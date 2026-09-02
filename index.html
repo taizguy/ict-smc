@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICT & SMC Academy</title>
+    <meta name="description" content="Comprehensive interactive learning platform, digital textbook, and chart laboratory for Inner Circle Trader (ICT) and Smart Money Concepts (SMC)." />
+    <meta property="og:title" content="ICT & SMC Academy" />
+    <meta property="og:description" content="Comprehensive interactive learning platform, digital textbook, and chart laboratory for Inner Circle Trader (ICT) and Smart Money Concepts (SMC)." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <script>
+      // Defensive guard against browser extension injection collisions (e.g. Zerion, MetaMask, Coinbase wallet conflicts)
+      (function() {
+        try {
+          const origDefineProperty = Object.defineProperty;
+          Object.defineProperty = function(obj, prop, descriptor) {
+            try {
+              return origDefineProperty.call(Object, obj, prop, descriptor);
+            } catch (err) {
+              if (
+                err instanceof TypeError && 
+                (String(prop).toLowerCase().includes('zerion') || String(err.message).toLowerCase().includes('cannot redefine property'))
+              ) {
+                // Extension property conflict, safely fallback
+                try {
+                  obj[prop] = descriptor && 'value' in descriptor ? descriptor.value : undefined;
+                } catch (e) {}
+                return obj;
+              }
+              throw err;
+            }
+          };
+        } catch (e) {}
+
+        window.addEventListener('error', function(event) {
+          if (
+            event && event.message && (
+              event.message.toLowerCase().includes('zerion') ||
+              event.message.toLowerCase().includes('cannot redefine property') ||
+              event.message.includes('chrome-extension://') ||
+              event.message.includes('moz-extension://')
+            )
+          ) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+            return true;
+          }
+        }, true);
+
+        window.addEventListener('unhandledrejection', function(event) {
+          if (
+            event && event.reason && (
+              String(event.reason).toLowerCase().includes('zerion') ||
+              String(event.reason).toLowerCase().includes('cannot redefine property') ||
+              String(event.reason).includes('chrome-extension://')
+            )
+          ) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+          }
+        }, true);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

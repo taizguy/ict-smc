@@ -174,5 +174,65 @@ export const conceptComparisons: ConceptComparison[] = [
     commonConfusion: 'Expecting price to reverse at every minor internal high. Internal liquidity is frequently consumed as fuel to power the move to the external target.',
     decisionRule: 'Start top-down: identify the ERL target first, then use IRL sweeps in discount/premium to find your execution entry.',
     diagramSnippet: 'External BSL [Target] <─── Internal High 1 <─── Internal High 2 <─── Price (Discount)'
+  },
+  {
+    id: 'model_1_scalp_vs_model_9_osok',
+    title: 'ICT Charter Model 1 (Intraday Scalp) vs. Charter Model 9 (One Shot One Kill)',
+    conceptA: {
+      name: 'Charter Model 1: Intraday Scalping',
+      summary: 'High-velocity 10–30 pip capture strategy targeting immediate intraday imbalances and liquidity sweeps within the 20-day IPDA lookback range.',
+      keyPoints: [
+        'Executed primarily on 1m–5m timeframes within the London or New York Killzone',
+        'Relies on Previous Day High/Low sweeps or internal session liquidity pools',
+        'Targets 10 to 30 pips fixed or next intermediate FVG/Order Block',
+        'Multiple setups can occur throughout the trading week'
+      ],
+      idealCondition: 'New York Open sweep of the London Session Low with clear 1m MSS and Bullish FVG retest targeting 20 pips.'
+    },
+    conceptB: {
+      name: 'Charter Model 9: One Shot One Kill (OSOK)',
+      summary: 'Patience-driven weekly swing execution targeting the complete expansion from Internal Range Liquidity to External Range Liquidity.',
+      keyPoints: [
+        'Executed with HTF Weekly/Daily direction, entering on 1H/15M charts',
+        'Takes at most 1 or 2 high-conviction trades per trading week',
+        'Enters at deep Discount/Premium Internal Range Liquidity (FVG or Order Block)',
+        'Targets major External Range Liquidity (Weekly Highs/Lows, 75–150+ pips)'
+      ],
+      idealCondition: 'Weekly candle creates early-week manipulation (Tuesday Low), tags 4H Bullish FVG, and expands for the rest of the week toward unviolated Buy-Side Liquidity.'
+    },
+    keyDifference: 'Model 1 prioritizes turnover, speed, and intraday precision for 10–30 pips; Model 9 prioritizes patience, low trade frequency, and capturing the complete weekly candle range.',
+    commonConfusion: 'Treating an OSOK setup as a fast scalp and taking early profits, or holding a Model 1 intraday scalp hoping it turns into a multi-day swing without HTF confirmation.',
+    decisionRule: 'If your thesis is based on a session liquidity raid and 5m displacement -> Model 1 scalp. If your thesis is based on the weekly candle high/low formation and 4H rebalance -> Model 9 OSOK.',
+    diagramSnippet: 'Model 1: 5m Sweep ──> 20-Pip FVG Target (Intraday) | Model 9: Weekly Low ──> 4H FVG ──> Weekly High (Multi-day)'
+  },
+  {
+    id: 'model_13_2022_vs_silver_bullet',
+    title: 'Charter Model 13 (2022 Mentorship) vs. ICT Silver Bullet',
+    conceptA: {
+      name: 'Charter Model 13: 2022 Mentorship Model',
+      summary: 'The universal price action framework based on a Higher Timeframe liquidity raid, Market Structure Shift (MSS) with displacement, and entry at the resulting Fair Value Gap.',
+      keyPoints: [
+        'Applicable across all sessions (London, NY AM, NY PM, Asia) and any timeframe',
+        'Requires a confirmed sweep of a prominent swing high/low (BSL or SSL)',
+        'Displacement MUST break market structure with a full candle body close',
+        'Entry is taken at the FVG boundary or 50% Consequent Encroachment'
+      ],
+      idealCondition: 'Price sweeps Previous Day High at 09:45 AM, violently breaks a 5m swing low with a huge down-candle, leaving an FVG for a short entry.'
+    },
+    conceptB: {
+      name: 'ICT Silver Bullet Model',
+      summary: 'A time-window-restricted algorithmic execution model targeting an immediate 10–15 handle / 20–30 pip run inside dedicated 60-minute windows.',
+      keyPoints: [
+        'Strictly bound to exact clock hours: 03:00–04:00 AM (London), 10:00–11:00 AM (NY AM), 02:00–03:00 PM (NY PM)',
+        'Does NOT require a structural sweep inside the window; it executes on the first valid FVG moving toward the existing draw on liquidity',
+        'Fixed mechanical targets: 5 to 10 index handles or 15 to 25 forex pips',
+        'Algorithmically engineered delivery window with high trade completion velocity'
+      ],
+      idealCondition: 'At 10:05 AM NY time, following a 09:30 AM open run, price creates a clean 1m/5m FVG aligned with the Daily draw on liquidity.'
+    },
+    keyDifference: 'Charter Model 13 is structure-driven (requires a sweep + MSS + FVG regardless of time); the Silver Bullet is time-driven (executes exclusively within fixed 60-minute algorithmic macro windows).',
+    commonConfusion: 'Thinking Silver Bullet requires a brand new sweep inside the 10:00–11:00 AM window. Silver Bullet simply trades the first clean FVG aligned with the established session draw.',
+    decisionRule: 'Outside of 10:00–11:00 AM or across other sessions, use Charter Model 13. When the clock strikes 10:00 AM NY time, look for the Silver Bullet delivery sequence.',
+    diagramSnippet: 'Model 13: Sweep ──> MSS ──> FVG (Any time) | Silver Bullet: 10:00 AM Clock ──> Valid FVG ──> 15-Handle Target'
   }
 ];

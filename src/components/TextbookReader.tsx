@@ -4,16 +4,13 @@ import { TextbookChapter } from '../types';
 import { InteractiveDiagram } from './InteractiveDiagram';
 import { 
   BookOpen, 
-  CheckCircle, 
   ChevronLeft, 
   ChevronRight, 
   HelpCircle, 
   Sparkles, 
   Eye, 
-  Bookmark, 
   Layers, 
   Lightbulb, 
-  CheckSquare,
   LayoutGrid,
   Clock,
   Award,
@@ -23,9 +20,8 @@ import {
   GraduationCap,
   Youtube,
   Search,
-  Check
+  CheckSquare
 } from 'lucide-react';
-import confetti from 'canvas-confetti';
 
 interface TextbookReaderProps {
   onSelectConcept: (conceptId: string) => void;
@@ -37,8 +33,6 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
   const [selectedChapterId, setSelectedChapterId] = useState<number>(textbookChapters[0].id);
   const [explainSimpler, setExplainSimpler] = useState<boolean>(false);
   const [showQuestions, setShowQuestions] = useState<boolean>(false);
-  const [completedChapters, setCompletedChapters] = useState<number[]>([1, 2]);
-  const [bookmarkedChapters, setBookmarkedChapters] = useState<number[]>([]);
   const [selectedPartFilter, setSelectedPartFilter] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
@@ -89,23 +83,6 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
     }
   };
 
-  const toggleBookmark = (id: number) => {
-    if (bookmarkedChapters.includes(id)) {
-      setBookmarkedChapters(bookmarkedChapters.filter((c) => c !== id));
-    } else {
-      setBookmarkedChapters([...bookmarkedChapters, id]);
-    }
-  };
-
-  const toggleComplete = (id: number) => {
-    if (completedChapters.includes(id)) {
-      setCompletedChapters(completedChapters.filter((c) => c !== id));
-    } else {
-      setCompletedChapters([...completedChapters, id]);
-      confetti({ particleCount: 60, spread: 60, origin: { y: 0.8 } });
-    }
-  };
-
   const getPartColor = (partName: string) => {
     if (partName.includes('Part I') || partName.includes('Foundations')) {
       return { border: 'border-emerald-300', badge: 'bg-emerald-50 text-emerald-800 border-emerald-300', accent: 'text-emerald-600' };
@@ -145,11 +122,9 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
     }
   };
 
-  const completionPercentage = Math.round((completedChapters.length / textbookChapters.length) * 100);
-
   return (
     <div className="space-y-6">
-      {/* Top Syllabus Control & Progress Banner */}
+      {/* Top Syllabus Control & Banner */}
       <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm relative overflow-hidden">
         {/* Glow Effects */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-sky-200/40 via-blue-100/30 to-purple-100/20 rounded-full blur-3xl pointer-events-none" />
@@ -163,66 +138,42 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                 <span>OFFICIAL CURRICULUM SYLLABUS</span>
               </span>
               <span className="text-slate-300">•</span>
-              <span className="text-xs font-mono text-slate-500 font-medium">23 Chapters • 8 Master Modules</span>
+              <span className="text-xs font-mono text-slate-500 font-medium">{textbookChapters.length} Chapters • 9 Master Modules</span>
             </div>
 
             <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 font-display tracking-tight">
               The Institutional Trading Syllabus
             </h1>
             <p className="text-slate-600 text-sm max-w-2xl font-sans leading-relaxed">
-              A comprehensive, zero-fluff syllabus for institutional order flow, algorithmic price delivery, and high-probability SMC execution models.
+              A comprehensive, zero-fluff syllabus for institutional order flow, algorithmic price delivery, ICT 2025 Mentorship frameworks, and high-probability SMC execution models.
             </p>
           </div>
 
-          {/* View Mode Toggle & Progress Pill */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full md:w-auto">
-            {/* View Mode Switch */}
-            <div className="flex items-center p-1.5 rounded-2xl bg-slate-100 border border-slate-200 shadow-inner shrink-0">
-              <button
-                onClick={() => setViewMode('syllabus')}
-                className={`px-4 py-2 rounded-xl text-xs font-mono font-bold flex items-center gap-2 transition-all ${
-                  viewMode === 'syllabus'
-                    ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/20'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
-              >
-                <LayoutGrid className="w-3.5 h-3.5" />
-                <span>Syllabus Grid</span>
-              </button>
-              <button
-                onClick={() => setViewMode('reader')}
-                className={`px-4 py-2 rounded-xl text-xs font-mono font-bold flex items-center gap-2 transition-all ${
-                  viewMode === 'reader'
-                    ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/20'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
-              >
-                <BookOpen className="w-3.5 h-3.5" />
-                <span>Chapter Reader</span>
-              </button>
-            </div>
-
-            {/* Quick Progress Ring Box */}
-            <div className="bg-slate-50 px-4 py-2.5 rounded-2xl border border-slate-200 flex items-center gap-3 shrink-0 shadow-sm">
-              <div className="w-10 h-10 rounded-full bg-white border-2 border-sky-500 flex items-center justify-center font-mono font-extrabold text-xs text-sky-700 shadow-sm">
-                {completionPercentage}%
-              </div>
-              <div className="space-y-0.5">
-                <div className="text-[10px] font-mono text-slate-500 uppercase font-bold tracking-wider">Completed</div>
-                <div className="text-xs font-mono font-bold text-slate-800">
-                  {completedChapters.length} / {textbookChapters.length} Units
-                </div>
-              </div>
-            </div>
+          {/* View Mode Switch */}
+          <div className="flex items-center p-1.5 rounded-2xl bg-slate-100 border border-slate-200 shadow-inner shrink-0">
+            <button
+              onClick={() => setViewMode('syllabus')}
+              className={`px-4 py-2 rounded-xl text-xs font-mono font-bold flex items-center gap-2 transition-all ${
+                viewMode === 'syllabus'
+                  ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/20'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              <LayoutGrid className="w-3.5 h-3.5" />
+              <span>Syllabus Grid</span>
+            </button>
+            <button
+              onClick={() => setViewMode('reader')}
+              className={`px-4 py-2 rounded-xl text-xs font-mono font-bold flex items-center gap-2 transition-all ${
+                viewMode === 'reader'
+                  ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/20'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              <BookOpen className="w-3.5 h-3.5" />
+              <span>Chapter Reader</span>
+            </button>
           </div>
-        </div>
-
-        {/* Global Progress Bar */}
-        <div className="mt-6 w-full bg-slate-100 h-2.5 rounded-full overflow-hidden border border-slate-200">
-          <div
-            className="h-full bg-gradient-to-r from-sky-500 via-teal-500 to-emerald-500 transition-all duration-500 rounded-full shadow-sm"
-            style={{ width: `${completionPercentage}%` }}
-          />
         </div>
       </div>
 
@@ -297,22 +248,17 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                         )}
                       </div>
                       <span className="text-xs font-mono text-slate-500 font-semibold">
-                        {chapters.filter((c) => completedChapters.includes(c.id)).length} of {chapters.length} Completed
+                        {chapters.length} Chapters
                       </span>
                     </div>
 
                     {/* Chapter Cards Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                       {chapters.map((ch) => {
-                        const isCompleted = completedChapters.includes(ch.id);
-                        const isBookmarked = bookmarkedChapters.includes(ch.id);
-
                         return (
                           <div
                             key={ch.id}
-                            className={`group bg-white border-2 ${
-                              isCompleted ? 'border-emerald-300 bg-emerald-50/20' : 'border-slate-200'
-                            } hover:border-sky-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between gap-4 hover:-translate-y-0.5`}
+                            className="group bg-white border-2 border-slate-200 hover:border-sky-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between gap-4 hover:-translate-y-0.5"
                           >
                             <div className="space-y-3">
                               {/* Top Bar of Card */}
@@ -322,37 +268,6 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                                     CH {ch.id < 10 ? `0${ch.id}` : ch.id}
                                   </span>
                                   {getDifficultyBadge(ch.level)}
-                                </div>
-
-                                <div className="flex items-center gap-1">
-                                  <button
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      toggleBookmark(ch.id);
-                                    }}
-                                    className={`p-1.5 rounded-lg border transition-colors ${
-                                      isBookmarked
-                                        ? 'bg-amber-100 border-amber-400 text-amber-700'
-                                        : 'bg-slate-50 border-slate-200 text-slate-400 hover:text-slate-600 hover:bg-slate-100'
-                                    }`}
-                                  >
-                                    <Bookmark className="w-3.5 h-3.5" />
-                                  </button>
-
-                                  <button
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      toggleComplete(ch.id);
-                                    }}
-                                    className={`p-1.5 rounded-lg border transition-all ${
-                                      isCompleted
-                                        ? 'bg-emerald-500 border-emerald-600 text-white'
-                                        : 'bg-slate-50 border-slate-200 text-slate-400 hover:text-slate-600 hover:bg-slate-100'
-                                    }`}
-                                    title={isCompleted ? 'Mastered' : 'Mark as Complete'}
-                                  >
-                                    <Check className="w-3.5 h-3.5 stroke-[3]" />
-                                  </button>
                                 </div>
                               </div>
 
@@ -410,8 +325,8 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                   <ChevronLeft className="w-4 h-4" />
                   <span>Back to Syllabus</span>
                 </button>
-                <span className="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded-full">
-                  {completedChapters.length}/{textbookChapters.length} Done
+                <span className="text-[10px] font-mono font-bold text-sky-800 bg-sky-100 border border-sky-300 px-2.5 py-0.5 rounded-full">
+                  {textbookChapters.length} Chapters
                 </span>
               </div>
 
@@ -419,8 +334,6 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
               <div className="space-y-1.5 max-h-[calc(100vh-220px)] overflow-y-auto pr-1">
                 {textbookChapters.map((ch) => {
                   const isSelected = ch.id === selectedChapterId;
-                  const isCompleted = completedChapters.includes(ch.id);
-                  const isBookmarked = bookmarkedChapters.includes(ch.id);
 
                   return (
                     <button
@@ -445,11 +358,6 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                           {ch.title}
                         </div>
                       </div>
-
-                      <div className="flex items-center gap-1 shrink-0 mt-1">
-                        {isCompleted && <CheckCircle className="w-3.5 h-3.5 text-emerald-600 fill-emerald-100" />}
-                        {isBookmarked && <Bookmark className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />}
-                      </div>
                     </button>
                   );
                 })}
@@ -471,32 +379,6 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                   </span>
                   <span>•</span>
                   {getDifficultyBadge(chapter.level)}
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => toggleBookmark(chapter.id)}
-                    className={`p-2 rounded-xl border transition-colors ${
-                      bookmarkedChapters.includes(chapter.id)
-                        ? 'bg-amber-100 border-amber-400 text-amber-800'
-                        : 'bg-slate-50 border-slate-200 text-slate-500 hover:text-slate-800'
-                    }`}
-                    title="Bookmark Chapter"
-                  >
-                    <Bookmark className="w-4 h-4" />
-                  </button>
-
-                  <button
-                    onClick={() => toggleComplete(chapter.id)}
-                    className={`px-4 py-2 rounded-xl border text-xs font-mono font-bold flex items-center gap-2 transition-all ${
-                      completedChapters.includes(chapter.id)
-                        ? 'bg-emerald-500 text-white border-emerald-600 shadow-md shadow-emerald-500/20'
-                        : 'bg-slate-100 border-slate-200 text-slate-800 hover:border-emerald-500'
-                    }`}
-                  >
-                    <CheckCircle className="w-4 h-4" />
-                    {completedChapters.includes(chapter.id) ? 'Mastered ✓' : 'Mark as Mastered'}
-                  </button>
                 </div>
               </div>
 

@@ -36,14 +36,14 @@ export const textbookChapters: TextbookChapter[] = [
       {
         id: '1.1',
         title: '1.1 The Biggest Lie Most Beginners Learn',
-        content: `Ask almost any beginner: *"Why did Bitcoin go up?"*
+        content: `Ask almost any beginner: "Why did Bitcoin go up?"
 
-The answer is usually: *"Because there were more buyers than sellers."*
+The answer is usually: "Because there were more buyers than sellers."
 
 This sounds logical, but it is fundamentally incomplete. In every single trade in financial history, there is always:
-- **One buyer.**
-- **One seller.**
-- **Always. Not sometimes. Always.**
+- One buyer.
+- One seller.
+- Always. Not sometimes. Always.
 
 If someone buys 10 BTC, someone else sold 10 BTC. So if buyers always equal sellers in volume, why does price move? This question is the foundation of everything you will learn.`
       },
@@ -58,23 +58,23 @@ If someone buys 10 BTC, someone else sold 10 BTC. So if buyers always equal sell
 
 Suppose 100 buyers rush in demanding apples immediately. Seller A sells out. Seller B sells out. Seller C sells out. Buyers must now buy from Seller D at $1.30.
 
-Did apples become 30% more valuable in one minute? **No. The cheapest available supply disappeared.**
+Did apples become 30% more valuable in one minute? No. The cheapest available supply disappeared.
 
-Financial markets work the exact same way. The exchange maintains an **Order Book** with two sides:
-1. **Asks (Sellers):** Waiting at progressively higher prices.
-2. **Bids (Buyers):** Waiting at progressively lower prices.`
+Financial markets work the exact same way. The exchange maintains an Order Book with two sides:
+1. Asks (Sellers): Waiting at progressively higher prices.
+2. Bids (Buyers): Waiting at progressively lower prices.`
       },
       {
         id: '1.3',
         title: '1.3 Aggression Moves Price',
         content: `Everything in every market begins with two basic order types:
 
-- **Market Order (Aggressive):** *"I don't care about price, fill my order immediately."* Market orders consume liquidity.
-- **Limit Order (Passive):** *"I will buy only at this price or better."* Limit orders provide liquidity.
+- Market Order (Aggressive): "I don't care about price, fill my order immediately." Market orders consume liquidity.
+- Limit Order (Passive): "I will buy only at this price or better." Limit orders provide liquidity.
 
-When an institutional fund wants to buy 5,000 BTC, they cannot simply click "Buy Market" without driving the execution price drastically higher (known as **Market Impact** or **Slippage**).
+When an institutional fund wants to buy 5,000 BTC, they cannot simply click "Buy Market" without driving the execution price drastically higher (known as Market Impact or Slippage).
 
-This explains why large institutions require concentrated pools of resting orders—which ICT refers to as **Liquidity Pools**—to enter and exit their positions.`
+This explains why large institutions require concentrated pools of resting orders—which ICT refers to as Liquidity Pools—to enter and exit their positions.`
       }
     ]
   },
@@ -107,7 +107,7 @@ This explains why large institutions require concentrated pools of resting order
       {
         id: '2.1',
         title: '2.1 The Exchange Is a Referee',
-        content: `One of the biggest misconceptions beginners have is: *"The exchange decides the price."*
+        content: `One of the biggest misconceptions beginners have is: "The exchange decides the price."
 
 It doesn't. The exchange has one job: match buyers and sellers according to predefined rules. It doesn't buy, sell, or predict the future. It simply executes:
 - A buyer wants to buy at X.
@@ -118,10 +118,10 @@ It doesn't. The exchange has one job: match buyers and sellers according to pred
         id: '2.2',
         title: '2.2 Price-Time Priority and Crossing the Spread',
         content: `Exchanges match orders according to two strict rules:
-1. **Rule 1 (Price Priority):** Better prices get executed first. The cheapest seller and highest buyer always take precedence.
-2. **Rule 2 (Time Priority):** If two traders offer the same price, the earlier order gets filled first.
+1. Rule 1 (Price Priority): Better prices get executed first. The cheapest seller and highest buyer always take precedence.
+2. Rule 2 (Time Priority): If two traders offer the same price, the earlier order gets filled first.
 
-Between the Best Bid and Best Ask exists a gap called **The Spread**. Passive traders wait on either side of the spread. Aggressive traders **cross the spread** and demand execution now. It is this urgency that creates price velocity.`
+Between the Best Bid and Best Ask exists a gap called The Spread. Passive traders wait on either side of the spread. Aggressive traders cross the spread and demand execution now. It is this urgency that creates price velocity.`
       },
       {
         id: '2.3',
@@ -134,7 +134,7 @@ Notice there are zero sell orders between $100,002 and $100,009. If a buyer subm
 - 1 BTC fills at $100,001
 - The remaining 4 BTC fill at $100,010
 
-To someone watching the chart, price appears to have "jumped" $9 in a millisecond. In reality, it simply cleared a liquidity vacuum. This mechanical reality is the exact engine behind **Fair Value Gaps** and **Displacement**.`
+To someone watching the chart, price appears to have "jumped" $9 in a millisecond. In reality, it simply cleared a liquidity vacuum. This mechanical reality is the exact engine behind Fair Value Gaps and Displacement.`
       }
     ]
   },
@@ -170,7 +170,7 @@ To someone watching the chart, price appears to have "jumped" $9 in a millisecon
       {
         id: '3.1',
         title: '3.1 Behind the Candlesticks',
-        content: `A single candlestick tells you four historical facts: Open, High, Low, and Close. It does not tell you *how* it happened.
+        content: `A single candlestick tells you four historical facts: Open, High, Low, and Close. It does not tell you how it happened.
 
 Think of a soccer scoreboard: Team A 3, Team B 1. You know the score, but not who dominated possession or how the goals were scored. Candlesticks are the scoreboard; the order book is the game.`
       },
@@ -178,11 +178,11 @@ Think of a soccer scoreboard: Team A 3, Team B 1. You know the score, but not wh
         id: '3.2',
         title: '3.2 Icebergs, Algorithms, and Absorption',
         content: `Large institutions use execution algorithms to enter positions over hours or days without moving the market against themselves:
-- **TWAP (Time-Weighted Average Price):** Slices large orders into small fractions executed at regular time intervals.
-- **VWAP (Volume-Weighted Average Price):** Adjusts execution speed based on market trading volume.
-- **Iceberg Orders:** Displays only 10 BTC visible while 1,000 BTC sits behind it. Every time 10 BTC is bought, another 10 BTC instantly refills.
+- TWAP (Time-Weighted Average Price): Slices large orders into small fractions executed at regular time intervals.
+- VWAP (Volume-Weighted Average Price): Adjusts execution speed based on market trading volume.
+- Iceberg Orders: Displays only 10 BTC visible while 1,000 BTC sits behind it. Every time 10 BTC is bought, another 10 BTC instantly refills.
 
-When aggressive buyers hit an iceberg seller, volume spikes but price refuses to rise. This is **Absorption**—the precursor to failed breakouts and Order Blocks.`
+When aggressive buyers hit an iceberg seller, volume spikes but price refuses to rise. This is Absorption—the precursor to failed breakouts and Order Blocks.`
       }
     ]
   },
@@ -220,9 +220,9 @@ When aggressive buyers hit an iceberg seller, volume spikes but price refuses to
         id: '4.1',
         title: '4.1 The Three Meanings of Liquidity',
         content: `The word "liquidity" is used in three distinct ways:
-1. **Economics / Finance:** How easily an asset can be converted to cash (Cash > Bitcoin > Real Estate).
-2. **Market Microstructure:** How many resting limit orders exist in the order book right now.
-3. **ICT / SMC Framework:** Concentrations of future conditional orders (stop-losses, breakout stops) clustered around visible swing highs, swing lows, and session extremes.
+1. Economics / Finance: How easily an asset can be converted to cash (Cash > Bitcoin > Real Estate).
+2. Market Microstructure: How many resting limit orders exist in the order book right now.
+3. ICT / SMC Framework: Concentrations of future conditional orders (stop-losses, breakout stops) clustered around visible swing highs, swing lows, and session extremes.
 
 Understanding this distinction eliminates 90% of useless online arguments.`
       },
@@ -232,19 +232,19 @@ Understanding this distinction eliminates 90% of useless online arguments.`
         content: `When thousands of traders look at the same chart and see a double top ("resistance"), retail traders short and place stop losses directly above it. Breakout traders place buy stop-entry orders above it.
 
 Now think: what happens when price touches that level?
-- Short stop-losses trigger -> **BUY orders**
-- Breakout entries trigger -> **BUY orders**
+- Short stop-losses trigger -> BUY orders
+- Breakout entries trigger -> BUY orders
 
-Both order types are **BUY orders**! This pool of buying volume provides the exact counterparty volume required for large institutions to fill massive sell orders or exit long positions.`
+Both order types are BUY orders! This pool of buying volume provides the exact counterparty volume required for large institutions to fill massive sell orders or exit long positions.`
       },
       {
         id: '4.3',
         title: '4.3 Liquidity Sweep vs Liquidity Run',
         content: `When price pierces a liquidity level, two distinct behaviors can occur:
-- **Liquidity Sweep:** Price breaches the level, consumes the stop orders, and immediately reverses with displacement, closing back inside the range.
-- **Liquidity Run:** Price trades through the level, closes beyond it, and continues expanding toward a higher-timeframe objective.
+- Liquidity Sweep: Price breaches the level, consumes the stop orders, and immediately reverses with displacement, closing back inside the range.
+- Liquidity Run: Price trades through the level, closes beyond it, and continues expanding toward a higher-timeframe objective.
 
-**The Golden Rule:** A sweep is an event, not an automatic entry signal. The reaction and market structure shift *after* the sweep give it meaning.`
+The Golden Rule: A sweep is an event, not an automatic entry signal. The reaction and market structure shift after the sweep give it meaning.`
       }
     ]
   },
@@ -284,7 +284,7 @@ The real body shows where the market accepted price between open and close. The 
       {
         id: '5.2',
         title: '5.2 The True Meaning of Displacement',
-        content: `Displacement is not just a "big candle". It is evidence of **abnormal expansion** where aggressive market orders completely overwhelm resting liquidity across multiple price tiers.
+        content: `Displacement is not just a "big candle". It is evidence of abnormal expansion where aggressive market orders completely overwhelm resting liquidity across multiple price tiers.
 
 Key characteristics of high-quality displacement:
 1. Large real body dominating the candle range (>75% body).
@@ -371,17 +371,17 @@ If the answer is yes, the swing carries high structural significance.`
         title: '9.1 The Continuation Rhythm',
         content: `An uptrend is a sequence: Higher Low -> Higher High -> Higher Low -> Higher High.
 
-When price surpasses the previous Higher High with decisive momentum, it produces a **Bullish BOS**. The existing auction has proven that buyers remain in structural control.`
+When price surpasses the previous Higher High with decisive momentum, it produces a Bullish BOS. The existing auction has proven that buyers remain in structural control.`
       },
       {
         id: '9.2',
         title: '9.2 The Five-Dimension Evaluation Framework',
         content: `Evaluate every structural break across five dimensions:
-1. **Scale:** Which timeframe and which level of structure broke?
-2. **Strength:** Was there real displacement or only a hesitant 1-tick breach?
-3. **Acceptance:** Did price close and hold beyond the level?
-4. **Context:** Where did this occur relative to the higher-timeframe dealing range?
-5. **Purpose:** Was the move continuing a trend or sweeping liquidity?`
+1. Scale: Which timeframe and which level of structure broke?
+2. Strength: Was there real displacement or only a hesitant 1-tick breach?
+3. Acceptance: Did price close and hold beyond the level?
+4. Context: Where did this occur relative to the higher-timeframe dealing range?
+5. Purpose: Was the move continuing a trend or sweeping liquidity?`
       }
     ]
   },
@@ -414,7 +414,7 @@ When price surpasses the previous Higher High with decisive momentum, it produce
         title: '10.1 The Broken Rhythm',
         content: `Imagine listening to music: beat, beat, beat, beat... Suddenly the rhythm stutters. Has the song ended? No, but something changed.
 
-In an uptrend, when price falls below the previous Higher Low for the first time, it creates a **Bearish CHoCH**. The market has stopped behaving like a healthy uptrend, alerting traders to a potential transition.`
+In an uptrend, when price falls below the previous Higher Low for the first time, it creates a Bearish CHoCH. The market has stopped behaving like a healthy uptrend, alerting traders to a potential transition.`
       }
     ]
   },
@@ -446,11 +446,11 @@ In an uptrend, when price falls below the previous Higher Low for the first time
         id: '11.1',
         title: '11.1 The Complete MSS Sequence',
         content: `A high-quality MSS unfolds in a strict chronological sequence:
-1. **Liquidity Taken:** Price sweeps an obvious BSL or SSL pool.
-2. **Displacement Appears:** Large, energetic candles launch in the opposite direction.
-3. **Structure Breaks:** Price decisively closes beyond a protected swing point.
-4. **Inefficiency Created:** The displacement leaves behind an FVG or Order Block.
-5. **Acceptance:** Price holds beyond the broken swing and begins retracing toward the newly formed imbalance.`
+1. Liquidity Taken: Price sweeps an obvious BSL or SSL pool.
+2. Displacement Appears: Large, energetic candles launch in the opposite direction.
+3. Structure Breaks: Price decisively closes beyond a protected swing point.
+4. Inefficiency Created: The displacement leaves behind an FVG or Order Block.
+5. Acceptance: Price holds beyond the broken swing and begins retracing toward the newly formed imbalance.`
       }
     ]
   },
@@ -484,8 +484,8 @@ In an uptrend, when price falls below the previous Higher Low for the first time
         id: '13.1',
         title: '13.1 Anatomy of a Three-Candle Imbalance',
         content: `An FVG is identified using three adjacent candles:
-- **Bullish FVG:** Candle 3 Low > Candle 1 High. (Gap = space between Candle 1 High and Candle 3 Low).
-- **Bearish FVG:** Candle 3 High < Candle 1 Low. (Gap = space between Candle 1 Low and Candle 3 High).
+- Bullish FVG: Candle 3 Low > Candle 1 High. (Gap = space between Candle 1 High and Candle 3 Low).
+- Bearish FVG: Candle 3 High < Candle 1 Low. (Gap = space between Candle 1 Low and Candle 3 High).
 
 The middle candle is the displacement candle that pushed price so rapidly that resting orders were bypassed.`
       },
@@ -493,9 +493,9 @@ The middle candle is the displacement candle that pushed price so rapidly that r
         id: '13.2',
         title: '13.2 Consequent Encroachment (50%) and Entry Depth',
         content: `Traders categorize FVG entries into three styles:
-1. **Aggressive (First Touch):** Enter at the nearest boundary. Highest fill rate, slightly larger stop.
-2. **Balanced (50% CE):** Enter at the exact midpoint. Optimal balance between fill rate and R:R.
-3. **Deep (Far Edge):** Enter near the complete fill. Highest R:R, but many high-momentum trades will leave without filling.`
+1. Aggressive (First Touch): Enter at the nearest boundary. Highest fill rate, slightly larger stop.
+2. Balanced (50% CE): Enter at the exact midpoint. Optimal balance between fill rate and R:R.
+3. Deep (Far Edge): Enter near the complete fill. Highest R:R, but many high-momentum trades will leave without filling.`
       }
     ]
   },
@@ -528,7 +528,7 @@ The middle candle is the displacement candle that pushed price so rapidly that r
         title: '14.1 The Role Reversal of Imbalance',
         content: `When buyers fail to defend an existing bullish FVG and price slices cleanly through it with strong bearish displacement, the market demonstrates that bullish demand has evaporated.
 
-When price retraces back upward, that same box now serves as a **Bearish IFVG**, offering resistance for short trades targeting Sell Side Liquidity.`
+When price retraces back upward, that same box now serves as a Bearish IFVG, offering resistance for short trades targeting Sell Side Liquidity.`
       }
     ]
   },
@@ -561,11 +561,11 @@ When price retraces back upward, that same box now serves as a **Bearish IFVG**,
       {
         id: '15.1',
         title: '15.1 The True Definition of an Order Block',
-        content: `In ICT methodology, an Order Block is identified by the **consequence of the move** that followed it:
-1. **Before:** Liquidity is swept from an obvious high/low.
-2. **During:** The final opposing candle forms.
-3. **After:** Violent displacement erupts away from the candle.
-4. **Result:** A meaningful market structure shift (MSS) occurs and an FVG is left behind.
+        content: `In ICT methodology, an Order Block is identified by the consequence of the move that followed it:
+1. Before: Liquidity is swept from an obvious high/low.
+2. During: The final opposing candle forms.
+3. After: Violent displacement erupts away from the candle.
+4. Result: A meaningful market structure shift (MSS) occurs and an FVG is left behind.
 
 The candle becomes a reference point for the origin of that institutional repricing.`
       }
@@ -602,11 +602,11 @@ The candle becomes a reference point for the origin of that institutional repric
         content: `The complete Bearish Breaker sequence:
 1. Market is bullish, making higher highs and higher lows.
 2. A bullish Order Block forms at the higher low.
-3. Price rallies from the OB and **sweeps Buy Side Liquidity (BSL)** at the peak.
+3. Price rallies from the OB and sweeps Buy Side Liquidity (BSL) at the peak.
 4. Massive bearish displacement erupts, smashing straight through the bullish Order Block.
 5. Bearish MSS is confirmed.
 6. Price retraces back up to test the failed Order Block from underneath.
-7. The old support zone acts as **Bearish Breaker resistance**.`
+7. The old support zone acts as Bearish Breaker resistance.`
       }
     ]
   },
@@ -639,10 +639,10 @@ The candle becomes a reference point for the origin of that institutional repric
         id: '18.1',
         title: '18.1 The Intraday Liquidity Matrix',
         content: `Before each trading day, map your liquidity hierarchy:
-- **Tier 1 (External):** Previous Week High (PWH) & Low (PWL), Monthly Highs/Lows.
-- **Tier 2 (Daily):** Previous Day High (PDH), Previous Day Low (PDL), Daily Open.
-- **Tier 3 (Session):** Asian High & Low, London High & Low.
-- **Tier 4 (Internal):** 15M/5M Equal Highs, Equal Lows, and dealing range midpoints.`
+- Tier 1 (External): Previous Week High (PWH) & Low (PWL), Monthly Highs/Lows.
+- Tier 2 (Daily): Previous Day High (PDH), Previous Day Low (PDL), Daily Open.
+- Tier 3 (Session): Asian High & Low, London High & Low.
+- Tier 4 (Internal): 15M/5M Equal Highs, Equal Lows, and dealing range midpoints.`
       }
     ]
   },
@@ -674,9 +674,9 @@ The candle becomes a reference point for the origin of that institutional repric
         id: '19.1',
         title: '19.1 The Session Trilogy',
         content: `The 24-hour market operates as a continuous conversation:
-- **Asia (Consolidation):** Builds the base range and establishes initial liquidity boundaries.
-- **London (Manipulation / Expansion):** Sweeps Asian high/low (Judas Swing) or establishes the Low/High of the Day.
-- **New York (Distribution / Reversal / Continuation):** Ingests US economic data, re-prices at 9:30 AM Equity Open, and delivers toward HTF Draw.`
+- Asia (Consolidation): Builds the base range and establishes initial liquidity boundaries.
+- London (Manipulation / Expansion): Sweeps Asian high/low (Judas Swing) or establishes the Low/High of the Day.
+- New York (Distribution / Reversal / Continuation): Ingests US economic data, re-prices at 9:30 AM Equity Open, and delivers toward HTF Draw.`
       }
     ]
   },
@@ -708,11 +708,11 @@ The candle becomes a reference point for the origin of that institutional repric
         id: '20.1',
         title: '20.1 The Five-Day Story',
         content: `Think of the trading week as one cohesive delivery cycle:
-- **Monday:** Establishes initial range and tests Weekly Open.
-- **Tuesday:** Creates manipulation raid (Classic Tuesday Low/High).
-- **Wednesday:** Midweek expansion or major structural reversal.
-- **Thursday:** Trend continuation or Thursday reversal into HTF array.
-- **Friday:** Final weekly delivery into external liquidity or NFP volatility.`
+- Monday: Establishes initial range and tests Weekly Open.
+- Tuesday: Creates manipulation raid (Classic Tuesday Low/High).
+- Wednesday: Midweek expansion or major structural reversal.
+- Thursday: Trend continuation or Thursday reversal into HTF array.
+- Friday: Final weekly delivery into external liquidity or NFP volatility.`
       }
     ]
   },
@@ -744,10 +744,10 @@ The candle becomes a reference point for the origin of that institutional repric
         id: '21.1',
         title: '21.1 Intraday Power of Three',
         content: `Every single daily candlestick tells a Power of Three story:
-- **Open:** The day begins.
-- **Low:** Formed during the manipulation phase below the open (London Open / Judas Swing).
-- **High:** Formed at the climax of the distribution phase (New York Session).
-- **Close:** The final settlement near the high of the day.`
+- Open: The day begins.
+- Low: Formed during the manipulation phase below the open (London Open / Judas Swing).
+- High: Formed at the climax of the distribution phase (New York Session).
+- Close: The final settlement near the high of the day.`
       }
     ]
   },
@@ -779,15 +779,15 @@ The candle becomes a reference point for the origin of that institutional repric
         id: '22.1',
         title: '22.1 The Master 9-Question Checklist',
         content: `Before executing any trade, answer these 9 questions:
-1. **Weekly:** Where is the larger draw on liquidity?
-2. **Daily:** Are we in Premium or Discount of the active dealing range?
-3. **Daily:** Where is the Daily Open, PDH, and PDL?
-4. **Session:** Which session is active and what liquidity is nearby?
-5. **Liquidity Event:** Did price sweep a meaningful high or low?
-6. **Displacement:** Did aggressive repricing occur with strong candle bodies?
-7. **Structure:** Did price produce a clean Market Structure Shift (MSS)?
-8. **Entry:** Is there a fresh FVG or Order Block with defined structural invalidation?
-9. **Target:** Does the target liquidity offer at least 2:1 to 3:1 Reward-to-Risk?`
+1. Weekly: Where is the larger draw on liquidity?
+2. Daily: Are we in Premium or Discount of the active dealing range?
+3. Daily: Where is the Daily Open, PDH, and PDL?
+4. Session: Which session is active and what liquidity is nearby?
+5. Liquidity Event: Did price sweep a meaningful high or low?
+6. Displacement: Did aggressive repricing occur with strong candle bodies?
+7. Structure: Did price produce a clean Market Structure Shift (MSS)?
+8. Entry: Is there a fresh FVG or Order Block with defined structural invalidation?
+9. Target: Does the target liquidity offer at least 2:1 to 3:1 Reward-to-Risk?`
       }
     ]
   },
@@ -823,60 +823,60 @@ The candle becomes a reference point for the origin of that institutional repric
       {
         id: '23.1',
         title: '23.1 The 4-Pillar Daily Bias Engine',
-        content: `Many traders struggle with Daily Bias because they change their bias on every 1-minute or 5-minute candle. In the teachings of **Trader Abdullah Masood**, Daily Bias is framed through a strict 4-pillar institutional structure:
+        content: `Many traders struggle with Daily Bias because they change their bias on every 1-minute or 5-minute candle. In the teachings of Trader Abdullah Masood, Daily Bias is framed through a strict 4-pillar institutional structure:
 
 ### 1. High Timeframe Draw on Liquidity (DOL)
 Always establish where the Daily / 4-Hour chart is reaching. Is price magnetically drawn to an old Weekly High (Buy Side Liquidity) or a Daily Fair Value Gap (Imbalance)? Until this target is filled, your higher-timeframe directional bias remains intact.
 
 ### 2. Previous Day High (PDH) & Previous Day Low (PDL)
 The extremes of yesterday's candle hold the highest density of resting stop orders. An expansion day typically:
-- Sweeps the **PDL** early in the London/NY session, rejects sharply, and then accelerates upward to target the **PDH** (Bullish Day).
-- Sweeps the **PDH** early in London/NY, rejects, and accelerates downward toward the **PDL** (Bearish Day).
+- Sweeps the PDL early in the London/NY session, rejects sharply, and then accelerates upward to target the PDH (Bullish Day).
+- Sweeps the PDH early in London/NY, rejects, and accelerates downward toward the PDL (Bearish Day).
 
 ### 3. The 00:00 NY Midnight Open Benchmark
 The Midnight Open is the true institutional line in the sand:
-- **Bullish Bias:** Look to execute buy setups when price trades **BELOW** the Midnight Open (accumulating at a Discount).
-- **Bearish Bias:** Look to execute sell setups when price trades **ABOVE** the Midnight Open (distributing at a Premium).
+- Bullish Bias: Look to execute buy setups when price trades BELOW the Midnight Open (accumulating at a Discount).
+- Bearish Bias: Look to execute sell setups when price trades ABOVE the Midnight Open (distributing at a Premium).
 
 ### 4. Asian Range Expansion (20:00 - 00:00 NY)
-The Asian session builds liquidity on both sides. A classic London Judas swing will break out of the Asian Range in the *opposite* direction of the true daily bias to trigger stop runs before reversing.`
+The Asian session builds liquidity on both sides. A classic London Judas swing will break out of the Asian Range in the opposite direction of the true daily bias to trigger stop runs before reversing.`
       },
       {
         id: '23.2',
         title: '23.2 The Gold Legacy: XAUUSD Precision SMC',
-        content: `Gold (XAUUSD) is one of the most profitable yet aggressive instruments in global financial markets. As taught in **The Gold Legacy Mentorship** by Abdullah Masood, Gold has unique characteristics that every SMC trader must respect:
+        content: `Gold (XAUUSD) is one of the most profitable yet aggressive instruments in global financial markets. As taught in The Gold Legacy Mentorship by Abdullah Masood, Gold has unique characteristics that every SMC trader must respect:
 
-- **Deep Asian Sweeps:** Unlike EUR/USD which may respect tight ranges, Gold routinely sweeps both Asian High and Asian Low by 15-30 pips before establishing the true London trend.
-- **The Judas Swing:** Between 02:00 AM and 04:00 AM NY (London Killzone), expect an aggressive fake breakout against the daily bias.
-- **The 50% Consequent Encroachment Rule:** When Gold prints a 5-minute or 15-minute Fair Value Gap, limit entries at the 50% CE (midpoint) offer the tightest invalidation and highest Reward-to-Risk ratio.
-- **News Delivery (CPI, FOMC, NFP):** Never gamble ahead of high-impact releases. Wait for the initial 15-minute liquidity injection to sweep both sides, mark the newly formed Displacement and FVG, and trade the retracement into the structural POI.`
+- Deep Asian Sweeps: Unlike EUR/USD which may respect tight ranges, Gold routinely sweeps both Asian High and Asian Low by 15-30 pips before establishing the true London trend.
+- The Judas Swing: Between 02:00 AM and 04:00 AM NY (London Killzone), expect an aggressive fake breakout against the daily bias.
+- The 50% Consequent Encroachment Rule: When Gold prints a 5-minute or 15-minute Fair Value Gap, limit entries at the 50% CE (midpoint) offer the tightest invalidation and highest Reward-to-Risk ratio.
+- News Delivery (CPI, FOMC, NFP): Never gamble ahead of high-impact releases. Wait for the initial 15-minute liquidity injection to sweep both sides, mark the newly formed Displacement and FVG, and trade the retracement into the structural POI.`
       },
       {
         id: '23.3',
         title: '23.3 Inducement (IDM) vs Genuine Structural POIs',
-        content: `The single biggest reason retail SMC traders lose money is failing to understand **Inducement (IDM)**. 
+        content: `The single biggest reason retail SMC traders lose money is failing to understand Inducement (IDM). 
 
 ### What is Inducement?
 When a Market Structure Shift occurs, price creates a series of minor internal swings. The very first internal pullback is engineered by algorithms to entice impatient traders into buying the "first order block" they see. 
 
 ### The Golden Rule of Inducement:
-1. **Never buy at the first internal Order Block.**
-2. Wait for price to sweep the **Inducement Low (IDM)** where retail stop losses have gathered.
-3. Once the Inducement is swept into an **Extreme Order Block** or **Decisional FVG**, that is where institutional Smart Money enters.`
+1. Never buy at the first internal Order Block.
+2. Wait for price to sweep the Inducement Low (IDM) where retail stop losses have gathered.
+3. Once the Inducement is swept into an Extreme Order Block or Decisional FVG, that is where institutional Smart Money enters.`
       },
       {
         id: '23.4',
         title: '23.4 Appreciation & YouTube Mentorship Resources',
-        content: `Every trader seeking to advance from theoretical drawings to live-market precision should study the complete library of over 800+ educational videos, daily live analyses, and mentorship series on **Trader Abdullah Masood's YouTube channel**:
+        content: `Every trader seeking to advance from theoretical drawings to live-market precision should study the complete library of over 800+ educational videos, daily live analyses, and mentorship series on Trader Abdullah Masood's YouTube channel:
 
-- **Official Channel:** [https://www.youtube.com/@TraderAbdullahMasood](https://www.youtube.com/@TraderAbdullahMasood)
-- **Recommended Playlists to Study:**
-  - *2025 / 2026 ICT Daily Bias Mentorship*
-  - *The Gold Legacy - SMC Mentorship*
-  - *Daily Live Gold & NASDAQ Analysis*
-  - *Beginner to Advanced ICT Trading Roadmap*
+- Official Channel: [https://www.youtube.com/@TraderAbdullahMasood](https://www.youtube.com/@TraderAbdullahMasood)
+- Recommended Playlists to Study:
+  - 2025 / 2026 ICT Daily Bias Mentorship
+  - The Gold Legacy - SMC Mentorship
+  - Daily Live Gold & NASDAQ Analysis
+  - Beginner to Advanced ICT Trading Roadmap
 
-*Special thanks and highest appreciation to Trader Abdullah Masood for his tireless work, clarity, and generosity in elevating traders worldwide.*`
+Special thanks and highest appreciation to Trader Abdullah Masood for his tireless work, clarity, and generosity in elevating traders worldwide.`
       }
     ]
   }

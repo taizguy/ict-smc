@@ -18,38 +18,38 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
   const handleNext = () => setStep((prev) => (prev < 4 ? prev + 1 : 0));
 
   return (
-    <div className="bg-slate-950/80 border border-slate-800 rounded-xl p-5 my-6 backdrop-blur-md shadow-2xl">
+    <div className="bg-white border border-slate-200 rounded-2xl p-5 my-6 shadow-sm">
       {/* Header bar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-800/80">
+      <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-200">
         <div className="flex items-center gap-2">
-          <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
-          <span className="text-xs font-mono tracking-wider uppercase text-cyan-400 font-semibold">
+          <div className="w-2.5 h-2.5 rounded-full bg-sky-500 animate-pulse" />
+          <span className="text-xs font-mono tracking-wider uppercase text-sky-700 font-bold bg-sky-50 px-2.5 py-0.5 rounded-full border border-sky-200">
             {type.replace('_', ' ')} • Interactive Diagram
           </span>
-          {title && <span className="text-slate-400 text-xs hidden sm:inline">| {title}</span>}
+          {title && <span className="text-slate-600 text-xs font-medium hidden sm:inline">| {title}</span>}
         </div>
 
         {isInteractive && (
           <div className="flex items-center gap-2">
             <button
               onClick={() => setShowExplanation(!showExplanation)}
-              className="px-2.5 py-1 text-xs rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 flex items-center gap-1.5 transition-colors border border-slate-700/50"
+              className="px-2.5 py-1 text-xs font-mono font-medium rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center gap-1.5 transition-colors border border-slate-200 shadow-sm"
             >
-              <Info className="w-3.5 h-3.5 text-cyan-400" />
+              <Info className="w-3.5 h-3.5 text-sky-600" />
               {showExplanation ? 'Hide Notes' : 'Show Notes'}
             </button>
             <button
               onClick={handleReset}
-              className="p-1.5 rounded bg-slate-800/80 hover:bg-slate-700 text-slate-300 transition-colors border border-slate-700/50"
+              className="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors border border-slate-200 shadow-sm"
               title="Reset Animation"
             >
               <RotateCcw className="w-3.5 h-3.5" />
             </button>
             <button
               onClick={handleNext}
-              className="px-3 py-1 text-xs font-medium rounded bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-500 hover:to-teal-500 text-white flex items-center gap-1.5 transition-all shadow-md"
+              className="px-3 py-1 text-xs font-mono font-bold rounded-lg bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 text-white flex items-center gap-1.5 transition-all shadow-md shadow-sky-600/20"
             >
-              <Play className="w-3.5 h-3.5" />
+              <Play className="w-3.5 h-3.5 fill-white" />
               Step {step + 1} / 4
             </button>
           </div>
@@ -57,12 +57,12 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
       </div>
 
       {/* SVG Canvas Stage */}
-      <div className="relative w-full h-72 sm:h-80 bg-slate-900/60 rounded-lg my-4 overflow-hidden border border-slate-800/50 flex items-center justify-center p-2 select-none">
+      <div className="relative w-full h-72 sm:h-80 bg-slate-50/80 rounded-xl my-4 overflow-hidden border border-slate-200 flex items-center justify-center p-2 select-none shadow-inner">
         {/* Background Subtle Grid */}
         <div 
-          className="absolute inset-0 opacity-15 pointer-events-none"
+          className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
-            backgroundImage: `radial-gradient(#38bdf8 1px, transparent 1px)`,
+            backgroundImage: `radial-gradient(#0284c7 1px, transparent 1px)`,
             backgroundSize: '24px 24px'
           }}
         />
@@ -71,57 +71,57 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
         {type === 'liquidity_sweep' && (
           <svg viewBox="0 0 600 300" className="w-full h-full max-h-72">
             {/* Old High Line (BSL) */}
-            <line x1="50" y1="100" x2="550" y2="100" stroke="#f59e0b" strokeWidth="2" strokeDasharray="4 4" />
-            <text x="60" y="90" fill="#f59e0b" fontSize="12" fontFamily="monospace" fontWeight="bold">
+            <line x1="50" y1="100" x2="550" y2="100" stroke="#d97706" strokeWidth="2" strokeDasharray="4 4" />
+            <text x="60" y="90" fill="#b45309" fontSize="12" fontFamily="monospace" fontWeight="bold">
               PREVIOUS HIGH / EQUAL HIGHS (BSL POOL)
             </text>
 
             {/* Candle 1 (Approach) */}
-            <line x1="120" y1="130" x2="120" y2="210" stroke="#10b981" strokeWidth="2" />
+            <line x1="120" y1="130" x2="120" y2="210" stroke="#059669" strokeWidth="2" />
             <rect x="112" y="145" width="16" height="50" fill="#10b981" rx="2" />
 
             {/* Candle 2 (Approach 2) */}
-            <line x1="180" y1="110" x2="180" y2="190" stroke="#10b981" strokeWidth="2" />
+            <line x1="180" y1="110" x2="180" y2="190" stroke="#059669" strokeWidth="2" />
             <rect x="172" y="125" width="16" height="45" fill="#10b981" rx="2" />
 
             {/* Candle 3 (The Liquidity Sweep Wick) */}
             <g className={step >= 1 ? 'opacity-100 transition-opacity duration-500' : 'opacity-30'}>
-              <line x1="260" y1="65" x2="260" y2="175" stroke="#ef4444" strokeWidth="2" />
-              <rect x="252" y="105" width="16" height="55" fill="#ef4444" rx="2" />
+              <line x1="260" y1="65" x2="260" y2="175" stroke="#e11d48" strokeWidth="2" />
+              <rect x="252" y="105" width="16" height="55" fill="#f43f5e" rx="2" />
               {/* Highlight the sweep zone */}
-              <circle cx="260" cy="65" r="5" fill="#ef4444" className="animate-ping" />
-              <rect x="235" y="70" width="50" height="28" fill="#ef4444" fillOpacity="0.2" stroke="#ef4444" strokeWidth="1" rx="4" />
-              <text x="240" y="88" fill="#ef4444" fontSize="10" fontFamily="monospace" fontWeight="bold">SWEEP</text>
+              <circle cx="260" cy="65" r="5" fill="#e11d48" className="animate-ping" />
+              <rect x="235" y="70" width="50" height="28" fill="#ffe4e6" stroke="#e11d48" strokeWidth="1.5" rx="4" />
+              <text x="240" y="88" fill="#be123c" fontSize="10" fontFamily="monospace" fontWeight="bold">SWEEP</text>
             </g>
 
             {/* Candle 4 & 5 (Violent Bearish Displacement & MSS) */}
-            <g className={step >= 2 ? 'opacity-100 transition-opacity duration-500' : 'opacity-10'}>
-              <line x1="330" y1="115" x2="330" y2="240" stroke="#ef4444" strokeWidth="2" />
-              <rect x="320" y="120" width="20" height="100" fill="#ef4444" rx="2" />
+            <g className={step >= 2 ? 'opacity-100 transition-opacity duration-500' : 'opacity-15'}>
+              <line x1="330" y1="115" x2="330" y2="240" stroke="#e11d48" strokeWidth="2" />
+              <rect x="320" y="120" width="20" height="100" fill="#f43f5e" rx="2" />
 
-              <line x1="400" y1="210" x2="400" y2="280" stroke="#ef4444" strokeWidth="2" />
-              <rect x="390" y="215" width="20" height="55" fill="#ef4444" rx="2" />
+              <line x1="400" y1="210" x2="400" y2="280" stroke="#e11d48" strokeWidth="2" />
+              <rect x="390" y="215" width="20" height="55" fill="#f43f5e" rx="2" />
 
               {/* MSS Break Line */}
-              <line x1="170" y1="190" x2="440" y2="190" stroke="#06b6d4" strokeWidth="2" strokeDasharray="3 3" />
-              <text x="340" y="182" fill="#06b6d4" fontSize="11" fontFamily="monospace" fontWeight="bold">
+              <line x1="170" y1="190" x2="440" y2="190" stroke="#0284c7" strokeWidth="2" strokeDasharray="3 3" />
+              <text x="310" y="182" fill="#0369a1" fontSize="11" fontFamily="monospace" fontWeight="bold">
                 BEARISH MSS (PROTECTED LOW BROKEN)
               </text>
             </g>
 
             {/* Candle 6 & 7 (Retracement into FVG & Continuation) */}
-            <g className={step >= 3 ? 'opacity-100 transition-opacity duration-500' : 'opacity-10'}>
+            <g className={step >= 3 ? 'opacity-100 transition-opacity duration-500' : 'opacity-15'}>
               {/* FVG Box */}
-              <rect x="320" y="145" width="160" height="40" fill="#06b6d4" fillOpacity="0.2" stroke="#06b6d4" strokeWidth="1" strokeDasharray="2 2" rx="4" />
-              <text x="410" y="168" fill="#06b6d4" fontSize="10" fontFamily="monospace" fontWeight="bold">BEARISH FVG</text>
+              <rect x="320" y="145" width="160" height="40" fill="#e0f2fe" stroke="#0284c7" strokeWidth="1.5" strokeDasharray="3 3" rx="4" />
+              <text x="405" y="168" fill="#0369a1" fontSize="10" fontFamily="monospace" fontWeight="bold">BEARISH FVG</text>
 
               {/* Retracement Candle */}
-              <line x1="470" y1="140" x2="470" y2="230" stroke="#10b981" strokeWidth="2" />
+              <line x1="470" y1="140" x2="470" y2="230" stroke="#059669" strokeWidth="2" />
               <rect x="462" y="155" width="16" height="55" fill="#10b981" rx="2" />
 
               {/* Rejection Arrow */}
-              <path d="M 490 170 L 530 250" fill="none" stroke="#ef4444" strokeWidth="3" markerEnd="url(#arrow-red)" />
-              <text x="490" y="275" fill="#ef4444" fontSize="12" fontFamily="monospace" fontWeight="bold">EXPANSION TO SSL ↓</text>
+              <path d="M 490 170 L 530 250" fill="none" stroke="#e11d48" strokeWidth="3" />
+              <text x="470" y="275" fill="#be123c" fontSize="12" fontFamily="monospace" fontWeight="bold">EXPANSION TO SSL ↓</text>
             </g>
           </svg>
         )}
@@ -131,32 +131,32 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
             <svg viewBox="0 0 600 280" className="w-full h-full max-h-68">
               {/* Three Candles */}
               {/* Candle 1 (Bullish Base) */}
-              <line x1="150" y1="180" x2="150" y2="260" stroke="#10b981" strokeWidth="2" />
+              <line x1="150" y1="180" x2="150" y2="260" stroke="#059669" strokeWidth="2" />
               <rect x="138" y="195" width="24" height="45" fill="#10b981" rx="2" />
-              <text x="125" y="275" fill="#94a3b8" fontSize="11" fontFamily="monospace">Candle 1</text>
+              <text x="125" y="275" fill="#64748b" fontSize="11" fontFamily="monospace" fontWeight="bold">Candle 1</text>
               {/* Candle 1 High Line */}
-              <line x1="150" y1="180" x2="450" y2="180" stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="3 3" />
-              <text x="455" y="184" fill="#38bdf8" fontSize="10" fontFamily="monospace">Candle 1 High ($100,000)</text>
+              <line x1="150" y1="180" x2="450" y2="180" stroke="#0284c7" strokeWidth="1.5" strokeDasharray="3 3" />
+              <text x="455" y="184" fill="#0369a1" fontSize="10" fontFamily="monospace" fontWeight="bold">Candle 1 High ($100,000)</text>
 
               {/* Candle 2 (Displacement Candle) */}
-              <line x1="250" y1="60" x2="250" y2="220" stroke="#10b981" strokeWidth="2.5" />
+              <line x1="250" y1="60" x2="250" y2="220" stroke="#059669" strokeWidth="2.5" />
               <rect x="236" y="70" width="28" height="135" fill="#10b981" rx="2" />
-              <text x="225" y="275" fill="#38bdf8" fontSize="11" fontFamily="monospace" fontWeight="bold">Candle 2 (Displacement)</text>
+              <text x="210" y="275" fill="#0284c7" fontSize="11" fontFamily="monospace" fontWeight="bold">Candle 2 (Displacement)</text>
 
               {/* Candle 3 (Continuation with Gap) */}
-              <line x1="350" y1="40" x2="350" y2="120" stroke="#10b981" strokeWidth="2" />
+              <line x1="350" y1="40" x2="350" y2="120" stroke="#059669" strokeWidth="2" />
               <rect x="338" y="55" width="24" height="45" fill="#10b981" rx="2" />
-              <text x="325" y="275" fill="#94a3b8" fontSize="11" fontFamily="monospace">Candle 3</text>
+              <text x="325" y="275" fill="#64748b" fontSize="11" fontFamily="monospace" fontWeight="bold">Candle 3</text>
               {/* Candle 3 Low Line */}
-              <line x1="150" y1="120" x2="450" y2="120" stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="3 3" />
-              <text x="455" y="124" fill="#38bdf8" fontSize="10" fontFamily="monospace">Candle 3 Low ($101,200)</text>
+              <line x1="150" y1="120" x2="450" y2="120" stroke="#0284c7" strokeWidth="1.5" strokeDasharray="3 3" />
+              <text x="455" y="124" fill="#0369a1" fontSize="10" fontFamily="monospace" fontWeight="bold">Candle 3 Low ($101,200)</text>
 
               {/* FVG Box Zone */}
-              <rect x="150" y="120" width="200" height="60" fill="#06b6d4" fillOpacity="0.25" stroke="#06b6d4" strokeWidth="1.5" rx="4" />
+              <rect x="150" y="120" width="200" height="60" fill="#e0f2fe" stroke="#0284c7" strokeWidth="1.5" rx="4" />
               
               {/* Consequent Encroachment (50% CE) Line */}
-              <line x1="150" y1="150" x2="400" y2="150" stroke="#f59e0b" strokeWidth="2" strokeDasharray="4 4" />
-              <text x="405" y="154" fill="#f59e0b" fontSize="11" fontFamily="monospace" fontWeight="bold">
+              <line x1="150" y1="150" x2="400" y2="150" stroke="#d97706" strokeWidth="2" strokeDasharray="4 4" />
+              <text x="405" y="154" fill="#b45309" fontSize="11" fontFamily="monospace" fontWeight="bold">
                 50% CE (Midpoint: $100,600)
               </text>
 
@@ -164,13 +164,13 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
               {step >= 2 && (
                 <g className="animate-pulse">
                   {/* Retracement Path */}
-                  <path d="M 360 80 Q 420 120 440 150" fill="none" stroke="#f59e0b" strokeWidth="2" strokeDasharray="2 2" />
-                  <circle cx="440" cy="150" r="6" fill="#10b981" stroke="#ffffff" strokeWidth="1.5" />
-                  <text x="455" y="148" fill="#10b981" fontSize="11" fontFamily="monospace" fontWeight="bold">
+                  <path d="M 360 80 Q 420 120 440 150" fill="none" stroke="#d97706" strokeWidth="2" strokeDasharray="2 2" />
+                  <circle cx="440" cy="150" r="6" fill="#059669" stroke="#ffffff" strokeWidth="2" />
+                  <text x="455" y="148" fill="#047857" fontSize="11" fontFamily="monospace" fontWeight="bold">
                     CE Entry Fill
                   </text>
-                  <path d="M 440 150 L 520 40" fill="none" stroke="#10b981" strokeWidth="3" />
-                  <text x="525" y="45" fill="#10b981" fontSize="11" fontFamily="monospace" fontWeight="bold">
+                  <path d="M 440 150 L 520 40" fill="none" stroke="#059669" strokeWidth="3" />
+                  <text x="525" y="45" fill="#047857" fontSize="11" fontFamily="monospace" fontWeight="bold">
                     Expansion ↑
                   </text>
                 </g>
@@ -183,46 +183,46 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
           <svg viewBox="0 0 600 280" className="w-full h-full max-h-68">
             {/* Bullish OB origin candle (Bearish Red) */}
             <g>
-              <line x1="140" y1="150" x2="140" y2="230" stroke="#ef4444" strokeWidth="2" />
-              <rect x="128" y="160" width="24" height="50" fill="#ef4444" rx="2" />
+              <line x1="140" y1="150" x2="140" y2="230" stroke="#e11d48" strokeWidth="2" />
+              <rect x="128" y="160" width="24" height="50" fill="#f43f5e" rx="2" />
               {/* OB Zone Rectangle */}
-              <rect x="128" y="150" width="280" height="80" fill="#3b82f6" fillOpacity="0.2" stroke="#3b82f6" strokeWidth="1.5" strokeDasharray="3 3" rx="4" />
-              <text x="130" y="140" fill="#60a5fa" fontSize="11" fontFamily="monospace" fontWeight="bold">
+              <rect x="128" y="150" width="280" height="80" fill="#dbeafe" stroke="#2563eb" strokeWidth="1.5" strokeDasharray="3 3" rx="4" />
+              <text x="130" y="140" fill="#1d4ed8" fontSize="11" fontFamily="monospace" fontWeight="bold">
                 BULLISH ORDER BLOCK ORIGIN
               </text>
             </g>
 
             {/* Displacement Green Candles launching away */}
-            <line x1="200" y1="100" x2="200" y2="200" stroke="#10b981" strokeWidth="2.5" />
+            <line x1="200" y1="100" x2="200" y2="200" stroke="#059669" strokeWidth="2.5" />
             <rect x="188" y="110" width="24" height="80" fill="#10b981" rx="2" />
 
-            <line x1="260" y1="50" x2="260" y2="140" stroke="#10b981" strokeWidth="2.5" />
+            <line x1="260" y1="50" x2="260" y2="140" stroke="#059669" strokeWidth="2.5" />
             <rect x="248" y="60" width="24" height="70" fill="#10b981" rx="2" />
 
             {/* Structure Break BOS */}
-            <line x1="90" y1="90" x2="330" y2="90" stroke="#06b6d4" strokeWidth="1.5" strokeDasharray="4 4" />
-            <text x="280" y="82" fill="#06b6d4" fontSize="10" fontFamily="monospace" fontWeight="bold">BOS CONFIRMED</text>
+            <line x1="90" y1="90" x2="330" y2="90" stroke="#0284c7" strokeWidth="1.5" strokeDasharray="4 4" />
+            <text x="280" y="82" fill="#0369a1" fontSize="10" fontFamily="monospace" fontWeight="bold">BOS CONFIRMED</text>
 
             {/* Mitigation Phase */}
             <g className={step >= 1 ? 'opacity-100 transition-opacity duration-500' : 'opacity-20'}>
               {/* Retrace candle into OB */}
-              <line x1="340" y1="80" x2="340" y2="180" stroke="#ef4444" strokeWidth="2" />
-              <rect x="330" y="95" width="20" height="65" fill="#ef4444" rx="2" />
+              <line x1="340" y1="80" x2="340" y2="180" stroke="#e11d48" strokeWidth="2" />
+              <rect x="330" y="95" width="20" height="65" fill="#f43f5e" rx="2" />
 
-              <line x1="390" y1="140" x2="390" y2="210" stroke="#ef4444" strokeWidth="2" />
-              <rect x="380" y="150" width="20" height="40" fill="#ef4444" rx="2" />
+              <line x1="390" y1="140" x2="390" y2="210" stroke="#e11d48" strokeWidth="2" />
+              <rect x="380" y="150" width="20" height="40" fill="#f43f5e" rx="2" />
 
               {/* Mitigation touch label */}
-              <circle cx="390" cy="190" r="5" fill="#10b981" className="animate-ping" />
-              <text x="350" y="245" fill="#10b981" fontSize="11" fontFamily="monospace" fontWeight="bold">
+              <circle cx="390" cy="190" r="5" fill="#059669" className="animate-ping" />
+              <text x="350" y="245" fill="#047857" fontSize="11" fontFamily="monospace" fontWeight="bold">
                 MITIGATION (TEST OF OB)
               </text>
             </g>
 
             {/* Continuation launch */}
-            <g className={step >= 2 ? 'opacity-100 transition-opacity duration-500' : 'opacity-10'}>
-              <path d="M 400 190 Q 450 140 500 60" fill="none" stroke="#10b981" strokeWidth="3.5" />
-              <text x="490" y="50" fill="#10b981" fontSize="12" fontFamily="monospace" fontWeight="bold">
+            <g className={step >= 2 ? 'opacity-100 transition-opacity duration-500' : 'opacity-15'}>
+              <path d="M 400 190 Q 450 140 500 60" fill="none" stroke="#059669" strokeWidth="3.5" />
+              <text x="485" y="50" fill="#047857" fontSize="12" fontFamily="monospace" fontWeight="bold">
                 EXPANSION TO BSL ↑
               </text>
             </g>
@@ -232,38 +232,38 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
         {type === 'breaker_block' && (
           <svg viewBox="0 0 600 280" className="w-full h-full max-h-68">
             {/* Bullish OB formed at higher low */}
-            <rect x="110" y="140" width="360" height="45" fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="1" strokeDasharray="3 3" rx="4" />
-            <text x="115" y="132" fill="#38bdf8" fontSize="10" fontFamily="monospace" fontWeight="bold">
+            <rect x="110" y="140" width="360" height="45" fill="#e0f2fe" stroke="#0284c7" strokeWidth="1.5" strokeDasharray="3 3" rx="4" />
+            <text x="115" y="132" fill="#0369a1" fontSize="10" fontFamily="monospace" fontWeight="bold">
               ORIGINAL BULLISH OB (SUPPORT)
             </text>
 
             {/* Rally to sweep BSL */}
-            <path d="M 120 160 L 220 50" fill="none" stroke="#10b981" strokeWidth="2.5" />
-            <circle cx="220" cy="50" r="5" fill="#ef4444" />
-            <text x="210" y="38" fill="#f59e0b" fontSize="11" fontFamily="monospace" fontWeight="bold">
+            <path d="M 120 160 L 220 50" fill="none" stroke="#059669" strokeWidth="2.5" />
+            <circle cx="220" cy="50" r="5" fill="#e11d48" />
+            <text x="210" y="38" fill="#b45309" fontSize="11" fontFamily="monospace" fontWeight="bold">
               SWEEPS BSL (PEAK)
             </text>
 
             {/* Violent collapse smashing through OB */}
-            <path d="M 220 50 L 320 230" fill="none" stroke="#ef4444" strokeWidth="3.5" />
-            <text x="260" y="200" fill="#ef4444" fontSize="10" fontFamily="monospace" fontWeight="bold">
+            <path d="M 220 50 L 320 230" fill="none" stroke="#e11d48" strokeWidth="3.5" />
+            <text x="260" y="200" fill="#be123c" fontSize="10" fontFamily="monospace" fontWeight="bold">
               SMASHES OB (MSS)
             </text>
 
             {/* Role Reversal Retest */}
             <g className={step >= 1 ? 'opacity-100 transition-opacity duration-500' : 'opacity-20'}>
-              <path d="M 320 230 Q 380 180 410 145" fill="none" stroke="#f59e0b" strokeWidth="2" strokeDasharray="3 3" />
-              <circle cx="410" cy="145" r="6" fill="#ef4444" stroke="#ffffff" strokeWidth="2" />
-              <rect x="360" y="95" width="160" height="30" fill="#ef4444" fillOpacity="0.25" stroke="#ef4444" strokeWidth="1" rx="4" />
-              <text x="368" y="115" fill="#ef4444" fontSize="10" fontFamily="monospace" fontWeight="bold">
+              <path d="M 320 230 Q 380 180 410 145" fill="none" stroke="#d97706" strokeWidth="2" strokeDasharray="3 3" />
+              <circle cx="410" cy="145" r="6" fill="#e11d48" stroke="#ffffff" strokeWidth="2" />
+              <rect x="360" y="95" width="160" height="30" fill="#ffe4e6" stroke="#e11d48" strokeWidth="1.5" rx="4" />
+              <text x="368" y="115" fill="#be123c" fontSize="10" fontFamily="monospace" fontWeight="bold">
                 BEARISH BREAKER RETEST
               </text>
             </g>
 
             {/* Bearish expansion */}
-            <g className={step >= 2 ? 'opacity-100 transition-opacity duration-500' : 'opacity-10'}>
-              <path d="M 410 145 L 520 250" fill="none" stroke="#ef4444" strokeWidth="3.5" />
-              <text x="470" y="270" fill="#ef4444" fontSize="11" fontFamily="monospace" fontWeight="bold">
+            <g className={step >= 2 ? 'opacity-100 transition-opacity duration-500' : 'opacity-15'}>
+              <path d="M 410 145 L 520 250" fill="none" stroke="#e11d48" strokeWidth="3.5" />
+              <text x="470" y="270" fill="#be123c" fontSize="11" fontFamily="monospace" fontWeight="bold">
                 DELIVERY TO SSL ↓
               </text>
             </g>
@@ -273,76 +273,76 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
         {type === 'po3_amd' && (
           <svg viewBox="0 0 600 280" className="w-full h-full max-h-68">
             {/* Daily Open Line */}
-            <line x1="40" y1="140" x2="560" y2="140" stroke="#f59e0b" strokeWidth="2" />
-            <text x="50" y="132" fill="#f59e0b" fontSize="11" fontFamily="monospace" fontWeight="bold">
+            <line x1="40" y1="140" x2="560" y2="140" stroke="#d97706" strokeWidth="2" />
+            <text x="50" y="132" fill="#b45309" fontSize="11" fontFamily="monospace" fontWeight="bold">
               DAILY OPEN (00:00 NY)
             </text>
 
             {/* Phase 1: Accumulation (Asia) */}
-            <rect x="80" y="120" width="110" height="40" fill="#64748b" fillOpacity="0.2" stroke="#64748b" strokeWidth="1" rx="4" />
-            <path d="M 85 140 Q 110 125 130 145 T 180 135" fill="none" stroke="#94a3b8" strokeWidth="2" />
-            <text x="90" y="112" fill="#94a3b8" fontSize="11" fontFamily="monospace" fontWeight="bold">
+            <rect x="80" y="120" width="110" height="40" fill="#f1f5f9" stroke="#94a3b8" strokeWidth="1.5" rx="4" />
+            <path d="M 85 140 Q 110 125 130 145 T 180 135" fill="none" stroke="#64748b" strokeWidth="2" />
+            <text x="90" y="112" fill="#475569" fontSize="11" fontFamily="monospace" fontWeight="bold">
               1. ACCUMULATION
             </text>
 
             {/* Phase 2: Manipulation (London Judas Sweep below Open) */}
             <g className={step >= 1 ? 'opacity-100 transition-opacity duration-500' : 'opacity-20'}>
-              <path d="M 180 135 L 240 240" fill="none" stroke="#ef4444" strokeWidth="3" />
-              <circle cx="240" cy="240" r="5" fill="#ef4444" className="animate-ping" />
-              <text x="210" y="265" fill="#ef4444" fontSize="11" fontFamily="monospace" fontWeight="bold">
+              <path d="M 180 135 L 240 240" fill="none" stroke="#e11d48" strokeWidth="3" />
+              <circle cx="240" cy="240" r="5" fill="#e11d48" className="animate-ping" />
+              <text x="210" y="265" fill="#be123c" fontSize="11" fontFamily="monospace" fontWeight="bold">
                 2. MANIPULATION (LOW OF DAY)
               </text>
-              <text x="250" y="225" fill="#ef4444" fontSize="9" fontFamily="monospace">
+              <text x="250" y="225" fill="#be123c" fontSize="9" fontFamily="monospace" fontWeight="bold">
                 Sweeps Asian Low into Discount
               </text>
             </g>
 
             {/* Phase 3: Distribution (New York Expansion) */}
-            <g className={step >= 2 ? 'opacity-100 transition-opacity duration-500' : 'opacity-10'}>
-              <path d="M 240 240 Q 300 220 360 120 T 480 40" fill="none" stroke="#10b981" strokeWidth="3.5" />
-              <text x="360" y="55" fill="#10b981" fontSize="12" fontFamily="monospace" fontWeight="bold">
+            <g className={step >= 2 ? 'opacity-100 transition-opacity duration-500' : 'opacity-15'}>
+              <path d="M 240 240 Q 300 220 360 120 T 480 40" fill="none" stroke="#059669" strokeWidth="3.5" />
+              <text x="360" y="55" fill="#047857" fontSize="12" fontFamily="monospace" fontWeight="bold">
                 3. DISTRIBUTION (TRUE EXPANSION)
               </text>
               {/* High of day / Close */}
-              <circle cx="480" cy="40" r="5" fill="#10b981" />
-              <text x="495" y="45" fill="#10b981" fontSize="10" fontFamily="monospace">High of Day</text>
-              <line x1="480" y1="40" x2="520" y2="70" stroke="#94a3b8" strokeWidth="2" />
-              <circle cx="520" cy="70" r="4" fill="#38bdf8" />
-              <text x="530" y="75" fill="#38bdf8" fontSize="10" fontFamily="monospace">Close</text>
+              <circle cx="480" cy="40" r="5" fill="#059669" />
+              <text x="495" y="45" fill="#047857" fontSize="10" fontFamily="monospace" fontWeight="bold">High of Day</text>
+              <line x1="480" y1="40" x2="520" y2="70" stroke="#64748b" strokeWidth="2" />
+              <circle cx="520" cy="70" r="4" fill="#0284c7" />
+              <text x="530" y="75" fill="#0369a1" fontSize="10" fontFamily="monospace" fontWeight="bold">Close</text>
             </g>
           </svg>
         )}
 
         {type === 'top_down_matrix' && (
-          <div className="w-full h-full flex items-center justify-around gap-2 text-xs font-mono">
-            <div className="flex-1 bg-slate-900/90 border border-slate-700/80 rounded-lg p-3 text-center">
-              <div className="text-amber-400 font-bold text-sm mb-1">1. WEEKLY / DAILY</div>
-              <div className="text-slate-400 text-[11px] mb-2">Macro Context & Draw</div>
-              <div className="bg-slate-800/80 p-2 rounded text-left space-y-1 text-[10px] text-slate-300">
+          <div className="w-full h-full flex items-center justify-around gap-3 text-xs font-mono p-2">
+            <div className="flex-1 bg-white border border-amber-200 rounded-xl p-3.5 text-center shadow-sm">
+              <div className="text-amber-800 font-bold text-sm mb-1">1. WEEKLY / DAILY</div>
+              <div className="text-slate-500 text-[11px] mb-2 font-medium">Macro Context & Draw</div>
+              <div className="bg-amber-50/60 p-2 rounded-lg text-left space-y-1 text-[10px] text-amber-950 font-medium">
                 <p>• Premium vs Discount</p>
                 <p>• External BSL / SSL</p>
                 <p>• Weekly Open & PDH/PDL</p>
               </div>
             </div>
 
-            <ChevronRight className="w-5 h-5 text-slate-600 shrink-0" />
+            <ChevronRight className="w-5 h-5 text-slate-400 shrink-0" />
 
-            <div className="flex-1 bg-slate-900/90 border border-slate-700/80 rounded-lg p-3 text-center">
-              <div className="text-cyan-400 font-bold text-sm mb-1">2. 4H / 1H / 15M</div>
-              <div className="text-slate-400 text-[11px] mb-2">Location & Liquidity Event</div>
-              <div className="bg-slate-800/80 p-2 rounded text-left space-y-1 text-[10px] text-slate-300">
+            <div className="flex-1 bg-white border border-sky-200 rounded-xl p-3.5 text-center shadow-sm">
+              <div className="text-sky-800 font-bold text-sm mb-1">2. 4H / 1H / 15M</div>
+              <div className="text-slate-500 text-[11px] mb-2 font-medium">Location & Liquidity Event</div>
+              <div className="bg-sky-50/60 p-2 rounded-lg text-left space-y-1 text-[10px] text-sky-950 font-medium">
                 <p>• Session Highs / Lows</p>
                 <p>• Liquidity Sweep</p>
                 <p>• HTF PD Arrays (FVG/OB)</p>
               </div>
             </div>
 
-            <ChevronRight className="w-5 h-5 text-slate-600 shrink-0" />
+            <ChevronRight className="w-5 h-5 text-slate-400 shrink-0" />
 
-            <div className="flex-1 bg-slate-900/90 border border-emerald-700/80 rounded-lg p-3 text-center shadow-lg shadow-emerald-950/40">
-              <div className="text-emerald-400 font-bold text-sm mb-1">3. 5M / 1M</div>
-              <div className="text-slate-400 text-[11px] mb-2">Displacement & Execution</div>
-              <div className="bg-slate-800/80 p-2 rounded text-left space-y-1 text-[10px] text-slate-300">
+            <div className="flex-1 bg-white border border-emerald-300 rounded-xl p-3.5 text-center shadow-sm">
+              <div className="text-emerald-800 font-bold text-sm mb-1">3. 5M / 1M</div>
+              <div className="text-slate-500 text-[11px] mb-2 font-medium">Displacement & Execution</div>
+              <div className="bg-emerald-50/60 p-2 rounded-lg text-left space-y-1 text-[10px] text-emerald-950 font-medium">
                 <p>• Bullish / Bearish MSS</p>
                 <p>• FVG Retracement (CE)</p>
                 <p>• Stop at Invalidation</p>
@@ -353,30 +353,30 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
 
         {type === 'session_timeline' && (
           <div className="w-full h-full flex flex-col justify-center px-4">
-            <div className="flex justify-between items-center text-xs font-mono text-slate-400 mb-2">
+            <div className="flex justify-between items-center text-xs font-mono text-slate-600 mb-2 font-semibold">
               <span>00:00 UTC (8:00 PM NY)</span>
-              <span className="text-cyan-400 font-semibold">New York Time Base</span>
+              <span className="text-sky-700 font-bold bg-sky-50 px-2 py-0.5 rounded border border-sky-200">New York Time Base</span>
               <span>24:00 UTC (8:00 PM NY)</span>
             </div>
             {/* Session Timeline Bar */}
-            <div className="w-full h-12 bg-slate-800 rounded-lg flex overflow-hidden border border-slate-700 relative">
-              <div className="w-1/3 bg-blue-950/70 border-r border-blue-600/40 flex flex-col justify-center items-center text-[11px] font-mono text-blue-300">
-                <span className="font-bold">ASIAN SESSION</span>
-                <span className="text-[9px] text-blue-400">8:00 PM - Midnight NY</span>
-                <span className="text-[8px] text-slate-400">Consolidation / Range</span>
+            <div className="w-full h-14 bg-slate-100 rounded-xl flex overflow-hidden border border-slate-300 relative shadow-sm">
+              <div className="w-1/3 bg-sky-50 border-r border-sky-300 flex flex-col justify-center items-center text-[11px] font-mono text-sky-900">
+                <span className="font-extrabold">ASIAN SESSION</span>
+                <span className="text-[10px] text-sky-700 font-semibold">8:00 PM - Midnight NY</span>
+                <span className="text-[9px] text-slate-500">Consolidation / Range</span>
               </div>
-              <div className="w-1/3 bg-amber-950/70 border-r border-amber-600/40 flex flex-col justify-center items-center text-[11px] font-mono text-amber-300">
-                <span className="font-bold">LONDON KILLZONE</span>
-                <span className="text-[9px] text-amber-400">2:00 AM - 5:00 AM NY</span>
-                <span className="text-[8px] text-slate-400">Judas Swing / Manipulation</span>
+              <div className="w-1/3 bg-amber-50 border-r border-amber-300 flex flex-col justify-center items-center text-[11px] font-mono text-amber-900">
+                <span className="font-extrabold">LONDON KILLZONE</span>
+                <span className="text-[10px] text-amber-700 font-semibold">2:00 AM - 5:00 AM NY</span>
+                <span className="text-[9px] text-slate-500">Judas Swing / Manipulation</span>
               </div>
-              <div className="w-1/3 bg-emerald-950/70 flex flex-col justify-center items-center text-[11px] font-mono text-emerald-300">
-                <span className="font-bold">NEW YORK KILLZONE</span>
-                <span className="text-[9px] text-emerald-400">7:00 AM - 10:00 AM NY</span>
-                <span className="text-[8px] text-slate-400">8:30 News • 9:30 Open • Distribution</span>
+              <div className="w-1/3 bg-emerald-50 flex flex-col justify-center items-center text-[11px] font-mono text-emerald-900">
+                <span className="font-extrabold">NEW YORK KILLZONE</span>
+                <span className="text-[10px] text-emerald-700 font-semibold">7:00 AM - 10:00 AM NY</span>
+                <span className="text-[9px] text-slate-500">8:30 News • 9:30 Open • Distribution</span>
               </div>
             </div>
-            <div className="flex items-center justify-between text-[10px] font-mono text-slate-400 mt-2 px-1">
+            <div className="flex items-center justify-between text-[10px] font-mono text-slate-500 font-medium mt-2 px-1">
               <span>Asian Range Established</span>
               <span>London Raids Asian High/Low</span>
               <span>NY Expands to Macro Target</span>
@@ -389,23 +389,23 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
             <svg viewBox="0 0 600 260" className="w-full h-full max-h-64">
               {/* Daily Structure */}
               <path d="M 80 200 L 300 40 L 520 200" fill="none" stroke="#64748b" strokeWidth="2" strokeDasharray="4 4" />
-              <text x="300" y="30" fill="#94a3b8" fontSize="12" fontFamily="monospace" fontWeight="bold" textAnchor="middle">
+              <text x="300" y="30" fill="#334155" fontSize="12" fontFamily="monospace" fontWeight="bold" textAnchor="middle">
                 DAILY BULLISH LEG (SWING HIGH)
               </text>
 
               {/* 15M Internal Swings */}
-              <path d="M 80 200 L 140 130 L 170 160 L 230 90 L 260 120 L 300 40" fill="none" stroke="#06b6d4" strokeWidth="2.5" />
-              <text x="140" y="115" fill="#06b6d4" fontSize="10" fontFamily="monospace">15M BOS</text>
-              <text x="230" y="75" fill="#06b6d4" fontSize="10" fontFamily="monospace">15M BOS</text>
+              <path d="M 80 200 L 140 130 L 170 160 L 230 90 L 260 120 L 300 40" fill="none" stroke="#0284c7" strokeWidth="2.5" />
+              <text x="140" y="115" fill="#0284c7" fontSize="10" fontFamily="monospace" fontWeight="bold">15M BOS</text>
+              <text x="230" y="75" fill="#0284c7" fontSize="10" fontFamily="monospace" fontWeight="bold">15M BOS</text>
 
               {/* 15M Pullback with 5M execution */}
-              <path d="M 300 40 L 360 120 L 390 90 L 440 180" fill="none" stroke="#ef4444" strokeWidth="2" />
-              <text x="380" y="150" fill="#ef4444" fontSize="10" fontFamily="monospace">15M Pullback (Discount)</text>
+              <path d="M 300 40 L 360 120 L 390 90 L 440 180" fill="none" stroke="#e11d48" strokeWidth="2" />
+              <text x="380" y="150" fill="#be123c" fontSize="10" fontFamily="monospace" fontWeight="bold">15M Pullback (Discount)</text>
 
               {/* 5M Reversal */}
-              <path d="M 440 180 Q 470 140 520 70" fill="none" stroke="#10b981" strokeWidth="3" />
-              <circle cx="440" cy="180" r="5" fill="#10b981" />
-              <text x="445" y="200" fill="#10b981" fontSize="11" fontFamily="monospace" fontWeight="bold">
+              <path d="M 440 180 Q 470 140 520 70" fill="none" stroke="#059669" strokeWidth="3" />
+              <circle cx="440" cy="180" r="5" fill="#059669" />
+              <text x="445" y="200" fill="#047857" fontSize="11" fontFamily="monospace" fontWeight="bold">
                 5M MSS Reversal in Daily Discount
               </text>
             </svg>
@@ -415,12 +415,12 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
 
       {/* Explanation Footer Box */}
       {showExplanation && (
-        <div className="bg-slate-900/90 border border-slate-800 rounded-lg p-3.5 text-xs text-slate-300 font-mono space-y-1.5">
-          <div className="flex items-center gap-2 text-cyan-400 font-semibold">
-            <CheckCircle2 className="w-4 h-4" />
+        <div className="bg-sky-50/70 border border-sky-200 rounded-xl p-3.5 text-xs text-slate-700 font-mono space-y-1.5 shadow-sm">
+          <div className="flex items-center gap-2 text-sky-800 font-bold">
+            <CheckCircle2 className="w-4 h-4 text-sky-600" />
             <span>Key Methodological Rule:</span>
           </div>
-          <p className="text-slate-300 leading-relaxed">
+          <p className="text-slate-700 leading-relaxed font-sans font-medium">
             {type === 'liquidity_sweep' && 'A sweep is an observation event, not an automatic entry. You must wait for displacement and a Market Structure Shift (MSS) before considering an entry.'}
             {type === 'fvg_formation' && 'Consequent Encroachment (50%) serves as a balanced institutional reference point inside the displacement corridor. If price closes beyond the FVG, it inverts into an IFVG.'}
             {type === 'order_block' && 'An Order Block is valid only because of the displacement and structural consequence that followed it. Fresh unmitigated Order Blocks provide superior odds.'}

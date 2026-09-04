@@ -234,5 +234,65 @@ export const conceptComparisons: ConceptComparison[] = [
     commonConfusion: 'Thinking Silver Bullet requires a brand new sweep inside the 10:00–11:00 AM window. Silver Bullet simply trades the first clean FVG aligned with the established session draw.',
     decisionRule: 'Outside of 10:00–11:00 AM or across other sessions, use Charter Model 13. When the clock strikes 10:00 AM NY time, look for the Silver Bullet delivery sequence.',
     diagramSnippet: 'Model 13: Sweep ──> MSS ──> FVG (Any time) | Silver Bullet: 10:00 AM Clock ──> Valid FVG ──> 15-Handle Target'
+  },
+  {
+    id: 'csod_vs_mss',
+    title: 'Changing State of Delivery (CSoD) vs. Market Structure Shift (MSS)',
+    conceptA: {
+      name: 'Changing State of Delivery (CSoD)',
+      summary: 'The micro-level order flow turning point where consecutive expansion candles fail and a down-close candle body closes below the open of the prior up-close candle.',
+      keyPoints: [
+        'Occurs immediately at the apex of a liquidity sweep into an institutional PD Array',
+        'Does not require price to break a major swing high/low; operates on single candle opens',
+        'Flips order book delivery from Buy-Side Imbalance (BISI) to Sell-Side Imbalance (SIBI)',
+        'Offers earlier sniper execution with minimal stop-loss risk'
+      ],
+      idealCondition: 'NQ tags an HTF Bearish Order Block at 09:35 AM and a 1M candle immediately closes below the 19,450 open of the preceding green candle.'
+    },
+    conceptB: {
+      name: 'Market Structure Shift (MSS)',
+      summary: 'A macro structural milestone where price displaces through an established swing high or swing low with a full candle body close.',
+      keyPoints: [
+        'Requires a defined swing point (containing multiple candles on left and right)',
+        'Signifies the formal breakdown of the intermediate trend structure',
+        'Must be accompanied by displacement leaving a clear Fair Value Gap',
+        'Higher confirmation reliability, but requires wider stop losses'
+      ],
+      idealCondition: 'Price sweeps previous day high, reverses, and completely slices through a 15M swing low with a massive red displacement bar.'
+    },
+    keyDifference: 'CSoD is the internal order flow gear shift (candle body closing beyond a prior candle open); MSS is the structural confirmation event (candle body breaking a distinct swing high/low).',
+    commonConfusion: 'Waiting for an MSS on a 5M chart when the 1M CSoD already offered a pristine 10-point entry with a 5-point stop.',
+    decisionRule: 'Use CSoD for early sniper entry at HTF PD Arrays; use MSS to confirm overall trend continuation or when trading higher timeframes.',
+    diagramSnippet: 'Liquidity Sweep ──> [1M CSoD: Candle closes below prior open] ──> [5M MSS: Breaks structural swing low]'
+  },
+  {
+    id: 'ndog_vs_fvg',
+    title: 'New Day Opening Gap (NDOG) vs. Regular Fair Value Gap (FVG)',
+    conceptA: {
+      name: 'New Day Opening Gap (NDOG)',
+      summary: 'The inter-session discontinuity between the 17:00 EST daily futures close and the 18:00 EST electronic re-open.',
+      keyPoints: [
+        'Created by non-trading settlement maintenance windows, not continuous order flow',
+        'Retains algorithmic memory throughout the entire following trading day and week',
+        'The 50% Consequent Encroachment (CE) acts as a primary magnetic pivot for the 09:30 AM open',
+        'Remains valid even if electronic overnight trading prints candles across it'
+      ],
+      idealCondition: 'NQ 09:30 AM Judas swing dumps directly into the 50% CE of the NDOG, wicks it cleanly, and launches into the morning trend.'
+    },
+    conceptB: {
+      name: 'Regular Fair Value Gap (FVG)',
+      summary: 'A three-candle price imbalance created during active continuous trading by aggressive one-sided displacement.',
+      keyPoints: [
+        'Formed by the non-overlap between Candle 1 High/Low and Candle 3 Low/High',
+        'Represents inefficient liquidity delivery during an intraday expansion leg',
+        'Typically mitigated and balanced within 1 to 5 subsequent price swings',
+        'Invalidated when candle bodies close completely through the gap boundaries'
+      ],
+      idealCondition: 'A 5M displacement candle following an MSS leaves a clean 4-point gap between Candle 1 and Candle 3.'
+    },
+    keyDifference: 'An NDOG is an inter-session settlement gap that anchors the daily template regardless of overnight candle overlap; an FVG is a continuous 3-candle imbalance that seeks prompt rebalancing.',
+    commonConfusion: 'Deleting an NDOG because overnight price traded through it. The CME algorithm permanently logs the 17:00-18:00 coordinates as a primary intraday reference.',
+    decisionRule: 'Frame your macro session bias and Judas swing reaction using NDOG 50% CE; use intraday FVGs for precise limit order entry timing.',
+    diagramSnippet: 'NDOG: 17:00 Close ──[1 Hour Settlement Gap]──> 18:00 Open | FVG: Candle 1 ──[Candle 2 Displacement]──> Candle 3'
   }
 ];

@@ -1680,5 +1680,780 @@ export const ictConcepts: ICTConcept[] = [
     invalidationCriteria: 'Loss and full candle body close beyond the divergence swing extreme.',
     diagramType: 'session_timeline',
     simplifiedExplanation: 'Trading NASDAQ at 09:30 is like surfing. You don\'t jump into the turbulent wave when it crashes; you wait for the wave to form cleanly at 09:45 and ride the smooth momentum into the shore.'
+  },
+  {
+    id: 'propulsion_and_reclaimed_blocks',
+    name: 'Propulsion Blocks & Reclaimed Order Blocks',
+    category: 'order_blocks',
+    shortDefinition: 'Advanced institutional order block variants that either accelerate momentum violently (Propulsion) or resurrect invalidated blocks as revived support/resistance (Reclaimed).',
+    source: {
+      mentorship: 'ICT Core Content (2016-2017)',
+      seriesOrMonth: 'Month 4 - Reinforcing Liquidity Concepts',
+      approximateDate: '2016-12-01',
+      originalTerminology: 'Propulsion Block / Reclaimed Orderblock',
+      conceptStatus: 'Active Core',
+      lectureReference: 'Month 4 Lecture 8 & Lecture 9'
+    },
+    tripartiteView: {
+      ictTeaching: 'Michael teaches that when price retraces into an existing Order Block and forms a new reaction candle, that reaction candle is a Propulsion Block. It has already absorbed the liquidity of the underlying block; thus, price will not violate its body. A Reclaimed Block is a breached order block that price powerfully recaptures, activating it with renewed institutional sponsorship.',
+      observableMarketBehavior: 'Secondary accumulation node within an existing high-volume node that triggers rapid directional continuation without deep retracement.',
+      derivedInterpretation: 'High-frequency momentum springboards where institutional algorithms defend entry points with tight risk tolerances.'
+    },
+    explanationLadder: {
+      level1Child: 'Think of bouncing on a trampoline. The first bounce charges the springs; the second bounce launches you high into the air without sinking to the ground.',
+      level2Beginner: 'A Propulsion Block is a candle that touches an existing Order Block and shoots off. A Reclaimed Block is an old broken zone that price takes back with strength.',
+      level3Trader: 'Never expect price to penetrate below the 50% Mean Threshold of a Propulsion Block. If price closes through it, the entire momentum setup is dead.',
+      level4Advanced: 'Propulsion Blocks occur in stage 2 and stage 3 of Market Maker Buy/Sell models during the acceleration curve.',
+      level5ICTFramework: 'IPDA recognizes the completed mitigation of the underlying block and uses the Propulsion Block as the algorithmic pivot point for immediate expansion.',
+      whenItMatters: 'During fast trend days where waiting for a deep pullback to the original OB causes you to miss the move.',
+      whenToIgnore: 'Inside tight consolidations or before higher timeframe liquidity has been raided.'
+    },
+    whyItExists: 'Allows institutions to rapidly scale into an accelerating trend without letting price retrace deeply enough to trigger early retail participation.',
+    problemItSolves: 'Solves the dilemma of missing strong runaway trend days when price refuses to return all the way back to the original Order Block.',
+    howItForms: [
+      'An established Bullish Order Block exists at Level A.',
+      'Price advances, then pulls back and tests Level A with a candle that closes bullishly.',
+      'This reaction candle is the Propulsion Block.',
+      'The subsequent candle opens and immediately uses the top of the Propulsion Block body as support to rocket upward.'
+    ],
+    chartAnatomy: 'Marked on the candle body that touched the previous Order Block. Stop loss is tucked safely beneath the low of the Propulsion Block, with entry at its open/high.',
+    identificationRules: [
+      'Confirm the presence of a validated underlying Order Block.',
+      'Identify the exact candle that re-tested that Order Block and closed in the trending direction.',
+      'Mark the body of this candle as the Propulsion Block.',
+      'Entry is taken on the very next test of this candle body.'
+    ],
+    validCharacteristics: [
+      'Candle touches an authentic OB that previously broke structure.',
+      'Subsequent price expansion is immediate and energetic.',
+      'Candle bodies respect the Mean Threshold of the Propulsion Block.'
+    ],
+    invalidCharacteristics: [
+      'The underlying block had no prior liquidity sweep.',
+      'Price lingers inside the Propulsion Block without swift displacement.'
+    ],
+    howICTUsesIt: 'Used to enter runaway trends with maximum position sizing and ultra-tight invalidation stops.',
+    commonMistakes: [
+      'Treating any random continuation candle as a Propulsion Block without verifying the underlying OB test.',
+      'Placing the stop loss too far away instead of anchoring it directly to the Propulsion Block.'
+    ],
+    advancedNuances: 'If a Bullish Propulsion Block forms inside an Inversion Fair Value Gap (IFVG), the win rate exceeds 80% on intraday timeframes.',
+    prerequisites: ['order_block', 'displacement_engine', 'fair_value_gap'],
+    relatedConcepts: ['Breaker Block', 'Mitigation Block', 'Reclaimed Order Block'],
+    bullishScenario: 'EUR/USD has a 1H Bullish OB at 1.0820. Price rallies to 1.0860, then drops to 1.0825 at 08:30 AM NY Open. The 15M candle rejects 1.0825 and closes at 1.0845. This candle is the Propulsion Block. Next candle dips to 1.0842 (open of propulsion block) and shoots straight to 1.0920.',
+    bearishScenario: 'GBP/USD has a Bearish OB at 1.2750. Price pushes down, retraces into 1.2745 and rejects, forming a 15M Propulsion Block down to 1.2715. Retest of 1.2720 sparks an immediate 60-pip dump to SSL.',
+    counterexample: 'Price dips into an OB, forms a candle, but the next candle closes completely below the OB low—the setup failed and is converting to a Breaker.',
+    invalidationCriteria: 'A full candle body close through the 50% Mean Threshold of the Propulsion Block.',
+    diagramType: 'order_block',
+    simplifiedExplanation: 'A Propulsion Block is like a booster rocket attached to an already moving spacecraft—it gives price a second, violent push in the same direction.'
+  },
+  {
+    id: 'interest_rate_triad',
+    name: 'The Interest Rate Triad (US 10Y/30Y Yields & Intermarket Forex Drivers)',
+    category: 'foundations',
+    shortDefinition: 'The intermarket engine taught in Month 4 & Month 5: tracking US 10-Year and 30-Year Treasury yields alongside global sovereign yields to identify true currency institutional sponsorship.',
+    source: {
+      mentorship: 'ICT Core Content (2016-2017)',
+      seriesOrMonth: 'Month 4 & Month 5 - Macro Delivery',
+      approximateDate: '2016-12-15',
+      originalTerminology: 'Interest Rate Triad / Intermarket Analysis',
+      conceptStatus: 'Active Core',
+      lectureReference: 'Month 4 Lecture 1 & Month 5 Lecture 14'
+    },
+    tripartiteView: {
+      ictTeaching: 'Michael teaches that currencies do not move based on chart patterns or retail sentiment; they move because institutional capital chases yield differentials. By analyzing the US 10Y yield (TNX), 30Y yield (TYX), and their divergence against foreign sovereign yields, an ICT trader knows whether the US Dollar will expand or collapse before the currency charts show it.',
+      observableMarketBehavior: 'Global bond yields price in central bank policy and inflation expectations ahead of spot foreign exchange markets.',
+      derivedInterpretation: 'Macro cross-asset relative value model where yield curve steepening/inversion drives institutional portfolio rebalancing.'
+    },
+    explanationLadder: {
+      level1Child: 'Money is like water: it always flows toward the highest interest rates to earn the biggest reward for resting safely.',
+      level2Beginner: 'If US Treasury yields are shooting up while European bond yields are falling, global banks sell Euros and buy US Dollars.',
+      level3Trader: 'Watch for SMT divergence between the 10-Year yield and 30-Year yield at swing highs/lows. If 10Y makes a higher high but 30Y fails, yield momentum is exhausted.',
+      level4Advanced: 'Combine the Interest Rate Triad with the 90-Day Quarterly Shift calendar to anticipate multi-month currency trend turns.',
+      level5ICTFramework: 'Treasury yields are the primary input for IPDA. The algorithm adjusts currency exchange rates to reflect yield parity.',
+      whenItMatters: 'Every morning during pre-market analysis before taking any trade on EUR/USD, GBP/USD, USD/JPY, or Gold.',
+      whenToIgnore: 'During ultra-short 1-minute scalps that rely purely on session liquidity sweeps.'
+    },
+    whyItExists: 'Sovereign bond markets represent the multi-trillion dollar foundation of global finance. Foreign exchange exists primarily to facilitate cross-border sovereign and commercial debt transactions.',
+    problemItSolves: 'Prevents traders from buying a currency pair right into a massive macro yield headwind.',
+    howItForms: [
+      'US 10-Year Yield (TNX) expands toward a key HTF PD Array.',
+      'US 30-Year Yield (TYX) fails to confirm the high/low, creating SMT divergence.',
+      'German Bund yields or UK Gilt yields begin diverging in the opposite direction.',
+      'Spot currency pairs (EUR/USD, GBP/USD) stage a massive, sustained expansion in the direction of the yield advantage.'
+    ],
+    chartAnatomy: 'Displayed on a multi-asset layout comparing US10Y (TNX), US30Y (TYX), DXY, and EUR/USD.',
+    identificationRules: [
+      'Pull up US 10-Year Note Yields alongside the US Dollar Index (DXY).',
+      'Look for higher highs in 10Y yields confirming DXY bullishness.',
+      'Check 30Y yields for confirming expansion or SMT divergence.',
+      'Align currency trades with the direction dictated by the sovereign yield spread.'
+    ],
+    validCharacteristics: [
+      'Clean directional displacement in Treasury yields.',
+      'Cross-market confirmation between yields, DXY, and foreign exchange pairs.'
+    ],
+    invalidCharacteristics: [
+      'Choppy, range-bound bond market with no clear yield direction.'
+    ],
+    howICTUsesIt: 'Used as the primary fundamental filter to establish weekly and quarterly directional bias.',
+    commonMistakes: [
+      'Trading EUR/USD long while US 10-Year yields are breaking out into parabolic bullish expansion.',
+      'Assuming technical support on a currency pair can hold against an adverse yield spike.'
+    ],
+    advancedNuances: 'Gold (XAU/USD) has an inverse relationship with real yields. When 10Y yields surge, non-yielding Gold faces heavy institutional distribution.',
+    prerequisites: ['market_mechanics_liquidity', 'daily_bias_masood'],
+    relatedConcepts: ['SMT Divergence', '90-Day Quarterly Shifts', 'Commercial COT Hedging'],
+    bullishScenario: 'US 10-Year yield sweeps a major swing high at 4.50% and prints a sharp bearish displacement. DXY follows downward. EUR/USD sweeps Sell-Side Liquidity and stages a massive 150-pip rally.',
+    bearishScenario: 'US 10-Year yield breaks out above resistance with strong green daily candles. EUR/USD fails to rally and breaks down through weekly lows.',
+    counterexample: 'Yields spike temporarily during an emergency rate cut headline but reverse instantly—wait for the daily candle close to confirm true yield trend.',
+    invalidationCriteria: 'Yields failing to produce displacement and getting absorbed back into consolidation.',
+    diagramType: 'top_down_matrix',
+    simplifiedExplanation: 'Bond yields are the dog; currencies are the tail. Never bet on the tail wagging the dog.'
+  },
+  {
+    id: 'quarterly_shifts_ipda',
+    name: '90-Day Quarterly Shifts & 6-Month IPDA Lookback',
+    category: 'time_sessions',
+    shortDefinition: 'The macro cycle framework taught in Month 5: how institutional balance sheets rebalance every 90 days across 20, 40, and 60-day IPDA lookback data ranges.',
+    source: {
+      mentorship: 'ICT Core Content (2016-2017)',
+      seriesOrMonth: 'Month 5 - IPDA Data Ranges',
+      approximateDate: '2017-01-10',
+      originalTerminology: 'Quarterly Shifts / IPDA Data Range',
+      conceptStatus: 'Active Core',
+      lectureReference: 'Month 5 Lecture 1 & Lecture 2'
+    },
+    tripartiteView: {
+      ictTeaching: 'Michael teaches that the Interbank Price Delivery Algorithm tracks rolling 20, 40, and 60-day lookback periods. Major institutional portfolio rebalancing occurs every 90 days (roughly each quarter). When price reaches the boundary of a 60-day range at the start of a quarterly shift, generational position trades unfold.',
+      observableMarketBehavior: 'Fiscal quarter-ends and quarter-starts consistently coincide with volatility expansion and multi-month trend reversals across major asset classes.',
+      derivedInterpretation: 'Institutional benchmark rebalancing windows where pension funds, corporate treasuries, and hedge funds rotate capital across macro risk assets.'
+    },
+    explanationLadder: {
+      level1Child: 'Just like the seasons change from summer to fall to winter every three months, the market changes its master direction every three months.',
+      level2Beginner: 'Every quarter (January, April, July, October), look for the market to reverse its trend or start a brand new major multi-week run.',
+      level3Trader: 'Look back 20, 40, and 60 days on the daily chart. Mark the highest high and lowest low of that 60-day window to know if the market is at a 60-day Discount or Premium.',
+      level4Advanced: 'Combine the 60-day IPDA range with 30-year seasonal tendencies and commercial COT hedging extremes for 500+ pip position trade captures.',
+      level5ICTFramework: 'IPDA resets its pricing algorithm on 90-day cycles, targeting opposing open float liquidity pools created during the previous quarterly cycle.',
+      whenItMatters: 'At the start of Q1, Q2, Q3, and Q4, and when price reaches the extreme highs/lows of the 60-day IPDA data range.',
+      whenToIgnore: 'Mid-quarter when price is cleanly in the middle of a 60-day expansion leg.'
+    },
+    whyItExists: 'Institutional reporting, fund performance evaluation, and tax cycles operate on quarterly horizons.',
+    problemItSolves: 'Explains why perfectly good technical patterns fail when a quarter ends, and gives traders a macro calendar to anticipate major market turns.',
+    howItForms: [
+      'Price trends for 60 to 90 days in one direction.',
+      'As the calendar approaches January, April, July, or October, price tags a Monthly or Weekly PD Array.',
+      'A weekly Market Structure Shift occurs with heavy volume.',
+      'A new 90-day quarterly trend is born in the opposite direction.'
+    ],
+    chartAnatomy: 'Annotated on the Daily chart by marking 20-day, 40-day, and 60-day vertical lookback lines and horizontal range extremes.',
+    identificationRules: [
+      'Count back 20, 40, and 60 trading days from the current date.',
+      'Identify the absolute highest high and lowest low within that 60-day window.',
+      'Calculate the 50% Equilibrium level of that 60-day range.',
+      'Determine whether price is in the Discount or Premium half of the 60-day IPDA range.'
+    ],
+    validCharacteristics: [
+      'Alignment with calendar quarter changes (Jan, Apr, Jul, Oct).',
+      'Tagging an HTF Monthly/Weekly PD Array at the 60-day range extreme.'
+    ],
+    invalidCharacteristics: [
+      'Mid-range chop with no alignment to quarterly cycle dates.'
+    ],
+    howICTUsesIt: 'Used to anchor macro position trades delivering 300 to 1,000+ pips over several months.',
+    commonMistakes: [
+      'Fighting a newly initiated quarterly shift by trying to scalp counter-trend against the macro institutional flow.',
+      'Ignoring the 60-day lookback and assuming a short-term 5-day high is a major ceiling.'
+    ],
+    advancedNuances: 'The August/September summer-to-autumn shift is historically one of the most violent quarterly reversals across equities and currencies.',
+    prerequisites: ['market_mechanics_liquidity', 'time_sessions'],
+    relatedConcepts: ['IPDA Data Range', 'Position Trading', 'Seasonal Tendencies'],
+    bullishScenario: 'In late March (end of Q1), EUR/USD sweeps the 60-day low at 1.0700 into a Monthly Bullish Order Block. On April 2 (start of Q2), price produces a weekly displacement candle. Over the next 90 days, EUR/USD rallies 650 pips to 1.1350.',
+    bearishScenario: 'In early October (start of Q4), S&P 500 tags a 60-day high in extreme Premium, creates a weekly MSS, and drops 8% over the next two months.',
+    counterexample: 'Price consolidates tightly for 10 days in the middle of a quarter—this is internal range rebalancing, not a quarterly shift.',
+    invalidationCriteria: 'Failure of weekly candle bodies to displace in the expected quarterly direction.',
+    diagramType: 'top_down_matrix',
+    simplifiedExplanation: 'Every 90 days the institutional game resets. Know the quarterly calendar, and you will never be caught on the wrong side of the master trend.'
+  },
+  {
+    id: 'lrlr_vs_hrlr',
+    name: 'Low Resistance Liquidity Runs (LRLR) vs. High Resistance (HRLR)',
+    category: 'liquidity',
+    shortDefinition: 'The core concept from Month 7 distinguishing between effortless, explosive price delivery (LRLR) and choppy, grindy price action impeded by opposing PD arrays (HRLR).',
+    source: {
+      mentorship: 'ICT Core Content (2016-2017)',
+      seriesOrMonth: 'Month 7 - Short Term Trading',
+      approximateDate: '2017-03-05',
+      originalTerminology: 'Low Resistance Liquidity Run / High Resistance Liquidity Run',
+      conceptStatus: 'Active Core',
+      lectureReference: 'Month 7 Lecture 4'
+    },
+    tripartiteView: {
+      ictTeaching: 'Michael teaches that an LRLR occurs when price targets clean, unviolated liquidity pools (such as equal highs or equal lows) with no major opposing PD arrays blocking its path. Price moves through this zone like a hot knife through butter. An HRLR occurs when price attempts to move through established swing points and order blocks, resulting in deep retracements and painful chop.',
+      observableMarketBehavior: 'Clean orderbook vacuums where passive limit depth is sparse in the direction of the target, leading to large candle bodies and fast fill velocities.',
+      derivedInterpretation: 'Liquidity void clearance where imbalance delivery encounters minimal counter-order absorption.'
+    },
+    explanationLadder: {
+      level1Child: 'Imagine running downhill on an open highway versus running through a thick muddy jungle full of fallen trees. You want to trade the open highway.',
+      level2Beginner: 'LRLR means fast profits with clean candles toward double tops or double bottoms. HRLR means messy candles with endless pullbacks.',
+      level3Trader: 'If there are multiple unmitigated Order Blocks between your entry and your target, you are trading an HRLR. Skip the trade or take quick partials.',
+      level4Advanced: 'LRLRs frequently unfold during Stage 4 of Market Maker Buy/Sell models when price attacks the original consolidation.',
+      level5ICTFramework: 'IPDA has zero algorithmic resistance in an LRLR because previous price action left clean liquidity voids and resting retail stops.',
+      whenItMatters: 'When selecting which pair or index to trade for the day—always pick the asset exhibiting an LRLR structure.',
+      whenToIgnore: 'When price is trapped inside a multi-week consolidation range.'
+    },
+    whyItExists: 'Price always seeks the path of least algorithmic resistance to maximize order matching efficiency.',
+    problemItSolves: 'Eliminates getting stuck in slow, grinding trades that take hours to move a few pips and repeatedly threaten your stop loss.',
+    howItForms: [
+      'Price creates very clean, smooth swing highs (Equal Highs) during a previous session.',
+      'Price sweeps a discount liquidity pool and shifts market structure with strong displacement.',
+      'Between the entry level and the Equal Highs, there are NO active bearish Order Blocks or Breakers.',
+      'Price expands rapidly in 1 to 3 giant candles straight into the equal highs.'
+    ],
+    chartAnatomy: 'Characterized by large displacement candles with little to no overlapping wicks moving directly toward a prominent BSL or SSL line.',
+    identificationRules: [
+      'Inspect the chart path between current price and the target liquidity pool.',
+      'Count the number of opposing PD Arrays in that path.',
+      'If the path is clear or contains only unmitigated imbalances (FVGs), it is an LRLR.',
+      'If the path has multiple swing highs and bearish blocks, it is an HRLR.'
+    ],
+    validCharacteristics: [
+      'Unviolated equal highs (BSL) or equal lows (SSL) as targets.',
+      'Lack of opposing structural obstacles in the delivery path.'
+    ],
+    invalidCharacteristics: [
+      'Heavy structural chop and multiple recent order blocks directly ahead.'
+    ],
+    howICTUsesIt: 'Used to filter trade setups: only aggressive risk is allocated to LRLR conditions.',
+    commonMistakes: [
+      'Holding full position size into an HRLR expecting it to move with LRLR velocity.',
+      'Failing to recognize that equal highs create the ultimate low-resistance magnet.'
+    ],
+    advancedNuances: 'During an LRLR, price will frequently disrespect smaller lower-timeframe opposing FVGs, blowing straight through them as Inversions.',
+    prerequisites: ['buy_side_liquidity', 'sell_side_liquidity', 'displacement_engine'],
+    relatedConcepts: ['Market Maker Buy Model', 'Order Blocks', 'Liquidity Voids'],
+    bullishScenario: 'EUR/USD has perfectly equal highs at 1.0900 from Tuesday and Wednesday. On Thursday London Open, price sweeps the Asian low and forms a 5M MSS at 1.0840. The path to 1.0900 is completely open. Price prints 4 giant green 15M candles and reaches 1.0900 in under 90 minutes (+60 pips).',
+    bearishScenario: 'NQ has three identical swing lows at 19,500. At 09:30 AM open, price sweeps pre-market highs and violently dumps 200 points to 19,500 with zero green candles.',
+    counterexample: 'Price tries to rally toward a high, but hits a 4H Bearish OB, then a Daily Bearish FVG, pulling back 70% each time—this is an HRLR.',
+    invalidationCriteria: 'Price failing to maintain expansion momentum and falling back into deep overlapping consolidation.',
+    diagramType: 'liquidity_sweep',
+    simplifiedExplanation: 'Trade where the runway is clear. If the path to your target is blocked by boulders, find another trade.'
+  },
+  {
+    id: 'institutional_pricing_theory',
+    name: 'Institutional Pricing Theory & "Filling the Numbers" (00, 20, 50, 80)',
+    category: 'models',
+    shortDefinition: 'The core concept from Month 9: how algorithmic orders are structured around institutional Big Figures (00, 50) and Mid Figures (20, 80) rather than random prices.',
+    source: {
+      mentorship: 'ICT Core Content (2016-2017)',
+      seriesOrMonth: 'Month 9 - Trading Consolidations',
+      approximateDate: '2017-05-12',
+      originalTerminology: 'Filling the Numbers / Institutional Pricing Levels',
+      conceptStatus: 'Active Core',
+      lectureReference: 'Month 9 Lecture 3'
+    },
+    tripartiteView: {
+      ictTeaching: 'Michael teaches that interbank dealing algorithms do not place orders at arbitrary retail prices like 1.08473. They operate around institutional tiers: Big Figures (00 and 50) and Mid Figures (20 and 80). Price naturally cycles from 00 to 20, 50, 80, and back to 00. Placing entries and targets at these levels aligns retail orders with institutional execution.',
+      observableMarketBehavior: 'Limit order books on major institutional exchanges (Currenex, EBS, CME) show massive clusters of liquidity concentrated at 00, 50, 20, and 80 price intervals.',
+      derivedInterpretation: 'Psychological round-number clustering reinforced by automated institutional matching engines and option strike spacing.'
+    },
+    explanationLadder: {
+      level1Child: 'Think of bus stops along a street at 00, 20, 50, and 80. The bus always stops at those exact stations.',
+      level2Beginner: 'Never place your stop or profit target at an arbitrary decimal. Big banks buy at 20 and 80, and take profits at 00 and 50.',
+      level3Trader: 'When bullish, look for an entry at the 20 level (institutional discount). When bearish, look for an entry at the 80 level (institutional premium).',
+      level4Advanced: 'Combine the 00/20/50/80 levels with Fair Value Gaps. If an FVG 50% Consequent Encroachment lands exactly on an 80 or 50 level, it is institutional perfection.',
+      level5ICTFramework: 'IPDA algorithms use institutional price tiers to programmatically execute sovereign and corporate cross-border currency conversion requests.',
+      whenItMatters: 'On every single Forex, Commodity, and Index trade when deciding where to place limit orders and profit targets.',
+      whenToIgnore: 'On illiquid, erratic crypto shitcoins with low institutional volume.'
+    },
+    whyItExists: 'Institutional dealing desks and central banks require standardized pricing increments for liquidity clearing.',
+    problemItSolves: 'Eliminates the common retail tragedy of missing a take profit by 1 or 2 pips because the target was placed at an un-algorithmic price.',
+    howItForms: [
+      'Price expands away from the Big Figure (00).',
+      'It pauses and tests the 20 level (Institutional Accumulation).',
+      'It pushes through the Mid Figure (50), retesting it as support.',
+      'It expands through the 80 level and arrives at the next Big Figure (00).'
+    ],
+    chartAnatomy: 'Horizontal gridlines marked at every 00, 20, 50, and 80 level across the trading chart.',
+    identificationRules: [
+      'Mark the Big Figure: 00 (e.g., 1.0800, 1.0900).',
+      'Mark the Mid Figure: 50 (e.g., 1.0850, 1.0950).',
+      'Mark the Institutional Quartiles: 20 and 80 (e.g., 1.0820, 1.0880).',
+      'Anchor limit entries and profit targets directly to these institutional levels.'
+    ],
+    validCharacteristics: [
+      'Price cleanly rebalancing and stalling within 1-3 pips of the institutional number.',
+      'Alignment of an FVG or Order Block with an institutional level.'
+    ],
+    invalidCharacteristics: [
+      'Expecting price to respect arbitrary retail Fibonacci lines that ignore the institutional numbers.'
+    ],
+    howICTUsesIt: 'Used as the final precision filter for placing limit orders, stop losses, and take-profit extractions.',
+    commonMistakes: [
+      'Targeting 1.0898 instead of front-running the Big Figure at 1.0890 to 1.0895.',
+      'Ignoring how often price reverses within a few pips of the 80 or 20 level.'
+    ],
+    advancedNuances: 'In Gold (XAU/USD), the Big Figures are every $10 ($2600, $2610, $2620), and the mid figures are $5 ($2605, $2615).',
+    prerequisites: ['market_mechanics_liquidity', 'fair_value_gap'],
+    relatedConcepts: ['Bread and Butter Setup', 'Optimal Trade Entry', 'Equilibrium'],
+    bullishScenario: 'EUR/USD is bullish. Price pulls back from 1.0860 to 1.0820 (Institutional 20 level) inside a 15M Bullish FVG. Trader enters long at 1.0820 with stop at 1.0805. Price rejects 1.0820 cleanly and rallies to 1.0880 (Institutional 80 level) where 80% is closed (+60 pips).',
+    bearishScenario: 'GBP/USD is bearish. Price rallies into 1.2880 (Institutional 80 level) at 09:30 AM NY Open. Limit sell executes at 1.2880. Price drops to the 1.2820 level for an easy 60-pip delivery.',
+    counterexample: 'Placing a limit order at 1.08373 because of an arbitrary retail moving average line.',
+    invalidationCriteria: 'Price slicing through the Big Figure with heavy displacement without any hesitation.',
+    diagramType: 'top_down_matrix',
+    simplifiedExplanation: 'Institutions speak in whole numbers and round increments. When you trade at 00, 20, 50, and 80, you are speaking their language.'
+  },
+  {
+    id: 'mega_trades_framework',
+    name: 'The ICT Mega-Trades Multi-Asset Architecture',
+    category: 'models',
+    shortDefinition: 'The pinnacle macro model from Month 11: identifying multi-month institutional setups capturing 500 to 1,500+ pips across Currencies, Commodities, Stocks, and Bonds.',
+    source: {
+      mentorship: 'ICT Core Content (2016-2017)',
+      seriesOrMonth: 'Month 11 - Mega-Trades',
+      approximateDate: '2017-07-20',
+      originalTerminology: 'Mega-Trades',
+      conceptStatus: 'Active Core',
+      lectureReference: 'Month 11 Lectures 1-4'
+    },
+    tripartiteView: {
+      ictTeaching: 'Michael teaches that Mega-Trades are the generational setups that appear 2 to 4 times per year when all four institutional pillars align: a 90-Day Quarterly Shift, extreme Commercial COT Hedging, sovereign yield divergence, and a pristine Monthly/Weekly PD Array reaction. A single Mega-Trade can define a trader\'s entire annual return.',
+      observableMarketBehavior: 'Multi-month structural trends driven by fundamental balance-of-payments shifts, commodity supply/demand imbalances, or sovereign central bank rate cycles.',
+      derivedInterpretation: 'Macro global macro regime shift with high statistical persistence and minimal drawdown on higher timeframes.'
+    },
+    explanationLadder: {
+      level1Child: 'Catching a Mega-Trade is like boarding a high-speed express train that travels across the entire country with only two stops.',
+      level2Beginner: 'A Mega-Trade is a trade that you enter on the Weekly chart and hold for 3 to 6 months, capturing 500 to 1,000+ pips.',
+      level3Trader: 'You don\'t trade a Mega-Trade with a fixed lot size. You enter initial size, and as new Daily/Weekly Order Blocks form in the trend, you pyramid additional positions.',
+      level4Advanced: 'Mega-Trades require intermarket confirmation: US Treasury yields, Commodity COT, and the US Dollar Index must all point in the same direction.',
+      level5ICTFramework: 'IPDA executes a multi-month repricing program to bring a mispriced macro asset back to fair value or to liquidate an entire quarterly float.',
+      whenItMatters: 'When COT reports show commercial hedgers at 3-year extreme positions coinciding with a quarterly shift.',
+      whenToIgnore: 'For everyday day-trading or when markets are in late-stage parabolic exhaustion.'
+    },
+    whyItExists: 'Sovereign and commercial macro capital moves slowly and deliberately over multi-month horizons.',
+    problemItSolves: 'Frees experienced traders from the daily screen addiction by providing generational wealth-building setups that require only 15 minutes of chart review per week.',
+    howItForms: [
+      'Commercial COT reaches multi-year net position extreme.',
+      'A 90-Day Quarterly Shift date arrives (e.g., October start of Q4).',
+      'Price sweeps a multi-month liquidity pool into a Monthly Order Block or Breaker.',
+      'Weekly chart produces an explosive displacement candle and MSS.',
+      'Position is entered on the first Weekly FVG and held through subsequent months.'
+    ],
+    chartAnatomy: 'Monthly and Weekly charts with multi-hundred pip expansion legs annotated with pyramiding entry blocks.',
+    identificationRules: [
+      'Monitor CFTC COT reports for commercial extreme net positions.',
+      'Verify 30-year seasonal tendency support for the current month.',
+      'Identify a Monthly PD Array acting as the macro launchpad.',
+      'Confirm weekly Market Structure Shift and enter on weekly FVG.'
+    ],
+    validCharacteristics: [
+      'Unanimous alignment of COT, Quarterly Shift, Yields, and Monthly PD Array.',
+      'Weekly candle bodies continually respecting newly formed Weekly Order Blocks.'
+    ],
+    invalidCharacteristics: [
+      'Conflicting intermarket signals (e.g., yields disagreeing with currency direction).'
+    ],
+    howICTUsesIt: 'Used to build generational wealth and produce life-changing portfolio expansions.',
+    commonMistakes: [
+      'Closing the trade after 50 pips out of fear instead of letting the multi-month macro run unfold.',
+      'Over-leveraging the initial entry instead of scaling in as the trend proves itself.'
+    ],
+    advancedNuances: 'Pyramiding must only be done from newly confirmed Weekly Order Blocks, never on lower-timeframe impulse entries.',
+    prerequisites: ['quarterly_shifts_ipda', 'interest_rate_triad', 'market_mechanics_liquidity'],
+    relatedConcepts: ['Position Trading', 'Commercial COT Hedging', 'Top-Down Analysis'],
+    bullishScenario: 'Commercials reach record net-long in Crude Oil in December. In January (Q1 shift), Oil sweeps multi-year lows at $65 and rejects from a Monthly Bullish Breaker. Weekly MSS confirms at $72. Trader enters long and pyramids at $78 and $84. Oil expands to $105 over 5 months (+4,000 ticks).',
+    bearishScenario: 'Commercials hit record net-short in GBP/USD while US 10-Year yields breakout. Cable rejects Monthly Bearish OB at 1.3400. Over the next 4 months, GBP/USD plunges 1,200 pips to 1.2200.',
+    counterexample: 'Entering a "swing" trade based only on a 15-minute chart pattern and calling it a macro trade.',
+    invalidationCriteria: 'Loss and full weekly candle body close through the Monthly PD Array origin.',
+    diagramType: 'top_down_matrix',
+    simplifiedExplanation: 'When central banks, commercial giants, and quarterly calendars all align, get on board, hold tight, and let the multi-month wave carry you.'
+  },
+  {
+    id: 'from_vision_to_execution',
+    name: 'From Vision to Execution: The 2026 Core Protocol',
+    category: 'models',
+    shortDefinition: 'The foundational 2026 mental and mechanical framework where market narrative, draw on liquidity, and entry timing are mathematically projected before taking order entry.',
+    source: {
+      mentorship: '2026 ICT Smart Money Concepts Lectures',
+      seriesOrMonth: '2026 Master Series',
+      approximateDate: '2026',
+      originalTerminology: 'From Vision To Execution & The Trinity Rule',
+      conceptStatus: 'Advanced Execution',
+      lectureReference: 'From Vision To Execution & How New Students Should Start (Parts 1 & 2)'
+    },
+    tripartiteView: {
+      ictTeaching: 'Michael teaches that amateur execution without a prior vision is gambling. The trader must project the exact algorithmic pathway: where liquidity rests, what PD Array will absorb the manipulation, and what macro window will deliver the expansion. Trading only occurs when Time, Price, and Narrative achieve 100% mutual alignment.',
+      observableMarketBehavior: 'Algorithmic quotation does not wander randomly. Price moves from imbalances (FVGs) to resting liquidity pools (BSL/SSL) within standardized macro windows (08:30, 09:50, 10:50, 11:50, 13:30, 15:00).',
+      derivedInterpretation: 'Structured three-tier confirmation protocol eliminating discretionary impulsivity through rule-gated trade sequencing.'
+    },
+    explanationLadder: {
+      level1Child: 'Before an architect builds a house, they draw every room on paper. "From Vision to Execution" means you draw the winning path on your chart before you press any button.',
+      level2Beginner: 'Never take a trade just because a green candle is moving fast. You must have three questions answered: Why is price moving (Narrative)? Where will it react (Price/PD Array)? When is it allowed to move (Time/Macro)?',
+      level3Trader: 'Execute only when HTF context (e.g. Daily FVG reaction), LTF structure (1M/5M Market Structure Shift with displacement), and an active Macro window (e.g. 09:50 - 10:10 AM EST) align simultaneously.',
+      level4Advanced: 'The 2026 protocol requires multi-timeframe nesting: 15-minute narrative framing, 5-minute PD array selection, and 1-minute execution on either the FVG boundary or 50% Consequent Encroachment.',
+      level5ICTFramework: 'IPDA requires time-based trigger gates. When an economic calendar catalyst activates IPDA, price delivers systematically toward the predetermined open float pool.',
+      whenItMatters: 'Every single trading day during the New York morning session (09:30 - 11:00 AM EST) and afternoon session (13:30 - 15:30 PM EST).',
+      whenToIgnore: 'Never. Taking an execution without a clear vision violates core ICT risk protocols.'
+    },
+    whyItExists: 'Human emotion leads to reactive trading, chasing green candles, and revenge trading. A systematic vision precedes consistent execution.',
+    problemItSolves: 'Cures premature entries, FOMO, over-trading, and catastrophic drawdown by enforcing a strict pre-flight confirmation checklist.',
+    howItForms: [
+      'Step 1: Identify the Higher Timeframe Draw on Liquidity (e.g., Previous Day High or unmitigated 1H FVG).',
+      'Step 2: Map pre-market liquidity boundaries (Asian High/Low, London High/Low, NDOG 50% CE).',
+      'Step 3: Wait for session open (09:30 EST) and observe the Judas Swing sweep of liquidity.',
+      'Step 4: Confirm 1M or 5M Market Structure Shift with displacement leaving a clean Fair Value Gap during the 09:50 - 10:10 AM Macro.',
+      'Step 5: Execute limit order at FVG boundary with stop loss safely anchored behind the structural sweep extreme.'
+    ],
+    chartAnatomy: 'A sequence showing HTF DOL target, pre-market Asian/London range sweep, 09:30 Judas swing, 09:50 macro displacement, and clean FVG retest leading to rapid target reach.',
+    identificationRules: [
+      'Narrative must be defined before 09:30 AM EST open.',
+      'Time must match an active Macro Window (09:50-10:10, 10:50-11:10, 13:30-14:00, 15:00-15:30).',
+      'Price must be entering an undiscounted/unmitigated institutional PD Array.',
+      'Displacement must be verified by full candle bodies, not mere wicks.'
+    ],
+    validCharacteristics: [
+      'All three components (Time, Price, Narrative) in unanimous agreement.',
+      'Clear, uncontested Draw on Liquidity with resting stop orders.'
+    ],
+    invalidCharacteristics: [
+      'Entering mid-range without any HTF PD Array reaction.',
+      'Entering during the 12:10 - 13:15 PM lunch hour dead zone.'
+    ],
+    howICTUsesIt: 'The foundational master protocol taught to all 2026 students to bridge the gap between theoretical knowledge and profitable live execution.',
+    commonMistakes: [
+      'Focusing only on the entry pattern (FVG) while completely ignoring whether time or narrative support the move.',
+      'Changing narrative mid-trade when lower-timeframe pullbacks occur.'
+    ],
+    advancedNuances: 'If the narrative is bullish but price creates a lower low during 09:50 AM macro, check if it just swept NDOG 50% CE before abandoning the vision.',
+    prerequisites: ['market_mechanics_liquidity', 'fair_value_gap', 'killzones_sessions'],
+    relatedConcepts: ['The Trinity Rule', '09:50 AM Macro', 'New Day Opening Gap', 'Judas Swing'],
+    bullishScenario: 'NQ sweeps London low at 09:34 AM into a Daily Bullish FVG. At 09:52 AM, a 1-minute MSS breaks the 09:40 high with displacement leaving a 4-point FVG. Trader enters long at the FVG with stop below 09:34 low. Price expands into Previous Day High (+85 points) by 10:45 AM.',
+    bearishScenario: 'ES sweeps Asian High at 08:30 news into a 4H Bearish Breaker. At 09:55 AM, price displaces downward through pre-market lows. Trader enters short on 5M FVG retest targeting the London Low (+32 points).',
+    counterexample: 'Clicking buy at 09:30:15 AM because the 1-minute candle looks strong green without any liquidity sweep or PD Array confluence.',
+    invalidationCriteria: 'Candle bodies closing through the invalidation level of the HTF PD Array.',
+    diagramType: 'po3_amd',
+    simplifiedExplanation: 'Plan the journey before you board the bus: know why the market is moving, where it will turn, and enter only when the clock strikes the macro window.'
+  },
+  {
+    id: 'market_alchemy_ath',
+    name: 'Market Alchemy: Trading All-Time Highs (ATH) with Fibonacci Projections',
+    category: 'models',
+    shortDefinition: 'The ICT methodology of mapping institutional price targets in uncharted All-Time High territory using mathematical Fibonacci extensions and Inversion FVGs.',
+    source: {
+      mentorship: '2026 ICT Smart Money Concepts Lectures',
+      seriesOrMonth: '2026 Market Commentary',
+      approximateDate: 'May 2026',
+      originalTerminology: 'Market Alchemy - Trading ATH',
+      conceptStatus: 'Advanced Execution',
+      lectureReference: 'Market Alchemy - Trading ATH (May 14, 2026)'
+    },
+    tripartiteView: {
+      ictTeaching: 'When price trades at All-Time Highs, retail resistance lines are non-existent. IPDA operates as a pure mathematical pricing engine that projects measured liquidity objectives using specific dealing range Fibonacci ratios: 1.272, 1.618, 2.0, 2.618, and 3.142.',
+      observableMarketBehavior: 'In blue-sky breakout regimes, indices (NQ/ES) consistently halt, consolidate, or reverse at exact Fibonacci extension levels of the preceding correction swing.',
+      derivedInterpretation: 'Quantitative expansion metrics derived from prior auction range amplitude and volatility boundaries.'
+    },
+    explanationLadder: {
+      level1Child: 'When a rocket shoots past the highest clouds where there are no mountains, it uses math to calculate where to refuel. That math is Fibonacci expansion.',
+      level2Beginner: 'When the market breaks its highest price ever, don\'t try to guess the top. Use Fibonacci extensions from the last pullback to find where smart money will take profits.',
+      level3Trader: 'Anchor your Fibonacci tool from the dealing range high (1.0) to dealing range low (0.0) of the consolidation that preceded the ATH breakout. Target the 1.272, 1.618, and 2.0 extension levels for scale-outs.',
+      level4Advanced: 'During ATH expansions, pullbacks do not form deep order blocks; instead, breached bearish FVGs flip into Inversion Fair Value Gaps (IFVGs) and Propulsion Blocks that institutional algorithms buy aggressively.',
+      level5ICTFramework: 'IPDA clears buy-side resting order flow dynamically by offering price into algorithmic expansion multiples until a Volume Imbalance or small-body indecision candle signals program exhaustion.',
+      whenItMatters: 'Whenever NQ, ES, Gold, or major assets are breaking into new historical highs.',
+      whenToIgnore: 'When price is trapped inside established historical ranges with clear existing resistance pools.'
+    },
+    whyItExists: 'Provides an objective, mathematically precise framework for taking profit and entering pullbacks when historical technical resistance does not exist.',
+    problemItSolves: 'Stops retail traders from fighting the trend by shorting new highs, and prevents leaving immense profits on the table by exiting prematurely.',
+    howItForms: [
+      'Price breaks above all prior historical swing highs into uncharted territory.',
+      'Anchor Fibonacci tool to the most recent HTF swing high (1.0) and swing low (0.0).',
+      'Watch for minor intraday dips to be absorbed by Inversion FVGs or Propulsion Blocks.',
+      'Enter long on the IFVG retest with targets set at 1.272, 1.618, and 2.0 Fibonacci extensions.',
+      'Exit positions when candle bodies shrink and a 5-minute candle closes below a previous up-candle low at the 1.618/2.0 level.'
+    ],
+    chartAnatomy: 'A clean bullish breakout above ATH annotated with Fibonacci extension levels (1.272, 1.618, 2.0), showing IFVG support defending pullbacks and algorithmic pause at 1.618.',
+    identificationRules: [
+      'Asset must be trading at true historical All-Time Highs (no old resistance above).',
+      'Fibonacci tool must be anchored from the swing high of the prior dealing range down to the lowest liquidity sweep point.',
+      'Profit targets must be placed 2 to 5 ticks before the 1.272, 1.618, or 2.0 extension lines.'
+    ],
+    validCharacteristics: [
+      'Strong bullish displacement candles closing above prior ATH.',
+      'Pullbacks immediately supported by breached bearish FVGs (Inversion FVGs).'
+    ],
+    invalidCharacteristics: [
+      'Heavy volume selloff closing back below the breakout level with full bodies (indicating a failed false breakout).'
+    ],
+    howICTUsesIt: 'Used to ride parabolic macro index rallies without guessing tops, banking profits methodically at algorithmic Fibonacci milestone targets.',
+    commonMistakes: [
+      'Trying to pick the top and counter-trend shorting an ATH breakout.',
+      'Anchoring the Fibonacci tool to arbitrary intraday noise candles instead of the true HTF dealing range swing.'
+    ],
+    advancedNuances: 'If price tags the 1.618 extension during the 09:50 AM macro and forms a volume imbalance, expect an intraday retracement back into the 1.0 dealing range high before the afternoon resumption.',
+    prerequisites: ['market_mechanics_liquidity', 'inverse_fair_value_gap', 'propulsion_block'],
+    relatedConcepts: ['Dealing Range', 'Fibonacci Extensions', 'Inversion FVG', 'Propulsion Block'],
+    bullishScenario: 'NQ breaks ATH at 19,500 after a 300-point consolidation between 19,200 and 19,500. Trader anchors Fib from 19,500 down to 19,200. The 1.272 extension sits at 19,581 and 1.618 sits at 19,685. NQ pulls back to an Inversion FVG at 19,510 during the 09:50 macro, bounces aggressively, and hits 19,685 (+175 pts) into the 10:50 AM macro.',
+    bearishScenario: 'Not applicable for initiating fresh shorts at ATH; used only to anticipate the exhaustion point where longs must be liquidated.',
+    counterexample: 'Drawing Fibonacci extensions from random 15-second wicks and expecting the entire market to respect them.',
+    invalidationCriteria: 'A full Daily candle body close back below the prior historical swing high.',
+    diagramType: 'top_down_matrix',
+    simplifiedExplanation: 'When sailing in uncharted waters, use Fibonacci stars to navigate: project the 1.272, 1.618, and 2.0 extensions of the last wave, buy dips into Inversion FVGs, and take profit like a king.'
+  },
+  {
+    id: 'opening_gap_matrix_ndog_nwog',
+    name: 'The Opening Gap Matrix: NDOG, NWOG & 50% Consequent Encroachment',
+    category: 'imbalances',
+    shortDefinition: 'The institutional framework utilizing New Day Opening Gaps (NDOG) and New Week Opening Gaps (NWOG) as permanent algorithmic magnetic pivots and support/resistance anchors.',
+    source: {
+      mentorship: '2026 ICT Smart Money Concepts Lectures',
+      seriesOrMonth: '2026 Market Commentary',
+      approximateDate: 'March - May 2026',
+      originalTerminology: 'New Day Opening Gap (NDOG) & New Week Opening Gap (NWOG)',
+      conceptStatus: 'Active Core',
+      lectureReference: 'ICT 2026 Market Commentary Series (March 08-09, 2026)'
+    },
+    tripartiteView: {
+      ictTeaching: 'The electronic futures market closes daily at 17:00 EST and reopens at 18:00 EST. The distance between the 17:00 close and 18:00 open is the NDOG. Even if overnight trading fills this price gap, the algorithm records its exact boundaries and 50% Consequent Encroachment (CE) as high-priority rebalancing pivots for the regular session.',
+      observableMarketBehavior: 'Index futures repeatedly stall, bounce, or reverse with remarkable precision at the 50% midpoint of daily and weekly opening gaps during the 09:30 AM open and morning macros.',
+      derivedInterpretation: 'Inter-session auction discontinuity serving as a persistent liquidity benchmark and equilibrium line.'
+    },
+    explanationLadder: {
+      level1Child: 'When a bridge opens to let a ship pass, a gap is left behind. Even when the bridge closes, people remember where the middle of the bridge was. That is an opening gap.',
+      level2Beginner: 'Every day between 5:00 PM and 6:00 PM New York time, futures pause. The space between the closing price and opening price is the NDOG. Mark the top, bottom, and exact 50% middle point on your chart.',
+      level3Trader: 'During the 09:30 AM Judas swing, price will often dump or rally directly into the 50% Consequent Encroachment of the NDOG. If candle bodies respect the 50% level, it acts as a launchpad for the morning trend.',
+      level4Advanced: 'NWOGs (formed between Friday close and Sunday open) hold institutional memory for weeks. When multiple past NWOGs overlap with an intraday FVG, you have an A+ institutional support/resistance level.',
+      level5ICTFramework: 'IPDA registers non-trading auction jumps as fair value voids. The algorithm routinely recalibrates quote streams to test whether the order book accepts prices above or below the NDOG/NWOG Consequent Encroachment.',
+      whenItMatters: 'Every trading day in index futures (NQ, ES, YM) during the pre-market (08:30) and morning session (09:30 - 11:00 EST).',
+      whenToIgnore: 'In continuous 24/7 markets with no official settlement breaks (such as crypto assets).'
+    },
+    whyItExists: 'Settlement maintenance windows create discontinuous price jumps that institutional algorithms use as benchmark reference points.',
+    problemItSolves: 'Provides precise, objective support and resistance levels without relying on arbitrary trendlines or indicators.',
+    howItForms: [
+      'At 17:00 EST, note the exact closing price of the futures contract.',
+      'At 18:00 EST, note the exact re-opening price.',
+      'Draw a horizontal box between the two prices: mark Upper Boundary, Lower Boundary, and 50% Consequent Encroachment (CE).',
+      'During the 09:30 AM cash open or 09:50 AM macro, watch for price to test the 50% CE level.',
+      'If candle bodies respect the CE and print a reversal displacement candle, enter in the direction of the rejection.'
+    ],
+    chartAnatomy: 'Horizontal banded zone representing the 17:00-18:00 EST gap with a dashed line at 50% CE, showing multiple sharp rejections by candle wicks with bodies closing on the outside.',
+    identificationRules: [
+      'Must use CME futures charts set to New York local time.',
+      'Gap is measured strictly between 17:00 EST close and 18:00 EST open (NDOG) or Friday 17:00 to Sunday 18:00 (NWOG).',
+      'Calculate the exact 50% midpoint: (Gap High + Gap Low) / 2.'
+    ],
+    validCharacteristics: [
+      'Candle wicks penetrate into the NDOG/NWOG but candle bodies close outside the 50% CE line.',
+      'Immediate explosive displacement away from the gap during a macro window.'
+    ],
+    invalidCharacteristics: [
+      'Candle bodies slicing completely through the entire gap without pausing (indicating high resistance or invalid gap context).'
+    ],
+    howICTUsesIt: 'A daily foundational routine: marking NDOG and NWOG before every morning session to frame the Judas swing and macro reaction points.',
+    commonMistakes: [
+      'Erasing the gap just because overnight Asian or London trading printed candles inside it (the algorithm still remembers the gap boundaries).',
+      'Confusing a regular 1-minute FVG with an inter-session NDOG.'
+    ],
+    advancedNuances: 'When price opens inside an NDOG at 09:30 AM, the initial move almost always sweeps the nearest boundary of the gap before expanding toward the opposite side.',
+    prerequisites: ['fair_value_gap', 'consequent_encroachment', 'killzones_sessions'],
+    relatedConcepts: ['New Week Opening Gap', 'Consequent Encroachment', '09:30 Judas Swing', 'CSoD'],
+    bullishScenario: 'NQ prints an NDOG between 19,400 (close) and 19,440 (open). 50% CE is 19,420. At 09:32 AM, the open dumps 30 points, wicking down to 19,418 but closing its 1-minute body at 19,425 above the 50% CE. A bullish FVG forms at 09:35 AM. Long entry is taken targeting Previous Day High (+75 points).',
+    bearishScenario: 'ES rallies at 09:30 into the 50% CE of an NWOG from two weeks ago at 5,520. Candle bodies fail to close above 5,520. A 5M bearish displacement candle breaks down at 09:45 AM. Trader enters short targeting Asian Low.',
+    counterexample: 'Marking a gap between two random intraday 5-minute candles and calling it an NDOG.',
+    invalidationCriteria: 'Full candle bodies closing and sustaining on the opposite side of the gap during expansion.',
+    diagramType: 'fvg_formation',
+    simplifiedExplanation: 'When the market closes and reopens with a jump, mark that gap and its exact 50% middle line. That line is an institutional magnetic magnet that price loves to test and bounce from.'
+  },
+  {
+    id: 'changing_state_of_delivery',
+    name: 'Changing State of Delivery (CSoD) & Change of Character',
+    category: 'structure',
+    shortDefinition: 'The earliest institutional order flow signal marking the transition from offering buy-side liquidity to sell-side liquidity, confirmed by candle body closes violating prior candle opens.',
+    source: {
+      mentorship: '2026 ICT Smart Money Concepts Lectures',
+      seriesOrMonth: '2026 Market Commentary',
+      approximateDate: 'March 2026',
+      originalTerminology: 'Changing State of Delivery (CSoD) / CHoCH',
+      conceptStatus: 'Advanced Execution',
+      lectureReference: 'ICT 2026 Market Commentary (March 09, 2026)'
+    },
+    tripartiteView: {
+      ictTeaching: 'Market Structure Shift (MSS) occurs at significant swing highs and lows, but the algorithm actually flips direction much earlier: at the Changing State of Delivery (CSoD). A CSoD occurs when the algorithm ceases to deliver buy-side efficiency and immediately delivers sell-side imbalance, marked by a candle closing below the opening price of the prior expansion candle.',
+      observableMarketBehavior: 'An immediate shift in order book aggression where bids are pulled and aggressive market sell orders sweep consecutive bid queues without waiting for structural swing breaks.',
+      derivedInterpretation: 'Micro-structural order flow regime flip indicating high-frequency algorithmic redirection.'
+    },
+    explanationLadder: {
+      level1Child: 'Imagine climbing an escalator going up. Suddenly, someone flips the switch and the escalator instantly moves down. That moment the switch flips is the Changing State of Delivery.',
+      level2Beginner: 'Before price breaks a major swing low, it gives an earlier clue: a down candle closes below the starting price (open) of the last up candle. That tells you the buyers have lost control.',
+      level3Trader: 'CSoD allows you to anticipate an MSS rather than reacting after a large displacement has already consumed 30 points of risk. It marks the flip from BISI to SIBI.',
+      level4Advanced: 'Combine CSoD with an NDOG or HTF PD Array: when price hits an HTF Bearish OB and prints a 1-minute CSoD, you can enter with a tight stop before the 5-minute MSS even forms.',
+      level5ICTFramework: 'IPDA algorithmically changes state from premium repricing to discount repricing. The open of the violated candle becomes the institutional mitigation threshold.',
+      whenItMatters: 'At major liquidity sweeps, HTF PD Array touches, and during the 09:30 - 10:00 AM opening balance phase.',
+      whenToIgnore: 'In the middle of a choppy consolidation where candles are alternating green and red without displacement.'
+    },
+    whyItExists: 'Institutional algorithms must execute rapid regime shifts to trap breakout retail orders on the wrong side before the structural shift becomes obvious to the public.',
+    problemItSolves: 'Solves the problem of late entries and wide stop losses by providing the earliest mathematically verifiable order flow reversal signal.',
+    howItForms: [
+      'Price conducts a liquidity sweep into an institutional PD Array.',
+      'A series of consecutive up-close candles marks the final upward push.',
+      'An aggressive displacement down-close candle forms.',
+      'The candle body of the down-close candle closes BELOW THE OPENING PRICE of the lowest up-close candle in that immediate run.',
+      'The State of Delivery is now flipped to bearish. The open of that prior up-candle now serves as immediate resistance.'
+    ],
+    chartAnatomy: 'Candlestick zoom showing the exact open of the last up-candle with a dashed line, and the subsequent down-candle body closing cleanly below that line, flipping the bias.',
+    identificationRules: [
+      'Must occur after a valid liquidity sweep or PD Array test.',
+      'Candle body MUST close below the open of the prior opposite candle (wicks do not count).',
+      'Look for an accompanying Fair Value Gap to confirm displacement.'
+    ],
+    validCharacteristics: [
+      'Energetic, wide-range down-candle that closes below the opening level with authority.',
+      'Immediate rejection on the next candle when retesting the open.'
+    ],
+    invalidCharacteristics: [
+      'Wicking below the open but closing back above (this is a liquidity probe, not a CSoD).'
+    ],
+    howICTUsesIt: 'Used for sniper entries with minimum drawdown, giving students the ability to enter alongside institutional algorithms before retail sees the chart pattern.',
+    commonMistakes: [
+      'Looking for CSoD inside dead consolidation without an HTF narrative.',
+      'Entering before the candle has officially closed (jumping the gun).'
+    ],
+    advancedNuances: 'When a CSoD occurs directly inside an NDOG or NWOG Consequent Encroachment, it has the highest statistical continuation probability.',
+    prerequisites: ['market_mechanics_liquidity', 'fair_value_gap', 'market_structure_shift'],
+    relatedConcepts: ['Market Structure Shift (MSS)', 'Change of Character (CHoCH)', 'BISI / SIBI', 'NDOG'],
+    bullishScenario: 'NQ drops into London low at 09:33 AM. At 09:36 AM, a strong 1-minute green candle forms and its body closes cleanly above the open of the last down-candle at 19,450. CSoD is confirmed. Long entered at 19,451 with stop at 19,442. Price rallies 60 points.',
+    bearishScenario: 'ES rallies into Previous Day High at 10:02 AM. At 10:05 AM, a red candle closes below the 5,510 open of the impulse candle. CSoD confirms sell-side delivery. Trader shorts at 5,510 targeting Asian low.',
+    counterexample: 'A candle wicking below the open but closing back inside the candle body, followed by immediate continuation.',
+    invalidationCriteria: 'Price immediately reclaiming the swing extreme of the reversal move.',
+    diagramType: 'mss_sequence',
+    simplifiedExplanation: 'Don\'t wait for the whole house to burn down before exiting: when an aggressive candle closes beyond the starting line of the previous run, the algorithm has flipped the delivery switch.'
+  },
+  {
+    id: 'lunch_and_afternoon_macros_2026',
+    name: 'The 2026 Intraday Macro Continuum (Lunch Macro 11:50, Afternoon 13:30 & Final Hour ES)',
+    category: 'time_sessions',
+    shortDefinition: 'The systematic framework for navigating the 11:50-12:10 Lunch Macro, avoiding the 12:10-13:15 retail graveyard, and trading the 13:30 PM acceleration and Final Hour settlement tape.',
+    source: {
+      mentorship: '2026 ICT Smart Money Concepts Lectures',
+      seriesOrMonth: '2026 Live Tape Reading',
+      approximateDate: 'April - May 2026',
+      originalTerminology: 'Lunch Macro, PM Session & Final Hour Tape Reading',
+      conceptStatus: 'Active Core',
+      lectureReference: 'Tapereading / Practice Session Final Hour ES (May 26, 2026)'
+    },
+    tripartiteView: {
+      ictTeaching: 'Retail traders give back all their morning gains between 12:00 and 13:00 EST. Professional trading requires understanding the discrete macro cycles of the second half of the day: the 11:50 AM Lunch Macro sweeps morning liquidity, the 13:30 PM macro activates the afternoon trend, and the 15:00 - 15:30 PM macro shapes the Daily candle into cash close.',
+      observableMarketBehavior: 'Volume and volatility drop drastically at 12:00 PM EST, creating choppy overlapping ranges. At 13:30 PM EST, institutional volume surges, and 15:00 PM initiates heavy index rebalancing.',
+      derivedInterpretation: 'Chronological order execution windows synchronized with institutional desk staffing and exchange closing auctions.'
+    },
+    explanationLadder: {
+      level1Child: 'The market is like a school day: morning classes (09:30 - 11:00), lunch break where everyone plays (12:00 - 13:00), afternoon classes (13:30 - 15:00), and the final bell (15:00 - 16:00). You only trade when the teachers are in class.',
+      level2Beginner: 'Never take trades between 12:10 PM and 13:15 PM EST. Use the 11:50 AM macro to close morning trades, and wait for 13:30 PM to trade the afternoon move.',
+      level3Trader: 'In the afternoon session, identify the high and low established during lunch consolidation. The 13:30 - 14:00 PM macro will sweep one side and displace toward the opposite extreme of the daily range.',
+      level4Advanced: 'In the Final Hour (15:00 - 16:00 EST), tape reading requires evaluating the Daily candle profile. If the Daily candle is an expanding bullish trend, the final hour will rally into 16:00 PM to close at the high of the day.',
+      level5ICTFramework: 'IPDA settlement programs run on strict timer routines. The 15:00 - 15:30 macro delivers the required volume to achieve the designated Daily candle range projection.',
+      whenItMatters: 'Every afternoon trading session in NQ, ES, and YM futures.',
+      whenToIgnore: 'Early market close days (e.g. day before Thanksgiving, Christmas Eve) when afternoon sessions are illiquid.'
+    },
+    whyItExists: 'Institutional market participants operate on fixed daily work schedules, mutual fund closing auctions, and exchange settlement procedures.',
+    problemItSolves: 'Prevents giving back morning profits during choppy lunch hours and provides an actionable playbook for the second half of the trading day.',
+    howItForms: [
+      '11:50 - 12:10 PM EST: Monitor the Lunch Macro for final morning runner profit extraction as price sweeps an extreme.',
+      '12:10 - 13:15 PM EST: Platform shutdown. No new positions permitted.',
+      '13:15 - 13:30 PM EST: Mark the Lunch High and Lunch Low.',
+      '13:30 - 14:00 PM EST: Watch for displacement breaking the lunch range and enter on a 1M/5M FVG retest.',
+      '15:00 - 15:30 PM EST: Execute the Final Hour tape reading setup aligned with the required Daily candle close.'
+    ],
+    chartAnatomy: 'Intraday chart displaying the distinct colored session blocks: AM Session, Lunch Graveyard, PM Acceleration Macro, and Final Hour Settlement Run.',
+    identificationRules: [
+      'Strict adherence to the clock: set alarms for 11:50, 12:10, 13:30, 15:00 EST.',
+      'Lunch range must be clearly mapped before trading the 13:30 macro.',
+      'Final hour trades must align with the Daily candle narrative.'
+    ],
+    validCharacteristics: [
+      'Clean breakout and displacement out of lunch consolidation during 13:30 - 14:00 PM.',
+      'Consistent candle body expansion in the final 30 minutes into the cash close.'
+    ],
+    invalidCharacteristics: [
+      'Trying to scalp 1-minute candles between 12:15 and 13:00 EST.',
+      'Fighting the Daily candle trend during the 15:00 PM settlement run.'
+    ],
+    howICTUsesIt: 'Used to achieve two distinct daily payout opportunities: the AM Trend Run and the PM Expansion Run, while protecting capital during midday.',
+    commonMistakes: [
+      'Revenge trading during lunch after a morning loss.',
+      'Holding afternoon trades through the 16:00 EST cash close when margins spike and spreads widen.'
+    ],
+    advancedNuances: 'On Federal Reserve FOMC days, the entire morning and lunch schedule is suspended; the only tradeable macro of the day is the 14:30 - 15:15 PM post-press-conference run.',
+    prerequisites: ['killzones_sessions', 'po3_amd', 'market_structure_shift'],
+    relatedConcepts: ['New York PM Session', 'Lunch Macro', 'Daily Candle Profiles', 'Settlement Hour'],
+    bullishScenario: 'NQ trends up in the morning, then consolidates between 19,480 and 19,510 during lunch. At 13:32 PM, price dips to 19,475 sweeping lunch low into an NDOG CE, then prints a 5M displacement candle to 19,520. Long entered at 19,512 FVG. NQ expands to 19,590 into the 15:00-15:30 PM settlement macro (+78 points).',
+    bearishScenario: 'ES rejects HTF 4H Bearish FVG in the morning. At 13:35 PM, the PM macro breaks below the lunch consolidation floor. Trader shorts the 1M FVG at 13:40 PM, riding the move down into the 15:15 PM settlement low (+25 points).',
+    counterexample: 'Taking 8 trades back-and-forth between 12:20 PM and 12:50 PM EST and losing 40 points in chop.',
+    invalidationCriteria: 'Trading inside lunch hours or exceeding the daily risk allotment.',
+    diagramType: 'session_timeline',
+    simplifiedExplanation: 'Treat trading like a professional job: work the morning rush, take a real lunch break, come back for the 13:30 PM afternoon wave, and read the tape into the closing bell.'
+  },
+  {
+    id: 'nfp_thursday_hrlr_and_event_volatility',
+    name: 'High Resistance Liquidity Runs (HRLR) on NFP Thursdays & Event Volatility',
+    category: 'liquidity',
+    shortDefinition: 'The tactical protocol for navigating market maker withholding, Seek and Destroy profiles during major central bank events, and micro-contract precision.',
+    source: {
+      mentorship: '2026 ICT Smart Money Concepts Lectures',
+      seriesOrMonth: '2026 Market Commentary',
+      approximateDate: 'May 2026',
+      originalTerminology: 'Trading NFP Thursday High Resistance Liquidity Runs & Jackson Hole Analysis',
+      conceptStatus: 'Advanced Execution',
+      lectureReference: 'Trading NFP Thursday High Resistance Liquidity Runs & 2026 MNQ Trading'
+    },
+    tripartiteView: {
+      ictTeaching: 'Market makers do not offer easy low-resistance liquidity runs every day. On the Thursday before Non-Farm Payroll (NFP) and during speeches like Jackson Hole or FOMC, the algorithm deliberately engages High Resistance Liquidity Runs (HRLR) and Seek & Destroy conditions. The professional move is either to step aside completely or cut risk to 25% using micro contracts (MNQ/MES).',
+      observableMarketBehavior: 'Price moves in small, overlapping, wick-heavy steps where every previous swing point is defended with counter-spikes, resulting in severe whipsaws and false structural breaks.',
+      derivedInterpretation: 'Inventory-neutral market making designed to balance books and harvest retail option/stop premiums ahead of binary macroeconomic shocks.'
+    },
+    explanationLadder: {
+      level1Child: 'Before a hurricane arrives, the sea gets rough and choppy with big waves going every which way. That is what the market does the day before a giant news announcement.',
+      level2Beginner: 'On the Thursday before NFP (first Friday of the month), the market does not want to run far. It moves slowly and chops up traders. Expect hard conditions and do not expect big trends.',
+      level3Trader: 'Identify whether the market is in a Low Resistance Liquidity Run (LRLR - clean one-way displacement) or High Resistance Liquidity Run (HRLR - choppy, dense opposing blocks). If HRLR, reduce target size to 10-15 points on NQ and trail aggressively.',
+      level4Advanced: 'During Seek and Destroy events (Jackson Hole, FOMC), the algorithm sweeps both sides of the initial balance. The only high-probability entry is waiting for the day after the speech, when the market reverts to clean LRLR.',
+      level5ICTFramework: 'IPDA holds price inside a statistical clearing corridor while awaiting the macroeconomic data input, preventing capital commitment before the fundamental repricing mandate.',
+      whenItMatters: 'Every NFP week (specifically Thursday), FOMC statement days, and major central banker symposia (Jackson Hole).',
+      whenToIgnore: 'Normal trend days with clean economic calendar schedules.'
+    },
+    whyItExists: 'Institutional algorithms must avoid accumulating directional directional imbalances ahead of massive volatility events.',
+    problemItSolves: 'Protects trading accounts from the single most common cause of prop firm evaluation failures: blowing up in high-resistance event chop.',
+    howItForms: [
+      'Check economic calendar: verify that tomorrow is NFP or this afternoon is FOMC/Jackson Hole.',
+      'Observe pre-market price action: candle bodies are small, wicks are long on both sides, and displacement candles fail to follow through.',
+      'Classify market environment as High Resistance Liquidity Run (HRLR).',
+      'Decision A (Recommended): Close terminal and paper-trade only.',
+      'Decision B: Reduce risk by 75%, trade 1 Micro contract (MNQ), take 10-15 point quick targets, and set a hard maximum 1-loss rule for the day.'
+    ],
+    chartAnatomy: 'A messy, choppy chart showing multiple overlapping consolidation boxes, long wicks sweeping highs and lows without follow-through, labeled "HRLR - High Resistance Liquidity Run".',
+    identificationRules: [
+      'Calendar alert: NFP week Thursday or FOMC day.',
+      'Price fails to produce clean displacement through swing points, leaving heavy wicks.',
+      'Fair Value Gaps are immediately filled or sliced through in both directions.'
+    ],
+    validCharacteristics: [
+      'Accepting the choppy reality and strictly preserving capital.',
+      'Using micro contracts (MNQ/MES) to keep dollar risk under $50.'
+    ],
+    invalidCharacteristics: [
+      'Using standard lot sizes and expecting a 100-point trend run on NFP Thursday.',
+      'Adding to losing positions as price wicks against you.'
+    ],
+    howICTUsesIt: 'ICT explicitly uses these days to demonstrate market maker withholding and teaches students that patience and capital preservation are their greatest assets.',
+    commonMistakes: [
+      'Assuming every day will offer an easy 2022 mentorship model setup.',
+      'Revenge trading after getting stopped out by a double-sided Seek & Destroy sweep.'
+    ],
+    advancedNuances: 'The day following an NFP Thursday or FOMC speech frequently produces the cleanest Low Resistance Liquidity Run (LRLR) of the entire month—being patient guarantees you have capital to trade it.',
+    prerequisites: ['market_mechanics_liquidity', 'low_resistance_liquidity_runs', 'killzones_sessions'],
+    relatedConcepts: ['LRLR vs HRLR', 'Seek and Destroy Profile', 'NFP Thursday', 'Micro Contracts MNQ'],
+    bullishScenario: 'Trader recognizes NFP Thursday. Instead of trading 4 NQ contracts, trader executes 1 MNQ micro contract on a small 10-point scalp off London low, banks +$30, and shuts down the computer by 10:15 AM with account 100% intact.',
+    bearishScenario: 'Trader recognizes FOMC at 14:00 PM. Morning ES price action is trapped in a 6-point range with alternating wicks. Trader steps aside completely, waits for Friday morning post-announcement, and catches a clean 40-point LRLR trend.',
+    counterexample: 'Trading 5 NQ contracts on NFP Thursday at 11:30 AM, getting whipped on both sides, and blowing a $50,000 prop firm evaluation.',
+    invalidationCriteria: 'Exceeding 0.25% risk or taking multiple discretionary trades in choppy market regimes.',
+    diagramType: 'liquidity_sweep',
+    simplifiedExplanation: 'When storm flags are raised before a hurricane, smart sailors stay in the harbor. On NFP Thursdays and FOMC days, preserve your cash and let the amateurs get washed away.'
   }
 ];

@@ -491,5 +491,240 @@ export const chartScenarios: ChartScenario[] = [
         activeLayers: ['BSL']
       }
     ]
+  },
+  {
+    id: 'eur_mmbm_propulsion_model',
+    title: 'EUR/USD: Market Maker Buy Model (MMBM) with Propulsion Block',
+    asset: 'EUR/USD',
+    timeframe: '15M',
+    htfContext: 'Daily Trend: Bullish | IPDA 60-Day Lookback: Discount | Target: Equal Highs & Original Consolidation (1.0920)',
+    description: 'Textbook execution of the Month 6/7 Market Maker Buy Model (MMBM) on EUR/USD. Original consolidation at 1.0910-1.0920, sell-side curve sweeps Asian Low into 4H Bullish OB at 1.0820, Smart Money Reversal (SMR) prints MSS, followed by a violent Propulsion Block test that rockets into the Original Consolidation.',
+    candles: [
+      // Original Consolidation (Candles 0-4)
+      { time: '01:00', open: 1.0910, high: 1.0922, low: 1.0905, close: 1.0915, session: 'Asia' },
+      { time: '02:00', open: 1.0915, high: 1.0920, low: 1.0902, close: 1.0908, session: 'Asia' },
+      { time: '03:00', open: 1.0908, high: 1.0916, low: 1.0898, close: 1.0902, session: 'Asia' },
+      { time: '04:00', open: 1.0902, high: 1.0906, low: 1.0888, close: 1.0892, session: 'Asia' },
+      { time: '05:00', open: 1.0892, high: 1.0895, low: 1.0875, close: 1.0880, session: 'London' },
+
+      // Sell-Side Curve & Accumulation (Candles 5-8)
+      { time: '06:00', open: 1.0880, high: 1.0884, low: 1.0855, close: 1.0860, session: 'London' },
+      { time: '07:00', open: 1.0860, high: 1.0865, low: 1.0835, close: 1.0840, session: 'London' },
+      { time: '08:00', open: 1.0840, high: 1.0845, low: 1.0818, close: 1.0822, session: 'London' }, // Sweeps SSL into HTF 4H OB at 1.0820
+      { time: '08:30', open: 1.0822, high: 1.0850, low: 1.0815, close: 1.0848, session: 'New York AM' }, // Smart Money Reversal (SMR) pinbar rejection
+
+      // Buy-Side Curve: MSS & Initial Order Block (Candles 9-11)
+      { time: '09:00', open: 1.0848, high: 1.0878, low: 1.0842, close: 1.0875, session: 'New York AM' }, // Displacement & MSS breaking 1.0865
+      { time: '09:30', open: 1.0875, high: 1.0880, low: 1.0852, close: 1.0862, session: 'New York AM' }, // Retest of Bullish OB at 1.0855
+      { time: '10:00', open: 1.0862, high: 1.0892, low: 1.0858, close: 1.0890, session: 'New York AM' }, // Reaction candle = PROPULSION BLOCK!
+
+      // Propulsion Block Re-test & Parabolic Run (Candles 12-16)
+      { time: '10:30', open: 1.0890, high: 1.0895, low: 1.0870, close: 1.0888, session: 'New York AM' }, // Dips into top of Propulsion Block (1.0870) and holds!
+      { time: '11:00', open: 1.0888, high: 1.0915, low: 1.0885, close: 1.0910, session: 'New York AM' }, // Low-resistance run
+      { time: '11:30', open: 1.0910, high: 1.0935, low: 1.0908, close: 1.0930, session: 'New York AM' }, // Smashes Original Consolidation BSL (1.0920)
+      { time: '12:00', open: 1.0930, high: 1.0945, low: 1.0925, close: 1.0938, session: 'London Close' },
+      { time: '12:30', open: 1.0938, high: 1.0942, low: 1.0930, close: 1.0935, session: 'New York PM' }
+    ],
+    annotations: [
+      {
+        id: 'eur-orig-cons',
+        type: 'BSL',
+        label: 'Original Consolidation (1.0910 - 1.0922)',
+        priceLevel: 1.0922,
+        candleIndexStart: 0,
+        candleIndexEnd: 4,
+        description: 'The starting anchor of the Market Maker Buy Model and final upside objective.'
+      },
+      {
+        id: 'eur-smr-sweep',
+        type: 'SWEEP',
+        label: 'Smart Money Reversal (SMR) at 1.0815',
+        priceLevel: 1.0815,
+        candleIndexStart: 7,
+        candleIndexEnd: 8,
+        description: 'Deep sell-side liquidity sweep into the 4H Bullish Order Block.'
+      },
+      {
+        id: 'eur-mss',
+        type: 'MSS',
+        label: 'Market Structure Shift (1.0865)',
+        priceLevel: 1.0865,
+        candleIndexStart: 9,
+        candleIndexEnd: 9,
+        description: 'Aggressive displacement breaking previous swing high, confirming Buy-Side curve.'
+      },
+      {
+        id: 'eur-propulsion',
+        type: 'OB',
+        label: 'Propulsion Block (1.0860 - 1.0875)',
+        priceTop: 1.0875,
+        priceBottom: 1.0860,
+        candleIndexStart: 11,
+        candleIndexEnd: 12,
+        description: 'Reaction candle off the underlying OB. Price touches 1.0870 and launches without penetrating MT.',
+        isBullish: true
+      },
+      {
+        id: 'eur-target-bsl',
+        type: 'BSL',
+        label: 'MMBM Terminal Target: 1.0922',
+        priceLevel: 1.0922,
+        candleIndexStart: 14,
+        candleIndexEnd: 15,
+        description: 'Complete round-trip delivery to the Original Consolidation BSL (+110 pips).'
+      }
+    ],
+    replaySteps: [
+      {
+        candleIndex: 3,
+        title: 'Phase 1: Original Consolidation Identified',
+        narrative: 'EUR/USD establishes the Original Consolidation between 1.0910 and 1.0922 during the Asian session. When price breaks lower, this consolidation becomes our macro algorithmic target.',
+        activeLayers: ['BSL']
+      },
+      {
+        candleIndex: 8,
+        title: 'Phase 2: Sell-Side Curve & Smart Money Reversal (SMR)',
+        narrative: 'Price expands lower on the sell-side curve, raiding Asian lows and dipping into the 4H Bullish Order Block at 1.0820. A long lower rejection wick marks the institutional absorption.',
+        activeLayers: ['BSL', 'SWEEP']
+      },
+      {
+        candleIndex: 9,
+        title: 'Phase 3: Buy-Side Curve Activation & MSS',
+        narrative: 'A large green displacement candle punches through swing high 1.0865, printing a clean Market Structure Shift (MSS). The buy-side curve of the MMBM is officially active.',
+        activeLayers: ['MSS']
+      },
+      {
+        candleIndex: 12,
+        title: 'Phase 4: Propulsion Block Limit Execution',
+        narrative: 'Price re-tests the initial order block, forming a secondary reaction candle: the Propulsion Block. On the next candle, price dips into 1.0870 and immediately rejects, providing a pristine low-risk entry.',
+        activeLayers: ['OB']
+      },
+      {
+        candleIndex: 14,
+        title: 'Phase 5: Low-Resistance Run into Original Consolidation',
+        narrative: 'With all sell-side liquidity absorbed, price stages a Low Resistance Liquidity Run (LRLR), surging straight into the Original Consolidation BSL at 1.0922 for a massive +110 pip delivery.',
+        activeLayers: ['BSL']
+      }
+    ]
+  },
+  {
+    id: 'nq_2026_ath_alchemy_ndog_macro',
+    title: '2026 NQ: NDOG Consequent Encroachment, 09:50 Macro IFVG & ATH Fibonacci Alchemy',
+    asset: 'NQ (E-mini NASDAQ-100 Futures)',
+    timeframe: '5-Minute / 1-Minute Nested',
+    htfContext: 'NASDAQ trading at All-Time Highs (ATH) with no historical resistance. Pre-market NDOG sits between 19,400 (close) and 19,450 (open) with 50% CE at 19,425. Recent dealing range: 19,150 low to 19,450 high. Target 1.618 Fibonacci expansion is 19,585.',
+    description: 'The definitive 2026 execution sequence: 08:30 pre-market sweep, 09:30 cash open Judas swing into the NDOG 50% CE, 09:50 AM Macro Inversion FVG long entry, and parabolic blue-sky expansion to the 1.618 Fibonacci dealing range target at 19,585.',
+    candles: [
+      { time: '09:15', open: 19445, high: 19455, low: 19438, close: 19440, session: 'New York AM' },
+      { time: '09:20', open: 19440, high: 19448, low: 19432, close: 19435, session: 'New York AM' },
+      { time: '09:25', open: 19435, high: 19442, low: 19430, close: 19438, session: 'New York AM' },
+      { time: '09:30', open: 19438, high: 19462, low: 19435, close: 19458, session: 'New York AM' }, // Cash Open pump
+      { time: '09:35', open: 19458, high: 19460, low: 19422, close: 19428, session: 'New York AM' }, // Judas Swing down into NDOG CE
+      { time: '09:40', open: 19428, high: 19436, low: 19423, close: 19434, session: 'New York AM' }, // Rejection from NDOG 50% CE
+      { time: '09:45', open: 19434, high: 19452, low: 19430, close: 19450, session: 'New York AM' }, // Displacement breaking prior swing
+      { time: '09:50', open: 19450, high: 19472, low: 19448, close: 19470, session: 'New York AM' }, // 09:50 Macro start: explosive run breaching bearish FVG
+      { time: '09:55', open: 19470, high: 19474, low: 19452, close: 19468, session: 'New York AM' }, // Dip into IFVG (19,455-19,452) & instant bounce
+      { time: '10:00', open: 19468, high: 19495, low: 19466, close: 19492, session: 'New York AM' }, // 10:00 AM macro continuation
+      { time: '10:05', open: 19492, high: 19520, low: 19490, close: 19515, session: 'New York AM' }, // Breaking previous ATH
+      { time: '10:10', open: 19515, high: 19532, low: 19510, close: 19528, session: 'New York AM' }, // 09:50-10:10 macro wrap
+      { time: '10:15', open: 19528, high: 19542, low: 19522, close: 19538, session: 'New York AM' },
+      { time: '10:30', open: 19538, high: 19565, low: 19535, close: 19560, session: 'New York AM' },
+      { time: '10:45', open: 19560, high: 19588, low: 19555, close: 19584, session: 'New York AM' }, // Hits 1.618 Fib Extension at 19,585
+      { time: '10:50', open: 19584, high: 19587, low: 19568, close: 19572, session: 'New York AM' }  // Small body exhaustion at 1.618
+    ],
+    annotations: [
+      {
+        id: 'ndog-zone',
+        type: 'FVG',
+        label: 'NDOG (19,400 - 19,450) & 50% CE: 19,425',
+        priceTop: 19450,
+        priceBottom: 19400,
+        candleIndexStart: 0,
+        candleIndexEnd: 6,
+        description: 'New Day Opening Gap from 17:00 close to 18:00 re-open. The 50% Consequent Encroachment at 19,425 serves as key institutional support.',
+        isBullish: true
+      },
+      {
+        id: 'judas-sweep',
+        type: 'SWEEP',
+        label: '09:35 AM Judas Swing Sweep into NDOG CE',
+        priceLevel: 19422,
+        candleIndexStart: 4,
+        candleIndexEnd: 5,
+        description: 'Violent 36-point dump triggering retail sell stops and wicking directly into 19,425 NDOG CE before rejecting.'
+      },
+      {
+        id: 'mss-csod',
+        type: 'MSS',
+        label: 'CSoD & MSS at 19,452',
+        priceLevel: 19452,
+        candleIndexStart: 6,
+        candleIndexEnd: 7,
+        description: 'Displacement candle body slices cleanly through prior down-candle opens, flipping delivery to buy-side.'
+      },
+      {
+        id: 'inversion-fvg',
+        type: 'IFVG',
+        label: '09:50 Macro Inversion FVG (19,452 - 19,456)',
+        priceTop: 19456,
+        priceBottom: 19452,
+        candleIndexStart: 8,
+        candleIndexEnd: 9,
+        description: 'Former bearish FVG sliced upward during 09:50 macro, inverting into unbreakable algorithmic support.',
+        isBullish: true
+      },
+      {
+        id: 'fib-1618-ath',
+        type: 'BSL',
+        label: '1.618 Fibonacci ATH Target: 19,585',
+        priceLevel: 19585,
+        candleIndexStart: 13,
+        candleIndexEnd: 15,
+        description: 'Algorithmic profit objective projected from 19,150-19,450 dealing range, hit precisely at 10:45 AM (+130 pts).'
+      }
+    ],
+    replaySteps: [
+      {
+        candleIndex: 2,
+        title: 'Step 1: Pre-Market Context & NDOG Mapping',
+        narrative: 'Before the 09:30 open, we mark the New Day Opening Gap (19,400 to 19,450) and its 50% Consequent Encroachment (19,425). NQ is poised to break into fresh All-Time Highs with 1.618 Fib projection sitting at 19,585.',
+        activeLayers: ['FVG']
+      },
+      {
+        candleIndex: 5,
+        title: 'Step 2: The 09:30 Judas Swing & NDOG CE Defense',
+        narrative: 'At 09:30 AM, price spikes up to 19,462, then violently dumps down to 19,422 at 09:35 AM. Retail panic-sells the breakdown. However, the candle body closes at 19,428, strictly defending the 19,425 NDOG 50% CE. Sell stops have been absorbed.',
+        activeLayers: ['FVG', 'SWEEP'],
+        question: {
+          prompt: 'Why do we NOT short when price dumps to 19,422 at 09:35 AM?',
+          options: [
+            'Because shorting is illegal during the 09:30 open.',
+            'Because the dump is the classic 09:30 Judas Swing testing the 50% Consequent Encroachment of the NDOG in a bullish daily bias.',
+            'Because the RSI was oversold.',
+            'Because the 200-period EMA was nearby.'
+          ],
+          correctIndex: 1,
+          explanation: 'The 09:30 open dump is a textbook Judas Swing. It ran sell stops directly into the pre-market NDOG 50% CE (19,425) to engineer institutional discount buy liquidity.'
+        }
+      },
+      {
+        candleIndex: 7,
+        title: 'Step 3: CSoD & 09:50 AM Macro Displacement',
+        narrative: 'Between 09:45 and 09:50 AM, price displaces aggressively upward, slicing through 19,452. The 09:50 AM Macro starts with strong green bodies, breaching a pre-market bearish FVG and turning it into an Inversion FVG.',
+        activeLayers: ['MSS', 'IFVG']
+      },
+      {
+        candleIndex: 9,
+        title: 'Step 4: Precision Inversion FVG Limit Entry',
+        narrative: 'At 09:55 AM, price retraces down into 19,452, perfectly kissing the Inversion FVG. A limit order is triggered at 19,455 with stop loss at 19,420 (below NDOG CE). Risk is strictly 35 points on NQ (or $70 on 1 MNQ micro).',
+        activeLayers: ['IFVG']
+      },
+      {
+        candleIndex: 14,
+        title: 'Step 5: Blue Sky ATH Expansion & 1.618 Fibonacci Alchemy Delivery',
+        narrative: 'NQ enters Blue Sky delivery, breaking all historical resistance. Through the 10:00 AM macro and 10:30 AM continuation, price surges cleanly to 19,588, tagging the exact 1.618 Fibonacci extension of the 19,150-19,450 dealing range. All contracts liquidated for a massive +130 point gain.',
+        activeLayers: ['BSL']
+      }
+    ]
   }
 ];

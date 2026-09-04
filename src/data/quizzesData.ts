@@ -135,6 +135,81 @@ export const quizQuestions: QuizQuestion[] = [
     correctIndex: 1,
     explanation: 'The 1M FVG is the final execution mechanism. Context comes first: Weekly Draw -> Daily Location -> 15M Liquidity Event -> 5M Displacement -> 1M FVG Entry.',
     difficulty: 'beginner'
+  },
+  {
+    id: 'q-2026-trinity-1',
+    conceptId: 'from_vision_to_execution',
+    type: 'reasoning',
+    question: "Under the 2026 ICT 'Trinity Rule', an institutional trade execution is only permitted when which three components align unanimously?",
+    options: [
+      'RSI, MACD, and Bollinger Bands',
+      'Time (Macro Windows), Price (PD Arrays / Liquidity), and Narrative (Draw on Liquidity)',
+      'Moving Average 50, Moving Average 200, and Volume Profile',
+      'Broker Spread, Account Balance, and Leverage'
+    ],
+    correctIndex: 1,
+    explanation: 'The 2026 Trinity Rule dictates that Time (specific algorithmic macro windows), Price (unmitigated institutional PD Arrays), and Narrative (HTF Draw on Liquidity) must achieve unanimous alignment before executing.',
+    difficulty: 'intermediate'
+  },
+  {
+    id: 'q-2026-ath-fib-1',
+    conceptId: 'market_alchemy_ath',
+    type: 'execution',
+    question: 'When an asset trades into uncharted All-Time Highs (ATH) with no historical resistance, how does ICT derive institutional profit targets?',
+    options: [
+      'Drawing random trendlines across highs',
+      'Anchoring Fibonacci expansion ratios (1.272, 1.618, 2.0) across the preceding consolidation dealing range',
+      'Shorting aggressively because the price is too high',
+      'Waiting for the price to drop back to zero'
+    ],
+    correctIndex: 1,
+    explanation: 'In blue-sky ATH conditions, IPDA quotes price algorithmically based on Fibonacci expansion multiples (1.272, 1.618, 2.0, 2.618) anchored from the high to low of the dealing range that preceded the breakout.',
+    difficulty: 'advanced'
+  },
+  {
+    id: 'q-2026-ndog-1',
+    conceptId: 'opening_gap_matrix_ndog_nwog',
+    type: 'recognition',
+    question: 'What creates the New Day Opening Gap (NDOG) in index futures, and which level within it is the highest-priority algorithmic pivot?',
+    options: [
+      'The distance between the 17:00 EST daily close and 18:00 EST re-open; its 50% Consequent Encroachment (CE) serves as the primary pivot.',
+      'The difference between Apple and Microsoft opening prices; the average is the pivot.',
+      'Any gap between two intraday 1-minute candles.',
+      'The gap between midnight and 08:30 AM.'
+    ],
+    correctIndex: 0,
+    explanation: 'The NDOG is the CME settlement gap between 17:00 EST close and 18:00 EST open. Even if traded through overnight, the 50% Consequent Encroachment remains an active algorithmic magnetic benchmark.',
+    difficulty: 'intermediate'
+  },
+  {
+    id: 'q-2026-csod-1',
+    conceptId: 'changing_state_of_delivery',
+    type: 'execution',
+    question: 'What is the technical definition of a Changing State of Delivery (CSoD) indicating an immediate shift to Sell-Side delivery?',
+    options: [
+      'When a candle body closes below the opening price of the lowest consecutive up-close candle in that immediate run.',
+      'When the 14-period RSI crosses below 30.',
+      'When price breaks a 4-hour swing low.',
+      'When price wicks below an old high.'
+    ],
+    correctIndex: 0,
+    explanation: 'CSoD is the earliest order flow regime shift: a down-close candle body closing below the opening price of the prior expansion candle, flipping algorithmic delivery from BISI to SIBI before an MSS forms.',
+    difficulty: 'advanced'
+  },
+  {
+    id: 'q-2026-nfp-thursday-1',
+    conceptId: 'nfp_thursday_hrlr_and_event_volatility',
+    type: 'execution',
+    question: 'Why does ICT recommend stepping aside or cutting risk to 25% on NFP Thursdays and FOMC release mornings?',
+    options: [
+      'Because brokers turn off the charts.',
+      'Because the algorithm engages High Resistance Liquidity Runs (HRLR) and Seek & Destroy conditions ahead of binary event shocks.',
+      'Because markets close at 10:00 AM on Thursdays.',
+      'Because Fibonacci tools do not work on Thursdays.'
+    ],
+    correctIndex: 1,
+    explanation: 'Prior to major macroeconomic releases, IPDA holds price in tight, choppy clearing corridors with overlapping swings (HRLR) to avoid directional inventory imbalances, resulting in whipsaws for retail traders.',
+    difficulty: 'intermediate'
   }
 ];
 
@@ -169,10 +244,17 @@ export const quizzes: QuizModule[] = [
     questions: quizQuestions.slice(5, 8)
   },
   {
+    id: 'quiz-2026-mastery',
+    title: 'Exam 4: 2026 Smart Money Concepts & Execution',
+    description: 'Test your precision on the 2026 curriculum: Trinity Rule, ATH Alchemy, NDOG Matrices, CSoD, and Macro Continuum.',
+    level: 'Level 5 (2026 Master)',
+    questions: quizQuestions.slice(8)
+  },
+  {
     id: 'quiz-mastery',
-    title: 'Final Certification Exam: Top-Down Execution Models',
-    description: 'Comprehensive evaluation covering the entire ICT sequence from HTF bias to execution triggers.',
-    level: 'Level 5 (Elite)',
+    title: 'Final Comprehensive Certification Exam',
+    description: 'Complete cross-curriculum evaluation covering foundations through 2026 advanced execution protocols.',
+    level: 'Grandmaster',
     questions: quizQuestions
   }
 ];

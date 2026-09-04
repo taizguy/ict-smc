@@ -12,12 +12,13 @@ import { MasteryDashboard } from './components/MasteryDashboard';
 import { SearchModal } from './components/SearchModal';
 import { MentorSpotlight } from './components/MentorSpotlight';
 import { OpeningScreen } from './components/OpeningScreen';
+import { MasoodAcademyView } from './components/masood/MasoodAcademyView';
 import { Youtube, Sparkles, Heart } from 'lucide-react';
 
 export const App: React.FC = () => {
   const [showOpeningScreen, setShowOpeningScreen] = useState<boolean>(true);
   const [activeTab, setActiveTab] = useState<
-    'textbook' | 'concepts' | 'chartlab' | 'graph' | 'compare' | 'simulator' | 'journal' | 'backtest' | 'dashboard'
+    'textbook' | 'concepts' | 'chartlab' | 'graph' | 'compare' | 'simulator' | 'journal' | 'backtest' | 'dashboard' | 'masood'
   >('textbook');
 
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
@@ -79,6 +80,8 @@ export const App: React.FC = () => {
           />
         )}
 
+        {activeTab === 'masood' && <MasoodAcademyView />}
+
         {activeTab === 'concepts' && (
           <ConceptExplorer
             onSelectConcept={handleSelectConcept}
@@ -117,6 +120,11 @@ export const App: React.FC = () => {
       <MentorSpotlight
         isOpen={isMentorSpotlightOpen}
         onClose={() => setIsMentorSpotlightOpen(false)}
+        onOpenMasoodAcademy={() => {
+          setIsMentorSpotlightOpen(false);
+          setActiveTab('masood');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
       />
 
       {/* Footer & Special Tribute Section */}
@@ -140,6 +148,16 @@ export const App: React.FC = () => {
             </div>
 
             <div className="flex items-center gap-3 shrink-0">
+              <button
+                onClick={() => {
+                  setActiveTab('masood');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="px-4 py-2 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-mono text-xs font-extrabold flex items-center gap-2 shadow-md shadow-red-600/20 transition-all hover:scale-105"
+              >
+                <Youtube className="w-4 h-4" />
+                <span>Masood's Academy (52 Lectures)</span>
+              </button>
               <button
                 onClick={() => setIsMentorSpotlightOpen(true)}
                 className="px-4 py-2 rounded-xl bg-white hover:bg-amber-50 text-amber-900 border border-amber-300 font-mono text-xs font-bold transition-all hover:scale-105 shadow-sm"

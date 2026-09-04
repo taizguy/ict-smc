@@ -30,13 +30,15 @@ interface MentorSpotlightProps {
   onClose: () => void;
   onSelectConcept?: (conceptId: string) => void;
   onSelectChapter?: (chapterId: number) => void;
+  onOpenMasoodAcademy?: () => void;
 }
 
 export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
   isOpen,
   onClose,
   onSelectConcept,
-  onSelectChapter
+  onSelectChapter,
+  onOpenMasoodAcademy
 }) => {
   const [activeTab, setActiveTab] = useState<'tribute' | 'curriculum' | 'daily_bias_checklist' | 'gold_legacy'>('tribute');
   const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
@@ -178,17 +180,29 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
               </div>
             </div>
 
-            {/* Direct Channel Link Button */}
-            <a
-              href={channelUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-mono text-xs font-bold flex items-center justify-center gap-2 shadow-md shadow-red-500/20 transition-all shrink-0 hover:scale-105 active:scale-95 group"
-            >
-              <Youtube className="w-4 h-4 fill-current" />
-              <span>Visit & Learn on YouTube</span>
-              <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-            </a>
+            <div className="flex flex-wrap items-center gap-2.5 w-full sm:w-auto">
+              {onOpenMasoodAcademy && (
+                <button
+                  onClick={onOpenMasoodAcademy}
+                  className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-300 font-mono text-xs font-extrabold flex items-center justify-center gap-2 shadow-md transition-all hover:scale-105 active:scale-95"
+                >
+                  <Sparkles className="w-4 h-4 text-amber-400" />
+                  <span>Open Masood's Academy (52 Lessons)</span>
+                </button>
+              )}
+
+              {/* Direct Channel Link Button */}
+              <a
+                href={channelUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-mono text-xs font-bold flex items-center justify-center gap-2 shadow-md shadow-red-500/20 transition-all shrink-0 hover:scale-105 active:scale-95 group"
+              >
+                <Youtube className="w-4 h-4 fill-current" />
+                <span>Visit & Learn on YouTube</span>
+                <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+            </div>
           </div>
 
           {/* Nav Tabs */}

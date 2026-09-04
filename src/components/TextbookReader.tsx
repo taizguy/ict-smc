@@ -182,7 +182,15 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
         <div className="space-y-8 animate-fadeIn">
           {/* Filter & Search Bar */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-1 scrollbar-none">
+            <div 
+              onWheel={(e) => { 
+                if (e.deltaY !== 0) {
+                  e.currentTarget.scrollLeft += e.deltaY;
+                }
+              }} 
+              className="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-1 scrollbar-thin scroll-smooth"
+              style={{ WebkitOverflowScrolling: 'touch' }}
+            >
               <button
                 onClick={() => setSelectedPartFilter('all')}
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold whitespace-nowrap transition-all ${

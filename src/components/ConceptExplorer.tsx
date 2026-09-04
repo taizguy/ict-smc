@@ -63,7 +63,15 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
   return (
     <div className="space-y-6">
       {/* Category Pills Header */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+      <div 
+        onWheel={(e) => { 
+          if (e.deltaY !== 0) {
+            e.currentTarget.scrollLeft += e.deltaY;
+          }
+        }} 
+        className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-thin scroll-smooth"
+        style={{ WebkitOverflowScrolling: 'touch' }}
+      >
         {categories.map((cat) => (
           <button
             key={cat.id}

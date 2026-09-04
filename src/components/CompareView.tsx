@@ -1,11 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { conceptComparisons } from '../data/comparisonsData';
 import { ConceptComparison } from '../types';
-import { GitCompare, AlertTriangle, Scale } from 'lucide-react';
+import { GitCompare, AlertTriangle, Scale, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export const CompareView: React.FC = () => {
   const [selectedComparisonId, setSelectedComparisonId] = useState<string>(conceptComparisons[0].id);
   const comparison = conceptComparisons.find((c) => c.id === selectedComparisonId) || conceptComparisons[0];
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState<boolean>(false);
+  const [canScrollRight, setCanScrollRight] = useState<boolean>(false);
+
+  const checkScroll = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 4);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 4);
+    }
+  };
+
+  useEffect(() => {
+    checkScroll();
+    const el = scrollContainerRef.current;
+    if (el) {
+      el.addEventListener('scroll', checkScroll);
+      window.addEventListener('resize', checkScroll);
+      return () => {
+        el.removeEventListener('scroll', checkScroll);
+        window.removeEventListener('resize', checkScroll);
+      };
+    }
+  }, [selectedComparisonId]);
+
+  useEffect(() => {
+    const activeEl = scrollContainerRef.current?.querySelector(`[data-active="true"]`);
+    if (activeEl) {
+      activeEl.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }, [selectedComparisonId]);
+
+  const handleScroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: direction === 'left' ? -250 : 250,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    if (e.deltaY !== 0 && scrollContainerRef.current) {
+      scrollContainerRef.current.scrollLeft += e.deltaY;
+    }
+  };
 
   return (
     <div className="space-y-6">
@@ -23,21 +69,53 @@ export const CompareView: React.FC = () => {
           </div>
         </div>
 
-        {/* Comparison Selector Chips */}
-        <div className="flex items-center gap-2 overflow-x-auto pt-4 mt-2 border-t border-slate-200 scrollbar-none">
-          {conceptComparisons.map((c) => (
-            <button
-              key={c.id}
-              onClick={() => setSelectedComparisonId(c.id)}
-              className={`px-4 py-2 rounded-xl text-xs font-mono font-medium whitespace-nowrap transition-all ${
-                selectedComparisonId === c.id
-                  ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white font-bold shadow-md shadow-sky-600/20'
-                  : 'bg-slate-100 border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-200'
-              }`}
-            >
-              {c.title.split(':')[0]}
-            </button>
-          ))}
+        {/* Comparison Selector Chips with Scroll Chevrons & Wheel Support */}
+        <div className="relative flex items-center pt-4 mt-2 border-t border-slate-200">
+          <button
+            type="button"
+            onClick={() => handleScroll('left')}
+            className={`flex items-center justify-center w-8 h-8 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-slate-900 shadow-sm transition-all mr-2 shrink-0 ${
+              canScrollLeft ? 'opacity-100 hover:bg-slate-50' : 'opacity-25 pointer-events-none'
+            }`}
+            title="Scroll comparisons left"
+            aria-label="Scroll comparisons left"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+
+          <div
+            ref={scrollContainerRef}
+            onWheel={handleWheel}
+            className="flex items-center gap-2 overflow-x-auto scrollbar-thin py-1 scroll-smooth w-full"
+            style={{ WebkitOverflowScrolling: 'touch' }}
+          >
+            {conceptComparisons.map((c) => (
+              <button
+                key={c.id}
+                data-active={selectedComparisonId === c.id ? 'true' : 'false'}
+                onClick={() => setSelectedComparisonId(c.id)}
+                className={`px-4 py-2 rounded-xl text-xs font-mono font-medium whitespace-nowrap transition-all shrink-0 ${
+                  selectedComparisonId === c.id
+                    ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white font-bold shadow-md shadow-sky-600/20'
+                    : 'bg-slate-100 border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-200'
+                }`}
+              >
+                {c.title.split(':')[0]}
+              </button>
+            ))}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => handleScroll('right')}
+            className={`flex items-center justify-center w-8 h-8 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-slate-900 shadow-sm transition-all ml-2 shrink-0 ${
+              canScrollRight ? 'opacity-100 hover:bg-slate-50' : 'opacity-25 pointer-events-none'
+            }`}
+            title="Scroll comparisons right"
+            aria-label="Scroll comparisons right"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
         </div>
       </div>
 

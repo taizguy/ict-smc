@@ -257,3 +257,33 @@ export interface BacktestSummary {
     session: string;
   }[];
 }
+
+export type MasoodPlaylistId = 'beginners' | 'advanced' | 'daily_bias' | 'godfather' | 'psychology' | 'syndicate';
+
+export interface MasoodLecture {
+  id: string;
+  lectureNumber: number;
+  title: string;
+  youtubeId: string;
+  playlistType: MasoodPlaylistId;
+  shortSummary: string;
+  keyTakeaways: string[];
+  coreRules: string[];
+  tradingChecklist: string[];
+  commonMistakes: string[];
+  practicalExercise: string;
+  bilingualNotes?: string;
+  animationType?: 'po3_expansion' | 'seek_and_destroy' | 'smt_divergence' | 'mmxm_curve' | 'volume_imbalance' | 'session_clock' | 'timeframe_fractal' | 'prop_drawdown' | 'gold_smc' | 'tape_reading' | 'godfather_laws';
+}
+
+export interface MasoodPlaylist {
+  id: MasoodPlaylistId;
+  title: string;
+  subtitle: string;
+  badge: string;
+  description: string;
+  targetAudience: string;
+  prerequisites: string[];
+  lecturesCount: number;
+  lectures: MasoodLecture[];
+}

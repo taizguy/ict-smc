@@ -1,6 +1,6 @@
 {
   "name": "ICT & SMC Academy",
-  "description": "Comprehensive interactive learning platform, digital textbook, and chart laboratory for Inner Circle Trader (ICT) and Smart Money Concepts (SMC).",
+  "description": "Comprehensive interactive learning platform, digital textbook, Trader Abdullah Masood mentorship academy, and chart laboratory for Inner Circle Trader (ICT) and Smart Money Concepts (SMC).",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

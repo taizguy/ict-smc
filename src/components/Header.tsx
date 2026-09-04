@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { BookOpen, Compass, BarChart2, GitFork, GitCompare, PlayCircle, BookMarked, Cpu, Search, Clock, Award, Shield, Youtube, Sparkles, Heart, HelpCircle } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { 
+  BookOpen, Compass, BarChart2, GitFork, GitCompare, PlayCircle, 
+  BookMarked, Cpu, Search, Clock, Award, Shield, Youtube, Sparkles, 
+  Heart, HelpCircle, ChevronLeft, ChevronRight 
+} from 'lucide-react';
 
 interface HeaderProps {
-  activeTab: 'textbook' | 'concepts' | 'chartlab' | 'graph' | 'compare' | 'simulator' | 'journal' | 'backtest' | 'dashboard';
-  setActiveTab: (tab: 'textbook' | 'concepts' | 'chartlab' | 'graph' | 'compare' | 'simulator' | 'journal' | 'backtest' | 'dashboard') => void;
+  activeTab: 'textbook' | 'concepts' | 'chartlab' | 'graph' | 'compare' | 'simulator' | 'journal' | 'backtest' | 'dashboard' | 'masood';
+  setActiveTab: (tab: 'textbook' | 'concepts' | 'chartlab' | 'graph' | 'compare' | 'simulator' | 'journal' | 'backtest' | 'dashboard' | 'masood') => void;
   onOpenSearch: () => void;
   onOpenMentorSpotlight?: () => void;
   onOpenWelcomeIntro?: () => void;
@@ -20,6 +24,53 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const [nyTime, setNyTime] = useState<string>('');
   const [activeSession, setActiveSession] = useState<string>('Asian');
+  const navScrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState<boolean>(false);
+  const [canScrollRight, setCanScrollRight] = useState<boolean>(false);
+
+  const checkScroll = () => {
+    if (navScrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = navScrollRef.current;
+      setCanScrollLeft(scrollLeft > 4);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 4);
+    }
+  };
+
+  useEffect(() => {
+    checkScroll();
+    const el = navScrollRef.current;
+    if (el) {
+      el.addEventListener('scroll', checkScroll);
+      window.addEventListener('resize', checkScroll);
+      return () => {
+        el.removeEventListener('scroll', checkScroll);
+        window.removeEventListener('resize', checkScroll);
+      };
+    }
+  }, [activeTab]);
+
+  useEffect(() => {
+    const activeEl = navScrollRef.current?.querySelector(`[data-active="true"]`);
+    if (activeEl) {
+      activeEl.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }, [activeTab]);
+
+  const scrollNav = (direction: 'left' | 'right') => {
+    if (navScrollRef.current) {
+      const scrollAmount = 260;
+      navScrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleNavWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    if (e.deltaY !== 0 && navScrollRef.current) {
+      navScrollRef.current.scrollLeft += e.deltaY;
+    }
+  };
 
   // Clock in NY time
   useEffect(() => {
@@ -55,6 +106,7 @@ export const Header: React.FC<HeaderProps> = ({
 
   const navItems = [
     { id: 'textbook', label: 'Bible & Textbook', icon: BookOpen },
+    { id: 'masood', label: "Masood's Academy", icon: Youtube },
     { id: 'concepts', label: 'Encyclopedia', icon: Compass },
     { id: 'chartlab', label: 'Chart Lab', icon: BarChart2 },
     { id: 'graph', label: 'Knowledge Graph', icon: GitFork },
@@ -141,7 +193,7 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Main Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4 overflow-x-auto scrollbar-none">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-3 relative">
         {/* Brand / Logo */}
         <button
           onClick={() => {
@@ -157,7 +209,7 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-sky-500 to-blue-700 flex items-center justify-center shadow-md shadow-sky-500/25 border border-sky-400/40 group-hover:scale-105 transition-transform text-white">
             <Shield className="w-5 h-5 text-white stroke-[2.5]" />
           </div>
-          <div>
+          <div className="hidden sm:block">
             <div className="font-extrabold text-slate-900 text-base tracking-tight font-display flex items-center gap-1.5">
               <span>ICT</span>
               <span className="text-sky-600 group-hover:text-blue-700 transition-colors">ACADEMY</span>
@@ -166,27 +218,64 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
         </button>
 
-        {/* Modern Vibrant Navigation Tabs */}
-        <nav className="flex items-center gap-1.5 bg-slate-100/90 p-1.5 rounded-2xl border border-slate-200 shadow-inner shrink-0">
-          {navItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = activeTab === item.id;
-            return (
-              <button
-                key={item.id}
-                onClick={() => setActiveTab(item.id)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold flex items-center gap-2 transition-all shrink-0 ${
-                  isActive
-                    ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/25'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-white/80'
-                }`}
-              >
-                <Icon className={`w-4 h-4 ${isActive ? 'text-white stroke-[2.5]' : 'text-slate-500'}`} />
-                <span>{item.label}</span>
-              </button>
-            );
-          })}
-        </nav>
+        {/* Modern Vibrant Navigation Tabs with Scroll Chevrons & Wheel Support */}
+        <div className="relative flex-1 min-w-0 max-w-4xl flex items-center">
+          {/* Scroll Left Button */}
+          <button
+            type="button"
+            onClick={() => scrollNav('left')}
+            className={`hidden sm:flex items-center justify-center w-7 h-7 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-slate-900 shadow-sm transition-all mr-1 z-10 shrink-0 ${
+              canScrollLeft ? 'opacity-100 hover:bg-slate-50' : 'opacity-25 pointer-events-none'
+            }`}
+            title="Scroll navigation left"
+            aria-label="Scroll navigation left"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+
+          {/* Scrollable Nav Container */}
+          <div
+            ref={navScrollRef}
+            onWheel={handleNavWheel}
+            className="flex-1 overflow-x-auto scrollbar-none py-1 scroll-smooth"
+            style={{ WebkitOverflowScrolling: 'touch' }}
+          >
+            <nav className="flex items-center gap-1.5 bg-slate-100/90 p-1.5 rounded-2xl border border-slate-200 shadow-inner w-max">
+              {navItems.map((item) => {
+                const Icon = item.icon;
+                const isActive = activeTab === item.id;
+                return (
+                  <button
+                    key={item.id}
+                    data-active={isActive ? 'true' : 'false'}
+                    onClick={() => setActiveTab(item.id)}
+                    className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold flex items-center gap-2 transition-all whitespace-nowrap shrink-0 ${
+                      isActive
+                        ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/25'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-white/80'
+                    }`}
+                  >
+                    <Icon className={`w-4 h-4 ${isActive ? 'text-white stroke-[2.5]' : 'text-slate-500'}`} />
+                    <span>{item.label}</span>
+                  </button>
+                );
+              })}
+            </nav>
+          </div>
+
+          {/* Scroll Right Button */}
+          <button
+            type="button"
+            onClick={() => scrollNav('right')}
+            className={`hidden sm:flex items-center justify-center w-7 h-7 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-slate-900 shadow-sm transition-all ml-1 z-10 shrink-0 ${
+              canScrollRight ? 'opacity-100 hover:bg-slate-50' : 'opacity-25 pointer-events-none'
+            }`}
+            title="Scroll navigation right"
+            aria-label="Scroll navigation right"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        </div>
 
         {/* Action Widgets */}
         <div className="flex items-center gap-3 shrink-0">

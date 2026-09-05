@@ -56,25 +56,27 @@ export const CompareView: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Top Header */}
-      <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 shadow-sm">
+      <div className="glass-acrylic border border-slate-200/80 rounded-3xl p-6 sm:p-7 shadow-xs relative overflow-hidden">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <GitCompare className="w-5 h-5 text-sky-600" />
-              <h2 className="text-xl font-bold text-slate-900 font-display tracking-wide">ICT Concept Comparison Matrix</h2>
+              <div className="w-8 h-8 rounded-xl bg-sky-100 flex items-center justify-center text-sky-700 border border-sky-200 shadow-xs">
+                <GitCompare className="w-4 h-4" />
+              </div>
+              <h2 className="text-xl sm:text-2xl font-black text-slate-900 font-display tracking-tight">ICT Concept Comparison Matrix</h2>
             </div>
-            <p className="text-slate-600 text-xs sm:text-sm">
+            <p className="text-slate-600 text-xs sm:text-sm font-sans">
               Dissect subtle differences and eliminate the most common conceptual confusions in Smart Money trading.
             </p>
           </div>
         </div>
 
         {/* Comparison Selector Chips with Scroll Chevrons & Wheel Support */}
-        <div className="relative flex items-center pt-4 mt-2 border-t border-slate-200">
+        <div className="relative flex items-center pt-4 mt-3 border-t border-slate-200/80">
           <button
             type="button"
             onClick={() => handleScroll('left')}
-            className={`flex items-center justify-center w-8 h-8 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-slate-900 shadow-sm transition-all mr-2 shrink-0 ${
+            className={`flex items-center justify-center w-8 h-8 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-slate-900 shadow-xs transition-all mr-2 shrink-0 ${
               canScrollLeft ? 'opacity-100 hover:bg-slate-50' : 'opacity-25 pointer-events-none'
             }`}
             title="Scroll comparisons left"
@@ -94,10 +96,10 @@ export const CompareView: React.FC = () => {
                 key={c.id}
                 data-active={selectedComparisonId === c.id ? 'true' : 'false'}
                 onClick={() => setSelectedComparisonId(c.id)}
-                className={`px-4 py-2 rounded-xl text-xs font-mono font-medium whitespace-nowrap transition-all shrink-0 ${
+                className={`px-4 py-2 rounded-xl text-xs font-mono whitespace-nowrap transition-all shrink-0 ${
                   selectedComparisonId === c.id
-                    ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white font-bold shadow-md shadow-sky-600/20'
-                    : 'bg-slate-100 border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-200'
+                    ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white font-extrabold shadow-md shadow-sky-600/25 scale-[1.02]'
+                    : 'bg-white/80 border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-white shadow-xs'
                 }`}
               >
                 {c.title.split(':')[0]}
@@ -108,7 +110,7 @@ export const CompareView: React.FC = () => {
           <button
             type="button"
             onClick={() => handleScroll('right')}
-            className={`flex items-center justify-center w-8 h-8 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-slate-900 shadow-sm transition-all ml-2 shrink-0 ${
+            className={`flex items-center justify-center w-8 h-8 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-slate-900 shadow-xs transition-all ml-2 shrink-0 ${
               canScrollRight ? 'opacity-100 hover:bg-slate-50' : 'opacity-25 pointer-events-none'
             }`}
             title="Scroll comparisons right"
@@ -121,17 +123,19 @@ export const CompareView: React.FC = () => {
 
       {/* Main Side-by-Side Comparison Container */}
       <div className="space-y-6">
-        <div className="text-center space-y-1">
-          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 font-display">{comparison.title}</h3>
-          <p className="text-xs font-mono text-sky-800 font-semibold">{comparison.keyDifference}</p>
+        <div className="text-center space-y-1.5 py-1">
+          <h3 className="text-xl sm:text-2xl font-black text-slate-900 font-display tracking-tight">{comparison.title}</h3>
+          <p className="text-xs font-mono text-sky-700 font-bold bg-sky-50 px-3 py-1 rounded-full border border-sky-200 inline-block shadow-xs">
+            {comparison.keyDifference}
+          </p>
         </div>
 
         {/* Dual Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Concept A Card */}
-          <div className="bg-white border-2 border-sky-300 rounded-3xl p-6 sm:p-7 shadow-sm space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-200">
-              <span className="px-3 py-1 rounded-xl bg-sky-50 text-sky-800 font-mono text-xs font-bold border border-sky-300">
+          <div className="card-2026 p-6 sm:p-7 space-y-4 relative overflow-hidden group">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-200/80">
+              <span className="px-3 py-1 rounded-xl bg-sky-50 text-sky-800 font-mono text-xs font-black border border-sky-200 shadow-xs">
                 {comparison.conceptA.name}
               </span>
             </div>
@@ -141,7 +145,7 @@ export const CompareView: React.FC = () => {
             </p>
 
             <div className="space-y-2">
-              <h5 className="text-xs font-mono font-bold text-sky-800 uppercase tracking-wider">Key Attributes:</h5>
+              <h5 className="text-[10px] font-mono font-extrabold text-sky-800 uppercase tracking-wider">Key Attributes:</h5>
               <ul className="space-y-1.5 text-xs font-mono text-slate-700">
                 {comparison.conceptA.keyPoints.map((pt, idx) => (
                   <li key={idx} className="flex items-start gap-2">
@@ -152,15 +156,15 @@ export const CompareView: React.FC = () => {
               </ul>
             </div>
 
-            <div className="pt-3 border-t border-slate-200 text-xs font-mono text-slate-700 bg-sky-50/60 p-3.5 rounded-2xl border border-sky-200">
-              <strong className="text-sky-900">Ideal Setup:</strong> {comparison.conceptA.idealCondition}
+            <div className="pt-3 border-t border-slate-200/80 text-xs font-mono text-slate-700 bg-sky-50/70 p-3.5 rounded-2xl border border-sky-200/80">
+              <strong className="text-sky-950 font-black">Ideal Setup:</strong> {comparison.conceptA.idealCondition}
             </div>
           </div>
 
           {/* Concept B Card */}
-          <div className="bg-white border-2 border-amber-300 rounded-3xl p-6 sm:p-7 shadow-sm space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-200">
-              <span className="px-3 py-1 rounded-xl bg-amber-50 text-amber-900 font-mono text-xs font-bold border border-amber-300">
+          <div className="card-2026 p-6 sm:p-7 space-y-4 relative overflow-hidden group">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-200/80">
+              <span className="px-3 py-1 rounded-xl bg-amber-50 text-amber-900 font-mono text-xs font-black border border-amber-300 shadow-xs">
                 {comparison.conceptB.name}
               </span>
             </div>
@@ -170,7 +174,7 @@ export const CompareView: React.FC = () => {
             </p>
 
             <div className="space-y-2">
-              <h5 className="text-xs font-mono font-bold text-amber-800 uppercase tracking-wider">Key Attributes:</h5>
+              <h5 className="text-[10px] font-mono font-extrabold text-amber-800 uppercase tracking-wider">Key Attributes:</h5>
               <ul className="space-y-1.5 text-xs font-mono text-slate-700">
                 {comparison.conceptB.keyPoints.map((pt, idx) => (
                   <li key={idx} className="flex items-start gap-2">
@@ -181,27 +185,27 @@ export const CompareView: React.FC = () => {
               </ul>
             </div>
 
-            <div className="pt-3 border-t border-slate-200 text-xs font-mono text-slate-700 bg-amber-50/60 p-3.5 rounded-2xl border border-amber-200">
-              <strong className="text-amber-900">Ideal Setup:</strong> {comparison.conceptB.idealCondition}
+            <div className="pt-3 border-t border-slate-200/80 text-xs font-mono text-slate-700 bg-amber-50/70 p-3.5 rounded-2xl border border-amber-200/80">
+              <strong className="text-amber-950 font-black">Ideal Setup:</strong> {comparison.conceptB.idealCondition}
             </div>
           </div>
         </div>
 
         {/* The Decisive Separation Rule Card */}
-        <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 shadow-sm space-y-4">
+        <div className="card-2026 p-6 sm:p-7 space-y-4">
           <div className="flex items-center gap-2 text-slate-900 font-mono text-sm font-bold">
             <Scale className="w-5 h-5 text-emerald-600" />
-            <span>The Decisive Execution Rule</span>
+            <span className="font-extrabold">The Decisive Execution Rule</span>
           </div>
 
-          <div className="bg-emerald-50 p-4 rounded-2xl border border-emerald-200 font-mono text-xs text-emerald-950 leading-relaxed">
+          <div className="bg-emerald-50/90 p-4 rounded-2xl border border-emerald-200 font-mono text-xs text-emerald-950 leading-relaxed shadow-xs">
             {comparison.decisionRule}
           </div>
 
-          <div className="flex items-start gap-3 bg-amber-50 p-4 rounded-2xl border border-amber-300 text-xs font-mono text-amber-950">
+          <div className="flex items-start gap-3 bg-amber-50/80 p-4 rounded-2xl border border-amber-200 text-xs font-mono text-amber-950 shadow-xs">
             <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
             <div>
-              <strong className="text-amber-900">Common Retail Mistake: </strong>
+              <strong className="text-amber-950 font-black">Common Retail Mistake: </strong>
               <span>{comparison.commonConfusion}</span>
             </div>
           </div>

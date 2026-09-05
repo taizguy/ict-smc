@@ -125,23 +125,23 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
   return (
     <div className="space-y-6">
       {/* Top Syllabus Control & Banner */}
-      <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm relative overflow-hidden">
+      <div className="glass-acrylic border border-slate-200/90 rounded-3xl p-6 sm:p-8 shadow-sm relative overflow-hidden">
         {/* Glow Effects */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-sky-200/40 via-blue-100/30 to-purple-100/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-10 -left-10 w-72 h-72 bg-emerald-100/40 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-sky-200/35 via-blue-100/25 to-purple-100/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-10 -left-10 w-72 h-72 bg-emerald-100/35 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <span className="px-3 py-1 rounded-full bg-sky-100 text-sky-800 border border-sky-300 text-xs font-mono font-bold flex items-center gap-1.5">
+              <span className="px-3 py-1 rounded-full bg-sky-50 text-sky-800 border border-sky-300 text-xs font-mono font-extrabold flex items-center gap-1.5 shadow-xs">
                 <GraduationCap className="w-3.5 h-3.5 text-sky-600" />
                 <span>OFFICIAL CURRICULUM SYLLABUS</span>
               </span>
               <span className="text-slate-300">•</span>
-              <span className="text-xs font-mono text-slate-500 font-medium">{textbookChapters.length} Chapters • 9 Master Modules</span>
+              <span className="text-xs font-mono text-slate-500 font-bold">{textbookChapters.length} Chapters • 9 Master Modules</span>
             </div>
 
-            <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 font-display tracking-tight">
+            <h1 className="text-2xl sm:text-4xl font-black text-slate-900 font-display tracking-tight">
               The Institutional Trading Syllabus
             </h1>
             <p className="text-slate-600 text-sm max-w-2xl font-sans leading-relaxed">
@@ -150,12 +150,12 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
           </div>
 
           {/* View Mode Switch */}
-          <div className="flex items-center p-1.5 rounded-2xl bg-slate-100 border border-slate-200 shadow-inner shrink-0">
+          <div className="flex items-center p-1.5 rounded-2xl bg-slate-100/80 border border-slate-200 shadow-inner shrink-0">
             <button
               onClick={() => setViewMode('syllabus')}
               className={`px-4 py-2 rounded-xl text-xs font-mono font-bold flex items-center gap-2 transition-all ${
                 viewMode === 'syllabus'
-                  ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/20'
+                  ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/25 scale-[1.02]'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -166,7 +166,7 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
               onClick={() => setViewMode('reader')}
               className={`px-4 py-2 rounded-xl text-xs font-mono font-bold flex items-center gap-2 transition-all ${
                 viewMode === 'reader'
-                  ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/20'
+                  ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/25 scale-[1.02]'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -188,15 +188,15 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                   e.currentTarget.scrollLeft += e.deltaY;
                 }
               }} 
-              className="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-1 scrollbar-thin scroll-smooth"
+              className="glass-acrylic border border-slate-200/80 p-2 rounded-2xl flex items-center gap-2 overflow-x-auto w-full sm:w-auto scrollbar-thin scroll-smooth shadow-xs"
               style={{ WebkitOverflowScrolling: 'touch' }}
             >
               <button
                 onClick={() => setSelectedPartFilter('all')}
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold whitespace-nowrap transition-all ${
                   selectedPartFilter === 'all'
-                    ? 'bg-sky-600 text-white shadow-md shadow-sky-600/20'
-                    : 'bg-white text-slate-600 border border-slate-200 hover:text-slate-900 hover:bg-slate-50'
+                    ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/25 scale-[1.02]'
+                    : 'bg-white/80 text-slate-600 border border-slate-200 hover:text-slate-900 hover:bg-white shadow-xs'
                 }`}
               >
                 All Modules ({textbookChapters.length})
@@ -210,8 +210,8 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                     onClick={() => setSelectedPartFilter(shortLabel)}
                     className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold whitespace-nowrap transition-all ${
                       isSelected
-                        ? 'bg-sky-600 text-white shadow-md shadow-sky-600/20'
-                        : 'bg-white text-slate-600 border border-slate-200 hover:text-slate-900 hover:bg-slate-50'
+                        ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/25 scale-[1.02]'
+                        : 'bg-white/80 text-slate-600 border border-slate-200 hover:text-slate-900 hover:bg-white shadow-xs'
                     }`}
                   >
                     {shortLabel}
@@ -266,13 +266,13 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                         return (
                           <div
                             key={ch.id}
-                            className="group bg-white border-2 border-slate-200 hover:border-sky-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between gap-4 hover:-translate-y-0.5"
+                            className="group card-2026 p-5 flex flex-col justify-between gap-4 hover:border-sky-500"
                           >
                             <div className="space-y-3">
                               {/* Top Bar of Card */}
                               <div className="flex items-center justify-between gap-2">
                                 <div className="flex items-center gap-2">
-                                  <span className="px-2.5 py-0.5 rounded-md text-[11px] font-mono font-extrabold bg-sky-100 text-sky-800 border border-sky-300">
+                                  <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-black bg-sky-50 text-sky-800 border border-sky-200 shadow-xs">
                                     CH {ch.id < 10 ? `0${ch.id}` : ch.id}
                                   </span>
                                   {getDifficultyBadge(ch.level)}
@@ -280,19 +280,19 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                               </div>
 
                               {/* Chapter Title */}
-                              <h3 className="text-base font-bold text-slate-900 font-display group-hover:text-sky-700 transition-colors line-clamp-2">
+                              <h3 className="text-base font-black text-slate-900 font-display group-hover:text-sky-700 transition-colors line-clamp-2">
                                 {ch.title}
                               </h3>
 
                               {/* Quote / Summary Preview */}
-                              <p className="text-xs text-slate-500 font-sans line-clamp-2 italic border-l-2 border-sky-300 pl-2">
+                              <p className="text-xs text-slate-500 font-sans line-clamp-2 italic border-l-2 border-sky-400 pl-2.5">
                                 "{ch.quote}"
                               </p>
                             </div>
 
                             {/* Card Footer & Action */}
-                            <div className="pt-3 border-t border-slate-100 flex items-center justify-between gap-3 text-xs font-mono">
-                              <span className="text-slate-500">
+                            <div className="pt-3 border-t border-slate-200/80 flex items-center justify-between gap-3 text-xs font-mono">
+                              <span className="text-slate-500 font-medium text-[11px]">
                                 {ch.sections.length} Sections • {ch.practiceQuestions.length} Practice
                               </span>
 
@@ -302,7 +302,7 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                                   setViewMode('reader');
                                   window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }}
-                                className="px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-sky-600 hover:text-white text-slate-800 border border-slate-200 hover:border-sky-600 font-bold transition-all flex items-center gap-1.5 group-hover:bg-sky-600 group-hover:text-white shadow-sm"
+                                className="px-3.5 py-1.5 rounded-xl bg-white hover:bg-sky-600 hover:text-white text-slate-800 border border-slate-200 hover:border-sky-600 font-bold transition-all flex items-center gap-1.5 group-hover:bg-sky-600 group-hover:text-white shadow-xs"
                               >
                                 <span>Read Unit</span>
                                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />

@@ -69,7 +69,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
             e.currentTarget.scrollLeft += e.deltaY;
           }
         }} 
-        className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-thin scroll-smooth"
+        className="glass-acrylic border border-slate-200/80 p-2 rounded-2xl flex items-center gap-2 overflow-x-auto scrollbar-thin scroll-smooth shadow-xs"
         style={{ WebkitOverflowScrolling: 'touch' }}
       >
         {categories.map((cat) => (
@@ -78,8 +78,8 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
             onClick={() => setSelectedCategory(cat.id)}
             className={`px-4 py-2 rounded-xl text-xs font-mono font-bold whitespace-nowrap transition-all ${
               selectedCategory === cat.id
-                ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white font-extrabold shadow-md shadow-sky-600/20'
-                : 'bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white font-extrabold shadow-md shadow-sky-600/25 scale-[1.02]'
+                : 'bg-white/80 border border-slate-200/80 text-slate-600 hover:text-slate-900 hover:bg-white shadow-xs'
             }`}
           >
             {cat.label}
@@ -90,10 +90,10 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Left Side: Concepts Directory */}
         <div className="lg:col-span-4 xl:col-span-3 space-y-3">
-          <div className="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-200 mb-3 text-xs font-mono">
-              <span className="text-slate-600 uppercase font-bold tracking-wider">Concept Index</span>
-              <span className="text-sky-800 font-extrabold bg-sky-50 px-2 py-0.5 rounded border border-sky-200">{filteredConcepts.length} Topics</span>
+          <div className="card-2026 p-4">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-200/80 mb-3 text-xs font-mono">
+              <span className="text-slate-700 uppercase font-black tracking-wider text-[11px]">Concept Index</span>
+              <span className="text-sky-800 font-black bg-sky-50 px-2.5 py-0.5 rounded-full border border-sky-200 text-[10px]">{filteredConcepts.length} Topics</span>
             </div>
 
             <div className="space-y-1.5 max-h-[calc(100vh-260px)] overflow-y-auto pr-1">
@@ -106,15 +106,15 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
                       setSelectedConceptId(c.id);
                       if (onSelectConcept) onSelectConcept(c.id);
                     }}
-                    className={`w-full text-left p-3 rounded-xl text-xs font-mono transition-all space-y-1 ${
+                    className={`w-full text-left p-3 rounded-2xl text-xs font-mono transition-all space-y-1 ${
                       isSelected
-                        ? 'bg-sky-50 border-2 border-sky-500 text-sky-950 shadow-sm font-bold'
+                        ? 'bg-sky-50/90 border-2 border-sky-500 text-sky-950 shadow-xs font-bold'
                         : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50 border border-transparent'
                     }`}
                   >
                     <div className="flex items-center justify-between">
-                      <span className="font-bold text-slate-900 tracking-wide truncate">{c.name}</span>
-                      <span className="text-[9px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 uppercase font-bold border border-slate-200">
+                      <span className="font-bold text-slate-900 tracking-tight truncate">{c.name}</span>
+                      <span className="text-[9px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 uppercase font-extrabold border border-slate-200/80">
                         {c.category}
                       </span>
                     </div>
@@ -131,17 +131,17 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
         {/* Right Side: Deep Encyclopedic Breakdown */}
         <div className="lg:col-span-8 xl:col-span-9 space-y-6">
           {/* Concept Header Card with Source Provenance */}
-          <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 shadow-sm relative overflow-hidden">
+          <div className="card-2026 p-6 sm:p-7 relative overflow-hidden">
             {/* Subtle Glow */}
-            <div className="absolute top-0 right-0 w-80 h-80 bg-sky-100/50 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-80 h-80 bg-sky-200/30 rounded-full blur-3xl pointer-events-none" />
 
             <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-sky-700 mb-3">
               <div className="flex items-center gap-2">
-                <span className="px-3 py-1 rounded-xl bg-sky-50 border border-sky-300 font-extrabold uppercase text-[10px] text-sky-800">
+                <span className="px-3 py-1 rounded-full bg-sky-50 border border-sky-300 font-black uppercase text-[10px] text-sky-800 shadow-xs">
                   {concept.category} • ICT Core Framework
                 </span>
                 {concept.source && (
-                  <span className="px-2.5 py-1 rounded-xl bg-amber-50 border border-amber-300 text-amber-900 font-mono text-[10px] font-bold flex items-center gap-1">
+                  <span className="px-3 py-1 rounded-full bg-amber-50 border border-amber-300 text-amber-900 font-mono text-[10px] font-bold flex items-center gap-1 shadow-xs">
                     <FileText className="w-3 h-3 text-amber-600" />
                     {concept.source.approximateDate} • {concept.source.conceptStatus}
                   </span>
@@ -151,14 +151,14 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setActiveLayerTab('ladder')}
-                  className="px-3 py-1.5 rounded-xl text-xs font-mono font-bold flex items-center gap-1.5 transition-all bg-slate-50 text-amber-900 border border-amber-300 hover:bg-amber-100"
+                  className="px-3 py-1.5 rounded-xl text-xs font-mono font-bold flex items-center gap-1.5 transition-all bg-amber-50 text-amber-900 border border-amber-300 hover:bg-amber-100 shadow-xs"
                 >
                   <GraduationCap className="w-3.5 h-3.5 text-amber-600" />
                   5-Level Ladder
                 </button>
                 <button
                   onClick={() => setActiveLayerTab('tripartite')}
-                  className="px-3 py-1.5 rounded-xl text-xs font-mono font-bold flex items-center gap-1.5 transition-all bg-slate-50 text-sky-800 border border-sky-300 hover:bg-sky-100"
+                  className="px-3 py-1.5 rounded-xl text-xs font-mono font-bold flex items-center gap-1.5 transition-all bg-sky-50 text-sky-800 border border-sky-300 hover:bg-sky-100 shadow-xs"
                 >
                   <Cpu className="w-3.5 h-3.5 text-sky-600" />
                   Fidelity Layer
@@ -166,7 +166,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
               </div>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 font-display tracking-tight">
               {concept.name}
             </h2>
 
@@ -176,24 +176,24 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
 
             {/* Source Reference Sub-Banner */}
             {concept.source && (
-              <div className="mt-4 p-4 rounded-2xl bg-slate-50 border border-slate-200 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-mono">
+              <div className="mt-4 p-4 rounded-2xl bg-slate-50/90 border border-slate-200/80 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-mono">
                 <div>
-                  <span className="text-slate-500 block text-[10px] uppercase font-semibold">Primary Mentorship</span>
+                  <span className="text-slate-500 block text-[10px] uppercase font-bold">Primary Mentorship</span>
                   <span className="text-slate-900 font-bold truncate block">{concept.source.mentorship}</span>
                 </div>
                 <div>
-                  <span className="text-slate-500 block text-[10px] uppercase font-semibold">Original Terminology</span>
+                  <span className="text-slate-500 block text-[10px] uppercase font-bold">Original Terminology</span>
                   <span className="text-amber-800 font-bold truncate block">{concept.source.originalTerminology}</span>
                 </div>
                 <div>
-                  <span className="text-slate-500 block text-[10px] uppercase font-semibold">Lecture Reference</span>
+                  <span className="text-slate-500 block text-[10px] uppercase font-bold">Lecture Reference</span>
                   <span className="text-sky-800 font-bold truncate block">{concept.source.lectureReference || 'Core Series'}</span>
                 </div>
               </div>
             )}
 
             {/* Layer Tabs */}
-            <div className="flex flex-wrap items-center gap-2 mt-5 pt-4 border-t border-slate-200">
+            <div className="flex flex-wrap items-center gap-2 mt-5 pt-4 border-t border-slate-200/80">
               {[
                 { id: 'overview', label: '1. Mechanism & Logic', icon: Info },
                 { id: 'anatomy', label: '2. Anatomy & Diagram', icon: Layers },
@@ -208,10 +208,10 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
                   <button
                     key={tab.id}
                     onClick={() => setActiveLayerTab(tab.id as any)}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold flex items-center gap-1.5 transition-all ${
+                    className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold flex items-center gap-1.5 transition-all ${
                       activeLayerTab === tab.id
-                        ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/20'
-                        : 'bg-white text-slate-600 border border-slate-200 hover:text-slate-900 hover:bg-slate-50'
+                        ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/25 font-black scale-105'
+                        : 'bg-white text-slate-600 border border-slate-200/90 hover:text-slate-900 hover:bg-slate-50 shadow-xs'
                     }`}
                   >
                     <Icon className="w-3.5 h-3.5" />

@@ -67,31 +67,31 @@ export const MasoodAcademyView: React.FC = () => {
 
   return (
     <div className="space-y-8 animate-fadeIn pb-16">
-      {/* Top Banner / Hero - Light Themed */}
-      <div className="rounded-3xl bg-gradient-to-br from-white via-slate-50 to-sky-50/60 text-slate-900 p-6 sm:p-8 md:p-10 border border-slate-200 shadow-sm relative overflow-hidden">
+      {/* Top Banner / Hero - Light Themed 2026 Glass Acrylic */}
+      <div className="rounded-3xl glass-acrylic text-slate-900 p-6 sm:p-8 md:p-10 border border-slate-200/90 shadow-sm relative overflow-hidden">
         {/* Background ambient accents */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-red-100/40 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-sky-100/50 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-red-100/35 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-sky-100/40 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 max-w-4xl space-y-4">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-red-50 text-red-700 border border-red-200">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-extrabold bg-red-50 text-red-700 border border-red-200 shadow-xs">
               <Youtube className="w-4 h-4 fill-red-600 text-red-600" />
               EXCLUSIVE MENTORSHIP SERIES
             </span>
-            <span className="text-xs font-mono text-slate-700 bg-slate-100 px-2.5 py-1 rounded-full border border-slate-200">
+            <span className="text-xs font-mono font-bold text-slate-700 bg-white/80 px-3 py-1 rounded-full border border-slate-200 shadow-xs">
               Trader Abdullah Masood
             </span>
-            <span className="text-xs font-mono text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+            <span className="text-xs font-mono font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 shadow-xs">
               {allLectures.length} Master Lectures • 6 Dedicated Playlists
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 font-sans">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-900 font-display">
             Trader Abdullah Masood <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-amber-600 to-sky-600">Academy</span>
           </h1>
 
-          <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-3xl">
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-3xl font-sans">
             A comprehensive, structured implementation of Trader Abdullah Masood’s viral trading education curricula. 
             Kept strictly separated from ICT’s primary curriculum, this suite organizes all lectures in chronological order across 
             <strong> 1) Beginner's Guide</strong>, <strong>2) Advanced Guide</strong>, <strong>3) 2025 ICT Daily Bias</strong>, 
@@ -105,7 +105,7 @@ export const MasoodAcademyView: React.FC = () => {
               href="https://www.youtube.com/@TraderAbdullahMasood"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-semibold shadow-md shadow-red-600/20 transition-all hover:scale-105"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-red-600 hover:bg-red-700 text-white text-xs font-mono font-bold shadow-md shadow-red-600/20 transition-all hover:scale-105"
             >
               <Youtube className="w-4 h-4" />
               <span>Official YouTube Channel</span>
@@ -114,7 +114,7 @@ export const MasoodAcademyView: React.FC = () => {
 
             <button
               onClick={() => setActiveTab('animations')}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold border border-slate-200 shadow-sm transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white/90 hover:bg-white text-slate-700 text-xs font-mono font-bold border border-slate-200 shadow-xs transition-colors hover:scale-105"
             >
               <Sparkles className="w-4 h-4 text-amber-500" />
               <span>Interactive Animated Demonstrators</span>
@@ -122,7 +122,7 @@ export const MasoodAcademyView: React.FC = () => {
 
             <button
               onClick={() => setActiveTab('bias_calc')}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold border border-slate-200 shadow-sm transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white/90 hover:bg-white text-slate-700 text-xs font-mono font-bold border border-slate-200 shadow-xs transition-colors hover:scale-105"
             >
               <Zap className="w-4 h-4 text-sky-600" />
               <span>Daily Bias Decision Engine</span>
@@ -130,7 +130,7 @@ export const MasoodAcademyView: React.FC = () => {
 
             <button
               onClick={() => setActiveTab('rules')}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold border border-slate-200 shadow-sm transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white/90 hover:bg-white text-slate-700 text-xs font-mono font-bold border border-slate-200 shadow-xs transition-colors hover:scale-105"
             >
               <Shield className="w-4 h-4 text-emerald-600" />
               <span>Masood's Golden Rulebook</span>
@@ -207,19 +207,21 @@ export const MasoodAcademyView: React.FC = () => {
                 e.currentTarget.scrollLeft += e.deltaY;
               }
             }}
-            className="flex items-center gap-2 p-1.5 bg-slate-100 rounded-2xl border border-slate-200 overflow-x-auto scrollbar-thin scroll-smooth"
+            className="flex items-center gap-2 p-2 glass-acrylic rounded-2xl border border-slate-200/80 overflow-x-auto scrollbar-thin scroll-smooth shadow-xs"
             style={{ WebkitOverflowScrolling: 'touch' }}
           >
             <button
               onClick={() => setActivePlaylistId('all')}
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap shrink-0 transition-all ${
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono font-bold whitespace-nowrap shrink-0 transition-all ${
                 activePlaylistId === 'all'
-                  ? 'bg-white text-slate-900 shadow-sm border border-slate-200'
-                  : 'text-slate-600 hover:text-slate-900'
+                  ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white font-extrabold shadow-md shadow-sky-600/25 scale-[1.02]'
+                  : 'bg-white/80 border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-white shadow-xs'
               }`}
             >
               <span>All Playlists</span>
-              <span className="px-1.5 py-0.5 rounded-full text-[10px] bg-slate-200 text-slate-700 font-mono">
+              <span className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${
+                activePlaylistId === 'all' ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-700'
+              }`}>
                 {allLectures.length}
               </span>
             </button>
@@ -228,14 +230,16 @@ export const MasoodAcademyView: React.FC = () => {
               <button
                 key={pl.id}
                 onClick={() => setActivePlaylistId(pl.id)}
-                className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap shrink-0 transition-all ${
+                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono font-bold whitespace-nowrap shrink-0 transition-all ${
                   activePlaylistId === pl.id
-                    ? 'bg-white text-slate-900 shadow-sm border border-slate-200'
-                    : 'text-slate-600 hover:text-slate-900'
+                    ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white font-extrabold shadow-md shadow-sky-600/25 scale-[1.02]'
+                    : 'bg-white/80 border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-white shadow-xs'
                 }`}
               >
                 <span>{pl.title.split(' - ')[0]}</span>
-                <span className="px-1.5 py-0.5 rounded-full text-[10px] bg-slate-200 text-slate-700 font-mono">
+                <span className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${
+                  activePlaylistId === pl.id ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-700'
+                }`}>
                   {pl.lectures.length}
                 </span>
               </button>
@@ -245,21 +249,21 @@ export const MasoodAcademyView: React.FC = () => {
           {/* Active Playlist Header Card */}
           {currentPlaylists.map((playlist) => (
             <div key={playlist.id} className="space-y-4">
-              <div className="p-5 sm:p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
-                <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
+              <div className="p-6 sm:p-7 card-2026 relative overflow-hidden">
+                <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-200/80">
                   <div className="flex items-center gap-2.5">
-                    <span className="px-2.5 py-1 rounded-md bg-sky-100 text-sky-800 text-xs font-mono font-bold">
+                    <span className="px-3 py-1 rounded-xl bg-sky-50 text-sky-800 text-xs font-mono font-black border border-sky-200 shadow-xs">
                       {playlist.badge}
                     </span>
-                    <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
+                    <h2 className="text-xl sm:text-2xl font-black text-slate-900 font-display tracking-tight">
                       {playlist.title}
                     </h2>
                   </div>
-                  <span className="text-xs font-mono font-semibold text-slate-500">
+                  <span className="text-xs font-mono font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
                     {playlist.lectures.length} Total Curated Master Lectures
                   </span>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed font-sans">
                   {playlist.description}
                 </p>
                 <div className="mt-3 flex flex-wrap items-center gap-4 text-xs text-slate-500 font-mono">
@@ -268,13 +272,13 @@ export const MasoodAcademyView: React.FC = () => {
               </div>
 
               {/* Lecture Cards Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {playlist.lectures
                   .filter((lec) => filteredLectures.some((fl) => fl.id === lec.id))
                   .map((lecture) => (
                     <div
                       key={lecture.id}
-                      className="bg-white rounded-2xl border border-slate-200 hover:border-sky-400 transition-all shadow-sm hover:shadow-md flex flex-col justify-between overflow-hidden group"
+                      className="card-2026 flex flex-col justify-between overflow-hidden group hover:border-sky-400 transition-all"
                     >
                       {/* Thumbnail Header with Play overlay */}
                       <div className="relative aspect-video bg-slate-900 overflow-hidden">

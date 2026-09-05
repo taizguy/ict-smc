@@ -103,24 +103,24 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
   };
 
   return (
-    <div className="bg-white text-slate-900 rounded-3xl border border-slate-200 p-5 md:p-6 shadow-sm relative overflow-hidden">
+    <div className="glass-acrylic text-slate-900 rounded-3xl border border-slate-200/90 p-5 md:p-6 shadow-sm relative overflow-hidden">
       {/* Background visual glow */}
-      <div className="absolute -top-24 -right-24 w-72 h-72 bg-sky-100/50 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-amber-100/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -top-24 -right-24 w-72 h-72 bg-sky-200/30 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-amber-200/25 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header bar */}
-      <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-200 relative z-10">
+      <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-200/80 relative z-10">
         <div>
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-sky-50 text-sky-700 border border-sky-200">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-extrabold bg-sky-50 text-sky-800 border border-sky-300 shadow-xs">
               <Activity className="w-3.5 h-3.5 text-sky-600 animate-pulse" />
               DYNAMIC ANIMATED DEMONSTRATOR
             </span>
-            <span className="text-xs text-slate-500 font-mono hidden sm:inline">
+            <span className="text-xs text-slate-500 font-mono font-bold hidden sm:inline">
               Visual Learning Engine
             </span>
           </div>
-          <h3 className="text-lg md:text-xl font-bold text-slate-900 mt-1 font-display">
+          <h3 className="text-lg md:text-xl font-black text-slate-900 mt-1 font-display tracking-tight">
             {selectedType === 'po3_expansion' && 'Power of 3 (PO3): The 4 Stages of the Daily Candle'}
             {selectedType === 'seek_and_destroy' && 'Seek & Destroy: Dual-Sided Stop Hunt Trap Simulator'}
             {selectedType === 'smt_divergence' && 'SMT Divergence: Uncovering Smart Money Accumulation'}
@@ -139,7 +139,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
         <div className="flex items-center gap-2">
           <button
             onClick={() => setIsPlaying(!isPlaying)}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold border border-slate-200 transition-colors shadow-xs"
+            className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-slate-200/90 text-slate-800 text-xs font-mono font-bold hover:bg-slate-50 transition-all shadow-xs"
             title={isPlaying ? 'Pause Animation' : 'Play Animation'}
           >
             {isPlaying ? <Pause className="w-3.5 h-3.5 text-amber-600 fill-amber-600" /> : <Play className="w-3.5 h-3.5 text-emerald-600 fill-emerald-600" />}
@@ -147,7 +147,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
           </button>
           <button
             onClick={handleReset}
-            className="p-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition-colors shadow-xs"
+            className="p-2 rounded-xl bg-white border border-slate-200/90 text-slate-700 hover:bg-slate-50 transition-all shadow-xs"
             title="Restart Animation"
           >
             <RotateCcw className="w-3.5 h-3.5" />
@@ -156,11 +156,11 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
       </div>
 
       {/* Selector Pills with Chevron and Wheel Support */}
-      <div className="relative flex items-center py-3 border-b border-slate-200 mb-4">
+      <div className="relative flex items-center py-3 border-b border-slate-200/80 mb-4">
         <button
           type="button"
           onClick={() => scrollPills('left')}
-          className={`flex items-center justify-center w-7 h-7 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-slate-900 shadow-sm transition-all mr-1.5 shrink-0 ${
+          className={`flex items-center justify-center w-8 h-8 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-slate-900 shadow-xs transition-all mr-2 shrink-0 ${
             canScrollLeft ? 'opacity-100 hover:bg-slate-50' : 'opacity-25 pointer-events-none'
           }`}
           title="Scroll left"
@@ -197,10 +197,10 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                   setSelectedType(tab.id as AnimationKind);
                   setProgress(0);
                 }}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold whitespace-nowrap shrink-0 transition-all ${
+                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl font-mono text-xs font-bold whitespace-nowrap shrink-0 transition-all ${
                   isActive
-                    ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/20'
-                    : 'bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200'
+                    ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/25 scale-[1.02]'
+                    : 'bg-white/80 hover:bg-white text-slate-700 border border-slate-200/90 shadow-xs'
                 }`}
               >
                 <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-white' : 'text-slate-500'}`} />

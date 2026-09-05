@@ -54,11 +54,12 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] text-slate-900 flex flex-col font-sans selection:bg-sky-500 selection:text-white relative overflow-x-hidden">
-      {/* Background Ambience Mesh */}
+      {/* 2026 Ambient Tech Grid & Radial Lighting */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-0 left-1/4 w-[600px] h-[400px] bg-gradient-to-br from-sky-200/20 via-blue-100/10 to-transparent rounded-full blur-3xl" />
-        <div className="absolute top-1/3 right-10 w-[500px] h-[500px] bg-gradient-to-bl from-amber-100/20 via-orange-50/10 to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-[600px] h-[400px] bg-gradient-to-tr from-emerald-100/20 to-transparent rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-tech-grid opacity-75" />
+        <div className="absolute top-0 left-1/4 w-[700px] h-[450px] bg-gradient-to-br from-sky-200/25 via-blue-100/15 to-transparent rounded-full blur-3xl animate-pulse-aura" />
+        <div className="absolute top-1/3 right-10 w-[600px] h-[600px] bg-gradient-to-bl from-amber-200/20 via-orange-100/10 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-10 w-[700px] h-[500px] bg-gradient-to-tr from-emerald-100/25 via-teal-50/15 to-transparent rounded-full blur-3xl" />
       </div>
 
       {/* Global Header & Nav */}
@@ -127,46 +128,48 @@ export const App: React.FC = () => {
         }}
       />
 
-      {/* Footer & Special Tribute Section */}
-      <footer className="border-t border-slate-200 bg-white py-8 px-4 mt-auto relative z-10">
+      {/* 2026 Footer & Special Tribute Section */}
+      <footer className="border-t border-slate-200/90 glass-acrylic py-8 px-4 mt-auto relative z-10">
         <div className="max-w-7xl mx-auto space-y-6">
           {/* Tribute Banner */}
-          <div className="p-5 rounded-2xl bg-gradient-to-r from-amber-50 via-white to-amber-50/80 border border-amber-200/80 flex flex-col md:flex-row items-center justify-between gap-5 shadow-sm">
-            <div className="flex items-center gap-3.5">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shrink-0 shadow-md shadow-amber-500/20 text-white">
-                <Youtube className="w-6 h-6 stroke-[2.5]" />
+          <div className="p-5 sm:p-6 rounded-3xl bg-gradient-to-r from-amber-50/90 via-white to-amber-50/70 border border-amber-200/90 flex flex-col md:flex-row items-center justify-between gap-5 shadow-lg shadow-amber-500/5">
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 flex items-center justify-center shrink-0 shadow-md shadow-amber-500/25 text-white">
+                <Youtube className="w-7 h-7 stroke-[2.5]" />
               </div>
               <div>
                 <div className="text-xs font-mono font-extrabold text-amber-800 flex items-center gap-2">
-                  <span>SPECIAL MENTORSHIP TRIBUTE</span>
-                  <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                  <span className="px-2.5 py-0.5 rounded-full bg-amber-100/90 border border-amber-300 text-[10px] tracking-wider uppercase">
+                    SPECIAL MENTORSHIP TRIBUTE
+                  </span>
+                  <Sparkles className="w-3.5 h-3.5 text-amber-500 animate-pulse" />
                 </div>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-700 mt-1.5 leading-relaxed font-sans">
                   Honoring <strong>Trader Abdullah Masood</strong> (<span className="text-amber-800 font-mono font-bold">@TraderAbdullahMasood</span>) — whose free masterclasses & market breakdown videos inspired this digital curriculum.
                 </p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 shrink-0">
+            <div className="flex flex-wrap items-center gap-2.5 shrink-0 w-full md:w-auto justify-start md:justify-end">
               <button
                 onClick={() => {
                   setActiveTab('masood');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="px-4 py-2 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-mono text-xs font-extrabold flex items-center gap-2 shadow-md shadow-red-600/20 transition-all hover:scale-105"
+                className="px-4 py-2.5 rounded-2xl bg-gradient-to-r from-rose-600 via-red-600 to-rose-600 hover:from-rose-500 hover:to-red-500 text-white font-mono text-xs font-extrabold flex items-center gap-2 shadow-md shadow-red-600/20 transition-all hover:scale-105 active:scale-95"
               >
                 <Youtube className="w-4 h-4" />
                 <span>Masood's Academy (52 Lectures)</span>
               </button>
               <button
                 onClick={() => setIsMentorSpotlightOpen(true)}
-                className="px-4 py-2 rounded-xl bg-white hover:bg-amber-50 text-amber-900 border border-amber-300 font-mono text-xs font-bold transition-all hover:scale-105 shadow-sm"
+                className="px-4 py-2.5 rounded-2xl bg-white hover:bg-amber-50/80 text-amber-900 border border-amber-300 font-mono text-xs font-bold transition-all hover:scale-105 shadow-xs"
               >
                 View Tribute Spotlight
               </button>
               <button
                 onClick={() => setShowOpeningScreen(true)}
-                className="px-3.5 py-2 rounded-xl bg-sky-50 hover:bg-sky-100 text-sky-800 border border-sky-200 font-mono text-xs font-bold transition-all"
+                className="px-3.5 py-2.5 rounded-2xl bg-sky-50 hover:bg-sky-100 text-sky-800 border border-sky-200 font-mono text-xs font-bold transition-all"
               >
                 Replay Journey Intro
               </button>
@@ -174,27 +177,29 @@ export const App: React.FC = () => {
                 href="https://www.youtube.com/@TraderAbdullahMasood"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-mono text-xs font-extrabold flex items-center gap-2 shadow-md shadow-red-600/20 transition-all hover:scale-105"
+                className="px-4 py-2.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-mono text-xs font-extrabold flex items-center gap-2 shadow-md transition-all hover:scale-105 active:scale-95"
               >
-                <Youtube className="w-4 h-4" />
+                <Youtube className="w-4 h-4 text-rose-500" />
                 <span>Visit Channel</span>
               </a>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500 pt-3 border-t border-slate-200">
-            <div>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
               <button
                 onClick={() => setShowOpeningScreen(true)}
-                className="text-slate-900 font-bold hover:text-sky-600 transition-colors cursor-pointer text-left inline-flex items-center gap-1"
+                className="text-slate-900 font-extrabold hover:text-sky-600 transition-colors cursor-pointer text-left inline-flex items-center gap-1"
                 title="Return to Animated Opening Screen"
               >
-                ICT & SMC ACADEMY
+                ICT & SMC ACADEMY 2026
               </button>{' '}
               — The Complete Digital Syllabus & Algorithmic Laboratory
             </div>
-            <div className="text-sky-700 font-semibold">
-              Algorithmic Price Delivery • Smart Money Concepts • Intermarket SMT Analysis
+            <div className="text-sky-700 font-bold flex items-center gap-2">
+              <span className="hidden sm:inline">⚡</span>
+              <span>Algorithmic Price Delivery • Smart Money Concepts • Intermarket SMT Analysis</span>
             </div>
           </div>
         </div>

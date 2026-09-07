@@ -20,7 +20,10 @@ import {
   GraduationCap,
   Youtube,
   Search,
-  CheckSquare
+  CheckSquare,
+  CheckCircle2,
+  Bookmark,
+  ShieldAlert
 } from 'lucide-react';
 
 interface TextbookReaderProps {
@@ -85,78 +88,78 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
 
   const getPartColor = (partName: string) => {
     if (partName.includes('Part I') || partName.includes('Foundations')) {
-      return { border: 'border-emerald-300', badge: 'bg-emerald-50 text-emerald-800 border-emerald-300', accent: 'text-emerald-600' };
+      return { border: 'border-emerald-500/40', badge: 'bg-emerald-950/60 text-emerald-300 border-emerald-500/40', accent: 'text-emerald-400' };
     }
     if (partName.includes('Part II') || partName.includes('Algorithmic')) {
-      return { border: 'border-sky-300', badge: 'bg-sky-50 text-sky-800 border-sky-300', accent: 'text-sky-600' };
+      return { border: 'border-cyan-500/40', badge: 'bg-cyan-950/60 text-cyan-300 border-cyan-500/40', accent: 'text-cyan-400' };
     }
     if (partName.includes('Part III') || partName.includes('Liquidity')) {
-      return { border: 'border-blue-300', badge: 'bg-blue-50 text-blue-800 border-blue-300', accent: 'text-blue-600' };
+      return { border: 'border-sky-500/40', badge: 'bg-sky-950/60 text-sky-300 border-sky-500/40', accent: 'text-sky-400' };
     }
     if (partName.includes('Part IV') || partName.includes('Structure')) {
-      return { border: 'border-purple-300', badge: 'bg-purple-50 text-purple-800 border-purple-300', accent: 'text-purple-600' };
+      return { border: 'border-purple-500/40', badge: 'bg-purple-950/60 text-purple-300 border-purple-500/40', accent: 'text-purple-400' };
     }
     if (partName.includes('Part V') || partName.includes('Imbalances') || partName.includes('Order Blocks')) {
-      return { border: 'border-rose-300', badge: 'bg-rose-50 text-rose-800 border-rose-300', accent: 'text-rose-600' };
+      return { border: 'border-rose-500/40', badge: 'bg-rose-950/60 text-rose-300 border-rose-500/40', accent: 'text-rose-400' };
     }
     if (partName.includes('Part VI') || partName.includes('Time')) {
-      return { border: 'border-amber-300', badge: 'bg-amber-50 text-amber-800 border-amber-300', accent: 'text-amber-600' };
+      return { border: 'border-amber-500/40', badge: 'bg-amber-950/60 text-amber-300 border-amber-500/40', accent: 'text-amber-400' };
     }
     if (partName.includes('Part VII') || partName.includes('Execution')) {
-      return { border: 'border-orange-300', badge: 'bg-orange-50 text-orange-800 border-orange-300', accent: 'text-orange-600' };
+      return { border: 'border-orange-500/40', badge: 'bg-orange-950/60 text-orange-300 border-orange-500/40', accent: 'text-orange-400' };
     }
     // Abdullah Masood Masterclass
-    return { border: 'border-amber-400', badge: 'bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 text-slate-950 border-amber-400 font-extrabold shadow-sm', accent: 'text-amber-800' };
+    return { border: 'border-amber-400/50', badge: 'bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 text-slate-950 border-amber-300 font-extrabold shadow-sm', accent: 'text-amber-400' };
   };
 
   const getDifficultyBadge = (level: number) => {
     switch (level) {
       case 0:
-        return <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-50 text-emerald-800 border border-emerald-300">Level 0: Foundation</span>;
+        return <span className="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-950/70 text-emerald-300 border border-emerald-500/40">Level 0: Foundation</span>;
       case 1:
-        return <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-sky-50 text-sky-800 border border-sky-300">Level 1: Core</span>;
+        return <span className="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold bg-cyan-950/70 text-cyan-300 border border-cyan-500/40">Level 1: Core</span>;
       case 2:
-        return <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-50 text-purple-800 border border-purple-300">Level 2: Advanced</span>;
+        return <span className="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-950/70 text-purple-300 border border-purple-500/40">Level 2: Advanced</span>;
       default:
-        return <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-100 text-amber-900 border border-amber-300">Level 3: Masterclass</span>;
+        return <span className="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-500/40">Level 3: Masterclass</span>;
     }
   };
 
   return (
     <div className="space-y-6">
       {/* Top Syllabus Control & Banner */}
-      <div className="glass-acrylic border border-slate-200/90 rounded-3xl p-6 sm:p-8 shadow-sm relative overflow-hidden">
-        {/* Glow Effects */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-sky-200/35 via-blue-100/25 to-purple-100/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-10 -left-10 w-72 h-72 bg-emerald-100/35 rounded-full blur-3xl pointer-events-none" />
+      <div className="bg-gradient-to-b from-[#141418] via-[#101013] to-[#0A0A0C] border border-white/[0.08] rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+        {/* Ambient Dark Accents */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#FF5722]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-10 -left-10 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <span className="px-3 py-1 rounded-full bg-sky-50 text-sky-800 border border-sky-300 text-xs font-mono font-extrabold flex items-center gap-1.5 shadow-xs">
-                <GraduationCap className="w-3.5 h-3.5 text-sky-600" />
+              <span className="px-3.5 py-1 rounded-full bg-[#FF5722]/15 text-[#FF5722] border border-[#FF5722]/30 text-xs font-mono font-extrabold flex items-center gap-1.5 shadow-xs">
+                <GraduationCap className="w-3.5 h-3.5 text-[#FF5722]" />
                 <span>OFFICIAL CURRICULUM SYLLABUS</span>
               </span>
-              <span className="text-slate-300">•</span>
-              <span className="text-xs font-mono text-slate-500 font-bold">{textbookChapters.length} Chapters • 9 Master Modules</span>
+              <span className="text-zinc-600">•</span>
+              <span className="text-xs font-mono text-zinc-400 font-bold">{textbookChapters.length} Chapters • 9 Master Modules</span>
             </div>
 
-            <h1 className="text-2xl sm:text-4xl font-black text-slate-900 font-display tracking-tight">
+            <h1 className="text-2xl sm:text-4xl font-black text-white font-display tracking-tight">
               The Institutional Trading Syllabus
             </h1>
-            <p className="text-slate-600 text-sm max-w-2xl font-sans leading-relaxed">
+            <p className="text-zinc-300 text-sm max-w-2xl font-sans leading-relaxed">
               A comprehensive, zero-fluff syllabus for institutional order flow, algorithmic price delivery, ICT 2025 Mentorship frameworks, and high-probability SMC execution models.
             </p>
           </div>
 
           {/* View Mode Switch */}
-          <div className="flex items-center p-1.5 rounded-2xl bg-slate-100/80 border border-slate-200 shadow-inner shrink-0">
+          <div className="flex items-center p-1.5 rounded-full bg-[#0D0D10] border border-white/[0.08] shadow-inner shrink-0">
             <button
               onClick={() => setViewMode('syllabus')}
-              className={`px-4 py-2 rounded-xl text-xs font-mono font-bold flex items-center gap-2 transition-all ${
+              className={`px-5 py-2 rounded-full text-xs font-mono font-bold flex items-center gap-2 transition-all ${
                 viewMode === 'syllabus'
-                  ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/25 scale-[1.02]'
-                  : 'text-slate-600 hover:text-slate-900'
+                  ? 'bg-gradient-to-r from-[#FF5722] to-[#FF7A00] text-white shadow-lg shadow-[#FF5722]/30 scale-[1.02]'
+                  : 'text-zinc-400 hover:text-white'
               }`}
             >
               <LayoutGrid className="w-3.5 h-3.5" />
@@ -164,10 +167,10 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
             </button>
             <button
               onClick={() => setViewMode('reader')}
-              className={`px-4 py-2 rounded-xl text-xs font-mono font-bold flex items-center gap-2 transition-all ${
+              className={`px-5 py-2 rounded-full text-xs font-mono font-bold flex items-center gap-2 transition-all ${
                 viewMode === 'reader'
-                  ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/25 scale-[1.02]'
-                  : 'text-slate-600 hover:text-slate-900'
+                  ? 'bg-gradient-to-r from-[#FF5722] to-[#FF7A00] text-white shadow-lg shadow-[#FF5722]/30 scale-[1.02]'
+                  : 'text-zinc-400 hover:text-white'
               }`}
             >
               <BookOpen className="w-3.5 h-3.5" />
@@ -188,15 +191,15 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                   e.currentTarget.scrollLeft += e.deltaY;
                 }
               }} 
-              className="glass-acrylic border border-slate-200/80 p-2 rounded-2xl flex items-center gap-2 overflow-x-auto w-full sm:w-auto scrollbar-thin scroll-smooth shadow-xs"
+              className="bg-[#0E0E11] border border-white/[0.08] p-2 rounded-2xl flex items-center gap-2 overflow-x-auto w-full sm:w-auto scrollbar-none scroll-smooth shadow-xs"
               style={{ WebkitOverflowScrolling: 'touch' }}
             >
               <button
                 onClick={() => setSelectedPartFilter('all')}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold whitespace-nowrap transition-all ${
+                className={`px-4 py-1.5 rounded-full text-xs font-mono font-bold whitespace-nowrap transition-all ${
                   selectedPartFilter === 'all'
-                    ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/25 scale-[1.02]'
-                    : 'bg-white/80 text-slate-600 border border-slate-200 hover:text-slate-900 hover:bg-white shadow-xs'
+                    ? 'bg-gradient-to-r from-[#FF5722] to-[#FF7A00] text-white shadow-md shadow-[#FF5722]/30 scale-[1.02]'
+                    : 'bg-[#121215] text-zinc-400 border border-white/[0.08] hover:text-white hover:bg-zinc-800 shadow-xs'
                 }`}
               >
                 All Modules ({textbookChapters.length})
@@ -208,10 +211,10 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                   <button
                     key={partName}
                     onClick={() => setSelectedPartFilter(shortLabel)}
-                    className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold whitespace-nowrap transition-all ${
+                    className={`px-4 py-1.5 rounded-full text-xs font-mono font-bold whitespace-nowrap transition-all ${
                       isSelected
-                        ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/25 scale-[1.02]'
-                        : 'bg-white/80 text-slate-600 border border-slate-200 hover:text-slate-900 hover:bg-white shadow-xs'
+                        ? 'bg-gradient-to-r from-[#FF5722] to-[#FF7A00] text-white shadow-md shadow-[#FF5722]/30 scale-[1.02]'
+                        : 'bg-[#121215] text-zinc-400 border border-white/[0.08] hover:text-white hover:bg-zinc-800 shadow-xs'
                     }`}
                   >
                     {shortLabel}
@@ -221,13 +224,13 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
             </div>
 
             <div className="relative w-full sm:w-72">
-              <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <Search className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 placeholder="Search syllabus topics & terms..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-white border border-slate-200 rounded-xl pl-9 pr-4 py-2 text-xs font-mono text-slate-800 focus:outline-none focus:border-sky-500 focus:ring-2 focus:ring-sky-100 transition-all placeholder:text-slate-400 shadow-sm"
+                className="w-full bg-[#121215] border border-white/[0.08] rounded-full pl-9 pr-4 py-2 text-xs font-mono text-zinc-200 focus:outline-none focus:border-[#FF5722] focus:ring-1 focus:ring-[#FF5722]/50 transition-all placeholder:text-zinc-500 shadow-sm"
               />
             </div>
           </div>
@@ -243,19 +246,19 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                 return (
                   <div key={partName} className="space-y-4">
                     {/* Module Header Ribbon */}
-                    <div className="flex flex-wrap items-center justify-between gap-3 pb-2 border-b border-slate-200">
+                    <div className="flex flex-wrap items-center justify-between gap-3 pb-2 border-b border-white/[0.08]">
                       <div className="flex items-center gap-3">
-                        <span className={`px-3 py-1 rounded-xl text-xs font-mono font-bold border ${styling.badge}`}>
+                        <span className={`px-3.5 py-1 rounded-full text-xs font-mono font-bold border ${styling.badge}`}>
                           {partName}
                         </span>
                         {isAbdullahMasood && (
-                          <span className="flex items-center gap-1.5 text-xs font-mono font-bold text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
-                            <Youtube className="w-3.5 h-3.5 text-red-600" />
+                          <span className="flex items-center gap-1.5 text-xs font-mono font-bold text-amber-300 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/30">
+                            <Youtube className="w-3.5 h-3.5 text-rose-500" />
                             <span>Mentor Spotlight Series</span>
                           </span>
                         )}
                       </div>
-                      <span className="text-xs font-mono text-slate-500 font-semibold">
+                      <span className="text-xs font-mono text-zinc-400 font-semibold">
                         {chapters.length} Chapters
                       </span>
                     </div>
@@ -266,13 +269,13 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                         return (
                           <div
                             key={ch.id}
-                            className="group card-2026 p-5 flex flex-col justify-between gap-4 hover:border-sky-500"
+                            className="group bg-[#111114] border border-white/[0.08] rounded-3xl p-6 flex flex-col justify-between gap-4 hover:border-[#FF5722]/50 hover:-translate-y-1 transition-all duration-300 shadow-xl"
                           >
                             <div className="space-y-3">
                               {/* Top Bar of Card */}
                               <div className="flex items-center justify-between gap-2">
                                 <div className="flex items-center gap-2">
-                                  <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-black bg-sky-50 text-sky-800 border border-sky-200 shadow-xs">
+                                  <span className="px-3 py-0.5 rounded-full text-[11px] font-mono font-black bg-[#FF5722]/15 text-[#FF5722] border border-[#FF5722]/30 shadow-xs">
                                     CH {ch.id < 10 ? `0${ch.id}` : ch.id}
                                   </span>
                                   {getDifficultyBadge(ch.level)}
@@ -280,19 +283,19 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                               </div>
 
                               {/* Chapter Title */}
-                              <h3 className="text-base font-black text-slate-900 font-display group-hover:text-sky-700 transition-colors line-clamp-2">
+                              <h3 className="text-base font-black text-white font-display group-hover:text-[#FF5722] transition-colors line-clamp-2">
                                 {ch.title}
                               </h3>
 
                               {/* Quote / Summary Preview */}
-                              <p className="text-xs text-slate-500 font-sans line-clamp-2 italic border-l-2 border-sky-400 pl-2.5">
+                              <p className="text-xs text-zinc-400 font-sans line-clamp-2 italic border-l-2 border-[#FF5722]/70 pl-2.5">
                                 "{ch.quote}"
                               </p>
                             </div>
 
                             {/* Card Footer & Action */}
-                            <div className="pt-3 border-t border-slate-200/80 flex items-center justify-between gap-3 text-xs font-mono">
-                              <span className="text-slate-500 font-medium text-[11px]">
+                            <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between gap-3 text-xs font-mono">
+                              <span className="text-zinc-400 font-medium text-[11px]">
                                 {ch.sections.length} Sections • {ch.practiceQuestions.length} Practice
                               </span>
 
@@ -302,7 +305,7 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                                   setViewMode('reader');
                                   window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }}
-                                className="px-3.5 py-1.5 rounded-xl bg-white hover:bg-sky-600 hover:text-white text-slate-800 border border-slate-200 hover:border-sky-600 font-bold transition-all flex items-center gap-1.5 group-hover:bg-sky-600 group-hover:text-white shadow-xs"
+                                className="px-4 py-1.5 rounded-full bg-zinc-900 hover:bg-[#FF5722] hover:text-white text-zinc-200 border border-white/[0.1] hover:border-[#FF5722] font-bold transition-all flex items-center gap-1.5 shadow-xs"
                               >
                                 <span>Read Unit</span>
                                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -324,16 +327,16 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 animate-fadeIn">
           {/* Sidebar: Table of Contents & Chapter List */}
           <div className="lg:col-span-4 xl:col-span-3 space-y-4">
-            <div className="bg-white border border-slate-200 rounded-3xl p-4 shadow-sm sticky top-24">
-              <div className="flex items-center justify-between pb-3 border-b border-slate-200 mb-3">
+            <div className="bg-[#111114] border border-white/[0.08] rounded-3xl p-5 sticky top-24 shadow-2xl">
+              <div className="flex items-center justify-between pb-3 border-b border-white/[0.08] mb-3">
                 <button
                   onClick={() => setViewMode('syllabus')}
-                  className="flex items-center gap-2 text-sky-700 hover:text-sky-800 font-mono text-xs font-bold uppercase tracking-wider transition-colors"
+                  className="flex items-center gap-2 text-[#FF5722] hover:text-[#FF7A00] font-mono text-xs font-bold uppercase tracking-wider transition-colors"
                 >
                   <ChevronLeft className="w-4 h-4" />
                   <span>Back to Syllabus</span>
                 </button>
-                <span className="text-[10px] font-mono font-bold text-sky-800 bg-sky-100 border border-sky-300 px-2.5 py-0.5 rounded-full">
+                <span className="text-[10px] font-mono font-bold text-[#FF5722] bg-[#FF5722]/15 border border-[#FF5722]/30 px-2.5 py-0.5 rounded-full">
                   {textbookChapters.length} Chapters
                 </span>
               </div>
@@ -350,19 +353,19 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                         setSelectedChapterId(ch.id);
                         setExplainSimpler(false);
                       }}
-                      className={`w-full text-left p-2.5 rounded-xl text-xs font-mono transition-all flex items-start justify-between gap-2 ${
+                      className={`w-full text-left p-3 rounded-2xl text-xs font-mono transition-all flex items-start justify-between gap-2 ${
                         isSelected
-                          ? 'bg-sky-50 text-sky-900 border-2 border-sky-400 font-bold shadow-sm'
-                          : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50 border border-transparent'
+                          ? 'bg-[#FF5722]/15 text-white border-2 border-[#FF5722] font-bold shadow-md shadow-[#FF5722]/20'
+                          : 'text-zinc-400 hover:text-white hover:bg-zinc-850 border border-transparent'
                       }`}
                     >
                       <div className="space-y-0.5 min-w-0">
-                        <div className="flex items-center gap-1.5 text-[10px] text-slate-500">
-                          <span className="font-bold text-sky-700">CH {ch.id}</span>
+                        <div className="flex items-center gap-1.5 text-[10px] text-zinc-500">
+                          <span className={`font-bold ${isSelected ? 'text-[#FF5722]' : 'text-zinc-400'}`}>CH {ch.id}</span>
                           <span>•</span>
                           <span className="truncate">{ch.part.split('-')[0]}</span>
                         </div>
-                        <div className={`font-semibold truncate ${isSelected ? 'text-slate-900 font-bold' : 'text-slate-700'}`}>
+                        <div className={`font-semibold truncate ${isSelected ? 'text-white font-bold' : 'text-zinc-300'}`}>
                           {ch.title}
                         </div>
                       </div>
@@ -376,13 +379,13 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
           {/* Main Chapter Reader View */}
           <div className="lg:col-span-8 xl:col-span-9 space-y-6">
             {/* Chapter Header Card */}
-            <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm relative overflow-hidden">
+            <div className="bg-[#111114] border border-white/[0.08] rounded-3xl p-6 sm:p-8 relative overflow-hidden shadow-2xl">
               {/* Subtle Ambient Glow */}
-              <div className="absolute top-0 right-0 w-80 h-80 bg-sky-100/50 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-80 h-80 bg-[#FF5722]/10 rounded-full blur-3xl pointer-events-none" />
 
-              <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-sky-700 mb-3">
+              <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-[#FF5722] mb-3">
                 <div className="flex items-center gap-2">
-                  <span className="px-3 py-1 rounded-xl bg-sky-50 border border-sky-300 text-sky-800 font-extrabold">
+                  <span className="px-3.5 py-1 rounded-full bg-[#FF5722]/15 border border-[#FF5722]/30 text-[#FF5722] font-extrabold">
                     {chapter.part}
                   </span>
                   <span>•</span>
@@ -390,23 +393,23 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                 </div>
               </div>
 
-              <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 font-display tracking-tight mt-3">
+              <h1 className="text-2xl sm:text-4xl font-extrabold text-white font-display tracking-tight mt-3">
                 Chapter {chapter.id}: {chapter.title}
               </h1>
 
               {/* Master Quotation */}
-              <blockquote className="my-5 p-4 border-l-4 border-sky-500 bg-sky-50/50 rounded-r-2xl text-slate-700 italic text-xs sm:text-sm font-serif leading-relaxed shadow-sm">
+              <blockquote className="my-5 p-4 border-l-4 border-[#FF5722] bg-[#FF5722]/10 rounded-r-2xl text-zinc-200 italic text-xs sm:text-sm font-serif leading-relaxed shadow-sm">
                 "{chapter.quote}"
               </blockquote>
 
               {/* Interactive Action Bar */}
-              <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100">
+              <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-white/[0.08]">
                 <button
                   onClick={() => setExplainSimpler(!explainSimpler)}
-                  className={`px-4 py-2 rounded-xl text-xs font-mono font-bold flex items-center gap-2 transition-all ${
+                  className={`px-5 py-2.5 rounded-full text-xs font-mono font-bold flex items-center gap-2 transition-all ${
                     explainSimpler
-                      ? 'bg-amber-400 text-slate-950 shadow-md shadow-amber-400/25'
-                      : 'bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300'
+                      ? 'bg-amber-400 text-black shadow-md shadow-amber-400/25'
+                      : 'bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30'
                   }`}
                 >
                   <Sparkles className="w-4 h-4" />
@@ -415,7 +418,7 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
 
                 <button
                   onClick={onOpenQuiz}
-                  className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 text-white flex items-center gap-2 transition-all shadow-md shadow-sky-600/20"
+                  className="px-5 py-2.5 rounded-full text-xs font-mono font-bold bg-gradient-to-r from-[#FF5722] to-[#FF7A00] hover:from-[#FF6A3D] hover:to-[#FF8E26] text-white flex items-center gap-2 transition-all shadow-lg shadow-[#FF5722]/30 hover:scale-105"
                 >
                   <Lightbulb className="w-4 h-4 text-white fill-white" />
                   Test Me On This Concept
@@ -425,12 +428,12 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
 
             {/* Beginner Analogy Callout (If active) */}
             {explainSimpler && (
-              <div className="bg-amber-50 border-2 border-amber-300 rounded-3xl p-6 text-xs text-amber-900 font-mono space-y-3 animate-fadeIn shadow-sm">
-                <div className="flex items-center gap-2 text-amber-900 font-bold text-sm">
-                  <Sparkles className="w-4 h-4 text-amber-600" />
+              <div className="bg-amber-500/10 border border-amber-500/30 rounded-3xl p-6 text-xs text-amber-300 font-mono space-y-3 animate-fadeIn shadow-lg">
+                <div className="flex items-center gap-2 text-amber-300 font-bold text-sm">
+                  <Sparkles className="w-4 h-4 text-amber-400" />
                   <span>Simplified First-Principles Analogy:</span>
                 </div>
-                <p className="text-slate-700 leading-relaxed text-sm font-sans">
+                <p className="text-zinc-200 leading-relaxed text-sm font-sans">
                   Imagine an auction house where 50 buyers enter wanting to buy gold coins. As they buy all the cheap coins at $100, the next coin costs $110. Price jumped not because buyers outnumbered sellers, but because cheap resting supply was exhausted. ICT concepts are simply footprints of where these bulk transactions leave empty zones on the floor.
                 </p>
               </div>
@@ -439,19 +442,19 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
             {/* Main Chapter Content Sections */}
             <div className="space-y-6">
               {chapter.sections.map((sec) => (
-                <div key={sec.id} className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 shadow-sm space-y-4">
-                  <h3 className="text-lg font-bold text-slate-900 font-display tracking-tight flex items-center gap-2.5">
-                    <span className="w-2.5 h-6 bg-gradient-to-b from-sky-500 to-blue-600 rounded-full" />
+                <div key={sec.id} className="bg-[#111114] border border-white/[0.08] rounded-3xl p-6 sm:p-7 space-y-4 shadow-xl">
+                  <h3 className="text-lg font-bold text-white font-display tracking-tight flex items-center gap-2.5">
+                    <span className="w-2.5 h-6 bg-gradient-to-b from-[#FF5722] to-[#FF7A00] rounded-full" />
                     {sec.title}
                   </h3>
 
-                  <div className="text-slate-700 text-sm leading-relaxed font-sans space-y-3 whitespace-pre-line">
+                  <div className="text-zinc-300 text-sm leading-relaxed font-sans space-y-3 whitespace-pre-line">
                     {sec.content.replace(/\*/g, '')}
                   </div>
 
                   {/* Embedded Diagram if specified */}
                   {sec.diagramType && (
-                    <div className="mt-5 pt-4 border-t border-slate-100">
+                    <div className="mt-5 pt-4 border-t border-white/[0.08]">
                       <InteractiveDiagram type={sec.diagramType} title={sec.title} />
                     </div>
                   )}
@@ -483,38 +486,38 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
             </div>
 
             {/* Chapter Summary Checklist & Key Terms */}
-            <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 shadow-sm space-y-6">
-              <div className="flex items-center gap-2.5 text-slate-900 font-display text-lg font-bold">
-                <CheckSquare className="w-5 h-5 text-emerald-600" />
+            <div className="bg-[#111114] border border-white/[0.08] rounded-3xl p-6 sm:p-7 space-y-6 shadow-xl">
+              <div className="flex items-center gap-2.5 text-white font-display text-lg font-bold">
+                <CheckSquare className="w-5 h-5 text-[#22C55E]" />
                 <span>Chapter {chapter.id} Summary & Ruleset</span>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-3">
-                  <h4 className="text-xs font-mono font-bold text-sky-800 uppercase tracking-wider flex items-center gap-1.5">
+                <div className="bg-[#0A0A0D] p-5 rounded-2xl border border-white/[0.06] space-y-3">
+                  <h4 className="text-xs font-mono font-bold text-[#FF5722] uppercase tracking-wider flex items-center gap-1.5">
                     <Zap className="w-3.5 h-3.5" />
                     <span>Core Takeaways:</span>
                   </h4>
-                  <ul className="space-y-2 text-xs text-slate-700">
+                  <ul className="space-y-2 text-xs text-zinc-300">
                     {chapter.summary.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <span className="text-emerald-600 font-bold mt-0.5">✓</span>
+                        <span className="text-[#22C55E] font-bold mt-0.5">✓</span>
                         <span className="leading-relaxed">{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-3">
-                  <h4 className="text-xs font-mono font-bold text-amber-800 uppercase tracking-wider flex items-center gap-1.5">
+                <div className="bg-[#0A0A0D] p-5 rounded-2xl border border-white/[0.06] space-y-3">
+                  <h4 className="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
                     <BookOpen className="w-3.5 h-3.5" />
                     <span>Key Terminology Glossary:</span>
                   </h4>
-                  <div className="space-y-2 text-xs text-slate-700 max-h-56 overflow-y-auto pr-1">
+                  <div className="space-y-2 text-xs text-zinc-300 max-h-56 overflow-y-auto pr-1">
                     {chapter.keyTerms.map((kt, idx) => (
-                      <div key={idx} className="border-b border-slate-200/80 pb-2">
-                        <span className="font-bold text-slate-900 font-mono">{kt.term}: </span>
-                        <span className="text-slate-600">{kt.definition}</span>
+                      <div key={idx} className="border-b border-white/[0.06] pb-2">
+                        <span className="font-bold text-white font-mono">{kt.term}: </span>
+                        <span className="text-zinc-400">{kt.definition}</span>
                       </div>
                     ))}
                   </div>
@@ -522,20 +525,20 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
               </div>
 
               {/* Practice Questions Accordion */}
-              <div className="pt-4 border-t border-slate-100">
+              <div className="pt-4 border-t border-white/[0.08]">
                 <button
                   onClick={() => setShowQuestions(!showQuestions)}
-                  className="text-xs font-mono text-sky-700 hover:text-sky-800 font-bold flex items-center gap-2 transition-colors"
+                  className="text-xs font-mono text-[#FF5722] hover:text-[#FF7A00] font-bold flex items-center gap-2 transition-colors"
                 >
                   <HelpCircle className="w-4 h-4" />
                   <span>{showQuestions ? 'Hide' : 'Show'} Self-Check Practice Questions ({chapter.practiceQuestions.length})</span>
                 </button>
 
                 {showQuestions && (
-                  <div className="mt-4 space-y-2.5 bg-slate-50 p-5 rounded-2xl border border-slate-200 text-xs text-slate-700">
+                  <div className="mt-4 space-y-2.5 bg-[#0A0A0D] p-5 rounded-2xl border border-white/[0.06] text-xs text-zinc-300">
                     {chapter.practiceQuestions.map((q, idx) => (
                       <div key={idx} className="flex items-start gap-2.5">
-                        <span className="font-mono text-sky-700 font-bold bg-white px-2 py-0.5 rounded border border-slate-200">Q{idx + 1}</span>
+                        <span className="font-mono text-[#FF5722] font-bold bg-[#111114] px-2.5 py-0.5 rounded-full border border-white/[0.08]">Q{idx + 1}</span>
                         <span className="leading-relaxed pt-0.5">{q}</span>
                       </div>
                     ))}
@@ -549,10 +552,10 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
               <button
                 onClick={handlePrevChapter}
                 disabled={currentIndex === 0}
-                className={`px-5 py-3 rounded-2xl text-xs font-mono font-bold flex items-center gap-2 transition-all ${
+                className={`px-6 py-3 rounded-full text-xs font-mono font-bold flex items-center gap-2 transition-all ${
                   currentIndex === 0
-                    ? 'bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed'
-                    : 'bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 shadow-sm'
+                    ? 'bg-[#111114] text-zinc-600 border border-white/[0.05] cursor-not-allowed'
+                    : 'bg-[#121215] hover:bg-zinc-800 text-zinc-200 border border-white/[0.1] shadow-md'
                 }`}
               >
                 <ChevronLeft className="w-4 h-4" />
@@ -562,10 +565,10 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
               <button
                 onClick={handleNextChapter}
                 disabled={currentIndex === textbookChapters.length - 1}
-                className={`px-6 py-3 rounded-2xl text-xs font-mono font-extrabold flex items-center gap-2 transition-all shadow-md ${
+                className={`px-7 py-3 rounded-full text-xs font-mono font-extrabold flex items-center gap-2 transition-all shadow-lg ${
                   currentIndex === textbookChapters.length - 1
-                    ? 'bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed'
-                    : 'bg-gradient-to-r from-sky-600 via-teal-600 to-emerald-600 hover:from-sky-500 hover:to-emerald-500 text-white shadow-sky-600/20'
+                    ? 'bg-[#111114] text-zinc-600 border border-white/[0.05] cursor-not-allowed'
+                    : 'bg-gradient-to-r from-[#FF5722] to-[#FF7A00] hover:from-[#FF6A3D] hover:to-[#FF8E26] text-white shadow-[#FF5722]/30 hover:scale-105'
                 }`}
               >
                 Next Chapter

@@ -28,6 +28,7 @@ import {
   Flame,
   Info
 } from 'lucide-react';
+import { BauhausNavScroller } from './BauhausNavScroller';
 
 interface ConceptExplorerProps {
   onSelectConcept?: (id: string) => void;
@@ -62,63 +63,61 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
 
   return (
     <div className="space-y-6">
-      {/* Category Pills Header */}
-      <div 
-        onWheel={(e) => { 
-          if (e.deltaY !== 0) {
-            e.currentTarget.scrollLeft += e.deltaY;
-          }
-        }} 
-        className="glass-acrylic border border-slate-200/80 p-2 rounded-2xl flex items-center gap-2 overflow-x-auto scrollbar-thin scroll-smooth shadow-xs"
-        style={{ WebkitOverflowScrolling: 'touch' }}
-      >
-        {categories.map((cat) => (
-          <button
-            key={cat.id}
-            onClick={() => setSelectedCategory(cat.id)}
-            className={`px-4 py-2 rounded-xl text-xs font-mono font-bold whitespace-nowrap transition-all ${
-              selectedCategory === cat.id
-                ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white font-extrabold shadow-md shadow-sky-600/25 scale-[1.02]'
-                : 'bg-white/80 border border-slate-200/80 text-slate-600 hover:text-slate-900 hover:bg-white shadow-xs'
-            }`}
-          >
-            {cat.label}
-          </button>
-        ))}
+      {/* Category Pills Header with BauhausNavScroller */}
+      <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-3">
+        <BauhausNavScroller>
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              type="button"
+              onClick={() => setSelectedCategory(cat.id)}
+              className={`px-4 py-2 text-xs font-mono font-black uppercase whitespace-nowrap transition-all border-2 border-[#121212] cursor-pointer shrink-0 active:translate-x-[1px] active:translate-y-[1px] active:shadow-none ${
+                selectedCategory === cat.id
+                  ? 'bg-[#D02020] text-white shadow-[3px_3px_0px_0px_#121212]'
+                  : 'bg-white text-[#121212] hover:bg-[#F0C020]'
+              }`}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </BauhausNavScroller>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left Side: Concepts Directory */}
         <div className="lg:col-span-4 xl:col-span-3 space-y-3">
-          <div className="card-2026 p-4">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-200/80 mb-3 text-xs font-mono">
-              <span className="text-slate-700 uppercase font-black tracking-wider text-[11px]">Concept Index</span>
-              <span className="text-sky-800 font-black bg-sky-50 px-2.5 py-0.5 rounded-full border border-sky-200 text-[10px]">{filteredConcepts.length} Topics</span>
+          <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-5">
+            <div className="flex items-center justify-between pb-3 border-b-4 border-[#121212] mb-3 text-xs font-mono">
+              <span className="text-[#121212] uppercase font-black tracking-wider text-[11px]">Concept Index</span>
+              <span className="text-white font-black bg-[#121212] px-3 py-0.5 text-[10px] uppercase">
+                {filteredConcepts.length} Topics
+              </span>
             </div>
 
-            <div className="space-y-1.5 max-h-[calc(100vh-260px)] overflow-y-auto pr-1">
+            <div className="space-y-2 max-h-[calc(100vh-260px)] overflow-y-auto pr-1">
               {filteredConcepts.map((c) => {
                 const isSelected = c.id === selectedConceptId;
                 return (
                   <button
                     key={c.id}
+                    type="button"
                     onClick={() => {
                       setSelectedConceptId(c.id);
                       if (onSelectConcept) onSelectConcept(c.id);
                     }}
-                    className={`w-full text-left p-3 rounded-2xl text-xs font-mono transition-all space-y-1 ${
+                    className={`w-full text-left p-3 text-xs font-mono transition-all space-y-1 border-2 border-[#121212] cursor-pointer active:translate-x-[1px] active:translate-y-[1px] active:shadow-none ${
                       isSelected
-                        ? 'bg-sky-50/90 border-2 border-sky-500 text-sky-950 shadow-xs font-bold'
-                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50 border border-transparent'
+                        ? 'bg-[#F0C020] text-[#121212] shadow-[3px_3px_0px_0px_#121212] font-black'
+                        : 'bg-white text-[#121212] hover:bg-[#F0F0F0]'
                     }`}
                   >
-                    <div className="flex items-center justify-between">
-                      <span className="font-bold text-slate-900 tracking-tight truncate">{c.name}</span>
-                      <span className="text-[9px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 uppercase font-extrabold border border-slate-200/80">
+                    <div className="flex items-center justify-between gap-1">
+                      <span className="font-black uppercase tracking-tight truncate text-[#121212]">{c.name}</span>
+                      <span className="text-[8px] px-1.5 py-0.5 bg-[#121212] text-white uppercase font-black shrink-0">
                         {c.category}
                       </span>
                     </div>
-                    <p className="text-[11px] text-slate-500 line-clamp-1 font-sans">
+                    <p className="text-[11px] text-[#121212]/80 line-clamp-1 font-medium">
                       {c.shortDefinition}
                     </p>
                   </button>
@@ -131,18 +130,15 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
         {/* Right Side: Deep Encyclopedic Breakdown */}
         <div className="lg:col-span-8 xl:col-span-9 space-y-6">
           {/* Concept Header Card with Source Provenance */}
-          <div className="card-2026 p-6 sm:p-7 relative overflow-hidden">
-            {/* Subtle Glow */}
-            <div className="absolute top-0 right-0 w-80 h-80 bg-sky-200/30 rounded-full blur-3xl pointer-events-none" />
-
-            <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-sky-700 mb-3">
-              <div className="flex items-center gap-2">
-                <span className="px-3 py-1 rounded-full bg-sky-50 border border-sky-300 font-black uppercase text-[10px] text-sky-800 shadow-xs">
+          <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 sm:p-7 relative overflow-hidden space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="px-3 py-1 bg-[#D02020] text-white border-2 border-[#121212] font-black uppercase text-[10px] shadow-[2px_2px_0px_0px_#121212]">
                   {concept.category} • ICT Core Framework
                 </span>
                 {concept.source && (
-                  <span className="px-3 py-1 rounded-full bg-amber-50 border border-amber-300 text-amber-900 font-mono text-[10px] font-bold flex items-center gap-1 shadow-xs">
-                    <FileText className="w-3 h-3 text-amber-600" />
+                  <span className="px-3 py-1 bg-[#FFF9C4] border-2 border-[#121212] text-[#121212] font-mono text-[10px] font-black uppercase flex items-center gap-1 shadow-[2px_2px_0px_0px_#121212]">
+                    <FileText className="w-3 h-3 text-[#121212]" />
                     {concept.source.approximateDate} • {concept.source.conceptStatus}
                   </span>
                 )}
@@ -150,75 +146,84 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
 
               <div className="flex items-center gap-2">
                 <button
+                  type="button"
                   onClick={() => setActiveLayerTab('ladder')}
-                  className="px-3 py-1.5 rounded-xl text-xs font-mono font-bold flex items-center gap-1.5 transition-all bg-amber-50 text-amber-900 border border-amber-300 hover:bg-amber-100 shadow-xs"
+                  className="px-4 py-1.5 text-xs font-mono font-black uppercase flex items-center gap-1.5 transition-all bg-[#F0C020] text-[#121212] border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] cursor-pointer active:translate-x-[1px] active:translate-y-[1px] active:shadow-none"
                 >
-                  <GraduationCap className="w-3.5 h-3.5 text-amber-600" />
+                  <GraduationCap className="w-3.5 h-3.5 stroke-[2.5]" />
                   5-Level Ladder
                 </button>
                 <button
+                  type="button"
                   onClick={() => setActiveLayerTab('tripartite')}
-                  className="px-3 py-1.5 rounded-xl text-xs font-mono font-bold flex items-center gap-1.5 transition-all bg-sky-50 text-sky-800 border border-sky-300 hover:bg-sky-100 shadow-xs"
+                  className="px-4 py-1.5 text-xs font-mono font-black uppercase flex items-center gap-1.5 transition-all bg-[#1040C0] text-white border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] cursor-pointer active:translate-x-[1px] active:translate-y-[1px] active:shadow-none"
                 >
-                  <Cpu className="w-3.5 h-3.5 text-sky-600" />
+                  <Cpu className="w-3.5 h-3.5 stroke-[2.5]" />
                   Fidelity Layer
                 </button>
               </div>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 font-display tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-black text-[#121212] uppercase tracking-tight">
               {concept.name}
             </h2>
 
-            <p className="text-slate-600 text-sm mt-2 leading-relaxed font-sans">
+            <p className="text-[#121212] text-sm leading-relaxed font-medium">
               {concept.shortDefinition}
             </p>
 
             {/* Source Reference Sub-Banner */}
             {concept.source && (
-              <div className="mt-4 p-4 rounded-2xl bg-slate-50/90 border border-slate-200/80 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-mono">
+              <div className="p-4 bg-[#F0F0F0] border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-mono">
                 <div>
-                  <span className="text-slate-500 block text-[10px] uppercase font-bold">Primary Mentorship</span>
-                  <span className="text-slate-900 font-bold truncate block">{concept.source.mentorship}</span>
+                  <span className="text-[#121212]/60 block text-[10px] uppercase font-black">Primary Mentorship</span>
+                  <span className="text-[#121212] font-black uppercase truncate block">{concept.source.mentorship}</span>
                 </div>
                 <div>
-                  <span className="text-slate-500 block text-[10px] uppercase font-bold">Original Terminology</span>
-                  <span className="text-amber-800 font-bold truncate block">{concept.source.originalTerminology}</span>
+                  <span className="text-[#121212]/60 block text-[10px] uppercase font-black">Original Terminology</span>
+                  <span className="text-[#1040C0] font-black uppercase truncate block">{concept.source.originalTerminology}</span>
                 </div>
                 <div>
-                  <span className="text-slate-500 block text-[10px] uppercase font-bold">Lecture Reference</span>
-                  <span className="text-sky-800 font-bold truncate block">{concept.source.lectureReference || 'Core Series'}</span>
+                  <span className="text-[#121212]/60 block text-[10px] uppercase font-black">Lecture Reference</span>
+                  <span className="text-[#D02020] font-black uppercase truncate block">{concept.source.lectureReference || 'Core Series'}</span>
                 </div>
               </div>
             )}
 
-            {/* Layer Tabs */}
-            <div className="flex flex-wrap items-center gap-2 mt-5 pt-4 border-t border-slate-200/80">
-              {[
-                { id: 'overview', label: '1. Mechanism & Logic', icon: Info },
-                { id: 'anatomy', label: '2. Anatomy & Diagram', icon: Layers },
-                { id: 'tripartite', label: '3. Source Fidelity (Tripartite)', icon: Cpu },
-                { id: 'ladder', label: '4. 5-Level Ladder', icon: GraduationCap },
-                { id: 'traps_counterexamples', label: '5. Traps & Counterexamples', icon: ShieldAlert },
-                { id: 'rules_invalidation', label: '6. Rules & Matrix', icon: CheckCircle2 },
-                { id: 'scenarios', label: '7. Scenarios & Trade Flow', icon: Zap }
-              ].map((tab) => {
-                const Icon = tab.icon;
-                return (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveLayerTab(tab.id as any)}
-                    className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold flex items-center gap-1.5 transition-all ${
-                      activeLayerTab === tab.id
-                        ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-600/25 font-black scale-105'
-                        : 'bg-white text-slate-600 border border-slate-200/90 hover:text-slate-900 hover:bg-slate-50 shadow-xs'
-                    }`}
-                  >
-                    <Icon className="w-3.5 h-3.5" />
-                    {tab.label}
-                  </button>
-                );
-              })}
+            {/* Layer Tabs with BauhausNavScroller */}
+            <div className="pt-4 border-t-4 border-[#121212]">
+              <div className="text-[10px] font-mono font-black uppercase tracking-widest text-[#121212]/60 mb-2">
+                ANALYSIS MODULES (SCROLL WITH ARROWS):
+              </div>
+              <BauhausNavScroller>
+                {[
+                  { id: 'overview', label: '1. Mechanism & Logic', icon: Info },
+                  { id: 'anatomy', label: '2. Anatomy & Diagram', icon: Layers },
+                  { id: 'tripartite', label: '3. Source Fidelity', icon: Cpu },
+                  { id: 'ladder', label: '4. 5-Level Ladder', icon: GraduationCap },
+                  { id: 'traps_counterexamples', label: '5. Traps & Counters', icon: ShieldAlert },
+                  { id: 'rules_invalidation', label: '6. Rules & Matrix', icon: CheckCircle2 },
+                  { id: 'scenarios', label: '7. Trade Scenarios', icon: Zap }
+                ].map((tab) => {
+                  const Icon = tab.icon;
+                  const isActive = activeLayerTab === tab.id;
+                  return (
+                    <button
+                      key={tab.id}
+                      type="button"
+                      onClick={() => setActiveLayerTab(tab.id as any)}
+                      className={`px-4 py-2 text-xs font-mono font-black uppercase flex items-center gap-1.5 transition-all border-2 border-[#121212] cursor-pointer shrink-0 active:translate-x-[1px] active:translate-y-[1px] active:shadow-none ${
+                        isActive
+                          ? 'bg-[#1040C0] text-white shadow-[3px_3px_0px_0px_#121212]'
+                          : 'bg-white text-[#121212] hover:bg-[#F0C020]'
+                      }`}
+                    >
+                      <Icon className="w-3.5 h-3.5 stroke-[2.5]" />
+                      {tab.label}
+                    </button>
+                  );
+                })}
+              </BauhausNavScroller>
             </div>
           </div>
 
@@ -226,58 +231,58 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
           {activeLayerTab === 'overview' && (
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-3">
-                  <div className="flex items-center gap-2 text-sky-700 font-mono text-sm font-bold">
-                    <Zap className="w-4 h-4 text-sky-600" />
-                    <h3 className="text-slate-900">Why It Exists</h3>
+                <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 space-y-3">
+                  <div className="flex items-center gap-2 text-[#D02020] font-mono text-sm font-black uppercase">
+                    <Zap className="w-4 h-4 text-[#D02020] stroke-[2.5]" />
+                    <h3>Why It Exists</h3>
                   </div>
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-sans">
+                  <p className="text-[#121212] text-xs sm:text-sm leading-relaxed font-medium">
                     {concept.whyItExists}
                   </p>
                 </div>
 
-                <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-3">
-                  <div className="flex items-center gap-2 text-amber-700 font-mono text-sm font-bold">
-                    <HelpCircle className="w-4 h-4 text-amber-600" />
-                    <h3 className="text-slate-900">Market Problem It Solves</h3>
+                <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 space-y-3">
+                  <div className="flex items-center gap-2 text-[#1040C0] font-mono text-sm font-black uppercase">
+                    <HelpCircle className="w-4 h-4 text-[#1040C0] stroke-[2.5]" />
+                    <h3>Market Problem It Solves</h3>
                   </div>
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-sans">
+                  <p className="text-[#121212] text-xs sm:text-sm leading-relaxed font-medium">
                     {concept.problemItSolves}
                   </p>
                 </div>
               </div>
 
               {/* How ICT Uses It & Causal Connections */}
-              <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-4">
-                <div className="flex items-center gap-2 text-emerald-700 font-mono text-sm font-bold">
-                  <BookOpen className="w-4 h-4 text-emerald-600" />
-                  <h3 className="text-slate-900">How ICT Employs This in Practice</h3>
+              <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 space-y-4">
+                <div className="flex items-center gap-2 text-[#121212] font-mono text-sm font-black uppercase">
+                  <BookOpen className="w-4 h-4 stroke-[2.5]" />
+                  <h3>How ICT Employs This in Practice</h3>
                 </div>
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-sans">
+                <p className="text-[#121212] text-xs sm:text-sm leading-relaxed font-medium">
                   {concept.howICTUsesIt}
                 </p>
 
                 {/* Causal Pathway to Next Concept */}
                 {concept.causalConnections && concept.causalConnections.length > 0 && (
-                  <div className="mt-4 pt-4 border-t border-slate-200 space-y-3">
-                    <div className="flex items-center gap-2 text-xs font-mono text-sky-800 font-bold uppercase">
-                      <GitFork className="w-4 h-4 text-sky-600" />
+                  <div className="mt-4 pt-4 border-t-4 border-[#121212] space-y-3">
+                    <div className="flex items-center gap-2 text-xs font-mono text-[#D02020] font-black uppercase">
+                      <GitFork className="w-4 h-4 stroke-[2.5]" />
                       <span>Causal Sequence: Why Does This Lead to the Next Step?</span>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {concept.causalConnections.map((conn, idx) => (
-                        <div key={idx} className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2 text-xs">
-                          <div className="flex items-center justify-between text-sky-800 font-mono font-bold">
+                        <div key={idx} className="p-4 bg-[#F0F0F0] border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] space-y-2 text-xs font-mono">
+                          <div className="flex items-center justify-between text-[#D02020] font-black uppercase">
                             <span>Next Step: {conn.targetLabel}</span>
-                            <ChevronRight className="w-4 h-4 text-sky-600" />
+                            <ChevronRight className="w-4 h-4 stroke-[3]" />
                           </div>
-                          <p className="text-slate-600 text-[11px] leading-relaxed">
-                            <strong className="text-slate-900">Why it follows:</strong> {conn.whyThisFollows}
+                          <p className="text-[#121212] text-[11px] leading-relaxed font-medium">
+                            <strong className="text-[#121212] font-black">Why it follows:</strong> {conn.whyThisFollows}
                           </p>
-                          <div className="p-2 rounded-lg bg-amber-50 border border-amber-200 text-[11px] text-amber-900 font-mono">
+                          <div className="p-2.5 bg-[#FFF9C4] border border-[#121212] text-[11px] text-[#121212] font-bold">
                             ⚡ Institutional Mechanic: {conn.institutionalMechanic}
                           </div>
-                          <p className="text-rose-700 text-[10px] font-mono">
+                          <p className="text-[#D02020] text-[10px] font-black uppercase">
                             ⚠️ Risk of skipping: {conn.riskOfSkipping}
                           </p>
                         </div>
@@ -292,22 +297,24 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
           {/* TAB 2: ANATOMY & INTERACTIVE DIAGRAM */}
           {activeLayerTab === 'anatomy' && (
             <div className="space-y-6">
-              <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-sky-700 font-mono text-sm font-bold">
-                    <Layers className="w-4 h-4 text-sky-600" />
-                    <h3 className="text-slate-900">Interactive Step-by-Step Diagram Engine</h3>
+              <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 space-y-4">
+                <div className="flex items-center justify-between flex-wrap gap-2">
+                  <div className="flex items-center gap-2 text-[#121212] font-mono text-sm font-black uppercase">
+                    <Layers className="w-4 h-4 stroke-[2.5]" />
+                    <h3>Interactive Step-by-Step Diagram Engine</h3>
                   </div>
-                  <span className="text-xs font-mono text-slate-500">
-                    Type: <span className="text-sky-800 font-bold">{concept.diagramType}</span>
+                  <span className="text-xs font-mono text-[#121212]">
+                    Type: <span className="text-[#D02020] font-black uppercase">{concept.diagramType}</span>
                   </span>
                 </div>
 
-                <InteractiveDiagram diagramType={concept.diagramType} />
+                <div className="border-2 border-[#121212]">
+                  <InteractiveDiagram type={concept.diagramType as any} title={concept.name} />
+                </div>
 
-                <div className="pt-3 border-t border-slate-200 text-xs text-slate-600 space-y-2 font-sans">
-                  <h4 className="font-bold text-slate-900 font-mono uppercase text-[11px]">Chart Anatomy Specifications:</h4>
-                  <p className="leading-relaxed text-slate-600">{concept.chartAnatomy}</p>
+                <div className="pt-3 border-t-2 border-[#121212] text-xs text-[#121212] space-y-2">
+                  <h4 className="font-black text-[#121212] font-mono uppercase text-[11px]">Chart Anatomy Specifications:</h4>
+                  <p className="leading-relaxed text-[#121212] font-medium">{concept.chartAnatomy}</p>
                 </div>
               </div>
             </div>
@@ -316,31 +323,32 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
           {/* TAB 3: SOURCE FIDELITY & TRIPARTITE EPISTEMOLOGY */}
           {activeLayerTab === 'tripartite' && (
             <div className="space-y-6">
-              <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-5">
+              <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 sm:p-7 space-y-5">
                 <div>
-                  <div className="flex items-center gap-2 text-sky-700 font-mono text-sm font-bold mb-1">
-                    <Cpu className="w-4 h-4 text-sky-600" />
-                    <h3 className="text-slate-900">Tripartite Epistemological Distinction</h3>
+                  <div className="flex items-center gap-2 text-[#121212] font-mono text-sm font-black uppercase mb-1">
+                    <Cpu className="w-4 h-4 stroke-[2.5]" />
+                    <h3>Tripartite Epistemological Distinction</h3>
                   </div>
-                  <p className="text-slate-600 text-xs sm:text-sm font-sans">
+                  <p className="text-[#121212]/80 text-xs sm:text-sm font-medium">
                     To maintain strict academic and source integrity, this platform separates what ICT explicitly teaches from observable auction orderbook mechanics and derived quantitative SMC interpretations.
                   </p>
                 </div>
 
                 {/* Sub-tabs */}
-                <div className="flex items-center gap-2 border-b border-slate-200 pb-3">
+                <div className="flex items-center gap-2 border-b-4 border-[#121212] pb-3 flex-wrap">
                   {[
-                    { id: 'ict', label: '1. ICT Canonical Teaching', color: 'bg-amber-50 text-amber-900 border-amber-300' },
-                    { id: 'observable', label: '2. Observable Auction Mechanics', color: 'bg-sky-50 text-sky-900 border-sky-300' },
-                    { id: 'derived', label: '3. Derived SMC Synthesis', color: 'bg-emerald-50 text-emerald-900 border-emerald-300' }
+                    { id: 'ict', label: '1. ICT Canonical Teaching' },
+                    { id: 'observable', label: '2. Observable Auction Mechanics' },
+                    { id: 'derived', label: '3. Derived SMC Synthesis' }
                   ].map((tab) => (
                     <button
                       key={tab.id}
+                      type="button"
                       onClick={() => setActiveTripartiteTab(tab.id as any)}
-                      className={`px-3 py-1.5 rounded-xl text-xs font-mono font-medium transition-all ${
+                      className={`px-4 py-2 text-xs font-mono font-black uppercase transition-all border-2 border-[#121212] cursor-pointer active:translate-x-[1px] active:translate-y-[1px] active:shadow-none ${
                         activeTripartiteTab === tab.id
-                          ? `${tab.color} border font-bold shadow-sm`
-                          : 'text-slate-500 hover:text-slate-900'
+                          ? 'bg-[#F0C020] text-[#121212] shadow-[2px_2px_0px_0px_#121212]'
+                          : 'bg-white text-[#121212] hover:bg-[#F0F0F0]'
                       }`}
                     >
                       {tab.label}
@@ -349,48 +357,48 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
                 </div>
 
                 {concept.tripartiteView && (
-                  <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+                  <div className="p-5 bg-[#FAF9F5] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] space-y-4">
                     {activeTripartiteTab === 'ict' && (
                       <div className="space-y-3">
-                        <div className="flex items-center gap-2 text-amber-800 font-mono text-sm font-bold">
-                          <Flame className="w-4 h-4 text-amber-600" />
+                        <div className="flex items-center gap-2 text-[#D02020] font-mono text-sm font-black uppercase">
+                          <Flame className="w-4 h-4 stroke-[2.5]" />
                           <h4>What ICT (Michael J. Huddleston) Explicitly Teaches:</h4>
                         </div>
-                        <p className="text-slate-800 text-xs sm:text-sm leading-relaxed font-sans bg-amber-50 border border-amber-200 p-4 rounded-xl">
+                        <p className="text-[#121212] text-xs sm:text-sm leading-relaxed font-medium bg-[#FFF9C4] border-2 border-[#121212] p-4">
                           "{concept.tripartiteView.ictTeaching}"
                         </p>
-                        <div className="text-[11px] font-mono text-slate-500">
-                          Source: <span className="text-amber-800 font-bold">{concept.source?.mentorship}</span> ({concept.source?.approximateDate})
+                        <div className="text-[11px] font-mono text-[#121212]/70 font-bold">
+                          Source: <span className="text-[#121212] font-black uppercase">{concept.source?.mentorship}</span> ({concept.source?.approximateDate})
                         </div>
                       </div>
                     )}
 
                     {activeTripartiteTab === 'observable' && (
                       <div className="space-y-3">
-                        <div className="flex items-center gap-2 text-sky-800 font-mono text-sm font-bold">
-                          <Activity className="w-4 h-4 text-sky-600" />
-                          <h4>What is Empirically Observable on Orderbooks & Charts:</h4>
+                        <div className="flex items-center gap-2 text-[#1040C0] font-mono text-sm font-black uppercase">
+                          <Activity className="w-4 h-4 stroke-[2.5]" />
+                          <h4>What is Empirically Observable on Orderbooks &amp; Charts:</h4>
                         </div>
-                        <p className="text-slate-800 text-xs sm:text-sm leading-relaxed font-sans bg-sky-50 border border-sky-200 p-4 rounded-xl">
+                        <p className="text-[#121212] text-xs sm:text-sm leading-relaxed font-medium bg-[#E0E7FF] border-2 border-[#121212] p-4">
                           {concept.tripartiteView.observableMarketBehavior}
                         </p>
-                        <div className="text-[11px] font-mono text-slate-500">
-                          Domain: <span className="text-sky-800 font-bold">Central Limit Order Book (CLOB), Matching Engine Microstructure & Auction Theory</span>
+                        <div className="text-[11px] font-mono text-[#121212]/70 font-bold">
+                          Domain: <span className="text-[#1040C0] font-black">Central Limit Order Book (CLOB), Matching Engine Microstructure &amp; Auction Theory</span>
                         </div>
                       </div>
                     )}
 
                     {activeTripartiteTab === 'derived' && (
                       <div className="space-y-3">
-                        <div className="flex items-center gap-2 text-emerald-800 font-mono text-sm font-bold">
-                          <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                          <h4>Derived Quantitative & SMC Synthesis:</h4>
+                        <div className="flex items-center gap-2 text-[#121212] font-mono text-sm font-black uppercase">
+                          <ShieldCheck className="w-4 h-4 stroke-[2.5]" />
+                          <h4>Derived Quantitative &amp; SMC Synthesis:</h4>
                         </div>
-                        <p className="text-slate-800 text-xs sm:text-sm leading-relaxed font-sans bg-emerald-50 border border-emerald-200 p-4 rounded-xl">
+                        <p className="text-[#121212] text-xs sm:text-sm leading-relaxed font-medium bg-[#DCFCE7] border-2 border-[#121212] p-4">
                           {concept.tripartiteView.derivedInterpretation}
                         </p>
-                        <div className="text-[11px] font-mono text-slate-500">
-                          Application: <span className="text-emerald-800 font-bold">Rule-based backtesting, statistical edge validation, risk-reward skew</span>
+                        <div className="text-[11px] font-mono text-[#121212]/70 font-bold">
+                          Application: <span className="text-[#121212] font-black">Rule-based backtesting, statistical edge validation, risk-reward skew</span>
                         </div>
                       </div>
                     )}
@@ -403,52 +411,53 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
           {/* TAB 4: 5-LEVEL EXPLANATION LADDER */}
           {activeLayerTab === 'ladder' && (
             <div className="space-y-6">
-              <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6">
+              <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 sm:p-7 space-y-6">
                 <div>
-                  <div className="flex items-center gap-2 text-amber-700 font-mono text-sm font-bold mb-1">
-                    <GraduationCap className="w-5 h-5 text-amber-600" />
-                    <h3 className="text-slate-900">The 5-Level Conceptual Progression Ladder</h3>
+                  <div className="flex items-center gap-2 text-[#121212] font-mono text-sm font-black uppercase mb-1">
+                    <GraduationCap className="w-5 h-5 stroke-[2.5]" />
+                    <h3>The 5-Level Conceptual Progression Ladder</h3>
                   </div>
-                  <p className="text-slate-600 text-xs sm:text-sm font-sans">
+                  <p className="text-[#121212]/80 text-xs sm:text-sm font-medium">
                     Progress from intuitive first-principles metaphors up to advanced algorithmic interbank execution models.
                   </p>
                 </div>
 
-                {/* Ladder Level Selector */}
-                <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
+                {/* Ladder Level Selector with BauhausNavScroller */}
+                <BauhausNavScroller>
                   {[
-                    { lvl: 1, title: 'Level 1: Child Analogy', desc: 'Intuitive metaphor' },
-                    { lvl: 2, title: 'Level 2: Beginner', desc: 'Chart behavior' },
-                    { lvl: 3, title: 'Level 3: Trader', desc: 'Orderflow & execution' },
-                    { lvl: 4, title: 'Level 4: Advanced', desc: 'Intermarket & timing' },
-                    { lvl: 5, title: 'Level 5: Canonical ICT', desc: 'IPDA algorithmic model' }
+                    { lvl: 1, title: 'L1: Child Analogy', desc: 'Metaphor' },
+                    { lvl: 2, title: 'L2: Beginner', desc: 'Chart behavior' },
+                    { lvl: 3, title: 'L3: Trader', desc: 'Orderflow' },
+                    { lvl: 4, title: 'L4: Advanced', desc: 'Intermarket' },
+                    { lvl: 5, title: 'L5: Canonical ICT', desc: 'IPDA algorithmic' }
                   ].map((step) => (
                     <button
                       key={step.lvl}
+                      type="button"
                       onClick={() => setLadderLevel(step.lvl as any)}
-                      className={`p-3 rounded-xl text-left transition-all font-mono ${
+                      className={`p-3 text-left transition-all font-mono border-2 border-[#121212] cursor-pointer min-w-[140px] shrink-0 active:translate-x-[1px] active:translate-y-[1px] active:shadow-none ${
                         ladderLevel === step.lvl
-                          ? 'bg-amber-400 text-slate-950 font-bold shadow-md shadow-amber-400/25'
-                          : 'bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                          ? 'bg-[#F0C020] text-[#121212] font-black shadow-[3px_3px_0px_0px_#121212]'
+                          : 'bg-white text-[#121212] hover:bg-[#F0F0F0]'
                       }`}
                     >
-                      <span className="block text-xs font-bold">{step.title}</span>
-                      <span className={`text-[10px] block truncate ${ladderLevel === step.lvl ? 'text-slate-900' : 'text-slate-500'}`}>
+                      <span className="block text-xs font-black uppercase">{step.title}</span>
+                      <span className="text-[10px] block truncate text-[#121212]/70 font-bold uppercase">
                         {step.desc}
                       </span>
                     </button>
                   ))}
-                </div>
+                </BauhausNavScroller>
 
                 {/* Ladder Content Card */}
                 {concept.explanationLadder && (
-                  <div className="p-5 rounded-2xl bg-slate-50 border border-amber-300 space-y-4">
-                    <div className="text-amber-900 font-mono font-bold text-xs uppercase tracking-wider flex items-center gap-2">
-                      <Sparkles className="w-4 h-4 text-amber-600" />
+                  <div className="p-6 bg-[#FAF9F5] border-4 border-[#121212] shadow-[4px_4px_0px_0px_#121212] space-y-4">
+                    <div className="text-[#D02020] font-mono font-black text-xs uppercase tracking-wider flex items-center gap-2">
+                      <Sparkles className="w-4 h-4 stroke-[2.5]" />
                       Active Explanation Level: {ladderLevel} of 5
                     </div>
 
-                    <p className="text-slate-800 text-sm sm:text-base leading-relaxed font-sans">
+                    <p className="text-[#121212] text-sm sm:text-base leading-relaxed font-medium">
                       {ladderLevel === 1 && concept.explanationLadder.level1Child}
                       {ladderLevel === 2 && concept.explanationLadder.level2Beginner}
                       {ladderLevel === 3 && concept.explanationLadder.level3Trader}
@@ -457,23 +466,23 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
                     </p>
 
                     {/* Actionable Boundaries: When it Matters vs When to Ignore */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-200">
-                      <div className="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 space-y-1.5">
-                        <div className="flex items-center gap-2 text-emerald-800 font-mono text-xs font-bold">
-                          <Check className="w-4 h-4 text-emerald-600" />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t-2 border-[#121212]">
+                      <div className="p-4 bg-[#DCFCE7] border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] space-y-1.5">
+                        <div className="flex items-center gap-2 text-[#121212] font-mono text-xs font-black uppercase">
+                          <Check className="w-4 h-4 text-[#166534] stroke-[3]" />
                           <span>⚡ When Does It Matter?</span>
                         </div>
-                        <p className="text-slate-700 text-xs font-sans leading-relaxed">
+                        <p className="text-[#121212] text-xs font-medium leading-relaxed">
                           {concept.explanationLadder.whenItMatters}
                         </p>
                       </div>
 
-                      <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 space-y-1.5">
-                        <div className="flex items-center gap-2 text-rose-800 font-mono text-xs font-bold">
-                          <XCircle className="w-4 h-4 text-rose-600" />
+                      <div className="p-4 bg-rose-50 border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] space-y-1.5">
+                        <div className="flex items-center gap-2 text-[#D02020] font-mono text-xs font-black uppercase">
+                          <XCircle className="w-4 h-4 stroke-[2.5]" />
                           <span>🚫 When Should You Ignore It?</span>
                         </div>
-                        <p className="text-slate-700 text-xs font-sans leading-relaxed">
+                        <p className="text-[#121212] text-xs font-medium leading-relaxed">
                           {concept.explanationLadder.whenToIgnore}
                         </p>
                       </div>
@@ -484,16 +493,16 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
             </div>
           )}
 
-          {/* TAB 5: TRAPS & COUNTEREXAMPLES (ANTI-SLOP PATTERN RECOGNITION) */}
+          {/* TAB 5: TRAPS & COUNTEREXAMPLES */}
           {activeLayerTab === 'traps_counterexamples' && (
             <div className="space-y-6">
-              <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-5">
+              <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 sm:p-7 space-y-5">
                 <div>
-                  <div className="flex items-center gap-2 text-rose-700 font-mono text-sm font-bold mb-1">
-                    <ShieldAlert className="w-5 h-5 text-rose-600" />
-                    <h3 className="text-slate-900">Deliberate Counterexamples & Fake Setup Traps</h3>
+                  <div className="flex items-center gap-2 text-[#D02020] font-mono text-sm font-black uppercase mb-1">
+                    <ShieldAlert className="w-5 h-5 stroke-[2.5]" />
+                    <h3>Deliberate Counterexamples &amp; Fake Setup Traps</h3>
                   </div>
-                  <p className="text-slate-600 text-xs sm:text-sm font-sans">
+                  <p className="text-[#121212]/80 text-xs sm:text-sm font-medium">
                     True pattern recognition comes from recognizing setups that look like ICT patterns on the surface, but are structurally invalid traps.
                   </p>
                 </div>
@@ -502,29 +511,29 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
                 <div className="space-y-4">
                   {concept.counterexamples && concept.counterexamples.length > 0 ? (
                     concept.counterexamples.map((trap, idx) => (
-                      <div key={idx} className="p-4 rounded-2xl bg-rose-50/40 border border-rose-200 space-y-3">
-                        <div className="flex items-center justify-between text-rose-800 font-mono text-sm font-bold">
+                      <div key={idx} className="p-5 bg-rose-50 border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] space-y-3 font-mono">
+                        <div className="flex items-center justify-between text-[#D02020] text-sm font-black uppercase flex-wrap gap-2">
                           <span className="flex items-center gap-2">
-                            <AlertTriangle className="w-4 h-4 text-rose-600" />
+                            <AlertTriangle className="w-4 h-4 stroke-[2.5]" />
                             {trap.title}
                           </span>
-                          <span className="text-[10px] px-2 py-0.5 rounded bg-rose-100 text-rose-800 font-mono uppercase border border-rose-300">
+                          <span className="text-[10px] px-2.5 py-0.5 bg-[#D02020] text-white border border-[#121212] uppercase font-black">
                             Invalid Counterexample
                           </span>
                         </div>
-                        <div className="text-xs text-slate-700 font-sans space-y-2">
-                          <p><strong className="text-slate-900 font-mono">The Trap:</strong> {trap.trapDescription}</p>
-                          <p><strong className="text-rose-700 font-mono">Why It Fails:</strong> {trap.whyItFails}</p>
+                        <div className="text-xs text-[#121212] space-y-2">
+                          <p><strong className="font-black text-[#121212] uppercase">The Trap:</strong> {trap.trapDescription}</p>
+                          <p><strong className="font-black text-[#D02020] uppercase">Why It Fails:</strong> {trap.whyItFails}</p>
                         </div>
-                        <div className="p-2.5 rounded-xl bg-white border border-amber-300 text-amber-900 text-xs font-mono">
+                        <div className="p-3 bg-[#FFF9C4] border border-[#121212] text-[#121212] text-xs font-bold">
                           🛡️ Rule of Thumb: {trap.ruleOfThumb}
                         </div>
                       </div>
                     ))
                   ) : (
-                    <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-slate-700 text-xs space-y-2">
-                      <p className="font-bold text-rose-700 font-mono">General Counterexample:</p>
-                      <p className="text-slate-600 leading-relaxed font-sans">{concept.counterexample}</p>
+                    <div className="p-5 bg-[#FAF9F5] border-2 border-[#121212] text-[#121212] text-xs space-y-2">
+                      <p className="font-black text-[#D02020] font-mono uppercase">General Counterexample:</p>
+                      <p className="leading-relaxed font-medium">{concept.counterexample}</p>
                     </div>
                   )}
                 </div>
@@ -537,50 +546,50 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
             <div className="space-y-6">
               {/* Timeframe Matrix */}
               {concept.timeframeMatrix && (
-                <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-4">
-                  <div className="flex items-center gap-2 text-sky-700 font-mono text-sm font-bold">
-                    <Clock className="w-4 h-4 text-sky-600" />
-                    <h3 className="text-slate-900">Multi-Timeframe Application Matrix</h3>
+                <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 space-y-4">
+                  <div className="flex items-center gap-2 text-[#121212] font-mono text-sm font-black uppercase">
+                    <Clock className="w-4 h-4 stroke-[2.5]" />
+                    <h3>Multi-Timeframe Application Matrix</h3>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-                    <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
-                      <span className="text-amber-800 font-mono font-bold block uppercase text-[10px]">Higher Timeframe (HTF)</span>
-                      <p className="text-slate-600 font-sans leading-relaxed">{concept.timeframeMatrix.htfApplication}</p>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-mono">
+                    <div className="p-4 bg-[#FFF9C4] border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] space-y-1.5">
+                      <span className="text-[#121212] font-black block uppercase text-[10px]">Higher Timeframe (HTF)</span>
+                      <p className="text-[#121212] leading-relaxed font-medium">{concept.timeframeMatrix.htfApplication}</p>
                     </div>
-                    <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
-                      <span className="text-sky-800 font-mono font-bold block uppercase text-[10px]">Lower Timeframe (LTF)</span>
-                      <p className="text-slate-600 font-sans leading-relaxed">{concept.timeframeMatrix.ltfApplication}</p>
+                    <div className="p-4 bg-[#FEE2E2] border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] space-y-1.5">
+                      <span className="text-[#D02020] font-black block uppercase text-[10px]">Lower Timeframe (LTF)</span>
+                      <p className="text-[#121212] leading-relaxed font-medium">{concept.timeframeMatrix.ltfApplication}</p>
                     </div>
-                    <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
-                      <span className="text-emerald-800 font-mono font-bold block uppercase text-[10px]">Session & Timing Context</span>
-                      <p className="text-slate-600 font-sans leading-relaxed">{concept.timeframeMatrix.sessionAndTiming}</p>
+                    <div className="p-4 bg-[#E0E7FF] border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] space-y-1.5">
+                      <span className="text-[#1040C0] font-black block uppercase text-[10px]">Session &amp; Timing Context</span>
+                      <p className="text-[#121212] leading-relaxed font-medium">{concept.timeframeMatrix.sessionAndTiming}</p>
                     </div>
                   </div>
                 </div>
               )}
 
               {/* Strict Invalidation Criteria */}
-              <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-3">
-                <div className="flex items-center gap-2 text-rose-700 font-mono text-sm font-bold">
-                  <ShieldAlert className="w-4 h-4 text-rose-600" />
-                  <h3 className="text-slate-900">Strict Invalidation Criteria</h3>
+              <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 space-y-3">
+                <div className="flex items-center gap-2 text-[#D02020] font-mono text-sm font-black uppercase">
+                  <ShieldAlert className="w-4 h-4 stroke-[2.5]" />
+                  <h3>Strict Invalidation Criteria</h3>
                 </div>
-                <p className="text-slate-800 text-xs sm:text-sm leading-relaxed font-sans bg-rose-50 border border-rose-200 p-4 rounded-xl">
+                <p className="text-[#121212] text-xs sm:text-sm leading-relaxed font-medium bg-rose-50 border-2 border-[#121212] p-4">
                   {concept.invalidationCriteria}
                 </p>
               </div>
 
               {/* Identification Checklist */}
-              <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-3">
-                <div className="flex items-center gap-2 text-emerald-700 font-mono text-sm font-bold">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                  <h3 className="text-slate-900">Identification Checklist</h3>
+              <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 space-y-3">
+                <div className="flex items-center gap-2 text-[#121212] font-mono text-sm font-black uppercase">
+                  <CheckCircle2 className="w-4 h-4 stroke-[2.5]" />
+                  <h3>Identification Checklist</h3>
                 </div>
-                <ul className="space-y-2 text-xs font-mono text-slate-700">
+                <ul className="space-y-2 text-xs font-mono text-[#121212]">
                   {concept.identificationRules.map((rule, idx) => (
-                    <li key={idx} className="flex items-start gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
-                      <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                      <span>{rule}</span>
+                    <li key={idx} className="flex items-start gap-2.5 bg-[#F0F0F0] p-3 border-2 border-[#121212]">
+                      <Check className="w-4 h-4 text-[#1040C0] shrink-0 mt-0.5 stroke-[3]" />
+                      <span className="leading-relaxed font-bold">{rule}</span>
                     </li>
                   ))}
                 </ul>
@@ -593,23 +602,23 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Bullish Scenario */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-3">
-                  <div className="flex items-center gap-2 text-emerald-700 font-mono text-sm font-bold">
-                    <ArrowUpRight className="w-5 h-5 text-emerald-600" />
-                    <h3 className="text-slate-900">Bullish Execution Scenario</h3>
+                <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 space-y-3">
+                  <div className="flex items-center gap-2 text-[#1040C0] font-mono text-sm font-black uppercase">
+                    <ArrowUpRight className="w-5 h-5 stroke-[3]" />
+                    <h3>Bullish Execution Scenario</h3>
                   </div>
-                  <p className="text-slate-700 text-xs sm:text-sm leading-relaxed font-sans bg-emerald-50 border border-emerald-200 p-4 rounded-xl">
+                  <p className="text-[#121212] text-xs sm:text-sm leading-relaxed font-medium bg-[#E0E7FF] border-2 border-[#121212] p-4">
                     {concept.bullishScenario}
                   </p>
                 </div>
 
                 {/* Bearish Scenario */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-3">
-                  <div className="flex items-center gap-2 text-rose-700 font-mono text-sm font-bold">
-                    <ArrowDownRight className="w-5 h-5 text-rose-600" />
-                    <h3 className="text-slate-900">Bearish Execution Scenario</h3>
+                <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 space-y-3">
+                  <div className="flex items-center gap-2 text-[#D02020] font-mono text-sm font-black uppercase">
+                    <ArrowDownRight className="w-5 h-5 stroke-[3]" />
+                    <h3>Bearish Execution Scenario</h3>
                   </div>
-                  <p className="text-slate-700 text-xs sm:text-sm leading-relaxed font-sans bg-rose-50 border border-rose-200 p-4 rounded-xl">
+                  <p className="text-[#121212] text-xs sm:text-sm leading-relaxed font-medium bg-rose-50 border-2 border-[#121212] p-4">
                     {concept.bearishScenario}
                   </p>
                 </div>
@@ -617,14 +626,15 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
 
               {/* Trade Execution CTA */}
               {onOpenSimulator && (
-                <div className="p-5 rounded-2xl bg-gradient-to-r from-sky-50 via-blue-50 to-indigo-50 border border-sky-200 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+                <div className="p-6 sm:p-7 bg-[#F0C020] border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] flex flex-col sm:flex-row items-center justify-between gap-5">
                   <div>
-                    <h4 className="font-bold text-slate-900 font-mono text-sm">Practice This Setup in the Decision Simulator</h4>
-                    <p className="text-slate-600 text-xs mt-1">Formulate a trade hypothesis using this concept and simulate price delivery.</p>
+                    <h4 className="font-black text-[#121212] uppercase text-base">Practice This Setup in the Decision Simulator</h4>
+                    <p className="text-[#121212]/90 text-xs sm:text-sm mt-1 font-medium">Formulate a trade hypothesis using this concept and simulate price delivery.</p>
                   </div>
                   <button
+                    type="button"
                     onClick={onOpenSimulator}
-                    className="px-4 py-2 rounded-xl bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 text-white font-bold font-mono text-xs shadow-md shadow-sky-600/20 transition-all shrink-0"
+                    className="px-6 py-3 bg-[#D02020] hover:bg-red-700 text-white font-black font-mono text-xs uppercase border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] transition-all shrink-0 cursor-pointer active:translate-x-[1px] active:translate-y-[1px] active:shadow-none"
                   >
                     Open Simulator
                   </button>
@@ -637,3 +647,5 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
     </div>
   );
 };
+
+export default ConceptExplorer;

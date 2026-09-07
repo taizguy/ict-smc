@@ -9,6 +9,7 @@ import {
   Activity,
   CheckCircle2
 } from 'lucide-react';
+import { BauhausNavScroller } from './BauhausNavScroller';
 
 export const BacktestLab: React.FC = () => {
   const [selectedStrategy, setSelectedStrategy] = useState<'2022_model' | 'charter_model_1' | 'charter_model_8' | 'charter_model_9' | 'silver_bullet' | 'breaker_reversal'>('2022_model');
@@ -38,94 +39,93 @@ export const BacktestLab: React.FC = () => {
       title: 'ICT Charter Model 1 (Intraday Scalping & 20-Day IPDA)',
       baseWinRate: minQualityScore >= 6 ? 72 : minQualityScore >= 5 ? 64 : 54,
       avgRR: 2.1,
-      tradesPerMonth: minQualityScore >= 6 ? 22 : 36,
-      maxDrawdown: minQualityScore >= 6 ? 4.4 : 7.8,
-      profitFactor: minQualityScore >= 6 ? 2.55 : 2.05,
-      description: 'High-frequency intraday scalping targeting 10 to 30 pips within the New York Killzone after raiding PDH/PDL with 20-Day IPDA discount/premium alignment.',
+      tradesPerMonth: minQualityScore >= 6 ? 18 : 34,
+      maxDrawdown: minQualityScore >= 6 ? 4.8 : 8.1,
+      profitFactor: minQualityScore >= 6 ? 2.62 : 2.05,
+      description: 'Focuses on 15m structural order flow aligned with the 20-day institutional lookback high/low draw on liquidity.',
       ruleSet: [
-        '1. 20-Day IPDA lookback defines active dealing range Equilibrium',
-        '2. Raids Previous Day High (for Premium Sells) or Low (for Discount Buys)',
-        '3. 62% to 79% Optimal Trade Entry (OTE) retracement entry',
-        '4. Stop loss fixed 1 tick outside the raid high or low',
-        '5. Target: 10, 20, or 30 pips expansion beyond the raided swing'
+        '1. 20-day IPDA institutional lookback benchmark marked',
+        '2. 15-minute directional order flow aligned with Daily Bias',
+        '3. New York AM Killzone execution (07:00 - 10:00 NY)',
+        '4. Quick partial profits taken at +1.5R, stop trailed to breakeven',
+        '5. Terminal target at previous day session high or low'
       ]
     },
     'charter_model_8': {
-      title: 'ICT Charter Model 8 (25 Pips / Week Compounding Precision)',
-      baseWinRate: minQualityScore >= 6 ? 81 : minQualityScore >= 5 ? 74 : 62,
-      avgRR: 2.2,
-      tradesPerMonth: minQualityScore >= 6 ? 5 : 9,
-      maxDrawdown: minQualityScore >= 6 ? 2.8 : 5.1,
-      profitFactor: minQualityScore >= 6 ? 3.15 : 2.4,
-      description: 'Ultra-disciplined compounding framework executing only the single cleanest counter-bias manipulation entry per week with a strict 15-pip stop.',
+      title: 'ICT Charter Model 8 (25 Pips / Week Framework)',
+      baseWinRate: minQualityScore >= 6 ? 76 : minQualityScore >= 5 ? 69 : 58,
+      avgRR: 2.5,
+      tradesPerMonth: minQualityScore >= 6 ? 8 : 14,
+      maxDrawdown: minQualityScore >= 6 ? 3.4 : 6.2,
+      profitFactor: minQualityScore >= 6 ? 3.10 : 2.30,
+      description: 'High-probability single weekly setup design for busy professionals seeking exactly 25-30 pips compounding per week with zero greed.',
       ruleSet: [
-        '1. Single weekly execution window during high-volatility injection',
-        '2. Counter-bias manipulation into an established HTF Discount FVG',
-        '3. Tight 15-pip structural stop loss on the 5-minute execution chart',
-        '4. Rigid 25-pip fixed objective with zero greed or overtrading',
-        '5. Complete screen detachment once 25 pips are secured'
+        '1. Weekly profile determination (Tuesday London or NY Wednesday expansion)',
+        '2. Only ONE or TWO trade executions permitted per calendar week',
+        '3. Strict 25–35 pip fixed target, zero runners allowed',
+        '4. Stop Loss capped at 12–15 pips below institutional mitigation block',
+        '5. After target achieved, platform is locked until next Monday'
       ]
     },
     'charter_model_9': {
       title: 'ICT Charter Model 9 (One Shot One Kill - OSOK)',
-      baseWinRate: minQualityScore >= 6 ? 76 : minQualityScore >= 5 ? 67 : 55,
-      avgRR: 3.2,
-      tradesPerMonth: minQualityScore >= 6 ? 4 : 8,
-      maxDrawdown: minQualityScore >= 6 ? 3.9 : 6.8,
-      profitFactor: minQualityScore >= 6 ? 2.95 : 2.25,
-      description: 'The patient sniper approach: waiting for Internal Range Liquidity (FVG/OB) rebalancing to ride the expansion towards External Range Liquidity.',
+      baseWinRate: minQualityScore >= 6 ? 65 : minQualityScore >= 5 ? 57 : 48,
+      avgRR: 4.2,
+      tradesPerMonth: minQualityScore >= 6 ? 6 : 11,
+      maxDrawdown: minQualityScore >= 6 ? 6.5 : 11.2,
+      profitFactor: minQualityScore >= 6 ? 2.85 : 2.15,
+      description: 'Captures the massive weekly range expansion from low of the week to high of the week using Daily & 4-Hour institutional order blocks.',
       ruleSet: [
-        '1. Directional alignment with Weekly Institutional Order Flow',
-        '2. External Range Liquidity swept first to spark the retracement',
-        '3. Entry executed at Internal Range Liquidity (FVG / Order Block)',
-        '4. Target: Full expansion to opposing External Range Liquidity',
-        '5. Maximum 1 high-conviction trade execution per week'
+        '1. Weekly Open Judas swing identified on Monday or Tuesday',
+        '2. Daily Order Block or Rejection Block tapped in extreme Discount/Premium',
+        '3. 4H MSS confirmation with significant displacement body closes',
+        '4. Stop loss placed below weekly extreme (25–35 pips)',
+        '5. Target opposing Weekly Draw on Liquidity for multi-day swing'
       ]
     },
     'silver_bullet': {
-      title: 'ICT Silver Bullet (10:00 - 11:00 AM NY Window)',
-      baseWinRate: minQualityScore >= 6 ? 74 : minQualityScore >= 5 ? 65 : 56,
+      title: 'ICT Silver Bullet (10:00 - 11:00 AM NY Macro Engine)',
+      baseWinRate: minQualityScore >= 6 ? 74 : minQualityScore >= 5 ? 66 : 56,
       avgRR: 2.2,
-      tradesPerMonth: minQualityScore >= 6 ? 18 : 32,
-      maxDrawdown: minQualityScore >= 6 ? 4.1 : 7.2,
-      profitFactor: minQualityScore >= 6 ? 2.65 : 2.1,
-      description: 'Strict 1-hour time-window strategy executing on the first clean FVG formed after sweeping session liquidity in New York AM session.',
+      tradesPerMonth: minQualityScore >= 6 ? 16 : 22,
+      maxDrawdown: minQualityScore >= 6 ? 4.2 : 7.8,
+      profitFactor: minQualityScore >= 6 ? 2.70 : 2.10,
+      description: 'Executes strictly inside the 60-minute algorithmic window (10:00 - 11:00 AM NY) targeting 15-20 index handles with surgical precision.',
       ruleSet: [
-        '1. Active execution window: 10:00 AM to 11:00 AM NY Time',
-        '2. London or NY Open liquidity sweep prerequisite',
-        '3. First qualifying Fair Value Gap inside the 60-minute window',
-        '4. Minimum 15-tick / 1:2 R:R objective to opposing session draw',
-        '5. Immediate trade cancellation if not triggered by 10:45 AM'
+        '1. Wait until 10:00 AM NY clock time before taking any action',
+        '2. Identify session high or low liquidity run between 09:30 and 10:00',
+        '3. Look for 1-minute or 5-minute displacement creating an obvious FVG',
+        '4. Enter at FVG CE or boundary with predetermined 15-point stop',
+        '5. Lock profits at resting buy-side or sell-side stops before 11:00 AM'
       ]
     },
     'breaker_reversal': {
-      title: 'Failed Order Block Breaker Reversal',
-      baseWinRate: minQualityScore >= 6 ? 62 : minQualityScore >= 5 ? 55 : 48,
-      avgRR: 3.4,
-      tradesPerMonth: minQualityScore >= 6 ? 9 : 18,
-      maxDrawdown: minQualityScore >= 6 ? 6.8 : 11.2,
-      profitFactor: minQualityScore >= 6 ? 2.3 : 1.75,
-      description: 'High reward-to-risk model catching the exact structural point where trapped retail breakout buyers/sellers are forced into liquidation.',
+      title: 'ICT Breaker Block Structural Reversals',
+      baseWinRate: minQualityScore >= 6 ? 70 : minQualityScore >= 5 ? 62 : 51,
+      avgRR: 3.2,
+      tradesPerMonth: minQualityScore >= 6 ? 10 : 18,
+      maxDrawdown: minQualityScore >= 6 ? 5.8 : 9.8,
+      profitFactor: minQualityScore >= 6 ? 2.55 : 1.90,
+      description: 'High-magnitude structural turns where the last up-close candle prior to a liquidity raid fails and becomes violent mitigation resistance.',
       ruleSet: [
-        '1. Swing High -> Swing Low -> Higher High raid pattern (Bearish Breaker)',
-        '2. Rapid invalidation of the intermediate down-close order block',
-        '3. Return to retest the high of the violated order block',
-        '4. Stop Loss placed tightly behind the retest candle',
-        '5. Primary target: Origin of the entire higher timeframe impulse leg'
+        '1. Higher timeframe key level pierced with a clean liquidity sweep',
+        '2. Immediate aggressive displacement breaking market structure',
+        '3. Breaker block established (last up/down candle before the high/low sweep)',
+        '4. Limit order placed at breaker block retest',
+        '5. Target opposing external liquidity pool with 1:3 RR'
       ]
     }
   }[selectedStrategy];
 
-  // Generate 5 Monte Carlo simulation paths to visualize variance
   const generateMonteCarloPaths = () => {
     const paths: number[][] = [];
-    const numPaths = 5;
     const numTrades = 40;
     const winProb = strategyData.baseWinRate / 100;
 
-    for (let p = 0; p < numPaths; p++) {
+    for (let p = 0; p < 5; p++) {
       let currentEquity = 10000;
-      const pathPoints: number[] = [currentEquity];
+      const pathPoints = [currentEquity];
+
       for (let t = 1; t <= numTrades; t++) {
         const pseudoRand = ((t * 97 + p * 313 + simSeed * 7919) % 1000) / 1000;
         const isWin = pseudoRand < winProb;
@@ -159,67 +159,74 @@ export const BacktestLab: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* Top Banner */}
-      <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 shadow-sm">
+      {/* Top Banner - Bauhaus Constructivist Card */}
+      <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 sm:p-7 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <Cpu className="w-5 h-5 text-sky-600" />
-              <h2 className="text-xl font-bold text-slate-900 font-display tracking-wide">
-                ICT Backtest & Expectancy Engine
+              <span className="w-4 h-4 bg-[#F0C020] border border-black inline-block" />
+              <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#121212]">
+                ICT Backtest &amp; Expectancy Engine
               </h2>
             </div>
-            <p className="text-slate-600 text-xs sm:text-sm font-sans">
+            <p className="text-[#121212]/80 text-xs sm:text-sm font-medium">
               Mathematical expectancy simulation, Monte Carlo randomized variance bounds, and institutional execution parameters.
             </p>
           </div>
 
           <button
+            type="button"
             onClick={() => setSimSeed((prev) => prev + 1)}
-            className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 text-xs font-mono font-bold flex items-center gap-1.5 self-start sm:self-auto transition-all"
+            className="px-5 py-2.5 bg-white hover:bg-[#F0C020] text-[#121212] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] text-xs font-mono font-black uppercase flex items-center gap-2 self-start sm:self-auto transition-all cursor-pointer active:translate-x-[1px] active:translate-y-[1px] active:shadow-none"
           >
-            <RefreshCw className="w-3.5 h-3.5 text-sky-600" />
+            <RefreshCw className="w-3.5 h-3.5 stroke-[2.5]" />
             Reseed Monte Carlo Run
           </button>
         </div>
 
-        {/* Strategy Selector Chips */}
-        <div className="flex items-center gap-2 overflow-x-auto pt-4 mt-2 border-t border-slate-200 scrollbar-none">
-          {[
-            { id: '2022_model', label: 'ICT Charter Model 13 (2022 Model)' },
-            { id: 'charter_model_1', label: 'Charter Model 1 (Intraday Scalp)' },
-            { id: 'charter_model_8', label: 'Charter Model 8 (25 Pips/Wk)' },
-            { id: 'charter_model_9', label: 'Charter Model 9 (OSOK)' },
-            { id: 'silver_bullet', label: 'Silver Bullet (10 AM Window)' },
-            { id: 'breaker_reversal', label: 'Breaker Block Reversals' }
-          ].map((strat) => (
-            <button
-              key={strat.id}
-              onClick={() => setSelectedStrategy(strat.id as any)}
-              className={`px-4 py-2 rounded-xl text-xs font-mono font-medium whitespace-nowrap transition-all ${
-                selectedStrategy === strat.id
-                  ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white font-bold shadow-md shadow-sky-600/20'
-                  : 'bg-slate-100 border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-200'
-              }`}
-            >
-              {strat.label}
-            </button>
-          ))}
+        {/* Strategy Selector with BauhausNavScroller with < and > navigation */}
+        <div className="pt-4 border-t-4 border-[#121212]">
+          <div className="text-[10px] font-mono font-black uppercase tracking-widest text-[#121212]/60 mb-2">
+            SELECT INSTITUTIONAL MODEL (SCROLL WITH ARROWS):
+          </div>
+          <BauhausNavScroller>
+            {[
+              { id: '2022_model', label: 'ICT Charter Model 13 (2022 Model)' },
+              { id: 'charter_model_1', label: 'Charter Model 1 (Intraday Scalp)' },
+              { id: 'charter_model_8', label: 'Charter Model 8 (25 Pips/Wk)' },
+              { id: 'charter_model_9', label: 'Charter Model 9 (OSOK)' },
+              { id: 'silver_bullet', label: 'Silver Bullet (10 AM Window)' },
+              { id: 'breaker_reversal', label: 'Breaker Block Reversals' }
+            ].map((strat) => (
+              <button
+                key={strat.id}
+                type="button"
+                onClick={() => setSelectedStrategy(strat.id as any)}
+                className={`px-4 py-2 text-xs font-mono font-black uppercase whitespace-nowrap transition-all border-2 border-[#121212] cursor-pointer shrink-0 active:translate-x-[1px] active:translate-y-[1px] active:shadow-none ${
+                  selectedStrategy === strat.id
+                    ? 'bg-[#1040C0] text-white shadow-[3px_3px_0px_0px_#121212]'
+                    : 'bg-white text-[#121212] hover:bg-[#F0C020]'
+                }`}
+              >
+                {strat.label}
+              </button>
+            ))}
+          </BauhausNavScroller>
         </div>
       </div>
 
       {/* Main Grid: Controls + Equity Chart */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Controls Column */}
-        <div className="lg:col-span-4 bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 shadow-sm space-y-5 font-mono text-xs">
-          <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider pb-3 border-b border-slate-200">
+        <div className="lg:col-span-4 bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 sm:p-7 space-y-5 font-mono text-xs text-[#121212]">
+          <h3 className="text-sm font-black text-[#121212] uppercase tracking-wider pb-3 border-b-4 border-[#121212]">
             Model Parameters
           </h3>
 
           <div className="space-y-4">
             <div>
-              <label className="text-slate-700 block mb-1.5 font-semibold">
-                Setup Confluence Score Filter: <span className="text-sky-700 font-bold">{minQualityScore} / 7</span>
+              <label className="text-[#121212] block mb-1.5 font-black uppercase text-[11px]">
+                Setup Confluence Score Filter: <span className="text-[#1040C0] font-black">{minQualityScore} / 7</span>
               </label>
               <input
                 type="range"
@@ -227,16 +234,16 @@ export const BacktestLab: React.FC = () => {
                 max="7"
                 value={minQualityScore}
                 onChange={(e) => setMinQualityScore(parseInt(e.target.value, 10))}
-                className="w-full accent-sky-600 cursor-pointer"
+                className="w-full accent-[#1040C0] cursor-pointer"
               />
-              <span className="text-[10px] text-slate-500 block mt-1">
+              <span className="text-[10px] text-[#121212]/70 block mt-1 font-bold">
                 {minQualityScore >= 6 ? '★ Elite A+ Confluence (Lower frequency, tighter drawdowns)' : 'Standard Setup Filter'}
               </span>
             </div>
 
             <div>
-              <label className="text-slate-700 block mb-1.5 font-semibold">
-                Risk Per Trade: <span className="text-emerald-600 font-bold">{riskPerTrade}%</span>
+              <label className="text-[#121212] block mb-1.5 font-black uppercase text-[11px]">
+                Risk Per Trade: <span className="text-[#D02020] font-black">{riskPerTrade}%</span>
               </label>
               <input
                 type="range"
@@ -245,23 +252,23 @@ export const BacktestLab: React.FC = () => {
                 step="0.5"
                 value={riskPerTrade}
                 onChange={(e) => setRiskPerTrade(parseFloat(e.target.value))}
-                className="w-full accent-emerald-600 cursor-pointer"
+                className="w-full accent-[#D02020] cursor-pointer"
               />
             </div>
 
-            <div>
-              <label className="text-slate-700 block mb-1.5 font-semibold">
-                Starting Account Equity: <span className="text-slate-900 font-bold">$10,000.00</span>
+            <div className="bg-[#F0F0F0] p-3 border-2 border-[#121212]">
+              <label className="text-[#121212] block font-black uppercase text-[10px]">
+                Starting Account Equity: <span className="text-[#121212] font-black text-sm block mt-0.5">$10,000.00</span>
               </label>
             </div>
           </div>
 
-          <div className="pt-4 border-t border-slate-200 space-y-2">
-            <h4 className="font-bold text-amber-800 uppercase text-[11px]">Execution Checklist:</h4>
-            <ul className="space-y-1 text-[11px] text-slate-700 font-sans">
+          <div className="pt-4 border-t-4 border-[#121212] space-y-2.5">
+            <h4 className="font-black text-[#D02020] uppercase text-xs">Execution Checklist:</h4>
+            <ul className="space-y-2 text-xs text-[#121212] font-medium">
               {strategyData.ruleSet.map((rule, idx) => (
-                <li key={idx} className="flex items-start gap-1.5 text-slate-700">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-sky-600 shrink-0 mt-0.5" />
+                <li key={idx} className="flex items-start gap-2 text-[#121212]">
+                  <CheckCircle2 className="w-4 h-4 text-[#1040C0] shrink-0 mt-0.5 stroke-[2.5]" />
                   <span>{rule}</span>
                 </li>
               ))}
@@ -270,35 +277,35 @@ export const BacktestLab: React.FC = () => {
         </div>
 
         {/* Statistical Summary & Curve */}
-        <div className="lg:col-span-8 bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 shadow-sm space-y-6">
+        <div className="lg:col-span-8 bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 sm:p-7 space-y-6 text-[#121212]">
           {/* Key Metric Highlights */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono text-xs">
-            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200">
-              <span className="text-slate-500 block text-[11px]">Model Win Rate:</span>
-              <span className="text-emerald-600 font-bold text-lg">{strategyData.baseWinRate}%</span>
+            <div className="bg-[#F0F0F0] p-4 border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212]">
+              <span className="text-[#121212]/60 block text-[10px] uppercase font-black tracking-wider">Model Win Rate:</span>
+              <span className="text-[#1040C0] font-black text-xl">{strategyData.baseWinRate}%</span>
             </div>
-            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200">
-              <span className="text-slate-500 block text-[11px]">Average R:R:</span>
-              <span className="text-sky-700 font-bold text-lg">1 : {strategyData.avgRR}</span>
+            <div className="bg-[#F0F0F0] p-4 border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212]">
+              <span className="text-[#121212]/60 block text-[10px] uppercase font-black tracking-wider">Average R:R:</span>
+              <span className="text-[#121212] font-black text-xl">1 : {strategyData.avgRR}</span>
             </div>
-            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200">
-              <span className="text-slate-500 block text-[11px]">Profit Factor:</span>
-              <span className="text-amber-700 font-bold text-lg">{strategyData.profitFactor}</span>
+            <div className="bg-[#F0F0F0] p-4 border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212]">
+              <span className="text-[#121212]/60 block text-[10px] uppercase font-black tracking-wider">Profit Factor:</span>
+              <span className="text-[#121212] font-black text-xl">{strategyData.profitFactor}</span>
             </div>
-            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200">
-              <span className="text-slate-500 block text-[11px]">Max Drawdown:</span>
-              <span className="text-rose-600 font-bold text-lg">{strategyData.maxDrawdown}%</span>
+            <div className="bg-[#F0F0F0] p-4 border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212]">
+              <span className="text-[#121212]/60 block text-[10px] uppercase font-black tracking-wider">Max Drawdown:</span>
+              <span className="text-[#D02020] font-black text-xl">{strategyData.maxDrawdown}%</span>
             </div>
           </div>
 
           {/* Svg Equity Curve with Multi-Path Monte Carlo */}
-          <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-2">
-            <div className="flex items-center justify-between text-xs font-mono">
-              <span className="text-slate-700 flex items-center gap-1.5 font-semibold">
-                <Activity className="w-3.5 h-3.5 text-sky-600" />
+          <div className="bg-[#FAF9F5] p-5 sm:p-6 border-4 border-[#121212] shadow-[4px_4px_0px_0px_#121212] space-y-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-mono">
+              <span className="text-[#121212] flex items-center gap-1.5 font-black uppercase">
+                <Activity className="w-4 h-4 text-[#1040C0] stroke-[2.5]" />
                 Monte Carlo Simulated Equity (5 Randomized Variance Paths, 40 Trades):
               </span>
-              <span className="text-emerald-600 font-bold text-sm">
+              <span className="text-[#1040C0] font-black text-sm bg-white px-2 py-1 border border-[#121212]">
                 ${endingEquity.toLocaleString()} (+{totalReturn}%)
               </span>
             </div>
@@ -315,9 +322,9 @@ export const BacktestLab: React.FC = () => {
                       y1={yVal}
                       x2={chartWidth - 30}
                       y2={yVal}
-                      stroke="#cbd5e1"
+                      stroke="#D4D4D4"
                       strokeWidth="1"
-                      strokeDasharray="3 3"
+                      strokeDasharray="4 4"
                     />
                   );
                 })}
@@ -331,10 +338,9 @@ export const BacktestLab: React.FC = () => {
                     <polyline
                       key={pIdx}
                       fill="none"
-                      stroke="#94a3b8"
-                      strokeWidth="1.2"
-                      strokeDasharray="2 2"
-                      opacity="0.7"
+                      stroke="#A1A1AA"
+                      strokeWidth="1.5"
+                      strokeDasharray="3 3"
                       points={pts}
                     />
                   );
@@ -343,8 +349,8 @@ export const BacktestLab: React.FC = () => {
                 {/* Primary Median Line */}
                 <polyline
                   fill="none"
-                  stroke="#0284c7"
-                  strokeWidth="2.5"
+                  stroke="#1040C0"
+                  strokeWidth="3"
                   points={medianPath
                     .map((val, idx) => `${getSvgX(idx, medianPath.length)},${getSvgY(val)}`)
                     .join(' ')}
@@ -356,8 +362,10 @@ export const BacktestLab: React.FC = () => {
                     key={idx}
                     cx={getSvgX(idx, medianPath.length)}
                     cy={getSvgY(val)}
-                    r="2.5"
-                    fill="#0369a1"
+                    r="3.5"
+                    fill="#F0C020"
+                    stroke="#121212"
+                    strokeWidth="1.5"
                   />
                 ))}
               </svg>
@@ -365,12 +373,12 @@ export const BacktestLab: React.FC = () => {
           </div>
 
           {/* Epistemological & Risk Disclaimer */}
-          <div className="p-4 rounded-2xl bg-amber-50 border border-amber-300 space-y-2 text-xs font-sans">
-            <div className="flex items-center gap-2 text-amber-900 font-mono font-bold">
-              <AlertTriangle className="w-4 h-4 text-amber-600" />
-              <span>Simulation Methodology & Epistemological Disclaimer</span>
+          <div className="p-5 bg-[#FFF9C4] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] space-y-2 text-xs font-sans">
+            <div className="flex items-center gap-2 text-[#121212] font-mono font-black uppercase">
+              <AlertTriangle className="w-4 h-4 text-[#D02020] stroke-[2.5]" />
+              <span>Simulation Methodology &amp; Epistemological Disclaimer</span>
             </div>
-            <p className="text-amber-950 leading-relaxed">
+            <p className="text-[#121212]/90 leading-relaxed font-medium">
               This engine calculates <em>mathematical expectancy distributions</em> based on parameterized win-rates and risk-to-reward ratios derived from backtested ICT sample series. Real-world execution is subject to matching-engine spread, slippage during high-impact macroeconomic news releases, execution latency, and human psychological variance.
             </p>
           </div>
@@ -379,3 +387,5 @@ export const BacktestLab: React.FC = () => {
     </div>
   );
 };
+
+export default BacktestLab;

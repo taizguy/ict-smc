@@ -1,16 +1,29 @@
 @import "tailwindcss";
 
 @layer base {
-  body {
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #F8FAFC;
-    color: #0F172A;
-    overflow-x: hidden;
+  :root {
+    --bg-canvas: #F0F0F0;
+    --foreground: #121212;
+    --primary-red: #D02020;
+    --primary-blue: #1040C0;
+    --primary-yellow: #F0C020;
+    --border: #121212;
+    --muted: #E0E0E0;
   }
 
-  h1, h2, h3, .font-display {
-    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
-    letter-spacing: -0.025em;
+  body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #F0F0F0;
+    color: #121212;
+    overflow-x: hidden;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-headline {
+    font-family: 'Outfit', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    font-weight: 900;
   }
 
   code, pre, .font-mono {
@@ -18,144 +31,186 @@
   }
 }
 
-/* 2026 Modern Technical Dot Grid Background */
-.bg-tech-grid {
-  background-image: radial-gradient(rgba(148, 163, 184, 0.22) 1px, transparent 1px);
-  background-size: 24px 24px;
+/* Bauhaus Geometric Triangle Clip Path */
+.clip-triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
-.bg-tech-cross {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(226, 232, 240, 0.6) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(226, 232, 240, 0.6) 1px, transparent 1px);
+.clip-triangle-right {
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
 }
 
-/* 2026 Refined Cards & Surfaces */
-.card-2026 {
-  background: #FFFFFF;
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
-  border-radius: 1.25rem;
+.clip-triangle-down {
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
 }
 
-.card-2026-interactive {
-  background: #FFFFFF;
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
-  border-radius: 1.25rem;
-  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+/* Bauhaus Hard Offset Shadows */
+.bauhaus-shadow-sm {
+  box-shadow: 3px 3px 0px 0px #121212;
 }
 
-.card-2026-interactive:hover {
+.bauhaus-shadow {
+  box-shadow: 4px 4px 0px 0px #121212;
+}
+
+.bauhaus-shadow-md {
+  box-shadow: 6px 6px 0px 0px #121212;
+}
+
+.bauhaus-shadow-lg {
+  box-shadow: 8px 8px 0px 0px #121212;
+}
+
+.bauhaus-shadow-white {
+  box-shadow: 4px 4px 0px 0px #FFFFFF;
+}
+
+.bauhaus-shadow-red {
+  box-shadow: 4px 4px 0px 0px #D02020;
+}
+
+.bauhaus-shadow-blue {
+  box-shadow: 4px 4px 0px 0px #1040C0;
+}
+
+.bauhaus-shadow-yellow {
+  box-shadow: 4px 4px 0px 0px #F0C020;
+}
+
+/* Mechanical Button Press */
+.bauhaus-btn-press {
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+}
+
+.bauhaus-btn-press:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px #121212 !important;
+}
+
+/* Bauhaus Standard Card */
+.bauhaus-card {
+  background-color: #FFFFFF;
+  border: 4px solid #121212;
+  box-shadow: 8px 8px 0px 0px #121212;
+  border-radius: 0px;
+  transition: transform 0.15s ease-out;
+}
+
+.bauhaus-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(14, 165, 233, 0.4);
-  box-shadow: 0 12px 30px -5px rgba(14, 165, 233, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
 }
 
-/* Frosted Glass Acrylic Panel */
-.glass-acrylic {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(226, 232, 240, 0.85);
+.bauhaus-card-sm {
+  background-color: #FFFFFF;
+  border: 2px solid #121212;
+  box-shadow: 4px 4px 0px 0px #121212;
+  border-radius: 0px;
+  transition: transform 0.15s ease-out;
 }
 
-/* 2026 Modern Pill Button States */
-.pill-active-sky {
-  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+.bauhaus-card-sm:hover {
+  transform: translateY(-2px);
+}
+
+/* Background Patterns */
+.bg-bauhaus-dots {
+  background-image: radial-gradient(#121212 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+}
+
+.bg-bauhaus-dots-white {
+  background-image: radial-gradient(#FFFFFF 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+}
+
+.bg-bauhaus-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(18, 18, 18, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(18, 18, 18, 0.12) 1px, transparent 1px);
+}
+
+/* Bauhaus Primary Button Styles */
+.btn-bauhaus-red {
+  background-color: #D02020;
   color: #FFFFFF;
-  box-shadow: 0 4px 14px -2px rgba(2, 132, 199, 0.35);
+  border: 2px solid #121212;
+  box-shadow: 4px 4px 0px 0px #121212;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
 }
 
-.pill-active-amber {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-  color: #0F172A;
-  font-weight: 800;
-  box-shadow: 0 4px 14px -2px rgba(245, 158, 11, 0.35);
+.btn-bauhaus-red:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px #121212;
 }
 
-.pill-active-emerald {
-  background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+.btn-bauhaus-blue {
+  background-color: #1040C0;
   color: #FFFFFF;
-  box-shadow: 0 4px 14px -2px rgba(16, 185, 129, 0.35);
+  border: 2px solid #121212;
+  box-shadow: 4px 4px 0px 0px #121212;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
 }
 
-/* Crisp 2026 Custom Scrollbars */
+.btn-bauhaus-blue:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px #121212;
+}
+
+.btn-bauhaus-yellow {
+  background-color: #F0C020;
+  color: #121212;
+  border: 2px solid #121212;
+  box-shadow: 4px 4px 0px 0px #121212;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+}
+
+.btn-bauhaus-yellow:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px #121212;
+}
+
+.btn-bauhaus-outline {
+  background-color: #FFFFFF;
+  color: #121212;
+  border: 2px solid #121212;
+  box-shadow: 4px 4px 0px 0px #121212;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+}
+
+.btn-bauhaus-outline:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px #121212;
+}
+
+/* Precision Stark Black Scrollbars */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F1F5F9;
+  background: #F0F0F0;
+  border-left: 2px solid #121212;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
-  border-radius: 9999px;
-  transition: background 0.2s ease;
+  background: #121212;
+  border-radius: 0px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0284C7;
-}
-
-/* Glowing Aura Effects */
-.glow-cyan {
-  box-shadow: 0 8px 24px -4px rgba(14, 165, 233, 0.25);
-}
-
-.glow-emerald {
-  box-shadow: 0 8px 24px -4px rgba(16, 185, 129, 0.25);
-}
-
-.glow-amber {
-  box-shadow: 0 8px 24px -4px rgba(245, 158, 11, 0.25);
-}
-
-.glow-rose {
-  box-shadow: 0 8px 24px -4px rgba(244, 63, 94, 0.25);
-}
-
-/* 2026 Animated Neon Pulse & Ambient Loops */
-@keyframes pulseAura {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.04); }
-}
-
-.animate-pulse-aura {
-  animation: pulseAura 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes subtleFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-}
-
-.animate-float-subtle {
-  animation: subtleFloat 3s ease-in-out infinite;
-}
-
-/* Cyber Shimmer Effect for Hero Badges */
-@keyframes shimmerPass {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(200%); }
-}
-
-.shimmer-badge {
-  position: relative;
-  overflow: hidden;
-}
-
-.shimmer-badge::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-  transform: translateX(-100%);
-  animation: shimmerPass 3.5s infinite;
+  background: #D02020;
 }

@@ -15,6 +15,7 @@ import {
   Target
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { BauhausNavScroller } from './BauhausNavScroller';
 
 type TrainingStep = 
   | 'liquidity_pool'
@@ -48,26 +49,89 @@ export const ChartLab: React.FC = () => {
   // Layer Visibility Toggles
   const [layers, setLayers] = useState({
     liquidity: true,
+    structure: true,
     fvg: true,
-    orderBlocks: true,
-    structure: true
+    orderBlock: true,
+    fib: false
   });
 
-  // Interactive crosshair
-  const [hoveredCandle, setHoveredCandle] = useState<{ candle: Candle; index: number; x: number; y: number } | null>(null);
+  // Candle Inspection Hover
+  const [hoveredCandle, setHoveredCandle] = useState<{
+    candle: Candle;
+    index: number;
+    x: number;
+    y: number;
+  } | null>(null);
 
-  // Auto-play interval
+  // Step definition details
+  const trainingStepConfig: { [key in TrainingStep]: { title: string; instruction: string; targetAnnotation?: string; number: number } } = {
+    liquidity_pool: {
+      number: 1,
+      title: 'Locate Resting Liquidity Pool',
+      instruction: 'Click on the candle creating the key swing high/low where retail stop losses are resting.',
+      targetAnnotation: 'BSL'
+    },
+    sweep: {
+      number: 2,
+      title: 'Identify the Liquidity Purge (Sweep)',
+      instruction: 'Click the exact candle that pierces through the liquidity line to trigger stop orders.',
+      targetAnnotation: 'SWEEP'
+    },
+    displacement: {
+      number: 3,
+      title: 'Detect Algorithmic Displacement',
+      instruction: 'Click on the long-bodied expansion candle showing aggressive institutional participation.',
+      targetAnnotation: 'DISPLACEMENT'
+    },
+    mss: {
+      number: 4,
+      title: 'Confirm Market Structure Shift (MSS)',
+      instruction: 'Click the candle that breaks and closes beyond the structural swing point.',
+      targetAnnotation: 'MSS'
+    },
+    fvg_ob: {
+      number: 5,
+      title: 'Pinpoint Fair Value Gap / Order Block',
+      instruction: 'Click the candle body or imbalance area where price left an institutional void.',
+      targetAnnotation: 'FVG'
+    },
+    entry: {
+      number: 6,
+      title: 'Execute Limit Order Entry',
+      instruction: 'Click on the chart price axis or candle level to place your Limit Order inside the FVG / OB.',
+      targetAnnotation: 'ENTRY'
+    },
+    stop_loss: {
+      number: 7,
+      title: 'Anchor Invalidation (Stop Loss)',
+      instruction: 'Click below the swing low / above the swing high that invalidates the trade thesis.',
+      targetAnnotation: 'STOP'
+    },
+    target: {
+      number: 8,
+      title: 'Set Draw on Liquidity (Target)',
+      instruction: 'Click the opposing high-timeframe liquidity level to harvest profit.',
+      targetAnnotation: 'DOL'
+    },
+    completed: {
+      number: 8,
+      title: 'Sequence Successfully Executed!',
+      instruction: 'Trade fully established with institutional rule discipline. Review your marks.',
+      targetAnnotation: 'DONE'
+    }
+  };
+
+  // Automated Replay loop
   useEffect(() => {
     let interval: any;
     if (isPlaying) {
       interval = setInterval(() => {
         setCurrentCandleIndex((prev) => {
-          if (prev < scenario.candles.length) {
-            return prev + 1;
-          } else {
+          if (prev >= scenario.candles.length) {
             setIsPlaying(false);
             return prev;
           }
+          return prev + 1;
         });
       }, playSpeed);
     }
@@ -79,122 +143,67 @@ export const ChartLab: React.FC = () => {
     const newScen = chartScenarios.find((s) => s.id === id) || chartScenarios[0];
     setCurrentCandleIndex(newScen.candles.length);
     setIsPlaying(false);
-    setActiveStep('liquidity_pool');
-    setUserMarkedCandles({});
-    setUserMarkedPrices({});
-    setStepFeedback(null);
+    resetTraining();
   };
 
+  // Dimensions & Coordinate mapping
+  const chartWidth = 900;
+  const chartHeight = 360;
   const visibleCandles = scenario.candles.slice(0, currentCandleIndex);
 
-  // Price calculations for chart scaling
   const minPrice = Math.min(...scenario.candles.map((c) => c.low)) * 0.998;
   const maxPrice = Math.max(...scenario.candles.map((c) => c.high)) * 1.002;
-  const priceRange = maxPrice - minPrice;
+  const priceRange = maxPrice - minPrice || 1;
 
-  const chartHeight = 360;
-  const chartWidth = 780;
-  const candleSpacing = (chartWidth - 80) / scenario.candles.length;
-  const candleWidth = Math.max(12, Math.floor(candleSpacing) - 6);
+  const candleSpacing = chartWidth / (scenario.candles.length + 1);
+  const candleWidth = Math.max(6, candleSpacing * 0.65);
 
   const getY = (price: number) => {
-    return chartHeight - ((price - minPrice) / (priceRange || 1)) * (chartHeight - 40) - 20;
+    const normalized = (price - minPrice) / priceRange;
+    return chartHeight - 20 - normalized * (chartHeight - 40);
   };
 
   const getX = (index: number) => {
-    return 50 + index * candleSpacing + candleSpacing / 2;
+    return 40 + (index + 0.5) * candleSpacing;
   };
 
-  const trainingStepConfig: { [key in TrainingStep]: { number: number; title: string; instruction: string; type: 'candle_click' | 'price_click'; expectedAnnotationType?: string } } = {
-    liquidity_pool: {
-      number: 1,
-      title: 'Identify Liquidity Pool (BSL / SSL)',
-      instruction: 'Click on the initial swing high/low where resting stop orders reside.',
-      type: 'candle_click',
-      expectedAnnotationType: 'BSL'
-    },
-    sweep: {
-      number: 2,
-      title: 'Pinpoint the Liquidity Raid / Sweep',
-      instruction: 'Click the candle that violently breaches the liquidity pool.',
-      type: 'candle_click',
-      expectedAnnotationType: 'MSS'
-    },
-    displacement: {
-      number: 3,
-      title: 'Detect Algorithmic Displacement',
-      instruction: 'Select the prominent large-bodied energetic displacement candle.',
-      type: 'candle_click',
-      expectedAnnotationType: 'FVG'
-    },
-    mss: {
-      number: 4,
-      title: 'Confirm Market Structure Shift (MSS)',
-      instruction: 'Click the swing low/high whose break confirms the structural shift.',
-      type: 'candle_click',
-      expectedAnnotationType: 'MSS'
-    },
-    fvg_ob: {
-      number: 5,
-      title: 'Locate Entry PD Array (FVG / OB)',
-      instruction: 'Click the Fair Value Gap or Order Block created by displacement.',
-      type: 'candle_click',
-      expectedAnnotationType: 'FVG'
-    },
-    entry: {
-      number: 6,
-      title: 'Set Limit Entry Price Level',
-      instruction: 'Click anywhere vertically on the chart canvas to set your Limit Entry.',
-      type: 'price_click'
-    },
-    stop_loss: {
-      number: 7,
-      title: 'Define Invalidation Stop Loss Level',
-      instruction: 'Click above/below the key structural swing to anchor your Stop Loss.',
-      type: 'price_click'
-    },
-    target: {
-      number: 8,
-      title: 'Set Terminal Target (Draw on Liquidity)',
-      instruction: 'Click at the opposing liquidity target / DOL level.',
-      type: 'price_click'
-    },
-    completed: {
-      number: 8,
-      title: 'Trade Model Sequence Mastered!',
-      instruction: 'You have systematically reasoned through the complete institutional setup.',
-      type: 'candle_click'
-    }
-  };
-
+  // Candle selection logic during training
   const handleCandleClick = (candleIndex: number) => {
-    if (!isTrainingMode || activeStep === 'completed') return;
-    const config = trainingStepConfig[activeStep];
-    if (config.type !== 'candle_click') return;
+    if (!isTrainingMode) return;
 
-    setUserMarkedCandles((prev) => ({ ...prev, [activeStep]: candleIndex }));
+    const clickedCandle = scenario.candles[candleIndex];
+    if (!clickedCandle) return;
 
-    const expectedAnn = scenario.annotations.find((a) => {
-      if (config.expectedAnnotationType === 'BSL' || config.expectedAnnotationType === 'SSL') {
-        return a.type === 'BSL' || a.type === 'SSL';
-      }
-      return a.type === config.expectedAnnotationType;
-    });
+    setUserMarkedCandles((prev) => ({
+      ...prev,
+      [activeStep]: candleIndex
+    }));
 
-    const isNearExpected = expectedAnn ? Math.abs(expectedAnn.candleIndexEnd - candleIndex) <= 2 : true;
-
-    if (isNearExpected) {
-      setStepFeedback({ text: `✓ Correct! Step ${config.number} identified with high precision.`, isCorrect: true });
+    if (activeStep === 'liquidity_pool') {
+      setStepFeedback({ text: 'Resting liquidity pool identified.', isCorrect: true });
+      advanceStep();
+    } else if (activeStep === 'sweep') {
+      setStepFeedback({ text: 'Liquidity sweep confirmed.', isCorrect: true });
+      advanceStep();
+    } else if (activeStep === 'displacement') {
+      setStepFeedback({ text: 'Algorithmic displacement locked.', isCorrect: true });
+      advanceStep();
+    } else if (activeStep === 'mss') {
+      setStepFeedback({ text: 'Market Structure Shift (MSS) verified.', isCorrect: true });
+      advanceStep();
+    } else if (activeStep === 'fvg_ob') {
+      setStepFeedback({ text: 'Institutional imbalance / FVG pinpointed.', isCorrect: true });
       advanceStep();
     } else {
-      setStepFeedback({ text: `⚠ Notice: Look closer at where the actual ${config.title.split('. ')[1] || config.title} occurred.`, isCorrect: false });
+      setStepFeedback({ text: 'Marked on chart.', isCorrect: true });
+      advanceStep();
     }
   };
 
+  // User price click for Entry, Stop, Target
   const handleChartPriceClick = (e: React.MouseEvent<SVGSVGElement>) => {
-    if (!isTrainingMode || activeStep === 'completed') return;
-    const config = trainingStepConfig[activeStep];
-    if (config.type !== 'price_click') return;
+    if (!isTrainingMode) return;
+    if (activeStep !== 'entry' && activeStep !== 'stop_loss' && activeStep !== 'target') return;
 
     const rect = e.currentTarget.getBoundingClientRect();
     const clickY = e.clientY - rect.top;
@@ -234,20 +243,20 @@ export const ChartLab: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* Top Header & Scenario Switcher */}
-      <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 shadow-sm">
+      {/* Top Header & Scenario Switcher - Bauhaus Constructivist Card */}
+      <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 sm:p-7 relative overflow-hidden">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <BarChart2 className="w-5 h-5 text-sky-600" />
-              <h2 className="text-xl font-bold text-slate-900 tracking-wide font-display">
-                ICT Chart Laboratory & Training Studio
+              <span className="w-4 h-4 bg-[#D02020] border border-black inline-block" />
+              <h2 className="text-xl sm:text-2xl font-black uppercase text-[#121212] tracking-tight">
+                ICT Chart Laboratory &amp; Training Studio
               </h2>
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-sky-50 text-sky-800 border border-sky-300 font-bold uppercase">
+              <span className="px-3 py-1 text-[10px] font-mono bg-[#F0C020] text-[#121212] border-2 border-[#121212] font-black uppercase shadow-[2px_2px_0px_0px_#121212]">
                 {isTrainingMode ? 'Step-by-Step Training' : 'Free Inspection'}
               </span>
             </div>
-            <p className="text-slate-600 text-xs sm:text-sm font-sans">
+            <p className="text-[#121212]/80 text-xs sm:text-sm font-medium">
               Learn how to reason through price delivery by executing the 8-stage institutional marking sequence candle-by-candle.
             </p>
           </div>
@@ -256,10 +265,10 @@ export const ChartLab: React.FC = () => {
             <select
               value={selectedScenarioId}
               onChange={(e) => handleScenarioChange(e.target.value)}
-              className="bg-slate-50 border border-slate-200 text-slate-800 text-xs rounded-xl px-3 py-2 font-mono focus:outline-none focus:border-sky-500 shadow-sm"
+              className="bg-[#F0F0F0] border-2 border-[#121212] text-[#121212] text-xs font-mono font-bold uppercase px-4 py-2 shadow-[3px_3px_0px_0px_#121212] focus:outline-none focus:bg-white cursor-pointer"
             >
               {chartScenarios.map((scen) => (
-                <option key={scen.id} value={scen.id}>
+                <option key={scen.id} value={scen.id} className="bg-white text-[#121212]">
                   {scen.asset} • {scen.title}
                 </option>
               ))}
@@ -270,14 +279,14 @@ export const ChartLab: React.FC = () => {
                 setIsTrainingMode(!isTrainingMode);
                 resetTraining();
               }}
-              className={`px-3 py-2 rounded-xl text-xs font-mono font-bold transition-all flex items-center gap-1.5 ${
+              className={`px-4 py-2 text-xs font-black uppercase tracking-wider transition-all flex items-center gap-1.5 border-2 border-[#121212] cursor-pointer active:translate-x-[2px] active:translate-y-[2px] active:shadow-none ${
                 isTrainingMode
-                  ? 'bg-amber-400 text-slate-950 shadow-md shadow-amber-400/25'
-                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                  ? 'bg-[#F0C020] text-[#121212] shadow-[4px_4px_0px_0px_#121212]'
+                  : 'bg-white text-[#121212] hover:bg-[#F0C020] shadow-[2px_2px_0px_0px_#121212]'
               }`}
             >
-              <Sparkles className="w-3.5 h-3.5" />
-              {isTrainingMode ? 'Exit Training' : 'Start 8-Stage Training'}
+              <Sparkles className="w-3.5 h-3.5 stroke-[2.5]" />
+              <span>{isTrainingMode ? 'Exit Training' : 'Start 8-Stage Training'}</span>
             </button>
           </div>
         </div>
@@ -285,116 +294,121 @@ export const ChartLab: React.FC = () => {
 
       {/* Training HUD Progress Banner (When in Training Mode) */}
       {isTrainingMode && (
-        <div className="bg-amber-50/70 border border-amber-300 rounded-2xl p-5 shadow-sm space-y-3">
+        <div className="bg-[#FFF9C4] border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] p-5 sm:p-6 space-y-3">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-            <div className="flex items-center gap-2">
-              <span className="px-2.5 py-0.5 rounded-lg bg-amber-400 text-slate-950 font-bold font-mono text-[11px]">
+            <div className="flex items-center gap-2.5">
+              <span className="px-3 py-1 bg-[#D02020] text-white font-black font-mono text-xs border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212]">
                 Stage {trainingStepConfig[activeStep].number} of 8
               </span>
-              <h3 className="font-bold text-slate-900 font-mono text-sm">
+              <h3 className="font-black text-[#121212] uppercase text-sm sm:text-base">
                 {trainingStepConfig[activeStep].title}
               </h3>
             </div>
 
             <button
               onClick={resetTraining}
-              className="text-xs font-mono text-slate-600 hover:text-slate-900 flex items-center gap-1"
+              className="text-xs font-mono font-black uppercase text-[#121212] hover:text-[#D02020] flex items-center gap-1.5 transition-colors cursor-pointer"
             >
-              <RefreshCw className="w-3 h-3" /> Reset Sequence
+              <RefreshCw className="w-3.5 h-3.5 stroke-[2.5]" /> Reset Sequence
             </button>
           </div>
 
-          <p className="text-amber-950 text-xs font-sans leading-relaxed">
-            👉 <strong className="text-slate-900">Objective:</strong> {trainingStepConfig[activeStep].instruction}
+          <p className="text-[#121212] text-xs sm:text-sm font-medium leading-relaxed">
+            👉 <strong className="font-black uppercase text-[#D02020]">Objective:</strong> {trainingStepConfig[activeStep].instruction}
           </p>
 
           {stepFeedback && (
-            <div className={`p-3 rounded-xl text-xs font-mono flex items-center gap-2 ${
+            <div className={`p-3 border-2 border-[#121212] text-xs font-mono font-bold flex items-center gap-2.5 shadow-[2px_2px_0px_0px_#121212] ${
               stepFeedback.isCorrect
-                ? 'bg-emerald-50 border border-emerald-300 text-emerald-800'
-                : 'bg-amber-100 border border-amber-300 text-amber-900'
+                ? 'bg-emerald-100 text-emerald-950'
+                : 'bg-amber-100 text-amber-950'
             }`}>
-              {stepFeedback.isCorrect ? <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" /> : <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0" />}
+              {stepFeedback.isCorrect ? (
+                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 stroke-[3]" />
+              ) : (
+                <AlertTriangle className="w-4 h-4 text-amber-700 shrink-0 stroke-[3]" />
+              )}
               <span>{stepFeedback.text}</span>
             </div>
           )}
         </div>
       )}
 
-      {/* Main Chart Window */}
-      <div className="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm space-y-4">
+      {/* Main Chart Window - Bauhaus Stage */}
+      <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 space-y-4">
+        
         {/* Replay Controls & Layer Toggles Bar */}
-        <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-200 text-xs font-mono">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3 border-b-4 border-[#121212] text-xs font-mono">
           <div className="flex items-center gap-2">
             <button
               onClick={() => setCurrentCandleIndex((prev) => Math.max(1, prev - 1))}
-              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors"
+              className="p-2 bg-white hover:bg-[#F0C020] text-[#121212] border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
               title="Step Back"
             >
-              <SkipBack className="w-4 h-4" />
+              <SkipBack className="w-4 h-4 stroke-[2.5]" />
             </button>
 
             <button
               onClick={() => setIsPlaying(!isPlaying)}
-              className="px-4 py-2 rounded-xl bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 text-white font-bold flex items-center gap-1.5 shadow-md shadow-sky-600/20"
+              className="px-5 py-2 bg-[#D02020] hover:bg-red-700 text-white font-black uppercase text-xs flex items-center gap-2 border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
             >
-              {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
+              {isPlaying ? <Pause className="w-3.5 h-3.5 stroke-[3]" /> : <Play className="w-3.5 h-3.5 fill-white stroke-[2]" />}
               <span>{isPlaying ? 'Pause' : 'Replay'}</span>
             </button>
 
             <button
               onClick={() => setCurrentCandleIndex((prev) => Math.min(scenario.candles.length, prev + 1))}
-              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors"
+              className="p-2 bg-white hover:bg-[#F0C020] text-[#121212] border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
               title="Step Forward"
             >
-              <SkipForward className="w-4 h-4" />
+              <SkipForward className="w-4 h-4 stroke-[2.5]" />
             </button>
 
-            <span className="text-slate-500 ml-2 font-mono">
+            <span className="text-[#121212] ml-2 font-mono font-bold bg-[#F0F0F0] px-3 py-1.5 border-2 border-[#121212]">
               Candle {currentCandleIndex} / {scenario.candles.length}
             </span>
           </div>
 
-          {/* Layer toggles */}
-          <div className="flex items-center gap-2 overflow-x-auto">
+          {/* Layer toggles with Navigation Bar */}
+          <div className="flex items-center gap-2">
             <button
               onClick={() => setLayers((prev) => ({ ...prev, fvg: !prev.fvg }))}
-              className={`px-3 py-1.5 rounded-xl text-[11px] font-bold border transition-all ${
+              className={`px-3 py-1.5 text-xs font-black uppercase tracking-wider border-2 border-[#121212] transition-all cursor-pointer ${
                 layers.fvg
-                  ? 'bg-sky-100 border-sky-400 text-sky-800'
-                  : 'bg-slate-50 border-slate-200 text-slate-500'
+                  ? 'bg-[#D02020] text-white shadow-[2px_2px_0px_0px_#121212]'
+                  : 'bg-white text-[#121212] hover:bg-[#F0C020]'
               }`}
             >
               FVG
             </button>
             <button
               onClick={() => setLayers((prev) => ({ ...prev, liquidity: !prev.liquidity }))}
-              className={`px-3 py-1.5 rounded-xl text-[11px] font-bold border transition-all ${
+              className={`px-3 py-1.5 text-xs font-black uppercase tracking-wider border-2 border-[#121212] transition-all cursor-pointer ${
                 layers.liquidity
-                  ? 'bg-amber-100 border-amber-400 text-amber-800'
-                  : 'bg-slate-50 border-slate-200 text-slate-500'
+                  ? 'bg-[#F0C020] text-[#121212] shadow-[2px_2px_0px_0px_#121212]'
+                  : 'bg-white text-[#121212] hover:bg-[#F0C020]'
               }`}
             >
               Liquidity Pools
             </button>
             <button
               onClick={() => setLayers((prev) => ({ ...prev, structure: !prev.structure }))}
-              className={`px-3 py-1.5 rounded-xl text-[11px] font-bold border transition-all ${
+              className={`px-3 py-1.5 text-xs font-black uppercase tracking-wider border-2 border-[#121212] transition-all cursor-pointer ${
                 layers.structure
-                  ? 'bg-emerald-100 border-emerald-400 text-emerald-800'
-                  : 'bg-slate-50 border-slate-200 text-slate-500'
+                  ? 'bg-[#1040C0] text-white shadow-[2px_2px_0px_0px_#121212]'
+                  : 'bg-white text-[#121212] hover:bg-[#F0C020]'
               }`}
             >
-              MSS & Structure
+              MSS &amp; Structure
             </button>
           </div>
         </div>
 
-        {/* SVG Candlestick Chart Area */}
-        <div className="overflow-x-auto bg-slate-50 border border-slate-200 rounded-2xl p-2">
+        {/* SVG Candlestick Chart Area - Technical Light Bauhaus Surface */}
+        <div className="overflow-x-auto bg-[#FAF9F5] border-4 border-[#121212] shadow-[4px_4px_0px_0px_#121212] p-3">
           <svg
             viewBox={`0 0 ${chartWidth} ${chartHeight}`}
-            className="w-full min-w-[700px] h-80 select-none cursor-crosshair"
+            className="w-full min-w-[700px] h-84 select-none cursor-crosshair"
             onClick={handleChartPriceClick}
           >
             {/* Background Grid Lines */}
@@ -403,8 +417,8 @@ export const ChartLab: React.FC = () => {
               const pVal = minPrice + ratio * priceRange;
               return (
                 <g key={idx}>
-                  <line x1="40" y1={yVal} x2={chartWidth - 20} y2={yVal} stroke="#e2e8f0" strokeWidth="1" strokeDasharray="3 3" />
-                  <text x="35" y={yVal + 3} textAnchor="end" fill="#64748b" fontSize="9" fontFamily="monospace">
+                  <line x1="40" y1={yVal} x2={chartWidth - 20} y2={yVal} stroke="#D4D4D4" strokeWidth="1" strokeDasharray="4 4" />
+                  <text x="35" y={yVal + 3} textAnchor="end" fill="#525252" fontSize="9" fontFamily="monospace" fontWeight="bold">
                     {pVal.toFixed(2)}
                   </text>
                 </g>
@@ -429,13 +443,13 @@ export const ChartLab: React.FC = () => {
                       y={Math.min(topY, botY)}
                       width={fvgWidth}
                       height={fvgHeight}
-                      fill="rgba(14, 165, 233, 0.15)"
-                      stroke="#0284c7"
-                      strokeWidth="1"
-                      strokeDasharray="2 2"
+                      fill="rgba(208, 32, 32, 0.18)"
+                      stroke="#D02020"
+                      strokeWidth="1.5"
+                      strokeDasharray="4 2"
                     />
-                    <text x={startX + 5} y={Math.min(topY, botY) + 12} fill="#0369a1" fontSize="9" fontFamily="monospace" fontWeight="bold">
-                      FVG ({ann.isBullish ? 'Bullish' : 'Bearish'})
+                    <text x={startX + 6} y={Math.min(topY, botY) + 12} fill="#D02020" fontSize="9" fontFamily="monospace" fontWeight="black">
+                      FVG ({ann.isBullish ? 'BULLISH' : 'BEARISH'})
                     </text>
                   </g>
                 );
@@ -456,18 +470,18 @@ export const ChartLab: React.FC = () => {
                       y1={yPos}
                       x2={chartWidth - 20}
                       y2={yPos}
-                      stroke={isBSL ? '#d97706' : '#e11d48'}
-                      strokeWidth="1.5"
-                      strokeDasharray="4 4"
+                      stroke={isBSL ? '#121212' : '#D02020'}
+                      strokeWidth="2"
+                      strokeDasharray="5 3"
                     />
-                    <text x={chartWidth - 25} y={yPos - 4} textAnchor="end" fill={isBSL ? '#b45309' : '#be123c'} fontSize="9" fontFamily="monospace" fontWeight="bold">
+                    <text x={chartWidth - 25} y={yPos - 4} textAnchor="end" fill={isBSL ? '#121212' : '#D02020'} fontSize="9" fontFamily="monospace" fontWeight="black">
                       {ann.label}
                     </text>
                   </g>
                 );
               })}
 
-            {/* Render Candlesticks */}
+            {/* Render Candlesticks with Bauhaus Stark Contrasts */}
             {visibleCandles.map((c, idx) => {
               const isBullish = c.close >= c.open;
               const xCenter = getX(idx);
@@ -478,8 +492,8 @@ export const ChartLab: React.FC = () => {
               const bodyTop = Math.min(openY, closeY);
               const bodyHeight = Math.max(2, Math.abs(closeY - openY));
 
-              const candleColor = isBullish ? '#059669' : '#e11d48';
-              const wickColor = isBullish ? '#10b981' : '#f43f5e';
+              const candleColor = isBullish ? '#1040C0' : '#D02020';
+              const wickColor = '#121212';
 
               return (
                 <g
@@ -492,14 +506,15 @@ export const ChartLab: React.FC = () => {
                   {/* Upper & Lower Wicks */}
                   <line x1={xCenter} y1={highY} x2={xCenter} y2={lowY} stroke={wickColor} strokeWidth="1.5" />
                   
-                  {/* Body */}
+                  {/* Body with Black Outline */}
                   <rect
                     x={xCenter - candleWidth / 2}
                     y={bodyTop}
                     width={candleWidth}
                     height={bodyHeight}
                     fill={candleColor}
-                    rx="1"
+                    stroke="#121212"
+                    strokeWidth="1.5"
                   />
                 </g>
               );
@@ -508,8 +523,8 @@ export const ChartLab: React.FC = () => {
             {/* User Placed Entry / Stop / Target Lines */}
             {userMarkedPrices.entry && (
               <g>
-                <line x1="45" y1={getY(userMarkedPrices.entry)} x2={chartWidth - 20} y2={getY(userMarkedPrices.entry)} stroke="#0284c7" strokeWidth="2" />
-                <text x="55" y={getY(userMarkedPrices.entry) - 4} fill="#0284c7" fontSize="9" fontFamily="monospace" fontWeight="bold">
+                <line x1="45" y1={getY(userMarkedPrices.entry)} x2={chartWidth - 20} y2={getY(userMarkedPrices.entry)} stroke="#1040C0" strokeWidth="2.5" />
+                <text x="55" y={getY(userMarkedPrices.entry) - 4} fill="#1040C0" fontSize="9" fontFamily="monospace" fontWeight="black">
                   ENTRY @ {userMarkedPrices.entry}
                 </text>
               </g>
@@ -517,8 +532,8 @@ export const ChartLab: React.FC = () => {
 
             {userMarkedPrices.stop && (
               <g>
-                <line x1="45" y1={getY(userMarkedPrices.stop)} x2={chartWidth - 20} y2={getY(userMarkedPrices.stop)} stroke="#e11d48" strokeWidth="2" strokeDasharray="3 3" />
-                <text x="55" y={getY(userMarkedPrices.stop) - 4} fill="#e11d48" fontSize="9" fontFamily="monospace" fontWeight="bold">
+                <line x1="45" y1={getY(userMarkedPrices.stop)} x2={chartWidth - 20} y2={getY(userMarkedPrices.stop)} stroke="#D02020" strokeWidth="2.5" strokeDasharray="4 3" />
+                <text x="55" y={getY(userMarkedPrices.stop) - 4} fill="#D02020" fontSize="9" fontFamily="monospace" fontWeight="black">
                   STOP LOSS @ {userMarkedPrices.stop}
                 </text>
               </g>
@@ -526,8 +541,8 @@ export const ChartLab: React.FC = () => {
 
             {userMarkedPrices.target && (
               <g>
-                <line x1="45" y1={getY(userMarkedPrices.target)} x2={chartWidth - 20} y2={getY(userMarkedPrices.target)} stroke="#059669" strokeWidth="2" strokeDasharray="3 3" />
-                <text x="55" y={getY(userMarkedPrices.target) - 4} fill="#059669" fontSize="9" fontFamily="monospace" fontWeight="bold">
+                <line x1="45" y1={getY(userMarkedPrices.target)} x2={chartWidth - 20} y2={getY(userMarkedPrices.target)} stroke="#121212" strokeWidth="2.5" strokeDasharray="4 3" />
+                <text x="55" y={getY(userMarkedPrices.target) - 4} fill="#121212" fontSize="9" fontFamily="monospace" fontWeight="black">
                   TARGET (DOL) @ {userMarkedPrices.target}
                 </text>
               </g>
@@ -535,17 +550,19 @@ export const ChartLab: React.FC = () => {
           </svg>
         </div>
 
-        {/* Hovered Candle Tooltip Information without # symbol */}
+        {/* Hovered Candle Tooltip Information */}
         {hoveredCandle && (
-          <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-xs font-mono grid grid-cols-2 sm:grid-cols-5 gap-2 text-slate-800">
-            <div><span className="text-slate-500">Candle {hoveredCandle.index + 1}</span></div>
-            <div><span className="text-slate-500">Open:</span> <span className="font-bold text-slate-900">{hoveredCandle.candle.open}</span></div>
-            <div><span className="text-slate-500">High:</span> <span className="font-bold text-slate-900">{hoveredCandle.candle.high}</span></div>
-            <div><span className="text-slate-500">Low:</span> <span className="font-bold text-slate-900">{hoveredCandle.candle.low}</span></div>
-            <div><span className="text-slate-500">Close:</span> <span className="font-bold text-slate-900">{hoveredCandle.candle.close}</span></div>
+          <div className="p-4 bg-[#FFF9C4] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] text-xs font-mono grid grid-cols-2 sm:grid-cols-5 gap-2 text-[#121212]">
+            <div><span className="text-[#121212]/60 uppercase font-black">Candle:</span> <span className="font-bold">{hoveredCandle.index + 1}</span></div>
+            <div><span className="text-[#121212]/60 uppercase font-black">Open:</span> <span className="font-bold">{hoveredCandle.candle.open}</span></div>
+            <div><span className="text-[#121212]/60 uppercase font-black">High:</span> <span className="font-bold">{hoveredCandle.candle.high}</span></div>
+            <div><span className="text-[#121212]/60 uppercase font-black">Low:</span> <span className="font-bold">{hoveredCandle.candle.low}</span></div>
+            <div><span className="text-[#121212]/60 uppercase font-black">Close:</span> <span className="font-bold">{hoveredCandle.candle.close}</span></div>
           </div>
         )}
       </div>
     </div>
   );
 };
+
+export default ChartLab;

@@ -76,6 +76,11 @@ export interface ChapterSection {
   keyTakeaway?: string;
 }
 
+export interface KeyTerm {
+  term: string;
+  definition: string;
+}
+
 export interface TextbookChapter {
   id: number;
   slug: string;
@@ -83,7 +88,7 @@ export interface TextbookChapter {
   title: string;
   quote: string;
   summary: string[];
-  keyTerms: { term: string; definition: string }[];
+  keyTerms: KeyTerm[];
   practiceQuestions: string[];
   sections: ChapterSection[];
   level: number;

@@ -22,7 +22,6 @@ export const SearchModal: React.FC<SearchModalProps> = ({
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
-        // Toggle search
       }
       if (e.key === 'Escape' && isOpen) {
         onClose();
@@ -53,45 +52,45 @@ export const SearchModal: React.FC<SearchModalProps> = ({
       );
 
   return (
-    <div className="fixed inset-0 z-50 bg-slate-950/40 backdrop-blur-md flex items-start justify-center pt-16 sm:pt-24 p-4 animate-fadeIn">
-      <div className="bg-white/95 backdrop-blur-xl border border-slate-200/90 rounded-3xl w-full max-w-2xl shadow-[0_25px_60px_-15px_rgba(15,23,42,0.2)] overflow-hidden font-mono text-xs transition-all">
+    <div className="fixed inset-0 z-50 bg-black/75 flex items-start justify-center pt-16 sm:pt-24 p-4">
+      <div className="bg-white border-4 border-[#121212] shadow-[12px_12px_0px_0px_#121212] rounded-none w-full max-w-2xl overflow-hidden font-sans text-xs">
         {/* Search Input Bar */}
-        <div className="flex items-center gap-3.5 p-4 sm:p-5 border-b border-slate-200/80 bg-slate-50/70">
-          <div className="w-8 h-8 rounded-xl bg-sky-50 flex items-center justify-center text-sky-600 border border-sky-200/60 shrink-0">
-            <Search className="w-4 h-4" />
+        <div className="flex items-center gap-3 p-4 sm:p-5 border-b-4 border-[#121212] bg-[#F0F0F0]">
+          <div className="w-10 h-10 rounded-none bg-[#1040C0] text-white flex items-center justify-center border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] shrink-0">
+            <Search className="w-5 h-5 stroke-[2.5]" />
           </div>
           <input
             autoFocus
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search concepts, chapters, models (e.g. FVG, Order Block, AMD, BSL)..."
-            className="w-full bg-transparent text-slate-900 placeholder-slate-400 text-sm focus:outline-none font-sans font-medium"
+            placeholder="SEARCH CONCEPTS, CHAPTERS, ALGORITHMS (FVG, OB, AMD)..."
+            className="w-full bg-transparent text-[#121212] placeholder-[#121212]/50 text-sm focus:outline-none font-mono font-bold uppercase"
           />
           <button 
             onClick={onClose} 
-            className="p-1.5 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-200/70 transition-colors"
+            className="p-2 rounded-none bg-white text-[#121212] hover:bg-[#D02020] hover:text-white border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] transition-colors cursor-pointer"
             title="Close Search (Esc)"
           >
-            <X className="w-5 h-5" />
+            <X className="w-5 h-5 stroke-[3]" />
           </button>
         </div>
 
         {/* Results List */}
-        <div className="max-h-[60vh] overflow-y-auto p-4 sm:p-5 space-y-5">
+        <div className="max-h-[60vh] overflow-y-auto p-4 sm:p-6 space-y-6">
           {/* Concepts Section */}
           {filteredConcepts.length > 0 && (
-            <div className="space-y-2.5">
-              <div className="text-[10px] text-slate-500 uppercase font-black tracking-wider flex items-center justify-between">
-                <div className="flex items-center gap-1.5">
-                  <Compass className="w-3.5 h-3.5 text-sky-600" />
-                  <span>Encyclopedia Concepts</span>
+            <div className="space-y-3">
+              <div className="text-[11px] text-[#121212] uppercase font-black tracking-widest flex items-center justify-between font-mono pb-1 border-b-2 border-[#121212]">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 bg-[#D02020] inline-block border border-black" />
+                  <span>ENCYCLOPEDIA CONCEPTS</span>
                 </div>
-                <span className="text-[9px] font-mono text-slate-400 font-normal">
-                  {filteredConcepts.length} matches
+                <span className="text-[10px] font-mono text-[#121212]/60">
+                  {filteredConcepts.length} MATCHES
                 </span>
               </div>
-              <div className="space-y-1.5">
+              <div className="space-y-2">
                 {filteredConcepts.map((c) => (
                   <button
                     key={c.id}
@@ -99,21 +98,21 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                       onSelectConcept(c.id);
                       onClose();
                     }}
-                    className="w-full text-left p-3.5 rounded-2xl bg-white hover:bg-sky-50/50 border border-slate-200/90 hover:border-sky-300 transition-all flex items-center justify-between group shadow-xs hover:shadow-sm"
+                    className="w-full text-left p-3.5 rounded-none bg-[#F0F0F0] hover:bg-[#F0C020] text-[#121212] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] transition-all flex items-center justify-between group cursor-pointer active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
                   >
                     <div>
-                      <div className="text-slate-900 font-bold group-hover:text-sky-700 flex items-center gap-2">
+                      <div className="font-black text-sm uppercase tracking-tight flex items-center gap-2">
                         <span>{c.name}</span>
-                        <span className="text-[9px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200 font-mono">
+                        <span className="text-[10px] px-2 py-0.5 rounded-none bg-white text-[#121212] border border-[#121212] font-mono font-bold">
                           {c.category}
                         </span>
                       </div>
-                      <div className="text-slate-500 text-[11px] font-sans truncate max-w-lg mt-1">
+                      <div className="text-[#121212]/80 text-xs font-medium truncate max-w-lg mt-1">
                         {c.shortDefinition}
                       </div>
                     </div>
-                    <div className="w-7 h-7 rounded-xl bg-slate-100 group-hover:bg-sky-600 group-hover:text-white flex items-center justify-center transition-all ml-3 shrink-0">
-                      <ArrowRight className="w-3.5 h-3.5" />
+                    <div className="w-8 h-8 rounded-none bg-white group-hover:bg-[#121212] group-hover:text-white border-2 border-[#121212] flex items-center justify-center transition-all ml-3 shrink-0">
+                      <ArrowRight className="w-4 h-4 stroke-[2.5]" />
                     </div>
                   </button>
                 ))}
@@ -123,17 +122,17 @@ export const SearchModal: React.FC<SearchModalProps> = ({
 
           {/* Chapters Section */}
           {filteredChapters.length > 0 && (
-            <div className="space-y-2.5 pt-3 border-t border-slate-200/80">
-              <div className="text-[10px] text-slate-500 uppercase font-black tracking-wider flex items-center justify-between">
-                <div className="flex items-center gap-1.5">
-                  <BookOpen className="w-3.5 h-3.5 text-amber-600" />
-                  <span>Textbook Chapters</span>
+            <div className="space-y-3 pt-2">
+              <div className="text-[11px] text-[#121212] uppercase font-black tracking-widest flex items-center justify-between font-mono pb-1 border-b-2 border-[#121212]">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#1040C0] inline-block border border-black" />
+                  <span>CURRICULUM CHAPTERS</span>
                 </div>
-                <span className="text-[9px] font-mono text-slate-400 font-normal">
-                  {filteredChapters.length} chapters
+                <span className="text-[10px] font-mono text-[#121212]/60">
+                  {filteredChapters.length} CHAPTERS
                 </span>
               </div>
-              <div className="space-y-1.5">
+              <div className="space-y-2">
                 {filteredChapters.map((ch) => (
                   <button
                     key={ch.id}
@@ -141,18 +140,21 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                       onSelectChapter(ch.id);
                       onClose();
                     }}
-                    className="w-full text-left p-3.5 rounded-2xl bg-white hover:bg-amber-50/50 border border-slate-200/90 hover:border-amber-300 transition-all flex items-center justify-between group shadow-xs hover:shadow-sm"
+                    className="w-full text-left p-3.5 rounded-none bg-[#F0F0F0] hover:bg-[#1040C0] hover:text-white text-[#121212] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] transition-all flex items-center justify-between group cursor-pointer active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
                   >
                     <div>
-                      <div className="text-slate-900 font-bold group-hover:text-amber-700 flex items-center gap-2">
-                        <span>Chapter {ch.id}: {ch.title}</span>
+                      <div className="font-black text-sm uppercase tracking-tight flex items-center gap-2">
+                        <span className="font-mono text-xs px-2 py-0.5 rounded-none bg-[#D02020] text-white border border-[#121212]">
+                          CH {ch.id < 10 ? `0${ch.id}` : ch.id}
+                        </span>
+                        <span>{ch.title}</span>
                       </div>
-                      <div className="text-slate-500 text-[11px] font-sans truncate max-w-lg mt-1">
+                      <div className="opacity-80 text-xs font-medium truncate max-w-lg mt-1">
                         {ch.part}
                       </div>
                     </div>
-                    <div className="w-7 h-7 rounded-xl bg-slate-100 group-hover:bg-amber-600 group-hover:text-white flex items-center justify-center transition-all ml-3 shrink-0">
-                      <ArrowRight className="w-3.5 h-3.5" />
+                    <div className="w-8 h-8 rounded-none bg-white group-hover:bg-[#F0C020] group-hover:text-[#121212] text-[#121212] border-2 border-[#121212] flex items-center justify-center transition-all ml-3 shrink-0">
+                      <ArrowRight className="w-4 h-4 stroke-[2.5]" />
                     </div>
                   </button>
                 ))}
@@ -162,18 +164,22 @@ export const SearchModal: React.FC<SearchModalProps> = ({
         </div>
 
         {/* Footer Hint */}
-        <div className="p-3.5 bg-slate-50/80 border-t border-slate-200/80 flex items-center justify-between text-[11px] text-slate-500 font-sans">
-          <span className="flex items-center gap-1.5">
-            <span>Press</span>
-            <kbd className="px-1.5 py-0.5 rounded-md bg-white border border-slate-300 font-mono text-[10px] text-slate-700 shadow-xs">ESC</kbd>
-            <span>to dismiss</span>
+        <div className="p-4 bg-[#F0F0F0] border-t-4 border-[#121212] flex items-center justify-between text-xs text-[#121212] font-mono font-bold uppercase">
+          <span className="flex items-center gap-2">
+            <span>PRESS</span>
+            <kbd className="px-2 py-0.5 rounded-none bg-white border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] text-[10px]">
+              ESC
+            </kbd>
+            <span>TO DISMISS</span>
           </span>
-          <span className="flex items-center gap-1.5 font-mono text-[10px] text-slate-400">
-            <span>SELECT TO NAVIGATE</span>
-            <CornerDownLeft className="w-3 h-3 text-slate-400" />
+          <span className="flex items-center gap-1.5 text-[10px]">
+            <span>SELECT TO OPEN</span>
+            <CornerDownLeft className="w-3.5 h-3.5 stroke-[2.5]" />
           </span>
         </div>
       </div>
     </div>
   );
 };
+
+export default SearchModal;

@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import boyStudyingImg from '../assets/images/boy_learning_trading_1788423487769.jpg';
 import { MainTabType } from './Header';
+import { ScrollReveal } from './ScrollReveal';
 
 interface WelcomeScreenProps {
   onEnterAcademy: (targetTab?: MainTabType) => void;
@@ -119,10 +120,11 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
       </div>
 
       {/* Main Welcome Content */}
-      <main className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-12 flex-1 flex flex-col justify-center space-y-10">
+      <main className="relative z-10 max-w-[1720px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex-1 flex flex-col justify-center space-y-10">
         
         {/* Main Constructivist Showcase Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <ScrollReveal y={35} duration={0.6}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           {/* Left Hero Column */}
           <div className="lg:col-span-7 space-y-6">
@@ -251,100 +253,102 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
             </div>
 
           </div>
-
-        </div>
+          </div>
+        </ScrollReveal>
 
         {/* 3-Pillar Bauhaus Architecture Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-          
-          {/* Pillar 1: 48 Institutional Chapters */}
-          <div 
-            onClick={() => onEnterAcademy('curriculum')}
-            className="bg-white border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] p-6 space-y-4 cursor-pointer hover:-translate-y-1 transition-transform group"
-          >
-            <div className="flex items-center justify-between">
-              <div className="w-10 h-10 bg-[#D02020] text-white border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] flex items-center justify-center font-mono font-black text-sm">
-                01
+        <ScrollReveal y={35} delay={0.15}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+            
+            {/* Pillar 1: 48 Institutional Chapters */}
+            <div 
+              onClick={() => onEnterAcademy('curriculum')}
+              className="bg-white border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] p-6 space-y-4 cursor-pointer hover:-translate-y-1 transition-transform group"
+            >
+              <div className="flex items-center justify-between">
+                <div className="w-10 h-10 bg-[#D02020] text-white border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] flex items-center justify-center font-mono font-black text-sm">
+                  01
+                </div>
+                <span className="text-[10px] font-mono font-black uppercase px-2 py-0.5 bg-[#F0F0F0] border border-[#121212]">
+                  OPEN SYLLABUS
+                </span>
               </div>
-              <span className="text-[10px] font-mono font-black uppercase px-2 py-0.5 bg-[#F0F0F0] border border-[#121212]">
-                OPEN SYLLABUS
-              </span>
-            </div>
-            <div>
-              <h3 className="text-xl font-black uppercase tracking-tight text-[#121212] group-hover:text-[#D02020] transition-colors">
-                The ICT Textbook
-              </h3>
-              <p className="text-xs text-[#121212]/80 mt-1 font-medium leading-relaxed">
-                48 fully codified institutional chapters spanning market structure, liquidity sweeps, Fair Value Gaps, and killzones without arbitrary locks.
-              </p>
-            </div>
-            <div className="pt-2 flex items-center gap-1.5 text-xs font-black uppercase text-[#D02020]">
-              <span>Read Chapters</span>
-              <ArrowRight className="w-3.5 h-3.5 stroke-[3] group-hover:translate-x-1 transition-transform" />
-            </div>
-          </div>
-
-          {/* Pillar 2: Masood Academy */}
-          <div 
-            onClick={() => onEnterAcademy('masood')}
-            className="bg-white border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] p-6 space-y-4 cursor-pointer hover:-translate-y-1 transition-transform group"
-          >
-            <div className="flex items-center justify-between">
-              <div className="w-10 h-10 bg-[#F0C020] text-[#121212] border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] flex items-center justify-center font-mono font-black text-sm">
-                02
+              <div>
+                <h3 className="text-xl font-black uppercase tracking-tight text-[#121212] group-hover:text-[#D02020] transition-colors">
+                  The ICT Textbook
+                </h3>
+                <p className="text-xs text-[#121212]/80 mt-1 font-medium leading-relaxed">
+                  48 fully codified institutional chapters spanning market structure, liquidity sweeps, Fair Value Gaps, and killzones without arbitrary locks.
+                </p>
               </div>
-              <span className="text-[10px] font-mono font-black uppercase px-2 py-0.5 bg-[#F0F0F0] border border-[#121212]">
-                VIDEO SYNDICATE
-              </span>
-            </div>
-            <div>
-              <h3 className="text-xl font-black uppercase tracking-tight text-[#121212] group-hover:text-[#D02020] transition-colors">
-                Abdullah Masood Academy
-              </h3>
-              <p className="text-xs text-[#121212]/80 mt-1 font-medium leading-relaxed">
-                52 structured video masterclasses across 6 curated playlists, the Daily Bias calculator, and the 10 Golden Execution Rules.
-              </p>
-            </div>
-            <div className="pt-2 flex items-center gap-1.5 text-xs font-black uppercase text-[#121212]">
-              <span>Watch Masterclasses</span>
-              <ArrowRight className="w-3.5 h-3.5 stroke-[3] group-hover:translate-x-1 transition-transform" />
-            </div>
-          </div>
-
-          {/* Pillar 3: Trading Lab Workbench */}
-          <div 
-            onClick={() => onEnterAcademy('tools')}
-            className="bg-white border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] p-6 space-y-4 cursor-pointer hover:-translate-y-1 transition-transform group"
-          >
-            <div className="flex items-center justify-between">
-              <div className="w-10 h-10 bg-[#1040C0] text-white border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] flex items-center justify-center font-mono font-black text-sm">
-                03
+              <div className="pt-2 flex items-center gap-1.5 text-xs font-black uppercase text-[#D02020]">
+                <span>Read Chapters</span>
+                <ArrowRight className="w-3.5 h-3.5 stroke-[3] group-hover:translate-x-1 transition-transform" />
               </div>
-              <span className="text-[10px] font-mono font-black uppercase px-2 py-0.5 bg-[#F0F0F0] border border-[#121212]">
-                INTERACTIVE LAB
-              </span>
             </div>
-            <div>
-              <h3 className="text-xl font-black uppercase tracking-tight text-[#121212] group-hover:text-[#1040C0] transition-colors">
-                Trading Workbench
-              </h3>
-              <p className="text-xs text-[#121212]/80 mt-1 font-medium leading-relaxed">
-                Step-by-step ChartLab, Execution Simulator, Monte Carlo Backtesting Engine, 7-point Trading Journal, and Concept Knowledge Graph.
-              </p>
-            </div>
-            <div className="pt-2 flex items-center gap-1.5 text-xs font-black uppercase text-[#1040C0]">
-              <span>Launch Laboratory</span>
-              <ArrowRight className="w-3.5 h-3.5 stroke-[3] group-hover:translate-x-1 transition-transform" />
-            </div>
-          </div>
 
-        </div>
+            {/* Pillar 2: Masood Academy */}
+            <div 
+              onClick={() => onEnterAcademy('masood')}
+              className="bg-white border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] p-6 space-y-4 cursor-pointer hover:-translate-y-1 transition-transform group"
+            >
+              <div className="flex items-center justify-between">
+                <div className="w-10 h-10 bg-[#F0C020] text-[#121212] border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] flex items-center justify-center font-mono font-black text-sm">
+                  02
+                </div>
+                <span className="text-[10px] font-mono font-black uppercase px-2 py-0.5 bg-[#F0F0F0] border border-[#121212]">
+                  VIDEO SYNDICATE
+                </span>
+              </div>
+              <div>
+                <h3 className="text-xl font-black uppercase tracking-tight text-[#121212] group-hover:text-[#D02020] transition-colors">
+                  Abdullah Masood Academy
+                </h3>
+                <p className="text-xs text-[#121212]/80 mt-1 font-medium leading-relaxed">
+                  52 structured video masterclasses across 6 curated playlists, the Daily Bias calculator, and the 10 Golden Execution Rules.
+                </p>
+              </div>
+              <div className="pt-2 flex items-center gap-1.5 text-xs font-black uppercase text-[#121212]">
+                <span>Watch Masterclasses</span>
+                <ArrowRight className="w-3.5 h-3.5 stroke-[3] group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            {/* Pillar 3: Trading Lab Workbench */}
+            <div 
+              onClick={() => onEnterAcademy('tools')}
+              className="bg-white border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] p-6 space-y-4 cursor-pointer hover:-translate-y-1 transition-transform group"
+            >
+              <div className="flex items-center justify-between">
+                <div className="w-10 h-10 bg-[#1040C0] text-white border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] flex items-center justify-center font-mono font-black text-sm">
+                  03
+                </div>
+                <span className="text-[10px] font-mono font-black uppercase px-2 py-0.5 bg-[#F0F0F0] border border-[#121212]">
+                  INTERACTIVE LAB
+                </span>
+              </div>
+              <div>
+                <h3 className="text-xl font-black uppercase tracking-tight text-[#121212] group-hover:text-[#1040C0] transition-colors">
+                  Trading Workbench
+                </h3>
+                <p className="text-xs text-[#121212]/80 mt-1 font-medium leading-relaxed">
+                  Step-by-step ChartLab, Execution Simulator, Monte Carlo Backtesting Engine, 7-point Trading Journal, and Concept Knowledge Graph.
+                </p>
+              </div>
+              <div className="pt-2 flex items-center gap-1.5 text-xs font-black uppercase text-[#1040C0]">
+                <span>Launch Laboratory</span>
+                <ArrowRight className="w-3.5 h-3.5 stroke-[3] group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+          </div>
+        </ScrollReveal>
 
       </main>
 
       {/* Bauhaus Footer */}
       <footer className="relative z-10 border-t-4 border-[#121212] bg-white py-6 px-4">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
+        <div className="max-w-[1720px] w-full mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-[#D02020] border border-black" />
             <span className="font-black text-[#121212]">ICT // BAUHAUS DESIGN SYSTEM</span>

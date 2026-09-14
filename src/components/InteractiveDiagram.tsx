@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Play, RotateCcw, Info, CheckCircle2, ChevronRight } from 'lucide-react';
+import { DiagramType } from '../types';
+import { MasterclassDiagrams, isMasterclassDiagram } from './MasterclassDiagrams';
 
 interface InteractiveDiagramProps {
-  type?: 'liquidity_sweep' | 'fvg_formation' | 'order_block' | 'breaker_block' | 'mss_sequence' | 'po3_amd' | 'top_down_matrix' | 'session_timeline' | 'nested_structure';
-  diagramType?: 'liquidity_sweep' | 'fvg_formation' | 'order_block' | 'breaker_block' | 'mss_sequence' | 'po3_amd' | 'top_down_matrix' | 'session_timeline' | 'nested_structure';
+  type?: DiagramType;
+  diagramType?: DiagramType;
   title?: string;
   isInteractive?: boolean;
 }
@@ -412,6 +414,10 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
             </svg>
           </div>
         )}
+
+        {isMasterclassDiagram(type) && (
+          <MasterclassDiagrams type={type} step={step} />
+        )}
       </div>
 
       {/* Explanation Footer Box */}
@@ -430,6 +436,21 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
             {type === 'top_down_matrix' && 'Higher timeframes dictate the narrative and location; lower timeframes provide the precision execution entry.'}
             {type === 'session_timeline' && 'All ICT timing is calibrated to New York local time. Never trade without knowing what liquidity was created in prior sessions.'}
             {type === 'nested_structure' && 'Every timeframe contains trends within trends. A 5-minute downtrend can simply be a healthy pullback delivering price into a Daily FVG.'}
+            {type === 'unicorn_model' && 'Unicorn Model: Breaker Block + overlapping Fair Value Gap. Requires a prior liquidity raid (Stop Hunt). Stop loss is placed above the Breaker & FVG high.'}
+            {type === 'cisd_masterclass' && 'Change In State of Delivery (CISD): An Order Block is a Change in the State of Delivery. Validated when price body closes through the delivery candles into HTF level.'}
+            {type === 'ifvg_inversion' && 'Inversion FVG (IFVG): A failed auction signature. When price decisively closes through an FVG with full body, it flips into opposing support or resistance.'}
+            {type === 'org_octant_grid' && 'Opening Range Gap (ORG): 9:30 AM Open vs 4:14 PM Settlement. Divided into Octant/Quadrant grid. 50% Consequent Encroachment is traded to ~70% of the time by 10:00 AM.'}
+            {type === 'mmxm_stage2' && 'Stage-2 Re-accumulation / Re-distribution: The holy grail of MMXM. The first leg from SMR must reach 50% of the distance to the target; Stage 2 accelerates violently.'}
+            {type === 'five_opening_ranges' && 'The 5 Algorithmic Opening Ranges: Midnight (12:00 AM), London (1:30 AM), NY Killzone (7:00 AM), AM Session (9:30 AM - King), and PM Session (1:30 PM).'}
+            {type === 'propulsion_block' && 'Propulsion Block: Retraces into a pre-existing Order Block, respects its 50% Mean Threshold, and violently propels price. An execution tool, not analysis tool.'}
+            {type === 'implied_fvg' && 'Implied FVG: Forms when consecutive candles have overlapping long wicks without a traditional body void. Consequent encroachment of both wicks defines the implied gap.'}
+            {type === 'rejection_block' && 'Rejection Block: Defined from the highest/lowest candle body close to the wick extreme. Acts as an algorithmic price delimiter and deferred entry zone.'}
+            {type === 'mitigation_block' && 'Mitigation Block: A failed breaker that forms after a failure swing (no stop raid). Institutions use it to mitigate underwater positions at breakeven.'}
+            {type === 'standard_deviations' && 'Standard Deviations (STDV): Anchor to the manipulation range (0.0 to -1.0). High-probability extensions form at -1.5, -2.0 (PDL/PDH target), -2.5, and -4.0 (macro terminus).'}
+            {type === 'ny_continuation_reversal' && 'New York Framework: Did London tap a HTF PD Array? If NO -> NY Continuation (retrace to London OB at 8:30/9:30). If YES -> NY Reversal with Judas sweep.'}
+            {type === 'first_presentation_fvg' && '1st Presented FVG: Only forms after 9:31 AM and after a stop raid. Must break away from balance with real displacement. Highest probability execution anchor.'}
+            {type === 'ote_model' && 'Optimal Trade Entry (OTE): 62% to 79% Fibonacci retracement with 70.5% sweet spot. Must align with displacement, SIBI/BISI rebalance, and time of day.'}
+            {type === 'three_day_rule' && '3-Day Rule: "Your entire universe of liquidity and inefficiencies can be summed up in the last 3 days." Cluster previous daily range octants with wick grades.'}
           </p>
         </div>
       )}

@@ -10,6 +10,7 @@ import {
   Clock, Shield, ArrowRight, X, Layers, CheckSquare
 } from 'lucide-react';
 import { BauhausNavScroller } from '../BauhausNavScroller';
+import { ScrollReveal } from '../ScrollReveal';
 
 export const MasoodAcademyView: React.FC = () => {
   const [activePlaylistId, setActivePlaylistId] = useState<'all' | MasoodPlaylistId>('all');
@@ -68,134 +69,139 @@ export const MasoodAcademyView: React.FC = () => {
   return (
     <div className="space-y-8 pb-24">
       {/* Bauhaus Hero Poster Header */}
-      <section className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] rounded-none p-6 sm:p-10 relative overflow-hidden space-y-6">
-        
-        {/* Geometric Corner Element */}
-        <div className="absolute top-0 right-0 w-24 h-24 bg-[#D02020] border-l-4 border-b-4 border-[#121212] pointer-events-none hidden sm:flex items-center justify-center">
-          <div className="w-8 h-8 rounded-full bg-[#F0C020] border-2 border-[#121212]" />
-        </div>
-
-        <div className="space-y-4 max-w-4xl">
-          {/* Metadata badges */}
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none text-xs font-mono font-black uppercase tracking-widest bg-[#D02020] text-white border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212]">
-              <Youtube className="w-4 h-4 fill-white text-white" />
-              EXCLUSIVE MENTORSHIP SERIES
-            </span>
-            <span className="text-xs font-mono font-black uppercase tracking-wider text-[#121212] bg-[#F0C020] px-3 py-1 border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212]">
-              TRADER ABDULLAH MASOOD
-            </span>
-            <span className="text-xs font-mono font-bold uppercase text-white bg-[#1040C0] px-3 py-1 border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212]">
-              {allLectures.length} LECTURES • 6 PLAYLISTS
-            </span>
+      <ScrollReveal y={35} duration={0.6}>
+        <section className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] rounded-none p-6 sm:p-10 relative overflow-hidden space-y-6">
+          
+          {/* Geometric Corner Element */}
+          <div className="absolute top-0 right-0 w-24 h-24 bg-[#D02020] border-l-4 border-b-4 border-[#121212] pointer-events-none hidden sm:flex items-center justify-center">
+            <div className="w-8 h-8 rounded-full bg-[#F0C020] border-2 border-[#121212]" />
           </div>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-[#121212] leading-none">
-            ABDULLAH MASOOD <span className="bg-[#D02020] text-white px-2 py-0.5 inline-block">ACADEMY</span>
-          </h1>
+          <div className="space-y-4 max-w-4xl">
+            {/* Metadata badges */}
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none text-xs font-mono font-black uppercase tracking-widest bg-[#D02020] text-white border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212]">
+                <Youtube className="w-4 h-4 fill-white text-white" />
+                EXCLUSIVE MENTORSHIP SERIES
+              </span>
+              <span className="text-xs font-mono font-black uppercase tracking-wider text-[#121212] bg-[#F0C020] px-3 py-1 border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212]">
+                TRADER ABDULLAH MASOOD
+              </span>
+              <span className="text-xs font-mono font-bold uppercase text-white bg-[#1040C0] px-3 py-1 border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212]">
+                {allLectures.length} LECTURES • 6 PLAYLISTS
+              </span>
+            </div>
 
-          <p className="text-sm sm:text-base text-[#121212] font-medium leading-relaxed max-w-3xl">
-            A comprehensive, structured curriculum of Trader Abdullah Masood’s institutional ICT education. Kept completely separate from ICT’s foundational syllabus for clarity, organizing lectures into Beginner's Guide, Advanced Systems, 2025 Daily Bias, The Godfather's Sanctum, Prop Risk &amp; Psychology, and the 44-session SMC Syndicate.
-          </p>
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-[#121212] leading-none">
+              ABDULLAH MASOOD <span className="bg-[#D02020] text-white px-2 py-0.5 inline-block">ACADEMY</span>
+            </h1>
 
-          {/* Quick action buttons */}
-          <div className="pt-2 flex flex-wrap items-center gap-3">
-            <a
-              href="https://www.youtube.com/@TraderAbdullahMasood"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none bg-[#D02020] hover:bg-red-700 text-white text-xs font-black uppercase tracking-wider border-2 border-[#121212] shadow-[4px_4px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
-            >
-              <Youtube className="w-4 h-4" />
-              <span>YOUTUBE CHANNEL</span>
-              <ExternalLink className="w-3.5 h-3.5 opacity-80 stroke-[3]" />
-            </a>
+            <p className="text-sm sm:text-base text-[#121212] font-medium leading-relaxed max-w-3xl">
+              A comprehensive, structured curriculum of Trader Abdullah Masood’s institutional ICT education. Kept completely separate from ICT’s foundational syllabus for clarity, organizing lectures into Beginner's Guide, Advanced Systems, 2025 Daily Bias, The Godfather's Sanctum, Prop Risk &amp; Psychology, and the 44-session SMC Syndicate.
+            </p>
 
-            <button
-              onClick={() => setActiveTab('animations')}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none bg-white hover:bg-[#F0C020] text-[#121212] text-xs font-black uppercase tracking-wider border-2 border-[#121212] shadow-[4px_4px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
-            >
-              <Sparkles className="w-4 h-4 text-[#1040C0] stroke-[2.5]" />
-              <span>ANIMATED EXPLAINERS</span>
-            </button>
+            {/* Quick action buttons */}
+            <div className="pt-2 flex flex-wrap items-center gap-3">
+              <a
+                href="https://www.youtube.com/@TraderAbdullahMasood"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none bg-[#D02020] hover:bg-red-700 text-white text-xs font-black uppercase tracking-wider border-2 border-[#121212] shadow-[4px_4px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+              >
+                <Youtube className="w-4 h-4" />
+                <span>YOUTUBE CHANNEL</span>
+                <ExternalLink className="w-3.5 h-3.5 opacity-80 stroke-[3]" />
+              </a>
 
-            <button
-              onClick={() => setActiveTab('bias_calc')}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none bg-white hover:bg-[#F0C020] text-[#121212] text-xs font-black uppercase tracking-wider border-2 border-[#121212] shadow-[4px_4px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
-            >
-              <Zap className="w-4 h-4 text-[#D02020] stroke-[2.5]" />
-              <span>DAILY BIAS ENGINE</span>
-            </button>
+              <button
+                onClick={() => setActiveTab('animations')}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none bg-white hover:bg-[#F0C020] text-[#121212] text-xs font-black uppercase tracking-wider border-2 border-[#121212] shadow-[4px_4px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+              >
+                <Sparkles className="w-4 h-4 text-[#1040C0] stroke-[2.5]" />
+                <span>ANIMATED EXPLAINERS</span>
+              </button>
 
-            <button
-              onClick={() => setActiveTab('rules')}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none bg-white hover:bg-[#F0C020] text-[#121212] text-xs font-black uppercase tracking-wider border-2 border-[#121212] shadow-[4px_4px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
-            >
-              <Shield className="w-4 h-4 text-[#1040C0] stroke-[2.5]" />
-              <span>10 GOLDEN RULES</span>
-            </button>
+              <button
+                onClick={() => setActiveTab('bias_calc')}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none bg-white hover:bg-[#F0C020] text-[#121212] text-xs font-black uppercase tracking-wider border-2 border-[#121212] shadow-[4px_4px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+              >
+                <Zap className="w-4 h-4 text-[#D02020] stroke-[2.5]" />
+                <span>DAILY BIAS ENGINE</span>
+              </button>
+
+              <button
+                onClick={() => setActiveTab('rules')}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none bg-white hover:bg-[#F0C020] text-[#121212] text-xs font-black uppercase tracking-wider border-2 border-[#121212] shadow-[4px_4px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+              >
+                <Shield className="w-4 h-4 text-[#1040C0] stroke-[2.5]" />
+                <span>10 GOLDEN RULES</span>
+              </button>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       {/* Main Navigation Sub-Bar & Search */}
-      <div className="bg-white border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] p-4 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
-        {/* Navigation Mode Tabs with Arrows */}
-        <div className="flex-1 min-w-0">
-          <BauhausNavScroller innerClassName="gap-2" showArrowsAlways={true}>
-            {[
-              { id: 'lectures', label: `LECTURE LIBRARY (${allLectures.length})`, icon: BookOpen },
-              { id: 'animations', label: 'ANIMATED EXPLAINERS', icon: Sparkles },
-              { id: 'bias_calc', label: 'BIAS CALCULATOR', icon: Zap },
-              { id: 'rules', label: 'GOLDEN RULES', icon: Shield },
-            ].map((tab) => {
-              const Icon = tab.icon;
-              const isActive = activeTab === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id as any)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-none text-xs font-black uppercase tracking-wider whitespace-nowrap transition-all border-2 border-[#121212] cursor-pointer shrink-0 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none ${
-                    isActive
-                      ? 'bg-[#1040C0] text-white shadow-[4px_4px_0px_0px_#121212] -translate-y-0.5'
-                      : 'bg-[#F0F0F0] text-[#121212] hover:bg-[#F0C020] shadow-[2px_2px_0px_0px_#121212]'
-                  }`}
-                >
-                  <Icon className="w-4 h-4 stroke-[2.5]" />
-                  <span>{tab.label}</span>
-                </button>
-              );
-            })}
-          </BauhausNavScroller>
-        </div>
+      <ScrollReveal y={25} delay={0.1}>
+        <div className="bg-white border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] p-4 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+          {/* Navigation Mode Tabs with Arrows */}
+          <div className="flex-1 min-w-0">
+            <BauhausNavScroller innerClassName="gap-2" showArrowsAlways={true}>
+              {[
+                { id: 'lectures', label: `LECTURE LIBRARY (${allLectures.length})`, icon: BookOpen },
+                { id: 'animations', label: 'ANIMATED EXPLAINERS', icon: Sparkles },
+                { id: 'bias_calc', label: 'BIAS CALCULATOR', icon: Zap },
+                { id: 'rules', label: 'GOLDEN RULES', icon: Shield },
+              ].map((tab) => {
+                const Icon = tab.icon;
+                const isActive = activeTab === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id as any)}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-none text-xs font-black uppercase tracking-wider whitespace-nowrap transition-all border-2 border-[#121212] cursor-pointer shrink-0 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none ${
+                      isActive
+                        ? 'bg-[#1040C0] text-white shadow-[4px_4px_0px_0px_#121212] -translate-y-0.5'
+                        : 'bg-[#F0F0F0] text-[#121212] hover:bg-[#F0C020] shadow-[2px_2px_0px_0px_#121212]'
+                    }`}
+                  >
+                    <Icon className="w-4 h-4 stroke-[2.5]" />
+                    <span>{tab.label}</span>
+                  </button>
+                );
+              })}
+            </BauhausNavScroller>
+          </div>
 
-        {/* Search input */}
-        <div className="relative w-full md:w-72 shrink-0">
-          <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-[#121212] stroke-[2.5]" />
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="SEARCH LECTURES & RULES..."
-            className="w-full pl-10 pr-8 py-2 rounded-none bg-[#F0F0F0] border-2 border-[#121212] text-xs font-bold uppercase tracking-wider text-[#121212] placeholder-[#121212]/50 focus:outline-none focus:bg-white shadow-[3px_3px_0px_0px_#121212]"
-          />
-          {searchQuery && (
-            <button
-              onClick={() => setSearchQuery('')}
-              className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#121212] hover:text-[#D02020]"
-            >
-              <X className="w-4 h-4 stroke-[3]" />
-            </button>
-          )}
+          {/* Search input */}
+          <div className="relative w-full md:w-72 shrink-0">
+            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-[#121212] stroke-[2.5]" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="SEARCH LECTURES & RULES..."
+              className="w-full pl-10 pr-8 py-2 rounded-none bg-[#F0F0F0] border-2 border-[#121212] text-xs font-bold uppercase tracking-wider text-[#121212] placeholder-[#121212]/50 focus:outline-none focus:bg-white shadow-[3px_3px_0px_0px_#121212]"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#121212] hover:text-[#D02020]"
+              >
+                <X className="w-4 h-4 stroke-[3]" />
+              </button>
+            )}
+          </div>
         </div>
-      </div>
+      </ScrollReveal>
 
       {/* VIEW 1: LECTURE LIBRARY WITH PLAYLIST SECTIONS */}
       {activeTab === 'lectures' && (
         <div className="space-y-8">
           {/* Playlist filter pills with Forward/Backward Navigation Arrows */}
-          <div className="p-2 bg-white rounded-none border-4 border-[#121212] shadow-[4px_4px_0px_0px_#121212]">
-            <BauhausNavScroller innerClassName="gap-2" showArrowsAlways={true}>
+          <ScrollReveal y={20} delay={0.1}>
+            <div className="p-2 bg-white rounded-none border-4 border-[#121212] shadow-[4px_4px_0px_0px_#121212]">
+              <BauhausNavScroller innerClassName="gap-2" showArrowsAlways={true}>
               <button
                 onClick={() => setActivePlaylistId('all')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-none text-xs font-mono font-black uppercase tracking-wider whitespace-nowrap shrink-0 border-2 border-[#121212] transition-all cursor-pointer ${
@@ -232,34 +238,36 @@ export const MasoodAcademyView: React.FC = () => {
               ))}
             </BauhausNavScroller>
           </div>
+          </ScrollReveal>
 
           {/* Active Playlist Header Card */}
           {currentPlaylists.map((playlist) => (
-            <div key={playlist.id} className="space-y-6">
-              <div className="p-6 sm:p-8 bg-white border-4 border-[#121212] rounded-none shadow-[8px_8px_0px_0px_#121212] space-y-3">
-                <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b-4 border-[#121212]">
-                  <div className="flex items-center gap-3">
-                    <span className="px-3 py-1 rounded-none bg-[#F0C020] text-[#121212] text-xs font-mono font-black uppercase border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212]">
-                      {playlist.badge}
+            <ScrollReveal key={playlist.id} y={30} delay={0.15}>
+              <div className="space-y-6">
+                <div className="p-6 sm:p-8 bg-white border-4 border-[#121212] rounded-none shadow-[8px_8px_0px_0px_#121212] space-y-3">
+                  <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b-4 border-[#121212]">
+                    <div className="flex items-center gap-3">
+                      <span className="px-3 py-1 rounded-none bg-[#F0C020] text-[#121212] text-xs font-mono font-black uppercase border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212]">
+                        {playlist.badge}
+                      </span>
+                      <h2 className="text-xl sm:text-2xl font-black text-[#121212] uppercase tracking-tight">
+                        {playlist.title}
+                      </h2>
+                    </div>
+                    <span className="text-xs font-mono font-black uppercase text-white bg-[#121212] px-3 py-1 border-2 border-[#121212]">
+                      {playlist.lectures.length} LECTURES
                     </span>
-                    <h2 className="text-xl sm:text-2xl font-black text-[#121212] uppercase tracking-tight">
-                      {playlist.title}
-                    </h2>
                   </div>
-                  <span className="text-xs font-mono font-black uppercase text-white bg-[#121212] px-3 py-1 border-2 border-[#121212]">
-                    {playlist.lectures.length} LECTURES
-                  </span>
+                  <p className="text-xs sm:text-sm text-[#121212] font-medium leading-relaxed">
+                    {playlist.description}
+                  </p>
+                  <div className="flex flex-wrap items-center gap-4 text-xs font-mono font-bold text-[#121212]">
+                    <span>TARGET AUDIENCE: {playlist.targetAudience}</span>
+                  </div>
                 </div>
-                <p className="text-xs sm:text-sm text-[#121212] font-medium leading-relaxed">
-                  {playlist.description}
-                </p>
-                <div className="flex flex-wrap items-center gap-4 text-xs font-mono font-bold text-[#121212]">
-                  <span>TARGET AUDIENCE: {playlist.targetAudience}</span>
-                </div>
-              </div>
 
-              {/* Lecture Cards Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Lecture Cards Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {playlist.lectures
                   .filter((lec) => filteredLectures.some((fl) => fl.id === lec.id))
                   .map((lecture) => (
@@ -354,30 +362,34 @@ export const MasoodAcademyView: React.FC = () => {
                   ))}
               </div>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       )}
 
       {/* VIEW 2: ANIMATED DEMONSTRATORS */}
       {activeTab === 'animations' && (
-        <div className="space-y-6">
-          <div className="p-5 bg-[#1040C0] text-white border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] rounded-none text-xs flex items-start gap-3">
-            <Sparkles className="w-5 h-5 text-[#F0C020] shrink-0 mt-0.5 stroke-[2.5]" />
-            <div>
-              <strong className="block text-sm font-black uppercase tracking-wider mb-1">
-                DYNAMIC VISUAL LEARNING ENGINE
-              </strong>
-              Animated simulations illustrating Trader Abdullah Masood’s core teachings: Power of 3 (PO3), Seek &amp; Destroy stop runs, SMT Divergences, Market Maker Models (MMXM), Volume Imbalances, and the 24-Hour Killzone clock.
+        <ScrollReveal y={30}>
+          <div className="space-y-6">
+            <div className="p-5 bg-[#1040C0] text-white border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] rounded-none text-xs flex items-start gap-3">
+              <Sparkles className="w-5 h-5 text-[#F0C020] shrink-0 mt-0.5 stroke-[2.5]" />
+              <div>
+                <strong className="block text-sm font-black uppercase tracking-wider mb-1">
+                  DYNAMIC VISUAL LEARNING ENGINE
+                </strong>
+                Animated simulations illustrating Trader Abdullah Masood’s core teachings: Power of 3 (PO3), Seek &amp; Destroy stop runs, SMT Divergences, Market Maker Models (MMXM), Volume Imbalances, and the 24-Hour Killzone clock.
+              </div>
             </div>
-          </div>
 
-          <MasoodAnimatedExplainer initialType={activeAnimation} />
-        </div>
+            <MasoodAnimatedExplainer initialType={activeAnimation} />
+          </div>
+        </ScrollReveal>
       )}
 
       {/* VIEW 3: DAILY BIAS CALCULATOR */}
       {activeTab === 'bias_calc' && (
-        <div className="max-w-4xl mx-auto bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] rounded-none p-6 sm:p-10 space-y-8">
+        <ScrollReveal y={30}>
+          <div className="max-w-4xl mx-auto bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] rounded-none p-6 sm:p-10 space-y-8">
           <div className="border-b-4 border-[#121212] pb-4">
             <div className="flex items-center gap-2">
               <span className="px-3 py-1 rounded-none text-xs font-mono font-black uppercase bg-[#F0C020] text-[#121212] border-2 border-[#121212]">
@@ -555,11 +567,13 @@ export const MasoodAcademyView: React.FC = () => {
             </p>
           </div>
         </div>
+        </ScrollReveal>
       )}
 
       {/* VIEW 4: ABDULLAH MASOOD GOLDEN RULES */}
       {activeTab === 'rules' && (
-        <div className="space-y-6">
+        <ScrollReveal y={30}>
+          <div className="space-y-6">
           <div className="p-6 sm:p-10 bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] rounded-none space-y-6">
             <div className="flex items-center gap-3 pb-4 border-b-4 border-[#121212]">
               <span className="w-4 h-4 bg-[#D02020] inline-block border border-black" />
@@ -644,6 +658,7 @@ export const MasoodAcademyView: React.FC = () => {
             </div>
           </div>
         </div>
+        </ScrollReveal>
       )}
 
       {/* LECTURE STUDY MODAL - Bauhaus Style */}

@@ -67,11 +67,37 @@ export interface QuizQuestion {
   difficulty: 'beginner' | 'intermediate' | 'advanced';
 }
 
+export type DiagramType = 
+  | 'liquidity_sweep' 
+  | 'fvg_formation' 
+  | 'order_block' 
+  | 'breaker_block' 
+  | 'mss_sequence' 
+  | 'po3_amd' 
+  | 'top_down_matrix' 
+  | 'session_timeline' 
+  | 'nested_structure'
+  | 'unicorn_model'
+  | 'cisd_masterclass'
+  | 'ifvg_inversion'
+  | 'org_octant_grid'
+  | 'mmxm_stage2'
+  | 'five_opening_ranges'
+  | 'propulsion_block'
+  | 'implied_fvg'
+  | 'rejection_block'
+  | 'mitigation_block'
+  | 'standard_deviations'
+  | 'ny_continuation_reversal'
+  | 'first_presentation_fvg'
+  | 'ote_model'
+  | 'three_day_rule';
+
 export interface ChapterSection {
   id: string;
   title: string;
   content: string; // Markdown / formatted text
-  diagramType?: 'liquidity_sweep' | 'fvg_formation' | 'order_block' | 'breaker_block' | 'mss_sequence' | 'po3_amd' | 'top_down_matrix' | 'session_timeline' | 'nested_structure';
+  diagramType?: DiagramType;
   diagramData?: Record<string, unknown>;
   keyTakeaway?: string;
 }
@@ -170,8 +196,14 @@ export interface ICTConcept {
     invalidationCriteria: string;
   };
   invalidationCriteria: string;
-  diagramType: 'liquidity_sweep' | 'fvg_formation' | 'order_block' | 'breaker_block' | 'mss_sequence' | 'po3_amd' | 'top_down_matrix' | 'session_timeline' | 'nested_structure';
+  diagramType: DiagramType;
   simplifiedExplanation: string;
+  orderOfOperations?: string[];
+  keyPointsMissed?: string[];
+  stepByStepBreakdown?: { step: number; title: string; detail: string; rule?: string }[];
+  invalidationChecklist?: string[];
+  riskRules?: string[];
+  collectionTags?: ('34_masterclass' | '15_pd_arrays' | '5_entry_models' | '5_opening_ranges' | 'algorithmic_signatures' | 'mentorship_2026')[];
 }
 
 export interface ConceptComparison {

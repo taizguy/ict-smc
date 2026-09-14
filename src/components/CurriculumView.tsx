@@ -8,6 +8,7 @@ import {
   X
 } from 'lucide-react';
 import { BauhausNavScroller } from './BauhausNavScroller';
+import { ScrollReveal } from './ScrollReveal';
 
 interface CurriculumViewProps {
   onSelectChapter: (chapterId: number) => void;
@@ -55,177 +56,182 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
     <div className="space-y-10 pb-20">
       
       {/* Bauhaus Constructivist Hero Section */}
-      <section className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] rounded-none p-6 sm:p-10 md:p-12 relative overflow-hidden">
-        {/* Abstract background decorative shapes */}
-        <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-[#D02020]/10 pointer-events-none" />
-        <div className="absolute -bottom-16 right-1/4 w-40 h-40 bg-[#F0C020]/20 rotate-45 pointer-events-none" />
-        
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+      <ScrollReveal y={35} duration={0.6}>
+        <section className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] rounded-none p-6 sm:p-10 md:p-12 relative overflow-hidden">
+          {/* Abstract background decorative shapes */}
+          <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-[#D02020]/10 pointer-events-none" />
+          <div className="absolute -bottom-16 right-1/4 w-40 h-40 bg-[#F0C020]/20 rotate-45 pointer-events-none" />
           
-          {/* Left Hero Column */}
-          <div className="lg:col-span-8 space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             
-            {/* Geometric Tag */}
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-2 px-3 py-1 bg-[#121212] text-white text-xs font-black uppercase tracking-widest border-2 border-[#121212] rounded-none">
-                <span className="w-2 h-2 rounded-full bg-[#D02020]" />
-                BAUHAUS COMPOSITION // 01
-              </span>
-              <span className="px-3 py-1 bg-[#F0C020] text-[#121212] text-xs font-black uppercase tracking-widest border-2 border-[#121212] rounded-none">
-                48 CHAPTERS UNLOCKED
-              </span>
-            </div>
-
-            {/* Massive Constructivist Headline */}
-            <div className="space-y-1">
-              <h1 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter text-[#121212] leading-[0.9]">
-                ICT &amp; SMC
-              </h1>
-              <div className="flex flex-wrap items-center gap-2 text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9]">
-                <span className="bg-[#D02020] text-white px-3 py-1 border-2 border-[#121212] inline-block shadow-[4px_4px_0px_0px_#121212]">
-                  INSTITUTIONAL
+            {/* Left Hero Column */}
+            <div className="lg:col-span-8 space-y-6">
+              
+              {/* Geometric Tag */}
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-2 px-3 py-1 bg-[#121212] text-white text-xs font-black uppercase tracking-widest border-2 border-[#121212] rounded-none">
+                  <span className="w-2 h-2 rounded-full bg-[#D02020]" />
+                  BAUHAUS COMPOSITION // 01
                 </span>
-                <span className="text-[#121212]">SYLLABUS</span>
+                <span className="px-3 py-1 bg-[#F0C020] text-[#121212] text-xs font-black uppercase tracking-widest border-2 border-[#121212] rounded-none">
+                  48 CHAPTERS UNLOCKED
+                </span>
+              </div>
+
+              {/* Massive Constructivist Headline */}
+              <div className="space-y-1">
+                <h1 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter text-[#121212] leading-[0.9]">
+                  ICT &amp; SMC
+                </h1>
+                <div className="flex flex-wrap items-center gap-2 text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9]">
+                  <span className="bg-[#D02020] text-white px-3 py-1 border-2 border-[#121212] inline-block shadow-[4px_4px_0px_0px_#121212]">
+                    INSTITUTIONAL
+                  </span>
+                  <span className="text-[#121212]">SYLLABUS</span>
+                </div>
+              </div>
+
+              <p className="text-base sm:text-lg font-medium text-[#121212] leading-relaxed max-w-2xl">
+                Form follows function. The complete 48-chapter institutional trading curriculum organized into pure geometric clarity. Examine orderflow, liquidity voids, and market delivery with zero locks or artificial barriers.
+              </p>
+
+              {/* Search Bar in Bauhaus styling */}
+              <div className="pt-2 flex flex-col sm:flex-row gap-3 max-w-xl">
+                <div className="relative flex-1">
+                  <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#121212] stroke-[3]" />
+                  <input
+                    type="text"
+                    placeholder="SEARCH 48 CHAPTERS, CONCEPTS, TERMS..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full pl-10 pr-10 py-3 bg-[#F0F0F0] border-2 sm:border-4 border-[#121212] rounded-none text-xs sm:text-sm font-black text-[#121212] placeholder-[#121212]/50 uppercase tracking-wide focus:outline-none focus:bg-white focus:shadow-[4px_4px_0px_0px_#121212] transition-all"
+                  />
+                  {searchQuery && (
+                    <button
+                      onClick={() => setSearchQuery('')}
+                      className="absolute right-3.5 top-1/2 -translate-y-1/2 p-1 text-[#121212] hover:bg-[#D02020] hover:text-white transition-colors"
+                    >
+                      <X className="w-3.5 h-3.5 stroke-[3]" />
+                    </button>
+                  )}
+                </div>
+
+                <button
+                  onClick={onOpenSearch}
+                  className="px-5 py-3 bg-[#1040C0] hover:bg-blue-700 text-white font-black text-xs uppercase tracking-wider border-2 sm:border-4 border-[#121212] shadow-[4px_4px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer whitespace-nowrap"
+                >
+                  INDEX (⌘K)
+                </button>
               </div>
             </div>
 
-            <p className="text-base sm:text-lg font-medium text-[#121212] leading-relaxed max-w-2xl">
-              Form follows function. The complete 48-chapter institutional trading curriculum organized into pure geometric clarity. Examine orderflow, liquidity voids, and market delivery with zero locks or artificial barriers.
-            </p>
-
-            {/* Search Bar in Bauhaus styling */}
-            <div className="pt-2 flex flex-col sm:flex-row gap-3 max-w-xl">
-              <div className="relative flex-1">
-                <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#121212] stroke-[3]" />
-                <input
-                  type="text"
-                  placeholder="SEARCH 48 CHAPTERS, CONCEPTS, TERMS..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-10 py-3 bg-[#F0F0F0] border-2 sm:border-4 border-[#121212] rounded-none text-xs sm:text-sm font-black text-[#121212] placeholder-[#121212]/50 uppercase tracking-wide focus:outline-none focus:bg-white focus:shadow-[4px_4px_0px_0px_#121212] transition-all"
-                />
-                {searchQuery && (
-                  <button
-                    onClick={() => setSearchQuery('')}
-                    className="absolute right-3.5 top-1/2 -translate-y-1/2 p-1 text-[#121212] hover:bg-[#D02020] hover:text-white transition-colors"
-                  >
-                    <X className="w-3.5 h-3.5 stroke-[3]" />
-                  </button>
-                )}
+            {/* Right Hero Column: Geometric Stats Block */}
+            <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4">
+              
+              {/* Stat 1: Chapters (Red) */}
+              <div className="flex-1 bg-[#D02020] text-white p-5 border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] rounded-none relative">
+                <div className="absolute top-2 right-2 w-3 h-3 rounded-full bg-white border border-black" />
+                <div className="text-4xl sm:text-5xl font-black uppercase tracking-tighter leading-none">
+                  48
+                </div>
+                <div className="text-xs font-black uppercase tracking-widest mt-1">
+                  Full Curriculum Chapters
+                </div>
               </div>
 
-              <button
-                onClick={onOpenSearch}
-                className="px-5 py-3 bg-[#1040C0] hover:bg-blue-700 text-white font-black text-xs uppercase tracking-wider border-2 sm:border-4 border-[#121212] shadow-[4px_4px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer whitespace-nowrap"
-              >
-                INDEX (⌘K)
-              </button>
+              {/* Stat 2: Core Parts (Yellow) */}
+              <div className="flex-1 bg-[#F0C020] text-[#121212] p-5 border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] rounded-none relative">
+                <div className="absolute top-2 right-2 w-3 h-3 bg-[#121212] rounded-none" />
+                <div className="text-4xl sm:text-5xl font-black uppercase tracking-tighter leading-none">
+                  07
+                </div>
+                <div className="text-xs font-black uppercase tracking-widest mt-1">
+                  Modular Knowledge Sections
+                </div>
+              </div>
+
+              {/* Stat 3: Open Access (Blue) */}
+              <div className="flex-1 bg-[#1040C0] text-white p-5 border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] rounded-none relative">
+                <div className="absolute top-2 right-2 w-3 h-3 bg-white clip-triangle inline-block" />
+                <div className="text-4xl sm:text-5xl font-black uppercase tracking-tighter leading-none">
+                  100%
+                </div>
+                <div className="text-xs font-black uppercase tracking-widest mt-1">
+                  Unrestricted &amp; Open Access
+                </div>
+              </div>
+
             </div>
+
           </div>
-
-          {/* Right Hero Column: Geometric Stats Block */}
-          <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4">
-            
-            {/* Stat 1: Chapters (Red) */}
-            <div className="flex-1 bg-[#D02020] text-white p-5 border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] rounded-none relative">
-              <div className="absolute top-2 right-2 w-3 h-3 rounded-full bg-white border border-black" />
-              <div className="text-4xl sm:text-5xl font-black uppercase tracking-tighter leading-none">
-                48
-              </div>
-              <div className="text-xs font-black uppercase tracking-widest mt-1">
-                Full Curriculum Chapters
-              </div>
-            </div>
-
-            {/* Stat 2: Core Parts (Yellow) */}
-            <div className="flex-1 bg-[#F0C020] text-[#121212] p-5 border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] rounded-none relative">
-              <div className="absolute top-2 right-2 w-3 h-3 bg-[#121212] rounded-none" />
-              <div className="text-4xl sm:text-5xl font-black uppercase tracking-tighter leading-none">
-                07
-              </div>
-              <div className="text-xs font-black uppercase tracking-widest mt-1">
-                Modular Knowledge Sections
-              </div>
-            </div>
-
-            {/* Stat 3: Open Access (Blue) */}
-            <div className="flex-1 bg-[#1040C0] text-white p-5 border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] rounded-none relative">
-              <div className="absolute top-2 right-2 w-3 h-3 bg-white clip-triangle inline-block" />
-              <div className="text-4xl sm:text-5xl font-black uppercase tracking-tighter leading-none">
-                100%
-              </div>
-              <div className="text-xs font-black uppercase tracking-widest mt-1">
-                Unrestricted &amp; Open Access
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       {/* Part Filter Section - Bauhaus Color-Blocked Tabs */}
-      <section className="space-y-3">
-        <div className="flex items-center justify-between gap-4 pb-2 border-b-4 border-[#121212]">
-          <div className="flex items-center gap-2">
-            <span className="w-3.5 h-3.5 bg-[#D02020] rounded-none border border-black" />
-            <h2 className="text-sm sm:text-base font-black uppercase tracking-wider text-[#121212]">
-              Filter By Curriculum Module
-            </h2>
+      <ScrollReveal y={25} delay={0.1}>
+        <section className="space-y-3">
+          <div className="flex items-center justify-between gap-4 pb-2 border-b-4 border-[#121212]">
+            <div className="flex items-center gap-2">
+              <span className="w-3.5 h-3.5 bg-[#D02020] rounded-none border border-black" />
+              <h2 className="text-sm sm:text-base font-black uppercase tracking-wider text-[#121212]">
+                Filter By Curriculum Module
+              </h2>
+            </div>
+            <div className="text-xs font-mono font-bold text-[#121212]">
+              Showing {filteredChapters.length} of {textbookChapters.length} Chapters
+            </div>
           </div>
-          <div className="text-xs font-mono font-bold text-[#121212]">
-            Showing {filteredChapters.length} of {textbookChapters.length} Chapters
-          </div>
-        </div>
 
-        <BauhausNavScroller innerClassName="gap-2 py-1" showArrowsAlways={true}>
-          <button
-            onClick={() => setSelectedPart('all')}
-            className={`px-4 py-2.5 rounded-none text-xs font-black uppercase tracking-wider whitespace-nowrap border-2 border-[#121212] transition-all cursor-pointer shrink-0 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none ${
-              selectedPart === 'all'
-                ? 'bg-[#121212] text-white shadow-[4px_4px_0px_0px_#121212] -translate-y-0.5'
-                : 'bg-white text-[#121212] shadow-[2px_2px_0px_0px_#121212] hover:bg-[#F0C020]'
-            }`}
-          >
-            All Modules ({textbookChapters.length})
-          </button>
+          <BauhausNavScroller innerClassName="gap-2 py-1" showArrowsAlways={true}>
+            <button
+              onClick={() => setSelectedPart('all')}
+              className={`px-4 py-2.5 rounded-none text-xs font-black uppercase tracking-wider whitespace-nowrap border-2 border-[#121212] transition-all cursor-pointer shrink-0 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none ${
+                selectedPart === 'all'
+                  ? 'bg-[#121212] text-white shadow-[4px_4px_0px_0px_#121212] -translate-y-0.5'
+                  : 'bg-white text-[#121212] shadow-[2px_2px_0px_0px_#121212] hover:bg-[#F0C020]'
+              }`}
+            >
+              All Modules ({textbookChapters.length})
+            </button>
 
-          {parts.map((p, idx) => {
-            const count = textbookChapters.filter(ch => ch.part === p).length;
-            const shortName = p.replace(/^Part\s+[IVXLCDM]+\s*-\s*/, '');
-            const isSelected = selectedPart === p;
+            {parts.map((p, idx) => {
+              const count = textbookChapters.filter(ch => ch.part === p).length;
+              const shortName = p.replace(/^Part\s+[IVXLCDM]+\s*-\s*/, '');
+              const isSelected = selectedPart === p;
 
-            // Rotating Bauhaus active color per part
-            const activeColors = [
-              'bg-[#D02020] text-white',
-              'bg-[#1040C0] text-white',
-              'bg-[#F0C020] text-[#121212]',
-              'bg-[#D02020] text-white',
-              'bg-[#1040C0] text-white',
-              'bg-[#F0C020] text-[#121212]',
-              'bg-[#121212] text-white'
-            ];
-            const activeClass = activeColors[idx % activeColors.length];
+              // Rotating Bauhaus active color per part
+              const activeColors = [
+                'bg-[#D02020] text-white',
+                'bg-[#1040C0] text-white',
+                'bg-[#F0C020] text-[#121212]',
+                'bg-[#D02020] text-white',
+                'bg-[#1040C0] text-white',
+                'bg-[#F0C020] text-[#121212]',
+                'bg-[#121212] text-white'
+              ];
+              const activeClass = activeColors[idx % activeColors.length];
 
-            return (
-              <button
-                key={p}
-                onClick={() => setSelectedPart(p)}
-                className={`px-4 py-2.5 rounded-none text-xs font-black uppercase tracking-wider whitespace-nowrap border-2 border-[#121212] transition-all cursor-pointer shrink-0 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none ${
-                  isSelected
-                    ? `${activeClass} shadow-[4px_4px_0px_0px_#121212] -translate-y-0.5`
-                    : 'bg-white text-[#121212] shadow-[2px_2px_0px_0px_#121212] hover:bg-[#F0C020]'
-                }`}
-              >
-                P{idx + 1}: {shortName} ({count})
-              </button>
-            );
-          })}
-        </BauhausNavScroller>
-      </section>
+              return (
+                <button
+                  key={p}
+                  onClick={() => setSelectedPart(p)}
+                  className={`px-4 py-2.5 rounded-none text-xs font-black uppercase tracking-wider whitespace-nowrap border-2 border-[#121212] transition-all cursor-pointer shrink-0 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none ${
+                    isSelected
+                      ? `${activeClass} shadow-[4px_4px_0px_0px_#121212] -translate-y-0.5`
+                      : 'bg-white text-[#121212] shadow-[2px_2px_0px_0px_#121212] hover:bg-[#F0C020]'
+                  }`}
+                >
+                  P{idx + 1}: {shortName} ({count})
+                </button>
+              );
+            })}
+          </BauhausNavScroller>
+        </section>
+      </ScrollReveal>
 
       {/* Chapters Grid - Bauhaus Hard-Border Cards */}
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <ScrollReveal y={35} delay={0.15}>
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {filteredChapters.map((ch, index) => {
           const partShort = ch.part.replace(/^Part\s+[IVXLCDM]+\s*-\s*/, '');
           
@@ -295,6 +301,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
           );
         })}
       </section>
+      </ScrollReveal>
 
       {filteredChapters.length === 0 && (
         <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] rounded-none p-12 text-center space-y-4">

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ictConcepts } from '../data/conceptsData';
+import { masterclassCollection } from '../data/masterclassData';
 import { ICTConcept } from '../types';
 import { InteractiveDiagram } from './InteractiveDiagram';
 import { 
@@ -39,7 +40,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedConceptId, setSelectedConceptId] = useState<string>(ictConcepts[0].id);
   const [activeLayerTab, setActiveLayerTab] = useState<
-    'overview' | 'tripartite' | 'anatomy' | 'traps_counterexamples' | 'ladder' | 'rules_invalidation' | 'scenarios'
+    'overview' | 'tripartite' | 'anatomy' | 'traps_counterexamples' | 'ladder' | 'rules_invalidation' | 'scenarios' | 'masterclass_blueprint'
   >('overview');
   const [ladderLevel, setLadderLevel] = useState<1 | 2 | 3 | 4 | 5>(3);
   const [activeTripartiteTab, setActiveTripartiteTab] = useState<'ict' | 'observable' | 'derived'>('ict');
@@ -203,7 +204,8 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
                   { id: 'ladder', label: '4. 5-Level Ladder', icon: GraduationCap },
                   { id: 'traps_counterexamples', label: '5. Traps & Counters', icon: ShieldAlert },
                   { id: 'rules_invalidation', label: '6. Rules & Matrix', icon: CheckCircle2 },
-                  { id: 'scenarios', label: '7. Trade Scenarios', icon: Zap }
+                  { id: 'scenarios', label: '7. Trade Scenarios', icon: Zap },
+                  { id: 'masterclass_blueprint', label: '8. Masterclass Blueprint', icon: Flame }
                 ].map((tab) => {
                   const Icon = tab.icon;
                   const isActive = activeLayerTab === tab.id;
@@ -640,6 +642,109 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
                   </button>
                 </div>
               )}
+            </div>
+          )}
+
+          {/* TAB 8: MASTERCLASS BLUEPRINT (UNCOMPROMISING STUDY) */}
+          {activeLayerTab === 'masterclass_blueprint' && (
+            <div className="space-y-6">
+              {(() => {
+                const matchedMasterclass = masterclassCollection.find(
+                  m => m.id.includes(concept.id) || concept.id.includes(m.id) || m.title.toLowerCase().includes(concept.name.toLowerCase())
+                ) || masterclassCollection[0];
+
+                return (
+                  <div className="space-y-6">
+                    {/* Masterclass Banner */}
+                    <div className="p-6 bg-[#121212] text-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#D02020] space-y-3">
+                      <div className="flex items-center justify-between flex-wrap gap-2">
+                        <span className="px-3 py-0.5 bg-[#D02020] text-white text-[10px] font-mono font-black uppercase">
+                          Masterclass Protocol • Unit #{matchedMasterclass.number.toString().padStart(2, '0')}
+                        </span>
+                        <span className="text-xs font-mono text-[#F0C020] font-bold uppercase">
+                          {matchedMasterclass.category.replace('_', ' ')}
+                        </span>
+                      </div>
+                      <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-white">
+                        {matchedMasterclass.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-white/80 font-mono">
+                        "{matchedMasterclass.coreRule}"
+                      </p>
+                    </div>
+
+                    {/* Interactive Diagram */}
+                    <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 space-y-4">
+                      <div className="flex items-center justify-between pb-3 border-b-2 border-[#121212]">
+                        <div className="flex items-center gap-2 font-mono font-black text-xs uppercase text-[#121212]">
+                          <Layers className="w-4 h-4 text-[#1040C0] stroke-[2.5]" />
+                          <span>Interactive Architectural Delivery Canvas</span>
+                        </div>
+                        <span className="text-[10px] font-mono font-black uppercase bg-[#121212] text-white px-2 py-0.5">
+                          {matchedMasterclass.diagramType}
+                        </span>
+                      </div>
+                      <InteractiveDiagram
+                        type={matchedMasterclass.diagramType}
+                        title={matchedMasterclass.title}
+                        isInteractive={true}
+                      />
+                    </div>
+
+                    {/* Order of Operations */}
+                    <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 space-y-4">
+                      <div className="flex items-center gap-2 font-mono font-black text-sm uppercase text-[#121212] pb-2 border-b-2 border-[#121212]">
+                        <Clock className="w-4 h-4 text-[#1040C0] stroke-[2.5]" />
+                        <span>Step-by-Step Order of Operations (Nothing Skipped)</span>
+                      </div>
+                      <div className="space-y-3">
+                        {matchedMasterclass.orderOfOperations.map((op, idx) => (
+                          <div key={idx} className="p-3.5 bg-white border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] flex items-start gap-3">
+                            <span className="w-6 h-6 bg-[#1040C0] text-white font-mono font-black text-xs flex items-center justify-center shrink-0 mt-0.5 border border-[#121212]">
+                              {idx + 1}
+                            </span>
+                            <p className="text-xs font-mono text-[#121212] leading-relaxed font-bold">
+                              {op}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Two-Column: Invalidation & Traps */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 space-y-3">
+                        <div className="flex items-center gap-2 font-mono font-black text-xs uppercase text-[#D02020]">
+                          <ShieldAlert className="w-4 h-4 stroke-[2.5]" />
+                          <span>Strict Invalidation Criteria</span>
+                        </div>
+                        <div className="space-y-2">
+                          {matchedMasterclass.invalidationChecklist.map((inv, idx) => (
+                            <div key={idx} className="p-3 bg-[#FFEBEE] border-2 border-[#D02020] text-xs font-mono text-[#121212] font-medium">
+                              {inv}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="bg-[#FFF9C4] border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 space-y-3">
+                        <div className="flex items-center gap-2 font-mono font-black text-xs uppercase text-[#121212]">
+                          <AlertTriangle className="w-4 h-4 text-[#D02020] stroke-[2.5]" />
+                          <span>Key Points Retail Traders Miss</span>
+                        </div>
+                        <div className="space-y-2">
+                          {matchedMasterclass.keyMistakes.map((mistake, idx) => (
+                            <div key={idx} className="flex items-start gap-2 text-xs font-mono text-[#121212]">
+                              <span className="text-[#D02020] font-black text-sm shrink-0">✕</span>
+                              <p className="font-medium leading-relaxed">{mistake}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()}
             </div>
           )}
         </div>

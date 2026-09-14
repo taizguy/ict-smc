@@ -89,7 +89,7 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="sticky top-0 z-50 bg-[#F0F0F0] border-b-4 border-[#121212]">
       {/* Top Main Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
+      <div className="max-w-[1720px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
         
         {/* Left: Geometric Bauhaus Logo */}
         <div className="flex items-center gap-4">

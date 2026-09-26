@@ -82,19 +82,30 @@ export const App: React.FC = () => {
   const isShowingWelcome = showWelcomeScreen || activeTab === 'welcome';
 
   return (
-    <div className="min-h-screen bg-[#F0F0F0] text-[#121212] flex flex-col font-sans selection:bg-[#1040C0] selection:text-white relative">
-      {/* Bauhaus Architectural Grid */}
-      <div className="fixed inset-0 pointer-events-none z-0">
+    <div className="min-h-screen bg-[#08090D] text-[#F5F7FA] flex flex-col font-sans selection:bg-[#5865FF] selection:text-white relative overflow-x-hidden">
+      {/* Subtle Film Grain Texture */}
+      <div className="predikt-grain" aria-hidden="true" />
+
+      {/* Predikt Deep Atmospheric Light Fields */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+        {/* Core Blue Atmosphere */}
         <div 
-          className="absolute inset-0 opacity-15"
-          style={{
-            backgroundImage: `linear-gradient(to right, #121212 1px, transparent 1px), linear-gradient(to bottom, #121212 1px, transparent 1px)`,
-            backgroundSize: '40px 40px'
-          }}
+          className="absolute -top-[25%] left-1/2 -translate-x-1/2 w-[1100px] h-[700px] rounded-full opacity-20 filter blur-[150px] pointer-events-none"
+          style={{ background: 'radial-gradient(circle, #5865FF 0%, rgba(138, 114, 255, 0.45) 45%, transparent 75%)' }}
+        />
+        {/* Violet Horizon Accent */}
+        <div 
+          className="absolute top-[35%] -right-[15%] w-[800px] h-[800px] rounded-full opacity-12 filter blur-[170px] pointer-events-none"
+          style={{ background: 'radial-gradient(circle, #8A72FF 0%, transparent 70%)' }}
+        />
+        {/* Cyan Liquidity Ambience */}
+        <div 
+          className="absolute bottom-[-10%] -left-[10%] w-[900px] h-[900px] rounded-full opacity-10 filter blur-[180px] pointer-events-none"
+          style={{ background: 'radial-gradient(circle, #55E6D1 0%, transparent 70%)' }}
         />
       </div>
 
-      {/* Simplified, Accessible Header */}
+      {/* Minimal, Dark, Translucent Predikt Header */}
       <Header
         activeTab={activeTab}
         setActiveTab={(tab) => {
@@ -119,7 +130,7 @@ export const App: React.FC = () => {
       />
 
       {/* Main Educational Application Content */}
-      <main className="flex-1 max-w-[1720px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 relative z-10 space-y-6 sm:space-y-8">
+      <main className="flex-1 max-w-[1560px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10 space-y-10 sm:space-y-14">
         
         {/* WELCOME SCREEN (When invoked or when activeTab is 'welcome') */}
         {isShowingWelcome && (
@@ -195,73 +206,73 @@ export const App: React.FC = () => {
         }}
       />
 
-      {/* Bauhaus Constructivist Footer */}
-      <footer className="border-t-4 border-[#121212] bg-white py-8 px-4 mt-auto relative z-10">
-        <div className="max-w-[1720px] w-full mx-auto space-y-6">
+      {/* Predikt Editorial Footer */}
+      <footer className="border-t border-white/[0.07] bg-[#08090D]/80 backdrop-blur-md py-10 px-4 sm:px-6 lg:px-8 mt-auto relative z-10">
+        <div className="max-w-[1560px] w-full mx-auto space-y-8">
           
-          {/* Tribute Banner */}
-          <ScrollReveal y={35} duration={0.6}>
-            <div className="p-6 bg-[#F0F0F0] border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] flex flex-col md:flex-row items-center justify-between gap-5">
+          {/* Tribute Banner - Sleek Dark Card */}
+          <ScrollReveal y={30} duration={0.6}>
+            <div className="p-6 sm:p-7 bg-[#11141B] border border-white/[0.08] rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 transition-colors hover:border-white/[0.14]">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-[#D02020] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] flex items-center justify-center shrink-0 text-white">
-                  <Youtube className="w-7 h-7 stroke-[2.5]" />
+                <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0 text-[#FF6B7A]">
+                  <Youtube className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-xs font-mono font-black uppercase text-[#D02020] flex items-center gap-2">
-                    <span className="px-2.5 py-0.5 bg-[#F0C020] text-[#121212] border border-[#121212] text-[10px] tracking-widest uppercase font-black">
-                      MENTORSHIP TRIBUTE
-                    </span>
-                    <Sparkles className="w-3.5 h-3.5 text-[#121212]" />
+                  <div className="text-[11px] font-mono tracking-[0.16em] uppercase text-[#9BA1AE] flex items-center gap-2">
+                    <span className="text-[#55E6D1]">MENTORSHIP TRIBUTE</span>
+                    <span className="text-white/20">/</span>
+                    <span>TRADER ABDULLAH MASOOD</span>
                   </div>
-                  <p className="text-xs sm:text-sm text-[#121212] mt-1 leading-relaxed font-bold uppercase">
-                    HONORING <strong>TRADER ABDULLAH MASOOD</strong> (<span className="text-[#D02020] font-mono font-black">@TraderAbdullahMasood</span>) — MASTER EDUCATOR OF ICT &amp; SMC INSTITUTIONAL ALGORITHMIC DELIVERY.
+                  <p className="text-xs sm:text-sm text-[#F5F7FA]/90 mt-1 leading-relaxed font-normal">
+                    Master educator of ICT &amp; Smart Money Concepts algorithmic delivery. 52 structured masterclasses preserved with complete fidelity.
                   </p>
                 </div>
               </div>
 
-              <div className="flex flex-wrap items-center gap-2.5 shrink-0 w-full md:w-auto justify-start md:justify-end">
+              <div className="flex flex-wrap items-center gap-3 shrink-0 w-full md:w-auto justify-start md:justify-end">
                 <button
                   onClick={() => {
                     setActiveTab('masood');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="px-4 py-2.5 bg-[#D02020] hover:bg-red-700 text-white font-mono text-xs font-black uppercase tracking-wider border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none flex items-center gap-2 transition-all cursor-pointer"
+                  className="btn-predikt-primary text-xs"
                 >
-                  <Youtube className="w-4 h-4" />
-                  <span>MASOOD'S ACADEMY (52)</span>
+                  <Youtube className="w-4 h-4 text-red-500" />
+                  <span>Masood Academy (52)</span>
                 </button>
                 <button
                   onClick={() => setIsMentorSpotlightOpen(true)}
-                  className="px-4 py-2.5 bg-white hover:bg-[#F0C020] text-[#121212] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] font-mono text-xs font-black uppercase tracking-wider active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+                  className="btn-predikt-secondary text-xs"
                 >
-                  VIEW TRIBUTE
+                  View Tribute
                 </button>
                 <a
                   href="https://www.youtube.com/@TraderAbdullahMasood"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2.5 bg-[#1040C0] hover:bg-blue-700 text-white border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] font-mono text-xs font-black uppercase tracking-wider flex items-center gap-2 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all"
+                  className="btn-predikt-secondary text-xs"
                 >
-                  <Youtube className="w-4 h-4" />
-                  <span>YOUTUBE CHANNEL</span>
+                  <Youtube className="w-4 h-4 text-red-400" />
+                  <span>YouTube Channel</span>
                 </a>
               </div>
             </div>
           </ScrollReveal>
 
-          <ScrollReveal y={20} delay={0.1}>
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono font-black uppercase text-[#121212] pt-4 border-t-2 border-[#121212]">
-              <div className="flex items-center gap-2">
-                <span className="w-3 h-3 bg-[#D02020] border border-black inline-block" />
-                <span>ICT &amp; SMC ACADEMY</span>
-                <span>— OPEN ACCESS INSTITUTIONAL SYLLABUS</span>
+          <ScrollReveal y={15} delay={0.1}>
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#9BA1AE] pt-6 border-t border-white/[0.06]">
+              <div className="flex items-center gap-2.5">
+                <span className="w-2 h-2 rounded-full bg-[#5865FF]" />
+                <span className="font-medium text-[#F5F7FA]">ICT &amp; SMC ACADEMY</span>
+                <span className="text-white/20">|</span>
+                <span>OPEN INSTITUTIONAL CURRICULUM</span>
               </div>
-              <div className="text-[#121212]/70 font-bold flex items-center gap-3">
+              <div className="text-[#656B78] flex items-center gap-3">
                 <span>48 CHAPTERS</span>
-                <span>/</span>
-                <span>52 MASOOD LECTURES</span>
-                <span>/</span>
-                <span>TRADING LAB</span>
+                <span>·</span>
+                <span>52 LECTURES</span>
+                <span>·</span>
+                <span>LABORATORY</span>
               </div>
             </div>
           </ScrollReveal>

@@ -1,4 +1,5 @@
 import { ICTConcept } from '../types';
+import { theinnercircletradersNewConcepts } from './theinnercircletradersConcepts';
 
 export const ictConcepts: ICTConcept[] = [
   {
@@ -2455,5 +2456,6 @@ export const ictConcepts: ICTConcept[] = [
     invalidationCriteria: 'Exceeding 0.25% risk or taking multiple discretionary trades in choppy market regimes.',
     diagramType: 'liquidity_sweep',
     simplifiedExplanation: 'When storm flags are raised before a hurricane, smart sailors stay in the harbor. On NFP Thursdays and FOMC days, preserve your cash and let the amateurs get washed away.'
-  }
+  },
+  ...theinnercircletradersNewConcepts
 ];

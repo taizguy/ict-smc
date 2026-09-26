@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
-import { ictConcepts } from '../data/conceptsData';
 import { 
   GitFork, 
-  ArrowRight, 
   BookOpen, 
-  Layers, 
-  HelpCircle, 
+  Cpu, 
   Zap, 
   ShieldAlert, 
-  ChevronRight, 
-  Cpu
+  HelpCircle, 
+  ArrowRight,
+  Layers,
+  ArrowLeft
 } from 'lucide-react';
 import { BauhausNavScroller } from './BauhausNavScroller';
 
-interface KnowledgeGraphProps {
+export interface KnowledgeGraphProps {
   onSelectConcept: (conceptId: string) => void;
 }
 
@@ -21,7 +20,7 @@ interface PipelineStep {
   id: string;
   stepNumber: number;
   label: string;
-  category: 'Foundation' | 'Liquidity' | 'Displacement' | 'Structure' | 'Imbalance' | 'Execution' | 'Target';
+  category: string;
   shortSummary: string;
   whyNext: {
     nextStepLabel: string;
@@ -73,79 +72,79 @@ export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onSelectConcept 
       conceptIdRef: 'buy_side_liquidity',
       whyNext: {
         nextStepLabel: '3. Liquidity Sweep (The Raid)',
-        algorithmicReason: 'Institutions cannot enter massive positions at current market prices without moving the market against themselves. They intentionally push price into these dense stop pools to extract counterparty volume.',
-        orderbookMechanic: 'When price crosses the old swing high, thousands of buy-stop orders trigger simultaneously as market orders, creating deep liquidity for institutional sellers.',
-        riskOfSkipping: 'Trading before a liquidity pool is swept exposes the trader to getting caught inside the manipulation run.'
+        algorithmicReason: 'Institutions cannot enter hundreds of millions in size without finding counterparty liquidity. They drive price into resting stop clusters to absorb orders.',
+        orderbookMechanic: 'Triggered stop-loss orders convert into immediate market orders, providing institutional limit orders with instantaneous high-volume fills.',
+        riskOfSkipping: 'Entering before a pool is raided guarantees you will be used as the stop-loss liquidity.'
       }
     },
     {
       id: 'step-3',
       stepNumber: 3,
-      label: '3. Liquidity Sweep',
-      category: 'Liquidity',
-      shortSummary: 'Sharp price penetration into resting stops (Turtle Soup / Stop Run).',
-      conceptIdRef: 'buy_side_liquidity',
+      label: '3. Liquidity Sweep (The Raid)',
+      category: 'Manipulation',
+      shortSummary: 'False breakout piercing key swing levels, purging stops before reversing.',
+      conceptIdRef: 'liquidity_pools_and_runs',
       whyNext: {
-        nextStepLabel: '4. Displacement (Velocity)',
-        algorithmicReason: 'Once institutional orders are fully filled against the triggered stops, smart money aggressively deploys market orders in the opposite direction, creating violent one-sided displacement.',
-        orderbookMechanic: 'Instantaneous book clearing: Aggressive orders devour all resting bids/asks across multiple price ticks, leaving single prints and wide candle bodies.',
-        riskOfSkipping: 'If displacement does not immediately follow a sweep, price is simply accepting and continuing the breakout—not sweeping.'
+        nextStepLabel: '4. Institutional Absorption',
+        algorithmicReason: 'A mere price touch does not confirm institutional intent. We must verify that large entities absorbed the volume rather than letting price run continuously.',
+        orderbookMechanic: 'Aggressive absorption is visible when price rejects the extreme rapidly, leaving long candle wicks and failing to close beyond the level on higher timeframes.',
+        riskOfSkipping: 'Treating real structural continuation as a false sweep leads to catastrophic counter-trend losses.'
       }
     },
     {
       id: 'step-4',
       stepNumber: 4,
-      label: '4. Displacement',
-      category: 'Displacement',
-      shortSummary: 'Energetic, wide-body candle velocity confirming institutional sponsorship.',
-      conceptIdRef: 'displacement_engine',
+      label: '4. Institutional Absorption',
+      category: 'Order Flow',
+      shortSummary: 'Interbank algorithms absorb counterparty fills against the swept pool.',
+      conceptIdRef: 'interbank_price_delivery_algorithm',
       whyNext: {
-        nextStepLabel: '5. Market Structure Shift (MSS)',
-        algorithmicReason: 'True institutional sponsorship has enough kinetic momentum to shatter the preceding short-term trend, breaking previous opposing swing highs or lows with authority.',
-        orderbookMechanic: 'The sheer volume of institutional displacement sweeps through structural pivot points, forcing algorithmic trend-followers to exit and reverse.',
-        riskOfSkipping: 'Displacement without breaking market structure is merely high-volume consolidation or a temporary news impulse.'
+        nextStepLabel: '5. Energetic Displacement',
+        algorithmicReason: 'Once institutional accumulation/distribution is complete, the algorithm transitions from passive absorption into active repricing (displacement).',
+        orderbookMechanic: 'Market orders aggressively sweep the thinned order book in the opposite direction, creating rapid large-range candles.',
+        riskOfSkipping: 'Without displacement, you are entering in chop or low-conviction market drift.'
       }
     },
     {
       id: 'step-5',
       stepNumber: 5,
-      label: '5. Market Structure Shift',
-      category: 'Structure',
-      shortSummary: 'Violation of key swing high/low confirming directional bias change.',
-      conceptIdRef: 'market_structure_shift',
+      label: '5. Displacement Candle',
+      category: 'Displacement',
+      shortSummary: 'Fast impulse candle with large body and minimal wicks indicating genuine intent.',
+      conceptIdRef: 'displacement',
       whyNext: {
-        nextStepLabel: '6. Fair Value Gap Creation',
-        algorithmicReason: 'Violent displacement that creates an MSS moves so fast through the auction book that it fails to pair equal buy and sell transactions, tearing open an inefficiency gap.',
-        orderbookMechanic: 'The middle candle of a 3-candle sequence has wicks that do not overlap with candle 1 and candle 3, creating an unpaid void in the ledger.',
-        riskOfSkipping: 'An MSS without an accompanying FVG lacks energetic conviction and may merely be a slow multi-leg retest.'
+        nextStepLabel: '6. Market Structure Shift (MSS)',
+        algorithmicReason: 'Displacement must have structural authority. It must break previous internal or swing structure (BOS/MSS) to officially reclassify the order flow regime.',
+        orderbookMechanic: 'Full candle body closes across the opposing swing point mathematically confirm the prior trend is invalidated.',
+        riskOfSkipping: 'Mistaking single-candle volatility spikes (news wicks) for genuine shifts in order flow.'
       }
     },
     {
       id: 'step-6',
       stepNumber: 6,
-      label: '6. Fair Value Gap (FVG)',
-      category: 'Imbalance',
-      shortSummary: '3-candle imbalance void indicating one-sided institutional buying/selling.',
-      conceptIdRef: 'fair_value_gap',
+      label: '6. Market Structure Shift',
+      category: 'Structure',
+      shortSummary: 'Body close breaking recent swing high/low, confirming trend reversal.',
+      conceptIdRef: 'market_structure_shifts',
       whyNext: {
-        nextStepLabel: '7. Discount / Premium Check',
-        algorithmicReason: 'Even with a valid FVG, institutions will never buy at premium prices or sell at discount prices. The market must rebalance into the favorable half of the dealing range before entry.',
-        orderbookMechanic: 'Smart money algorithms strictly calibrate inventory accumulation to discount zones (<50% of the dealing range) to maximize edge.',
-        riskOfSkipping: 'Entering an FVG that sits in Premium when looking to buy results in unfavorable risk-to-reward and frequent deep drawdowns.'
+        nextStepLabel: '7. Imbalance / FVG Formation',
+        algorithmicReason: 'Because the displacement was one-sided, interbank pricing created inefficiency where buy orders were delivered without two-sided auction.',
+        orderbookMechanic: 'The 3-candle sequence leaves a void between Candle 1 wick and Candle 3 wick: the Fair Value Gap (FVG).',
+        riskOfSkipping: 'Entering blindly at market rather than identifying the precise institutional discount/premium array to mitigate.'
       }
     },
     {
       id: 'step-7',
       stepNumber: 7,
-      label: '7. Dealing Range Filter',
-      category: 'Execution',
-      shortSummary: '50% Equilibrium filter: Buys strictly in Discount, Sells in Premium.',
-      conceptIdRef: 'premium_discount',
+      label: '7. FVG Imbalance Formation',
+      category: 'Imbalance',
+      shortSummary: 'Inefficient price delivery leaving a 3-candle liquidity gap.',
+      conceptIdRef: 'fair_value_gap',
       whyNext: {
-        nextStepLabel: '8. Retest / Mitigation Entry',
-        algorithmicReason: 'The Interbank Price Delivery Algorithm (IPDA) intentionally circles back to re-offer prices through the imbalance void, allowing institutions to balance the books and add positions.',
-        orderbookMechanic: 'Price retraces into the FVG (often to Consequent Encroachment 50%), filling limit orders sitting at the gap boundary before resuming expansion.',
-        riskOfSkipping: 'Chasing the initial breakout instead of waiting for the mitigation retest forces wide, uncalibrated stop losses.'
+        nextStepLabel: '8. Mitigation Retest (Execution Entry)',
+        algorithmicReason: 'Interbank algorithms are mandated to offer fair two-sided auction. Price returns to rebalance the inefficiency before expanding toward the ultimate target.',
+        orderbookMechanic: 'Resting limit orders from algorithmic desks are filled at the 50% Consequent Encroachment (CE) of the FVG.',
+        riskOfSkipping: 'Chasing expansion moves at market prices results in adverse drawdown and poor risk-to-reward.'
       }
     },
     {
@@ -211,47 +210,47 @@ export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onSelectConcept 
   const activeNodeObj = nodes.find((n) => n.id === selectedNode) || nodes[0];
 
   return (
-    <div className="space-y-6">
-      {/* Top Banner - Bauhaus Constructivist Card */}
-      <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 sm:p-7 space-y-4">
+    <div className="space-y-6 text-[#F5F7FA]">
+      {/* Top Banner */}
+      <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-4">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="w-4 h-4 bg-[#1040C0] border border-black inline-block" />
-              <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#121212]">
+              <span className="w-2 h-2 rounded-full bg-[#5865FF]" />
+              <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F5F7FA]">
                 ICT Concept Dependency &amp; Causal Pipeline
               </h2>
-              <span className="px-3 py-0.5 text-[10px] font-mono bg-[#F0C020] text-[#121212] border-2 border-[#121212] font-black uppercase shadow-[2px_2px_0px_0px_#121212]">
-                Institutional Causality
+              <span className="px-2.5 py-0.5 text-[10px] font-mono bg-[#5865FF]/10 text-[#5865FF] border border-[#5865FF]/20 rounded-full uppercase">
+                Causality Engine
               </span>
             </div>
-            <p className="text-[#121212]/80 text-xs sm:text-sm font-medium">
+            <p className="text-[#9BA1AE] text-xs sm:text-sm">
               Understand the non-random causal logic linking liquidity raids, displacement, FVG imbalances, and terminal execution.
             </p>
           </div>
 
-          <div className="flex items-center gap-2 p-1.5 bg-[#F0F0F0] border-2 border-[#121212]">
+          <div className="flex items-center gap-1.5 p-1 bg-white/[0.03] border border-white/[0.07] rounded-xl self-start md:self-auto">
             <button
               type="button"
               onClick={() => setViewMode('pipeline')}
-              className={`px-4 py-2 text-xs font-mono font-black uppercase transition-all border-2 border-[#121212] cursor-pointer active:translate-x-[1px] active:translate-y-[1px] active:shadow-none ${
+              className={`px-3.5 py-1.5 text-xs font-mono uppercase tracking-wider rounded-lg transition-all cursor-pointer ${
                 viewMode === 'pipeline'
-                  ? 'bg-[#1040C0] text-white shadow-[2px_2px_0px_0px_#121212]'
-                  : 'bg-white text-[#121212] hover:bg-[#F0C020]'
+                  ? 'bg-white/[0.12] text-[#F5F7FA] border border-white/20'
+                  : 'text-[#9BA1AE] hover:text-[#F5F7FA]'
               }`}
             >
-              10-Step Causal Pipeline
+              10-Step Pipeline
             </button>
             <button
               type="button"
               onClick={() => setViewMode('network')}
-              className={`px-4 py-2 text-xs font-mono font-black uppercase transition-all border-2 border-[#121212] cursor-pointer active:translate-x-[1px] active:translate-y-[1px] active:shadow-none ${
+              className={`px-3.5 py-1.5 text-xs font-mono uppercase tracking-wider rounded-lg transition-all cursor-pointer ${
                 viewMode === 'network'
-                  ? 'bg-[#1040C0] text-white shadow-[2px_2px_0px_0px_#121212]'
-                  : 'bg-white text-[#121212] hover:bg-[#F0C020]'
+                  ? 'bg-white/[0.12] text-[#F5F7FA] border border-white/20'
+                  : 'text-[#9BA1AE] hover:text-[#F5F7FA]'
               }`}
             >
-              Full Dependency Map
+              Dependency Map
             </button>
           </div>
         </div>
@@ -260,10 +259,10 @@ export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onSelectConcept 
       {/* MODE 1: 10-STEP CAUSAL PIPELINE */}
       {viewMode === 'pipeline' && (
         <div className="space-y-6">
-          {/* Horizontal Step Progression Bar with BauhausNavScroller */}
-          <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-4">
-            <div className="text-[10px] font-mono font-black uppercase tracking-widest text-[#121212]/60 mb-2">
-              PIPELINE SEQUENCE (SCROLL WITH ARROWS):
+          {/* Horizontal Step Progression Bar */}
+          <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-4">
+            <div className="text-[10px] font-mono uppercase tracking-wider text-[#656B78] mb-2 px-1">
+              PIPELINE SEQUENCE:
             </div>
             <BauhausNavScroller>
               {pipelineSteps.map((step) => {
@@ -273,21 +272,21 @@ export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onSelectConcept 
                     key={step.id}
                     type="button"
                     onClick={() => setSelectedPipelineStep(step.stepNumber)}
-                    className={`p-3.5 text-left transition-all font-mono border-2 border-[#121212] cursor-pointer min-w-[160px] shrink-0 active:translate-x-[1px] active:translate-y-[1px] active:shadow-none ${
+                    className={`p-3 text-left transition-all font-mono rounded-xl border cursor-pointer min-w-[170px] shrink-0 ${
                       isSelected
-                        ? 'bg-[#F0C020] text-[#121212] shadow-[3px_3px_0px_0px_#121212]'
-                        : 'bg-white text-[#121212] hover:bg-[#F0F0F0]'
+                        ? 'bg-white/[0.10] border-white/25 text-[#F5F7FA] shadow-sm'
+                        : 'bg-white/[0.02] border-white/[0.06] text-[#9BA1AE] hover:text-[#F5F7FA] hover:bg-white/[0.05]'
                     }`}
                   >
                     <div className="flex items-center justify-between text-[10px] mb-1">
-                      <span className="font-black uppercase text-[#121212]">
+                      <span className="text-[#5865FF] font-medium">
                         Step {step.stepNumber}
                       </span>
-                      <span className="text-[9px] px-1.5 py-0.5 bg-[#121212] text-white font-black uppercase">
+                      <span className="text-[9px] px-1.5 py-0.5 rounded bg-white/[0.04] text-[#656B78] uppercase">
                         {step.category}
                       </span>
                     </div>
-                    <div className="text-xs font-black truncate uppercase">
+                    <div className="text-xs font-medium truncate text-[#F5F7FA]">
                       {step.label.split('. ')[1]}
                     </div>
                   </button>
@@ -297,16 +296,16 @@ export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onSelectConcept 
           </div>
 
           {/* Detailed Causal Reasoning Box for Selected Step */}
-          <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 sm:p-7 space-y-6 text-[#121212]">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b-4 border-[#121212]">
+          <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-6 text-[#F5F7FA]">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-white/[0.07]">
               <div>
-                <span className="text-xs font-mono text-[#D02020] font-black uppercase tracking-wider">
+                <span className="text-xs font-mono text-[#55E6D1] uppercase tracking-wider">
                   Active Execution Node: Step {currentStep.stepNumber} of 10
                 </span>
-                <h3 className="text-2xl font-black text-[#121212] uppercase tracking-tight mt-0.5">
+                <h3 className="text-2xl font-semibold text-[#F5F7FA] tracking-tight mt-0.5">
                   {currentStep.label}
                 </h3>
-                <p className="text-[#121212]/80 text-xs sm:text-sm mt-1 font-medium">
+                <p className="text-[#9BA1AE] text-xs sm:text-sm mt-1">
                   {currentStep.shortSummary}
                 </p>
               </div>
@@ -315,53 +314,53 @@ export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onSelectConcept 
                 <button
                   type="button"
                   onClick={() => onSelectConcept(currentStep.conceptIdRef!)}
-                  className="px-4 py-2 bg-white hover:bg-[#F0C020] border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] text-[#121212] font-mono text-xs font-black uppercase transition-all flex items-center gap-1.5 shrink-0 cursor-pointer"
+                  className="px-4 py-2 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] rounded-xl text-[#F5F7FA] font-mono text-xs uppercase tracking-wider transition-all flex items-center gap-1.5 shrink-0 cursor-pointer"
                 >
-                  <BookOpen className="w-4 h-4 stroke-[2.5]" />
+                  <BookOpen className="w-4 h-4 text-[#5865FF]" />
                   Read Full Encyclopedia Article
                 </button>
               )}
             </div>
 
             {/* "WHY DOES THIS COME NEXT?" Deep Institutional Inspector */}
-            <div className="p-6 bg-[#FAF9F5] border-4 border-[#121212] shadow-[4px_4px_0px_0px_#121212] space-y-4">
+            <div className="p-6 bg-[#0C0E13] rounded-xl border border-white/[0.06] space-y-4">
               <div className="flex items-center justify-between flex-wrap gap-2">
-                <div className="flex items-center gap-2 text-[#121212] font-mono text-sm font-black uppercase">
-                  <HelpCircle className="w-5 h-5 text-[#1040C0] stroke-[2.5]" />
-                  <h4>Why Does This Step Connect to: <span className="text-[#D02020] underline">{currentStep.whyNext.nextStepLabel}</span>?</h4>
+                <div className="flex items-center gap-2 font-mono text-xs uppercase text-[#F5F7FA]">
+                  <HelpCircle className="w-4 h-4 text-[#5865FF]" />
+                  <h4>Why Does This Step Connect to: <span className="text-[#55E6D1] underline">{currentStep.whyNext.nextStepLabel}</span>?</h4>
                 </div>
-                <span className="text-[10px] font-mono px-2.5 py-0.5 bg-[#F0C020] border-2 border-[#121212] text-[#121212] font-black uppercase">
+                <span className="text-[10px] font-mono px-2.5 py-0.5 rounded bg-white/[0.04] border border-white/[0.08] text-[#9BA1AE] uppercase">
                   Institutional Causality
                 </span>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 text-xs font-sans">
                 {/* 1. Algorithmic Reason */}
-                <div className="p-5 bg-white border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] space-y-2">
-                  <span className="text-[#1040C0] font-mono font-black block uppercase text-[11px] flex items-center gap-1">
-                    <Cpu className="w-4 h-4 stroke-[2.5]" /> 1. Algorithmic Delivery Reason
+                <div className="p-5 bg-[#151923] rounded-xl border border-white/[0.06] space-y-2">
+                  <span className="text-[#5865FF] font-mono uppercase text-[11px] flex items-center gap-1.5">
+                    <Cpu className="w-3.5 h-3.5" /> 1. Algorithmic Delivery Reason
                   </span>
-                  <p className="text-[#121212] font-medium leading-relaxed">
+                  <p className="text-[#9BA1AE] leading-relaxed">
                     {currentStep.whyNext.algorithmicReason}
                   </p>
                 </div>
 
                 {/* 2. Orderbook Matching Engine Mechanics */}
-                <div className="p-5 bg-[#FFF9C4] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] space-y-2">
-                  <span className="text-[#121212] font-mono font-black block uppercase text-[11px] flex items-center gap-1">
-                    <Zap className="w-4 h-4 text-[#D02020] stroke-[2.5]" /> 2. Order Book Mechanics
+                <div className="p-5 bg-[#151923] rounded-xl border border-white/[0.06] space-y-2">
+                  <span className="text-[#55E6D1] font-mono uppercase text-[11px] flex items-center gap-1.5">
+                    <Zap className="w-3.5 h-3.5" /> 2. Order Book Mechanics
                   </span>
-                  <p className="text-[#121212] font-medium leading-relaxed">
+                  <p className="text-[#9BA1AE] leading-relaxed">
                     {currentStep.whyNext.orderbookMechanic}
                   </p>
                 </div>
 
                 {/* 3. Risk of Premature Skipping */}
-                <div className="p-5 bg-rose-50 border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] space-y-2">
-                  <span className="text-[#D02020] font-mono font-black block uppercase text-[11px] flex items-center gap-1">
-                    <ShieldAlert className="w-4 h-4 stroke-[2.5]" /> 3. Risk of Skipping This Step
+                <div className="p-5 bg-[#151923] rounded-xl border border-white/[0.06] space-y-2">
+                  <span className="text-[#FF6B7A] font-mono uppercase text-[11px] flex items-center gap-1.5">
+                    <ShieldAlert className="w-3.5 h-3.5" /> 3. Risk of Skipping This Step
                   </span>
-                  <p className="text-[#121212] font-medium leading-relaxed">
+                  <p className="text-[#9BA1AE] leading-relaxed">
                     {currentStep.whyNext.riskOfSkipping}
                   </p>
                 </div>
@@ -373,20 +372,20 @@ export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onSelectConcept 
                   type="button"
                   disabled={selectedPipelineStep <= 1}
                   onClick={() => setSelectedPipelineStep((prev) => Math.max(1, prev - 1))}
-                  className="px-4 py-2 bg-white hover:bg-[#F0C020] border-2 border-[#121212] text-[#121212] text-xs font-mono font-black uppercase disabled:opacity-40 transition-colors cursor-pointer shadow-[2px_2px_0px_0px_#121212]"
+                  className="px-4 py-2 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] rounded-xl text-[#9BA1AE] hover:text-[#F5F7FA] text-xs font-mono uppercase tracking-wider disabled:opacity-40 transition-colors cursor-pointer flex items-center gap-1.5"
                 >
-                  ← Previous Step
+                  <ArrowLeft className="w-3.5 h-3.5" /> Previous Step
                 </button>
-                <span className="text-xs font-mono text-[#121212] font-black uppercase">
+                <span className="text-xs font-mono text-[#656B78] uppercase">
                   Step {selectedPipelineStep} of {pipelineSteps.length}
                 </span>
                 <button
                   type="button"
                   disabled={selectedPipelineStep >= pipelineSteps.length}
                   onClick={() => setSelectedPipelineStep((prev) => Math.min(pipelineSteps.length, prev + 1))}
-                  className="px-5 py-2.5 bg-[#D02020] hover:bg-red-700 text-white font-black text-xs font-mono uppercase disabled:opacity-40 flex items-center gap-1.5 border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] cursor-pointer active:translate-x-[1px] active:translate-y-[1px] active:shadow-none"
+                  className="px-5 py-2.5 bg-[#5865FF] hover:bg-[#4752E6] text-white text-xs font-mono uppercase tracking-wider disabled:opacity-40 flex items-center gap-1.5 rounded-xl cursor-pointer shadow-lg shadow-[#5865FF]/20"
                 >
-                  Advance to Step {selectedPipelineStep + 1} <ArrowRight className="w-3.5 h-3.5 stroke-[3]" />
+                  Advance to Step {selectedPipelineStep + 1} <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             </div>
@@ -397,57 +396,44 @@ export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onSelectConcept 
       {/* MODE 2: 2D DEPENDENCY MAP */}
       {viewMode === 'network' && (
         <div className="space-y-6">
-          <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-5 overflow-x-auto">
-            <svg viewBox="0 0 1150 340" className="w-full min-w-[950px] h-84 select-none bg-[#FAF9F5] border-2 border-[#121212]">
+          <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-5 overflow-x-auto">
+            <svg viewBox="0 0 1150 340" className="w-full min-w-[950px] h-84 select-none bg-[#0C0E13] rounded-xl border border-white/[0.06]">
               <defs>
-                <marker id="arrow-bauhaus" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                  <path d="M 0 1 L 8 5 L 0 9 z" fill="#121212" />
+                <marker id="arrow-predikt" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1 L 8 5 L 0 9 z" fill="rgba(255,255,255,0.4)" />
                 </marker>
               </defs>
 
               {/* Connectors */}
-              <line x1="180" y1="70" x2="240" y2="50" stroke="#121212" strokeWidth="2" markerEnd="url(#arrow-bauhaus)" />
-              <line x1="180" y1="70" x2="240" y2="120" stroke="#121212" strokeWidth="2" markerEnd="url(#arrow-bauhaus)" />
-              <line x1="180" y1="70" x2="240" y2="200" stroke="#121212" strokeWidth="2" markerEnd="url(#arrow-bauhaus)" />
-              <line x1="360" y1="50" x2="420" y2="100" stroke="#121212" strokeWidth="2" markerEnd="url(#arrow-bauhaus)" />
-              <line x1="360" y1="120" x2="420" y2="100" stroke="#121212" strokeWidth="2" markerEnd="url(#arrow-bauhaus)" />
-              <line x1="360" y1="200" x2="420" y2="260" stroke="#121212" strokeWidth="2" markerEnd="url(#arrow-bauhaus)" />
-              <line x1="360" y1="200" x2="580" y2="150" stroke="#121212" strokeWidth="2" markerEnd="url(#arrow-bauhaus)" />
-              <line x1="540" y1="100" x2="590" y2="60" stroke="#121212" strokeWidth="2" markerEnd="url(#arrow-bauhaus)" />
-              <line x1="540" y1="100" x2="590" y2="150" stroke="#121212" strokeWidth="2" markerEnd="url(#arrow-bauhaus)" />
-              <line x1="710" y1="60" x2="760" y2="60" stroke="#121212" strokeWidth="2" markerEnd="url(#arrow-bauhaus)" />
-              <line x1="710" y1="150" x2="760" y2="150" stroke="#121212" strokeWidth="2" markerEnd="url(#arrow-bauhaus)" />
-              <line x1="710" y1="150" x2="760" y2="220" stroke="#121212" strokeWidth="2" markerEnd="url(#arrow-bauhaus)" />
-              <line x1="540" y1="260" x2="590" y2="260" stroke="#121212" strokeWidth="2" markerEnd="url(#arrow-bauhaus)" />
-              <line x1="880" y1="60" x2="940" y2="100" stroke="#121212" strokeWidth="2" markerEnd="url(#arrow-bauhaus)" />
-              <line x1="880" y1="150" x2="940" y2="100" stroke="#121212" strokeWidth="2" markerEnd="url(#arrow-bauhaus)" />
-              <line x1="710" y1="60" x2="940" y2="180" stroke="#121212" strokeWidth="2" markerEnd="url(#arrow-bauhaus)" />
-              <line x1="710" y1="260" x2="940" y2="180" stroke="#121212" strokeWidth="2" markerEnd="url(#arrow-bauhaus)" />
-              <line x1="710" y1="260" x2="940" y2="260" stroke="#121212" strokeWidth="2" markerEnd="url(#arrow-bauhaus)" />
+              <line x1="180" y1="70" x2="240" y2="50" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" markerEnd="url(#arrow-predikt)" />
+              <line x1="180" y1="70" x2="240" y2="120" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" markerEnd="url(#arrow-predikt)" />
+              <line x1="180" y1="70" x2="240" y2="200" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" markerEnd="url(#arrow-predikt)" />
+              <line x1="360" y1="50" x2="420" y2="100" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" markerEnd="url(#arrow-predikt)" />
+              <line x1="360" y1="120" x2="420" y2="100" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" markerEnd="url(#arrow-predikt)" />
+              <line x1="360" y1="200" x2="420" y2="260" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" markerEnd="url(#arrow-predikt)" />
+              <line x1="360" y1="200" x2="580" y2="150" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" markerEnd="url(#arrow-predikt)" />
+              <line x1="540" y1="100" x2="590" y2="60" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" markerEnd="url(#arrow-predikt)" />
+              <line x1="540" y1="100" x2="590" y2="150" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" markerEnd="url(#arrow-predikt)" />
+              <line x1="710" y1="60" x2="760" y2="60" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" markerEnd="url(#arrow-predikt)" />
+              <line x1="710" y1="150" x2="760" y2="150" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" markerEnd="url(#arrow-predikt)" />
+              <line x1="710" y1="150" x2="760" y2="220" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" markerEnd="url(#arrow-predikt)" />
+              <line x1="540" y1="260" x2="590" y2="260" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" markerEnd="url(#arrow-predikt)" />
+              <line x1="880" y1="60" x2="940" y2="100" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" markerEnd="url(#arrow-predikt)" />
+              <line x1="880" y1="150" x2="940" y2="100" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" markerEnd="url(#arrow-predikt)" />
+              <line x1="710" y1="60" x2="940" y2="180" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" markerEnd="url(#arrow-predikt)" />
+              <line x1="710" y1="260" x2="940" y2="180" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" markerEnd="url(#arrow-predikt)" />
+              <line x1="710" y1="260" x2="940" y2="260" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" markerEnd="url(#arrow-predikt)" />
 
-              {/* Render Bauhaus Constructivist Nodes */}
+              {/* Render Modern Dark Nodes */}
               {nodes.map((node) => {
                 const isSelected = node.id === selectedNode;
-                const isHovered = node.id === hoveredNode;
 
-                let bgColor = '#FFFFFF';
-                let headerColor = '#121212';
-                if (node.category === 'Liquidity') {
-                  bgColor = '#FFF9C4';
-                  headerColor = '#D02020';
-                } else if (node.category === 'Imbalances') {
-                  bgColor = '#FEE2E2';
-                  headerColor = '#D02020';
-                } else if (node.category === 'Order Blocks') {
-                  bgColor = '#E0E7FF';
-                  headerColor = '#1040C0';
-                } else if (node.category === 'Time') {
-                  bgColor = '#FEF3C7';
-                  headerColor = '#121212';
-                } else if (node.category === 'Models') {
-                  bgColor = '#DCFCE7';
-                  headerColor = '#166534';
-                }
+                let tagColor = '#5865FF';
+                if (node.category === 'Liquidity') tagColor = '#55E6D1';
+                else if (node.category === 'Imbalances') tagColor = '#FF6B7A';
+                else if (node.category === 'Order Blocks') tagColor = '#5865FF';
+                else if (node.category === 'Time') tagColor = '#F0B35B';
+                else if (node.category === 'Models') tagColor = '#55E6D1';
 
                 return (
                   <g
@@ -458,42 +444,35 @@ export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onSelectConcept 
                     onMouseEnter={() => setHoveredNode(node.id)}
                     onMouseLeave={() => setHoveredNode(null)}
                   >
-                    {/* Hard shadow */}
-                    <rect
-                      x="-68"
-                      y="-20"
-                      width="140"
-                      height="44"
-                      fill="#121212"
-                    />
                     <rect
                       x="-70"
                       y="-22"
                       width="140"
                       height="44"
-                      fill={bgColor}
-                      stroke="#121212"
-                      strokeWidth={isSelected ? '3' : '2'}
+                      rx="10"
+                      fill={isSelected ? '#1A1F2C' : '#151923'}
+                      stroke={isSelected ? '#5865FF' : 'rgba(255, 255, 255, 0.1)'}
+                      strokeWidth={isSelected ? '2' : '1'}
                     />
                     <text
                       x="0"
                       y="-4"
                       textAnchor="middle"
-                      fill="#121212"
+                      fill="#F5F7FA"
                       fontSize="10"
-                      fontWeight="900"
-                      fontFamily="monospace"
+                      fontWeight="500"
+                      fontFamily="sans-serif"
                     >
                       {node.label.length > 18 ? node.label.substring(0, 16) + '...' : node.label}
                     </text>
                     <text
                       x="0"
-                      y="10"
+                      y="11"
                       textAnchor="middle"
-                      fill={headerColor}
+                      fill={tagColor}
                       fontSize="8"
                       fontFamily="monospace"
-                      fontWeight="800"
+                      fontWeight="600"
                     >
                       {node.category}
                     </text>
@@ -503,17 +482,17 @@ export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onSelectConcept 
             </svg>
           </div>
 
-          {/* Node Inspector - Bauhaus Card */}
-          <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[#121212]">
+          {/* Node Inspector */}
+          <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[#F5F7FA]">
             <div>
-              <span className="text-xs font-mono text-[#D02020] font-black uppercase">{activeNodeObj.category} Node</span>
-              <h3 className="text-xl font-black text-[#121212] uppercase mt-0.5">{activeNodeObj.label}</h3>
-              <p className="text-[#121212]/80 text-xs sm:text-sm mt-1 font-medium">{activeNodeObj.description}</p>
+              <span className="text-xs font-mono text-[#55E6D1] uppercase tracking-wider">{activeNodeObj.category} Node</span>
+              <h3 className="text-xl font-semibold text-[#F5F7FA] mt-0.5">{activeNodeObj.label}</h3>
+              <p className="text-[#9BA1AE] text-xs sm:text-sm mt-1">{activeNodeObj.description}</p>
             </div>
             <button
               type="button"
               onClick={() => onSelectConcept(activeNodeObj.id)}
-              className="px-5 py-2.5 bg-[#1040C0] hover:bg-blue-700 text-white font-mono text-xs font-black uppercase border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] transition-all shrink-0 cursor-pointer active:translate-x-[1px] active:translate-y-[1px] active:shadow-none"
+              className="px-5 py-2.5 bg-[#5865FF] hover:bg-[#4752E6] text-white font-mono text-xs uppercase tracking-wider rounded-xl transition-all shrink-0 cursor-pointer shadow-lg shadow-[#5865FF]/20"
             >
               Open Concept
             </button>

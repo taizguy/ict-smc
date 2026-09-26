@@ -1,4 +1,5 @@
 import { TextbookChapter } from '../types';
+import { theinnercircletradersNewChapters } from './theinnercircletradersChapters';
 
 export const textbookChapters: TextbookChapter[] = [
   {
@@ -3079,6 +3080,7 @@ Step 4: Afternoon Session & Final Hour (13:30 - 16:00 EST)
 - Journal all trades with screenshots and rule compliance grades.`
       }
     ]
-  }
+  },
+  ...theinnercircletradersNewChapters
 ];
 

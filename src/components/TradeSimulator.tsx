@@ -1,5 +1,16 @@
 import React, { useState } from 'react';
-import { PlayCircle, ShieldCheck, Target, RefreshCw, BarChart2, CheckCircle2, XCircle, AlertCircle, ArrowUpRight, ArrowDownRight, Zap } from 'lucide-react';
+import { 
+  PlayCircle, 
+  ShieldCheck, 
+  RefreshCw, 
+  CheckCircle2, 
+  XCircle, 
+  ArrowUpRight, 
+  ArrowDownRight, 
+  Zap,
+  Layers,
+  Sparkles
+} from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface SimulationResult {
@@ -16,7 +27,7 @@ interface SimulationResult {
 }
 
 export const TradeSimulator: React.FC = () => {
-  const [asset, setAsset] = useState<string>('BTC/USDT');
+  const [asset] = useState<string>('BTC/USDT');
   const [direction, setDirection] = useState<'LONG' | 'SHORT'>('LONG');
   const [htfBias, setHtfBias] = useState<'Bullish' | 'Bearish'>('Bullish');
   const [location, setLocation] = useState<'Discount' | 'Premium' | 'Equilibrium'>('Discount');
@@ -36,7 +47,6 @@ export const TradeSimulator: React.FC = () => {
     setTimeout(() => {
       // Algorithmic evaluation of trade model confluence
       let isWin = false;
-      let isMissed = false;
       let rMultiple = 0;
       const narrative: string[] = [];
       let lesson = '';
@@ -89,7 +99,6 @@ export const TradeSimulator: React.FC = () => {
         narrative.push(`5. Target Fulfilled: Price expanded directly to Draw on Liquidity at $${targetPrice.toLocaleString()} for +${rMultiple}R.`);
         lesson = 'Flawless confluence alignment. Entry in proper range, confirmed displacement, and safe structural invalidation.';
       } else if (score >= 5) {
-        // Marginal setup
         if (stopPlacement === 'Tight (Inside Array)') {
           isWin = false;
           rMultiple = -1.0;
@@ -98,14 +107,14 @@ export const TradeSimulator: React.FC = () => {
         } else {
           isWin = true;
           rMultiple = 1.8;
-          narrative.push(`5. Reduced Target: Front-run expansion yielded partial fill before internal exhaustion for +1.8R.`);
-          lesson = 'Acceptable execution with minor timing friction. Disciplined take-profit secured.';
+          narrative.push(`5. Scalp Achieved: Sub-optimal context capped continuation, but primary target reached for +1.8R.`);
+          lesson = 'Acceptable execution, but trading with medium confluence requires active profit taking.';
         }
       } else {
         isWin = false;
         rMultiple = -1.0;
-        narrative.push(`5. Invalidation Stop Out: Low-confluence execution broke opposite structure, hitting protective stop.`);
-        lesson = 'Low confluence trade. Trading into adverse liquidity pools without confirmed displacement carries extreme risk.';
+        narrative.push(`5. Invalidation Hit: Lack of HTF alignment and insufficient liquidity purge resulted in full stop out.`);
+        lesson = 'Do not trade without liquidity raid and higher timeframe displacement. You were retail counterparty.';
       }
 
       setSimResult({
@@ -125,74 +134,87 @@ export const TradeSimulator: React.FC = () => {
       if (isWin) {
         confetti({ particleCount: 70, spread: 60, origin: { y: 0.6 } });
       }
-    }, 800);
+    }, 600);
   };
 
   return (
-    <div className="space-y-6">
-      {/* Top Banner - Bauhaus Constructivist Card */}
-      <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 sm:p-7 relative overflow-hidden">
-        <div>
-          <div className="flex items-center gap-2 mb-1">
-            <span className="w-4 h-4 bg-[#1040C0] border border-black inline-block" />
-            <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#121212]">
-              ICT Trade Decision Simulator
-            </h2>
-            <span className="px-3 py-1 text-[10px] font-mono bg-[#F0C020] text-[#121212] border-2 border-[#121212] font-black uppercase shadow-[2px_2px_0px_0px_#121212]">
-              Algorithmic Simulator
+    <div className="space-y-6 text-[#F5F7FA]">
+      {/* Top Banner - Predikt Dark Card */}
+      <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 relative overflow-hidden">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="w-2 h-2 rounded-full bg-[#5865FF]" />
+              <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F5F7FA]">
+                ICT Trade Decision Simulator
+              </h2>
+              <span className="px-2.5 py-0.5 text-[10px] font-mono bg-[#5865FF]/10 text-[#5865FF] border border-[#5865FF]/20 rounded-full font-medium uppercase">
+                Algorithmic Lab
+              </span>
+            </div>
+            <p className="text-[#9BA1AE] text-xs sm:text-sm">
+              Formulate a full institutional trade thesis from Higher Timeframe bias down to entry array and calculate realistic market execution outcomes.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2 font-mono text-xs">
+            <span className="px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/[0.07] text-[#9BA1AE]">
+              PAIR: <span className="text-[#F5F7FA] font-medium">{asset}</span>
             </span>
           </div>
-          <p className="text-[#121212]/80 text-xs sm:text-sm font-medium">
-            Formulate a full institutional trade thesis from Higher Timeframe bias down to entry array and calculate realistic market execution outcomes.
-          </p>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        {/* Configuration Setup Form - Bauhaus Panel */}
-        <div className="lg:col-span-7 bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 sm:p-7 space-y-5 text-[#121212]">
-          <h3 className="text-sm font-mono font-black uppercase tracking-wider flex items-center gap-2 pb-3 border-b-4 border-[#121212]">
-            <ShieldCheck className="w-4 h-4 text-[#D02020] stroke-[2.5]" />
-            <span>Step 1: Configure Trade Hypothesis</span>
-          </h3>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        {/* Configuration Setup Form */}
+        <div className="lg:col-span-7 bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-5">
+          <div className="flex items-center justify-between pb-3.5 border-b border-white/[0.07]">
+            <h3 className="text-xs font-mono uppercase tracking-wider flex items-center gap-2 text-[#F5F7FA]">
+              <ShieldCheck className="w-4 h-4 text-[#55E6D1]" />
+              <span>Step 1: Configure Trade Hypothesis</span>
+            </h3>
+            <span className="text-[10px] font-mono text-[#656B78] uppercase">
+              Parameters // 08
+            </span>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono">
             {/* Direction */}
             <div className="space-y-1.5">
-              <label className="text-[#121212] font-black uppercase text-[11px]">Trade Direction:</label>
+              <label className="text-[#9BA1AE] text-[11px] uppercase">Trade Direction:</label>
               <div className="grid grid-cols-2 gap-2">
                 <button
                   type="button"
                   onClick={() => setDirection('LONG')}
-                  className={`py-2.5 rounded-none font-black uppercase text-xs flex items-center justify-center gap-1 transition-all border-2 border-[#121212] cursor-pointer active:translate-x-[1px] active:translate-y-[1px] active:shadow-none ${
+                  className={`py-2.5 rounded-xl font-medium uppercase text-xs flex items-center justify-center gap-1.5 transition-all border cursor-pointer ${
                     direction === 'LONG'
-                      ? 'bg-[#1040C0] text-white shadow-[3px_3px_0px_0px_#121212]'
-                      : 'bg-white text-[#121212] hover:bg-[#F0C020]'
+                      ? 'bg-[#55E6D1]/15 text-[#55E6D1] border-[#55E6D1]/40 shadow-sm'
+                      : 'bg-white/[0.02] text-[#9BA1AE] border-white/[0.06] hover:bg-white/[0.05] hover:text-[#F5F7FA]'
                   }`}
                 >
-                  <ArrowUpRight className="w-3.5 h-3.5 stroke-[3]" /> LONG
+                  <ArrowUpRight className="w-3.5 h-3.5" /> LONG
                 </button>
                 <button
                   type="button"
                   onClick={() => setDirection('SHORT')}
-                  className={`py-2.5 rounded-none font-black uppercase text-xs flex items-center justify-center gap-1 transition-all border-2 border-[#121212] cursor-pointer active:translate-x-[1px] active:translate-y-[1px] active:shadow-none ${
+                  className={`py-2.5 rounded-xl font-medium uppercase text-xs flex items-center justify-center gap-1.5 transition-all border cursor-pointer ${
                     direction === 'SHORT'
-                      ? 'bg-[#D02020] text-white shadow-[3px_3px_0px_0px_#121212]'
-                      : 'bg-white text-[#121212] hover:bg-[#F0C020]'
+                      ? 'bg-[#FF6B7A]/15 text-[#FF6B7A] border-[#FF6B7A]/40 shadow-sm'
+                      : 'bg-white/[0.02] text-[#9BA1AE] border-white/[0.06] hover:bg-white/[0.05] hover:text-[#F5F7FA]'
                   }`}
                 >
-                  <ArrowDownRight className="w-3.5 h-3.5 stroke-[3]" /> SHORT
+                  <ArrowDownRight className="w-3.5 h-3.5" /> SHORT
                 </button>
               </div>
             </div>
 
             {/* HTF Bias */}
             <div className="space-y-1.5">
-              <label className="text-[#121212] font-black uppercase text-[11px]">Higher Timeframe Bias:</label>
+              <label className="text-[#9BA1AE] text-[11px] uppercase">Higher Timeframe Bias:</label>
               <select
                 value={htfBias}
                 onChange={(e) => setHtfBias(e.target.value as any)}
-                className="w-full bg-[#F0F0F0] border-2 border-[#121212] text-[#121212] font-bold rounded-none p-2.5 focus:outline-none focus:bg-white shadow-[2px_2px_0px_0px_#121212] cursor-pointer"
+                className="w-full bg-[#151923] border border-white/[0.08] text-[#F5F7FA] rounded-xl p-2.5 focus:outline-none focus:border-[#5865FF] cursor-pointer"
               >
                 <option value="Bullish">Daily/Weekly Bullish</option>
                 <option value="Bearish">Daily/Weekly Bearish</option>
@@ -201,11 +223,11 @@ export const TradeSimulator: React.FC = () => {
 
             {/* Dealing Range Location */}
             <div className="space-y-1.5">
-              <label className="text-[#121212] font-black uppercase text-[11px]">Dealing Range Location:</label>
+              <label className="text-[#9BA1AE] text-[11px] uppercase">Dealing Range Location:</label>
               <select
                 value={location}
                 onChange={(e) => setLocation(e.target.value as any)}
-                className="w-full bg-[#F0F0F0] border-2 border-[#121212] text-[#121212] font-bold rounded-none p-2.5 focus:outline-none focus:bg-white shadow-[2px_2px_0px_0px_#121212] cursor-pointer"
+                className="w-full bg-[#151923] border border-white/[0.08] text-[#F5F7FA] rounded-xl p-2.5 focus:outline-none focus:border-[#5865FF] cursor-pointer"
               >
                 <option value="Discount">Discount (Below 50% Equilibrium)</option>
                 <option value="Premium">Premium (Above 50% Equilibrium)</option>
@@ -215,11 +237,11 @@ export const TradeSimulator: React.FC = () => {
 
             {/* Liquidity Event */}
             <div className="space-y-1.5">
-              <label className="text-[#121212] font-black uppercase text-[11px]">Liquidity Event (Before Move):</label>
+              <label className="text-[#9BA1AE] text-[11px] uppercase">Liquidity Event (Before Move):</label>
               <select
                 value={liquidityEvent}
                 onChange={(e) => setLiquidityEvent(e.target.value as any)}
-                className="w-full bg-[#F0F0F0] border-2 border-[#121212] text-[#121212] font-bold rounded-none p-2.5 focus:outline-none focus:bg-white shadow-[2px_2px_0px_0px_#121212] cursor-pointer"
+                className="w-full bg-[#151923] border border-white/[0.08] text-[#F5F7FA] rounded-xl p-2.5 focus:outline-none focus:border-[#5865FF] cursor-pointer"
               >
                 <option value="SSL Sweep">Sell Side Liquidity (SSL) Swept</option>
                 <option value="BSL Sweep">Buy Side Liquidity (BSL) Swept</option>
@@ -229,11 +251,11 @@ export const TradeSimulator: React.FC = () => {
 
             {/* Confirmation */}
             <div className="space-y-1.5">
-              <label className="text-[#121212] font-black uppercase text-[11px]">Structural Confirmation:</label>
+              <label className="text-[#9BA1AE] text-[11px] uppercase">Structural Confirmation:</label>
               <select
                 value={confirmation}
                 onChange={(e) => setConfirmation(e.target.value as any)}
-                className="w-full bg-[#F0F0F0] border-2 border-[#121212] text-[#121212] font-bold rounded-none p-2.5 focus:outline-none focus:bg-white shadow-[2px_2px_0px_0px_#121212] cursor-pointer"
+                className="w-full bg-[#151923] border border-white/[0.08] text-[#F5F7FA] rounded-xl p-2.5 focus:outline-none focus:border-[#5865FF] cursor-pointer"
               >
                 <option value="Displacement + MSS">Strong Displacement + Valid MSS</option>
                 <option value="Weak Move">Weak Drift / No MSS</option>
@@ -243,11 +265,11 @@ export const TradeSimulator: React.FC = () => {
 
             {/* Entry Array */}
             <div className="space-y-1.5">
-              <label className="text-[#121212] font-black uppercase text-[11px]">Entry PD Array:</label>
+              <label className="text-[#9BA1AE] text-[11px] uppercase">Entry PD Array:</label>
               <select
                 value={entryArray}
                 onChange={(e) => setEntryArray(e.target.value as any)}
-                className="w-full bg-[#F0F0F0] border-2 border-[#121212] text-[#121212] font-bold rounded-none p-2.5 focus:outline-none focus:bg-white shadow-[2px_2px_0px_0px_#121212] cursor-pointer"
+                className="w-full bg-[#151923] border border-white/[0.08] text-[#F5F7FA] rounded-xl p-2.5 focus:outline-none focus:border-[#5865FF] cursor-pointer"
               >
                 <option value="FVG (50% CE)">Fair Value Gap (50% Consequent Encroachment)</option>
                 <option value="Order Block">Fresh Order Block (Mitigation)</option>
@@ -258,11 +280,11 @@ export const TradeSimulator: React.FC = () => {
 
             {/* Stop Placement */}
             <div className="space-y-1.5">
-              <label className="text-[#121212] font-black uppercase text-[11px]">Stop Loss Invalidation:</label>
+              <label className="text-[#9BA1AE] text-[11px] uppercase">Stop Loss Invalidation:</label>
               <select
                 value={stopPlacement}
                 onChange={(e) => setStopPlacement(e.target.value as any)}
-                className="w-full bg-[#F0F0F0] border-2 border-[#121212] text-[#121212] font-bold rounded-none p-2.5 focus:outline-none focus:bg-white shadow-[2px_2px_0px_0px_#121212] cursor-pointer"
+                className="w-full bg-[#151923] border border-white/[0.08] text-[#F5F7FA] rounded-xl p-2.5 focus:outline-none focus:border-[#5865FF] cursor-pointer"
               >
                 <option value="Structural Invalidation (Sweep Low/High)">Below Sweep Low / Above Sweep High</option>
                 <option value="Tight (Inside Array)">Tight (Inside the FVG/OB)</option>
@@ -272,11 +294,11 @@ export const TradeSimulator: React.FC = () => {
 
             {/* Target */}
             <div className="space-y-1.5">
-              <label className="text-[#121212] font-black uppercase text-[11px]">Target Objective (Draw):</label>
+              <label className="text-[#9BA1AE] text-[11px] uppercase">Target Objective (Draw):</label>
               <select
                 value={targetType}
                 onChange={(e) => setTargetType(e.target.value as any)}
-                className="w-full bg-[#F0F0F0] border-2 border-[#121212] text-[#121212] font-bold rounded-none p-2.5 focus:outline-none focus:bg-white shadow-[2px_2px_0px_0px_#121212] cursor-pointer"
+                className="w-full bg-[#151923] border border-white/[0.08] text-[#F5F7FA] rounded-xl p-2.5 focus:outline-none focus:border-[#5865FF] cursor-pointer"
               >
                 <option value="Major External Liquidity (PDH/PDL)">External Liquidity (PDH / PDL / PWH)</option>
                 <option value="Internal Range Liquidity">Internal Range Swing</option>
@@ -289,62 +311,65 @@ export const TradeSimulator: React.FC = () => {
             type="button"
             onClick={runSimulation}
             disabled={isSimulating}
-            className="w-full py-4 rounded-none bg-[#D02020] hover:bg-red-700 text-white font-mono font-black text-sm uppercase flex items-center justify-center gap-2 transition-all border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none cursor-pointer"
+            className="w-full py-3.5 rounded-xl bg-[#5865FF] hover:bg-[#4752E6] text-white font-mono font-medium text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg shadow-[#5865FF]/20 active:scale-[0.99] disabled:opacity-50"
           >
-            {isSimulating ? <RefreshCw className="w-4 h-4 animate-spin" /> : <PlayCircle className="w-5 h-5 fill-white/20 stroke-[2.5]" />}
-            <span>{isSimulating ? 'SIMULATING PRICE DELIVERY...' : 'SIMULATE MARKET EXECUTION'}</span>
+            {isSimulating ? <RefreshCw className="w-4 h-4 animate-spin" /> : <PlayCircle className="w-4 h-4" />}
+            <span>{isSimulating ? 'Simulating Price Delivery...' : 'Simulate Market Execution'}</span>
           </button>
         </div>
 
-        {/* Output & Narrative Breakdown - Bauhaus Results Card */}
+        {/* Output & Narrative Breakdown */}
         <div className="lg:col-span-5 space-y-4">
           {simResult ? (
-            <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 sm:p-7 space-y-4 text-[#121212]">
-              <div className="flex items-center justify-between pb-3 border-b-4 border-[#121212]">
+            <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-5 text-[#F5F7FA]">
+              <div className="flex items-center justify-between pb-3 border-b border-white/[0.07]">
                 <div className="flex items-center gap-2.5">
                   {simResult.outcome === 'WIN' ? (
-                    <CheckCircle2 className="w-6 h-6 text-[#1040C0] stroke-[3]" />
+                    <CheckCircle2 className="w-5 h-5 text-[#55E6D1]" />
                   ) : (
-                    <XCircle className="w-6 h-6 text-[#D02020] stroke-[3]" />
+                    <XCircle className="w-5 h-5 text-[#FF6B7A]" />
                   )}
                   <span
-                    className={`font-mono text-base sm:text-lg font-black uppercase ${
-                      simResult.outcome === 'WIN' ? 'text-[#1040C0]' : 'text-[#D02020]'
+                    className={`font-mono text-sm sm:text-base font-semibold uppercase ${
+                      simResult.outcome === 'WIN' ? 'text-[#55E6D1]' : 'text-[#FF6B7A]'
                     }`}
                   >
                     TRADE RESULT: {simResult.outcome} ({simResult.rMultiple > 0 ? `+${simResult.rMultiple}R` : `${simResult.rMultiple}R`})
                   </span>
                 </div>
+                <span className="text-[10px] font-mono text-[#656B78] uppercase">
+                  EXECUTION LOG
+                </span>
               </div>
 
               {/* Price Metrics Grid */}
-              <div className="grid grid-cols-2 gap-3 font-mono text-xs">
-                <div className="bg-[#F0F0F0] p-3 border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212]">
-                  <span className="text-[#121212]/60 block text-[10px] uppercase font-black">Entry Fill:</span>
-                  <span className="text-[#1040C0] font-black text-sm">${simResult.entryPrice.toLocaleString()}</span>
+              <div className="grid grid-cols-2 gap-2.5 font-mono text-xs">
+                <div className="bg-[#151923] p-3 rounded-xl border border-white/[0.06]">
+                  <span className="text-[#656B78] block text-[10px] uppercase">Entry Fill:</span>
+                  <span className="text-[#5865FF] font-semibold text-sm">${simResult.entryPrice.toLocaleString()}</span>
                 </div>
-                <div className="bg-[#F0F0F0] p-3 border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212]">
-                  <span className="text-[#121212]/60 block text-[10px] uppercase font-black">Exit Price:</span>
-                  <span className="text-[#121212] font-black text-sm">${simResult.exitPrice.toLocaleString()}</span>
+                <div className="bg-[#151923] p-3 rounded-xl border border-white/[0.06]">
+                  <span className="text-[#656B78] block text-[10px] uppercase">Exit Price:</span>
+                  <span className="text-[#F5F7FA] font-semibold text-sm">${simResult.exitPrice.toLocaleString()}</span>
                 </div>
-                <div className="bg-[#F0F0F0] p-3 border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212]">
-                  <span className="text-[#121212]/60 block text-[10px] uppercase font-black">Stop (Invalidation):</span>
-                  <span className="text-[#D02020] font-black text-sm">${simResult.stopPrice.toLocaleString()}</span>
+                <div className="bg-[#151923] p-3 rounded-xl border border-white/[0.06]">
+                  <span className="text-[#656B78] block text-[10px] uppercase">Stop (Invalidation):</span>
+                  <span className="text-[#FF6B7A] font-semibold text-sm">${simResult.stopPrice.toLocaleString()}</span>
                 </div>
-                <div className="bg-[#F0F0F0] p-3 border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212]">
-                  <span className="text-[#121212]/60 block text-[10px] uppercase font-black">Target (Draw):</span>
-                  <span className="text-[#1040C0] font-black text-sm">${simResult.targetPrice.toLocaleString()}</span>
+                <div className="bg-[#151923] p-3 rounded-xl border border-white/[0.06]">
+                  <span className="text-[#656B78] block text-[10px] uppercase">Target (Draw):</span>
+                  <span className="text-[#55E6D1] font-semibold text-sm">${simResult.targetPrice.toLocaleString()}</span>
                 </div>
               </div>
 
               {/* Step by Step Narrative */}
               <div className="space-y-2">
-                <h5 className="text-xs font-mono font-black text-[#121212] uppercase tracking-wider">
+                <h5 className="text-[11px] font-mono uppercase tracking-wider text-[#9BA1AE]">
                   Price Delivery Chronology:
                 </h5>
-                <div className="space-y-2 bg-[#FAF9F5] p-4 border-2 border-[#121212] text-xs font-mono font-bold text-[#121212]">
+                <div className="space-y-2 bg-[#0C0E13] p-4 rounded-xl border border-white/[0.06] text-xs font-mono text-[#9BA1AE]">
                   {simResult.narrativeSteps.map((step, idx) => (
-                    <div key={idx} className="leading-relaxed border-b border-[#121212]/10 pb-1.5 last:border-0 last:pb-0">
+                    <div key={idx} className="leading-relaxed border-b border-white/[0.04] pb-1.5 last:border-0 last:pb-0">
                       {step}
                     </div>
                   ))}
@@ -352,19 +377,19 @@ export const TradeSimulator: React.FC = () => {
               </div>
 
               {/* Methodological Lesson */}
-              <div className="p-4 bg-[#FFF9C4] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] text-xs font-mono text-[#121212]">
-                <strong className="text-[#D02020] uppercase font-black">Institutional Takeaway: </strong>
-                {simResult.lesson}
+              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.08] text-xs font-mono text-[#F5F7FA]">
+                <strong className="text-[#F0B35B] uppercase font-semibold">Institutional Takeaway: </strong>
+                <span className="text-[#9BA1AE]">{simResult.lesson}</span>
               </div>
             </div>
           ) : (
-            <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-8 text-center space-y-3 h-full flex flex-col items-center justify-center">
-              <div className="w-12 h-12 bg-[#F0C020] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] flex items-center justify-center mb-1">
-                <Zap className="w-6 h-6 text-[#121212] stroke-[2.5]" />
+            <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-8 text-center space-y-3 h-full flex flex-col items-center justify-center min-h-[300px]">
+              <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center mb-1 text-[#5865FF]">
+                <Zap className="w-6 h-6" />
               </div>
-              <h4 className="text-base font-mono font-black uppercase text-[#121212]">Ready to Simulate</h4>
-              <p className="text-xs text-[#121212]/80 max-w-xs leading-relaxed font-medium">
-                Select your setup parameters on the left and click "Simulate Market Execution" to see how the algorithmic delivery sequence unfolds.
+              <h4 className="text-sm font-mono uppercase font-semibold text-[#F5F7FA]">Ready to Simulate</h4>
+              <p className="text-xs text-[#9BA1AE] max-w-xs leading-relaxed">
+                Select your setup parameters on the left and click "Simulate Market Execution" to observe how the algorithmic delivery sequence unfolds.
               </p>
             </div>
           )}

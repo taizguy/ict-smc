@@ -1,21 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { ChartScenario, Candle, ChartAnnotation } from '../types';
+import { Candle } from '../types';
 import { chartScenarios } from '../data/chartScenarios';
 import { 
   Play, 
   Pause, 
   SkipForward, 
   SkipBack, 
-  BarChart2, 
   CheckCircle2, 
   AlertTriangle, 
   RefreshCw, 
-  Sparkles,
-  Zap,
-  Target
+  Sparkles
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import { BauhausNavScroller } from './BauhausNavScroller';
 
 type TrainingStep = 
   | 'liquidity_pool'
@@ -35,14 +31,14 @@ export const ChartLab: React.FC = () => {
   // Replay State
   const [currentCandleIndex, setCurrentCandleIndex] = useState<number>(scenario.candles.length);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [playSpeed, setPlaySpeed] = useState<number>(1000);
+  const [playSpeed] = useState<number>(1000);
 
   // Training Mode vs Inspection Mode
   const [isTrainingMode, setIsTrainingMode] = useState<boolean>(true);
   const [activeStep, setActiveStep] = useState<TrainingStep>('liquidity_pool');
   
   // User Marked Elements
-  const [userMarkedCandles, setUserMarkedCandles] = useState<{ [key in TrainingStep]?: number }>({});
+  const [, setUserMarkedCandles] = useState<{ [key in TrainingStep]?: number }>({});
   const [userMarkedPrices, setUserMarkedPrices] = useState<{ entry?: number; stop?: number; target?: number }>({});
   const [stepFeedback, setStepFeedback] = useState<{ text: string; isCorrect: boolean } | null>(null);
 
@@ -167,7 +163,21 @@ export const ChartLab: React.FC = () => {
     return 40 + (index + 0.5) * candleSpacing;
   };
 
-  // Candle selection logic during training
+  const advanceStep = () => {
+    if (activeStep === 'liquidity_pool') setActiveStep('sweep');
+    else if (activeStep === 'sweep') setActiveStep('displacement');
+    else if (activeStep === 'displacement') setActiveStep('mss');
+    else if (activeStep === 'mss') setActiveStep('fvg_ob');
+    else if (activeStep === 'fvg_ob') setActiveStep('entry');
+  };
+
+  const resetTraining = () => {
+    setActiveStep('liquidity_pool');
+    setUserMarkedCandles({});
+    setUserMarkedPrices({});
+    setStepFeedback(null);
+  };
+
   const handleCandleClick = (candleIndex: number) => {
     if (!isTrainingMode) return;
 
@@ -200,7 +210,6 @@ export const ChartLab: React.FC = () => {
     }
   };
 
-  // User price click for Entry, Stop, Target
   const handleChartPriceClick = (e: React.MouseEvent<SVGSVGElement>) => {
     if (!isTrainingMode) return;
     if (activeStep !== 'entry' && activeStep !== 'stop_loss' && activeStep !== 'target') return;
@@ -212,52 +221,38 @@ export const ChartLab: React.FC = () => {
 
     if (activeStep === 'entry') {
       setUserMarkedPrices((prev) => ({ ...prev, entry: estimatedPrice }));
-      setStepFeedback({ text: `✓ Entry level placed at ${estimatedPrice.toFixed(2)}.`, isCorrect: true });
+      setStepFeedback({ text: `✓ Entry placed at ${estimatedPrice.toFixed(2)}.`, isCorrect: true });
       setActiveStep('stop_loss');
     } else if (activeStep === 'stop_loss') {
       setUserMarkedPrices((prev) => ({ ...prev, stop: estimatedPrice }));
-      setStepFeedback({ text: `✓ Protective Stop Loss anchored at ${estimatedPrice.toFixed(2)}.`, isCorrect: true });
+      setStepFeedback({ text: `✓ Stop Loss anchored at ${estimatedPrice.toFixed(2)}.`, isCorrect: true });
       setActiveStep('target');
     } else if (activeStep === 'target') {
       setUserMarkedPrices((prev) => ({ ...prev, target: estimatedPrice }));
       setStepFeedback({ text: `✓ Terminal Target locked at ${estimatedPrice.toFixed(2)}. Sequence complete!`, isCorrect: true });
       setActiveStep('completed');
-      confetti({ particleCount: 100, spread: 80, origin: { y: 0.6 } });
+      confetti({ particleCount: 90, spread: 70, origin: { y: 0.6 } });
     }
   };
 
-  const advanceStep = () => {
-    if (activeStep === 'liquidity_pool') setActiveStep('sweep');
-    else if (activeStep === 'sweep') setActiveStep('displacement');
-    else if (activeStep === 'displacement') setActiveStep('mss');
-    else if (activeStep === 'mss') setActiveStep('fvg_ob');
-    else if (activeStep === 'fvg_ob') setActiveStep('entry');
-  };
-
-  const resetTraining = () => {
-    setActiveStep('liquidity_pool');
-    setUserMarkedCandles({});
-    setUserMarkedPrices({});
-    setStepFeedback(null);
-  };
-
   return (
-    <div className="space-y-6">
-      {/* Top Header & Scenario Switcher - Bauhaus Constructivist Card */}
-      <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 sm:p-7 relative overflow-hidden">
+    <div className="space-y-6 text-[#F5F7FA]">
+      
+      {/* Top Header & Scenario Switcher */}
+      <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 relative overflow-hidden">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <span className="w-4 h-4 bg-[#D02020] border border-black inline-block" />
-              <h2 className="text-xl sm:text-2xl font-black uppercase text-[#121212] tracking-tight">
-                ICT Chart Laboratory &amp; Training Studio
+            <div className="flex items-center gap-3 mb-1">
+              <span className="w-2 h-2 rounded-full bg-[#5865FF]" />
+              <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F5F7FA]">
+                ICT Chart Laboratory
               </h2>
-              <span className="px-3 py-1 text-[10px] font-mono bg-[#F0C020] text-[#121212] border-2 border-[#121212] font-black uppercase shadow-[2px_2px_0px_0px_#121212]">
-                {isTrainingMode ? 'Step-by-Step Training' : 'Free Inspection'}
+              <span className="px-2.5 py-0.5 text-[10px] font-mono bg-white/[0.04] text-[#55E6D1] border border-white/[0.08] rounded-md uppercase">
+                {isTrainingMode ? 'Guided Sequence' : 'Free Inspection'}
               </span>
             </div>
-            <p className="text-[#121212]/80 text-xs sm:text-sm font-medium">
-              Learn how to reason through price delivery by executing the 8-stage institutional marking sequence candle-by-candle.
+            <p className="text-xs sm:text-sm text-[#9BA1AE] max-w-xl">
+              Execute the 8-stage institutional marking sequence candle-by-candle and reason through price delivery.
             </p>
           </div>
 
@@ -265,10 +260,10 @@ export const ChartLab: React.FC = () => {
             <select
               value={selectedScenarioId}
               onChange={(e) => handleScenarioChange(e.target.value)}
-              className="bg-[#F0F0F0] border-2 border-[#121212] text-[#121212] text-xs font-mono font-bold uppercase px-4 py-2 shadow-[3px_3px_0px_0px_#121212] focus:outline-none focus:bg-white cursor-pointer"
+              className="bg-[#0C0E13] border border-white/[0.08] text-[#F5F7FA] text-xs font-mono px-3.5 py-2 rounded-lg focus:outline-none focus:border-[#5865FF]/60 cursor-pointer"
             >
               {chartScenarios.map((scen) => (
-                <option key={scen.id} value={scen.id} className="bg-white text-[#121212]">
+                <option key={scen.id} value={scen.id} className="bg-[#0C0E13] text-[#F5F7FA]">
                   {scen.asset} • {scen.title}
                 </option>
               ))}
@@ -279,54 +274,51 @@ export const ChartLab: React.FC = () => {
                 setIsTrainingMode(!isTrainingMode);
                 resetTraining();
               }}
-              className={`px-4 py-2 text-xs font-black uppercase tracking-wider transition-all flex items-center gap-1.5 border-2 border-[#121212] cursor-pointer active:translate-x-[2px] active:translate-y-[2px] active:shadow-none ${
-                isTrainingMode
-                  ? 'bg-[#F0C020] text-[#121212] shadow-[4px_4px_0px_0px_#121212]'
-                  : 'bg-white text-[#121212] hover:bg-[#F0C020] shadow-[2px_2px_0px_0px_#121212]'
-              }`}
+              className="btn-predikt-secondary text-xs"
             >
-              <Sparkles className="w-3.5 h-3.5 stroke-[2.5]" />
-              <span>{isTrainingMode ? 'Exit Training' : 'Start 8-Stage Training'}</span>
+              <Sparkles className="w-3.5 h-3.5 text-[#55E6D1]" />
+              <span>{isTrainingMode ? 'Free View' : 'Start 8-Stage Training'}</span>
             </button>
           </div>
         </div>
       </div>
 
-      {/* Training HUD Progress Banner (When in Training Mode) */}
+      {/* Training HUD Progress Banner */}
       {isTrainingMode && (
-        <div className="bg-[#FFF9C4] border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] p-5 sm:p-6 space-y-3">
+        <div className="bg-[#151923] border border-white/[0.08] rounded-2xl p-5 sm:p-6 space-y-3">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-            <div className="flex items-center gap-2.5">
-              <span className="px-3 py-1 bg-[#D02020] text-white font-black font-mono text-xs border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212]">
+            <div className="flex items-center gap-3">
+              <span className="px-2.5 py-0.5 bg-[#5865FF]/10 text-[#5865FF] font-mono text-xs rounded border border-[#5865FF]/20">
                 Stage {trainingStepConfig[activeStep].number} of 8
               </span>
-              <h3 className="font-black text-[#121212] uppercase text-sm sm:text-base">
+              <h3 className="font-medium text-[#F5F7FA] text-sm sm:text-base">
                 {trainingStepConfig[activeStep].title}
               </h3>
             </div>
 
             <button
               onClick={resetTraining}
-              className="text-xs font-mono font-black uppercase text-[#121212] hover:text-[#D02020] flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="text-xs font-mono text-[#9BA1AE] hover:text-[#F5F7FA] flex items-center gap-1.5 transition-colors cursor-pointer"
             >
-              <RefreshCw className="w-3.5 h-3.5 stroke-[2.5]" /> Reset Sequence
+              <RefreshCw className="w-3.5 h-3.5" />
+              <span>Reset Sequence</span>
             </button>
           </div>
 
-          <p className="text-[#121212] text-xs sm:text-sm font-medium leading-relaxed">
-            👉 <strong className="font-black uppercase text-[#D02020]">Objective:</strong> {trainingStepConfig[activeStep].instruction}
+          <p className="text-[#9BA1AE] text-xs sm:text-sm leading-relaxed">
+            <strong className="text-[#F5F7FA]">Objective:</strong> {trainingStepConfig[activeStep].instruction}
           </p>
 
           {stepFeedback && (
-            <div className={`p-3 border-2 border-[#121212] text-xs font-mono font-bold flex items-center gap-2.5 shadow-[2px_2px_0px_0px_#121212] ${
+            <div className={`p-3 rounded-lg border text-xs font-mono flex items-center gap-2.5 ${
               stepFeedback.isCorrect
-                ? 'bg-emerald-100 text-emerald-950'
-                : 'bg-amber-100 text-amber-950'
+                ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300'
+                : 'bg-amber-500/10 border-amber-500/30 text-amber-300'
             }`}>
               {stepFeedback.isCorrect ? (
-                <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 stroke-[3]" />
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
               ) : (
-                <AlertTriangle className="w-4 h-4 text-amber-700 shrink-0 stroke-[3]" />
+                <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0" />
               )}
               <span>{stepFeedback.text}</span>
             </div>
@@ -334,78 +326,78 @@ export const ChartLab: React.FC = () => {
         </div>
       )}
 
-      {/* Main Chart Window - Bauhaus Stage */}
-      <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 space-y-4">
+      {/* Main Chart Window */}
+      <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-4">
         
         {/* Replay Controls & Layer Toggles Bar */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3 border-b-4 border-[#121212] text-xs font-mono">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3 border-b border-white/[0.07] text-xs font-mono">
           <div className="flex items-center gap-2">
             <button
               onClick={() => setCurrentCandleIndex((prev) => Math.max(1, prev - 1))}
-              className="p-2 bg-white hover:bg-[#F0C020] text-[#121212] border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
+              className="p-1.5 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] text-[#9BA1AE] hover:text-[#F5F7FA] transition-all cursor-pointer"
               title="Step Back"
             >
-              <SkipBack className="w-4 h-4 stroke-[2.5]" />
+              <SkipBack className="w-4 h-4" />
             </button>
 
             <button
               onClick={() => setIsPlaying(!isPlaying)}
-              className="px-5 py-2 bg-[#D02020] hover:bg-red-700 text-white font-black uppercase text-xs flex items-center gap-2 border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+              className="btn-predikt-blue text-xs py-1.5 px-3.5 flex items-center gap-1.5"
             >
-              {isPlaying ? <Pause className="w-3.5 h-3.5 stroke-[3]" /> : <Play className="w-3.5 h-3.5 fill-white stroke-[2]" />}
+              {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5 fill-white" />}
               <span>{isPlaying ? 'Pause' : 'Replay'}</span>
             </button>
 
             <button
               onClick={() => setCurrentCandleIndex((prev) => Math.min(scenario.candles.length, prev + 1))}
-              className="p-2 bg-white hover:bg-[#F0C020] text-[#121212] border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
+              className="p-1.5 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] text-[#9BA1AE] hover:text-[#F5F7FA] transition-all cursor-pointer"
               title="Step Forward"
             >
-              <SkipForward className="w-4 h-4 stroke-[2.5]" />
+              <SkipForward className="w-4 h-4" />
             </button>
 
-            <span className="text-[#121212] ml-2 font-mono font-bold bg-[#F0F0F0] px-3 py-1.5 border-2 border-[#121212]">
+            <span className="text-[#9BA1AE] ml-2 text-xs font-mono">
               Candle {currentCandleIndex} / {scenario.candles.length}
             </span>
           </div>
 
-          {/* Layer toggles with Navigation Bar */}
+          {/* Layer toggles */}
           <div className="flex items-center gap-2">
             <button
               onClick={() => setLayers((prev) => ({ ...prev, fvg: !prev.fvg }))}
-              className={`px-3 py-1.5 text-xs font-black uppercase tracking-wider border-2 border-[#121212] transition-all cursor-pointer ${
+              className={`px-3 py-1 rounded-lg text-xs font-mono transition-all cursor-pointer border ${
                 layers.fvg
-                  ? 'bg-[#D02020] text-white shadow-[2px_2px_0px_0px_#121212]'
-                  : 'bg-white text-[#121212] hover:bg-[#F0C020]'
+                  ? 'bg-[#5865FF]/20 text-[#5865FF] border-[#5865FF]/40 font-medium'
+                  : 'bg-white/[0.02] text-[#656B78] border-white/[0.06] hover:text-[#9BA1AE]'
               }`}
             >
               FVG
             </button>
             <button
               onClick={() => setLayers((prev) => ({ ...prev, liquidity: !prev.liquidity }))}
-              className={`px-3 py-1.5 text-xs font-black uppercase tracking-wider border-2 border-[#121212] transition-all cursor-pointer ${
+              className={`px-3 py-1 rounded-lg text-xs font-mono transition-all cursor-pointer border ${
                 layers.liquidity
-                  ? 'bg-[#F0C020] text-[#121212] shadow-[2px_2px_0px_0px_#121212]'
-                  : 'bg-white text-[#121212] hover:bg-[#F0C020]'
+                  ? 'bg-[#55E6D1]/20 text-[#55E6D1] border-[#55E6D1]/40 font-medium'
+                  : 'bg-white/[0.02] text-[#656B78] border-white/[0.06] hover:text-[#9BA1AE]'
               }`}
             >
               Liquidity Pools
             </button>
             <button
               onClick={() => setLayers((prev) => ({ ...prev, structure: !prev.structure }))}
-              className={`px-3 py-1.5 text-xs font-black uppercase tracking-wider border-2 border-[#121212] transition-all cursor-pointer ${
+              className={`px-3 py-1 rounded-lg text-xs font-mono transition-all cursor-pointer border ${
                 layers.structure
-                  ? 'bg-[#1040C0] text-white shadow-[2px_2px_0px_0px_#121212]'
-                  : 'bg-white text-[#121212] hover:bg-[#F0C020]'
+                  ? 'bg-white/[0.15] text-[#F5F7FA] border-white/30 font-medium'
+                  : 'bg-white/[0.02] text-[#656B78] border-white/[0.06] hover:text-[#9BA1AE]'
               }`}
             >
-              MSS &amp; Structure
+              Structure
             </button>
           </div>
         </div>
 
-        {/* SVG Candlestick Chart Area - Technical Light Bauhaus Surface */}
-        <div className="overflow-x-auto bg-[#FAF9F5] border-4 border-[#121212] shadow-[4px_4px_0px_0px_#121212] p-3">
+        {/* SVG Candlestick Chart Area */}
+        <div className="overflow-x-auto bg-[#08090D] border border-white/[0.06] rounded-xl p-3">
           <svg
             viewBox={`0 0 ${chartWidth} ${chartHeight}`}
             className="w-full min-w-[700px] h-84 select-none cursor-crosshair"
@@ -417,8 +409,8 @@ export const ChartLab: React.FC = () => {
               const pVal = minPrice + ratio * priceRange;
               return (
                 <g key={idx}>
-                  <line x1="40" y1={yVal} x2={chartWidth - 20} y2={yVal} stroke="#D4D4D4" strokeWidth="1" strokeDasharray="4 4" />
-                  <text x="35" y={yVal + 3} textAnchor="end" fill="#525252" fontSize="9" fontFamily="monospace" fontWeight="bold">
+                  <line x1="40" y1={yVal} x2={chartWidth - 20} y2={yVal} stroke="rgba(255, 255, 255, 0.04)" strokeWidth="1" strokeDasharray="3 3" />
+                  <text x="35" y={yVal + 3} textAnchor="end" fill="#656B78" fontSize="9" fontFamily="monospace">
                     {pVal.toFixed(2)}
                   </text>
                 </g>
@@ -443,12 +435,13 @@ export const ChartLab: React.FC = () => {
                       y={Math.min(topY, botY)}
                       width={fvgWidth}
                       height={fvgHeight}
-                      fill="rgba(208, 32, 32, 0.18)"
-                      stroke="#D02020"
-                      strokeWidth="1.5"
+                      fill="rgba(102, 117, 255, 0.15)"
+                      stroke="#6675FF"
+                      strokeWidth="1"
                       strokeDasharray="4 2"
+                      rx="2"
                     />
-                    <text x={startX + 6} y={Math.min(topY, botY) + 12} fill="#D02020" fontSize="9" fontFamily="monospace" fontWeight="black">
+                    <text x={startX + 6} y={Math.min(topY, botY) + 12} fill="#6675FF" fontSize="9" fontFamily="monospace" fontWeight="600">
                       FVG ({ann.isBullish ? 'BULLISH' : 'BEARISH'})
                     </text>
                   </g>
@@ -470,18 +463,18 @@ export const ChartLab: React.FC = () => {
                       y1={yPos}
                       x2={chartWidth - 20}
                       y2={yPos}
-                      stroke={isBSL ? '#121212' : '#D02020'}
-                      strokeWidth="2"
-                      strokeDasharray="5 3"
+                      stroke={isBSL ? '#55E6D1' : '#FF6B7A'}
+                      strokeWidth="1.5"
+                      strokeDasharray="4 3"
                     />
-                    <text x={chartWidth - 25} y={yPos - 4} textAnchor="end" fill={isBSL ? '#121212' : '#D02020'} fontSize="9" fontFamily="monospace" fontWeight="black">
+                    <text x={chartWidth - 25} y={yPos - 4} textAnchor="end" fill={isBSL ? '#55E6D1' : '#FF6B7A'} fontSize="9" fontFamily="monospace" fontWeight="600">
                       {ann.label}
                     </text>
                   </g>
                 );
               })}
 
-            {/* Render Candlesticks with Bauhaus Stark Contrasts */}
+            {/* Candlesticks */}
             {visibleCandles.map((c, idx) => {
               const isBullish = c.close >= c.open;
               const xCenter = getX(idx);
@@ -492,8 +485,7 @@ export const ChartLab: React.FC = () => {
               const bodyTop = Math.min(openY, closeY);
               const bodyHeight = Math.max(2, Math.abs(closeY - openY));
 
-              const candleColor = isBullish ? '#1040C0' : '#D02020';
-              const wickColor = '#121212';
+              const candleColor = isBullish ? '#52D273' : '#FF6B7A';
 
               return (
                 <g
@@ -503,18 +495,14 @@ export const ChartLab: React.FC = () => {
                   onMouseEnter={() => setHoveredCandle({ candle: c, index: idx, x: xCenter, y: bodyTop })}
                   onMouseLeave={() => setHoveredCandle(null)}
                 >
-                  {/* Upper & Lower Wicks */}
-                  <line x1={xCenter} y1={highY} x2={xCenter} y2={lowY} stroke={wickColor} strokeWidth="1.5" />
-                  
-                  {/* Body with Black Outline */}
+                  <line x1={xCenter} y1={highY} x2={xCenter} y2={lowY} stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1.2" />
                   <rect
                     x={xCenter - candleWidth / 2}
                     y={bodyTop}
                     width={candleWidth}
                     height={bodyHeight}
                     fill={candleColor}
-                    stroke="#121212"
-                    strokeWidth="1.5"
+                    rx="1"
                   />
                 </g>
               );
@@ -523,8 +511,8 @@ export const ChartLab: React.FC = () => {
             {/* User Placed Entry / Stop / Target Lines */}
             {userMarkedPrices.entry && (
               <g>
-                <line x1="45" y1={getY(userMarkedPrices.entry)} x2={chartWidth - 20} y2={getY(userMarkedPrices.entry)} stroke="#1040C0" strokeWidth="2.5" />
-                <text x="55" y={getY(userMarkedPrices.entry) - 4} fill="#1040C0" fontSize="9" fontFamily="monospace" fontWeight="black">
+                <line x1="45" y1={getY(userMarkedPrices.entry)} x2={chartWidth - 20} y2={getY(userMarkedPrices.entry)} stroke="#5865FF" strokeWidth="2" />
+                <text x="55" y={getY(userMarkedPrices.entry) - 4} fill="#5865FF" fontSize="9" fontFamily="monospace" fontWeight="600">
                   ENTRY @ {userMarkedPrices.entry}
                 </text>
               </g>
@@ -532,8 +520,8 @@ export const ChartLab: React.FC = () => {
 
             {userMarkedPrices.stop && (
               <g>
-                <line x1="45" y1={getY(userMarkedPrices.stop)} x2={chartWidth - 20} y2={getY(userMarkedPrices.stop)} stroke="#D02020" strokeWidth="2.5" strokeDasharray="4 3" />
-                <text x="55" y={getY(userMarkedPrices.stop) - 4} fill="#D02020" fontSize="9" fontFamily="monospace" fontWeight="black">
+                <line x1="45" y1={getY(userMarkedPrices.stop)} x2={chartWidth - 20} y2={getY(userMarkedPrices.stop)} stroke="#FF6B7A" strokeWidth="2" strokeDasharray="4 3" />
+                <text x="55" y={getY(userMarkedPrices.stop) - 4} fill="#FF6B7A" fontSize="9" fontFamily="monospace" fontWeight="600">
                   STOP LOSS @ {userMarkedPrices.stop}
                 </text>
               </g>
@@ -541,8 +529,8 @@ export const ChartLab: React.FC = () => {
 
             {userMarkedPrices.target && (
               <g>
-                <line x1="45" y1={getY(userMarkedPrices.target)} x2={chartWidth - 20} y2={getY(userMarkedPrices.target)} stroke="#121212" strokeWidth="2.5" strokeDasharray="4 3" />
-                <text x="55" y={getY(userMarkedPrices.target) - 4} fill="#121212" fontSize="9" fontFamily="monospace" fontWeight="black">
+                <line x1="45" y1={getY(userMarkedPrices.target)} x2={chartWidth - 20} y2={getY(userMarkedPrices.target)} stroke="#55E6D1" strokeWidth="2" strokeDasharray="4 3" />
+                <text x="55" y={getY(userMarkedPrices.target) - 4} fill="#55E6D1" fontSize="9" fontFamily="monospace" fontWeight="600">
                   TARGET (DOL) @ {userMarkedPrices.target}
                 </text>
               </g>
@@ -552,12 +540,12 @@ export const ChartLab: React.FC = () => {
 
         {/* Hovered Candle Tooltip Information */}
         {hoveredCandle && (
-          <div className="p-4 bg-[#FFF9C4] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] text-xs font-mono grid grid-cols-2 sm:grid-cols-5 gap-2 text-[#121212]">
-            <div><span className="text-[#121212]/60 uppercase font-black">Candle:</span> <span className="font-bold">{hoveredCandle.index + 1}</span></div>
-            <div><span className="text-[#121212]/60 uppercase font-black">Open:</span> <span className="font-bold">{hoveredCandle.candle.open}</span></div>
-            <div><span className="text-[#121212]/60 uppercase font-black">High:</span> <span className="font-bold">{hoveredCandle.candle.high}</span></div>
-            <div><span className="text-[#121212]/60 uppercase font-black">Low:</span> <span className="font-bold">{hoveredCandle.candle.low}</span></div>
-            <div><span className="text-[#121212]/60 uppercase font-black">Close:</span> <span className="font-bold">{hoveredCandle.candle.close}</span></div>
+          <div className="p-3.5 bg-[#151923] border border-white/[0.08] rounded-xl text-xs font-mono grid grid-cols-2 sm:grid-cols-5 gap-2 text-[#9BA1AE]">
+            <div><span className="text-[#656B78] uppercase">Candle:</span> <span className="text-[#F5F7FA] font-medium">{hoveredCandle.index + 1}</span></div>
+            <div><span className="text-[#656B78] uppercase">Open:</span> <span className="text-[#F5F7FA] font-medium">{hoveredCandle.candle.open}</span></div>
+            <div><span className="text-[#656B78] uppercase">High:</span> <span className="text-[#F5F7FA] font-medium">{hoveredCandle.candle.high}</span></div>
+            <div><span className="text-[#656B78] uppercase">Low:</span> <span className="text-[#F5F7FA] font-medium">{hoveredCandle.candle.low}</span></div>
+            <div><span className="text-[#656B78] uppercase">Close:</span> <span className="text-[#F5F7FA] font-medium">{hoveredCandle.candle.close}</span></div>
           </div>
         )}
       </div>

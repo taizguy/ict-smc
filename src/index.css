@@ -1,18 +1,66 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --color-predikt-bg: #08090D;
+  --color-predikt-bg-secondary: #0C0E13;
+  --color-predikt-surface: #11141B;
+  --color-predikt-surface-raised: #151923;
+  --color-predikt-text: #F5F7FA;
+  --color-predikt-text-secondary: #9BA1AE;
+  --color-predikt-text-muted: #656B78;
+  --color-predikt-blue: #5865FF;
+  --color-predikt-blue-bright: #6F7BFF;
+  --color-predikt-cyan: #55E6D1;
+  --color-predikt-violet: #8A72FF;
+  --color-predikt-green: #52D273;
+  --color-predikt-red: #FF6B7A;
+  --color-predikt-amber: #F0B35B;
+}
+
 @layer base {
   :root {
-    --bg-canvas: #F0F0F0;
-    --foreground: #121212;
-    --primary-red: #D02020;
-    --primary-blue: #1040C0;
-    --primary-yellow: #F0C020;
-    --border: #121212;
-    --muted: #E0E0E0;
+    --bg-primary: #08090D;
+    --bg-secondary: #0C0E13;
+    --surface: #11141B;
+    --surface-raised: #151923;
+    --text-primary: #F5F7FA;
+    --text-secondary: #9BA1AE;
+    --text-muted: #656B78;
+    --border-subtle: rgba(255, 255, 255, 0.07);
+    --border-light: rgba(255, 255, 255, 0.10);
+    --border-hover: rgba(255, 255, 255, 0.16);
+    --accent-blue: #5865FF;
+    --accent-blue-bright: #6F7BFF;
+    --accent-cyan: #55E6D1;
+    --accent-violet: #8A72FF;
+    --accent-soft-violet: #B49CFF;
+    --accent-green: #52D273;
+    --accent-red: #FF6B7A;
+    --accent-amber: #F0B35B;
+
+    /* Semantic ICT Colors */
+    --ict-liquidity: #55E6D1;
+    --ict-bullish: #52D273;
+    --ict-bearish: #FF6B7A;
+    --ict-fvg: #6675FF;
+    --ict-ifvg: #9B7CFF;
+    --ict-ob: #F0B35B;
+    --ict-breaker: #E08BFF;
+    --ict-premium: #FFB45C;
+    --ict-discount: #55D6C2;
+    --ict-eq: #A7ACB8;
+    --ict-mss: #FFFFFF;
+
+    color-scheme: dark;
   }
 
   html {
     scroll-behavior: smooth;
+    font-family: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #08090D;
+    color: #F5F7FA;
   }
 
   html.lenis, html.lenis body {
@@ -32,205 +80,268 @@
   }
 
   body {
-    font-family: 'Outfit', sans-serif;
-    background-color: #F0F0F0;
-    color: #121212;
+    font-family: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #08090D;
+    color: #F5F7FA;
     overflow-x: hidden;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.012em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3, h4, h5, h6, .font-headline {
-    font-family: 'Outfit', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: -0.04em;
-    font-weight: 900;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    letter-spacing: -0.035em;
+    font-weight: 600;
   }
 
-  code, pre, .font-mono {
-    font-family: 'JetBrains Mono', monospace;
+  code, pre, .font-mono, .font-mono * {
+    font-family: 'IBM Plex Mono', monospace !important;
   }
 }
 
-/* Bauhaus Geometric Triangle Clip Path */
-.clip-triangle {
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+/* ========================================================
+   PREDIKT DESIGN SYSTEM: TYPOGRAPHY, SURFACES & BUTTONS
+   ======================================================== */
+
+.predikt-hero-title {
+  font-family: 'Geist', 'Inter', sans-serif;
+  font-size: clamp(4rem, 9.5vw, 8.5rem);
+  font-weight: 650;
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+  color: #F5F7FA;
 }
 
-.clip-triangle-right {
-  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+.predikt-section-title {
+  font-family: 'Geist', 'Inter', sans-serif;
+  font-size: clamp(2.4rem, 5.2vw, 4.2rem);
+  font-weight: 600;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  color: #F5F7FA;
 }
 
-.clip-triangle-down {
-  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+.predikt-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9BA1AE;
 }
 
-/* Bauhaus Hard Offset Shadows */
-.bauhaus-shadow-sm {
-  box-shadow: 3px 3px 0px 0px #121212;
+.predikt-card {
+  background-color: #11141B;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  transition: border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1), transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.bauhaus-shadow {
-  box-shadow: 4px 4px 0px 0px #121212;
-}
-
-.bauhaus-shadow-md {
-  box-shadow: 6px 6px 0px 0px #121212;
-}
-
-.bauhaus-shadow-lg {
-  box-shadow: 8px 8px 0px 0px #121212;
-}
-
-.bauhaus-shadow-white {
-  box-shadow: 4px 4px 0px 0px #FFFFFF;
-}
-
-.bauhaus-shadow-red {
-  box-shadow: 4px 4px 0px 0px #D02020;
-}
-
-.bauhaus-shadow-blue {
-  box-shadow: 4px 4px 0px 0px #1040C0;
-}
-
-.bauhaus-shadow-yellow {
-  box-shadow: 4px 4px 0px 0px #F0C020;
-}
-
-/* Mechanical Button Press */
-.bauhaus-btn-press {
-  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
-}
-
-.bauhaus-btn-press:active {
-  transform: translate(2px, 2px);
-  box-shadow: 0px 0px 0px 0px #121212 !important;
-}
-
-/* Bauhaus Standard Card */
-.bauhaus-card {
-  background-color: #FFFFFF;
-  border: 4px solid #121212;
-  box-shadow: 8px 8px 0px 0px #121212;
-  border-radius: 0px;
-  transition: transform 0.15s ease-out;
-}
-
-.bauhaus-card:hover {
+.predikt-card:hover {
+  border-color: rgba(255, 255, 255, 0.14);
   transform: translateY(-2px);
 }
 
-.bauhaus-card-sm {
+.predikt-card-raised {
+  background-color: #151923;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+}
+
+.btn-predikt-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  background-color: #F5F7FA;
+  color: #08090D;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+}
+
+.btn-predikt-primary:hover {
   background-color: #FFFFFF;
-  border: 2px solid #121212;
-  box-shadow: 4px 4px 0px 0px #121212;
-  border-radius: 0px;
-  transition: transform 0.15s ease-out;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.12);
 }
 
-.bauhaus-card-sm:hover {
-  transform: translateY(-2px);
-}
-
-/* Background Patterns */
-.bg-bauhaus-dots {
-  background-image: radial-gradient(#121212 1.5px, transparent 1.5px);
-  background-size: 20px 20px;
-}
-
-.bg-bauhaus-dots-white {
-  background-image: radial-gradient(#FFFFFF 1.5px, transparent 1.5px);
-  background-size: 20px 20px;
-}
-
-.bg-bauhaus-grid {
-  background-size: 32px 32px;
-  background-image: 
-    linear-gradient(to right, rgba(18, 18, 18, 0.12) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(18, 18, 18, 0.12) 1px, transparent 1px);
-}
-
-/* Bauhaus Primary Button Styles */
-.btn-bauhaus-red {
-  background-color: #D02020;
+.btn-predikt-blue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  background-color: #5865FF;
   color: #FFFFFF;
-  border: 2px solid #121212;
-  box-shadow: 4px 4px 0px 0px #121212;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
 }
 
-.btn-bauhaus-red:active {
-  transform: translate(2px, 2px);
-  box-shadow: 0px 0px 0px 0px #121212;
+.btn-predikt-blue:hover {
+  background-color: #6F7BFF;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(88, 101, 255, 0.28);
 }
 
-.btn-bauhaus-blue {
-  background-color: #1040C0;
-  color: #FFFFFF;
-  border: 2px solid #121212;
-  box-shadow: 4px 4px 0px 0px #121212;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+.btn-predikt-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  color: #F5F7FA;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
 }
 
-.btn-bauhaus-blue:active {
-  transform: translate(2px, 2px);
-  box-shadow: 0px 0px 0px 0px #121212;
+.btn-predikt-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
 }
 
-.btn-bauhaus-yellow {
-  background-color: #F0C020;
-  color: #121212;
-  border: 2px solid #121212;
-  box-shadow: 4px 4px 0px 0px #121212;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+.predikt-input {
+  background-color: #0C0E13;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #F5F7FA;
+  border-radius: 10px;
+  transition: border-color 0.2s ease;
 }
 
-.btn-bauhaus-yellow:active {
-  transform: translate(2px, 2px);
-  box-shadow: 0px 0px 0px 0px #121212;
+.predikt-input:focus {
+  outline: none;
+  border-color: rgba(88, 101, 255, 0.6);
+  box-shadow: 0 0 0 1px rgba(88, 101, 255, 0.2);
 }
 
-.btn-bauhaus-outline {
-  background-color: #FFFFFF;
-  color: #121212;
-  border: 2px solid #121212;
-  box-shadow: 4px 4px 0px 0px #121212;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+/* Atmospheric Glow Background */
+.predikt-atmospheric-glow {
+  pointer-events: none;
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(120px);
+  opacity: 0.14;
 }
 
-.btn-bauhaus-outline:active {
-  transform: translate(2px, 2px);
-  box-shadow: 0px 0px 0px 0px #121212;
+/* Subtle Film Grain Overlay */
+.predikt-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* Precision Stark Black Scrollbars */
+/* Subtle Dark Minimal Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F0F0F0;
-  border-left: 2px solid #121212;
+  background: #08090D;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #121212;
-  border-radius: 0px;
+  background: #1C2230;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #D02020;
+  background: #2D374D;
+}
+
+/* ========================================================
+   LEGACY / BAUHAUS ALIAS REMAPPINGS
+   (Ensures 100% dark Predikt aesthetic everywhere)
+   ======================================================== */
+.bauhaus-card,
+.bauhaus-card-sm {
+  background-color: #11141B !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  box-shadow: none !important;
+  border-radius: 14px !important;
+  color: #F5F7FA !important;
+  transition: transform 0.2s ease, border-color 0.2s ease !important;
+}
+
+.bauhaus-card:hover,
+.bauhaus-card-sm:hover {
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  transform: translateY(-2px) !important;
+}
+
+.btn-bauhaus-red {
+  background-color: #5865FF !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: none !important;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+.btn-bauhaus-blue {
+  background-color: #5865FF !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: none !important;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+}
+
+.btn-bauhaus-yellow {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: #F5F7FA !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: none !important;
+  border-radius: 10px !important;
+  font-weight: 500 !important;
+}
+
+.btn-bauhaus-outline {
+  background-color: transparent !important;
+  color: #F5F7FA !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: none !important;
+  border-radius: 10px !important;
+}
+
+.bauhaus-shadow-sm,
+.bauhaus-shadow,
+.bauhaus-shadow-md,
+.bauhaus-shadow-lg,
+.bauhaus-shadow-white,
+.bauhaus-shadow-red,
+.bauhaus-shadow-blue,
+.bauhaus-shadow-yellow {
+  box-shadow: none !important;
+}
+
+.bg-bauhaus-dots,
+.bg-bauhaus-dots-white,
+.bg-bauhaus-grid {
+  background-image: none !important;
+}
+
+.clip-triangle,
+.clip-triangle-right,
+.clip-triangle-down {
+  clip-path: none !important;
 }

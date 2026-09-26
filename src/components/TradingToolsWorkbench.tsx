@@ -9,8 +9,8 @@ import {
   GitCompare, 
   Award,
   Wrench,
-  Sparkles,
-  Flame
+  Flame,
+  Compass
 } from 'lucide-react';
 import { ChartLab } from './ChartLab';
 import { TradeSimulator } from './TradeSimulator';
@@ -21,9 +21,10 @@ import { ConceptExplorer } from './ConceptExplorer';
 import { CompareView } from './CompareView';
 import { MasteryDashboard } from './MasteryDashboard';
 import { MasterclassWorkbench } from './MasterclassWorkbench';
+import { InstitutionalToolsSuite } from './InstitutionalToolsSuite';
 import { ScrollReveal } from './ScrollReveal';
 
-export type TradingToolId = 'chartlab' | 'simulator' | 'backtest' | 'journal' | 'graph' | 'concepts' | 'compare' | 'dashboard' | 'masterclass';
+export type TradingToolId = 'chartlab' | 'simulator' | 'backtest' | 'journal' | 'graph' | 'concepts' | 'compare' | 'dashboard' | 'masterclass' | 'ict_suite';
 
 export interface TradingToolsWorkbenchProps {
   initialTool?: TradingToolId;
@@ -42,113 +43,112 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
       name: 'Masterclass Hub',
       badge: '34 Masterclasses',
       desc: '34 Masterclasses, 15 PD Arrays in hierarchy, 5 Entry Models & 5 Opening Ranges',
-      icon: Flame,
-      accent: 'bg-[#D02020]'
+      icon: Flame
     },
     {
       id: 'chartlab',
       name: 'Chart Lab',
       badge: 'Trading Floor',
       desc: 'Interactive 8-stage candle sequence marking & price delivery',
-      icon: BarChart2,
-      accent: 'bg-[#D02020]'
+      icon: BarChart2
     },
     {
       id: 'simulator',
       name: 'Trade Simulator',
       badge: 'Execution Room',
       desc: 'Simulated market entry, limit orders, and fill mechanics',
-      icon: PlayCircle,
-      accent: 'bg-[#1040C0]'
+      icon: PlayCircle
     },
     {
       id: 'backtest',
       name: 'Backtest Lab',
       badge: 'Research Lab',
       desc: 'Statistical expectancy, win-rates, and drawdown analysis',
-      icon: Cpu,
-      accent: 'bg-[#F0C020]'
+      icon: Cpu
     },
     {
       id: 'journal',
       name: 'Trading Journal',
       badge: "Trader's Log",
       desc: '7-point institutional trade audit and rule validation',
-      icon: BookMarked,
-      accent: 'bg-[#121212]'
+      icon: BookMarked
     },
     {
       id: 'graph',
       name: 'Knowledge Graph',
       badge: 'Concept Matrix',
       desc: '10-step institutional pipeline and connected concept nodes',
-      icon: GitFork,
-      accent: 'bg-[#1040C0]'
+      icon: GitFork
     },
     {
       id: 'concepts',
       name: 'Glossary',
       badge: 'Encyclopedia',
       desc: 'Searchable glossary of ICT mechanics, definitions, and diagrams',
-      icon: Layers,
-      accent: 'bg-[#D02020]'
+      icon: Layers
     },
     {
       id: 'compare',
       name: 'Compare Matrix',
       badge: 'Side-by-Side',
       desc: 'Side-by-side contrast of overlapping or misunderstood concepts',
-      icon: GitCompare,
-      accent: 'bg-[#F0C020]'
+      icon: GitCompare
     },
     {
       id: 'dashboard',
       name: 'Mastery Profile',
       badge: 'Diagnostics',
       desc: 'Assessments, diagnostic quizzes, and operator credentials',
-      icon: Award,
-      accent: 'bg-[#D02020]'
+      icon: Award
+    },
+    {
+      id: 'ict_suite',
+      name: 'ICT Delivery Suite',
+      badge: 'Tools & Macros',
+      desc: 'Official OTE calculator, Asian Judas planner, 8 macro windows clock & 5-phase roadmap',
+      icon: Compass
     }
   ] as const;
 
   const currentToolMeta = tools.find(t => t.id === activeTool) || tools[0];
 
   return (
-    <div className="space-y-8 pb-20">
+    <div className="space-y-8 sm:space-y-12 pb-20 text-[#F5F7FA]">
       
-      {/* Bauhaus Workbench Control Panel */}
-      <ScrollReveal y={25}>
-        <section className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] rounded-none p-6 sm:p-8 space-y-6">
+      {/* Workbench Control Panel */}
+      <ScrollReveal y={20}>
+        <section className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-8 space-y-6">
           
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-4 border-[#121212] pb-6">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-[#1040C0] text-white border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] flex items-center justify-center shrink-0">
-                <Wrench className="w-6 h-6 stroke-[2.5]" />
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/[0.07] pb-6">
+            <div className="flex items-center gap-4">
+              <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0 text-[#5865FF]">
+                <Wrench className="w-5 h-5" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-mono font-black uppercase tracking-widest px-2 py-0.5 bg-[#F0C020] text-[#121212] border border-[#121212]">
-                    BAUHAUS WORKBENCH // 03
+                  <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#55E6D1]">
+                    WORKBENCH // 03
                   </span>
-                  <span className="text-xs font-mono font-bold text-[#121212]/60 uppercase">
+                  <span className="text-white/20">·</span>
+                  <span className="text-xs font-mono text-[#9BA1AE] uppercase">
                     ACTIVE: {currentToolMeta.name}
                   </span>
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#121212] mt-0.5">
-                  TRADING TOOLS &amp; LABORATORY
+                <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F5F7FA] mt-0.5">
+                  Trading Tools &amp; Laboratory
                 </h2>
               </div>
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="px-3 py-1.5 bg-[#121212] text-white text-xs font-mono font-black uppercase tracking-wider border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212]">
-                {tools.length} DEDICATED TOOLS
+              <span className="px-3 py-1 bg-white/[0.04] text-[#9BA1AE] text-xs font-mono rounded-lg border border-white/[0.08]">
+                {tools.length} DEDICATED MODULES
               </span>
             </div>
           </div>
 
-          {/* Bauhaus Tool Selector Matrix */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+          {/* Tool Selector Matrix */}
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
             {tools.map((tool, idx) => {
               const Icon = tool.icon;
               const isActive = activeTool === tool.id;
@@ -157,30 +157,28 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
                 <button
                   key={tool.id}
                   onClick={() => setActiveTool(tool.id)}
-                  className={`p-3 border-2 border-[#121212] text-left transition-all cursor-pointer flex flex-col justify-between rounded-none active:translate-x-[2px] active:translate-y-[2px] active:shadow-none ${
+                  className={`p-3.5 rounded-xl border text-left transition-all cursor-pointer flex flex-col justify-between ${
                     isActive
-                      ? 'bg-[#1040C0] text-white shadow-[4px_4px_0px_0px_#121212] -translate-y-0.5'
-                      : 'bg-white hover:bg-[#F0C020] text-[#121212] shadow-[2px_2px_0px_0px_#121212]'
+                      ? 'bg-white/[0.10] border-white/20 text-[#F5F7FA] shadow-sm'
+                      : 'bg-white/[0.02] border-white/[0.06] hover:bg-white/[0.05] text-[#9BA1AE] hover:text-[#F5F7FA]'
                   }`}
                 >
                   <div className="flex items-center justify-between w-full mb-3">
-                    <div className={`w-8 h-8 border-2 border-[#121212] flex items-center justify-center ${
-                      isActive ? 'bg-white text-[#1040C0]' : 'bg-[#F0F0F0] text-[#121212]'
+                    <div className={`w-7 h-7 rounded-lg flex items-center justify-center ${
+                      isActive ? 'bg-white/[0.12] text-[#F5F7FA]' : 'bg-white/[0.04] text-[#9BA1AE]'
                     }`}>
-                      <Icon className="w-4 h-4 stroke-[2.5]" />
+                      <Icon className="w-3.5 h-3.5" />
                     </div>
-                    <span className={`text-[10px] font-mono font-bold ${isActive ? 'text-white' : 'text-[#121212]/50'}`}>
+                    <span className="text-[10px] font-mono text-[#656B78]">
                       0{idx + 1}
                     </span>
                   </div>
 
                   <div>
-                    <div className="text-xs font-black uppercase tracking-tight truncate leading-snug">
+                    <div className="text-xs font-medium tracking-tight truncate">
                       {tool.name}
                     </div>
-                    <div className={`text-[10px] font-mono uppercase tracking-wider truncate mt-0.5 ${
-                      isActive ? 'text-white/80' : 'text-[#121212]/60'
-                    }`}>
+                    <div className="text-[10px] font-mono uppercase tracking-wider text-[#656B78] truncate mt-0.5">
                       {tool.badge}
                     </div>
                   </div>
@@ -191,9 +189,9 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
         </section>
       </ScrollReveal>
 
-      {/* Render Active Tool Content inside Bauhaus Boundary */}
-      <ScrollReveal y={30}>
-        <div className="bauhaus-workbench-body">
+      {/* Render Active Tool Content */}
+      <ScrollReveal y={25}>
+        <div className="predikt-workbench-body">
           {activeTool === 'masterclass' && <MasterclassWorkbench />}
           {activeTool === 'chartlab' && <ChartLab />}
           {activeTool === 'simulator' && <TradeSimulator />}
@@ -212,6 +210,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
           )}
           {activeTool === 'compare' && <CompareView />}
           {activeTool === 'dashboard' && <MasteryDashboard onSelectTab={(tab) => setActiveTool(tab as any)} />}
+          {activeTool === 'ict_suite' && <InstitutionalToolsSuite />}
         </div>
       </ScrollReveal>
 

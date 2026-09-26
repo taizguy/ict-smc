@@ -1,4 +1,5 @@
 import { ConceptComparison } from '../types';
+import { theinnercircletradersNewComparisons } from './theinnercircletradersComparisons';
 
 export const conceptComparisons: ConceptComparison[] = [
   {
@@ -294,5 +295,6 @@ export const conceptComparisons: ConceptComparison[] = [
     commonConfusion: 'Deleting an NDOG because overnight price traded through it. The CME algorithm permanently logs the 17:00-18:00 coordinates as a primary intraday reference.',
     decisionRule: 'Frame your macro session bias and Judas swing reaction using NDOG 50% CE; use intraday FVGs for precise limit order entry timing.',
     diagramSnippet: 'NDOG: 17:00 Close ──[1 Hour Settlement Gap]──> 18:00 Open | FVG: Candle 1 ──[Candle 2 Displacement]──> Candle 3'
-  }
+  },
+  ...theinnercircletradersNewComparisons
 ];

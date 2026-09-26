@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { 
-  Cpu, 
-  BarChart3, 
-  TrendingUp, 
-  ShieldCheck, 
   RefreshCw, 
   AlertTriangle, 
   Activity,
-  CheckCircle2
+  CheckCircle2,
+  TrendingUp,
+  Cpu
 } from 'lucide-react';
 import { BauhausNavScroller } from './BauhausNavScroller';
 
@@ -100,19 +98,19 @@ export const BacktestLab: React.FC = () => {
       ]
     },
     'breaker_reversal': {
-      title: 'ICT Breaker Block Structural Reversals',
-      baseWinRate: minQualityScore >= 6 ? 70 : minQualityScore >= 5 ? 62 : 51,
-      avgRR: 3.2,
-      tradesPerMonth: minQualityScore >= 6 ? 10 : 18,
-      maxDrawdown: minQualityScore >= 6 ? 5.8 : 9.8,
-      profitFactor: minQualityScore >= 6 ? 2.55 : 1.90,
-      description: 'High-magnitude structural turns where the last up-close candle prior to a liquidity raid fails and becomes violent mitigation resistance.',
+      title: 'ICT Breaker Block Reversal Protocol',
+      baseWinRate: minQualityScore >= 6 ? 70 : minQualityScore >= 5 ? 63 : 53,
+      avgRR: 2.6,
+      tradesPerMonth: minQualityScore >= 6 ? 12 : 20,
+      maxDrawdown: minQualityScore >= 6 ? 4.6 : 8.5,
+      profitFactor: minQualityScore >= 6 ? 2.55 : 2.02,
+      description: 'Failed order block inversion that trapped retail breakout traders before aggressively shifting order flow.',
       ruleSet: [
-        '1. Higher timeframe key level pierced with a clean liquidity sweep',
-        '2. Immediate aggressive displacement breaking market structure',
-        '3. Breaker block established (last up/down candle before the high/low sweep)',
-        '4. Limit order placed at breaker block retest',
-        '5. Target opposing external liquidity pool with 1:3 RR'
+        '1. High-probability liquidity raid creates a higher high or lower low',
+        '2. Aggressive impulse breaks the previous impulse swing point',
+        '3. The down-close/up-close candle that led to the high is inverted into a Breaker',
+        '4. Retest of breaker provides highest confidence entry',
+        '5. Draw on liquidity anchored at the originating swing origin'
       ]
     }
   }[selectedStrategy];
@@ -158,18 +156,18 @@ export const BacktestLab: React.FC = () => {
   const getSvgY = (val: number) => chartHeight - ((val - chartMin) / (chartMax - chartMin || 1)) * (chartHeight - 40) - 20;
 
   return (
-    <div className="space-y-6">
-      {/* Top Banner - Bauhaus Constructivist Card */}
-      <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 sm:p-7 space-y-4">
+    <div className="space-y-6 text-[#F5F7FA]">
+      {/* Top Banner */}
+      <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="w-4 h-4 bg-[#F0C020] border border-black inline-block" />
-              <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#121212]">
+              <span className="w-2 h-2 rounded-full bg-[#5865FF]" />
+              <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F5F7FA]">
                 ICT Backtest &amp; Expectancy Engine
               </h2>
             </div>
-            <p className="text-[#121212]/80 text-xs sm:text-sm font-medium">
+            <p className="text-[#9BA1AE] text-xs sm:text-sm">
               Mathematical expectancy simulation, Monte Carlo randomized variance bounds, and institutional execution parameters.
             </p>
           </div>
@@ -177,21 +175,21 @@ export const BacktestLab: React.FC = () => {
           <button
             type="button"
             onClick={() => setSimSeed((prev) => prev + 1)}
-            className="px-5 py-2.5 bg-white hover:bg-[#F0C020] text-[#121212] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] text-xs font-mono font-black uppercase flex items-center gap-2 self-start sm:self-auto transition-all cursor-pointer active:translate-x-[1px] active:translate-y-[1px] active:shadow-none"
+            className="px-4 py-2 bg-white/[0.04] hover:bg-white/[0.08] text-[#F5F7FA] border border-white/[0.08] rounded-xl text-xs font-mono uppercase tracking-wider flex items-center gap-2 self-start sm:self-auto transition-all cursor-pointer"
           >
-            <RefreshCw className="w-3.5 h-3.5 stroke-[2.5]" />
+            <RefreshCw className="w-3.5 h-3.5 text-[#55E6D1]" />
             Reseed Monte Carlo Run
           </button>
         </div>
 
-        {/* Strategy Selector with BauhausNavScroller with < and > navigation */}
-        <div className="pt-4 border-t-4 border-[#121212]">
-          <div className="text-[10px] font-mono font-black uppercase tracking-widest text-[#121212]/60 mb-2">
-            SELECT INSTITUTIONAL MODEL (SCROLL WITH ARROWS):
+        {/* Strategy Selector with BauhausNavScroller */}
+        <div className="pt-4 border-t border-white/[0.07]">
+          <div className="text-[10px] font-mono uppercase tracking-wider text-[#656B78] mb-2">
+            SELECT INSTITUTIONAL MODEL:
           </div>
           <BauhausNavScroller>
             {[
-              { id: '2022_model', label: 'ICT Charter Model 13 (2022 Model)' },
+              { id: '2022_model', label: 'ICT 2022 Mentorship Model' },
               { id: 'charter_model_1', label: 'Charter Model 1 (Intraday Scalp)' },
               { id: 'charter_model_8', label: 'Charter Model 8 (25 Pips/Wk)' },
               { id: 'charter_model_9', label: 'Charter Model 9 (OSOK)' },
@@ -202,10 +200,10 @@ export const BacktestLab: React.FC = () => {
                 key={strat.id}
                 type="button"
                 onClick={() => setSelectedStrategy(strat.id as any)}
-                className={`px-4 py-2 text-xs font-mono font-black uppercase whitespace-nowrap transition-all border-2 border-[#121212] cursor-pointer shrink-0 active:translate-x-[1px] active:translate-y-[1px] active:shadow-none ${
+                className={`px-3.5 py-1.5 text-xs font-mono uppercase whitespace-nowrap transition-all rounded-lg border cursor-pointer shrink-0 ${
                   selectedStrategy === strat.id
-                    ? 'bg-[#1040C0] text-white shadow-[3px_3px_0px_0px_#121212]'
-                    : 'bg-white text-[#121212] hover:bg-[#F0C020]'
+                    ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20'
+                    : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06] hover:bg-white/[0.05]'
                 }`}
               >
                 {strat.label}
@@ -218,33 +216,40 @@ export const BacktestLab: React.FC = () => {
       {/* Main Grid: Controls + Equity Chart */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Controls Column */}
-        <div className="lg:col-span-4 bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 sm:p-7 space-y-5 font-mono text-xs text-[#121212]">
-          <h3 className="text-sm font-black text-[#121212] uppercase tracking-wider pb-3 border-b-4 border-[#121212]">
-            Model Parameters
+        <div className="lg:col-span-4 bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-5 font-mono text-xs text-[#F5F7FA]">
+          <h3 className="text-xs uppercase tracking-wider text-[#F5F7FA] pb-3 border-b border-white/[0.07] flex items-center justify-between">
+            <span>Model Parameters</span>
+            <span className="text-[10px] text-[#656B78]">CONFIG</span>
           </h3>
 
           <div className="space-y-4">
             <div>
-              <label className="text-[#121212] block mb-1.5 font-black uppercase text-[11px]">
-                Setup Confluence Score Filter: <span className="text-[#1040C0] font-black">{minQualityScore} / 7</span>
-              </label>
+              <div className="flex items-center justify-between mb-1.5">
+                <label className="text-[#9BA1AE] uppercase text-[11px]">
+                  Quality Score Filter:
+                </label>
+                <span className="text-[#5865FF] font-semibold">{minQualityScore} / 7</span>
+              </div>
               <input
                 type="range"
                 min="4"
                 max="7"
                 value={minQualityScore}
                 onChange={(e) => setMinQualityScore(parseInt(e.target.value, 10))}
-                className="w-full accent-[#1040C0] cursor-pointer"
+                className="w-full accent-[#5865FF] cursor-pointer"
               />
-              <span className="text-[10px] text-[#121212]/70 block mt-1 font-bold">
+              <span className="text-[10px] text-[#656B78] block mt-1">
                 {minQualityScore >= 6 ? '★ Elite A+ Confluence (Lower frequency, tighter drawdowns)' : 'Standard Setup Filter'}
               </span>
             </div>
 
             <div>
-              <label className="text-[#121212] block mb-1.5 font-black uppercase text-[11px]">
-                Risk Per Trade: <span className="text-[#D02020] font-black">{riskPerTrade}%</span>
-              </label>
+              <div className="flex items-center justify-between mb-1.5">
+                <label className="text-[#9BA1AE] uppercase text-[11px]">
+                  Risk Per Trade:
+                </label>
+                <span className="text-[#FF6B7A] font-semibold">{riskPerTrade}%</span>
+              </div>
               <input
                 type="range"
                 min="0.5"
@@ -252,23 +257,24 @@ export const BacktestLab: React.FC = () => {
                 step="0.5"
                 value={riskPerTrade}
                 onChange={(e) => setRiskPerTrade(parseFloat(e.target.value))}
-                className="w-full accent-[#D02020] cursor-pointer"
+                className="w-full accent-[#FF6B7A] cursor-pointer"
               />
             </div>
 
-            <div className="bg-[#F0F0F0] p-3 border-2 border-[#121212]">
-              <label className="text-[#121212] block font-black uppercase text-[10px]">
-                Starting Account Equity: <span className="text-[#121212] font-black text-sm block mt-0.5">$10,000.00</span>
-              </label>
+            <div className="bg-[#151923] p-3 rounded-xl border border-white/[0.06]">
+              <span className="text-[#656B78] block uppercase text-[10px]">
+                Starting Account Equity:
+              </span>
+              <span className="text-[#F5F7FA] font-semibold text-sm block mt-0.5">$10,000.00</span>
             </div>
           </div>
 
-          <div className="pt-4 border-t-4 border-[#121212] space-y-2.5">
-            <h4 className="font-black text-[#D02020] uppercase text-xs">Execution Checklist:</h4>
-            <ul className="space-y-2 text-xs text-[#121212] font-medium">
+          <div className="pt-4 border-t border-white/[0.07] space-y-2.5">
+            <h4 className="text-[11px] uppercase tracking-wider text-[#55E6D1]">Execution Rules:</h4>
+            <ul className="space-y-2 text-xs text-[#9BA1AE] font-sans">
               {strategyData.ruleSet.map((rule, idx) => (
-                <li key={idx} className="flex items-start gap-2 text-[#121212]">
-                  <CheckCircle2 className="w-4 h-4 text-[#1040C0] shrink-0 mt-0.5 stroke-[2.5]" />
+                <li key={idx} className="flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#5865FF] shrink-0 mt-0.5" />
                   <span>{rule}</span>
                 </li>
               ))}
@@ -277,35 +283,35 @@ export const BacktestLab: React.FC = () => {
         </div>
 
         {/* Statistical Summary & Curve */}
-        <div className="lg:col-span-8 bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 sm:p-7 space-y-6 text-[#121212]">
+        <div className="lg:col-span-8 bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-6 text-[#F5F7FA]">
           {/* Key Metric Highlights */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono text-xs">
-            <div className="bg-[#F0F0F0] p-4 border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212]">
-              <span className="text-[#121212]/60 block text-[10px] uppercase font-black tracking-wider">Model Win Rate:</span>
-              <span className="text-[#1040C0] font-black text-xl">{strategyData.baseWinRate}%</span>
+            <div className="bg-[#151923] p-4 rounded-xl border border-white/[0.06]">
+              <span className="text-[#656B78] block text-[10px] uppercase tracking-wider">Model Win Rate:</span>
+              <span className="text-[#55E6D1] font-semibold text-xl">{strategyData.baseWinRate}%</span>
             </div>
-            <div className="bg-[#F0F0F0] p-4 border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212]">
-              <span className="text-[#121212]/60 block text-[10px] uppercase font-black tracking-wider">Average R:R:</span>
-              <span className="text-[#121212] font-black text-xl">1 : {strategyData.avgRR}</span>
+            <div className="bg-[#151923] p-4 rounded-xl border border-white/[0.06]">
+              <span className="text-[#656B78] block text-[10px] uppercase tracking-wider">Average R:R:</span>
+              <span className="text-[#F5F7FA] font-semibold text-xl">1 : {strategyData.avgRR}</span>
             </div>
-            <div className="bg-[#F0F0F0] p-4 border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212]">
-              <span className="text-[#121212]/60 block text-[10px] uppercase font-black tracking-wider">Profit Factor:</span>
-              <span className="text-[#121212] font-black text-xl">{strategyData.profitFactor}</span>
+            <div className="bg-[#151923] p-4 rounded-xl border border-white/[0.06]">
+              <span className="text-[#656B78] block text-[10px] uppercase tracking-wider">Profit Factor:</span>
+              <span className="text-[#5865FF] font-semibold text-xl">{strategyData.profitFactor}</span>
             </div>
-            <div className="bg-[#F0F0F0] p-4 border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212]">
-              <span className="text-[#121212]/60 block text-[10px] uppercase font-black tracking-wider">Max Drawdown:</span>
-              <span className="text-[#D02020] font-black text-xl">{strategyData.maxDrawdown}%</span>
+            <div className="bg-[#151923] p-4 rounded-xl border border-white/[0.06]">
+              <span className="text-[#656B78] block text-[10px] uppercase tracking-wider">Max Drawdown:</span>
+              <span className="text-[#FF6B7A] font-semibold text-xl">{strategyData.maxDrawdown}%</span>
             </div>
           </div>
 
           {/* Svg Equity Curve with Multi-Path Monte Carlo */}
-          <div className="bg-[#FAF9F5] p-5 sm:p-6 border-4 border-[#121212] shadow-[4px_4px_0px_0px_#121212] space-y-3">
+          <div className="bg-[#0C0E13] p-5 sm:p-6 rounded-xl border border-white/[0.06] space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-mono">
-              <span className="text-[#121212] flex items-center gap-1.5 font-black uppercase">
-                <Activity className="w-4 h-4 text-[#1040C0] stroke-[2.5]" />
-                Monte Carlo Simulated Equity (5 Randomized Variance Paths, 40 Trades):
+              <span className="text-[#F5F7FA] flex items-center gap-1.5 uppercase">
+                <Activity className="w-4 h-4 text-[#5865FF]" />
+                Monte Carlo Simulated Equity (5 Variance Paths, 40 Trades):
               </span>
-              <span className="text-[#1040C0] font-black text-sm bg-white px-2 py-1 border border-[#121212]">
+              <span className="text-[#55E6D1] font-semibold text-sm bg-white/[0.04] px-2.5 py-1 rounded-lg border border-white/[0.08]">
                 ${endingEquity.toLocaleString()} (+{totalReturn}%)
               </span>
             </div>
@@ -322,7 +328,7 @@ export const BacktestLab: React.FC = () => {
                       y1={yVal}
                       x2={chartWidth - 30}
                       y2={yVal}
-                      stroke="#D4D4D4"
+                      stroke="rgba(255, 255, 255, 0.06)"
                       strokeWidth="1"
                       strokeDasharray="4 4"
                     />
@@ -338,7 +344,7 @@ export const BacktestLab: React.FC = () => {
                     <polyline
                       key={pIdx}
                       fill="none"
-                      stroke="#A1A1AA"
+                      stroke="rgba(255, 255, 255, 0.15)"
                       strokeWidth="1.5"
                       strokeDasharray="3 3"
                       points={pts}
@@ -349,8 +355,8 @@ export const BacktestLab: React.FC = () => {
                 {/* Primary Median Line */}
                 <polyline
                   fill="none"
-                  stroke="#1040C0"
-                  strokeWidth="3"
+                  stroke="#5865FF"
+                  strokeWidth="2.5"
                   points={medianPath
                     .map((val, idx) => `${getSvgX(idx, medianPath.length)},${getSvgY(val)}`)
                     .join(' ')}
@@ -362,9 +368,9 @@ export const BacktestLab: React.FC = () => {
                     key={idx}
                     cx={getSvgX(idx, medianPath.length)}
                     cy={getSvgY(val)}
-                    r="3.5"
-                    fill="#F0C020"
-                    stroke="#121212"
+                    r="3"
+                    fill="#55E6D1"
+                    stroke="#11141B"
                     strokeWidth="1.5"
                   />
                 ))}
@@ -373,13 +379,13 @@ export const BacktestLab: React.FC = () => {
           </div>
 
           {/* Epistemological & Risk Disclaimer */}
-          <div className="p-5 bg-[#FFF9C4] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] space-y-2 text-xs font-sans">
-            <div className="flex items-center gap-2 text-[#121212] font-mono font-black uppercase">
-              <AlertTriangle className="w-4 h-4 text-[#D02020] stroke-[2.5]" />
-              <span>Simulation Methodology &amp; Epistemological Disclaimer</span>
+          <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.08] space-y-2 text-xs font-sans">
+            <div className="flex items-center gap-2 text-[#F0B35B] font-mono uppercase text-[11px]">
+              <AlertTriangle className="w-3.5 h-3.5" />
+              <span>Simulation Methodology &amp; Mathematical Notice</span>
             </div>
-            <p className="text-[#121212]/90 leading-relaxed font-medium">
-              This engine calculates <em>mathematical expectancy distributions</em> based on parameterized win-rates and risk-to-reward ratios derived from backtested ICT sample series. Real-world execution is subject to matching-engine spread, slippage during high-impact macroeconomic news releases, execution latency, and human psychological variance.
+            <p className="text-[#9BA1AE] leading-relaxed">
+              This engine calculates <em>mathematical expectancy distributions</em> based on parameterized win-rates and risk-to-reward ratios derived from backtested ICT sample series. Real-world execution is subject to spread, slippage during high-impact news releases, execution latency, and behavioral discipline.
             </p>
           </div>
         </div>

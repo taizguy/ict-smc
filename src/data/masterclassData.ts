@@ -1,4 +1,5 @@
 import { ICTConcept, DiagramType } from '../types';
+import { theinnercircletradersNewMasterclasses } from './theinnercircletradersMasterclasses';
 
 export interface MasterclassItem {
   id: string;
@@ -775,5 +776,6 @@ export const masterclassCollection: MasterclassItem[] = [
     visualAnatomy: 'Dual chart pane comparing Asset A (higher high) and Asset B (lower high) with a vertical line marking the exact moment of institutional divergence.',
     relatedPdArrays: ['Relative Strength/Weakness', 'Change in State of Delivery', 'Stop Raid'],
     quote: 'When the algorithm cannot move correlated markets in harmony, the crack in the mirror reveals the institutional hand.'
-  }
+  },
+  ...theinnercircletradersNewMasterclasses
 ];

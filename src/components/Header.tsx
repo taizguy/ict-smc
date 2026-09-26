@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  BookOpen, 
-  Youtube, 
-  Wrench, 
   Search, 
   Sparkles,
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight
+  Clock
 } from 'lucide-react';
 import { BauhausNavScroller } from './BauhausNavScroller';
 
@@ -42,12 +37,23 @@ export const Header: React.FC<HeaderProps> = ({
   setActiveTab, 
   onOpenSearch, 
   onOpenMentorSpotlight, 
-  onOpenWelcomeIntro
+  onOpenWelcomeIntro,
+  progressPercent = 0
 }) => {
   const [nyTime, setNyTime] = useState<string>('');
   const [activeSession, setActiveSession] = useState<string>('Asian');
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
-  // Clock in NY time
+  // Scroll detection for backdrop effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Clock in NY time (IPDA benchmark)
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
@@ -64,11 +70,11 @@ export const Header: React.FC<HeaderProps> = ({
       if (nyHour >= 20 || nyHour < 2) {
         setActiveSession('Asia');
       } else if (nyHour >= 2 && nyHour < 7) {
-        setActiveSession('London Killzone');
+        setActiveSession('London KZ');
       } else if (nyHour >= 7 && nyHour < 12) {
-        setActiveSession('New York AM');
+        setActiveSession('NY AM Killzone');
       } else if (nyHour >= 12 && nyHour < 16) {
-        setActiveSession('New York PM');
+        setActiveSession('NY PM Session');
       } else {
         setActiveSession('Post-Market');
       }
@@ -87,15 +93,18 @@ export const Header: React.FC<HeaderProps> = ({
   ].includes(activeTab);
 
   return (
-    <header className="sticky top-0 z-50 bg-[#F0F0F0] border-b-4 border-[#121212]">
+    <header className={`sticky top-0 z-50 transition-all duration-300 border-b ${
+      isScrolled 
+        ? 'bg-[#08090D]/90 backdrop-blur-xl border-white/[0.08] shadow-[0_4px_30px_rgba(0,0,0,0.5)]' 
+        : 'bg-[#08090D]/60 backdrop-blur-md border-white/[0.05]'
+    }`}>
       {/* Top Main Navigation Bar */}
-      <div className="max-w-[1720px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
+      <div className="max-w-[1560px] w-full mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between gap-4">
         
-        {/* Left: Geometric Bauhaus Logo */}
-        <div className="flex items-center gap-4">
+        {/* Left: Brand Identity */}
+        <div className="flex items-center gap-6">
           <button
             type="button"
-            id="main-bauhaus-logo-btn"
             onClick={(e) => {
               e.preventDefault();
               if (onOpenWelcomeIntro) {
@@ -109,127 +118,127 @@ export const Header: React.FC<HeaderProps> = ({
             title="Return to Welcome Screen"
             aria-label="Return to Welcome Screen"
           >
-            {/* The 3 Primaries Geometric Mark: Red Circle, Blue Square, Yellow Triangle */}
-            <div className="flex items-center gap-1.5 p-1.5 bg-white border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] rounded-none group-hover:-translate-y-0.5 group-hover:shadow-[4px_4px_0px_0px_#121212] transition-all">
-              <span className="w-3.5 h-3.5 rounded-full bg-[#D02020] border border-[#121212] inline-block shrink-0" />
-              <span className="w-3.5 h-3.5 rounded-none bg-[#1040C0] border border-[#121212] inline-block shrink-0" />
-              <span className="w-3.5 h-3.5 bg-[#F0C020] clip-triangle inline-block shrink-0" />
+            {/* Minimal Technical Emblem */}
+            <div className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/[0.09] flex items-center justify-center group-hover:border-white/20 transition-all">
+              <span className="w-2 h-2 rounded-full bg-[#5865FF] group-hover:scale-125 transition-transform" />
             </div>
 
             <div>
-              <div className="font-black text-lg sm:text-xl uppercase tracking-tighter text-[#121212] flex items-center gap-1.5 leading-none group-hover:text-[#D02020] transition-colors">
+              <div className="font-semibold text-sm sm:text-base tracking-tight text-[#F5F7FA] flex items-center gap-1.5 leading-none">
                 <span>ICT</span>
-                <span className="text-[#D02020]">//</span>
-                <span>BAUHAUS</span>
+                <span className="text-white/25">/</span>
+                <span className="text-[#9BA1AE]">SMC</span>
               </div>
-              <div className="text-[10px] font-bold uppercase tracking-widest text-[#121212]/70 leading-tight mt-0.5 font-mono">
-                SMC SYLLABUS &amp; LAB
+              <div className="text-[10px] font-mono tracking-[0.16em] uppercase text-[#656B78] mt-0.5">
+                ACADEMY
               </div>
             </div>
           </button>
         </div>
 
-        {/* Center: Constructivist 3-Pillar Macro Navigation */}
-        <nav className="hidden md:flex items-center gap-2 p-1.5 bg-[#E0E0E0] border-2 border-[#121212] shadow-[4px_4px_0px_0px_#121212] rounded-none">
+        {/* Center: Minimal Segmented Navigation */}
+        <nav className="hidden md:flex items-center gap-1 p-1 bg-white/[0.03] border border-white/[0.07] rounded-xl">
           {/* Pillar 1: Curriculum */}
           <button
             onClick={() => setActiveTab('curriculum')}
-            className={`px-4 py-2 rounded-none text-xs font-black uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer border-2 border-[#121212] ${
+            className={`px-4 py-2 rounded-lg text-xs font-medium tracking-tight transition-all cursor-pointer ${
               isCurriculumActive
-                ? 'bg-[#D02020] text-white shadow-[3px_3px_0px_0px_#121212] -translate-y-0.5'
-                : 'bg-white text-[#121212] hover:bg-[#F0C020] hover:text-[#121212]'
+                ? 'bg-white/[0.08] text-[#F5F7FA] shadow-sm'
+                : 'text-[#9BA1AE] hover:text-[#F5F7FA] hover:bg-white/[0.03]'
             }`}
           >
-            <span className={`w-2.5 h-2.5 rounded-full border border-black ${isCurriculumActive ? 'bg-white' : 'bg-[#D02020]'}`} />
-            <span>Curriculum (48)</span>
+            <span>Curriculum</span>
+            <span className="ml-1.5 text-[10px] font-mono text-[#656B78]">48</span>
           </button>
 
           {/* Pillar 2: Masood's Academy */}
           <button
             onClick={() => setActiveTab('masood')}
-            className={`px-4 py-2 rounded-none text-xs font-black uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer border-2 border-[#121212] ${
+            className={`px-4 py-2 rounded-lg text-xs font-medium tracking-tight transition-all cursor-pointer ${
               isMasoodActive
-                ? 'bg-[#F0C020] text-[#121212] shadow-[3px_3px_0px_0px_#121212] -translate-y-0.5'
-                : 'bg-white text-[#121212] hover:bg-[#F0C020] hover:text-[#121212]'
+                ? 'bg-white/[0.08] text-[#F5F7FA] shadow-sm'
+                : 'text-[#9BA1AE] hover:text-[#F5F7FA] hover:bg-white/[0.03]'
             }`}
           >
-            <span className={`w-2.5 h-2.5 rounded-none border border-black ${isMasoodActive ? 'bg-[#121212]' : 'bg-[#F0C020]'}`} />
-            <span>Masood Academy (52)</span>
+            <span>Masood Academy</span>
+            <span className="ml-1.5 text-[10px] font-mono text-[#656B78]">52</span>
           </button>
 
           {/* Pillar 3: Trading Tools */}
           <button
             onClick={() => setActiveTab('tools')}
-            className={`px-4 py-2 rounded-none text-xs font-black uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer border-2 border-[#121212] ${
+            className={`px-4 py-2 rounded-lg text-xs font-medium tracking-tight transition-all cursor-pointer ${
               isToolsActive
-                ? 'bg-[#1040C0] text-white shadow-[3px_3px_0px_0px_#121212] -translate-y-0.5'
-                : 'bg-white text-[#121212] hover:bg-[#F0C020] hover:text-[#121212]'
+                ? 'bg-white/[0.08] text-[#F5F7FA] shadow-sm'
+                : 'text-[#9BA1AE] hover:text-[#F5F7FA] hover:bg-white/[0.03]'
             }`}
           >
-            <span className={`w-2.5 h-2.5 bg-[#F0C020] clip-triangle ${isToolsActive ? 'bg-white' : ''}`} />
-            <span>Workbench & Lab</span>
+            <span>Workbench &amp; Lab</span>
+            <span className="ml-1.5 text-[10px] font-mono text-[#656B78]">8</span>
           </button>
         </nav>
 
-        {/* Right: Search & Market Clock */}
-        <div className="flex items-center gap-2.5">
+        {/* Right: Search, Market Clock, Tribute */}
+        <div className="flex items-center gap-2 sm:gap-3">
           {/* NY Market Session Clock */}
-          <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-none bg-white border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] text-xs font-mono">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#D02020] border border-black animate-pulse" />
-            <span className="text-[#121212] font-black uppercase">{activeSession}</span>
-            <span className="text-[#121212]/40 font-black">|</span>
-            <span className="text-[#121212] font-bold">{nyTime || '10:00:00'} EST</span>
+          <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.02] border border-white/[0.07] text-xs font-mono">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#52D273] animate-pulse" />
+            <span className="text-[#9BA1AE] uppercase">{activeSession}</span>
+            <span className="text-white/20">|</span>
+            <span className="text-[#F5F7FA] font-medium">{nyTime || '09:30:00'} EST</span>
           </div>
 
-          {/* Bauhaus Search Button */}
+          {/* Search Button */}
           <button
             onClick={onOpenSearch}
-            className="flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white hover:bg-[#F0C020] text-[#121212] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] text-xs font-black uppercase tracking-wider transition-all cursor-pointer active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+            className="flex items-center gap-2.5 px-3 py-1.5 rounded-lg bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.07] hover:border-white/15 text-xs text-[#9BA1AE] hover:text-[#F5F7FA] transition-all cursor-pointer"
             title="Search (⌘K)"
           >
-            <Search className="w-3.5 h-3.5 stroke-[3]" />
-            <span className="hidden sm:inline">Search</span>
-            <kbd className="hidden sm:inline px-1 py-0.5 text-[9px] font-mono font-bold bg-[#F0F0F0] border border-[#121212]">
+            <Search className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline text-xs font-sans">Search</span>
+            <kbd className="hidden sm:inline px-1.5 py-0.5 text-[9px] font-mono bg-white/[0.06] border border-white/[0.08] rounded text-[#9BA1AE]">
               ⌘K
             </kbd>
           </button>
 
+          {/* Mentor Tribute */}
           {onOpenMentorSpotlight && (
             <button
               onClick={onOpenMentorSpotlight}
-              className="p-2 rounded-none bg-[#F0C020] hover:bg-yellow-400 text-[#121212] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] transition-all cursor-pointer active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-              title="Mentor Tribute"
+              className="p-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.07] text-[#9BA1AE] hover:text-[#F5F7FA] transition-all cursor-pointer"
+              title="Trader Abdullah Masood Tribute"
+              aria-label="Trader Abdullah Masood Tribute"
             >
-              <Sparkles className="w-4 h-4 stroke-[2.5]" />
+              <Sparkles className="w-4 h-4 text-[#55E6D1]" />
             </button>
           )}
         </div>
 
       </div>
 
-      {/* Mobile Bauhaus Macro Navigation Bar with Navigation Arrows */}
-      <div className="flex md:hidden border-t-2 border-[#121212] px-2 py-1.5 bg-[#E0E0E0]">
-        <BauhausNavScroller innerClassName="gap-1.5" showArrowsAlways={false}>
+      {/* Mobile Macro Navigation Bar */}
+      <div className="flex md:hidden border-t border-white/[0.06] px-3 py-2 bg-[#0C0E13]/70">
+        <BauhausNavScroller innerClassName="gap-1.5">
           <button
             onClick={() => setActiveTab('curriculum')}
-            className={`py-2 px-3 rounded-none text-xs font-black uppercase tracking-wider whitespace-nowrap text-center border-2 border-[#121212] transition-all shrink-0 ${
-              isCurriculumActive ? 'bg-[#D02020] text-white shadow-[2px_2px_0px_0px_#121212]' : 'bg-white text-[#121212]'
+            className={`py-1.5 px-3 rounded-lg text-xs font-medium tracking-tight whitespace-nowrap transition-all shrink-0 ${
+              isCurriculumActive ? 'bg-white/[0.10] text-[#F5F7FA]' : 'text-[#9BA1AE]'
             }`}
           >
             Curriculum (48)
           </button>
           <button
             onClick={() => setActiveTab('masood')}
-            className={`py-2 px-3 rounded-none text-xs font-black uppercase tracking-wider whitespace-nowrap text-center border-2 border-[#121212] transition-all shrink-0 ${
-              isMasoodActive ? 'bg-[#F0C020] text-[#121212] shadow-[2px_2px_0px_0px_#121212]' : 'bg-white text-[#121212]'
+            className={`py-1.5 px-3 rounded-lg text-xs font-medium tracking-tight whitespace-nowrap transition-all shrink-0 ${
+              isMasoodActive ? 'bg-white/[0.10] text-[#F5F7FA]' : 'text-[#9BA1AE]'
             }`}
           >
             Masood Academy (52)
           </button>
           <button
             onClick={() => setActiveTab('tools')}
-            className={`py-2 px-3 rounded-none text-xs font-black uppercase tracking-wider whitespace-nowrap text-center border-2 border-[#121212] transition-all shrink-0 ${
-              isToolsActive ? 'bg-[#1040C0] text-white shadow-[2px_2px_0px_0px_#121212]' : 'bg-white text-[#121212]'
+            className={`py-1.5 px-3 rounded-lg text-xs font-medium tracking-tight whitespace-nowrap transition-all shrink-0 ${
+              isToolsActive ? 'bg-white/[0.10] text-[#F5F7FA]' : 'text-[#9BA1AE]'
             }`}
           >
             Workbench &amp; Lab (8)

@@ -36,7 +36,6 @@ export const BauhausNavScroller: React.FC<BauhausNavScrollerProps> = ({
     el.addEventListener('scroll', checkScroll, { passive: true });
     window.addEventListener('resize', checkScroll);
 
-    // Also observe mutations in case children change size
     const observer = new ResizeObserver(() => checkScroll());
     observer.observe(el);
 
@@ -57,21 +56,23 @@ export const BauhausNavScroller: React.FC<BauhausNavScrollerProps> = ({
   const hasOverflow = canScrollLeft || canScrollRight || showArrowsAlways;
 
   return (
-    <div className={`relative flex items-center gap-1.5 w-full ${className}`}>
+    <div className={`relative flex items-center gap-2 w-full ${className}`}>
       {/* Left Scroll Arrow */}
-      <button
-        type="button"
-        onClick={() => handleScroll('left')}
-        disabled={!canScrollLeft && !showArrowsAlways}
-        aria-label="Scroll left"
-        className={`w-8 h-8 flex items-center justify-center shrink-0 border-2 border-[#121212] font-black transition-all cursor-pointer select-none ${
-          canScrollLeft || showArrowsAlways
-            ? 'bg-white hover:bg-[#F0C020] text-[#121212] shadow-[2px_2px_0px_0px_#121212] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none'
-            : 'bg-[#E5E5E5] text-[#121212]/30 border-[#121212]/30 cursor-not-allowed opacity-40 shadow-none'
-        }`}
-      >
-        <ChevronLeft className="w-4 h-4 stroke-[3]" />
-      </button>
+      {hasOverflow && (
+        <button
+          type="button"
+          onClick={() => handleScroll('left')}
+          disabled={!canScrollLeft && !showArrowsAlways}
+          aria-label="Scroll left"
+          className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 border border-white/[0.08] transition-all cursor-pointer select-none ${
+            canScrollLeft || showArrowsAlways
+              ? 'bg-white/[0.04] hover:bg-white/[0.1] text-[#F5F7FA]'
+              : 'opacity-20 cursor-not-allowed text-[#656B78]'
+          }`}
+        >
+          <ChevronLeft className="w-4 h-4" />
+        </button>
+      )}
 
       {/* Horizontal Scrollable Area */}
       <div
@@ -82,19 +83,21 @@ export const BauhausNavScroller: React.FC<BauhausNavScrollerProps> = ({
       </div>
 
       {/* Right Scroll Arrow */}
-      <button
-        type="button"
-        onClick={() => handleScroll('right')}
-        disabled={!canScrollRight && !showArrowsAlways}
-        aria-label="Scroll right"
-        className={`w-8 h-8 flex items-center justify-center shrink-0 border-2 border-[#121212] font-black transition-all cursor-pointer select-none ${
-          canScrollRight || showArrowsAlways
-            ? 'bg-white hover:bg-[#F0C020] text-[#121212] shadow-[2px_2px_0px_0px_#121212] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none'
-            : 'bg-[#E5E5E5] text-[#121212]/30 border-[#121212]/30 cursor-not-allowed opacity-40 shadow-none'
-        }`}
-      >
-        <ChevronRight className="w-4 h-4 stroke-[3]" />
-      </button>
+      {hasOverflow && (
+        <button
+          type="button"
+          onClick={() => handleScroll('right')}
+          disabled={!canScrollRight && !showArrowsAlways}
+          aria-label="Scroll right"
+          className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 border border-white/[0.08] transition-all cursor-pointer select-none ${
+            canScrollRight || showArrowsAlways
+              ? 'bg-white/[0.04] hover:bg-white/[0.1] text-[#F5F7FA]'
+              : 'opacity-20 cursor-not-allowed text-[#656B78]'
+          }`}
+        >
+          <ChevronRight className="w-4 h-4" />
+        </button>
+      )}
     </div>
   );
 };

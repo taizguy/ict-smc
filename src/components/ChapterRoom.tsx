@@ -11,12 +11,13 @@ import {
   Zap, 
   Eye, 
   Compass, 
-  ChevronDown
+  ChevronDown,
+  Sparkles
 } from 'lucide-react';
 import { textbookChapters } from '../data/chaptersData';
 import { quizQuestions } from '../data/quizzesData';
 import { InteractiveDiagram } from './InteractiveDiagram';
-import { ChapterSection, KeyTerm } from '../types';
+import { ChapterSection } from '../types';
 import { saveQuestionAnswer } from '../utils/academyProgress';
 import { BauhausNavScroller } from './BauhausNavScroller';
 import { ScrollReveal } from './ScrollReveal';
@@ -37,6 +38,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
   const [activeScene, setActiveScene] = useState<'text' | 'visual' | 'terms' | 'checkpoint' | 'briefing'>('text');
   const [revealedQuestions, setRevealedQuestions] = useState<Record<number, boolean>>({});
   const [selectedQuizAnswers, setSelectedQuizAnswers] = useState<Record<string, number>>({});
+  const [expandedSimpler, setExpandedSimpler] = useState<Record<number, boolean>>({});
 
   const chapter = useMemo(() => {
     return textbookChapters.find(c => c.id === chapterId) || textbookChapters[0];
@@ -113,6 +115,13 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
     }));
   };
 
+  const handleToggleSimpler = (sIdx: number) => {
+    setExpandedSimpler(prev => ({
+      ...prev,
+      [sIdx]: !prev[sIdx]
+    }));
+  };
+
   const handleSelectQuizOption = (questionId: string, optionIdx: number) => {
     setSelectedQuizAnswers(prev => ({
       ...prev,
@@ -122,7 +131,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
   };
 
   const scenes = [
-    { id: 'text', label: '1. Curriculum Sections', icon: BookOpen },
+    { id: 'text', label: '1. Textbook Sections', icon: BookOpen },
     { id: 'visual', label: '2. Interactive Diagram', icon: Eye },
     { id: 'terms', label: '3. Key Terms', icon: Layers },
     { id: 'checkpoint', label: '4. Practice & Quiz', icon: Award },
@@ -130,31 +139,31 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
   ] as const;
 
   return (
-    <div className="space-y-8 pb-24">
+    <div className="space-y-8 sm:space-y-12 pb-24 text-[#F5F7FA]">
       
-      {/* Top Bauhaus Navigation & Jump Bar */}
-      <ScrollReveal y={20} duration={0.4}>
-        <div className="bg-white border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] rounded-none p-4 flex flex-wrap items-center justify-between gap-4">
+      {/* Top Minimal Navigation Bar */}
+      <ScrollReveal y={15} duration={0.4}>
+        <div className="bg-[#11141B] border border-white/[0.08] rounded-xl p-3.5 flex flex-wrap items-center justify-between gap-4">
           
           <div className="flex items-center gap-3">
             <button
               onClick={onReturnToMap}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-none bg-[#121212] hover:bg-[#D02020] text-white text-xs font-black uppercase tracking-wider border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+              className="btn-predikt-secondary text-xs py-1.5 px-3"
             >
-              <ArrowLeft className="w-3.5 h-3.5 stroke-[3]" />
-              <span>ALL CHAPTERS</span>
+              <ArrowLeft className="w-3.5 h-3.5" />
+              <span>All Chapters</span>
             </button>
 
             {/* Quick jump dropdown */}
             <div className="flex items-center gap-2">
-              <span className="text-xs font-mono font-bold uppercase text-[#121212] hidden sm:inline">JUMP:</span>
+              <span className="text-[11px] font-mono text-[#656B78] uppercase hidden sm:inline">JUMP:</span>
               <select
                 value={chapter.id}
                 onChange={(e) => onSelectChapter(Number(e.target.value))}
-                className="px-3 py-2 bg-[#F0F0F0] border-2 border-[#121212] rounded-none text-xs font-black uppercase text-[#121212] focus:outline-none focus:bg-white cursor-pointer"
+                className="px-3 py-1.5 bg-[#0C0E13] border border-white/[0.08] rounded-lg text-xs font-mono text-[#F5F7FA] focus:outline-none focus:border-[#5865FF]/60 cursor-pointer"
               >
                 {textbookChapters.map((ch) => (
-                  <option key={ch.id} value={ch.id}>
+                  <option key={ch.id} value={ch.id} className="bg-[#0C0E13] text-[#F5F7FA]">
                     CH {ch.id < 10 ? `0${ch.id}` : ch.id}: {ch.title}
                   </option>
                 ))}
@@ -162,75 +171,77 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
             </div>
           </div>
 
-          {/* Prev / Next chapter buttons in Bauhaus buttons */}
+          {/* Prev / Next chapter controls */}
           <div className="flex items-center gap-2">
             {prevChapter && (
               <button
                 onClick={() => onSelectChapter(prevChapter.id)}
-                className="px-3 py-2 rounded-none bg-white hover:bg-[#F0C020] text-[#121212] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] flex items-center gap-1.5 text-xs font-black uppercase tracking-wider active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+                className="btn-predikt-secondary text-xs py-1.5 px-3"
                 title={`Previous: ${prevChapter.title}`}
               >
-                <ChevronLeft className="w-4 h-4 stroke-[3]" />
-                <span className="hidden sm:inline">PREV</span>
+                <ChevronLeft className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">Prev</span>
               </button>
             )}
 
-            <div className="px-3 py-2 rounded-none bg-[#F0C020] border-2 border-[#121212] text-[#121212] text-xs font-mono font-black shadow-[3px_3px_0px_0px_#121212]">
+            <div className="px-3 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-[#9BA1AE]">
               {chapter.id} / {textbookChapters.length}
             </div>
 
             {nextChapter && (
               <button
                 onClick={() => onSelectChapter(nextChapter.id)}
-                className="px-3 py-2 rounded-none bg-[#1040C0] hover:bg-blue-700 text-white border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] flex items-center gap-1.5 text-xs font-black uppercase tracking-wider active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+                className="btn-predikt-primary text-xs py-1.5 px-3"
                 title={`Next: ${nextChapter.title}`}
               >
-                <span className="hidden sm:inline">NEXT</span>
-                <ChevronRight className="w-4 h-4 stroke-[3]" />
+                <span className="hidden sm:inline">Next</span>
+                <ChevronRight className="w-3.5 h-3.5" />
               </button>
             )}
           </div>
         </div>
       </ScrollReveal>
 
-      {/* Main Chapter Header Card - Bauhaus Color Blocking */}
-      <ScrollReveal y={35} duration={0.6} delay={0.05}>
-        <section className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] rounded-none p-6 sm:p-10 space-y-6 relative overflow-hidden">
+      {/* Main Chapter Header Card */}
+      <ScrollReveal y={25} duration={0.6} delay={0.05}>
+        <section className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 space-y-6 relative overflow-hidden">
           
           {/* Top Meta Bar */}
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-2">
-              <span className="px-3 py-1 rounded-none text-xs font-mono font-black uppercase tracking-widest bg-[#D02020] text-white border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212]">
+            <div className="flex items-center gap-3">
+              <span className="text-xs font-mono font-semibold text-[#5865FF] tracking-wider">
                 CHAPTER {chapter.id < 10 ? `0${chapter.id}` : chapter.id}
               </span>
-              <span className="px-3 py-1 rounded-none text-xs font-mono font-bold uppercase tracking-wider bg-[#F0F0F0] text-[#121212] border-2 border-[#121212]">
+              <span className="text-white/20">·</span>
+              <span className="text-xs font-mono text-[#9BA1AE] uppercase tracking-wider">
                 {chapter.part}
               </span>
-              <span className="px-3 py-1 rounded-none text-xs font-mono font-bold uppercase bg-[#F0C020] text-[#121212] border-2 border-[#121212]">
+              <span className="text-white/20">·</span>
+              <span className="text-xs font-mono text-[#55E6D1] uppercase tracking-wider">
                 LEVEL {chapter.level}
               </span>
             </div>
           </div>
 
           {/* Chapter Title & Inscription */}
-          <div className="space-y-4">
-            <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#121212] leading-tight">
+          <div className="space-y-4 max-w-4xl">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-[#F5F7FA] leading-tight">
               {chapter.title}
             </h1>
 
             {/* Principle callout */}
-            <div className="p-5 rounded-none bg-[#FFF9C4] border-4 border-[#121212] shadow-[4px_4px_0px_0px_#121212]">
-              <div className="text-[10px] font-mono text-[#D02020] uppercase tracking-widest font-black mb-1">
-                // INSTITUTIONAL PRINCIPLE
+            <div className="p-4 sm:p-5 rounded-xl bg-white/[0.02] border-l-2 border-[#5865FF] space-y-1">
+              <div className="text-[10px] font-mono text-[#5865FF] uppercase tracking-[0.16em]">
+                INSTITUTIONAL PRINCIPLE
               </div>
-              <p className="text-sm sm:text-base text-[#121212] font-bold italic leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#F5F7FA]/90 italic font-normal leading-relaxed">
                 "{chapter.quote}"
               </p>
             </div>
           </div>
 
-          {/* Scene Tabs Selector - Bauhaus Pills with Nav Scroller */}
-          <div className="pt-4 border-t-4 border-[#121212]">
+          {/* Scene Tabs Selector */}
+          <div className="pt-4 border-t border-white/[0.07]">
             <BauhausNavScroller innerClassName="gap-2 pb-1" showArrowsAlways={false}>
               {scenes.map((scene) => {
                 const Icon = scene.icon;
@@ -239,13 +250,13 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                   <button
                     key={scene.id}
                     onClick={() => setActiveScene(scene.id)}
-                    className={`px-4 py-2.5 rounded-none text-xs font-black uppercase tracking-wider flex items-center gap-2 shrink-0 border-2 border-[#121212] transition-all cursor-pointer active:translate-x-[2px] active:translate-y-[2px] active:shadow-none ${
+                    className={`px-3.5 py-2 rounded-lg text-xs font-medium tracking-tight flex items-center gap-2 shrink-0 border transition-all cursor-pointer ${
                       isActive
-                        ? 'bg-[#D02020] text-white shadow-[4px_4px_0px_0px_#121212] -translate-y-0.5'
-                        : 'bg-white text-[#121212] shadow-[2px_2px_0px_0px_#121212] hover:bg-[#F0C020]'
+                        ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20'
+                        : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06] hover:bg-white/[0.05]'
                     }`}
                   >
-                    <Icon className="w-4 h-4 stroke-[2.5]" />
+                    <Icon className="w-3.5 h-3.5" />
                     <span>{scene.label}</span>
                   </button>
                 );
@@ -259,73 +270,103 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
 
       {/* SCENE 1: FULL CODIFIED CURRICULUM SECTIONS */}
       {activeScene === 'text' && (
-        <ScrollReveal y={30}>
+        <ScrollReveal y={25}>
           <section className="space-y-6">
-            <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] rounded-none p-6 sm:p-10 space-y-8">
-              <div className="flex items-center justify-between pb-4 border-b-4 border-[#121212]">
-                <div className="flex items-center gap-3">
-                  <span className="w-3.5 h-3.5 bg-[#D02020] rounded-none border border-black inline-block" />
-                  <h2 className="text-lg sm:text-xl font-black uppercase tracking-tight text-[#121212]">
+            <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 space-y-8">
+              <div className="flex items-center justify-between pb-4 border-b border-white/[0.07]">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#5865FF]" />
+                  <h2 className="text-base sm:text-lg font-semibold uppercase tracking-tight text-[#F5F7FA]">
                     TEXTBOOK SECTIONS ({chapter.sections.length} PARTS)
                   </h2>
                 </div>
-                <span className="text-xs font-mono font-bold uppercase text-[#121212]/60">AUTHENTIC MATERIAL</span>
+                <span className="text-xs font-mono text-[#656B78] uppercase">AUTHENTIC MATERIAL</span>
               </div>
 
               {/* Sections List */}
-              <div className="space-y-6">
-                {chapter.sections.map((sec: ChapterSection, sIdx: number) => (
-                  <article 
-                    key={sec.id || sIdx}
-                    className="p-6 rounded-none bg-[#F0F0F0] border-4 border-[#121212] shadow-[4px_4px_0px_0px_#121212] space-y-4"
-                  >
-                    <div className="flex items-center gap-3">
-                      <span className="w-8 h-8 rounded-none bg-[#1040C0] text-white border-2 border-[#121212] flex items-center justify-center font-mono text-xs font-black">
-                        0{sIdx + 1}
-                      </span>
-                      <h3 className="text-lg sm:text-xl font-black uppercase tracking-tight text-[#121212]">
-                        {sec.title}
-                      </h3>
-                    </div>
+              <div className="space-y-8">
+                {chapter.sections.map((sec: ChapterSection, sIdx: number) => {
+                  const isSimplerOpen = expandedSimpler[sIdx];
 
-                    {/* Section Content */}
-                    <div className="text-sm sm:text-base text-[#121212] leading-relaxed font-medium whitespace-pre-line space-y-3">
-                      {sec.content}
-                    </div>
-
-                    {/* Key Takeaway Banner */}
-                    {sec.keyTakeaway && (
-                      <div className="p-4 rounded-none bg-[#FFF9C4] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] flex items-start gap-3 mt-4">
-                        <Zap className="w-5 h-5 text-[#D02020] shrink-0 mt-0.5 stroke-[2.5]" />
-                        <div>
-                          <div className="text-[10px] font-mono text-[#D02020] uppercase font-black tracking-widest">
-                            // INSTITUTIONAL KEY TAKEAWAY
-                          </div>
-                          <p className="text-xs sm:text-sm font-bold text-[#121212] mt-1 leading-relaxed">
-                            {sec.keyTakeaway}
-                          </p>
-                        </div>
+                  return (
+                    <article 
+                      key={sec.id || sIdx}
+                      className="p-6 sm:p-7 rounded-xl bg-white/[0.02] border border-white/[0.06] space-y-5"
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="w-7 h-7 rounded-lg bg-white/[0.04] border border-white/[0.08] text-[#5865FF] flex items-center justify-center font-mono text-xs font-semibold">
+                          0{sIdx + 1}
+                        </span>
+                        <h3 className="text-lg sm:text-xl font-semibold text-[#F5F7FA] tracking-tight">
+                          {sec.title}
+                        </h3>
                       </div>
-                    )}
-                  </article>
-                ))}
+
+                      {/* Section Content */}
+                      <div className="text-sm sm:text-base text-[#9BA1AE] leading-relaxed font-normal whitespace-pre-line space-y-4">
+                        {sec.content}
+                      </div>
+
+                      {/* "Explain Simpler" Component */}
+                      <div className="pt-2">
+                        <button
+                          type="button"
+                          onClick={() => handleToggleSimpler(sIdx)}
+                          className="flex items-center gap-2 text-xs font-mono text-[#55E6D1] hover:text-white transition-colors cursor-pointer"
+                        >
+                          <Sparkles className="w-3.5 h-3.5 text-[#55E6D1]" />
+                          <span className="uppercase tracking-wider">
+                            {isSimplerOpen ? 'Collapse Simplified View' : 'Explain Simpler'}
+                          </span>
+                          <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${isSimplerOpen ? 'rotate-180' : ''}`} />
+                        </button>
+
+                        {isSimplerOpen && (
+                          <div className="mt-3 p-4 rounded-xl bg-[#5865FF]/10 border border-[#5865FF]/20 text-xs sm:text-sm text-[#F5F7FA] space-y-1.5 animate-fadeIn">
+                            <div className="text-[10px] font-mono uppercase tracking-[0.16em] text-[#55E6D1]">
+                              SIMPLIFIED EXPLANATION
+                            </div>
+                            <p className="leading-relaxed font-light text-[#F5F7FA]/90">
+                              Think of this simply: {sec.keyTakeaway || "Smart money waits for the crowd's stop orders to cluster, sweeps them for execution fuel, and then triggers rapid price movement in the real intended direction."}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Key Takeaway Banner */}
+                      {sec.keyTakeaway && (
+                        <div className="p-4 rounded-xl bg-white/[0.03] border-l-2 border-[#55E6D1] flex items-start gap-3 mt-4">
+                          <Zap className="w-4 h-4 text-[#55E6D1] shrink-0 mt-0.5" />
+                          <div>
+                            <div className="text-[10px] font-mono text-[#55E6D1] uppercase tracking-[0.16em]">
+                              INSTITUTIONAL KEY TAKEAWAY
+                            </div>
+                            <p className="text-xs sm:text-sm font-normal text-[#F5F7FA] mt-1 leading-relaxed">
+                              {sec.keyTakeaway}
+                            </p>
+                          </div>
+                        </div>
+                      )}
+                    </article>
+                  );
+                })}
               </div>
 
               {/* Navigation Footer */}
-              <div className="pt-4 flex flex-wrap items-center justify-between gap-3 border-t-4 border-[#121212]">
+              <div className="pt-4 flex flex-wrap items-center justify-between gap-3 border-t border-white/[0.07]">
                 <button
                   onClick={() => setActiveScene('visual')}
-                  className="px-5 py-3 rounded-none bg-[#D02020] text-white hover:bg-red-700 text-xs font-black uppercase tracking-wider flex items-center gap-2 border-2 border-[#121212] shadow-[4px_4px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+                  className="btn-predikt-primary text-xs"
                 >
-                  <span>VIEW INTERACTIVE DIAGRAM</span>
-                  <ArrowRight className="w-4 h-4 stroke-[3]" />
+                  <span>View Interactive Diagram</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </button>
 
                 <button
                   onClick={() => setActiveScene('terms')}
-                  className="px-5 py-3 rounded-none bg-white hover:bg-[#F0C020] text-[#121212] text-xs font-black uppercase tracking-wider border-2 border-[#121212] shadow-[4px_4px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+                  className="btn-predikt-secondary text-xs"
                 >
-                  <span>STUDY KEY TERMS ({chapter.keyTerms.length})</span>
+                  <span>Study Key Terms ({chapter.keyTerms.length})</span>
                 </button>
               </div>
             </div>
@@ -335,27 +376,27 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
 
       {/* SCENE 2: INTERACTIVE VISUAL STAGE */}
       {activeScene === 'visual' && (
-        <ScrollReveal y={30}>
+        <ScrollReveal y={25}>
           <section className="space-y-6">
-            <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] rounded-none p-6 sm:p-10 space-y-6">
-              <div className="flex items-center justify-between pb-4 border-b-4 border-[#121212]">
-                <div className="flex items-center gap-3">
-                  <span className="w-3.5 h-3.5 rounded-full bg-[#1040C0] border border-black inline-block" />
-                  <h2 className="text-lg sm:text-xl font-black uppercase tracking-tight text-[#121212]">
+            <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 space-y-6">
+              <div className="flex items-center justify-between pb-4 border-b border-white/[0.07]">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#5865FF]" />
+                  <h2 className="text-base sm:text-lg font-semibold uppercase tracking-tight text-[#F5F7FA]">
                     INTERACTIVE DIAGRAM SIMULATOR
                   </h2>
                 </div>
-                <span className="text-xs font-mono font-black uppercase bg-[#F0C020] text-[#121212] px-3 py-1 border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212]">
+                <span className="text-xs font-mono uppercase bg-white/[0.04] text-[#9BA1AE] px-2.5 py-1 rounded-md border border-white/[0.08]">
                   {primaryDiagramType.replace(/_/g, ' ')}
                 </span>
               </div>
 
-              <p className="text-sm font-medium text-[#121212]">
-                Step through the stages of algorithmic delivery, observe liquidity consumption, and study how institutional order flow imprints onto price candles.
+              <p className="text-xs sm:text-sm text-[#9BA1AE] leading-relaxed">
+                Step through the sequence of algorithmic delivery, observe liquidity consumption, and study how institutional order flow prints onto candles.
               </p>
 
-              {/* Bespoke Interactive Diagram */}
-              <div className="border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] p-4 bg-[#121212]">
+              {/* Embedded Diagram */}
+              <div className="rounded-xl overflow-hidden border border-white/[0.08] bg-[#0C0E13] p-2">
                 <InteractiveDiagram 
                   type={primaryDiagramType} 
                   title={chapter.title} 
@@ -363,20 +404,20 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                 />
               </div>
 
-              <div className="pt-4 flex flex-wrap items-center justify-between gap-3 border-t-4 border-[#121212]">
+              <div className="pt-4 flex flex-wrap items-center justify-between gap-3 border-t border-white/[0.07]">
                 <button
                   onClick={() => setActiveScene('text')}
-                  className="px-5 py-3 rounded-none bg-white hover:bg-[#E0E0E0] text-[#121212] text-xs font-black uppercase tracking-wider border-2 border-[#121212] shadow-[4px_4px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+                  className="btn-predikt-secondary text-xs"
                 >
-                  ← BACK TO SECTIONS
+                  ← Back to Sections
                 </button>
 
                 <button
                   onClick={() => setActiveScene('terms')}
-                  className="px-5 py-3 rounded-none bg-[#D02020] hover:bg-red-700 text-white text-xs font-black uppercase tracking-wider flex items-center gap-2 border-2 border-[#121212] shadow-[4px_4px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+                  className="btn-predikt-primary text-xs"
                 >
-                  <span>STUDY KEY TERMS</span>
-                  <ArrowRight className="w-4 h-4 stroke-[3]" />
+                  <span>Study Key Terms</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             </div>
@@ -386,53 +427,53 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
 
       {/* SCENE 3: KEY TERMS & GLOSSARY */}
       {activeScene === 'terms' && (
-        <ScrollReveal y={30}>
+        <ScrollReveal y={25}>
           <section className="space-y-6">
-            <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] rounded-none p-6 sm:p-10 space-y-6">
-              <div className="flex items-center justify-between pb-4 border-b-4 border-[#121212]">
-                <div className="flex items-center gap-3">
-                  <span className="w-3.5 h-3.5 bg-[#F0C020] clip-triangle inline-block" />
-                  <h2 className="text-lg sm:text-xl font-black uppercase tracking-tight text-[#121212]">
+            <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 space-y-6">
+              <div className="flex items-center justify-between pb-4 border-b border-white/[0.07]">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#55E6D1]" />
+                  <h2 className="text-base sm:text-lg font-semibold uppercase tracking-tight text-[#F5F7FA]">
                     KEY INSTITUTIONAL TERMS ({chapter.keyTerms.length} DEFINITIONS)
                   </h2>
                 </div>
-                <span className="text-xs font-mono font-bold uppercase text-[#121212]/60">CORE VOCABULARY</span>
+                <span className="text-xs font-mono text-[#656B78] uppercase">CORE VOCABULARY</span>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {chapter.keyTerms.map((item, tIdx) => (
                   <div 
                     key={tIdx}
-                    className="p-5 rounded-none bg-[#F0F0F0] border-4 border-[#121212] shadow-[4px_4px_0px_0px_#121212] space-y-2 hover:-translate-y-1 transition-transform"
+                    className="p-5 rounded-xl bg-white/[0.02] border border-white/[0.07] space-y-2 hover:border-white/[0.14] transition-colors"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-mono font-black uppercase text-white bg-[#1040C0] px-3 py-1 border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212]">
+                      <span className="text-xs font-mono font-medium text-[#55E6D1] bg-[#55E6D1]/10 px-2.5 py-0.5 rounded border border-[#55E6D1]/20">
                         {item.term}
                       </span>
-                      <span className="text-xs font-mono font-black text-[#121212]">#{tIdx + 1}</span>
+                      <span className="text-xs font-mono text-[#656B78]">#{tIdx + 1}</span>
                     </div>
 
-                    <p className="text-sm text-[#121212] font-medium leading-relaxed pt-2">
+                    <p className="text-xs sm:text-sm text-[#9BA1AE] font-normal leading-relaxed pt-1">
                       {item.definition}
                     </p>
                   </div>
                 ))}
               </div>
 
-              <div className="pt-4 flex flex-wrap items-center justify-between gap-3 border-t-4 border-[#121212]">
+              <div className="pt-4 flex flex-wrap items-center justify-between gap-3 border-t border-white/[0.07]">
                 <button
                   onClick={() => setActiveScene('text')}
-                  className="px-5 py-3 rounded-none bg-white hover:bg-[#E0E0E0] text-[#121212] text-xs font-black uppercase tracking-wider border-2 border-[#121212] shadow-[4px_4px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+                  className="btn-predikt-secondary text-xs"
                 >
-                  ← BACK TO TEXTBOOK
+                  ← Back to Textbook
                 </button>
 
                 <button
                   onClick={() => setActiveScene('checkpoint')}
-                  className="px-5 py-3 rounded-none bg-[#D02020] hover:bg-red-700 text-white text-xs font-black uppercase tracking-wider flex items-center gap-2 border-2 border-[#121212] shadow-[4px_4px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+                  className="btn-predikt-primary text-xs"
                 >
-                  <span>PRACTICE CHECKPOINT</span>
-                  <ArrowRight className="w-4 h-4 stroke-[3]" />
+                  <span>Practice Checkpoint</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             </div>
@@ -442,80 +483,134 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
 
       {/* SCENE 4: PRACTICE CHECKPOINT & QUESTIONS */}
       {activeScene === 'checkpoint' && (
-        <ScrollReveal y={30}>
+        <ScrollReveal y={25}>
           <section className="space-y-6">
-          <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] rounded-none p-6 sm:p-10 space-y-8">
-            <div className="flex items-center justify-between pb-4 border-b-4 border-[#121212]">
-              <div className="flex items-center gap-3">
-                <span className="w-3.5 h-3.5 bg-[#D02020] rounded-none border border-black inline-block" />
-                <h2 className="text-lg sm:text-xl font-black uppercase tracking-tight text-[#121212]">
-                  UNDERSTANDING CHECKPOINT &amp; PRACTICE
-                </h2>
+            <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 space-y-8">
+              <div className="flex items-center justify-between pb-4 border-b border-white/[0.07]">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#5865FF]" />
+                  <h2 className="text-base sm:text-lg font-semibold uppercase tracking-tight text-[#F5F7FA]">
+                    UNDERSTANDING CHECKPOINT &amp; PRACTICE
+                  </h2>
+                </div>
+                <span className="text-xs font-mono text-[#656B78] uppercase">ACTIVE RECALL</span>
               </div>
-              <span className="text-xs font-mono font-bold uppercase text-[#121212]/60">ACTIVE RECALL</span>
-            </div>
 
-            {/* Diagnostic Multiple Choice Check */}
-            {matchingQuizQuestions.length > 0 && (
-              <div className="space-y-6">
-                <div className="text-xs font-mono font-black uppercase tracking-widest text-[#121212] pb-1 border-b-2 border-[#121212]">
-                  MULTIPLE-CHOICE DIAGNOSTIC QUESTIONS ({matchingQuizQuestions.length})
+              {/* Diagnostic Multiple Choice Check */}
+              {matchingQuizQuestions.length > 0 && (
+                <div className="space-y-6">
+                  <div className="text-xs font-mono uppercase tracking-[0.16em] text-[#9BA1AE] pb-1 border-b border-white/[0.06]">
+                    MULTIPLE-CHOICE DIAGNOSTIC QUESTIONS ({matchingQuizQuestions.length})
+                  </div>
+
+                  <div className="space-y-6">
+                    {matchingQuizQuestions.map((quiz, qIdx) => {
+                      const selectedOpt = selectedQuizAnswers[quiz.id];
+                      const isAnswered = selectedOpt !== undefined;
+                      const isCorrect = selectedOpt === quiz.correctIndex;
+
+                      return (
+                        <div 
+                          key={quiz.id}
+                          className="p-6 rounded-xl bg-white/[0.02] border border-white/[0.07] space-y-4"
+                        >
+                          <div className="text-sm sm:text-base font-medium text-[#F5F7FA]">
+                            0{qIdx + 1}. {quiz.question}
+                          </div>
+
+                          <div className="space-y-2 pt-1">
+                            {quiz.options.map((opt, oIdx) => {
+                              const isThisSelected = selectedOpt === oIdx;
+                              const isThisCorrect = quiz.correctIndex === oIdx;
+
+                              let optClass = 'bg-white/[0.02] hover:bg-white/[0.05] border-white/[0.08] text-[#9BA1AE] hover:text-[#F5F7FA]';
+                              if (isAnswered) {
+                                if (isThisCorrect) {
+                                  optClass = 'bg-emerald-500/10 border-emerald-500/40 text-emerald-300 font-medium';
+                                } else if (isThisSelected && !isCorrect) {
+                                  optClass = 'bg-rose-500/10 border-rose-500/40 text-rose-300 font-medium';
+                                } else {
+                                  optClass = 'bg-white/[0.01] border-white/[0.04] text-[#656B78] opacity-50';
+                                }
+                              }
+
+                              return (
+                                <button
+                                  key={oIdx}
+                                  onClick={() => handleSelectQuizOption(quiz.id, oIdx)}
+                                  className={`w-full p-3.5 rounded-lg text-left text-xs sm:text-sm border transition-all flex items-center justify-between gap-3 cursor-pointer ${optClass}`}
+                                >
+                                  <span>{opt}</span>
+                                  {isAnswered && isThisCorrect && (
+                                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                                  )}
+                                </button>
+                              );
+                            })}
+                          </div>
+
+                          {/* Inline Explanation */}
+                          {isAnswered && (
+                            <div className={`p-4 rounded-xl text-xs sm:text-sm leading-relaxed border ${
+                              isCorrect 
+                                ? 'bg-emerald-500/5 border-emerald-500/20 text-emerald-200' 
+                                : 'bg-white/[0.03] border-white/[0.08] text-[#9BA1AE]'
+                            }`}>
+                              <strong className="text-[#F5F7FA]">INSTITUTIONAL ANALYSIS:</strong> {quiz.explanation}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* Codified Practice Questions */}
+              <div className="space-y-4 pt-4 border-t border-white/[0.07]">
+                <div className="flex items-center justify-between">
+                  <div className="text-xs font-mono uppercase tracking-[0.16em] text-[#9BA1AE]">
+                    CODIFIED PRACTICE QUESTIONS ({chapter.practiceQuestions.length})
+                  </div>
+                  <span className="text-xs font-mono text-[#656B78] uppercase">CLICK TO REVEAL</span>
                 </div>
 
-                <div className="space-y-6">
-                  {matchingQuizQuestions.map((quiz, qIdx) => {
-                    const selectedOpt = selectedQuizAnswers[quiz.id];
-                    const isAnswered = selectedOpt !== undefined;
-                    const isCorrect = selectedOpt === quiz.correctIndex;
-
+                <div className="space-y-3">
+                  {chapter.practiceQuestions.map((question, qIdx) => {
+                    const isRevealed = revealedQuestions[qIdx];
                     return (
                       <div 
-                        key={quiz.id}
-                        className="p-6 rounded-none bg-[#F0F0F0] border-4 border-[#121212] shadow-[4px_4px_0px_0px_#121212] space-y-4"
+                        key={qIdx}
+                        className="rounded-xl border border-white/[0.07] overflow-hidden bg-white/[0.02]"
                       >
-                        <div className="text-sm sm:text-base font-black uppercase text-[#121212]">
-                          0{qIdx + 1}. {quiz.question}
-                        </div>
+                        {/* Header */}
+                        <button
+                          onClick={() => handleToggleRevealQuestion(qIdx)}
+                          className="w-full p-4 sm:p-5 text-left flex items-start justify-between gap-3 transition-colors cursor-pointer hover:bg-white/[0.03]"
+                        >
+                          <div className="flex items-start gap-3">
+                            <span className="w-6 h-6 rounded-md bg-white/[0.04] border border-white/[0.08] flex items-center justify-center font-mono text-xs font-semibold text-[#5865FF] shrink-0 mt-0.5">
+                              Q{qIdx + 1}
+                            </span>
+                            <p className="text-xs sm:text-sm font-medium text-[#F5F7FA]">
+                              {question}
+                            </p>
+                          </div>
 
-                        <div className="space-y-2.5 pt-1">
-                          {quiz.options.map((opt, oIdx) => {
-                            const isThisSelected = selectedOpt === oIdx;
-                            const isThisCorrect = quiz.correctIndex === oIdx;
+                          <ChevronDown className={`w-4 h-4 text-[#9BA1AE] shrink-0 transition-transform duration-200 ${
+                            isRevealed ? 'rotate-180' : ''
+                          }`} />
+                        </button>
 
-                            let optClass = 'bg-white hover:bg-[#F0C020] text-[#121212] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212]';
-                            if (isAnswered) {
-                              if (isThisCorrect) {
-                                optClass = 'bg-[#1040C0] text-white border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] font-black';
-                              } else if (isThisSelected && !isCorrect) {
-                                optClass = 'bg-[#D02020] text-white border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] font-black';
-                              } else {
-                                optClass = 'bg-white opacity-50 border-2 border-[#121212] text-[#121212]/50';
-                              }
-                            }
-
-                            return (
-                              <button
-                                key={oIdx}
-                                onClick={() => handleSelectQuizOption(quiz.id, oIdx)}
-                                className={`w-full p-3 rounded-none text-left text-xs sm:text-sm font-bold transition-all flex items-center justify-between gap-3 cursor-pointer active:translate-x-[2px] active:translate-y-[2px] active:shadow-none ${optClass}`}
-                              >
-                                <span>{opt}</span>
-                                {isAnswered && isThisCorrect && (
-                                  <CheckCircle2 className="w-5 h-5 text-white shrink-0 stroke-[3]" />
-                                )}
-                              </button>
-                            );
-                          })}
-                        </div>
-
-                        {/* Explanation */}
-                        {isAnswered && (
-                          <div className={`p-4 rounded-none text-xs sm:text-sm font-medium leading-relaxed border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] ${
-                            isCorrect 
-                              ? 'bg-[#1040C0] text-white' 
-                              : 'bg-[#FFF9C4] text-[#121212]'
-                          }`}>
-                            <strong>INSTITUTIONAL ANALYSIS:</strong> {quiz.explanation}
+                        {/* Expanded Explanation */}
+                        {isRevealed && (
+                          <div className="p-4 sm:p-5 bg-white/[0.01] border-t border-white/[0.06] text-xs sm:text-sm text-[#9BA1AE] space-y-2">
+                            <div className="font-mono text-[10px] uppercase text-[#55E6D1] tracking-[0.16em]">
+                              INSTITUTIONAL ANALYSIS &amp; MECHANICS:
+                            </div>
+                            <p className="leading-relaxed font-light">
+                              Verify how this analytical question connects directly to liquidity pools, resting limit orders, and algorithmic delivery sequences. Always ask: <em>Whose stop-loss was targeted, and what liquidity did the algorithm seek next?</em>
+                            </p>
                           </div>
                         )}
                       </div>
@@ -523,126 +618,68 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                   })}
                 </div>
               </div>
-            )}
 
-            {/* Codified Practice Questions - Bauhaus Accordion */}
-            <div className="space-y-4 pt-4 border-t-4 border-[#121212]">
-              <div className="flex items-center justify-between">
-                <div className="text-xs font-mono font-black uppercase tracking-widest text-[#121212]">
-                  CODIFIED PRACTICE QUESTIONS ({chapter.practiceQuestions.length})
+              {/* Next Chapter CTA */}
+              <div className="pt-6 border-t border-white/[0.07] flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="text-xs font-mono text-[#9BA1AE] uppercase tracking-wider">
+                  CHAPTER COMPLETED · READY TO ADVANCE?
                 </div>
-                <span className="text-xs font-mono font-bold uppercase text-[#121212]/60">CLICK TO REVEAL</span>
+
+                {nextChapter ? (
+                  <button
+                    onClick={() => onSelectChapter(nextChapter.id)}
+                    className="btn-predikt-primary text-xs"
+                  >
+                    <span>Advance to CH {nextChapter.id}: {nextChapter.title}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                ) : (
+                  <button
+                    onClick={onReturnToMap}
+                    className="btn-predikt-primary text-xs"
+                  >
+                    <span>Return to Full Syllabus</span>
+                  </button>
+                )}
               </div>
 
-              <div className="space-y-4">
-                {chapter.practiceQuestions.map((question, qIdx) => {
-                  const isRevealed = revealedQuestions[qIdx];
-                  return (
-                    <div 
-                      key={qIdx}
-                      className="rounded-none border-4 border-[#121212] shadow-[4px_4px_0px_0px_#121212] overflow-hidden"
-                    >
-                      {/* Accordion Header */}
-                      <button
-                        onClick={() => handleToggleRevealQuestion(qIdx)}
-                        className={`w-full p-5 text-left flex items-start justify-between gap-3 transition-colors cursor-pointer ${
-                          isRevealed ? 'bg-[#D02020] text-white' : 'bg-white text-[#121212] hover:bg-[#F0F0F0]'
-                        }`}
-                      >
-                        <div className="flex items-start gap-3">
-                          <span className={`w-7 h-7 rounded-none border-2 border-[#121212] flex items-center justify-center font-mono text-xs font-black shrink-0 mt-0.5 ${
-                            isRevealed ? 'bg-white text-[#D02020]' : 'bg-[#F0C020] text-[#121212]'
-                          }`}>
-                            Q{qIdx + 1}
-                          </span>
-                          <p className="text-sm font-black uppercase tracking-tight">
-                            {question}
-                          </p>
-                        </div>
-
-                        <ChevronDown className={`w-5 h-5 shrink-0 stroke-[3] transition-transform duration-200 ${
-                          isRevealed ? 'rotate-180' : ''
-                        }`} />
-                      </button>
-
-                      {/* Accordion Expanded Content: Bauhaus Light Yellow */}
-                      {isRevealed && (
-                        <div className="p-5 bg-[#FFF9C4] border-t-4 border-[#121212] text-xs sm:text-sm font-medium text-[#121212] space-y-2">
-                          <div className="font-mono text-[10px] uppercase font-black text-[#D02020] tracking-widest">
-                            // INSTITUTIONAL ANALYSIS &amp; MECHANICS:
-                          </div>
-                          <p className="leading-relaxed">
-                            Verify how this analytical question connects directly to liquidity pools, resting limit orders, and algorithmic delivery sequences. Always ask: <em>Whose stop-loss was targeted, and what liquidity did the algorithm seek next?</em>
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
             </div>
-
-            {/* Next Chapter CTA */}
-            <div className="pt-6 border-t-4 border-[#121212] flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="text-xs font-mono font-black uppercase text-[#121212]">
-                CHAPTER COMPLETED // READY TO ADVANCE?
-              </div>
-
-              {nextChapter ? (
-                <button
-                  onClick={() => onSelectChapter(nextChapter.id)}
-                  className="px-6 py-3 rounded-none bg-[#1040C0] hover:bg-blue-700 text-white font-black text-xs uppercase tracking-wider flex items-center gap-2 border-2 border-[#121212] shadow-[4px_4px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
-                >
-                  <span>ADVANCE TO CH {nextChapter.id}: {nextChapter.title}</span>
-                  <ArrowRight className="w-4 h-4 stroke-[3]" />
-                </button>
-              ) : (
-                <button
-                  onClick={onReturnToMap}
-                  className="px-6 py-3 rounded-none bg-[#D02020] text-white font-black text-xs uppercase tracking-wider flex items-center gap-2 border-2 border-[#121212] shadow-[4px_4px_0px_0px_#121212] cursor-pointer"
-                >
-                  <span>RETURN TO FULL SYLLABUS</span>
-                </button>
-              )}
-            </div>
-
-          </div>
-        </section>
+          </section>
         </ScrollReveal>
       )}
 
       {/* SCENE 5: SUMMARY BRIEFING */}
       {activeScene === 'briefing' && (
-        <ScrollReveal y={30}>
+        <ScrollReveal y={25}>
           <section className="space-y-6">
-            <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] rounded-none p-6 sm:p-10 space-y-6">
-              <div className="flex items-center gap-3 pb-4 border-b-4 border-[#121212]">
-                <span className="w-3.5 h-3.5 rounded-full bg-[#1040C0] border border-black inline-block" />
-                <h2 className="text-lg sm:text-xl font-black uppercase tracking-tight text-[#121212]">
+            <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 space-y-6">
+              <div className="flex items-center gap-2 pb-4 border-b border-white/[0.07]">
+                <span className="w-2 h-2 rounded-full bg-[#5865FF]" />
+                <h2 className="text-base sm:text-lg font-semibold uppercase tracking-tight text-[#F5F7FA]">
                   EXECUTIVE CHAPTER SUMMARY
                 </h2>
               </div>
 
               <div className="space-y-3">
                 {chapter.summary.map((point, pIdx) => (
-                  <div key={pIdx} className="flex items-start gap-3 p-4 rounded-none bg-[#F0F0F0] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212]">
-                    <span className="w-6 h-6 rounded-none bg-[#F0C020] text-[#121212] border border-[#121212] font-mono text-xs font-black flex items-center justify-center shrink-0 mt-0.5">
+                  <div key={pIdx} className="flex items-start gap-3 p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+                    <span className="w-6 h-6 rounded-md bg-white/[0.04] border border-white/[0.08] text-[#5865FF] font-mono text-xs font-semibold flex items-center justify-center shrink-0 mt-0.5">
                       0{pIdx + 1}
                     </span>
-                    <p className="text-sm font-bold text-[#121212] leading-relaxed">
+                    <p className="text-xs sm:text-sm text-[#F5F7FA]/90 leading-relaxed font-normal">
                       {point}
                     </p>
                   </div>
                 ))}
               </div>
 
-              <div className="pt-4 flex items-center justify-between border-t-4 border-[#121212]">
+              <div className="pt-4 flex items-center justify-between border-t border-white/[0.07]">
                 <button
                   onClick={() => setActiveScene('text')}
-                  className="px-6 py-3 rounded-none bg-[#D02020] text-white hover:bg-red-700 text-xs font-black uppercase tracking-wider flex items-center gap-2 border-2 border-[#121212] shadow-[4px_4px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+                  className="btn-predikt-primary text-xs"
                 >
-                  <span>READ FULL CHAPTER</span>
-                  <ArrowRight className="w-4 h-4 stroke-[3]" />
+                  <span>Read Full Chapter</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             </div>
@@ -650,12 +687,12 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
         </ScrollReveal>
       )}
 
-      {/* Bottom Sticky Action Bar in Bauhaus style */}
-      <ScrollReveal y={20}>
-        <div className="p-4 rounded-none bg-white border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] flex flex-wrap items-center justify-between gap-3 text-xs">
+      {/* Bottom Minimal Action Bar */}
+      <ScrollReveal y={15}>
+        <div className="p-4 rounded-xl bg-[#11141B] border border-white/[0.08] flex flex-wrap items-center justify-between gap-3 text-xs">
           <div className="flex items-center gap-2">
-            <span className="text-[#121212]/60 font-mono font-bold uppercase">CURRENT:</span>
-            <span className="font-black text-[#121212] uppercase tracking-tight text-sm">
+            <span className="text-[#656B78] font-mono uppercase">CURRENT:</span>
+            <span className="font-medium text-[#F5F7FA] tracking-tight">
               CH {chapter.id}: {chapter.title}
             </span>
           </div>
@@ -663,18 +700,18 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
           <div className="flex items-center gap-3">
             <button
               onClick={onReturnToMap}
-              className="px-4 py-2 rounded-none bg-[#F0F0F0] hover:bg-[#E0E0E0] text-[#121212] font-black uppercase tracking-wider border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+              className="btn-predikt-secondary text-xs py-1.5 px-3"
             >
-              ALL CHAPTERS
+              All Chapters
             </button>
 
             {nextChapter && (
               <button
                 onClick={() => onSelectChapter(nextChapter.id)}
-                className="px-4 py-2 rounded-none bg-[#1040C0] hover:bg-blue-700 text-white font-black uppercase tracking-wider flex items-center gap-1.5 border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+                className="btn-predikt-primary text-xs py-1.5 px-3"
               >
-                <span>NEXT (CH {nextChapter.id})</span>
-                <ArrowRight className="w-3.5 h-3.5 stroke-[3]" />
+                <span>Next (CH {nextChapter.id})</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </button>
             )}
           </div>

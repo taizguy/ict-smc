@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { JournalEntry } from '../types';
-import { BookMarked, Plus, CheckSquare, BarChart2, ShieldAlert, Award, Calendar, ArrowUpRight, ArrowDownRight, Trash2, CheckCircle2 } from 'lucide-react';
+import { BookMarked, Plus, CheckSquare, BarChart2, ShieldAlert, Award, Calendar, ArrowUpRight, ArrowDownRight, Trash2, CheckCircle2, X } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export const TradingJournal: React.FC = () => {
@@ -101,18 +101,18 @@ export const TradingJournal: React.FC = () => {
     : 7;
 
   return (
-    <div className="space-y-6">
-      {/* Top Banner & Stats - Bauhaus Constructivist Card */}
-      <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-6 sm:p-7 space-y-4">
+    <div className="space-y-6 text-[#F5F7FA]">
+      {/* Top Banner & Stats */}
+      <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="w-4 h-4 bg-[#D02020] border border-black inline-block" />
-              <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#121212]">
-                ICT Trade Journal &amp; Pre-Flight Checklist
+              <span className="w-2 h-2 rounded-full bg-[#5865FF]" />
+              <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F5F7FA]">
+                ICT Trade Journal &amp; Audit Log
               </h2>
             </div>
-            <p className="text-[#121212]/80 text-xs sm:text-sm font-medium">
+            <p className="text-[#9BA1AE] text-xs sm:text-sm">
               Log institutional setups, enforce the 7-Point ICT Quality Score, and maintain an audit of execution discipline.
             </p>
           </div>
@@ -120,30 +120,30 @@ export const TradingJournal: React.FC = () => {
           <button
             type="button"
             onClick={() => setShowNewModal(true)}
-            className="px-5 py-2.5 bg-[#D02020] hover:bg-red-700 text-white font-mono text-xs font-black uppercase flex items-center gap-2 transition-all border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] shrink-0 cursor-pointer active:translate-x-[1px] active:translate-y-[1px] active:shadow-none"
+            className="px-4 py-2.5 bg-[#5865FF] hover:bg-[#4752E6] text-white font-mono text-xs uppercase tracking-wider flex items-center gap-2 transition-all rounded-xl cursor-pointer shadow-lg shadow-[#5865FF]/20"
           >
-            <Plus className="w-4 h-4 stroke-[3]" />
+            <Plus className="w-4 h-4" />
             Log New Trade
           </button>
         </div>
 
         {/* Stats Strip */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t-4 border-[#121212] font-mono text-xs">
-          <div className="bg-[#F0F0F0] p-4 border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212]">
-            <span className="text-[#121212]/60 block text-[10px] uppercase font-black tracking-wider">Total Logged:</span>
-            <span className="text-[#121212] font-black text-lg">{totalTrades} Trades</span>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/[0.07] font-mono text-xs">
+          <div className="bg-[#151923] p-4 rounded-xl border border-white/[0.06]">
+            <span className="text-[#656B78] block text-[10px] uppercase tracking-wider">Total Logged:</span>
+            <span className="text-[#F5F7FA] font-semibold text-lg">{totalTrades} Trades</span>
           </div>
-          <div className="bg-[#F0F0F0] p-4 border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212]">
-            <span className="text-[#121212]/60 block text-[10px] uppercase font-black tracking-wider">Win Rate:</span>
-            <span className="text-[#1040C0] font-black text-lg">{winRate}%</span>
+          <div className="bg-[#151923] p-4 rounded-xl border border-white/[0.06]">
+            <span className="text-[#656B78] block text-[10px] uppercase tracking-wider">Win Rate:</span>
+            <span className="text-[#55E6D1] font-semibold text-lg">{winRate}%</span>
           </div>
-          <div className="bg-[#F0F0F0] p-4 border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212]">
-            <span className="text-[#121212]/60 block text-[10px] uppercase font-black tracking-wider">Cumulative R:</span>
-            <span className="text-[#121212] font-black text-lg">+{totalR.toFixed(1)}R</span>
+          <div className="bg-[#151923] p-4 rounded-xl border border-white/[0.06]">
+            <span className="text-[#656B78] block text-[10px] uppercase tracking-wider">Cumulative R:</span>
+            <span className="text-[#5865FF] font-semibold text-lg">+{totalR.toFixed(1)}R</span>
           </div>
-          <div className="bg-[#F0F0F0] p-4 border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212]">
-            <span className="text-[#121212]/60 block text-[10px] uppercase font-black tracking-wider">Avg ICT Score:</span>
-            <span className="text-[#D02020] font-black text-lg">{avgChecklistScore} / 7</span>
+          <div className="bg-[#151923] p-4 rounded-xl border border-white/[0.06]">
+            <span className="text-[#656B78] block text-[10px] uppercase tracking-wider">Avg Quality Score:</span>
+            <span className="text-[#F0B35B] font-semibold text-lg">{avgChecklistScore} / 7</span>
           </div>
         </div>
       </div>
@@ -153,33 +153,33 @@ export const TradingJournal: React.FC = () => {
         {entries.map((entry) => (
           <div
             key={entry.id}
-            className="bg-white border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] p-6 space-y-4 font-mono text-xs text-[#121212]"
+            className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-4 font-mono text-xs text-[#F5F7FA]"
           >
-            <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b-4 border-[#121212]">
+            <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-white/[0.07]">
               <div className="flex items-center gap-2.5">
                 <span
-                  className={`px-3 py-1 font-black uppercase text-[11px] border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] ${
+                  className={`px-2.5 py-0.5 rounded-lg uppercase text-[10px] font-semibold border ${
                     entry.direction === 'LONG'
-                      ? 'bg-[#1040C0] text-white'
-                      : 'bg-[#D02020] text-white'
+                      ? 'bg-[#55E6D1]/10 text-[#55E6D1] border-[#55E6D1]/20'
+                      : 'bg-[#FF6B7A]/10 text-[#FF6B7A] border-[#FF6B7A]/20'
                   }`}
                 >
                   {entry.direction}
                 </span>
-                <span className="font-black text-[#121212] text-sm uppercase">{entry.asset}</span>
-                <span className="text-[#121212]/40 font-bold">•</span>
-                <span className="text-[#121212] font-bold uppercase">{entry.modelUsed}</span>
+                <span className="font-semibold text-[#F5F7FA] text-sm uppercase">{entry.asset}</span>
+                <span className="text-white/20 font-bold">•</span>
+                <span className="text-[#9BA1AE] uppercase">{entry.modelUsed}</span>
               </div>
 
               <div className="flex items-center gap-3">
-                <span className="text-[#121212]/60 font-bold">{entry.date} {entry.time}</span>
+                <span className="text-[#656B78]">{entry.date} {entry.time}</span>
                 <span
-                  className={`px-3 py-1 font-black uppercase text-xs border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] ${
+                  className={`px-2.5 py-0.5 rounded-lg uppercase text-xs font-semibold border ${
                     entry.result === 'WIN'
-                      ? 'bg-[#F0C020] text-[#121212]'
+                      ? 'bg-[#55E6D1]/10 text-[#55E6D1] border-[#55E6D1]/20'
                       : entry.result === 'LOSS'
-                      ? 'bg-[#D02020] text-white'
-                      : 'bg-[#F0F0F0] text-[#121212]'
+                      ? 'bg-[#FF6B7A]/10 text-[#FF6B7A] border-[#FF6B7A]/20'
+                      : 'bg-white/[0.04] text-[#9BA1AE] border-white/[0.08]'
                   }`}
                 >
                   {entry.result} ({entry.rRealized > 0 ? `+${entry.rRealized}R` : `${entry.rRealized}R`})
@@ -189,29 +189,29 @@ export const TradingJournal: React.FC = () => {
 
             {/* ICT Parameters Breakdown */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <div className="bg-[#F0F0F0] p-3.5 border-2 border-[#121212]">
-                <span className="text-[#121212]/60 block text-[10px] uppercase font-black">HTF Bias &amp; Draw:</span>
-                <span className="font-bold text-[#121212] text-xs mt-0.5 block">{entry.htfBias}</span>
+              <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+                <span className="text-[#656B78] block text-[10px] uppercase">HTF Bias &amp; Draw:</span>
+                <span className="text-[#F5F7FA] text-xs mt-0.5 block">{entry.htfBias}</span>
               </div>
-              <div className="bg-[#F0F0F0] p-3.5 border-2 border-[#121212]">
-                <span className="text-[#121212]/60 block text-[10px] uppercase font-black">Liquidity Swept:</span>
-                <span className="text-[#1040C0] font-bold text-xs mt-0.5 block">{entry.liquiditySwept}</span>
+              <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+                <span className="text-[#656B78] block text-[10px] uppercase">Liquidity Swept:</span>
+                <span className="text-[#5865FF] text-xs mt-0.5 block">{entry.liquiditySwept}</span>
               </div>
-              <div className="bg-[#F0F0F0] p-3.5 border-2 border-[#121212]">
-                <span className="text-[#121212]/60 block text-[10px] uppercase font-black">Entry Array &amp; Stop:</span>
-                <span className="text-[#D02020] font-bold text-xs mt-0.5 block">{entry.entryArray}</span>
+              <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+                <span className="text-[#656B78] block text-[10px] uppercase">Entry Array &amp; Stop:</span>
+                <span className="text-[#55E6D1] text-xs mt-0.5 block">{entry.entryArray}</span>
               </div>
             </div>
 
             {/* Quality Score & Notes */}
-            <div className="pt-3 border-t-2 border-[#121212] flex flex-wrap items-center justify-between gap-2 text-[11px]">
+            <div className="pt-3 border-t border-white/[0.06] flex flex-wrap items-center justify-between gap-2 text-[11px]">
               <div className="flex items-center gap-2">
-                <span className="text-[#121212]/60 font-black uppercase">Quality Score:</span>
-                <span className="px-2.5 py-0.5 bg-[#FFF9C4] text-[#121212] font-black uppercase border border-[#121212]">
+                <span className="text-[#656B78] uppercase">Quality Score:</span>
+                <span className="px-2 py-0.5 bg-white/[0.04] text-[#F0B35B] rounded-md border border-white/[0.08] uppercase">
                   {entry.checklistScore} / 7 Confluences
                 </span>
               </div>
-              <div className="text-[#121212] italic font-medium">
+              <div className="text-[#9BA1AE] italic">
                 "{entry.psychologyNotes}"
               </div>
             </div>
@@ -219,39 +219,39 @@ export const TradingJournal: React.FC = () => {
         ))}
       </div>
 
-      {/* Log Trade Modal - Bauhaus Constructivist Dialog */}
+      {/* Log Trade Modal */}
       {showNewModal && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white border-4 border-[#121212] shadow-[12px_12px_0px_0px_#121212] p-6 sm:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto space-y-4 font-mono text-xs text-[#121212]">
-            <div className="flex items-center justify-between pb-3 border-b-4 border-[#121212]">
-              <h3 className="text-base font-black uppercase text-[#121212]">Log Institutional Trade</h3>
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="bg-[#11141B] border border-white/[0.1] rounded-2xl p-6 sm:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto space-y-4 font-mono text-xs text-[#F5F7FA] shadow-2xl">
+            <div className="flex items-center justify-between pb-3 border-b border-white/[0.08]">
+              <h3 className="text-sm font-semibold uppercase text-[#F5F7FA]">Log Institutional Trade</h3>
               <button
                 type="button"
                 onClick={() => setShowNewModal(false)}
-                className="w-8 h-8 bg-white hover:bg-[#D02020] hover:text-white text-[#121212] border-2 border-[#121212] font-black flex items-center justify-center transition-colors cursor-pointer"
+                className="w-8 h-8 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-[#9BA1AE] hover:text-[#F5F7FA] flex items-center justify-center transition-colors cursor-pointer"
               >
-                ✕
+                <X className="w-4 h-4" />
               </button>
             </div>
 
             <form onSubmit={handleAddEntry} className="space-y-4">
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-[#121212] block mb-1 font-black uppercase text-[11px]">Asset / Symbol:</label>
+                  <label className="text-[#9BA1AE] block mb-1 uppercase text-[11px]">Asset / Symbol:</label>
                   <input
                     type="text"
                     value={asset}
                     onChange={(e) => setAsset(e.target.value)}
-                    className="w-full bg-[#F0F0F0] border-2 border-[#121212] p-3 text-[#121212] font-bold focus:outline-none focus:bg-white shadow-[2px_2px_0px_0px_#121212]"
+                    className="w-full bg-[#151923] border border-white/[0.08] rounded-xl p-3 text-[#F5F7FA] focus:outline-none focus:border-[#5865FF]"
                     required
                   />
                 </div>
                 <div>
-                  <label className="text-[#121212] block mb-1 font-black uppercase text-[11px]">Direction:</label>
+                  <label className="text-[#9BA1AE] block mb-1 uppercase text-[11px]">Direction:</label>
                   <select
                     value={direction}
                     onChange={(e) => setDirection(e.target.value as any)}
-                    className="w-full bg-[#F0F0F0] border-2 border-[#121212] p-3 text-[#121212] font-bold focus:outline-none focus:bg-white shadow-[2px_2px_0px_0px_#121212] cursor-pointer"
+                    className="w-full bg-[#151923] border border-white/[0.08] rounded-xl p-3 text-[#F5F7FA] focus:outline-none focus:border-[#5865FF] cursor-pointer"
                   >
                     <option value="LONG">LONG</option>
                     <option value="SHORT">SHORT</option>
@@ -260,11 +260,11 @@ export const TradingJournal: React.FC = () => {
               </div>
 
               <div>
-                <label className="text-[#121212] block mb-1 font-black uppercase text-[11px]">ICT Execution Model:</label>
+                <label className="text-[#9BA1AE] block mb-1 uppercase text-[11px]">ICT Execution Model:</label>
                 <select
                   value={modelUsed}
                   onChange={(e) => setModelUsed(e.target.value)}
-                  className="w-full bg-[#F0F0F0] border-2 border-[#121212] p-3 text-[#121212] font-bold focus:outline-none focus:bg-white shadow-[2px_2px_0px_0px_#121212] cursor-pointer"
+                  className="w-full bg-[#151923] border border-white/[0.08] rounded-xl p-3 text-[#F5F7FA] focus:outline-none focus:border-[#5865FF] cursor-pointer"
                 >
                   <option value="ICT Charter Model 1: Intraday Scalping (20-Day IPDA & OTE)">ICT Charter Model 1: Intraday Scalping (20-Day IPDA &amp; OTE)</option>
                   <option value="ICT Charter Model 2: Weekly Range Expansion (Tuesday Low/High)">ICT Charter Model 2: Weekly Range Expansion (Tuesday Low/High)</option>
@@ -286,74 +286,74 @@ export const TradingJournal: React.FC = () => {
               </div>
 
               {/* 7-Point ICT Checklist */}
-              <div className="bg-[#FFF9C4] p-5 border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] space-y-3">
-                <div className="flex items-center justify-between font-black uppercase text-[#121212]">
-                  <span>ICT 7-Point Quality Checklist</span>
-                  <span className="bg-[#D02020] text-white border border-[#121212] px-3 py-0.5 text-[11px] font-mono">
+              <div className="bg-[#151923] p-5 rounded-xl border border-white/[0.08] space-y-3">
+                <div className="flex items-center justify-between uppercase">
+                  <span className="text-[#F5F7FA] font-medium">ICT 7-Point Quality Checklist</span>
+                  <span className="bg-[#5865FF]/10 text-[#5865FF] border border-[#5865FF]/20 px-2.5 py-0.5 rounded-full text-[10px] font-mono">
                     Score: {checklistScore} / 7
                   </span>
                 </div>
-                <div className="space-y-2 text-[#121212] font-medium">
-                  <label className="flex items-center gap-2 cursor-pointer">
+                <div className="space-y-2 text-[#9BA1AE] font-sans text-xs">
+                  <label className="flex items-center gap-2 cursor-pointer hover:text-[#F5F7FA]">
                     <input
                       type="checkbox"
                       checked={checklist.htfBiasAligned}
                       onChange={(e) => setChecklist({ ...checklist, htfBiasAligned: e.target.checked })}
-                      className="accent-[#1040C0] w-4 h-4"
+                      className="accent-[#5865FF] w-4 h-4 rounded"
                     />
                     <span>1. HTF Bias &amp; Draw on Liquidity clearly identified</span>
                   </label>
-                  <label className="flex items-center gap-2 cursor-pointer">
+                  <label className="flex items-center gap-2 cursor-pointer hover:text-[#F5F7FA]">
                     <input
                       type="checkbox"
                       checked={checklist.inDiscountPremium}
                       onChange={(e) => setChecklist({ ...checklist, inDiscountPremium: e.target.checked })}
-                      className="accent-[#1040C0] w-4 h-4"
+                      className="accent-[#5865FF] w-4 h-4 rounded"
                     />
                     <span>2. Trade executes in Discount (for Buys) or Premium (for Sells)</span>
                   </label>
-                  <label className="flex items-center gap-2 cursor-pointer">
+                  <label className="flex items-center gap-2 cursor-pointer hover:text-[#F5F7FA]">
                     <input
                       type="checkbox"
                       checked={checklist.liquiditySweptFirst}
                       onChange={(e) => setChecklist({ ...checklist, liquiditySweptFirst: e.target.checked })}
-                      className="accent-[#1040C0] w-4 h-4"
+                      className="accent-[#5865FF] w-4 h-4 rounded"
                     />
                     <span>3. Key liquidity pool (BSL/SSL) was swept prior to displacement</span>
                   </label>
-                  <label className="flex items-center gap-2 cursor-pointer">
+                  <label className="flex items-center gap-2 cursor-pointer hover:text-[#F5F7FA]">
                     <input
                       type="checkbox"
                       checked={checklist.displacementWithFullBody}
                       onChange={(e) => setChecklist({ ...checklist, displacementWithFullBody: e.target.checked })}
-                      className="accent-[#1040C0] w-4 h-4"
+                      className="accent-[#5865FF] w-4 h-4 rounded"
                     />
                     <span>4. Energetic displacement with full candle bodies broke structure (MSS)</span>
                   </label>
-                  <label className="flex items-center gap-2 cursor-pointer">
+                  <label className="flex items-center gap-2 cursor-pointer hover:text-[#F5F7FA]">
                     <input
                       type="checkbox"
                       checked={checklist.fvgClearlyVisible}
                       onChange={(e) => setChecklist({ ...checklist, fvgClearlyVisible: e.target.checked })}
-                      className="accent-[#1040C0] w-4 h-4"
+                      className="accent-[#5865FF] w-4 h-4 rounded"
                     />
                     <span>5. Clean 3-candle Fair Value Gap (FVG) or Order Block left behind</span>
                   </label>
-                  <label className="flex items-center gap-2 cursor-pointer">
+                  <label className="flex items-center gap-2 cursor-pointer hover:text-[#F5F7FA]">
                     <input
                       type="checkbox"
                       checked={checklist.invalidationStopPlaced}
                       onChange={(e) => setChecklist({ ...checklist, invalidationStopPlaced: e.target.checked })}
-                      className="accent-[#1040C0] w-4 h-4"
+                      className="accent-[#5865FF] w-4 h-4 rounded"
                     />
                     <span>6. Stop Loss is set safely beyond structural invalidation point</span>
                   </label>
-                  <label className="flex items-center gap-2 cursor-pointer">
+                  <label className="flex items-center gap-2 cursor-pointer hover:text-[#F5F7FA]">
                     <input
                       type="checkbox"
                       checked={checklist.inKillzoneTimeWindow}
                       onChange={(e) => setChecklist({ ...checklist, inKillzoneTimeWindow: e.target.checked })}
-                      className="accent-[#1040C0] w-4 h-4"
+                      className="accent-[#5865FF] w-4 h-4 rounded"
                     />
                     <span>7. Setup occurred inside dedicated ICT Killzone or Silver Bullet window</span>
                   </label>
@@ -362,11 +362,11 @@ export const TradingJournal: React.FC = () => {
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-[#121212] block mb-1 font-black uppercase text-[11px]">Result:</label>
+                  <label className="text-[#9BA1AE] block mb-1 uppercase text-[11px]">Result:</label>
                   <select
                     value={result}
                     onChange={(e) => setResult(e.target.value as any)}
-                    className="w-full bg-[#F0F0F0] border-2 border-[#121212] p-3 text-[#121212] font-bold focus:outline-none focus:bg-white shadow-[2px_2px_0px_0px_#121212] cursor-pointer"
+                    className="w-full bg-[#151923] border border-white/[0.08] rounded-xl p-3 text-[#F5F7FA] focus:outline-none focus:border-[#5865FF] cursor-pointer"
                   >
                     <option value="WIN">WIN</option>
                     <option value="LOSS">LOSS</option>
@@ -374,38 +374,38 @@ export const TradingJournal: React.FC = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="text-[#121212] block mb-1 font-black uppercase text-[11px]">R Realized:</label>
+                  <label className="text-[#9BA1AE] block mb-1 uppercase text-[11px]">R Realized:</label>
                   <input
                     type="number"
                     step="0.1"
                     value={rRealized}
                     onChange={(e) => setRRealized(parseFloat(e.target.value))}
-                    className="w-full bg-[#F0F0F0] border-2 border-[#121212] p-3 text-[#121212] font-bold focus:outline-none focus:bg-white shadow-[2px_2px_0px_0px_#121212]"
+                    className="w-full bg-[#151923] border border-white/[0.08] rounded-xl p-3 text-[#F5F7FA] focus:outline-none focus:border-[#5865FF]"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="text-[#121212] block mb-1 font-black uppercase text-[11px]">Psychology &amp; Execution Notes:</label>
+                <label className="text-[#9BA1AE] block mb-1 uppercase text-[11px]">Psychology &amp; Execution Notes:</label>
                 <textarea
                   value={psychologyNotes}
                   onChange={(e) => setPsychologyNotes(e.target.value)}
                   rows={2}
-                  className="w-full bg-[#F0F0F0] border-2 border-[#121212] p-3 text-[#121212] font-bold focus:outline-none focus:bg-white shadow-[2px_2px_0px_0px_#121212]"
+                  className="w-full bg-[#151923] border border-white/[0.08] rounded-xl p-3 text-[#F5F7FA] focus:outline-none focus:border-[#5865FF]"
                 />
               </div>
 
-              <div className="flex justify-end gap-3 pt-4 border-t-4 border-[#121212]">
+              <div className="flex justify-end gap-3 pt-4 border-t border-white/[0.08]">
                 <button
                   type="button"
                   onClick={() => setShowNewModal(false)}
-                  className="px-5 py-3 bg-white hover:bg-[#F0C020] text-[#121212] font-mono text-xs font-black uppercase border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] transition-colors cursor-pointer"
+                  className="px-4 py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-[#9BA1AE] hover:text-[#F5F7FA] uppercase tracking-wider transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-[#D02020] hover:bg-red-700 text-white font-mono text-xs font-black uppercase border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] cursor-pointer active:translate-x-[1px] active:translate-y-[1px] active:shadow-none"
+                  className="px-5 py-2.5 bg-[#5865FF] hover:bg-[#4752E6] text-white uppercase tracking-wider rounded-xl cursor-pointer shadow-lg shadow-[#5865FF]/20"
                 >
                   Save Entry
                 </button>

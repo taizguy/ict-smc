@@ -6,12 +6,6 @@ import {
   BookOpen, 
   Heart, 
   Wrench, 
-  BarChart2, 
-  Shield, 
-  Zap, 
-  GraduationCap,
-  ExternalLink,
-  CheckCircle2,
   Clock
 } from 'lucide-react';
 import boyStudyingImg from '../assets/images/boy_learning_trading_1788423487769.jpg';
@@ -29,7 +23,6 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
 }) => {
   const [gratitudeCount, setGratitudeCount] = useState<number>(1429);
   const [hasVoted, setHasVoted] = useState<boolean>(false);
-  const [activeTab, setActiveTab] = useState<'mission' | 'mentor' | 'pillars'>('mission');
 
   const quotes = [
     "“Trading isn't guessing. It's reading institutional footprints candle by candle.”",
@@ -42,7 +35,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
   useEffect(() => {
     const timer = setInterval(() => {
       setQuoteIndex((prev) => (prev + 1) % quotes.length);
-    }, 5000);
+    }, 6000);
     return () => clearInterval(timer);
   }, [quotes.length]);
 
@@ -54,330 +47,281 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
   };
 
   return (
-    <div className="text-[#121212] flex flex-col justify-between relative selection:bg-[#1040C0] selection:text-white font-sans space-y-6">
-      {/* Bauhaus Sub-Navigation & Dedication Bar */}
-      <div className="relative z-10 w-full px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-4 border-[#121212] bg-white shadow-[6px_6px_0px_0px_#121212]">
-        {/* Geometric Bauhaus Logo / Header */}
-        <button
-          type="button"
-          onClick={() => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }}
-          className="flex items-center gap-3 text-left cursor-pointer group"
-          title="Return to top of Welcome Screen"
-        >
-          <div className="flex items-center gap-1.5 p-1.5 bg-white border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] group-hover:-translate-y-0.5 transition-transform">
-            <span className="w-3.5 h-3.5 rounded-full bg-[#D02020] border border-[#121212] inline-block shrink-0" />
-            <span className="w-3.5 h-3.5 rounded-none bg-[#1040C0] border border-[#121212] inline-block shrink-0" />
-            <span className="w-3.5 h-3.5 bg-[#F0C020] clip-triangle inline-block shrink-0" />
-          </div>
-          <div>
-            <div className="font-black text-lg sm:text-xl uppercase tracking-tighter text-[#121212] flex items-center gap-1.5 leading-none group-hover:text-[#D02020] transition-colors">
-              <span>ICT</span>
-              <span className="text-[#D02020]">//</span>
-              <span>BAUHAUS</span>
-            </div>
-            <div className="text-[10px] font-bold uppercase tracking-widest text-[#121212]/70 leading-tight mt-0.5 font-mono">
-              INSTITUTIONAL CURRICULUM &amp; LAB
-            </div>
-          </div>
-        </button>
+    <div className="text-[#F5F7FA] flex flex-col justify-between relative selection:bg-[#5865FF] selection:text-white font-sans space-y-12 sm:space-y-16">
+      
+      {/* Top Ambient Sub-Header Bar */}
+      <div className="w-full px-5 py-3.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-white/[0.08] bg-[#11141B]/80 backdrop-blur-md rounded-2xl">
+        <div className="flex items-center gap-3">
+          <div className="w-2.5 h-2.5 rounded-full bg-[#5865FF] shadow-[0_0_12px_rgba(88,101,255,0.7)]" />
+          <span className="text-[11px] font-mono tracking-[0.18em] uppercase text-[#9BA1AE]">
+            INSTITUTIONAL CURRICULUM · OPEN ACCESS CODEX
+          </span>
+        </div>
 
-        {/* Action Controls */}
-        <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+        <div className="flex items-center gap-3">
           <button
             type="button"
             onClick={onOpenMentorSpotlight}
-            className="flex items-center gap-2 px-3.5 py-1.5 bg-[#F0C020] hover:bg-yellow-400 text-[#121212] border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] text-xs font-black uppercase tracking-wider transition-all cursor-pointer active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-xs text-[#F5F7FA] transition-all cursor-pointer"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#121212] stroke-[2.5]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#55E6D1]" />
             <span>Mentor Tribute</span>
           </button>
 
           <button
             type="button"
             onClick={handleVote}
-            className={`flex items-center gap-2 px-3.5 py-1.5 border-2 border-[#121212] text-xs font-mono font-black uppercase tracking-wider transition-all cursor-pointer ${
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs font-mono transition-all cursor-pointer ${
               hasVoted
-                ? 'bg-[#D02020] text-white shadow-[3px_3px_0px_0px_#121212]'
-                : 'bg-white text-[#121212] hover:bg-[#F0F0F0] shadow-[3px_3px_0px_0px_#121212]'
+                ? 'bg-rose-500/10 border-rose-500/30 text-rose-300'
+                : 'bg-white/[0.04] hover:bg-white/[0.08] border-white/[0.08] text-[#9BA1AE] hover:text-[#F5F7FA]'
             }`}
             title="Appreciation for free institutional education"
           >
-            <Heart className={`w-3.5 h-3.5 ${hasVoted ? 'fill-white text-white' : 'text-[#D02020]'}`} />
+            <Heart className={`w-3.5 h-3.5 ${hasVoted ? 'fill-rose-400 text-rose-400' : 'text-[#9BA1AE]'}`} />
             <span>{gratitudeCount}</span>
           </button>
 
           <button
             type="button"
             onClick={() => onEnterAcademy('curriculum')}
-            className="flex items-center gap-2 px-4 py-1.5 bg-[#1040C0] hover:bg-blue-700 text-white border-2 border-[#121212] shadow-[3px_3px_0px_0px_#121212] text-xs font-black uppercase tracking-wider transition-all cursor-pointer active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+            className="btn-predikt-primary text-xs py-1.5 px-3.5"
           >
             <span>Enter Academy</span>
-            <ArrowRight className="w-3.5 h-3.5 stroke-[3]" />
+            <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>
       </div>
 
-      {/* Main Welcome Content */}
-      <main className="relative z-10 max-w-[1720px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex-1 flex flex-col justify-center space-y-10">
-        
-        {/* Main Constructivist Showcase Grid */}
-        <ScrollReveal y={35} duration={0.6}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          {/* Left Hero Column */}
-          <div className="lg:col-span-7 space-y-6">
+      {/* Main Hero Section: Predikt Enormous Typography & Layout */}
+      <section className="relative z-10 w-full pt-4 sm:pt-10 space-y-12">
+        <ScrollReveal y={30} duration={0.7}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             
-            {/* Bauhaus Composition Badge */}
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-2 px-3 py-1 bg-[#121212] text-white text-xs font-black uppercase tracking-widest border-2 border-[#121212]">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#D02020]" />
-                FORM FOLLOWS FUNCTION
-              </span>
-              <span className="px-3 py-1 bg-[#F0C020] text-[#121212] text-xs font-black uppercase tracking-widest border-2 border-[#121212]">
-                OPEN ACCESSIBLE TRADING
-              </span>
-            </div>
-
-            {/* Massive Bauhaus Heading */}
-            <div className="space-y-1">
-              <div className="text-sm sm:text-base font-black uppercase font-mono tracking-widest text-[#1040C0]">
-                ICT SMART MONEY CONCEPTS
-              </div>
-              <h1 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter text-[#121212] leading-[0.9]">
-                BAUHAUS <span className="bg-[#D02020] text-white px-3 py-1 inline-block border-2 border-[#121212] shadow-[4px_4px_0px_0px_#121212]">ACADEMY</span>
-              </h1>
-            </div>
-
-            <p className="text-base sm:text-lg font-medium text-[#121212] leading-relaxed max-w-xl">
-              An institutional trading syllabus engineered with constructivist clarity. Master order flow, fair value gaps, algorithmic displacement, and liquidity delivery across 48 codified chapters, 52 masterclasses by Trader Abdullah Masood, and an interactive 8-tool laboratory.
-            </p>
-
-            {/* Primary Action Buttons */}
-            <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
-              <button
-                onClick={() => onEnterAcademy('curriculum')}
-                className="px-6 py-3.5 bg-[#D02020] hover:bg-red-700 text-white text-sm font-black uppercase tracking-wider border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] flex items-center gap-2.5 transition-all cursor-pointer active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-              >
-                <BookOpen className="w-4 h-4 stroke-[2.5]" />
-                <span>Explore 48 Chapters</span>
-                <ArrowRight className="w-4 h-4 stroke-[3]" />
-              </button>
-
-              <button
-                onClick={() => onEnterAcademy('masood')}
-                className="px-6 py-3.5 bg-[#F0C020] hover:bg-yellow-400 text-[#121212] text-sm font-black uppercase tracking-wider border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] flex items-center gap-2.5 transition-all cursor-pointer active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-              >
-                <Youtube className="w-4 h-4 text-[#D02020] fill-[#D02020]" />
-                <span>Masood Academy (52)</span>
-              </button>
-
-              <button
-                onClick={() => onEnterAcademy('tools')}
-                className="px-6 py-3.5 bg-[#1040C0] hover:bg-blue-700 text-white text-sm font-black uppercase tracking-wider border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] flex items-center gap-2.5 transition-all cursor-pointer active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-              >
-                <Wrench className="w-4 h-4 stroke-[2.5]" />
-                <span>Trading Lab (8 Tools)</span>
-              </button>
-            </div>
-
-            {/* Rotating Dynamic Quote */}
-            <div className="p-4 bg-white border-2 sm:border-4 border-[#121212] shadow-[4px_4px_0px_0px_#121212] space-y-1 max-w-xl">
-              <div className="flex items-center gap-2 text-[10px] font-mono font-black uppercase text-[#D02020]">
-                <Clock className="w-3.5 h-3.5" />
-                <span>Algorithmic Dictum</span>
-              </div>
-              <p className="text-xs sm:text-sm font-bold text-[#121212] italic">
-                {quotes[quoteIndex]}
-              </p>
-            </div>
-
-          </div>
-
-          {/* Right Column: Bauhaus Tribute & Visual Showcase */}
-          <div className="lg:col-span-5 space-y-6">
-            
-            {/* The Student & Mentor Bauhaus Card */}
-            <div className="bg-white border-4 border-[#121212] shadow-[8px_8px_0px_0px_#121212] p-5 sm:p-6 relative overflow-hidden space-y-4">
+            {/* Left Column: Editorial Display Typography */}
+            <div className="lg:col-span-7 space-y-6">
               
-              <div className="flex items-center justify-between border-b-2 border-[#121212] pb-3">
-                <div className="flex items-center gap-2">
-                  <span className="w-3.5 h-3.5 bg-[#D02020] border border-black" />
-                  <span className="text-xs font-mono font-black uppercase text-[#121212]">
-                    DEDICATION &amp; TRIBUTE
+              {/* Eyebrow */}
+              <div className="flex items-center gap-3">
+                <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-[#55E6D1] font-medium">
+                  00 / THE INNER CIRCLE TRADER
+                </span>
+                <span className="text-white/20">·</span>
+                <span className="text-[11px] font-mono tracking-[0.16em] uppercase text-[#656B78]">
+                  SMART MONEY CONCEPTS
+                </span>
+              </div>
+
+              {/* Enormous Editorial Display Title */}
+              <h1 className="predikt-hero-title">
+                READ THE<br />
+                <span className="text-[#5865FF]">MARKET.</span>
+              </h1>
+
+              {/* Supporting Educational Description */}
+              <p className="text-base sm:text-lg text-[#9BA1AE] font-normal leading-relaxed max-w-xl">
+                An institutional trading syllabus engineered with complete mathematical discipline. Master order flow, Fair Value Gaps, algorithmic displacement, and liquidity delivery across 48 codified chapters, 52 masterclasses by Trader Abdullah Masood, and an interactive 8-tool laboratory.
+              </p>
+
+              {/* Action Buttons */}
+              <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
+                <button
+                  onClick={() => onEnterAcademy('curriculum')}
+                  className="btn-predikt-primary text-sm px-6 py-3"
+                >
+                  <BookOpen className="w-4 h-4 text-[#08090D]" />
+                  <span>Explore 48 Chapters</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+
+                <button
+                  onClick={() => onEnterAcademy('masood')}
+                  className="btn-predikt-secondary text-sm px-5 py-3"
+                >
+                  <Youtube className="w-4 h-4 text-[#FF6B7A]" />
+                  <span>Masood Academy (52)</span>
+                </button>
+
+                <button
+                  onClick={() => onEnterAcademy('tools')}
+                  className="btn-predikt-secondary text-sm px-5 py-3"
+                >
+                  <Wrench className="w-4 h-4 text-[#55E6D1]" />
+                  <span>Trading Lab</span>
+                </button>
+              </div>
+
+              {/* Dynamic Algorithmic Quote */}
+              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] space-y-1.5 max-w-xl">
+                <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.16em] text-[#656B78]">
+                  <Clock className="w-3 h-3 text-[#5865FF]" />
+                  <span>ALGORITHMIC DICTUM</span>
+                </div>
+                <p className="text-xs sm:text-sm text-[#F5F7FA]/80 italic font-light">
+                  {quotes[quoteIndex]}
+                </p>
+              </div>
+
+            </div>
+
+            {/* Right Column: Visual Showcase Card */}
+            <div className="lg:col-span-5 space-y-6">
+              <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 relative overflow-hidden space-y-5 transition-all hover:border-white/[0.15]">
+                
+                <div className="flex items-center justify-between pb-3 border-b border-white/[0.07]">
+                  <div className="flex items-center gap-2.5">
+                    <span className="w-2 h-2 rounded-full bg-[#55E6D1]" />
+                    <span className="text-[11px] font-mono tracking-[0.16em] uppercase text-[#F5F7FA]">
+                      DEDICATION &amp; TRIBUTE
+                    </span>
+                  </div>
+                  <span className="text-[10px] font-mono text-[#5865FF] bg-[#5865FF]/10 px-2.5 py-0.5 rounded-full border border-[#5865FF]/20">
+                    100% UNLOCKED
                   </span>
                 </div>
-                <span className="text-[10px] font-mono font-bold bg-[#F0C020] px-2 py-0.5 border border-[#121212]">
-                  100% UNLOCKED
-                </span>
-              </div>
 
-              {/* Framed Image */}
-              <div className="relative border-4 border-[#121212] overflow-hidden bg-[#E5E5E5] aspect-4/3">
-                <img 
-                  src={boyStudyingImg} 
-                  alt="Young student studying institutional price delivery"
-                  className="w-full h-full object-cover grayscale contrast-125"
-                />
-                <div className="absolute bottom-2 left-2 bg-[#121212] text-white px-2.5 py-1 text-[10px] font-mono font-bold border border-white uppercase">
-                  FOCUS // ORDERFLOW DISCIPLINE
+                {/* Framed Image */}
+                <div className="relative rounded-xl overflow-hidden bg-[#0C0E13] border border-white/[0.08] aspect-4/3">
+                  <img 
+                    src={boyStudyingImg} 
+                    alt="Student studying institutional price delivery"
+                    className="w-full h-full object-cover grayscale contrast-125 opacity-90 hover:opacity-100 transition-opacity"
+                  />
+                  <div className="absolute bottom-3 left-3 bg-[#08090D]/85 backdrop-blur-md text-[#F5F7FA] px-3 py-1 text-[10px] font-mono rounded-md border border-white/[0.09] tracking-wider uppercase">
+                    FOCUS // ORDERFLOW DISCIPLINE
+                  </div>
                 </div>
-              </div>
 
-              {/* Tribute Inscription */}
-              <div className="p-3 bg-[#FFF9C4] border-2 border-[#121212] text-xs font-medium space-y-1">
-                <div className="font-mono font-black uppercase text-[10px] text-[#D02020]">
-                  IN HONOR OF TRADER ABDULLAH MASOOD
+                {/* Inscription */}
+                <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.06] text-xs space-y-1">
+                  <div className="font-mono text-[10px] text-[#55E6D1] tracking-[0.14em] uppercase">
+                    IN HONOR OF TRADER ABDULLAH MASOOD
+                  </div>
+                  <p className="text-[#9BA1AE] text-xs leading-relaxed font-light">
+                    Transforming thousands of retail traders through relentless dedication to open education, algorithmic precision, and disciplined risk psychology.
+                  </p>
                 </div>
-                <p className="text-[#121212] text-xs leading-snug">
-                  Transforming thousands of retail traders through relentless dedication to open education, algorithmic precision, and disciplined risk psychology.
-                </p>
-              </div>
 
-              <div className="grid grid-cols-3 gap-2 text-center">
-                <div className="p-2.5 bg-[#F0F0F0] border-2 border-[#121212]">
-                  <div className="text-xl font-black text-[#121212] font-mono">48</div>
-                  <div className="text-[9px] font-black uppercase text-[#121212]/70 font-mono">Textbook Ch.</div>
+                {/* Metrics */}
+                <div className="grid grid-cols-3 gap-3 text-center">
+                  <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+                    <div className="text-2xl font-semibold text-[#F5F7FA] font-mono">48</div>
+                    <div className="text-[10px] uppercase text-[#656B78] font-mono tracking-wider mt-0.5">Chapters</div>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+                    <div className="text-2xl font-semibold text-[#FF6B7A] font-mono">52</div>
+                    <div className="text-[10px] uppercase text-[#656B78] font-mono tracking-wider mt-0.5">Lectures</div>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+                    <div className="text-2xl font-semibold text-[#55E6D1] font-mono">08</div>
+                    <div className="text-[10px] uppercase text-[#656B78] font-mono tracking-wider mt-0.5">Tools</div>
+                  </div>
                 </div>
-                <div className="p-2.5 bg-[#F0F0F0] border-2 border-[#121212]">
-                  <div className="text-xl font-black text-[#D02020] font-mono">52</div>
-                  <div className="text-[9px] font-black uppercase text-[#121212]/70 font-mono">Lectures</div>
-                </div>
-                <div className="p-2.5 bg-[#F0F0F0] border-2 border-[#121212]">
-                  <div className="text-xl font-black text-[#1040C0] font-mono">08</div>
-                  <div className="text-[9px] font-black uppercase text-[#121212]/70 font-mono">Lab Tools</div>
-                </div>
-              </div>
 
-            </div>
-
-          </div>
-          </div>
-        </ScrollReveal>
-
-        {/* 3-Pillar Bauhaus Architecture Grid */}
-        <ScrollReveal y={35} delay={0.15}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-            
-            {/* Pillar 1: 48 Institutional Chapters */}
-            <div 
-              onClick={() => onEnterAcademy('curriculum')}
-              className="bg-white border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] p-6 space-y-4 cursor-pointer hover:-translate-y-1 transition-transform group"
-            >
-              <div className="flex items-center justify-between">
-                <div className="w-10 h-10 bg-[#D02020] text-white border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] flex items-center justify-center font-mono font-black text-sm">
-                  01
-                </div>
-                <span className="text-[10px] font-mono font-black uppercase px-2 py-0.5 bg-[#F0F0F0] border border-[#121212]">
-                  OPEN SYLLABUS
-                </span>
-              </div>
-              <div>
-                <h3 className="text-xl font-black uppercase tracking-tight text-[#121212] group-hover:text-[#D02020] transition-colors">
-                  The ICT Textbook
-                </h3>
-                <p className="text-xs text-[#121212]/80 mt-1 font-medium leading-relaxed">
-                  48 fully codified institutional chapters spanning market structure, liquidity sweeps, Fair Value Gaps, and killzones without arbitrary locks.
-                </p>
-              </div>
-              <div className="pt-2 flex items-center gap-1.5 text-xs font-black uppercase text-[#D02020]">
-                <span>Read Chapters</span>
-                <ArrowRight className="w-3.5 h-3.5 stroke-[3] group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-
-            {/* Pillar 2: Masood Academy */}
-            <div 
-              onClick={() => onEnterAcademy('masood')}
-              className="bg-white border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] p-6 space-y-4 cursor-pointer hover:-translate-y-1 transition-transform group"
-            >
-              <div className="flex items-center justify-between">
-                <div className="w-10 h-10 bg-[#F0C020] text-[#121212] border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] flex items-center justify-center font-mono font-black text-sm">
-                  02
-                </div>
-                <span className="text-[10px] font-mono font-black uppercase px-2 py-0.5 bg-[#F0F0F0] border border-[#121212]">
-                  VIDEO SYNDICATE
-                </span>
-              </div>
-              <div>
-                <h3 className="text-xl font-black uppercase tracking-tight text-[#121212] group-hover:text-[#D02020] transition-colors">
-                  Abdullah Masood Academy
-                </h3>
-                <p className="text-xs text-[#121212]/80 mt-1 font-medium leading-relaxed">
-                  52 structured video masterclasses across 6 curated playlists, the Daily Bias calculator, and the 10 Golden Execution Rules.
-                </p>
-              </div>
-              <div className="pt-2 flex items-center gap-1.5 text-xs font-black uppercase text-[#121212]">
-                <span>Watch Masterclasses</span>
-                <ArrowRight className="w-3.5 h-3.5 stroke-[3] group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-
-            {/* Pillar 3: Trading Lab Workbench */}
-            <div 
-              onClick={() => onEnterAcademy('tools')}
-              className="bg-white border-4 border-[#121212] shadow-[6px_6px_0px_0px_#121212] p-6 space-y-4 cursor-pointer hover:-translate-y-1 transition-transform group"
-            >
-              <div className="flex items-center justify-between">
-                <div className="w-10 h-10 bg-[#1040C0] text-white border-2 border-[#121212] shadow-[2px_2px_0px_0px_#121212] flex items-center justify-center font-mono font-black text-sm">
-                  03
-                </div>
-                <span className="text-[10px] font-mono font-black uppercase px-2 py-0.5 bg-[#F0F0F0] border border-[#121212]">
-                  INTERACTIVE LAB
-                </span>
-              </div>
-              <div>
-                <h3 className="text-xl font-black uppercase tracking-tight text-[#121212] group-hover:text-[#1040C0] transition-colors">
-                  Trading Workbench
-                </h3>
-                <p className="text-xs text-[#121212]/80 mt-1 font-medium leading-relaxed">
-                  Step-by-step ChartLab, Execution Simulator, Monte Carlo Backtesting Engine, 7-point Trading Journal, and Concept Knowledge Graph.
-                </p>
-              </div>
-              <div className="pt-2 flex items-center gap-1.5 text-xs font-black uppercase text-[#1040C0]">
-                <span>Launch Laboratory</span>
-                <ArrowRight className="w-3.5 h-3.5 stroke-[3] group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
 
           </div>
         </ScrollReveal>
 
-      </main>
+        {/* 3 Pillars Section */}
+        <ScrollReveal y={30} delay={0.15}>
+          <div className="space-y-4 pt-8">
+            <div className="flex items-center gap-2">
+              <span className="text-[11px] font-mono uppercase tracking-[0.18em] text-[#656B78]">
+                01 / THREE PILLARS OF MASTERY
+              </span>
+            </div>
 
-      {/* Bauhaus Footer */}
-      <footer className="relative z-10 border-t-4 border-[#121212] bg-white py-6 px-4">
-        <div className="max-w-[1720px] w-full mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
-          <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#D02020] border border-black" />
-            <span className="font-black text-[#121212]">ICT // BAUHAUS DESIGN SYSTEM</span>
-            <span className="text-[#121212]/40">|</span>
-            <span className="text-[#121212]/70 font-bold">100% FREE &amp; OPEN EDUCATIONAL ARCHITECTURE</span>
-          </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              
+              {/* Pillar 1: Textbook */}
+              <div 
+                onClick={() => onEnterAcademy('curriculum')}
+                className="predikt-card p-6 sm:p-7 space-y-4 cursor-pointer group"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center font-mono text-xs text-[#5865FF] font-semibold">
+                    01
+                  </div>
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#656B78]">
+                    OPEN SYLLABUS
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-[#F5F7FA] group-hover:text-[#5865FF] transition-colors">
+                    The ICT Textbook
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#9BA1AE] mt-1.5 leading-relaxed font-normal">
+                    48 fully codified institutional chapters spanning market structure, liquidity sweeps, Fair Value Gaps, and killzones without arbitrary locks.
+                  </p>
+                </div>
+                <div className="pt-2 flex items-center gap-1.5 text-xs text-[#5865FF] font-medium">
+                  <span>Read Chapters</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
 
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => onEnterAcademy('curriculum')}
-              className="font-black text-[#121212] hover:text-[#D02020] uppercase underline cursor-pointer"
-            >
-              Curriculum
-            </button>
-            <button
-              onClick={() => onEnterAcademy('masood')}
-              className="font-black text-[#121212] hover:text-[#D02020] uppercase underline cursor-pointer"
-            >
-              Masood Academy
-            </button>
-            <button
-              onClick={() => onEnterAcademy('tools')}
-              className="font-black text-[#121212] hover:text-[#D02020] uppercase underline cursor-pointer"
-            >
-              Lab Workbench
-            </button>
+              {/* Pillar 2: Masood Academy */}
+              <div 
+                onClick={() => onEnterAcademy('masood')}
+                className="predikt-card p-6 sm:p-7 space-y-4 cursor-pointer group"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center font-mono text-xs text-[#FF6B7A] font-semibold">
+                    02
+                  </div>
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#656B78]">
+                    VIDEO SYNDICATE
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-[#F5F7FA] group-hover:text-[#FF6B7A] transition-colors">
+                    Abdullah Masood Academy
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#9BA1AE] mt-1.5 leading-relaxed font-normal">
+                    52 structured video masterclasses across 6 curated playlists, the Daily Bias calculator, and the 10 Golden Execution Rules.
+                  </p>
+                </div>
+                <div className="pt-2 flex items-center gap-1.5 text-xs text-[#FF6B7A] font-medium">
+                  <span>Watch Masterclasses</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+
+              {/* Pillar 3: Trading Workbench */}
+              <div 
+                onClick={() => onEnterAcademy('tools')}
+                className="predikt-card p-6 sm:p-7 space-y-4 cursor-pointer group"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center font-mono text-xs text-[#55E6D1] font-semibold">
+                    03
+                  </div>
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#656B78]">
+                    INTERACTIVE LAB
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-[#F5F7FA] group-hover:text-[#55E6D1] transition-colors">
+                    Trading Workbench
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#9BA1AE] mt-1.5 leading-relaxed font-normal">
+                    Step-by-step ChartLab, Execution Simulator, Monte Carlo Backtesting Engine, 7-point Trading Journal, and Knowledge Graph.
+                  </p>
+                </div>
+                <div className="pt-2 flex items-center gap-1.5 text-xs text-[#55E6D1] font-medium">
+                  <span>Launch Laboratory</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+
+            </div>
           </div>
-        </div>
-      </footer>
+        </ScrollReveal>
+
+      </section>
+
     </div>
   );
 };

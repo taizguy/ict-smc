@@ -338,7 +338,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
             onClick={() => setSelectedSectorFilter('all')}
             className={`px-3.5 py-1.5 rounded-full transition-all cursor-pointer font-bold ${
               selectedSectorFilter === 'all'
-                ? 'bg-white text-black shadow-md'
+                ? 'bg-white/[0.15] text-[#F5F7FA] border border-white/30 shadow-md'
                 : 'bg-[#111114] text-zinc-400 hover:text-white border border-white/[0.08]'
             }`}
           >
@@ -349,7 +349,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
             onClick={() => setSelectedSectorFilter('FOUNDATIONS')}
             className={`px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
               selectedSectorFilter === 'FOUNDATIONS'
-                ? 'bg-emerald-500 text-black font-bold shadow-md shadow-emerald-500/20'
+                ? 'bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/40 shadow-md'
                 : 'bg-[#111114] text-zinc-400 hover:text-emerald-300 border border-white/[0.08]'
             }`}
           >
@@ -360,7 +360,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
             onClick={() => setSelectedSectorFilter('STRUCTURE')}
             className={`px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
               selectedSectorFilter === 'STRUCTURE'
-                ? 'bg-cyan-500 text-black font-bold shadow-md shadow-cyan-500/20'
+                ? 'bg-cyan-500/20 text-cyan-300 font-bold border border-cyan-500/40 shadow-md'
                 : 'bg-[#111114] text-zinc-400 hover:text-cyan-300 border border-white/[0.08]'
             }`}
           >
@@ -393,7 +393,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
             onClick={() => setSelectedSectorFilter('TACTICAL')}
             className={`px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
               selectedSectorFilter === 'TACTICAL'
-                ? 'bg-amber-500 text-black font-bold shadow-md shadow-amber-500/20'
+                ? 'bg-amber-500/20 text-amber-300 font-bold border border-amber-500/40 shadow-md'
                 : 'bg-[#111114] text-zinc-400 hover:text-amber-300 border border-white/[0.08]'
             }`}
           >

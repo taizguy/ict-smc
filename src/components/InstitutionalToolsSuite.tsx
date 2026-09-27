@@ -493,9 +493,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
           <button
             onClick={() => setActiveTab('clock')}
             className={`px-3 py-2.5 text-xs font-mono font-black uppercase tracking-wider border border-white/[0.08] flex items-center justify-center gap-2 transition-all ${
-              activeTab === 'clock'
-                ? 'bg-[#5865FF] text-white '
-                : 'bg-white hover:bg-white/[0.06] text-[#F0B35B] text-[#F5F7FA]'
+              activeTab === 'clock' ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20 shadow-sm' : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06] hover:bg-white/[0.04]'
             }`}
           >
             <Timer className="w-4 h-4" />
@@ -505,9 +503,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
           <button
             onClick={() => setActiveTab('ote')}
             className={`px-3 py-2.5 text-xs font-mono font-black uppercase tracking-wider border border-white/[0.08] flex items-center justify-center gap-2 transition-all ${
-              activeTab === 'ote'
-                ? 'bg-[#FF6B7A] text-white '
-                : 'bg-white hover:bg-white/[0.06] text-[#F0B35B] text-[#F5F7FA]'
+              activeTab === 'ote' ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20 shadow-sm' : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06] hover:bg-white/[0.04]'
             }`}
           >
             <Calculator className="w-4 h-4" />
@@ -517,9 +513,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
           <button
             onClick={() => setActiveTab('asian_planner')}
             className={`px-3 py-2.5 text-xs font-mono font-black uppercase tracking-wider border border-white/[0.08] flex items-center justify-center gap-2 transition-all ${
-              activeTab === 'asian_planner'
-                ? 'bg-white/[0.06] text-[#F0B35B] text-[#F5F7FA] '
-                : 'bg-white hover:bg-white/[0.06] text-[#F0B35B] text-[#F5F7FA]'
+              activeTab === 'asian_planner' ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20 shadow-sm' : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06] hover:bg-white/[0.04]'
             }`}
           >
             <Compass className="w-4 h-4" />
@@ -529,9 +523,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
           <button
             onClick={() => setActiveTab('learning_path')}
             className={`px-3 py-2.5 text-xs font-mono font-black uppercase tracking-wider border border-white/[0.08] flex items-center justify-center gap-2 transition-all ${
-              activeTab === 'learning_path'
-                ? 'bg-[#121212] text-white '
-                : 'bg-white hover:bg-white/[0.06] text-[#F0B35B] text-[#F5F7FA]'
+              activeTab === 'learning_path' ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20 shadow-sm' : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06] hover:bg-white/[0.04]'
             }`}
           >
             <Target className="w-4 h-4" />
@@ -541,9 +533,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
           <button
             onClick={() => setActiveTab('glossary')}
             className={`px-3 py-2.5 text-xs font-mono font-black uppercase tracking-wider border border-white/[0.08] flex items-center justify-center gap-2 transition-all ${
-              activeTab === 'glossary'
-                ? 'bg-[#5865FF] text-white '
-                : 'bg-white hover:bg-white/[0.06] text-[#F0B35B] text-[#F5F7FA]'
+              activeTab === 'glossary' ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20 shadow-sm' : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06] hover:bg-white/[0.04]'
             }`}
           >
             <BookOpen className="w-4 h-4" />
@@ -558,11 +548,11 @@ export const InstitutionalToolsSuite: React.FC = () => {
           
           {/* Active Macro Alert Banner */}
           <div className={`border border-white/[0.08] p-5  ${
-            activeMacro ? 'bg-white/[0.06] text-[#F0B35B] text-[#F5F7FA]' : 'bg-white text-[#F5F7FA]'
+            activeMacro ? 'bg-[#5865FF]/15 border-[#5865FF]/30 text-[#F5F7FA]' : 'bg-[#151923] border-white/[0.06] text-[#F5F7FA]'
           }`}>
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-[#121212] text-white flex items-center justify-center shrink-0 border border-white/[0.08]">
+                <div className="w-12 h-12 rounded-xl bg-white/[0.04] text-white flex items-center justify-center shrink-0 border border-white/[0.08]">
                   <Flame className={`w-6 h-6 ${activeMacro ? 'text-[#F0C020] animate-bounce' : 'text-white'}`} />
                 </div>
                 <div>
@@ -579,7 +569,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
               </div>
 
               <div className="flex items-center gap-2 self-end sm:self-auto">
-                <span className="text-xs font-mono px-3 py-1 bg-[#121212] text-white font-bold uppercase border border-white/[0.08]">
+                <span className="text-xs font-mono px-3 py-1 bg-white/[0.04] text-[#9BA1AE] rounded-lg uppercase border border-white/[0.08]">
                   {activeKillzones.length > 0 
                     ? `ACTIVE KZ: ${activeKillzones.map(k => k.name).join(' & ')}` 
                     : 'INTER-SESSION'}
@@ -602,7 +592,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
               <button
                 onClick={() => { setSimulatedHour(null); setSimulatedMinute(null); }}
                 className={`px-2.5 py-1 text-xs font-mono font-bold uppercase border border-white/[0.08] ${
-                  simulatedHour === null ? 'bg-[#5865FF] text-white' : 'bg-white hover:bg-white/[0.06] text-[#F0B35B]'
+                  simulatedHour === null ? 'bg-[#5865FF] text-white' : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06]'
                 }`}
               >
                 LIVE REAL-TIME
@@ -610,7 +600,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
               <button
                 onClick={() => { setSimulatedHour(2); setSimulatedMinute(45); }}
                 className={`px-2.5 py-1 text-xs font-mono font-bold uppercase border border-white/[0.08] ${
-                  simulatedHour === 2 ? 'bg-[#FF6B7A] text-white' : 'bg-white hover:bg-white/[0.06] text-[#F0B35B]'
+                  simulatedHour === 2 ? 'bg-[#FF6B7A] text-white' : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06]'
                 }`}
               >
                 02:45 London Macro
@@ -618,7 +608,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
               <button
                 onClick={() => { setSimulatedHour(9); setSimulatedMinute(55); }}
                 className={`px-2.5 py-1 text-xs font-mono font-bold uppercase border border-white/[0.08] ${
-                  simulatedHour === 9 ? 'bg-white/[0.06] text-[#F0B35B] text-[#F5F7FA]' : 'bg-white hover:bg-white/[0.06] text-[#F0B35B]'
+                  simulatedHour === 9 ? 'bg-[#55E6D1] text-[#08090D]' : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06]'
                 }`}
               >
                 09:55 AM Silver Bullet
@@ -626,7 +616,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
               <button
                 onClick={() => { setSimulatedHour(14); setSimulatedMinute(55); }}
                 className={`px-2.5 py-1 text-xs font-mono font-bold uppercase border border-white/[0.08] ${
-                  simulatedHour === 14 ? 'bg-[#5865FF] text-white' : 'bg-white hover:bg-white/[0.06] text-[#F0B35B]'
+                  simulatedHour === 14 ? 'bg-[#5865FF] text-white' : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06]'
                 }`}
               >
                 14:55 MOC Macro
@@ -650,7 +640,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
                 return (
                   <div
                     key={kz.id}
-                    className={`border-4 ${kz.color} p-4 bg-white transition-all ${
+                    className={`border rounded-xl p-4 bg-[#151923] border-white/[0.08] transition-all ${
                       isActive 
                         ? ' -translate-y-1 ring-2 ring-[#D02020]' 
                         : ''
@@ -697,20 +687,20 @@ export const InstitutionalToolsSuite: React.FC = () => {
             <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl text-[#F5F7FA] overflow-x-auto">
               <table className="w-full text-left text-xs font-mono border-collapse">
                 <thead>
-                  <tr className="bg-[#121212] text-white uppercase">
+                  <tr className="bg-[#0C0E13] text-[#9BA1AE] uppercase border-b border-white/[0.08]">
                     <th className="p-3 border-r border-white/20">Macro Window</th>
                     <th className="p-3 border-r border-white/20">EST Time Window</th>
                     <th className="p-3 border-r border-white/20">Algorithmic Function</th>
                     <th className="p-3">Execution Directive</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y-2 divide-[#121212]">
+                <tbody className="divide-y divide-white/[0.06]">
                   {macroWindows.map((m, idx) => {
                     const isRunning = currentTotalMinutes >= m.startMin && currentTotalMinutes < m.endMin;
                     return (
                       <tr 
                         key={m.id}
-                        className={isRunning ? 'bg-white/[0.06] text-[#F0B35B]/40 font-bold' : idx % 2 === 0 ? 'bg-white' : 'bg-[#151923]'}
+                        className={isRunning ? 'bg-[#5865FF]/15 text-[#F5F7FA] font-medium' : idx % 2 === 0 ? 'bg-[#11141B]' : 'bg-[#151923]'}
                       >
                         <td className="p-3 font-black text-sm border-r-2 border-white/[0.08] flex items-center gap-2">
                           {isRunning && <span className="w-2.5 h-2.5 rounded-full bg-[#FF6B7A] animate-ping" />}
@@ -764,9 +754,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
                 <button
                   onClick={() => setOteDirection('bullish')}
                   className={`px-4 py-2 text-xs font-mono font-black uppercase border border-white/[0.08] flex items-center gap-1.5 transition-all ${
-                    oteDirection === 'bullish'
-                      ? 'bg-[#5865FF] text-white '
-                      : 'bg-white text-[#F5F7FA]'
+                    oteDirection === 'bullish' ? 'bg-[#5865FF] text-white rounded-lg shadow-sm' : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06] rounded-lg'
                   }`}
                 >
                   <TrendingUp className="w-4 h-4" />
@@ -775,9 +763,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
                 <button
                   onClick={() => setOteDirection('bearish')}
                   className={`px-4 py-2 text-xs font-mono font-black uppercase border border-white/[0.08] flex items-center gap-1.5 transition-all ${
-                    oteDirection === 'bearish'
-                      ? 'bg-[#FF6B7A] text-white '
-                      : 'bg-white text-[#F5F7FA]'
+                    oteDirection === 'bearish' ? 'bg-[#FF6B7A] text-white rounded-lg shadow-sm' : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06] rounded-lg'
                   }`}
                 >
                   <TrendingDown className="w-4 h-4" />
@@ -794,9 +780,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
                   key={asset}
                   onClick={() => handleAssetSelect(asset)}
                   className={`px-3 py-1.5 text-xs font-mono font-black uppercase border border-white/[0.08] ${
-                    oteAsset === asset
-                      ? 'bg-white/[0.06] text-[#F0B35B] text-[#F5F7FA] '
-                      : 'bg-white hover:bg-white/[0.03] text-[#F5F7FA]'
+                    oteAsset === asset ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20 rounded-lg' : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06] rounded-lg'
                   }`}
                 >
                   {asset} ({assetPresets[asset].name})
@@ -865,7 +849,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
             {/* Calculations & Fib Matrix */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Fib Matrix Table */}
-              <div className="border border-white/[0.08] bg-white p-5 ">
+              <div className="border border-white/[0.08] bg-[#151923] rounded-2xl p-5">
                 <h3 className="font-black text-sm uppercase text-[#F5F7FA] mb-3 flex items-center gap-2 border-b-2 border-white/[0.08] pb-2">
                   <BarChart3 className="w-4 h-4 text-[#5865FF]" />
                   Algorithmic Price Matrix (Fibonacci Levels)
@@ -884,15 +868,15 @@ export const InstitutionalToolsSuite: React.FC = () => {
                     <span className="font-bold">{oteDirection === 'bullish' ? '1.000 Swing High' : '0.000 Swing Low'}</span>
                     <span className="font-black">{(oteDirection === 'bullish' ? swingHigh : swingLow).toFixed(4)}</span>
                   </div>
-                  <div className="flex items-center justify-between p-2 bg-white border border-white/[0.08]">
+                  <div className="flex items-center justify-between p-2 bg-[#11141B] rounded-lg border border-white/[0.06]">
                     <span className="font-bold text-[#9BA1AE]">0.500 Equilibrium (50%)</span>
                     <span className="font-black">{ote50.toFixed(4)}</span>
                   </div>
-                  <div className="flex items-center justify-between p-2 bg-white border border-white/[0.08]">
+                  <div className="flex items-center justify-between p-2 bg-[#11141B] rounded-lg border border-white/[0.06]">
                     <span className="font-bold text-[#9BA1AE]">0.618 Fib Retracement</span>
                     <span className="font-black">{ote618.toFixed(4)}</span>
                   </div>
-                  <div className="flex items-center justify-between p-2.5 bg-white/[0.06] text-[#F0B35B] border border-white/[0.08] text-[#F5F7FA]">
+                  <div className="flex items-center justify-between p-2.5 bg-[#5865FF]/15 border border-[#5865FF]/30 rounded-lg text-[#F5F7FA]">
                     <span className="font-black flex items-center gap-1.5">
                       <Sparkles className="w-4 h-4 text-[#F5F7FA]" />
                       0.705 Institutional Sweet Spot (OTE Entry)
@@ -1009,9 +993,9 @@ export const InstitutionalToolsSuite: React.FC = () => {
             </div>
 
             {/* Range Classification Banner */}
-            <div className="bg-[#121212] text-white p-4 border border-white/[0.08] mb-6 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono">
+            <div className="bg-[#0C0E13] text-[#F5F7FA] p-4 border border-white/[0.08] rounded-xl mb-6 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white/[0.06] text-[#F0B35B] text-[#F5F7FA] font-black text-xs flex items-center justify-center border border-white">
+                <div className="w-10 h-10 rounded-lg bg-white/[0.06] text-[#55E6D1] font-bold text-xs flex items-center justify-center border border-white/10">
                   {asianRangePips.toFixed(1)}
                 </div>
                 <div>
@@ -1032,7 +1016,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
             {/* Standard Deviation Matrix */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Bullish Scenario */}
-              <div className="border-4 border-[#1040C0] bg-white p-5 ">
+              <div className="border border-[#55E6D1]/30 bg-[#151923] rounded-2xl p-5">
                 <div className="flex items-center justify-between mb-3 border-b-2 border-[#1040C0] pb-2">
                   <h3 className="font-black text-sm uppercase text-[#5865FF] flex items-center gap-1.5">
                     <TrendingUp className="w-4 h-4" />
@@ -1068,7 +1052,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
               </div>
 
               {/* Bearish Scenario */}
-              <div className="border-4 border-[#D02020] bg-white p-5 ">
+              <div className="border border-[#FF6B7A]/30 bg-[#151923] rounded-2xl p-5">
                 <div className="flex items-center justify-between mb-3 border-b-2 border-[#D02020] pb-2">
                   <h3 className="font-black text-sm uppercase text-[#FF6B7A] flex items-center gap-1.5">
                     <TrendingDown className="w-4 h-4" />
@@ -1113,7 +1097,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
           <div className="bg-[#11141B] border border-white/[0.08] p-6 rounded-2xl text-[#F5F7FA]">
             <div className="border-b-2 border-white/[0.08] pb-4 mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
-                <span className="text-[10px] font-mono font-black uppercase px-2 py-0.5 bg-[#121212] text-white border border-white/[0.08]">
+                <span className="text-[10px] font-mono font-medium uppercase px-2.5 py-0.5 bg-white/[0.04] text-[#9BA1AE] rounded border border-white/[0.08]">
                   CURRICULUM ARCHITECTURE (51 CORE ARTICLES)
                 </span>
                 <h2 className="text-2xl font-black uppercase text-[#F5F7FA] mt-1">
@@ -1130,7 +1114,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
                   <div className="text-[10px] font-bold uppercase text-[#656B78]">Total Mastery</div>
                   <div className="text-xl font-black text-[#5865FF]">{overallProgress}%</div>
                 </div>
-                <div className="w-12 h-12 rounded-full border-4 border-[#1040C0] flex items-center justify-center font-mono font-black text-xs bg-white">
+                <div className="w-12 h-12 rounded-full border-2 border-[#5865FF] flex items-center justify-center font-mono font-semibold text-xs bg-white/[0.04] text-[#5865FF]">
                   {completedCount}/{totalTopics}
                 </div>
               </div>
@@ -1143,8 +1127,8 @@ export const InstitutionalToolsSuite: React.FC = () => {
                 const phasePercent = Math.round((phaseCompleted / phase.topics.length) * 100);
 
                 return (
-                  <div key={phase.phase} className="border border-white/[0.08] bg-white ">
-                    <div className="bg-[#121212] text-white p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <div key={phase.phase} className="border border-white/[0.08] bg-[#151923] rounded-2xl overflow-hidden">
+                    <div className="bg-[#0C0E13] text-[#F5F7FA] p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.08]">
                       <div>
                         <div className="text-[10px] font-mono text-[#F0C020] font-black uppercase">
                           PHASE 0{phase.phase} // {phase.articlesCount} ARTICLES IN CURRICULUM
@@ -1161,7 +1145,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
                       </div>
                     </div>
 
-                    <div className="p-4 bg-[#FAFAFA] border-b-2 border-white/[0.08] text-xs text-[#9BA1AE] leading-relaxed">
+                    <div className="p-4 bg-[#11141B] border-b border-white/[0.06] text-xs text-[#9BA1AE] leading-relaxed">
                       {phase.desc}
                     </div>
 
@@ -1173,14 +1157,12 @@ export const InstitutionalToolsSuite: React.FC = () => {
                             key={topic.id}
                             onClick={() => toggleTopic(topic.id)}
                             className={`p-3 border border-white/[0.08] flex items-center justify-between gap-3 cursor-pointer transition-all select-none ${
-                              isDone
-                                ? 'bg-[#5865FF]/10 border-[#1040C0]'
-                                : 'bg-white hover:bg-white/[0.06] text-[#F0B35B]/20'
+                              isDone ? 'bg-[#5865FF]/10 border-[#5865FF]/30 rounded-xl' : 'bg-[#11141B] hover:bg-white/[0.03] border-white/[0.06] rounded-xl'
                             }`}
                           >
                             <div className="flex items-center gap-2.5">
                               <div className={`w-5 h-5 border border-white/[0.08] flex items-center justify-center shrink-0 ${
-                                isDone ? 'bg-[#5865FF] text-white' : 'bg-white'
+                                isDone ? 'bg-[#5865FF] text-white rounded' : 'border-white/20 bg-white/[0.04] rounded'
                               }`}>
                                 {isDone && <CheckCircle2 className="w-3.5 h-3.5" />}
                               </div>
@@ -1230,7 +1212,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
                   placeholder="Search abbreviations (e.g., CISD, CRT, Reaper, Venom, FVG)..."
                   value={glossarySearch}
                   onChange={(e) => setGlossarySearch(e.target.value)}
-                  className="w-full bg-[#151923] border border-white/[0.06] rounded-xl pl-9 pr-4 py-2 text-xs font-mono font-bold focus:outline-none focus:bg-white"
+                  className="w-full bg-[#151923] border border-white/[0.06] rounded-xl pl-9 pr-4 py-2 text-xs font-mono font-bold focus:outline-none focus:border-[#5865FF]"
                 />
               </div>
 
@@ -1240,9 +1222,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
                     key={cat}
                     onClick={() => setGlossaryCategory(cat)}
                     className={`px-2.5 py-1.5 text-[10px] font-mono font-black uppercase border border-white/[0.08] whitespace-nowrap ${
-                      glossaryCategory === cat
-                        ? 'bg-[#121212] text-white'
-                        : 'bg-white hover:bg-white/[0.06] text-[#F0B35B] text-[#F5F7FA]'
+                      glossaryCategory === cat ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20 rounded-lg' : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06] rounded-lg'
                     }`}
                   >
                     {cat}
@@ -1256,7 +1236,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
               {filteredGlossary.map((item, idx) => (
                 <div
                   key={idx}
-                  className="border border-white/[0.08] p-3.5 bg-white hover:bg-[#151923] transition-all  flex flex-col justify-between"
+                  className="border border-white/[0.08] p-4 bg-[#151923] hover:border-white/20 rounded-xl transition-all flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-1.5">

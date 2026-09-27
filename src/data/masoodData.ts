@@ -151,7 +151,7 @@ const basePlaylists: MasoodPlaylist[] = [
           'Markets are fractal: algorithmic patterns on a 1-minute chart repeat the exact same mechanics found on Daily and Monthly charts.',
           'Higher timeframes dictate DIRECTION; lower timeframes dictate EXECUTION.',
           'The Top-Down Hierarchy: Monthly/Weekly (Macro Narrative) -> Daily (Session Bias & Draw on Liquidity) -> 4H/1H (Structural Framing & Key PD Arrays) -> 15M/5M (Setup Confirmation & MSS) -> 1M (Sniper Entry).',
-          'Trading solely on the 1-minute or 5-minute chart without knowing the Daily Draw on Liquidity is the #1 reason beginner traders blow accounts.'
+          'Trading solely on the 1-minute or 5-minute chart without knowing the Daily Draw on Liquidity is the No. 1 reason beginner traders blow accounts.'
         ],
         coreRules: [
           'Always mark your key liquidity levels (Previous Day High/Low, Weekly High/Low) on the Daily chart before dropping to lower timeframes.',
@@ -378,8 +378,8 @@ const basePlaylists: MasoodPlaylist[] = [
         playlistType: 'advanced',
         shortSummary: 'Why huge 200+ point trend days are almost always followed by choppy, non-directional consolidation, and how to protect your profits from the inevitable post-expansion trap.',
         keyTakeaways: [
-          'Market delivery alternates between two primary states: **Expansion** (high volume, fast directional movement) and **Consolidation** (low volume, sideways accumulation/rebalancing).',
-          'After an outsized, multi-hundred point trend day, the institutional algorithm has fulfilled its delivery quota; the next day will almost always be an **Inside Day** or choppy consolidation.',
+          'Market delivery alternates between two primary states: Expansion (high volume, fast directional movement) and Consolidation (low volume, sideways accumulation/rebalancing).',
+          'After an outsized, multi-hundred point trend day, the institutional algorithm has fulfilled its delivery quota; the next day will almost always be an Inside Day or choppy consolidation.',
           'Retail traders make money on the trend day, then give it all back plus extra on the subsequent day by forcing trades in sideways chop.'
         ],
         coreRules: [
@@ -409,7 +409,7 @@ const basePlaylists: MasoodPlaylist[] = [
         keyTakeaways: [
           'Average Daily Range (ADR) measures the typical high-to-low distance an asset travels in a single day.',
           'If NASDAQ has an average daily range of 180 points, and by 10:15 AM it has already moved 190 points from low to high, the expansion is mathematically exhausted; buying high is chasing a top.',
-          'An **Inside Day** forms when the entire daily high and low range sits completely inside the prior day’s range. Inside Days represent coiled algorithmic spring energy, typically leading to explosive breakouts within 24 to 48 hours.'
+          'An Inside Day forms when the entire daily high and low range sits completely inside the prior day’s range. Inside Days represent coiled algorithmic spring energy, typically leading to explosive breakouts within 24 to 48 hours.'
         ],
         coreRules: [
           'Always know today’s 5-day ADR before trading.',
@@ -707,8 +707,8 @@ const basePlaylists: MasoodPlaylist[] = [
         shortSummary: 'Tactical survival manual: identifying the early-warning signatures of a chop day within the first 20 minutes of the session and executing capital protection protocols.',
         keyTakeaways: [
           'Loss avoidance is more important than profit generation: a trader who avoids bad days compounds capital exponentially faster than a trader who gives back 50% of their profits in chop.',
-          'Early warning sign #1: The 09:30 open sweeps pre-market high, displaces down, sweeps pre-market low, and immediately wicks back into the opening price.',
-          'Early warning sign #2: Consecutive 5-minute candles have long wicks exceeding their body lengths.',
+          'Early warning sign No. 1: The 09:30 open sweeps pre-market high, displaces down, sweeps pre-market low, and immediately wicks back into the opening price.',
+          'Early warning sign No. 2: Consecutive 5-minute candles have long wicks exceeding their body lengths.',
           'Protocol: When these signs appear by 09:50 AM, declare a Trap Day, close TradingView, and do not place a single trade.'
         ],
         coreRules: [
@@ -794,9 +794,9 @@ const basePlaylists: MasoodPlaylist[] = [
         playlistType: 'advanced',
         shortSummary: 'Mastering the institutional Premium / Discount (P/D) Array hierarchy: Order Blocks, Fair Value Gaps, Breakers, and Mitigation Blocks mapped to the 50% Equilibrium rule.',
         keyTakeaways: [
-          'Every price range has an exact 50% midpoint called **Equilibrium**.',
-          'Above 50% = **Premium** (Smart money sells to retail buyers).',
-          'Below 50% = **Discount** (Smart money buys from retail sellers).',
+          'Every price range has an exact 50% midpoint called Equilibrium.',
+          'Above 50% = Premium (Smart money sells to retail buyers).',
+          'Below 50% = Discount (Smart money buys from retail sellers).',
           'The P/D Array Matrix ranks institutional levels in order of priority: Old High/Low -> Rejection Block -> Order Block -> Fair Value Gap -> Liquidity Void -> Breaker Block -> Mitigation Block.',
           'Golden Rule: NEVER buy in Premium; NEVER sell in Discount.'
         ],
@@ -987,7 +987,7 @@ const basePlaylists: MasoodPlaylist[] = [
         playlistType: 'daily_bias',
         shortSummary: 'The subtle but powerful mechanics of Volume Imbalances (body-to-body gaps), seasonal institutional tendencies, and identifying when the daily bias formally shifts.',
         keyTakeaways: [
-          'A **Volume Imbalance** occurs when the wicks of two consecutive candles overlap, but their real candle BODIES do not overlap, leaving a clean open space between Candle 1 Close and Candle 2 Open.',
+          'A Volume Imbalance occurs when the wicks of two consecutive candles overlap, but their real candle BODIES do not overlap, leaving a clean open space between Candle 1 Close and Candle 2 Open.',
           'Volume Imbalances are high-priority institutional magnets: price will return to surgically retest the gap before continuing the trend.',
           'Seasonal tendencies: institutional asset managers deploy capital in predictable quarterly cycles (e.g. Q1 early year rebalancing, summer doldrums, Q4 Santa Claus rally).',
           'A Daily Bias Shift occurs when a Daily candle body closes through the invalidation level of the previous dealing range.'
@@ -1019,7 +1019,7 @@ const basePlaylists: MasoodPlaylist[] = [
         keyTakeaways: [
           'Institutional algorithms do not look back 5 years; they operate on 20-day, 40-day, and 60-day institutional lookback cycles (approx. 1, 2, and 3 calendar months).',
           'Mark the 20-day, 40-day, and 60-day high and low on your Daily chart to find major institutional inflection points.',
-          'A **Liquidity Void** is a violent one-way price run where price moved in consecutive green or red candles without two-sided auction; IPDA will systematically return to fill the void like water filling a hole.'
+          'A Liquidity Void is a violent one-way price run where price moved in consecutive green or red candles without two-sided auction; IPDA will systematically return to fill the void like water filling a hole.'
         ],
         coreRules: [
           'Count back 20, 40, and 60 daily candles from the current day and mark the highest high and lowest low.',
@@ -1136,7 +1136,7 @@ const basePlaylists: MasoodPlaylist[] = [
         playlistType: 'daily_bias',
         shortSummary: 'Understanding the perpetual 4-stage algorithmic cycle: Consolidation -> Expansion -> Retracement -> Reversal, and positioning yourself on the right stage of delivery.',
         keyTakeaways: [
-          'The market is trapped in a perpetual 4-phase algorithmic loop: **Consolidation** (range) -> **Expansion** (breakout displacement) -> **Retracement** (pullback to FVG/OB) -> **Reversal** (liquidity sweep and directional change) -> return to Consolidation.',
+          'The market is trapped in a perpetual 4-phase algorithmic loop: Consolidation (range) -> Expansion (breakout displacement) -> Retracement (pullback to FVG/OB) -> Reversal (liquidity sweep and directional change) -> return to Consolidation.',
           'Retail traders buy at the end of Expansions; Smart Money buys during Retracements into Discount PD Arrays.',
           'Identify exactly which phase of the continuum the market is currently occupying before choosing your execution model.'
         ],
@@ -1225,7 +1225,7 @@ const basePlaylists: MasoodPlaylist[] = [
         playlistType: 'daily_bias',
         shortSummary: 'Unmasking institutional accumulation and distribution via intermarket correlation cracks between US100 (NASDAQ) and US500 (ES) or EURUSD and DXY.',
         keyTakeaways: [
-          'Smart Money Technique (SMT) Divergence is the #1 institutional order flow fingerprint taught by ICT and Abdullah Masood.',
+          'Smart Money Technique (SMT) Divergence is the No. 1 institutional order flow fingerprint taught by ICT and Abdullah Masood.',
           'Correlated assets like NASDAQ and S&P 500 should move together. When one asset sweeps a swing high/low but the other FAILS to sweep it, a crack in correlation (SMT Divergence) has occurred.',
           'Bullish SMT: US100 makes a Lower Low (sweeping sell stops), but US500 makes a Higher Low (refusing to make a new low) -> Smart Money is aggressively buying US500; expect explosive upward reversal on both assets!',
           'Bearish SMT: US100 makes a Higher High (sweeping buy stops), but US500 makes a Lower High -> Smart Money is distributing; expect severe downward collapse.'
@@ -1316,7 +1316,7 @@ const basePlaylists: MasoodPlaylist[] = [
         playlistType: 'daily_bias',
         shortSummary: 'Synthesizing time, price, and institutional order book imbalances into a predictive confluence engine that anticipates upcoming 15-minute and 1-hour candles.',
         keyTakeaways: [
-          'Market prediction is the mathematical intersection of **Time** (Macro Windows), **Price** (PD Arrays & Liquidity Pools), and **Narrative** (Daily Bias & Economic Catalyst).',
+          'Market prediction is the mathematical intersection of Time (Macro Windows), Price (PD Arrays & Liquidity Pools), and Narrative (Daily Bias & Economic Catalyst).',
           'When Time + Price + Narrative achieve 100% unanimous agreement, market direction becomes almost completely deterministic.',
           'Monitor the speed of quotation (pace of tape): rapid displacement through resistance proves institutions are aggressively filling buy orders.'
         ],

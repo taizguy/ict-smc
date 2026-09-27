@@ -408,7 +408,7 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                   onClick={() => setExplainSimpler(!explainSimpler)}
                   className={`px-5 py-2.5 rounded-full text-xs font-mono font-bold flex items-center gap-2 transition-all ${
                     explainSimpler
-                      ? 'bg-amber-400 text-black shadow-md shadow-amber-400/25'
+                      ? 'bg-amber-500/25 text-amber-200 border border-amber-500/50 shadow-md shadow-amber-500/10'
                       : 'bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30'
                   }`}
                 >
@@ -449,7 +449,7 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                   </h3>
 
                   <div className="text-zinc-300 text-sm leading-relaxed font-sans space-y-3 whitespace-pre-line">
-                    {sec.content.replace(/\*/g, '')}
+                    {sec.content.replace(/[*#]/g, '')}
                   </div>
 
                   {/* Embedded Diagram if specified */}

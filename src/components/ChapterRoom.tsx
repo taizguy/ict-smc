@@ -304,7 +304,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
 
                       {/* Section Content */}
                       <div className="text-sm sm:text-base text-[#9BA1AE] leading-relaxed font-normal whitespace-pre-line space-y-4">
-                        {sec.content}
+                        {sec.content.replace(/[*#]/g, '')}
                       </div>
 
                       {/* "Explain Simpler" Component */}

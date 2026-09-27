@@ -335,7 +335,7 @@ export const MasterclassDiagrams: React.FC<MasterclassDiagramProps> = ({ type, s
             {/* 1. Midnight */}
             <div className="bg-[#151923] border border-white/[0.1] rounded-xl p-2 flex flex-col justify-between">
               <div>
-                <span className="bg-[#121212] text-white px-1 py-0.5 text-[8px] font-black uppercase">Range 1</span>
+                <span className="bg-white/[0.08] text-[#9BA1AE] px-1 py-0.5 text-[8px] font-mono uppercase rounded">Range 1</span>
                 <p className="font-black text-[11px] mt-1 text-[#1040C0]">MIDNIGHT</p>
                 <p className="font-bold text-[9px] text-[#9BA1AE]">12:00 – 12:30 AM</p>
               </div>

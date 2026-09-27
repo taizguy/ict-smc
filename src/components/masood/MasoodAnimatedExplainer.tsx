@@ -1120,7 +1120,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                       : 'bg-slate-900 text-slate-400 border border-slate-800 hover:text-white hover:bg-slate-800'
                   }`}
                 >
-                  <span className="text-[10px] font-mono block opacity-75">LAW #{law.num}</span>
+                  <span className="text-[10px] font-mono block opacity-75">LAW {law.num}</span>
                   <span className="text-xs leading-tight font-medium line-clamp-1">{law.title}</span>
                 </button>
               ))}
@@ -1131,7 +1131,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                 <div className="flex items-center gap-2">
                   <Award className="w-4 h-4 text-amber-400" />
                   <span className="text-xs font-mono font-bold text-amber-300">
-                    SANCTUM CHARTER — LAW #{selectedLaw}
+                    SANCTUM CHARTER — LAW {selectedLaw}
                   </span>
                 </div>
 

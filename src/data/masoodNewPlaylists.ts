@@ -6,7 +6,7 @@ export const masoodAdditionalPlaylists: MasoodPlaylist[] = [
     title: "4) The Godfather's Sanctum - Private Mentorship",
     subtitle: 'Operator Philosophy, Capital Defense, Lifestyle Calibration & Solitude in Trading',
     badge: 'Private Sanctum',
-    description: "The private inner circle teachings and musings by Trader Abdullah Masood. Beyond technical charts, true profitability requires an unshakeable psychological citadel. Explore the discipline of silence, capital defense as the #1 law, the daily morning routine of an institutional operator, emotional equilibrium, and the lifetime charter of the Sanctum.",
+    description: "The private inner circle teachings and musings by Trader Abdullah Masood. Beyond technical charts, true profitability requires an unshakeable psychological citadel. Explore the discipline of silence, capital defense as the No. 1 law, the daily morning routine of an institutional operator, emotional equilibrium, and the lifetime charter of the Sanctum.",
     targetAudience: 'Serious traders seeking the mental elevation, stoic discipline, and psychological resilience needed to manage institutional capital.',
     prerequisites: ['Basic & Advanced SMC Foundations', 'Willingness to discard ego and gambling impulses', 'Commitment to long-term capital preservation'],
     lecturesCount: 9,
@@ -327,7 +327,7 @@ export const masoodAdditionalPlaylists: MasoodPlaylist[] = [
         ],
         coreRules: [
           'Max risk per trade on prop firms: strictly 0.5% - 0.75%.',
-          'Calculate contract size based on exact point stop: Risk $ / (Stop Points * $2 per micro).',
+          'Calculate contract size based on exact point stop: Risk $ / (Stop Points  $2 per micro).',
           'Lock daily loss limit at 2% in your trader dashboard.'
         ],
         tradingChecklist: ['Contract sizing verified with lot calculator?', 'Daily drawdown buffer calculated?'],

@@ -49,7 +49,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
   if (!isOpen) return null;
 
   const handleCopyAdsTxt = () => {
-    navigator.clipboard.writeText('google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0');
+    navigator.clipboard.writeText('google.com, pub-6985025314302607, DIRECT, f08c47fec0942fa0');
     setCopiedAdsTxt(true);
     setTimeout(() => setCopiedAdsTxt(false), 2500);
   };
@@ -372,7 +372,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
                 </div>
 
                 <pre className="p-4 rounded-xl bg-black/60 border border-white/[0.1] text-xs font-mono text-[#55E6D1] overflow-x-auto select-all">
-                  google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+                  google.com, pub-6985025314302607, DIRECT, f08c47fec0942fa0
                 </pre>
               </div>
 

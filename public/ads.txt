@@ -1,5 +1,1 @@
-# Google AdSense Authorized Digital Sellers (ads.txt)
-# Domain: learnsmc.xyz
-# Standard Google AdSense Entry:
-# When your Google AdSense account is approved, replace pub-0000000000000000 with your real publisher ID (e.g., pub-1234567890123456).
-google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+google.com, pub-6985025314302607, DIRECT, f08c47fec0942fa0

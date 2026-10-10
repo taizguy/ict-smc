@@ -1,0 +1,9 @@
+# robots.txt for https://learnsmc.xyz
+User-agent: *
+Allow: /
+
+# Google AdSense Crawler
+User-agent: Mediapartners-Google
+Allow: /
+
+Sitemap: https://learnsmc.xyz/sitemap.xml

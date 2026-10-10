@@ -18,10 +18,16 @@ import {
   ArrowRight, 
   BookOpen, 
   Wrench,
-  GraduationCap
+  GraduationCap,
+  ShieldAlert,
+  Lock,
+  FileText,
+  Mail,
+  CheckCircle2
 } from 'lucide-react';
 import { useSmoothScroll } from './hooks/useSmoothScroll';
 import { ScrollReveal } from './components/ScrollReveal';
+import { LegalModal, LegalModalTab } from './components/LegalModal';
 
 export const App: React.FC = () => {
   // Initialize buttery smooth momentum mouse scrolling
@@ -35,6 +41,8 @@ export const App: React.FC = () => {
 
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
   const [isMentorSpotlightOpen, setIsMentorSpotlightOpen] = useState<boolean>(false);
+  const [isLegalModalOpen, setIsLegalModalOpen] = useState<boolean>(false);
+  const [legalModalTab, setLegalModalTab] = useState<LegalModalTab>('disclaimer');
   const [selectedConceptId, setSelectedConceptId] = useState<string>('fair_value_gap');
   const [selectedChapterId, setSelectedChapterId] = useState<number>(1);
 
@@ -259,8 +267,101 @@ export const App: React.FC = () => {
             </div>
           </ScrollReveal>
 
+          {/* Regulatory Risk Notice Banner */}
+          <ScrollReveal y={20} delay={0.05}>
+            <div className="p-4 sm:p-5 rounded-xl bg-amber-500/[0.04] border border-amber-500/20 text-[#C4C9D6] text-xs leading-relaxed flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div className="flex items-start gap-3">
+                <ShieldAlert className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                <p className="text-[11px] sm:text-xs text-[#9BA1AE]">
+                  <strong className="text-amber-300 font-semibold uppercase tracking-wider">Regulatory Risk Disclosure:</strong> Trading foreign exchange, futures, indices, and financial derivatives carries high risk and may not be suitable for all investors. All materials on <strong className="text-white">learnsmc.xyz</strong> are strictly for educational and research purposes. Past performance is not indicative of future results.
+                </p>
+              </div>
+              <button
+                onClick={() => {
+                  setLegalModalTab('disclaimer');
+                  setIsLegalModalOpen(true);
+                }}
+                className="text-[11px] font-mono text-amber-400 hover:text-amber-300 underline shrink-0 whitespace-nowrap self-end md:self-center"
+              >
+                Read Full Risk Disclosure &rarr;
+              </button>
+            </div>
+          </ScrollReveal>
+
+          {/* Legal Pages & Policy Navigation Links */}
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/[0.06] text-xs font-mono text-[#8E95A5]">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+              <button
+                onClick={() => {
+                  setLegalModalTab('disclaimer');
+                  setIsLegalModalOpen(true);
+                }}
+                className="hover:text-amber-400 transition-colors flex items-center gap-1.5"
+              >
+                <ShieldAlert className="w-3.5 h-3.5 text-amber-400" />
+                <span>Risk Disclaimer</span>
+              </button>
+
+              <button
+                onClick={() => {
+                  setLegalModalTab('privacy');
+                  setIsLegalModalOpen(true);
+                }}
+                className="hover:text-[#55E6D1] transition-colors flex items-center gap-1.5"
+              >
+                <Lock className="w-3.5 h-3.5 text-[#55E6D1]" />
+                <span>Privacy Policy</span>
+              </button>
+
+              <button
+                onClick={() => {
+                  setLegalModalTab('terms');
+                  setIsLegalModalOpen(true);
+                }}
+                className="hover:text-[#8A72FF] transition-colors flex items-center gap-1.5"
+              >
+                <FileText className="w-3.5 h-3.5 text-[#8A72FF]" />
+                <span>Terms of Service</span>
+              </button>
+
+              <button
+                onClick={() => {
+                  setLegalModalTab('about');
+                  setIsLegalModalOpen(true);
+                }}
+                className="hover:text-white transition-colors flex items-center gap-1.5"
+              >
+                <Mail className="w-3.5 h-3.5 text-white/80" />
+                <span>About &amp; Contact</span>
+              </button>
+
+              <button
+                onClick={() => {
+                  setLegalModalTab('adsense');
+                  setIsLegalModalOpen(true);
+                }}
+                className="text-[#55E6D1]/90 hover:text-[#55E6D1] transition-colors flex items-center gap-1.5"
+              >
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#55E6D1]" />
+                <span>ads.txt Verified</span>
+              </button>
+            </div>
+
+            <div className="text-[11px] text-[#656B78] flex items-center gap-2">
+              <span>Domain:</span>
+              <a 
+                href="https://learnsmc.xyz" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-[#9BA1AE] hover:text-[#55E6D1] underline"
+              >
+                learnsmc.xyz
+              </a>
+            </div>
+          </div>
+
           <ScrollReveal y={15} delay={0.1}>
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#9BA1AE] pt-6 border-t border-white/[0.06]">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#9BA1AE] pt-4 border-t border-white/[0.06]">
               <div className="flex items-center gap-2.5">
                 <span className="w-2 h-2 rounded-full bg-[#5865FF]" />
                 <span className="font-medium text-[#F5F7FA]">ICT &amp; SMC ACADEMY</span>
@@ -278,6 +379,13 @@ export const App: React.FC = () => {
           </ScrollReveal>
         </div>
       </footer>
+
+      {/* Regulatory & Legal Modal (AdSense & Policy Ready) */}
+      <LegalModal
+        isOpen={isLegalModalOpen}
+        onClose={() => setIsLegalModalOpen(false)}
+        initialTab={legalModalTab}
+      />
     </div>
   );
 };

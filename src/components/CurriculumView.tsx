@@ -199,60 +199,58 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
       </ScrollReveal>
 
       {/* Chapters Grid - Predikt Dark Cards */}
-      <ScrollReveal y={30} delay={0.15}>
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {filteredChapters.map((ch) => {
-            const partShort = ch.part.replace(/^Part\s+[IVXLCDM]+\s*-\s*/, '');
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        {filteredChapters.map((ch) => {
+          const partShort = ch.part.replace(/^Part\s+[IVXLCDM]+\s*-\s*/, '');
 
-            return (
-              <div
-                key={ch.id}
-                onClick={() => onSelectChapter(ch.id)}
-                className="group predikt-card p-6 flex flex-col justify-between cursor-pointer space-y-5"
-              >
-                <div className="space-y-4">
-                  {/* Card Header Metadata */}
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono font-semibold text-[#5865FF] tracking-wider">
-                      {ch.id < 10 ? `0${ch.id}` : ch.id} / 48
-                    </span>
-                    <span className="text-[10px] font-mono tracking-wider uppercase text-[#656B78]">
-                      LEVEL {ch.level} · {partShort}
-                    </span>
-                  </div>
-
-                  {/* Chapter Title */}
-                  <div>
-                    <h3 className="text-base sm:text-lg font-semibold text-[#F5F7FA] group-hover:text-[#5865FF] transition-colors leading-snug">
-                      {ch.title}
-                    </h3>
-                    
-                    {/* Quote Callout */}
-                    <div className="mt-3 p-3 rounded-lg bg-white/[0.02] border-l-2 border-[#5865FF] text-xs text-[#9BA1AE] italic line-clamp-2 leading-relaxed">
-                      "{ch.quote}"
-                    </div>
-                  </div>
+          return (
+            <div
+              key={ch.id}
+              onClick={() => onSelectChapter(ch.id)}
+              className="group predikt-card p-6 flex flex-col justify-between cursor-pointer space-y-5"
+            >
+              <div className="space-y-4">
+                {/* Card Header Metadata */}
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono font-semibold text-[#5865FF] tracking-wider">
+                    {ch.id < 10 ? `0${ch.id}` : ch.id} / 48
+                  </span>
+                  <span className="text-[10px] font-mono tracking-wider uppercase text-[#656B78]">
+                    LEVEL {ch.level} · {partShort}
+                  </span>
                 </div>
 
-                {/* Card Footer */}
-                <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between gap-3 text-xs font-mono">
-                  <div className="flex items-center gap-2 text-[#656B78] text-[11px]">
-                    <span>{ch.sections.length} SEC</span>
-                    <span>·</span>
-                    <span>{ch.keyTerms.length} TERMS</span>
-                  </div>
-
-                  <div className="flex items-center gap-1.5 text-xs text-[#F5F7FA] font-sans group-hover:text-[#5865FF] transition-colors">
-                    <span>Study</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                {/* Chapter Title */}
+                <div>
+                  <h3 className="text-base sm:text-lg font-semibold text-[#F5F7FA] group-hover:text-[#5865FF] transition-colors leading-snug">
+                    {ch.title}
+                  </h3>
+                  
+                  {/* Quote Callout */}
+                  <div className="mt-3 p-3 rounded-lg bg-white/[0.02] border-l-2 border-[#5865FF] text-xs text-[#9BA1AE] italic line-clamp-2 leading-relaxed">
+                    "{ch.quote}"
                   </div>
                 </div>
-
               </div>
-            );
-          })}
-        </section>
-      </ScrollReveal>
+
+              {/* Card Footer */}
+              <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between gap-3 text-xs font-mono">
+                <div className="flex items-center gap-2 text-[#656B78] text-[11px]">
+                  <span>{ch.sections.length} SEC</span>
+                  <span>·</span>
+                  <span>{ch.keyTerms.length} TERMS</span>
+                </div>
+
+                <div className="flex items-center gap-1.5 text-xs text-[#F5F7FA] font-sans group-hover:text-[#5865FF] transition-colors">
+                  <span>Study</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+
+            </div>
+          );
+        })}
+      </section>
 
       {/* Empty Search State */}
       {filteredChapters.length === 0 && (

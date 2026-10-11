@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { 
   ArrowLeft, 
   ArrowRight, 
@@ -42,6 +42,11 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
   const [selectedQuizAnswers, setSelectedQuizAnswers] = useState<Record<string, number>>({});
   const [expandedSimpler, setExpandedSimpler] = useState<Record<number, boolean>>({});
   const [hasCopiedLink, setHasCopiedLink] = useState<boolean>(false);
+
+  // Instantly reset scroll to top on chapter load or navigation
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [chapterId]);
 
   const handleCopyChapterLink = () => {
     const url = `https://learnsmc.xyz/?chapter=${chapterId}`;
@@ -232,7 +237,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
       </ScrollReveal>
 
       {/* Main Chapter Header Card */}
-      <ScrollReveal y={25} duration={0.6} delay={0.05}>
+      <ScrollReveal y={15} duration={0.4} immediate={true}>
         <section className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 space-y-6 relative overflow-hidden">
           
           {/* Top Meta Bar */}
@@ -299,9 +304,8 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
 
       {/* SCENE 1: FULL CODIFIED CURRICULUM SECTIONS */}
       {activeScene === 'text' && (
-        <ScrollReveal y={25}>
-          <section className="space-y-6">
-            <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 space-y-8">
+        <section className="space-y-6 animate-fade-in">
+          <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 space-y-8">
               <div className="flex items-center justify-between pb-4 border-b border-white/[0.07]">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#5865FF]" />
@@ -400,14 +404,12 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
               </div>
             </div>
           </section>
-        </ScrollReveal>
       )}
 
       {/* SCENE 2: INTERACTIVE VISUAL STAGE */}
       {activeScene === 'visual' && (
-        <ScrollReveal y={25}>
-          <section className="space-y-6">
-            <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 space-y-6">
+        <section className="space-y-6 animate-fade-in">
+          <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 space-y-6">
               <div className="flex items-center justify-between pb-4 border-b border-white/[0.07]">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#5865FF]" />
@@ -451,14 +453,12 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
               </div>
             </div>
           </section>
-        </ScrollReveal>
       )}
 
       {/* SCENE 3: KEY TERMS & GLOSSARY */}
       {activeScene === 'terms' && (
-        <ScrollReveal y={25}>
-          <section className="space-y-6">
-            <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 space-y-6">
+        <section className="space-y-6 animate-fade-in">
+          <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 space-y-6">
               <div className="flex items-center justify-between pb-4 border-b border-white/[0.07]">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#55E6D1]" />
@@ -507,14 +507,12 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
               </div>
             </div>
           </section>
-        </ScrollReveal>
       )}
 
       {/* SCENE 4: PRACTICE CHECKPOINT & QUESTIONS */}
       {activeScene === 'checkpoint' && (
-        <ScrollReveal y={25}>
-          <section className="space-y-6">
-            <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 space-y-8">
+        <section className="space-y-6 animate-fade-in">
+          <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 space-y-8">
               <div className="flex items-center justify-between pb-4 border-b border-white/[0.07]">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#5865FF]" />
@@ -674,14 +672,12 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
 
             </div>
           </section>
-        </ScrollReveal>
       )}
 
       {/* SCENE 5: SUMMARY BRIEFING */}
       {activeScene === 'briefing' && (
-        <ScrollReveal y={25}>
-          <section className="space-y-6">
-            <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 space-y-6">
+        <section className="space-y-6 animate-fade-in">
+          <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 space-y-6">
               <div className="flex items-center gap-2 pb-4 border-b border-white/[0.07]">
                 <span className="w-2 h-2 rounded-full bg-[#5865FF]" />
                 <h2 className="text-base sm:text-lg font-semibold uppercase tracking-tight text-[#F5F7FA]">
@@ -713,7 +709,6 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
               </div>
             </div>
           </section>
-        </ScrollReveal>
       )}
 
       {/* Bottom Minimal Action Bar */}

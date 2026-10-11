@@ -77,7 +77,9 @@ export const BauhausNavScroller: React.FC<BauhausNavScrollerProps> = ({
       {/* Horizontal Scrollable Area */}
       <div
         ref={scrollRef}
-        className={`flex-1 flex items-center overflow-x-auto scrollbar-none scroll-smooth ${innerClassName}`}
+        data-lenis-prevent="true"
+        data-lenis-prevent-horizontal="true"
+        className={`flex-1 flex items-center overflow-x-auto overscroll-contain scrollbar-none scroll-smooth ${innerClassName}`}
       >
         {children}
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Youtube, 
   ExternalLink, 
@@ -15,6 +15,7 @@ import {
   X
 } from 'lucide-react';
 import { BauhausNavScroller } from './BauhausNavScroller';
+import { useModalScrollLock } from '../hooks/useSmoothScroll';
 
 interface MentorSpotlightProps {
   isOpen: boolean;
@@ -32,6 +33,17 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
 }) => {
   const [activeTab, setActiveTab] = useState<'tribute' | 'curriculum' | 'daily_bias_checklist'>('tribute');
   const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
+
+  useModalScrollLock(isOpen);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -136,8 +148,21 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md overflow-y-auto text-[#F5F7FA]">
-      <div className="relative w-full max-w-4xl bg-[#11141B] border border-white/[0.1] rounded-2xl overflow-hidden flex flex-col max-h-[92vh] shadow-2xl">
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md overflow-y-auto text-[#F5F7FA]"
+      data-lenis-prevent="true"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Mentor Tribute Spotlight"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
+      <div 
+        className="relative w-full max-w-4xl bg-[#11141B] border border-white/[0.1] rounded-2xl overflow-hidden flex flex-col max-h-[90vh] shadow-2xl my-auto"
+        data-lenis-prevent="true"
+        onClick={(e) => e.stopPropagation()}
+      >
         
         {/* Header */}
         <div className="bg-[#0C0E13] p-6 sm:p-8 border-b border-white/[0.08] relative overflow-hidden">
@@ -222,7 +247,10 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
         </div>
 
         {/* Modal Body */}
-        <div className="flex-1 overflow-y-auto p-6 sm:p-8 space-y-6 bg-[#11141B]">
+        <div 
+          className="flex-1 min-h-0 modal-scrollable p-6 sm:p-8 space-y-6 bg-[#11141B]"
+          data-lenis-prevent="true"
+        >
           
           {/* TAB 1: TRIBUTE & ACKNOWLEDGEMENT */}
           {activeTab === 'tribute' && (

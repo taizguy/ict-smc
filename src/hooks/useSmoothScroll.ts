@@ -23,8 +23,41 @@ export const smoothScrollTo = (target: number | string | HTMLElement, options?: 
 };
 
 /**
+ * Hook to pause Lenis smooth scrolling and lock background page scrolling
+ * whenever any modal, drawer, or dialog is open.
+ */
+export const useModalScrollLock = (isOpen: boolean) => {
+  useEffect(() => {
+    if (!isOpen) return;
+
+    // Pause Lenis while modal is open so wheel/touch inside modal scrolls smoothly & natively
+    if (lenisInstance) {
+      lenisInstance.stop();
+    }
+
+    const originalOverflow = document.body.style.overflow;
+    const originalPaddingRight = document.body.style.paddingRight;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+    document.body.style.overflow = 'hidden';
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      document.body.style.paddingRight = originalPaddingRight;
+      if (lenisInstance) {
+        lenisInstance.start();
+      }
+    };
+  }, [isOpen]);
+};
+
+/**
  * Hook to initialize Lenis momentum smooth scrolling across the website.
- * Transforms jerky mouse wheel increments into silky, fluid scrolling.
+ * Configured with prevent handlers and allowNestedScroll so all modals,
+ * dialogs, and scrollable containers preserve silky native scrolling.
  */
 export const useSmoothScroll = () => {
   useEffect(() => {
@@ -43,6 +76,39 @@ export const useSmoothScroll = () => {
       smoothWheel: true,
       wheelMultiplier: 0.95,
       touchMultiplier: 1.5,
+      allowNestedScroll: true,
+      prevent: (node) => {
+        if (!node || !(node instanceof HTMLElement)) return false;
+
+        // 1. Explicit data-lenis-prevent attribute anywhere in hierarchy
+        if (node.hasAttribute('data-lenis-prevent') || node.closest('[data-lenis-prevent]')) {
+          return true;
+        }
+
+        // 2. Any modal, dialog, or fullscreen overlay
+        if (node.closest('[role="dialog"], [aria-modal="true"], .modal, .modal-scrollable, [data-modal]')) {
+          return true;
+        }
+
+        // 3. Fixed overlay containers
+        if (node.closest('.fixed.inset-0')) {
+          return true;
+        }
+
+        // 4. Any container with active vertical or horizontal overflow
+        try {
+          const style = window.getComputedStyle(node);
+          const isScrollY = (style.overflowY === 'auto' || style.overflowY === 'scroll') && node.scrollHeight > node.clientHeight;
+          const isScrollX = (style.overflowX === 'auto' || style.overflowX === 'scroll') && node.scrollWidth > node.clientWidth;
+          if (isScrollY || isScrollX) {
+            return true;
+          }
+        } catch {
+          // ignore
+        }
+
+        return false;
+      },
     });
 
     lenisInstance = lenis;

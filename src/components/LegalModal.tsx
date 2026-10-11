@@ -11,6 +11,7 @@ import {
   AlertTriangle,
   Scale
 } from 'lucide-react';
+import { useModalScrollLock } from '../hooks/useSmoothScroll';
 
 export type LegalModalTab = 'disclaimer' | 'privacy' | 'terms' | 'about' | 'adsense';
 
@@ -27,6 +28,8 @@ export const LegalModal: React.FC<LegalModalProps> = ({
 }) => {
   const [activeTab, setActiveTab] = useState<LegalModalTab>(initialTab);
   const [copiedAdsTxt, setCopiedAdsTxt] = useState(false);
+
+  useModalScrollLock(isOpen);
 
   // Sync initial tab when changed externally
   React.useEffect(() => {
@@ -56,13 +59,18 @@ export const LegalModal: React.FC<LegalModalProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md animate-fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md animate-fade-in overflow-y-auto"
       role="dialog"
       aria-modal="true"
       aria-labelledby="legal-modal-title"
+      data-lenis-prevent="true"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
     >
       <div 
-        className="bg-[#0D0F17] border border-white/[0.12] w-full max-w-4xl max-h-[90vh] rounded-2xl flex flex-col shadow-2xl shadow-black/90 overflow-hidden relative"
+        className="bg-[#0D0F17] border border-white/[0.12] w-full max-w-4xl max-h-[90vh] rounded-2xl flex flex-col shadow-2xl shadow-black/90 overflow-hidden relative my-auto"
+        data-lenis-prevent="true"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Bar */}
@@ -157,7 +165,10 @@ export const LegalModal: React.FC<LegalModalProps> = ({
         </div>
 
         {/* Content Body */}
-        <div className="flex-1 overflow-y-auto p-6 sm:p-8 space-y-6 text-[#C4C9D6] text-xs sm:text-sm leading-relaxed">
+        <div 
+          className="flex-1 min-h-0 modal-scrollable p-6 sm:p-8 space-y-6 text-[#C4C9D6] text-xs sm:text-sm leading-relaxed"
+          data-lenis-prevent="true"
+        >
           
           {/* TAB 1: FINANCIAL & RISK DISCLAIMER */}
           {activeTab === 'disclaimer' && (

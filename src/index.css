@@ -71,8 +71,37 @@
     scroll-behavior: auto !important;
   }
 
-  .lenis.lenis-smooth [data-lenis-prevent] {
+  .lenis.lenis-smooth [data-lenis-prevent],
+  [data-lenis-prevent] {
     overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .modal-scrollable {
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.22) rgba(0, 0, 0, 0.2);
+  }
+
+  .modal-scrollable::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .modal-scrollable::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 9999px;
+  }
+
+  .modal-scrollable::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 9999px;
+  }
+
+  .modal-scrollable::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
   }
 
   .lenis.lenis-stopped {

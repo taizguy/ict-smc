@@ -55,7 +55,10 @@ export const OpeningScreen: React.FC<OpeningScreenProps> = ({ onEnter, onOpenMen
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#040711] text-slate-100 overflow-y-auto flex flex-col justify-between selection:bg-cyan-500 selection:text-slate-950 relative">
+    <div 
+      className="fixed inset-0 z-50 bg-[#040711] text-slate-100 modal-scrollable flex flex-col justify-between selection:bg-cyan-500 selection:text-slate-950 relative"
+      data-lenis-prevent="true"
+    >
       {/* Deep Celestial Fantasy Ambient Background */}
       <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
         {/* Deep Cosmic Gradient */}

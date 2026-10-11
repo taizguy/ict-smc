@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { JournalEntry } from '../types';
 import { BookMarked, Plus, CheckSquare, BarChart2, ShieldAlert, Award, Calendar, ArrowUpRight, ArrowDownRight, Trash2, CheckCircle2, X } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { useModalScrollLock } from '../hooks/useSmoothScroll';
 
 export const TradingJournal: React.FC = () => {
   const [entries, setEntries] = useState<JournalEntry[]>([
@@ -30,6 +31,17 @@ export const TradingJournal: React.FC = () => {
   ]);
 
   const [showNewModal, setShowNewModal] = useState<boolean>(false);
+
+  useModalScrollLock(showNewModal);
+
+  useEffect(() => {
+    if (!showNewModal) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setShowNewModal(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [showNewModal]);
 
   // Form State
   const [asset, setAsset] = useState<string>('BTC/USDT');
@@ -221,8 +233,21 @@ export const TradingJournal: React.FC = () => {
 
       {/* Log Trade Modal */}
       {showNewModal && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-[#11141B] border border-white/[0.1] rounded-2xl p-6 sm:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto space-y-4 font-mono text-xs text-[#F5F7FA] shadow-2xl">
+        <div 
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto"
+          data-lenis-prevent="true"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Log Institutional Trade"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setShowNewModal(false);
+          }}
+        >
+          <div 
+            className="bg-[#11141B] border border-white/[0.1] rounded-2xl p-6 sm:p-8 max-w-2xl w-full max-h-[90vh] modal-scrollable min-h-0 space-y-4 font-mono text-xs text-[#F5F7FA] shadow-2xl my-auto"
+            data-lenis-prevent="true"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="flex items-center justify-between pb-3 border-b border-white/[0.08]">
               <h3 className="text-sm font-semibold uppercase text-[#F5F7FA]">Log Institutional Trade</h3>
               <button

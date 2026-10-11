@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { 
   masoodPlaylistsData 
 } from '../../data/masoodData';
@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { BauhausNavScroller } from '../BauhausNavScroller';
 import { ScrollReveal } from '../ScrollReveal';
+import { useModalScrollLock } from '../../hooks/useSmoothScroll';
 
 export const MasoodAcademyView: React.FC = () => {
   const [activePlaylistId, setActivePlaylistId] = useState<'all' | MasoodPlaylistId>('all');
@@ -18,6 +19,17 @@ export const MasoodAcademyView: React.FC = () => {
   const [selectedLecture, setSelectedLecture] = useState<MasoodLecture | null>(null);
   const [activeAnimation, setActiveAnimation] = useState<AnimationKind>('po3_expansion');
   const [activeTab, setActiveTab] = useState<'lectures' | 'animations' | 'bias_calc' | 'rules'>('lectures');
+
+  useModalScrollLock(!!selectedLecture);
+
+  useEffect(() => {
+    if (!selectedLecture) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedLecture(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedLecture]);
 
   // Bias calculator state
   const [calcStep1, setCalcStep1] = useState<'bullish' | 'bearish' | 'unclear'>('bullish');
@@ -657,8 +669,21 @@ export const MasoodAcademyView: React.FC = () => {
 
       {/* LECTURE STUDY MODAL */}
       {selectedLecture && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4 overflow-y-auto">
-          <div className="bg-[#11141B] border border-white/[0.1] rounded-2xl text-[#F5F7FA] max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4 overflow-y-auto"
+          data-lenis-prevent="true"
+          role="dialog"
+          aria-modal="true"
+          aria-label={selectedLecture.title}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setSelectedLecture(null);
+          }}
+        >
+          <div 
+            className="bg-[#11141B] border border-white/[0.1] rounded-2xl text-[#F5F7FA] max-w-3xl w-full max-h-[90vh] modal-scrollable min-h-0 shadow-2xl my-auto"
+            data-lenis-prevent="true"
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* Modal Header */}
             <div className="sticky top-0 z-10 bg-[#11141B] border-b border-white/[0.08] px-6 py-4 flex items-center justify-between">
               <div className="flex items-center gap-2">

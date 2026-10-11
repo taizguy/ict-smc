@@ -342,7 +342,10 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
               </div>
 
               {/* Chapter Navigation List */}
-              <div className="space-y-1.5 max-h-[calc(100vh-220px)] overflow-y-auto pr-1">
+              <div 
+                className="space-y-1.5 max-h-[calc(100vh-220px)] modal-scrollable pr-1"
+                data-lenis-prevent="true"
+              >
                 {textbookChapters.map((ch) => {
                   const isSelected = ch.id === selectedChapterId;
 
@@ -513,7 +516,10 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                     <BookOpen className="w-3.5 h-3.5" />
                     <span>Key Terminology Glossary:</span>
                   </h4>
-                  <div className="space-y-2 text-xs text-zinc-300 max-h-56 overflow-y-auto pr-1">
+                  <div 
+                    className="space-y-2 text-xs text-zinc-300 max-h-56 modal-scrollable pr-1"
+                    data-lenis-prevent="true"
+                  >
                     {chapter.keyTerms.map((kt, idx) => (
                       <div key={idx} className="border-b border-white/[0.06] pb-2">
                         <span className="font-bold text-white font-mono">{kt.term}: </span>

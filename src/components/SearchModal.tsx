@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ictConcepts } from '../data/conceptsData';
 import { textbookChapters } from '../data/chaptersData';
 import { Search, BookOpen, Layers, X, ArrowRight } from 'lucide-react';
+import { useModalScrollLock } from '../hooks/useSmoothScroll';
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -17,6 +18,8 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   onSelectChapter
 }) => {
   const [query, setQuery] = useState<string>('');
+
+  useModalScrollLock(isOpen);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -52,8 +55,21 @@ export const SearchModal: React.FC<SearchModalProps> = ({
       );
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-start justify-center pt-16 sm:pt-24 p-4 text-[#F5F7FA]">
-      <div className="bg-[#11141B] border border-white/[0.1] rounded-2xl w-full max-w-2xl overflow-hidden font-sans text-xs shadow-2xl">
+    <div 
+      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-start justify-center pt-16 sm:pt-24 p-4 text-[#F5F7FA] overflow-y-auto"
+      data-lenis-prevent="true"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Search"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
+      <div 
+        className="bg-[#11141B] border border-white/[0.1] rounded-2xl w-full max-w-2xl overflow-hidden font-sans text-xs shadow-2xl"
+        data-lenis-prevent="true"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Search Input Bar */}
         <div className="flex items-center gap-3 p-4 sm:p-5 border-b border-white/[0.08] bg-[#0C0E13]">
           <Search className="w-5 h-5 text-[#656B78] shrink-0" />
@@ -75,7 +91,10 @@ export const SearchModal: React.FC<SearchModalProps> = ({
         </div>
 
         {/* Results List */}
-        <div className="max-h-[60vh] overflow-y-auto p-4 sm:p-6 space-y-6">
+        <div 
+          className="max-h-[60vh] modal-scrollable p-4 sm:p-6 space-y-6"
+          data-lenis-prevent="true"
+        >
           {/* Concepts Section */}
           {filteredConcepts.length > 0 && (
             <div className="space-y-3">

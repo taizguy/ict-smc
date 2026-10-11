@@ -137,7 +137,10 @@ export const MasterclassWorkbench: React.FC = () => {
               </span>
             </div>
 
-            <div className="space-y-2 max-h-[calc(100vh-320px)] overflow-y-auto pr-1">
+            <div 
+              className="space-y-2 max-h-[calc(100vh-320px)] modal-scrollable pr-1"
+              data-lenis-prevent="true"
+            >
               {filteredItems.map((item) => {
                 const isSelected = item.id === activeItem.id;
                 return (

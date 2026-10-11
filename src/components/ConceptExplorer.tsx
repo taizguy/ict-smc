@@ -92,7 +92,10 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
               </span>
             </div>
 
-            <div className="space-y-2 max-h-[calc(100vh-260px)] overflow-y-auto pr-1">
+            <div 
+              className="space-y-2 max-h-[calc(100vh-260px)] modal-scrollable pr-1"
+              data-lenis-prevent="true"
+            >
               {filteredConcepts.map((c) => {
                 const isSelected = c.id === selectedConceptId;
                 return (

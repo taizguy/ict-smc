@@ -184,7 +184,11 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                 <div className="relative rounded-xl overflow-hidden bg-[#0C0E13] border border-white/[0.08] aspect-4/3">
                   <img 
                     src={boyStudyingImg} 
-                    alt="Student studying institutional price delivery"
+                    alt="Student studying institutional price delivery and ICT order flow"
+                    width="1376"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover grayscale contrast-125 opacity-90 hover:opacity-100 transition-opacity"
                   />
                   <div className="absolute bottom-3 left-3 bg-[#08090D]/85 backdrop-blur-md text-[#F5F7FA] px-3 py-1 text-[10px] font-mono rounded-md border border-white/[0.09] tracking-wider uppercase">

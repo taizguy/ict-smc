@@ -131,6 +131,10 @@ export const OpeningScreen: React.FC<OpeningScreenProps> = ({ onEnter, onOpenMen
                 <img
                   src={boyStudyingImg}
                   alt="A boy passionately studying trading charts with laptop, notebook and charts"
+                  width="1376"
+                  height="768"
+                  loading="lazy"
+                  decoding="async"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 brightness-95"
                 />

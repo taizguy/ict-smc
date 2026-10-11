@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#08090D"/>
+  <rect x="1" y="1" width="62" height="62" rx="13" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+  <!-- Bullish green candle wick and body -->
+  <line x1="22" y1="12" x2="22" y2="52" stroke="#52D273" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="17" y="20" width="10" height="22" rx="2" fill="#52D273"/>
+  <!-- Bearish red candle wick and body -->
+  <line x1="42" y1="16" x2="42" y2="50" stroke="#FF6B7A" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="37" y="24" width="10" height="18" rx="2" fill="#FF6B7A"/>
+  <!-- Institutional cyan flow chevron -->
+  <path d="M12 36 L32 20 L52 36" stroke="#55E6D1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

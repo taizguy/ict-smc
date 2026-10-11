@@ -11,6 +11,30 @@ export default defineConfig(() => {
         '@': path.resolve(__dirname, '.'),
       },
     },
+    build: {
+      target: 'esnext',
+      cssCodeSplit: true,
+      sourcemap: false,
+      chunkSizeWarningLimit: 800,
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
+            if (id.includes('src/data/chapters/')) {
+              return 'data-chapters';
+            }
+            if (id.includes('src/data/masood')) {
+              return 'data-masood';
+            }
+            if (id.includes('src/data/conceptsData')) {
+              return 'data-concepts';
+            }
+          },
+        },
+      },
+    },
     server: {
       host: '0.0.0.0',
       port: 3000,

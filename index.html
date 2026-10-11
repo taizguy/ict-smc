@@ -10,6 +10,16 @@
     <meta name="theme-color" content="#08090D" />
     <link rel="canonical" href="https://learnsmc.xyz/" />
 
+    <!-- Favicon & Mobile Icons (Fixes 404 & Lighthouse PWA/Best Practices) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- DNS Prefetch & Preconnect for High-Speed Asset Resolution -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+    <link rel="dns-prefetch" href="https://www.youtube.com" />
+
     <!-- Open Graph / Facebook / Discord / Slack -->
     <meta property="og:site_name" content="ICT &amp; SMC Academy" />
     <meta property="og:title" content="ICT &amp; SMC Academy - Smart Money Concepts Curriculum" />
@@ -17,11 +27,16 @@
     <meta property="og:url" content="https://learnsmc.xyz/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://learnsmc.xyz/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ICT &amp; SMC Academy institutional curriculum card" />
 
     <!-- Twitter / X Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="ICT &amp; SMC Academy - Institutional Trading Curriculum" />
     <meta name="twitter:description" content="Free 48-chapter institutional curriculum, 52 Abdullah Masood lectures, interactive Chart Lab, and algorithmic price delivery models." />
+    <meta name="twitter:image" content="https://learnsmc.xyz/og-image.png" />
 
     <!-- Robots Directives -->
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -114,11 +129,38 @@
       ]
     }
     </script>
-    <!-- Google AdSense Integration -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6985025314302607" crossorigin="anonymous"></script>
+    <!-- Google AdSense Integration (Non-blocking idle loader for 100/100 Core Web Vitals) -->
+    <script>
+      (function() {
+        function initAdSense() {
+          if (window.__adsenseLoaded) return;
+          window.__adsenseLoaded = true;
+          var adScript = document.createElement('script');
+          adScript.async = true;
+          adScript.crossOrigin = 'anonymous';
+          adScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6985025314302607';
+          document.head.appendChild(adScript);
+        }
+        if (document.readyState === 'complete') {
+          if ('requestIdleCallback' in window) requestIdleCallback(initAdSense, { timeout: 1500 });
+          else setTimeout(initAdSense, 1000);
+        } else {
+          window.addEventListener('load', function() {
+            if ('requestIdleCallback' in window) requestIdleCallback(initAdSense, { timeout: 1500 });
+            else setTimeout(initAdSense, 1000);
+          });
+        }
+      })();
+    </script>
+
+    <!-- Non-render-blocking Typography (Geist, IBM Plex Mono, Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
     <script>
       // Defensive guard against browser extension injection collisions (e.g. Zerion, MetaMask, Coinbase wallet conflicts)
       (function() {

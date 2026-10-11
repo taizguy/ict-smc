@@ -1,12 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Header, MainTabType } from './components/Header';
-import { WelcomeScreen } from './components/WelcomeScreen';
 import { CurriculumView } from './components/CurriculumView';
-import { ChapterRoom } from './components/ChapterRoom';
-import { TradingToolsWorkbench, TradingToolId } from './components/TradingToolsWorkbench';
-import { MasoodAcademyView } from './components/masood/MasoodAcademyView';
-import { SearchModal } from './components/SearchModal';
-import { MentorSpotlight } from './components/MentorSpotlight';
+import { TradingToolId } from './components/TradingToolsWorkbench';
 import { textbookChapters } from './data/chaptersData';
 import { 
   getStoredProgress, 
@@ -23,11 +18,33 @@ import {
   Lock,
   FileText,
   Mail,
-  CheckCircle2
+  CheckCircle2,
+  Loader2
 } from 'lucide-react';
 import { useSmoothScroll } from './hooks/useSmoothScroll';
 import { ScrollReveal } from './components/ScrollReveal';
-import { LegalModal, LegalModalTab } from './components/LegalModal';
+import type { LegalModalTab } from './components/LegalModal';
+
+// Code-split heavy interactive sub-modules for fast initial paint & Core Web Vitals
+const WelcomeScreen = lazy(() => import('./components/WelcomeScreen').then(m => ({ default: m.WelcomeScreen })));
+const ChapterRoom = lazy(() => import('./components/ChapterRoom').then(m => ({ default: m.ChapterRoom })));
+const TradingToolsWorkbench = lazy(() => import('./components/TradingToolsWorkbench').then(m => ({ default: m.TradingToolsWorkbench })));
+const MasoodAcademyView = lazy(() => import('./components/masood/MasoodAcademyView').then(m => ({ default: m.MasoodAcademyView })));
+const SearchModal = lazy(() => import('./components/SearchModal').then(m => ({ default: m.SearchModal })));
+const MentorSpotlight = lazy(() => import('./components/MentorSpotlight').then(m => ({ default: m.MentorSpotlight })));
+const LegalModal = lazy(() => import('./components/LegalModal').then(m => ({ default: m.LegalModal })));
+
+const ViewLoadingFallback: React.FC = () => (
+  <div className="min-h-[50vh] flex flex-col items-center justify-center gap-3 py-24 text-center">
+    <div className="w-12 h-12 rounded-2xl bg-white/[0.03] border border-white/[0.08] flex items-center justify-center">
+      <Loader2 className="w-5 h-5 text-[#55E6D1] animate-spin" />
+    </div>
+    <div className="space-y-1">
+      <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#9BA1AE]">Loading Institutional Module...</p>
+      <p className="text-[11px] text-[#656B78]">Streaming codified market microstructure</p>
+    </div>
+  </div>
+);
 
 export const App: React.FC = () => {
   // Initialize buttery smooth momentum mouse scrolling
@@ -238,20 +255,22 @@ export const App: React.FC = () => {
         
         {/* WELCOME SCREEN (When invoked or when activeTab is 'welcome') */}
         {isShowingWelcome && (
-          <WelcomeScreen
-            onEnterAcademy={(targetTab?: MainTabType) => {
-              setShowWelcomeScreen(false);
-              if (targetTab && targetTab !== 'welcome') {
-                setActiveTab(targetTab);
-              } else {
-                setActiveTab('curriculum');
-              }
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-            onOpenMentorSpotlight={() => {
-              setIsMentorSpotlightOpen(true);
-            }}
-          />
+          <Suspense fallback={<ViewLoadingFallback />}>
+            <WelcomeScreen
+              onEnterAcademy={(targetTab?: MainTabType) => {
+                setShowWelcomeScreen(false);
+                if (targetTab && targetTab !== 'welcome') {
+                  setActiveTab(targetTab);
+                } else {
+                  setActiveTab('curriculum');
+                }
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              onOpenMentorSpotlight={() => {
+                setIsMentorSpotlightOpen(true);
+              }}
+            />
+          </Suspense>
         )}
 
         {/* PILLAR 1: OPEN SYLLABUS & CURRICULUM VIEW (All 48 Chapters Unlocked) */}
@@ -264,51 +283,63 @@ export const App: React.FC = () => {
 
         {/* PILLAR 1 DETAIL: DEDICATED CHAPTER ROOM */}
         {!isShowingWelcome && activeTab === 'chapter_room' && (
-          <ChapterRoom
-            chapterId={selectedChapterId}
-            onSelectChapter={handleSelectChapter}
-            onReturnToMap={() => {
-              setActiveTab('curriculum');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-            onCompleteChapter={handleCompleteChapter}
-            isCompleted={completedChapterIds.includes(selectedChapterId)}
-          />
+          <Suspense fallback={<ViewLoadingFallback />}>
+            <ChapterRoom
+              chapterId={selectedChapterId}
+              onSelectChapter={handleSelectChapter}
+              onReturnToMap={() => {
+                setActiveTab('curriculum');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              onCompleteChapter={handleCompleteChapter}
+              isCompleted={completedChapterIds.includes(selectedChapterId)}
+            />
+          </Suspense>
         )}
 
         {/* PILLAR 2: TRADER ABDULLAH MASOOD ACADEMY (52 LECTURES) */}
-        {!isShowingWelcome && activeTab === 'masood' && <MasoodAcademyView />}
+        {!isShowingWelcome && activeTab === 'masood' && (
+          <Suspense fallback={<ViewLoadingFallback />}>
+            <MasoodAcademyView />
+          </Suspense>
+        )}
 
         {/* PILLAR 3: TRADING TOOLS WORKBENCH (Separated from primary learning) */}
         {!isShowingWelcome && (activeTab === 'tools' || [
           'chartlab', 'simulator', 'backtest', 'journal', 'graph', 'concepts', 'compare', 'dashboard'
         ].includes(activeTab)) && (
-          <TradingToolsWorkbench
-            initialTool={initialTool}
-            onSelectConcept={handleSelectConcept}
-          />
+          <Suspense fallback={<ViewLoadingFallback />}>
+            <TradingToolsWorkbench
+              initialTool={initialTool}
+              onSelectConcept={handleSelectConcept}
+            />
+          </Suspense>
         )}
 
       </main>
 
       {/* Global Search Modal */}
-      <SearchModal
-        isOpen={isSearchOpen}
-        onClose={() => setIsSearchOpen(false)}
-        onSelectConcept={handleSelectConcept}
-        onSelectChapter={handleSelectChapter}
-      />
+      <Suspense fallback={null}>
+        <SearchModal
+          isOpen={isSearchOpen}
+          onClose={() => setIsSearchOpen(false)}
+          onSelectConcept={handleSelectConcept}
+          onSelectChapter={handleSelectChapter}
+        />
+      </Suspense>
 
       {/* Mentor Tribute Spotlight Modal */}
-      <MentorSpotlight
-        isOpen={isMentorSpotlightOpen}
-        onClose={() => setIsMentorSpotlightOpen(false)}
-        onOpenMasoodAcademy={() => {
-          setIsMentorSpotlightOpen(false);
-          setActiveTab('masood');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
-      />
+      <Suspense fallback={null}>
+        <MentorSpotlight
+          isOpen={isMentorSpotlightOpen}
+          onClose={() => setIsMentorSpotlightOpen(false)}
+          onOpenMasoodAcademy={() => {
+            setIsMentorSpotlightOpen(false);
+            setActiveTab('masood');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        />
+      </Suspense>
 
       {/* Predikt Editorial Footer */}
       <footer className="border-t border-white/[0.07] bg-[#08090D]/80 backdrop-blur-md py-10 px-4 sm:px-6 lg:px-8 mt-auto relative z-10">
@@ -477,11 +508,13 @@ export const App: React.FC = () => {
       </footer>
 
       {/* Regulatory & Legal Modal (AdSense & Policy Ready) */}
-      <LegalModal
-        isOpen={isLegalModalOpen}
-        onClose={() => setIsLegalModalOpen(false)}
-        initialTab={legalModalTab}
-      />
+      <Suspense fallback={null}>
+        <LegalModal
+          isOpen={isLegalModalOpen}
+          onClose={() => setIsLegalModalOpen(false)}
+          initialTab={legalModalTab}
+        />
+      </Suspense>
     </div>
   );
 };

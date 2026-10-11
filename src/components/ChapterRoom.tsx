@@ -12,7 +12,9 @@ import {
   Eye, 
   Compass, 
   ChevronDown,
-  Sparkles
+  Sparkles,
+  Share2,
+  Check
 } from 'lucide-react';
 import { textbookChapters } from '../data/chaptersData';
 import { quizQuestions } from '../data/quizzesData';
@@ -39,6 +41,15 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
   const [revealedQuestions, setRevealedQuestions] = useState<Record<number, boolean>>({});
   const [selectedQuizAnswers, setSelectedQuizAnswers] = useState<Record<string, number>>({});
   const [expandedSimpler, setExpandedSimpler] = useState<Record<number, boolean>>({});
+  const [hasCopiedLink, setHasCopiedLink] = useState<boolean>(false);
+
+  const handleCopyChapterLink = () => {
+    const url = `https://learnsmc.xyz/?chapter=${chapterId}`;
+    navigator.clipboard.writeText(url).then(() => {
+      setHasCopiedLink(true);
+      setTimeout(() => setHasCopiedLink(false), 2000);
+    }).catch(() => {});
+  };
 
   const chapter = useMemo(() => {
     return textbookChapters.find(c => c.id === chapterId) || textbookChapters[0];
@@ -171,8 +182,26 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
             </div>
           </div>
 
-          {/* Prev / Next chapter controls */}
+          {/* Prev / Next chapter controls & Share URL */}
           <div className="flex items-center gap-2">
+            <button
+              onClick={handleCopyChapterLink}
+              className="btn-predikt-secondary text-xs py-1.5 px-3 flex items-center gap-1.5 text-[#9BA1AE] hover:text-[#55E6D1]"
+              title="Copy direct permanent URL for this chapter"
+            >
+              {hasCopiedLink ? (
+                <>
+                  <Check className="w-3.5 h-3.5 text-[#55E6D1]" />
+                  <span className="text-[#55E6D1]">Copied!</span>
+                </>
+              ) : (
+                <>
+                  <Share2 className="w-3.5 h-3.5" />
+                  <span className="hidden md:inline">Share</span>
+                </>
+              )}
+            </button>
+
             {prevChapter && (
               <button
                 onClick={() => onSelectChapter(prevChapter.id)}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header, MainTabType } from './components/Header';
 import { WelcomeScreen } from './components/WelcomeScreen';
 import { CurriculumView } from './components/CurriculumView';
@@ -50,6 +50,102 @@ export const App: React.FC = () => {
   const [completedChapterIds, setCompletedChapterIds] = useState<number[]>(() => {
     return getStoredProgress().completedChapterIds;
   });
+
+  // Read URL query parameters on initial load and handle browser popstate (Back/Forward)
+  useEffect(() => {
+    const parseUrlState = () => {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const chapterParam = params.get('chapter');
+        const tabParam = params.get('tab') as MainTabType | null;
+        const toolParam = params.get('tool') as TradingToolId | null;
+        const conceptParam = params.get('concept');
+
+        if (chapterParam) {
+          const cid = parseInt(chapterParam, 10);
+          if (!isNaN(cid) && cid >= 1 && cid <= 48) {
+            setSelectedChapterId(cid);
+            setActiveTab('chapter_room');
+            setShowWelcomeScreen(false);
+            return;
+          }
+        }
+
+        if (tabParam) {
+          if (tabParam === 'welcome') {
+            setShowWelcomeScreen(true);
+            setActiveTab('welcome');
+          } else {
+            setShowWelcomeScreen(false);
+            setActiveTab(tabParam);
+          }
+        }
+
+        if (toolParam) {
+          setInitialTool(toolParam);
+        }
+
+        if (conceptParam) {
+          setSelectedConceptId(conceptParam);
+        }
+      } catch {
+        // Fallback safely
+      }
+    };
+
+    parseUrlState();
+    window.addEventListener('popstate', parseUrlState);
+    return () => window.removeEventListener('popstate', parseUrlState);
+  }, []);
+
+  // Synchronize document title, meta descriptions, canonical links, and URL query params
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    let title = 'ICT & SMC Academy - Smart Money Concepts Curriculum';
+    let description = 'Master Inner Circle Trader (ICT) and Smart Money Concepts with a free 48-chapter institutional curriculum and 52 Abdullah Masood masterclasses.';
+    let urlQuery = '';
+
+    if (activeTab === 'chapter_room') {
+      const ch = textbookChapters.find(c => c.id === selectedChapterId) || textbookChapters[0];
+      title = `Chapter ${ch.id}: ${ch.title} | ICT & SMC Academy`;
+      description = `Chapter ${ch.id} (${ch.part}): ${ch.quote || ch.title}. Master institutional algorithmic price delivery, liquidity sweeps, and execution.`;
+      urlQuery = `?chapter=${ch.id}`;
+    } else if (activeTab === 'masood') {
+      title = 'Trader Abdullah Masood Academy (52 Masterclasses) | ICT & SMC Academy';
+      description = 'Study Trader Abdullah Masood complete 52-lecture institutional curriculum on ICT and Smart Money Concepts with video timestamps and notes.';
+      urlQuery = '?tab=masood';
+    } else if (activeTab === 'tools') {
+      title = `ICT Trading Workbench & ${initialTool.toUpperCase()} | learnsmc.xyz`;
+      description = 'Interactive Chart Lab, SMC strategy simulator, backtester, trading journal, and institutional concepts reference.';
+      urlQuery = `?tab=tools&tool=${initialTool}`;
+    } else if (activeTab === 'welcome') {
+      title = 'Welcome | ICT & SMC Institutional Trading Academy';
+      urlQuery = '?tab=welcome';
+    } else {
+      title = 'ICT & SMC Academy - 48-Chapter Institutional Trading Curriculum';
+      urlQuery = '?tab=curriculum';
+    }
+
+    document.title = title;
+
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', description);
+    }
+
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      const targetUrl = urlQuery ? `https://learnsmc.xyz/${urlQuery}` : 'https://learnsmc.xyz/';
+      canonical.setAttribute('href', targetUrl);
+    }
+
+    const currentQuery = window.location.search;
+    if (currentQuery !== urlQuery) {
+      const nextPath = urlQuery || window.location.pathname;
+      window.history.replaceState({ activeTab, selectedChapterId, initialTool }, '', nextPath);
+    }
+  }, [activeTab, selectedChapterId, initialTool]);
 
   const totalChapters = textbookChapters.length;
   const progressPercent = Math.round((completedChapterIds.length / totalChapters) * 100);

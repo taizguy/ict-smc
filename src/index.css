@@ -374,3 +374,43 @@
 .clip-triangle-down {
   clip-path: none !important;
 }
+
+/* ========================================================
+   WCAG 2.2 AA Accessibility & Focus Visible Indicators
+   ======================================================== */
+:focus-visible {
+  outline: 2px solid #5865FF !important;
+  outline-offset: 2px !important;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #5865FF !important;
+  outline-offset: 2px !important;
+}
+
+/* ========================================================
+   Reduced Motion Support & Animation Fallback (P0)
+   Prevents any content hiding if motion is reduced or stalled
+   ======================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-scroll-reveal],
+  .animate-fade-in,
+  .animate-slide-up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+

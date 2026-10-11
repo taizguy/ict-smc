@@ -21,7 +21,13 @@ export type MainTabType =
   | 'simulator' 
   | 'journal' 
   | 'backtest' 
-  | 'dashboard';
+  | 'dashboard'
+  | 'disclaimer'
+  | 'privacy'
+  | 'terms'
+  | 'about'
+  | 'contact'
+  | 'adsense';
 
 interface HeaderProps {
   activeTab: MainTabType;

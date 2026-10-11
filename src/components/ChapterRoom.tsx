@@ -14,7 +14,13 @@ import {
   ChevronDown,
   Sparkles,
   Share2,
-  Check
+  Check,
+  Bookmark,
+  BookmarkCheck,
+  ShieldAlert,
+  Edit3,
+  Save,
+  AlertTriangle
 } from 'lucide-react';
 import { textbookChapters } from '../data/chaptersData';
 import { quizQuestions } from '../data/quizzesData';
@@ -42,11 +48,49 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
   const [selectedQuizAnswers, setSelectedQuizAnswers] = useState<Record<string, number>>({});
   const [expandedSimpler, setExpandedSimpler] = useState<Record<number, boolean>>({});
   const [hasCopiedLink, setHasCopiedLink] = useState<boolean>(false);
+  
+  // Personal Learning Workspace: Bookmarks & Study Notes (LocalStorage)
+  const [isBookmarked, setIsBookmarked] = useState<boolean>(false);
+  const [userNote, setUserNote] = useState<string>('');
+  const [savedNoteStatus, setSavedNoteStatus] = useState<boolean>(false);
 
-  // Instantly reset scroll to top on chapter load or navigation
+  // Instantly reset scroll to top and hydrate bookmarks/notes on chapter load
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
+    try {
+      const raw = localStorage.getItem('learnsmc_bookmarked_chapters');
+      const bmarks = raw ? JSON.parse(raw) : [];
+      setIsBookmarked(Array.isArray(bmarks) && bmarks.includes(chapterId));
+
+      const note = localStorage.getItem(`learnsmc_note_ch_${chapterId}`) || '';
+      setUserNote(note);
+      setSavedNoteStatus(false);
+    } catch {}
   }, [chapterId]);
+
+  const handleToggleBookmark = () => {
+    try {
+      const raw = localStorage.getItem('learnsmc_bookmarked_chapters');
+      let bmarks: number[] = raw ? JSON.parse(raw) : [];
+      if (!Array.isArray(bmarks)) bmarks = [];
+      if (bmarks.includes(chapterId)) {
+        bmarks = bmarks.filter(id => id !== chapterId);
+        setIsBookmarked(false);
+      } else {
+        bmarks.push(chapterId);
+        setIsBookmarked(true);
+      }
+      localStorage.setItem('learnsmc_bookmarked_chapters', JSON.stringify(bmarks));
+    } catch {}
+  };
+
+  const handleSaveNote = () => {
+    try {
+      localStorage.setItem(`learnsmc_note_ch_${chapterId}`, userNote);
+      setSavedNoteStatus(true);
+      setTimeout(() => setSavedNoteStatus(false), 2200);
+    } catch {}
+  };
 
   const handleCopyChapterLink = () => {
     const url = `https://learnsmc.xyz/?chapter=${chapterId}`;
@@ -189,6 +233,28 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
 
           {/* Prev / Next chapter controls & Share URL */}
           <div className="flex items-center gap-2">
+            <button
+              onClick={handleToggleBookmark}
+              className={`btn-predikt-secondary text-xs py-1.5 px-3 flex items-center gap-1.5 transition-colors ${
+                isBookmarked 
+                  ? 'text-amber-400 border-amber-400/40 bg-amber-400/10' 
+                  : 'text-[#9BA1AE] hover:text-white'
+              }`}
+              title={isBookmarked ? 'Remove chapter from bookmarks' : 'Bookmark this chapter for quick study'}
+            >
+              {isBookmarked ? (
+                <>
+                  <BookmarkCheck className="w-3.5 h-3.5 text-amber-400" />
+                  <span className="text-amber-300 hidden md:inline">Saved</span>
+                </>
+              ) : (
+                <>
+                  <Bookmark className="w-3.5 h-3.5" />
+                  <span className="hidden md:inline">Bookmark</span>
+                </>
+              )}
+            </button>
+
             <button
               onClick={handleCopyChapterLink}
               className="btn-predikt-secondary text-xs py-1.5 px-3 flex items-center gap-1.5 text-[#9BA1AE] hover:text-[#55E6D1]"
@@ -383,6 +449,71 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                     </article>
                   );
                 })}
+              </div>
+
+              {/* INSTITUTIONAL INVALIDATION & RISK ARCHITECTURE (Curriculum Rigor) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-4 border-t border-white/[0.08]">
+                {/* Invalidation Rules */}
+                <div className="bg-white/[0.02] border border-white/[0.07] rounded-xl p-5 space-y-3">
+                  <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-rose-400">
+                    <AlertTriangle className="w-4 h-4 shrink-0" />
+                    <span>Explicit Invalidation &amp; Failure Rules</span>
+                  </div>
+                  <h4 className="text-sm font-semibold text-white">When is This Concept Violated?</h4>
+                  <ul className="text-xs text-[#9BA1AE] space-y-2 list-disc pl-4 leading-relaxed">
+                    <li><strong className="text-white">Candle Body Violations:</strong> Invalidation occurs when a candle body (not merely a wick) closes past the key anchor level or 50% Consequent Encroachment (CE).</li>
+                    <li><strong className="text-white">Lack of Displacement:</strong> If price lingers or consolidates inside an imbalance without immediate directional departure, the orderflow signature is degraded.</li>
+                    <li><strong className="text-white">Time Window Expiration:</strong> Setups that do not trigger within the active ICT Killzone (London, NY AM, NY PM) are mechanically cancelled.</li>
+                  </ul>
+                  <div className="text-[11px] font-mono text-amber-300/90 bg-amber-500/10 border border-amber-500/20 rounded p-2.5">
+                    RULE: When an invalidation condition is triggered, the premise is falsified. Discard the setup immediately.
+                  </div>
+                </div>
+
+                {/* Risk Management & Execution Protocol */}
+                <div className="bg-white/[0.02] border border-white/[0.07] rounded-xl p-5 space-y-3">
+                  <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#55E6D1]">
+                    <ShieldAlert className="w-4 h-4 shrink-0" />
+                    <span>Risk Management &amp; Sizing Protocols</span>
+                  </div>
+                  <h4 className="text-sm font-semibold text-white">Capital Preservation Architecture</h4>
+                  <ul className="text-xs text-[#9BA1AE] space-y-2 list-disc pl-4 leading-relaxed">
+                    <li><strong className="text-white">Strict Capital Cap:</strong> Never risk more than 0.5% to 1.0% of total portfolio equity on any single institutional entry model.</li>
+                    <li><strong className="text-white">Mechanical Stop-Loss:</strong> Placed strictly beyond the invalidating swing high/low or wick displacement—never arbitrarily chosen by pip count.</li>
+                    <li><strong className="text-white">Asymmetric Payoff:</strong> Minimum 1:2.0 Risk-to-Reward ratio to maintain positive mathematical expectancy across all market regimes.</li>
+                  </ul>
+                  <div className="text-[11px] font-mono text-[#55E6D1]/90 bg-[#55E6D1]/10 border border-[#55E6D1]/20 rounded p-2.5">
+                    PRINCIPLE: Trade management and survival precede profit. Invalidation must be predefined before entry.
+                  </div>
+                </div>
+              </div>
+
+              {/* PERSONAL STUDY NOTES & LEARNING WORKSPACE */}
+              <div className="bg-[#151923] border border-white/[0.08] rounded-xl p-5 space-y-3">
+                <div className="flex items-center justify-between flex-wrap gap-2">
+                  <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#5865FF]">
+                    <Edit3 className="w-4 h-4" />
+                    <span>Personal Learning Notes · Chapter {chapter.id}</span>
+                  </div>
+                  <button
+                    onClick={handleSaveNote}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#5865FF] hover:bg-[#6F7BFF] text-white text-xs font-mono font-medium transition-colors shadow-sm"
+                  >
+                    <Save className="w-3.5 h-3.5" />
+                    <span>{savedNoteStatus ? 'Notes Saved!' : 'Save Notes'}</span>
+                  </button>
+                </div>
+                <textarea
+                  rows={3}
+                  value={userNote}
+                  onChange={(e) => setUserNote(e.target.value)}
+                  placeholder="Record your personal tape observations, chart invalidation takeaways, and execution reflections for this chapter..."
+                  className="w-full bg-[#0D0F17] border border-white/[0.08] rounded-lg p-3 text-xs text-white placeholder-[#656B78] focus:border-[#5865FF] focus:outline-none resize-none leading-relaxed"
+                />
+                <div className="flex items-center justify-between text-[11px] text-[#656B78] font-mono">
+                  <span>Saved locally in browser storage · 100% private</span>
+                  {userNote.length > 0 && <span>{userNote.length} characters</span>}
+                </div>
               </div>
 
               {/* Navigation Footer */}

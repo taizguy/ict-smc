@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>LearnSMC - Redirecting...</title>
+    <meta name="robots" content="noindex, follow">
+    <script>
+      // Single Page Apps for GitHub Pages and Static Servers
+      // Redirects deep URLs back to index.html with pathname preserved in query
+      (function() {
+        var path = window.location.pathname;
+        var search = window.location.search;
+        var hash = window.location.hash;
+        
+        // Handle chapter paths like /chapter/1 or /chapter-1
+        var chapterMatch = path.match(/\/chapter[-/](\d+)/i);
+        if (chapterMatch) {
+          window.location.replace('/?chapter=' + chapterMatch[1] + (hash || ''));
+          return;
+        }
+
+        // Handle legal standalone routes
+        var legalMatches = ['privacy', 'terms', 'disclaimer', 'about', 'contact', 'masood', 'tools', 'curriculum'];
+        for (var i = 0; i < legalMatches.length; i++) {
+          if (path.indexOf('/' + legalMatches[i]) !== -1) {
+            window.location.replace('/?tab=' + legalMatches[i] + (hash || ''));
+            return;
+          }
+        }
+
+        // Default SPA fallback
+        window.location.replace('/' + (search || '') + (hash || ''));
+      })();
+    </script>
+    <meta http-equiv="refresh" content="0;URL='/'">
+  </head>
+  <body style="background-color: #08090D; color: #F5F7FA; font-family: system-ui, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; text-align: center;">
+    <div>
+      <h1 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Redirecting to LearnSMC...</h1>
+      <p style="color: #9BA1AE; font-size: 0.9rem;">Returning you to the institutional curriculum...</p>
+      <a href="/" style="color: #55E6D1; text-decoration: none; font-size: 0.85rem; font-family: monospace;">Click here if not redirected automatically</a>
+    </div>
+  </body>
+</html>

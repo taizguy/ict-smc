@@ -19,11 +19,14 @@ import {
   FileText,
   Mail,
   CheckCircle2,
-  Loader2
+  Loader2,
+  Building
 } from 'lucide-react';
 import { useSmoothScroll } from './hooks/useSmoothScroll';
 import { ScrollReveal } from './components/ScrollReveal';
 import type { LegalModalTab } from './components/LegalModal';
+import { CookieConsentBanner } from './components/CookieConsentBanner';
+import type { LegalTabType } from './components/LegalPageView';
 
 // Code-split heavy interactive sub-modules for fast initial paint & Core Web Vitals
 const WelcomeScreen = lazy(() => import('./components/WelcomeScreen').then(m => ({ default: m.WelcomeScreen })));
@@ -33,6 +36,7 @@ const MasoodAcademyView = lazy(() => import('./components/masood/MasoodAcademyVi
 const SearchModal = lazy(() => import('./components/SearchModal').then(m => ({ default: m.SearchModal })));
 const MentorSpotlight = lazy(() => import('./components/MentorSpotlight').then(m => ({ default: m.MentorSpotlight })));
 const LegalModal = lazy(() => import('./components/LegalModal').then(m => ({ default: m.LegalModal })));
+const LegalPageView = lazy(() => import('./components/LegalPageView').then(m => ({ default: m.LegalPageView })));
 
 const ViewLoadingFallback: React.FC = () => (
   <div className="min-h-[50vh] flex flex-col items-center justify-center gap-3 py-24 text-center">
@@ -72,11 +76,46 @@ export const App: React.FC = () => {
   useEffect(() => {
     const parseUrlState = () => {
       try {
+        const path = window.location.pathname.toLowerCase();
         const params = new URLSearchParams(window.location.search);
         const chapterParam = params.get('chapter');
         const tabParam = params.get('tab') as MainTabType | null;
         const toolParam = params.get('tool') as TradingToolId | null;
         const conceptParam = params.get('concept');
+
+        // Pathname inspection for direct clean routing (prevents 404 on deep refresh)
+        const chapterPathMatch = path.match(/\/chapter[-/](\d+)/i);
+        if (chapterPathMatch) {
+          const cid = parseInt(chapterPathMatch[1], 10);
+          if (!isNaN(cid) && cid >= 1 && cid <= 48) {
+            setSelectedChapterId(cid);
+            setActiveTab('chapter_room');
+            setShowWelcomeScreen(false);
+            return;
+          }
+        }
+
+        const legalPaths: LegalTabType[] = ['disclaimer', 'privacy', 'terms', 'about', 'contact', 'adsense'];
+        for (const lp of legalPaths) {
+          if (path.includes(`/${lp}`) || tabParam === lp) {
+            setActiveTab(lp);
+            setShowWelcomeScreen(false);
+            return;
+          }
+        }
+
+        if (path.includes('/masood') || tabParam === 'masood') {
+          setActiveTab('masood');
+          setShowWelcomeScreen(false);
+          return;
+        }
+
+        if (path.includes('/tools') || tabParam === 'tools') {
+          setActiveTab('tools');
+          setShowWelcomeScreen(false);
+          if (toolParam) setInitialTool(toolParam);
+          return;
+        }
 
         if (chapterParam) {
           const cid = parseInt(chapterParam, 10);
@@ -136,6 +175,30 @@ export const App: React.FC = () => {
       title = `ICT Trading Workbench & ${initialTool.toUpperCase()} | learnsmc.xyz`;
       description = 'Interactive Chart Lab, SMC strategy simulator, backtester, trading journal, and institutional concepts reference.';
       urlQuery = `?tab=tools&tool=${initialTool}`;
+    } else if (activeTab === 'disclaimer') {
+      title = 'Financial Risk Disclosure & CFTC Rule 4.41 Compliance | LearnSMC';
+      description = 'Statutory risk disclosures, CFTC Rule 4.41 compliance statement, and educational non-advice declaration for LearnSMC.';
+      urlQuery = '?tab=disclaimer';
+    } else if (activeTab === 'privacy') {
+      title = 'Privacy Policy & Google AdSense Cookie Disclosures | LearnSMC';
+      description = 'Official privacy policy, Google AdSense third-party cookie disclosures, opt-out links, and GDPR/CCPA data rights for learnsmc.xyz.';
+      urlQuery = '?tab=privacy';
+    } else if (activeTab === 'terms') {
+      title = 'Terms of Service & Open Educational License | LearnSMC';
+      description = 'Terms of service, educational usage licenses, limitation of liability, and acceptable use guidelines for learnsmc.xyz.';
+      urlQuery = '?tab=terms';
+    } else if (activeTab === 'about') {
+      title = 'About LearnSMC, Editorial Methodology & Authorship | LearnSMC';
+      description = 'LearnSMC institutional mission, editorial peer review standards, author bios, and Trader Abdullah Masood curriculum preservation.';
+      urlQuery = '?tab=about';
+    } else if (activeTab === 'contact') {
+      title = 'Contact LearnSMC & Editorial Support | LearnSMC';
+      description = 'Direct contact channels, support email (support@learnsmc.xyz), and editorial inquiry form for LearnSMC.';
+      urlQuery = '?tab=contact';
+    } else if (activeTab === 'adsense') {
+      title = 'Google AdSense Verification & ads.txt Record | LearnSMC';
+      description = 'Official Google AdSense publisher verification, ca-pub-6985025314302607 record, and ads.txt specification for learnsmc.xyz.';
+      urlQuery = '?tab=adsense';
     } else if (activeTab === 'welcome') {
       title = 'Welcome | ICT & SMC Institutional Trading Academy';
       urlQuery = '?tab=welcome';
@@ -316,6 +379,23 @@ export const App: React.FC = () => {
           </Suspense>
         )}
 
+        {/* PILLAR 4: STANDALONE CRAWLABLE LEGAL & POLICY PAGES (AdSense, CFTC & GDPR Compliant) */}
+        {!isShowingWelcome && ['disclaimer', 'privacy', 'terms', 'about', 'contact', 'adsense'].includes(activeTab) && (
+          <Suspense fallback={<ViewLoadingFallback />}>
+            <LegalPageView
+              currentTab={activeTab as LegalTabType}
+              onTabChange={(tab) => {
+                setActiveTab(tab);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              onBackToCurriculum={() => {
+                setActiveTab('curriculum');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+            />
+          </Suspense>
+        )}
+
       </main>
 
       {/* Global Search Modal */}
@@ -403,75 +483,100 @@ export const App: React.FC = () => {
                   <strong className="text-amber-300 font-semibold uppercase tracking-wider">Regulatory Risk Disclosure:</strong> Trading foreign exchange, futures, indices, and financial derivatives carries high risk and may not be suitable for all investors. All materials on <strong className="text-white">learnsmc.xyz</strong> are strictly for educational and research purposes. Past performance is not indicative of future results.
                 </p>
               </div>
-              <button
-                onClick={() => {
-                  setLegalModalTab('disclaimer');
-                  setIsLegalModalOpen(true);
+              <a
+                href="?tab=disclaimer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setActiveTab('disclaimer');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 className="text-[11px] font-mono text-amber-400 hover:text-amber-300 underline shrink-0 whitespace-nowrap self-end md:self-center"
               >
                 Read Full Risk Disclosure &rarr;
-              </button>
+              </a>
             </div>
           </ScrollReveal>
 
           {/* Legal Pages & Policy Navigation Links */}
           <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/[0.06] text-xs font-mono text-[#8E95A5]">
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-              <button
-                onClick={() => {
-                  setLegalModalTab('disclaimer');
-                  setIsLegalModalOpen(true);
+              <a
+                href="?tab=disclaimer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setActiveTab('disclaimer');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 className="hover:text-amber-400 transition-colors flex items-center gap-1.5"
               >
                 <ShieldAlert className="w-3.5 h-3.5 text-amber-400" />
                 <span>Risk Disclaimer</span>
-              </button>
+              </a>
 
-              <button
-                onClick={() => {
-                  setLegalModalTab('privacy');
-                  setIsLegalModalOpen(true);
+              <a
+                href="?tab=privacy"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setActiveTab('privacy');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 className="hover:text-[#55E6D1] transition-colors flex items-center gap-1.5"
               >
                 <Lock className="w-3.5 h-3.5 text-[#55E6D1]" />
                 <span>Privacy Policy</span>
-              </button>
+              </a>
 
-              <button
-                onClick={() => {
-                  setLegalModalTab('terms');
-                  setIsLegalModalOpen(true);
+              <a
+                href="?tab=terms"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setActiveTab('terms');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 className="hover:text-[#8A72FF] transition-colors flex items-center gap-1.5"
               >
                 <FileText className="w-3.5 h-3.5 text-[#8A72FF]" />
                 <span>Terms of Service</span>
-              </button>
+              </a>
 
-              <button
-                onClick={() => {
-                  setLegalModalTab('about');
-                  setIsLegalModalOpen(true);
+              <a
+                href="?tab=about"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setActiveTab('about');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 className="hover:text-white transition-colors flex items-center gap-1.5"
               >
-                <Mail className="w-3.5 h-3.5 text-white/80" />
-                <span>About &amp; Contact</span>
-              </button>
+                <Building className="w-3.5 h-3.5 text-white/80" />
+                <span>About &amp; Editorial</span>
+              </a>
 
-              <button
-                onClick={() => {
-                  setLegalModalTab('adsense');
-                  setIsLegalModalOpen(true);
+              <a
+                href="?tab=contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setActiveTab('contact');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="hover:text-[#55E6D1] transition-colors flex items-center gap-1.5"
+              >
+                <Mail className="w-3.5 h-3.5 text-[#55E6D1]" />
+                <span>Contact</span>
+              </a>
+
+              <a
+                href="?tab=adsense"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setActiveTab('adsense');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 className="text-[#55E6D1]/90 hover:text-[#55E6D1] transition-colors flex items-center gap-1.5"
               >
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#55E6D1]" />
                 <span>ads.txt Verified</span>
-              </button>
+              </a>
             </div>
 
             <div className="text-[11px] text-[#656B78] flex items-center gap-2">
@@ -507,7 +612,7 @@ export const App: React.FC = () => {
         </div>
       </footer>
 
-      {/* Regulatory & Legal Modal (AdSense & Policy Ready) */}
+      {/* Regulatory & Legal Modal (Quick preview or deep study) */}
       <Suspense fallback={null}>
         <LegalModal
           isOpen={isLegalModalOpen}
@@ -515,6 +620,14 @@ export const App: React.FC = () => {
           initialTab={legalModalTab}
         />
       </Suspense>
+
+      {/* Cookie & Privacy Consent Banner (GDPR, UK & AdSense Ready) */}
+      <CookieConsentBanner
+        onOpenPrivacyPolicy={() => {
+          setActiveTab('privacy');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+      />
     </div>
   );
 };

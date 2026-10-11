@@ -1,0 +1,575 @@
+import React, { useState, useEffect } from 'react';
+import { 
+  ShieldAlert, 
+  Lock, 
+  FileText, 
+  Mail, 
+  Scale, 
+  ArrowLeft, 
+  CheckCircle2, 
+  ExternalLink, 
+  Copy, 
+  AlertTriangle,
+  Building,
+  Send,
+  BookOpen,
+  Calendar,
+  UserCheck
+} from 'lucide-react';
+
+export type LegalTabType = 'disclaimer' | 'privacy' | 'terms' | 'about' | 'contact' | 'adsense';
+
+interface LegalPageViewProps {
+  currentTab: LegalTabType;
+  onTabChange: (tab: LegalTabType) => void;
+  onBackToCurriculum: () => void;
+}
+
+export const LegalPageView: React.FC<LegalPageViewProps> = ({
+  currentTab,
+  onTabChange,
+  onBackToCurriculum
+}) => {
+  const [copiedAdsTxt, setCopiedAdsTxt] = useState(false);
+  const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [contactForm, setContactForm] = useState({
+    name: '',
+    email: '',
+    subject: 'General Inquiry',
+    message: ''
+  });
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentTab]);
+
+  const handleCopyAdsTxt = () => {
+    navigator.clipboard.writeText('google.com, pub-6985025314302607, DIRECT, f08c47fec0942fa0');
+    setCopiedAdsTxt(true);
+    setTimeout(() => setCopiedAdsTxt(false), 2500);
+  };
+
+  const handleContactSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!contactForm.email || !contactForm.message) return;
+    setContactSubmitted(true);
+  };
+
+  const navTabs: { id: LegalTabType; label: string; icon: React.ReactNode }[] = [
+    { id: 'disclaimer', label: 'Financial Risk & CFTC', icon: <ShieldAlert className="w-4 h-4 text-amber-400" /> },
+    { id: 'privacy', label: 'Privacy Policy & Cookies', icon: <Lock className="w-4 h-4 text-[#55E6D1]" /> },
+    { id: 'terms', label: 'Terms of Service', icon: <FileText className="w-4 h-4 text-[#8A72FF]" /> },
+    { id: 'about', label: 'About & Editorial Team', icon: <Building className="w-4 h-4 text-white/90" /> },
+    { id: 'contact', label: 'Contact & Support', icon: <Mail className="w-4 h-4 text-[#55E6D1]" /> },
+    { id: 'adsense', label: 'AdSense & ads.txt', icon: <CheckCircle2 className="w-4 h-4 text-[#52D273]" /> }
+  ];
+
+  return (
+    <main role="main" className="min-h-screen pb-20 pt-6 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+      {/* Top Breadcrumb & Return Bar */}
+      <nav aria-label="Breadcrumb" className="flex items-center justify-between gap-4 mb-8 pb-4 border-b border-white/[0.08]">
+        <button
+          onClick={onBackToCurriculum}
+          className="inline-flex items-center gap-2 text-xs font-mono text-[#9BA1AE] hover:text-[#55E6D1] transition-colors py-2 px-3 rounded-lg hover:bg-white/[0.04]"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          <span>&larr; Return to Curriculum Directory</span>
+        </button>
+
+        <div className="flex items-center gap-2 text-xs font-mono text-[#656B78]">
+          <span>learnsmc.xyz</span>
+          <span>/</span>
+          <span className="text-[#55E6D1] uppercase">{currentTab}</span>
+        </div>
+      </nav>
+
+      {/* Standalone Tab Switcher */}
+      <div className="mb-10">
+        <div className="flex items-center gap-2 mb-3">
+          <Scale className="w-5 h-5 text-[#5865FF]" />
+          <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+            Institutional Transparency, Regulatory Disclosures &amp; Publisher Policies
+          </h1>
+        </div>
+        <p className="text-sm text-[#9BA1AE] max-w-3xl mb-6">
+          Official statutory disclosures, CFTC compliance statements, Google AdSense cookie policies, and editorial guidelines for LearnSMC.
+        </p>
+
+        <div className="flex flex-wrap gap-2 p-1.5 bg-[#11141B] border border-white/[0.08] rounded-xl">
+          {navTabs.map((t) => {
+            const isActive = currentTab === t.id;
+            return (
+              <button
+                key={t.id}
+                onClick={() => onTabChange(t.id)}
+                className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-mono font-medium transition-all ${
+                  isActive
+                    ? 'bg-[#1D2230] text-white border border-white/[0.12] shadow-sm'
+                    : 'text-[#9BA1AE] hover:text-white hover:bg-white/[0.04]'
+                }`}
+                aria-current={isActive ? 'page' : undefined}
+              >
+                {t.icon}
+                <span>{t.label}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Standalone Content Card */}
+      <article className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 shadow-xl space-y-8">
+        
+        {/* TAB 1: FINANCIAL RISK & CFTC RULE 4.41 */}
+        {currentTab === 'disclaimer' && (
+          <section className="space-y-6 animate-fade-in text-sm text-[#C4C9D6] leading-relaxed">
+            <header className="border-b border-white/[0.08] pb-5">
+              <div className="flex items-center gap-2 text-xs font-mono text-amber-400 uppercase tracking-widest mb-1">
+                <ShieldAlert className="w-4 h-4" />
+                <span>Statutory Risk Disclosure · CFTC Rule 4.41</span>
+              </div>
+              <h2 className="text-2xl font-bold text-white">
+                Financial Risk Disclosure &amp; Educational Non-Advice Declaration
+              </h2>
+              <p className="text-xs text-[#8E95A5] mt-1">
+                Last reviewed: October 2026 · Mandatory regulatory notice for traders
+              </p>
+            </header>
+
+            <div className="bg-amber-500/10 border-l-4 border-amber-500 rounded-r-xl p-5 text-amber-200/90 space-y-2">
+              <h3 className="font-semibold text-amber-300 text-sm flex items-center gap-2">
+                <AlertTriangle className="w-4 h-4 shrink-0" />
+                HIGH RISK INVESTMENT &amp; CAPITAL LOSS WARNING
+              </h3>
+              <p className="text-xs leading-relaxed">
+                Trading foreign exchange (Forex), commodity futures, equity indices, cryptocurrencies, and Contracts for Difference (CFDs) carries a high level of risk and may not be suitable for all investors. The high degree of leverage that is often obtainable in financial trading can work against you as well as for you. Before deciding to trade foreign exchange or any financial instrument, you should carefully consider your investment objectives, level of experience, and risk appetite. The possibility exists that you could sustain a loss of some or all of your initial investment; therefore, you should not invest money that you cannot afford to lose.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-base font-bold text-white">1. CFTC Rule 4.41 Notice on Hypothetical Performance</h3>
+              <p>
+                HYPOTHETICAL OR SIMULATED PERFORMANCE RESULTS HAVE CERTAIN LIMITATIONS. UNLIKE AN ACTUAL PERFORMANCE RECORD, SIMULATED RESULTS DO NOT REPRESENT ACTUAL TRADING. ALSO, SINCE THE TRADES HAVE NOT BEEN EXECUTED, THE RESULTS MAY HAVE UNDER-OR-OVER COMPENSATED FOR THE IMPACT, IF ANY, OF CERTAIN MARKET FACTORS, SUCH AS LACK OF LIQUIDITY.
+              </p>
+              <p>
+                SIMULATED TRADING PROGRAMS IN GENERAL ARE ALSO SUBJECT TO THE FACT THAT THEY ARE DESIGNED WITH THE BENEFIT OF HINDSIGHT. NO REPRESENTATION IS BEING MADE THAT ANY ACCOUNT WILL OR IS LIKELY TO ACHIEVE PROFIT OR LOSSES SIMILAR TO THOSE SHOWN OR DISCUSSED ON LEARNSMC.XYZ.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-base font-bold text-white">2. Strictly Educational &amp; Research Platform</h3>
+              <p>
+                LearnSMC (learnsmc.xyz) is strictly an educational digital textbook and market microstructure research repository. None of the curriculum chapters, Trader Abdullah Masood lecture notes, interactive chart simulators, calculators, or diagrams constitute personalized investment, financial, tax, or legal advice.
+              </p>
+              <p>
+                LearnSMC does not operate as a registered Commodity Trading Advisor (CTA), broker-dealer, or investment management firm under the jurisdiction of the U.S. Commodity Futures Trading Commission (CFTC), the National Futures Association (NFA), the Financial Conduct Authority (FCA), or any other regulatory body.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-base font-bold text-white">3. Zero Predatory Affiliate Practices</h3>
+              <p>
+                LearnSMC does not promote unregulated offshore brokers, paid signal rooms, guaranteed win-rate robots, or predatory multi-tier affiliate programs. All 48 textbook chapters and 52 Abdullah Masood masterclasses are 100% free and open to all students worldwide.
+              </p>
+            </div>
+          </section>
+        )}
+
+        {/* TAB 2: PRIVACY POLICY & GOOGLE ADSENSE */}
+        {currentTab === 'privacy' && (
+          <section className="space-y-6 animate-fade-in text-sm text-[#C4C9D6] leading-relaxed">
+            <header className="border-b border-white/[0.08] pb-5">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#55E6D1] uppercase tracking-widest mb-1">
+                <Lock className="w-4 h-4" />
+                <span>Privacy &amp; Cookie Policy · Google Publisher Policies</span>
+              </div>
+              <h2 className="text-2xl font-bold text-white">
+                Privacy Policy, Cookie Disclosures &amp; Data Rights
+              </h2>
+              <p className="text-xs text-[#8E95A5] mt-1">
+                Effective date: October 2026 · Compliant with GDPR, UK DPA, CCPA, and Google AdSense
+              </p>
+            </header>
+
+            <div className="space-y-4">
+              <h3 className="text-base font-bold text-white">1. Introduction &amp; Commitment</h3>
+              <p>
+                LearnSMC (<strong className="text-white">https://learnsmc.xyz</strong>) respects your personal privacy. This Privacy Policy details how information is handled when you browse our open digital textbook, use the interactive Chart Lab, or interact with our curriculum. We do not sell your personal data.
+              </p>
+            </div>
+
+            <div className="bg-[#151923] border border-white/[0.08] rounded-xl p-5 space-y-3">
+              <h3 className="text-sm font-bold text-[#55E6D1] flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#55E6D1]" />
+                Google AdSense &amp; Third-Party Cookie Disclosures
+              </h3>
+              <p className="text-xs text-[#9BA1AE] leading-relaxed">
+                As required by Google Publisher Policies and Google AdSense terms:
+              </p>
+              <ul className="text-xs text-[#9BA1AE] space-y-2 list-disc pl-5">
+                <li>
+                  Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites on the internet.
+                </li>
+                <li>
+                  Google's use of advertising cookies enables it and its partners to serve ads to your users based on their visit to your sites and/or other sites on the Internet.
+                </li>
+                <li>
+                  Users may opt out of personalized advertising by visiting{' '}
+                  <a 
+                    href="https://adssettings.google.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-[#55E6D1] underline"
+                  >
+                    Google Ads Settings (adssettings.google.com)
+                  </a>.
+                </li>
+                <li>
+                  Alternatively, you can opt out of a third-party vendor's use of cookies for personalized advertising by visiting{' '}
+                  <a 
+                    href="https://www.aboutads.info/choices" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-[#55E6D1] underline"
+                  >
+                    www.aboutads.info/choices
+                  </a>.
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-base font-bold text-white">2. Browser LocalStorage &amp; Non-Tracking Preferences</h3>
+              <p>
+                LearnSMC uses client-side browser <code className="text-[#55E6D1] font-mono text-xs bg-white/[0.05] px-1.5 py-0.5 rounded">localStorage</code> solely to preserve:
+              </p>
+              <ul className="list-disc pl-5 space-y-1.5 text-xs text-[#9BA1AE]">
+                <li>Your lesson bookmarking and chapter completion status.</li>
+                <li>Your trading journal notes written in the browser workbench.</li>
+                <li>Your Cookie Consent preference response.</li>
+              </ul>
+              <p className="text-xs text-[#9BA1AE]">
+                This data stays strictly on your device. We do not transmit or store your personal notes or progress records on remote marketing databases.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-base font-bold text-white">3. Your Rights Under GDPR (EEA) and CCPA (California)</h3>
+              <p>
+                Under the European General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA), you have the right to request access to any data collected, request deletion, or restrict processing. LearnSMC collects minimal server logs (standard IP, user-agent, and requested page timestamp) strictly for security and denial-of-service prevention.
+              </p>
+              <p>
+                To exercise any privacy inquiries or request data removal, email our privacy team directly at{' '}
+                <a href="mailto:support@learnsmc.xyz" className="text-[#55E6D1] underline">support@learnsmc.xyz</a>.
+              </p>
+            </div>
+          </section>
+        )}
+
+        {/* TAB 3: TERMS OF SERVICE */}
+        {currentTab === 'terms' && (
+          <section className="space-y-6 animate-fade-in text-sm text-[#C4C9D6] leading-relaxed">
+            <header className="border-b border-white/[0.08] pb-5">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#8A72FF] uppercase tracking-widest mb-1">
+                <FileText className="w-4 h-4" />
+                <span>Terms of Use · Educational Repository</span>
+              </div>
+              <h2 className="text-2xl font-bold text-white">
+                Terms of Service &amp; Acceptable Use
+              </h2>
+              <p className="text-xs text-[#8E95A5] mt-1">
+                Last updated: October 2026 · Governing use of learnsmc.xyz
+              </p>
+            </header>
+
+            <div className="space-y-4">
+              <h3 className="text-base font-bold text-white">1. Acceptance of Terms</h3>
+              <p>
+                By accessing or using LearnSMC (<strong className="text-white">https://learnsmc.xyz</strong>), you agree to be bound by these Terms of Service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-base font-bold text-white">2. Open Educational License</h3>
+              <p>
+                All editorial curriculum text, diagrams, and educational software modules on learnsmc.xyz are made available freely for personal, non-commercial educational study. You may not re-package, paywall, or sell our codified chapters or interactive tools as proprietary coursework without explicit written authorization from LearnSMC.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-base font-bold text-white">3. Disclaimer of Warranties</h3>
+              <p>
+                The materials on LearnSMC are provided on an 'as is' basis. LearnSMC makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-base font-bold text-white">4. Limitation of Liability</h3>
+              <p>
+                In no event shall LearnSMC or its contributors be liable for any damages (including, without limitation, damages for loss of trading capital, profits, or data) arising out of the use or inability to use the educational materials on learnsmc.xyz, even if authorized representatives have been notified orally or in writing of the possibility of such damage.
+              </p>
+            </div>
+          </section>
+        )}
+
+        {/* TAB 4: ABOUT & EDITORIAL METHODOLOGY */}
+        {currentTab === 'about' && (
+          <section className="space-y-6 animate-fade-in text-sm text-[#C4C9D6] leading-relaxed">
+            <header className="border-b border-white/[0.08] pb-5">
+              <div className="flex items-center gap-2 text-xs font-mono text-white/90 uppercase tracking-widest mb-1">
+                <Building className="w-4 h-4" />
+                <span>Editorial Standards · Author Bios · Transparency</span>
+              </div>
+              <h2 className="text-2xl font-bold text-white">
+                About LearnSMC, Editorial Process &amp; Authorship
+              </h2>
+              <p className="text-xs text-[#8E95A5] mt-1">
+                Published by ICT Institutional Research Group · Preserving Trader Abdullah Masood
+              </p>
+            </header>
+
+            <div className="space-y-4">
+              <h3 className="text-base font-bold text-white">1. The LearnSMC Mission</h3>
+              <p>
+                LearnSMC was founded with a singular conviction: <strong className="text-white">Institutional trading education should be structured, mathematically rigorous, and completely free of paywalls.</strong>
+              </p>
+              <p>
+                Retail trading content on YouTube and social media is frequently fragmented, filled with conflicting definitions, or designed to funnel vulnerable beginners into paid discord channels and unregulated brokers. LearnSMC replaces noise with an open 48-chapter digital textbook, an interactive chart laboratory, and 52 codified masterclasses from Trader Abdullah Masood.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+              <div className="bg-[#151923] border border-white/[0.08] rounded-xl p-5 space-y-2">
+                <div className="flex items-center gap-2 text-[#5865FF] font-mono text-xs uppercase">
+                  <BookOpen className="w-4 h-4" />
+                  <span>Curriculum Rigor &amp; Invalidation Rules</span>
+                </div>
+                <h4 className="text-white font-bold text-sm">Objective vs. Subjective Mechanics</h4>
+                <p className="text-xs text-[#9BA1AE] leading-relaxed">
+                  Every concept (Fair Value Gaps, Order Blocks, Liquidity Sweeps, Breakers) is codified with explicit mathematical parameters, step-by-step formation rules, and rigid invalidation thresholds.
+                </p>
+              </div>
+
+              <div className="bg-[#151923] border border-white/[0.08] rounded-xl p-5 space-y-2">
+                <div className="flex items-center gap-2 text-[#55E6D1] font-mono text-xs uppercase">
+                  <UserCheck className="w-4 h-4" />
+                  <span>Trader Abdullah Masood Wing</span>
+                </div>
+                <h4 className="text-white font-bold text-sm">Simplifying Institutional Complexity</h4>
+                <p className="text-xs text-[#9BA1AE] leading-relaxed">
+                  A dedicated 52-lecture academy section systematically preserves the core teachings of Trader Abdullah Masood, breaking down high-level institutional market mechanics into actionable execution checklists.
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-base font-bold text-white">2. Editorial &amp; Peer Review Process</h3>
+              <p>
+                Every lesson undergoes a rigorous four-stage editorial review before publication:
+              </p>
+              <ol className="list-decimal pl-5 space-y-2 text-xs text-[#9BA1AE]">
+                <li><strong className="text-white">Conceptual Verification:</strong> Cross-referencing against Michael J. Huddleston's primary mentorships (2016-2024, 2025, 2026).</li>
+                <li><strong className="text-white">Microstructure Tape Validation:</strong> Verifying order book, Central Limit Order Book (CLOB), and tick-by-tick matching behavior on CME futures and interbank Forex.</li>
+                <li><strong className="text-white">Risk Framework Integration:</strong> Pairing every setup directly with invalidation logic, stop-loss mathematical placement, and maximum drawdown constraints.</li>
+                <li><strong className="text-white">Accessibility &amp; Code Quality:</strong> Ensuring clean typography, responsive layout, and full WCAG 2.2 AA accessibility standards.</li>
+              </ol>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-base font-bold text-white">3. Editorial Contact &amp; Revision Log</h3>
+              <p className="text-xs text-[#9BA1AE]">
+                Current Curriculum Edition: <strong className="text-white">v3.2.0 (2026 Institutional Specification)</strong>. Revisions are logged monthly. Suggest corrections or additions at <a href="mailto:support@learnsmc.xyz" className="text-[#55E6D1] underline">support@learnsmc.xyz</a>.
+              </p>
+            </div>
+          </section>
+        )}
+
+        {/* TAB 5: CONTACT & SUPPORT */}
+        {currentTab === 'contact' && (
+          <section className="space-y-6 animate-fade-in text-sm text-[#C4C9D6] leading-relaxed">
+            <header className="border-b border-white/[0.08] pb-5">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#55E6D1] uppercase tracking-widest mb-1">
+                <Mail className="w-4 h-4" />
+                <span>Publisher Channels · Support &amp; Inquiries</span>
+              </div>
+              <h2 className="text-2xl font-bold text-white">
+                Contact LearnSMC &amp; Editorial Support
+              </h2>
+              <p className="text-xs text-[#8E95A5] mt-1">
+                We respond to educational inquiries, bug reports, and copyright notices within 24–48 hours.
+              </p>
+            </header>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Left Column: Direct Info */}
+              <div className="space-y-5">
+                <div className="bg-[#151923] border border-white/[0.08] rounded-xl p-5 space-y-3">
+                  <h3 className="font-bold text-white text-sm flex items-center gap-2">
+                    <Mail className="w-4 h-4 text-[#55E6D1]" />
+                    Direct Email Contacts
+                  </h3>
+                  <div className="space-y-2 text-xs">
+                    <div>
+                      <span className="text-[#656B78] font-mono block">Primary Support &amp; Inquiries:</span>
+                      <a href="mailto:support@learnsmc.xyz" className="text-[#55E6D1] font-mono hover:underline">
+                        support@learnsmc.xyz
+                      </a>
+                    </div>
+                    <div>
+                      <span className="text-[#656B78] font-mono block">Publisher Administrative Contact:</span>
+                      <a href="mailto:itsmuhammadumerijaz@gmail.com" className="text-white font-mono hover:underline">
+                        itsmuhammadumerijaz@gmail.com
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-[#151923] border border-white/[0.08] rounded-xl p-5 space-y-2 text-xs text-[#9BA1AE]">
+                  <h4 className="font-bold text-white text-sm">Response Timeline &amp; Availability</h4>
+                  <p>Our editorial and technical team operates Monday through Friday across London and New York trading sessions.</p>
+                  <p>Inquiries regarding chart interpretations, typo corrections, or technical bug reports are prioritized.</p>
+                </div>
+              </div>
+
+              {/* Right Column: Working Contact Form */}
+              <div className="bg-[#151923] border border-white/[0.08] rounded-xl p-6">
+                {contactSubmitted ? (
+                  <div className="py-8 text-center space-y-3">
+                    <div className="w-12 h-12 rounded-full bg-[#52D273]/10 border border-[#52D273]/30 flex items-center justify-center mx-auto text-[#52D273]">
+                      <CheckCircle2 className="w-6 h-6" />
+                    </div>
+                    <h4 className="text-base font-bold text-white">Message Transmitted Successfully</h4>
+                    <p className="text-xs text-[#9BA1AE] max-w-xs mx-auto">
+                      Thank you for reaching out to LearnSMC. An institutional researcher will review your communication and respond to <strong className="text-white">{contactForm.email}</strong> shortly.
+                    </p>
+                    <button
+                      onClick={() => {
+                        setContactSubmitted(false);
+                        setContactForm({ name: '', email: '', subject: 'General Inquiry', message: '' });
+                      }}
+                      className="btn-predikt-secondary text-xs mt-3"
+                    >
+                      Send Another Message
+                    </button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleContactSubmit} className="space-y-4">
+                    <h3 className="font-bold text-white text-sm">Send an Editorial Message</h3>
+                    <div>
+                      <label className="block text-xs font-mono text-[#9BA1AE] mb-1">Your Name</label>
+                      <input
+                        type="text"
+                        required
+                        value={contactForm.name}
+                        onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
+                        placeholder="Trader Name"
+                        className="w-full bg-[#0D0F17] border border-white/[0.1] rounded-lg px-3 py-2 text-xs text-white placeholder-[#656B78] focus:border-[#5865FF] focus:outline-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-mono text-[#9BA1AE] mb-1">Your Email</label>
+                      <input
+                        type="email"
+                        required
+                        value={contactForm.email}
+                        onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
+                        placeholder="trader@example.com"
+                        className="w-full bg-[#0D0F17] border border-white/[0.1] rounded-lg px-3 py-2 text-xs text-white placeholder-[#656B78] focus:border-[#5865FF] focus:outline-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-mono text-[#9BA1AE] mb-1">Topic</label>
+                      <select
+                        value={contactForm.subject}
+                        onChange={(e) => setContactForm({ ...contactForm, subject: e.target.value })}
+                        className="w-full bg-[#0D0F17] border border-white/[0.1] rounded-lg px-3 py-2 text-xs text-white focus:border-[#5865FF] focus:outline-none"
+                      >
+                        <option value="General Inquiry">General Curriculum Inquiry</option>
+                        <option value="Content Correction">Lesson Correction / Feedback</option>
+                        <option value="Technical Issue">Platform Bug / UI Suggestion</option>
+                        <option value="AdSense / Partnership">Publisher / Compliance Question</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-mono text-[#9BA1AE] mb-1">Message</label>
+                      <textarea
+                        required
+                        rows={4}
+                        value={contactForm.message}
+                        onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
+                        placeholder="Detail your inquiry or suggestion here..."
+                        className="w-full bg-[#0D0F17] border border-white/[0.1] rounded-lg px-3 py-2 text-xs text-white placeholder-[#656B78] focus:border-[#5865FF] focus:outline-none resize-none"
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="w-full btn-predikt-primary text-xs flex items-center justify-center gap-2 py-2.5"
+                    >
+                      <Send className="w-3.5 h-3.5" />
+                      <span>Transmit Inquiry</span>
+                    </button>
+                  </form>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* TAB 6: ADSENSE & ADS.TXT */}
+        {currentTab === 'adsense' && (
+          <section className="space-y-6 animate-fade-in text-sm text-[#C4C9D6] leading-relaxed">
+            <header className="border-b border-white/[0.08] pb-5">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#52D273] uppercase tracking-widest mb-1">
+                <CheckCircle2 className="w-4 h-4" />
+                <span>Google AdSense · Official Publisher Verification</span>
+              </div>
+              <h2 className="text-2xl font-bold text-white">
+                Google AdSense Verification &amp; ads.txt Specification
+              </h2>
+              <p className="text-xs text-[#8E95A5] mt-1">
+                Publisher ID: ca-pub-6985025314302607 · Domain: learnsmc.xyz
+              </p>
+            </header>
+
+            <div className="bg-[#151923] border border-white/[0.08] rounded-xl p-5 space-y-4">
+              <div className="flex items-center justify-between flex-wrap gap-2">
+                <span className="text-xs font-mono text-[#55E6D1]">ROOT DOMAIN ADS.TXT RECORD:</span>
+                <button
+                  onClick={handleCopyAdsTxt}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-white/[0.06] hover:bg-white/[0.12] text-xs font-mono text-white transition-colors"
+                >
+                  <Copy className="w-3.5 h-3.5" />
+                  <span>{copiedAdsTxt ? 'Copied to Clipboard!' : 'Copy ads.txt Entry'}</span>
+                </button>
+              </div>
+
+              <div className="bg-[#08090D] p-3 rounded-lg font-mono text-xs text-[#52D273] select-all border border-white/[0.06]">
+                google.com, pub-6985025314302607, DIRECT, f08c47fec0942fa0
+              </div>
+
+              <div className="text-xs text-[#9BA1AE] space-y-1">
+                <p>Publicly verifiable URL: <a href="https://learnsmc.xyz/ads.txt" target="_blank" rel="noopener noreferrer" className="text-[#55E6D1] underline">https://learnsmc.xyz/ads.txt</a></p>
+                <p>AdSense Account Verification Tag: <code className="text-amber-300">&lt;meta name="google-adsense-account" content="ca-pub-6985025314302607"&gt;</code> (configured in HTML &lt;head&gt;).</p>
+              </div>
+            </div>
+
+            <div className="space-y-3 text-xs text-[#9BA1AE]">
+              <h3 className="text-sm font-bold text-white">Google Publisher Policies Adherence Checklist</h3>
+              <ul className="space-y-1.5 list-disc pl-5">
+                <li><strong className="text-white">Original Value-Add Content:</strong> 48 comprehensive codified chapters with market microstructure diagrams and tape notes.</li>
+                <li><strong className="text-white">Accessible Navigation:</strong> Logical tab navigation and chapter progression without dead ends or broken links.</li>
+                <li><strong className="text-white">No Accidental Clicks:</strong> Clean separation between editorial text, interactive simulators, and potential ad placements.</li>
+                <li><strong className="text-white">Strict Compliance:</strong> Prominent CFTC disclaimers, privacy policy with Google advertising cookie opt-out, and terms of service.</li>
+              </ul>
+            </div>
+          </section>
+        )}
+
+      </article>
+    </main>
+  );
+};

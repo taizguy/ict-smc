@@ -8,7 +8,19 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://learnsmc.xyz/curriculum</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://learnsmc.xyz/?tab=curriculum</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://learnsmc.xyz/masood</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
@@ -20,15 +32,33 @@
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://learnsmc.xyz/tools</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://learnsmc.xyz/?tab=tools</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- Legal, AdSense & Compliance Pages -->
+  <!-- Legal, AdSense & Compliance Pages (Clean Paths & Query Paths) -->
+  <url>
+    <loc>https://learnsmc.xyz/disclaimer</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://learnsmc.xyz/?tab=disclaimer</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://learnsmc.xyz/privacy</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -40,10 +70,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://learnsmc.xyz/terms</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://learnsmc.xyz/?tab=terms</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://learnsmc.xyz/about</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://learnsmc.xyz/?tab=about</loc>
@@ -52,10 +94,22 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://learnsmc.xyz/contact</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://learnsmc.xyz/?tab=contact</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://learnsmc.xyz/adsense</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://learnsmc.xyz/?tab=adsense</loc>

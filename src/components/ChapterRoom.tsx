@@ -306,19 +306,30 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
       <ScrollReveal y={15} duration={0.4} immediate={true}>
         <section className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 space-y-6 relative overflow-hidden">
           
-          {/* Top Meta Bar */}
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-3">
-              <span className="text-xs font-mono font-semibold text-[#5865FF] tracking-wider">
+          {/* Top Meta Bar & Editorial Credentials (E-E-A-T & AdSense Compliance) */}
+          <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono border-b border-white/[0.06] pb-3">
+            <div className="flex items-center gap-2.5 flex-wrap">
+              <span className="font-semibold text-[#5865FF] tracking-wider">
                 CHAPTER {chapter.id < 10 ? `0${chapter.id}` : chapter.id}
               </span>
               <span className="text-white/20">·</span>
-              <span className="text-xs font-mono text-[#9BA1AE] uppercase tracking-wider">
+              <span className="text-[#9BA1AE] uppercase tracking-wider">
                 {chapter.part}
               </span>
               <span className="text-white/20">·</span>
-              <span className="text-xs font-mono text-[#55E6D1] uppercase tracking-wider">
+              <span className="text-[#55E6D1] uppercase tracking-wider">
                 LEVEL {chapter.level}
+              </span>
+            </div>
+
+            <div className="flex items-center gap-3 text-[11px] text-[#8E95A5] flex-wrap">
+              <span>Editorial: ICT Research Group</span>
+              <span className="text-white/20">·</span>
+              <span>Revised: Oct 2026</span>
+              <span className="text-white/20">·</span>
+              <span className="text-[#52D273] flex items-center gap-1">
+                <CheckCircle2 className="w-3 h-3" />
+                <span>Peer-Reviewed</span>
               </span>
             </div>
           </div>

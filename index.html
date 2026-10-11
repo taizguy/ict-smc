@@ -53,6 +53,49 @@
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "WebSite",
+          "@id": "https://learnsmc.xyz/#website",
+          "url": "https://learnsmc.xyz/",
+          "name": "LearnSMC - ICT & SMC Academy",
+          "description": "Free open-source 48-chapter institutional trading curriculum, 52 Abdullah Masood masterclasses, and chart laboratory.",
+          "inLanguage": "en-US",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://learnsmc.xyz/?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://learnsmc.xyz/#breadcrumbs",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://learnsmc.xyz/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Curriculum Directory",
+              "item": "https://learnsmc.xyz/?tab=curriculum"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Trader Abdullah Masood Academy",
+              "item": "https://learnsmc.xyz/?tab=masood"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Trading Workbench & Chart Lab",
+              "item": "https://learnsmc.xyz/?tab=tools"
+            }
+          ]
+        },
+        {
           "@type": "EducationalOrganization",
           "@id": "https://learnsmc.xyz/#organization",
           "name": "ICT & SMC Academy",
@@ -485,8 +528,16 @@
               </p>
             </div>
           </div>
-          <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1rem; text-align: center; font-family: monospace; font-size: 0.75rem; color: #656B78;">
-            <p style="margin: 0;">© 2026 ICT &amp; SMC Academy · learnsmc.xyz · All 48 textbook chapters & 52 Abdullah Masood lectures are free for personal educational use.</p>
+          <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.25rem; margin-top: 1rem; text-align: center; font-family: monospace; font-size: 0.75rem; color: #8E95A5;">
+            <div style="display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+              <a href="/?tab=disclaimer" style="color: #F59E0B; text-decoration: underline;">Financial Risk &amp; CFTC Rule 4.41</a>
+              <a href="/?tab=privacy" style="color: #55E6D1; text-decoration: underline;">Privacy Policy &amp; Cookies</a>
+              <a href="/?tab=terms" style="color: #8A72FF; text-decoration: underline;">Terms of Service</a>
+              <a href="/?tab=about" style="color: #F5F7FA; text-decoration: underline;">About &amp; Editorial Standards</a>
+              <a href="/?tab=contact" style="color: #55E6D1; text-decoration: underline;">Contact &amp; Support</a>
+              <a href="/?tab=adsense" style="color: #52D273; text-decoration: underline;">AdSense &amp; ads.txt Record</a>
+            </div>
+            <p style="margin: 0; color: #656B78;">© 2026 ICT &amp; SMC Academy · learnsmc.xyz · All 48 textbook chapters &amp; 52 Abdullah Masood lectures are free for personal educational use.</p>
           </div>
         </footer>
       </div>

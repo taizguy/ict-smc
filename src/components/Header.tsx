@@ -154,7 +154,7 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             <span>Curriculum</span>
-            <span className="ml-1.5 text-[10px] font-mono text-[#656B78]">48</span>
+            <span className="ml-1.5 text-[10px] font-mono text-[#656B78]">57</span>
           </button>
 
           {/* Pillar 2: Masood's Academy */}
@@ -231,7 +231,7 @@ export const Header: React.FC<HeaderProps> = ({
               isCurriculumActive ? 'bg-white/[0.10] text-[#F5F7FA]' : 'text-[#9BA1AE]'
             }`}
           >
-            Curriculum (48)
+            Curriculum (57)
           </button>
           <button
             onClick={() => setActiveTab('masood')}

@@ -4,7 +4,6 @@ import {
   Sparkles, 
   Youtube, 
   BookOpen, 
-  Heart, 
   Wrench, 
   Clock
 } from 'lucide-react';
@@ -21,9 +20,6 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
   onEnterAcademy, 
   onOpenMentorSpotlight 
 }) => {
-  const [gratitudeCount, setGratitudeCount] = useState<number>(1429);
-  const [hasVoted, setHasVoted] = useState<boolean>(false);
-
   const quotes = [
     "“Trading isn't guessing. It's reading institutional footprints candle by candle.”",
     "“Price does not move because there are more buyers than sellers. It moves because liquidity is consumed.”",
@@ -38,13 +34,6 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
     }, 6000);
     return () => clearInterval(timer);
   }, [quotes.length]);
-
-  const handleVote = () => {
-    if (!hasVoted) {
-      setGratitudeCount(prev => prev + 1);
-      setHasVoted(true);
-    }
-  };
 
   return (
     <div className="text-[#F5F7FA] flex flex-col justify-between relative selection:bg-[#5865FF] selection:text-white font-sans space-y-12 sm:space-y-16">
@@ -66,20 +55,6 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
           >
             <Sparkles className="w-3.5 h-3.5 text-[#55E6D1]" />
             <span>Mentor Tribute</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={handleVote}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs font-mono transition-all cursor-pointer ${
-              hasVoted
-                ? 'bg-rose-500/10 border-rose-500/30 text-rose-300'
-                : 'bg-white/[0.04] hover:bg-white/[0.08] border-white/[0.08] text-[#9BA1AE] hover:text-[#F5F7FA]'
-            }`}
-            title="Appreciation for free institutional education"
-          >
-            <Heart className={`w-3.5 h-3.5 ${hasVoted ? 'fill-rose-400 text-rose-400' : 'text-[#9BA1AE]'}`} />
-            <span>{gratitudeCount}</span>
           </button>
 
           <button
@@ -120,7 +95,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
 
               {/* Supporting Educational Description */}
               <p className="text-base sm:text-lg text-[#9BA1AE] font-normal leading-relaxed max-w-xl">
-                An institutional trading syllabus engineered with complete mathematical discipline. Master order flow, Fair Value Gaps, algorithmic displacement, and liquidity delivery across 48 codified chapters, 52 masterclasses by Trader Abdullah Masood, and an interactive 8-tool laboratory.
+                An institutional trading syllabus engineered with complete mathematical discipline. Master order flow, Fair Value Gaps, algorithmic displacement, and liquidity delivery across 57 codified chapters, 52 masterclasses by Trader Abdullah Masood, and an interactive 8-tool laboratory.
               </p>
 
               {/* Action Buttons */}
@@ -130,7 +105,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                   className="btn-predikt-primary text-sm px-6 py-3"
                 >
                   <BookOpen className="w-4 h-4 text-[#08090D]" />
-                  <span>Explore 48 Chapters</span>
+                  <span>Explore 57 Chapters</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
 
@@ -209,7 +184,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                 {/* Metrics */}
                 <div className="grid grid-cols-3 gap-3 text-center">
                   <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                    <div className="text-2xl font-semibold text-[#F5F7FA] font-mono">48</div>
+                    <div className="text-2xl font-semibold text-[#F5F7FA] font-mono">57</div>
                     <div className="text-[10px] uppercase text-[#656B78] font-mono tracking-wider mt-0.5">Chapters</div>
                   </div>
                   <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06]">
@@ -257,7 +232,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                     The ICT Textbook
                   </h3>
                   <p className="text-xs sm:text-sm text-[#9BA1AE] mt-1.5 leading-relaxed font-normal">
-                    48 fully codified institutional chapters spanning market structure, liquidity sweeps, Fair Value Gaps, and killzones without arbitrary locks.
+                    57 fully codified institutional chapters spanning market structure, liquidity sweeps, Fair Value Gaps, and killzones without arbitrary locks.
                   </p>
                 </div>
                 <div className="pt-2 flex items-center gap-1.5 text-xs text-[#5865FF] font-medium">

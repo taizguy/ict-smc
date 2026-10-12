@@ -54,18 +54,48 @@ export const App: React.FC = () => {
   // Initialize buttery smooth momentum mouse scrolling
   useSmoothScroll();
 
-  // Start directly in the open curriculum without forced onboarding modal
-  const [showWelcomeScreen, setShowWelcomeScreen] = useState<boolean>(false);
+  // Read initial route from URL path or parameters (default to clean 'welcome' home screen)
+  const [activeTab, setActiveTab] = useState<MainTabType>(() => {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname.toLowerCase().replace(/\/$/, '') || '/';
+      const params = new URLSearchParams(window.location.search);
+      const tabParam = params.get('tab') as MainTabType | null;
+      const chapterParam = params.get('chapter');
+      const chapterPathMatch = path.match(/\/chapter[-/](\d+)/i);
 
-  const [activeTab, setActiveTab] = useState<MainTabType>('curriculum');
+      if (chapterPathMatch || chapterParam) return 'chapter_room';
+      if (path === '/curriculum' || tabParam === 'curriculum') return 'curriculum';
+      if (path === '/masood' || tabParam === 'masood') return 'masood';
+      if (path === '/tools' || tabParam === 'tools') return 'tools';
+
+      const legalPaths: LegalTabType[] = ['disclaimer', 'privacy', 'terms', 'about', 'contact', 'adsense'];
+      for (const lp of legalPaths) {
+        if (path === `/${lp}` || tabParam === lp) return lp;
+      }
+    }
+    return 'welcome';
+  });
+
   const [initialTool, setInitialTool] = useState<TradingToolId>('chartlab');
-
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
   const [isMentorSpotlightOpen, setIsMentorSpotlightOpen] = useState<boolean>(false);
   const [isLegalModalOpen, setIsLegalModalOpen] = useState<boolean>(false);
   const [legalModalTab, setLegalModalTab] = useState<LegalModalTab>('disclaimer');
   const [selectedConceptId, setSelectedConceptId] = useState<string>('fair_value_gap');
-  const [selectedChapterId, setSelectedChapterId] = useState<number>(1);
+  const [selectedChapterId, setSelectedChapterId] = useState<number>(() => {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname.toLowerCase();
+      const params = new URLSearchParams(window.location.search);
+      const chapterParam = params.get('chapter');
+      const chapterPathMatch = path.match(/\/chapter[-/](\d+)/i);
+      const rawCid = chapterPathMatch ? chapterPathMatch[1] : chapterParam;
+      if (rawCid) {
+        const parsed = parseInt(rawCid, 10);
+        if (!isNaN(parsed) && parsed >= 1 && parsed <= 57) return parsed;
+      }
+    }
+    return 1;
+  });
 
   // Chapter completion (optional reference, non-blocking)
   const [completedChapterIds, setCompletedChapterIds] = useState<number[]>(() => {
@@ -76,65 +106,56 @@ export const App: React.FC = () => {
   useEffect(() => {
     const parseUrlState = () => {
       try {
-        const path = window.location.pathname.toLowerCase();
+        const path = window.location.pathname.toLowerCase().replace(/\/$/, '') || '/';
         const params = new URLSearchParams(window.location.search);
         const chapterParam = params.get('chapter');
         const tabParam = params.get('tab') as MainTabType | null;
         const toolParam = params.get('tool') as TradingToolId | null;
         const conceptParam = params.get('concept');
 
-        // Pathname inspection for direct clean routing (prevents 404 on deep refresh)
+        // Pathname inspection for direct clean routing (supports all 57 chapters)
         const chapterPathMatch = path.match(/\/chapter[-/](\d+)/i);
-        if (chapterPathMatch) {
-          const cid = parseInt(chapterPathMatch[1], 10);
-          if (!isNaN(cid) && cid >= 1 && cid <= 48) {
+        const rawChapter = chapterPathMatch ? chapterPathMatch[1] : chapterParam;
+        if (rawChapter) {
+          const cid = parseInt(rawChapter, 10);
+          if (!isNaN(cid) && cid >= 1 && cid <= 57) {
             setSelectedChapterId(cid);
             setActiveTab('chapter_room');
-            setShowWelcomeScreen(false);
             return;
           }
         }
 
         const legalPaths: LegalTabType[] = ['disclaimer', 'privacy', 'terms', 'about', 'contact', 'adsense'];
         for (const lp of legalPaths) {
-          if (path.includes(`/${lp}`) || tabParam === lp) {
+          if (path === `/${lp}` || path.startsWith(`/${lp}/`) || tabParam === lp) {
             setActiveTab(lp);
-            setShowWelcomeScreen(false);
             return;
           }
         }
 
-        if (path.includes('/masood') || tabParam === 'masood') {
+        if (path === '/masood' || path.startsWith('/masood/') || tabParam === 'masood') {
           setActiveTab('masood');
-          setShowWelcomeScreen(false);
           return;
         }
 
-        if (path.includes('/tools') || tabParam === 'tools') {
+        if (path === '/tools' || path.startsWith('/tools/') || tabParam === 'tools') {
           setActiveTab('tools');
-          setShowWelcomeScreen(false);
           if (toolParam) setInitialTool(toolParam);
           return;
         }
 
-        if (chapterParam) {
-          const cid = parseInt(chapterParam, 10);
-          if (!isNaN(cid) && cid >= 1 && cid <= 48) {
-            setSelectedChapterId(cid);
-            setActiveTab('chapter_room');
-            setShowWelcomeScreen(false);
-            return;
-          }
+        if (path === '/curriculum' || path.startsWith('/curriculum/') || tabParam === 'curriculum') {
+          setActiveTab('curriculum');
+          return;
+        }
+
+        if (tabParam === 'welcome' || path === '/' || path === '') {
+          setActiveTab('welcome');
+          return;
         }
 
         if (tabParam) {
-          if (tabParam === 'welcome') {
-            setShowWelcomeScreen(true);
-            setActiveTab('welcome');
-          } else {
-            setShowWelcomeScreen(false);
-            setActiveTab(tabParam);
-          }
+          setActiveTab(tabParam);
         }
 
         if (toolParam) {
@@ -154,57 +175,59 @@ export const App: React.FC = () => {
     return () => window.removeEventListener('popstate', parseUrlState);
   }, []);
 
-  // Synchronize document title, meta descriptions, canonical links, and URL query params
+  // Synchronize document title, meta descriptions, canonical links, and clean browser URL
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    let title = 'ICT & SMC Academy - Smart Money Concepts Curriculum';
-    let description = 'Master Inner Circle Trader (ICT) and Smart Money Concepts with a free 48-chapter institutional curriculum and 52 Abdullah Masood masterclasses.';
-    let urlQuery = '';
+    let title = 'ICT & SMC Academy - Smart Money Concepts & Institutional Trading Curriculum';
+    let description = 'Master Inner Circle Trader (ICT) and Smart Money Concepts with a free 57-chapter institutional curriculum, 52 Abdullah Masood masterclasses, interactive Chart Lab, and algorithmic trade simulator.';
+    let cleanPath = '/';
 
     if (activeTab === 'chapter_room') {
       const ch = textbookChapters.find(c => c.id === selectedChapterId) || textbookChapters[0];
       title = `Chapter ${ch.id}: ${ch.title} | ICT & SMC Academy`;
       description = `Chapter ${ch.id} (${ch.part}): ${ch.quote || ch.title}. Master institutional algorithmic price delivery, liquidity sweeps, and execution.`;
-      urlQuery = `?chapter=${ch.id}`;
+      cleanPath = `/chapter/${ch.id}`;
     } else if (activeTab === 'masood') {
       title = 'Trader Abdullah Masood Academy (52 Masterclasses) | ICT & SMC Academy';
       description = 'Study Trader Abdullah Masood complete 52-lecture institutional curriculum on ICT and Smart Money Concepts with video timestamps and notes.';
-      urlQuery = '?tab=masood';
+      cleanPath = '/masood';
     } else if (activeTab === 'tools') {
       title = `ICT Trading Workbench & ${initialTool.toUpperCase()} | learnsmc.xyz`;
       description = 'Interactive Chart Lab, SMC strategy simulator, backtester, trading journal, and institutional concepts reference.';
-      urlQuery = `?tab=tools&tool=${initialTool}`;
+      cleanPath = '/tools';
+    } else if (activeTab === 'curriculum') {
+      title = 'ICT & SMC Academy - 57-Chapter Institutional Trading Curriculum';
+      description = 'Explore the complete 57-chapter institutional trading curriculum covering Market Structure, Liquidity Sweeps, Fair Value Gaps, PO3, and Algorithmic Execution.';
+      cleanPath = '/curriculum';
     } else if (activeTab === 'disclaimer') {
       title = 'Financial Risk Disclosure & CFTC Rule 4.41 Compliance | LearnSMC';
       description = 'Statutory risk disclosures, CFTC Rule 4.41 compliance statement, and educational non-advice declaration for LearnSMC.';
-      urlQuery = '?tab=disclaimer';
+      cleanPath = '/disclaimer';
     } else if (activeTab === 'privacy') {
       title = 'Privacy Policy & Google AdSense Cookie Disclosures | LearnSMC';
       description = 'Official privacy policy, Google AdSense third-party cookie disclosures, opt-out links, and GDPR/CCPA data rights for learnsmc.xyz.';
-      urlQuery = '?tab=privacy';
+      cleanPath = '/privacy';
     } else if (activeTab === 'terms') {
       title = 'Terms of Service & Open Educational License | LearnSMC';
       description = 'Terms of service, educational usage licenses, limitation of liability, and acceptable use guidelines for learnsmc.xyz.';
-      urlQuery = '?tab=terms';
+      cleanPath = '/terms';
     } else if (activeTab === 'about') {
       title = 'About LearnSMC, Editorial Methodology & Authorship | LearnSMC';
       description = 'LearnSMC institutional mission, editorial peer review standards, author bios, and Trader Abdullah Masood curriculum preservation.';
-      urlQuery = '?tab=about';
+      cleanPath = '/about';
     } else if (activeTab === 'contact') {
       title = 'Contact LearnSMC & Editorial Support | LearnSMC';
       description = 'Direct contact channels, support email (support@learnsmc.xyz), and editorial inquiry form for LearnSMC.';
-      urlQuery = '?tab=contact';
+      cleanPath = '/contact';
     } else if (activeTab === 'adsense') {
       title = 'Google AdSense Verification & ads.txt Record | LearnSMC';
       description = 'Official Google AdSense publisher verification, ca-pub-6985025314302607 record, and ads.txt specification for learnsmc.xyz.';
-      urlQuery = '?tab=adsense';
+      cleanPath = '/adsense';
     } else if (activeTab === 'welcome') {
-      title = 'Welcome | ICT & SMC Institutional Trading Academy';
-      urlQuery = '?tab=welcome';
-    } else {
-      title = 'ICT & SMC Academy - 48-Chapter Institutional Trading Curriculum';
-      urlQuery = '?tab=curriculum';
+      title = 'ICT & SMC Academy - Smart Money Concepts & Institutional Trading Curriculum';
+      description = 'Master Inner Circle Trader (ICT) and Smart Money Concepts with a free 57-chapter institutional curriculum, 52 Abdullah Masood masterclasses, and interactive Chart Lab.';
+      cleanPath = '/';
     }
 
     document.title = title;
@@ -216,21 +239,28 @@ export const App: React.FC = () => {
 
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
-      const targetUrl = urlQuery ? `https://learnsmc.xyz/${urlQuery}` : 'https://learnsmc.xyz/';
-      canonical.setAttribute('href', targetUrl);
+      const canonicalHref = cleanPath === '/' ? 'https://learnsmc.xyz/' : `https://learnsmc.xyz${cleanPath}`;
+      canonical.setAttribute('href', canonicalHref);
     }
 
-    const currentQuery = window.location.search;
-    if (currentQuery !== urlQuery) {
-      const nextPath = urlQuery || window.location.pathname;
-      window.history.replaceState({ activeTab, selectedChapterId, initialTool }, '', nextPath);
+    // Keep URL clean and synchronized with active state (avoid messy query parameters like ?tab=welcome)
+    const currentPath = window.location.pathname;
+    const currentSearch = window.location.search;
+    const hasSearchToClean = currentSearch.includes('tab=') || currentSearch.includes('chapter=');
+    if (currentPath !== cleanPath || hasSearchToClean) {
+      window.history.replaceState({ activeTab, selectedChapterId, initialTool }, '', cleanPath);
     }
   }, [activeTab, selectedChapterId, initialTool]);
 
   const totalChapters = textbookChapters.length;
   const progressPercent = Math.round((completedChapterIds.length / totalChapters) * 100);
 
-  // Jump handlers
+  // Jump and navigation handlers
+  const navigateToTab = (tab: MainTabType) => {
+    setActiveTab(tab);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleSelectConcept = (conceptId: string) => {
     setSelectedConceptId(conceptId);
     setInitialTool('concepts');
@@ -251,19 +281,12 @@ export const App: React.FC = () => {
 
   // Switch to specific trading workbench tool
   const handleNavigateTool = (toolId: TradingToolId) => {
-    setShowWelcomeScreen(false);
     setInitialTool(toolId);
     setActiveTab('tools');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleOpenWelcome = () => {
-    setShowWelcomeScreen(true);
-    setActiveTab('welcome');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const isShowingWelcome = showWelcomeScreen || activeTab === 'welcome';
+  const isShowingWelcome = activeTab === 'welcome';
 
   return (
     <div className="min-h-screen bg-[#08090D] text-[#F5F7FA] flex flex-col font-sans selection:bg-[#5865FF] selection:text-white relative overflow-x-hidden">
@@ -293,41 +316,28 @@ export const App: React.FC = () => {
       <Header
         activeTab={activeTab}
         setActiveTab={(tab) => {
-          if (tab === 'welcome') {
-            setShowWelcomeScreen(true);
-            setActiveTab('welcome');
+          if (['chartlab', 'simulator', 'backtest', 'journal', 'graph', 'concepts', 'compare', 'dashboard'].includes(tab)) {
+            setInitialTool(tab);
+            navigateToTab('tools');
           } else {
-            setShowWelcomeScreen(false);
-            if (['chartlab', 'simulator', 'backtest', 'journal', 'graph', 'concepts', 'compare', 'dashboard'].includes(tab)) {
-              setInitialTool(tab);
-              setActiveTab('tools');
-            } else {
-              setActiveTab(tab);
-            }
+            navigateToTab(tab);
           }
-          window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
         onOpenSearch={() => setIsSearchOpen(true)}
         onOpenMentorSpotlight={() => setIsMentorSpotlightOpen(true)}
-        onOpenWelcomeIntro={handleOpenWelcome}
+        onOpenWelcomeIntro={() => navigateToTab('welcome')}
         progressPercent={progressPercent}
       />
 
       {/* Main Educational Application Content */}
       <main className="flex-1 max-w-[1560px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10 space-y-10 sm:space-y-14">
         
-        {/* WELCOME SCREEN (When invoked or when activeTab is 'welcome') */}
+        {/* WELCOME / HOME SCREEN (Clean root experience at /) */}
         {isShowingWelcome && (
           <Suspense fallback={<ViewLoadingFallback />}>
             <WelcomeScreen
               onEnterAcademy={(targetTab?: MainTabType) => {
-                setShowWelcomeScreen(false);
-                if (targetTab && targetTab !== 'welcome') {
-                  setActiveTab(targetTab);
-                } else {
-                  setActiveTab('curriculum');
-                }
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                navigateToTab(targetTab || 'curriculum');
               }}
               onOpenMentorSpotlight={() => {
                 setIsMentorSpotlightOpen(true);
@@ -336,7 +346,7 @@ export const App: React.FC = () => {
           </Suspense>
         )}
 
-        {/* PILLAR 1: OPEN SYLLABUS & CURRICULUM VIEW (All 48 Chapters Unlocked) */}
+        {/* PILLAR 1: OPEN SYLLABUS & CURRICULUM VIEW (All 57 Chapters Unlocked) */}
         {!isShowingWelcome && (activeTab === 'curriculum' || activeTab === 'world_map' || activeTab === 'textbook') && (
           <CurriculumView
             onSelectChapter={handleSelectChapter}
@@ -384,14 +394,8 @@ export const App: React.FC = () => {
           <Suspense fallback={<ViewLoadingFallback />}>
             <LegalPageView
               currentTab={activeTab as LegalTabType}
-              onTabChange={(tab) => {
-                setActiveTab(tab);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              onBackToCurriculum={() => {
-                setActiveTab('curriculum');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
+              onTabChange={navigateToTab}
+              onBackToCurriculum={() => navigateToTab('curriculum')}
             />
           </Suspense>
         )}
@@ -484,11 +488,10 @@ export const App: React.FC = () => {
                 </p>
               </div>
               <a
-                href="?tab=disclaimer"
+                href="/disclaimer"
                 onClick={(e) => {
                   e.preventDefault();
-                  setActiveTab('disclaimer');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  navigateToTab('disclaimer');
                 }}
                 className="text-[11px] font-mono text-amber-400 hover:text-amber-300 underline shrink-0 whitespace-nowrap self-end md:self-center"
               >
@@ -501,11 +504,10 @@ export const App: React.FC = () => {
           <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/[0.06] text-xs font-mono text-[#8E95A5]">
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
               <a
-                href="?tab=disclaimer"
+                href="/disclaimer"
                 onClick={(e) => {
                   e.preventDefault();
-                  setActiveTab('disclaimer');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  navigateToTab('disclaimer');
                 }}
                 className="hover:text-amber-400 transition-colors flex items-center gap-1.5"
               >
@@ -514,11 +516,10 @@ export const App: React.FC = () => {
               </a>
 
               <a
-                href="?tab=privacy"
+                href="/privacy"
                 onClick={(e) => {
                   e.preventDefault();
-                  setActiveTab('privacy');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  navigateToTab('privacy');
                 }}
                 className="hover:text-[#55E6D1] transition-colors flex items-center gap-1.5"
               >
@@ -527,11 +528,10 @@ export const App: React.FC = () => {
               </a>
 
               <a
-                href="?tab=terms"
+                href="/terms"
                 onClick={(e) => {
                   e.preventDefault();
-                  setActiveTab('terms');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  navigateToTab('terms');
                 }}
                 className="hover:text-[#8A72FF] transition-colors flex items-center gap-1.5"
               >
@@ -540,11 +540,10 @@ export const App: React.FC = () => {
               </a>
 
               <a
-                href="?tab=about"
+                href="/about"
                 onClick={(e) => {
                   e.preventDefault();
-                  setActiveTab('about');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  navigateToTab('about');
                 }}
                 className="hover:text-white transition-colors flex items-center gap-1.5"
               >
@@ -553,11 +552,10 @@ export const App: React.FC = () => {
               </a>
 
               <a
-                href="?tab=contact"
+                href="/contact"
                 onClick={(e) => {
                   e.preventDefault();
-                  setActiveTab('contact');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  navigateToTab('contact');
                 }}
                 className="hover:text-[#55E6D1] transition-colors flex items-center gap-1.5"
               >
@@ -566,11 +564,10 @@ export const App: React.FC = () => {
               </a>
 
               <a
-                href="?tab=adsense"
+                href="/adsense"
                 onClick={(e) => {
                   e.preventDefault();
-                  setActiveTab('adsense');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  navigateToTab('adsense');
                 }}
                 className="text-[#55E6D1]/90 hover:text-[#55E6D1] transition-colors flex items-center gap-1.5"
               >
@@ -601,7 +598,7 @@ export const App: React.FC = () => {
                 <span>OPEN INSTITUTIONAL CURRICULUM</span>
               </div>
               <div className="text-[#656B78] flex items-center gap-3">
-                <span>48 CHAPTERS</span>
+                <span>57 CHAPTERS</span>
                 <span>·</span>
                 <span>52 LECTURES</span>
                 <span>·</span>

@@ -169,7 +169,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
             <div className="space-y-4">
               <h3 className="text-base font-bold text-white">3. Zero Predatory Affiliate Practices</h3>
               <p>
-                LearnSMC does not promote unregulated offshore brokers, paid signal rooms, guaranteed win-rate robots, or predatory multi-tier affiliate programs. All 48 textbook chapters and 52 Abdullah Masood masterclasses are 100% free and open to all students worldwide.
+                LearnSMC does not promote unregulated offshore brokers, paid signal rooms, guaranteed win-rate robots, or predatory multi-tier affiliate programs. All 57 textbook chapters and 52 Abdullah Masood masterclasses are 100% free and open to all students worldwide.
               </p>
             </div>
           </section>
@@ -334,7 +334,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
                 LearnSMC was founded with a singular conviction: <strong className="text-white">Institutional trading education should be structured, mathematically rigorous, and completely free of paywalls.</strong>
               </p>
               <p>
-                Retail trading content on YouTube and social media is frequently fragmented, filled with conflicting definitions, or designed to funnel vulnerable beginners into paid discord channels and unregulated brokers. LearnSMC replaces noise with an open 48-chapter digital textbook, an interactive chart laboratory, and 52 codified masterclasses from Trader Abdullah Masood.
+                Retail trading content on YouTube and social media is frequently fragmented, filled with conflicting definitions, or designed to funnel vulnerable beginners into paid discord channels and unregulated brokers. LearnSMC replaces noise with an open 57-chapter digital textbook, an interactive chart laboratory, and 52 codified masterclasses from Trader Abdullah Masood.
               </p>
             </div>
 
@@ -560,7 +560,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
             <div className="space-y-3 text-xs text-[#9BA1AE]">
               <h3 className="text-sm font-bold text-white">Google Publisher Policies Adherence Checklist</h3>
               <ul className="space-y-1.5 list-disc pl-5">
-                <li><strong className="text-white">Original Value-Add Content:</strong> 48 comprehensive codified chapters with market microstructure diagrams and tape notes.</li>
+                <li><strong className="text-white">Original Value-Add Content:</strong> 57 comprehensive codified chapters with market microstructure diagrams and tape notes.</li>
                 <li><strong className="text-white">Accessible Navigation:</strong> Logical tab navigation and chapter progression without dead ends or broken links.</li>
                 <li><strong className="text-white">No Accidental Clicks:</strong> Clean separation between editorial text, interactive simulators, and potential ad placements.</li>
                 <li><strong className="text-white">Strict Compliance:</strong> Prominent CFTC disclaimers, privacy policy with Google advertising cookie opt-out, and terms of service.</li>

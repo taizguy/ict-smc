@@ -44,7 +44,7 @@ const legalPages: RouteMeta[] = [
         <p style="margin-bottom: 1rem; line-height: 1.7; color: #C5CBD8;">
           LearnSMC was founded to bridge the divide between predatory retail trading lore and genuine institutional auction delivery. 
           Historically, Inner Circle Trader (ICT) concepts and Smart Money Concepts (SMC) have been obscured behind expensive paywalls, 
-          unverified signal services, and misleading affiliate schemes. LearnSMC publishes a peer-reviewed, free-for-life 48-chapter curriculum 
+          unverified signal services, and misleading affiliate schemes. LearnSMC publishes a peer-reviewed, free-for-life 57-chapter curriculum 
           alongside 52 comprehensive Abdullah Masood masterclass breakdowns.
         </p>
       </section>
@@ -229,17 +229,17 @@ const legalPages: RouteMeta[] = [
   {
     url: 'https://learnsmc.xyz/curriculum',
     outputPath: 'curriculum/index.html',
-    title: '48-Chapter Institutional Trading Curriculum | LearnSMC',
-    description: 'Explore the full 48-chapter institutional trading curriculum covering Market Structure, Liquidity Sweeps, Fair Value Gaps, PO3, and Algorithmic Execution.',
+    title: '57-Chapter Institutional Trading Curriculum | LearnSMC',
+    description: 'Explore the full 57-chapter institutional trading curriculum covering Market Structure, Liquidity Sweeps, Fair Value Gaps, PO3, and Algorithmic Execution.',
     canonical: 'https://learnsmc.xyz/curriculum',
-    heading: '48-Chapter Institutional Curriculum',
+    heading: '57-Chapter Institutional Curriculum',
     subheading: 'A complete university-grade syllabus from foundational auction mechanics to advanced execution models.',
     badge: 'Comprehensive Syllabus',
     bodyHtml: `
       <section style="margin-bottom: 2rem;">
         <h2 style="font-size: 1.5rem; color: #ffffff; margin-bottom: 0.75rem;">Curriculum Navigation & Chapters</h2>
         <p style="line-height: 1.7; color: #C5CBD8; margin-bottom: 1.5rem;">
-          Below is the complete catalog of all 48 institutional modules. Each module provides primary ICT definitions, empirical auction chart proof, step-by-step invalidation rules, and interactive chart labs.
+          Below is the complete catalog of all 57 institutional modules. Each module provides primary ICT definitions, empirical auction chart proof, step-by-step invalidation rules, and interactive chart labs.
         </p>
         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;">
           ${textbookChapters.map(ch => `
@@ -457,7 +457,7 @@ for (const page of legalPages) {
   console.log(`✓ Generated ${page.outputPath} (${(pageHtml.length / 1024).toFixed(1)} KB)`);
 }
 
-// 2. Process All 48 Chapter Pages (Generating /chapter/{id}/index.html)
+// 2. Process All 57 Chapter Pages (Generating /chapter/{id}/index.html)
 for (const ch of textbookChapters) {
   const chapterMeta: RouteMeta = {
     url: `https://learnsmc.xyz/chapter/${ch.id}`,

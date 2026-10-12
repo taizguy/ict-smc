@@ -69,7 +69,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
                 </span>
                 <span className="text-white/20">·</span>
                 <span className="text-[11px] font-mono tracking-[0.16em] uppercase text-[#656B78]">
-                  48 CODIFIED CHAPTERS
+                  57 CODIFIED CHAPTERS
                 </span>
               </div>
 
@@ -79,7 +79,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
                   ICT &amp; SMC SYLLABUS
                 </h1>
                 <p className="text-sm sm:text-base text-[#9BA1AE] leading-relaxed max-w-2xl font-normal pt-1">
-                  The complete 48-chapter institutional trading curriculum organized with rigorous technical hierarchy. Examine order flow, liquidity voids, and algorithmic delivery with zero artificial barriers.
+                  The complete 57-chapter institutional trading curriculum organized with rigorous technical hierarchy. Examine order flow, liquidity voids, and algorithmic delivery with zero artificial barriers.
                 </p>
               </div>
 
@@ -118,7 +118,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
               
               <div className="flex-1 bg-white/[0.02] border border-white/[0.07] p-4 sm:p-5 rounded-xl">
                 <div className="text-3xl sm:text-4xl font-semibold font-mono text-[#F5F7FA] tracking-tight leading-none">
-                  48
+                  57
                 </div>
                 <div className="text-xs text-[#9BA1AE] mt-1 font-mono tracking-wider uppercase">
                   Textbook Chapters
@@ -213,7 +213,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
                 {/* Card Header Metadata */}
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono font-semibold text-[#5865FF] tracking-wider">
-                    {ch.id < 10 ? `0${ch.id}` : ch.id} / 48
+                    {ch.id < 10 ? `0${ch.id}` : ch.id} / 57
                   </span>
                   <span className="text-[10px] font-mono tracking-wider uppercase text-[#656B78]">
                     LEVEL {ch.level} · {partShort}

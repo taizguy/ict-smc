@@ -1,0 +1,3 @@
+# Cloudflare Pages SPA Fallback
+# Static files that exist take precedence automatically.
+/*    /index.html   200

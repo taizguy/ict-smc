@@ -35,7 +35,7 @@ interface AcademyWorldMapProps {
   completedChapterIds: number[];
   freeRoamMode: boolean;
   onToggleFreeRoam: (enabled: boolean) => void;
-  onEnterChapter: (chapterId: number) => void;
+  onEnterChapter: (chapterId: number, slug?: string) => void;
   onNavigateFacility: (facility: 'chartlab' | 'simulator' | 'backtest' | 'journal' | 'graph' | 'concepts' | 'compare' | 'dashboard' | 'masood') => void;
   onOpenSearch: () => void;
 }
@@ -165,7 +165,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
               <div className="text-xs font-mono uppercase tracking-[0.2em] text-[#00E5FF] font-bold flex items-center gap-2">
                 <span>ACADEMY WORLD MAP</span>
                 <span>•</span>
-                <span>48 CURRICULUM CHAMBERS</span>
+                <span>{textbookChapters.length} CURRICULUM CHAMBERS</span>
               </div>
               <h1 className="text-2xl sm:text-4xl font-bold text-[#F5F5F5] font-space tracking-tight leading-tight">
                 The Institutional Progression Matrix.
@@ -195,7 +195,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
               </div>
 
               <button
-                onClick={() => onEnterChapter(currentActiveChapter.id)}
+                onClick={() => onEnterChapter(currentActiveChapter.id, currentActiveChapter.slug)}
                 className="w-full py-2.5 px-4 bg-[#F5F5F5] hover:bg-[#00E5FF] text-[#08090C] text-xs font-mono font-bold uppercase tracking-wider flex items-center justify-center gap-2 border border-[#F5F5F5] hover:border-[#00E5FF] transition-all duration-100 cursor-pointer"
               >
                 <span>ENTER MISSION CHAMBER {currentActiveChapter.id}</span>
@@ -554,7 +554,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
                         <div className="pt-3">
                           {unlocked ? (
                             <button
-                              onClick={() => onEnterChapter(ch.id)}
+                              onClick={() => onEnterChapter(ch.id, ch.slug)}
                               className={`w-full py-2.5 px-3 rounded-xl font-mono text-xs font-bold flex items-center justify-center gap-2 transition-all cursor-pointer ${
                                 isCurrent
                                   ? 'bg-gradient-to-r from-[#FF5722] to-[#FF7A00] text-white shadow-md shadow-[#FF5722]/25 hover:brightness-110'

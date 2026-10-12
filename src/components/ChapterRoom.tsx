@@ -32,7 +32,7 @@ import { ScrollReveal } from './ScrollReveal';
 
 interface ChapterRoomProps {
   chapterId: number;
-  onSelectChapter: (chapterId: number) => void;
+  onSelectChapter: (chapterId: number, slug?: string) => void;
   onReturnToMap: () => void;
   onCompleteChapter?: (chapterId: number) => void;
   isCompleted?: boolean;
@@ -92,17 +92,17 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
     } catch {}
   };
 
+  const chapter = useMemo(() => {
+    return textbookChapters.find(c => c.id === chapterId) || textbookChapters[0];
+  }, [chapterId]);
+
   const handleCopyChapterLink = () => {
-    const url = `https://learnsmc.xyz/?chapter=${chapterId}`;
+    const url = `https://learnsmc.xyz/learn/${chapter.slug}`;
     navigator.clipboard.writeText(url).then(() => {
       setHasCopiedLink(true);
       setTimeout(() => setHasCopiedLink(false), 2000);
     }).catch(() => {});
   };
-
-  const chapter = useMemo(() => {
-    return textbookChapters.find(c => c.id === chapterId) || textbookChapters[0];
-  }, [chapterId]);
 
   // Chapter boundary helpers
   const prevChapter = useMemo(() => {
@@ -219,7 +219,11 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
               <span className="text-[11px] font-mono text-[#656B78] uppercase hidden sm:inline">JUMP:</span>
               <select
                 value={chapter.id}
-                onChange={(e) => onSelectChapter(Number(e.target.value))}
+                onChange={(e) => {
+                  const targetId = Number(e.target.value);
+                  const targetCh = textbookChapters.find(c => c.id === targetId);
+                  onSelectChapter(targetId, targetCh?.slug);
+                }}
                 className="px-3 py-1.5 bg-[#0C0E13] border border-white/[0.08] rounded-lg text-xs font-mono text-[#F5F7FA] focus:outline-none focus:border-[#5865FF]/60 cursor-pointer"
               >
                 {textbookChapters.map((ch) => (
@@ -275,7 +279,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
 
             {prevChapter && (
               <button
-                onClick={() => onSelectChapter(prevChapter.id)}
+                onClick={() => onSelectChapter(prevChapter.id, prevChapter.slug)}
                 className="btn-predikt-secondary text-xs py-1.5 px-3"
                 title={`Previous: ${prevChapter.title}`}
               >
@@ -290,7 +294,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
 
             {nextChapter && (
               <button
-                onClick={() => onSelectChapter(nextChapter.id)}
+                onClick={() => onSelectChapter(nextChapter.id, nextChapter.slug)}
                 className="btn-predikt-primary text-xs py-1.5 px-3"
                 title={`Next: ${nextChapter.title}`}
               >
@@ -796,7 +800,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
 
                 {nextChapter ? (
                   <button
-                    onClick={() => onSelectChapter(nextChapter.id)}
+                    onClick={() => onSelectChapter(nextChapter.id, nextChapter.slug)}
                     className="btn-predikt-primary text-xs"
                   >
                     <span>Advance to CH {nextChapter.id}: {nextChapter.title}</span>
@@ -873,7 +877,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
 
             {nextChapter && (
               <button
-                onClick={() => onSelectChapter(nextChapter.id)}
+                onClick={() => onSelectChapter(nextChapter.id, nextChapter.slug)}
                 className="btn-predikt-primary text-xs py-1.5 px-3"
               >
                 <span>Next (CH {nextChapter.id})</span>

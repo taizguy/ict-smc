@@ -8,7 +8,7 @@ interface SearchModalProps {
   isOpen: boolean;
   onClose: () => void;
   onSelectConcept: (id: string) => void;
-  onSelectChapter: (id: number) => void;
+  onSelectChapter: (id: number, slug?: string) => void;
 }
 
 export const SearchModal: React.FC<SearchModalProps> = ({
@@ -154,7 +154,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                   <button
                     key={ch.id}
                     onClick={() => {
-                      onSelectChapter(ch.id);
+                      onSelectChapter(ch.id, ch.slug);
                       onClose();
                     }}
                     className="w-full p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.06] border border-white/[0.05] hover:border-white/[0.12] text-left transition-all flex items-center justify-between gap-3 group cursor-pointer"

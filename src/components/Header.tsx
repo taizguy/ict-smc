@@ -22,12 +22,15 @@ export type MainTabType =
   | 'journal' 
   | 'backtest' 
   | 'dashboard'
+  | 'masterclass'
+  | 'ict_suite'
   | 'disclaimer'
   | 'privacy'
   | 'terms'
   | 'about'
   | 'contact'
-  | 'adsense';
+  | 'adsense'
+  | 'not_found';
 
 interface HeaderProps {
   activeTab: MainTabType;

@@ -13,23 +13,72 @@ import { BauhausNavScroller } from '../BauhausNavScroller';
 import { ScrollReveal } from '../ScrollReveal';
 import { useModalScrollLock } from '../../hooks/useSmoothScroll';
 
-export const MasoodAcademyView: React.FC = () => {
+export interface MasoodAcademyViewProps {
+  initialSubTab?: 'lectures' | 'animations' | 'bias_calc' | 'rules';
+  initialLectureId?: string;
+  onSubTabChange?: (subTab: 'lectures' | 'animations' | 'bias_calc' | 'rules') => void;
+  onLectureSelect?: (lectureId: string | null) => void;
+}
+
+export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
+  initialSubTab = 'lectures',
+  initialLectureId,
+  onSubTabChange,
+  onLectureSelect
+}) => {
   const [activePlaylistId, setActivePlaylistId] = useState<'all' | MasoodPlaylistId>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedLecture, setSelectedLecture] = useState<MasoodLecture | null>(null);
   const [activeAnimation, setActiveAnimation] = useState<AnimationKind>('po3_expansion');
-  const [activeTab, setActiveTab] = useState<'lectures' | 'animations' | 'bias_calc' | 'rules'>('lectures');
+  const [activeTab, setActiveTab] = useState<'lectures' | 'animations' | 'bias_calc' | 'rules'>(initialSubTab);
+
+  const allLectures = useMemo(() => {
+    return masoodPlaylistsData.flatMap((p) => p.lectures);
+  }, []);
+
+  // Sync initial sub-tab if modified externally
+  useEffect(() => {
+    if (initialSubTab && initialSubTab !== activeTab) {
+      setActiveTab(initialSubTab);
+    }
+  }, [initialSubTab]);
+
+  // Sync initial lecture if requested via URL
+  useEffect(() => {
+    if (initialLectureId) {
+      const match = allLectures.find(l => l.id === initialLectureId || String(l.lectureNumber) === initialLectureId);
+      if (match) setSelectedLecture(match);
+    }
+  }, [initialLectureId, allLectures]);
 
   useModalScrollLock(!!selectedLecture);
 
   useEffect(() => {
     if (!selectedLecture) return;
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setSelectedLecture(null);
+      if (e.key === 'Escape') {
+        setSelectedLecture(null);
+        if (onLectureSelect) onLectureSelect(null);
+      }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedLecture]);
+  }, [selectedLecture, onLectureSelect]);
+
+  const handleSelectTab = (tab: 'lectures' | 'animations' | 'bias_calc' | 'rules') => {
+    setActiveTab(tab);
+    if (onSubTabChange) onSubTabChange(tab);
+  };
+
+  const handleOpenLecture = (lec: MasoodLecture) => {
+    setSelectedLecture(lec);
+    if (onLectureSelect) onLectureSelect(lec.id);
+  };
+
+  const handleCloseLecture = () => {
+    setSelectedLecture(null);
+    if (onLectureSelect) onLectureSelect(null);
+  };
 
   // Bias calculator state
   const [calcStep1, setCalcStep1] = useState<'bullish' | 'bearish' | 'unclear'>('bullish');
@@ -42,10 +91,6 @@ export const MasoodAcademyView: React.FC = () => {
     if (activePlaylistId === 'all') return masoodPlaylistsData;
     return masoodPlaylistsData.filter((p) => p.id === activePlaylistId);
   }, [activePlaylistId]);
-
-  const allLectures = useMemo(() => {
-    return masoodPlaylistsData.flatMap((p) => p.lectures);
-  }, []);
 
   const filteredLectures = useMemo(() => {
     return allLectures.filter((lec) => {
@@ -120,7 +165,7 @@ export const MasoodAcademyView: React.FC = () => {
               </a>
 
               <button
-                onClick={() => setActiveTab('animations')}
+                onClick={() => handleSelectTab('animations')}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-[#F5F7FA] text-xs font-mono uppercase tracking-wider border border-white/[0.08] transition-all cursor-pointer"
               >
                 <Sparkles className="w-4 h-4 text-[#55E6D1]" />
@@ -128,7 +173,7 @@ export const MasoodAcademyView: React.FC = () => {
               </button>
 
               <button
-                onClick={() => setActiveTab('bias_calc')}
+                onClick={() => handleSelectTab('bias_calc')}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-[#F5F7FA] text-xs font-mono uppercase tracking-wider border border-white/[0.08] transition-all cursor-pointer"
               >
                 <Zap className="w-4 h-4 text-[#F0B35B]" />
@@ -136,7 +181,7 @@ export const MasoodAcademyView: React.FC = () => {
               </button>
 
               <button
-                onClick={() => setActiveTab('rules')}
+                onClick={() => handleSelectTab('rules')}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-[#F5F7FA] text-xs font-mono uppercase tracking-wider border border-white/[0.08] transition-all cursor-pointer"
               >
                 <Shield className="w-4 h-4 text-[#5865FF]" />
@@ -164,7 +209,7 @@ export const MasoodAcademyView: React.FC = () => {
                 return (
                   <button
                     key={tab.id}
-                    onClick={() => setActiveTab(tab.id as any)}
+                    onClick={() => handleSelectTab(tab.id as any)}
                     className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-mono uppercase tracking-wider whitespace-nowrap transition-all border cursor-pointer shrink-0 ${
                       isActive
                         ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20 shadow-sm'
@@ -309,7 +354,7 @@ export const MasoodAcademyView: React.FC = () => {
 
                           {/* Center Play Button */}
                           <button
-                            onClick={() => setSelectedLecture(lecture)}
+                            onClick={() => handleOpenLecture(lecture)}
                             className="absolute inset-0 flex items-center justify-center cursor-pointer group bg-black/20 hover:bg-black/40 transition-colors"
                           >
                             <div className="w-11 h-11 rounded-full bg-white/[0.1] backdrop-blur-md text-white border border-white/20 flex items-center justify-center group-hover:bg-[#5865FF] group-hover:scale-105 transition-all">
@@ -343,7 +388,7 @@ export const MasoodAcademyView: React.FC = () => {
                           {/* Action buttons */}
                           <div className="pt-3 flex items-center justify-between gap-2 border-t border-white/[0.06] text-xs">
                             <button
-                              onClick={() => setSelectedLecture(lecture)}
+                              onClick={() => handleOpenLecture(lecture)}
                               className="text-[#5865FF] hover:text-[#55E6D1] font-mono uppercase tracking-wider flex items-center gap-1 cursor-pointer transition-colors"
                             >
                               <span>Study Lesson</span>
@@ -676,7 +721,7 @@ export const MasoodAcademyView: React.FC = () => {
           aria-modal="true"
           aria-label={selectedLecture.title}
           onClick={(e) => {
-            if (e.target === e.currentTarget) setSelectedLecture(null);
+            if (e.target === e.currentTarget) handleCloseLecture();
           }}
         >
           <div 
@@ -695,7 +740,7 @@ export const MasoodAcademyView: React.FC = () => {
                 </span>
               </div>
               <button
-                onClick={() => setSelectedLecture(null)}
+                onClick={handleCloseLecture}
                 className="p-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-[#9BA1AE] hover:text-[#F5F7FA] transition-colors cursor-pointer"
               >
                 <X className="w-5 h-5" />

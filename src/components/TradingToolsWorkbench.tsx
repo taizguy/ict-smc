@@ -28,14 +28,27 @@ export type TradingToolId = 'chartlab' | 'simulator' | 'backtest' | 'journal' | 
 
 export interface TradingToolsWorkbenchProps {
   initialTool?: TradingToolId;
+  onToolChange?: (tool: TradingToolId) => void;
   onSelectConcept?: (conceptId: string) => void;
 }
 
 export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
   initialTool = 'masterclass',
+  onToolChange,
   onSelectConcept
 }) => {
   const [activeTool, setActiveTool] = useState<TradingToolId>(initialTool);
+
+  React.useEffect(() => {
+    if (initialTool && initialTool !== activeTool) {
+      setActiveTool(initialTool);
+    }
+  }, [initialTool]);
+
+  const handleSelectTool = (toolId: TradingToolId) => {
+    setActiveTool(toolId);
+    if (onToolChange) onToolChange(toolId);
+  };
 
   const tools = [
     {
@@ -156,7 +169,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
               return (
                 <button
                   key={tool.id}
-                  onClick={() => setActiveTool(tool.id)}
+                  onClick={() => handleSelectTool(tool.id)}
                   className={`p-3.5 rounded-xl border text-left transition-all cursor-pointer flex flex-col justify-between ${
                     isActive
                       ? 'bg-white/[0.10] border-white/20 text-[#F5F7FA] shadow-sm'

@@ -9,7 +9,7 @@ import { BauhausNavScroller } from './BauhausNavScroller';
 import { ScrollReveal } from './ScrollReveal';
 
 interface CurriculumViewProps {
-  onSelectChapter: (chapterId: number) => void;
+  onSelectChapter: (chapterId: number, slug?: string) => void;
   onOpenSearch: () => void;
 }
 
@@ -204,10 +204,16 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
           const partShort = ch.part.replace(/^Part\s+[IVXLCDM]+\s*-\s*/, '');
 
           return (
-            <div
+            <a
               key={ch.id}
-              onClick={() => onSelectChapter(ch.id)}
-              className="group predikt-card p-6 flex flex-col justify-between cursor-pointer space-y-5"
+              href={`/learn/${ch.slug}`}
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey) {
+                  e.preventDefault();
+                  onSelectChapter(ch.id, ch.slug);
+                }
+              }}
+              className="group predikt-card p-6 flex flex-col justify-between cursor-pointer space-y-5 no-underline block"
             >
               <div className="space-y-4">
                 {/* Card Header Metadata */}
@@ -247,7 +253,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
                 </div>
               </div>
 
-            </div>
+            </a>
           );
         })}
       </section>

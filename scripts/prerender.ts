@@ -845,6 +845,11 @@ const public404Path = path.resolve(projectRoot, 'public', '404.html');
 fs.writeFileSync(public404Path, notFoundHtml, 'utf-8');
 console.log('✓ Generated 404.html for static hosting fallback');
 
+// Write 200.html (Cloudflare Pages native SPA fallback)
+fs.copyFileSync(templatePath, path.resolve(distDir, '200.html'));
+fs.copyFileSync(templatePath, path.resolve(projectRoot, 'public', '200.html'));
+console.log('✓ Generated 200.html for Cloudflare Pages native SPA fallback');
+
 // 9. Generate Legacy Backward Compatibility Routes (/chapter/:id/index.html & /chapter/index.html)
 // Pointing canonical to /learn/:slug/ with instant client redirect
 for (const ch of textbookChapters) {
@@ -942,9 +947,10 @@ redirectsLines.push('/chapter          /curriculum/          301');
 redirectsLines.push('/chapter/         /curriculum/          301');
 redirectsLines.push('/chapter/*        /curriculum/          301');
 redirectsLines.push('');
-redirectsLines.push('# Cloudflare Pages SPA Fallback (existing static files take precedence)');
-redirectsLines.push('/*                /index.html           200');
-redirectsLines.push('');
+// Note: Do NOT include '/* /index.html 200' here.
+// Cloudflare Pages / Workers static assets uses wrangler.jsonc ("not_found_handling": "single-page-application")
+// and the generated 200.html file. Cloudflare's _redirects validator rejects rewriting /* to /index.html
+// with error 100324 (infinite loop detected due to Cloudflare stripping .html / auto-trailing-slash).
 
 const redirectsContent = redirectsLines.join('\n');
 fs.writeFileSync(path.resolve(distDir, '_redirects'), redirectsContent, 'utf-8');

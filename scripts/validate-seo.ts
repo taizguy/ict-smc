@@ -259,6 +259,11 @@ for (const ch of textbookChapters) {
 }
 assert(redirectsRuleErrors === 0, `All ${textbookChapters.length} legacy chapters have 301 rules in _redirects`);
 assert(distRedirectsContent.includes('/chapter/*        /curriculum/          301'), '_redirects has /chapter/* fallback to /curriculum/');
+assert(!distRedirectsContent.includes('/index.html'), '_redirects does NOT contain /index.html rewrite (prevents Cloudflare error 100324)');
+
+// Verify 200.html exists for Cloudflare Pages native SPA fallback
+const dist200Path = path.resolve(distDir, '200.html');
+assert(fs.existsSync(dist200Path), 'dist/200.html exists for Cloudflare Pages native SPA fallback');
 
 // 2. Vercel vercel.json configuration
 const vercelPath = path.resolve(projectRoot, 'vercel.json');

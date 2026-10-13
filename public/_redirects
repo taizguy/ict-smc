@@ -116,4 +116,4 @@
 /chapter/*        /curriculum/          301
 
 # Cloudflare Pages SPA Fallback (existing static files take precedence)
-/*                /index.html           200
+# /*                /index.html           200

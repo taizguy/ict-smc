@@ -285,6 +285,66 @@ for (const r of vercelJson.redirects) {
 }
 assert(loopErrors === 0, 'Redirect loop prevention check passed: ZERO circular redirect rules detected');
 
+// ============================================================================
+// TEST SUITE 6: Content Isolation & Preventing Chapter 1 Bleed Across Pages
+// ============================================================================
+console.log('\n[Suite 6] Testing Content Isolation & Preventing Chapter 1 Bleed...');
+
+// 1. Verify Home Page does not leak Chapter 1 body/heading
+const homeContent = fs.readFileSync(path.resolve(distDir, 'index.html'), 'utf-8');
+assert(!homeContent.includes('What Actually Moves Price? — The Mechanics of the Electronic Auction'), 'Homepage does not contain Chapter 1 header bleed');
+assert(!homeContent.includes('id="chapter-1"'), 'Homepage does not contain id="chapter-1" article bleed');
+assert(homeContent.includes('Codified Institutional Curriculum'), 'Homepage contains authentic institutional homepage content');
+
+// 2. Verify non-chapter hub & legal pages do NOT leak Chapter 1
+const standaloneHubsToCheck = ['masood/index.html', 'tools/index.html', 'about/index.html', 'privacy/index.html', 'terms/index.html', 'disclaimer/index.html', 'contact/index.html', 'adsense/index.html'];
+let hubBleedCount = 0;
+for (const hub of standaloneHubsToCheck) {
+  const hubContent = fs.readFileSync(path.resolve(distDir, hub), 'utf-8');
+  if (hubContent.includes('What Actually Moves Price') || hubContent.includes('id="chapter-1"')) {
+    hubBleedCount++;
+    console.error(`❌ Content bleed detected: Chapter 1 found in ${hub}`);
+  }
+}
+// Curriculum index should list Chapter 1 as a syllabus link, but must NOT contain the full chapter article or id="chapter-1"
+const curriculumContent = fs.readFileSync(path.resolve(distDir, 'curriculum/index.html'), 'utf-8');
+if (curriculumContent.includes('id="chapter-1"') || curriculumContent.includes('The Great Fallacy')) {
+  hubBleedCount++;
+  console.error('❌ Content bleed detected: Chapter 1 article body found in curriculum/index.html');
+}
+assert(hubBleedCount === 0, 'Hub, curriculum and legal pages have ZERO Chapter 1 article body bleed');
+
+// 3. Verify other textbook chapters do NOT have Chapter 1 appended to them
+let otherChapterBleedCount = 0;
+for (const ch of textbookChapters) {
+  if (ch.slug === 'what-actually-moves-price') continue;
+  const chFile = path.resolve(distDir, `learn/${ch.slug}/index.html`);
+  if (fs.existsSync(chFile)) {
+    const chContent = fs.readFileSync(chFile, 'utf-8');
+    if (chContent.includes('What Actually Moves Price? — The Mechanics of the Electronic Auction')) {
+      otherChapterBleedCount++;
+      console.error(`❌ Content bleed detected: Chapter 1 found in learn/${ch.slug}/index.html`);
+    }
+  }
+}
+assert(otherChapterBleedCount === 0, 'All 52 other chapters are cleanly isolated with ZERO Chapter 1 bleed');
+
+// 4. Verify ONLY Chapter 1 itself contains the Chapter 1 heading
+const ch1File = path.resolve(distDir, 'learn/what-actually-moves-price/index.html');
+const ch1Content = fs.readFileSync(ch1File, 'utf-8');
+assert(ch1Content.includes('What Actually Moves Price'), 'Chapter 1 page properly contains its own heading');
+
+// 5. Verify NO prerendered pages contain legacy links (?chapter= or href="https://learnsmc.xyz/chapter/1")
+let legacyLinkLeaks = 0;
+for (const hub of ['index.html', 'curriculum/index.html', ...standaloneHubsToCheck]) {
+  const content = fs.readFileSync(path.resolve(distDir, hub), 'utf-8');
+  if (content.includes('href="https://learnsmc.xyz/?chapter=1"') || content.includes('href="https://learnsmc.xyz/chapter/1"')) {
+    legacyLinkLeaks++;
+    console.error(`❌ Legacy link leak detected in ${hub}`);
+  }
+}
+assert(legacyLinkLeaks === 0, 'ZERO legacy /chapter/1 or ?chapter=1 links found in hub pages');
+
 console.log('\n--------------------------------------------------');
 console.log(`Results: ${passedTests} checks passed, ${failedTests} failed.`);
 if (failedTests > 0) {

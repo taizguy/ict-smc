@@ -180,12 +180,16 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
   `;
 
   // Inject prerendered content into <div id="root">
-  html = html.replace(/<div id="root">[\s\S]*?<\/div>(\s*<script type="module" src="\/src\/main\.tsx"><\/script>)/, `<div id="root">${renderedContent}</div>$1`);
-  if (!html.includes(renderedContent)) {
-    html = html.replace(/<div id="root">[\s\S]*?<\/div>(\s*<script type="module" src="\/assets\/[^"]+"><\/script>)/, `<div id="root">${renderedContent}</div>$1`);
-  }
-  if (!html.includes(renderedContent)) {
-    html = html.replace(/<div id="root">[\s\S]*?<\/div>/, `<div id="root">${renderedContent}</div>`);
+  if (html.includes('<div id="root"></div>')) {
+    html = html.replace('<div id="root"></div>', `<div id="root">\n${renderedContent}\n</div>`);
+  } else {
+    html = html.replace(/<div id="root">[\s\S]*?<\/div>(\s*<script type="module" src="\/src\/main\.tsx"><\/script>)/, `<div id="root">\n${renderedContent}\n</div>$1`);
+    if (!html.includes(renderedContent)) {
+      html = html.replace(/<div id="root">[\s\S]*?<\/div>(\s*<script type="module" src="\/assets\/[^"]+"><\/script>)/, `<div id="root">\n${renderedContent}\n</div>$1`);
+    }
+    if (!html.includes(renderedContent)) {
+      html = html.replace(/<div id="root">[\s\S]*?<\/div>/, `<div id="root">\n${renderedContent}\n</div>`);
+    }
   }
 
   return html;
@@ -198,6 +202,66 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
 const allRoutes: RouteMeta[] = [];
 const sitemapUrls: { loc: string; lastmod: string; changefreq: string; priority: string }[] = [];
 const todayIso = new Date().toISOString().split('T')[0];
+
+// 0. Institutional Homepage (Root /)
+const homePage: RouteMeta = {
+  url: 'https://learnsmc.xyz/',
+  outputPath: 'index.html',
+  title: 'ICT & SMC Academy - Smart Money Concepts & Institutional Trading Curriculum',
+  description: 'Master Inner Circle Trader (ICT) and Smart Money Concepts with a free 57-chapter institutional curriculum, 52 Abdullah Masood masterclasses, interactive Chart Lab, and algorithmic trade simulator.',
+  canonical: 'https://learnsmc.xyz/',
+  heading: 'ICT & SMC Institutional Trading Academy',
+  subheading: 'Master algorithmic price delivery, fair value gaps, order blocks, and market liquidity through 57 codified chapters and 52 Abdullah Masood masterclasses.',
+  badge: 'Institutional Curriculum · Open Access Codex',
+  bodyHtml: `
+    <section style="margin-bottom: 2.5rem;">
+      <h2 style="font-size: 1.5rem; color: #ffffff; margin-bottom: 1rem;">Codified Institutional Curriculum</h2>
+      <p style="line-height: 1.7; color: #C5CBD8; margin-bottom: 1.5rem;">
+        LearnSMC is an open-access educational institution preserving and codifying Smart Money Concepts (SMC) and Inner Circle Trader (ICT) market mechanics. 
+        Unlike retail technical analysis that relies on lagging indicators and trendlines, our curriculum teaches how central banks, algorithmic market makers, 
+        and high-frequency matching engines deliver price across electronic auctions.
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem;">
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1.25rem;">
+          <h3 style="font-size: 1.1rem; color: #55E6D1; margin-top: 0; margin-bottom: 0.5rem;">57 Digital Textbook Chapters</h3>
+          <p style="color: #94A3B8; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem;">From auction theory and limit order books to complex algorithmic delivery models.</p>
+          <a href="/curriculum/" style="color: #8A72FF; text-decoration: none; font-weight: 600; font-size: 0.85rem;">Browse 57 Chapters &rarr;</a>
+        </div>
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1.25rem;">
+          <h3 style="font-size: 1.1rem; color: #55E6D1; margin-top: 0; margin-bottom: 0.5rem;">52 Abdullah Masood Masterclasses</h3>
+          <p style="color: #94A3B8; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem;">Curated video lectures, timestamped breakdown notes, and mechanical checklists.</p>
+          <a href="/masood/" style="color: #8A72FF; text-decoration: none; font-weight: 600; font-size: 0.85rem;">Explore Masood Academy &rarr;</a>
+        </div>
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1.25rem;">
+          <h3 style="font-size: 1.1rem; color: #55E6D1; margin-top: 0; margin-bottom: 0.5rem;">Interactive Trading Workbench</h3>
+          <p style="color: #94A3B8; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem;">Chart Lab, algorithmic trade simulator, backtest expectancy engine, and journal.</p>
+          <a href="/tools/" style="color: #8A72FF; text-decoration: none; font-weight: 600; font-size: 0.85rem;">Launch Workbench &rarr;</a>
+        </div>
+      </div>
+    </section>
+    <section style="margin-bottom: 2rem;">
+      <h2 style="font-size: 1.3rem; color: #ffffff; margin-bottom: 1rem;">Foundational Learning Tracks</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem;">
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 1rem; border-radius: 6px;">
+          <h4 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Part I · Market Foundations</h4>
+          <p style="color: #94A3B8; font-size: 0.8rem; margin: 0;">Auction mechanics, CLOB limit order books, liquidity consumption, and market structure.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 1rem; border-radius: 6px;">
+          <h4 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Part II · Core ICT Frameworks</h4>
+          <p style="color: #94A3B8; font-size: 0.8rem; margin: 0;">Fair Value Gaps (FVG), Order Blocks, Breaker Blocks, and institutional mitigation.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 1rem; border-radius: 6px;">
+          <h4 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Part III · Sessions & Algorithmic Time</h4>
+          <p style="color: #94A3B8; font-size: 0.8rem; margin: 0;">ICT Killzones, London Open Judas Swing, New York AM/PM sessions, and Power of 3 (PO3).</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 1rem; border-radius: 6px;">
+          <h4 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Part IV · Execution Protocols</h4>
+          <p style="color: #94A3B8; font-size: 0.8rem; margin: 0;">2022 Mentorship Model, Silver Bullet algorithm, and OTE Fibonacci matrix.</p>
+        </div>
+      </div>
+    </section>
+  `
+};
 
 // 1. Legal & Informational Pages
 const legalPages: RouteMeta[] = [
@@ -644,6 +708,7 @@ const workbenchTools: RouteMeta[] = [
 ];
 
 // Combine Hub & Tool pages
+allRoutes.push(homePage);
 allRoutes.push(...legalPages);
 allRoutes.push(curriculumHubPage);
 allRoutes.push(masoodHubPage);

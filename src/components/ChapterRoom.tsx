@@ -23,6 +23,7 @@ import {
   AlertTriangle
 } from 'lucide-react';
 import { textbookChapters } from '../data/chaptersData';
+import { getLessonCanonicalUrl } from '../utils/url';
 import { quizQuestions } from '../data/quizzesData';
 import { InteractiveDiagram } from './InteractiveDiagram';
 import { ChapterSection } from '../types';
@@ -97,7 +98,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
   }, [chapterId]);
 
   const handleCopyChapterLink = () => {
-    const url = `https://learnsmc.xyz/learn/${chapter.slug}`;
+    const url = getLessonCanonicalUrl(chapter.slug);
     navigator.clipboard.writeText(url).then(() => {
       setHasCopiedLink(true);
       setTimeout(() => setHasCopiedLink(false), 2000);

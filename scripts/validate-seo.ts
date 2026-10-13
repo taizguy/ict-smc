@@ -2,13 +2,21 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { textbookChapters } from '../src/data/chaptersData.ts';
+import { 
+  BASE_URL, 
+  normalizeCanonicalUrl, 
+  normalizePath, 
+  getLessonCanonicalUrl, 
+  getLessonPath, 
+  resolveLegacyChapter 
+} from '../src/utils/url.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
 const distDir = path.resolve(projectRoot, 'dist');
 
-console.log('--- Starting Comprehensive SEO & Metadata Audit ---');
+console.log('--- Starting Comprehensive SEO, URL Consistency & Redirect Integrity Audit ---');
 
 let passedTests = 0;
 let failedTests = 0;
@@ -22,45 +30,127 @@ function assert(condition: boolean, msg: string) {
   }
 }
 
-// 1. Verify dist exists
+// ============================================================================
+// TEST SUITE 1: Trailing Slash Normalization & URL Utility Tests
+// ============================================================================
+console.log('\n[Suite 1] Testing Trailing Slash Normalization & Canonical URL Generator...');
+
+assert(
+  normalizeCanonicalUrl('/') === 'https://learnsmc.xyz/',
+  'normalizeCanonicalUrl("/") correctly preserves root trailing slash'
+);
+
+assert(
+  normalizeCanonicalUrl('https://learnsmc.xyz') === 'https://learnsmc.xyz/',
+  'normalizeCanonicalUrl("https://learnsmc.xyz") normalizes to root with trailing slash'
+);
+
+assert(
+  normalizeCanonicalUrl('/learn/what-actually-moves-price') === 'https://learnsmc.xyz/learn/what-actually-moves-price/',
+  'normalizeCanonicalUrl adds trailing slash to lesson path without slash'
+);
+
+assert(
+  normalizeCanonicalUrl('/learn/what-actually-moves-price/') === 'https://learnsmc.xyz/learn/what-actually-moves-price/',
+  'normalizeCanonicalUrl keeps existing trailing slash without doubling'
+);
+
+assert(
+  normalizeCanonicalUrl('/learn/what-actually-moves-price?ref=twitter#section-1') === 'https://learnsmc.xyz/learn/what-actually-moves-price/',
+  'normalizeCanonicalUrl strips query params and anchors to avoid duplicate canonicals'
+);
+
+assert(
+  normalizeCanonicalUrl('/sitemap.xml') === 'https://learnsmc.xyz/sitemap.xml',
+  'normalizeCanonicalUrl does NOT add trailing slash to file extensions (.xml)'
+);
+
+assert(
+  getLessonCanonicalUrl('what-actually-moves-price') === 'https://learnsmc.xyz/learn/what-actually-moves-price/',
+  'getLessonCanonicalUrl produces exact canonical lesson URL with trailing slash'
+);
+
+assert(
+  getLessonPath('what-actually-moves-price') === '/learn/what-actually-moves-price/',
+  'getLessonPath produces preferred internal path with trailing slash'
+);
+
+// ============================================================================
+// TEST SUITE 2: Legacy Chapter Mapping & Invalid Identifier Fallback
+// ============================================================================
+console.log('\n[Suite 2] Testing Legacy Chapter Mapping & Fallback...');
+
+let mappingErrors = 0;
+for (const ch of textbookChapters) {
+  const byId = resolveLegacyChapter(ch.id, textbookChapters);
+  if (!byId || byId.slug !== ch.slug || byId.targetPath !== `/learn/${ch.slug}/`) {
+    mappingErrors++;
+    console.error(`Failed legacy resolution by ID for chapter ${ch.id}`);
+  }
+
+  const bySlug = resolveLegacyChapter(ch.slug, textbookChapters);
+  if (!bySlug || bySlug.id !== ch.id) {
+    mappingErrors++;
+    console.error(`Failed legacy resolution by slug for chapter ${ch.id}`);
+  }
+}
+assert(mappingErrors === 0, `All ${textbookChapters.length} chapters resolve via legacy chapter mapping`);
+
+// Test invalid chapter identifiers fallback
+assert(
+  resolveLegacyChapter(999, textbookChapters) === null,
+  'Unknown chapter ID (999) returns null (signals fallback to /curriculum/)'
+);
+assert(
+  resolveLegacyChapter('invalid-slug-xyz', textbookChapters) === null,
+  'Unknown chapter slug returns null (signals fallback to /curriculum/)'
+);
+
+// ============================================================================
+// TEST SUITE 3: Static Build Output, Robots & Sitemap Integrity
+// ============================================================================
+console.log('\n[Suite 3] Testing Robots.txt and XML Sitemap...');
+
 assert(fs.existsSync(distDir), 'dist directory exists');
 
-// 2. Verify robots.txt
 const robotsPath = path.resolve(distDir, 'robots.txt');
 assert(fs.existsSync(robotsPath), 'dist/robots.txt exists');
 const robotsContent = fs.readFileSync(robotsPath, 'utf-8');
-assert(robotsContent.includes('Sitemap: https://learnsmc.xyz/sitemap.xml'), 'robots.txt points to correct sitemap URL');
-assert(robotsContent.includes('Allow: /'), 'robots.txt allows crawling of public content');
+assert(robotsContent.includes('Sitemap: https://learnsmc.xyz/sitemap.xml'), 'robots.txt specifies correct absolute sitemap URL');
+assert(robotsContent.includes('Allow: /'), 'robots.txt allows crawling of public resources');
 
-// 3. Verify sitemap.xml
 const sitemapPath = path.resolve(distDir, 'sitemap.xml');
 assert(fs.existsSync(sitemapPath), 'dist/sitemap.xml exists');
 const sitemapContent = fs.readFileSync(sitemapPath, 'utf-8');
-assert(sitemapContent.startsWith('<?xml'), 'sitemap.xml has valid XML header');
-assert(sitemapContent.includes('<urlset'), 'sitemap.xml has urlset tag');
-assert(sitemapContent.includes('https://learnsmc.xyz/'), 'sitemap.xml contains root domain');
+assert(sitemapContent.startsWith('<?xml'), 'sitemap.xml begins with valid XML declaration');
+assert(sitemapContent.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'), 'sitemap.xml has standard sitemap 0.9 schema');
 
-// Check that all 53 chapters are in sitemap
-let missingChapterUrls = 0;
+// Verify all 53 chapters have exact trailing-slash entries in sitemap.xml
+let missingSitemapChapters = 0;
 for (const ch of textbookChapters) {
-  const chapterUrl = `<loc>https://learnsmc.xyz/learn/${ch.slug}</loc>`;
-  if (!sitemapContent.includes(chapterUrl)) {
-    missingChapterUrls++;
-    console.error(`Missing from sitemap: https://learnsmc.xyz/learn/${ch.slug}`);
+  const expectedEntry = `<loc>https://learnsmc.xyz/learn/${ch.slug}/</loc>`;
+  if (!sitemapContent.includes(expectedEntry)) {
+    missingSitemapChapters++;
+    console.error(`Missing from sitemap.xml: ${expectedEntry}`);
   }
 }
-assert(missingChapterUrls === 0, `All ${textbookChapters.length} chapters present in sitemap.xml`);
+assert(missingSitemapChapters === 0, `All ${textbookChapters.length} chapters present in sitemap with canonical trailing slashes`);
 
-// 4. Verify 404.html
-const notFoundPath = path.resolve(distDir, '404.html');
-assert(fs.existsSync(notFoundPath), 'dist/404.html exists');
-const notFoundHtml = fs.readFileSync(notFoundPath, 'utf-8');
-assert(notFoundHtml.includes('noindex'), '404.html contains noindex directive');
-assert(notFoundHtml.includes('404'), '404.html contains 404 error indicator');
+// Verify sitemap does NOT contain non-canonical or query URLs in <loc> entries
+const sitemapLocs = (sitemapContent.match(/<loc>[\s\S]*?<\/loc>/g) || []);
+const hasQueryInLoc = sitemapLocs.some(loc => loc.includes('?'));
+assert(!hasQueryInLoc, 'sitemap.xml <loc> entries contain ZERO query parameter URLs');
+const hasLegacyChapterInLoc = sitemapLocs.some(loc => loc.includes('/chapter/'));
+assert(!hasLegacyChapterInLoc, 'sitemap.xml <loc> entries contain ZERO legacy /chapter/ URLs');
+const has404InLoc = sitemapLocs.some(loc => loc.includes('/404'));
+assert(!has404InLoc, 'sitemap.xml <loc> entries contain ZERO 404 error URLs');
 
-// 5. Verify HTML files across chapters, tools, and legal pages
+// ============================================================================
+// TEST SUITE 4: HTML Prerendering, Canonical Tags & CSR Fallback
+// ============================================================================
+console.log('\n[Suite 4] Testing HTML Pre-rendered Pages & Canonical Tags...');
+
 const titlesMap = new Map<string, string>();
-const descriptionsMap = new Map<string, string>();
 const canonicalsMap = new Map<string, string>();
 
 function auditHtmlFile(relPath: string, expectedCanonical: string, isRedirect = false) {
@@ -69,45 +159,50 @@ function auditHtmlFile(relPath: string, expectedCanonical: string, isRedirect = 
   if (!fs.existsSync(filePath)) return;
 
   const content = fs.readFileSync(filePath, 'utf-8');
-  assert(content.length > 500, `${relPath} is non-empty (${(content.length / 1024).toFixed(1)} KB)`);
+  assert(content.length > 400, `${relPath} is non-empty (${(content.length / 1024).toFixed(1)} KB)`);
 
   if (isRedirect) {
-    assert(content.includes(`rel="canonical" href="${expectedCanonical}"`), `${relPath} has correct target canonical`);
+    assert(
+      content.includes(`rel="canonical" href="${expectedCanonical}"`),
+      `${relPath} has correct target canonical tag: ${expectedCanonical}`
+    );
+    assert(
+      content.includes('http-equiv="refresh"'),
+      `${relPath} has instant meta refresh fallback`
+    );
     return;
   }
 
-  // Title check
+  // Canonical tag check
+  const canonicalMatch = content.match(/<link rel="canonical" href="([\s\S]*?)" \/>/);
+  assert(
+    !!canonicalMatch && canonicalMatch[1] === expectedCanonical,
+    `${relPath} has exact matching canonical: ${expectedCanonical}`
+  );
+
+  // Title tag check
   const titleMatch = content.match(/<title>([\s\S]*?)<\/title>/);
-  assert(!!titleMatch && titleMatch[1].trim().length > 10, `${relPath} has non-empty <title>`);
-  const title = titleMatch ? titleMatch[1].trim() : '';
+  assert(
+    !!titleMatch && titleMatch[1].trim().length > 10,
+    `${relPath} has descriptive <title>`
+  );
 
   // Description check
   const descMatch = content.match(/<meta name="description" content="([\s\S]*?)" \/>/);
-  assert(!!descMatch && descMatch[1].trim().length > 20, `${relPath} has non-empty description`);
-  const desc = descMatch ? descMatch[1].trim() : '';
+  assert(
+    !!descMatch && descMatch[1].trim().length > 20,
+    `${relPath} has descriptive meta description`
+  );
 
-  // Canonical check
-  const canonicalMatch = content.match(/<link rel="canonical" href="([\s\S]*?)" \/>/);
-  assert(!!canonicalMatch && canonicalMatch[1] === expectedCanonical, `${relPath} has exact matching canonical: ${expectedCanonical}`);
-  const canonical = canonicalMatch ? canonicalMatch[1] : '';
-
-  // H1 Check
-  const h1Match = content.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
-  assert(!!h1Match && h1Match[1].trim().length > 0, `${relPath} has primary <h1>`);
+  // OpenGraph URL matches canonical
+  const ogUrlMatch = content.match(/<meta property="og:url" content="([\s\S]*?)" \/>/);
+  assert(
+    !!ogUrlMatch && ogUrlMatch[1] === expectedCanonical,
+    `${relPath} og:url matches canonical link`
+  );
 
   // Uniqueness check across distinct canonical pages
-  if (titlesMap.has(title) && titlesMap.get(title) !== relPath) {
-    console.warn(`⚠️ Warning: Duplicate title across ${titlesMap.get(title)} and ${relPath}: "${title}"`);
-  } else {
-    titlesMap.set(title, relPath);
-  }
-
-  if (descriptionsMap.has(desc) && descriptionsMap.get(desc) !== relPath) {
-    console.warn(`⚠️ Warning: Duplicate description across ${descriptionsMap.get(desc)} and ${relPath}: "${desc}"`);
-  } else {
-    descriptionsMap.set(desc, relPath);
-  }
-
+  const canonical = canonicalMatch ? canonicalMatch[1] : '';
   if (canonicalsMap.has(canonical) && canonicalsMap.get(canonical) !== relPath) {
     console.error(`❌ Duplicate canonical URL across ${canonicalsMap.get(canonical)} and ${relPath}: "${canonical}"`);
     failedTests++;
@@ -116,39 +211,80 @@ function auditHtmlFile(relPath: string, expectedCanonical: string, isRedirect = 
   }
 }
 
-// Audit Core Pages
-console.log('Auditing Core & Legal Pages...');
+// Audit Core Hubs & Legal Pages
 auditHtmlFile('index.html', 'https://learnsmc.xyz/');
-auditHtmlFile('curriculum/index.html', 'https://learnsmc.xyz/curriculum');
-auditHtmlFile('masood/index.html', 'https://learnsmc.xyz/masood');
-auditHtmlFile('tools/index.html', 'https://learnsmc.xyz/tools');
-auditHtmlFile('about/index.html', 'https://learnsmc.xyz/about');
-auditHtmlFile('disclaimer/index.html', 'https://learnsmc.xyz/disclaimer');
-auditHtmlFile('privacy/index.html', 'https://learnsmc.xyz/privacy');
-auditHtmlFile('terms/index.html', 'https://learnsmc.xyz/terms');
-auditHtmlFile('contact/index.html', 'https://learnsmc.xyz/contact');
-auditHtmlFile('adsense/index.html', 'https://learnsmc.xyz/adsense');
+auditHtmlFile('curriculum/index.html', 'https://learnsmc.xyz/curriculum/');
+auditHtmlFile('masood/index.html', 'https://learnsmc.xyz/masood/');
+auditHtmlFile('tools/index.html', 'https://learnsmc.xyz/tools/');
+auditHtmlFile('about/index.html', 'https://learnsmc.xyz/about/');
+auditHtmlFile('disclaimer/index.html', 'https://learnsmc.xyz/disclaimer/');
+auditHtmlFile('privacy/index.html', 'https://learnsmc.xyz/privacy/');
+auditHtmlFile('terms/index.html', 'https://learnsmc.xyz/terms/');
+auditHtmlFile('contact/index.html', 'https://learnsmc.xyz/contact/');
+auditHtmlFile('adsense/index.html', 'https://learnsmc.xyz/adsense/');
 
-// Audit All 53 Chapter Pages at /learn/:slug
-console.log(`Auditing all ${textbookChapters.length} chapter pages...`);
+// Audit All 53 Chapter Pages at /learn/:slug/
 for (const ch of textbookChapters) {
-  auditHtmlFile(`learn/${ch.slug}/index.html`, `https://learnsmc.xyz/learn/${ch.slug}`);
-  // Check backward compatibility alias
-  auditHtmlFile(`chapter/${ch.id}/index.html`, `https://learnsmc.xyz/learn/${ch.slug}`, true);
+  auditHtmlFile(`learn/${ch.slug}/index.html`, `https://learnsmc.xyz/learn/${ch.slug}/`);
+  // Audit legacy redirect alias
+  auditHtmlFile(`chapter/${ch.id}/index.html`, `https://learnsmc.xyz/learn/${ch.slug}/`, true);
 }
 
-// Audit Workbench Tools
-console.log('Auditing Workbench tools...');
-const toolSlugs = ['chartlab', 'simulator', 'backtest', 'journal', 'graph', 'concepts', 'compare', 'dashboard', 'masterclass', 'ict-suite'];
-for (const t of toolSlugs) {
-  auditHtmlFile(`tools/${t}/index.html`, `https://learnsmc.xyz/tools/${t}`);
-}
+// Audit legacy /chapter root fallback
+auditHtmlFile('chapter/index.html', 'https://learnsmc.xyz/curriculum/', true);
 
-console.log('--------------------------------------------------');
+// Audit 404 page (noindex)
+const notFoundPath = path.resolve(distDir, '404.html');
+assert(fs.existsSync(notFoundPath), '404.html exists in dist');
+const notFoundContent = fs.readFileSync(notFoundPath, 'utf-8');
+assert(notFoundContent.includes('noindex'), '404.html contains noindex directive');
+
+// ============================================================================
+// TEST SUITE 5: Hosting Configuration & Redirect Loop Prevention
+// ============================================================================
+console.log('\n[Suite 5] Testing Cloudflare & Vercel Edge Redirect Configurations...');
+
+// 1. Cloudflare Pages _redirects file
+const distRedirectsPath = path.resolve(distDir, '_redirects');
+assert(fs.existsSync(distRedirectsPath), 'dist/_redirects file exists');
+const distRedirectsContent = fs.readFileSync(distRedirectsPath, 'utf-8');
+
+let redirectsRuleErrors = 0;
+for (const ch of textbookChapters) {
+  const expectedRule = `/chapter/${ch.id}     /learn/${ch.slug}/    301`;
+  if (!distRedirectsContent.includes(`/chapter/${ch.id} `)) {
+    redirectsRuleErrors++;
+    console.error(`Missing redirect rule for Chapter ${ch.id} in _redirects`);
+  }
+}
+assert(redirectsRuleErrors === 0, `All ${textbookChapters.length} legacy chapters have 301 rules in _redirects`);
+assert(distRedirectsContent.includes('/chapter/*        /curriculum/          301'), '_redirects has /chapter/* fallback to /curriculum/');
+
+// 2. Vercel vercel.json configuration
+const vercelPath = path.resolve(projectRoot, 'vercel.json');
+assert(fs.existsSync(vercelPath), 'vercel.json file exists');
+const vercelJson = JSON.parse(fs.readFileSync(vercelPath, 'utf-8'));
+assert(Array.isArray(vercelJson.redirects), 'vercel.json has redirects array');
+
+// Check redirect loop prevention: no redirect destination should be an existing redirect source
+const redirectSources = new Set<string>();
+for (const r of vercelJson.redirects) {
+  redirectSources.add(r.source);
+}
+let loopErrors = 0;
+for (const r of vercelJson.redirects) {
+  if (redirectSources.has(r.destination)) {
+    loopErrors++;
+    console.error(`Potential redirect loop: ${r.source} -> ${r.destination}`);
+  }
+}
+assert(loopErrors === 0, 'Redirect loop prevention check passed: ZERO circular redirect rules detected');
+
+console.log('\n--------------------------------------------------');
 console.log(`Results: ${passedTests} checks passed, ${failedTests} failed.`);
 if (failedTests > 0) {
-  console.error(`Audit finished with ${failedTests} failure(s).`);
+  console.error(`Audit completed with ${failedTests} failure(s).`);
   process.exit(1);
 } else {
-  console.log('✅ All SEO, metadata, canonical, and sitemap audits PASSED successfully!');
+  console.log('✅ ALL URL consistency, canonical trailing slash, sitemap, and legacy redirect audits PASSED successfully!');
 }

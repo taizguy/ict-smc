@@ -28,6 +28,13 @@ import { ScrollReveal } from './components/ScrollReveal';
 import type { LegalModalTab } from './components/LegalModal';
 import { CookieConsentBanner } from './components/CookieConsentBanner';
 import type { LegalTabType } from './components/LegalPageView';
+import { 
+  normalizeCanonicalUrl, 
+  normalizePath, 
+  getLessonCanonicalUrl, 
+  getLessonPath, 
+  resolveLegacyChapter 
+} from './utils/url';
 
 // Code-split heavy interactive sub-modules for fast initial paint & Core Web Vitals
 const WelcomeScreen = lazy(() => import('./components/WelcomeScreen').then(m => ({ default: m.WelcomeScreen })));
@@ -115,20 +122,19 @@ export const App: React.FC = () => {
       const legacyChapterMatch = path.match(/^\/chapter[-/](\d+)/i);
       const rawLegacyChapter = legacyChapterMatch ? legacyChapterMatch[1] : chapterParam;
       if (rawLegacyChapter) {
-        const cid = parseInt(rawLegacyChapter, 10);
-        const match = textbookChapters.find(c => c.id === cid);
-        if (match) {
-          setSelectedChapterId(match.id);
+        const resolved = resolveLegacyChapter(rawLegacyChapter, textbookChapters);
+        if (resolved) {
+          setSelectedChapterId(resolved.id);
           setActiveTab('chapter_room');
           return;
         } else {
-          setActiveTab('not_found');
-          setAttemptedInvalidPath(window.location.pathname);
+          // Graceful fallback to curriculum for unknown/invalid chapter identifiers per SEO specs
+          setActiveTab('curriculum');
           return;
         }
       }
 
-      // 2. Modern Canonical Lesson URLs: /learn/:slug (or numeric ID fallback)
+      // 2. Modern Canonical Lesson URLs: /learn/:slug/ (or numeric ID fallback)
       const learnMatch = path.match(/^\/learn\/([^/]+)/i);
       if (learnMatch) {
         const slugOrId = learnMatch[1];
@@ -261,29 +267,29 @@ export const App: React.FC = () => {
       const ch = textbookChapters.find(c => c.id === selectedChapterId) || textbookChapters[0];
       title = `${ch.title} — Chapter ${ch.id} | LearnSMC`;
       description = `Chapter ${ch.id} (${ch.part}): ${ch.quote || ch.summary.slice(0, 2).join(' ')}. Master institutional order flow, fair value gaps, and execution on LearnSMC.`;
-      cleanPath = `/learn/${ch.slug}`;
+      cleanPath = getLessonPath(ch.slug);
     } else if (activeTab === 'masood') {
       if (masoodLectureId) {
         const lec = allMasoodLectures.find(l => l.id === masoodLectureId);
         title = `${lec ? lec.title : 'Lecture'} — Trader Abdullah Masood | LearnSMC`;
         description = `${lec?.shortSummary || 'Trader Abdullah Masood masterclass lecture'}. Video timestamps, rules, and institutional checklist.`;
-        cleanPath = `/masood/lectures/${masoodLectureId}`;
+        cleanPath = `/masood/lectures/${masoodLectureId}/`;
       } else if (masoodSubTab === 'animations') {
         title = 'Animated SMC & ICT Explainers — Trader Abdullah Masood | LearnSMC';
         description = 'Interactive visual animations of PO3, Fair Value Gap formation, Liquidity Sweeps, and Order Blocks by Trader Abdullah Masood.';
-        cleanPath = '/masood/animations';
+        cleanPath = '/masood/animations/';
       } else if (masoodSubTab === 'bias_calc') {
         title = 'Daily Bias Calculator — Trader Abdullah Masood | LearnSMC';
         description = 'Systematic 4-step daily bias calculator for index futures and Forex based on HTF liquidity, discount/premium, and economic macros.';
-        cleanPath = '/masood/bias-calculator';
+        cleanPath = '/masood/bias-calculator/';
       } else if (masoodSubTab === 'rules') {
         title = 'Golden Trading Rules — Trader Abdullah Masood | LearnSMC';
         description = 'Non-negotiable institutional execution and risk management rules distilled from 52 Abdullah Masood masterclasses.';
-        cleanPath = '/masood/golden-rules';
+        cleanPath = '/masood/golden-rules/';
       } else {
         title = 'Trader Abdullah Masood Academy — 52 Masterclasses | LearnSMC';
         description = 'Study Trader Abdullah Masood complete 52-lecture institutional curriculum on ICT and Smart Money Concepts with video timestamps and notes.';
-        cleanPath = '/masood';
+        cleanPath = '/masood/';
       }
     } else if (activeTab === 'tools') {
       const toolMetadata: Record<TradingToolId, { title: string; desc: string; slug: string }> = {
@@ -342,35 +348,35 @@ export const App: React.FC = () => {
       const currentToolInfo = toolMetadata[initialTool] || toolMetadata['chartlab'];
       title = currentToolInfo.title;
       description = currentToolInfo.desc;
-      cleanPath = `/tools/${currentToolInfo.slug}`;
+      cleanPath = `/tools/${currentToolInfo.slug}/`;
     } else if (activeTab === 'curriculum') {
       title = 'ICT & SMC Academy — 57-Chapter Institutional Trading Curriculum | LearnSMC';
       description = 'Explore the complete 57-chapter institutional trading curriculum covering Market Structure, Liquidity Sweeps, Fair Value Gaps, PO3, and Algorithmic Execution.';
-      cleanPath = '/curriculum';
+      cleanPath = '/curriculum/';
     } else if (activeTab === 'disclaimer') {
       title = 'Financial Risk Disclosure & CFTC Rule 4.41 Compliance | LearnSMC';
       description = 'Statutory risk disclosures, CFTC Rule 4.41 compliance statement, and educational non-advice declaration for LearnSMC.';
-      cleanPath = '/disclaimer';
+      cleanPath = '/disclaimer/';
     } else if (activeTab === 'privacy') {
       title = 'Privacy Policy & Google AdSense Cookie Disclosures | LearnSMC';
       description = 'Official privacy policy, Google AdSense third-party cookie disclosures, opt-out links, and GDPR/CCPA data rights for learnsmc.xyz.';
-      cleanPath = '/privacy';
+      cleanPath = '/privacy/';
     } else if (activeTab === 'terms') {
       title = 'Terms of Service & Open Educational License | LearnSMC';
       description = 'Terms of service, educational usage licenses, limitation of liability, and acceptable use guidelines for learnsmc.xyz.';
-      cleanPath = '/terms';
+      cleanPath = '/terms/';
     } else if (activeTab === 'about') {
       title = 'About LearnSMC, Editorial Methodology & Authorship | LearnSMC';
       description = 'LearnSMC institutional mission, editorial peer review standards, author bios, and Trader Abdullah Masood curriculum preservation.';
-      cleanPath = '/about';
+      cleanPath = '/about/';
     } else if (activeTab === 'contact') {
       title = 'Contact LearnSMC & Editorial Support | LearnSMC';
       description = 'Direct contact channels, support email (support@learnsmc.xyz), and editorial inquiry form for LearnSMC.';
-      cleanPath = '/contact';
+      cleanPath = '/contact/';
     } else if (activeTab === 'adsense') {
       title = 'Google AdSense Verification & ads.txt Record | LearnSMC';
       description = 'Official Google AdSense publisher verification, ca-pub-6985025314302607 record, and ads.txt specification for learnsmc.xyz.';
-      cleanPath = '/adsense';
+      cleanPath = '/adsense/';
     } else if (activeTab === 'welcome') {
       title = 'LearnSMC | Free ICT and Smart Money Concepts Education';
       description = 'Master Inner Circle Trader (ICT) and Smart Money Concepts with a free 57-chapter institutional curriculum, 52 Abdullah Masood masterclasses, and interactive Chart Lab.';
@@ -392,14 +398,14 @@ export const App: React.FC = () => {
     const ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc) ogDesc.setAttribute('content', description);
 
-    const canonicalHref = cleanPath === '/' ? 'https://learnsmc.xyz/' : `https://learnsmc.xyz${cleanPath}`;
+    const canonicalHref = normalizeCanonicalUrl(cleanPath);
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) canonical.setAttribute('href', canonicalHref);
 
     const ogUrl = document.querySelector('meta[property="og:url"]');
     if (ogUrl) ogUrl.setAttribute('content', canonicalHref);
 
-    // Keep URL clean and synchronized with active state (migrate legacy ?chapter=1 to /learn/:slug)
+    // Keep URL clean and synchronized with active state (migrate legacy ?chapter=1 to /learn/:slug/)
     const currentPath = window.location.pathname;
     const currentSearch = window.location.search;
     const hasSearchToClean = currentSearch.includes('tab=') || currentSearch.includes('chapter=');
@@ -417,10 +423,10 @@ export const App: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (typeof window !== 'undefined') {
       let targetPath = '/';
-      if (tab === 'curriculum') targetPath = '/curriculum';
-      else if (tab === 'masood') targetPath = '/masood';
-      else if (tab === 'tools') targetPath = `/tools/${initialTool === 'ict_suite' ? 'ict-suite' : initialTool}`;
-      else if (['disclaimer', 'privacy', 'terms', 'about', 'contact', 'adsense'].includes(tab)) targetPath = `/${tab}`;
+      if (tab === 'curriculum') targetPath = '/curriculum/';
+      else if (tab === 'masood') targetPath = '/masood/';
+      else if (tab === 'tools') targetPath = `/tools/${initialTool === 'ict_suite' ? 'ict-suite' : initialTool}/`;
+      else if (['disclaimer', 'privacy', 'terms', 'about', 'contact', 'adsense'].includes(tab)) targetPath = `/${tab}/`;
       else if (tab === 'welcome') targetPath = '/';
       if (window.location.pathname !== targetPath || window.location.search) {
         window.history.pushState({ activeTab: tab }, '', targetPath);
@@ -435,7 +441,7 @@ export const App: React.FC = () => {
     if (typeof window !== 'undefined') {
       const ch = textbookChapters.find(c => c.id === chapterId) || textbookChapters[0];
       const targetSlug = slug || ch?.slug || String(chapterId);
-      const targetPath = `/learn/${targetSlug}`;
+      const targetPath = getLessonPath(targetSlug);
       if (window.location.pathname !== targetPath) {
         window.history.pushState({ activeTab: 'chapter_room', selectedChapterId: chapterId }, '', targetPath);
       }
@@ -713,7 +719,7 @@ export const App: React.FC = () => {
                 </p>
               </div>
               <a
-                href="/disclaimer"
+                href="/disclaimer/"
                 onClick={(e) => {
                   e.preventDefault();
                   navigateToTab('disclaimer');
@@ -729,7 +735,7 @@ export const App: React.FC = () => {
           <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/[0.06] text-xs font-mono text-[#8E95A5]">
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
               <a
-                href="/disclaimer"
+                href="/disclaimer/"
                 onClick={(e) => {
                   e.preventDefault();
                   navigateToTab('disclaimer');
@@ -741,7 +747,7 @@ export const App: React.FC = () => {
               </a>
 
               <a
-                href="/privacy"
+                href="/privacy/"
                 onClick={(e) => {
                   e.preventDefault();
                   navigateToTab('privacy');
@@ -753,7 +759,7 @@ export const App: React.FC = () => {
               </a>
 
               <a
-                href="/terms"
+                href="/terms/"
                 onClick={(e) => {
                   e.preventDefault();
                   navigateToTab('terms');
@@ -765,7 +771,7 @@ export const App: React.FC = () => {
               </a>
 
               <a
-                href="/about"
+                href="/about/"
                 onClick={(e) => {
                   e.preventDefault();
                   navigateToTab('about');
@@ -777,7 +783,7 @@ export const App: React.FC = () => {
               </a>
 
               <a
-                href="/contact"
+                href="/contact/"
                 onClick={(e) => {
                   e.preventDefault();
                   navigateToTab('contact');
@@ -789,7 +795,7 @@ export const App: React.FC = () => {
               </a>
 
               <a
-                href="/adsense"
+                href="/adsense/"
                 onClick={(e) => {
                   e.preventDefault();
                   navigateToTab('adsense');
@@ -804,7 +810,7 @@ export const App: React.FC = () => {
             <div className="text-[11px] text-[#656B78] flex items-center gap-2">
               <span>Domain:</span>
               <a 
-                href="https://learnsmc.xyz" 
+                href="https://learnsmc.xyz/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-[#9BA1AE] hover:text-[#55E6D1] underline"

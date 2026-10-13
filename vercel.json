@@ -1,4 +1,924 @@
 {
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "1"
+        }
+      ],
+      "destination": "/learn/what-actually-moves-price/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "2"
+        }
+      ],
+      "destination": "/learn/how-an-exchange-matches-orders/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "3"
+        }
+      ],
+      "destination": "/learn/the-order-book-in-depth/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "4"
+        }
+      ],
+      "destination": "/learn/liquidity-the-most-misunderstood-word-in-trading/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "5"
+        }
+      ],
+      "destination": "/learn/why-candles-form-and-how-displacement-arises/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "7"
+        }
+      ],
+      "destination": "/learn/what-is-a-swing-the-atom-of-structure/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "9"
+        }
+      ],
+      "destination": "/learn/break-of-structure-bos-trend-continuation/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "10"
+        }
+      ],
+      "destination": "/learn/change-of-character-choch-the-first-warning/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "11"
+        }
+      ],
+      "destination": "/learn/market-structure-shift-mss-verified-directional-shift/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "13"
+        }
+      ],
+      "destination": "/learn/fair-value-gaps-fvg-and-consequent-encroachment/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "14"
+        }
+      ],
+      "destination": "/learn/inverse-fair-value-gaps-ifvg-role-reversal-imbalances/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "15"
+        }
+      ],
+      "destination": "/learn/order-blocks-ob-and-mitigation/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "16"
+        }
+      ],
+      "destination": "/learn/breaker-blocks-trading-failed-order-blocks/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "18"
+        }
+      ],
+      "destination": "/learn/liquidity-engineering-and-liquidity-runs/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "19"
+        }
+      ],
+      "destination": "/learn/time-and-session-liquidity-the-global-clock/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "20"
+        }
+      ],
+      "destination": "/learn/the-weekly-profile-and-five-day-delivery-model/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "21"
+        }
+      ],
+      "destination": "/learn/daily-profiles-and-intraday-power-of-three-po3/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "22"
+        }
+      ],
+      "destination": "/learn/the-complete-ict-top-down-model-and-execution-blueprint/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "23"
+        }
+      ],
+      "destination": "/learn/trader-abdullah-masood-masterclass/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "24"
+        }
+      ],
+      "destination": "/learn/0930-am-opening-range-theory/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "25"
+        }
+      ],
+      "destination": "/learn/the-1st-presented-fvg-the-0931-rule/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "26"
+        }
+      ],
+      "destination": "/learn/smt-divergence-mechanics/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "27"
+        }
+      ],
+      "destination": "/learn/the-12-weekly-profiles/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "28"
+        }
+      ],
+      "destination": "/learn/ict-charter-model-1-intraday-scalping/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "29"
+        }
+      ],
+      "destination": "/learn/ict-charter-model-2-weekly-range-expansion/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "30"
+        }
+      ],
+      "destination": "/learn/ict-charter-model-3-swing-trading-cot/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "31"
+        }
+      ],
+      "destination": "/learn/ict-charter-model-4-position-trading/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "32"
+        }
+      ],
+      "destination": "/learn/ict-charter-model-5-session-day-trading/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "33"
+        }
+      ],
+      "destination": "/learn/ict-charter-models-6-and-7-universal-models/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "34"
+        }
+      ],
+      "destination": "/learn/ict-charter-models-8-and-9-precision-and-osok/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "35"
+        }
+      ],
+      "destination": "/learn/ict-charter-models-10-11-and-12/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "36"
+        }
+      ],
+      "destination": "/learn/ict-charter-model-13-2022-youtube-model/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "37"
+        }
+      ],
+      "destination": "/learn/core-content-month-1-elements-of-trade-setup/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "38"
+        }
+      ],
+      "destination": "/learn/core-content-month-2-growing-small-accounts/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "39"
+        }
+      ],
+      "destination": "/learn/core-content-month-3-institutional-sponsorship-and-traps/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "40"
+        }
+      ],
+      "destination": "/learn/core-content-month-4-advanced-pd-arrays-and-yields/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "41"
+        }
+      ],
+      "destination": "/learn/core-content-month-5-quarterly-shifts-and-position-trading/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "42"
+        }
+      ],
+      "destination": "/learn/core-content-month-6-swing-trading-mastery/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "43"
+        }
+      ],
+      "destination": "/learn/core-content-month-7-short-term-trading-and-market-maker-templates/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "44"
+        }
+      ],
+      "destination": "/learn/core-content-month-8-daily-range-and-intraday-profiles/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "45"
+        }
+      ],
+      "destination": "/learn/core-content-month-9-consolidations-and-bread-and-butter/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "46"
+        }
+      ],
+      "destination": "/learn/core-content-months-10-11-12-multi-asset-mega-trades-top-down/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "47"
+        }
+      ],
+      "destination": "/learn/2026-onboarding-from-vision-to-execution/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "48"
+        }
+      ],
+      "destination": "/learn/nq-es-premarket-session-rules-morning-engine/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "49"
+        }
+      ],
+      "destination": "/learn/market-alchemy-trading-all-time-highs-ath/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "50"
+        }
+      ],
+      "destination": "/learn/opening-gap-matrices-ndog-nwog-csod/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "51"
+        }
+      ],
+      "destination": "/learn/midday-afternoon-tape-reading-macros-final-hour/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "52"
+        }
+      ],
+      "destination": "/learn/event-volatility-hrlr-futures-vs-cfds/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "53"
+        }
+      ],
+      "destination": "/learn/the-ict-venom-model-five-stage-delivery/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "54"
+        }
+      ],
+      "destination": "/learn/candle-range-theory-crt-strategy/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "55"
+        }
+      ],
+      "destination": "/learn/reaper-ifvg-and-suspension-block-advancements/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "56"
+        }
+      ],
+      "destination": "/learn/rdrb-balanced-price-range-and-enigma-fvg/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter",
+          "value": "57"
+        }
+      ],
+      "destination": "/learn/sick-sister-strategy-and-double-purge-framework/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "chapter"
+        }
+      ],
+      "destination": "/curriculum/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/1",
+      "destination": "/learn/what-actually-moves-price/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/2",
+      "destination": "/learn/how-an-exchange-matches-orders/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/3",
+      "destination": "/learn/the-order-book-in-depth/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/4",
+      "destination": "/learn/liquidity-the-most-misunderstood-word-in-trading/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/5",
+      "destination": "/learn/why-candles-form-and-how-displacement-arises/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/7",
+      "destination": "/learn/what-is-a-swing-the-atom-of-structure/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/9",
+      "destination": "/learn/break-of-structure-bos-trend-continuation/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/10",
+      "destination": "/learn/change-of-character-choch-the-first-warning/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/11",
+      "destination": "/learn/market-structure-shift-mss-verified-directional-shift/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/13",
+      "destination": "/learn/fair-value-gaps-fvg-and-consequent-encroachment/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/14",
+      "destination": "/learn/inverse-fair-value-gaps-ifvg-role-reversal-imbalances/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/15",
+      "destination": "/learn/order-blocks-ob-and-mitigation/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/16",
+      "destination": "/learn/breaker-blocks-trading-failed-order-blocks/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/18",
+      "destination": "/learn/liquidity-engineering-and-liquidity-runs/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/19",
+      "destination": "/learn/time-and-session-liquidity-the-global-clock/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/20",
+      "destination": "/learn/the-weekly-profile-and-five-day-delivery-model/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/21",
+      "destination": "/learn/daily-profiles-and-intraday-power-of-three-po3/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/22",
+      "destination": "/learn/the-complete-ict-top-down-model-and-execution-blueprint/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/23",
+      "destination": "/learn/trader-abdullah-masood-masterclass/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/24",
+      "destination": "/learn/0930-am-opening-range-theory/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/25",
+      "destination": "/learn/the-1st-presented-fvg-the-0931-rule/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/26",
+      "destination": "/learn/smt-divergence-mechanics/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/27",
+      "destination": "/learn/the-12-weekly-profiles/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/28",
+      "destination": "/learn/ict-charter-model-1-intraday-scalping/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/29",
+      "destination": "/learn/ict-charter-model-2-weekly-range-expansion/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/30",
+      "destination": "/learn/ict-charter-model-3-swing-trading-cot/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/31",
+      "destination": "/learn/ict-charter-model-4-position-trading/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/32",
+      "destination": "/learn/ict-charter-model-5-session-day-trading/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/33",
+      "destination": "/learn/ict-charter-models-6-and-7-universal-models/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/34",
+      "destination": "/learn/ict-charter-models-8-and-9-precision-and-osok/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/35",
+      "destination": "/learn/ict-charter-models-10-11-and-12/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/36",
+      "destination": "/learn/ict-charter-model-13-2022-youtube-model/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/37",
+      "destination": "/learn/core-content-month-1-elements-of-trade-setup/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/38",
+      "destination": "/learn/core-content-month-2-growing-small-accounts/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/39",
+      "destination": "/learn/core-content-month-3-institutional-sponsorship-and-traps/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/40",
+      "destination": "/learn/core-content-month-4-advanced-pd-arrays-and-yields/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/41",
+      "destination": "/learn/core-content-month-5-quarterly-shifts-and-position-trading/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/42",
+      "destination": "/learn/core-content-month-6-swing-trading-mastery/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/43",
+      "destination": "/learn/core-content-month-7-short-term-trading-and-market-maker-templates/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/44",
+      "destination": "/learn/core-content-month-8-daily-range-and-intraday-profiles/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/45",
+      "destination": "/learn/core-content-month-9-consolidations-and-bread-and-butter/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/46",
+      "destination": "/learn/core-content-months-10-11-12-multi-asset-mega-trades-top-down/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/47",
+      "destination": "/learn/2026-onboarding-from-vision-to-execution/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/48",
+      "destination": "/learn/nq-es-premarket-session-rules-morning-engine/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/49",
+      "destination": "/learn/market-alchemy-trading-all-time-highs-ath/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/50",
+      "destination": "/learn/opening-gap-matrices-ndog-nwog-csod/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/51",
+      "destination": "/learn/midday-afternoon-tape-reading-macros-final-hour/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/52",
+      "destination": "/learn/event-volatility-hrlr-futures-vs-cfds/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/53",
+      "destination": "/learn/the-ict-venom-model-five-stage-delivery/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/54",
+      "destination": "/learn/candle-range-theory-crt-strategy/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/55",
+      "destination": "/learn/reaper-ifvg-and-suspension-block-advancements/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/56",
+      "destination": "/learn/rdrb-balanced-price-range-and-enigma-fvg/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/57",
+      "destination": "/learn/sick-sister-strategy-and-double-purge-framework/",
+      "permanent": true
+    },
+    {
+      "source": "/chapter/:path*",
+      "destination": "/curriculum/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
@@ -29,6 +949,19 @@
         {
           "key": "Content-Type",
           "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
         },
         {
           "key": "Cache-Control",

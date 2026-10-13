@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { textbookChapters } from '../data/chaptersData';
+import { getLessonPath } from '../utils/url';
 import { 
   Search, 
   ArrowRight, 
@@ -206,7 +207,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
           return (
             <a
               key={ch.id}
-              href={`/learn/${ch.slug}`}
+              href={getLessonPath(ch.slug)}
               onClick={(e) => {
                 if (!e.ctrlKey && !e.metaKey) {
                   e.preventDefault();

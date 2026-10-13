@@ -3,9 +3,87 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
+function legacyRedirectsPlugin() {
+  return {
+    name: 'learnsmc-legacy-redirects',
+    configureServer(server: any) {
+      server.middlewares.use(async (req: any, res: any, next: any) => {
+        if (!req.url) return next();
+        const urlObj = new URL(req.url, 'http://localhost:3000');
+        const pathname = urlObj.pathname;
+        const chapterParam = urlObj.searchParams.get('chapter');
+
+        if (chapterParam) {
+          const { textbookChapters } = await import('./src/data/chaptersData.ts');
+          const matched = textbookChapters.find((c: any) => String(c.id) === chapterParam || c.slug === chapterParam);
+          const target = matched ? `/learn/${matched.slug}/` : '/curriculum/';
+          res.writeHead(301, { Location: target });
+          res.end();
+          return;
+        }
+
+        const chapterMatch = pathname.match(/^\/chapter[-/](\d+)/i);
+        if (chapterMatch) {
+          const cid = parseInt(chapterMatch[1], 10);
+          const { textbookChapters } = await import('./src/data/chaptersData.ts');
+          const matched = textbookChapters.find((c: any) => c.id === cid);
+          const target = matched ? `/learn/${matched.slug}/` : '/curriculum/';
+          res.writeHead(301, { Location: target });
+          res.end();
+          return;
+        }
+
+        if (pathname === '/chapter' || pathname === '/chapter/') {
+          res.writeHead(301, { Location: '/curriculum/' });
+          res.end();
+          return;
+        }
+
+        next();
+      });
+    },
+    configurePreviewServer(server: any) {
+      server.middlewares.use(async (req: any, res: any, next: any) => {
+        if (!req.url) return next();
+        const urlObj = new URL(req.url, 'http://localhost:3000');
+        const pathname = urlObj.pathname;
+        const chapterParam = urlObj.searchParams.get('chapter');
+
+        if (chapterParam) {
+          const { textbookChapters } = await import('./src/data/chaptersData.ts');
+          const matched = textbookChapters.find((c: any) => String(c.id) === chapterParam || c.slug === chapterParam);
+          const target = matched ? `/learn/${matched.slug}/` : '/curriculum/';
+          res.writeHead(301, { Location: target });
+          res.end();
+          return;
+        }
+
+        const chapterMatch = pathname.match(/^\/chapter[-/](\d+)/i);
+        if (chapterMatch) {
+          const cid = parseInt(chapterMatch[1], 10);
+          const { textbookChapters } = await import('./src/data/chaptersData.ts');
+          const matched = textbookChapters.find((c: any) => c.id === cid);
+          const target = matched ? `/learn/${matched.slug}/` : '/curriculum/';
+          res.writeHead(301, { Location: target });
+          res.end();
+          return;
+        }
+
+        if (pathname === '/chapter' || pathname === '/chapter/') {
+          res.writeHead(301, { Location: '/curriculum/' });
+          res.end();
+          return;
+        }
+
+        next();
+      });
+    }
+  };
+}
+
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [react(), tailwindcss(), legacyRedirectsPlugin()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

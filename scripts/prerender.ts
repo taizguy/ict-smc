@@ -1869,7 +1869,21 @@ redirectsLines.push('');
 for (const [from, to] of Object.entries(canonicalAliases)) {
   redirectsLines.push(`${from} ${to} 301`, `${from.slice(0, -1)} ${to} 301`);
 }
-const redirectsContent = [...new Set(redirectsLines)].join('\n');
+// Cloudflare deduplicates by source path, not by the full formatted line.
+const redirectTargets = new Map<string, string>();
+const uniqueRedirectLines = redirectsLines.filter(line => {
+  const parts = line.trim().split(/\s+/);
+  if (!parts[0]?.startsWith('/') || parts.length !== 3) return true;
+  const [source, target, status] = parts;
+  const destination = `${target} ${status}`;
+  if (redirectTargets.has(source)) {
+    if (redirectTargets.get(source) !== destination) throw new Error(`Conflicting redirect for ${source}`);
+    return false;
+  }
+  redirectTargets.set(source, destination);
+  return true;
+});
+const redirectsContent = uniqueRedirectLines.join('\n');
 fs.writeFileSync(path.resolve(distDir, '_redirects'), redirectsContent, 'utf-8');
 
 console.log(`✓ Generated _redirects with ${textbookChapters.length * 2 + 17} legacy 301 rules`);

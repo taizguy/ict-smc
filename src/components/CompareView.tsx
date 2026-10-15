@@ -1,14 +1,65 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { conceptComparisons } from '../data/comparisonsData';
-import { AlertTriangle, Scale } from 'lucide-react';
+import { AlertTriangle, Scale, GitCompare, Layers, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { BauhausNavScroller } from './BauhausNavScroller';
+import { SEO } from './SEO';
+import { ContextualInternalLinker } from './ContextualInternalLinker';
+import { getComparisonSlug, getComparisonUrl } from '../utils/workbenchToolRoutes';
 
-export const CompareView: React.FC = () => {
-  const [selectedComparisonId, setSelectedComparisonId] = useState<string>(conceptComparisons[0].id);
+export interface CompareViewProps {
+  initialComparisonSlug?: string;
+  onNavigateUrl?: (url: string) => void;
+}
+
+export const CompareView: React.FC<CompareViewProps> = ({
+  initialComparisonSlug,
+  onNavigateUrl
+}) => {
+  const resolvedComparison = initialComparisonSlug
+    ? conceptComparisons.find(c => getComparisonSlug(c.id) === initialComparisonSlug || c.id === initialComparisonSlug)
+    : conceptComparisons[0];
+
+  const [selectedComparisonId, setSelectedComparisonId] = useState<string>(
+    resolvedComparison ? resolvedComparison.id : conceptComparisons[0].id
+  );
+
+  useEffect(() => {
+    if (initialComparisonSlug) {
+      const match = conceptComparisons.find(c => getComparisonSlug(c.id) === initialComparisonSlug || c.id === initialComparisonSlug);
+      if (match && match.id !== selectedComparisonId) {
+        setSelectedComparisonId(match.id);
+      }
+    }
+  }, [initialComparisonSlug]);
+
+  const handleSelectComparison = (id: string) => {
+    setSelectedComparisonId(id);
+    const targetUrl = getComparisonUrl(id);
+    if (onNavigateUrl) {
+      onNavigateUrl(targetUrl);
+    } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
+      window.history.pushState({ tool: 'compare', comparisonId: id }, '', targetUrl);
+    }
+  };
+
   const comparison = conceptComparisons.find((c) => c.id === selectedComparisonId) || conceptComparisons[0];
+  const comparisonSlug = getComparisonSlug(comparison.id);
+  const canonicalPath = `/tools/compare/${comparisonSlug}/`;
 
   return (
     <div className="space-y-6 text-[#F5F7FA]">
+      <SEO
+        title={`${comparison.title} — Compare Matrix | LearnSMC`}
+        description={`Key Difference: ${comparison.keyDifference} Institutional side-by-side comparison of ${comparison.conceptA.name} and ${comparison.conceptB.name}.`}
+        path={canonicalPath}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Workbench', path: '/tools/' },
+          { name: 'Compare Matrix', path: '/tools/compare/' },
+          { name: comparison.title, path: canonicalPath }
+        ]}
+      />
+
       {/* Top Header */}
       <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -37,7 +88,7 @@ export const CompareView: React.FC = () => {
                 <button
                   key={c.id}
                   type="button"
-                  onClick={() => setSelectedComparisonId(c.id)}
+                  onClick={() => handleSelectComparison(c.id)}
                   className={`px-3.5 py-1.5 text-xs font-mono uppercase whitespace-nowrap transition-all rounded-lg border cursor-pointer shrink-0 ${
                     isSelected
                       ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20'
@@ -154,6 +205,92 @@ export const CompareView: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* SEO Engine & Structured Data */}
+      <SEO
+        title="Concept Comparison Matrix — Side-by-Side Analysis | LearnSMC"
+        description="Direct side-by-side contrast between overlapping concepts: Order Blocks vs Breaker Blocks, MSS vs BOS, Liquidity Sweeps vs Real Structural Breaks."
+        canonicalPath="/tools/compare/"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "LearnSMC Concept Comparison Matrix",
+          "url": "https://learnsmc.xyz/tools/compare/",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "All",
+          "description": "Comparative matrix contrasting overlapping and commonly confused Smart Money Concepts.",
+          "educationalUse": "Technical definition disambiguation and execution rules",
+          "provider": {
+            "@type": "Organization",
+            "name": "LearnSMC",
+            "url": "https://learnsmc.xyz/"
+          }
+        }}
+      />
+
+      {/* Static Semantic HTML Documentation Block (Indexable by Googlebot & Search Engines) */}
+      <article className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-8 space-y-6 text-[#F5F7FA]">
+        <header className="border-b border-white/[0.07] pb-5">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="w-2 h-2 rounded-full bg-[#5865FF]" />
+            <span className="text-[10px] font-mono uppercase tracking-[0.16em] text-[#5865FF]">
+              DOCUMENTATION // COMPARISON CODEX
+            </span>
+          </div>
+          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F5F7FA]">
+            Institutional Concept Contrast Matrix &amp; Disambiguation Rules
+          </h2>
+          <p className="text-sm text-[#9BA1AE] mt-1">
+            Definitive technical guide resolving the most common conceptual conflations in Inner Circle Trader and Smart Money trading.
+          </p>
+        </header>
+
+        {/* Section 1: Order Block vs Breaker Block */}
+        <section className="space-y-3">
+          <h3 className="text-base sm:text-lg font-semibold text-[#55E6D1] flex items-center gap-2">
+            <GitCompare className="w-4 h-4 text-[#55E6D1]" />
+            1. Order Block (OB) vs. Breaker Block (BB)
+          </h3>
+          <p className="text-xs sm:text-sm text-[#C5CBD8] leading-relaxed">
+            The fundamental differentiator between an Order Block and a Breaker Block is whether prior liquidity was swept before the displacement occurred. 
+            An <strong>Order Block</strong> is the last opposing candle before an impulsive displacement that creates a structural continuation. 
+            A <strong>Breaker Block</strong>, by contrast, is an invalidated Order Block that successfully swept opposing liquidity (creating a Turtle Soup or higher high / lower low) 
+            prior to being broken violently by displacement. When retested, the Breaker functions as high-confluence support or resistance because trapped retail traders are forced to exit at breakeven.
+          </p>
+        </section>
+
+        {/* Section 2: MSS vs BOS */}
+        <section className="space-y-3 pt-3 border-t border-white/[0.06]">
+          <h3 className="text-base sm:text-lg font-semibold text-[#5865FF] flex items-center gap-2">
+            <Layers className="w-4 h-4 text-[#5865FF]" />
+            2. Market Structure Shift (MSS) vs. Break of Structure (BOS)
+          </h3>
+          <p className="text-xs sm:text-sm text-[#C5CBD8] leading-relaxed">
+            A <strong>Break of Structure (BOS)</strong> occurs in the direction of the existing prevailing trend, indicating institutional continuation. 
+            A <strong>Market Structure Shift (MSS)</strong> occurs when price sweeps liquidity and subsequently closes beyond the swing low (in an uptrend) 
+            or swing high (in a downtrend) with an institutional displacement candle. Crucially, a mere wick piercing a swing point is considered a liquidity raid, 
+            whereas an MSS strictly requires a candle body close through the structural pivot.
+          </p>
+        </section>
+
+        {/* Section 3: Liquidity Sweeps vs Real Structural Breaks */}
+        <section className="space-y-3 pt-3 border-t border-white/[0.06]">
+          <h3 className="text-base sm:text-lg font-semibold text-[#FFB020] flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-[#FFB020]" />
+            3. Liquidity Sweeps vs. Genuine Structural Expansion
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-[#9BA1AE]">
+            <div className="bg-[#151923] p-4 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Liquidity Sweep Signatures</strong>
+              Fast wick penetration beyond old highs or lows followed by swift rejection. Candle bodies close back inside the prior range, signaling false breakout traps.
+            </div>
+            <div className="bg-[#151923] p-4 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Genuine Structural Break Signatures</strong>
+              Substantial candle body closes well beyond the key level. Multiple consecutive candles expand away, leaving fair value gaps and no immediate retracement back inside the range.
+            </div>
+          </div>
+        </section>
+      </article>
     </div>
   );
 };

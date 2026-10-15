@@ -2,6 +2,12 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { textbookChapters } from '../src/data/chaptersData.ts';
+import { ictConcepts } from '../src/data/conceptsData.ts';
+import { 
+  GLOSSARY_CATEGORIES, 
+  CONCEPT_SLUG_MAP, 
+  DEEP_SUB_CONCEPTS 
+} from '../src/utils/glossaryRoutes.ts';
 import { 
   BASE_URL, 
   normalizeCanonicalUrl, 
@@ -136,6 +142,34 @@ for (const ch of textbookChapters) {
 }
 assert(missingSitemapChapters === 0, `All ${textbookChapters.length} chapters present in sitemap with canonical trailing slashes`);
 
+// Verify all glossary categories, concepts, and deep sub-concepts are present in sitemap.xml
+let missingGlossaryEntries = 0;
+for (const cat of GLOSSARY_CATEGORIES) {
+  const expectedLoc = `<loc>https://learnsmc.xyz/tools/glossary/${cat.slug}/</loc>`;
+  if (!sitemapContent.includes(expectedLoc)) {
+    missingGlossaryEntries++;
+    console.error(`Missing category from sitemap.xml: ${expectedLoc}`);
+  }
+}
+for (const concept of ictConcepts) {
+  const mapping = CONCEPT_SLUG_MAP[concept.id];
+  const catSlug = mapping?.categorySlug || 'foundations';
+  const cSlug = mapping?.slug || concept.id.replace(/_/g, '-');
+  const expectedLoc = `<loc>https://learnsmc.xyz/tools/glossary/${catSlug}/${cSlug}/</loc>`;
+  if (!sitemapContent.includes(expectedLoc)) {
+    missingGlossaryEntries++;
+    console.error(`Missing concept from sitemap.xml: ${expectedLoc}`);
+  }
+}
+for (const sub of DEEP_SUB_CONCEPTS) {
+  const expectedLoc = `<loc>https://learnsmc.xyz/tools/glossary/${sub.categorySlug}/${sub.slug}/</loc>`;
+  if (!sitemapContent.includes(expectedLoc)) {
+    missingGlossaryEntries++;
+    console.error(`Missing sub-concept from sitemap.xml: ${expectedLoc}`);
+  }
+}
+assert(missingGlossaryEntries === 0, `All glossary categories, concepts, and deep sub-concepts present in sitemap.xml`);
+
 // Verify sitemap does NOT contain non-canonical or query URLs in <loc> entries
 const sitemapLocs = (sitemapContent.match(/<loc>[\s\S]*?<\/loc>/g) || []);
 const hasQueryInLoc = sitemapLocs.some(loc => loc.includes('?'));
@@ -223,6 +257,29 @@ auditHtmlFile('terms/index.html', 'https://learnsmc.xyz/terms/');
 auditHtmlFile('contact/index.html', 'https://learnsmc.xyz/contact/');
 auditHtmlFile('adsense/index.html', 'https://learnsmc.xyz/adsense/');
 
+// Audit Glossary & Workbench Hubs
+auditHtmlFile('tools/glossary/index.html', 'https://learnsmc.xyz/tools/glossary/');
+auditHtmlFile('tools/concepts/index.html', 'https://learnsmc.xyz/tools/glossary/', true);
+auditHtmlFile('workbench/index.html', 'https://learnsmc.xyz/tools/', true);
+
+// Audit all 7 glossary categories
+for (const cat of GLOSSARY_CATEGORIES) {
+  auditHtmlFile(`tools/glossary/${cat.slug}/index.html`, `https://learnsmc.xyz/tools/glossary/${cat.slug}/`);
+}
+
+// Audit all 41 concepts
+for (const concept of ictConcepts) {
+  const mapping = CONCEPT_SLUG_MAP[concept.id];
+  const catSlug = mapping?.categorySlug || 'foundations';
+  const cSlug = mapping?.slug || concept.id.replace(/_/g, '-');
+  auditHtmlFile(`tools/glossary/${catSlug}/${cSlug}/index.html`, `https://learnsmc.xyz/tools/glossary/${catSlug}/${cSlug}/`);
+}
+
+// Audit all deep sub-concepts
+for (const sub of DEEP_SUB_CONCEPTS) {
+  auditHtmlFile(`tools/glossary/${sub.categorySlug}/${sub.slug}/index.html`, `https://learnsmc.xyz/tools/glossary/${sub.categorySlug}/${sub.slug}/`);
+}
+
 // Audit All 53 Chapter Pages at /learn/:slug/
 for (const ch of textbookChapters) {
   auditHtmlFile(`learn/${ch.slug}/index.html`, `https://learnsmc.xyz/learn/${ch.slug}/`);
@@ -259,6 +316,11 @@ for (const ch of textbookChapters) {
 }
 assert(redirectsRuleErrors === 0, `All ${textbookChapters.length} legacy chapters have 301 rules in _redirects`);
 assert(distRedirectsContent.includes('/chapter/*        /curriculum/          301'), '_redirects has /chapter/* fallback to /curriculum/');
+assert(distRedirectsContent.includes('/tools/concepts     /tools/glossary/      301'), '_redirects has /tools/concepts 301 rule');
+assert(distRedirectsContent.includes('/workbench          /tools/               301'), '_redirects has /workbench 301 rule');
+assert(distRedirectsContent.includes('/tools/graph        /tools/knowledge-graph/  301'), '_redirects has /tools/graph 301 rule');
+assert(distRedirectsContent.includes('/tools/dashboard    /tools/profile/       301'), '_redirects has /tools/dashboard 301 rule');
+assert(distRedirectsContent.includes('/tools/ict_suite    /tools/delivery-suite/ 301'), '_redirects has /tools/ict_suite 301 rule');
 assert(!distRedirectsContent.includes('/index.html'), '_redirects does NOT contain /index.html rewrite (prevents Cloudflare error 100324)');
 
 // Verify 200.html exists for Cloudflare Pages native SPA fallback

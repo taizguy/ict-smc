@@ -25,9 +25,47 @@ import {
   DollarSign,
   Percent
 } from 'lucide-react';
+import { SEO } from './SEO';
+import { ContextualInternalLinker } from './ContextualInternalLinker';
+import { DELIVERY_SUITE_MODULES, DeliverySuiteModuleMeta } from '../utils/workbenchToolRoutes';
 
-export const InstitutionalToolsSuite: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'clock' | 'ote' | 'asian_planner' | 'learning_path' | 'glossary'>('clock');
+export interface InstitutionalToolsSuiteProps {
+  initialModuleSlug?: string;
+  onNavigateUrl?: (url: string) => void;
+}
+
+export const InstitutionalToolsSuite: React.FC<InstitutionalToolsSuiteProps> = ({
+  initialModuleSlug = 'macro-clock',
+  onNavigateUrl
+}) => {
+  const resolvedTab = initialModuleSlug === 'ote-calculator' ? 'ote' :
+    initialModuleSlug === 'judas-planner' ? 'asian_planner' :
+    initialModuleSlug === 'learning-path' ? 'learning_path' : 'clock';
+
+  const [activeTab, setActiveTab] = useState<'clock' | 'ote' | 'asian_planner' | 'learning_path' | 'glossary'>(resolvedTab);
+
+  useEffect(() => {
+    if (initialModuleSlug) {
+      if (initialModuleSlug === 'ote-calculator') setActiveTab('ote');
+      else if (initialModuleSlug === 'judas-planner') setActiveTab('asian_planner');
+      else if (initialModuleSlug === 'learning-path') setActiveTab('learning_path');
+      else setActiveTab('clock');
+    }
+  }, [initialModuleSlug]);
+
+  const handleSelectTab = (tab: 'clock' | 'ote' | 'asian_planner' | 'learning_path' | 'glossary') => {
+    setActiveTab(tab);
+    const modMeta = DELIVERY_SUITE_MODULES.find(m => m.id === tab);
+    const targetUrl = tab === 'clock' 
+      ? '/tools/delivery-suite/macro-clock/' 
+      : `/tools/delivery-suite/${modMeta?.slug || tab}/`;
+
+    if (onNavigateUrl) {
+      onNavigateUrl(targetUrl);
+    } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
+      window.history.pushState({ tool: 'delivery_suite', tab }, '', targetUrl);
+    }
+  };
 
   // --- 1. KILL ZONE & MACRO TIMES ENGINE ---
   const [currentEstTime, setCurrentEstTime] = useState<Date>(new Date());
@@ -454,9 +492,23 @@ export const InstitutionalToolsSuite: React.FC = () => {
     return matchesSearch && matchesCat;
   });
 
+  const activeModuleMeta = DELIVERY_SUITE_MODULES.find(m => m.id === activeTab);
+  const canonicalPath = `/tools/delivery-suite/${activeModuleMeta?.slug || 'macro-clock'}/`;
+
   return (
     <div className="space-y-8">
-      
+      <SEO
+        title={activeModuleMeta ? `${activeModuleMeta.name} — ICT Delivery Suite | LearnSMC` : 'ICT Institutional Delivery Suite & Timing Engine | LearnSMC'}
+        description={activeModuleMeta ? `${activeModuleMeta.description}` : 'Precision ICT tools: OTE calculator, Asian Judas swing planner, 8 macro windows countdown, and 5-phase mentorship roadmap.'}
+        path={canonicalPath}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Workbench', path: '/tools/' },
+          { name: 'Delivery Suite', path: '/tools/delivery-suite/' },
+          ...(activeModuleMeta ? [{ name: activeModuleMeta.name, path: canonicalPath }] : [])
+        ]}
+      />
+
       {/* Header Banner */}
       <div className="bg-[#11141B] border border-white/[0.08] p-6 rounded-2xl text-[#F5F7FA]">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
@@ -489,9 +541,9 @@ export const InstitutionalToolsSuite: React.FC = () => {
         </div>
 
         {/* Tab Navigation */}
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 mt-6 border-t-2 border-white/[0.08] pt-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-6 border-t-2 border-white/[0.08] pt-4">
           <button
-            onClick={() => setActiveTab('clock')}
+            onClick={() => handleSelectTab('clock')}
             className={`px-3 py-2.5 text-xs font-mono font-black uppercase tracking-wider border border-white/[0.08] flex items-center justify-center gap-2 transition-all ${
               activeTab === 'clock' ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20 shadow-sm' : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06] hover:bg-white/[0.04]'
             }`}
@@ -501,7 +553,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
           </button>
 
           <button
-            onClick={() => setActiveTab('ote')}
+            onClick={() => handleSelectTab('ote')}
             className={`px-3 py-2.5 text-xs font-mono font-black uppercase tracking-wider border border-white/[0.08] flex items-center justify-center gap-2 transition-all ${
               activeTab === 'ote' ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20 shadow-sm' : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06] hover:bg-white/[0.04]'
             }`}
@@ -511,7 +563,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
           </button>
 
           <button
-            onClick={() => setActiveTab('asian_planner')}
+            onClick={() => handleSelectTab('asian_planner')}
             className={`px-3 py-2.5 text-xs font-mono font-black uppercase tracking-wider border border-white/[0.08] flex items-center justify-center gap-2 transition-all ${
               activeTab === 'asian_planner' ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20 shadow-sm' : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06] hover:bg-white/[0.04]'
             }`}
@@ -521,7 +573,7 @@ export const InstitutionalToolsSuite: React.FC = () => {
           </button>
 
           <button
-            onClick={() => setActiveTab('learning_path')}
+            onClick={() => handleSelectTab('learning_path')}
             className={`px-3 py-2.5 text-xs font-mono font-black uppercase tracking-wider border border-white/[0.08] flex items-center justify-center gap-2 transition-all ${
               activeTab === 'learning_path' ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20 shadow-sm' : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06] hover:bg-white/[0.04]'
             }`}

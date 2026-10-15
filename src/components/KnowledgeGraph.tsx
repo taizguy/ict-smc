@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   GitFork, 
   BookOpen, 
@@ -8,12 +8,21 @@ import {
   HelpCircle, 
   ArrowRight,
   Layers,
-  ArrowLeft
+  ArrowLeft,
+  Target,
+  ShieldCheck
 } from 'lucide-react';
 import { BauhausNavScroller } from './BauhausNavScroller';
+import { SEO } from './SEO';
+import { ContextualInternalLinker } from './ContextualInternalLinker';
+import { KNOWLEDGE_GRAPH_STEPS } from '../utils/workbenchToolRoutes';
 
 export interface KnowledgeGraphProps {
+  initialViewMode?: 'pipeline' | 'network';
+  initialStep?: number;
+  initialNodeId?: string;
   onSelectConcept: (conceptId: string) => void;
+  onNavigateUrl?: (url: string) => void;
 }
 
 interface PipelineStep {
@@ -41,11 +50,67 @@ interface Node {
   prereqs: string[];
 }
 
-export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onSelectConcept }) => {
-  const [viewMode, setViewMode] = useState<'pipeline' | 'network'>('pipeline');
-  const [selectedPipelineStep, setSelectedPipelineStep] = useState<number>(3);
-  const [selectedNode, setSelectedNode] = useState<string>('fair_value_gap');
+export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ 
+  initialViewMode = 'pipeline',
+  initialStep = 1,
+  initialNodeId = 'fair_value_gap',
+  onSelectConcept,
+  onNavigateUrl 
+}) => {
+  const [viewMode, setViewMode] = useState<'pipeline' | 'network'>(initialViewMode);
+  const [selectedPipelineStep, setSelectedPipelineStep] = useState<number>(initialStep);
+  const [selectedNode, setSelectedNode] = useState<string>(initialNodeId);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (initialViewMode && initialViewMode !== viewMode) {
+      setViewMode(initialViewMode);
+    }
+  }, [initialViewMode]);
+
+  useEffect(() => {
+    if (initialStep && initialStep !== selectedPipelineStep) {
+      setSelectedPipelineStep(initialStep);
+    }
+  }, [initialStep]);
+
+  useEffect(() => {
+    if (initialNodeId && initialNodeId !== selectedNode) {
+      setSelectedNode(initialNodeId);
+    }
+  }, [initialNodeId]);
+
+  const handleSelectViewMode = (mode: 'pipeline' | 'network') => {
+    setViewMode(mode);
+    const targetUrl = mode === 'pipeline' 
+      ? `/tools/knowledge-graph/pipeline/step-${selectedPipelineStep}/` 
+      : `/tools/knowledge-graph/network/${selectedNode}/`;
+    if (onNavigateUrl) {
+      onNavigateUrl(targetUrl);
+    } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
+      window.history.pushState({ tool: 'graph', mode }, '', targetUrl);
+    }
+  };
+
+  const handleSelectStep = (stepNumber: number) => {
+    setSelectedPipelineStep(stepNumber);
+    const targetUrl = `/tools/knowledge-graph/pipeline/step-${stepNumber}/`;
+    if (onNavigateUrl) {
+      onNavigateUrl(targetUrl);
+    } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
+      window.history.pushState({ tool: 'graph', mode: 'pipeline', step: stepNumber }, '', targetUrl);
+    }
+  };
+
+  const handleSelectNetworkNode = (nodeId: string) => {
+    setSelectedNode(nodeId);
+    const targetUrl = `/tools/knowledge-graph/network/${nodeId}/`;
+    if (onNavigateUrl) {
+      onNavigateUrl(targetUrl);
+    } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
+      window.history.pushState({ tool: 'graph', mode: 'network', nodeId }, '', targetUrl);
+    }
+  };
 
   // The Canonical 10-Step Institutional Execution Pipeline
   const pipelineSteps: PipelineStep[] = [
@@ -209,8 +274,25 @@ export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onSelectConcept 
 
   const activeNodeObj = nodes.find((n) => n.id === selectedNode) || nodes[0];
 
+  const activeStepMeta = KNOWLEDGE_GRAPH_STEPS.find(s => s.step === selectedPipelineStep);
+  const canonicalPath = viewMode === 'pipeline'
+    ? `/tools/knowledge-graph/pipeline/step-${selectedPipelineStep}/`
+    : `/tools/knowledge-graph/network/${selectedNode}/`;
+
   return (
     <div className="space-y-6 text-[#F5F7FA]">
+      <SEO
+        title={viewMode === 'pipeline' && activeStepMeta ? `${activeStepMeta.title} — Knowledge Graph | LearnSMC` : 'ICT Institutional Knowledge Graph & Causal Pipeline | LearnSMC'}
+        description={viewMode === 'pipeline' && activeStepMeta ? `${activeStepMeta.shortDesc} Non-random causal pipeline connecting liquidity to execution.` : 'Explore the 10-step institutional pipeline and dependency graph of smart money concepts.'}
+        path={canonicalPath}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Workbench', path: '/tools/' },
+          { name: 'Knowledge Graph', path: '/tools/knowledge-graph/' },
+          ...(viewMode === 'pipeline' && activeStepMeta ? [{ name: activeStepMeta.title, path: canonicalPath }] : [])
+        ]}
+      />
+
       {/* Top Banner */}
       <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-4">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -232,7 +314,7 @@ export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onSelectConcept 
           <div className="flex items-center gap-1.5 p-1 bg-white/[0.03] border border-white/[0.07] rounded-xl self-start md:self-auto">
             <button
               type="button"
-              onClick={() => setViewMode('pipeline')}
+              onClick={() => handleSelectViewMode('pipeline')}
               className={`px-3.5 py-1.5 text-xs font-mono uppercase tracking-wider rounded-lg transition-all cursor-pointer ${
                 viewMode === 'pipeline'
                   ? 'bg-white/[0.12] text-[#F5F7FA] border border-white/20'
@@ -243,7 +325,7 @@ export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onSelectConcept 
             </button>
             <button
               type="button"
-              onClick={() => setViewMode('network')}
+              onClick={() => handleSelectViewMode('network')}
               className={`px-3.5 py-1.5 text-xs font-mono uppercase tracking-wider rounded-lg transition-all cursor-pointer ${
                 viewMode === 'network'
                   ? 'bg-white/[0.12] text-[#F5F7FA] border border-white/20'
@@ -271,7 +353,7 @@ export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onSelectConcept 
                   <button
                     key={step.id}
                     type="button"
-                    onClick={() => setSelectedPipelineStep(step.stepNumber)}
+                    onClick={() => handleSelectStep(step.stepNumber)}
                     className={`p-3 text-left transition-all font-mono rounded-xl border cursor-pointer min-w-[170px] shrink-0 ${
                       isSelected
                         ? 'bg-white/[0.10] border-white/25 text-[#F5F7FA] shadow-sm'
@@ -499,6 +581,111 @@ export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({ onSelectConcept 
           </div>
         </div>
       )}
+
+      {/* SEO Engine & Structured Data */}
+      <SEO
+        title="Interactive Knowledge Graph — 10-Step Pipeline | LearnSMC"
+        description="Visual node map connecting foundational market mechanics to advanced execution models across a 10-step institutional pipeline."
+        canonicalPath="/tools/graph/"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "LearnSMC Interactive Knowledge Graph",
+          "url": "https://learnsmc.xyz/tools/graph/",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "All",
+          "description": "Visual dependency tree and concept network mapping Smart Money Concepts.",
+          "educationalUse": "Concept dependency mapping and institutional syllabus exploration",
+          "provider": {
+            "@type": "Organization",
+            "name": "LearnSMC",
+            "url": "https://learnsmc.xyz/"
+          }
+        }}
+      />
+
+      {/* Static Semantic HTML Documentation Block (Indexable by Googlebot & Search Engines) */}
+      <article className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-8 space-y-6 text-[#F5F7FA]">
+        <header className="border-b border-white/[0.07] pb-5">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="w-2 h-2 rounded-full bg-[#55E6D1]" />
+            <span className="text-[10px] font-mono uppercase tracking-[0.16em] text-[#55E6D1]">
+              DOCUMENTATION // CONCEPT DEPENDENCY GRAPH
+            </span>
+          </div>
+          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F5F7FA]">
+            The 10-Step Institutional Execution Pipeline &amp; Conceptual Tree
+          </h2>
+          <p className="text-sm text-[#9BA1AE] mt-1">
+            Hierarchical mapping of trading mechanics: from electronic order book foundations up to high-confluence algorithmic execution.
+          </p>
+        </header>
+
+        {/* Section 1: The 10-Step Pipeline Breakdown */}
+        <section className="space-y-3">
+          <h3 className="text-base sm:text-lg font-semibold text-[#55E6D1] flex items-center gap-2">
+            <GitFork className="w-4 h-4 text-[#55E6D1]" />
+            1. The 10 Sequential Conceptual Milestones
+          </h3>
+          <p className="text-xs sm:text-sm text-[#C5CBD8] leading-relaxed">
+            Smart Money Concepts cannot be practiced as isolated indicators. Every trading setup exists within a causal chain of prerequisites:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-[#9BA1AE]">
+            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Step 1: Auction Mechanics (CLOB)</strong>
+              Understanding passive limit orders vs. aggressive market orders in continuous double auctions.
+            </div>
+            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Step 2: HTF Market Structure</strong>
+              Establishing directional order flow on daily and 4-hour charts (Higher Highs vs. Lower Lows).
+            </div>
+            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Step 3: Liquidity Pool Identification</strong>
+              Mapping Buy-Side Liquidity (BSL) and Sell-Side Liquidity (SSL) resting at swing extremes.
+            </div>
+            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Step 4: Liquidity Sweep / Purge</strong>
+              Observing the intentional raid on retail stops to inject execution liquidity into institutional books.
+            </div>
+            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Step 5: Aggressive Displacement</strong>
+              Energetic expansion printing wide-bodied candles indicating institutional presence.
+            </div>
+            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Step 6: Market Structure Shift (MSS)</strong>
+              Decisive close through a structural swing point confirming an algorithmic shift in delivery.
+            </div>
+            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Step 7: PD Arrays (FVG / OB / Breaker)</strong>
+              Locating unmitigated imbalances and institutional footprint arrays in the discount/premium zone.
+            </div>
+            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Step 8: Time &amp; Price Alignment</strong>
+              Synchronizing setup with London Open (02:00–05:00 EST) or NY AM Killzones (08:30–11:00 EST).
+            </div>
+            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Step 9: Optimal Trade Entry (OTE)</strong>
+              Precision entry between 62% and 79% Fibonacci retracement into the PD Array.
+            </div>
+            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Step 10: Draw on Liquidity &amp; Risk</strong>
+              Targeting opposing liquidity with a strict 2R–3R minimum and mechanical invalidation stop.
+            </div>
+          </div>
+        </section>
+
+        {/* Section 2: Non-Linear Graph Dependencies */}
+        <section className="space-y-3 pt-3 border-t border-white/[0.06]">
+          <h3 className="text-base sm:text-lg font-semibold text-[#5865FF] flex items-center gap-2">
+            <Layers className="w-4 h-4 text-[#5865FF]" />
+            2. Topological Dependencies in SMC
+          </h3>
+          <p className="text-xs sm:text-sm text-[#C5CBD8] leading-relaxed">
+            Attempting to trade an Order Block without first confirming a Liquidity Sweep and Displacement leads to repeated losses. 
+            The knowledge graph codifies these structural parent-child relationships, ensuring operators never execute in isolation.
+          </p>
+        </section>
+      </article>
     </div>
   );
 };

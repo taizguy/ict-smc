@@ -114,3 +114,22 @@
 /chapter          /curriculum/          301
 /chapter/         /curriculum/          301
 /chapter/*        /curriculum/          301
+
+# Workbench & Glossary route migrations
+/workbench          /tools/               301
+/workbench/         /tools/               301
+/tools/concepts     /tools/glossary/      301
+/tools/concepts/    /tools/glossary/      301
+/tools/concepts/*   /tools/glossary/      301
+/tools/graph        /tools/knowledge-graph/  301
+/tools/graph/       /tools/knowledge-graph/  301
+/tools/graph/*      /tools/knowledge-graph/  301
+/tools/dashboard    /tools/profile/       301
+/tools/dashboard/   /tools/profile/       301
+/tools/dashboard/*  /tools/profile/       301
+/tools/mastery-profile  /tools/profile/   301
+/tools/mastery-profile/ /tools/profile/   301
+/tools/mastery-profile/* /tools/profile/  301
+/tools/ict_suite    /tools/delivery-suite/ 301
+/tools/ict_suite/   /tools/delivery-suite/ 301
+/tools/ict_suite/*  /tools/delivery-suite/ 301

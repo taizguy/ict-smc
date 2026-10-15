@@ -917,6 +917,66 @@
       "source": "/chapter/:path*",
       "destination": "/curriculum/",
       "permanent": true
+    },
+    {
+      "source": "/workbench",
+      "destination": "/tools/",
+      "permanent": true
+    },
+    {
+      "source": "/workbench/:path*",
+      "destination": "/tools/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/concepts",
+      "destination": "/tools/glossary/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/concepts/:path*",
+      "destination": "/tools/glossary/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/graph",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/graph/:path*",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/dashboard",
+      "destination": "/tools/profile/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/dashboard/:path*",
+      "destination": "/tools/profile/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/mastery-profile",
+      "destination": "/tools/profile/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/mastery-profile/:path*",
+      "destination": "/tools/profile/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/ict_suite",
+      "destination": "/tools/delivery-suite/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/ict_suite/:path*",
+      "destination": "/tools/delivery-suite/",
+      "permanent": true
     }
   ],
   "rewrites": [

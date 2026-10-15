@@ -1,10 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { JournalEntry } from '../types';
-import { BookMarked, Plus, CheckSquare, BarChart2, ShieldAlert, Award, Calendar, ArrowUpRight, ArrowDownRight, Trash2, CheckCircle2, X } from 'lucide-react';
+import { BookMarked, Plus, CheckSquare, BarChart2, ShieldAlert, Award, Calendar, ArrowUpRight, ArrowDownRight, Trash2, CheckCircle2, X, Target, Layers, ShieldCheck } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { useModalScrollLock } from '../hooks/useSmoothScroll';
+import { SEO } from './SEO';
+import { ContextualInternalLinker } from './ContextualInternalLinker';
+import { JOURNAL_SECTIONS, JournalSectionMeta } from '../utils/workbenchToolRoutes';
 
-export const TradingJournal: React.FC = () => {
+export interface TradingJournalProps {
+  initialSectionSlug?: string;
+  onNavigateUrl?: (url: string) => void;
+}
+
+export const TradingJournal: React.FC<TradingJournalProps> = ({
+  initialSectionSlug = 'log-book',
+  onNavigateUrl
+}) => {
+  const [activeSection, setActiveSection] = useState<string>(
+    initialSectionSlug === 'audit-protocol' ? 'audit' :
+    initialSectionSlug === 'analytics' ? 'analytics' :
+    initialSectionSlug === 'new-entry' ? 'new' : 'log'
+  );
+
   const [entries, setEntries] = useState<JournalEntry[]>([
     {
       id: 'j-1',
@@ -30,7 +47,35 @@ export const TradingJournal: React.FC = () => {
     }
   ]);
 
-  const [showNewModal, setShowNewModal] = useState<boolean>(false);
+  const [showNewModal, setShowNewModal] = useState<boolean>(initialSectionSlug === 'new-entry');
+
+  // Sync with prop updates
+  useEffect(() => {
+    if (initialSectionSlug) {
+      if (initialSectionSlug === 'audit-protocol') setActiveSection('audit');
+      else if (initialSectionSlug === 'analytics') setActiveSection('analytics');
+      else if (initialSectionSlug === 'new-entry') {
+        setActiveSection('new');
+        setShowNewModal(true);
+      } else {
+        setActiveSection('log');
+      }
+    }
+  }, [initialSectionSlug]);
+
+  const handleSelectSection = (secId: string) => {
+    setActiveSection(secId);
+    if (secId === 'new') {
+      setShowNewModal(true);
+    }
+    const secMeta = JOURNAL_SECTIONS.find(s => s.id === secId);
+    const targetUrl = secId === 'log' ? '/tools/journal/' : `/tools/journal/${secMeta?.slug || secId}/`;
+    if (onNavigateUrl) {
+      onNavigateUrl(targetUrl);
+    } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
+      window.history.pushState({ tool: 'journal', sectionId: secId }, '', targetUrl);
+    }
+  };
 
   useModalScrollLock(showNewModal);
 
@@ -112,8 +157,23 @@ export const TradingJournal: React.FC = () => {
     ? Math.round((entries.reduce((acc, curr) => acc + curr.checklistScore, 0) / totalTrades) * 10) / 10
     : 7;
 
+  const currentSectionMeta = JOURNAL_SECTIONS.find(s => s.id === activeSection);
+  const canonicalPath = activeSection === 'log' ? '/tools/journal/' : `/tools/journal/${currentSectionMeta?.slug || activeSection}/`;
+
   return (
     <div className="space-y-6 text-[#F5F7FA]">
+      <SEO
+        title={currentSectionMeta ? `${currentSectionMeta.title} — Trading Journal | LearnSMC` : 'Institutional Trading Journal & Audit Log | LearnSMC'}
+        description={currentSectionMeta ? `${currentSectionMeta.description}` : 'Maintain institutional trade audit records, enforce 7-point quality checklist, and evaluate statistical edge.'}
+        path={canonicalPath}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Workbench', path: '/tools/' },
+          { name: 'Trading Journal', path: '/tools/journal/' },
+          ...(activeSection !== 'log' && currentSectionMeta ? [{ name: currentSectionMeta.title, path: canonicalPath }] : [])
+        ]}
+      />
+
       {/* Top Banner & Stats */}
       <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -129,14 +189,37 @@ export const TradingJournal: React.FC = () => {
             </p>
           </div>
 
-          <button
-            type="button"
-            onClick={() => setShowNewModal(true)}
-            className="px-4 py-2.5 bg-[#5865FF] hover:bg-[#4752E6] text-white font-mono text-xs uppercase tracking-wider flex items-center gap-2 transition-all rounded-xl cursor-pointer shadow-lg shadow-[#5865FF]/20"
-          >
-            <Plus className="w-4 h-4" />
-            Log New Trade
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => handleSelectSection('new')}
+              className="px-4 py-2.5 bg-[#5865FF] hover:bg-[#4752E6] text-white font-mono text-xs uppercase tracking-wider flex items-center gap-2 transition-all rounded-xl cursor-pointer shadow-lg shadow-[#5865FF]/20"
+            >
+              <Plus className="w-4 h-4" />
+              Log New Trade
+            </button>
+          </div>
+        </div>
+
+        {/* Section Pills */}
+        <div className="flex items-center gap-2 pt-2 border-t border-white/[0.06] overflow-x-auto">
+          {JOURNAL_SECTIONS.map((sec) => {
+            const isSelected = activeSection === sec.id;
+            return (
+              <button
+                key={sec.id}
+                type="button"
+                onClick={() => handleSelectSection(sec.id)}
+                className={`px-3 py-1 text-xs font-mono rounded-lg border whitespace-nowrap transition-all cursor-pointer ${
+                  isSelected
+                    ? 'bg-white/[0.12] text-[#55E6D1] border-[#55E6D1]/40'
+                    : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06] hover:bg-white/[0.05]'
+                }`}
+              >
+                {sec.title}
+              </button>
+            );
+          })}
         </div>
 
         {/* Stats Strip */}
@@ -439,6 +522,100 @@ export const TradingJournal: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* SEO Engine & Structured Data */}
+      <SEO
+        title="Institutional Trading Journal & Rule Validation | LearnSMC"
+        description="7-point institutional trade audit and rule validation logger for disciplined trade execution, error tracking, and psychological state logging."
+        canonicalPath="/tools/journal/"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "LearnSMC Institutional Trading Journal",
+          "url": "https://learnsmc.xyz/tools/journal/",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "All",
+          "description": "7-point trade audit logging system and error tracking tool.",
+          "educationalUse": "Trade journaling and execution discipline audit",
+          "provider": {
+            "@type": "Organization",
+            "name": "LearnSMC",
+            "url": "https://learnsmc.xyz/"
+          }
+        }}
+      />
+
+      {/* Static Semantic HTML Documentation Block (Indexable by Googlebot & Search Engines) */}
+      <article className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-8 space-y-6 text-[#F5F7FA]">
+        <header className="border-b border-white/[0.07] pb-5">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="w-2 h-2 rounded-full bg-[#00E5FF]" />
+            <span className="text-[10px] font-mono uppercase tracking-[0.16em] text-[#00E5FF]">
+              DOCUMENTATION // AUDIT LOG PROTOCOL
+            </span>
+          </div>
+          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F5F7FA]">
+            The 7-Point Institutional Trade Audit &amp; Behavioral Framework
+          </h2>
+          <p className="text-sm text-[#9BA1AE] mt-1">
+            Systematic trade post-mortems, psychological discipline tracking, and edge verification protocols.
+          </p>
+        </header>
+
+        {/* Section 1: The 7-Point Audit Checklist */}
+        <section className="space-y-3">
+          <h3 className="text-base sm:text-lg font-semibold text-[#55E6D1] flex items-center gap-2">
+            <Target className="w-4 h-4 text-[#55E6D1]" />
+            1. The 7-Point Pre-Execution Checklist
+          </h3>
+          <p className="text-xs sm:text-sm text-[#C5CBD8] leading-relaxed">
+            Professional prop desk traders do not initiate trades based on subjective feelings. Every setup logged into this journal must pass seven non-negotiable verification gates:
+          </p>
+          <ol className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-[#9BA1AE] list-none p-0">
+            <li className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Gate 1: Higher Timeframe Bias Verified</strong>
+              Is price delivering toward a daily or 4-hour draw on liquidity, or are you counter-trend scalping noise?
+            </li>
+            <li className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Gate 2: Algorithmic Timing Window Active</strong>
+              Is execution occurring strictly inside a codified Killzone (London Open, NY AM, NY PM, or Silver Bullet)?
+            </li>
+            <li className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Gate 3: Liquidity Pool Swept</strong>
+              Has price pierced an objective pool of liquidity (Asian high/low, session high/low, equal highs/lows)?
+            </li>
+            <li className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Gate 4: Energetic Displacement &amp; MSS</strong>
+              Did aggressive market participants displace price with wide-bodied candles closing beyond a structural pivot?
+            </li>
+            <li className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Gate 5: Unmitigated PD Array Entry</strong>
+              Is entry located at a fresh Fair Value Gap, Order Block, or Breaker within the discount/premium range?
+            </li>
+            <li className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Gate 6: Mechanical Invalidation Level Defined</strong>
+              Is the stop loss placed strictly beyond the sweep extreme where the setup thesis is objectively proven wrong?
+            </li>
+            <li className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Gate 7: Asymmetric Reward-to-Risk (&ge; 2:1)</strong>
+              Does the distance to the opposing target offer at least double the risk incurred?
+            </li>
+          </ol>
+        </section>
+
+        {/* Section 2: Psychological Logging */}
+        <section className="space-y-3 pt-3 border-t border-white/[0.06]">
+          <h3 className="text-base sm:text-lg font-semibold text-[#FF6B7A] flex items-center gap-2">
+            <ShieldAlert className="w-4 h-4 text-[#FF6B7A]" />
+            2. Psychological State &amp; Behavioral Tagging
+          </h3>
+          <p className="text-xs sm:text-sm text-[#C5CBD8] leading-relaxed">
+            By cataloging emotional states (Calm, Anxious, FOMO, Revenge) alongside execution tags (Early Entry, Chased Price, Moved Stop to Breakeven Prematurely), 
+            operators isolate behavioral leaks that erode profitability. In institutional trading, flawless execution of a losing setup is deemed a success, 
+            whereas winning money on an undisciplined, rule-breaking gamble is treated as a severe infraction.
+          </p>
+        </section>
+      </article>
     </div>
   );
 };

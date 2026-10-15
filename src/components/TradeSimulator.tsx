@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   PlayCircle, 
   ShieldCheck, 
@@ -12,6 +12,10 @@ import {
   Sparkles
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { Target, BookOpen } from 'lucide-react';
+import { SEO } from './SEO';
+import { ContextualInternalLinker } from './ContextualInternalLinker';
+import { SIMULATOR_MODELS, SimulatorModelMeta } from '../utils/workbenchToolRoutes';
 
 interface SimulationResult {
   outcome: 'WIN' | 'LOSS' | 'MISSED';
@@ -26,19 +30,69 @@ interface SimulationResult {
   lesson: string;
 }
 
-export const TradeSimulator: React.FC = () => {
+export interface TradeSimulatorProps {
+  initialModelSlug?: string;
+  onNavigateUrl?: (url: string) => void;
+}
+
+export const TradeSimulator: React.FC<TradeSimulatorProps> = ({
+  initialModelSlug,
+  onNavigateUrl
+}) => {
+  const resolvedModel = initialModelSlug
+    ? SIMULATOR_MODELS.find(m => m.slug === initialModelSlug || m.id === initialModelSlug)
+    : undefined;
+
+  const [activeModelSlug, setActiveModelSlug] = useState<string | null>(resolvedModel ? resolvedModel.slug : null);
+
+  useEffect(() => {
+    if (initialModelSlug) {
+      const match = SIMULATOR_MODELS.find(m => m.slug === initialModelSlug || m.id === initialModelSlug);
+      if (match && match.slug !== activeModelSlug) {
+        applyModelPreset(match);
+      }
+    }
+  }, [initialModelSlug]);
   const [asset] = useState<string>('BTC/USDT');
-  const [direction, setDirection] = useState<'LONG' | 'SHORT'>('LONG');
-  const [htfBias, setHtfBias] = useState<'Bullish' | 'Bearish'>('Bullish');
-  const [location, setLocation] = useState<'Discount' | 'Premium' | 'Equilibrium'>('Discount');
-  const [liquidityEvent, setLiquidityEvent] = useState<'SSL Sweep' | 'BSL Sweep' | 'No Sweep (Chop)'>('SSL Sweep');
-  const [confirmation, setConfirmation] = useState<'Displacement + MSS' | 'Weak Move' | 'News Spike'>('Displacement + MSS');
-  const [entryArray, setEntryArray] = useState<'FVG (50% CE)' | 'Order Block' | 'Breaker Block' | 'OTE (70.5%)'>('FVG (50% CE)');
-  const [stopPlacement, setStopPlacement] = useState<'Structural Invalidation (Sweep Low/High)' | 'Tight (Inside Array)' | 'Arbitrary 20-point'>('Structural Invalidation (Sweep Low/High)');
-  const [targetType, setTargetType] = useState<'Major External Liquidity (PDH/PDL)' | 'Internal Range Liquidity' | 'Fixed 1.5R'>('Major External Liquidity (PDH/PDL)');
+  const [direction, setDirection] = useState<'LONG' | 'SHORT'>(resolvedModel ? resolvedModel.direction : 'LONG');
+  const [htfBias, setHtfBias] = useState<'Bullish' | 'Bearish'>(resolvedModel ? resolvedModel.htfBias : 'Bullish');
+  const [location, setLocation] = useState<'Discount' | 'Premium' | 'Equilibrium'>(resolvedModel ? resolvedModel.location : 'Discount');
+  const [liquidityEvent, setLiquidityEvent] = useState<'SSL Sweep' | 'BSL Sweep' | 'No Sweep (Chop)'>(resolvedModel ? (resolvedModel.liquidityEvent as any) : 'SSL Sweep');
+  const [confirmation, setConfirmation] = useState<'Displacement + MSS' | 'Weak Move' | 'News Spike'>(resolvedModel ? (resolvedModel.confirmation as any) : 'Displacement + MSS');
+  const [entryArray, setEntryArray] = useState<'FVG (50% CE)' | 'Order Block' | 'Breaker Block' | 'OTE (70.5%)'>(resolvedModel ? (resolvedModel.entryArray as any) : 'FVG (50% CE)');
+  const [stopPlacement, setStopPlacement] = useState<'Structural Invalidation (Sweep Low/High)' | 'Tight (Inside Array)' | 'Arbitrary 20-point'>(resolvedModel ? (resolvedModel.stopPlacement as any) : 'Structural Invalidation (Sweep Low/High)');
+  const [targetType, setTargetType] = useState<'Major External Liquidity (PDH/PDL)' | 'Internal Range Liquidity' | 'Fixed 1.5R'>(resolvedModel ? (resolvedModel.targetType as any) : 'Major External Liquidity (PDH/PDL)');
 
   const [isSimulating, setIsSimulating] = useState<boolean>(false);
   const [simResult, setSimResult] = useState<SimulationResult | null>(null);
+
+  const applyModelPreset = (model: SimulatorModelMeta) => {
+    setActiveModelSlug(model.slug);
+    setDirection(model.direction);
+    setHtfBias(model.htfBias);
+    setLocation(model.location);
+    setLiquidityEvent(model.liquidityEvent as any);
+    setConfirmation(model.confirmation as any);
+    setEntryArray(model.entryArray as any);
+    setStopPlacement(model.stopPlacement as any);
+    setTargetType(model.targetType as any);
+    setSimResult(null);
+
+    const targetUrl = `/tools/simulator/${model.slug}/`;
+    if (onNavigateUrl) {
+      onNavigateUrl(targetUrl);
+    } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
+      window.history.pushState({ tool: 'simulator', modelSlug: model.slug }, '', targetUrl);
+    }
+  };
+
+  const currentModelMeta = activeModelSlug 
+    ? SIMULATOR_MODELS.find(m => m.slug === activeModelSlug)
+    : undefined;
+  
+  const canonicalPath = activeModelSlug
+    ? `/tools/simulator/${activeModelSlug}/`
+    : '/tools/simulator/';
 
   const runSimulation = () => {
     setIsSimulating(true);
@@ -139,8 +193,20 @@ export const TradeSimulator: React.FC = () => {
 
   return (
     <div className="space-y-6 text-[#F5F7FA]">
+      <SEO
+        title={currentModelMeta ? `${currentModelMeta.name} — Trade Simulator | LearnSMC` : 'ICT Trade Simulator & Execution Engine | LearnSMC'}
+        description={currentModelMeta ? `${currentModelMeta.description}` : 'Simulate institutional trade setups, liquidity sweeps, displacement confirmation, and optimal trade entry execution.'}
+        path={canonicalPath}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Workbench', path: '/tools/' },
+          { name: 'Trade Simulator', path: '/tools/simulator/' },
+          ...(currentModelMeta ? [{ name: currentModelMeta.name, path: canonicalPath }] : [])
+        ]}
+      />
+
       {/* Top Banner - Predikt Dark Card */}
-      <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 relative overflow-hidden">
+      <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 relative overflow-hidden space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
@@ -162,6 +228,28 @@ export const TradeSimulator: React.FC = () => {
               PAIR: <span className="text-[#F5F7FA] font-medium">{asset}</span>
             </span>
           </div>
+        </div>
+
+        {/* Model Presets Bar */}
+        <div className="pt-2 border-t border-white/[0.06] flex items-center gap-2 overflow-x-auto pb-1">
+          <span className="text-[10px] font-mono text-[#656B78] uppercase whitespace-nowrap">Presets:</span>
+          {SIMULATOR_MODELS.map((m) => {
+            const isSelected = activeModelSlug === m.slug;
+            return (
+              <button
+                key={m.id}
+                type="button"
+                onClick={() => applyModelPreset(m)}
+                className={`px-3 py-1 text-xs font-mono rounded-lg border whitespace-nowrap transition-all cursor-pointer ${
+                  isSelected
+                    ? 'bg-white/[0.12] text-[#55E6D1] border-[#55E6D1]/40'
+                    : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06] hover:bg-white/[0.05]'
+                }`}
+              >
+                {m.name}
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -395,6 +483,94 @@ export const TradeSimulator: React.FC = () => {
           )}
         </div>
       </div>
+
+      {/* SEO Engine & Structured Data */}
+      <SEO
+        title="Trade Simulator & Algorithmic Market Replay | LearnSMC"
+        description="Step-by-step blind testing across London and NY Killzones with realistic limit order fills, slippage, and institutional order book simulation."
+        canonicalPath="/tools/simulator/"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "LearnSMC Trade Simulator",
+          "url": "https://learnsmc.xyz/tools/simulator/",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "All",
+          "description": "Algorithmic execution simulator modeling order fills, stop runs, and price delivery.",
+          "educationalUse": "Execution strategy simulation and trade mechanics testing",
+          "provider": {
+            "@type": "Organization",
+            "name": "LearnSMC",
+            "url": "https://learnsmc.xyz/"
+          }
+        }}
+      />
+
+      {/* Static Semantic HTML Documentation Block (Indexable by Googlebot & Search Engines) */}
+      <article className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-8 space-y-6 text-[#F5F7FA]">
+        <header className="border-b border-white/[0.07] pb-5">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="w-2 h-2 rounded-full bg-[#5865FF]" />
+            <span className="text-[10px] font-mono uppercase tracking-[0.16em] text-[#5865FF]">
+              DOCUMENTATION // EXECUTION SIMULATOR
+            </span>
+          </div>
+          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F5F7FA]">
+            Algorithmic Trade Simulator &amp; Order Execution Mechanics
+          </h2>
+          <p className="text-sm text-[#9BA1AE] mt-1">
+            Understanding passive limit order queue priority, aggressive market order consumption, and trade expectancy modeling.
+          </p>
+        </header>
+
+        {/* Section 1: Execution Mechanics */}
+        <section className="space-y-3">
+          <h3 className="text-base sm:text-lg font-semibold text-[#55E6D1] flex items-center gap-2">
+            <Layers className="w-4 h-4 text-[#55E6D1]" />
+            1. Simulated Market Fills vs. Live Order Book Reality
+          </h3>
+          <p className="text-xs sm:text-sm text-[#C5CBD8] leading-relaxed">
+            In live exchange trading, an order is not filled merely because price touches a level on a chart. 
+            Limit orders placed at an Order Block or Fair Value Gap join the back of the queue at that price level (Price-Time Priority). 
+            Unless aggressive market orders consume sufficient volume at that quote, resting orders remain unfilled. 
+            This simulator models both fill probability and adverse excursion to prevent retail traders from building false confidence on frictionless paper executions.
+          </p>
+        </section>
+
+        {/* Section 2: Confluence Multipliers */}
+        <section className="space-y-3 pt-3 border-t border-white/[0.06]">
+          <h3 className="text-base sm:text-lg font-semibold text-[#5865FF] flex items-center gap-2">
+            <Target className="w-4 h-4 text-[#5865FF]" />
+            2. Confluence Hierarchy for Trade Expectancy
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs sm:text-sm text-[#9BA1AE]">
+            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Higher-Timeframe Alignment</strong>
+              Executing trades in agreement with daily and 4-hour market structure yields over 2.5x higher win probability compared to counter-trend scalps.
+            </div>
+            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Prior Liquidity Sweep</strong>
+              Entering without a clean sweep of external liquidity results in getting caught inside range-bound whipsaws and retail stop-runs.
+            </div>
+            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">Displacement Confirmation</strong>
+              A decisive close creating an energetic FVG confirms algorithmic participation, validating entry on the subsequent pullback.
+            </div>
+          </div>
+        </section>
+
+        {/* Section 3: Risk & Sizing */}
+        <section className="space-y-3 pt-3 border-t border-white/[0.06]">
+          <h3 className="text-base sm:text-lg font-semibold text-[#FFB020] flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-[#FFB020]" />
+            3. Maximum Adverse Excursion (MAE) &amp; Stop Placement
+          </h3>
+          <p className="text-xs sm:text-sm text-[#C5CBD8] leading-relaxed">
+            Never place stops arbitrarily (e.g., fixed 10 pips or 20 ticks). Stops must always be placed beyond the structural invalidation point — specifically 
+            the swing point that initiated the displacement. If price breaches that extreme, the setup thesis is fundamentally broken.
+          </p>
+        </section>
+      </article>
     </div>
   );
 };

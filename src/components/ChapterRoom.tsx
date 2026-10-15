@@ -30,6 +30,7 @@ import { ChapterSection } from '../types';
 import { saveQuestionAnswer } from '../utils/academyProgress';
 import { BauhausNavScroller } from './BauhausNavScroller';
 import { ScrollReveal } from './ScrollReveal';
+import { ContextualInternalLinker } from './ContextualInternalLinker';
 
 interface ChapterRoomProps {
   chapterId: number;
@@ -417,9 +418,9 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                         </h3>
                       </div>
 
-                      {/* Section Content */}
+                      {/* Section Content with Automatic Contextual Internal Link Mesh */}
                       <div className="text-sm sm:text-base text-[#9BA1AE] leading-relaxed font-normal whitespace-pre-line space-y-4">
-                        {sec.content.replace(/[*#]/g, '')}
+                        <ContextualInternalLinker text={sec.content.replace(/[*#]/g, '')} />
                       </div>
 
                       {/* "Explain Simpler" Component */}

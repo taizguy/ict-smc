@@ -35,6 +35,16 @@ import {
   getLessonPath, 
   resolveLegacyChapter 
 } from './utils/url';
+import { 
+  resolveGlossaryUrl, 
+  getConceptBySlugOrId, 
+  getGlossaryConceptPath,
+  getGlossaryRootPath 
+} from './utils/glossaryRoutes';
+import { 
+  resolveWorkbenchRoute,
+  WorkbenchToolId
+} from './utils/workbenchToolRoutes';
 
 // Code-split heavy interactive sub-modules for fast initial paint & Core Web Vitals
 const WelcomeScreen = lazy(() => import('./components/WelcomeScreen').then(m => ({ default: m.WelcomeScreen })));
@@ -77,9 +87,13 @@ const toolSlugMap: Record<string, TradingToolId> = {
   'glossary': 'concepts',
   'compare': 'compare',
   'dashboard': 'dashboard',
+  'profile': 'dashboard',
+  'mastery-profile': 'dashboard',
   'masterclass': 'masterclass',
   'ict-suite': 'ict_suite',
-  'ict_suite': 'ict_suite'
+  'ict_suite': 'ict_suite',
+  'delivery-suite': 'ict_suite',
+  'delivery_suite': 'ict_suite'
 };
 
 export const App: React.FC = () => {
@@ -89,7 +103,26 @@ export const App: React.FC = () => {
   // Route state
   const [activeTab, setActiveTab] = useState<MainTabType>('welcome');
   const [selectedChapterId, setSelectedChapterId] = useState<number>(1);
-  const [initialTool, setInitialTool] = useState<TradingToolId>('chartlab');
+  const [initialTool, setInitialTool] = useState<TradingToolId | 'overview'>('overview');
+  const [glossaryCategory, setGlossaryCategory] = useState<string | undefined>(undefined);
+  const [glossaryConceptId, setGlossaryConceptId] = useState<string | undefined>(undefined);
+  const [glossarySubConceptId, setGlossarySubConceptId] = useState<string | undefined>(undefined);
+
+  // Workbench sub-route states
+  const [masterclassCategory, setMasterclassCategory] = useState<string | undefined>(undefined);
+  const [masterclassModuleSlug, setMasterclassModuleSlug] = useState<string | undefined>(undefined);
+  const [chartScenarioSlug, setChartScenarioSlug] = useState<string | undefined>(undefined);
+  const [chartStepSlug, setChartStepSlug] = useState<string | undefined>(undefined);
+  const [simulatorModelSlug, setSimulatorModelSlug] = useState<string | undefined>(undefined);
+  const [backtestStrategySlug, setBacktestStrategySlug] = useState<string | undefined>(undefined);
+  const [journalSectionSlug, setJournalSectionSlug] = useState<string | undefined>(undefined);
+  const [graphViewMode, setGraphViewMode] = useState<'pipeline' | 'network' | undefined>(undefined);
+  const [graphStep, setGraphStep] = useState<number | undefined>(undefined);
+  const [graphNodeId, setGraphNodeId] = useState<string | undefined>(undefined);
+  const [comparisonSlug, setComparisonSlug] = useState<string | undefined>(undefined);
+  const [profileSubTab, setProfileSubTab] = useState<'roadmap' | 'quiz' | undefined>(undefined);
+  const [profileExamSlug, setProfileExamSlug] = useState<string | undefined>(undefined);
+  const [deliveryModuleSlug, setDeliveryModuleSlug] = useState<string | undefined>(undefined);
   const [masoodSubTab, setMasoodSubTab] = useState<'lectures' | 'animations' | 'bias_calc' | 'rules'>('lectures');
   const [masoodLectureId, setMasoodLectureId] = useState<string | null>(null);
   const [attemptedInvalidPath, setAttemptedInvalidPath] = useState<string>('');
@@ -202,21 +235,61 @@ export const App: React.FC = () => {
         return;
       }
 
-      // 5. Workbench Tools deep routing: /tools, /tools/:toolId, /tools/concepts/:conceptId
-      if (path === '/tools' || path.startsWith('/tools/')) {
+      // 5. Workbench Tools deep routing: /workbench, /tools, /tools/glossary/..., /tools/:toolId/...
+      if (path === '/workbench' || path.startsWith('/workbench/') || path === '/tools' || path.startsWith('/tools/')) {
         setActiveTab('tools');
-        if (path === '/tools') {
-          if (toolParam && toolSlugMap[toolParam]) setInitialTool(toolSlugMap[toolParam]);
+        if (path === '/tools' || path === '/workbench') {
+          if (toolParam && toolSlugMap[toolParam]) {
+            setInitialTool(toolSlugMap[toolParam]);
+          } else {
+            setInitialTool('overview');
+          }
           return;
         }
-        const subTool = path.replace('/tools/', '').split('/')[0];
+
+        // Check glossary routes (/tools/glossary/ or legacy /tools/concepts/)
+        if (path === '/tools/glossary' || path.startsWith('/tools/glossary/') || path === '/tools/concepts' || path.startsWith('/tools/concepts/')) {
+          setInitialTool('concepts');
+          const resolved = resolveGlossaryUrl(path);
+          setGlossaryCategory(resolved.categorySlug);
+          setGlossaryConceptId(resolved.conceptId);
+          setGlossarySubConceptId(resolved.subConceptInfo?.slug);
+          if (resolved.conceptId) {
+            setSelectedConceptId(resolved.conceptId);
+          }
+          return;
+        }
+
+        // Check all remaining Workbench tools & hierarchical sub-routes
+        const resolvedWb = resolveWorkbenchRoute(path);
+        if (resolvedWb && resolvedWb.tool !== 'overview') {
+          setInitialTool(resolvedWb.tool);
+          setMasterclassCategory(resolvedWb.masterclassCategory);
+          setMasterclassModuleSlug(resolvedWb.masterclassModuleSlug);
+          setChartScenarioSlug(resolvedWb.chartScenarioSlug);
+          setChartStepSlug(resolvedWb.chartStepSlug);
+          setSimulatorModelSlug(resolvedWb.simulatorModelSlug);
+          setBacktestStrategySlug(resolvedWb.backtestStrategySlug);
+          setJournalSectionSlug(resolvedWb.journalSectionSlug);
+          setGraphViewMode(resolvedWb.graphViewMode);
+          setGraphStep(resolvedWb.graphStep);
+          setGraphNodeId(resolvedWb.graphNodeId);
+          setComparisonSlug(resolvedWb.comparisonSlug);
+          setProfileSubTab(resolvedWb.profileSubTab);
+          setProfileExamSlug(resolvedWb.profileExamSlug);
+          setDeliveryModuleSlug(resolvedWb.deliveryModuleSlug);
+
+          // If the visited path was an alias or non-canonical (e.g. /tools/graph/ or /tools/ict-suite/), update URL seamlessly without reload
+          if (!resolvedWb.isCanonical && typeof window !== 'undefined' && window.location.pathname !== resolvedWb.canonicalUrl) {
+            window.history.replaceState({ activeTab: 'tools', initialTool: resolvedWb.tool }, '', resolvedWb.canonicalUrl);
+          }
+          return;
+        }
+
+        const subTool = path.replace(/^\/(tools|workbench)\//, '').split('/')[0];
         if (toolSlugMap[subTool]) {
           const resolvedTool = toolSlugMap[subTool];
           setInitialTool(resolvedTool);
-          if (resolvedTool === 'concepts') {
-            const conceptMatch = path.match(/^\/tools\/concepts\/([^/]+)/i);
-            if (conceptMatch) setSelectedConceptId(conceptMatch[1]);
-          }
           return;
         } else {
           setActiveTab('not_found');
@@ -292,63 +365,74 @@ export const App: React.FC = () => {
         cleanPath = '/masood/';
       }
     } else if (activeTab === 'tools') {
-      const toolMetadata: Record<TradingToolId, { title: string; desc: string; slug: string }> = {
-        'masterclass': {
-          title: 'Masterclass Hub (34 Models & 15 PD Arrays) | LearnSMC',
-          desc: 'Explore 34 institutional masterclasses, 15 PD Arrays in hierarchical order, and 5 opening range models.',
-          slug: 'masterclass'
-        },
-        'chartlab': {
-          title: 'Interactive Chart Lab — Candlestick Auction Engine | LearnSMC',
-          desc: 'High-definition candlestick auction engine with multi-layer ICT overlays, Fair Value Gaps, and liquidity sweeps.',
-          slug: 'chartlab'
-        },
-        'simulator': {
-          title: 'Trade Simulator & Algorithmic Market Replay | LearnSMC',
-          desc: 'Step-by-step blind testing across London and NY Killzones with realistic limit order fills and slip models.',
-          slug: 'simulator'
-        },
-        'backtest': {
-          title: 'Backtest Lab & Strategy Expectancy Matrix | LearnSMC',
-          desc: 'Statistical expectancy, win-rates, profit factor, and drawdown curves without risking live capital.',
-          slug: 'backtest'
-        },
-        'journal': {
-          title: 'Institutional Trading Journal & Rule Validation | LearnSMC',
-          desc: '7-point institutional trade audit and rule validation logger for disciplined trade execution.',
-          slug: 'journal'
-        },
-        'graph': {
-          title: 'Interactive Knowledge Graph — 10-Step Pipeline | LearnSMC',
-          desc: 'Visual node map connecting foundational market mechanics to advanced execution models.',
-          slug: 'graph'
-        },
-        'concepts': {
-          title: 'ICT & SMC Institutional Concepts Reference | LearnSMC',
-          desc: 'Searchable encyclopedia of Fair Value Gaps, Order Blocks, Liquidity Pools, and algorithmic mechanics.',
-          slug: 'concepts'
-        },
-        'compare': {
-          title: 'Concept Comparison Matrix — Side-by-Side Analysis | LearnSMC',
-          desc: 'Contrast overlapping concepts such as Order Block vs Breaker Block, and BSL vs SSL.',
-          slug: 'compare'
-        },
-        'dashboard': {
-          title: 'Mastery Profile & Operator Credentials | LearnSMC',
-          desc: 'Assessments, diagnostic quizzes, and operator credentials tracking your institutional mastery.',
-          slug: 'dashboard'
-        },
-        'ict_suite': {
-          title: 'ICT Delivery Suite & Killzone Macro Clock | LearnSMC',
-          desc: 'Optimal Trade Entry (OTE) calculator, Asian Judas planner, and 8 macro execution windows.',
-          slug: 'ict-suite'
-        }
-      };
+      if (initialTool === 'overview') {
+        title = 'ICT Trading Workbench & Analytical Laboratories | LearnSMC';
+        description = 'Interactive Chart Lab, SMC strategy simulator, backtester, trading journal, and institutional concepts reference.';
+        cleanPath = '/tools/';
+      } else if (initialTool === 'concepts') {
+        const resolvedGlossary = resolveGlossaryUrl(window.location.pathname);
+        title = resolvedGlossary.metaTitle;
+        description = resolvedGlossary.metaDescription;
+        cleanPath = resolvedGlossary.cleanPath;
+      } else {
+        const toolMetadata: Record<TradingToolId, { title: string; desc: string; slug: string }> = {
+          'masterclass': {
+            title: 'Masterclass Hub (34 Models & 15 PD Arrays) | LearnSMC',
+            desc: 'Explore 34 institutional masterclasses, 15 PD Arrays in hierarchical order, and 5 opening range models.',
+            slug: 'masterclass'
+          },
+          'chartlab': {
+            title: 'Interactive Chart Lab — Candlestick Auction Engine | LearnSMC',
+            desc: 'High-definition candlestick auction engine with multi-layer ICT overlays, Fair Value Gaps, and liquidity sweeps.',
+            slug: 'chartlab'
+          },
+          'simulator': {
+            title: 'Trade Simulator & Algorithmic Market Replay | LearnSMC',
+            desc: 'Step-by-step blind testing across London and NY Killzones with realistic limit order fills and slip models.',
+            slug: 'simulator'
+          },
+          'backtest': {
+            title: 'Backtest Lab & Strategy Expectancy Matrix | LearnSMC',
+            desc: 'Statistical expectancy, win-rates, profit factor, and drawdown curves without risking live capital.',
+            slug: 'backtest'
+          },
+          'journal': {
+            title: 'Institutional Trading Journal & Rule Validation | LearnSMC',
+            desc: '7-point institutional trade audit and rule validation logger for disciplined trade execution.',
+            slug: 'journal'
+          },
+          'graph': {
+            title: 'Interactive Knowledge Graph — 10-Step Pipeline | LearnSMC',
+            desc: 'Visual node map connecting foundational market mechanics to advanced execution models.',
+            slug: 'graph'
+          },
+          'concepts': {
+            title: 'ICT & SMC Institutional Concepts Glossary & Reference | LearnSMC',
+            desc: 'Searchable encyclopedia of Fair Value Gaps, Order Blocks, Liquidity Pools, and algorithmic mechanics.',
+            slug: 'glossary'
+          },
+          'compare': {
+            title: 'Concept Comparison Matrix — Side-by-Side Analysis | LearnSMC',
+            desc: 'Contrast overlapping concepts such as Order Block vs Breaker Block, and BSL vs SSL.',
+            slug: 'compare'
+          },
+          'dashboard': {
+            title: 'Mastery Profile & Operator Credentials | LearnSMC',
+            desc: 'Assessments, diagnostic quizzes, and operator credentials tracking your institutional mastery.',
+            slug: 'dashboard'
+          },
+          'ict_suite': {
+            title: 'ICT Delivery Suite & Killzone Macro Clock | LearnSMC',
+            desc: 'Optimal Trade Entry (OTE) calculator, Asian Judas planner, and 8 macro execution windows.',
+            slug: 'ict-suite'
+          }
+        };
 
-      const currentToolInfo = toolMetadata[initialTool] || toolMetadata['chartlab'];
-      title = currentToolInfo.title;
-      description = currentToolInfo.desc;
-      cleanPath = `/tools/${currentToolInfo.slug}/`;
+        const currentToolInfo = toolMetadata[initialTool as TradingToolId] || toolMetadata['chartlab'];
+        title = currentToolInfo.title;
+        description = currentToolInfo.desc;
+        cleanPath = `/tools/${currentToolInfo.slug}/`;
+      }
     } else if (activeTab === 'curriculum') {
       title = 'ICT & SMC Academy — 57-Chapter Institutional Trading Curriculum | LearnSMC';
       description = 'Explore the complete 57-chapter institutional trading curriculum covering Market Structure, Liquidity Sweeps, Fair Value Gaps, PO3, and Algorithmic Execution.';
@@ -425,7 +509,10 @@ export const App: React.FC = () => {
       let targetPath = '/';
       if (tab === 'curriculum') targetPath = '/curriculum/';
       else if (tab === 'masood') targetPath = '/masood/';
-      else if (tab === 'tools') targetPath = `/tools/${initialTool === 'ict_suite' ? 'ict-suite' : initialTool}/`;
+      else if (tab === 'tools') {
+        targetPath = '/tools/';
+        setInitialTool('overview');
+      }
       else if (['disclaimer', 'privacy', 'terms', 'about', 'contact', 'adsense'].includes(tab)) targetPath = `/${tab}/`;
       else if (tab === 'welcome') targetPath = '/';
       if (window.location.pathname !== targetPath || window.location.search) {
@@ -448,13 +535,22 @@ export const App: React.FC = () => {
     }
   };
 
-  const handleSelectConcept = (conceptId: string) => {
+  const handleSelectConcept = (conceptId: string, slug?: string) => {
     setSelectedConceptId(conceptId);
     setInitialTool('concepts');
     setActiveTab('tools');
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (typeof window !== 'undefined') {
-      window.history.pushState({ activeTab: 'tools', initialTool: 'concepts' }, '', `/tools/concepts/${conceptId}`);
+      const mapping = getConceptBySlugOrId(conceptId);
+      const catSlug = mapping?.categorySlug || 'foundations';
+      const cSlug = slug || mapping?.slug || conceptId.replace(/_/g, '-');
+      const targetPath = getGlossaryConceptPath(cSlug, catSlug);
+      setGlossaryCategory(catSlug);
+      setGlossaryConceptId(conceptId);
+      setGlossarySubConceptId(undefined);
+      if (window.location.pathname !== targetPath) {
+        window.history.pushState({ activeTab: 'tools', initialTool: 'concepts', conceptId }, '', targetPath);
+      }
     }
   };
 
@@ -464,12 +560,27 @@ export const App: React.FC = () => {
   };
 
   // Switch to specific trading workbench tool
-  const handleWorkbenchToolChange = (toolId: TradingToolId) => {
+  const handleWorkbenchToolChange = (toolId: TradingToolId | 'overview', customUrl?: string) => {
     setInitialTool(toolId);
     setActiveTab('tools');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     if (typeof window !== 'undefined') {
-      const slug = toolId === 'ict_suite' ? 'ict-suite' : toolId;
-      const targetPath = `/tools/${slug}`;
+      let targetPath = '/tools/';
+      if (customUrl) {
+        targetPath = customUrl;
+      } else if (toolId === 'overview') {
+        targetPath = '/tools/';
+      } else if (toolId === 'concepts') {
+        targetPath = '/tools/glossary/';
+      } else if (toolId === 'graph') {
+        targetPath = '/tools/knowledge-graph/';
+      } else if (toolId === 'dashboard') {
+        targetPath = '/tools/profile/';
+      } else if (toolId === 'ict_suite') {
+        targetPath = '/tools/delivery-suite/';
+      } else {
+        targetPath = `/tools/${toolId}/`;
+      }
       if (window.location.pathname !== targetPath) {
         window.history.pushState({ activeTab: 'tools', initialTool: toolId }, '', targetPath);
       }
@@ -605,6 +716,23 @@ export const App: React.FC = () => {
               initialTool={initialTool}
               onToolChange={handleWorkbenchToolChange}
               onSelectConcept={handleSelectConcept}
+              glossaryCategory={glossaryCategory}
+              glossaryConceptId={glossaryConceptId}
+              glossarySubConceptId={glossarySubConceptId}
+              masterclassCategory={masterclassCategory}
+              masterclassModuleSlug={masterclassModuleSlug}
+              chartScenarioSlug={chartScenarioSlug}
+              chartStepSlug={chartStepSlug}
+              simulatorModelSlug={simulatorModelSlug}
+              backtestStrategySlug={backtestStrategySlug}
+              journalSectionSlug={journalSectionSlug}
+              graphViewMode={graphViewMode}
+              graphStep={graphStep}
+              graphNodeId={graphNodeId}
+              comparisonSlug={comparisonSlug}
+              profileSubTab={profileSubTab}
+              profileExamSlug={profileExamSlug}
+              deliveryModuleSlug={deliveryModuleSlug}
             />
           </Suspense>
         )}

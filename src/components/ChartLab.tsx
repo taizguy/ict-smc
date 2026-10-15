@@ -9,9 +9,21 @@ import {
   CheckCircle2, 
   AlertTriangle, 
   RefreshCw, 
-  Sparkles
+  Sparkles,
+  BookOpen,
+  ShieldCheck,
+  Target,
+  Layers,
+  HelpCircle
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { SEO } from './SEO';
+import { ContextualInternalLinker } from './ContextualInternalLinker';
+import { 
+  CHART_SCENARIOS_META, 
+  getChartScenarioSlug, 
+  getChartScenarioUrl 
+} from '../utils/workbenchToolRoutes';
 
 type TrainingStep = 
   | 'liquidity_pool'
@@ -24,9 +36,48 @@ type TrainingStep =
   | 'target'
   | 'completed';
 
-export const ChartLab: React.FC = () => {
-  const [selectedScenarioId, setSelectedScenarioId] = useState<string>(chartScenarios[0].id);
+export interface ChartLabProps {
+  initialScenarioSlug?: string;
+  initialStepSlug?: string;
+  onNavigateUrl?: (url: string) => void;
+}
+
+export const ChartLab: React.FC<ChartLabProps> = ({
+  initialScenarioSlug,
+  initialStepSlug,
+  onNavigateUrl
+}) => {
+  // Resolve initial scenario from slug
+  const resolvedScenario = initialScenarioSlug
+    ? chartScenarios.find(s => getChartScenarioSlug(s.id) === initialScenarioSlug || s.id === initialScenarioSlug)
+    : chartScenarios[0];
+
+  const [selectedScenarioId, setSelectedScenarioId] = useState<string>(resolvedScenario ? resolvedScenario.id : chartScenarios[0].id);
   const scenario = chartScenarios.find((s) => s.id === selectedScenarioId) || chartScenarios[0];
+
+  // Sync with prop updates
+  useEffect(() => {
+    if (initialScenarioSlug) {
+      const match = chartScenarios.find(s => getChartScenarioSlug(s.id) === initialScenarioSlug || s.id === initialScenarioSlug);
+      if (match && match.id !== selectedScenarioId) {
+        setSelectedScenarioId(match.id);
+      }
+    }
+  }, [initialScenarioSlug]);
+
+  const updateScenarioUrl = (scenarioId: string, step?: string) => {
+    const targetUrl = getChartScenarioUrl(scenarioId, step);
+    if (onNavigateUrl) {
+      onNavigateUrl(targetUrl);
+    } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
+      window.history.pushState({ tool: 'chartlab', scenarioId, step }, '', targetUrl);
+    }
+  };
+
+  const handleSelectScenario = (scenarioId: string) => {
+    setSelectedScenarioId(scenarioId);
+    updateScenarioUrl(scenarioId);
+  };
 
   // Replay State
   const [currentCandleIndex, setCurrentCandleIndex] = useState<number>(scenario.candles.length);
@@ -135,7 +186,7 @@ export const ChartLab: React.FC = () => {
   }, [isPlaying, playSpeed, scenario.candles.length]);
 
   const handleScenarioChange = (id: string) => {
-    setSelectedScenarioId(id);
+    handleSelectScenario(id);
     const newScen = chartScenarios.find((s) => s.id === id) || chartScenarios[0];
     setCurrentCandleIndex(newScen.candles.length);
     setIsPlaying(false);
@@ -146,6 +197,10 @@ export const ChartLab: React.FC = () => {
   const chartWidth = 900;
   const chartHeight = 360;
   const visibleCandles = scenario.candles.slice(0, currentCandleIndex);
+
+  const scenarioSlug = getChartScenarioSlug(scenario.id);
+  const scenarioMeta = CHART_SCENARIOS_META[scenario.id];
+  const canonicalPath = `/tools/chartlab/${scenarioSlug}/`;
 
   const minPrice = Math.min(...scenario.candles.map((c) => c.low)) * 0.998;
   const maxPrice = Math.max(...scenario.candles.map((c) => c.high)) * 1.002;
@@ -237,6 +292,17 @@ export const ChartLab: React.FC = () => {
 
   return (
     <div className="space-y-6 text-[#F5F7FA]">
+      <SEO
+        title={scenarioMeta?.metaTitle || `${scenario.title} — Chart Lab | LearnSMC`}
+        description={scenarioMeta?.metaDescription || `${scenario.description.substring(0, 150)}...`}
+        path={canonicalPath}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Workbench', path: '/tools/' },
+          { name: 'Chart Lab', path: '/tools/chartlab/' },
+          { name: scenario.title, path: canonicalPath }
+        ]}
+      />
       
       {/* Top Header & Scenario Switcher */}
       <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 relative overflow-hidden">
@@ -549,6 +615,127 @@ export const ChartLab: React.FC = () => {
           </div>
         )}
       </div>
+
+      {/* SEO Engine & Structured Data */}
+      <SEO
+        title="Interactive Chart Lab — Candlestick Auction Engine | LearnSMC"
+        description="High-definition candlestick auction engine with multi-layer ICT overlays, Fair Value Gaps, liquidity sweeps, and step-by-step mechanical trade delivery."
+        canonicalPath="/tools/chartlab/"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "LearnSMC Interactive Chart Lab",
+          "url": "https://learnsmc.xyz/tools/chartlab/",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "All",
+          "description": "Candlestick auction simulation engine for Smart Money Concepts, algorithmic displacement, and liquidity sweeps.",
+          "educationalUse": "Interactive price action analysis and trade replay",
+          "provider": {
+            "@type": "Organization",
+            "name": "LearnSMC",
+            "url": "https://learnsmc.xyz/"
+          }
+        }}
+      />
+
+      {/* Static Semantic HTML Documentation Block (Indexable by Googlebot & Search Engines) */}
+      <article className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-8 space-y-6 text-[#F5F7FA]">
+        <header className="border-b border-white/[0.07] pb-5">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="w-2 h-2 rounded-full bg-[#55E6D1]" />
+            <span className="text-[10px] font-mono uppercase tracking-[0.16em] text-[#55E6D1]">
+              DOCUMENTATION // ENGINE SPECIFICATION
+            </span>
+          </div>
+          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F5F7FA]">
+            Candlestick Auction Theory &amp; Algorithmic Delivery Specification
+          </h2>
+          <p className="text-sm text-[#9BA1AE] mt-1">
+            A comprehensive institutional reference on electronic order book mechanics, continuous double auctions, and mechanical trade delivery steps.
+          </p>
+        </header>
+
+        {/* Section 1: Electronic Auction & Order Book Mechanics */}
+        <section className="space-y-3">
+          <h3 className="text-base sm:text-lg font-semibold text-[#55E6D1] flex items-center gap-2">
+            <Layers className="w-4 h-4 text-[#55E6D1]" />
+            1. The Electronic Central Limit Order Book (CLOB)
+          </h3>
+          <p className="text-xs sm:text-sm text-[#C5CBD8] leading-relaxed">
+            Market prices in foreign exchange, futures, and equity indexes do not move according to geometric shapes, diagonal trendlines, or retail indicators. 
+            Price delivery is governed by electronic matching engines executing continuous double auctions. At any given moment, market participants 
+            post resting passive liquidity (Limit Orders) across bid and ask queues, while aggressive participants consume that liquidity using Market Orders.
+          </p>
+          <p className="text-xs sm:text-sm text-[#C5CBD8] leading-relaxed">
+            When buy stops resting above previous swing highs are triggered, they convert into market buy orders. Institutional market makers utilize 
+            this influx of buy liquidity to unload their long inventory or initiate large short positions without causing adverse price slippage. 
+            This sequence forms the foundation of the <strong>Turtle Soup</strong> and <strong>Liquidity Sweep</strong> phenomenon.
+          </p>
+        </section>
+
+        {/* Section 2: The 8-Stage Mechanical Replay Execution Pipeline */}
+        <section className="space-y-3 pt-3 border-t border-white/[0.06]">
+          <h3 className="text-base sm:text-lg font-semibold text-[#5865FF] flex items-center gap-2">
+            <Target className="w-4 h-4 text-[#5865FF]" />
+            2. The 8-Stage Mechanical Delivery Pipeline
+          </h3>
+          <p className="text-xs sm:text-sm text-[#C5CBD8] leading-relaxed">
+            Every high-probability institutional setup follows an unvarying algorithmic sequence codified into eight discrete milestones:
+          </p>
+          <ol className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-[#9BA1AE] list-none p-0">
+            <li className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">01. Liquidity Pool Identification (BSL / SSL)</strong>
+              Locate equal highs (EQH), previous day highs (PDH), or session highs where retail stop-losses accumulate.
+            </li>
+            <li className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">02. The Liquidity Sweep</strong>
+              Price pierces the identified liquidity pool to trigger resting stop orders and inject liquidity into the matching engine.
+            </li>
+            <li className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">03. Algorithmic Displacement</strong>
+              Large institutional candles expand aggressively away from the swept level, printing wide bodies with minimal wicks.
+            </li>
+            <li className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">04. Market Structure Shift (MSS)</strong>
+              The displacement candle closes decisively through a key structural swing point, confirming an algorithmic reversal.
+            </li>
+            <li className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">05. PD Array Formation (FVG / OB)</strong>
+              The displacement leaves a three-candle Fair Value Gap (imbalance) or an unmitigated Order Block.
+            </li>
+            <li className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">06. Optimal Trade Entry (OTE) Retracement</strong>
+              Price retraces into the 62% - 79% Fibonacci discount/premium zone directly into the PD Array.
+            </li>
+            <li className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">07. Invalidation &amp; Stop Placement</strong>
+              Protective stop-loss is placed mechanically beyond the displacement origin or the Order Block threshold.
+            </li>
+            <li className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <strong className="text-[#F5F7FA] block mb-1">08. Draw on Liquidity (DOL) Target</strong>
+              Target is established at the opposing liquidity pool (Sell-Side Liquidity or equal lows) for asymmetric risk-to-reward.
+            </li>
+          </ol>
+        </section>
+
+        {/* Section 3: Technical Parameters & Invalidation Rules */}
+        <section className="space-y-3 pt-3 border-t border-white/[0.06]">
+          <h3 className="text-base sm:text-lg font-semibold text-[#FFB020] flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-[#FFB020]" />
+            3. Invalidation Rules &amp; Mathematical Parameters
+          </h3>
+          <div className="space-y-2 text-xs sm:text-sm text-[#C5CBD8]">
+            <p>
+              <strong>Fair Value Gap Invalidation:</strong> An FVG is defined by three consecutive candles where Candle 1 high and Candle 3 low do not overlap. 
+              The imbalance is considered violated if a subsequent candle body closes beyond the Consequent Encroachment (the 50% midpoint of the FVG).
+            </p>
+            <p>
+              <strong>Order Block Mean Threshold:</strong> The Order Block represents the last opposite-colored candle before displacement. 
+              The 50% midpoint of the candle body (Mean Threshold) is the definitive line in the sand; any body close beyond this level invalidates the setup.
+            </p>
+          </div>
+        </section>
+      </article>
     </div>
   );
 };

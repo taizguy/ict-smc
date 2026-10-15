@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ictConcepts } from '../data/conceptsData';
 import { masterclassCollection } from '../data/masterclassData';
 import { InteractiveDiagram } from './InteractiveDiagram';
@@ -24,23 +24,102 @@ import {
   ChevronRight,
   ShieldCheck,
   Flame,
-  Info
+  Info,
+  CornerDownRight,
+  Compass,
+  ArrowRight
 } from 'lucide-react';
 import { BauhausNavScroller } from './BauhausNavScroller';
+import { Target } from 'lucide-react';
+import { SEO } from './SEO';
+import { ContextualInternalLinker } from './ContextualInternalLinker';
+import { 
+  GLOSSARY_CATEGORIES, 
+  DEEP_SUB_CONCEPTS, 
+  getCategoryBySlugOrId, 
+  getConceptBySlugOrId, 
+  getDeepSubConceptBySlug, 
+  getGlossaryRootPath,
+  getGlossaryCategoryPath,
+  getGlossaryConceptPath,
+  getGlossarySubConceptPath,
+  DeepSubConceptInfo
+} from '../utils/glossaryRoutes';
 
 interface ConceptExplorerProps {
-  onSelectConcept?: (id: string) => void;
+  initialCategory?: string;
+  initialConceptId?: string;
+  initialSubConceptId?: string;
+  onSelectConcept?: (id: string, slug?: string) => void;
   onOpenSimulator?: () => void;
 }
 
-export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcept, onOpenSimulator }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [selectedConceptId, setSelectedConceptId] = useState<string>(ictConcepts[0].id);
+export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ 
+  initialCategory,
+  initialConceptId,
+  initialSubConceptId,
+  onSelectConcept, 
+  onOpenSimulator 
+}) => {
+  // Category state
+  const [selectedCategory, setSelectedCategory] = useState<string>(() => {
+    if (initialCategory) {
+      const match = getCategoryBySlugOrId(initialCategory);
+      return match ? match.id : 'all';
+    }
+    return 'all';
+  });
+
+  // Concept state
+  const [selectedConceptId, setSelectedConceptId] = useState<string>(() => {
+    if (initialConceptId) {
+      const match = getConceptBySlugOrId(initialConceptId);
+      if (match) return match.id;
+    }
+    return ictConcepts[0].id;
+  });
+
+  // Deep sub-concept state
+  const [activeSubConcept, setActiveSubConcept] = useState<DeepSubConceptInfo | null>(() => {
+    if (initialSubConceptId) {
+      return getDeepSubConceptBySlug(initialSubConceptId) || null;
+    }
+    return null;
+  });
+
   const [activeLayerTab, setActiveLayerTab] = useState<
     'overview' | 'tripartite' | 'anatomy' | 'traps_counterexamples' | 'ladder' | 'rules_invalidation' | 'scenarios' | 'masterclass_blueprint'
   >('overview');
   const [ladderLevel, setLadderLevel] = useState<1 | 2 | 3 | 4 | 5>(3);
   const [activeTripartiteTab, setActiveTripartiteTab] = useState<'ict' | 'observable' | 'derived'>('ict');
+
+  // Sync with incoming props if changed externally
+  useEffect(() => {
+    if (initialCategory) {
+      const cat = getCategoryBySlugOrId(initialCategory);
+      if (cat && cat.id !== selectedCategory) {
+        setSelectedCategory(cat.id);
+      }
+    }
+  }, [initialCategory]);
+
+  useEffect(() => {
+    if (initialConceptId) {
+      const c = getConceptBySlugOrId(initialConceptId);
+      if (c && c.id !== selectedConceptId) {
+        setSelectedConceptId(c.id);
+      }
+    }
+  }, [initialConceptId]);
+
+  useEffect(() => {
+    if (initialSubConceptId) {
+      const sc = getDeepSubConceptBySlug(initialSubConceptId);
+      setActiveSubConcept(sc || null);
+    } else if (initialSubConceptId === undefined && !initialConceptId && !initialCategory) {
+      // do not overwrite if user clicked
+    }
+  }, [initialSubConceptId]);
 
   const concept = ictConcepts.find((c) => c.id === selectedConceptId) || ictConcepts[0];
 
@@ -49,18 +128,135 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
     : ictConcepts.filter((c) => c.category === selectedCategory);
 
   const categories = [
-    { id: 'all', label: 'All Concepts' },
-    { id: 'foundations', label: 'Foundations' },
-    { id: 'structure', label: 'Market Structure' },
-    { id: 'liquidity', label: 'Liquidity' },
-    { id: 'imbalances', label: 'Imbalances & FVGs' },
-    { id: 'order_blocks', label: 'Order Blocks & Breakers' },
-    { id: 'time_sessions', label: 'Time & Sessions' },
-    { id: 'models', label: 'Trade Models' }
+    { id: 'all', slug: 'all', label: 'All Concepts' },
+    ...GLOSSARY_CATEGORIES.map(c => ({ id: c.id, slug: c.slug, label: c.name.split('&')[0].trim() }))
   ];
+
+  // Available deep sub-concepts for the current category or selected concept
+  const availableSubConcepts = DEEP_SUB_CONCEPTS.filter(sc => {
+    if (selectedCategory !== 'all') {
+      const catObj = getCategoryBySlugOrId(selectedCategory);
+      return sc.categorySlug === catObj?.slug;
+    }
+    return sc.parentConceptId === selectedConceptId;
+  });
+
+  // Client-side dynamic routing handlers
+  const handleSelectCategory = (catId: string) => {
+    setSelectedCategory(catId);
+    setActiveSubConcept(null);
+    if (typeof window !== 'undefined') {
+      const catObj = getCategoryBySlugOrId(catId);
+      const targetPath = catId === 'all' ? getGlossaryRootPath() : getGlossaryCategoryPath(catObj?.slug || catId);
+      window.history.pushState({ category: catId }, '', targetPath);
+    }
+  };
+
+  const handleSelectConcept = (conceptId: string) => {
+    setSelectedConceptId(conceptId);
+    setActiveSubConcept(null);
+    const mapping = getConceptBySlugOrId(conceptId);
+    const catObj = getCategoryBySlugOrId(mapping?.category || selectedCategory);
+    const catSlug = catObj?.slug || 'foundations';
+    const conceptSlug = mapping?.slug || conceptId.replace(/_/g, '-');
+    const targetPath = getGlossaryConceptPath(conceptSlug, catSlug);
+
+    if (typeof window !== 'undefined') {
+      window.history.pushState({ conceptId, category: catSlug }, '', targetPath);
+    }
+    if (onSelectConcept) onSelectConcept(conceptId, conceptSlug);
+  };
+
+  const handleSelectSubConcept = (subConcept: DeepSubConceptInfo) => {
+    setActiveSubConcept(subConcept);
+    setSelectedConceptId(subConcept.parentConceptId);
+    const targetPath = getGlossarySubConceptPath(subConcept.categorySlug, subConcept.slug);
+
+    if (typeof window !== 'undefined') {
+      window.history.pushState({ subConceptId: subConcept.id }, '', targetPath);
+    }
+  };
+
+  // Determine current active SEO metadata
+  let dynamicTitle = 'ICT & SMC Institutional Concepts Glossary & Reference | LearnSMC';
+  let dynamicDesc = 'Searchable encyclopedia of 41+ institutional trading concepts, Fair Value Gaps, Order Blocks, Liquidity Pools, and algorithmic mechanics.';
+  let dynamicCanonicalPath = getGlossaryRootPath();
+
+  if (activeSubConcept) {
+    dynamicTitle = activeSubConcept.metaTitle;
+    dynamicDesc = activeSubConcept.metaDescription;
+    dynamicCanonicalPath = getGlossarySubConceptPath(activeSubConcept.categorySlug, activeSubConcept.slug);
+  } else if (selectedConceptId) {
+    const cMap = getConceptBySlugOrId(selectedConceptId);
+    if (cMap) {
+      dynamicTitle = cMap.metaTitle;
+      dynamicDesc = cMap.metaDescription;
+      dynamicCanonicalPath = getGlossaryConceptPath(cMap.slug, cMap.categorySlug);
+    }
+  } else if (selectedCategory !== 'all') {
+    const catObj = getCategoryBySlugOrId(selectedCategory);
+    if (catObj) {
+      dynamicTitle = catObj.metaTitle;
+      dynamicDesc = catObj.metaDescription;
+      dynamicCanonicalPath = getGlossaryCategoryPath(catObj.slug);
+    }
+  }
 
   return (
     <div className="space-y-6 text-[#F5F7FA]">
+      {/* Dynamic SEO Engine */}
+      <SEO
+        title={dynamicTitle}
+        description={dynamicDesc}
+        canonicalPath={dynamicCanonicalPath}
+        type="website"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": dynamicTitle,
+          "url": `https://learnsmc.xyz${dynamicCanonicalPath}`,
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "All",
+          "description": dynamicDesc,
+          "provider": {
+            "@type": "Organization",
+            "name": "LearnSMC",
+            "url": "https://learnsmc.xyz/"
+          }
+        }}
+      />
+
+      {/* Breadcrumb Hierarchy */}
+      <div className="flex items-center gap-2 text-xs font-mono text-[#9BA1AE] px-1">
+        <a 
+          href="/tools/" 
+          onClick={(e) => { e.preventDefault(); if (typeof window !== 'undefined') { window.history.pushState({}, '', '/tools/'); window.dispatchEvent(new PopStateEvent('popstate')); }}}
+          className="hover:text-white transition-colors"
+        >
+          Workbench
+        </a>
+        <ChevronRight className="w-3.5 h-3.5 text-[#656B78]" />
+        <a 
+          href="/tools/glossary/" 
+          onClick={(e) => { e.preventDefault(); handleSelectCategory('all'); }}
+          className={`hover:text-white transition-colors ${selectedCategory === 'all' && !activeSubConcept ? 'text-[#55E6D1] font-semibold' : ''}`}
+        >
+          Glossary
+        </a>
+        {selectedCategory !== 'all' && (
+          <>
+            <ChevronRight className="w-3.5 h-3.5 text-[#656B78]" />
+            <span className="text-[#9BA1AE] capitalize">
+              {getCategoryBySlugOrId(selectedCategory)?.name || selectedCategory}
+            </span>
+          </>
+        )}
+        <ChevronRight className="w-3.5 h-3.5 text-[#656B78]" />
+        <span className="text-[#55E6D1] font-medium truncate max-w-xs">
+          {activeSubConcept ? activeSubConcept.name : concept.name}
+        </span>
+      </div>
+
       {/* Category Pills Header with Scroller */}
       <div className="bg-[#11141B] border border-white/[0.08] rounded-xl p-3">
         <BauhausNavScroller>
@@ -68,7 +264,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
             <button
               key={cat.id}
               type="button"
-              onClick={() => setSelectedCategory(cat.id)}
+              onClick={() => handleSelectCategory(cat.id)}
               className={`px-3.5 py-1.5 text-xs font-mono uppercase whitespace-nowrap transition-all rounded-lg border cursor-pointer shrink-0 ${
                 selectedCategory === cat.id
                   ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20'
@@ -80,6 +276,43 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
           ))}
         </BauhausNavScroller>
       </div>
+
+      {/* Deep Sub-Concepts Quick Bar (If category or concept has specialized deep sub-concepts) */}
+      {availableSubConcepts.length > 0 && (
+        <div className="bg-[#151923] border border-[#5865FF]/20 rounded-xl p-3.5 space-y-2">
+          <div className="flex items-center justify-between text-[11px] font-mono">
+            <span className="text-[#55E6D1] uppercase tracking-wider flex items-center gap-1.5 font-semibold">
+              <CornerDownRight className="w-3.5 h-3.5" />
+              Deep Sub-Concepts ({availableSubConcepts.length} Specialized Analyses):
+            </span>
+            <span className="text-[10px] text-[#9BA1AE]">Hierarchical Multi-Tier Exploration</span>
+          </div>
+
+          <div className="flex flex-wrap gap-2 pt-1">
+            {availableSubConcepts.map((sub) => {
+              const isSubActive = activeSubConcept?.id === sub.id;
+              return (
+                <button
+                  key={sub.id}
+                  type="button"
+                  onClick={() => handleSelectSubConcept(sub)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all flex items-center gap-1.5 cursor-pointer border ${
+                    isSubActive
+                      ? 'bg-[#5865FF]/25 border-[#5865FF] text-white shadow-sm'
+                      : 'bg-white/[0.03] border-white/[0.08] text-[#9BA1AE] hover:text-white hover:bg-white/[0.06]'
+                  }`}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#55E6D1]" />
+                  <span>{sub.name}</span>
+                  <span className="text-[9px] uppercase px-1.5 py-0.2 rounded bg-black/30 text-[#55E6D1]">
+                    Sub-Concept
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left Side: Concepts Directory */}
@@ -97,15 +330,12 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
               data-lenis-prevent="true"
             >
               {filteredConcepts.map((c) => {
-                const isSelected = c.id === selectedConceptId;
+                const isSelected = c.id === selectedConceptId && !activeSubConcept;
                 return (
                   <button
                     key={c.id}
                     type="button"
-                    onClick={() => {
-                      setSelectedConceptId(c.id);
-                      if (onSelectConcept) onSelectConcept(c.id);
-                    }}
+                    onClick={() => handleSelectConcept(c.id)}
                     className={`w-full text-left p-3 text-xs font-mono transition-all space-y-1.5 rounded-xl border cursor-pointer ${
                       isSelected
                         ? 'bg-white/[0.10] border-white/20 text-[#F5F7FA]'
@@ -130,6 +360,79 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
 
         {/* Right Side: Deep Encyclopedic Breakdown */}
         <div className="lg:col-span-8 xl:col-span-9 space-y-6">
+          
+          {/* SPECIALIZED DEEP SUB-CONCEPT CARD IF ACTIVE */}
+          {activeSubConcept && (
+            <div className="bg-gradient-to-br from-[#191D28] to-[#11141B] border-2 border-[#5865FF]/40 rounded-2xl p-6 sm:p-8 space-y-5 relative overflow-hidden shadow-xl">
+              <div className="flex items-center justify-between flex-wrap gap-2 text-xs font-mono">
+                <div className="flex items-center gap-2">
+                  <span className="px-3 py-1 rounded-full bg-[#5865FF]/20 text-[#55E6D1] border border-[#5865FF]/30 uppercase text-[11px] font-semibold tracking-wider flex items-center gap-1.5">
+                    <Compass className="w-3.5 h-3.5" />
+                    Deep Sub-Concept Analysis
+                  </span>
+                  <span className="text-white/20">/</span>
+                  <span className="text-[#9BA1AE] uppercase">{activeSubConcept.categorySlug}</span>
+                </div>
+                <button
+                  onClick={() => setActiveSubConcept(null)}
+                  className="text-[11px] text-[#9BA1AE] hover:text-white underline font-mono cursor-pointer"
+                >
+                  Return to Main Concept
+                </button>
+              </div>
+
+              <div className="space-y-2">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                  {activeSubConcept.name}
+                </h2>
+                <div className="text-xs sm:text-sm font-mono text-[#55E6D1]">
+                  {activeSubConcept.subtitle}
+                </div>
+                <div className="text-sm text-[#C5CBD8] leading-relaxed pt-1">
+                  <ContextualInternalLinker text={activeSubConcept.shortDefinition} />
+                </div>
+              </div>
+
+              {/* 4 Key Points */}
+              <div className="p-4 sm:p-5 rounded-xl bg-[#0C0E13]/80 border border-white/[0.08] space-y-3">
+                <div className="text-xs font-mono uppercase text-[#5865FF] font-semibold flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#5865FF]" />
+                  <span>Decisive Operational Criteria &amp; Rules of Thumb:</span>
+                </div>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-[#9BA1AE] leading-relaxed">
+                  {activeSubConcept.keyPoints.map((pt, pIdx) => (
+                    <li key={pIdx} className="flex items-start gap-2 bg-white/[0.02] p-2.5 rounded-lg border border-white/[0.04]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#55E6D1] mt-1.5 shrink-0" />
+                      <div>
+                        <ContextualInternalLinker text={pt} />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Invalidation & Example Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono">
+                <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 space-y-1.5">
+                  <span className="text-rose-400 uppercase tracking-wider font-semibold block text-[11px]">
+                    Structural Invalidation Protocol:
+                  </span>
+                  <p className="text-[#C5CBD8] font-normal leading-relaxed">
+                    {activeSubConcept.invalidation}
+                  </p>
+                </div>
+                <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 space-y-1.5">
+                  <span className="text-emerald-400 uppercase tracking-wider font-semibold block text-[11px]">
+                    Institutional Market Scenario:
+                  </span>
+                  <p className="text-[#C5CBD8] font-normal leading-relaxed">
+                    <ContextualInternalLinker text={activeSubConcept.exampleScenario} />
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Concept Header Card with Source Provenance */}
           <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 relative overflow-hidden space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
@@ -169,9 +472,9 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
               {concept.name}
             </h2>
 
-            <p className="text-[#9BA1AE] text-sm leading-relaxed font-normal">
-              {concept.shortDefinition}
-            </p>
+            <div className="text-[#9BA1AE] text-sm leading-relaxed font-normal">
+              <ContextualInternalLinker text={concept.shortDefinition} />
+            </div>
 
             {/* Source Reference Sub-Banner */}
             {concept.source && (
@@ -238,256 +541,187 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
                     <Zap className="w-4 h-4" />
                     <h3 className="font-semibold">Why It Exists</h3>
                   </div>
-                  <p className="text-[#9BA1AE] text-xs sm:text-sm leading-relaxed font-normal">
-                    {concept.whyItExists}
-                  </p>
+                  <div className="text-[#9BA1AE] text-xs sm:text-sm leading-relaxed font-normal">
+                    <ContextualInternalLinker text={concept.whyItExists} />
+                  </div>
                 </div>
 
                 <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-3">
                   <div className="flex items-center gap-2 text-[#5865FF] font-mono text-xs uppercase">
                     <HelpCircle className="w-4 h-4" />
-                    <h3 className="font-semibold">Market Problem It Solves</h3>
+                    <h3 className="font-semibold">Problem It Solves</h3>
                   </div>
-                  <p className="text-[#9BA1AE] text-xs sm:text-sm leading-relaxed font-normal">
-                    {concept.problemItSolves}
-                  </p>
+                  <div className="text-[#9BA1AE] text-xs sm:text-sm leading-relaxed font-normal">
+                    <ContextualInternalLinker text={concept.problemItSolves} />
+                  </div>
                 </div>
               </div>
 
-              {/* How ICT Uses It & Causal Connections */}
-              <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-4">
-                <div className="flex items-center gap-2 text-[#F5F7FA] font-mono text-xs uppercase">
-                  <BookOpen className="w-4 h-4 text-[#55E6D1]" />
-                  <h3 className="font-semibold">How ICT Employs This in Practice</h3>
+              <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-4">
+                <div className="flex items-center gap-2 text-[#55E6D1] font-mono text-xs uppercase">
+                  <Activity className="w-4 h-4" />
+                  <h3 className="font-semibold">How It Forms</h3>
                 </div>
-                <p className="text-[#9BA1AE] text-xs sm:text-sm leading-relaxed font-normal">
-                  {concept.howICTUsesIt}
-                </p>
-
-                {/* Causal Pathway to Next Concept */}
-                {concept.causalConnections && concept.causalConnections.length > 0 && (
-                  <div className="mt-4 pt-4 border-t border-white/[0.07] space-y-3">
-                    <div className="flex items-center gap-2 text-xs font-mono text-[#5865FF] uppercase">
-                      <GitFork className="w-4 h-4" />
-                      <span>Causal Sequence: Why Does This Lead to the Next Step?</span>
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {concept.causalConnections.map((conn, idx) => (
-                        <div key={idx} className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.07] space-y-2 text-xs font-mono">
-                          <div className="flex items-center justify-between text-[#55E6D1] uppercase">
-                            <span>Next Step: {conn.targetLabel}</span>
-                            <ChevronRight className="w-4 h-4" />
-                          </div>
-                          <p className="text-[#9BA1AE] text-[11px] leading-relaxed font-normal">
-                            <strong className="text-[#F5F7FA]">Why it follows:</strong> {conn.whyThisFollows}
-                          </p>
-                          <div className="p-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06] text-[11px] text-[#F5F7FA]/90">
-                            ⚡ Institutional Mechanic: {conn.institutionalMechanic}
-                          </div>
-                          <p className="text-[#FF6B7A] text-[10px] uppercase">
-                            ⚠️ Risk of skipping: {conn.riskOfSkipping}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
+                <div className="text-[#9BA1AE] text-xs sm:text-sm leading-relaxed font-normal">
+                  <ContextualInternalLinker text={concept.howItForms} />
+                </div>
               </div>
             </div>
           )}
 
-          {/* TAB 2: ANATOMY & INTERACTIVE DIAGRAM */}
+          {/* TAB 2: ANATOMY & DIAGRAM */}
           {activeLayerTab === 'anatomy' && (
             <div className="space-y-6">
               <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-4">
-                <div className="flex items-center justify-between flex-wrap gap-2">
-                  <div className="flex items-center gap-2 text-[#F5F7FA] font-mono text-xs uppercase">
-                    <Layers className="w-4 h-4 text-[#5865FF]" />
-                    <h3 className="font-semibold">Interactive Diagram Engine</h3>
+                <div className="flex items-center justify-between pb-3 border-b border-white/[0.07]">
+                  <div className="flex items-center gap-2 font-mono text-xs uppercase text-[#F5F7FA]">
+                    <Layers className="w-4 h-4 text-[#55E6D1]" />
+                    <span>Interactive Architectural Delivery Canvas</span>
                   </div>
-                  <span className="text-xs font-mono text-[#9BA1AE]">
-                    Type: <span className="text-[#55E6D1] uppercase">{concept.diagramType}</span>
+                  <span className="text-[10px] font-mono uppercase bg-white/[0.04] text-[#9BA1AE] px-2 py-0.5 rounded border border-white/[0.08]">
+                    {concept.diagramType}
                   </span>
                 </div>
+                <InteractiveDiagram
+                  type={concept.diagramType}
+                  title={concept.name}
+                  isInteractive={true}
+                />
+              </div>
 
-                <div className="rounded-xl overflow-hidden border border-white/[0.08] bg-[#0C0E13] p-2">
-                  <InteractiveDiagram type={concept.diagramType as any} title={concept.name} />
+              <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-3">
+                <div className="flex items-center gap-2 font-mono text-xs uppercase text-[#55E6D1]">
+                  <BookOpen className="w-4 h-4" />
+                  <h4 className="font-semibold">Visual Anatomy &amp; Identification</h4>
                 </div>
-
-                <div className="pt-3 border-t border-white/[0.07] text-xs text-[#9BA1AE] space-y-1.5">
-                  <h4 className="text-[#F5F7FA] font-mono uppercase text-[11px]">Chart Anatomy Specifications:</h4>
-                  <p className="leading-relaxed font-normal">{concept.chartAnatomy}</p>
+                <div className="text-xs sm:text-sm text-[#9BA1AE] leading-relaxed font-mono bg-[#0C0E13] p-4 rounded-xl border border-white/[0.06]">
+                  <ContextualInternalLinker text={concept.chartAnatomy} />
                 </div>
               </div>
             </div>
           )}
 
-          {/* TAB 3: SOURCE FIDELITY & TRIPARTITE */}
+          {/* TAB 3: SOURCE FIDELITY & TRIPARTITE VIEW */}
           {activeLayerTab === 'tripartite' && (
             <div className="space-y-6">
-              <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-5">
-                <div>
-                  <div className="flex items-center gap-2 text-[#F5F7FA] font-mono text-xs uppercase mb-1">
-                    <Cpu className="w-4 h-4 text-[#55E6D1]" />
-                    <h3 className="font-semibold">Tripartite Epistemological Distinction</h3>
+              <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-4">
+                <div className="flex items-center justify-between border-b border-white/[0.07] pb-3">
+                  <div className="flex items-center gap-2 font-mono text-xs uppercase text-[#55E6D1]">
+                    <Cpu className="w-4 h-4" />
+                    <span>Source Fidelity Tripartite Engine</span>
                   </div>
-                  <p className="text-[#9BA1AE] text-xs sm:text-sm font-normal">
-                    This platform separates what ICT explicitly teaches from observable auction orderbook mechanics and derived quantitative SMC interpretations.
-                  </p>
+                  <span className="text-[10px] font-mono uppercase text-[#9BA1AE]">3 Perspectives</span>
                 </div>
 
-                {/* Sub-tabs */}
-                <div className="flex items-center gap-2 border-b border-white/[0.07] pb-3 flex-wrap">
+                <div className="grid grid-cols-3 gap-2">
                   {[
-                    { id: 'ict', label: '1. ICT Canonical Teaching' },
-                    { id: 'observable', label: '2. Observable Auction Mechanics' },
-                    { id: 'derived', label: '3. Derived SMC Synthesis' }
-                  ].map((tab) => (
+                    { id: 'ict', label: '1. What ICT Teaches' },
+                    { id: 'observable', label: '2. Observable Auction' },
+                    { id: 'derived', label: '3. Derived SMC Model' }
+                  ].map((t) => (
                     <button
-                      key={tab.id}
+                      key={t.id}
                       type="button"
-                      onClick={() => setActiveTripartiteTab(tab.id as any)}
-                      className={`px-3.5 py-1.5 text-xs font-mono uppercase transition-all rounded-lg border cursor-pointer ${
-                        activeTripartiteTab === tab.id
-                          ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20'
-                          : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06]'
+                      onClick={() => setActiveTripartiteTab(t.id as any)}
+                      className={`p-3 text-xs font-mono text-center rounded-xl border transition-all cursor-pointer ${
+                        activeTripartiteTab === t.id
+                          ? 'bg-white/[0.10] border-white/20 text-[#F5F7FA] font-semibold'
+                          : 'bg-white/[0.02] border-white/[0.06] text-[#9BA1AE] hover:text-[#F5F7FA]'
                       }`}
                     >
-                      {tab.label}
+                      {t.label}
                     </button>
                   ))}
                 </div>
 
-                {concept.tripartiteView && (
-                  <div className="p-5 rounded-xl bg-white/[0.02] border border-white/[0.07] space-y-4">
-                    {activeTripartiteTab === 'ict' && (
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-2 text-[#5865FF] font-mono text-xs uppercase">
-                          <Flame className="w-4 h-4" />
-                          <h4>What ICT (Michael J. Huddleston) Explicitly Teaches:</h4>
-                        </div>
-                        <p className="text-[#F5F7FA]/90 text-xs sm:text-sm leading-relaxed font-normal bg-white/[0.02] border border-white/[0.06] rounded-xl p-4 italic">
-                          "{concept.tripartiteView.ictTeaching}"
-                        </p>
-                        <div className="text-[11px] font-mono text-[#656B78]">
-                          Source: <span className="text-[#9BA1AE] uppercase">{concept.source?.mentorship}</span> ({concept.source?.approximateDate})
-                        </div>
-                      </div>
-                    )}
-
-                    {activeTripartiteTab === 'observable' && (
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-2 text-[#55E6D1] font-mono text-xs uppercase">
-                          <Activity className="w-4 h-4" />
-                          <h4>What is Empirically Observable on Orderbooks &amp; Charts:</h4>
-                        </div>
-                        <p className="text-[#9BA1AE] text-xs sm:text-sm leading-relaxed font-normal bg-white/[0.02] border border-white/[0.06] rounded-xl p-4">
-                          {concept.tripartiteView.observableMarketBehavior}
-                        </p>
-                        <div className="text-[11px] font-mono text-[#656B78]">
-                          Domain: <span className="text-[#9BA1AE]">Central Limit Order Book (CLOB), Matching Engine Microstructure &amp; Auction Theory</span>
-                        </div>
-                      </div>
-                    )}
-
-                    {activeTripartiteTab === 'derived' && (
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-2 text-[#52D273] font-mono text-xs uppercase">
-                          <ShieldCheck className="w-4 h-4" />
-                          <h4>Derived Quantitative &amp; SMC Synthesis:</h4>
-                        </div>
-                        <p className="text-[#9BA1AE] text-xs sm:text-sm leading-relaxed font-normal bg-white/[0.02] border border-white/[0.06] rounded-xl p-4">
-                          {concept.tripartiteView.derivedInterpretation}
-                        </p>
-                        <div className="text-[11px] font-mono text-[#656B78]">
-                          Application: <span className="text-[#9BA1AE]">Rule-based backtesting, statistical edge validation, risk-reward skew</span>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
+                <div className="p-5 rounded-xl bg-[#0C0E13] border border-white/[0.06] text-xs sm:text-sm text-[#F5F7FA] leading-relaxed">
+                  {activeTripartiteTab === 'ict' && (
+                    <div className="space-y-2">
+                      <div className="text-[10px] font-mono uppercase text-[#5865FF]">Explicit ICT Teaching:</div>
+                      <ContextualInternalLinker text={concept.tripartiteView.ictTeaching} />
+                    </div>
+                  )}
+                  {activeTripartiteTab === 'observable' && (
+                    <div className="space-y-2">
+                      <div className="text-[10px] font-mono uppercase text-[#52D273]">Observable Market Microstructure:</div>
+                      <ContextualInternalLinker text={concept.tripartiteView.observableMarketBehavior} />
+                    </div>
+                  )}
+                  {activeTripartiteTab === 'derived' && (
+                    <div className="space-y-2">
+                      <div className="text-[10px] font-mono uppercase text-[#FFB300]">Derived SMC Formalization:</div>
+                      <ContextualInternalLinker text={concept.tripartiteView.derivedInterpretation} />
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           )}
 
-          {/* TAB 4: 5-LEVEL LADDER */}
+          {/* TAB 4: 5-LEVEL EXPLANATION LADDER */}
           {activeLayerTab === 'ladder' && (
-            <div className="space-y-6">
-              <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-6">
-                <div>
-                  <div className="flex items-center gap-2 text-[#F5F7FA] font-mono text-xs uppercase mb-1">
-                    <GraduationCap className="w-4 h-4 text-[#5865FF]" />
-                    <h3 className="font-semibold">The 5-Level Conceptual Progression Ladder</h3>
-                  </div>
-                  <p className="text-[#9BA1AE] text-xs sm:text-sm font-normal">
-                    Progress from intuitive first-principles metaphors up to advanced algorithmic interbank execution models.
-                  </p>
+            <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-6">
+              <div className="flex items-center justify-between border-b border-white/[0.07] pb-4">
+                <div className="flex items-center gap-2 font-mono text-xs uppercase text-[#55E6D1]">
+                  <GraduationCap className="w-4 h-4" />
+                  <span>5-Level Conceptual Depth Ladder</span>
                 </div>
+                <span className="text-[10px] font-mono text-[#9BA1AE] uppercase">Level {ladderLevel} of 5</span>
+              </div>
 
-                {/* Ladder Selector */}
-                <BauhausNavScroller>
-                  {[
-                    { lvl: 1, title: 'L1: Child Analogy', desc: 'Metaphor' },
-                    { lvl: 2, title: 'L2: Beginner', desc: 'Chart behavior' },
-                    { lvl: 3, title: 'L3: Trader', desc: 'Order flow' },
-                    { lvl: 4, title: 'L4: Advanced', desc: 'Intermarket' },
-                    { lvl: 5, title: 'L5: Canonical ICT', desc: 'IPDA algorithmic' }
-                  ].map((step) => (
-                    <button
-                      key={step.lvl}
-                      type="button"
-                      onClick={() => setLadderLevel(step.lvl as any)}
-                      className={`p-3 text-left transition-all font-mono rounded-xl border cursor-pointer min-w-[140px] shrink-0 ${
-                        ladderLevel === step.lvl
-                          ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20'
-                          : 'bg-white/[0.02] text-[#9BA1AE] border-white/[0.06] hover:bg-white/[0.05]'
-                      }`}
-                    >
-                      <span className="block text-xs font-semibold uppercase">{step.title}</span>
-                      <span className="text-[10px] block truncate text-[#656B78] uppercase mt-0.5">
-                        {step.desc}
-                      </span>
-                    </button>
-                  ))}
-                </BauhausNavScroller>
+              <div className="grid grid-cols-5 gap-2">
+                {[
+                  { level: 1, label: 'Child Analogy' },
+                  { level: 2, label: 'Beginner' },
+                  { level: 3, label: 'Active Trader' },
+                  { level: 4, label: 'Advanced' },
+                  { level: 5, label: 'ICT Interbank' }
+                ].map((item) => (
+                  <button
+                    key={item.level}
+                    type="button"
+                    onClick={() => setLadderLevel(item.level as any)}
+                    className={`p-2.5 rounded-xl border text-center font-mono text-xs transition-all cursor-pointer ${
+                      ladderLevel === item.level
+                        ? 'bg-[#5865FF]/20 border-[#5865FF] text-[#F5F7FA] font-semibold'
+                        : 'bg-white/[0.02] border-white/[0.06] text-[#9BA1AE] hover:text-[#F5F7FA]'
+                    }`}
+                  >
+                    <div className="text-[10px] text-[#656B78]">L0{item.level}</div>
+                    <div className="truncate mt-0.5">{item.label}</div>
+                  </button>
+                ))}
+              </div>
 
-                {/* Ladder Content Card */}
-                {concept.explanationLadder && (
-                  <div className="p-6 rounded-xl bg-white/[0.02] border border-white/[0.07] space-y-4">
-                    <div className="text-[#55E6D1] font-mono text-xs uppercase tracking-wider flex items-center gap-2">
-                      <Sparkles className="w-4 h-4" />
-                      Active Explanation Level: {ladderLevel} of 5
-                    </div>
-
-                    <p className="text-[#F5F7FA]/90 text-sm sm:text-base leading-relaxed font-normal">
-                      {ladderLevel === 1 && concept.explanationLadder.level1Child}
-                      {ladderLevel === 2 && concept.explanationLadder.level2Beginner}
-                      {ladderLevel === 3 && concept.explanationLadder.level3Trader}
-                      {ladderLevel === 4 && concept.explanationLadder.level4Advanced}
-                      {ladderLevel === 5 && concept.explanationLadder.level5ICTFramework}
-                    </p>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/[0.07]">
-                      <div className="p-4 rounded-xl bg-emerald-500/5 border border-emerald-500/20 space-y-1.5">
-                        <div className="flex items-center gap-2 text-emerald-400 font-mono text-xs uppercase">
-                          <Check className="w-4 h-4" />
-                          <span>When Does It Matter?</span>
-                        </div>
-                        <p className="text-[#9BA1AE] text-xs font-normal leading-relaxed">
-                          {concept.explanationLadder.whenItMatters}
-                        </p>
-                      </div>
-
-                      <div className="p-4 rounded-xl bg-rose-500/5 border border-rose-500/20 space-y-1.5">
-                        <div className="flex items-center gap-2 text-rose-400 font-mono text-xs uppercase">
-                          <XCircle className="w-4 h-4" />
-                          <span>When Should You Ignore It?</span>
-                        </div>
-                        <p className="text-[#9BA1AE] text-xs font-normal leading-relaxed">
-                          {concept.explanationLadder.whenToIgnore}
-                        </p>
-                      </div>
-                    </div>
+              <div className="p-6 rounded-xl bg-[#0C0E13] border border-white/[0.06] text-xs sm:text-sm text-[#F5F7FA] leading-relaxed">
+                {ladderLevel === 1 && (
+                  <div className="space-y-2">
+                    <span className="text-[10px] font-mono uppercase text-[#52D273]">Level 1: Everyday Analogy</span>
+                    <p className="italic text-[#9BA1AE]">"{concept.explanationLadder.level1Child}"</p>
+                  </div>
+                )}
+                {ladderLevel === 2 && (
+                  <div className="space-y-2">
+                    <span className="text-[10px] font-mono uppercase text-[#55E6D1]">Level 2: Beginner Chart Behavior</span>
+                    <ContextualInternalLinker text={concept.explanationLadder.level2Beginner} />
+                  </div>
+                )}
+                {ladderLevel === 3 && (
+                  <div className="space-y-2">
+                    <span className="text-[10px] font-mono uppercase text-[#5865FF]">Level 3: Active Retail Execution</span>
+                    <ContextualInternalLinker text={concept.explanationLadder.level3Trader} />
+                  </div>
+                )}
+                {ladderLevel === 4 && (
+                  <div className="space-y-2">
+                    <span className="text-[10px] font-mono uppercase text-[#FFB300]">Level 4: Advanced Microstructure</span>
+                    <ContextualInternalLinker text={concept.explanationLadder.level4Advanced} />
+                  </div>
+                )}
+                {ladderLevel === 5 && (
+                  <div className="space-y-2">
+                    <span className="text-[10px] font-mono uppercase text-[#FF6B7A]">Level 5: ICT Interbank IPDA Engine</span>
+                    <ContextualInternalLinker text={concept.explanationLadder.level5ICTFramework} />
                   </div>
                 )}
               </div>
@@ -497,101 +731,78 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
           {/* TAB 5: TRAPS & COUNTEREXAMPLES */}
           {activeLayerTab === 'traps_counterexamples' && (
             <div className="space-y-6">
-              <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-5">
-                <div>
-                  <div className="flex items-center gap-2 text-[#FF6B7A] font-mono text-xs uppercase mb-1">
-                    <ShieldAlert className="w-4 h-4" />
-                    <h3 className="font-semibold">Deliberate Counterexamples &amp; Fake Setup Traps</h3>
-                  </div>
-                  <p className="text-[#9BA1AE] text-xs sm:text-sm font-normal">
-                    Recognize setups that look like ICT patterns on the surface, but are structurally invalid traps.
-                  </p>
+              <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-4">
+                <div className="flex items-center gap-2 font-mono text-xs uppercase text-[#FF6B7A] pb-3 border-b border-white/[0.07]">
+                  <ShieldAlert className="w-4 h-4" />
+                  <h3 className="font-semibold">Retail Traps &amp; Counterexamples</h3>
                 </div>
 
-                <div className="space-y-4">
-                  {concept.counterexamples && concept.counterexamples.length > 0 ? (
-                    concept.counterexamples.map((trap, idx) => (
-                      <div key={idx} className="p-5 rounded-xl bg-rose-500/5 border border-rose-500/20 space-y-3 font-mono">
-                        <div className="flex items-center justify-between text-[#FF6B7A] text-sm uppercase flex-wrap gap-2">
-                          <span className="flex items-center gap-2 font-medium">
-                            <AlertTriangle className="w-4 h-4" />
-                            {trap.title}
-                          </span>
-                          <span className="text-[10px] px-2 py-0.5 rounded bg-rose-500/10 text-rose-300 border border-rose-500/20 uppercase">
-                            Invalid Counterexample
-                          </span>
-                        </div>
-                        <div className="text-xs text-[#9BA1AE] space-y-2">
-                          <p><strong className="text-[#F5F7FA] uppercase">The Trap:</strong> {trap.trapDescription}</p>
-                          <p><strong className="text-rose-400 uppercase">Why It Fails:</strong> {trap.whyItFails}</p>
-                        </div>
-                        <div className="p-3 rounded-lg bg-white/[0.02] border border-white/[0.06] text-[#F5F7FA] text-xs font-normal">
-                          🛡️ Rule of Thumb: {trap.ruleOfThumb}
-                        </div>
+                <div className="grid grid-cols-1 gap-4">
+                  {(concept.counterexamples || []).map((trap, idx) => (
+                    <div key={idx} className="p-5 rounded-xl bg-rose-500/5 border border-rose-500/20 space-y-2">
+                      <div className="flex items-center justify-between text-xs font-mono">
+                        <span className="text-rose-400 font-semibold uppercase">{trap.title}</span>
+                        <span className="text-[10px] text-[#656B78] uppercase">Common Fallacy</span>
                       </div>
-                    ))
-                  ) : (
-                    <div className="p-5 rounded-xl bg-white/[0.02] border border-white/[0.07] text-[#9BA1AE] text-xs space-y-2">
-                      <p className="text-[#FF6B7A] font-mono uppercase">General Counterexample:</p>
-                      <p className="leading-relaxed font-normal">{concept.counterexample}</p>
+                      <p className="text-xs sm:text-sm text-[#9BA1AE] leading-relaxed">
+                        <strong className="text-[#F5F7FA]">The Trap:</strong> {trap.trapDescription}
+                      </p>
+                      <p className="text-xs sm:text-sm text-[#9BA1AE] leading-relaxed">
+                        <strong className="text-[#55E6D1]">Why It Fails:</strong> {trap.whyItFails}
+                      </p>
+                      <div className="text-xs font-mono text-[#52D273] pt-1">
+                        Rule of thumb: {trap.ruleOfThumb}
+                      </div>
                     </div>
-                  )}
+                  ))}
                 </div>
               </div>
             </div>
           )}
 
-          {/* TAB 6: RULES & INVALIDATION */}
+          {/* TAB 6: RULES & INVALIDATION MATRIX */}
           {activeLayerTab === 'rules_invalidation' && (
             <div className="space-y-6">
-              {concept.timeframeMatrix && (
-                <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-4">
-                  <div className="flex items-center gap-2 text-[#F5F7FA] font-mono text-xs uppercase">
-                    <Clock className="w-4 h-4 text-[#5865FF]" />
-                    <h3 className="font-semibold">Multi-Timeframe Application Matrix</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-3">
+                  <div className="flex items-center gap-2 text-[#52D273] font-mono text-xs uppercase">
+                    <CheckCircle2 className="w-4 h-4" />
+                    <h3 className="font-semibold">Valid Signatures</h3>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-mono">
-                    <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] space-y-1.5">
-                      <span className="text-[#55E6D1] block uppercase text-[10px]">Higher Timeframe (HTF)</span>
-                      <p className="text-[#9BA1AE] leading-relaxed font-normal">{concept.timeframeMatrix.htfApplication}</p>
-                    </div>
-                    <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] space-y-1.5">
-                      <span className="text-[#FF6B7A] block uppercase text-[10px]">Lower Timeframe (LTF)</span>
-                      <p className="text-[#9BA1AE] leading-relaxed font-normal">{concept.timeframeMatrix.ltfApplication}</p>
-                    </div>
-                    <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] space-y-1.5">
-                      <span className="text-[#5865FF] block uppercase text-[10px]">Session &amp; Timing Context</span>
-                      <p className="text-[#9BA1AE] leading-relaxed font-normal">{concept.timeframeMatrix.sessionAndTiming}</p>
-                    </div>
-                  </div>
+                  <ul className="space-y-2 text-xs sm:text-sm text-[#9BA1AE]">
+                    {concept.validCharacteristics.map((char, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#52D273] mt-1.5 shrink-0" />
+                        <span>{char}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              )}
 
-              {/* Invalidation Criteria */}
-              <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-3">
-                <div className="flex items-center gap-2 text-[#FF6B7A] font-mono text-xs uppercase">
-                  <ShieldAlert className="w-4 h-4" />
-                  <h3 className="font-semibold">Strict Invalidation Criteria</h3>
+                <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-3">
+                  <div className="flex items-center gap-2 text-[#FF6B7A] font-mono text-xs uppercase">
+                    <XCircle className="w-4 h-4" />
+                    <h3 className="font-semibold">Invalid Signatures</h3>
+                  </div>
+                  <ul className="space-y-2 text-xs sm:text-sm text-[#9BA1AE]">
+                    {concept.invalidCharacteristics.map((char, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B7A] mt-1.5 shrink-0" />
+                        <span>{char}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <p className="text-[#9BA1AE] text-xs sm:text-sm leading-relaxed font-normal bg-rose-500/5 border border-rose-500/20 rounded-xl p-4">
-                  {concept.invalidationCriteria}
-                </p>
               </div>
 
-              {/* Identification Checklist */}
               <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-3">
-                <div className="flex items-center gap-2 text-[#F5F7FA] font-mono text-xs uppercase">
-                  <CheckCircle2 className="w-4 h-4 text-[#52D273]" />
-                  <h3 className="font-semibold">Identification Checklist</h3>
+                <div className="flex items-center gap-2 text-[#FFB300] font-mono text-xs uppercase">
+                  <ShieldCheck className="w-4 h-4" />
+                  <h3 className="font-semibold">Mechanical Invalidation Threshold</h3>
                 </div>
-                <ul className="space-y-2 text-xs font-mono text-[#9BA1AE]">
-                  {concept.identificationRules.map((rule, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 bg-white/[0.02] p-3 rounded-lg border border-white/[0.06]">
-                      <Check className="w-4 h-4 text-[#52D273] shrink-0 mt-0.5" />
-                      <span className="leading-relaxed font-normal">{rule}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="text-xs sm:text-sm text-[#9BA1AE] leading-relaxed bg-[#0C0E13] p-4 rounded-xl border border-white/[0.06]">
+                  {concept.invalidationCriteria}
+                </div>
               </div>
             </div>
           )}
@@ -605,9 +816,9 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
                     <ArrowUpRight className="w-4 h-4" />
                     <h3 className="font-semibold">Bullish Execution Scenario</h3>
                   </div>
-                  <p className="text-[#9BA1AE] text-xs sm:text-sm leading-relaxed font-normal bg-emerald-500/5 border border-emerald-500/20 rounded-xl p-4">
-                    {concept.bullishScenario}
-                  </p>
+                  <div className="text-[#9BA1AE] text-xs sm:text-sm leading-relaxed font-normal bg-emerald-500/5 border border-emerald-500/20 rounded-xl p-4">
+                    <ContextualInternalLinker text={concept.bullishScenario} />
+                  </div>
                 </div>
 
                 <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-3">
@@ -615,9 +826,9 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
                     <ArrowDownRight className="w-4 h-4" />
                     <h3 className="font-semibold">Bearish Execution Scenario</h3>
                   </div>
-                  <p className="text-[#9BA1AE] text-xs sm:text-sm leading-relaxed font-normal bg-rose-500/5 border border-rose-500/20 rounded-xl p-4">
-                    {concept.bearishScenario}
-                  </p>
+                  <div className="text-[#9BA1AE] text-xs sm:text-sm leading-relaxed font-normal bg-rose-500/5 border border-rose-500/20 rounded-xl p-4">
+                    <ContextualInternalLinker text={concept.bearishScenario} />
+                  </div>
                 </div>
               </div>
 
@@ -694,9 +905,9 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
                             <span className="w-6 h-6 rounded-md bg-white/[0.04] border border-white/[0.08] text-[#5865FF] font-mono text-xs flex items-center justify-center shrink-0 mt-0.5">
                               {idx + 1}
                             </span>
-                            <p className="text-xs font-mono text-[#9BA1AE] leading-relaxed">
-                              {op}
-                            </p>
+                            <div className="text-xs font-mono text-[#9BA1AE] leading-relaxed">
+                              <ContextualInternalLinker text={op} />
+                            </div>
                           </div>
                         ))}
                       </div>
@@ -708,6 +919,82 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({ onSelectConcep
           )}
         </div>
       </div>
+
+      {/* Static Semantic HTML Documentation Block (Indexable by Googlebot & Search Engines) */}
+      <article className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-8 space-y-6 text-[#F5F7FA]">
+        <header className="border-b border-white/[0.07] pb-5">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="w-2 h-2 rounded-full bg-[#8A72FF]" />
+            <span className="text-[10px] font-mono uppercase tracking-[0.16em] text-[#8A72FF]">
+              DOCUMENTATION // ENCYCLOPEDIA CODEX
+            </span>
+          </div>
+          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F5F7FA]">
+            Codified Encyclopedia of Smart Money Concepts (SMC) &amp; ICT Mechanics
+          </h2>
+          <p className="text-sm text-[#9BA1AE] mt-1">
+            Authoritative institutional reference defining Fair Value Gaps, Order Blocks, Liquidity Pools, and algorithmic execution models.
+          </p>
+        </header>
+
+        {/* Section 1: Core Definitions */}
+        <section className="space-y-3">
+          <h3 className="text-base sm:text-lg font-semibold text-[#55E6D1] flex items-center gap-2">
+            <BookOpen className="w-4 h-4 text-[#55E6D1]" />
+            1. Definitive Terminology &amp; Mathematical Specifications
+          </h3>
+          <dl className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-[#9BA1AE]">
+            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <dt className="text-[#F5F7FA] font-bold font-mono text-xs uppercase mb-1">Fair Value Gap (FVG)</dt>
+              <dd className="m-0 leading-relaxed">
+                A price imbalance created across a three-candle sequence where the extreme of Candle 1 fails to overlap the opposite extreme of Candle 3, leaving un-offered liquidity.
+              </dd>
+            </div>
+            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <dt className="text-[#F5F7FA] font-bold font-mono text-xs uppercase mb-1">Order Block (OB)</dt>
+              <dd className="m-0 leading-relaxed">
+                The final counter-trend candle immediately prior to a violent displacement creating an MSS. The 50% Mean Threshold of its body serves as institutional mitigation support/resistance.
+              </dd>
+            </div>
+            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <dt className="text-[#F5F7FA] font-bold font-mono text-xs uppercase mb-1">Breaker Block (BB)</dt>
+              <dd className="m-0 leading-relaxed">
+                A failed Order Block that previously engineered a liquidity sweep (higher high or lower low) before suffering a violent displacement violation. Retest offers high-probability entry.
+              </dd>
+            </div>
+            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <dt className="text-[#F5F7FA] font-bold font-mono text-xs uppercase mb-1">Liquidity Void</dt>
+              <dd className="m-0 leading-relaxed">
+                A sharp vertical price leap or gap featuring long body candles that skipped two-sided electronic auction matching, requiring future re-delivery to establish fair value.
+              </dd>
+            </div>
+            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <dt className="text-[#F5F7FA] font-bold font-mono text-xs uppercase mb-1">Optimal Trade Entry (OTE)</dt>
+              <dd className="m-0 leading-relaxed">
+                The institutional retracement zone between 62% and 79% Fibonacci extension of an impulsive swing, with 70.5% representing the sweet spot equilibrium for entry.
+              </dd>
+            </div>
+            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
+              <dt className="text-[#F5F7FA] font-bold font-mono text-xs uppercase mb-1">Power of 3 (PO3 / AMD)</dt>
+              <dd className="m-0 leading-relaxed">
+                The three-stage daily cycle comprising Accumulation (Asian consolidation), Manipulation (London Judas fake-out), and Distribution (New York trend expansion).
+              </dd>
+            </div>
+          </dl>
+        </section>
+
+        {/* Section 2: Invalidation Criteria */}
+        <section className="space-y-3 pt-3 border-t border-white/[0.06]">
+          <h3 className="text-base sm:text-lg font-semibold text-[#FFB020] flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-[#FFB020]" />
+            2. Mechanical Invalidation Thresholds
+          </h3>
+          <p className="text-xs sm:text-sm text-[#C5CBD8] leading-relaxed">
+            Every concept is bounded by rigorous invalidation criteria. If candle bodies violate the Consequent Encroachment (50%) of a Fair Value Gap 
+            or close through the Mean Threshold of an Order Block, the institutional setup is deemed structurally compromised.
+          </p>
+        </section>
+      </article>
     </div>
   );
 };

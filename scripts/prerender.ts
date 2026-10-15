@@ -3,12 +3,37 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { textbookChapters } from '../src/data/chaptersData.ts';
 import { masoodPlaylistsData } from '../src/data/masoodData.ts';
+import { ictConcepts } from '../src/data/conceptsData.ts';
+import { 
+  GLOSSARY_CATEGORIES, 
+  CONCEPT_SLUG_MAP, 
+  DEEP_SUB_CONCEPTS 
+} from '../src/utils/glossaryRoutes.ts';
 import { 
   BASE_URL, 
   normalizeCanonicalUrl, 
   getLessonCanonicalUrl, 
   getLessonPath 
 } from '../src/utils/url.ts';
+import { masterclassCollection } from '../src/data/masterclassData.ts';
+import { chartScenarios } from '../src/data/chartScenarios.ts';
+import { conceptComparisons } from '../src/data/comparisonsData.ts';
+import { quizzes } from '../src/data/quizzesData.ts';
+import {
+  MASTERCLASS_CATEGORIES,
+  getMasterclassSlug,
+  getMasterclassCategorySlug,
+  getMasterclassUrl,
+  CHART_SCENARIOS_META,
+  getChartScenarioSlug,
+  SIMULATOR_MODELS,
+  BACKTEST_STRATEGIES,
+  JOURNAL_SECTIONS,
+  KNOWLEDGE_GRAPH_STEPS,
+  getComparisonSlug,
+  MASTERY_EXAMS,
+  DELIVERY_SUITE_MODULES
+} from '../src/utils/workbenchToolRoutes.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -37,8 +62,12 @@ interface RouteMeta {
   isNoindex?: boolean;
 }
 
-function escapeHtml(str: string): string {
-  if (!str) return '';
+function escapeHtml(val: unknown): string {
+  if (val === null || val === undefined) return '';
+  if (Array.isArray(val)) {
+    return val.map(item => escapeHtml(item)).join(' ');
+  }
+  const str = typeof val === 'string' ? val : String(val);
   return str
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -552,13 +581,13 @@ const masoodSubPages: RouteMeta[] = [
   }
 ];
 
-// 5. Workbench Tools Hub & Sub-Tools
+// 5. Workbench Tools Hub & Root Tools
 const workbenchTools: RouteMeta[] = [
   {
     url: 'https://learnsmc.xyz/tools/',
     outputPath: 'tools/index.html',
     title: 'ICT Trading Workbench & Analytical Laboratories | LearnSMC',
-    description: 'Interactive Chart Lab, SMC strategy simulator, backtester, trading journal, and institutional concepts reference.',
+    description: 'Interactive Chart Lab, SMC strategy simulator, backtester, trading journal, masterclass hub, and institutional concepts reference.',
     canonical: 'https://learnsmc.xyz/tools/',
     heading: 'ICT Trading Workbench & Laboratory Suite',
     subheading: 'Empirical software tools engineered for deliberate practice without financial risk.',
@@ -567,6 +596,10 @@ const workbenchTools: RouteMeta[] = [
       <section style="margin-bottom: 2rem;">
         <h2 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 0.75rem;">Interactive Workbench Facilities</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem;">
+          <a href="/tools/masterclass/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+            <div style="font-weight: bold; color: #5865FF; margin-bottom: 0.25rem;">Masterclass Hub</div>
+            <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">34 Masterclasses, 15 PD Arrays in hierarchical order, and 5 A+ entry models.</p>
+          </a>
           <a href="/tools/chartlab/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
             <div style="font-weight: bold; color: #55E6D1; margin-bottom: 0.25rem;">Chart Lab</div>
             <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">8-stage candlestick auction replay with multi-layer ICT overlays.</p>
@@ -583,17 +616,40 @@ const workbenchTools: RouteMeta[] = [
             <div style="font-weight: bold; color: #00E5FF; margin-bottom: 0.25rem;">Trading Journal</div>
             <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">7-point institutional trade audit and rule validation logger.</p>
           </a>
-          <a href="/tools/graph/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+          <a href="/tools/knowledge-graph/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
             <div style="font-weight: bold; color: #55E6D1; margin-bottom: 0.25rem;">Knowledge Graph</div>
             <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">10-step institutional pipeline and connected concept network.</p>
           </a>
-          <a href="/tools/concepts/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+          <a href="/tools/glossary/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
             <div style="font-weight: bold; color: #8A72FF; margin-bottom: 0.25rem;">Concepts Glossary</div>
-            <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">Searchable encyclopedia of 40+ ICT concepts and definitions.</p>
+            <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">Searchable encyclopedia of 41+ ICT concepts, categories, and deep sub-concepts.</p>
+          </a>
+          <a href="/tools/compare/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+            <div style="font-weight: bold; color: #FB7185; margin-bottom: 0.25rem;">Compare Matrix</div>
+            <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">Side-by-side contrast of overlapping or misunderstood concepts.</p>
+          </a>
+          <a href="/tools/profile/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+            <div style="font-weight: bold; color: #34D399; margin-bottom: 0.25rem;">Mastery Profile</div>
+            <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">Assessments, diagnostic quizzes, and operator credentials.</p>
+          </a>
+          <a href="/tools/delivery-suite/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+            <div style="font-weight: bold; color: #FF6B7A; margin-bottom: 0.25rem;">ICT Delivery Suite</div>
+            <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">OTE calculator, Asian Judas planner, and 8 macro execution windows.</p>
           </a>
         </div>
       </section>
     `
+  },
+  {
+    url: 'https://learnsmc.xyz/tools/masterclass/',
+    outputPath: 'tools/masterclass/index.html',
+    title: 'Masterclass Hub (34 Models & 15 PD Arrays) | LearnSMC',
+    description: 'Explore 34 institutional masterclasses, 15 PD Arrays in hierarchical order, and 5 opening range models.',
+    canonical: 'https://learnsmc.xyz/tools/masterclass/',
+    heading: 'Masterclass Hub (34 Models & 15 PD Arrays)',
+    subheading: 'Deep-dive reference into algorithmic premium/discount arrays and high-probability entry models.',
+    badge: 'Advanced Models',
+    bodyHtml: '<p style="line-height: 1.7; color: #C5CBD8;">Explore the 15-tier PD Array hierarchy from Old High/Low down to Mitigation Blocks, alongside 5 specialized opening range setups.</p>'
   },
   {
     url: 'https://learnsmc.xyz/tools/chartlab/',
@@ -640,26 +696,38 @@ const workbenchTools: RouteMeta[] = [
     bodyHtml: '<p style="line-height: 1.7; color: #C5CBD8;">Track setup type, session, entry model, risk-reward ratio, and mistake tags in local browser storage.</p>'
   },
   {
-    url: 'https://learnsmc.xyz/tools/graph/',
-    outputPath: 'tools/graph/index.html',
+    url: 'https://learnsmc.xyz/tools/knowledge-graph/',
+    outputPath: 'tools/knowledge-graph/index.html',
     title: 'Interactive Knowledge Graph — 10-Step Pipeline | LearnSMC',
     description: 'Visual node map connecting foundational market mechanics to advanced execution models.',
-    canonical: 'https://learnsmc.xyz/tools/graph/',
+    canonical: 'https://learnsmc.xyz/tools/knowledge-graph/',
     heading: 'SMC Interactive Knowledge Graph',
     subheading: 'Connect liquidity concepts, market structure, and algorithmic timing models.',
     badge: 'Concept Matrix',
     bodyHtml: '<p style="line-height: 1.7; color: #C5CBD8;">Explore the conceptual dependency tree connecting liquidity pools, displacement, market structure shifts, and optimal trade entries.</p>'
   },
   {
-    url: 'https://learnsmc.xyz/tools/concepts/',
-    outputPath: 'tools/concepts/index.html',
-    title: 'ICT & SMC Institutional Concepts Reference | LearnSMC',
+    url: 'https://learnsmc.xyz/tools/glossary/',
+    outputPath: 'tools/glossary/index.html',
+    title: 'ICT & SMC Institutional Concepts Glossary & Reference | LearnSMC',
     description: 'Searchable encyclopedia of Fair Value Gaps, Order Blocks, Liquidity Pools, and algorithmic mechanics.',
-    canonical: 'https://learnsmc.xyz/tools/concepts/',
-    heading: 'Institutional Concepts Encyclopedia',
-    subheading: 'Rigorous definitions, mathematical parameters, and invalidation rules for 40+ ICT concepts.',
+    canonical: 'https://learnsmc.xyz/tools/glossary/',
+    heading: 'Institutional Concepts Encyclopedia & Glossary',
+    subheading: 'Rigorous definitions, mathematical parameters, and invalidation rules for 41+ ICT concepts.',
     badge: 'Encyclopedia',
-    bodyHtml: '<p style="line-height: 1.7; color: #C5CBD8;">Comprehensive dictionary and visual guide to Fair Value Gaps (FVG), Inverse FVGs (IFVG), Order Blocks, Breakers, Liquidity Voids, and Session Profiles.</p>'
+    bodyHtml: `
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.3rem; color: #ffffff; margin-bottom: 0.75rem;">Glossary Categories &amp; Knowledge Structure</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem;">
+          ${GLOSSARY_CATEGORIES.map(cat => `
+            <a href="/tools/glossary/${cat.slug}/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+              <div style="font-weight: bold; color: #55E6D1; margin-bottom: 0.25rem;">${escapeHtml(cat.name)}</div>
+              <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">${escapeHtml(cat.description)}</p>
+            </a>
+          `).join('')}
+        </div>
+      </section>
+    `
   },
   {
     url: 'https://learnsmc.xyz/tools/compare/',
@@ -673,33 +741,22 @@ const workbenchTools: RouteMeta[] = [
     bodyHtml: '<p style="line-height: 1.7; color: #C5CBD8;">Direct contrast between Order Blocks vs Breaker Blocks, MSS vs BOS, and Liquidity Sweeps vs Real Structural Breaks.</p>'
   },
   {
-    url: 'https://learnsmc.xyz/tools/dashboard/',
-    outputPath: 'tools/dashboard/index.html',
+    url: 'https://learnsmc.xyz/tools/profile/',
+    outputPath: 'tools/profile/index.html',
     title: 'Mastery Profile & Operator Credentials | LearnSMC',
     description: 'Assessments, diagnostic quizzes, and operator credentials tracking your institutional mastery.',
-    canonical: 'https://learnsmc.xyz/tools/dashboard/',
+    canonical: 'https://learnsmc.xyz/tools/profile/',
     heading: 'Mastery Profile & Operator Diagnostics',
     subheading: 'Track curriculum completion, test scores, and institutional skill readiness.',
     badge: 'Diagnostics',
     bodyHtml: '<p style="line-height: 1.7; color: #C5CBD8;">Verify your mastery across 57 curriculum chapters and track your progression from Novice to Certified Institutional Operator.</p>'
   },
   {
-    url: 'https://learnsmc.xyz/tools/masterclass/',
-    outputPath: 'tools/masterclass/index.html',
-    title: 'Masterclass Hub (34 Models & 15 PD Arrays) | LearnSMC',
-    description: 'Explore 34 institutional masterclasses, 15 PD Arrays in hierarchical order, and 5 opening range models.',
-    canonical: 'https://learnsmc.xyz/tools/masterclass/',
-    heading: 'Masterclass Hub (34 Models & 15 PD Arrays)',
-    subheading: 'Deep-dive reference into algorithmic premium/discount arrays and high-probability entry models.',
-    badge: 'Advanced Models',
-    bodyHtml: '<p style="line-height: 1.7; color: #C5CBD8;">Explore the 15-tier PD Array hierarchy from Old High/Low down to Mitigation Blocks, alongside 5 specialized opening range setups.</p>'
-  },
-  {
-    url: 'https://learnsmc.xyz/tools/ict-suite/',
-    outputPath: 'tools/ict-suite/index.html',
+    url: 'https://learnsmc.xyz/tools/delivery-suite/',
+    outputPath: 'tools/delivery-suite/index.html',
     title: 'ICT Delivery Suite & Killzone Macro Clock | LearnSMC',
     description: 'Optimal Trade Entry (OTE) calculator, Asian Judas planner, and 8 macro execution windows.',
-    canonical: 'https://learnsmc.xyz/tools/ict-suite/',
+    canonical: 'https://learnsmc.xyz/tools/delivery-suite/',
     heading: 'ICT Delivery Suite & Macro Clock',
     subheading: 'Real-time countdown to algorithmic Killzones and macro windows.',
     badge: 'Timing & Macros',
@@ -707,13 +764,701 @@ const workbenchTools: RouteMeta[] = [
   }
 ];
 
-// Combine Hub & Tool pages
+// 5a. Masterclass Category Sub-Routes (/tools/masterclass/:category/)
+const masterclassCategoryRoutes: RouteMeta[] = MASTERCLASS_CATEGORIES
+  .filter(cat => cat.id !== 'all')
+  .map(cat => {
+    const catItems = masterclassCollection.filter(m => m.category === cat.id);
+    return {
+      url: `https://learnsmc.xyz/tools/masterclass/${cat.slug}/`,
+      outputPath: `tools/masterclass/${cat.slug}/index.html`,
+      title: `${cat.name} — ICT Masterclass Hub | LearnSMC`,
+      description: cat.description,
+      canonical: `https://learnsmc.xyz/tools/masterclass/${cat.slug}/`,
+      heading: cat.name,
+      subheading: cat.description,
+      badge: `${cat.name} • Series`,
+      schemaJson: {
+        '@context': 'https://schema.org',
+        '@type': 'Course',
+        'name': cat.name,
+        'description': cat.description,
+        'provider': {
+          '@type': 'Organization',
+          'name': 'LearnSMC',
+          'url': 'https://learnsmc.xyz/'
+        }
+      },
+      bodyHtml: `
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-size: 1.3rem; color: #ffffff; margin-bottom: 0.75rem;">Masterclasses in ${escapeHtml(cat.name)}</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;">
+            ${catItems.map(m => `
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1.25rem;">
+                <div style="font-size: 0.75rem; font-family: monospace; color: #5865FF; margin-bottom: 0.25rem;">Masterclass #${m.number}</div>
+                <a href="${getMasterclassUrl(m)}" style="color: #ffffff; text-decoration: none; font-weight: bold; font-size: 1rem; display: block; margin-bottom: 0.5rem;">
+                  ${escapeHtml(m.title)}
+                </a>
+                <p style="color: #94A3B8; font-size: 0.85rem; line-height: 1.5; margin: 0 0 0.75rem 0;">${escapeHtml(m.subtitle)}</p>
+                <div style="font-size: 0.8rem; color: #55E6D1; font-family: monospace;">Rule: ${escapeHtml(m.coreRule.substring(0, 90))}...</div>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+      `
+    };
+  });
+
+// 5b. Individual Masterclass Sub-Routes (/tools/masterclass/:category/:module/)
+const masterclassModuleRoutes: RouteMeta[] = masterclassCollection.map(m => {
+  const catSlug = getMasterclassCategorySlug(m.category);
+  const modSlug = getMasterclassSlug(m);
+  const targetUrl = `https://learnsmc.xyz/tools/masterclass/${catSlug}/${modSlug}/`;
+
+  return {
+    url: targetUrl,
+    outputPath: `tools/masterclass/${catSlug}/${modSlug}/index.html`,
+    title: `${m.title} — ICT Masterclass Hub | LearnSMC`,
+    description: `${m.subtitle}. Core institutional rule: ${m.coreRule}`,
+    canonical: targetUrl,
+    heading: `#${m.number.toString().padStart(2, '0')}: ${m.title}`,
+    subheading: m.subtitle,
+    badge: `Masterclass #${m.number} • ${catSlug.toUpperCase()}`,
+    schemaJson: {
+      '@context': 'https://schema.org',
+      '@type': 'LearningResource',
+      'name': m.title,
+      'description': m.subtitle,
+      'learningResourceType': 'Masterclass Blueprint',
+      'isPartOf': {
+        '@type': 'Course',
+        'name': 'ICT & SMC Masterclass Compendium',
+        'url': 'https://learnsmc.xyz/tools/masterclass/'
+      }
+    },
+    bodyHtml: `
+      <article style="line-height: 1.7; color: #C5CBD8;">
+        <div style="background: rgba(88, 101, 255, 0.08); border-left: 3px solid #5865FF; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
+          <h3 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 1.1rem;">Core Institutional Execution Rule</h3>
+          <p style="color: #E0E7FF; font-size: 0.95rem; margin: 0; line-height: 1.6;">${escapeHtml(m.coreRule)}</p>
+        </div>
+
+        <div style="margin-bottom: 1.75rem;">
+          <h3 style="color: #ffffff; font-size: 1.15rem; margin-bottom: 0.75rem;">Step-by-Step Order of Operations</h3>
+          <ol style="padding-left: 1.5rem; line-height: 1.8;">
+            ${m.orderOfOperations.map(step => `<li>${escapeHtml(step)}</li>`).join('')}
+          </ol>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.75rem;">
+          <div style="background: rgba(244,63,94,0.08); border: 1px solid rgba(244,63,94,0.2); border-radius: 8px; padding: 1rem;">
+            <h4 style="color: #FB7185; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Structural Invalidation Criteria</h4>
+            <ul style="padding-left: 1.25rem; margin: 0; font-size: 0.85rem; line-height: 1.6;">
+              ${m.invalidationChecklist.map(inv => `<li>${escapeHtml(inv)}</li>`).join('')}
+            </ul>
+          </div>
+          <div style="background: rgba(85,230,209,0.08); border: 1px solid rgba(85,230,209,0.2); border-radius: 8px; padding: 1rem;">
+            <h4 style="color: #55E6D1; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Visual Anatomy Signature</h4>
+            <p style="margin: 0; font-size: 0.85rem; line-height: 1.6;">${escapeHtml(m.visualAnatomy || m.coreRule)}</p>
+          </div>
+        </div>
+
+        <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.25rem; font-size: 0.85rem; color: #94A3B8;">
+          Cross-reference this blueprint with the <a href="/tools/glossary/" style="color: #55E6D1;">Concepts Glossary</a> and test live execution inside the <a href="/tools/simulator/" style="color: #8A72FF;">Trade Simulator</a>.
+        </div>
+      </article>
+    `
+  };
+});
+
+// 5c. Chart Lab Scenarios Sub-Routes (/tools/chartlab/:scenario/)
+const chartLabScenarioRoutes: RouteMeta[] = chartScenarios.map(s => {
+  const slug = getChartScenarioSlug(s.id);
+  const meta = CHART_SCENARIOS_META[s.id];
+  const targetUrl = `https://learnsmc.xyz/tools/chartlab/${slug}/`;
+
+  return {
+    url: targetUrl,
+    outputPath: `tools/chartlab/${slug}/index.html`,
+    title: meta?.metaTitle || `${s.title} — Chart Lab | LearnSMC`,
+    description: meta?.metaDescription || s.description,
+    canonical: targetUrl,
+    heading: s.title,
+    subheading: `${s.asset} · Interactive Candlestick Auction Replay & Training Lab`,
+    badge: `${s.asset} • Lab Scenario`,
+    schemaJson: {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      'name': s.title,
+      'applicationCategory': 'Trading Simulation',
+      'operatingSystem': 'Any Web Browser'
+    },
+    bodyHtml: `
+      <article style="line-height: 1.7; color: #C5CBD8;">
+        <div style="background: rgba(85, 230, 209, 0.08); border-left: 3px solid #55E6D1; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
+          <h3 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 1.1rem;">Scenario Objective &amp; Learning Takeaway</h3>
+          <p style="color: #E0E7FF; font-size: 0.95rem; margin: 0;">${escapeHtml(s.description)}</p>
+        </div>
+
+        <div style="margin-bottom: 1.75rem;">
+          <h3 style="color: #ffffff; font-size: 1.15rem; margin-bottom: 0.75rem;">8-Stage Sequential Execution Protocol</h3>
+          <ol style="padding-left: 1.5rem; line-height: 1.8;">
+            <li><strong>Stage 1 (Liquidity Pool):</strong> Identify resting Buy-Side (BSL) or Sell-Side (SSL) stops.</li>
+            <li><strong>Stage 2 (Sweep):</strong> Mark the candle wick penetrating resting stops to engineer liquidity.</li>
+            <li><strong>Stage 3 (Displacement):</strong> Spot explosive institutional expansion candles with wide bodies.</li>
+            <li><strong>Stage 4 (Market Structure Shift):</strong> Confirm candle body close breaking internal structure swing.</li>
+            <li><strong>Stage 5 (PD Array Formation):</strong> Highlight the Fair Value Gap (FVG) or Order Block.</li>
+            <li><strong>Stage 6 (Institutional Entry):</strong> Place limit entry at the 50% Consequent Encroachment (CE).</li>
+            <li><strong>Stage 7 (Invalidation Stop):</strong> Anchor protective stop beyond the structural sweep high/low.</li>
+            <li><strong>Stage 8 (Terminal Target):</strong> Lock profit at opposing Higher Timeframe liquidity pool.</li>
+          </ol>
+        </div>
+
+        <p style="font-size: 0.85rem; color: #94A3B8;">
+          Ready to trade this setup? Open the <a href="/tools/chartlab/" style="color: #55E6D1;">Interactive Chart Lab</a> for step-by-step candle advance and automatic feedback.
+        </p>
+      </article>
+    `
+  };
+});
+
+// 5d. Trade Simulator Models Sub-Routes (/tools/simulator/:model/)
+const simulatorModelRoutes: RouteMeta[] = SIMULATOR_MODELS.map(m => {
+  const targetUrl = `https://learnsmc.xyz/tools/simulator/${m.slug}/`;
+
+  return {
+    url: targetUrl,
+    outputPath: `tools/simulator/${m.slug}/index.html`,
+    title: `${m.name} Execution Simulator | LearnSMC`,
+    description: `${m.subtitle}. ${m.description}`,
+    canonical: targetUrl,
+    heading: m.name,
+    subheading: m.subtitle,
+    badge: `${m.direction} • ${m.location}`,
+    schemaJson: {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      'name': `${m.name} Simulator`,
+      'applicationCategory': 'Financial Application'
+    },
+    bodyHtml: `
+      <article style="line-height: 1.7; color: #C5CBD8;">
+        <p style="font-size: 1rem; color: #fff; margin-bottom: 1.25rem;">${escapeHtml(m.description)}</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.75rem;">
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem;">
+            <div style="font-size: 0.75rem; font-family: monospace; color: #55E6D1;">Direction &amp; Higher Timeframe Bias</div>
+            <div style="font-weight: bold; color: #fff; margin-top: 0.25rem;">${m.direction} (${m.htfBias} in ${m.location})</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem;">
+            <div style="font-size: 0.75rem; font-family: monospace; color: #8A72FF;">Liquidity Event &amp; Confirmation</div>
+            <div style="font-weight: bold; color: #fff; margin-top: 0.25rem;">${m.liquidityEvent} ➔ ${m.confirmation}</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem;">
+            <div style="font-size: 0.75rem; font-family: monospace; color: #FF5722;">Entry Array &amp; Invalidation Stop</div>
+            <div style="font-weight: bold; color: #fff; margin-top: 0.25rem;">${m.entryArray} (Stop: ${m.stopPlacement})</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem;">
+            <div style="font-size: 0.75rem; font-family: monospace; color: #34D399;">Profit Target Objective</div>
+            <div style="font-weight: bold; color: #fff; margin-top: 0.25rem;">${m.targetType}</div>
+          </div>
+        </div>
+
+        <p style="font-size: 0.85rem; color: #94A3B8;">
+          Test your execution rules live in the <a href="/tools/simulator/" style="color: #8A72FF;">Trade Simulator</a> or explore backtested win rates in the <a href="/tools/backtest/" style="color: #FF5722;">Backtest Lab</a>.
+        </p>
+      </article>
+    `
+  };
+});
+
+// 5e. Backtest Strategies Sub-Routes (/tools/backtest/:strategy/)
+const backtestStrategyRoutes: RouteMeta[] = BACKTEST_STRATEGIES.map(s => {
+  const targetUrl = `https://learnsmc.xyz/tools/backtest/${s.slug}/`;
+
+  return {
+    url: targetUrl,
+    outputPath: `tools/backtest/${s.slug}/index.html`,
+    title: `${s.shortName} Backtest Strategy & Expectancy | LearnSMC`,
+    description: `${s.description} Expected Win Rate: ${s.expectedWinRate}, Average RR: ${s.avgRR}.`,
+    canonical: targetUrl,
+    heading: s.title,
+    subheading: 'Quantitative Statistical Edge & Expectancy Model',
+    badge: `${s.avgRR} • Expectancy`,
+    schemaJson: {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      'name': s.title,
+      'applicationCategory': 'Quantitative Finance Research'
+    },
+    bodyHtml: `
+      <article style="line-height: 1.7; color: #C5CBD8;">
+        <p style="font-size: 1rem; color: #fff; margin-bottom: 1.25rem;">${escapeHtml(s.description)}</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.75rem;">
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-align: center;">
+            <div style="font-size: 0.75rem; font-family: monospace; color: #94A3B8;">Expected Win Rate</div>
+            <div style="font-size: 1.5rem; font-weight: bold; color: #34D399; margin-top: 0.25rem;">${s.expectedWinRate}</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-align: center;">
+            <div style="font-size: 0.75rem; font-family: monospace; color: #94A3B8;">Average R-Multiple</div>
+            <div style="font-size: 1.5rem; font-weight: bold; color: #55E6D1; margin-top: 0.25rem;">${s.avgRR}</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-align: center;">
+            <div style="font-size: 0.75rem; font-family: monospace; color: #94A3B8;">Profit Factor Range</div>
+            <div style="font-size: 1.5rem; font-weight: bold; color: #8A72FF; margin-top: 0.25rem;">${s.profitFactor}</div>
+          </div>
+        </div>
+
+        <p style="font-size: 0.85rem; color: #94A3B8;">
+          Run Monte Carlo simulations for this strategy in the <a href="/tools/backtest/" style="color: #FF5722;">Backtest Lab</a>.
+        </p>
+      </article>
+    `
+  };
+});
+
+// 5f. Trading Journal Sections Sub-Routes (/tools/journal/:section/)
+const journalSectionRoutes: RouteMeta[] = JOURNAL_SECTIONS.map(s => {
+  const targetUrl = `https://learnsmc.xyz/tools/journal/${s.slug}/`;
+
+  return {
+    url: targetUrl,
+    outputPath: `tools/journal/${s.slug}/index.html`,
+    title: `${s.title} — Trading Journal | LearnSMC`,
+    description: s.description,
+    canonical: targetUrl,
+    heading: s.title,
+    subheading: 'Institutional Audit & Trade Discipline Logger',
+    badge: "Trader's Log",
+    schemaJson: {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      'name': s.title,
+      'applicationCategory': 'Trading Journal'
+    },
+    bodyHtml: `
+      <article style="line-height: 1.7; color: #C5CBD8;">
+        <p style="font-size: 1rem; color: #fff; margin-bottom: 1.25rem;">${escapeHtml(s.description)}</p>
+
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1.25rem; margin-bottom: 1.5rem;">
+          <h3 style="color: #55E6D1; margin-top: 0; font-size: 1.1rem;">The 7-Point Institutional Quality Audit</h3>
+          <ul style="padding-left: 1.5rem; line-height: 1.8;">
+            <li>1. HTF Daily Bias Aligned with clear liquidity draw</li>
+            <li>2. Execution strictly in Discount (Buy) or Premium (Sell)</li>
+            <li>3. Obvious liquidity raid of session or daily boundaries</li>
+            <li>4. Clean displacement candle breaking structure with full body</li>
+            <li>5. Clear Fair Value Gap (FVG) or unmitigated Order Block present</li>
+            <li>6. Invalidation stop placed beyond structural raid swing</li>
+            <li>7. Execution inside London or New York Killzone time window</li>
+          </ul>
+        </div>
+
+        <p style="font-size: 0.85rem; color: #94A3B8;">
+          Log your executions with automated local storage in the <a href="/tools/journal/" style="color: #00E5FF;">Institutional Trading Journal</a>.
+        </p>
+      </article>
+    `
+  };
+});
+
+// 5g. Knowledge Graph Steps & Network Sub-Routes (/tools/knowledge-graph/pipeline/step-:step/)
+const knowledgeGraphStepRoutes: RouteMeta[] = KNOWLEDGE_GRAPH_STEPS.map(s => {
+  const targetUrl = `https://learnsmc.xyz/tools/knowledge-graph/pipeline/step-${s.step}/`;
+
+  return {
+    url: targetUrl,
+    outputPath: `tools/knowledge-graph/pipeline/step-${s.step}/index.html`,
+    title: `${s.title} — Knowledge Graph | LearnSMC`,
+    description: `${s.shortDesc} Non-random causal pipeline connecting liquidity to execution.`,
+    canonical: targetUrl,
+    heading: s.title,
+    subheading: `Step ${s.step} of 10 in Algorithmic Institutional Price Delivery`,
+    badge: `Step ${s.step} of 10 • Pipeline`,
+    schemaJson: {
+      '@context': 'https://schema.org',
+      '@type': 'ItemPage',
+      'name': s.title,
+      'description': s.shortDesc
+    },
+    bodyHtml: `
+      <article style="line-height: 1.7; color: #C5CBD8;">
+        <p style="font-size: 1.05rem; color: #fff; margin-bottom: 1.25rem;">${escapeHtml(s.shortDesc)}</p>
+
+        <div style="background: rgba(85,230,209,0.08); border-left: 3px solid #55E6D1; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
+          <h3 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 1.1rem;">Algorithmic Causality</h3>
+          <p style="color: #E0E7FF; font-size: 0.95rem; margin: 0;">Step ${s.step} represents a deterministic link in institutional auction mechanics. Smart money relies on resting liquidity pools to fill large position blocks before triggering displacement.</p>
+        </div>
+
+        <p style="font-size: 0.85rem; color: #94A3B8;">
+          Interact with this causal node and view interconnected concept prerequisites in the <a href="/tools/knowledge-graph/" style="color: #55E6D1;">Interactive Knowledge Graph</a>.
+        </p>
+      </article>
+    `
+  };
+});
+
+const knowledgeGraphNetworkRoute: RouteMeta = {
+  url: 'https://learnsmc.xyz/tools/knowledge-graph/network/fair_value_gap/',
+  outputPath: 'tools/knowledge-graph/network/fair_value_gap/index.html',
+  title: 'Knowledge Graph Network: Fair Value Gap Node | LearnSMC',
+  description: 'Interactive concept dependency network connecting Fair Value Gaps with displacement, liquidity sweeps, and trade models.',
+  canonical: 'https://learnsmc.xyz/tools/knowledge-graph/network/fair_value_gap/',
+  heading: 'Smart Money Interconnected Node Network',
+  subheading: 'Visual Dependency Tree for Institutional Trading Concepts',
+  badge: 'Network Matrix',
+  schemaJson: {
+    '@context': 'https://schema.org',
+    '@type': 'ItemPage',
+    'name': 'Knowledge Graph Network'
+  },
+  bodyHtml: `
+    <article style="line-height: 1.7; color: #C5CBD8;">
+      <p style="font-size: 1rem; color: #fff; margin-bottom: 1.25rem;">
+        The Smart Money Concepts knowledge graph links core concepts into a cohesive causal web: Liquidity Sweeps ➔ Displacement ➔ Fair Value Gaps ➔ Market Structure Shifts ➔ Institutional Order Blocks ➔ Killzone Execution Models.
+      </p>
+      <p style="font-size: 0.85rem; color: #94A3B8;">
+        Explore the 2D visual layout in the <a href="/tools/knowledge-graph/" style="color: #55E6D1;">Knowledge Graph</a>.
+      </p>
+    </article>
+  `
+};
+
+// 5h. Compare Matrix Sub-Routes (/tools/compare/:slug/)
+const compareSubRoutes: RouteMeta[] = conceptComparisons.map(c => {
+  const slug = getComparisonSlug(c.id);
+  const targetUrl = `https://learnsmc.xyz/tools/compare/${slug}/`;
+
+  return {
+    url: targetUrl,
+    outputPath: `tools/compare/${slug}/index.html`,
+    title: `${c.title} — Compare Matrix | LearnSMC`,
+    description: `Key Difference: ${c.keyDifference} Side-by-side technical comparison of ${c.conceptA.name} and ${c.conceptB.name}.`,
+    canonical: targetUrl,
+    heading: c.title,
+    subheading: 'Side-by-Side Microstructure Contrast & Operational Decision Rules',
+    badge: 'Side-by-Side Analysis',
+    schemaJson: {
+      '@context': 'https://schema.org',
+      '@type': 'ItemPage',
+      'name': c.title,
+      'description': c.keyDifference
+    },
+    bodyHtml: `
+      <article style="line-height: 1.7; color: #C5CBD8;">
+        <div style="background: rgba(88, 101, 255, 0.08); border-left: 3px solid #5865FF; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
+          <h3 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 1.1rem;">The Crucial Operational Distinction</h3>
+          <p style="color: #E0E7FF; font-size: 0.95rem; margin: 0;">${escapeHtml(c.keyDifference)}</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.75rem;">
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem;">
+            <h4 style="color: #55E6D1; margin: 0 0 0.5rem 0;">${escapeHtml(c.conceptA.name)}</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">${escapeHtml(c.conceptA.summary)}</p>
+            <ul style="padding-left: 1.25rem; margin: 0; font-size: 0.8rem; line-height: 1.5;">
+              ${c.conceptA.keyPoints.map(kp => `<li>${escapeHtml(kp)}</li>`).join('')}
+            </ul>
+          </div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem;">
+            <h4 style="color: #8A72FF; margin: 0 0 0.5rem 0;">${escapeHtml(c.conceptB.name)}</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">${escapeHtml(c.conceptB.summary)}</p>
+            <ul style="padding-left: 1.25rem; margin: 0; font-size: 0.8rem; line-height: 1.5;">
+              ${c.conceptB.keyPoints.map(kp => `<li>${escapeHtml(kp)}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.75rem;">
+          <div style="background: rgba(244,63,94,0.08); border: 1px solid rgba(244,63,94,0.2); border-radius: 8px; padding: 1rem;">
+            <strong style="color: #FB7185;">Common Confusion:</strong>
+            <p style="margin: 0.5rem 0 0 0; font-size: 0.85rem;">${escapeHtml(c.commonConfusion)}</p>
+          </div>
+          <div style="background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2); border-radius: 8px; padding: 1rem;">
+            <strong style="color: #34D399;">Mechanical Decision Rule:</strong>
+            <p style="margin: 0.5rem 0 0 0; font-size: 0.85rem;">${escapeHtml(c.decisionRule)}</p>
+          </div>
+        </div>
+
+        <p style="font-size: 0.85rem; color: #94A3B8;">
+          View all pairings in the <a href="/tools/compare/" style="color: #FB7185;">Compare Matrix</a> or search definitions in the <a href="/tools/glossary/" style="color: #55E6D1;">Concepts Glossary</a>.
+        </p>
+      </article>
+    `
+  };
+});
+
+// 5i. Mastery Profile Sub-Routes (/tools/profile/roadmap/ & /tools/profile/exams/)
+const profileRoadmapRoute: RouteMeta = {
+  url: 'https://learnsmc.xyz/tools/profile/roadmap/',
+  outputPath: 'tools/profile/roadmap/index.html',
+  title: 'Institutional Operator Roadmap — Mastery Profile | LearnSMC',
+  description: 'Track progression across Level 0 Foundations, Liquidity, Displacement, PD Arrays, and 2026 Advanced Execution Protocols.',
+  canonical: 'https://learnsmc.xyz/tools/profile/roadmap/',
+  heading: 'Institutional Trader Curriculum Roadmap',
+  subheading: 'Progressive Level 0 through Level 5 Competency Milestones',
+  badge: 'Curriculum Roadmap',
+  schemaJson: {
+    '@context': 'https://schema.org',
+    '@type': 'ItemPage',
+    'name': 'Mastery Roadmap'
+  },
+  bodyHtml: `
+    <article style="line-height: 1.7; color: #C5CBD8;">
+      <p style="font-size: 1rem; color: #fff; margin-bottom: 1.25rem;">
+        The LearnSMC curriculum spans 6 rigorous phases of deliberate practice:
+      </p>
+      <ul style="padding-left: 1.5rem; line-height: 2;">
+        <li><strong>Level 0:</strong> Foundations & Electronic Auction Microstructure (Chapters 1 - 3)</li>
+        <li><strong>Level 1:</strong> Market Structure, Swing Mechanics & Liquidity Pools (Chapters 4 - 8)</li>
+        <li><strong>Level 2:</strong> Energetic Displacement, Fair Value Gaps & Dealing Range (Chapters 9 - 14)</li>
+        <li><strong>Level 3:</strong> Institutional PD Arrays, Breakers & Mitigation Blocks (Chapters 15 - 18)</li>
+        <li><strong>Level 4:</strong> Time, Killzones & Daily/Weekly Profiles (Chapters 19 - 21)</li>
+        <li><strong>Level 5:</strong> 2026 Smart Money Concepts, ATH Alchemy & Trinity Rules (Chapters 22 - 57)</li>
+      </ul>
+      <p style="font-size: 0.85rem; color: #94A3B8;">
+        Test your readiness across these levels in the <a href="/tools/profile/exams/" style="color: #34D399;">Mastery Diagnostic Exams</a>.
+      </p>
+    </article>
+  `
+};
+
+const profileExamsRootRoute: RouteMeta = {
+  url: 'https://learnsmc.xyz/tools/profile/exams/',
+  outputPath: 'tools/profile/exams/index.html',
+  title: 'Institutional Diagnostic Exams — Mastery Profile | LearnSMC',
+  description: '5 rigorous diagnostic exams evaluating liquidity mechanics, imbalances, order blocks, and 2026 Smart Money execution.',
+  canonical: 'https://learnsmc.xyz/tools/profile/exams/',
+  heading: 'Institutional Diagnostic Examination Suite',
+  subheading: 'Evaluate Your Market Microstructure Knowledge',
+  badge: 'Diagnostic Exams',
+  schemaJson: {
+    '@context': 'https://schema.org',
+    '@type': 'Quiz',
+    'name': 'Institutional Diagnostic Exams'
+  },
+  bodyHtml: `
+    <article style="line-height: 1.7; color: #C5CBD8;">
+      <p style="font-size: 1rem; color: #fff; margin-bottom: 1.25rem;">
+        Benchmark your institutional market understanding with interactive diagnostic assessments:
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem;">
+        ${MASTERY_EXAMS.map(e => `
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1.25rem;">
+            <div style="font-size: 0.75rem; font-family: monospace; color: #34D399; margin-bottom: 0.25rem;">${e.level}</div>
+            <a href="/tools/profile/exams/${e.slug}/" style="color: #ffffff; text-decoration: none; font-weight: bold; font-size: 1rem; display: block; margin-bottom: 0.5rem;">
+              ${escapeHtml(e.title)}
+            </a>
+            <p style="color: #94A3B8; font-size: 0.85rem; margin: 0;">${escapeHtml(e.description)}</p>
+          </div>
+        `).join('')}
+      </div>
+    </article>
+  `
+};
+
+const profileExamDetailRoutes: RouteMeta[] = MASTERY_EXAMS.map(e => {
+  const targetUrl = `https://learnsmc.xyz/tools/profile/exams/${e.slug}/`;
+
+  return {
+    url: targetUrl,
+    outputPath: `tools/profile/exams/${e.slug}/index.html`,
+    title: `${e.title} — Mastery Exam | LearnSMC`,
+    description: `${e.description} Level: ${e.level}.`,
+    canonical: targetUrl,
+    heading: e.title,
+    subheading: `Level: ${e.level} Diagnostic Assessment`,
+    badge: e.level,
+    schemaJson: {
+      '@context': 'https://schema.org',
+      '@type': 'Quiz',
+      'name': e.title,
+      'description': e.description,
+      'educationalLevel': e.level
+    },
+    bodyHtml: `
+      <article style="line-height: 1.7; color: #C5CBD8;">
+        <p style="font-size: 1.05rem; color: #fff; margin-bottom: 1.25rem;">${escapeHtml(e.description)}</p>
+
+        <div style="background: rgba(52,211,153,0.08); border-left: 3px solid #34D399; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
+          <h3 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 1.1rem;">Exam Parameters</h3>
+          <p style="color: #E0E7FF; font-size: 0.95rem; margin: 0;">Passing score: 75% or higher. Evaluates conceptual mastery, operational rules, and invalidation recognition under pressure.</p>
+        </div>
+
+        <p style="font-size: 0.85rem; color: #94A3B8;">
+          Take this exam with instant scoring in the <a href="/tools/profile/" style="color: #34D399;">Mastery Profile</a>.
+        </p>
+      </article>
+    `
+  };
+});
+
+// 5j. ICT Delivery Suite Sub-Routes (/tools/delivery-suite/:module/)
+const deliverySuiteSubRoutes: RouteMeta[] = DELIVERY_SUITE_MODULES.map(m => {
+  const targetUrl = `https://learnsmc.xyz/tools/delivery-suite/${m.slug}/`;
+
+  return {
+    url: targetUrl,
+    outputPath: `tools/delivery-suite/${m.slug}/index.html`,
+    title: `${m.name} — ICT Delivery Suite | LearnSMC`,
+    description: m.description,
+    canonical: targetUrl,
+    heading: m.name,
+    subheading: 'Official Precision Institutional Delivery Tool',
+    badge: m.badge,
+    schemaJson: {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      'name': m.name,
+      'applicationCategory': 'Financial Application'
+    },
+    bodyHtml: `
+      <article style="line-height: 1.7; color: #C5CBD8;">
+        <p style="font-size: 1.05rem; color: #fff; margin-bottom: 1.25rem;">${escapeHtml(m.description)}</p>
+
+        <div style="background: rgba(255,107,122,0.08); border-left: 3px solid #FF6B7A; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
+          <h3 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 1.1rem;">Mathematical &amp; Algorithmic Foundation</h3>
+          <p style="color: #FFE4E6; font-size: 0.95rem; margin: 0;">Derived from the canonical algorithms of Inner Circle Trader delivery mechanics. Time and price must synchronize for highest expectancy setups.</p>
+        </div>
+
+        <p style="font-size: 0.85rem; color: #94A3B8;">
+          Access the live interactive calculator in the <a href="/tools/delivery-suite/" style="color: #FF6B7A;">ICT Delivery Suite</a>.
+        </p>
+      </article>
+    `
+  };
+});
+
+// 5b. Multi-Tier Dynamic Glossary Categories: /tools/glossary/:category/
+const glossaryCategoryRoutes: RouteMeta[] = GLOSSARY_CATEGORIES.map(cat => {
+  const catConcepts = ictConcepts.filter(c => c.category === cat.id);
+  return {
+    url: `https://learnsmc.xyz/tools/glossary/${cat.slug}/`,
+    outputPath: `tools/glossary/${cat.slug}/index.html`,
+    title: cat.metaTitle,
+    description: cat.metaDescription,
+    canonical: `https://learnsmc.xyz/tools/glossary/${cat.slug}/`,
+    heading: cat.name,
+    subheading: cat.description,
+    badge: `${cat.badge} • Category`,
+    bodyHtml: `
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.3rem; color: #ffffff; margin-bottom: 0.75rem;">${escapeHtml(cat.name)} Topics (${catConcepts.length})</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;">
+          ${catConcepts.map(c => {
+            const mapping = CONCEPT_SLUG_MAP[c.id];
+            const cSlug = mapping?.slug || c.id.replace(/_/g, '-');
+            return `
+              <a href="/tools/glossary/${cat.slug}/${cSlug}/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+                <div style="font-weight: bold; color: #55E6D1; margin-bottom: 0.25rem;">${escapeHtml(c.name)}</div>
+                <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">${escapeHtml(c.shortDefinition)}</p>
+              </a>
+            `;
+          }).join('\n')}
+        </div>
+      </section>
+    `
+  };
+});
+
+// 5c. Multi-Tier Dynamic Glossary Concepts: /tools/glossary/:category/:concept/
+const glossaryConceptRoutes: RouteMeta[] = ictConcepts.map(c => {
+  const mapping = CONCEPT_SLUG_MAP[c.id];
+  const catSlug = mapping?.categorySlug || 'foundations';
+  const cSlug = mapping?.slug || c.id.replace(/_/g, '-');
+  const canonicalUrl = `https://learnsmc.xyz/tools/glossary/${catSlug}/${cSlug}/`;
+
+  return {
+    url: canonicalUrl,
+    outputPath: `tools/glossary/${catSlug}/${cSlug}/index.html`,
+    title: mapping?.metaTitle || `${c.name} — ICT Institutional Glossary | LearnSMC`,
+    description: mapping?.metaDescription || c.shortDefinition,
+    canonical: canonicalUrl,
+    heading: c.name,
+    subheading: c.shortDefinition,
+    badge: `${c.category} • ICT Framework`,
+    bodyHtml: `
+      <article style="line-height: 1.7; color: #C5CBD8;">
+        <section style="margin-bottom: 1.5rem;">
+          <h3 style="color: #55E6D1; font-size: 1.1rem; margin-bottom: 0.5rem;">1. Mechanism &amp; Operational Logic</h3>
+          <p><strong style="color: #fff;">Why It Exists:</strong> ${escapeHtml(c.whyItExists)}</p>
+          <p><strong style="color: #fff;">Problem It Solves:</strong> ${escapeHtml(c.problemItSolves)}</p>
+          <p><strong style="color: #fff;">How It Forms:</strong> ${escapeHtml(c.howItForms)}</p>
+        </section>
+        <section style="margin-bottom: 1.5rem;">
+          <h3 style="color: #5865FF; font-size: 1.1rem; margin-bottom: 0.5rem;">2. Visual Anatomy &amp; Identification Rules</h3>
+          <p>${escapeHtml(c.chartAnatomy)}</p>
+          <ul style="padding-left: 1.5rem; margin-top: 0.5rem;">
+            ${(c.identificationRules || []).map(r => `<li>${escapeHtml(r)}</li>`).join('')}
+          </ul>
+        </section>
+        <section style="margin-bottom: 1.5rem;">
+          <h3 style="color: #FFB300; font-size: 1.1rem; margin-bottom: 0.5rem;">3. Mechanical Invalidation Threshold</h3>
+          <p>${escapeHtml(c.invalidationCriteria)}</p>
+        </section>
+      </article>
+    `
+  };
+});
+
+// 5d. Multi-Tier Deep Sub-Concepts: /tools/glossary/:category/:subConcept/
+const deepSubConceptRoutes: RouteMeta[] = DEEP_SUB_CONCEPTS.map(sub => {
+  const canonicalUrl = `https://learnsmc.xyz/tools/glossary/${sub.categorySlug}/${sub.slug}/`;
+  return {
+    url: canonicalUrl,
+    outputPath: `tools/glossary/${sub.categorySlug}/${sub.slug}/index.html`,
+    title: sub.metaTitle,
+    description: sub.metaDescription,
+    canonical: canonicalUrl,
+    heading: sub.name,
+    subheading: sub.subtitle,
+    badge: `Deep Sub-Concept • ${sub.categorySlug}`,
+    bodyHtml: `
+      <article style="line-height: 1.7; color: #C5CBD8;">
+        <p style="font-size: 1rem; color: #fff; margin-bottom: 1rem;">${escapeHtml(sub.shortDefinition)}</p>
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1.25rem; margin-bottom: 1.5rem;">
+          <h4 style="color: #55E6D1; margin-top: 0;">Decisive Operational Criteria &amp; Rules of Thumb</h4>
+          <ul style="padding-left: 1.5rem;">
+            ${sub.keyPoints.map(pt => `<li>${escapeHtml(pt)}</li>`).join('')}
+          </ul>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+          <div style="background: rgba(244,63,94,0.08); border: 1px solid rgba(244,63,94,0.2); border-radius: 8px; padding: 1rem;">
+            <strong style="color: #FB7185;">Structural Invalidation:</strong>
+            <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">${escapeHtml(sub.invalidation)}</p>
+          </div>
+          <div style="background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2); border-radius: 8px; padding: 1rem;">
+            <strong style="color: #34D399;">Market Scenario:</strong>
+            <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">${escapeHtml(sub.exampleScenario)}</p>
+          </div>
+        </div>
+      </article>
+    `
+  };
+});
+
+// Combine Hub, Tool, and Dynamic Glossary pages
 allRoutes.push(homePage);
 allRoutes.push(...legalPages);
 allRoutes.push(curriculumHubPage);
 allRoutes.push(masoodHubPage);
 allRoutes.push(...masoodSubPages);
 allRoutes.push(...workbenchTools);
+allRoutes.push(...masterclassCategoryRoutes);
+allRoutes.push(...masterclassModuleRoutes);
+allRoutes.push(...chartLabScenarioRoutes);
+allRoutes.push(...simulatorModelRoutes);
+allRoutes.push(...backtestStrategyRoutes);
+allRoutes.push(...journalSectionRoutes);
+allRoutes.push(...knowledgeGraphStepRoutes);
+allRoutes.push(knowledgeGraphNetworkRoute);
+allRoutes.push(...compareSubRoutes);
+allRoutes.push(profileRoadmapRoute);
+allRoutes.push(profileExamsRootRoute);
+allRoutes.push(...profileExamDetailRoutes);
+allRoutes.push(...deliverySuiteSubRoutes);
+allRoutes.push(...glossaryCategoryRoutes);
+allRoutes.push(...glossaryConceptRoutes);
+allRoutes.push(...deepSubConceptRoutes);
 
 // 6. Process All 53 Chapters at Canonical /learn/:slug/
 for (const ch of textbookChapters) {
@@ -892,6 +1637,12 @@ for (const route of allRoutes) {
     } else if (route.outputPath.startsWith('curriculum/') || route.outputPath.startsWith('masood/')) {
       priority = '0.8';
       changefreq = 'weekly';
+    } else if (route.outputPath.startsWith('tools/glossary/')) {
+      priority = '0.85';
+      changefreq = 'weekly';
+    } else if (route.outputPath.startsWith('tools/')) {
+      priority = '0.8';
+      changefreq = 'weekly';
     }
 
     sitemapUrls.push({
@@ -960,7 +1711,80 @@ const chapterRootHtml = `<!doctype html>
 </html>`;
 fs.writeFileSync(path.resolve(chapterRootDir, 'index.html'), chapterRootHtml, 'utf-8');
 
-console.log(`✓ Generated ${textbookChapters.length} legacy /chapter/:id redirect aliases + /chapter root fallback`);
+// 9b. Legacy Redirect for /tools/concepts/ -> /tools/glossary/
+const legacyConceptsDir = path.resolve(distDir, 'tools/concepts');
+if (!fs.existsSync(legacyConceptsDir)) {
+  fs.mkdirSync(legacyConceptsDir, { recursive: true });
+}
+const legacyConceptsHtml = `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Concepts Glossary | LearnSMC</title>
+    <link rel="canonical" href="https://learnsmc.xyz/tools/glossary/" />
+    <meta http-equiv="refresh" content="0; url=/tools/glossary/" />
+    <script>window.location.replace('/tools/glossary/');</script>
+  </head>
+  <body style="background: #08090D; color: #fff; font-family: sans-serif; padding: 2rem; text-align: center;">
+    <p>Navigating to Glossary: <a href="/tools/glossary/" style="color: #55E6D1;">Glossary</a>...</p>
+  </body>
+</html>`;
+fs.writeFileSync(path.resolve(legacyConceptsDir, 'index.html'), legacyConceptsHtml, 'utf-8');
+
+// 9c. Legacy Redirect for /workbench/ -> /tools/
+// 9c. Legacy Redirect for /workbench/ -> /tools/
+const legacyWorkbenchDir = path.resolve(distDir, 'workbench');
+if (!fs.existsSync(legacyWorkbenchDir)) {
+  fs.mkdirSync(legacyWorkbenchDir, { recursive: true });
+}
+const legacyWorkbenchHtml = `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Trading Tools & Workbench | LearnSMC</title>
+    <link rel="canonical" href="https://learnsmc.xyz/tools/" />
+    <meta http-equiv="refresh" content="0; url=/tools/" />
+    <script>window.location.replace('/tools/');</script>
+  </head>
+  <body style="background: #08090D; color: #fff; font-family: sans-serif; padding: 2rem; text-align: center;">
+    <p>Navigating to Workbench: <a href="/tools/" style="color: #55E6D1;">Workbench</a>...</p>
+  </body>
+</html>`;
+fs.writeFileSync(path.resolve(legacyWorkbenchDir, 'index.html'), legacyWorkbenchHtml, 'utf-8');
+
+// 9d. Legacy / Alternative Aliases:
+// /tools/graph/ -> /tools/knowledge-graph/
+// /tools/dashboard/ -> /tools/profile/
+// /tools/ict-suite/ & /tools/ict_suite/ -> /tools/delivery-suite/
+const aliasMappings = [
+  { fromDir: 'tools/graph', toUrl: '/tools/knowledge-graph/', title: 'Knowledge Graph' },
+  { fromDir: 'tools/dashboard', toUrl: '/tools/profile/', title: 'Mastery Profile' },
+  { fromDir: 'tools/ict-suite', toUrl: '/tools/delivery-suite/', title: 'ICT Delivery Suite' },
+  { fromDir: 'tools/ict_suite', toUrl: '/tools/delivery-suite/', title: 'ICT Delivery Suite' }
+];
+
+for (const alias of aliasMappings) {
+  const aliasDir = path.resolve(distDir, alias.fromDir);
+  if (!fs.existsSync(aliasDir)) {
+    fs.mkdirSync(aliasDir, { recursive: true });
+  }
+  const aliasHtml = `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>${alias.title} | LearnSMC</title>
+    <link rel="canonical" href="https://learnsmc.xyz${alias.toUrl}" />
+    <meta http-equiv="refresh" content="0; url=${alias.toUrl}" />
+    <script>window.location.replace('${alias.toUrl}');</script>
+  </head>
+  <body style="background: #08090D; color: #fff; font-family: sans-serif; padding: 2rem; text-align: center;">
+    <p>Redirecting to <a href="${alias.toUrl}" style="color: #55E6D1;">${alias.title}</a>...</p>
+  </body>
+</html>`;
+  fs.writeFileSync(path.resolve(aliasDir, 'index.html'), aliasHtml, 'utf-8');
+}
+
+console.log(`✓ Generated ${textbookChapters.length} legacy /chapter/:id redirect aliases + /chapter root fallback + /tools/concepts & tool aliases`);
 
 // 10. Generate Complete XML Sitemap
 // Ensure homepage is first
@@ -1012,6 +1836,25 @@ redirectsLines.push('/chapter          /curriculum/          301');
 redirectsLines.push('/chapter/         /curriculum/          301');
 redirectsLines.push('/chapter/*        /curriculum/          301');
 redirectsLines.push('');
+redirectsLines.push('# Workbench & Glossary route migrations');
+redirectsLines.push('/workbench          /tools/               301');
+redirectsLines.push('/workbench/         /tools/               301');
+redirectsLines.push('/tools/concepts     /tools/glossary/      301');
+redirectsLines.push('/tools/concepts/    /tools/glossary/      301');
+redirectsLines.push('/tools/concepts/*   /tools/glossary/      301');
+redirectsLines.push('/tools/graph        /tools/knowledge-graph/  301');
+redirectsLines.push('/tools/graph/       /tools/knowledge-graph/  301');
+redirectsLines.push('/tools/graph/*      /tools/knowledge-graph/  301');
+redirectsLines.push('/tools/dashboard    /tools/profile/       301');
+redirectsLines.push('/tools/dashboard/   /tools/profile/       301');
+redirectsLines.push('/tools/dashboard/*  /tools/profile/       301');
+redirectsLines.push('/tools/mastery-profile  /tools/profile/   301');
+redirectsLines.push('/tools/mastery-profile/ /tools/profile/   301');
+redirectsLines.push('/tools/mastery-profile/* /tools/profile/  301');
+redirectsLines.push('/tools/ict_suite    /tools/delivery-suite/ 301');
+redirectsLines.push('/tools/ict_suite/   /tools/delivery-suite/ 301');
+redirectsLines.push('/tools/ict_suite/*  /tools/delivery-suite/ 301');
+redirectsLines.push('');
 // Note: Do NOT include '/* /index.html 200' here.
 // Cloudflare Pages / Workers static assets uses wrangler.jsonc ("not_found_handling": "single-page-application")
 // and the generated 200.html file. Cloudflare's _redirects validator rejects rewriting /* to /index.html
@@ -1020,6 +1863,6 @@ redirectsLines.push('');
 const redirectsContent = redirectsLines.join('\n');
 fs.writeFileSync(path.resolve(distDir, '_redirects'), redirectsContent, 'utf-8');
 fs.writeFileSync(path.resolve(projectRoot, 'public', '_redirects'), redirectsContent, 'utf-8');
-console.log(`✓ Generated _redirects with ${textbookChapters.length * 2} legacy chapter 301 rules`);
+console.log(`✓ Generated _redirects with ${textbookChapters.length * 2 + 17} legacy 301 rules`);
 
 console.log('✓ Prerendering and SEO build completed successfully!');

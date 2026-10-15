@@ -10,6 +10,9 @@ const dist = path.resolve('dist');
 const routes: Array<{path: string; outputPath: string; title: string; description: string; indexable: boolean}> =
   JSON.parse(fs.readFileSync(path.join(dist, 'seo-manifest.json'), 'utf8'));
 const sitemap = fs.readFileSync(path.join(dist, 'sitemap.xml'), 'utf8');
+const redirectSources = fs.readFileSync(path.join(dist, '_redirects'), 'utf8').split('\n')
+  .map(line => line.trim().split(/\s+/)).filter(parts => parts.length === 3 && parts[0].startsWith('/')).map(parts => parts[0]);
+assert.equal(new Set(redirectSources).size, redirectSources.length, 'Cloudflare rejects duplicate redirect source paths, even with different whitespace');
 const aliases = new Map(fs.readFileSync(path.join(dist, '_redirects'), 'utf8').split('\n')
   .map(line => line.trim().split(/\s+/)).filter(parts => parts.length === 3 && parts[0].startsWith('/')).map(parts => [parts[0], parts[1]]));
 const titles = new Set<string>(), descriptions = new Set<string>(), visited = new Set<string>();

@@ -70,7 +70,7 @@ export const ChartLab: React.FC<ChartLabProps> = ({
     if (onNavigateUrl) {
       onNavigateUrl(targetUrl);
     } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
-      window.history.pushState({ tool: 'chartlab', scenarioId, step }, '', targetUrl);
+      window.location.assign(targetUrl);
     }
   };
 

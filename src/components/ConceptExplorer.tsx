@@ -148,7 +148,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
     if (typeof window !== 'undefined') {
       const catObj = getCategoryBySlugOrId(catId);
       const targetPath = catId === 'all' ? getGlossaryRootPath() : getGlossaryCategoryPath(catObj?.slug || catId);
-      window.history.pushState({ category: catId }, '', targetPath);
+      window.location.assign(targetPath);
     }
   };
 
@@ -162,7 +162,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
     const targetPath = getGlossaryConceptPath(conceptSlug, catSlug);
 
     if (typeof window !== 'undefined') {
-      window.history.pushState({ conceptId, category: catSlug }, '', targetPath);
+      window.location.assign(targetPath);
     }
     if (onSelectConcept) onSelectConcept(conceptId, conceptSlug);
   };
@@ -173,7 +173,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
     const targetPath = getGlossarySubConceptPath(subConcept.categorySlug, subConcept.slug);
 
     if (typeof window !== 'undefined') {
-      window.history.pushState({ subConceptId: subConcept.id }, '', targetPath);
+      window.location.assign(targetPath);
     }
   };
 
@@ -230,7 +230,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
       <div className="flex items-center gap-2 text-xs font-mono text-[#9BA1AE] px-1">
         <a 
           href="/tools/" 
-          onClick={(e) => { e.preventDefault(); if (typeof window !== 'undefined') { window.history.pushState({}, '', '/tools/'); window.dispatchEvent(new PopStateEvent('popstate')); }}}
+          onClick={(e) => { e.preventDefault(); if (typeof window !== 'undefined') { window.location.assign('/tools/'); window.dispatchEvent(new PopStateEvent('popstate')); }}}
           className="hover:text-white transition-colors"
         >
           Workbench

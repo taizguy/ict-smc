@@ -63,7 +63,7 @@ export const InstitutionalToolsSuite: React.FC<InstitutionalToolsSuiteProps> = (
     if (onNavigateUrl) {
       onNavigateUrl(targetUrl);
     } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
-      window.history.pushState({ tool: 'delivery_suite', tab }, '', targetUrl);
+      window.location.assign(targetUrl);
     }
   };
 
@@ -521,9 +521,9 @@ export const InstitutionalToolsSuite: React.FC<InstitutionalToolsSuiteProps> = (
                 THE INNER CIRCLE TRADER BENCHMARK SUITE
               </span>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-black uppercase text-[#F5F7FA] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-black uppercase text-[#F5F7FA] tracking-tight">
               INSTITUTIONAL DELIVERY &amp; EXECUTION SUITE
-            </h1>
+            </h2>
             <p className="text-sm text-[#9BA1AE] mt-1 max-w-3xl">
               Official precision tools synthesized from <span className="font-bold underline text-[#5865FF]">theinnercircletraders.com</span>. Calculate institutional OTE retracements, forecast Asian Judas swings, monitor the 8 algorithmic macro windows in real-time, and track your 5-phase mentorship roadmap.
             </p>

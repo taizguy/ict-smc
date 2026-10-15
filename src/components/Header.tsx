@@ -1,3 +1,4 @@
+import { chapterCount, lectureCount } from '../utils/catalogCounts';
 import React, { useState, useEffect } from 'react';
 import { 
   Search, 
@@ -148,8 +149,7 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Center: Minimal Segmented Navigation */}
         <nav className="hidden md:flex items-center gap-1 p-1 bg-white/[0.03] border border-white/[0.07] rounded-xl">
           {/* Pillar 1: Curriculum */}
-          <button
-            onClick={() => setActiveTab('curriculum')}
+          <a href="/curriculum/"
             className={`px-4 py-2 rounded-lg text-xs font-medium tracking-tight transition-all cursor-pointer ${
               isCurriculumActive
                 ? 'bg-white/[0.08] text-[#F5F7FA] shadow-sm'
@@ -157,12 +157,11 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             <span>Curriculum</span>
-            <span className="ml-1.5 text-[10px] font-mono text-[#656B78]">57</span>
-          </button>
+            <span className="ml-1.5 text-[10px] font-mono text-[#656B78]">{chapterCount}</span>
+          </a>
 
           {/* Pillar 2: Masood's Academy */}
-          <button
-            onClick={() => setActiveTab('masood')}
+          <a href="/masood/"
             className={`px-4 py-2 rounded-lg text-xs font-medium tracking-tight transition-all cursor-pointer ${
               isMasoodActive
                 ? 'bg-white/[0.08] text-[#F5F7FA] shadow-sm'
@@ -170,12 +169,11 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             <span>Masood Academy</span>
-            <span className="ml-1.5 text-[10px] font-mono text-[#656B78]">52</span>
-          </button>
+            <span className="ml-1.5 text-[10px] font-mono text-[#656B78]">{lectureCount}</span>
+          </a>
 
           {/* Pillar 3: Trading Tools */}
-          <button
-            onClick={() => setActiveTab('tools')}
+          <a href="/tools/"
             className={`px-4 py-2 rounded-lg text-xs font-medium tracking-tight transition-all cursor-pointer ${
               isToolsActive
                 ? 'bg-white/[0.08] text-[#F5F7FA] shadow-sm'
@@ -183,8 +181,8 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             <span>Workbench &amp; Lab</span>
-            <span className="ml-1.5 text-[10px] font-mono text-[#656B78]">8</span>
-          </button>
+            <span className="ml-1.5 text-[10px] font-mono text-[#656B78]">10</span>
+          </a>
         </nav>
 
         {/* Right: Search, Market Clock, Tribute */}
@@ -228,30 +226,27 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Mobile Macro Navigation Bar */}
       <div className="flex md:hidden border-t border-white/[0.06] px-3 py-2 bg-[#0C0E13]/70">
         <BauhausNavScroller innerClassName="gap-1.5">
-          <button
-            onClick={() => setActiveTab('curriculum')}
+          <a href="/curriculum/"
             className={`py-1.5 px-3 rounded-lg text-xs font-medium tracking-tight whitespace-nowrap transition-all shrink-0 ${
               isCurriculumActive ? 'bg-white/[0.10] text-[#F5F7FA]' : 'text-[#9BA1AE]'
             }`}
           >
-            Curriculum (57)
-          </button>
-          <button
-            onClick={() => setActiveTab('masood')}
+            Curriculum ({chapterCount})
+          </a>
+          <a href="/masood/"
             className={`py-1.5 px-3 rounded-lg text-xs font-medium tracking-tight whitespace-nowrap transition-all shrink-0 ${
               isMasoodActive ? 'bg-white/[0.10] text-[#F5F7FA]' : 'text-[#9BA1AE]'
             }`}
           >
-            Masood Academy (52)
-          </button>
-          <button
-            onClick={() => setActiveTab('tools')}
+            Masood Academy ({lectureCount})
+          </a>
+          <a href="/tools/"
             className={`py-1.5 px-3 rounded-lg text-xs font-medium tracking-tight whitespace-nowrap transition-all shrink-0 ${
               isToolsActive ? 'bg-white/[0.10] text-[#F5F7FA]' : 'text-[#9BA1AE]'
             }`}
           >
             Workbench &amp; Lab (8)
-          </button>
+          </a>
         </BauhausNavScroller>
       </div>
     </header>

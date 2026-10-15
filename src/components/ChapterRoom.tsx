@@ -1,3 +1,5 @@
+import { FinancialDisclaimer } from './FinancialDisclaimer';
+import { LessonRelatedLinks } from './LessonRelatedLinks';
 import React, { useState, useMemo, useEffect } from 'react';
 import { 
   ArrowLeft, 
@@ -329,13 +331,13 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
             </div>
 
             <div className="flex items-center gap-3 text-[11px] text-[#8E95A5] flex-wrap">
-              <span>Editorial: ICT Research Group</span>
+              <span>Author: Muhammad Umer Ijaz</span>
               <span className="text-white/20">·</span>
-              <span>Revised: Oct 2026</span>
+              <a href="/contact/" className="underline">Suggest a correction</a>
               <span className="text-white/20">·</span>
               <span className="text-[#52D273] flex items-center gap-1">
                 <CheckCircle2 className="w-3 h-3" />
-                <span>Peer-Reviewed</span>
+                <a href="/about/#author" className="underline">Author and editorial policy</a>
               </span>
             </div>
           </div>
@@ -890,6 +892,8 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
         </div>
       </ScrollReveal>
 
+      <LessonRelatedLinks chapterId={chapter.id} />
+      <FinancialDisclaimer />
     </div>
   );
 };

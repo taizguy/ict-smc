@@ -78,7 +78,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
     if (onNavigateUrl) {
       onNavigateUrl(targetUrl);
     } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
-      window.history.pushState({ tool: 'masterclass', itemId: item.id, category: cat }, '', targetUrl);
+      window.location.assign(targetUrl);
     }
   };
 
@@ -97,7 +97,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
     if (onNavigateUrl) {
       onNavigateUrl(targetUrl);
     } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
-      window.history.pushState({ tool: 'masterclass', category: catId }, '', targetUrl);
+      window.location.assign(targetUrl);
     }
   };
 
@@ -155,9 +155,9 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                 34 Masterclasses • 15 PD Arrays • 5 Models
               </span>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[#F5F7FA]">
+            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[#F5F7FA]">
               ICT &amp; SMC Masterclass Visual Compendium
-            </h1>
+            </h2>
             <p className="text-xs sm:text-sm text-[#9BA1AE] leading-relaxed">
               Step-by-step institutional order of operations, failed auction mechanics, 
               exact invalidation checklists, and interactive visual delivery signatures.

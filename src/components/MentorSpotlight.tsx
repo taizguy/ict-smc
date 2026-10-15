@@ -1,3 +1,4 @@
+import { chapterCount, lectureCount } from '../utils/catalogCounts';
 import React, { useState, useEffect } from 'react';
 import { 
   Youtube, 
@@ -195,7 +196,7 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
                   }}
                   className="btn-predikt-primary text-xs"
                 >
-                  <span>Open Academy (52)</span>
+                  <span>Open Academy ({lectureCount})</span>
                 </button>
               )}
 

@@ -21,6 +21,7 @@ export const SEO: React.FC<SEOProps> = ({
   breadcrumbs,
 }) => {
   useEffect(() => {
+    if (document.querySelector('meta[name="learnsmc-prerendered"]')) return;
     // 1. Resolve canonical URL
     const targetPath = canonicalPath || explicitPath || (typeof window !== 'undefined' ? window.location.pathname : '/');
     const canonicalUrl = normalizeCanonicalUrl(targetPath);
@@ -80,7 +81,7 @@ export const SEO: React.FC<SEOProps> = ({
     return () => {
       // Optional cleanup on component unmount
     };
-  }, [title, description, canonicalPath, type, schema]);
+  }, [title, description, canonicalPath, explicitPath, type, schema, breadcrumbs]);
 
   return null;
 };

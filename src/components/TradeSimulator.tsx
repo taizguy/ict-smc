@@ -82,7 +82,7 @@ export const TradeSimulator: React.FC<TradeSimulatorProps> = ({
     if (onNavigateUrl) {
       onNavigateUrl(targetUrl);
     } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
-      window.history.pushState({ tool: 'simulator', modelSlug: model.slug }, '', targetUrl);
+      window.location.assign(targetUrl);
     }
   };
 

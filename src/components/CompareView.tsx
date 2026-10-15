@@ -38,7 +38,7 @@ export const CompareView: React.FC<CompareViewProps> = ({
     if (onNavigateUrl) {
       onNavigateUrl(targetUrl);
     } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
-      window.history.pushState({ tool: 'compare', comparisonId: id }, '', targetUrl);
+      window.location.assign(targetUrl);
     }
   };
 

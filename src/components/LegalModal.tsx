@@ -413,7 +413,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
         <div className="flex items-center justify-between px-6 py-4 border-t border-white/[0.08] bg-[#0E1119]">
           <div className="text-[11px] font-mono text-[#8E95A5] flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            <span>Compliance Verified for learnsmc.xyz</span>
+            <span>Publisher information for learnsmc.xyz</span>
           </div>
 
           <button

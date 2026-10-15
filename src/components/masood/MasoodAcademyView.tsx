@@ -1,3 +1,4 @@
+import { MasoodLecturePage } from '../MasoodLecturePage';
 import React, { useState, useMemo, useEffect } from 'react';
 import { 
   masoodPlaylistsData 
@@ -26,7 +27,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
   onSubTabChange,
   onLectureSelect
 }) => {
-  const [activePlaylistId, setActivePlaylistId] = useState<'all' | MasoodPlaylistId>('all');
+  const [activePlaylistId, setActivePlaylistId] = useState<'all' | MasoodPlaylistId>(() => masoodPlaylistsData.find(p => location.pathname === `/masood/playlists/${p.id}/`)?.id || 'all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedLecture, setSelectedLecture] = useState<MasoodLecture | null>(null);
   const [activeAnimation, setActiveAnimation] = useState<AnimationKind>('po3_expansion');
@@ -51,7 +52,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
     }
   }, [initialLectureId, allLectures]);
 
-  useModalScrollLock(!!selectedLecture);
+  useModalScrollLock(!!selectedLecture && !initialLectureId);
 
   useEffect(() => {
     if (!selectedLecture) return;
@@ -123,8 +124,15 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
     return score;
   }, [calcStep1, calcStep2, calcStep3, calcStep4]);
 
+  const pageLecture = allLectures.find(l => l.id === initialLectureId);
+  if (pageLecture) return <MasoodLecturePage lecture={pageLecture} />;
+  const activePlaylist = masoodPlaylistsData.find(p => p.id === activePlaylistId);
   return (
     <div className="space-y-8 pb-24 text-[#F5F7FA]">
+      <nav aria-label="Abdullah Masood series" className="flex flex-wrap gap-3">
+        <a className="underline" href="/masood/">All lectures</a>
+        {masoodPlaylistsData.map(p => <a key={p.id} className="underline text-[#55E6D1]" href={`/masood/playlists/${p.id}/`}>{p.badge}</a>)}
+      </nav>
       {/* Editorial Hero Header */}
       <ScrollReveal y={30} duration={0.6}>
         <section className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 relative overflow-hidden space-y-6">
@@ -133,7 +141,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
             <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-[#FF6B7A]/10 text-[#FF6B7A] border border-[#FF6B7A]/20">
                 <Youtube className="w-3.5 h-3.5 fill-current" />
-                Exclusive Mentorship Series
+                Independent study guide
               </span>
               <span className="text-xs font-mono uppercase tracking-wider text-[#F0B35B] bg-white/[0.04] px-3 py-1 rounded-full border border-white/[0.08]">
                 Trader Abdullah Masood
@@ -144,11 +152,11 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
             </div>
 
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-[#F5F7FA] leading-none">
-              ABDULLAH MASOOD <span className="text-[#5865FF]">ACADEMY</span>
+              {activePlaylist ? activePlaylist.title : activeTab === 'animations' ? 'Animated ICT & SMC Explainers' : activeTab === 'bias_calc' ? 'Daily Bias Calculator' : activeTab === 'rules' ? 'Golden Trading Rules' : 'Abdullah Masood Academy'}
             </h1>
 
             <p className="text-sm sm:text-base text-[#9BA1AE] leading-relaxed max-w-3xl">
-              A comprehensive, structured curriculum of Trader Abdullah Masood’s institutional ICT education. Kept completely separate from ICT’s foundational syllabus for clarity, organizing lectures into Beginner's Guide, Advanced Systems, 2025 Daily Bias, The Godfather's Sanctum, Prop Risk &amp; Psychology, and the 44-session SMC Syndicate.
+              {activePlaylist?.description} A collection of independently written study guides accompanying Trader Abdullah Masood’s videos. Kept completely separate from ICT’s foundational syllabus for clarity, organizing lectures into Beginner's Guide, Advanced Systems, 2025 Daily Bias, The Godfather's Sanctum, Prop Risk &amp; Psychology, and the 44-session SMC Syndicate.
             </p>
 
             {/* Quick action buttons */}
@@ -332,7 +340,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                             src={`https://i.ytimg.com/vi/${lecture.youtubeId}/hqdefault.jpg`}
                             alt={lecture.title}
                             className="w-full h-full object-cover"
-                            loading="lazy"
+                            loading="lazy" width="480" height="360" decoding="async"
                           />
                           
                           {/* Lecture Badge */}

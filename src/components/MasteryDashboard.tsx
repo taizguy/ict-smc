@@ -45,7 +45,7 @@ export const MasteryDashboard: React.FC<MasteryDashboardProps> = ({
     if (onNavigateUrl) {
       onNavigateUrl(targetUrl);
     } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
-      window.history.pushState({ tool: 'profile', subTab: tab }, '', targetUrl);
+      window.location.assign(targetUrl);
     }
   };
 
@@ -58,7 +58,7 @@ export const MasteryDashboard: React.FC<MasteryDashboardProps> = ({
     if (onNavigateUrl) {
       onNavigateUrl(targetUrl);
     } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
-      window.history.pushState({ tool: 'profile', subTab: 'quiz', examIndex: index }, '', targetUrl);
+      window.location.assign(targetUrl);
     }
   };
 

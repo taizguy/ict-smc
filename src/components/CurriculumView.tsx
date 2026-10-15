@@ -1,3 +1,5 @@
+import { chapterCount, lectureCount } from '../utils/catalogCounts';
+import { topicClusters, topicSlug } from '../utils/topicClusters';
 import React, { useState, useMemo } from 'react';
 import { textbookChapters } from '../data/chaptersData';
 import { getLessonPath } from '../utils/url';
@@ -18,7 +20,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
   onSelectChapter,
   onOpenSearch
 }) => {
-  const [selectedPart, setSelectedPart] = useState<string>('all');
+  const [selectedPart, setSelectedPart] = useState<string>(() => topicClusters.find(c => location.pathname === `/curriculum/${c.slug}/`)?.part || 'all');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   // Extract unique parts
@@ -54,6 +56,10 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
   return (
     <div className="space-y-12 sm:space-y-16 pb-20">
       
+      <nav aria-label="Curriculum topics" className="flex flex-wrap gap-3">
+        <a className="underline" href="/curriculum/">All lessons</a>
+        {topicClusters.map(c => <a key={c.slug} className="underline text-[#55E6D1]" href={`/curriculum/${c.slug}/`}>{c.part}</a>)}
+      </nav>
       {/* Editorial Header Section */}
       <ScrollReveal y={25} duration={0.6}>
         <section className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-10 md:p-12 relative overflow-hidden">
@@ -70,17 +76,15 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
                 </span>
                 <span className="text-white/20">·</span>
                 <span className="text-[11px] font-mono tracking-[0.16em] uppercase text-[#656B78]">
-                  57 CODIFIED CHAPTERS
+                  {chapterCount} CODIFIED CHAPTERS
                 </span>
               </div>
 
               {/* Large Section Headline */}
               <div className="space-y-1">
-                <h1 className="predikt-section-title">
-                  ICT &amp; SMC SYLLABUS
-                </h1>
+                <h1 className="predikt-section-title">{selectedPart === 'all' ? 'ICT & SMC Syllabus' : selectedPart}</h1>
                 <p className="text-sm sm:text-base text-[#9BA1AE] leading-relaxed max-w-2xl font-normal pt-1">
-                  The complete 57-chapter institutional trading curriculum organized with rigorous technical hierarchy. Examine order flow, liquidity voids, and algorithmic delivery with zero artificial barriers.
+                  The complete {chapterCount}-chapter institutional trading curriculum organized with rigorous technical hierarchy. Examine order flow, liquidity voids, and algorithmic delivery with zero artificial barriers.
                 </p>
               </div>
 
@@ -119,7 +123,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
               
               <div className="flex-1 bg-white/[0.02] border border-white/[0.07] p-4 sm:p-5 rounded-xl">
                 <div className="text-3xl sm:text-4xl font-semibold font-mono text-[#F5F7FA] tracking-tight leading-none">
-                  57
+                  {chapterCount}
                 </div>
                 <div className="text-xs text-[#9BA1AE] mt-1 font-mono tracking-wider uppercase">
                   Textbook Chapters

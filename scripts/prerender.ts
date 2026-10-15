@@ -148,6 +148,7 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
   const renderedContent = `
     <div id="static-content" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #08090D; color: #F5F7FA; min-height: 100vh; padding: 2rem 1.5rem; max-width: 1200px; margin: 0 auto; box-sizing: border-box;">
       <style>#static-content a{color:#55e6d1;text-underline-offset:3px}#static-content p,#static-content li{line-height:1.75}#static-content section{margin-block:1.5rem}#static-content li{margin-block:.5rem}#static-content ul{padding-left:1.25rem}</style>
+      <a href="#main-content" style="color:#55e6d1">Skip to main content</a>
       <!-- Crawlable Header -->
       <header style="border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 1.5rem; margin-bottom: 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
         <div>
@@ -166,7 +167,7 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
       </header>
 
       <!-- Main Article / Route Body -->
-      <main>
+      <main id="main-content" tabindex="-1">
         <article>
           <header style="margin-bottom: 2rem;">
             <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 9999px; background: rgba(88, 101, 255, 0.15); border: 1px solid rgba(88, 101, 255, 0.3); color: #8A72FF; font-size: 0.75rem; font-family: monospace; margin-bottom: 0.75rem;">
@@ -209,7 +210,7 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
                 <li><a href="/disclaimer/" style="color: #94A3B8; text-decoration: none;">Financial Disclaimer</a></li>
                 <li><a href="/privacy/" style="color: #94A3B8; text-decoration: none;">Privacy Policy</a></li>
                 <li><a href="/terms/" style="color: #94A3B8; text-decoration: none;">Terms of Service</a></li>
-                <li><a href="/about/" style="color: #94A3B8; text-decoration: none;">About Publisher</a></li>
+                <li><a href="/about/" style="color: #94A3B8; text-decoration: none;">About Publisher</a></li><li><a href="/about/#editorial-policy">Editorial policy</a></li>
                 <li><a href="/contact/" style="color: #94A3B8; text-decoration: none;">Contact Us</a></li>
                 <li><a href="/adsense/" style="color: #94A3B8; text-decoration: none;">AdSense Transparency</a></li>
               </ul>
@@ -251,8 +252,8 @@ const todayIso = new Date().toISOString().split('T')[0];
 const homePage: RouteMeta = {
   url: 'https://learnsmc.xyz/',
   outputPath: 'index.html',
-  title: 'ICT & SMC Academy - Smart Money Concepts & Institutional Trading Curriculum',
-  description: 'Master Inner Circle Trader (ICT) and Smart Money Concepts with a free 57-chapter institutional curriculum, 52 Abdullah Masood masterclasses, interactive Chart Lab, and algorithmic trade simulator.',
+  title: 'Learn ICT & Smart Money Concepts | LearnSMC',
+  description: 'Study ICT and Smart Money Concepts with free trading lessons, Abdullah Masood video notes, chart exercises and risk education.',
   canonical: 'https://learnsmc.xyz/',
   heading: 'ICT & SMC Institutional Trading Academy',
   subheading: 'Master algorithmic price delivery, fair value gaps, order blocks, and market liquidity through 57 codified chapters and 52 Abdullah Masood masterclasses.',
@@ -1894,3 +1895,12 @@ fs.writeFileSync(path.resolve(distDir, 'seo-manifest.json'), JSON.stringify(allR
   path: new URL(r.canonical).pathname, title: r.title, description: r.description,
   outputPath: r.outputPath, indexable: !r.isNoindex,
 })), null, 2));
+
+// Optional AI orientation files, not a substitute for indexing or robots rules.
+const llms = '# LearnSMC\n\n> Independent ICT and Smart Money Concepts study notes by Muhammad Umer Ijaz. Education is not investment advice or proof of future performance.\n\n## Main sections\n\n' +
+  ['/curriculum/', '/masood/', '/tools/glossary/', '/tools/compare/', '/about/', '/contact/', '/disclaimer/'].map(p => {
+    const r = allRoutes.find(r => new URL(r.canonical).pathname === p)!;
+    return `- [${r.heading}](${r.canonical}): ${r.description}`;
+  }).join('\n') + '\n\n## Attribution\n\nWritten notes: Muhammad Umer Ijaz. Linked videos retain their original authorship; linking does not imply endorsement or review. Canonical HTML pages are the primary source.\n';
+fs.writeFileSync(path.join(distDir, 'llms.txt'), llms);
+fs.writeFileSync(path.join(distDir, 'llms-full.txt'), llms + '\n## Published page directory\n\n' + allRoutes.filter(r => !r.isNoindex).map(r => `- [${r.heading}](${r.canonical}): ${r.description}`).join('\n') + '\n');

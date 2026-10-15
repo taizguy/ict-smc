@@ -1,8 +1,11 @@
+import { toolStudyGuide } from '../src/utils/toolStudyGuides';
 import { textbookChapters } from '../src/data/chaptersData';
 import { masoodPlaylistsData } from '../src/data/masoodData';
 import { contextualFragments, relatedChapters } from '../src/utils/contextualLinks';
 import { topicClusters } from '../src/utils/topicClusters';
-import { publisher, lessonAuthor, financialDisclaimer } from '../src/utils/publisher';
+import { publisher, lessonAuthor, financialDisclaimer, authorContact } from '../src/utils/publisher';
+import { conceptComparisons } from '../src/data/comparisonsData';
+import { getComparisonSlug } from '../src/utils/workbenchToolRoutes';
 import type { RouteMeta } from './prerender';
 
 export const escape = (value: unknown) => String(value ?? '').replace(/[&<>"']/g, c => ({
@@ -98,15 +101,28 @@ export function prepareRoutes(routes: RouteMeta[]) {
   const rules = routes.find(r => r.canonical.endsWith('/masood/golden-rules/'))!;
   rules.bodyHtml += section('Source-linked rule study', list(lectures.filter(l => /risk|psychology|golden|rules/i.test(l.title)).map(l => `${link(`/masood/lectures/${l.id}/`, l.title)}: ${escape(l.shortSummary)}`)));
 
+  const home = routes.find(r => r.canonical === 'https://learnsmc.xyz/')!;
+  home.bodyHtml += section('What are ICT and Smart Money Concepts?', '<p>ICT stands for Inner Circle Trader, a trading education framework associated with Michael J. Huddleston. Smart Money Concepts is a broader collection of chart-reading terms covering market structure, liquidity, order blocks and price imbalances. LearnSMC explains these ideas as study frameworks. A chart pattern does not establish that a bank placed an order or that a future move is certain.</p>') +
+    section('Choose a study path', '<p>Begin with market foundations in the curriculum, then study liquidity and market structure before entry patterns. Read a definition in the glossary, compare similar concepts, and use chart exercises to test whether you can identify the required conditions without looking ahead. The Abdullah Masood directory provides independently written notes and links to the original videos.</p>') +
+    section('A practice example', '<p>If price moves above a previous high and returns below it, record it as a possible liquidity sweep. Do not assume that a reversal follows. Write down the timeframe, the prior range, the next structural level and the condition that would invalidate your interpretation. Compare the idea with a case where price continues higher. Use historical charts or a demo account, not money needed for living expenses.</p>') + byline + notice;
+  root.bodyHtml += section('How to study a chapter', '<p>Read the definition first, identify its conditions on a historical chart, and record at least one example where the pattern fails. Hide future candles during practice to reduce hindsight bias. Keep observations separate from assumptions about institutional intent. Revisit market foundations whenever a later entry model depends on an unfamiliar term.</p>');
+  for (const r of routes.filter(r => r.canonical.includes('/tools/compare/'))) {
+    const selected = conceptComparisons.find(c => r.canonical.endsWith('/' + getComparisonSlug(c.id) + '/'));
+    const entries = selected ? [selected] : conceptComparisons;
+    r.bodyHtml += entries.map(c => section(c.title, `<div style="overflow-x:auto"><table><caption>${escape(c.title)}: definitions and study conditions</caption><thead><tr><th scope="col">Feature</th><th scope="col">${escape(c.conceptA.name)}</th><th scope="col">${escape(c.conceptB.name)}</th></tr></thead><tbody><tr><th scope="row">Definition</th><td>${escape(c.conceptA.summary)}</td><td>${escape(c.conceptB.summary)}</td></tr><tr><th scope="row">Study condition</th><td>${escape(c.conceptA.idealCondition)}</td><td>${escape(c.conceptB.idealCondition)}</td></tr></tbody></table></div><p>${escape(c.commonConfusion)}</p>`)).join('');
+  }
   const contact = routes.find(r => r.canonical.endsWith('/contact/'))!;
+  const contactHtml = `<address><p>${escape(lessonAuthor.name)}</p><p><a href="mailto:${escape(authorContact.email)}">${escape(authorContact.email)}</a></p><p><a href="tel:${escape(authorContact.telephone)}">${escape(authorContact.telephone)}</a></p><p>${escape(authorContact.streetAddress)}, Daska, Pakistan</p></address>`;
+  contact.bodyHtml = section('Contact the author and publisher', contactHtml);
   contact.bodyHtml += section('How to report an issue', '<p>For a lesson correction, include the full page URL, the passage in question and any supporting source. For a technical problem, include the URL, browser name and the steps that produced the issue. Do not send account passwords, trading account details or private financial records.</p>') +
     section('Copyright and source inquiries', '<p>If you own material referenced by this site, identify the work and the page where it appears so the publisher can review the request. Video links lead to third-party services; this site does not host those videos.</p>');
   const privacy = routes.find(r => r.canonical.endsWith('/privacy/'))!;
   privacy.bodyHtml += section('Advertising choices', '<p>Optional advertising does not load until you allow it in Privacy choices. You can withdraw that choice using the same control. If advertising is enabled, Google and its partners may use cookies and process device information. Regional consent messages, where required, are provided through the configured advertising consent service.</p><p><a href="https://policies.google.com/technologies/ads">How Google uses advertising information</a>. Embedded videos connect to YouTube only when loaded.</p>');
   const about = routes.find(r => r.canonical.endsWith('/about/'))!;
   about.bodyHtml = `<section id="author"><h2>Author and publisher</h2><p>Muhammad Umer Ijaz writes and maintains the LearnSMC lessons and study notes. LearnSMC is an independent educational project. Linked third-party videos retain their original authorship.</p></section>` +
-    section('Editorial approach', '<p>These pages explain trading frameworks for study. Framework claims and simulated examples are not proof of profitable outcomes. Test assumptions independently and check the original video sources. Named expert or peer review is not claimed.</p>') +
+    `<section id="editorial-policy"><h2>Editorial policy</h2>` + '<p>These pages explain trading frameworks for study. Framework claims and simulated examples are not proof of profitable outcomes. Test assumptions independently and check the original video sources. Named expert or peer review is not claimed.</p>' + '</section>' +
     section('Corrections and contact', `<p>${link('/contact/', 'Send a correction, source reference or copyright inquiry')}.</p>`) + notice;
+  about.bodyHtml += section('Publisher contact', contactHtml);
   about.schemaJson = { '@type': 'AboutPage', name: 'About LearnSMC', mainEntity: lessonAuthor, publisher };
 }
 
@@ -117,6 +133,7 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   const counts = (text: string) => text.replace(/\b57(?=[- ](?:chapter|Chapter|CHAPTER))/g, String(chapterCount)).replace(/\b52(?=[- ](?:Abdullah|lecture|Lecture|LECTURE|Masterclass|masterclass))/g, String(lectureCount));
   r.title = counts(r.title); r.description = counts(r.description); r.bodyHtml = counts(r.bodyHtml);
   r.heading = counts(r.heading); r.subheading = counts(r.subheading);
+  if (path === '/') { r.title = 'Learn ICT & Smart Money Concepts | LearnSMC'; r.description = 'Study ICT and Smart Money Concepts with free trading lessons, Abdullah Masood video notes, chart exercises and risk education.'; }
   if (r.title.length > 80) r.title = r.title.slice(0, 65).replace(/\s+\S*$/, '') + ' | LearnSMC';
   r.description = r.description.replace(/\s+/g, ' ').trim();
   if (r.description.length > 165) r.description = r.description.slice(0, 162).replace(/\s+\S*$/, '') + '…';
@@ -131,6 +148,8 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   const children = routes.filter(c => c !== r && new URL(c.canonical).pathname.startsWith(path) &&
     !routes.some(mid => mid !== r && mid !== c && new URL(mid.canonical).pathname.startsWith(path) && new URL(c.canonical).pathname.startsWith(new URL(mid.canonical).pathname)));
   if (children.length && path !== '/') r.bodyHtml += section('Explore this topic', list(children.map(c => link(new URL(c.canonical).pathname, c.heading))));
+  const guide = toolStudyGuide(path);
+  if (guide) r.bodyHtml += section(guide.title, guide.paragraphs.map(p => `<p>${escape(p)}</p>`).join(''));
   if (/^\/(learn|masood|tools)\//.test(path) && !r.isNoindex) r.bodyHtml += notice;
   const parentRoutes = routes.filter(c => c !== r && c.canonical !== 'https://learnsmc.xyz/' &&
     path.startsWith(new URL(c.canonical).pathname)).sort((a, b) => a.canonical.length - b.canonical.length);
@@ -138,9 +157,13 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
     ...parentRoutes.map(p => ({ name: p.heading, url: p.canonical })),
     ...(path === '/' ? [] : [{ name: r.heading, url: r.canonical }])];
   if (path !== '/') r.bodyHtml = `<nav aria-label="Breadcrumb">${crumbs.map(c => link(new URL(c.url).pathname, c.name)).join(' / ')}</nav>` + r.bodyHtml;
+  if (['/', '/curriculum/', '/about/', '/contact/'].includes(path) || path.startsWith('/tools/compare/')) {
+    r.bodyHtml += '<p>Page updated: <time datetime="2026-10-16">16 October 2026</time>. ' + link('/about/#editorial-policy', 'Editorial policy') + '</p>';
+    if (r.schemaJson) r.schemaJson = { ...r.schemaJson, dateModified: '2026-10-16' };
+  }
   r.schemaJson = { '@context': 'https://schema.org', '@graph': [publisher, lessonAuthor,
     { '@type': 'WebSite', '@id': 'https://learnsmc.xyz/#website', name: 'LearnSMC', url: 'https://learnsmc.xyz/' },
     { '@type': 'BreadcrumbList', itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })) },
-    r.schemaJson || { '@type': children.length ? 'CollectionPage' : 'WebPage', name: r.heading, description: r.description, url: r.canonical, publisher },
+    r.schemaJson || { '@type': children.length ? 'CollectionPage' : 'WebPage', name: r.heading, description: r.description, url: r.canonical, publisher, ...(['/', '/curriculum/', '/about/', '/contact/'].includes(path) || path.startsWith('/tools/compare/') ? { dateModified: '2026-10-16' } : {}) },
   ] };
 }

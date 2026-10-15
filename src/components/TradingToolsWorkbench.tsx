@@ -1,3 +1,5 @@
+import { toolStudyGuide } from '../utils/toolStudyGuides';
+import { FinancialDisclaimer } from './FinancialDisclaimer';
 import React, { useState, useEffect } from 'react';
 import { 
   BarChart2, 
@@ -358,6 +360,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
         </div>
       </ScrollReveal>
 
+      {(() => { const guide = toolStudyGuide(window.location.pathname); return guide ? <section className="space-y-3 text-sm leading-relaxed"><h2 className="text-xl font-semibold">{guide.title}</h2>{guide.paragraphs.map(p => <p key={p}>{p}</p>)}<p><a href="/curriculum/" className="underline">Study the curriculum</a> and <a href="/about/#editorial-policy" className="underline">editorial policy</a>.</p><FinancialDisclaimer /></section> : null; })()}
     </div>
   );
 };

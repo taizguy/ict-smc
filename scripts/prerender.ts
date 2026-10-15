@@ -1,3 +1,5 @@
+import 'dotenv/config';
+import { prepareRoutes, enrichRoute, renderContextualText, canonicalAliases } from './seo-content';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -46,9 +48,13 @@ if (!fs.existsSync(templatePath)) {
   process.exit(1);
 }
 
-const templateHtml = fs.readFileSync(templatePath, 'utf-8');
+// Re-running prerender must not nest old page content or retain old JSON-LD.
+const templateHtml = fs.readFileSync(templatePath, 'utf-8')
+  .replace(/<div id="root">[\s\S]*<\/div>\s*<\/body>/, '<div id="root"></div>\n</body>')
+  .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, '')
+  .replace(/<meta name="(?:learnsmc-prerendered|learnsmc-heading|learnsmc-status|google-site-verification)"[^>]*>/g, '');
 
-interface RouteMeta {
+export interface RouteMeta {
   url: string;
   outputPath: string;
   title: string;
@@ -77,8 +83,16 @@ function escapeHtml(val: unknown): string {
 }
 
 function generatePrerenderedHtml(meta: RouteMeta): string {
-  let html = templateHtml;
+  const chapterCount = textbookChapters.length;
+  const lectureCount = masoodPlaylistsData.reduce((sum, p) => sum + p.lectures.length, 0);
+  let html = templateHtml.replace(/\b57(?=[- ](?:chapter|Chapter|CHAPTER))/g, String(chapterCount)).replace(/\b52(?=[- ](?:Abdullah|lecture|Lecture|LECTURE|Masterclass|masterclass))/g, String(lectureCount));
 
+  html = html.replace('</head>', '<meta name="learnsmc-prerendered" content="true" /></head>');
+  const verification = process.env.GOOGLE_SITE_VERIFICATION;
+  if (verification) html = html.replace('</head>', `<meta name="google-site-verification" content="${escapeHtml(verification)}" /></head>`);
+  if (/\/(learn|masood\/lectures)\//.test(meta.canonical)) html = html.replace('property="og:type" content="website"', 'property="og:type" content="article"');
+  html = html.replace('</head>', `<meta name="learnsmc-heading" content="${escapeHtml(meta.heading)}" /></head>`);
+  if (meta.outputPath === '404.html') html = html.replace('</head>', '<meta name="learnsmc-status" content="404" /></head>');
   // Replace Title
   html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(meta.title)}</title>`);
 
@@ -118,7 +132,7 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
 
   // Optional Schema.org JSON-LD injection
   if (meta.schemaJson) {
-    const jsonLdString = `<script type="application/ld+json">\n${JSON.stringify(meta.schemaJson, null, 2)}\n</script>`;
+    const jsonLdString = `<script type="application/ld+json">\n${JSON.stringify(meta.schemaJson, null, 2).replace(/</g, '\\u003c')}\n</script>`;
     html = html.replace('</head>', `  ${jsonLdString}\n  </head>`);
   }
 
@@ -132,7 +146,8 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
 
   // Generate Crawlable Structural Layout
   const renderedContent = `
-    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #08090D; color: #F5F7FA; min-height: 100vh; padding: 2rem 1.5rem; max-width: 1200px; mx-auto; margin: 0 auto; box-sizing: border-box;">
+    <div id="static-content" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #08090D; color: #F5F7FA; min-height: 100vh; padding: 2rem 1.5rem; max-width: 1200px; margin: 0 auto; box-sizing: border-box;">
+      <style>#static-content a{color:#55e6d1;text-underline-offset:3px}#static-content p,#static-content li{line-height:1.75}#static-content section{margin-block:1.5rem}#static-content li{margin-block:.5rem}#static-content ul{padding-left:1.25rem}</style>
       <!-- Crawlable Header -->
       <header style="border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 1.5rem; margin-bottom: 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
         <div>
@@ -221,7 +236,7 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
     }
   }
 
-  return html;
+  return html.replace(/\b57(?=[- ](?:chapter|Chapter|CHAPTER))/g, String(chapterCount)).replace(/\b52(?=[- ](?:Abdullah|lecture|Lecture|LECTURE|Masterclass|masterclass))/g, String(lectureCount));
 }
 
 // -------------------------------------------------------------
@@ -1512,7 +1527,7 @@ for (const ch of textbookChapters) {
         ${ch.sections.map((sec, idx) => `
           <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.25rem; margin-top: 1.25rem;">
             <h3 style="color: #ffffff; font-size: 1.15rem; margin-bottom: 0.5rem;">${idx + 1}. ${escapeHtml(sec.title)}</h3>
-            <p style="color: #C5CBD8; line-height: 1.7; margin-bottom: 0.75rem;">${escapeHtml(sec.content)}</p>
+            <p style="color: #C5CBD8; line-height: 1.7; margin-bottom: 0.75rem;">${renderContextualText(sec.content, getLessonPath(ch.slug))}</p>
             ${sec.keyTakeaway ? `
               <div style="background: rgba(88, 101, 255, 0.08); border-left: 3px solid #8A72FF; padding: 0.75rem 1rem; border-radius: 4px; font-size: 0.85rem; color: #E0E7FF;">
                 <strong style="color: #A5B4FC;">Key Takeaway:</strong> ${escapeHtml(sec.keyTakeaway)}
@@ -1613,7 +1628,9 @@ const notFoundPage: RouteMeta = {
 console.log(`Starting static prerendering for ${allRoutes.length} canonical routes...`);
 
 // Render and write all canonical routes
+prepareRoutes(allRoutes);
 for (const route of allRoutes) {
+  enrichRoute(route, allRoutes);
   const filePath = path.resolve(distDir, route.outputPath);
   const dirPath = path.dirname(filePath);
   if (!fs.existsSync(dirPath)) {
@@ -1657,14 +1674,8 @@ for (const route of allRoutes) {
 // Write 404 page
 const notFoundHtml = generatePrerenderedHtml(notFoundPage);
 fs.writeFileSync(path.resolve(distDir, '404.html'), notFoundHtml, 'utf-8');
-const public404Path = path.resolve(projectRoot, 'public', '404.html');
-fs.writeFileSync(public404Path, notFoundHtml, 'utf-8');
-console.log('✓ Generated 404.html for static hosting fallback');
 
-// Write 200.html (Cloudflare Pages native SPA fallback)
-fs.copyFileSync(templatePath, path.resolve(distDir, '200.html'));
-fs.copyFileSync(templatePath, path.resolve(projectRoot, 'public', '200.html'));
-console.log('✓ Generated 200.html for Cloudflare Pages native SPA fallback');
+console.log('✓ Generated 404.html for static hosting fallback');
 
 // 9. Generate Legacy Backward Compatibility Routes (/chapter/:id/index.html & /chapter/index.html)
 // Pointing canonical to /learn/:slug/ with instant client redirect
@@ -1802,7 +1813,6 @@ const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${finalSitemapUrls.map(u => `  <url>
     <loc>${u.loc}</loc>
-    <lastmod>${u.lastmod}</lastmod>
     <changefreq>${u.changefreq}</changefreq>
     <priority>${u.priority}</priority>
   </url>`).join('\n')}
@@ -1812,7 +1822,7 @@ const distSitemapPath = path.resolve(distDir, 'sitemap.xml');
 const publicSitemapPath = path.resolve(projectRoot, 'public', 'sitemap.xml');
 
 fs.writeFileSync(distSitemapPath, sitemapXml, 'utf-8');
-fs.writeFileSync(publicSitemapPath, sitemapXml, 'utf-8');
+
 
 console.log(`✓ Generated sitemap.xml with ${finalSitemapUrls.length} verified canonical URLs`);
 
@@ -1855,14 +1865,18 @@ redirectsLines.push('/tools/ict_suite    /tools/delivery-suite/ 301');
 redirectsLines.push('/tools/ict_suite/   /tools/delivery-suite/ 301');
 redirectsLines.push('/tools/ict_suite/*  /tools/delivery-suite/ 301');
 redirectsLines.push('');
-// Note: Do NOT include '/* /index.html 200' here.
-// Cloudflare Pages / Workers static assets uses wrangler.jsonc ("not_found_handling": "single-page-application")
-// and the generated 200.html file. Cloudflare's _redirects validator rejects rewriting /* to /index.html
-// with error 100324 (infinite loop detected due to Cloudflare stripping .html / auto-trailing-slash).
-
-const redirectsContent = redirectsLines.join('\n');
+// Missing documents use the generated 404 page. No success-status SPA catch-all.
+for (const [from, to] of Object.entries(canonicalAliases)) {
+  redirectsLines.push(`${from} ${to} 301`, `${from.slice(0, -1)} ${to} 301`);
+}
+const redirectsContent = [...new Set(redirectsLines)].join('\n');
 fs.writeFileSync(path.resolve(distDir, '_redirects'), redirectsContent, 'utf-8');
-fs.writeFileSync(path.resolve(projectRoot, 'public', '_redirects'), redirectsContent, 'utf-8');
+
 console.log(`✓ Generated _redirects with ${textbookChapters.length * 2 + 17} legacy 301 rules`);
 
 console.log('✓ Prerendering and SEO build completed successfully!');
+
+fs.writeFileSync(path.resolve(distDir, 'seo-manifest.json'), JSON.stringify(allRoutes.map(r => ({
+  path: new URL(r.canonical).pathname, title: r.title, description: r.description,
+  outputPath: r.outputPath, indexable: !r.isNoindex,
+})), null, 2));

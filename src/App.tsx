@@ -1,9 +1,11 @@
+import { chapterCount, lectureCount } from './utils/catalogCounts';
 import React, { useState, useEffect, lazy, Suspense } from 'react';
+import { AdsenseLoader } from './components/AdsenseLoader';
 import { Header, MainTabType } from './components/Header';
-import { CurriculumView } from './components/CurriculumView';
+
 import { TradingToolId } from './components/TradingToolsWorkbench';
-import { textbookChapters } from './data/chaptersData';
-import { masoodPlaylistsData } from './data/masoodData';
+import { chapterCatalog as textbookChapters, lectureCatalog as allMasoodLectures, playlistCatalog as masoodPlaylistsData } from './data/catalog.generated';
+
 import { 
   getStoredProgress, 
   saveCompletedChapter 
@@ -42,11 +44,11 @@ import {
   getGlossaryRootPath 
 } from './utils/glossaryRoutes';
 import { 
-  resolveWorkbenchRoute,
-  WorkbenchToolId
+  type WorkbenchToolId
 } from './utils/workbenchToolRoutes';
 
 // Code-split heavy interactive sub-modules for fast initial paint & Core Web Vitals
+const CurriculumView = lazy(() => import('./components/CurriculumView').then(m => ({ default: m.CurriculumView })));
 const WelcomeScreen = lazy(() => import('./components/WelcomeScreen').then(m => ({ default: m.WelcomeScreen })));
 const ChapterRoom = lazy(() => import('./components/ChapterRoom').then(m => ({ default: m.ChapterRoom })));
 const TradingToolsWorkbench = lazy(() => import('./components/TradingToolsWorkbench').then(m => ({ default: m.TradingToolsWorkbench })));
@@ -57,7 +59,7 @@ const LegalModal = lazy(() => import('./components/LegalModal').then(m => ({ def
 const LegalPageView = lazy(() => import('./components/LegalPageView').then(m => ({ default: m.LegalPageView })));
 const NotFoundView = lazy(() => import('./components/NotFoundView').then(m => ({ default: m.NotFoundView })));
 
-const allMasoodLectures = masoodPlaylistsData.flatMap(p => p.lectures);
+
 
 const ViewLoadingFallback: React.FC = () => (
   <div className="min-h-[50vh] flex flex-col items-center justify-center gap-3 py-24 text-center">
@@ -140,10 +142,13 @@ export const App: React.FC = () => {
   });
 
   // Centralized URL Parser for Deep Linking, Direct Access & Browser History
-  const parseCurrentUrl = () => {
+  const parseCurrentUrl = async () => {
     if (typeof window === 'undefined') return;
 
     try {
+      if (document.querySelector('meta[name="learnsmc-status"]')?.getAttribute('content') === '404') {
+        setActiveTab('not_found'); setAttemptedInvalidPath(window.location.pathname); return;
+      }
       const path = window.location.pathname.toLowerCase().replace(/\/$/, '') || '/';
       const params = new URLSearchParams(window.location.search);
       const chapterParam = params.get('chapter');
@@ -168,7 +173,7 @@ export const App: React.FC = () => {
       }
 
       // 2. Modern Canonical Lesson URLs: /learn/:slug/ (or numeric ID fallback)
-      const learnMatch = path.match(/^\/learn\/([^/]+)/i);
+      const learnMatch = path.match(/^\/learn\/([^/]+)$/i);
       if (learnMatch) {
         const slugOrId = learnMatch[1];
         const match = textbookChapters.find(c => c.slug === slugOrId || String(c.id) === slugOrId);
@@ -184,7 +189,7 @@ export const App: React.FC = () => {
       }
 
       // 3. Curriculum hub: /curriculum
-      if (path === '/curriculum' || tabParam === 'curriculum') {
+      if (path === '/curriculum' || path.startsWith('/curriculum/') || tabParam === 'curriculum') {
         setActiveTab('curriculum');
         return;
       }
@@ -197,7 +202,11 @@ export const App: React.FC = () => {
           setMasoodLectureId(null);
           return;
         }
-        const lectureMatch = path.match(/^\/masood\/lectures\/([^/]+)/i);
+        const playlistMatch = path.match(/^\/masood\/playlists\/([^/]+)$/);
+        if (playlistMatch && masoodPlaylistsData.some(p => p.id === playlistMatch[1])) {
+          setMasoodSubTab('lectures'); setMasoodLectureId(null); return;
+        }
+        const lectureMatch = path.match(/^\/masood\/lectures\/([^/]+)$/i);
         if (lectureMatch) {
           const lecParam = lectureMatch[1];
           const matchedLec = allMasoodLectures.find(l => 
@@ -261,6 +270,7 @@ export const App: React.FC = () => {
         }
 
         // Check all remaining Workbench tools & hierarchical sub-routes
+        const { resolveWorkbenchRoute } = await import('./utils/workbenchToolRoutes');
         const resolvedWb = resolveWorkbenchRoute(path);
         if (resolvedWb && resolvedWb.tool !== 'overview') {
           setInitialTool(resolvedWb.tool);
@@ -281,7 +291,7 @@ export const App: React.FC = () => {
 
           // If the visited path was an alias or non-canonical (e.g. /tools/graph/ or /tools/ict-suite/), update URL seamlessly without reload
           if (!resolvedWb.isCanonical && typeof window !== 'undefined' && window.location.pathname !== resolvedWb.canonicalUrl) {
-            window.history.replaceState({ activeTab: 'tools', initialTool: resolvedWb.tool }, '', resolvedWb.canonicalUrl);
+            window.location.replace(resolvedWb.canonicalUrl);
           }
           return;
         }
@@ -328,176 +338,8 @@ export const App: React.FC = () => {
     return () => window.removeEventListener('popstate', parseCurrentUrl);
   }, []);
 
-  // Synchronize document title, meta descriptions, canonical links, and clean browser URL
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    let title = 'LearnSMC | Free ICT and Smart Money Concepts Education';
-    let description = 'Master Inner Circle Trader (ICT) and Smart Money Concepts with a free 57-chapter institutional curriculum, 52 Abdullah Masood masterclasses, and interactive Chart Lab.';
-    let cleanPath = '/';
-
-    if (activeTab === 'chapter_room') {
-      const ch = textbookChapters.find(c => c.id === selectedChapterId) || textbookChapters[0];
-      title = `${ch.title} — Chapter ${ch.id} | LearnSMC`;
-      description = `Chapter ${ch.id} (${ch.part}): ${ch.quote || ch.summary.slice(0, 2).join(' ')}. Master institutional order flow, fair value gaps, and execution on LearnSMC.`;
-      cleanPath = getLessonPath(ch.slug);
-    } else if (activeTab === 'masood') {
-      if (masoodLectureId) {
-        const lec = allMasoodLectures.find(l => l.id === masoodLectureId);
-        title = `${lec ? lec.title : 'Lecture'} — Trader Abdullah Masood | LearnSMC`;
-        description = `${lec?.shortSummary || 'Trader Abdullah Masood masterclass lecture'}. Video timestamps, rules, and institutional checklist.`;
-        cleanPath = `/masood/lectures/${masoodLectureId}/`;
-      } else if (masoodSubTab === 'animations') {
-        title = 'Animated SMC & ICT Explainers — Trader Abdullah Masood | LearnSMC';
-        description = 'Interactive visual animations of PO3, Fair Value Gap formation, Liquidity Sweeps, and Order Blocks by Trader Abdullah Masood.';
-        cleanPath = '/masood/animations/';
-      } else if (masoodSubTab === 'bias_calc') {
-        title = 'Daily Bias Calculator — Trader Abdullah Masood | LearnSMC';
-        description = 'Systematic 4-step daily bias calculator for index futures and Forex based on HTF liquidity, discount/premium, and economic macros.';
-        cleanPath = '/masood/bias-calculator/';
-      } else if (masoodSubTab === 'rules') {
-        title = 'Golden Trading Rules — Trader Abdullah Masood | LearnSMC';
-        description = 'Non-negotiable institutional execution and risk management rules distilled from 52 Abdullah Masood masterclasses.';
-        cleanPath = '/masood/golden-rules/';
-      } else {
-        title = 'Trader Abdullah Masood Academy — 52 Masterclasses | LearnSMC';
-        description = 'Study Trader Abdullah Masood complete 52-lecture institutional curriculum on ICT and Smart Money Concepts with video timestamps and notes.';
-        cleanPath = '/masood/';
-      }
-    } else if (activeTab === 'tools') {
-      if (initialTool === 'overview') {
-        title = 'ICT Trading Workbench & Analytical Laboratories | LearnSMC';
-        description = 'Interactive Chart Lab, SMC strategy simulator, backtester, trading journal, and institutional concepts reference.';
-        cleanPath = '/tools/';
-      } else if (initialTool === 'concepts') {
-        const resolvedGlossary = resolveGlossaryUrl(window.location.pathname);
-        title = resolvedGlossary.metaTitle;
-        description = resolvedGlossary.metaDescription;
-        cleanPath = resolvedGlossary.cleanPath;
-      } else {
-        const toolMetadata: Record<TradingToolId, { title: string; desc: string; slug: string }> = {
-          'masterclass': {
-            title: 'Masterclass Hub (34 Models & 15 PD Arrays) | LearnSMC',
-            desc: 'Explore 34 institutional masterclasses, 15 PD Arrays in hierarchical order, and 5 opening range models.',
-            slug: 'masterclass'
-          },
-          'chartlab': {
-            title: 'Interactive Chart Lab — Candlestick Auction Engine | LearnSMC',
-            desc: 'High-definition candlestick auction engine with multi-layer ICT overlays, Fair Value Gaps, and liquidity sweeps.',
-            slug: 'chartlab'
-          },
-          'simulator': {
-            title: 'Trade Simulator & Algorithmic Market Replay | LearnSMC',
-            desc: 'Step-by-step blind testing across London and NY Killzones with realistic limit order fills and slip models.',
-            slug: 'simulator'
-          },
-          'backtest': {
-            title: 'Backtest Lab & Strategy Expectancy Matrix | LearnSMC',
-            desc: 'Statistical expectancy, win-rates, profit factor, and drawdown curves without risking live capital.',
-            slug: 'backtest'
-          },
-          'journal': {
-            title: 'Institutional Trading Journal & Rule Validation | LearnSMC',
-            desc: '7-point institutional trade audit and rule validation logger for disciplined trade execution.',
-            slug: 'journal'
-          },
-          'graph': {
-            title: 'Interactive Knowledge Graph — 10-Step Pipeline | LearnSMC',
-            desc: 'Visual node map connecting foundational market mechanics to advanced execution models.',
-            slug: 'graph'
-          },
-          'concepts': {
-            title: 'ICT & SMC Institutional Concepts Glossary & Reference | LearnSMC',
-            desc: 'Searchable encyclopedia of Fair Value Gaps, Order Blocks, Liquidity Pools, and algorithmic mechanics.',
-            slug: 'glossary'
-          },
-          'compare': {
-            title: 'Concept Comparison Matrix — Side-by-Side Analysis | LearnSMC',
-            desc: 'Contrast overlapping concepts such as Order Block vs Breaker Block, and BSL vs SSL.',
-            slug: 'compare'
-          },
-          'dashboard': {
-            title: 'Mastery Profile & Operator Credentials | LearnSMC',
-            desc: 'Assessments, diagnostic quizzes, and operator credentials tracking your institutional mastery.',
-            slug: 'dashboard'
-          },
-          'ict_suite': {
-            title: 'ICT Delivery Suite & Killzone Macro Clock | LearnSMC',
-            desc: 'Optimal Trade Entry (OTE) calculator, Asian Judas planner, and 8 macro execution windows.',
-            slug: 'ict-suite'
-          }
-        };
-
-        const currentToolInfo = toolMetadata[initialTool as TradingToolId] || toolMetadata['chartlab'];
-        title = currentToolInfo.title;
-        description = currentToolInfo.desc;
-        cleanPath = `/tools/${currentToolInfo.slug}/`;
-      }
-    } else if (activeTab === 'curriculum') {
-      title = 'ICT & SMC Academy — 57-Chapter Institutional Trading Curriculum | LearnSMC';
-      description = 'Explore the complete 57-chapter institutional trading curriculum covering Market Structure, Liquidity Sweeps, Fair Value Gaps, PO3, and Algorithmic Execution.';
-      cleanPath = '/curriculum/';
-    } else if (activeTab === 'disclaimer') {
-      title = 'Financial Risk Disclosure & CFTC Rule 4.41 Compliance | LearnSMC';
-      description = 'Statutory risk disclosures, CFTC Rule 4.41 compliance statement, and educational non-advice declaration for LearnSMC.';
-      cleanPath = '/disclaimer/';
-    } else if (activeTab === 'privacy') {
-      title = 'Privacy Policy & Google AdSense Cookie Disclosures | LearnSMC';
-      description = 'Official privacy policy, Google AdSense third-party cookie disclosures, opt-out links, and GDPR/CCPA data rights for learnsmc.xyz.';
-      cleanPath = '/privacy/';
-    } else if (activeTab === 'terms') {
-      title = 'Terms of Service & Open Educational License | LearnSMC';
-      description = 'Terms of service, educational usage licenses, limitation of liability, and acceptable use guidelines for learnsmc.xyz.';
-      cleanPath = '/terms/';
-    } else if (activeTab === 'about') {
-      title = 'About LearnSMC, Editorial Methodology & Authorship | LearnSMC';
-      description = 'LearnSMC institutional mission, editorial peer review standards, author bios, and Trader Abdullah Masood curriculum preservation.';
-      cleanPath = '/about/';
-    } else if (activeTab === 'contact') {
-      title = 'Contact LearnSMC & Editorial Support | LearnSMC';
-      description = 'Direct contact channels, support email (support@learnsmc.xyz), and editorial inquiry form for LearnSMC.';
-      cleanPath = '/contact/';
-    } else if (activeTab === 'adsense') {
-      title = 'Google AdSense Verification & ads.txt Record | LearnSMC';
-      description = 'Official Google AdSense publisher verification, ca-pub-6985025314302607 record, and ads.txt specification for learnsmc.xyz.';
-      cleanPath = '/adsense/';
-    } else if (activeTab === 'welcome') {
-      title = 'LearnSMC | Free ICT and Smart Money Concepts Education';
-      description = 'Master Inner Circle Trader (ICT) and Smart Money Concepts with a free 57-chapter institutional curriculum, 52 Abdullah Masood masterclasses, and interactive Chart Lab.';
-      cleanPath = '/';
-    } else if (activeTab === 'not_found') {
-      title = '404 - Module Not Found | LearnSMC';
-      description = 'The requested trading module, chapter, or workbench tool does not exist. Explore the 57-chapter institutional curriculum on LearnSMC.';
-      cleanPath = attemptedInvalidPath || '/404';
-    }
-
-    document.title = title;
-
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', description);
-
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute('content', title);
-
-    const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) ogDesc.setAttribute('content', description);
-
-    const canonicalHref = normalizeCanonicalUrl(cleanPath);
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) canonical.setAttribute('href', canonicalHref);
-
-    const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) ogUrl.setAttribute('content', canonicalHref);
-
-    // Keep URL clean and synchronized with active state (migrate legacy ?chapter=1 to /learn/:slug/)
-    const currentPath = window.location.pathname;
-    const currentSearch = window.location.search;
-    const hasSearchToClean = currentSearch.includes('tab=') || currentSearch.includes('chapter=');
-    if (activeTab !== 'not_found' && (currentPath !== cleanPath || hasSearchToClean)) {
-      window.history.replaceState({ activeTab, selectedChapterId, initialTool, masoodSubTab, masoodLectureId }, '', cleanPath);
-    }
-  }, [activeTab, selectedChapterId, initialTool, masoodSubTab, masoodLectureId, attemptedInvalidPath]);
-
+  // Metadata comes from the generated document. Cross-page navigation loads a fresh document,
+  // so hydration must not replace deep-route metadata with parent-route information.
   const totalChapters = textbookChapters.length;
   const progressPercent = Math.round((completedChapterIds.length / totalChapters) * 100);
 
@@ -516,7 +358,7 @@ export const App: React.FC = () => {
       else if (['disclaimer', 'privacy', 'terms', 'about', 'contact', 'adsense'].includes(tab)) targetPath = `/${tab}/`;
       else if (tab === 'welcome') targetPath = '/';
       if (window.location.pathname !== targetPath || window.location.search) {
-        window.history.pushState({ activeTab: tab }, '', targetPath);
+        window.location.assign(targetPath);
       }
     }
   };
@@ -530,7 +372,7 @@ export const App: React.FC = () => {
       const targetSlug = slug || ch?.slug || String(chapterId);
       const targetPath = getLessonPath(targetSlug);
       if (window.location.pathname !== targetPath) {
-        window.history.pushState({ activeTab: 'chapter_room', selectedChapterId: chapterId }, '', targetPath);
+        window.location.assign(targetPath);
       }
     }
   };
@@ -549,7 +391,7 @@ export const App: React.FC = () => {
       setGlossaryConceptId(conceptId);
       setGlossarySubConceptId(undefined);
       if (window.location.pathname !== targetPath) {
-        window.history.pushState({ activeTab: 'tools', initialTool: 'concepts', conceptId }, '', targetPath);
+        window.location.assign(targetPath);
       }
     }
   };
@@ -582,7 +424,7 @@ export const App: React.FC = () => {
         targetPath = `/tools/${toolId}/`;
       }
       if (window.location.pathname !== targetPath) {
-        window.history.pushState({ activeTab: 'tools', initialTool: toolId }, '', targetPath);
+        window.location.assign(targetPath);
       }
     }
   };
@@ -592,12 +434,12 @@ export const App: React.FC = () => {
     setMasoodSubTab(subTab);
     setMasoodLectureId(null);
     if (typeof window !== 'undefined') {
-      let targetPath = '/masood';
-      if (subTab === 'animations') targetPath = '/masood/animations';
-      else if (subTab === 'bias_calc') targetPath = '/masood/bias-calculator';
-      else if (subTab === 'rules') targetPath = '/masood/golden-rules';
+      let targetPath = '/masood/';
+      if (subTab === 'animations') targetPath = '/masood/animations/';
+      else if (subTab === 'bias_calc') targetPath = '/masood/bias-calculator/';
+      else if (subTab === 'rules') targetPath = '/masood/golden-rules/';
       if (window.location.pathname !== targetPath) {
-        window.history.pushState({ activeTab: 'masood', masoodSubTab: subTab }, '', targetPath);
+        window.location.assign(targetPath);
       }
     }
   };
@@ -606,9 +448,9 @@ export const App: React.FC = () => {
   const handleMasoodLectureSelect = (lectureId: string | null) => {
     setMasoodLectureId(lectureId);
     if (typeof window !== 'undefined') {
-      const targetPath = lectureId ? `/masood/lectures/${lectureId}` : '/masood';
+      const targetPath = lectureId ? `/masood/lectures/${lectureId}/` : '/masood/';
       if (window.location.pathname !== targetPath) {
-        window.history.pushState({ activeTab: 'masood', masoodLectureId: lectureId }, '', targetPath);
+        window.location.assign(targetPath);
       }
     }
   };
@@ -674,10 +516,10 @@ export const App: React.FC = () => {
 
         {/* PILLAR 1: OPEN SYLLABUS & CURRICULUM VIEW (All 57 Chapters Unlocked) */}
         {!isShowingWelcome && (activeTab === 'curriculum' || activeTab === 'world_map' || activeTab === 'textbook') && (
-          <CurriculumView
+          <Suspense fallback={<ViewLoadingFallback />}><CurriculumView
             onSelectChapter={handleSelectChapter}
             onOpenSearch={() => setIsSearchOpen(true)}
-          />
+          /></Suspense>
         )}
 
         {/* PILLAR 1 DETAIL: DEDICATED CHAPTER ROOM */}
@@ -762,27 +604,27 @@ export const App: React.FC = () => {
       </main>
 
       {/* Global Search Modal */}
-      <Suspense fallback={null}>
+      {isSearchOpen && <Suspense fallback={null}>
         <SearchModal
           isOpen={isSearchOpen}
           onClose={() => setIsSearchOpen(false)}
           onSelectConcept={handleSelectConcept}
           onSelectChapter={handleSelectChapter}
         />
-      </Suspense>
+      </Suspense>}
 
       {/* Mentor Tribute Spotlight Modal */}
-      <Suspense fallback={null}>
+      {isMentorSpotlightOpen && <Suspense fallback={null}>
         <MentorSpotlight
           isOpen={isMentorSpotlightOpen}
           onClose={() => setIsMentorSpotlightOpen(false)}
           onOpenMasoodAcademy={() => {
             setIsMentorSpotlightOpen(false);
-            setActiveTab('masood');
+            navigateToTab('masood');
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         />
-      </Suspense>
+      </Suspense>}
 
       {/* Predikt Editorial Footer */}
       <footer className="border-t border-white/[0.07] bg-[#08090D]/80 backdrop-blur-md py-10 px-4 sm:px-6 lg:px-8 mt-auto relative z-10">
@@ -802,7 +644,7 @@ export const App: React.FC = () => {
                     <span>TRADER ABDULLAH MASOOD</span>
                   </div>
                   <p className="text-xs sm:text-sm text-[#F5F7FA]/90 mt-1 leading-relaxed font-normal">
-                    Master educator of ICT &amp; Smart Money Concepts algorithmic delivery. 52 structured masterclasses preserved with complete fidelity.
+                    Master educator of ICT &amp; Smart Money Concepts algorithmic delivery. {lectureCount} independent study guides with original video source links.
                   </p>
                 </div>
               </div>
@@ -810,13 +652,13 @@ export const App: React.FC = () => {
               <div className="flex flex-wrap items-center gap-3 shrink-0 w-full md:w-auto justify-start md:justify-end">
                 <button
                   onClick={() => {
-                    setActiveTab('masood');
+                    navigateToTab('masood');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="btn-predikt-primary text-xs"
                 >
                   <Youtube className="w-4 h-4 text-red-500" />
-                  <span>Masood Academy (52)</span>
+                  <span>Masood Academy ({lectureCount})</span>
                 </button>
                 <button
                   onClick={() => setIsMentorSpotlightOpen(true)}
@@ -931,7 +773,7 @@ export const App: React.FC = () => {
                 className="text-[#55E6D1]/90 hover:text-[#55E6D1] transition-colors flex items-center gap-1.5"
               >
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#55E6D1]" />
-                <span>ads.txt Verified</span>
+                <span>Advertising information</span>
               </a>
             </div>
 
@@ -957,9 +799,9 @@ export const App: React.FC = () => {
                 <span>OPEN INSTITUTIONAL CURRICULUM</span>
               </div>
               <div className="text-[#656B78] flex items-center gap-3">
-                <span>57 CHAPTERS</span>
+                <span>{chapterCount} CHAPTERS</span>
                 <span>·</span>
-                <span>52 LECTURES</span>
+                <span>{lectureCount} LECTURES</span>
                 <span>·</span>
                 <span>LABORATORY</span>
               </div>
@@ -969,18 +811,20 @@ export const App: React.FC = () => {
       </footer>
 
       {/* Regulatory & Legal Modal (Quick preview or deep study) */}
-      <Suspense fallback={null}>
+      {isLegalModalOpen && <Suspense fallback={null}>
         <LegalModal
           isOpen={isLegalModalOpen}
           onClose={() => setIsLegalModalOpen(false)}
           initialTab={legalModalTab}
         />
-      </Suspense>
+      </Suspense>}
+
+      <AdsenseLoader />
 
       {/* Cookie & Privacy Consent Banner (GDPR, UK & AdSense Ready) */}
       <CookieConsentBanner
         onOpenPrivacyPolicy={() => {
-          setActiveTab('privacy');
+          navigateToTab('privacy');
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
       />

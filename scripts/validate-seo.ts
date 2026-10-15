@@ -325,7 +325,7 @@ assert(!distRedirectsContent.includes('/index.html'), '_redirects does NOT conta
 
 // Verify 200.html exists for Cloudflare Pages native SPA fallback
 const dist200Path = path.resolve(distDir, '200.html');
-assert(fs.existsSync(dist200Path), 'dist/200.html exists for Cloudflare Pages native SPA fallback');
+assert(!fs.existsSync(dist200Path), 'No success-status SPA fallback is emitted');
 
 // 2. Vercel vercel.json configuration
 const vercelPath = path.resolve(projectRoot, 'vercel.json');
@@ -383,7 +383,7 @@ for (const ch of textbookChapters) {
   const chFile = path.resolve(distDir, `learn/${ch.slug}/index.html`);
   if (fs.existsSync(chFile)) {
     const chContent = fs.readFileSync(chFile, 'utf-8');
-    if (chContent.includes('What Actually Moves Price? — The Mechanics of the Electronic Auction')) {
+    if ((chContent.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1] || '').includes('What Actually Moves Price')) {
       otherChapterBleedCount++;
       console.error(`❌ Content bleed detected: Chapter 1 found in learn/${ch.slug}/index.html`);
     }

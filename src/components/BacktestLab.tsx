@@ -52,7 +52,7 @@ export const BacktestLab: React.FC<BacktestLabProps> = ({
     if (onNavigateUrl) {
       onNavigateUrl(targetUrl);
     } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
-      window.history.pushState({ tool: 'backtest', strategyId: stratId }, '', targetUrl);
+      window.location.assign(targetUrl);
     }
   };
 

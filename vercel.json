@@ -977,12 +977,26 @@
       "source": "/tools/ict_suite/:path*",
       "destination": "/tools/delivery-suite/",
       "permanent": true
-    }
-  ],
-  "rewrites": [
+    },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/tools/ict-suite/",
+      "destination": "/tools/delivery-suite/",
+      "permanent": true
+    },
+    {
+      "source": "/masood/lectures/",
+      "destination": "/masood/",
+      "permanent": true
+    },
+    {
+      "source": "/masood/bias_calc/",
+      "destination": "/masood/bias-calculator/",
+      "permanent": true
+    },
+    {
+      "source": "/masood/rules/",
+      "destination": "/masood/golden-rules/",
+      "permanent": true
     }
   ],
   "headers": [
@@ -1000,6 +1014,14 @@
         {
           "key": "Referrer-Policy",
           "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "object-src 'none'; base-uri 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
         }
       ]
     },

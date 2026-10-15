@@ -73,7 +73,7 @@ export const TradingJournal: React.FC<TradingJournalProps> = ({
     if (onNavigateUrl) {
       onNavigateUrl(targetUrl);
     } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
-      window.history.pushState({ tool: 'journal', sectionId: secId }, '', targetUrl);
+      window.location.assign(targetUrl);
     }
   };
 

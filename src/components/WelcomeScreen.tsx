@@ -1,3 +1,4 @@
+import { chapterCount, lectureCount } from '../utils/catalogCounts';
 import React, { useState, useEffect } from 'react';
 import { 
   ArrowRight, 
@@ -7,7 +8,7 @@ import {
   Wrench, 
   Clock
 } from 'lucide-react';
-import boyStudyingImg from '../assets/images/boy_learning_trading_1788423487769.jpg';
+import boyStudyingImg from '../assets/images/boy_learning_trading.webp';
 import { MainTabType } from './Header';
 import { ScrollReveal } from './ScrollReveal';
 
@@ -95,7 +96,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
 
               {/* Supporting Educational Description */}
               <p className="text-base sm:text-lg text-[#9BA1AE] font-normal leading-relaxed max-w-xl">
-                An institutional trading syllabus engineered with complete mathematical discipline. Master order flow, Fair Value Gaps, algorithmic displacement, and liquidity delivery across 57 codified chapters, 52 masterclasses by Trader Abdullah Masood, and an interactive 8-tool laboratory.
+                An institutional trading syllabus engineered with complete mathematical discipline. Master order flow, Fair Value Gaps, algorithmic displacement, and liquidity delivery across {chapterCount} codified chapters, {lectureCount} masterclasses by Trader Abdullah Masood, and an interactive 10-tool laboratory.
               </p>
 
               {/* Action Buttons */}
@@ -105,7 +106,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                   className="btn-predikt-primary text-sm px-6 py-3"
                 >
                   <BookOpen className="w-4 h-4 text-[#08090D]" />
-                  <span>Explore 57 Chapters</span>
+                  <span>Explore {chapterCount} Chapters</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
 
@@ -114,7 +115,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                   className="btn-predikt-secondary text-sm px-5 py-3"
                 >
                   <Youtube className="w-4 h-4 text-[#FF6B7A]" />
-                  <span>Masood Academy (52)</span>
+                  <span>Masood Academy ({lectureCount})</span>
                 </button>
 
                 <button
@@ -162,7 +163,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                     alt="Student studying institutional price delivery and ICT order flow"
                     width="1376"
                     height="768"
-                    loading="lazy"
+                    loading="eager" fetchPriority="high"
                     decoding="async"
                     className="w-full h-full object-cover grayscale contrast-125 opacity-90 hover:opacity-100 transition-opacity"
                   />
@@ -184,11 +185,11 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                 {/* Metrics */}
                 <div className="grid grid-cols-3 gap-3 text-center">
                   <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                    <div className="text-2xl font-semibold text-[#F5F7FA] font-mono">57</div>
+                    <div className="text-2xl font-semibold text-[#F5F7FA] font-mono">{chapterCount}</div>
                     <div className="text-[10px] uppercase text-[#656B78] font-mono tracking-wider mt-0.5">Chapters</div>
                   </div>
                   <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                    <div className="text-2xl font-semibold text-[#FF6B7A] font-mono">52</div>
+                    <div className="text-2xl font-semibold text-[#FF6B7A] font-mono">{lectureCount}</div>
                     <div className="text-[10px] uppercase text-[#656B78] font-mono tracking-wider mt-0.5">Lectures</div>
                   </div>
                   <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06]">
@@ -232,7 +233,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                     The ICT Textbook
                   </h3>
                   <p className="text-xs sm:text-sm text-[#9BA1AE] mt-1.5 leading-relaxed font-normal">
-                    57 fully codified institutional chapters spanning market structure, liquidity sweeps, Fair Value Gaps, and killzones without arbitrary locks.
+                    {chapterCount} fully codified institutional chapters spanning market structure, liquidity sweeps, Fair Value Gaps, and killzones without arbitrary locks.
                   </p>
                 </div>
                 <div className="pt-2 flex items-center gap-1.5 text-xs text-[#5865FF] font-medium">
@@ -259,7 +260,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                     Abdullah Masood Academy
                   </h3>
                   <p className="text-xs sm:text-sm text-[#9BA1AE] mt-1.5 leading-relaxed font-normal">
-                    52 structured video masterclasses across 6 curated playlists, the Daily Bias calculator, and the 10 Golden Execution Rules.
+                    {lectureCount} structured video masterclasses across 6 curated playlists, the Daily Bias calculator, and the 10 Golden Execution Rules.
                   </p>
                 </div>
                 <div className="pt-2 flex items-center gap-1.5 text-xs text-[#FF6B7A] font-medium">

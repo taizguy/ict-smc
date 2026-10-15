@@ -14,29 +14,13 @@ export const BASE_URL = 'https://learnsmc.xyz';
 export function normalizeCanonicalUrl(pathOrUrl: string): string {
   if (!pathOrUrl) return `${BASE_URL}/`;
 
-  let cleaned = pathOrUrl.trim();
-
-  // Strip origin if present
-  if (cleaned.startsWith(BASE_URL)) {
-    cleaned = cleaned.substring(BASE_URL.length);
-  } else if (/^https?:\/\/[^/]+/i.test(cleaned)) {
-    cleaned = cleaned.replace(/^https?:\/\/[^/]+/i, '');
-  }
-
-  // Strip query params and hashes for canonical generation
-  const queryIndex = cleaned.indexOf('?');
-  if (queryIndex !== -1) {
-    cleaned = cleaned.substring(0, queryIndex);
-  }
-  const hashIndex = cleaned.indexOf('#');
-  if (hashIndex !== -1) {
-    cleaned = cleaned.substring(0, hashIndex);
-  }
-
-  // Ensure leading slash
-  if (!cleaned.startsWith('/')) {
-    cleaned = `/${cleaned}`;
-  }
+  let cleaned: string;
+  try {
+    const parsed = new URL(pathOrUrl.trim(), `${BASE_URL}/`);
+    cleaned = parsed.pathname.replace(/\/{2,}/g, '/');
+    // Public document routes are lowercase; asset filenames remain case-sensitive.
+    if (!/\.[a-z0-9]{2,5}$/i.test(cleaned)) cleaned = cleaned.toLowerCase();
+  } catch { return `${BASE_URL}/`; }
 
   // Root path
   if (cleaned === '/' || cleaned === '') {

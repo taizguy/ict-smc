@@ -14,19 +14,6 @@ export interface ScrollRevealProps {
   immediate?: boolean;
 }
 
-// Identify search engine crawlers, SEO audit tools, and AI agentic scrapers
-const isCrawlerOrBot = (): boolean => {
-  if (typeof navigator === 'undefined') return true;
-  const ua = navigator.userAgent;
-  if (!ua) return false;
-  return /bot|googlebot|crawler|spider|robot|crawling|mediapartners|adsbot|slurp|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot|linkedinbot|pinterest|slackbot|whatsapp|applebot|gptbot|chatgpt|perplexity|claude/i.test(ua);
-};
-
-/**
- * ScrollReveal: SEO & Crawler-Optimized Intersection reveal component using motion/react.
- * Guarantees zero blank content above/below fold, positive pre-fetch threshold margin,
- * and immediate visibility for Googlebot, AdSense crawler, and AI bots.
- */
 export const ScrollReveal: React.FC<ScrollRevealProps> = ({
   children,
   className = '',
@@ -40,8 +27,7 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
   immediate = false,
 }) => {
   const shouldReduceMotion = useReducedMotion();
-  const isBot = isCrawlerOrBot();
-  const shouldSkipAnimation = immediate || shouldReduceMotion || isBot;
+  const shouldSkipAnimation = immediate || shouldReduceMotion;
 
   if (shouldSkipAnimation) {
     return (
@@ -56,7 +42,7 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
       id={id}
       style={style}
       className={className}
-      initial={{ opacity: 0, y }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ 
         once, 

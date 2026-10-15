@@ -224,9 +224,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
                     ACTIVE: {currentToolMeta.name}
                   </span>
                 </div>
-                <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F5F7FA] mt-0.5">
-                  Trading Tools &amp; Laboratory
-                </h2>
+                <h1 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F5F7FA] mt-0.5">{document.querySelector('meta[name="learnsmc-heading"]')?.getAttribute('content') || currentToolMeta.name}</h1>
               </div>
             </div>
 

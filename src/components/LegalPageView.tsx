@@ -1,3 +1,4 @@
+import { chapterCount, lectureCount } from '../utils/catalogCounts';
 import React, { useState, useEffect } from 'react';
 import { 
   ShieldAlert, 
@@ -52,11 +53,13 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!contactForm.email || !contactForm.message) return;
+    const body = `Name: ${contactForm.name}\nReply email: ${contactForm.email}\n\n${contactForm.message}`;
+    window.location.href = `mailto:support@learnsmc.xyz?subject=${encodeURIComponent(contactForm.subject)}&body=${encodeURIComponent(body)}`;
     setContactSubmitted(true);
   };
 
   const navTabs: { id: LegalTabType; label: string; icon: React.ReactNode }[] = [
-    { id: 'disclaimer', label: 'Financial Risk & CFTC', icon: <ShieldAlert className="w-4 h-4 text-amber-400" /> },
+    { id: 'disclaimer', label: 'Financial risk disclosure', icon: <ShieldAlert className="w-4 h-4 text-amber-400" /> },
     { id: 'privacy', label: 'Privacy Policy & Cookies', icon: <Lock className="w-4 h-4 text-[#55E6D1]" /> },
     { id: 'terms', label: 'Terms of Service', icon: <FileText className="w-4 h-4 text-[#8A72FF]" /> },
     { id: 'about', label: 'About & Editorial Team', icon: <Building className="w-4 h-4 text-white/90" /> },
@@ -65,7 +68,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
   ];
 
   return (
-    <main role="main" className="min-h-screen pb-20 pt-6 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+    <div className="min-h-screen pb-20 pt-6 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
       {/* Top Breadcrumb & Return Bar */}
       <nav aria-label="Breadcrumb" className="flex items-center justify-between gap-4 mb-8 pb-4 border-b border-white/[0.08]">
         <button
@@ -88,11 +91,11 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
         <div className="flex items-center gap-2 mb-3">
           <Scale className="w-5 h-5 text-[#5865FF]" />
           <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-            Institutional Transparency, Regulatory Disclosures &amp; Publisher Policies
+            {navTabs.find(t => t.id === currentTab)?.label}
           </h1>
         </div>
         <p className="text-sm text-[#9BA1AE] max-w-3xl mb-6">
-          Official statutory disclosures, CFTC compliance statements, Google AdSense cookie policies, and editorial guidelines for LearnSMC.
+          Risk disclosures, privacy and cookie information, source attribution, and editorial policies for LearnSMC.
         </p>
 
         <div className="flex flex-wrap gap-2 p-1.5 bg-[#11141B] border border-white/[0.08] rounded-xl">
@@ -126,7 +129,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
             <header className="border-b border-white/[0.08] pb-5">
               <div className="flex items-center gap-2 text-xs font-mono text-amber-400 uppercase tracking-widest mb-1">
                 <ShieldAlert className="w-4 h-4" />
-                <span>Statutory Risk Disclosure · CFTC Rule 4.41</span>
+                <span>Education and simulated performance</span>
               </div>
               <h2 className="text-2xl font-bold text-white">
                 Financial Risk Disclosure &amp; Educational Non-Advice Declaration
@@ -169,7 +172,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
             <div className="space-y-4">
               <h3 className="text-base font-bold text-white">3. Zero Predatory Affiliate Practices</h3>
               <p>
-                LearnSMC does not promote unregulated offshore brokers, paid signal rooms, guaranteed win-rate robots, or predatory multi-tier affiliate programs. All 57 textbook chapters and 52 Abdullah Masood masterclasses are 100% free and open to all students worldwide.
+                LearnSMC does not promote unregulated offshore brokers, paid signal rooms, guaranteed win-rate robots, or predatory multi-tier affiliate programs. All {chapterCount} textbook chapters and {lectureCount} Abdullah Masood masterclasses are 100% free and open to all students worldwide.
               </p>
             </div>
           </section>
@@ -187,7 +190,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
                 Privacy Policy, Cookie Disclosures &amp; Data Rights
               </h2>
               <p className="text-xs text-[#8E95A5] mt-1">
-                Effective date: October 2026 · Compliant with GDPR, UK DPA, CCPA, and Google AdSense
+                Privacy, browser storage and third-party advertising
               </p>
             </header>
 
@@ -208,10 +211,10 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
               </p>
               <ul className="text-xs text-[#9BA1AE] space-y-2 list-disc pl-5">
                 <li>
-                  Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites on the internet.
+                  Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites on the internet.
                 </li>
                 <li>
-                  Google's use of advertising cookies enables it and its partners to serve ads to your users based on their visit to your sites and/or other sites on the Internet.
+                  Google's use of advertising cookies enables it and its partners to serve ads to your visitors based on their visit to this site and/or other sites on the Internet.
                 </li>
                 <li>
                   Users may opt out of personalized advertising by visiting{' '}
@@ -314,73 +317,15 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
 
         {/* TAB 4: ABOUT & EDITORIAL METHODOLOGY */}
         {currentTab === 'about' && (
-          <section className="space-y-6 animate-fade-in text-sm text-[#C4C9D6] leading-relaxed">
-            <header className="border-b border-white/[0.08] pb-5">
-              <div className="flex items-center gap-2 text-xs font-mono text-white/90 uppercase tracking-widest mb-1">
-                <Building className="w-4 h-4" />
-                <span>Editorial Standards · Author Bios · Transparency</span>
-              </div>
-              <h2 className="text-2xl font-bold text-white">
-                About LearnSMC, Editorial Process &amp; Authorship
-              </h2>
-              <p className="text-xs text-[#8E95A5] mt-1">
-                Published by ICT Institutional Research Group · Preserving Trader Abdullah Masood
-              </p>
-            </header>
-
-            <div className="space-y-4">
-              <h3 className="text-base font-bold text-white">1. The LearnSMC Mission</h3>
-              <p>
-                LearnSMC was founded with a singular conviction: <strong className="text-white">Institutional trading education should be structured, mathematically rigorous, and completely free of paywalls.</strong>
-              </p>
-              <p>
-                Retail trading content on YouTube and social media is frequently fragmented, filled with conflicting definitions, or designed to funnel vulnerable beginners into paid discord channels and unregulated brokers. LearnSMC replaces noise with an open 57-chapter digital textbook, an interactive chart laboratory, and 52 codified masterclasses from Trader Abdullah Masood.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-              <div className="bg-[#151923] border border-white/[0.08] rounded-xl p-5 space-y-2">
-                <div className="flex items-center gap-2 text-[#5865FF] font-mono text-xs uppercase">
-                  <BookOpen className="w-4 h-4" />
-                  <span>Curriculum Rigor &amp; Invalidation Rules</span>
-                </div>
-                <h4 className="text-white font-bold text-sm">Objective vs. Subjective Mechanics</h4>
-                <p className="text-xs text-[#9BA1AE] leading-relaxed">
-                  Every concept (Fair Value Gaps, Order Blocks, Liquidity Sweeps, Breakers) is codified with explicit mathematical parameters, step-by-step formation rules, and rigid invalidation thresholds.
-                </p>
-              </div>
-
-              <div className="bg-[#151923] border border-white/[0.08] rounded-xl p-5 space-y-2">
-                <div className="flex items-center gap-2 text-[#55E6D1] font-mono text-xs uppercase">
-                  <UserCheck className="w-4 h-4" />
-                  <span>Trader Abdullah Masood Wing</span>
-                </div>
-                <h4 className="text-white font-bold text-sm">Simplifying Institutional Complexity</h4>
-                <p className="text-xs text-[#9BA1AE] leading-relaxed">
-                  A dedicated 52-lecture academy section systematically preserves the core teachings of Trader Abdullah Masood, breaking down high-level institutional market mechanics into actionable execution checklists.
-                </p>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-base font-bold text-white">2. Editorial &amp; Peer Review Process</h3>
-              <p>
-                Every lesson undergoes a rigorous four-stage editorial review before publication:
-              </p>
-              <ol className="list-decimal pl-5 space-y-2 text-xs text-[#9BA1AE]">
-                <li><strong className="text-white">Conceptual Verification:</strong> Cross-referencing against Michael J. Huddleston's primary mentorships (2016-2024, 2025, 2026).</li>
-                <li><strong className="text-white">Microstructure Tape Validation:</strong> Verifying order book, Central Limit Order Book (CLOB), and tick-by-tick matching behavior on CME futures and interbank Forex.</li>
-                <li><strong className="text-white">Risk Framework Integration:</strong> Pairing every setup directly with invalidation logic, stop-loss mathematical placement, and maximum drawdown constraints.</li>
-                <li><strong className="text-white">Accessibility &amp; Code Quality:</strong> Ensuring clean typography, responsive layout, and full WCAG 2.2 AA accessibility standards.</li>
-              </ol>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-base font-bold text-white">3. Editorial Contact &amp; Revision Log</h3>
-              <p className="text-xs text-[#9BA1AE]">
-                Current Curriculum Edition: <strong className="text-white">v3.2.0 (2026 Institutional Specification)</strong>. Revisions are logged monthly. Suggest corrections or additions at <a href="mailto:support@learnsmc.xyz" className="text-[#55E6D1] underline">support@learnsmc.xyz</a>.
-              </p>
-            </div>
+          <section id="author" className="space-y-6 text-sm leading-relaxed">
+            <h2 className="text-2xl font-semibold">About LearnSMC and its author</h2>
+            <p>Muhammad Umer Ijaz writes and maintains the written lessons and study notes on LearnSMC. This is an independent educational project for studying ICT and Smart Money Concepts.</p>
+            <h3 className="text-xl font-semibold">Source attribution</h3>
+            <p>Videos attributed to Trader Abdullah Masood link to their original YouTube sources. Written study notes are independently published and are not claimed to be reviewed or endorsed by the source educator.</p>
+            <h3 className="text-xl font-semibold">Editorial approach</h3>
+            <p>Lessons explain the frameworks, definitions, examples and practice rules used in this curriculum. A trading framework is not proof of future results. Check the source material, test assumptions in a demo account and examine cases where a setup fails. Independent expert or peer review is not claimed.</p>
+            <h3 className="text-xl font-semibold">Corrections and questions</h3>
+            <p>To suggest a correction, include the page URL, the statement in question and a source supporting the correction. <a className="underline text-[#55E6D1]" href="/contact/">Contact the publisher</a>.</p>
           </section>
         )}
 
@@ -396,7 +341,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
                 Contact LearnSMC &amp; Editorial Support
               </h2>
               <p className="text-xs text-[#8E95A5] mt-1">
-                We respond to educational inquiries, bug reports, and copyright notices within 24–48 hours.
+                Contact the publisher about lessons, corrections, technical problems or copyright concerns.
               </p>
             </header>
 
@@ -438,9 +383,9 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
                     <div className="w-12 h-12 rounded-full bg-[#52D273]/10 border border-[#52D273]/30 flex items-center justify-center mx-auto text-[#52D273]">
                       <CheckCircle2 className="w-6 h-6" />
                     </div>
-                    <h4 className="text-base font-bold text-white">Message Transmitted Successfully</h4>
+                    <h4 className="text-base font-bold text-white">Complete sending in your email app</h4>
                     <p className="text-xs text-[#9BA1AE] max-w-xs mx-auto">
-                      Thank you for reaching out to LearnSMC. An institutional researcher will review your communication and respond to <strong className="text-white">{contactForm.email}</strong> shortly.
+                      Your email app should open with a prepared message. Review it and press Send there. This website has not submitted a message to a server.
                     </p>
                     <button
                       onClick={() => {
@@ -560,7 +505,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
             <div className="space-y-3 text-xs text-[#9BA1AE]">
               <h3 className="text-sm font-bold text-white">Google Publisher Policies Adherence Checklist</h3>
               <ul className="space-y-1.5 list-disc pl-5">
-                <li><strong className="text-white">Original Value-Add Content:</strong> 57 comprehensive codified chapters with market microstructure diagrams and tape notes.</li>
+                <li><strong className="text-white">Original Value-Add Content:</strong> {chapterCount} comprehensive codified chapters with market microstructure diagrams and tape notes.</li>
                 <li><strong className="text-white">Accessible Navigation:</strong> Logical tab navigation and chapter progression without dead ends or broken links.</li>
                 <li><strong className="text-white">No Accidental Clicks:</strong> Clean separation between editorial text, interactive simulators, and potential ad placements.</li>
                 <li><strong className="text-white">Strict Compliance:</strong> Prominent CFTC disclaimers, privacy policy with Google advertising cookie opt-out, and terms of service.</li>
@@ -570,6 +515,6 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
         )}
 
       </article>
-    </main>
+    </div>
   );
 };

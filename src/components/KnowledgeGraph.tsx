@@ -59,7 +59,7 @@ export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({
 }) => {
   const [viewMode, setViewMode] = useState<'pipeline' | 'network'>(initialViewMode);
   const [selectedPipelineStep, setSelectedPipelineStep] = useState<number>(initialStep);
-  const [selectedNode, setSelectedNode] = useState<string>(initialNodeId);
+  const [selectedNode, setSelectedNode] = useState<string>(() => decodeURIComponent(location.hash.slice(1)) || initialNodeId);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
 
   useEffect(() => {
@@ -75,7 +75,7 @@ export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({
   }, [initialStep]);
 
   useEffect(() => {
-    if (initialNodeId && initialNodeId !== selectedNode) {
+    if (!location.hash && initialNodeId && initialNodeId !== selectedNode) {
       setSelectedNode(initialNodeId);
     }
   }, [initialNodeId]);
@@ -84,11 +84,11 @@ export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({
     setViewMode(mode);
     const targetUrl = mode === 'pipeline' 
       ? `/tools/knowledge-graph/pipeline/step-${selectedPipelineStep}/` 
-      : `/tools/knowledge-graph/network/${selectedNode}/`;
+      : `/tools/knowledge-graph/network/fair_value_gap/#${encodeURIComponent(selectedNode)}`;
     if (onNavigateUrl) {
       onNavigateUrl(targetUrl);
     } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
-      window.history.pushState({ tool: 'graph', mode }, '', targetUrl);
+      window.location.assign(targetUrl);
     }
   };
 
@@ -98,17 +98,17 @@ export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({
     if (onNavigateUrl) {
       onNavigateUrl(targetUrl);
     } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
-      window.history.pushState({ tool: 'graph', mode: 'pipeline', step: stepNumber }, '', targetUrl);
+      window.location.assign(targetUrl);
     }
   };
 
   const handleSelectNetworkNode = (nodeId: string) => {
     setSelectedNode(nodeId);
-    const targetUrl = `/tools/knowledge-graph/network/${nodeId}/`;
+    const targetUrl = `/tools/knowledge-graph/network/fair_value_gap/#${encodeURIComponent(nodeId)}`;
     if (onNavigateUrl) {
       onNavigateUrl(targetUrl);
     } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
-      window.history.pushState({ tool: 'graph', mode: 'network', nodeId }, '', targetUrl);
+      window.location.assign(targetUrl);
     }
   };
 
@@ -277,7 +277,7 @@ export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = ({
   const activeStepMeta = KNOWLEDGE_GRAPH_STEPS.find(s => s.step === selectedPipelineStep);
   const canonicalPath = viewMode === 'pipeline'
     ? `/tools/knowledge-graph/pipeline/step-${selectedPipelineStep}/`
-    : `/tools/knowledge-graph/network/${selectedNode}/`;
+    : `/tools/knowledge-graph/network/fair_value_gap/#${encodeURIComponent(selectedNode)}`;
 
   return (
     <div className="space-y-6 text-[#F5F7FA]">

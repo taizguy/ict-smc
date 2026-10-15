@@ -1,3 +1,4 @@
+import { FinancialDisclaimer } from './FinancialDisclaimer';
 import { chapterCount, lectureCount } from '../utils/catalogCounts';
 import React, { useState, useEffect } from 'react';
 import { 
@@ -302,6 +303,16 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
 
       </section>
 
+      <section className="space-y-4 text-sm leading-relaxed text-[#C4C9D6]">
+        <h2 className="text-2xl font-semibold text-white">What are ICT and Smart Money Concepts?</h2>
+        <p>ICT stands for Inner Circle Trader, a trading education framework associated with Michael J. Huddleston. Smart Money Concepts covers chart-reading terms such as market structure, liquidity, order blocks and price imbalances. A chart pattern does not establish that a bank placed an order or that a future move is certain.</p>
+        <h2 className="text-xl font-semibold text-white">Choose a study path</h2>
+        <p>Start with <a className="underline" href="/curriculum/">market foundations</a>, then study liquidity and structure before entry patterns. Read definitions in the <a className="underline" href="/tools/glossary/">glossary</a>, compare related concepts and practice on historical charts without looking ahead.</p>
+        <h2 className="text-xl font-semibold text-white">A practice example</h2>
+        <p>If price moves above a previous high and returns below it, record it as a possible liquidity sweep. Do not assume a reversal follows. Note the timeframe, range and invalidation condition. Compare it with a case where price continues higher. Use historical charts or a demo account.</p>
+        <p>Written by <a className="underline" href="/about/#author">Muhammad Umer Ijaz</a>. Page updated: <time dateTime="2026-10-16">16 October 2026</time>. <a className="underline" href="/about/#editorial-policy">Editorial policy</a>.</p>
+        <FinancialDisclaimer />
+      </section>
     </div>
   );
 };

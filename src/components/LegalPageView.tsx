@@ -1,3 +1,4 @@
+import { authorContact } from '../utils/publisher';
 import { chapterCount, lectureCount } from '../utils/catalogCounts';
 import React, { useState, useEffect } from 'react';
 import { 
@@ -54,7 +55,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
     e.preventDefault();
     if (!contactForm.email || !contactForm.message) return;
     const body = `Name: ${contactForm.name}\nReply email: ${contactForm.email}\n\n${contactForm.message}`;
-    window.location.href = `mailto:support@learnsmc.xyz?subject=${encodeURIComponent(contactForm.subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:itsmuhammadumerijaz@gmail.com?subject=${encodeURIComponent(contactForm.subject)}&body=${encodeURIComponent(body)}`;
     setContactSubmitted(true);
   };
 
@@ -263,7 +264,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
               </p>
               <p>
                 To exercise any privacy inquiries or request data removal, email our privacy team directly at{' '}
-                <a href="mailto:support@learnsmc.xyz" className="text-[#55E6D1] underline">support@learnsmc.xyz</a>.
+                <a href="mailto:itsmuhammadumerijaz@gmail.com" className="text-[#55E6D1] underline">itsmuhammadumerijaz@gmail.com</a>.
               </p>
             </div>
           </section>
@@ -320,9 +321,14 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
           <section id="author" className="space-y-6 text-sm leading-relaxed">
             <h2 className="text-2xl font-semibold">About LearnSMC and its author</h2>
             <p>Muhammad Umer Ijaz writes and maintains the written lessons and study notes on LearnSMC. This is an independent educational project for studying ICT and Smart Money Concepts.</p>
+            <address className="not-italic break-words">
+              <p><a className="underline" href={`mailto:${authorContact.email}`}>{authorContact.email}</a></p>
+              <p><a className="underline" href={`tel:${authorContact.telephone}`}>{authorContact.telephone}</a></p>
+              <p>{authorContact.streetAddress}, Daska, Pakistan</p>
+            </address>
             <h3 className="text-xl font-semibold">Source attribution</h3>
             <p>Videos attributed to Trader Abdullah Masood link to their original YouTube sources. Written study notes are independently published and are not claimed to be reviewed or endorsed by the source educator.</p>
-            <h3 className="text-xl font-semibold">Editorial approach</h3>
+            <h3 id="editorial-policy" className="text-xl font-semibold">Editorial policy</h3>
             <p>Lessons explain the frameworks, definitions, examples and practice rules used in this curriculum. A trading framework is not proof of future results. Check the source material, test assumptions in a demo account and examine cases where a setup fails. Independent expert or peer review is not claimed.</p>
             <h3 className="text-xl font-semibold">Corrections and questions</h3>
             <p>To suggest a correction, include the page URL, the statement in question and a source supporting the correction. <a className="underline text-[#55E6D1]" href="/contact/">Contact the publisher</a>.</p>
@@ -356,13 +362,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
                   <div className="space-y-2 text-xs">
                     <div>
                       <span className="text-[#656B78] font-mono block">Primary Support &amp; Inquiries:</span>
-                      <a href="mailto:support@learnsmc.xyz" className="text-[#55E6D1] font-mono hover:underline">
-                        support@learnsmc.xyz
-                      </a>
-                    </div>
-                    <div>
-                      <span className="text-[#656B78] font-mono block">Publisher Administrative Contact:</span>
-                      <a href="mailto:itsmuhammadumerijaz@gmail.com" className="text-white font-mono hover:underline">
+                      <a href="mailto:itsmuhammadumerijaz@gmail.com" className="text-[#55E6D1] font-mono hover:underline">
                         itsmuhammadumerijaz@gmail.com
                       </a>
                     </div>
@@ -370,8 +370,9 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
                 </div>
 
                 <div className="bg-[#151923] border border-white/[0.08] rounded-xl p-5 space-y-2 text-xs text-[#9BA1AE]">
-                  <h4 className="font-bold text-white text-sm">Response Timeline &amp; Availability</h4>
-                  <p>Our editorial and technical team operates Monday through Friday across London and New York trading sessions.</p>
+                  <h4 className="font-bold text-white text-sm">Publisher contact</h4>
+                  <address className="not-italic"><p>Muhammad Umer Ijaz</p><p><a className="underline" href={`tel:${authorContact.telephone}`}>{authorContact.telephone}</a></p><p>{authorContact.streetAddress}, Daska, Pakistan</p></address>
+                  <p>Muhammad Umer Ijaz maintains this independent project. Responses depend on availability.</p>
                   <p>Inquiries regarding chart interpretations, typo corrections, or technical bug reports are prioritized.</p>
                 </div>
               </div>
@@ -514,6 +515,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
           </section>
         )}
 
+        {(currentTab === 'about' || currentTab === 'contact') && <p className="text-sm">Page updated: <time dateTime="2026-10-16">16 October 2026</time>. <a href="/about/#editorial-policy" className="underline">Editorial policy</a>.</p>}
       </article>
     </div>
   );

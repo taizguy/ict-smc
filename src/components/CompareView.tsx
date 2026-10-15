@@ -114,6 +114,13 @@ export const CompareView: React.FC<CompareViewProps> = ({
           </p>
         </div>
 
+        <div className="overflow-x-auto rounded-xl border border-white/10">
+          <table className="w-full text-left text-sm">
+            <caption className="p-3">{comparison.title}: definitions and study conditions</caption>
+            <thead><tr><th scope="col" className="p-3">Feature</th><th scope="col" className="p-3">{comparison.conceptA.name}</th><th scope="col" className="p-3">{comparison.conceptB.name}</th></tr></thead>
+            <tbody><tr><th scope="row" className="p-3">Definition</th><td className="p-3">{comparison.conceptA.summary}</td><td className="p-3">{comparison.conceptB.summary}</td></tr><tr><th scope="row" className="p-3">Study condition</th><td className="p-3">{comparison.conceptA.idealCondition}</td><td className="p-3">{comparison.conceptB.idealCondition}</td></tr></tbody>
+          </table>
+        </div>
         {/* Dual Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Concept A Card */}
@@ -290,6 +297,7 @@ export const CompareView: React.FC<CompareViewProps> = ({
             </div>
           </div>
         </section>
+        <p className="text-sm">Page updated: <time dateTime="2026-10-16">16 October 2026</time>. <a href="/about/#editorial-policy" className="underline">Editorial policy</a>.</p>
       </article>
     </div>
   );

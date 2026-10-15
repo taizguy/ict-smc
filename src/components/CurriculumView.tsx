@@ -287,6 +287,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
         </div>
       )}
 
+      <section className="space-y-3 text-sm leading-relaxed"><h2 className="text-xl font-semibold">How to study a chapter</h2><p>Read the definition, identify its conditions on a historical chart, and record an example where the pattern fails. Hide future candles to reduce hindsight bias. Keep observations separate from assumptions about institutional intent.</p><p>Page updated: <time dateTime="2026-10-16">16 October 2026</time>. <a className="underline" href="/about/#editorial-policy">Editorial policy</a>.</p></section>
     </div>
   );
 };

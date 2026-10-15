@@ -61,7 +61,11 @@ const NotFoundView = lazy(() => import('./components/NotFoundView').then(m => ({
 
 
 
-const ViewLoadingFallback: React.FC = () => (
+// Keep this page's published article readable while its interactive module downloads.
+const initialArticleHtml = typeof document === 'undefined' ? '' : document.querySelector('#static-content article')?.innerHTML || '';
+const ViewLoadingFallback: React.FC = () => initialArticleHtml ? (
+  <div id="static-content" className="prose prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: initialArticleHtml }} />
+) : (
   <div className="min-h-[50vh] flex flex-col items-center justify-center gap-3 py-24 text-center">
     <div className="w-12 h-12 rounded-2xl bg-white/[0.03] border border-white/[0.08] flex items-center justify-center">
       <Loader2 className="w-5 h-5 text-[#55E6D1] animate-spin" />
@@ -459,6 +463,7 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#08090D] text-[#F5F7FA] flex flex-col font-sans selection:bg-[#5865FF] selection:text-white relative overflow-x-hidden">
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       {/* Subtle Film Grain Texture */}
       <div className="predikt-grain" aria-hidden="true" />
 
@@ -498,7 +503,7 @@ export const App: React.FC = () => {
       />
 
       {/* Main Educational Application Content */}
-      <main className="flex-1 max-w-[1560px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10 space-y-10 sm:space-y-14">
+      <main id="main-content" tabIndex={-1} className="flex-1 max-w-[1560px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10 space-y-10 sm:space-y-14">
         
         {/* WELCOME / HOME SCREEN (Clean root experience at /) */}
         {isShowingWelcome && (

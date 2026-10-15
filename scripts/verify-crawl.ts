@@ -36,7 +36,7 @@ for (const route of routes) {
     const resource = nodes.find(n => n['@type'] === 'LearningResource');
     check(resource?.author?.name === 'Muhammad Umer Ijaz', `Actual author missing: ${route.path}`);
     check(html.includes('class="ymyl-disclaimer"'), `In-content disclaimer missing: ${route.path}`);
-    if (route.path.startsWith('/learn/')) check((html.match(/<main>([\s\S]*?)<\/main>/)?.[1] || '').includes('<a href="/learn/'), `Context links missing: ${route.path}`);
+    if (route.path.startsWith('/learn/')) check((html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] || '').includes('<a href="/learn/'), `Context links missing: ${route.path}`);
     if (route.path.startsWith('/masood/lectures/')) check(html.includes('https://www.youtube.com/watch?v='), `Original source missing: ${route.path}`);
   }
   const links: string[] = [];
@@ -71,3 +71,22 @@ if (failures.length) {
   console.error(failures.join('\n')); throw new Error(`${failures.length} crawl checks failed`);
 }
 console.log(`Crawl checks passed: ${routes.length} unique pages, valid schemas and links, all indexable pages reachable from home.`);
+
+// Findings from the supplied reports: guard confirmed fixes and avoid schema regressions.
+const homeHtml = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
+assert.ok(homeHtml.includes('What are ICT and Smart Money Concepts?'));
+assert.ok(homeHtml.includes('href="#main-content"'));
+assert.ok(!/<meta[^>]+content="[^"]*(?:nosnippet|max-snippet:0)/.test(homeHtml));
+for (const p of ['about', 'contact']) {
+  const html = fs.readFileSync(path.join(dist, p, 'index.html'), 'utf8');
+  assert.ok(html.includes('tel:+923424009627'));
+  assert.ok(html.includes('Gullistan Villas near Pasrur bypass'));
+  assert.ok(html.includes('mailto:itsmuhammadumerijaz@gmail.com'));
+}
+assert.ok(fs.readFileSync(path.join(dist, 'tools/compare/index.html'), 'utf8').includes('<table>'));
+for (const name of ['llms.txt', 'llms-full.txt']) {
+  const text = fs.readFileSync(path.join(dist, name), 'utf8');
+  assert.ok(text.startsWith('# LearnSMC'));
+  assert.ok(text.includes('https://learnsmc.xyz/curriculum/'));
+}
+console.log('Report regression checks passed: author contacts, reading guides, comparison tables and snippet eligibility.');

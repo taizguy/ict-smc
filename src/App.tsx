@@ -68,15 +68,15 @@ const NotFoundView = lazy(() => import('./components/NotFoundView').then(m => ({
 // Keep this page's published article readable while its interactive module downloads.
 const initialArticleHtml = typeof document === 'undefined' ? '' : document.querySelector('#static-content article')?.innerHTML || '';
 const ViewLoadingFallback: React.FC = () => initialArticleHtml ? (
-  <div id="static-content" className="prose prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: initialArticleHtml }} />
+  <div id="static-content" className="prose max-w-none" dangerouslySetInnerHTML={{ __html: initialArticleHtml }} />
 ) : (
   <div className="min-h-[50vh] flex flex-col items-center justify-center gap-3 py-24 text-center">
-    <div className="w-12 h-12 rounded-2xl bg-white/[0.03] border border-white/[0.08] flex items-center justify-center">
-      <Loader2 className="w-5 h-5 text-[#55E6D1] animate-spin" />
+    <div className="w-12 h-12 rounded-2xl bg-ink/[0.03] border border-ink/[0.08] flex items-center justify-center">
+      <Loader2 className="w-5 h-5 text-teal animate-spin" />
     </div>
     <div className="space-y-1">
-      <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#9BA1AE]">Loading Institutional Module...</p>
-      <p className="text-[11px] text-[#656B78]">Streaming codified market microstructure</p>
+      <p className="text-xs font-mono uppercase tracking-[0.18em] text-ink-secondary">Loading Institutional Module...</p>
+      <p className="text-[11px] text-ink-muted">Streaming codified market microstructure</p>
     </div>
   </div>
 );
@@ -437,31 +437,10 @@ export const App: React.FC = () => {
   const isShowingWelcome = activeTab === 'welcome';
 
   return (
-    <div className="min-h-screen bg-[#08090D] text-[#F5F7FA] flex flex-col font-sans selection:bg-[#5865FF] selection:text-white relative overflow-x-hidden">
+    <div className="min-h-screen bg-canvas text-ink flex flex-col font-sans selection:bg-brand selection:text-on-brand relative overflow-x-hidden">
       <a href="#main-content" className="skip-link">Skip to main content</a>
-      {/* Subtle Film Grain Texture */}
-      <div className="predikt-grain" aria-hidden="true" />
+      <div className="site-wash fixed inset-0 pointer-events-none z-0" aria-hidden="true" />
 
-      {/* Predikt Deep Atmospheric Light Fields */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
-        {/* Core Blue Atmosphere */}
-        <div 
-          className="absolute -top-[25%] left-1/2 -translate-x-1/2 w-[1100px] h-[700px] rounded-full opacity-20 filter blur-[150px] pointer-events-none"
-          style={{ background: 'radial-gradient(circle, #5865FF 0%, rgba(138, 114, 255, 0.45) 45%, transparent 75%)' }}
-        />
-        {/* Violet Horizon Accent */}
-        <div 
-          className="absolute top-[35%] -right-[15%] w-[800px] h-[800px] rounded-full opacity-12 filter blur-[170px] pointer-events-none"
-          style={{ background: 'radial-gradient(circle, #8A72FF 0%, transparent 70%)' }}
-        />
-        {/* Cyan Liquidity Ambience */}
-        <div 
-          className="absolute bottom-[-10%] -left-[10%] w-[900px] h-[900px] rounded-full opacity-10 filter blur-[180px] pointer-events-none"
-          style={{ background: 'radial-gradient(circle, #55E6D1 0%, transparent 70%)' }}
-        />
-      </div>
-
-      {/* Minimal, Dark, Translucent Predikt Header */}
       <Header
         activeTab={activeTab}
         setActiveTab={(tab) => {
@@ -609,23 +588,23 @@ export const App: React.FC = () => {
       </Suspense>}
 
       {/* Predikt Editorial Footer */}
-      <footer className="border-t border-white/[0.07] bg-[#08090D]/80 backdrop-blur-md py-10 px-4 sm:px-6 lg:px-8 mt-auto relative z-10">
+      <footer className="border-t border-ink/[0.07] bg-canvas/80 backdrop-blur-md py-10 px-4 sm:px-6 lg:px-8 mt-auto relative z-10">
         <div className="max-w-[1560px] w-full mx-auto space-y-8">
           
           {/* Tribute Banner - Sleek Dark Card */}
           <ScrollReveal y={30} duration={0.6}>
-            <div className="p-6 sm:p-7 bg-[#11141B] border border-white/[0.08] rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 transition-colors hover:border-white/[0.14]">
+            <div className="p-6 sm:p-7 bg-surface border border-ink/[0.08] rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 transition-colors hover:border-ink/[0.14]">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0 text-[#FF6B7A]">
+                <div className="w-12 h-12 rounded-xl bg-ink/[0.04] border border-ink/[0.08] flex items-center justify-center shrink-0 text-negative">
                   <Youtube className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-mono tracking-[0.16em] uppercase text-[#9BA1AE] flex items-center gap-2">
-                    <span className="text-[#55E6D1]">MENTORSHIP TRIBUTE</span>
-                    <span className="text-white/20">/</span>
+                  <div className="text-[11px] font-mono tracking-[0.16em] uppercase text-ink-secondary flex items-center gap-2">
+                    <span className="text-teal">MENTORSHIP TRIBUTE</span>
+                    <span className="text-ink">/</span>
                     <span>TRADER ABDULLAH MASOOD</span>
                   </div>
-                  <p className="text-xs sm:text-sm text-[#F5F7FA]/90 mt-1 leading-relaxed font-normal">
+                  <p className="text-xs sm:text-sm text-ink/90 mt-1 leading-relaxed font-normal">
                     Master educator of ICT &amp; Smart Money Concepts algorithmic delivery. {lectureCount} independent study guides with original video source links.
                   </p>
                 </div>
@@ -639,7 +618,7 @@ export const App: React.FC = () => {
                   }}
                   className="btn-predikt-primary text-xs"
                 >
-                  <Youtube className="w-4 h-4 text-red-500" />
+                  <Youtube className="w-4 h-4 text-red-700" />
                   <span>Masood Academy ({lectureCount})</span>
                 </button>
                 <button
@@ -654,7 +633,7 @@ export const App: React.FC = () => {
                   rel="noopener noreferrer"
                   className="btn-predikt-secondary text-xs"
                 >
-                  <Youtube className="w-4 h-4 text-red-400" />
+                  <Youtube className="w-4 h-4 text-red-700" />
                   <span>YouTube Channel</span>
                 </a>
               </div>
@@ -663,11 +642,11 @@ export const App: React.FC = () => {
 
           {/* Regulatory Risk Notice Banner */}
           <ScrollReveal y={20} delay={0.05}>
-            <div className="p-4 sm:p-5 rounded-xl bg-amber-500/[0.04] border border-amber-500/20 text-[#C4C9D6] text-xs leading-relaxed flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="p-4 sm:p-5 rounded-xl bg-amber-500/[0.04] border border-amber-500/20 text-ink-secondary text-xs leading-relaxed flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div className="flex items-start gap-3">
-                <ShieldAlert className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                <p className="text-[11px] sm:text-xs text-[#9BA1AE]">
-                  <strong className="text-amber-300 font-semibold uppercase tracking-wider">Regulatory Risk Disclosure:</strong> Trading foreign exchange, futures, indices, and financial derivatives carries high risk and may not be suitable for all investors. All materials on <strong className="text-white">learnsmc.xyz</strong> are strictly for educational and research purposes. Past performance is not indicative of future results.
+                <ShieldAlert className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
+                <p className="text-[11px] sm:text-xs text-ink-secondary">
+                  <strong className="text-amber-700 font-semibold uppercase tracking-wider">Regulatory Risk Disclosure:</strong> Trading foreign exchange, futures, indices, and financial derivatives carries high risk and may not be suitable for all investors. All materials on <strong className="text-ink">learnsmc.xyz</strong> are strictly for educational and research purposes. Past performance is not indicative of future results.
                 </p>
               </div>
               <a
@@ -676,7 +655,7 @@ export const App: React.FC = () => {
                   e.preventDefault();
                   navigateToTab('disclaimer');
                 }}
-                className="text-[11px] font-mono text-amber-400 hover:text-amber-300 underline shrink-0 whitespace-nowrap self-end md:self-center"
+                className="text-[11px] font-mono text-amber-700 hover:text-amber-700 underline shrink-0 whitespace-nowrap self-end md:self-center"
               >
                 Read Full Risk Disclosure &rarr;
               </a>
@@ -684,7 +663,7 @@ export const App: React.FC = () => {
           </ScrollReveal>
 
           {/* Legal Pages & Policy Navigation Links */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/[0.06] text-xs font-mono text-[#8E95A5]">
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-ink/[0.06] text-xs font-mono text-ink-muted">
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
               <a
                 href="/disclaimer/"
@@ -692,9 +671,9 @@ export const App: React.FC = () => {
                   e.preventDefault();
                   navigateToTab('disclaimer');
                 }}
-                className="hover:text-amber-400 transition-colors flex items-center gap-1.5"
+                className="hover:text-amber-700 transition-colors flex items-center gap-1.5"
               >
-                <ShieldAlert className="w-3.5 h-3.5 text-amber-400" />
+                <ShieldAlert className="w-3.5 h-3.5 text-amber-700" />
                 <span>Risk Disclaimer</span>
               </a>
 
@@ -704,9 +683,9 @@ export const App: React.FC = () => {
                   e.preventDefault();
                   navigateToTab('privacy');
                 }}
-                className="hover:text-[#55E6D1] transition-colors flex items-center gap-1.5"
+                className="hover:text-teal transition-colors flex items-center gap-1.5"
               >
-                <Lock className="w-3.5 h-3.5 text-[#55E6D1]" />
+                <Lock className="w-3.5 h-3.5 text-teal" />
                 <span>Privacy Policy</span>
               </a>
 
@@ -716,9 +695,9 @@ export const App: React.FC = () => {
                   e.preventDefault();
                   navigateToTab('terms');
                 }}
-                className="hover:text-[#8A72FF] transition-colors flex items-center gap-1.5"
+                className="hover:text-violet transition-colors flex items-center gap-1.5"
               >
-                <FileText className="w-3.5 h-3.5 text-[#8A72FF]" />
+                <FileText className="w-3.5 h-3.5 text-violet" />
                 <span>Terms of Service</span>
               </a>
 
@@ -728,9 +707,9 @@ export const App: React.FC = () => {
                   e.preventDefault();
                   navigateToTab('about');
                 }}
-                className="hover:text-white transition-colors flex items-center gap-1.5"
+                className="hover:text-ink transition-colors flex items-center gap-1.5"
               >
-                <Building className="w-3.5 h-3.5 text-white/80" />
+                <Building className="w-3.5 h-3.5 text-ink" />
                 <span>About &amp; Editorial</span>
               </a>
 
@@ -740,9 +719,9 @@ export const App: React.FC = () => {
                   e.preventDefault();
                   navigateToTab('contact');
                 }}
-                className="hover:text-[#55E6D1] transition-colors flex items-center gap-1.5"
+                className="hover:text-teal transition-colors flex items-center gap-1.5"
               >
-                <Mail className="w-3.5 h-3.5 text-[#55E6D1]" />
+                <Mail className="w-3.5 h-3.5 text-teal" />
                 <span>Contact</span>
               </a>
 
@@ -752,20 +731,20 @@ export const App: React.FC = () => {
                   e.preventDefault();
                   navigateToTab('adsense');
                 }}
-                className="text-[#55E6D1]/90 hover:text-[#55E6D1] transition-colors flex items-center gap-1.5"
+                className="text-teal/90 hover:text-teal transition-colors flex items-center gap-1.5"
               >
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#55E6D1]" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-teal" />
                 <span>Advertising information</span>
               </a>
             </div>
 
-            <div className="text-[11px] text-[#656B78] flex items-center gap-2">
+            <div className="text-[11px] text-ink-muted flex items-center gap-2">
               <span>Domain:</span>
               <a 
                 href="https://learnsmc.xyz/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-[#9BA1AE] hover:text-[#55E6D1] underline"
+                className="text-ink-secondary hover:text-teal underline"
               >
                 learnsmc.xyz
               </a>
@@ -773,14 +752,14 @@ export const App: React.FC = () => {
           </div>
 
           <ScrollReveal y={15} delay={0.1}>
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#9BA1AE] pt-4 border-t border-white/[0.06]">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-ink-secondary pt-4 border-t border-ink/[0.06]">
               <div className="flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-[#5865FF]" />
-                <span className="font-medium text-[#F5F7FA]">ICT &amp; SMC ACADEMY</span>
-                <span className="text-white/20">|</span>
+                <span className="w-2 h-2 rounded-full bg-brand" />
+                <span className="font-medium text-ink">ICT &amp; SMC ACADEMY</span>
+                <span className="text-ink">|</span>
                 <span>OPEN INSTITUTIONAL CURRICULUM</span>
               </div>
-              <div className="text-[#656B78] flex items-center gap-3">
+              <div className="text-ink-muted flex items-center gap-3">
                 <span>{chapterCount} CHAPTERS</span>
                 <span>·</span>
                 <span>{lectureCount} LECTURES</span>

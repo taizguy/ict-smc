@@ -19,7 +19,7 @@ export function renderContextualText(text: string, path: string) {
 const link = (path: string, text: string) => `<a href="${escape(path)}">${escape(text)}</a>`;
 const list = (items: string[]) => `<ul>${items.map(s => `<li>${s}</li>`).join('')}</ul>`;
 const section = (title: string, content: string) => `<section><h2>${escape(title)}</h2>${content}</section>`;
-const notice = `<aside class="ymyl-disclaimer" aria-label="Financial education and risk notice" style="margin-top:2rem;padding:1.25rem;border:1px solid #a97829;border-radius:8px;background:#241d15"><h2>Financial education and risk notice</h2><p>${escape(financialDisclaimer)}</p>${link('/disclaimer/', 'Full risk disclosure')}</aside>`;
+const notice = `<aside class="ymyl-disclaimer" aria-label="Financial education and risk notice" style="margin-top:2rem;padding:1.25rem;border:1px solid #a97829;border-radius:8px;background:#ffffff"><h2>Financial education and risk notice</h2><p>${escape(financialDisclaimer)}</p>${link('/disclaimer/', 'Full risk disclosure')}</aside>`;
 const byline = `<p>Written study notes by ${link('/about/#author', lessonAuthor.name)}. Published independently by LearnSMC.</p>`;
 const source = `<p>Video source: <a href="https://www.youtube.com/@TraderAbdullahMasood" rel="noopener noreferrer">Trader Abdullah Masood on YouTube</a>. Notes are independently written; the source educator is not the author or reviewer of these notes.</p>`;
 function route(path: string, title: string, description: string, bodyHtml: string): RouteMeta {

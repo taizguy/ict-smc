@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <script>
@@ -17,19 +17,21 @@
     </script>
     <style>
       #app-startup { display: none; }
-      html[data-app-startup="loading"] { background: #08090d; }
+      html[data-app-startup="loading"] { background: #f6f7f2; }
       html[data-app-startup="loading"] #root { visibility: hidden; }
-      html[data-app-startup="loading"] #app-startup { position: fixed; inset: 0; display: grid; place-content: center; gap: 1rem; background: #08090d; color: #c4c9d6; font: 14px system-ui, sans-serif; text-align: center; z-index: 100; }
-      #app-startup strong { color: #f5f7fa; font-size: 20px; letter-spacing: -.025em; }
-      #app-startup::before { content: ''; width: 28px; height: 28px; margin: 0 auto; border: 2px solid #29313d; border-top-color: #55e6d1; border-radius: 50%; animation: startup-spin .8s linear infinite; }
+      html[data-app-startup="loading"] #app-startup { position: fixed; inset: 0; display: grid; place-content: center; gap: 1rem; background: #f6f7f2; color: #435b50; font: 14px system-ui, sans-serif; text-align: center; z-index: 100; }
+      #app-startup strong { color: #223b35; font-size: 20px; letter-spacing: -.025em; }
+      #app-startup::before { content: ''; width: 28px; height: 28px; margin: 0 auto; border: 2px solid #29313d; border-top-color: #23796d; border-radius: 50%; animation: startup-spin .8s linear infinite; }
       @keyframes startup-spin { to { transform: rotate(360deg); } }
       @media (prefers-reduced-motion: reduce) { #app-startup::before { animation: none; } }
     </style>
+    <meta name="theme-color" content="#f6f7f2" />
+    <meta name="color-scheme" content="light" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learn ICT &amp; Smart Money Concepts | LearnSMC</title>
     <meta name="description" content="Master Inner Circle Trader (ICT) and Smart Money Concepts (SMC) with a free 57-chapter institutional curriculum, 52 Abdullah Masood masterclasses, interactive Chart Lab, and algorithmic trade simulator." />
     <meta name="author" content="Muhammad Umer Ijaz" />
-    <meta name="theme-color" content="#08090D" />
+    <meta name="theme-color" content="#f6f7f2" />
     <link rel="canonical" href="https://learnsmc.xyz/" />
 
     <link rel="alternate" type="text/plain" href="/llms.txt" title="LearnSMC AI reading guide" />
@@ -53,7 +55,7 @@
     <meta property="og:image" content="https://learnsmc.xyz/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="ICT &amp; SMC Academy institutional curriculum card" />
+    <meta property="og:image:alt" content="LearnSMC trading education in a light, green-and-ivory design" />
 
     <!-- Twitter / X Cards -->
     <meta name="twitter:card" content="summary_large_image" />

@@ -206,15 +206,15 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
   const currentToolMeta = tools.find(t => t.id === activeTool) || tools[0];
 
   return (
-    <div className="space-y-8 sm:space-y-12 pb-20 text-[#F5F7FA]">
+    <div className="space-y-8 sm:space-y-12 pb-20 text-ink">
       
-      <header className="rounded-2xl border border-white/10 bg-[#11141B] p-4 sm:p-5 space-y-3">
+      <header className="rounded-2xl border border-ink/10 bg-surface p-4 sm:p-5 space-y-3">
         <div className="flex items-center justify-between gap-4 text-sm">
-          <a href="/tools/" className="underline text-[#55E6D1]">All tools</a>
+          <a href="/tools/" className="underline text-teal">All tools</a>
           <details className="relative">
-            <summary className="cursor-pointer rounded-lg border border-white/20 px-3 py-2">Switch tool</summary>
-            <nav aria-label="Switch tool" className="absolute right-0 top-full mt-2 z-30 flex flex-col gap-2 w-64 max-w-[80vw] max-h-[65vh] overflow-y-auto rounded-xl border border-white/20 bg-[#11141B] p-3 shadow-2xl">
-              {tools.map(tool => <a key={tool.id} href={`/tools/${tool.slug}/`} aria-current={activeTool === tool.id ? 'page' : undefined} className="rounded-lg border border-white/15 px-3 py-2 text-sm hover:bg-white/10">{tool.name}</a>)}
+            <summary className="cursor-pointer rounded-lg border border-ink/20 px-3 py-2">Switch tool</summary>
+            <nav aria-label="Switch tool" className="absolute right-0 top-full mt-2 z-30 flex flex-col gap-2 w-64 max-w-[80vw] max-h-[65vh] overflow-y-auto rounded-xl border border-ink/20 bg-surface p-3 shadow-2xl">
+              {tools.map(tool => <a key={tool.id} href={`/tools/${tool.slug}/`} aria-current={activeTool === tool.id ? 'page' : undefined} className="rounded-lg border border-ink/15 px-3 py-2 text-sm hover:bg-ink/10">{tool.name}</a>)}
             </nav>
           </details>
         </div>

@@ -64,10 +64,10 @@ export const BauhausNavScroller: React.FC<BauhausNavScrollerProps> = ({
           onClick={() => handleScroll('left')}
           disabled={!canScrollLeft && !showArrowsAlways}
           aria-label="Scroll left"
-          className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 border border-white/[0.08] transition-all cursor-pointer select-none ${
+          className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 border border-ink/[0.08] transition-all cursor-pointer select-none ${
             canScrollLeft || showArrowsAlways
-              ? 'bg-white/[0.04] hover:bg-white/[0.1] text-[#F5F7FA]'
-              : 'opacity-20 cursor-not-allowed text-[#656B78]'
+              ? 'bg-ink/[0.04] hover:bg-ink/[0.1] text-ink'
+              : 'opacity-20 cursor-not-allowed text-ink-muted'
           }`}
         >
           <ChevronLeft className="w-4 h-4" />
@@ -91,10 +91,10 @@ export const BauhausNavScroller: React.FC<BauhausNavScrollerProps> = ({
           onClick={() => handleScroll('right')}
           disabled={!canScrollRight && !showArrowsAlways}
           aria-label="Scroll right"
-          className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 border border-white/[0.08] transition-all cursor-pointer select-none ${
+          className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 border border-ink/[0.08] transition-all cursor-pointer select-none ${
             canScrollRight || showArrowsAlways
-              ? 'bg-white/[0.04] hover:bg-white/[0.1] text-[#F5F7FA]'
-              : 'opacity-20 cursor-not-allowed text-[#656B78]'
+              ? 'bg-ink/[0.04] hover:bg-ink/[0.1] text-ink'
+              : 'opacity-20 cursor-not-allowed text-ink-muted'
           }`}
         >
           <ChevronRight className="w-4 h-4" />

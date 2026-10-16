@@ -1,0 +1,97 @@
+/* LearnSMC's single light palette. These roles are shared by tools and reading views. */
+@theme {
+  --color-canvas: #f6f7f2;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f0f3eb;
+  --color-surface-raised: #edf1e8;
+  --color-surface-hover: #e3ebde;
+  --color-ink: #223b35;
+  --color-ink-secondary: #52645b;
+  --color-ink-muted: #5f7064;
+  --color-line: #cfd8cd;
+  --color-brand: #256552;
+  --color-brand-hover: #1d5545;
+  --color-on-brand: #ffffff;
+  --color-teal: #23796d;
+  --color-positive: #25734f;
+  --color-negative: #b44746;
+  --color-amber: #94631f;
+  --color-violet: #705692;
+  --color-data-blue: #405a98;
+  --color-rust: #b34e30;
+  /* Legacy semantic utilities retain their meanings with light-safe foregrounds. */
+  --color-emerald-500: #25734f;
+  --color-emerald-600: #25734f;
+  --color-emerald-700: #216a47;
+  --color-green-500: #25734f;
+  --color-green-700: #216a47;
+  --color-rose-500: #b44746;
+  --color-rose-600: #a63d3e;
+  --color-rose-700: #a63d3e;
+  --color-red-500: #b44746;
+  --color-red-700: #a63d3e;
+  --color-amber-500: #94631f;
+  --color-amber-700: #875817;
+  --color-yellow-700: #875817;
+  --color-orange-500: #b34e30;
+  --color-orange-700: #a3482b;
+  --color-cyan-500: #23796d;
+  --color-cyan-600: #23796d;
+  --color-cyan-700: #206d64;
+  --color-blue-500: #405a98;
+  --color-blue-700: #3b528e;
+  --color-purple-500: #705692;
+  --color-purple-700: #684d89;
+  --color-violet-500: #705692;
+  --color-violet-700: #684d89;
+  --shadow-sm: 0 2px 6px rgb(34 59 53 / .04);
+  --shadow-md: 0 5px 18px rgb(34 59 53 / .06);
+  --shadow-lg: 0 8px 28px rgb(34 59 53 / .07);
+  --shadow-xl: 0 12px 36px rgb(34 59 53 / .09);
+  --shadow-2xl: 0 18px 60px rgb(34 59 53 / .12);
+}
+
+:root { color-scheme: light; accent-color: var(--color-brand); }
+body { background: var(--color-canvas); color: var(--color-ink); }
+::selection { background: #d6e8db; color: #173e30; }
+html .site-wash { background: radial-gradient(ellipse at 60% 0, #e5eddf80, transparent 65%); }
+html .predikt-grain { display: none; }
+html .predikt-hero-title, html .predikt-section-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -.05em;
+}
+html .predikt-hero-title { font-size: clamp(3.7rem, 7.7vw, 7rem); }
+html .predikt-section-title { font-size: clamp(2.2rem, 4.7vw, 3.7rem); }
+html .btn-predikt-primary { background: var(--color-brand); color: var(--color-on-brand); }
+html .btn-predikt-primary:hover, html .btn-predikt-blue:hover { background: var(--color-brand-hover); color: var(--color-on-brand); box-shadow: 0 5px 16px rgb(37 101 82 / .12); }
+html .btn-predikt-secondary:hover { background: var(--color-surface-hover); }
+html .on-accent { color: var(--color-on-brand); }
+html .on-accent :is(.text-ink, .text-ink-secondary, .text-ink-muted) { color: var(--color-on-brand); }
+html .skip-link { background: var(--color-brand); color: var(--color-on-brand); }
+input:not([type=checkbox], [type=radio], [type=range], [type=hidden]), select, textarea {
+  border-color: #7c9180;
+  color: var(--color-ink);
+}
+input::placeholder, textarea::placeholder { color: var(--color-ink-muted); opacity: 1; }
+option { background: var(--color-surface); color: var(--color-ink); }
+progress { accent-color: var(--color-brand); }
+button, a, input, select, textarea { -webkit-tap-highlight-color: #d6e8db; }
+html .predikt-workbench-body table th { color: var(--color-ink); }
+html .predikt-workbench-body table td { color: var(--color-ink-secondary); }
+html .fieldnotes { box-shadow: 0 5px 24px rgb(34 59 53 / .04); border: 1px solid #dce1d4; }
+html .modal-scrollable, [data-lenis-prevent] { scrollbar-color: #9aaa9b #edf1e8; }
+html .modal-scrollable::-webkit-scrollbar-track { background: #edf1e8; }
+html .modal-scrollable::-webkit-scrollbar-thumb { background: #9aaa9b; }
+html .modal-scrollable::-webkit-scrollbar-thumb:hover { background: #6c8172; }
+.study-illustration { width: 100%; height: auto; }
+@media print {
+  body { background: #fff; color: #223b35; }
+  .site-wash { display: none; }
+}
+
+html .curriculum-topics { border: 1px solid var(--color-line); border-radius: 12px; padding: .4rem 1rem; background: var(--color-surface); }
+html .curriculum-topics summary { min-height: 44px; padding: .7rem 0; cursor: pointer; font-size: .9rem; font-weight: 500; }
+html .curriculum-topics a { min-height: 44px; padding: .65rem .8rem; font-size: .85rem; border-radius: 7px; text-decoration: none; background: var(--color-surface-muted); }
+html .curriculum-topics a:hover { background: var(--color-surface-hover); }

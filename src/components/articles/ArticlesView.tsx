@@ -1,0 +1,22 @@
+import React, { useState } from 'react';
+import { articlePath, articles, readingMinutes } from '../../data/articles';
+import { ArticleContent } from './ArticleContent';
+
+export function ArticlesView({ slug, staticMode = false }: { slug?: string; staticMode?: boolean }) {
+  const [topic, setTopic] = useState('All');
+  const [query, setQuery] = useState('');
+  const article = articles.find(a => a.slug === slug);
+  if (slug && !article) return <section><h1>Article not found</h1><a href="/articles/">Browse all articles</a></section>;
+  if (article) return <article className="fieldnotes article-detail">
+    <header className="article-title-block"><nav aria-label="Article breadcrumb"><a href="/articles/">← All articles</a><span>{article.topic}</span></nav><p className="notes-eyebrow">LearnSMC / Field notes</p><h1>{article.title}</h1><p className="article-deck">{article.description}</p></header>
+    <ArticleContent article={article} staticMode={staticMode} />
+  </article>;
+  const visible = articles.filter(a => (topic === 'All' || a.topic === topic) && `${a.title} ${a.description} ${a.topic}`.toLowerCase().includes(query.trim().toLowerCase()));
+  const featured = articles[0];
+  return <div className="fieldnotes articles-index">
+    <header className="notes-masthead"><p className="notes-eyebrow">LearnSMC / An illustrated trading journal</p><h1>Markets are complicated.<br/><em>Let’s draw them out.</em></h1><p>Thoughtful articles about trading, the decisions behind it, and the data we sometimes trust a little too much.</p><div className="notes-edition"><span>Issue 01 · The thinking trader</span><a href="/articles/feed.xml">RSS feed ↗</a></div></header>
+    <section className="notes-feature" aria-label="Featured article"><a className="notes-feature-art" href={articlePath(featured)} aria-label={`Read ${featured.title}`}><img src={`/images/articles/${featured.sketch}.svg`} alt="Original line drawing: a trader compares a written plan with a separate result card." width="720" height="350" fetchPriority="high" /></a><div><span className="notes-label">Start here / {featured.topic}</span><h2><a href={articlePath(featured)}>{featured.title}</a></h2><p>{featured.description}</p><p className="notes-meta">Muhammad Umer Ijaz · {readingMinutes(featured)} min</p><a className="notes-read" href={articlePath(featured)}>Follow the thought <span aria-hidden="true">→</span></a></div></section>
+    <section className="notes-library" aria-labelledby="browse-articles"><div className="notes-library-heading"><h2 id="browse-articles">A few things worth thinking about.</h2><p>Original essays. Small drawings. Room for doubt.</p></div><div className="notes-filters"><div role="group" aria-label="Filter articles by topic">{['All', ...new Set(articles.map(a => a.topic))].map(t => <button type="button" key={t} aria-pressed={topic === t} onClick={() => setTopic(t)}>{t}</button>)}</div><label>Find an article<input type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Try risk, liquidity, Bitcoin…" /></label></div><p className="notes-result-count" role="status">{visible.length} {visible.length === 1 ? 'article' : 'articles'}</p><div className="notes-grid">{visible.map(a => <article className="notes-card" key={a.slug}><a href={articlePath(a)} tabIndex={-1} aria-hidden="true"><img src={`/images/articles/${a.sketch}.svg`} alt="" width="720" height="350" loading="lazy" /></a><div className="notes-card-text"><p className="notes-label">{a.topic} <span> / {String(articles.indexOf(a) + 1).padStart(2, '0')}</span></p><h3><a href={articlePath(a)}>{a.title}</a></h3><p>{a.description}</p><p className="notes-meta">{readingMinutes(a)} min read · Illustrated essay</p></div></article>)}</div>{!visible.length && <div className="notes-empty"><h3>No articles match that thought yet.</h3><button type="button" onClick={() => { setQuery(''); setTopic('All'); }}>Show all articles</button></div>}</section>
+    <aside className="notes-editor-note"><h2>A note from the desk.</h2><p>This is a place to slow an idea down until it becomes understandable. The stories use clearly labeled fictional examples; the drawings are original. Sources and uncertainty travel with the explanation.</p><p>Written by <a href="/about/#author">Muhammad Umer Ijaz</a>. Have a question worth drawing? <a href="/contact/">Send it in.</a></p><p className="notes-meta">Educational writing, not investment advice. <a href="/disclaimer/">Risk disclosure</a> · <a href="/about/#editorial-policy">Editorial policy</a></p></aside>
+  </div>;
+}

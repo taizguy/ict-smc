@@ -1,3 +1,4 @@
+import { articleCatalog as articles } from '../data/catalog.generated';
 import React, { useState, useEffect } from 'react';
 import { ictConcepts } from '../data/conceptsData';
 import { textbookChapters } from '../data/chaptersData';
@@ -54,6 +55,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
           ch.keyTerms.some((kt) => kt.term.toLowerCase().includes(query.toLowerCase()))
       );
 
+  const filteredArticles = articles.filter(a => !query.trim() || `${a.title} ${a.description} ${a.topic}`.toLowerCase().includes(query.toLowerCase()));
   return (
     <div 
       className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-start justify-center pt-16 sm:pt-24 p-4 text-[#F5F7FA] overflow-y-auto"
@@ -137,6 +139,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
             </div>
           )}
 
+          {filteredArticles.length > 0 && <section className="space-y-3"><h2 className="text-sm font-semibold">Articles</h2>{filteredArticles.map(a => <a key={a.slug} href={`/articles/${a.slug}/`} className="block p-3 rounded-xl border border-white/10 hover:bg-white/5"><span className="text-[#55E6D1] text-xs">{a.topic}</span><h3 className="text-sm mt-1">{a.title}</h3></a>)}</section>}
           {/* Chapters Section */}
           {filteredChapters.length > 0 && (
             <div className="space-y-3">
@@ -179,7 +182,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
             </div>
           )}
 
-          {filteredConcepts.length === 0 && filteredChapters.length === 0 && (
+          {filteredConcepts.length === 0 && filteredChapters.length === 0 && filteredArticles.length === 0 && (
             <div className="text-center py-8 space-y-2">
               <p className="text-[#9BA1AE] text-sm">No matches found for "{query}".</p>
               <p className="text-xs text-[#656B78] font-mono">Try searching for FVG, Liquidity, Order Block, or Level 1.</p>

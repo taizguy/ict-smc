@@ -40,7 +40,7 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({
       <div className="bg-surface border border-amber-500/20 rounded-2xl p-6 sm:p-8 space-y-4 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
         
-        <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-amber-700">
+        <div className="flex items-center gap-2 text-xs font-sans tabular-nums uppercase tracking-widest text-amber-700">
           <AlertTriangle className="w-4 h-4 text-amber-700" />
           <span>HTTP 404 // MODULE NOT FOUND</span>
         </div>
@@ -50,12 +50,12 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({
         </h1>
 
         <p className="text-sm sm:text-base text-ink-secondary leading-relaxed max-w-2xl">
-          The path <code className="px-2 py-0.5 rounded bg-ink/[0.06] font-mono text-teal text-xs">{attemptedPath}</code> does not match any published ICT textbook chapter, masterclass lecture, or workbench laboratory tool on <strong className="text-ink">LearnSMC</strong>.
+          The path <code className="px-2 py-0.5 rounded bg-ink/[0.06] font-sans tabular-nums text-teal text-xs">{attemptedPath}</code> does not match any published ICT textbook chapter, masterclass lecture, or workbench laboratory tool on <strong className="text-ink">LearnSMC</strong>.
         </p>
 
         {/* Search Input */}
         <div className="pt-2 max-w-md">
-          <label className="block text-xs font-mono uppercase text-ink-muted mb-1.5">
+          <label className="block text-xs font-sans tabular-nums uppercase text-ink-muted mb-1.5">
             Search 57 Institutional Chapters
           </label>
           <div className="relative">
@@ -65,14 +65,14 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({
               placeholder="Search by topic (e.g. Fair Value Gap, Liquidity, PO3)..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="w-full bg-canvas border border-ink/[0.08] rounded-xl pl-9 pr-4 py-2.5 text-xs font-mono text-ink placeholder-[#5f7064] focus:outline-none focus:border-brand transition-all"
+              className="w-full bg-canvas border border-ink/[0.08] rounded-xl pl-9 pr-4 py-2.5 text-xs font-sans tabular-nums text-ink placeholder-[#5f7064] focus:outline-none focus:border-brand transition-all"
             />
           </div>
 
           {/* Quick Filter Results */}
           {matchingChapters.length > 0 && (
             <div className="mt-3 space-y-2">
-              <span className="text-[10px] font-mono uppercase tracking-wider text-teal">
+              <span className="text-[0.8125rem] font-sans tabular-nums uppercase tracking-wider text-teal">
                 Matching Chapters:
               </span>
               <div className="space-y-1.5">
@@ -83,7 +83,7 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({
                     className="w-full text-left p-2.5 rounded-lg bg-ink/[0.03] hover:bg-ink/[0.07] border border-ink/[0.06] text-xs flex items-center justify-between group transition-all cursor-pointer"
                   >
                     <div>
-                      <span className="font-mono text-brand text-[10px] mr-2">CH {ch.id < 10 ? `0${ch.id}` : ch.id}</span>
+                      <span className="font-sans tabular-nums text-brand text-[0.8125rem] mr-2">CH {ch.id < 10 ? `0${ch.id}` : ch.id}</span>
                       <span className="text-ink group-hover:text-teal transition-colors">{ch.title}</span>
                     </div>
                     <ArrowRight className="w-3.5 h-3.5 text-ink-muted group-hover:text-teal group-hover:translate-x-1 transition-all" />

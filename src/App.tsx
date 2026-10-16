@@ -75,8 +75,8 @@ const ViewLoadingFallback: React.FC = () => initialArticleHtml ? (
       <Loader2 className="w-5 h-5 text-teal animate-spin" />
     </div>
     <div className="space-y-1">
-      <p className="text-xs font-mono uppercase tracking-[0.18em] text-ink-secondary">Loading Institutional Module...</p>
-      <p className="text-[11px] text-ink-muted">Streaming codified market microstructure</p>
+      <p className="text-xs font-sans tabular-nums uppercase tracking-[0.18em] text-ink-secondary">Loading Institutional Module...</p>
+      <p className="text-[0.8125rem] text-ink-muted">Streaming codified market microstructure</p>
     </div>
   </div>
 );
@@ -599,7 +599,7 @@ export const App: React.FC = () => {
                   <Youtube className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-mono tracking-[0.16em] uppercase text-ink-secondary flex items-center gap-2">
+                  <div className="text-[0.8125rem] font-sans tabular-nums tracking-[0.16em] uppercase text-ink-secondary flex items-center gap-2">
                     <span className="text-teal">MENTORSHIP TRIBUTE</span>
                     <span className="text-ink">/</span>
                     <span>TRADER ABDULLAH MASOOD</span>
@@ -645,7 +645,7 @@ export const App: React.FC = () => {
             <div className="p-4 sm:p-5 rounded-xl bg-amber-500/[0.04] border border-amber-500/20 text-ink-secondary text-xs leading-relaxed flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div className="flex items-start gap-3">
                 <ShieldAlert className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
-                <p className="text-[11px] sm:text-xs text-ink-secondary">
+                <p className="text-[0.8125rem] sm:text-xs text-ink-secondary">
                   <strong className="text-amber-700 font-semibold uppercase tracking-wider">Regulatory Risk Disclosure:</strong> Trading foreign exchange, futures, indices, and financial derivatives carries high risk and may not be suitable for all investors. All materials on <strong className="text-ink">learnsmc.xyz</strong> are strictly for educational and research purposes. Past performance is not indicative of future results.
                 </p>
               </div>
@@ -655,7 +655,7 @@ export const App: React.FC = () => {
                   e.preventDefault();
                   navigateToTab('disclaimer');
                 }}
-                className="text-[11px] font-mono text-amber-700 hover:text-amber-700 underline shrink-0 whitespace-nowrap self-end md:self-center"
+                className="text-[0.8125rem] font-sans tabular-nums text-amber-700 hover:text-amber-700 underline shrink-0 whitespace-nowrap self-end md:self-center"
               >
                 Read Full Risk Disclosure &rarr;
               </a>
@@ -663,7 +663,7 @@ export const App: React.FC = () => {
           </ScrollReveal>
 
           {/* Legal Pages & Policy Navigation Links */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-ink/[0.06] text-xs font-mono text-ink-muted">
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-ink/[0.06] text-xs font-sans tabular-nums text-ink-muted">
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
               <a
                 href="/disclaimer/"
@@ -738,7 +738,7 @@ export const App: React.FC = () => {
               </a>
             </div>
 
-            <div className="text-[11px] text-ink-muted flex items-center gap-2">
+            <div className="text-[0.8125rem] text-ink-muted flex items-center gap-2">
               <span>Domain:</span>
               <a 
                 href="https://learnsmc.xyz/" 
@@ -752,7 +752,7 @@ export const App: React.FC = () => {
           </div>
 
           <ScrollReveal y={15} delay={0.1}>
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-ink-secondary pt-4 border-t border-ink/[0.06]">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans tabular-nums text-ink-secondary pt-4 border-t border-ink/[0.06]">
               <div className="flex items-center gap-2.5">
                 <span className="w-2 h-2 rounded-full bg-brand" />
                 <span className="font-medium text-ink">ICT &amp; SMC ACADEMY</span>

@@ -140,7 +140,7 @@ export const Header: React.FC<HeaderProps> = ({
                 <span className="text-ink">/</span>
                 <span className="text-ink-secondary">SMC</span>
               </div>
-              <div className="text-[10px] font-mono tracking-[0.16em] uppercase text-ink-muted mt-0.5">
+              <div className="text-[0.8125rem] font-sans tabular-nums tracking-[0.16em] uppercase text-ink-muted mt-0.5">
                 ACADEMY
               </div>
             </div>
@@ -148,51 +148,51 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Center: Minimal Segmented Navigation */}
-        <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-1 p-1 bg-ink/[0.03] border border-ink/[0.07] rounded-xl">
+        <nav aria-label="Main navigation" className="hidden xl:flex items-center gap-1 p-1 bg-ink/[0.03] border border-ink/[0.07] rounded-xl">
           {/* Pillar 1: Curriculum */}
           <a href="/curriculum/"
-            className={`px-4 py-2 rounded-lg text-xs font-medium tracking-tight transition-all cursor-pointer ${
+            className={`px-4 py-2 rounded-lg text-sm font-semibold tracking-tight transition-all cursor-pointer ${
               isCurriculumActive
                 ? 'bg-ink/[0.08] text-ink shadow-sm'
                 : 'text-ink-secondary hover:text-ink hover:bg-ink/[0.03]'
             }`}
           >
             <span>Curriculum</span>
-            <span className="ml-1.5 text-[10px] font-mono text-ink-muted">{chapterCount}</span>
+            <span className="ml-1.5 text-[0.8125rem] font-sans tabular-nums text-ink-muted">{chapterCount}</span>
           </a>
 
           <a href="/articles/" aria-current={activeTab === 'articles' ? 'page' : undefined}
-            className={`px-4 py-2 rounded-lg text-xs font-medium transition-all ${activeTab === 'articles' ? 'bg-ink/[0.08] text-ink' : 'text-ink-secondary hover:text-ink'}`}>Articles</a>
+            className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${activeTab === 'articles' ? 'bg-ink/[0.08] text-ink' : 'text-ink-secondary hover:text-ink'}`}>Articles</a>
 
           {/* Pillar 2: Masood's Academy */}
           <a href="/masood/"
-            className={`px-4 py-2 rounded-lg text-xs font-medium tracking-tight transition-all cursor-pointer ${
+            className={`px-4 py-2 rounded-lg text-sm font-semibold tracking-tight transition-all cursor-pointer ${
               isMasoodActive
                 ? 'bg-ink/[0.08] text-ink shadow-sm'
                 : 'text-ink-secondary hover:text-ink hover:bg-ink/[0.03]'
             }`}
           >
             <span>Masood Academy</span>
-            <span className="ml-1.5 text-[10px] font-mono text-ink-muted">{lectureCount}</span>
+            <span className="ml-1.5 text-[0.8125rem] font-sans tabular-nums text-ink-muted">{lectureCount}</span>
           </a>
 
           {/* Pillar 3: Trading Tools */}
           <a href="/tools/"
-            className={`px-4 py-2 rounded-lg text-xs font-medium tracking-tight transition-all cursor-pointer ${
+            className={`px-4 py-2 rounded-lg text-sm font-semibold tracking-tight transition-all cursor-pointer ${
               isToolsActive
                 ? 'bg-ink/[0.08] text-ink shadow-sm'
                 : 'text-ink-secondary hover:text-ink hover:bg-ink/[0.03]'
             }`}
           >
             <span>Workbench &amp; Lab</span>
-            <span className="ml-1.5 text-[10px] font-mono text-ink-muted">10</span>
+            <span className="ml-1.5 text-[0.8125rem] font-sans tabular-nums text-ink-muted">10</span>
           </a>
         </nav>
 
         {/* Right: Search, Market Clock, Tribute */}
         <div className="flex items-center gap-2 sm:gap-3">
           {/* NY Market Session Clock */}
-          <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-ink/[0.02] border border-ink/[0.07] text-xs font-mono">
+          <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-ink/[0.02] border border-ink/[0.07] text-xs font-sans tabular-nums">
             <span className="w-1.5 h-1.5 rounded-full bg-positive animate-pulse" />
             <span className="text-ink-secondary uppercase">{activeSession}</span>
             <span className="text-ink">|</span>
@@ -207,7 +207,7 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <Search className="w-3.5 h-3.5" />
             <span className="hidden sm:inline text-xs font-sans">Search</span>
-            <kbd className="hidden sm:inline px-1.5 py-0.5 text-[9px] font-mono bg-ink/[0.06] border border-ink/[0.08] rounded text-ink-secondary">
+            <kbd className="hidden sm:inline px-1.5 py-0.5 text-[0.8125rem] font-sans tabular-nums bg-ink/[0.06] border border-ink/[0.08] rounded text-ink-secondary">
               ⌘K
             </kbd>
           </button>
@@ -228,26 +228,26 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Mobile Macro Navigation Bar */}
-      <div role="navigation" aria-label="Main navigation" className="flex lg:hidden border-t border-ink/[0.06] px-3 py-2 bg-surface-muted/70">
+      <div role="navigation" aria-label="Main navigation" className="flex xl:hidden border-t border-ink/[0.06] px-3 py-2 bg-surface-muted/70">
         <BauhausNavScroller innerClassName="gap-1.5">
           <a href="/curriculum/"
-            className={`py-1.5 px-3 rounded-lg text-xs font-medium tracking-tight whitespace-nowrap transition-all shrink-0 ${
+            className={`py-1.5 px-3 rounded-lg text-sm font-semibold tracking-tight whitespace-nowrap transition-all shrink-0 ${
               isCurriculumActive ? 'bg-ink/[0.10] text-ink' : 'text-ink-secondary'
             }`}
           >
             Curriculum ({chapterCount})
           </a>
           <a href="/articles/" aria-current={activeTab === 'articles' ? 'page' : undefined}
-            className={`min-h-11 inline-flex items-center px-3 rounded-lg text-xs font-medium whitespace-nowrap shrink-0 ${activeTab === 'articles' ? 'bg-ink/[0.10] text-ink' : 'text-ink-secondary'}`}>Articles</a>
+            className={`min-h-11 inline-flex items-center px-3 rounded-lg text-sm font-semibold whitespace-nowrap shrink-0 ${activeTab === 'articles' ? 'bg-ink/[0.10] text-ink' : 'text-ink-secondary'}`}>Articles</a>
           <a href="/masood/"
-            className={`py-1.5 px-3 rounded-lg text-xs font-medium tracking-tight whitespace-nowrap transition-all shrink-0 ${
+            className={`py-1.5 px-3 rounded-lg text-sm font-semibold tracking-tight whitespace-nowrap transition-all shrink-0 ${
               isMasoodActive ? 'bg-ink/[0.10] text-ink' : 'text-ink-secondary'
             }`}
           >
             Masood Academy ({lectureCount})
           </a>
           <a href="/tools/"
-            className={`py-1.5 px-3 rounded-lg text-xs font-medium tracking-tight whitespace-nowrap transition-all shrink-0 ${
+            className={`py-1.5 px-3 rounded-lg text-sm font-semibold tracking-tight whitespace-nowrap transition-all shrink-0 ${
               isToolsActive ? 'bg-ink/[0.10] text-ink' : 'text-ink-secondary'
             }`}
           >

@@ -220,7 +220,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
 
             {/* Quick jump dropdown */}
             <div className="flex items-center gap-2">
-              <span className="text-[11px] font-mono text-ink-muted uppercase hidden sm:inline">JUMP:</span>
+              <span className="text-[0.8125rem] font-sans tabular-nums text-ink-muted uppercase hidden sm:inline">JUMP:</span>
               <select
                 value={chapter.id}
                 onChange={(e) => {
@@ -228,7 +228,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                   const targetCh = textbookChapters.find(c => c.id === targetId);
                   onSelectChapter(targetId, targetCh?.slug);
                 }}
-                className="px-3 py-1.5 bg-surface-muted border border-ink/[0.08] rounded-lg text-xs font-mono text-ink focus:outline-none focus:border-brand/60 cursor-pointer"
+                className="px-3 py-1.5 bg-surface-muted border border-ink/[0.08] rounded-lg text-xs font-sans tabular-nums text-ink focus:outline-none focus:border-brand/60 cursor-pointer"
               >
                 {textbookChapters.map((ch) => (
                   <option key={ch.id} value={ch.id} className="bg-surface-muted text-ink">
@@ -292,7 +292,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
               </button>
             )}
 
-            <div className="px-3 py-1.5 rounded-lg bg-ink/[0.04] border border-ink/[0.08] text-xs font-mono text-ink-secondary">
+            <div className="px-3 py-1.5 rounded-lg bg-ink/[0.04] border border-ink/[0.08] text-xs font-sans tabular-nums text-ink-secondary">
               {chapter.id} / {textbookChapters.length}
             </div>
 
@@ -315,7 +315,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
         <section className="bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-10 space-y-6 relative overflow-hidden">
           
           {/* Top Meta Bar & Editorial Credentials (E-E-A-T & AdSense Compliance) */}
-          <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono border-b border-ink/[0.06] pb-3">
+          <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-sans tabular-nums border-b border-ink/[0.06] pb-3">
             <div className="flex items-center gap-2.5 flex-wrap">
               <span className="font-semibold text-brand tracking-wider">
                 CHAPTER {chapter.id < 10 ? `0${chapter.id}` : chapter.id}
@@ -330,7 +330,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
               </span>
             </div>
 
-            <div className="flex items-center gap-3 text-[11px] text-ink-muted flex-wrap">
+            <div className="flex items-center gap-3 text-[0.8125rem] text-ink-muted flex-wrap">
               <span>Author: Muhammad Umer Ijaz</span>
               <span className="text-ink">·</span>
               <a href="/contact/" className="underline">Suggest a correction</a>
@@ -350,7 +350,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
 
             {/* Principle callout */}
             <div className="p-4 sm:p-5 rounded-xl bg-ink/[0.02] border-l-2 border-brand space-y-1">
-              <div className="text-[10px] font-mono text-brand uppercase tracking-[0.16em]">
+              <div className="text-[0.8125rem] font-sans tabular-nums text-brand uppercase tracking-[0.16em]">
                 INSTITUTIONAL PRINCIPLE
               </div>
               <p className="text-xs sm:text-sm text-ink/90 italic font-normal leading-relaxed">
@@ -398,7 +398,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                     TEXTBOOK SECTIONS ({chapter.sections.length} PARTS)
                   </h2>
                 </div>
-                <span className="text-xs font-mono text-ink-muted uppercase">AUTHENTIC MATERIAL</span>
+                <span className="text-xs font-sans tabular-nums text-ink-muted uppercase">AUTHENTIC MATERIAL</span>
               </div>
 
               {/* Sections List */}
@@ -412,7 +412,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                       className="p-6 sm:p-7 rounded-xl bg-ink/[0.02] border border-ink/[0.06] space-y-5"
                     >
                       <div className="flex items-center gap-3">
-                        <span className="w-7 h-7 rounded-lg bg-ink/[0.04] border border-ink/[0.08] text-brand flex items-center justify-center font-mono text-xs font-semibold">
+                        <span className="w-7 h-7 rounded-lg bg-ink/[0.04] border border-ink/[0.08] text-brand flex items-center justify-center font-sans tabular-nums text-xs font-semibold">
                           0{sIdx + 1}
                         </span>
                         <h3 className="text-lg sm:text-xl font-semibold text-ink tracking-tight">
@@ -421,7 +421,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                       </div>
 
                       {/* Section Content with Automatic Contextual Internal Link Mesh */}
-                      <div className="text-sm sm:text-base text-ink-secondary leading-relaxed font-normal whitespace-pre-line space-y-4">
+                      <div className="text-base sm:text-lg text-ink-secondary leading-relaxed font-normal whitespace-pre-line space-y-4">
                         <ContextualInternalLinker text={sec.content.replace(/[*#]/g, '')} />
                       </div>
 
@@ -430,7 +430,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                         <button
                           type="button"
                           onClick={() => handleToggleSimpler(sIdx)}
-                          className="flex items-center gap-2 text-xs font-mono text-teal hover:text-ink transition-colors cursor-pointer"
+                          className="flex items-center gap-2 text-xs font-sans tabular-nums text-teal hover:text-ink transition-colors cursor-pointer"
                         >
                           <Sparkles className="w-3.5 h-3.5 text-teal" />
                           <span className="uppercase tracking-wider">
@@ -441,10 +441,10 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
 
                         {isSimplerOpen && (
                           <div className="mt-3 p-4 rounded-xl bg-brand/10 border border-brand/20 text-xs sm:text-sm text-ink space-y-1.5 animate-fadeIn">
-                            <div className="text-[10px] font-mono uppercase tracking-[0.16em] text-teal">
+                            <div className="text-[0.8125rem] font-sans tabular-nums uppercase tracking-[0.16em] text-teal">
                               SIMPLIFIED EXPLANATION
                             </div>
-                            <p className="leading-relaxed font-light text-ink/90">
+                            <p className="leading-relaxed font-normal text-ink/90">
                               Think of this simply: {sec.keyTakeaway || "Smart money waits for the crowd's stop orders to cluster, sweeps them for execution fuel, and then triggers rapid price movement in the real intended direction."}
                             </p>
                           </div>
@@ -456,7 +456,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                         <div className="p-4 rounded-xl bg-ink/[0.03] border-l-2 border-teal flex items-start gap-3 mt-4">
                           <Zap className="w-4 h-4 text-teal shrink-0 mt-0.5" />
                           <div>
-                            <div className="text-[10px] font-mono text-teal uppercase tracking-[0.16em]">
+                            <div className="text-[0.8125rem] font-sans tabular-nums text-teal uppercase tracking-[0.16em]">
                               INSTITUTIONAL KEY TAKEAWAY
                             </div>
                             <p className="text-xs sm:text-sm font-normal text-ink mt-1 leading-relaxed">
@@ -474,7 +474,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-4 border-t border-ink/[0.08]">
                 {/* Invalidation Rules */}
                 <div className="bg-ink/[0.02] border border-ink/[0.07] rounded-xl p-5 space-y-3">
-                  <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-rose-700">
+                  <div className="flex items-center gap-2 text-xs font-sans tabular-nums uppercase tracking-wider text-rose-700">
                     <AlertTriangle className="w-4 h-4 shrink-0" />
                     <span>Explicit Invalidation &amp; Failure Rules</span>
                   </div>
@@ -484,14 +484,14 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                     <li><strong className="text-ink">Lack of Displacement:</strong> If price lingers or consolidates inside an imbalance without immediate directional departure, the orderflow signature is degraded.</li>
                     <li><strong className="text-ink">Time Window Expiration:</strong> Setups that do not trigger within the active ICT Killzone (London, NY AM, NY PM) are mechanically cancelled.</li>
                   </ul>
-                  <div className="text-[11px] font-mono text-amber-700 bg-amber-500/10 border border-amber-500/20 rounded p-2.5">
+                  <div className="text-[0.8125rem] font-sans tabular-nums text-amber-700 bg-amber-500/10 border border-amber-500/20 rounded p-2.5">
                     RULE: When an invalidation condition is triggered, the premise is falsified. Discard the setup immediately.
                   </div>
                 </div>
 
                 {/* Risk Management & Execution Protocol */}
                 <div className="bg-ink/[0.02] border border-ink/[0.07] rounded-xl p-5 space-y-3">
-                  <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-teal">
+                  <div className="flex items-center gap-2 text-xs font-sans tabular-nums uppercase tracking-wider text-teal">
                     <ShieldAlert className="w-4 h-4 shrink-0" />
                     <span>Risk Management &amp; Sizing Protocols</span>
                   </div>
@@ -501,7 +501,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                     <li><strong className="text-ink">Mechanical Stop-Loss:</strong> Placed strictly beyond the invalidating swing high/low or wick displacement—never arbitrarily chosen by pip count.</li>
                     <li><strong className="text-ink">Asymmetric Payoff:</strong> Minimum 1:2.0 Risk-to-Reward ratio to maintain positive mathematical expectancy across all market regimes.</li>
                   </ul>
-                  <div className="text-[11px] font-mono text-teal/90 bg-teal/10 border border-teal/20 rounded p-2.5">
+                  <div className="text-[0.8125rem] font-sans tabular-nums text-teal/90 bg-teal/10 border border-teal/20 rounded p-2.5">
                     PRINCIPLE: Trade management and survival precede profit. Invalidation must be predefined before entry.
                   </div>
                 </div>
@@ -510,13 +510,13 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
               {/* PERSONAL STUDY NOTES & LEARNING WORKSPACE */}
               <div className="bg-surface-raised border border-ink/[0.08] rounded-xl p-5 space-y-3">
                 <div className="flex items-center justify-between flex-wrap gap-2">
-                  <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-brand">
+                  <div className="flex items-center gap-2 text-xs font-sans tabular-nums uppercase tracking-wider text-brand">
                     <Edit3 className="w-4 h-4" />
                     <span>Personal Learning Notes · Chapter {chapter.id}</span>
                   </div>
                   <button
                     onClick={handleSaveNote}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand hover:bg-brand-hover text-on-brand text-xs font-mono font-medium transition-colors shadow-sm on-accent"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand hover:bg-brand-hover text-on-brand text-xs font-sans tabular-nums font-medium transition-colors shadow-sm on-accent"
                   >
                     <Save className="w-3.5 h-3.5" />
                     <span>{savedNoteStatus ? 'Notes Saved!' : 'Save Notes'}</span>
@@ -529,7 +529,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                   placeholder="Record your personal tape observations, chart invalidation takeaways, and execution reflections for this chapter..."
                   className="w-full bg-surface border border-ink/[0.08] rounded-lg p-3 text-xs text-ink placeholder-[#5f7064] focus:border-brand focus:outline-none resize-none leading-relaxed"
                 />
-                <div className="flex items-center justify-between text-[11px] text-ink-muted font-mono">
+                <div className="flex items-center justify-between text-[0.8125rem] text-ink-muted font-sans tabular-nums">
                   <span>Saved locally in browser storage · 100% private</span>
                   {userNote.length > 0 && <span>{userNote.length} characters</span>}
                 </div>
@@ -567,12 +567,12 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                     INTERACTIVE DIAGRAM SIMULATOR
                   </h2>
                 </div>
-                <span className="text-xs font-mono uppercase bg-ink/[0.04] text-ink-secondary px-2.5 py-1 rounded-md border border-ink/[0.08]">
+                <span className="text-xs font-sans tabular-nums uppercase bg-ink/[0.04] text-ink-secondary px-2.5 py-1 rounded-md border border-ink/[0.08]">
                   {primaryDiagramType.replace(/_/g, ' ')}
                 </span>
               </div>
 
-              <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
+              <p className="text-base text-ink-secondary leading-relaxed">
                 Step through the sequence of algorithmic delivery, observe liquidity consumption, and study how institutional order flow prints onto candles.
               </p>
 
@@ -616,7 +616,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                     KEY INSTITUTIONAL TERMS ({chapter.keyTerms.length} DEFINITIONS)
                   </h2>
                 </div>
-                <span className="text-xs font-mono text-ink-muted uppercase">CORE VOCABULARY</span>
+                <span className="text-xs font-sans tabular-nums text-ink-muted uppercase">CORE VOCABULARY</span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -626,10 +626,10 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                     className="p-5 rounded-xl bg-ink/[0.02] border border-ink/[0.07] space-y-2 hover:border-ink/[0.14] transition-colors"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-mono font-medium text-teal bg-teal/10 px-2.5 py-0.5 rounded border border-teal/20">
+                      <span className="text-xs font-sans tabular-nums font-medium text-teal bg-teal/10 px-2.5 py-0.5 rounded border border-teal/20">
                         {item.term}
                       </span>
-                      <span className="text-xs font-mono text-ink-muted">#{tIdx + 1}</span>
+                      <span className="text-xs font-sans tabular-nums text-ink-muted">#{tIdx + 1}</span>
                     </div>
 
                     <p className="text-xs sm:text-sm text-ink-secondary font-normal leading-relaxed pt-1">
@@ -670,13 +670,13 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                     UNDERSTANDING CHECKPOINT &amp; PRACTICE
                   </h2>
                 </div>
-                <span className="text-xs font-mono text-ink-muted uppercase">ACTIVE RECALL</span>
+                <span className="text-xs font-sans tabular-nums text-ink-muted uppercase">ACTIVE RECALL</span>
               </div>
 
               {/* Diagnostic Multiple Choice Check */}
               {matchingQuizQuestions.length > 0 && (
                 <div className="space-y-6">
-                  <div className="text-xs font-mono uppercase tracking-[0.16em] text-ink-secondary pb-1 border-b border-ink/[0.06]">
+                  <div className="text-xs font-sans tabular-nums uppercase tracking-[0.16em] text-ink-secondary pb-1 border-b border-ink/[0.06]">
                     MULTIPLE-CHOICE DIAGNOSTIC QUESTIONS ({matchingQuizQuestions.length})
                   </div>
 
@@ -746,10 +746,10 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
               {/* Codified Practice Questions */}
               <div className="space-y-4 pt-4 border-t border-ink/[0.07]">
                 <div className="flex items-center justify-between">
-                  <div className="text-xs font-mono uppercase tracking-[0.16em] text-ink-secondary">
+                  <div className="text-xs font-sans tabular-nums uppercase tracking-[0.16em] text-ink-secondary">
                     CODIFIED PRACTICE QUESTIONS ({chapter.practiceQuestions.length})
                   </div>
-                  <span className="text-xs font-mono text-ink-muted uppercase">CLICK TO REVEAL</span>
+                  <span className="text-xs font-sans tabular-nums text-ink-muted uppercase">CLICK TO REVEAL</span>
                 </div>
 
                 <div className="space-y-3">
@@ -766,7 +766,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                           className="w-full p-4 sm:p-5 text-left flex items-start justify-between gap-3 transition-colors cursor-pointer hover:bg-ink/[0.03]"
                         >
                           <div className="flex items-start gap-3">
-                            <span className="w-6 h-6 rounded-md bg-ink/[0.04] border border-ink/[0.08] flex items-center justify-center font-mono text-xs font-semibold text-brand shrink-0 mt-0.5">
+                            <span className="w-6 h-6 rounded-md bg-ink/[0.04] border border-ink/[0.08] flex items-center justify-center font-sans tabular-nums text-xs font-semibold text-brand shrink-0 mt-0.5">
                               Q{qIdx + 1}
                             </span>
                             <p className="text-xs sm:text-sm font-medium text-ink">
@@ -782,10 +782,10 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                         {/* Expanded Explanation */}
                         {isRevealed && (
                           <div className="p-4 sm:p-5 bg-ink/[0.01] border-t border-ink/[0.06] text-xs sm:text-sm text-ink-secondary space-y-2">
-                            <div className="font-mono text-[10px] uppercase text-teal tracking-[0.16em]">
+                            <div className="font-sans tabular-nums text-[0.8125rem] uppercase text-teal tracking-[0.16em]">
                               INSTITUTIONAL ANALYSIS &amp; MECHANICS:
                             </div>
-                            <p className="leading-relaxed font-light">
+                            <p className="leading-relaxed font-normal">
                               Verify how this analytical question connects directly to liquidity pools, resting limit orders, and algorithmic delivery sequences. Always ask: <em>Whose stop-loss was targeted, and what liquidity did the algorithm seek next?</em>
                             </p>
                           </div>
@@ -798,7 +798,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
 
               {/* Next Chapter CTA */}
               <div className="pt-6 border-t border-ink/[0.07] flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div className="text-xs font-mono text-ink-secondary uppercase tracking-wider">
+                <div className="text-xs font-sans tabular-nums text-ink-secondary uppercase tracking-wider">
                   CHAPTER COMPLETED · READY TO ADVANCE?
                 </div>
 
@@ -838,7 +838,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
               <div className="space-y-3">
                 {chapter.summary.map((point, pIdx) => (
                   <div key={pIdx} className="flex items-start gap-3 p-4 rounded-xl bg-ink/[0.02] border border-ink/[0.06]">
-                    <span className="w-6 h-6 rounded-md bg-ink/[0.04] border border-ink/[0.08] text-brand font-mono text-xs font-semibold flex items-center justify-center shrink-0 mt-0.5">
+                    <span className="w-6 h-6 rounded-md bg-ink/[0.04] border border-ink/[0.08] text-brand font-sans tabular-nums text-xs font-semibold flex items-center justify-center shrink-0 mt-0.5">
                       0{pIdx + 1}
                     </span>
                     <p className="text-xs sm:text-sm text-ink/90 leading-relaxed font-normal">
@@ -865,7 +865,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
       <ScrollReveal y={15}>
         <div className="p-4 rounded-xl bg-surface border border-ink/[0.08] flex flex-wrap items-center justify-between gap-3 text-xs">
           <div className="flex items-center gap-2">
-            <span className="text-ink-muted font-mono uppercase">CURRENT:</span>
+            <span className="text-ink-muted font-sans tabular-nums uppercase">CURRENT:</span>
             <span className="font-medium text-ink tracking-tight">
               CH {chapter.id}: {chapter.title}
             </span>

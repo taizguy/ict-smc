@@ -210,7 +210,7 @@ export const MasterclassDiagrams: React.FC<MasterclassDiagramProps> = ({ type, s
       return (
         <svg viewBox="0 0 620 300" className="w-full h-full max-h-72 select-none">
           {/* ORG Grid Lines */}
-          <g className="font-mono text-[9px] font-bold">
+          <g className="font-sans tabular-nums text-[0.8125rem] font-bold">
             {/* 1.0 High */}
             <line x1="70" y1="60" x2="550" y2="60" stroke="#52645b" strokeWidth="2" />
             <text x="80" y="55" fill="#223b35" fontWeight="900">1.0 HIGH (9:30 AM Open: $28,576.75)</text>
@@ -327,19 +327,19 @@ export const MasterclassDiagrams: React.FC<MasterclassDiagramProps> = ({ type, s
 
     case 'five_opening_ranges':
       return (
-        <div className="w-full h-full flex flex-col justify-center px-2 font-mono">
-          <div className="text-center font-black text-xs uppercase mb-3 text-ink">
+        <div className="w-full h-full flex flex-col justify-center px-2 font-sans tabular-nums">
+          <div className="text-center font-bold text-xs uppercase mb-3 text-ink">
             THE 5 ALGORITHMIC OPENING RANGES (NEW YORK LOCAL TIME)
           </div>
-          <div className="grid grid-cols-5 gap-2 text-center text-[10px]">
+          <div className="grid grid-cols-5 gap-2 text-center text-[0.8125rem]">
             {/* 1. Midnight */}
             <div className="bg-surface-raised border border-ink/[0.1] rounded-xl p-2 flex flex-col justify-between">
               <div>
-                <span className="bg-ink/[0.08] text-ink-secondary px-1 py-0.5 text-[8px] font-mono uppercase rounded">Range 1</span>
-                <p className="font-black text-[11px] mt-1 text-[#345f9e]">MIDNIGHT</p>
-                <p className="font-bold text-[9px] text-ink-secondary">12:00 – 12:30 AM</p>
+                <span className="bg-ink/[0.08] text-ink-secondary px-1 py-0.5 text-[0.8125rem] font-sans tabular-nums uppercase rounded">Range 1</span>
+                <p className="font-bold text-[0.8125rem] mt-1 text-[#345f9e]">MIDNIGHT</p>
+                <p className="font-bold text-[0.8125rem] text-ink-secondary">12:00 – 12:30 AM</p>
               </div>
-              <p className="text-[8px] bg-surface-raised border border-ink/[0.1] rounded-lg p-1 mt-2">
+              <p className="text-[0.8125rem] bg-surface-raised border border-ink/[0.1] rounded-lg p-1 mt-2">
                 PO3 daily anchor; standard deviation projections (-1 to -3).
               </p>
             </div>
@@ -347,11 +347,11 @@ export const MasterclassDiagrams: React.FC<MasterclassDiagramProps> = ({ type, s
             {/* 2. London */}
             <div className="bg-surface-raised border border-ink/[0.1] rounded-xl p-2 flex flex-col justify-between">
               <div>
-                <span className="bg-[#345f9e] text-on-brand px-1 py-0.5 text-[8px] font-black uppercase on-accent">Range 2</span>
-                <p className="font-black text-[11px] mt-1 text-ink">LONDON</p>
-                <p className="font-bold text-[9px] text-ink-secondary">1:30 – 2:00 AM</p>
+                <span className="bg-[#345f9e] text-on-brand px-1 py-0.5 text-[0.8125rem] font-bold uppercase on-accent">Range 2</span>
+                <p className="font-bold text-[0.8125rem] mt-1 text-ink">LONDON</p>
+                <p className="font-bold text-[0.8125rem] text-ink-secondary">1:30 – 2:00 AM</p>
               </div>
-              <p className="text-[8px] bg-surface-raised border border-ink/[0.1] rounded-lg p-1 mt-2">
+              <p className="text-[0.8125rem] bg-surface-raised border border-ink/[0.1] rounded-lg p-1 mt-2">
                 First directional impulse; 3:30 AM delivery sweet spot.
               </p>
             </div>
@@ -359,11 +359,11 @@ export const MasterclassDiagrams: React.FC<MasterclassDiagramProps> = ({ type, s
             {/* 3. NY Killzone */}
             <div className="bg-surface-raised border border-ink/[0.1] rounded-xl p-2 flex flex-col justify-between">
               <div>
-                <span className="bg-[#b13c3e] text-on-brand px-1 py-0.5 text-[8px] font-black uppercase on-accent">Range 3</span>
-                <p className="font-black text-[11px] mt-1 text-[#b13c3e]">NY KILLZONE</p>
-                <p className="font-bold text-[9px] text-ink-secondary">7:00 – 7:30 AM</p>
+                <span className="bg-[#b13c3e] text-on-brand px-1 py-0.5 text-[0.8125rem] font-bold uppercase on-accent">Range 3</span>
+                <p className="font-bold text-[0.8125rem] mt-1 text-[#b13c3e]">NY KILLZONE</p>
+                <p className="font-bold text-[0.8125rem] text-ink-secondary">7:00 – 7:30 AM</p>
               </div>
-              <p className="text-[8px] bg-surface-raised border border-ink/[0.1] rounded-lg p-1 mt-2">
+              <p className="text-[0.8125rem] bg-surface-raised border border-ink/[0.1] rounded-lg p-1 mt-2">
                 Universal for all instruments (Forex, indices, metals).
               </p>
             </div>
@@ -371,11 +371,11 @@ export const MasterclassDiagrams: React.FC<MasterclassDiagramProps> = ({ type, s
             {/* 4. AM Session */}
             <div className="bg-[#1A2234] border border-ink/[0.1] rounded-xl p-2 flex flex-col justify-between ">
               <div>
-                <span className="bg-[#b13c3e] text-on-brand px-1 py-0.5 text-[8px] font-black uppercase on-accent">Master</span>
-                <p className="font-black text-[11px] mt-1 text-ink">AM SESSION</p>
-                <p className="font-bold text-[9px] text-[#b13c3e]">9:30 – 10:00 AM</p>
+                <span className="bg-[#b13c3e] text-on-brand px-1 py-0.5 text-[0.8125rem] font-bold uppercase on-accent">Master</span>
+                <p className="font-bold text-[0.8125rem] mt-1 text-ink">AM SESSION</p>
+                <p className="font-bold text-[0.8125rem] text-[#b13c3e]">9:30 – 10:00 AM</p>
               </div>
-              <p className="text-[8px] bg-surface-raised border border-ink/[0.1] rounded-lg p-1 mt-2 font-bold">
+              <p className="text-[0.8125rem] bg-surface-raised border border-ink/[0.1] rounded-lg p-1 mt-2 font-bold">
                 Most powerful! Equities open; 0.5 to 2.5 SD targets.
               </p>
             </div>
@@ -383,11 +383,11 @@ export const MasterclassDiagrams: React.FC<MasterclassDiagramProps> = ({ type, s
             {/* 5. PM Session */}
             <div className="bg-surface-raised border border-ink/[0.1] rounded-xl p-2 flex flex-col justify-between">
               <div>
-                <span className="bg-[#166534] text-on-brand px-1 py-0.5 text-[8px] font-black uppercase on-accent">Range 5</span>
-                <p className="font-black text-[11px] mt-1 text-[#166534]">PM SESSION</p>
-                <p className="font-bold text-[9px] text-ink-secondary">1:30 – 2:00 PM</p>
+                <span className="bg-[#166534] text-on-brand px-1 py-0.5 text-[0.8125rem] font-bold uppercase on-accent">Range 5</span>
+                <p className="font-bold text-[0.8125rem] mt-1 text-[#166534]">PM SESSION</p>
+                <p className="font-bold text-[0.8125rem] text-ink-secondary">1:30 – 2:00 PM</p>
               </div>
-              <p className="text-[8px] bg-surface-raised border border-ink/[0.1] rounded-lg p-1 mt-2">
+              <p className="text-[0.8125rem] bg-surface-raised border border-ink/[0.1] rounded-lg p-1 mt-2">
                 End of lunch; drives 2:50/3:15 macros and 3:50 MOC run.
               </p>
             </div>
@@ -438,7 +438,7 @@ export const MasterclassDiagrams: React.FC<MasterclassDiagramProps> = ({ type, s
 
     case 'implied_fvg':
       return (
-        <svg viewBox="0 0 620 300" className="w-full h-full max-h-72 select-none font-mono">
+        <svg viewBox="0 0 620 300" className="w-full h-full max-h-72 select-none font-sans tabular-nums">
           {/* Candle 1 with long lower wick */}
           <line x1="140" y1="80" x2="140" y2="240" stroke="#166534" strokeWidth="2" />
           <rect x="130" y="100" width="20" height="50" fill="#166534" stroke="#52645b" strokeWidth="1" />
@@ -482,7 +482,7 @@ export const MasterclassDiagrams: React.FC<MasterclassDiagramProps> = ({ type, s
 
     case 'rejection_block':
       return (
-        <svg viewBox="0 0 620 300" className="w-full h-full max-h-72 select-none font-mono">
+        <svg viewBox="0 0 620 300" className="w-full h-full max-h-72 select-none font-sans tabular-nums">
           {/* Series of candles testing highs with long wicks */}
           <g>
             <line x1="120" y1="80" x2="120" y2="220" stroke="#52645b" strokeWidth="2" />
@@ -519,7 +519,7 @@ export const MasterclassDiagrams: React.FC<MasterclassDiagramProps> = ({ type, s
 
     case 'mitigation_block':
       return (
-        <svg viewBox="0 0 620 300" className="w-full h-full max-h-72 select-none font-mono">
+        <svg viewBox="0 0 620 300" className="w-full h-full max-h-72 select-none font-sans tabular-nums">
           {/* Swing High 1 */}
           <path d="M 80 180 L 160 80 L 220 160" fill="none" stroke="#52645b" strokeWidth="2.5" />
           <text x="130" y="70" fill="#223b35" fontSize="10" fontWeight="900">1. Swing High A</text>
@@ -551,7 +551,7 @@ export const MasterclassDiagrams: React.FC<MasterclassDiagramProps> = ({ type, s
 
     case 'standard_deviations':
       return (
-        <svg viewBox="0 0 620 300" className="w-full h-full max-h-72 select-none font-mono text-[9px]">
+        <svg viewBox="0 0 620 300" className="w-full h-full max-h-72 select-none font-sans tabular-nums text-[0.8125rem]">
           {/* Anchor Range */}
           <line x1="60" y1="80" x2="560" y2="80" stroke="#52645b" strokeWidth="2" />
           <text x="70" y="75" fill="#223b35" fontWeight="900">0.0 (Manipulation Anchor High)</text>
@@ -589,33 +589,33 @@ export const MasterclassDiagrams: React.FC<MasterclassDiagramProps> = ({ type, s
 
     case 'ny_continuation_reversal':
       return (
-        <div className="w-full h-full flex items-center justify-around gap-4 p-2 font-mono text-xs">
+        <div className="w-full h-full flex items-center justify-around gap-4 p-2 font-sans tabular-nums text-xs">
           {/* Question node */}
           <div className="bg-surface-raised border border-ink/[0.1] rounded-xl p-3 text-center  flex-1">
-            <span className="text-[#345f9e] font-black text-xs uppercase block mb-1">Key Question (2-5 AM)</span>
-            <p className="font-bold text-[11px] text-ink">
+            <span className="text-[#345f9e] font-bold text-xs uppercase block mb-1">Key Question (2-5 AM)</span>
+            <p className="font-bold text-[0.8125rem] text-ink">
               Did London tap a Higher Timeframe PD Array?
             </p>
           </div>
 
           {/* Branch A: Continuation */}
           <div className="bg-surface-raised border border-ink/[0.1] rounded-xl p-3 text-center  flex-1">
-            <span className="bg-[#166534] text-on-brand px-2 py-0.5 font-black text-[10px] uppercase on-accent">NO → CONTINUATION</span>
-            <p className="font-bold text-[10px] mt-2 text-ink">
+            <span className="bg-[#166534] text-on-brand px-2 py-0.5 font-bold text-[0.8125rem] uppercase on-accent">NO → CONTINUATION</span>
+            <p className="font-bold text-[0.8125rem] mt-2 text-ink">
               London generated directional engine.
             </p>
-            <p className="text-[9px] text-ink-secondary mt-1">
+            <p className="text-[0.8125rem] text-ink-secondary mt-1">
               NY 8:30/9:30 retraces into London OB/PB, then expands toward HTF DOL.
             </p>
           </div>
 
           {/* Branch B: Reversal */}
           <div className="bg-surface-raised border border-ink/[0.1] rounded-xl p-3 text-center  flex-1">
-            <span className="bg-[#b13c3e] text-on-brand px-2 py-0.5 font-black text-[10px] uppercase on-accent">YES → REVERSAL</span>
-            <p className="font-bold text-[10px] mt-2 text-ink">
+            <span className="bg-[#b13c3e] text-on-brand px-2 py-0.5 font-bold text-[0.8125rem] uppercase on-accent">YES → REVERSAL</span>
+            <p className="font-bold text-[0.8125rem] mt-2 text-ink">
               London overextended into HTF array.
             </p>
-            <p className="text-[9px] text-ink-secondary mt-1">
+            <p className="text-[0.8125rem] text-ink-secondary mt-1">
               NY prints 9:30 Judas sweep, forms CISD/MSS, and delivers reverse move into Asia/London lows.
             </p>
           </div>
@@ -624,7 +624,7 @@ export const MasterclassDiagrams: React.FC<MasterclassDiagramProps> = ({ type, s
 
     case 'first_presentation_fvg':
       return (
-        <svg viewBox="0 0 620 300" className="w-full h-full max-h-72 select-none font-mono">
+        <svg viewBox="0 0 620 300" className="w-full h-full max-h-72 select-none font-sans tabular-nums">
           {/* 9:30 Open Line */}
           <line x1="40" y1="130" x2="580" y2="130" stroke="#52645b" strokeWidth="2" strokeDasharray="3 3" />
           <text x="45" y="122" fill="#223b35" fontSize="10" fontWeight="900">9:30 AM OPEN LINE</text>
@@ -666,7 +666,7 @@ export const MasterclassDiagrams: React.FC<MasterclassDiagramProps> = ({ type, s
 
     case 'ote_model':
       return (
-        <svg viewBox="0 0 620 300" className="w-full h-full max-h-72 select-none font-mono">
+        <svg viewBox="0 0 620 300" className="w-full h-full max-h-72 select-none font-sans tabular-nums">
           {/* Swing Low to High Leg */}
           <path d="M 80 230 L 260 50" fill="none" stroke="#166534" strokeWidth="2.5" />
           <text x="70" y="245" fill="#223b35" fontSize="10" fontWeight="900">0.0 (Swing Low)</text>
@@ -708,38 +708,38 @@ export const MasterclassDiagrams: React.FC<MasterclassDiagramProps> = ({ type, s
 
     case 'three_day_rule':
       return (
-        <div className="w-full h-full flex items-center justify-around gap-3 p-2 font-mono text-xs">
+        <div className="w-full h-full flex items-center justify-around gap-3 p-2 font-sans tabular-nums text-xs">
           {/* Day 1 */}
           <div className="flex-1 bg-surface-raised border border-ink/[0.1] rounded-xl p-3 text-center ">
-            <span className="text-[#345f9e] font-black uppercase text-[11px] block">Day -2 (Wednesday)</span>
-            <p className="text-[10px] text-ink mt-1 font-bold">Wick Grade Reference</p>
-            <div className="mt-2 bg-surface-raised border border-ink/[0.1] rounded-lg p-1.5 text-[9px] text-left">
+            <span className="text-[#345f9e] font-bold uppercase text-[0.8125rem] block">Day -2 (Wednesday)</span>
+            <p className="text-[0.8125rem] text-ink mt-1 font-bold">Wick Grade Reference</p>
+            <div className="mt-2 bg-surface-raised border border-ink/[0.1] rounded-lg p-1.5 text-[0.8125rem] text-left">
               <p>• Upper Quad: 0.25</p>
               <p>• Premium Wick Grade</p>
               <p>• Implied C.E.</p>
             </div>
           </div>
 
-          <span className="font-black text-base text-[#b13c3e]">+</span>
+          <span className="font-bold text-base text-[#b13c3e]">+</span>
 
           {/* Day 2 */}
           <div className="flex-1 bg-surface-raised border border-ink/[0.1] rounded-xl p-3 text-center ">
-            <span className="text-[#705692] font-black uppercase text-[11px] block">Day -1 (Thursday)</span>
-            <p className="text-[10px] text-ink mt-1 font-bold">Previous Daily Range</p>
-            <div className="mt-2 bg-surface-raised border border-ink/[0.1] rounded-lg p-1.5 text-[9px] text-left">
+            <span className="text-[#705692] font-bold uppercase text-[0.8125rem] block">Day -1 (Thursday)</span>
+            <p className="text-[0.8125rem] text-ink mt-1 font-bold">Previous Daily Range</p>
+            <div className="mt-2 bg-surface-raised border border-ink/[0.1] rounded-lg p-1.5 text-[0.8125rem] text-left">
               <p>• Divide into Octants</p>
               <p>• Confluence at 0.375</p>
               <p>• Anchors LOD Target</p>
             </div>
           </div>
 
-          <span className="font-black text-base text-[#166534]">=</span>
+          <span className="font-bold text-base text-[#166534]">=</span>
 
           {/* Today */}
           <div className="flex-1 bg-[#1A2234] border border-ink/[0.1] rounded-xl p-3 text-center ">
-            <span className="text-ink font-black uppercase text-[11px] block">Today (Friday)</span>
-            <p className="text-[10px] text-[#b13c3e] mt-1 font-black">Projected High/Low of Day</p>
-            <div className="mt-2 bg-surface-raised border border-ink/[0.1] rounded-lg p-1.5 text-[9px] text-left font-bold">
+            <span className="text-ink font-bold uppercase text-[0.8125rem] block">Today (Friday)</span>
+            <p className="text-[0.8125rem] text-[#b13c3e] mt-1 font-bold">Projected High/Low of Day</p>
+            <div className="mt-2 bg-surface-raised border border-ink/[0.1] rounded-lg p-1.5 text-[0.8125rem] text-left font-bold">
               <p className="text-[#166534]">✓ Clustered Fib Nodes</p>
               <p className="text-[#345f9e]">✓ 3-Day Lookback Bound</p>
               <p className="text-[#b13c3e]">✓ LOD Anticipated Exactly</p>

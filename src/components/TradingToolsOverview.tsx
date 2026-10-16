@@ -216,11 +216,11 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
 
           <div className="relative z-10 max-w-4xl space-y-6">
             <div className="flex flex-wrap items-center gap-2.5">
-              <span className="px-3 py-1 rounded-full bg-teal/10 text-teal border border-teal/20 text-[11px] font-mono uppercase tracking-wider font-semibold">
+              <span className="px-3 py-1 rounded-full bg-teal/10 text-teal border border-teal/20 text-[0.8125rem] font-sans tabular-nums uppercase tracking-wider font-semibold">
                 Workbench &amp; Laboratory
               </span>
               <span className="text-ink">/</span>
-              <span className="text-xs font-mono text-ink-secondary">
+              <span className="text-xs font-sans tabular-nums text-ink-secondary">
                 10 Free Institutional Software Modules
               </span>
             </div>
@@ -240,20 +240,20 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
             {/* Quick Metrics */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
               <div className="p-3.5 rounded-xl bg-ink/[0.03] border border-ink/[0.06]">
-                <div className="text-xs font-mono uppercase text-ink-muted">Replay Stages</div>
-                <div className="text-xl font-bold text-teal font-mono mt-0.5">8 Stages</div>
+                <div className="text-xs font-sans tabular-nums uppercase text-ink-muted">Replay Stages</div>
+                <div className="text-xl font-bold text-teal font-sans tabular-nums mt-0.5">8 Stages</div>
               </div>
               <div className="p-3.5 rounded-xl bg-ink/[0.03] border border-ink/[0.06]">
-                <div className="text-xs font-mono uppercase text-ink-muted">Glossary Concepts</div>
-                <div className="text-xl font-bold text-brand font-mono mt-0.5">41 Topics</div>
+                <div className="text-xs font-sans tabular-nums uppercase text-ink-muted">Glossary Concepts</div>
+                <div className="text-xl font-bold text-brand font-sans tabular-nums mt-0.5">41 Topics</div>
               </div>
               <div className="p-3.5 rounded-xl bg-ink/[0.03] border border-ink/[0.06]">
-                <div className="text-xs font-mono uppercase text-ink-muted">PD Arrays</div>
-                <div className="text-xl font-bold text-rust font-mono mt-0.5">Reference studies</div>
+                <div className="text-xs font-sans tabular-nums uppercase text-ink-muted">PD Arrays</div>
+                <div className="text-xl font-bold text-rust font-sans tabular-nums mt-0.5">Reference studies</div>
               </div>
               <div className="p-3.5 rounded-xl bg-ink/[0.03] border border-ink/[0.06]">
-                <div className="text-xs font-mono uppercase text-ink-muted">Macro Windows</div>
-                <div className="text-xl font-bold text-positive font-mono mt-0.5">8 Daily</div>
+                <div className="text-xs font-sans tabular-nums uppercase text-ink-muted">Macro Windows</div>
+                <div className="text-xl font-bold text-positive font-sans tabular-nums mt-0.5">8 Daily</div>
               </div>
             </div>
           </div>
@@ -273,7 +273,7 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
               key={tab.id}
               aria-pressed={filterCategory === tab.id}
               onClick={() => setFilterCategory(tab.id as any)}
-              className={`px-4 py-2 rounded-xl text-xs font-mono uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer ${
+              className={`px-4 py-2 rounded-xl text-xs font-sans tabular-nums uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer ${
                 filterCategory === tab.id
                   ? 'bg-ink/[0.12] text-ink border border-ink/20 shadow-sm'
                   : 'text-ink-secondary hover:text-ink hover:bg-ink/[0.04]'
@@ -283,7 +283,7 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
             </button>
           ))}
         </div>
-        <div className="text-xs font-mono text-ink-muted">
+        <div className="text-xs font-sans tabular-nums text-ink-muted">
           Showing {filteredTools.length} of {WORKBENCH_TOOL_CATALOG.length} facilities
         </div>
       </div>
@@ -306,8 +306,8 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
                   >
                     <Icon className="w-6 h-6" />
                   </div>
-                  <div className="flex items-center gap-2 font-mono text-xs">
-                    <span className="text-[10px] uppercase px-2 py-0.5 rounded bg-ink/[0.04] text-ink-secondary border border-ink/[0.06]">
+                  <div className="flex items-center gap-2 font-sans tabular-nums text-xs">
+                    <span className="text-[0.8125rem] uppercase px-2 py-0.5 rounded bg-ink/[0.04] text-ink-secondary border border-ink/[0.06]">
                       {tool.badge}
                     </span>
                     <span className="text-ink-muted">{tool.number}</span>
@@ -319,7 +319,7 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
                   <h3 className="text-xl font-bold text-ink group-hover:text-ink tracking-tight flex items-center justify-between">
                     <span>{tool.name}</span>
                   </h3>
-                  <div className="text-[11px] font-mono text-teal uppercase tracking-wider">
+                  <div className="text-[0.8125rem] font-sans tabular-nums text-teal uppercase tracking-wider">
                     {tool.categoryLabel}
                   </div>
                   <p className="text-xs text-ink-secondary leading-relaxed line-clamp-3">
@@ -330,7 +330,7 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
                 {/* Feature Chips */}
                 <ul className="space-y-1.5 pt-2 border-t border-ink/[0.06]">
                   {tool.features.map((feat, fIdx) => (
-                    <li key={fIdx} className="text-[11px] font-mono text-ink-muted flex items-center gap-2">
+                    <li key={fIdx} className="text-[0.8125rem] font-sans tabular-nums text-ink-muted flex items-center gap-2">
                       <span className="w-1 h-1 rounded-full bg-teal" />
                       <span className="truncate">{feat}</span>
                     </li>
@@ -343,7 +343,7 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
                 <a
 
                   href={tool.url}
-                  className="w-full py-2.5 px-4 rounded-xl bg-ink/[0.04] hover:bg-ink/[0.10] border border-ink/[0.08] hover:border-ink/20 text-xs font-mono uppercase tracking-wider text-ink hover:text-ink flex items-center justify-center gap-2 transition-all cursor-pointer group/btn"
+                  className="w-full py-2.5 px-4 rounded-xl bg-ink/[0.04] hover:bg-ink/[0.10] border border-ink/[0.08] hover:border-ink/20 text-xs font-sans tabular-nums uppercase tracking-wider text-ink hover:text-ink flex items-center justify-center gap-2 transition-all cursor-pointer group/btn"
                 >
                   <span>Launch Module</span>
                   <ArrowRight className="w-3.5 h-3.5 text-teal group-hover/btn:translate-x-1 transition-transform" />
@@ -356,7 +356,7 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
 
       {/* Static Semantic HTML for Search Engines & Technical Documentation */}
       <article className="mt-16 rounded-2xl bg-surface-muted border border-ink/[0.08] p-6 sm:p-10 space-y-6 text-ink-secondary text-sm leading-relaxed">
-        <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-teal">
+        <div className="flex items-center gap-2 text-xs font-sans tabular-nums uppercase tracking-wider text-teal">
           <Terminal className="w-4 h-4" />
           <span>Institutional Infrastructure Specification</span>
         </div>
@@ -369,19 +369,19 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
           <div className="p-4 rounded-xl bg-ink/[0.02] border border-ink/[0.06] space-y-2">
-            <h4 className="font-semibold text-ink font-mono text-xs uppercase text-teal">1. Execution &amp; Replay</h4>
+            <h4 className="font-semibold text-ink font-sans tabular-nums text-xs uppercase text-teal">1. Execution &amp; Replay</h4>
             <p className="text-xs text-ink-secondary leading-relaxed">
               Step through authored illustrative candle sequences in the Chart Lab, review fictional trade-plan assumptions in the Trade Simulator, and inspect generated hypothetical outcomes in the Expectancy Lab.
             </p>
           </div>
           <div className="p-4 rounded-xl bg-ink/[0.02] border border-ink/[0.06] space-y-2">
-            <h4 className="font-semibold text-ink font-mono text-xs uppercase text-brand">2. Reference &amp; Structure</h4>
+            <h4 className="font-semibold text-ink font-sans tabular-nums text-xs uppercase text-brand">2. Reference &amp; Structure</h4>
             <p className="text-xs text-ink-secondary leading-relaxed">
               Query 41+ concepts in the multi-tier Glossary, cross-examine definitions in the Compare Matrix, and traverse the 10-step institutional pipeline in the Knowledge Graph.
             </p>
           </div>
           <div className="p-4 rounded-xl bg-ink/[0.02] border border-ink/[0.06] space-y-2">
-            <h4 className="font-semibold text-ink font-mono text-xs uppercase text-positive">3. Timing &amp; Mastery</h4>
+            <h4 className="font-semibold text-ink font-sans tabular-nums text-xs uppercase text-positive">3. Timing &amp; Mastery</h4>
             <p className="text-xs text-ink-secondary leading-relaxed">
               Track session killzones and macro execution windows in the ICT Delivery Suite, audit your execution psychology in the Trading Journal, and benchmark diagnostics in the Mastery Profile.
             </p>

@@ -25,10 +25,10 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
       {/* Header bar */}
       <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-ink/[0.07]">
         <div className="flex items-center gap-3">
-          <span className="text-xs font-mono tracking-wider uppercase text-teal bg-teal/10 px-2.5 py-1 rounded border border-teal/20">
+          <span className="text-xs font-sans tabular-nums tracking-wider uppercase text-teal bg-teal/10 px-2.5 py-1 rounded border border-teal/20">
             {type.replace(/_/g, ' ')}
           </span>
-          {title && <span className="text-ink-secondary text-xs hidden sm:inline font-mono">| {title}</span>}
+          {title && <span className="text-ink-secondary text-xs hidden sm:inline font-sans tabular-nums">| {title}</span>}
         </div>
 
         {isInteractive && (
@@ -36,7 +36,7 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
             <button
               type="button"
               onClick={() => setShowExplanation(!showExplanation)}
-              className="px-3 py-1.5 text-xs font-mono rounded-lg bg-ink/[0.03] hover:bg-ink/[0.08] border border-ink/[0.08] text-ink-secondary hover:text-ink flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="px-3 py-1.5 text-xs font-sans tabular-nums rounded-lg bg-ink/[0.03] hover:bg-ink/[0.08] border border-ink/[0.08] text-ink-secondary hover:text-ink flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               <Info className="w-3.5 h-3.5 text-brand" />
               {showExplanation ? 'Hide Notes' : 'Show Notes'}
@@ -52,7 +52,7 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
             <button
               type="button"
               onClick={handleNext} disabled={!animated}
-              className="px-3.5 py-1.5 text-xs font-mono font-medium rounded-lg bg-brand hover:bg-brand-hover text-on-brand flex items-center gap-1.5 transition-all cursor-pointer on-accent"
+              className="px-3.5 py-1.5 text-xs font-sans tabular-nums font-medium rounded-lg bg-brand hover:bg-brand-hover text-on-brand flex items-center gap-1.5 transition-all cursor-pointer on-accent"
             >
               <Play className="w-3 h-3 fill-ink" />
               <span>{animated ? `Step ${step + 1} / 4` : 'Static reference'}</span>
@@ -312,11 +312,11 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
         )}
 
         {type === 'top_down_matrix' && (
-          <div className="w-full h-full flex items-center justify-around gap-3 text-xs font-mono p-2">
+          <div className="w-full h-full flex items-center justify-around gap-3 text-xs font-sans tabular-nums p-2">
             <div className="flex-1 bg-ink/[0.02] border border-ink/[0.08] rounded-xl p-3.5 text-center">
               <div className="text-negative font-semibold text-xs mb-1 uppercase tracking-wider">1. WEEKLY / DAILY</div>
-              <div className="text-ink-muted text-[10px] mb-2 uppercase">Macro Context &amp; Draw</div>
-              <div className="bg-ink/[0.02] border border-ink/[0.06] rounded-lg p-2.5 text-left space-y-1 text-[11px] text-ink-secondary">
+              <div className="text-ink-muted text-[0.8125rem] mb-2 uppercase">Macro Context &amp; Draw</div>
+              <div className="bg-ink/[0.02] border border-ink/[0.06] rounded-lg p-2.5 text-left space-y-1 text-[0.8125rem] text-ink-secondary">
                 <p>• Premium vs Discount</p>
                 <p>• External BSL / SSL</p>
                 <p>• Weekly Open &amp; PDH/PDL</p>
@@ -327,8 +327,8 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
 
             <div className="flex-1 bg-ink/[0.02] border border-ink/[0.08] rounded-xl p-3.5 text-center">
               <div className="text-brand font-semibold text-xs mb-1 uppercase tracking-wider">2. 4H / 1H / 15M</div>
-              <div className="text-ink-muted text-[10px] mb-2 uppercase">Location &amp; Liquidity Event</div>
-              <div className="bg-ink/[0.02] border border-ink/[0.06] rounded-lg p-2.5 text-left space-y-1 text-[11px] text-ink-secondary">
+              <div className="text-ink-muted text-[0.8125rem] mb-2 uppercase">Location &amp; Liquidity Event</div>
+              <div className="bg-ink/[0.02] border border-ink/[0.06] rounded-lg p-2.5 text-left space-y-1 text-[0.8125rem] text-ink-secondary">
                 <p>• Session Highs / Lows</p>
                 <p>• Liquidity Sweep</p>
                 <p>• HTF PD Arrays (FVG/OB)</p>
@@ -339,8 +339,8 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
 
             <div className="flex-1 bg-ink/[0.02] border border-ink/[0.08] rounded-xl p-3.5 text-center">
               <div className="text-positive font-semibold text-xs mb-1 uppercase tracking-wider">3. 5M / 1M</div>
-              <div className="text-ink-muted text-[10px] mb-2 uppercase">Displacement &amp; Entry</div>
-              <div className="bg-ink/[0.02] border border-ink/[0.06] rounded-lg p-2.5 text-left space-y-1 text-[11px] text-ink-secondary">
+              <div className="text-ink-muted text-[0.8125rem] mb-2 uppercase">Displacement &amp; Entry</div>
+              <div className="bg-ink/[0.02] border border-ink/[0.06] rounded-lg p-2.5 text-left space-y-1 text-[0.8125rem] text-ink-secondary">
                 <p>• Bullish / Bearish MSS</p>
                 <p>• FVG Retracement (CE)</p>
                 <p>• Stop at Invalidation</p>
@@ -351,30 +351,30 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
 
         {type === 'session_timeline' && (
           <div className="w-full h-full flex flex-col justify-center px-4 space-y-3">
-            <div className="flex justify-between items-center text-xs font-mono text-ink-secondary uppercase">
+            <div className="flex justify-between items-center text-xs font-sans tabular-nums text-ink-secondary uppercase">
               <span>20:00 New York (UTC varies with DST)</span>
-              <span className="text-teal bg-teal/10 px-2.5 py-0.5 rounded border border-teal/20 text-[10px]">
+              <span className="text-teal bg-teal/10 px-2.5 py-0.5 rounded border border-teal/20 text-[0.8125rem]">
                 New York Base
               </span>
               <span>Next 20:00 New York</span>
             </div>
             
             <div className="w-full h-14 bg-ink/[0.02] border border-ink/[0.08] rounded-xl flex overflow-hidden">
-              <div className="w-1/3 bg-brand/10 border-r border-ink/[0.08] flex flex-col justify-center items-center text-[11px] font-mono text-brand">
+              <div className="w-1/3 bg-brand/10 border-r border-ink/[0.08] flex flex-col justify-center items-center text-[0.8125rem] font-sans tabular-nums text-brand">
                 <span className="font-semibold uppercase">ASIAN SESSION</span>
-                <span className="text-[10px] text-ink-secondary">8:00 PM - Midnight NY</span>
+                <span className="text-[0.8125rem] text-ink-secondary">8:00 PM - Midnight NY</span>
               </div>
-              <div className="w-1/3 bg-amber/10 border-r border-ink/[0.08] flex flex-col justify-center items-center text-[11px] font-mono text-amber">
+              <div className="w-1/3 bg-amber/10 border-r border-ink/[0.08] flex flex-col justify-center items-center text-[0.8125rem] font-sans tabular-nums text-amber">
                 <span className="font-semibold uppercase">LONDON KILLZONE</span>
-                <span className="text-[10px] text-ink-secondary">2:00 AM - 5:00 AM NY</span>
+                <span className="text-[0.8125rem] text-ink-secondary">2:00 AM - 5:00 AM NY</span>
               </div>
-              <div className="w-1/3 bg-positive/10 flex flex-col justify-center items-center text-[11px] font-mono text-positive">
+              <div className="w-1/3 bg-positive/10 flex flex-col justify-center items-center text-[0.8125rem] font-sans tabular-nums text-positive">
                 <span className="font-semibold uppercase">NEW YORK KILLZONE</span>
-                <span className="text-[10px] text-ink-secondary">7:00 AM - 10:00 AM NY</span>
+                <span className="text-[0.8125rem] text-ink-secondary">7:00 AM - 10:00 AM NY</span>
               </div>
             </div>
 
-            <div className="flex items-center justify-between text-[10px] font-mono text-ink-muted uppercase px-1">
+            <div className="flex items-center justify-between text-[0.8125rem] font-sans tabular-nums text-ink-muted uppercase px-1">
               <span>Asian Range Established</span>
               <span>London Raids Asian Liquidity</span>
               <span>NY Expands to Macro Target</span>
@@ -413,12 +413,12 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
 
       {/* Explanation Footer Box */}
       {showExplanation && (
-        <div className="bg-ink/[0.02] border border-ink/[0.07] rounded-xl p-4 text-xs text-ink-secondary font-mono space-y-1.5">
+        <div className="bg-ink/[0.02] border border-ink/[0.07] rounded-xl p-4 text-xs text-ink-secondary font-sans tabular-nums space-y-1.5">
           <div className="flex items-center gap-2 text-ink uppercase">
             <CheckCircle2 className="w-4 h-4 text-teal" />
             <span className="font-medium">Key Methodological Rule:</span>
           </div>
-          <p className="leading-relaxed font-light text-ink-secondary">
+          <p className="leading-relaxed font-normal text-ink-secondary">
             {type === 'mss_sequence' && 'BOS describes a continuation break; CHoCH describes an early character change; MSS requires the selected structural pivot and displacement confirmation. Definitions depend on the stated timeframe and convention.'}
             {type === 'liquidity_sweep' && 'A sweep is an observation event, not an automatic entry. You must wait for displacement and a Market Structure Shift (MSS) before considering an entry.'}
             {type === 'fvg_formation' && 'Consequent Encroachment (50%) serves as a balanced institutional reference point inside the displacement corridor. If price closes beyond the FVG, it inverts into an IFVG.'}

@@ -174,14 +174,14 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-teal">
+                  <span className="text-[0.8125rem] font-sans tabular-nums uppercase tracking-[0.18em] text-teal">
                     MENTOR SPOTLIGHT
                   </span>
                 </div>
                 <h1 className="text-xl sm:text-2xl font-semibold uppercase text-ink tracking-tight mt-0.5">
                   Trader Abdullah Masood
                 </h1>
-                <p className="text-xs text-ink-secondary font-mono mt-0.5">
+                <p className="text-xs text-ink-secondary font-sans tabular-nums mt-0.5">
                   @TraderAbdullahMasood · ICT &amp; SMC Master Educator
                 </p>
               </div>
@@ -215,7 +215,7 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
             <BauhausNavScroller innerClassName="gap-2" showArrowsAlways={false}>
               <button
                 onClick={() => setActiveTab('tribute')}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-mono uppercase tracking-wider transition-all border cursor-pointer shrink-0 ${
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-sans tabular-nums uppercase tracking-wider transition-all border cursor-pointer shrink-0 ${
                   activeTab === 'tribute'
                     ? 'bg-ink/[0.12] text-ink border-ink/20'
                     : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06]'
@@ -225,7 +225,7 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
               </button>
               <button
                 onClick={() => setActiveTab('curriculum')}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-mono uppercase tracking-wider transition-all border cursor-pointer shrink-0 ${
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-sans tabular-nums uppercase tracking-wider transition-all border cursor-pointer shrink-0 ${
                   activeTab === 'curriculum'
                     ? 'bg-ink/[0.12] text-ink border-ink/20'
                     : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06]'
@@ -235,7 +235,7 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
               </button>
               <button
                 onClick={() => setActiveTab('daily_bias_checklist')}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-mono uppercase tracking-wider transition-all border cursor-pointer shrink-0 ${
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-sans tabular-nums uppercase tracking-wider transition-all border cursor-pointer shrink-0 ${
                   activeTab === 'daily_bias_checklist'
                     ? 'bg-ink/[0.12] text-ink border-ink/20'
                     : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06]'
@@ -258,7 +258,7 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
             <div className="space-y-6">
               
               <div className="bg-ink/[0.02] border border-ink/[0.08] rounded-xl p-6 sm:p-7 space-y-4">
-                <div className="flex items-center gap-2 text-teal font-mono text-xs uppercase tracking-wider">
+                <div className="flex items-center gap-2 text-teal font-sans tabular-nums text-xs uppercase tracking-wider">
                   <Heart className="w-4 h-4 fill-current" />
                   DEDICATED WITH SINCERE GRATITUDE &amp; RESPECT
                 </div>
@@ -294,14 +294,14 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
 
               {/* 4 Pillars Learned */}
               <div className="space-y-3">
-                <h3 className="text-xs font-mono uppercase tracking-[0.16em] text-ink-muted flex items-center gap-2">
+                <h3 className="text-xs font-sans tabular-nums uppercase tracking-[0.16em] text-ink-muted flex items-center gap-2">
                   <Star className="w-3.5 h-3.5 text-amber" />
                   CORE BREAKTHROUGH LESSONS LEARNED FROM HIS CHANNEL
                 </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="bg-surface-raised border border-ink/[0.07] rounded-xl p-5 space-y-2">
-                    <div className="flex items-center gap-2 font-mono text-xs uppercase text-ink">
+                    <div className="flex items-center gap-2 font-sans tabular-nums text-xs uppercase text-ink">
                       <div className="w-5 h-5 rounded bg-brand/15 text-brand flex items-center justify-center text-xs font-semibold">
                         1
                       </div>
@@ -313,7 +313,7 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
                   </div>
 
                   <div className="bg-surface-raised border border-ink/[0.07] rounded-xl p-5 space-y-2">
-                    <div className="flex items-center gap-2 font-mono text-xs uppercase text-ink">
+                    <div className="flex items-center gap-2 font-sans tabular-nums text-xs uppercase text-ink">
                       <div className="w-5 h-5 rounded bg-negative/15 text-negative flex items-center justify-center text-xs font-semibold">
                         2
                       </div>
@@ -325,7 +325,7 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
                   </div>
 
                   <div className="bg-surface-raised border border-ink/[0.07] rounded-xl p-5 space-y-2">
-                    <div className="flex items-center gap-2 font-mono text-xs uppercase text-ink">
+                    <div className="flex items-center gap-2 font-sans tabular-nums text-xs uppercase text-ink">
                       <div className="w-5 h-5 rounded bg-teal/15 text-teal flex items-center justify-center text-xs font-semibold">
                         3
                       </div>
@@ -337,7 +337,7 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
                   </div>
 
                   <div className="bg-surface-raised border border-ink/[0.07] rounded-xl p-5 space-y-2">
-                    <div className="flex items-center gap-2 font-mono text-xs uppercase text-ink">
+                    <div className="flex items-center gap-2 font-sans tabular-nums text-xs uppercase text-ink">
                       <div className="w-5 h-5 rounded bg-amber/15 text-amber flex items-center justify-center text-xs font-semibold">
                         4
                       </div>
@@ -375,7 +375,7 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
                             {track.title}
                           </h4>
                         </div>
-                        <span className="text-[10px] font-mono uppercase bg-ink/[0.04] text-ink-secondary px-2.5 py-0.5 rounded border border-ink/[0.06]">
+                        <span className="text-[0.8125rem] font-sans tabular-nums uppercase bg-ink/[0.04] text-ink-secondary px-2.5 py-0.5 rounded border border-ink/[0.06]">
                           {track.tag}
                         </span>
                       </div>
@@ -385,13 +385,13 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
                       </p>
 
                       <div className="space-y-1.5 pt-1">
-                        <span className="text-[10px] font-mono uppercase text-ink-muted block">
+                        <span className="text-[0.8125rem] font-sans tabular-nums uppercase text-ink-muted block">
                           Core Principles:
                         </span>
                         <ul className="space-y-1 text-xs text-ink/90">
                           {track.coreTeachings.map((t, tIdx) => (
                             <li key={tIdx} className="flex items-start gap-2">
-                              <span className="text-brand font-mono">•</span>
+                              <span className="text-brand font-sans tabular-nums">•</span>
                               <span>{t}</span>
                             </li>
                           ))}
@@ -405,7 +405,7 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
                               onClose();
                               onSelectConcept(track.conceptLink);
                             }}
-                            className="text-xs font-mono text-teal hover:underline flex items-center gap-1 cursor-pointer"
+                            className="text-xs font-sans tabular-nums text-teal hover:underline flex items-center gap-1 cursor-pointer"
                           >
                             <span>Study {track.title.split('-')[0]}</span>
                             <CheckCircle2 className="w-3.5 h-3.5" />
@@ -423,7 +423,7 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
           {activeTab === 'daily_bias_checklist' && (
             <div className="space-y-4">
               <div className="p-4 rounded-xl bg-ink/[0.02] border border-ink/[0.07] space-y-1">
-                <div className="text-xs font-mono text-brand uppercase font-semibold">
+                <div className="text-xs font-sans tabular-nums text-brand uppercase font-semibold">
                   TRADER ABDULLAH MASOOD PRE-MARKET BIAS CHECKLIST
                 </div>
                 <p className="text-xs text-ink-secondary">
@@ -453,13 +453,13 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
                       </div>
 
                       <div className="space-y-1">
-                        <div className="text-[10px] font-mono uppercase text-ink-muted">
+                        <div className="text-[0.8125rem] font-sans tabular-nums uppercase text-ink-muted">
                           {item.category}
                         </div>
                         <div className={`text-xs sm:text-sm font-medium ${isChecked ? 'text-emerald-700' : 'text-ink'}`}>
                           {item.question}
                         </div>
-                        <p className="text-xs text-ink-secondary leading-relaxed font-light">
+                        <p className="text-xs text-ink-secondary leading-relaxed font-normal">
                           {item.detail}
                         </p>
                       </div>

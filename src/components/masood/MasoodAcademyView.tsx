@@ -139,14 +139,14 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
           <div className="space-y-4 max-w-4xl">
             {/* Metadata badges */}
             <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-negative/10 text-negative border border-negative/20">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-sans tabular-nums uppercase tracking-wider bg-negative/10 text-negative border border-negative/20">
                 <Youtube className="w-3.5 h-3.5 fill-current" />
                 Independent study guide
               </span>
-              <span className="text-xs font-mono uppercase tracking-wider text-amber bg-ink/[0.04] px-3 py-1 rounded-full border border-ink/[0.08]">
+              <span className="text-xs font-sans tabular-nums uppercase tracking-wider text-amber bg-ink/[0.04] px-3 py-1 rounded-full border border-ink/[0.08]">
                 Trader Abdullah Masood
               </span>
-              <span className="text-xs font-mono uppercase text-teal bg-teal/10 px-3 py-1 rounded-full border border-teal/20">
+              <span className="text-xs font-sans tabular-nums uppercase text-teal bg-teal/10 px-3 py-1 rounded-full border border-teal/20">
                 {allLectures.length} Lectures • 6 Playlists
               </span>
             </div>
@@ -165,7 +165,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                 href="https://www.youtube.com/@TraderAbdullahMasood"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand hover:bg-[#1d5545] text-on-brand text-xs font-mono uppercase tracking-wider transition-all cursor-pointer shadow-lg shadow-brand/20 on-accent"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand hover:bg-[#1d5545] text-on-brand text-xs font-sans tabular-nums uppercase tracking-wider transition-all cursor-pointer shadow-lg shadow-brand/20 on-accent"
               >
                 <Youtube className="w-4 h-4" />
                 <span>YouTube Channel</span>
@@ -174,7 +174,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
 
               <button
                 onClick={() => handleSelectTab('animations')}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-ink/[0.04] hover:bg-ink/[0.08] text-ink text-xs font-mono uppercase tracking-wider border border-ink/[0.08] transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-ink/[0.04] hover:bg-ink/[0.08] text-ink text-xs font-sans tabular-nums uppercase tracking-wider border border-ink/[0.08] transition-all cursor-pointer"
               >
                 <Sparkles className="w-4 h-4 text-teal" />
                 <span>Animated Explainers</span>
@@ -182,7 +182,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
 
               <button
                 onClick={() => handleSelectTab('bias_calc')}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-ink/[0.04] hover:bg-ink/[0.08] text-ink text-xs font-mono uppercase tracking-wider border border-ink/[0.08] transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-ink/[0.04] hover:bg-ink/[0.08] text-ink text-xs font-sans tabular-nums uppercase tracking-wider border border-ink/[0.08] transition-all cursor-pointer"
               >
                 <Zap className="w-4 h-4 text-amber" />
                 <span>Daily Bias Engine</span>
@@ -190,7 +190,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
 
               <button
                 onClick={() => handleSelectTab('rules')}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-ink/[0.04] hover:bg-ink/[0.08] text-ink text-xs font-mono uppercase tracking-wider border border-ink/[0.08] transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-ink/[0.04] hover:bg-ink/[0.08] text-ink text-xs font-sans tabular-nums uppercase tracking-wider border border-ink/[0.08] transition-all cursor-pointer"
               >
                 <Shield className="w-4 h-4 text-brand" />
                 <span>10 Golden Rules</span>
@@ -218,7 +218,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                   <button
                     key={tab.id}
                     onClick={() => handleSelectTab(tab.id as any)}
-                    className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-mono uppercase tracking-wider whitespace-nowrap transition-all border cursor-pointer shrink-0 ${
+                    className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-sans tabular-nums uppercase tracking-wider whitespace-nowrap transition-all border cursor-pointer shrink-0 ${
                       isActive
                         ? 'bg-ink/[0.12] text-ink border-ink/20 shadow-sm'
                         : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06] hover:bg-ink/[0.05]'
@@ -240,7 +240,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search lectures & rules..."
-              className="w-full pl-10 pr-8 py-2 rounded-xl bg-surface-raised border border-ink/[0.08] text-xs font-mono text-ink placeholder-[#5f7064] focus:outline-none focus:border-brand"
+              className="w-full pl-10 pr-8 py-2 rounded-xl bg-surface-raised border border-ink/[0.08] text-xs font-sans tabular-nums text-ink placeholder-[#5f7064] focus:outline-none focus:border-brand"
             />
             {searchQuery && (
               <button
@@ -263,14 +263,14 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
               <BauhausNavScroller innerClassName="gap-2" showArrowsAlways={true}>
                 <button
                   onClick={() => setActivePlaylistId('all')}
-                  className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-mono uppercase tracking-wider whitespace-nowrap shrink-0 border transition-all cursor-pointer ${
+                  className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-sans tabular-nums uppercase tracking-wider whitespace-nowrap shrink-0 border transition-all cursor-pointer ${
                     activePlaylistId === 'all'
                       ? 'bg-brand text-on-brand border-brand on-accent'
                       : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06] hover:bg-ink/[0.05]'
                   }`}
                 >
                   <span>All Playlists</span>
-                  <span className={`px-2 py-0.5 text-[10px] font-mono rounded-md ${
+                  <span className={`px-2 py-0.5 text-[0.8125rem] font-sans tabular-nums rounded-md ${
                     activePlaylistId === 'all' ? 'bg-ink/20 text-ink' : 'bg-ink/[0.04] text-ink-muted'
                   }`}>
                     {allLectures.length}
@@ -281,14 +281,14 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                   <button
                     key={pl.id}
                     onClick={() => setActivePlaylistId(pl.id)}
-                    className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-mono uppercase tracking-wider whitespace-nowrap shrink-0 border transition-all cursor-pointer ${
+                    className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-sans tabular-nums uppercase tracking-wider whitespace-nowrap shrink-0 border transition-all cursor-pointer ${
                       activePlaylistId === pl.id
                         ? 'bg-brand text-on-brand border-brand on-accent'
                         : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06] hover:bg-ink/[0.05]'
                     }`}
                   >
                     <span>{pl.title.split(' - ')[0]}</span>
-                    <span className={`px-2 py-0.5 text-[10px] font-mono rounded-md ${
+                    <span className={`px-2 py-0.5 text-[0.8125rem] font-sans tabular-nums rounded-md ${
                       activePlaylistId === pl.id ? 'bg-ink/20 text-ink' : 'bg-ink/[0.04] text-ink-muted'
                     }`}>
                       {pl.lectures.length}
@@ -306,21 +306,21 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                 <div className="p-6 sm:p-8 bg-surface border border-ink/[0.08] rounded-2xl space-y-3">
                   <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-ink/[0.07]">
                     <div className="flex items-center gap-3">
-                      <span className="px-2.5 py-0.5 rounded-full bg-brand/10 text-brand border border-brand/20 text-[10px] font-mono uppercase">
+                      <span className="px-2.5 py-0.5 rounded-full bg-brand/10 text-brand border border-brand/20 text-[0.8125rem] font-sans tabular-nums uppercase">
                         {playlist.badge}
                       </span>
                       <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-ink">
                         {playlist.title}
                       </h2>
                     </div>
-                    <span className="text-xs font-mono uppercase text-ink-secondary bg-ink/[0.04] px-3 py-1 rounded-lg border border-ink/[0.08]">
+                    <span className="text-xs font-sans tabular-nums uppercase text-ink-secondary bg-ink/[0.04] px-3 py-1 rounded-lg border border-ink/[0.08]">
                       {playlist.lectures.length} Lectures
                     </span>
                   </div>
                   <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
                     {playlist.description}
                   </p>
-                  <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-ink-muted">
+                  <div className="flex flex-wrap items-center gap-4 text-xs font-sans tabular-nums text-ink-muted">
                     <span>TARGET AUDIENCE: {playlist.targetAudience}</span>
                   </div>
                 </div>
@@ -344,7 +344,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                           />
                           
                           {/* Lecture Badge */}
-                          <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md text-[10px] font-mono font-medium bg-black/70 backdrop-blur-sm text-on-brand border border-ink/10">
+                          <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md text-[0.8125rem] font-sans tabular-nums font-medium bg-black/70 backdrop-blur-sm text-on-brand border border-ink/10">
                             LEC #{lecture.lectureNumber}
                           </span>
 
@@ -383,8 +383,8 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                           </div>
 
                           {/* Core Takeaway Banner */}
-                          <div className="text-[11px] text-ink-secondary bg-surface-raised border border-ink/[0.06] p-3 rounded-xl space-y-1">
-                            <div className="font-mono text-[10px] uppercase text-teal flex items-center gap-1.5">
+                          <div className="text-[0.8125rem] text-ink-secondary bg-surface-raised border border-ink/[0.06] p-3 rounded-xl space-y-1">
+                            <div className="font-sans tabular-nums text-[0.8125rem] uppercase text-teal flex items-center gap-1.5">
                               <CheckCircle2 className="w-3 h-3" />
                               <span>Core Takeaway</span>
                             </div>
@@ -397,7 +397,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                           <div className="pt-3 flex items-center justify-between gap-2 border-t border-ink/[0.06] text-xs">
                             <button
                               onClick={() => handleOpenLecture(lecture)}
-                              className="text-brand hover:text-teal font-mono uppercase tracking-wider flex items-center gap-1 cursor-pointer transition-colors"
+                              className="text-brand hover:text-teal font-sans tabular-nums uppercase tracking-wider flex items-center gap-1 cursor-pointer transition-colors"
                             >
                               <span>Study Lesson</span>
                               <ArrowRight className="w-3.5 h-3.5" />
@@ -409,7 +409,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                                   setActiveAnimation(lecture.animationType!);
                                   setActiveTab('animations');
                                 }}
-                                className="text-[10px] font-mono uppercase flex items-center gap-1 bg-ink/[0.04] hover:bg-ink/[0.08] text-amber px-2.5 py-1 rounded-lg border border-ink/[0.08] cursor-pointer transition-colors"
+                                className="text-[0.8125rem] font-sans tabular-nums uppercase flex items-center gap-1 bg-ink/[0.04] hover:bg-ink/[0.08] text-amber px-2.5 py-1 rounded-lg border border-ink/[0.08] cursor-pointer transition-colors"
                               >
                                 <Sparkles className="w-3 h-3" />
                                 <span>Animation</span>
@@ -452,7 +452,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
         <ScrollReveal y={25}>
           <div className="p-6 sm:p-10 bg-surface border border-ink/[0.08] rounded-2xl space-y-8">
             <div className="border-b border-ink/[0.07] pb-4">
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono uppercase bg-brand/10 text-brand border border-brand/20">
+              <span className="px-2.5 py-0.5 rounded-full text-[0.8125rem] font-sans tabular-nums uppercase bg-brand/10 text-brand border border-brand/20">
                 Gate Matrix Calculator
               </span>
               <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-ink mt-2">
@@ -466,7 +466,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
             <div className="space-y-6 text-sm">
               {/* Gate 1 */}
               <div className="space-y-2">
-                <label className="text-ink-secondary uppercase font-mono text-xs block">
+                <label className="text-ink-secondary uppercase font-sans tabular-nums text-xs block">
                   Gate 1: Higher Timeframe (Daily/4H) Draw on Liquidity
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -485,7 +485,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                       }`}
                     >
                       <div className="font-semibold uppercase tracking-tight text-xs">{opt.label}</div>
-                      <div className="text-[11px] font-mono mt-1 text-ink-muted">
+                      <div className="text-[0.8125rem] font-sans tabular-nums mt-1 text-ink-muted">
                         {opt.desc}
                       </div>
                     </button>
@@ -495,7 +495,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
 
               {/* Gate 2 */}
               <div className="space-y-2">
-                <label className="text-ink-secondary uppercase font-mono text-xs block">
+                <label className="text-ink-secondary uppercase font-sans tabular-nums text-xs block">
                   Gate 2: Location Relative to 00:00 Midnight NY Open
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -514,7 +514,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                       }`}
                     >
                       <div className="font-semibold uppercase tracking-tight text-xs">{opt.label}</div>
-                      <div className="text-[11px] font-mono mt-1 text-ink-muted">
+                      <div className="text-[0.8125rem] font-sans tabular-nums mt-1 text-ink-muted">
                         {opt.desc}
                       </div>
                     </button>
@@ -524,7 +524,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
 
               {/* Gate 3 */}
               <div className="space-y-2">
-                <label className="text-ink-secondary uppercase font-mono text-xs block">
+                <label className="text-ink-secondary uppercase font-sans tabular-nums text-xs block">
                   Gate 3: Pre-Market &amp; Session Liquidity Sweep Status
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -543,7 +543,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                       }`}
                     >
                       <div className="font-semibold uppercase tracking-tight text-xs">{opt.label}</div>
-                      <div className="text-[11px] font-mono mt-1 text-ink-muted">
+                      <div className="text-[0.8125rem] font-sans tabular-nums mt-1 text-ink-muted">
                         {opt.desc}
                       </div>
                     </button>
@@ -553,7 +553,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
 
               {/* Gate 4 */}
               <div className="space-y-2">
-                <label className="text-ink-secondary uppercase font-mono text-xs block">
+                <label className="text-ink-secondary uppercase font-sans tabular-nums text-xs block">
                   Gate 4: High-Impact Red Folder Economic Calendar
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -571,7 +571,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                       }`}
                     >
                       <div className="font-semibold uppercase tracking-tight text-xs">{opt.label}</div>
-                      <div className="text-[11px] font-mono mt-1 text-ink-muted">
+                      <div className="text-[0.8125rem] font-sans tabular-nums mt-1 text-ink-muted">
                         {opt.desc}
                       </div>
                     </button>
@@ -583,10 +583,10 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
             {/* Result Output Card */}
             <div className="p-6 rounded-xl bg-surface-muted border border-ink/[0.08] space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono uppercase text-ink-muted">
+                <span className="text-xs font-sans tabular-nums uppercase text-ink-muted">
                   Calculated Output
                 </span>
-                <span className="text-xs font-mono text-teal bg-teal/10 px-2.5 py-0.5 rounded border border-teal/20">
+                <span className="text-xs font-sans tabular-nums text-teal bg-teal/10 px-2.5 py-0.5 rounded border border-teal/20">
                   CONFIDENCE: {Math.abs(biasScore)}%
                 </span>
               </div>
@@ -702,7 +702,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                     className="p-5 rounded-xl bg-surface-raised border border-ink/[0.06] space-y-2 hover:border-ink/20 transition-all"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="w-7 h-7 rounded-lg bg-brand/15 text-brand border border-brand/20 font-mono text-xs flex items-center justify-center font-semibold shrink-0">
+                      <span className="w-7 h-7 rounded-lg bg-brand/15 text-brand border border-brand/20 font-sans tabular-nums text-xs flex items-center justify-center font-semibold shrink-0">
                         0{item.num}
                       </span>
                       <span className="font-semibold text-ink text-sm">
@@ -740,10 +740,10 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
             {/* Modal Header */}
             <div className="sticky top-0 z-10 bg-surface border-b border-ink/[0.08] px-6 py-4 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded-full text-xs font-mono bg-brand/10 text-brand border border-brand/20">
+                <span className="px-2.5 py-0.5 rounded-full text-xs font-sans tabular-nums bg-brand/10 text-brand border border-brand/20">
                   LEC #{selectedLecture.lectureNumber}
                 </span>
-                <span className="text-xs font-mono text-ink-secondary uppercase">
+                <span className="text-xs font-sans tabular-nums text-ink-secondary uppercase">
                   {selectedLecture.playlistType.replace('_', ' ')}
                 </span>
               </div>
@@ -772,14 +772,14 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                 <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-ink">
                   {selectedLecture.title}
                 </h2>
-                <div className="mt-2 text-xs text-teal bg-teal/10 border border-teal/20 px-3 py-1.5 rounded-lg inline-block font-mono">
+                <div className="mt-2 text-xs text-teal bg-teal/10 border border-teal/20 px-3 py-1.5 rounded-lg inline-block font-sans tabular-nums">
                   {selectedLecture.playlistType.replace(/_/g, ' ').toUpperCase()}
                 </div>
               </div>
 
               {/* Takeaways */}
               <div className="space-y-2">
-                <h3 className="text-xs font-mono uppercase tracking-wider text-ink-secondary">
+                <h3 className="text-xs font-sans tabular-nums uppercase tracking-wider text-ink-secondary">
                   Key Institutional Takeaways
                 </h3>
                 <ul className="space-y-2 text-xs">
@@ -794,7 +794,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
 
               {/* Core Rules */}
               <div className="space-y-2">
-                <h3 className="text-xs font-mono uppercase tracking-wider text-ink-secondary">
+                <h3 className="text-xs font-sans tabular-nums uppercase tracking-wider text-ink-secondary">
                   Core Rules Taught in This Lecture
                 </h3>
                 <div className="space-y-2">
@@ -812,7 +812,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                   href={`https://www.youtube.com/watch?v=${selectedLecture.youtubeId}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand hover:bg-[#1d5545] text-on-brand text-xs font-mono uppercase tracking-wider transition-all cursor-pointer shadow-lg shadow-brand/20 on-accent"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand hover:bg-[#1d5545] text-on-brand text-xs font-sans tabular-nums uppercase tracking-wider transition-all cursor-pointer shadow-lg shadow-brand/20 on-accent"
                 >
                   <Youtube className="w-4 h-4" />
                   <span>Open on YouTube</span>
@@ -821,7 +821,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
 
                 <button
                   onClick={() => setSelectedLecture(null)}
-                  className="px-5 py-2.5 rounded-xl bg-ink/[0.04] hover:bg-ink/[0.08] text-ink-secondary hover:text-ink text-xs font-mono uppercase tracking-wider transition-colors cursor-pointer"
+                  className="px-5 py-2.5 rounded-xl bg-ink/[0.04] hover:bg-ink/[0.08] text-ink-secondary hover:text-ink text-xs font-sans tabular-nums uppercase tracking-wider transition-colors cursor-pointer"
                 >
                   Close Lesson
                 </button>

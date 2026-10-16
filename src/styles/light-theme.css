@@ -56,14 +56,6 @@ body { background: var(--color-canvas); color: var(--color-ink); }
 ::selection { background: #d6e8db; color: #173e30; }
 html .site-wash { background: radial-gradient(ellipse at 60% 0, #e5eddf80, transparent 65%); }
 html .predikt-grain { display: none; }
-html .predikt-hero-title, html .predikt-section-title {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-weight: 400;
-  line-height: 1.04;
-  letter-spacing: -.05em;
-}
-html .predikt-hero-title { font-size: clamp(3.7rem, 7.7vw, 7rem); }
-html .predikt-section-title { font-size: clamp(2.2rem, 4.7vw, 3.7rem); }
 html .btn-predikt-primary { background: var(--color-brand); color: var(--color-on-brand); }
 html .btn-predikt-primary:hover, html .btn-predikt-blue:hover { background: var(--color-brand-hover); color: var(--color-on-brand); box-shadow: 0 5px 16px rgb(37 101 82 / .12); }
 html .btn-predikt-secondary:hover { background: var(--color-surface-hover); }

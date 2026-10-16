@@ -82,7 +82,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
             <div>
               <h2 id="legal-modal-title" className="text-base sm:text-lg font-bold text-ink tracking-wide flex items-center gap-2">
                 Legal Compliance &amp; Disclosure
-                <span className="text-[11px] font-mono text-brand bg-brand/10 px-2 py-0.5 rounded border border-brand/30">
+                <span className="text-[0.8125rem] font-sans tabular-nums text-brand bg-brand/10 px-2 py-0.5 rounded border border-brand/30">
                   learnsmc.xyz
                 </span>
               </h2>
@@ -153,7 +153,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
 
           <button
             onClick={() => setActiveTab('adsense')}
-            className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-mono transition-all shrink-0 ml-auto ${
+            className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-sans tabular-nums transition-all shrink-0 ml-auto ${
               activeTab === 'adsense'
                 ? 'bg-teal/20 text-teal border border-teal/40'
                 : 'text-ink-muted hover:text-teal hover:bg-ink/[0.04]'
@@ -209,7 +209,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
                 <p>
                   The interactive Chart Laboratory, Backtesting Workbench, and Trade Simulator hosted on this platform utilize simulated historical or synthetic price quotes. Simulated results have inherent limitations because they do not reflect actual market execution, liquidity constraints, commissions, slippage, latency, or psychological pressures of live capital risk.
                 </p>
-                <div className="p-3.5 rounded-lg bg-ink/[0.03] border border-ink/[0.08] text-xs text-ink-secondary italic font-mono">
+                <div className="p-3.5 rounded-lg bg-ink/[0.03] border border-ink/[0.08] text-xs text-ink-secondary italic font-sans tabular-nums">
                   &quot;CFTC RULE 4.41: Hypothetical or simulated performance results have certain inherent limitations. Unlike an actual performance record, simulated results do not represent actual trading. Also, since the trades have not actually been executed, the results may have under- or over-compensated for the impact, if any, of certain market factors, such as lack of liquidity. No representation is being made that any account will or is likely to achieve profits or losses similar to those shown.&quot;
                 </div>
 
@@ -227,7 +227,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
           {activeTab === 'privacy' && (
             <div className="space-y-6">
               <div className="border-b border-ink/[0.08] pb-4">
-                <span className="text-[11px] font-mono text-teal uppercase tracking-wider">Privacy Standards</span>
+                <span className="text-[0.8125rem] font-sans tabular-nums text-teal uppercase tracking-wider">Privacy Standards</span>
                 <h3 className="text-base sm:text-lg font-bold text-ink mt-1">Privacy Policy &amp; Cookie Disclosure</h3>
                 <p className="text-xs text-ink-muted mt-1">Last Updated: October 2026 · learnsmc.xyz</p>
               </div>
@@ -256,7 +256,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
 
                 <h4 className="font-semibold text-ink text-sm pt-2">3. Local Storage &amp; Progress Tracking</h4>
                 <p>
-                  To provide an interactive digital textbook and curriculum experience, <strong>learnsmc.xyz</strong> saves your chapter completion progress, journal records and drafts, practice quiz answers and results, and study checklists locally within your browser&apos;s <code className="bg-ink/[0.06] px-1.5 py-0.5 rounded text-ink font-mono text-xs">localStorage</code>. This data never leaves your device and is not sold or shared with any third party.
+                  To provide an interactive digital textbook and curriculum experience, <strong>learnsmc.xyz</strong> saves your chapter completion progress, journal records and drafts, practice quiz answers and results, and study checklists locally within your browser&apos;s <code className="bg-ink/[0.06] px-1.5 py-0.5 rounded text-ink font-sans tabular-nums text-xs">localStorage</code>. This data never leaves your device and is not sold or shared with any third party.
                 </p>
 
                 <h4 className="font-semibold text-ink text-sm pt-2">4. Log Files and Web Analytics</h4>
@@ -276,7 +276,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
           {activeTab === 'terms' && (
             <div className="space-y-6">
               <div className="border-b border-ink/[0.08] pb-4">
-                <span className="text-[11px] font-mono text-violet uppercase tracking-wider">User Agreement</span>
+                <span className="text-[0.8125rem] font-sans tabular-nums text-violet uppercase tracking-wider">User Agreement</span>
                 <h3 className="text-base sm:text-lg font-bold text-ink mt-1">Terms of Service</h3>
                 <p className="text-xs text-ink-muted mt-1">Effective Date: October 2026 · learnsmc.xyz</p>
               </div>
@@ -309,7 +309,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
           {activeTab === 'about' && (
             <div className="space-y-6">
               <div className="border-b border-ink/[0.08] pb-4">
-                <span className="text-[11px] font-mono text-brand uppercase tracking-wider">Publisher Identity</span>
+                <span className="text-[0.8125rem] font-sans tabular-nums text-brand uppercase tracking-wider">Publisher Identity</span>
                 <h3 className="text-base sm:text-lg font-bold text-ink mt-1">About learnsmc.xyz &amp; Contact Information</h3>
                 <p className="text-xs text-ink-muted mt-1">Educational Platform for Inner Circle Trader &amp; Smart Money Concepts</p>
               </div>
@@ -321,13 +321,13 @@ export const LegalModal: React.FC<LegalModalProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
                   <div className="p-4 rounded-xl bg-ink/[0.03] border border-ink/[0.08]">
-                    <div className="text-xs text-ink-muted uppercase font-mono">Website Domain</div>
+                    <div className="text-xs text-ink-muted uppercase font-sans tabular-nums">Website Domain</div>
                     <div className="text-sm font-semibold text-ink mt-1">learnsmc.xyz</div>
                     <div className="text-xs text-teal mt-0.5">Active &amp; SSL Secured</div>
                   </div>
 
                   <div className="p-4 rounded-xl bg-ink/[0.03] border border-ink/[0.08]">
-                    <div className="text-xs text-ink-muted uppercase font-mono">Editorial Contact Email</div>
+                    <div className="text-xs text-ink-muted uppercase font-sans tabular-nums">Editorial Contact Email</div>
                     <a href="mailto:itsmuhammadumerijaz@gmail.com" className="text-sm font-semibold text-teal hover:underline mt-1 block">
                       itsmuhammadumerijaz@gmail.com
                     </a>
@@ -347,7 +347,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
           {activeTab === 'adsense' && (
             <div className="space-y-6">
               <div className="border-b border-ink/[0.08] pb-4">
-                <span className="text-[11px] font-mono text-teal uppercase tracking-wider">Monetization Infrastructure</span>
+                <span className="text-[0.8125rem] font-sans tabular-nums text-teal uppercase tracking-wider">Monetization Infrastructure</span>
                 <h3 className="text-base sm:text-lg font-bold text-ink mt-1">Google AdSense Integration &amp; ads.txt</h3>
                 <p className="text-xs text-ink-muted mt-1">Ready for publisher verification</p>
               </div>
@@ -362,7 +362,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
                       href="https://learnsmc.xyz/ads.txt" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-teal underline inline-flex items-center gap-1 font-mono"
+                      className="text-teal underline inline-flex items-center gap-1 font-sans tabular-nums"
                     >
                       https://learnsmc.xyz/ads.txt <ExternalLink className="w-3 h-3" />
                     </a>
@@ -372,17 +372,17 @@ export const LegalModal: React.FC<LegalModalProps> = ({
 
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono text-ink-muted uppercase">Current ads.txt Content:</span>
+                  <span className="text-xs font-sans tabular-nums text-ink-muted uppercase">Current ads.txt Content:</span>
                   <button
                     onClick={handleCopyAdsTxt}
-                    className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-ink/[0.06] hover:bg-ink/[0.12] text-xs font-mono text-teal transition-colors"
+                    className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-ink/[0.06] hover:bg-ink/[0.12] text-xs font-sans tabular-nums text-teal transition-colors"
                   >
                     {copiedAdsTxt ? <CheckCircle2 className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
                     <span>{copiedAdsTxt ? 'Copied!' : 'Copy Line'}</span>
                   </button>
                 </div>
 
-                <pre className="p-4 rounded-xl bg-surface-muted border border-ink/[0.1] text-xs font-mono text-teal overflow-x-auto select-all">
+                <pre className="p-4 rounded-xl bg-surface-muted border border-ink/[0.1] text-xs font-sans tabular-nums text-teal overflow-x-auto select-all">
                   google.com, pub-6985025314302607, DIRECT, f08c47fec0942fa0
                 </pre>
               </div>
@@ -394,13 +394,13 @@ export const LegalModal: React.FC<LegalModalProps> = ({
                     Log in to your <strong>Google AdSense</strong> console at <a href="https://adsense.google.com" target="_blank" rel="noopener noreferrer" className="text-teal underline">adsense.google.com</a>.
                   </li>
                   <li>
-                    Click <strong>Sites &gt; Add Site</strong>, and enter <code className="text-ink font-mono bg-ink/[0.08] px-1.5 py-0.5 rounded">learnsmc.xyz</code>.
+                    Click <strong>Sites &gt; Add Site</strong>, and enter <code className="text-ink font-sans tabular-nums bg-ink/[0.08] px-1.5 py-0.5 rounded">learnsmc.xyz</code>.
                   </li>
                   <li>
-                    Copy your assigned <strong>Publisher ID</strong> (e.g. <code className="text-ink font-mono bg-ink/[0.08] px-1 py-0.5 rounded">pub-1234567890123456</code>).
+                    Copy your assigned <strong>Publisher ID</strong> (e.g. <code className="text-ink font-sans tabular-nums bg-ink/[0.08] px-1 py-0.5 rounded">pub-1234567890123456</code>).
                   </li>
                   <li>
-                    Tell me your Publisher ID, and I will instantly replace the placeholder in your <code className="text-ink font-mono bg-ink/[0.08] px-1 py-0.5 rounded">ads.txt</code> and <code className="text-ink font-mono bg-ink/[0.08] px-1 py-0.5 rounded">index.html</code> verification code!
+                    Tell me your Publisher ID, and I will instantly replace the placeholder in your <code className="text-ink font-sans tabular-nums bg-ink/[0.08] px-1 py-0.5 rounded">ads.txt</code> and <code className="text-ink font-sans tabular-nums bg-ink/[0.08] px-1 py-0.5 rounded">index.html</code> verification code!
                   </li>
                 </ol>
               </div>
@@ -411,7 +411,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
 
         {/* Modal Footer */}
         <div className="flex items-center justify-between px-6 py-4 border-t border-ink/[0.08] bg-surface">
-          <div className="text-[11px] font-mono text-ink-muted flex items-center gap-2">
+          <div className="text-[0.8125rem] font-sans tabular-nums text-ink-muted flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400" />
             <span>Publisher information for learnsmc.xyz</span>
           </div>

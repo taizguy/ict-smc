@@ -22,8 +22,8 @@ export const ictConcepts: ICTConcept[] = [
     },
     explanationLadder: {
       level1Child: 'Think of an auction at a crowded market. If 50 buyers rush in and grab every $1 apple, the next seller will demand $1.50. Price rises because the cheap apples are gone, not by magic.',
-      level2Beginner: 'Price only changes when someone places an immediate market buy or sell order that eats up all the resting limit orders at the current price level.',
-      level3Trader: 'Stop orders become market orders when triggered. When clusters of stops are hit, they create sudden surges of aggressive volume that large players use to fill institutional sizes without moving price against themselves.',
+      level2Beginner: 'Execution prices can change as marketable orders consume available liquidity. Quotes can also change when orders are added, cancelled or repriced; the mechanism depends on the venue.',
+      level3Trader: 'Stop-market orders become marketable when triggered; stop-limit orders activate limit orders and may remain unfilled. When clusters of stops are hit, they create sudden surges of aggressive volume that large players use to fill institutional sizes without moving price against themselves.',
       level4Advanced: 'In fragmented liquidity environments (CFDs, decentralized crypto, multi-venue equities), smart routing and arbitrage algorithms constantly align price across electronic communication networks (ECNs).',
       level5ICTFramework: 'The Interbank Price Delivery Algorithm (IPDA) delivers price to either: (1) Rebalance an inefficiently delivered price range (Fair Value Gap), or (2) Run resting liquidity above old highs or below old lows.',
       whenItMatters: 'Always relevant as the foundational law of electronic auction markets.',
@@ -36,8 +36,8 @@ export const ictConcepts: ICTConcept[] = [
     identificationRules: [
       'Market orders consume resting liquidity and move the price.',
       'Limit orders provide liquidity and sit in the queue.',
-      'Spread = Best Ask - Best Bid; no execution occurs inside the spread without an aggressive order crossing it.',
-      'Last executed trade price becomes the displayed chart price.'
+      'Quoted spread = best ask minus best bid. Hidden liquidity, midpoint matching and venue rules can permit executions inside the displayed spread.',
+      'A chart may show last trade, bid, ask or mark prices; identify the feed convention.'
     ],
     validCharacteristics: [
       'High liquidity markets have tight spreads and deep order books.',
@@ -112,7 +112,7 @@ export const ictConcepts: ICTConcept[] = [
       level1Child: 'Imagine a game where everyone who hid their treasure on top of a hill has to surrender it if the king touches the peak. The king climbs up, grabs the treasure, and immediately leaves.',
       level2Beginner: 'Traders who shorted the market put their stop loss above the highest point. When price touches that point, their stops trigger as automatic buy orders.',
       level3Trader: 'Never buy into a clean high that has just been breached without seeing price accept above it with displacement; expect a sweep (turtle soup) followed by a sharp drop.',
-      level4Advanced: 'Combine HTF BSL with session timing: an Asian High swept during London Open (Judas Swing) provides high-probability short setups.',
+      level4Advanced: 'Combine HTF BSL with session timing: an Asian High swept during London Open (Judas Swing) provides model-based short setups.',
       level5ICTFramework: 'BSL is an active Draw on Liquidity (DOL) for the IPDA. Once BSL is purged, the algorithm re-prices downward toward internal Sell Side Liquidity or Discount PD arrays.',
       whenItMatters: 'When price approaches obvious equal highs (EQH), Previous Day High (PDH), or Session Highs during active Killzones.',
       whenToIgnore: 'When price is in a runaway HTF parabolic expansion and continually accepts above every high with massive displacement (trend continuation, not a sweep).'
@@ -374,7 +374,7 @@ export const ictConcepts: ICTConcept[] = [
       level1Child: 'Imagine a bowling ball thrown down a ramp. It rolls so fast and with so much power that it clears everything in its path without slowing down.',
       level2Beginner: 'Displacement looks like a series of long, strong candles of the same color that have almost no shadows (wicks) on the ends.',
       level3Trader: 'Do not trade during the displacement candle itself (fear of missing out). Wait for the displacement to finish, mark the Fair Value Gap it leaves behind, and wait for price to retrace.',
-      level4Advanced: 'Displacement must have purpose: displacement starting from a liquidity sweep or HTF PD Array is high probability; random displacement inside consolidation is low probability.',
+      level4Advanced: 'Displacement must have purpose: displacement starting from a liquidity sweep or HTF PD Array is model-based; random displacement inside consolidation is uncertain.',
       level5ICTFramework: 'Displacement represents the IPDA re-pricing price from one fair value quadrant to the next, leaving Fair Value Gaps that must subsequently be mitigated.',
       whenItMatters: 'Immediately following a liquidity sweep or at the retest of a major HTF Order Block.',
       whenToIgnore: 'During low-volume bank holidays or late NY PM session (after 15:30 NY time).'
@@ -615,7 +615,7 @@ export const ictConcepts: ICTConcept[] = [
       targetingLogic: ['Opposing swing highs/lows or liquidity pools.'],
       invalidationCriteria: 'Candle body closes beyond the outer FVG boundary.'
     },
-    invalidationCriteria: 'Candle body closing beyond the 50% CE level in the opposite direction of the trade.',
+    invalidationCriteria: 'For a tighter CE-based trade, a body close through the midpoint may end the thesis. This is a trade-specific stop rule, not full-zone FVG failure; full-zone failure uses the opposite outer boundary.',
     diagramType: 'fvg_formation',
     simplifiedExplanation: 'CE is the bullseye on a target. Hitting the bullseye is all the algorithm needs to confirm the price is rebalanced.'
   },
@@ -701,9 +701,9 @@ export const ictConcepts: ICTConcept[] = [
     tradeRules: {
       entryModels: ['Limit order at OB Open or Mean Threshold (MT 50%)'],
       targetingLogic: ['Opposing Liquidity Pool or opposing HTF PD Array'],
-      invalidationCriteria: 'Candle body closing past the Mean Threshold (MT 50%) or beyond the OB Low/High.'
+      invalidationCriteria: 'Specify a trade-specific stop first. A midpoint breach can invalidate a tighter trade; full-zone failure uses a decisive body close beyond the selected outer boundary.'
     },
-    invalidationCriteria: 'Candle body closing beyond the 50% Mean Threshold (MT) or breaching the extreme low/high of the Order Block.',
+    invalidationCriteria: 'A midpoint-based stop is a trade-specific convention. Distinguish it from a decisive body close beyond the full selected order-block zone.',
     diagramType: 'order_block',
     simplifiedExplanation: 'An Order Block is the footprints left in wet cement by a giant. When price walks back to that footprint, it steps right into the same solid ground.'
   },
@@ -721,7 +721,7 @@ export const ictConcepts: ICTConcept[] = [
       lectureReference: 'Core Content Month 5 - Video 1 & 2'
     },
     tripartiteView: {
-      ictTeaching: 'Michael emphasizes that Breaker Blocks are among the highest probability setups in the entire ICT universe because they involve trapped institutional orderflow and a complete liquidity purge.',
+      ictTeaching: 'Michael emphasizes that Breaker Blocks are among the framework-selected setups in the entire ICT universe because they involve trapped institutional orderflow and a complete liquidity purge.',
       observableMarketBehavior: 'Failed breakout retest: Traders who bought the breakout high are trapped when price crashes. When price returns to their entry, they sell to break even, creating strong resistance.',
       derivedInterpretation: 'Trapped liquidity mitigation: Market participants who accumulated positions at the swing failure point exit at breakeven during the pullback, fueling the reversal.'
     },
@@ -735,7 +735,7 @@ export const ictConcepts: ICTConcept[] = [
       whenToIgnore: 'When price broke the swing without sweeping any prior liquidity (this is a Mitigation block, not a Breaker).'
     },
     whyItExists: 'When price sweeps liquidity and aggressively reverses, traders who entered during the sweep are trapped in underwater positions. When price returns to this zone, their breakeven mitigation orders create powerful rejection.',
-    problemItSolves: 'Provides high-probability reversal entries with built-in trapped liquidity confirmation.',
+    problemItSolves: 'Provides model-based reversal entries with built-in trapped liquidity confirmation.',
     howItForms: 'Bearish Breaker: Low -> High -> Lower Low (SSL Swept) -> Price shoots up breaking the High. The down candle at the initial Low is the Bullish Breaker. Bearish is inverted: High -> Low -> Higher High (BSL swept) -> price crashes below Low.',
     chartAnatomy: 'Marked on the extreme opposing candle of the initial swing that was subsequently violated by displacement.',
     identificationRules: [
@@ -753,12 +753,12 @@ export const ictConcepts: ICTConcept[] = [
       'Did not sweep liquidity (made a failure swing / lower high instead).',
       'Slow drifting price action without displacement.'
     ],
-    howICTUsesIt: 'One of ICT\'s favorite high-probability execution PD Arrays, often combined with OTE (Optimal Trade Entry) Fibonacci levels.',
+    howICTUsesIt: 'One of ICT\'s favorite model-based execution PD Arrays, often combined with OTE (Optimal Trade Entry) Fibonacci levels.',
     commonMistakes: [
       'Confusing a Breaker Block with a Mitigation Block (Mitigation does NOT sweep liquidity).',
       'Placing entry on the wrong candle (must be the opposing candle at the swing pivot).'
     ],
-    advancedNuances: 'A Breaker Block overlapping with an unmitigated Fair Value Gap creates an ultra-high-probability confluence known as a "Breaker + FVG Matrix".',
+    advancedNuances: 'A Breaker Block overlapping with an unmitigated Fair Value Gap creates an model-based confluence known as a "Breaker + FVG Matrix".',
     prerequisites: ['Order Block', 'Liquidity Sweeps', 'Market Structure Shift'],
     relatedConcepts: ['Mitigation Block', 'Order Block', 'Fair Value Gap', '2022 Model'],
     bullishScenario: 'Price makes a High at 100, drops to 90 (sweeping SSL), then violently blasts through 100 to 110. The down candle at 90 is the Bullish Breaker. Price pulls back to 95-100 and rockets to 130.',
@@ -899,7 +899,7 @@ export const ictConcepts: ICTConcept[] = [
     tripartiteView: {
       ictTeaching: 'Michael released the 2022 model as a complete, self-contained index and forex trading system that anyone can execute mechanically without complex indicators.',
       observableMarketBehavior: 'Complete institutional orderflow delivery cycle: Liquidity capture -> Momentum impulse -> Structural break -> Imbalance rebalance -> Target expansion.',
-      derivedInterpretation: 'Systematic statistical trading edge: The model combines high-probability liquidity triggers with positive skew reward-to-risk (typically 1:2.5 to 1:4).'
+      derivedInterpretation: 'Systematic statistical trading edge: The model combines model-based liquidity triggers with positive skew reward-to-risk (typically 1:2.5 to 1:4).'
     },
     explanationLadder: {
       level1Child: '1. Wait for someone to touch the electric fence (Liquidity Sweep). 2. Watch everyone run away in fear (Displacement). 3. See the exit door open (MSS). 4. Step through the doorway calmly (FVG Entry). 5. Collect the prize at the finish line (Target).',
@@ -1163,7 +1163,7 @@ export const ictConcepts: ICTConcept[] = [
       lectureReference: 'Core Content Month 3 - Killzone Mechanics'
     },
     tripartiteView: {
-      ictTeaching: 'Michael teaches that time is more important than price. The algorithm operates on specific clock-based macros. A setup that appears outside a Killzone is low probability and should be completely ignored.',
+      ictTeaching: 'Michael teaches that time is more important than price. The algorithm operates on specific clock-based macros. A setup that appears outside a Killzone is uncertain and should be completely ignored.',
       observableMarketBehavior: 'Global banking settlement and market open schedules: London and New York banking desks process the overwhelming majority of global foreign exchange and futures volume, causing predictable volatility spikes.',
       derivedInterpretation: 'Time-of-day liquidity filtering: Systematic trading models filter out 80% of false signals simply by restricting trade execution to high-volume market open windows.'
     },
@@ -1176,7 +1176,7 @@ export const ictConcepts: ICTConcept[] = [
       whenItMatters: 'Every day during 02:00-05:00 AM NY and 08:30-11:00 AM NY.',
       whenToIgnore: 'During Asian consolidation (unless trading AUD/NZD/JPY pairs) and NY Lunch (12:00-13:00 NY).'
     },
-    whyItExists: 'Financial institutions only execute heavy order flow during their official operating desk hours.',
+    whyItExists: 'Activity varies by instrument, venue, session, holidays and news. Large orders can execute outside the listed study windows.',
     problemItSolves: 'Prevents traders from getting chopped to pieces during low-liquidity drift periods.',
     howItForms: 'Synchronized with the opening of London and New York financial exchanges and economic data releases (08:30 AM / 10:00 AM NY).',
     chartAnatomy: 'Vertical shaded bands highlighting Asian (19:00-00:00), London (02:00-05:00), and NY AM (08:30-11:00) with key highs/lows marked.',
@@ -1283,7 +1283,7 @@ export const ictConcepts: ICTConcept[] = [
       'Minor wick discrepancies on 5-second charts.',
       'Divergence between completely uncorrelated assets (e.g. Gold vs Crude Oil).'
     ],
-    howICTUsesIt: 'The definitive confirmation filter to upgrade a standard setup into a Tier-1 high-probability trade.',
+    howICTUsesIt: 'The definitive confirmation filter to upgrade a standard setup into a Tier-1 model-based trade.',
     commonMistakes: [
       'Shorting the strong asset that made the higher high instead of the weak asset that failed to make the high.',
       'Searching for SMT in the middle of a trend without any HTF liquidity context.'
@@ -1329,7 +1329,7 @@ export const ictConcepts: ICTConcept[] = [
     id: 'daily_bias_masood',
     name: '4-Pillar Daily Bias Engine (Abdullah Masood Model)',
     category: 'time_sessions',
-    shortDefinition: 'A mechanical, high-probability daily bias determination model utilizing Previous Day High/Low, the 00:00 NY Midnight Open, and HTF Draw on Liquidity.',
+    shortDefinition: 'A mechanical, model-based daily bias determination model utilizing Previous Day High/Low, the 00:00 NY Midnight Open, and HTF Draw on Liquidity.',
     source: {
       mentorship: 'Trader Abdullah Masood Daily Bias Mentorship',
       seriesOrMonth: '2025/2026 ICT Daily Bias Mentorship Series',
@@ -1372,7 +1372,7 @@ export const ictConcepts: ICTConcept[] = [
       'Trading when price is trapped in the middle of a multi-day HTF consolidation without clear DOL.',
       'Buying above the Midnight Open on a bullish day (chasing expensive prices).'
     ],
-    howICTUsesIt: 'Used to filter out 90% of lower-timeframe counter-trend noise and focus execution strictly on high-probability expansion days.',
+    howICTUsesIt: 'Used to filter out 90% of lower-timeframe counter-trend noise and focus execution strictly on model-based expansion days.',
     commonMistakes: [
       'Changing daily bias because a 1-minute candle dumped for 5 minutes.',
       'Ignoring high-impact economic news releases (CPI, NFP, FOMC) that override normal session timing.'
@@ -1382,7 +1382,7 @@ export const ictConcepts: ICTConcept[] = [
     relatedConcepts: ['Gold Legacy SMC', 'Inducement vs Liquidity', '2022 Mentorship Model'],
     bullishScenario: 'Daily DOL is a Weekly Buy-Side Liquidity pool at 1.1050. Price opens at 00:00 NY at 1.0950. London sweeps PDL down to 1.0920 (Discount below Midnight Open), prints a 5M MSS with displacement, and mitigates a 5M FVG at 1.0935. Price rallies straight to PDH at 1.1000 (+4.5R).',
     bearishScenario: 'Daily DOL is a Daily FVG low at 2,380. Price trades above 00:00 NY Open in London to sweep PDH at 2,415, forms a bearish breaker block, and dumps to PDL at 2,385 (+3R).',
-    counterexample: 'Price opens, immediately chops sideways around the Midnight Open with no displacement and no sweep of Asian extremes—a low-probability consolidation day.',
+    counterexample: 'Price opens, immediately chops sideways around the Midnight Open with no displacement and no sweep of Asian extremes—a uncertain consolidation day.',
     counterexamples: [
       {
         title: 'The "Mid-Range Chop" Bias Trap',
@@ -1550,7 +1550,7 @@ export const ictConcepts: ICTConcept[] = [
       'Entering at the first internal mini-order block before IDM has been touched.',
       'Assuming every minor wick is an institutional order block.'
     ],
-    howICTUsesIt: 'Filters out low-probability "retail SMC" setups and ensures entries are placed at institutional wholesale prices.',
+    howICTUsesIt: 'Filters out uncertain "retail SMC" setups and ensures entries are placed at institutional wholesale prices.',
     commonMistakes: [
       'Marking 10 different Order Blocks on a single chart and wondering why most get blown through.',
       'Confusing an Inducement sweep with a full trend reversal.'
@@ -2090,10 +2090,10 @@ export const ictConcepts: ICTConcept[] = [
     explanationLadder: {
       level1Child: 'Before an architect builds a house, they draw every room on paper. "From Vision to Execution" means you draw the winning path on your chart before you press any button.',
       level2Beginner: 'Never take a trade just because a green candle is moving fast. You must have three questions answered: Why is price moving (Narrative)? Where will it react (Price/PD Array)? When is it allowed to move (Time/Macro)?',
-      level3Trader: 'Execute only when HTF context (e.g. Daily FVG reaction), LTF structure (1M/5M Market Structure Shift with displacement), and an active Macro window (e.g. 09:50 - 10:10 AM EST) align simultaneously.',
+      level3Trader: 'Execute only when HTF context (e.g. Daily FVG reaction), LTF structure (1M/5M Market Structure Shift with displacement), and an active Macro window (e.g. 09:50 - 10:10 AM ET) align simultaneously.',
       level4Advanced: 'The 2026 protocol requires multi-timeframe nesting: 15-minute narrative framing, 5-minute PD array selection, and 1-minute execution on either the FVG boundary or 50% Consequent Encroachment.',
       level5ICTFramework: 'IPDA requires time-based trigger gates. When an economic calendar catalyst activates IPDA, price delivers systematically toward the predetermined open float pool.',
-      whenItMatters: 'Every single trading day during the New York morning session (09:30 - 11:00 AM EST) and afternoon session (13:30 - 15:30 PM EST).',
+      whenItMatters: 'Every single trading day during the New York morning session (09:30 - 11:00 AM ET) and afternoon session (13:30 - 15:30 PM ET).',
       whenToIgnore: 'Never. Taking an execution without a clear vision violates core ICT risk protocols.'
     },
     whyItExists: 'Human emotion leads to reactive trading, chasing green candles, and revenge trading. A systematic vision precedes consistent execution.',
@@ -2101,13 +2101,13 @@ export const ictConcepts: ICTConcept[] = [
     howItForms: [
       'Step 1: Identify the Higher Timeframe Draw on Liquidity (e.g., Previous Day High or unmitigated 1H FVG).',
       'Step 2: Map pre-market liquidity boundaries (Asian High/Low, London High/Low, NDOG 50% CE).',
-      'Step 3: Wait for session open (09:30 EST) and observe the Judas Swing sweep of liquidity.',
+      'Step 3: Wait for session open (09:30 ET) and observe the Judas Swing sweep of liquidity.',
       'Step 4: Confirm 1M or 5M Market Structure Shift with displacement leaving a clean Fair Value Gap during the 09:50 - 10:10 AM Macro.',
       'Step 5: Execute limit order at FVG boundary with stop loss safely anchored behind the structural sweep extreme.'
     ],
     chartAnatomy: 'A sequence showing HTF DOL target, pre-market Asian/London range sweep, 09:30 Judas swing, 09:50 macro displacement, and clean FVG retest leading to rapid target reach.',
     identificationRules: [
-      'Narrative must be defined before 09:30 AM EST open.',
+      'Narrative must be defined before 09:30 AM ET open.',
       'Time must match an active Macro Window (09:50-10:10, 10:50-11:10, 13:30-14:00, 15:00-15:30).',
       'Price must be entering an undiscounted/unmitigated institutional PD Array.',
       'Displacement must be verified by full candle bodies, not mere wicks.'
@@ -2213,7 +2213,7 @@ export const ictConcepts: ICTConcept[] = [
       lectureReference: 'ICT 2026 Market Commentary Series (March 08-09, 2026)'
     },
     tripartiteView: {
-      ictTeaching: 'The electronic futures market closes daily at 17:00 EST and reopens at 18:00 EST. The distance between the 17:00 close and 18:00 open is the NDOG. Even if overnight trading fills this price gap, the algorithm records its exact boundaries and 50% Consequent Encroachment (CE) as high-priority rebalancing pivots for the regular session.',
+      ictTeaching: 'The electronic futures market closes daily at 17:00 ET and reopens at 18:00 ET. The distance between the 17:00 close and 18:00 open is the NDOG. Even if overnight trading fills this price gap, the algorithm records its exact boundaries and 50% Consequent Encroachment (CE) as high-priority rebalancing pivots for the regular session.',
       observableMarketBehavior: 'Index futures repeatedly stall, bounce, or reverse with remarkable precision at the 50% midpoint of daily and weekly opening gaps during the 09:30 AM open and morning macros.',
       derivedInterpretation: 'Inter-session auction discontinuity serving as a persistent liquidity benchmark and equilibrium line.'
     },
@@ -2223,22 +2223,22 @@ export const ictConcepts: ICTConcept[] = [
       level3Trader: 'During the 09:30 AM Judas swing, price will often dump or rally directly into the 50% Consequent Encroachment of the NDOG. If candle bodies respect the 50% level, it acts as a launchpad for the morning trend.',
       level4Advanced: 'NWOGs (formed between Friday close and Sunday open) hold institutional memory for weeks. When multiple past NWOGs overlap with an intraday FVG, you have an A+ institutional support/resistance level.',
       level5ICTFramework: 'IPDA registers non-trading auction jumps as fair value voids. The algorithm routinely recalibrates quote streams to test whether the order book accepts prices above or below the NDOG/NWOG Consequent Encroachment.',
-      whenItMatters: 'Every trading day in index futures (NQ, ES, YM) during the pre-market (08:30) and morning session (09:30 - 11:00 EST).',
+      whenItMatters: 'Every trading day in index futures (NQ, ES, YM) during the pre-market (08:30) and morning session (09:30 - 11:00 ET).',
       whenToIgnore: 'In continuous 24/7 markets with no official settlement breaks (such as crypto assets).'
     },
     whyItExists: 'Settlement maintenance windows create discontinuous price jumps that institutional algorithms use as benchmark reference points.',
     problemItSolves: 'Provides precise, objective support and resistance levels without relying on arbitrary trendlines or indicators.',
     howItForms: [
-      'At 17:00 EST, note the exact closing price of the futures contract.',
-      'At 18:00 EST, note the exact re-opening price.',
+      'At 17:00 ET, note the exact closing price of the futures contract.',
+      'At 18:00 ET, note the exact re-opening price.',
       'Draw a horizontal box between the two prices: mark Upper Boundary, Lower Boundary, and 50% Consequent Encroachment (CE).',
       'During the 09:30 AM cash open or 09:50 AM macro, watch for price to test the 50% CE level.',
       'If candle bodies respect the CE and print a reversal displacement candle, enter in the direction of the rejection.'
     ],
-    chartAnatomy: 'Horizontal banded zone representing the 17:00-18:00 EST gap with a dashed line at 50% CE, showing multiple sharp rejections by candle wicks with bodies closing on the outside.',
+    chartAnatomy: 'Horizontal banded zone representing the 17:00-18:00 ET gap with a dashed line at 50% CE, showing multiple sharp rejections by candle wicks with bodies closing on the outside.',
     identificationRules: [
       'Must use CME futures charts set to New York local time.',
-      'Gap is measured strictly between 17:00 EST close and 18:00 EST open (NDOG) or Friday 17:00 to Sunday 18:00 (NWOG).',
+      'Gap is measured strictly between 17:00 ET close and 18:00 ET open (NDOG) or Friday 17:00 to Sunday 18:00 (NWOG).',
       'Calculate the exact 50% midpoint: (Gap High + Gap Low) / 2.'
     ],
     validCharacteristics: [
@@ -2341,15 +2341,15 @@ export const ictConcepts: ICTConcept[] = [
       lectureReference: 'Tapereading / Practice Session Final Hour ES (May 26, 2026)'
     },
     tripartiteView: {
-      ictTeaching: 'Retail traders give back all their morning gains between 12:00 and 13:00 EST. Professional trading requires understanding the discrete macro cycles of the second half of the day: the 11:50 AM Lunch Macro sweeps morning liquidity, the 13:30 PM macro activates the afternoon trend, and the 15:00 - 15:30 PM macro shapes the Daily candle into cash close.',
-      observableMarketBehavior: 'Volume and volatility drop drastically at 12:00 PM EST, creating choppy overlapping ranges. At 13:30 PM EST, institutional volume surges, and 15:00 PM initiates heavy index rebalancing.',
+      ictTeaching: 'Retail traders give back all their morning gains between 12:00 and 13:00 ET. Professional trading requires understanding the discrete macro cycles of the second half of the day: the 11:50 AM Lunch Macro sweeps morning liquidity, the 13:30 PM macro activates the afternoon trend, and the 15:00 - 15:30 PM macro shapes the Daily candle into cash close.',
+      observableMarketBehavior: 'Volume and volatility drop drastically at 12:00 PM ET, creating choppy overlapping ranges. At 13:30 PM ET, institutional volume surges, and 15:00 PM initiates heavy index rebalancing.',
       derivedInterpretation: 'Chronological order execution windows synchronized with institutional desk staffing and exchange closing auctions.'
     },
     explanationLadder: {
       level1Child: 'The market is like a school day: morning classes (09:30 - 11:00), lunch break where everyone plays (12:00 - 13:00), afternoon classes (13:30 - 15:00), and the final bell (15:00 - 16:00). You only trade when the teachers are in class.',
-      level2Beginner: 'Never take trades between 12:10 PM and 13:15 PM EST. Use the 11:50 AM macro to close morning trades, and wait for 13:30 PM to trade the afternoon move.',
+      level2Beginner: 'Never take trades between 12:10 PM and 13:15 PM ET. Use the 11:50 AM macro to close morning trades, and wait for 13:30 PM to trade the afternoon move.',
       level3Trader: 'In the afternoon session, identify the high and low established during lunch consolidation. The 13:30 - 14:00 PM macro will sweep one side and displace toward the opposite extreme of the daily range.',
-      level4Advanced: 'In the Final Hour (15:00 - 16:00 EST), tape reading requires evaluating the Daily candle profile. If the Daily candle is an expanding bullish trend, the final hour will rally into 16:00 PM to close at the high of the day.',
+      level4Advanced: 'In the Final Hour (15:00 - 16:00 ET), tape reading requires evaluating the Daily candle profile. If the Daily candle is an expanding bullish trend, the final hour will rally into 16:00 PM to close at the high of the day.',
       level5ICTFramework: 'IPDA settlement programs run on strict timer routines. The 15:00 - 15:30 macro delivers the required volume to achieve the designated Daily candle range projection.',
       whenItMatters: 'Every afternoon trading session in NQ, ES, and YM futures.',
       whenToIgnore: 'Early market close days (e.g. day before Thanksgiving, Christmas Eve) when afternoon sessions are illiquid.'
@@ -2357,15 +2357,15 @@ export const ictConcepts: ICTConcept[] = [
     whyItExists: 'Institutional market participants operate on fixed daily work schedules, mutual fund closing auctions, and exchange settlement procedures.',
     problemItSolves: 'Prevents giving back morning profits during choppy lunch hours and provides an actionable playbook for the second half of the trading day.',
     howItForms: [
-      '11:50 - 12:10 PM EST: Monitor the Lunch Macro for final morning runner profit extraction as price sweeps an extreme.',
-      '12:10 - 13:15 PM EST: Platform shutdown. No new positions permitted.',
-      '13:15 - 13:30 PM EST: Mark the Lunch High and Lunch Low.',
-      '13:30 - 14:00 PM EST: Watch for displacement breaking the lunch range and enter on a 1M/5M FVG retest.',
-      '15:00 - 15:30 PM EST: Execute the Final Hour tape reading setup aligned with the required Daily candle close.'
+      '11:50 - 12:10 PM ET: Monitor the Lunch Macro for final morning runner profit extraction as price sweeps an extreme.',
+      '12:10 - 13:15 PM ET: Platform shutdown. No new positions permitted.',
+      '13:15 - 13:30 PM ET: Mark the Lunch High and Lunch Low.',
+      '13:30 - 14:00 PM ET: Watch for displacement breaking the lunch range and enter on a 1M/5M FVG retest.',
+      '15:00 - 15:30 PM ET: Execute the Final Hour tape reading setup aligned with the required Daily candle close.'
     ],
     chartAnatomy: 'Intraday chart displaying the distinct colored session blocks: AM Session, Lunch Graveyard, PM Acceleration Macro, and Final Hour Settlement Run.',
     identificationRules: [
-      'Strict adherence to the clock: set alarms for 11:50, 12:10, 13:30, 15:00 EST.',
+      'Strict adherence to the clock: set alarms for 11:50, 12:10, 13:30, 15:00 ET.',
       'Lunch range must be clearly mapped before trading the 13:30 macro.',
       'Final hour trades must align with the Daily candle narrative.'
     ],
@@ -2374,27 +2374,27 @@ export const ictConcepts: ICTConcept[] = [
       'Consistent candle body expansion in the final 30 minutes into the cash close.'
     ],
     invalidCharacteristics: [
-      'Trying to scalp 1-minute candles between 12:15 and 13:00 EST.',
+      'Trying to scalp 1-minute candles between 12:15 and 13:00 ET.',
       'Fighting the Daily candle trend during the 15:00 PM settlement run.'
     ],
     howICTUsesIt: 'Used to achieve two distinct daily payout opportunities: the AM Trend Run and the PM Expansion Run, while protecting capital during midday.',
     commonMistakes: [
       'Revenge trading during lunch after a morning loss.',
-      'Holding afternoon trades through the 16:00 EST cash close when margins spike and spreads widen.'
+      'Holding afternoon trades through the 16:00 ET cash close when margins spike and spreads widen.'
     ],
     advancedNuances: 'On Federal Reserve FOMC days, the entire morning and lunch schedule is suspended; the only tradeable macro of the day is the 14:30 - 15:15 PM post-press-conference run.',
     prerequisites: ['killzones_sessions', 'po3_amd', 'market_structure_shift'],
     relatedConcepts: ['New York PM Session', 'Lunch Macro', 'Daily Candle Profiles', 'Settlement Hour'],
     bullishScenario: 'NQ trends up in the morning, then consolidates between 19,480 and 19,510 during lunch. At 13:32 PM, price dips to 19,475 sweeping lunch low into an NDOG CE, then prints a 5M displacement candle to 19,520. Long entered at 19,512 FVG. NQ expands to 19,590 into the 15:00-15:30 PM settlement macro (+78 points).',
     bearishScenario: 'ES rejects HTF 4H Bearish FVG in the morning. At 13:35 PM, the PM macro breaks below the lunch consolidation floor. Trader shorts the 1M FVG at 13:40 PM, riding the move down into the 15:15 PM settlement low (+25 points).',
-    counterexample: 'Taking 8 trades back-and-forth between 12:20 PM and 12:50 PM EST and losing 40 points in chop.',
+    counterexample: 'Taking 8 trades back-and-forth between 12:20 PM and 12:50 PM ET and losing 40 points in chop.',
     invalidationCriteria: 'Trading inside lunch hours or exceeding the daily risk allotment.',
     diagramType: 'session_timeline',
     simplifiedExplanation: 'Treat trading like a professional job: work the morning rush, take a real lunch break, come back for the 13:30 PM afternoon wave, and read the tape into the closing bell.'
   },
   {
     id: 'nfp_thursday_hrlr_and_event_volatility',
-    name: 'High Resistance Liquidity Runs (HRLR) on NFP Thursdays & Event Volatility',
+    name: 'High Resistance Liquidity Runs (HRLR) on Event Calendars & Volatility',
     category: 'liquidity',
     shortDefinition: 'The tactical protocol for navigating market maker withholding, Seek and Destroy profiles during major central bank events, and micro-contract precision.',
     source: {
@@ -2414,7 +2414,7 @@ export const ictConcepts: ICTConcept[] = [
       level1Child: 'Before a hurricane arrives, the sea gets rough and choppy with big waves going every which way. That is what the market does the day before a giant news announcement.',
       level2Beginner: 'On the Thursday before NFP (first Friday of the month), the market does not want to run far. It moves slowly and chops up traders. Expect hard conditions and do not expect big trends.',
       level3Trader: 'Identify whether the market is in a Low Resistance Liquidity Run (LRLR - clean one-way displacement) or High Resistance Liquidity Run (HRLR - choppy, dense opposing blocks). If HRLR, reduce target size to 10-15 points on NQ and trail aggressively.',
-      level4Advanced: 'During Seek and Destroy events (Jackson Hole, FOMC), the algorithm sweeps both sides of the initial balance. The only high-probability entry is waiting for the day after the speech, when the market reverts to clean LRLR.',
+      level4Advanced: 'During Seek and Destroy events (Jackson Hole, FOMC), the algorithm sweeps both sides of the initial balance. The only model-based entry is waiting for the day after the speech, when the market reverts to clean LRLR.',
       level5ICTFramework: 'IPDA holds price inside a statistical clearing corridor while awaiting the macroeconomic data input, preventing capital commitment before the fundamental repricing mandate.',
       whenItMatters: 'Every NFP week (specifically Thursday), FOMC statement days, and major central banker symposia (Jackson Hole).',
       whenToIgnore: 'Normal trend days with clean economic calendar schedules.'
@@ -2455,7 +2455,7 @@ export const ictConcepts: ICTConcept[] = [
     counterexample: 'Trading 5 NQ contracts on NFP Thursday at 11:30 AM, getting whipped on both sides, and blowing a $50,000 prop firm evaluation.',
     invalidationCriteria: 'Exceeding 0.25% risk or taking multiple discretionary trades in choppy market regimes.',
     diagramType: 'liquidity_sweep',
-    simplifiedExplanation: 'When storm flags are raised before a hurricane, smart sailors stay in the harbor. On NFP Thursdays and FOMC days, preserve your cash and let the amateurs get washed away.'
+    simplifiedExplanation: 'When storm flags are raised before a hurricane, smart sailors stay in the harbor. On event-related sessions and FOMC days, preserve your cash and let the amateurs get washed away.'
   },
   ...theinnercircletradersNewConcepts
 ];

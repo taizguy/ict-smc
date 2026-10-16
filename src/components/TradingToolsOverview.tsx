@@ -1,3 +1,5 @@
+import { masterclassCollection } from '../data/masterclassData';
+import { textbookChapters } from '../data/chaptersData';
 import React, { useState } from 'react';
 import { 
   BarChart2, 
@@ -44,10 +46,10 @@ export const WORKBENCH_TOOL_CATALOG: ToolCardData[] = [
     name: 'Masterclass Hub',
     category: 'reference',
     categoryLabel: 'Curriculum & Models',
-    badge: '34 Masterclasses',
+    badge: `${masterclassCollection.length} Lessons`,
     number: '01',
-    desc: 'Codified reference for 34 institutional masterclasses, 15 PD Arrays in hierarchical execution order, 5 Entry Models, and 5 Opening Range setups.',
-    features: ['15-tier PD Array hierarchy', '5 opening range setups', 'Turtle soup & unicorn execution models'],
+    desc: 'Independent study lessons covering PD arrays, entry frameworks, opening ranges, invalidation and risk assumptions.',
+    features: ['PD array study lessons', '5 opening range setups', 'Turtle soup & unicorn execution models'],
     icon: Flame,
     accentColor: '#FF7043'
   },
@@ -61,7 +63,7 @@ export const WORKBENCH_TOOL_CATALOG: ToolCardData[] = [
     badge: 'Trading Floor',
     number: '02',
     desc: 'High-definition candlestick auction engine with multi-layer ICT overlays. Replay 8-stage price delivery sequences across London and NY Killzones.',
-    features: ['8-stage candle sequence marking', 'Real-time FVG & OB detection', 'Macro liquidity sweep visualization'],
+    features: ['8-stage candle sequence marking', 'Authored FVG and block overlays', 'Macro liquidity sweep visualization'],
     icon: BarChart2,
     accentColor: '#55E6D1'
   },
@@ -74,8 +76,8 @@ export const WORKBENCH_TOOL_CATALOG: ToolCardData[] = [
     categoryLabel: 'Execution Engine',
     badge: 'Blind Testing',
     number: '03',
-    desc: 'Simulated market entry, limit order placement, and realistic fill algorithms with slippage modeling without risking live capital.',
-    features: ['Blind historical replay', 'Realistic limit fills & slippage', 'London & NY Killzone trade sessions'],
+    desc: 'Review a fictional trade plan, check its assumptions, and reconcile entry, stop, target and signed R.',
+    features: ['Authored illustrative scenarios', 'Transparent price and R arithmetic', 'No historical fills or outcome prediction'],
     icon: PlayCircle,
     accentColor: '#5865FF'
   },
@@ -88,8 +90,8 @@ export const WORKBENCH_TOOL_CATALOG: ToolCardData[] = [
     categoryLabel: 'Quantitative Testing',
     badge: 'Expectancy Lab',
     number: '04',
-    desc: 'Statistical expectancy, win-rates, profit factors, and equity drawdown curves to validate trading setups before committing live funds.',
-    features: ['Monte Carlo & drawdown modeling', 'Win-rate vs R:R expectancy matrix', 'Setup confluence grading'],
+    desc: 'Explore hypothetical independent trade outcomes with editable assumptions, reproducible paths, costs and calculated statistics.',
+    features: ['Monte Carlo & drawdown modeling', 'Win-rate vs R:R expectancy matrix', 'Exportable generated trade ledgers'],
     icon: Cpu,
     accentColor: '#38EF7D'
   },
@@ -103,21 +105,21 @@ export const WORKBENCH_TOOL_CATALOG: ToolCardData[] = [
     badge: "Trader's Audit",
     number: '05',
     desc: 'Institutional 7-point trade audit and rule validation logger. Keep track of setups, session timing, emotional adherence, and mistake patterns.',
-    features: ['7-point execution audit', 'Local storage persistence', 'Mistake classification & tags'],
+    features: ['7-point execution audit', 'Local storage persistence', 'Editable execution notes'],
     icon: BookMarked,
     accentColor: '#FFB300'
   },
   {
     id: 'graph',
-    slug: 'graph',
-    url: '/tools/graph/',
+    slug: 'knowledge-graph',
+    url: '/tools/knowledge-graph/',
     name: 'Knowledge Graph',
     category: 'reference',
     categoryLabel: 'Concept Map',
     badge: '10-Step Pipeline',
     number: '06',
     desc: 'Interactive node network mapping foundational market mechanics to intermediate structural shifts and advanced execution models.',
-    features: ['10-step institutional pipeline', 'Interactive causal dependencies', 'Direct jump to concept definitions'],
+    features: ['10-step institutional pipeline', 'Concept study relationships', 'Direct jump to concept definitions'],
     icon: GitFork,
     accentColor: '#8A72FF'
   },
@@ -151,28 +153,28 @@ export const WORKBENCH_TOOL_CATALOG: ToolCardData[] = [
   },
   {
     id: 'dashboard',
-    slug: 'dashboard',
-    url: '/tools/dashboard/',
+    slug: 'profile',
+    url: '/tools/profile/',
     name: 'Mastery Profile',
     category: 'performance',
     categoryLabel: 'Diagnostics & Badges',
-    badge: 'Certification',
+    badge: 'Practice',
     number: '09',
-    desc: 'Institutional competency scoring, curriculum progress tracker, diagnostic quizzes, and operator credential verification.',
-    features: ['57-chapter progress tracker', 'Knowledge quizzes & score diagnostics', 'Operator credential achievements'],
+    desc: 'View your saved lesson completion and take fixed practice quizzes with explanations. No professional credentials are awarded.',
+    features: [`${textbookChapters.length}-lesson completion overview`, 'Knowledge quizzes & score diagnostics', 'Device-local practice results'],
     icon: Award,
     accentColor: '#FFD700'
   },
   {
     id: 'ict_suite',
-    slug: 'ict-suite',
-    url: '/tools/ict-suite/',
+    slug: 'delivery-suite',
+    url: '/tools/delivery-suite/',
     name: 'ICT Delivery Suite',
     category: 'performance',
     categoryLabel: 'Calculators & Clock',
     badge: 'Macro Suite',
     number: '10',
-    desc: 'Official 62%-79% Optimal Trade Entry (OTE) calculator, Asian Judas range projection planner, 8 macro windows countdown clock, and roadmap.',
+    desc: 'Independent retracement calculator with instrument-aware sizing, range-multiple projections, New York study clock and saved checklist.',
     features: ['Optimal Trade Entry (OTE) levels', 'Asian Judas swing projection tool', '8 intraday macro execution windows'],
     icon: Compass,
     accentColor: '#1DE9B6'
@@ -225,13 +227,13 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
 
             <div className="space-y-3">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
-                Empirical Trading Laboratories <br className="hidden sm:inline" />
+                Trading Study Workbench <br className="hidden sm:inline" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#55E6D1] via-[#5865FF] to-[#A855F7]">
-                  Engineered for Deliberate Practice
+                  Reference, Practice and Review
                 </span>
               </h1>
               <p className="text-base sm:text-lg text-[#9BA1AE] max-w-2xl leading-relaxed">
-                Google and algorithmic markets cannot read guesswork. Master central limit order books, multi-timeframe fair value gaps, and execution models using real mechanical simulators and deep technical references.
+                Study definitions, work through illustrative chart exercises, and inspect hypothetical risk calculations. Each tool states its assumptions and limitations.
               </p>
             </div>
 
@@ -247,7 +249,7 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
                 <div className="text-xs font-mono uppercase text-[#656B78]">PD Arrays</div>
-                <div className="text-xl font-bold text-[#FF7043] font-mono mt-0.5">15 Tiers</div>
+                <div className="text-xl font-bold text-[#FF7043] font-mono mt-0.5">Reference studies</div>
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
                 <div className="text-xs font-mono uppercase text-[#656B78]">Macro Windows</div>
@@ -269,6 +271,7 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
           ].map((tab) => (
             <button
               key={tab.id}
+              aria-pressed={filterCategory === tab.id}
               onClick={() => setFilterCategory(tab.id as any)}
               className={`px-4 py-2 rounded-xl text-xs font-mono uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer ${
                 filterCategory === tab.id
@@ -337,14 +340,14 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
 
               {/* Action Button */}
               <div className="pt-6 mt-4 border-t border-white/[0.06]">
-                <button
-                  type="button"
-                  onClick={() => onSelectTool(tool.id, tool.url)}
+                <a
+
+                  href={tool.url}
                   className="w-full py-2.5 px-4 rounded-xl bg-white/[0.04] hover:bg-white/[0.10] border border-white/[0.08] hover:border-white/20 text-xs font-mono uppercase tracking-wider text-[#F5F7FA] hover:text-white flex items-center justify-center gap-2 transition-all cursor-pointer group/btn"
                 >
                   <span>Launch Module</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#55E6D1] group-hover/btn:translate-x-1 transition-transform" />
-                </button>
+                </a>
               </div>
             </div>
           );
@@ -361,14 +364,14 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
           Deliberate Practice Architecture: Why Simulation Precedes Live Capital Risk
         </h2>
         <p>
-          Electronic financial markets operate via central limit order books (CLOB) regulated by automated market-making algorithms. The LearnSMC Workbench and Laboratory Suite provides full-spectrum simulation tools so traders can isolate and test individual components of the delivery cycle without financial friction.
+          Exchange-traded products and fragmented OTC markets use different execution structures. The LearnSMC Workbench and Laboratory Suite provides independent educational tools so traders can isolate and test individual components of the delivery cycle without financial friction.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
           <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] space-y-2">
             <h4 className="font-semibold text-white font-mono text-xs uppercase text-[#55E6D1]">1. Execution &amp; Replay</h4>
             <p className="text-xs text-[#9BA1AE] leading-relaxed">
-              Step through historical candlestick delivery in the Chart Lab, blind-test intraday setups with realistic slippage in the Trade Simulator, and verify sample sizes in the Backtest Lab.
+              Step through authored illustrative candle sequences in the Chart Lab, review fictional trade-plan assumptions in the Trade Simulator, and inspect generated hypothetical outcomes in the Expectancy Lab.
             </p>
           </div>
           <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] space-y-2">

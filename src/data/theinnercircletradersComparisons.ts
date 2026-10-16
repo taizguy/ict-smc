@@ -44,7 +44,7 @@ export const theinnercircletradersNewComparisons: ConceptComparison[] = [
         'Functions as a classic support-becomes-resistance flip',
         'Supported by HTF directional alignment in the direction of the inversion',
         'Candle bodies respect the outer edge or 50% Consequent Encroachment of the broken gap',
-        'Provides high-probability trend-continuation entries during active macros'
+        'Provides model-based trend-continuation entries during active macros'
       ],
       idealCondition: 'A bearish FVG is sliced upward during a bullish morning trend; price retests the top of the box and launches upward.'
     },
@@ -110,7 +110,7 @@ export const theinnercircletradersNewComparisons: ConceptComparison[] = [
         'Provides mechanical entry, stop, and take-profit targets across the reference range',
         'Operationalizes PO3 into concrete, objective horizontal lines on the chart'
       ],
-      idealCondition: 'Drawing lines at Asian High and Low at 01:55 EST, watching 02:30 EST sweep the Low, and targeting the High.'
+      idealCondition: 'Drawing lines at Asian High and Low at 01:55 ET, watching 02:30 ET sweep the Low, and targeting the High.'
     },
     conceptB: {
       name: 'Power of Three (PO3 / AMD)',
@@ -121,7 +121,7 @@ export const theinnercircletradersNewComparisons: ConceptComparison[] = [
         'Explains WHY price fakes out in the opposite direction of the daily trend after the open',
         'Broad conceptual template rather than a specific session-line tool'
       ],
-      idealCondition: 'Daily open at 00:00 EST, morning Judas manipulation lower to form Low of Day, afternoon expansion to High of Day.'
+      idealCondition: 'Daily open at 00:00 ET, morning Judas manipulation lower to form Low of Day, afternoon expansion to High of Day.'
     },
     keyDifference: 'PO3 is the universal algorithmic philosophy (AMD cycle); CRT is the specific session-by-session tactical execution framework that puts exact price levels on the PO3 manipulation and distribution phases.',
     commonConfusion: 'Trying to trade PO3 without reference boundaries. CRT provides the exact lines where PO3 manipulation begins and ends.',
@@ -167,29 +167,29 @@ export const theinnercircletradersNewComparisons: ConceptComparison[] = [
     title: 'Silver Bullet 60-Minute Window vs. 3 AM London Open Execution',
     conceptA: {
       name: 'ICT Silver Bullet Strategy',
-      summary: 'A strictly mechanical 60-minute execution window (03:00-04:00, 10:00-11:00, 14:00-15:00 EST) designed to harvest a fixed 10-15 handle delivery off the First Presented FVG.',
+      summary: 'A strictly mechanical 60-minute execution window (03:00-04:00, 10:00-11:00, 14:00-15:00 ET) designed to harvest a fixed 10-15 handle delivery off the First Presented FVG.',
       keyPoints: [
         'Strict 60-minute time constraint: trade must set up and trigger within the hour',
         'Rules-based targeting: 10-15 handles on NQ/ES, 15-20 pips on EUR/GBP',
         'Executes exclusively on the First Presented FVG following liquidity interaction',
         'Designed for prop firm traders needing repeatable, mechanical daily expectancy'
       ],
-      idealCondition: '10:05 AM EST prints a 5-minute MSS and FVG on NQ; trader enters, hits +15 handles, and closes terminal by 10:30 AM.'
+      idealCondition: '10:05 AM ET prints a 5-minute MSS and FVG on NQ; trader enters, hits +15 handles, and closes terminal by 10:30 AM.'
     },
     conceptB: {
       name: 'Classical 3 AM London Open Execution',
       summary: 'A multi-hour session profile targeting the creation of the High or Low of the Day through the London Judas Swing.',
       keyPoints: [
-        'Broad 3-hour window (02:00-05:00 EST) capturing the full European expansion leg',
+        'Broad 3-hour window (02:00-05:00 ET) capturing the full European expansion leg',
         'Targets multi-session liquidity: Asian High/Low, Previous Day High/Low, or HTF targets',
         'Captures 40 to 100+ pips by holding through minor intraday pullbacks',
         'Requires endurance and flexibility across multiple algorithmic macro windows'
       ],
-      idealCondition: 'London open sweeps Asian low at 02:40 EST; trader holds long through 05:00 EST London close for a +65 pip day.'
+      idealCondition: 'London open sweeps Asian low at 02:40 ET; trader holds long through 05:00 ET London close for a +65 pip day.'
     },
     keyDifference: 'Silver Bullet is a surgical 60-minute, fixed-target scalp (10-15 handles); Classical London Open is a full session swing targeting the daily high/low formation (40-100 pips).',
     commonConfusion: 'Holding a Silver Bullet trade for 4 hours hoping for a massive runner, or conversely closing a London Open swing after only 10 handles.',
-    decisionRule: 'Trade the London Silver Bullet (03:00-04:00 EST) for quick, stress-free morning profits; trade the full London Open session when HTF bias offers massive expansion potential.',
-    diagramSnippet: 'Silver Bullet: [03:00 ──> 04:00 EST: 10-15 Handles Banked] | London Open: [02:00 ──> 05:00 EST: High/Low of Day Captured]'
+    decisionRule: 'Trade the London Silver Bullet (03:00-04:00 ET) for quick, stress-free morning profits; trade the full London Open session when HTF bias offers massive expansion potential.',
+    diagramSnippet: 'Silver Bullet: [03:00 ──> 04:00 ET: 10-15 Handles Banked] | London Open: [02:00 ──> 05:00 ET: High/Low of Day Captured]'
   }
 ];

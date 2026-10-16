@@ -1,4 +1,5 @@
 import { toolStudyGuide } from '../src/utils/toolStudyGuides';
+import { correctToolDocument } from './tools-content';
 import { textbookChapters } from '../src/data/chaptersData';
 import { masoodPlaylistsData } from '../src/data/masoodData';
 import { contextualFragments, relatedChapters } from '../src/utils/contextualLinks';
@@ -128,6 +129,7 @@ export function prepareRoutes(routes: RouteMeta[]) {
 
 export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   const path = new URL(r.canonical).pathname;
+  correctToolDocument(r, path);
   const chapterCount = textbookChapters.length;
   const lectureCount = masoodPlaylistsData.reduce((sum, p) => sum + p.lectures.length, 0);
   const counts = (text: string) => text.replace(/\b57(?=[- ](?:chapter|Chapter|CHAPTER))/g, String(chapterCount)).replace(/\b52(?=[- ](?:Abdullah|lecture|Lecture|LECTURE|Masterclass|masterclass))/g, String(lectureCount));

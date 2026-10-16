@@ -1,3 +1,4 @@
+import { masterclassCollection } from '../data/masterclassData';
 import { toolStudyGuide } from '../utils/toolStudyGuides';
 import { FinancialDisclaimer } from './FinancialDisclaimer';
 import React, { useState, useEffect } from 'react';
@@ -106,8 +107,8 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
   }, [initialTool]);
 
   const handleSelectTool = (toolId: TradingToolId | 'overview', customUrl?: string) => {
-    setActiveTool(toolId);
-    if (onToolChange) onToolChange(toolId, customUrl);
+    if (onToolChange) { onToolChange(toolId, customUrl); return; }
+    window.location.assign(customUrl || `/tools/${tools.find(t => t.id === toolId)?.slug || toolId}/`);
   };
 
   const tools = [
@@ -115,8 +116,8 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
       id: 'masterclass' as const,
       slug: 'masterclass',
       name: 'Masterclass Hub',
-      badge: '34 Masterclasses',
-      desc: '34 Masterclasses, 15 PD Arrays in hierarchy, 5 Entry Models & 5 Opening Ranges',
+      badge: `${masterclassCollection.length} Lessons`,
+      desc: 'Model definitions, PD arrays and reference lessons',
       icon: Flame
     },
     {
@@ -180,7 +181,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
       slug: 'profile',
       name: 'Mastery Profile',
       badge: 'Diagnostics',
-      desc: 'Assessments, diagnostic quizzes, and operator credentials',
+      desc: 'Device-local lesson completion and practice quizzes',
       icon: Award
     },
     {
@@ -188,7 +189,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
       slug: 'delivery-suite',
       name: 'ICT Delivery Suite',
       badge: 'Tools & Macros',
-      desc: 'Official OTE calculator, Asian Judas planner, 8 macro windows clock & 5-phase roadmap',
+      desc: 'Independent retracement calculator, range extensions, New York clock and study checklist',
       icon: Compass
     }
   ];
@@ -207,85 +208,21 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
   return (
     <div className="space-y-8 sm:space-y-12 pb-20 text-[#F5F7FA]">
       
-      {/* Workbench Control Panel */}
-      <ScrollReveal y={20}>
-        <section className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-8 space-y-6">
-          
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/[0.07] pb-6">
-            <div className="flex items-center gap-4">
-              <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0 text-[#5865FF]">
-                <Wrench className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#55E6D1]">
-                    WORKBENCH // 03
-                  </span>
-                  <span className="text-white/20">·</span>
-                  <span className="text-xs font-mono text-[#9BA1AE] uppercase">
-                    ACTIVE: {currentToolMeta.name}
-                  </span>
-                </div>
-                <h1 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F5F7FA] mt-0.5">{document.querySelector('meta[name="learnsmc-heading"]')?.getAttribute('content') || currentToolMeta.name}</h1>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2.5">
-              <button
-                type="button"
-                onClick={() => handleSelectTool('overview', '/tools/')}
-                className="px-3.5 py-1.5 bg-white/[0.04] hover:bg-white/[0.08] text-[#F5F7FA] text-xs font-mono rounded-lg border border-white/[0.08] hover:border-white/20 flex items-center gap-1.5 transition-all cursor-pointer"
-              >
-                <ArrowLeft className="w-3.5 h-3.5 text-[#55E6D1]" />
-                <span>All 10 Modules Overview</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Tool Selector Matrix */}
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
-            {tools.map((tool, idx) => {
-              const Icon = tool.icon;
-              const isActive = activeTool === tool.id;
-
-              return (
-                <button
-                  key={tool.id}
-                  onClick={() => handleSelectTool(tool.id, `/tools/${tool.slug}/`)}
-                  className={`p-3.5 rounded-xl border text-left transition-all cursor-pointer flex flex-col justify-between ${
-                    isActive
-                      ? 'bg-white/[0.10] border-white/20 text-[#F5F7FA] shadow-sm'
-                      : 'bg-white/[0.02] border-white/[0.06] hover:bg-white/[0.05] text-[#9BA1AE] hover:text-[#F5F7FA]'
-                  }`}
-                >
-                  <div className="flex items-center justify-between w-full mb-3">
-                    <div className={`w-7 h-7 rounded-lg flex items-center justify-center ${
-                      isActive ? 'bg-white/[0.12] text-[#F5F7FA]' : 'bg-white/[0.04] text-[#9BA1AE]'
-                    }`}>
-                      <Icon className="w-3.5 h-3.5" />
-                    </div>
-                    <span className="text-[10px] font-mono text-[#656B78]">
-                      0{idx + 1}
-                    </span>
-                  </div>
-
-                  <div>
-                    <div className="text-xs font-medium tracking-tight truncate">
-                      {tool.name}
-                    </div>
-                    <div className="text-[10px] font-mono uppercase tracking-wider text-[#656B78] truncate mt-0.5">
-                      {tool.badge}
-                    </div>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-        </section>
-      </ScrollReveal>
+      <header className="rounded-2xl border border-white/10 bg-[#11141B] p-4 sm:p-5 space-y-3">
+        <div className="flex items-center justify-between gap-4 text-sm">
+          <a href="/tools/" className="underline text-[#55E6D1]">All tools</a>
+          <details className="relative">
+            <summary className="cursor-pointer rounded-lg border border-white/20 px-3 py-2">Switch tool</summary>
+            <nav aria-label="Switch tool" className="absolute right-0 top-full mt-2 z-30 flex flex-col gap-2 w-64 max-w-[80vw] max-h-[65vh] overflow-y-auto rounded-xl border border-white/20 bg-[#11141B] p-3 shadow-2xl">
+              {tools.map(tool => <a key={tool.id} href={`/tools/${tool.slug}/`} aria-current={activeTool === tool.id ? 'page' : undefined} className="rounded-lg border border-white/15 px-3 py-2 text-sm hover:bg-white/10">{tool.name}</a>)}
+            </nav>
+          </details>
+        </div>
+        <h1 className="text-xl sm:text-2xl font-semibold tracking-tight">{document.querySelector('meta[name="learnsmc-heading"]')?.getAttribute('content') || currentToolMeta.name}</h1>
+      </header>
 
       {/* Render Active Tool Content */}
-      <ScrollReveal y={25}>
+      <div>
         <div className="predikt-workbench-body">
           {activeTool === 'masterclass' && (
             <MasterclassWorkbench 
@@ -358,7 +295,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
             />
           )}
         </div>
-      </ScrollReveal>
+      </div>
 
       {(() => { const guide = toolStudyGuide(window.location.pathname); return guide ? <section className="space-y-3 text-sm leading-relaxed"><h2 className="text-xl font-semibold">{guide.title}</h2>{guide.paragraphs.map(p => <p key={p}>{p}</p>)}<p><a href="/curriculum/" className="underline">Study the curriculum</a> and <a href="/about/#editorial-policy" className="underline">editorial policy</a>.</p><FinancialDisclaimer /></section> : null; })()}
     </div>

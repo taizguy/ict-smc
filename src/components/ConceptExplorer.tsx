@@ -1,3 +1,4 @@
+import { ToolContentNotice } from './ToolContentNotice';
 import React, { useState, useEffect } from 'react';
 import { ictConcepts } from '../data/conceptsData';
 import { masterclassCollection } from '../data/masterclassData';
@@ -76,7 +77,8 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
       const match = getConceptBySlugOrId(initialConceptId);
       if (match) return match.id;
     }
-    return ictConcepts[0].id;
+    const category = getCategoryBySlugOrId(initialCategory || '');
+    return (ictConcepts.find(c => c.category === category?.id) || ictConcepts[0]).id;
   });
 
   // Deep sub-concept state
@@ -143,8 +145,6 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
 
   // Client-side dynamic routing handlers
   const handleSelectCategory = (catId: string) => {
-    setSelectedCategory(catId);
-    setActiveSubConcept(null);
     if (typeof window !== 'undefined') {
       const catObj = getCategoryBySlugOrId(catId);
       const targetPath = catId === 'all' ? getGlossaryRootPath() : getGlossaryCategoryPath(catObj?.slug || catId);
@@ -153,8 +153,6 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
   };
 
   const handleSelectConcept = (conceptId: string) => {
-    setSelectedConceptId(conceptId);
-    setActiveSubConcept(null);
     const mapping = getConceptBySlugOrId(conceptId);
     const catObj = getCategoryBySlugOrId(mapping?.category || selectedCategory);
     const catSlug = catObj?.slug || 'foundations';
@@ -164,12 +162,10 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
     if (typeof window !== 'undefined') {
       window.location.assign(targetPath);
     }
-    if (onSelectConcept) onSelectConcept(conceptId, conceptSlug);
+
   };
 
   const handleSelectSubConcept = (subConcept: DeepSubConceptInfo) => {
-    setActiveSubConcept(subConcept);
-    setSelectedConceptId(subConcept.parentConceptId);
     const targetPath = getGlossarySubConceptPath(subConcept.categorySlug, subConcept.slug);
 
     if (typeof window !== 'undefined') {
@@ -230,7 +226,6 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
       <div className="flex items-center gap-2 text-xs font-mono text-[#9BA1AE] px-1">
         <a 
           href="/tools/" 
-          onClick={(e) => { e.preventDefault(); if (typeof window !== 'undefined') { window.location.assign('/tools/'); window.dispatchEvent(new PopStateEvent('popstate')); }}}
           className="hover:text-white transition-colors"
         >
           Workbench
@@ -238,7 +233,6 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
         <ChevronRight className="w-3.5 h-3.5 text-[#656B78]" />
         <a 
           href="/tools/glossary/" 
-          onClick={(e) => { e.preventDefault(); handleSelectCategory('all'); }}
           className={`hover:text-white transition-colors ${selectedCategory === 'all' && !activeSubConcept ? 'text-[#55E6D1] font-semibold' : ''}`}
         >
           Glossary
@@ -257,14 +251,16 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
         </span>
       </div>
 
+      <ToolContentNotice />
       {/* Category Pills Header with Scroller */}
       <div className="bg-[#11141B] border border-white/[0.08] rounded-xl p-3">
         <BauhausNavScroller>
           {categories.map((cat) => (
-            <button
+            <a
               key={cat.id}
-              type="button"
-              onClick={() => handleSelectCategory(cat.id)}
+
+              aria-current={selectedCategory === cat.id ? 'page' : undefined}
+              href={cat.id === 'all' ? '/tools/glossary/' : getGlossaryCategoryPath(cat.slug)}
               className={`px-3.5 py-1.5 text-xs font-mono uppercase whitespace-nowrap transition-all rounded-lg border cursor-pointer shrink-0 ${
                 selectedCategory === cat.id
                   ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20'
@@ -272,7 +268,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
               }`}
             >
               {cat.label}
-            </button>
+            </a>
           ))}
         </BauhausNavScroller>
       </div>
@@ -292,10 +288,10 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
             {availableSubConcepts.map((sub) => {
               const isSubActive = activeSubConcept?.id === sub.id;
               return (
-                <button
+                <a
                   key={sub.id}
-                  type="button"
-                  onClick={() => handleSelectSubConcept(sub)}
+
+                  href={getGlossarySubConceptPath(sub.categorySlug, sub.slug)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all flex items-center gap-1.5 cursor-pointer border ${
                     isSubActive
                       ? 'bg-[#5865FF]/25 border-[#5865FF] text-white shadow-sm'
@@ -307,7 +303,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                   <span className="text-[9px] uppercase px-1.5 py-0.2 rounded bg-black/30 text-[#55E6D1]">
                     Sub-Concept
                   </span>
-                </button>
+                </a>
               );
             })}
           </div>
@@ -332,11 +328,11 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
               {filteredConcepts.map((c) => {
                 const isSelected = c.id === selectedConceptId && !activeSubConcept;
                 return (
-                  <button
-                    key={c.id}
-                    type="button"
-                    onClick={() => handleSelectConcept(c.id)}
-                    className={`w-full text-left p-3 text-xs font-mono transition-all space-y-1.5 rounded-xl border cursor-pointer ${
+                  <a
+                    key={c.id} aria-current={isSelected ? 'page' : undefined}
+
+                    href={(() => { const mapping = getConceptBySlugOrId(c.id); return mapping ? getGlossaryConceptPath(mapping.slug, mapping.categorySlug) : '/tools/glossary/'; })()}
+                    className={`block w-full text-left p-3 text-xs font-mono transition-all space-y-1.5 rounded-xl border cursor-pointer ${
                       isSelected
                         ? 'bg-white/[0.10] border-white/20 text-[#F5F7FA]'
                         : 'bg-white/[0.02] border-white/[0.06] text-[#9BA1AE] hover:text-[#F5F7FA] hover:bg-white/[0.05]'
@@ -351,7 +347,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                     <p className="text-[11px] text-[#9BA1AE] line-clamp-1 font-normal">
                       {c.shortDefinition}
                     </p>
-                  </button>
+                  </a>
                 );
               })}
             </div>
@@ -373,12 +369,12 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                   <span className="text-white/20">/</span>
                   <span className="text-[#9BA1AE] uppercase">{activeSubConcept.categorySlug}</span>
                 </div>
-                <button
-                  onClick={() => setActiveSubConcept(null)}
+                <a
+                  href={(() => { const c = getConceptBySlugOrId(concept.id); return c ? getGlossaryConceptPath(c.slug, c.categorySlug) : '/tools/glossary/'; })()}
                   className="text-[11px] text-[#9BA1AE] hover:text-white underline font-mono cursor-pointer"
                 >
                   Return to Main Concept
-                </button>
+                </a>
               </div>
 
               <div className="space-y-2">
@@ -451,7 +447,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
               <div className="flex items-center gap-2">
                 <button
                   type="button"
-                  onClick={() => setActiveLayerTab('ladder')}
+                  aria-pressed={activeLayerTab === 'ladder'} onClick={() => setActiveLayerTab('ladder')}
                   className="btn-predikt-secondary text-xs py-1 px-3"
                 >
                   <GraduationCap className="w-3.5 h-3.5" />
@@ -459,7 +455,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                 </button>
                 <button
                   type="button"
-                  onClick={() => setActiveLayerTab('tripartite')}
+                  aria-pressed={activeLayerTab === 'tripartite'} onClick={() => setActiveLayerTab('tripartite')}
                   className="btn-predikt-primary text-xs py-1 px-3"
                 >
                   <Cpu className="w-3.5 h-3.5" />
@@ -516,7 +512,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                     <button
                       key={tab.id}
                       type="button"
-                      onClick={() => setActiveLayerTab(tab.id as any)}
+                      aria-pressed={activeLayerTab === tab.id as any} onClick={() => setActiveLayerTab(tab.id as any)}
                       className={`px-3.5 py-1.5 text-xs font-mono uppercase flex items-center gap-1.5 transition-all rounded-lg border cursor-pointer shrink-0 ${
                         isActive
                           ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20'
@@ -622,7 +618,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                     <button
                       key={t.id}
                       type="button"
-                      onClick={() => setActiveTripartiteTab(t.id as any)}
+                      aria-pressed={activeTripartiteTab === t.id} onClick={() => setActiveTripartiteTab(t.id as any)}
                       className={`p-3 text-xs font-mono text-center rounded-xl border transition-all cursor-pointer ${
                         activeTripartiteTab === t.id
                           ? 'bg-white/[0.10] border-white/20 text-[#F5F7FA] font-semibold'
@@ -680,7 +676,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                   <button
                     key={item.level}
                     type="button"
-                    onClick={() => setLadderLevel(item.level as any)}
+                    aria-pressed={ladderLevel === item.level} onClick={() => setLadderLevel(item.level as any)}
                     className={`p-2.5 rounded-xl border text-center font-mono text-xs transition-all cursor-pointer ${
                       ladderLevel === item.level
                         ? 'bg-[#5865FF]/20 border-[#5865FF] text-[#F5F7FA] font-semibold'
@@ -920,81 +916,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
         </div>
       </div>
 
-      {/* Static Semantic HTML Documentation Block (Indexable by Googlebot & Search Engines) */}
-      <article className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-8 space-y-6 text-[#F5F7FA]">
-        <header className="border-b border-white/[0.07] pb-5">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="w-2 h-2 rounded-full bg-[#8A72FF]" />
-            <span className="text-[10px] font-mono uppercase tracking-[0.16em] text-[#8A72FF]">
-              DOCUMENTATION // ENCYCLOPEDIA CODEX
-            </span>
-          </div>
-          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F5F7FA]">
-            Codified Encyclopedia of Smart Money Concepts (SMC) &amp; ICT Mechanics
-          </h2>
-          <p className="text-sm text-[#9BA1AE] mt-1">
-            Authoritative institutional reference defining Fair Value Gaps, Order Blocks, Liquidity Pools, and algorithmic execution models.
-          </p>
-        </header>
 
-        {/* Section 1: Core Definitions */}
-        <section className="space-y-3">
-          <h3 className="text-base sm:text-lg font-semibold text-[#55E6D1] flex items-center gap-2">
-            <BookOpen className="w-4 h-4 text-[#55E6D1]" />
-            1. Definitive Terminology &amp; Mathematical Specifications
-          </h3>
-          <dl className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-[#9BA1AE]">
-            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
-              <dt className="text-[#F5F7FA] font-bold font-mono text-xs uppercase mb-1">Fair Value Gap (FVG)</dt>
-              <dd className="m-0 leading-relaxed">
-                A price imbalance created across a three-candle sequence where the extreme of Candle 1 fails to overlap the opposite extreme of Candle 3, leaving un-offered liquidity.
-              </dd>
-            </div>
-            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
-              <dt className="text-[#F5F7FA] font-bold font-mono text-xs uppercase mb-1">Order Block (OB)</dt>
-              <dd className="m-0 leading-relaxed">
-                The final counter-trend candle immediately prior to a violent displacement creating an MSS. The 50% Mean Threshold of its body serves as institutional mitigation support/resistance.
-              </dd>
-            </div>
-            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
-              <dt className="text-[#F5F7FA] font-bold font-mono text-xs uppercase mb-1">Breaker Block (BB)</dt>
-              <dd className="m-0 leading-relaxed">
-                A failed Order Block that previously engineered a liquidity sweep (higher high or lower low) before suffering a violent displacement violation. Retest offers high-probability entry.
-              </dd>
-            </div>
-            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
-              <dt className="text-[#F5F7FA] font-bold font-mono text-xs uppercase mb-1">Liquidity Void</dt>
-              <dd className="m-0 leading-relaxed">
-                A sharp vertical price leap or gap featuring long body candles that skipped two-sided electronic auction matching, requiring future re-delivery to establish fair value.
-              </dd>
-            </div>
-            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
-              <dt className="text-[#F5F7FA] font-bold font-mono text-xs uppercase mb-1">Optimal Trade Entry (OTE)</dt>
-              <dd className="m-0 leading-relaxed">
-                The institutional retracement zone between 62% and 79% Fibonacci extension of an impulsive swing, with 70.5% representing the sweet spot equilibrium for entry.
-              </dd>
-            </div>
-            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
-              <dt className="text-[#F5F7FA] font-bold font-mono text-xs uppercase mb-1">Power of 3 (PO3 / AMD)</dt>
-              <dd className="m-0 leading-relaxed">
-                The three-stage daily cycle comprising Accumulation (Asian consolidation), Manipulation (London Judas fake-out), and Distribution (New York trend expansion).
-              </dd>
-            </div>
-          </dl>
-        </section>
-
-        {/* Section 2: Invalidation Criteria */}
-        <section className="space-y-3 pt-3 border-t border-white/[0.06]">
-          <h3 className="text-base sm:text-lg font-semibold text-[#FFB020] flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-[#FFB020]" />
-            2. Mechanical Invalidation Thresholds
-          </h3>
-          <p className="text-xs sm:text-sm text-[#C5CBD8] leading-relaxed">
-            Every concept is bounded by rigorous invalidation criteria. If candle bodies violate the Consequent Encroachment (50%) of a Fair Value Gap 
-            or close through the Mean Threshold of an Order Block, the institutional setup is deemed structurally compromised.
-          </p>
-        </section>
-      </article>
     </div>
   );
 };

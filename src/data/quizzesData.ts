@@ -5,7 +5,7 @@ export const quizQuestions: QuizQuestion[] = [
     id: 'q-ord-1',
     conceptId: 'market_mechanics_liquidity',
     type: 'reasoning',
-    question: 'Why does Bitcoin price rise when a large institutional buy order is submitted?',
+    question: 'In a continuous limit-order book, which mechanism can move executed prices upward when aggressive buying consumes available asks?',
     options: [
       'Because the number of registered buyers exceeds the number of registered sellers.',
       'Because aggressive market buy orders exhaust the available resting limit sell orders (asks) across consecutive price queues.',
@@ -28,7 +28,7 @@ export const quizQuestions: QuizQuestion[] = [
       'Because price is guaranteed to buy that area.'
     ],
     correctIndex: 1,
-    explanation: 'Both short stop-losses and breakout entries above a resistance high convert into BUY market orders when triggered, creating a dense pool of Buy Side Liquidity.',
+    explanation: 'In this framework, stops above a high are a hypothesis about potential buying interest. Stop-market orders become market orders on triggering; stop-limit orders become limit orders and may not fill. Actual order concentration cannot be established from candles alone.',
     difficulty: 'beginner'
   },
   {
@@ -50,15 +50,15 @@ export const quizQuestions: QuizQuestion[] = [
     id: 'q-fvg-2',
     conceptId: 'fair_value_gap',
     type: 'reasoning',
-    question: 'Why does a Fair Value Gap created after a Liquidity Sweep and Market Structure Shift have higher probability than one in the middle of a range?',
+    question: 'Why does this curriculum study an FVG together with a sweep and structural shift rather than as an isolated pattern?',
     options: [
       'Because the algorithm only recognizes FVGs with green candles.',
-      'Because the sweep provided the liquidity event, displacement confirmed institutional aggression, and structure confirmed directional intent.',
+      'Because these observations provide a stated location and directional thesis that can be tested and invalidated.',
       'Because FVGs in ranges are illegal on exchanges.',
       'Because range FVGs always fill to exactly 100% within 3 minutes.'
     ],
     correctIndex: 1,
-    explanation: 'An FVG is not a standalone magic pattern. It is the footprint of displacement. When accompanied by a liquidity sweep and MSS, it is part of a complete institutional narrative.',
+    explanation: 'These are complementary observations in the study framework. Their combination does not identify institutions or establish a higher success probability without a defined dataset and test.',
     difficulty: 'intermediate'
   },
   {
@@ -73,14 +73,14 @@ export const quizQuestions: QuizQuestion[] = [
       'BOS occurs only on crypto, while MSS occurs on Forex.'
     ],
     correctIndex: 1,
-    explanation: 'BOS extends an ongoing established trend. MSS marks the verified transfer of control to the opposite side, backed by displacement after liquidity collection.',
+    explanation: 'BOS extends an ongoing established trend. MSS is interpreted as a potential directional change supported by displacement. It does not verify institutional control or guarantee continuation.',
     difficulty: 'intermediate'
   },
   {
     id: 'q-ob-1',
     conceptId: 'order_block',
     type: 'invalidation',
-    question: 'Where is the true structural invalidation point (stop loss) for a Bullish Order Block setup formed after a Sell Side Liquidity sweep?',
+    question: 'For a bullish trade thesis explicitly invalidated by a break of the initiating sweep low, where would the structural stop reference be?',
     options: [
       'Exactly 1 tick below the Order Block candle body.',
       'Below the extreme low of the liquidity sweep that initiated the move.',
@@ -140,7 +140,7 @@ export const quizQuestions: QuizQuestion[] = [
     id: 'q-2026-trinity-1',
     conceptId: 'from_vision_to_execution',
     type: 'reasoning',
-    question: "Under the 2026 ICT 'Trinity Rule', an institutional trade execution is only permitted when which three components align unanimously?",
+    question: "In this curriculum's time-price-narrative checklist, which three study components are compared?",
     options: [
       'RSI, MACD, and Bollinger Bands',
       'Time (Macro Windows), Price (PD Arrays / Liquidity), and Narrative (Draw on Liquidity)',
@@ -148,14 +148,14 @@ export const quizQuestions: QuizQuestion[] = [
       'Broker Spread, Account Balance, and Leverage'
     ],
     correctIndex: 1,
-    explanation: 'The 2026 Trinity Rule dictates that Time (specific algorithmic macro windows), Price (unmitigated institutional PD Arrays), and Narrative (HTF Draw on Liquidity) must achieve unanimous alignment before executing.',
+    explanation: 'This independent study checklist compares time, price references and a higher-timeframe narrative. It is not an exchange requirement, verified institutional procedure or validated success model.',
     difficulty: 'intermediate'
   },
   {
     id: 'q-2026-ath-fib-1',
     conceptId: 'market_alchemy_ath',
     type: 'execution',
-    question: 'When an asset trades into uncharted All-Time Highs (ATH) with no historical resistance, how does ICT derive institutional profit targets?',
+    question: 'Which range-based projection method does this curriculum illustrate when price trades beyond historical highs?',
     options: [
       'Drawing random trendlines across highs',
       'Anchoring Fibonacci expansion ratios (1.272, 1.618, 2.0) across the preceding consolidation dealing range',
@@ -163,22 +163,22 @@ export const quizQuestions: QuizQuestion[] = [
       'Waiting for the price to drop back to zero'
     ],
     correctIndex: 1,
-    explanation: 'In blue-sky ATH conditions, IPDA quotes price algorithmically based on Fibonacci expansion multiples (1.272, 1.618, 2.0, 2.618) anchored from the high to low of the dealing range that preceded the breakout.',
+    explanation: 'Fibonacci expansion multiples provide reference projections from selected anchors. They do not prove how exchanges quote prices or predict that a target will be reached.',
     difficulty: 'advanced'
   },
   {
     id: 'q-2026-ndog-1',
     conceptId: 'opening_gap_matrix_ndog_nwog',
     type: 'recognition',
-    question: 'What creates the New Day Opening Gap (NDOG) in index futures, and which level within it is the highest-priority algorithmic pivot?',
+    question: 'In this index-futures study convention, which session references define an NDOG and its midpoint?',
     options: [
-      'The distance between the 17:00 EST daily close and 18:00 EST re-open; its 50% Consequent Encroachment (CE) serves as the primary pivot.',
+      'The distance between the 17:00 ET daily close and 18:00 ET re-open; its 50% Consequent Encroachment (CE) serves as the primary pivot.',
       'The difference between Apple and Microsoft opening prices; the average is the pivot.',
       'Any gap between two intraday 1-minute candles.',
       'The gap between midnight and 08:30 AM.'
     ],
     correctIndex: 0,
-    explanation: 'The NDOG is the CME settlement gap between 17:00 EST close and 18:00 EST open. Even if traded through overnight, the 50% Consequent Encroachment remains an active algorithmic magnetic benchmark.',
+    explanation: 'This convention compares the selected 17:00 ET session close with the 18:00 ET reopen and marks the arithmetic midpoint. Session close is not necessarily official settlement. Check the instrument calendar and holiday hours; midpoint reactions are not guaranteed.',
     difficulty: 'intermediate'
   },
   {
@@ -193,22 +193,22 @@ export const quizQuestions: QuizQuestion[] = [
       'When price wicks below an old high.'
     ],
     correctIndex: 0,
-    explanation: 'CSoD is the earliest order flow regime shift: a down-close candle body closing below the opening price of the prior expansion candle, flipping algorithmic delivery from BISI to SIBI before an MSS forms.',
+    explanation: 'Under the convention used here, a close below the relevant up-close run opening reference is treated as an early bearish hypothesis. State the exact reference candle; it is not a guaranteed regime change or direct order-flow measurement.',
     difficulty: 'advanced'
   },
   {
     id: 'q-2026-nfp-thursday-1',
     conceptId: 'nfp_thursday_hrlr_and_event_volatility',
     type: 'execution',
-    question: 'Why does ICT recommend stepping aside or cutting risk to 25% on NFP Thursdays and FOMC release mornings?',
+    question: 'Why should a study plan check the official employment and central-bank release calendar before a session?',
     options: [
       'Because brokers turn off the charts.',
-      'Because the algorithm engages High Resistance Liquidity Runs (HRLR) and Seek & Destroy conditions ahead of binary event shocks.',
+      'Because scheduled releases can change volatility, spreads and execution conditions, requiring explicit risk limits.',
       'Because markets close at 10:00 AM on Thursdays.',
       'Because Fibonacci tools do not work on Thursdays.'
     ],
     correctIndex: 1,
-    explanation: 'Prior to major macroeconomic releases, IPDA holds price in tight, choppy clearing corridors with overlapping swings (HRLR) to avoid directional inventory imbalances, resulting in whipsaws for retail traders.',
+    explanation: 'Release dates and times must be checked on official calendars; an employment report is not inherently a Thursday event. Price may consolidate or trend before releases. No universal 25% risk rule or deterministic algorithmic behavior is established here.',
     difficulty: 'intermediate'
   }
 ];
@@ -252,7 +252,7 @@ export const quizzes: QuizModule[] = [
   },
   {
     id: 'quiz-mastery',
-    title: 'Final Comprehensive Certification Exam',
+    title: 'Comprehensive Practice Exam',
     description: 'Complete cross-curriculum evaluation covering foundations through 2026 advanced execution protocols.',
     level: 'Grandmaster',
     questions: quizQuestions

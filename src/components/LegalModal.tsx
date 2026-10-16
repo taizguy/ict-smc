@@ -256,7 +256,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
 
                 <h4 className="font-semibold text-white text-sm pt-2">3. Local Storage &amp; Progress Tracking</h4>
                 <p>
-                  To provide an interactive digital textbook and curriculum experience, <strong>learnsmc.xyz</strong> saves your chapter completion progress, journal notes, and chart simulator preferences locally within your browser&apos;s <code className="bg-white/[0.06] px-1.5 py-0.5 rounded text-white font-mono text-xs">localStorage</code>. This data never leaves your device and is not sold or shared with any third party.
+                  To provide an interactive digital textbook and curriculum experience, <strong>learnsmc.xyz</strong> saves your chapter completion progress, journal records and drafts, practice quiz answers and results, and study checklists locally within your browser&apos;s <code className="bg-white/[0.06] px-1.5 py-0.5 rounded text-white font-mono text-xs">localStorage</code>. This data never leaves your device and is not sold or shared with any third party.
                 </p>
 
                 <h4 className="font-semibold text-white text-sm pt-2">4. Log Files and Web Analytics</h4>

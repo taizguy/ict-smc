@@ -26,8 +26,8 @@ export const theinnercircletradersNewConcepts: ICTConcept[] = [
       level3Trader: 'Execute inside London or NY Silver Bullet windows. Wait for price to sweep the CRT Reference Candle High/Low. Confirm SMT divergence with a correlated pair. Enter on the First Presented FVG with stop above the manipulation high. Target the opposite CRT extreme for 1:3+ R:R.',
       level4Advanced: 'Synthesizes Market Maker Buy/Sell Models with intraday Candle Range Theory. The SMT divergence at the CRT extreme proves that one market is being accumulated while the other is being used as liquidity bait.',
       level5ICTFramework: 'Interbank Price Delivery Algorithm (IPDA) repricing sequence: Phase 1 HTF DOL alignment -> Phase 2 Reference Candle boundary sweep -> Phase 3 Intermarket SMT absorption -> Phase 4 Displacement into First Presented FVG -> Phase 5 Delivery to opposing dealing range liquidity.',
-      whenItMatters: 'During London Open (02:00-05:00 EST) and New York AM (09:30-11:00 EST) when correlated index futures (NQ/ES/YM) or FX pairs (EUR/GBP) approach prior session extremes.',
-      whenToIgnore: 'During mid-day consolidation (12:00-13:00 EST), bank holidays, or when correlated assets are moving in identical lockstep without any SMT divergence.'
+      whenItMatters: 'During London Open (02:00-05:00 ET) and New York AM (09:30-11:00 ET) when correlated index futures (NQ/ES/YM) or FX pairs (EUR/GBP) approach prior session extremes.',
+      whenToIgnore: 'During mid-day consolidation (12:00-13:00 ET), bank holidays, or when correlated assets are moving in identical lockstep without any SMT divergence.'
     },
     whyItExists: 'Institutional algorithms require massive counterparty liquidity before executing major curve distributions. They engineer sweeps at obvious reference candles and use correlated pairs to absorb retail stops.',
     problemItSolves: 'Stops traders from entering early on false displacements or trading into high-resistance chop without intermarket confirmation.',
@@ -63,8 +63,8 @@ export const theinnercircletradersNewConcepts: ICTConcept[] = [
     advancedNuances: 'If the First Presented FVG aligns directly with an old Breaker Block (the Unicorn confluence), the Venom Model reaches its highest statistical expectancy.',
     prerequisites: ['power_of_three_amd', 'smt_divergence', 'fair_value_gap', 'breaker_block'],
     relatedConcepts: ['Unicorn Model', 'Candle Range Theory', 'SMT Divergence', 'First Presented FVG', 'MMXM'],
-    bullishScenario: 'London Open CRT: Asian Low is swept at 02:45 EST. GBPUSD breaks Asian low, but EURUSD forms a higher low (Bullish SMT). A 5-minute displacement candle rallies, printing a clean BISI. Trader enters on 50% CE of the First Presented FVG, stop below the manipulation low, targeting Asian High for a +45 pip run.',
-    bearishScenario: 'NY AM Session: NQ sweeps London High at 09:55 EST, but ES fails to reach its London High (Bearish SMT). NQ prints a rapid bearish displacement candle closing below the opening price of the upward leg (CISD). Trader limits into the First Presented FVG at 10:02 EST, targeting the London Low for +85 points.',
+    bullishScenario: 'London Open CRT: Asian Low is swept at 02:45 ET. GBPUSD breaks Asian low, but EURUSD forms a higher low (Bullish SMT). A 5-minute displacement candle rallies, printing a clean BISI. Trader enters on 50% CE of the First Presented FVG, stop below the manipulation low, targeting Asian High for a +45 pip run.',
+    bearishScenario: 'NY AM Session: NQ sweeps London High at 09:55 ET, but ES fails to reach its London High (Bearish SMT). NQ prints a rapid bearish displacement candle closing below the opening price of the upward leg (CISD). Trader limits into the First Presented FVG at 10:02 ET, targeting the London Low for +85 points.',
     counterexample: 'Taking an FVG entry when NQ and ES both broke the high cleanly with no divergence, resulting in getting stopped out as institutional buying continued higher.',
     invalidationCriteria: 'A candle body close beyond the extreme manipulation high/low or failure of the First Presented FVG.',
     diagramType: 'fvg_formation',
@@ -210,7 +210,7 @@ export const theinnercircletradersNewConcepts: ICTConcept[] = [
     id: 'ict_rdrb',
     name: 'ICT RDRB (Redelivered Balanced Price Range)',
     category: 'imbalances',
-    shortDefinition: 'When an existing Balanced Price Range (BPR)—formed by overlapping opposing FVGs—is revisited, respected, and defended a second time, providing an ultra-high-probability confirmation entry.',
+    shortDefinition: 'When an existing Balanced Price Range (BPR)—formed by overlapping opposing FVGs—is revisited, respected, and defended a second time, providing an model-based confirmation entry.',
     source: {
       mentorship: '2024–2025 Balanced Price Range Refinements',
       seriesOrMonth: 'Re-delivery Mechanics & CE Defense',
@@ -230,8 +230,8 @@ export const theinnercircletradersNewConcepts: ICTConcept[] = [
       level3Trader: 'Identify an established BPR from an earlier session or morning open. On the second visit (RDRB), wait for price to touch the BPR without candle bodies closing beyond the 50% Consequent Encroachment. Enter on the rejection candle close with stop just outside the BPR boundary.',
       level4Advanced: 'RDRB trades offer higher win rates than initial BPR touches because institutional order book commitment is empirically confirmed rather than hypothesized.',
       level5ICTFramework: 'IPDA re-delivery verification: The algorithm has successfully rebalanced both buy and sell liquidity. The second delivery tests residual resting volume; once absorbed, the market shifts directly to aggressive distribution.',
-      whenItMatters: 'During London Close (10:00-12:00 EST) and NY PM sessions when morning BPR zones are re-tested before the final daily expansion.',
-      whenToIgnore: 'If candle bodies close decisively beyond the 50% midpoint (Consequent Encroachment) of the BPR, which invalidates the balance.'
+      whenItMatters: 'During London Close (10:00-12:00 ET) and NY PM sessions when morning BPR zones are re-tested before the final daily expansion.',
+      whenToIgnore: 'A tighter midpoint-based trade may invalidate there. Distinguish that stop rule from failure beyond the full selected BPR zone.'
     },
     whyItExists: 'Algorithms must ensure that large volume tranches transferred during two-sided imbalance creation are fully settled before expanding price to new extremes.',
     problemItSolves: 'Removes the anxiety of trading unconfirmed imbalances by providing an entry that has already demonstrated active institutional defense.',
@@ -288,7 +288,7 @@ export const theinnercircletradersNewConcepts: ICTConcept[] = [
     },
     tripartiteView: {
       ictTeaching: 'Price delivery is fractal and candle-based. For any upcoming session, an earlier candle serves as the Reference Candle (RC). The algorithm manipulates beyond one extreme of the RC to engineer liquidity, then distributes through the range toward the opposite extreme.',
-      observableMarketBehavior: 'In London session, price almost universally sweeps either the Asian session high or low before reversing. In NY session, price sweeps the London session high or low before reversing toward daily targets.',
+      observableMarketBehavior: 'A session range may be exceeded and then revisited, or the breakout may continue. This observation alone does not identify intent or establish a reversal probability.',
       derivedInterpretation: 'A mean-reversion and range-expansion algorithmic model that anchors session volatility boundaries to prior time containers and targets opposing boundary stops.'
     },
     explanationLadder: {
@@ -297,7 +297,7 @@ export const theinnercircletradersNewConcepts: ICTConcept[] = [
       level3Trader: 'Five-Step CRT Checklist: 1. Confirm HTF Daily Bias. 2. Mark Reference Candle High and Low. 3. Watch for manipulation sweep of one extreme. 4. Confirm CISD / MSS and enter on First Presented FVG. 5. Target the opposite Reference Candle extreme.',
       level4Advanced: 'London Open CRT uses the Asian Session Candle as the Reference Candle. New York Open CRT uses the London Session Candle as the Reference Candle. Daily CRT uses the Weekly Candle as the Reference Candle.',
       level5ICTFramework: 'Fractal PO3 within time containers: The Reference Candle represents the Accumulation phase. The sweep of its extreme is the Manipulation phase (Judas). The run through its body is the Distribution phase.',
-      whenItMatters: 'Every single trading day during pre-session preparation before London Open (02:00 EST) and before NY Cash Open (09:30 EST).',
+      whenItMatters: 'Every single trading day during pre-session preparation before London Open (02:00 ET) and before NY Cash Open (09:30 ET).',
       whenToIgnore: 'When price opens directly outside the Reference Candle range on high-impact news gaps and runs without any manipulation retest.'
     },
     whyItExists: 'Price needs defined dealing boundaries. Algorithms use prior session candle extremes as standardized pools of resting stop orders to ignite momentum.',
@@ -321,7 +321,7 @@ export const theinnercircletradersNewConcepts: ICTConcept[] = [
     ],
     invalidCharacteristics: [
       'Trading in the direction of the initial sweep without waiting for manipulation and reversal.',
-      'Reference Candle range is excessively wide (>80 pips on FX, >150 pts on NQ), indicating low-probability follow-through.'
+      'Reference Candle range is excessively wide (>80 pips on FX, >150 pts on NQ), indicating uncertain follow-through.'
     ],
     howICTUsesIt: 'Used as the fundamental mechanical daily routine that dictates whether an ICT operator is looking for Buy-side or Sell-side delivery in the upcoming session.',
     commonMistakes: [
@@ -331,8 +331,8 @@ export const theinnercircletradersNewConcepts: ICTConcept[] = [
     advancedNuances: 'Stacked CRT: When Session 1 CRT delivers into Session 2, the Session 1 delivery candle itself becomes the Reference Candle for Session 2, creating multi-session compounding moves.',
     prerequisites: ['power_of_three_amd', 'buy_side_liquidity', 'sell_side_liquidity'],
     relatedConcepts: ['Asian Range', 'Judas Swing', 'Reference Candle', 'Stacked CRT', 'MMXM'],
-    bullishScenario: 'London Open CRT: Asian High is 20,450; Asian Low is 20,400. Daily bias is Bullish. At 02:35 EST, NQ dips to 20,392 (sweeping Asian Low). At 02:45 EST, a 5m green candle closes at 20,412 (CISD). Trader enters long on the FVG at 20,405, targeting 20,450 Asian High (+45 pts).',
-    bearishScenario: 'NY Open CRT: London High is 1.0880; London Low is 1.0820. Daily bias is Bearish. At 09:35 EST, EURUSD spikes to 1.0885 (sweeping London High). SMT confirms with GBPUSD. A rapid red candle prints an MSS. Trader shorts the FVG, targeting 1.0820 London Low (+60 pips).',
+    bullishScenario: 'London Open CRT: Asian High is 20,450; Asian Low is 20,400. Daily bias is Bullish. At 02:35 ET, NQ dips to 20,392 (sweeping Asian Low). At 02:45 ET, a 5m green candle closes at 20,412 (CISD). Trader enters long on the FVG at 20,405, targeting 20,450 Asian High (+45 pts).',
+    bearishScenario: 'NY Open CRT: London High is 1.0880; London Low is 1.0820. Daily bias is Bearish. At 09:35 ET, EURUSD spikes to 1.0885 (sweeping London High). SMT confirms with GBPUSD. A rapid red candle prints an MSS. Trader shorts the FVG, targeting 1.0820 London Low (+60 pips).',
     counterexample: 'Buying above the Asian High thinking it is a momentum breakout, only to have London dump immediately to the Asian Low.',
     invalidationCriteria: 'Price accepting multiple candle body closes outside the Reference Candle without showing any signs of displacement in reverse.',
     diagramType: 'po3_amd',
@@ -460,7 +460,7 @@ export const theinnercircletradersNewConcepts: ICTConcept[] = [
     howICTUsesIt: 'ICT teaches this pattern to explain why retail "breakout" and "support/resistance" traders get stopped out twice on the same morning.',
     commonMistakes: [
       'Entering full size immediately on the first sweep before checking if the opposing liquidity pool has been tested.',
-      'Failing to recognize that the second sweep is the genuine high-probability trigger.'
+      'Failing to recognize that the second sweep is the genuine model-based trigger.'
     ],
     advancedNuances: 'A Double Purge that ends with an SMT divergence on the second sweep provides one of the highest conviction reversal setups in the entire trading year.',
     prerequisites: ['buy_side_liquidity', 'sell_side_liquidity', 'liquidity_sweep'],
@@ -562,7 +562,7 @@ export const theinnercircletradersNewConcepts: ICTConcept[] = [
     explanationLadder: {
       level1Child: 'Think of skipping a stair when running up the steps. You pause for half a second to steady your foot on the skipped stair and then sprint up the rest of the staircase.',
       level2Beginner: 'Standard traders wait for a 3-candle pattern and miss the fastest moves. The Enigma FVG lets you catch the immediate re-test on the very next candle.',
-      level3Trader: 'Identify an explosive displacement bar that breaks a significant swing level. Notice if the spread between the opening of the bar and the preceding close leaves an unhedged volume void. Enter on the immediate pullback to the opening price with tight invalidation.',
+      level3Trader: 'Identify an explosive displacement bar that breaks a significant swing level. Notice if the spread between the opening of the bar and the preceding close leaves an body/open-close price nonoverlap, which does not establish missing volume. Enter on the immediate pullback to the opening price with tight invalidation.',
       level4Advanced: 'The Enigma FVG is closely related to Volume Imbalances (VI) but occurs during active breakout momentum rather than between session closes.',
       level5ICTFramework: 'High-frequency IPDA liquidity skip: The algorithm accelerates past resting liquidity to reach an urgent benchmark before opposing order matching can stabilize.',
       whenItMatters: 'During high-impact news releases (CPI, PPI) or at the exact 09:30:00 AM cash open on equities.',

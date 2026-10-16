@@ -192,7 +192,7 @@ export const Header: React.FC<HeaderProps> = ({
             <span className="w-1.5 h-1.5 rounded-full bg-[#52D273] animate-pulse" />
             <span className="text-[#9BA1AE] uppercase">{activeSession}</span>
             <span className="text-white/20">|</span>
-            <span className="text-[#F5F7FA] font-medium">{nyTime || '09:30:00'} EST</span>
+            <span className="text-[#F5F7FA] font-medium">{nyTime || 'Loading time…'} ET</span>
           </div>
 
           {/* Search Button */}
@@ -245,7 +245,7 @@ export const Header: React.FC<HeaderProps> = ({
               isToolsActive ? 'bg-white/[0.10] text-[#F5F7FA]' : 'text-[#9BA1AE]'
             }`}
           >
-            Workbench &amp; Lab (8)
+            Workbench &amp; Lab (10)
           </a>
         </BauhausNavScroller>
       </div>

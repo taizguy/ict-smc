@@ -191,7 +191,7 @@ export const CONCEPT_SLUG_MAP: Record<string, ConceptSlugMapping> = {
     slug: 'event-volatility-hrlr',
     category: 'liquidity',
     categorySlug: 'liquidity',
-    name: 'High Resistance Runs on NFP Thursdays & Event Volatility',
+    name: 'High Resistance Runs on Event Calendars & Volatility',
     shortName: 'Event Volatility',
     metaTitle: 'NFP Thursday HRLR & Macro Event Volatility Protocol | LearnSMC',
     metaDescription: 'How tier-one macroeconomic news releases (CPI, FOMC, NFP) create high-resistance delivery conditions and institutional expansion legs.'
@@ -264,7 +264,7 @@ export const CONCEPT_SLUG_MAP: Record<string, ConceptSlugMapping> = {
     name: 'Consequent Encroachment (CE 50%)',
     shortName: 'Consequent Encroachment',
     metaTitle: 'Consequent Encroachment (CE 50%) Level in SMC | LearnSMC',
-    metaDescription: 'The exact 50% midpoint of a Fair Value Gap or wick range serving as the primary institutional sensitivity threshold and invalidation anchor.'
+    metaDescription: 'The 50% midpoint reference of a defined FVG or wick range. A midpoint is not a universal invalidation boundary.'
   },
   'inverse_fair_value_gap': {
     id: 'inverse_fair_value_gap',
@@ -334,7 +334,7 @@ export const CONCEPT_SLUG_MAP: Record<string, ConceptSlugMapping> = {
     name: 'Breaker Block',
     shortName: 'Breaker Block',
     metaTitle: 'Breaker Block in SMC Trading: Trapped Liquidity Play | LearnSMC',
-    metaDescription: 'A failed Order Block that sponsored a liquidity sweep before being breached, flipping its polarity to provide high-probability support/resistance.'
+    metaDescription: 'A failed Order Block that sponsored a liquidity sweep before being breached, flipping its polarity to provide model-based support/resistance.'
   },
   'propulsion_and_reclaimed_blocks': {
     id: 'propulsion_and_reclaimed_blocks',
@@ -384,7 +384,7 @@ export const CONCEPT_SLUG_MAP: Record<string, ConceptSlugMapping> = {
     name: 'Sessions & Killzones Timing',
     shortName: 'Killzones Timing',
     metaTitle: 'ICT Sessions & Killzone Timing (London, NY AM, NY PM) | LearnSMC',
-    metaDescription: 'Official algorithmic windows: Asian Range (20:00-00:00), London Open (02:00-05:00), New York AM (08:30-11:00), and London Close Killzones.'
+    metaDescription: 'Curriculum timing conventions: Asian Range (20:00-00:00), London Open (02:00-05:00), New York AM (08:30-11:00), and London Close Killzones.'
   },
   'daily_bias_masood': {
     id: 'daily_bias_masood',
@@ -434,7 +434,7 @@ export const CONCEPT_SLUG_MAP: Record<string, ConceptSlugMapping> = {
     name: 'ICT Silver Bullet Model',
     shortName: 'Silver Bullet',
     metaTitle: 'ICT Silver Bullet Model: 60-Minute Execution Windows | LearnSMC',
-    metaDescription: 'Time-based trading strategy occurring precisely at 03:00-04:00 (London), 10:00-11:00 (NY AM), and 14:00-15:00 (NY PM) for high-probability 15-point setups.'
+    metaDescription: 'Time-based trading strategy occurring precisely at 03:00-04:00 (London), 10:00-11:00 (NY AM), and 14:00-15:00 (NY PM) for model-based 15-point setups.'
   },
   'smt_divergence': {
     id: 'smt_divergence',
@@ -555,7 +555,7 @@ export const DEEP_SUB_CONCEPTS: DeepSubConceptInfo[] = [
       'Breakers originate from an Order Block that successfully swept opposing liquidity before breaking structure.',
       'Mitigation Blocks fail to sweep opposing liquidity before breaking structure, indicating urgent failure of original supply/demand.',
       'Both block variants represent trapped participants rushing to exit at breakeven when price retraces.',
-      'The highest probability setups occur when an Inversion Fair Value Gap overlaps directly with the Breaker candle.'
+      'The framework-selected setups occur when an Inversion Fair Value Gap overlaps directly with the Breaker candle.'
     ],
     invalidation: 'Candle body closes completely across the entire body of the breaker candle invalidates the mitigation setup.',
     exampleScenario: 'Price sweeps previous day high into BSL, makes a sharp lower low breaking the last up-candle with displacement, then pulls back to test the former up-candle as a bearish Breaker.'
@@ -717,7 +717,7 @@ export const DEEP_SUB_CONCEPTS: DeepSubConceptInfo[] = [
     subtitle: 'Mechanical Entry Rules, Time Windows & FVG Retracement Protocols',
     shortDefinition: 'Step-by-step execution protocol for the two most popular mechanical ICT models: the 2022 model and the 60-minute Silver Bullet algorithm.',
     metaTitle: 'ICT 2022 Model & Silver Bullet Execution — Deep Sub-Concept | LearnSMC',
-    metaDescription: 'Actionable trading protocol combining the ICT 2022 setup with the 10:00-11:00 AM NY Silver Bullet time window for high-probability setups.',
+    metaDescription: 'Actionable trading protocol combining the ICT 2022 setup with the 10:00-11:00 AM NY Silver Bullet time window for model-based setups.',
     keyPoints: [
       'Step 1: Wait for higher timeframe liquidity sweep or PD array tap.',
       'Step 2: Require 1-5 minute displacement candle creating an unmistakable FVG.',

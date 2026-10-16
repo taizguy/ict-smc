@@ -16,8 +16,8 @@ export const MASTERCLASS_CATEGORIES: MasterclassCategoryMeta[] = [
   {
     id: 'all',
     slug: 'all',
-    name: 'All Masterclasses (34+)',
-    description: 'Comprehensive compendium of 34 ICT & SMC visual blueprints, execution sequences, and delivery signatures.'
+    name: `All masterclasses (${masterclassCollection.length})`,
+    description: `${masterclassCollection.length} independent study lessons covering model definitions, sequences and risk assumptions.`
   },
   {
     id: 'masterclass_34',
@@ -28,19 +28,19 @@ export const MASTERCLASS_CATEGORIES: MasterclassCategoryMeta[] = [
   {
     id: 'pd_array_15',
     slug: 'pd-arrays',
-    name: '15 PD Arrays Hierarchy',
+    name: 'PD array studies',
     description: 'The strict hierarchy of institutional premium and discount arrays from Old Highs to Breakers and Mitigation.'
   },
   {
     id: 'entry_model_5',
     slug: 'entry-models',
-    name: '5 A+ Entry Models',
-    description: 'High-probability execution models: 2022 Mentorship, Silver Bullet, MMBM/MMSM, Turtle Soup, and Breaker setups.'
+    name: 'Entry model studies',
+    description: 'model-based execution models: 2022 Mentorship, Silver Bullet, MMBM/MMSM, Turtle Soup, and Breaker setups.'
   },
   {
     id: 'opening_range_5',
     slug: 'opening-ranges',
-    name: '5 Opening Ranges',
+    name: 'Opening range studies',
     description: 'True opening price filters across London Open, New York 09:30 AM, Asia, and Midnight benchmark lines.'
   },
   {
@@ -89,7 +89,7 @@ export const CHART_SCENARIOS_META: { [key: string]: { slug: string; metaTitle: s
   eurusd_failed_ob_breaker: {
     slug: 'eurusd-failed-ob-breaker',
     metaTitle: 'EUR/USD Failed Bullish OB to Bearish Breaker — Chart Lab | LearnSMC',
-    metaDescription: 'Train your eye to spot trapped buyers in failed order blocks converted into high-probability institutional breaker blocks on EUR/USD.'
+    metaDescription: 'Train your eye to spot trapped buyers in failed order blocks converted into model-based institutional breaker blocks on EUR/USD.'
   },
   xauusd_gold_legacy_model: {
     slug: 'xauusd-gold-legacy-model',
@@ -246,9 +246,9 @@ export const BACKTEST_STRATEGIES: BacktestStrategyMeta[] = [
     title: 'ICT Charter Model 13 / 2022 Mentorship Model (Displacement + FVG)',
     shortName: '2022 Mentorship Model',
     description: 'Executes strictly when session liquidity is swept, followed by aggressive displacement and MSS creating a clean 50% CE FVG.',
-    expectedWinRate: '61% - 68%',
-    avgRR: '2.8R',
-    profitFactor: '1.95 - 2.45'
+    expectedWinRate: 'User-selected hypothetical assumption',
+    avgRR: 'User-selected hypothetical reward',
+    profitFactor: 'Calculated from generated trade ledger'
   },
   {
     id: 'charter_model_1',
@@ -256,19 +256,19 @@ export const BACKTEST_STRATEGIES: BacktestStrategyMeta[] = [
     title: 'ICT Charter Model 1 (Intraday Scalping & 20-Day IPDA)',
     shortName: 'Charter Model 1 (Scalping)',
     description: 'Focuses on 15m structural order flow aligned with the 20-day institutional lookback high/low draw on liquidity.',
-    expectedWinRate: '64% - 72%',
-    avgRR: '2.1R',
-    profitFactor: '2.05 - 2.62'
+    expectedWinRate: 'User-selected hypothetical assumption',
+    avgRR: 'User-selected hypothetical reward',
+    profitFactor: 'Calculated from generated trade ledger'
   },
   {
     id: 'charter_model_8',
     slug: 'charter-model-8',
     title: 'ICT Charter Model 8 (25 Pips / Week Framework)',
     shortName: 'Charter Model 8 (25 Pips)',
-    description: 'High-probability single weekly setup design for busy professionals seeking exactly 25-30 pips compounding per week.',
-    expectedWinRate: '69% - 76%',
-    avgRR: '2.5R',
-    profitFactor: '2.30 - 3.10'
+    description: 'model-based single weekly setup design for busy professionals seeking exactly 25-30 pips compounding per week.',
+    expectedWinRate: 'User-selected hypothetical assumption',
+    avgRR: 'User-selected hypothetical reward',
+    profitFactor: 'Calculated from generated trade ledger'
   },
   {
     id: 'charter_model_9',
@@ -276,9 +276,9 @@ export const BACKTEST_STRATEGIES: BacktestStrategyMeta[] = [
     title: 'ICT Charter Model 9 (One Shot One Kill - OSOK)',
     shortName: 'Charter Model 9 (OSOK Swing)',
     description: 'Captures the massive weekly range expansion from low of the week to high of the week using Daily & 4-Hour institutional order blocks.',
-    expectedWinRate: '57% - 65%',
-    avgRR: '4.2R',
-    profitFactor: '2.15 - 2.85'
+    expectedWinRate: 'User-selected hypothetical assumption',
+    avgRR: 'User-selected hypothetical reward',
+    profitFactor: 'Calculated from generated trade ledger'
   },
   {
     id: 'silver_bullet',
@@ -286,9 +286,9 @@ export const BACKTEST_STRATEGIES: BacktestStrategyMeta[] = [
     title: 'ICT Silver Bullet (10:00 - 11:00 AM NY Macro Engine)',
     shortName: 'Silver Bullet Engine',
     description: 'Executes strictly inside the 60-minute algorithmic window (10:00 - 11:00 AM NY) targeting 15-20 index handles with surgical precision.',
-    expectedWinRate: '66% - 74%',
-    avgRR: '2.2R',
-    profitFactor: '2.10 - 2.70'
+    expectedWinRate: 'User-selected hypothetical assumption',
+    avgRR: 'User-selected hypothetical reward',
+    profitFactor: 'Calculated from generated trade ledger'
   },
   {
     id: 'breaker_reversal',
@@ -296,9 +296,9 @@ export const BACKTEST_STRATEGIES: BacktestStrategyMeta[] = [
     title: 'Institutional Breaker Block Reversal Protocol',
     shortName: 'Breaker Reversal Model',
     description: 'Capitalizes on trapped liquidity by trading the retest of failed order blocks that generated a stop run before structural breach.',
-    expectedWinRate: '63% - 71%',
-    avgRR: '3.1R',
-    profitFactor: '2.20 - 2.80'
+    expectedWinRate: 'User-selected hypothetical assumption',
+    avgRR: 'User-selected hypothetical reward',
+    profitFactor: 'Calculated from generated trade ledger'
   }
 ];
 
@@ -409,8 +409,8 @@ export const MASTERY_EXAMS: MasteryExamMeta[] = [
   {
     id: 'quiz-mastery',
     slug: 'final-certification',
-    title: 'Final Comprehensive Certification Exam',
-    level: 'Grandmaster',
+    title: 'Comprehensive Practice Exam',
+    level: 'Cross-curriculum practice',
     description: 'Complete cross-curriculum evaluation covering foundations through 2026 advanced execution protocols.'
   }
 ];
@@ -430,7 +430,7 @@ export const DELIVERY_SUITE_MODULES: DeliverySuiteModuleMeta[] = [
     slug: 'macro-clock',
     name: 'Kill Zone & Macro Times Engine',
     badge: 'Timing Protocol',
-    description: 'Real-time New York (EST) session clock, countdown timer to active killzones, and institutional macro delivery windows.'
+    description: 'Real-time New York (ET) session clock, countdown timer to active killzones, and institutional macro delivery windows.'
   },
   {
     id: 'ote',
@@ -449,7 +449,7 @@ export const DELIVERY_SUITE_MODULES: DeliverySuiteModuleMeta[] = [
   {
     id: 'learning_path',
     slug: 'learning-path',
-    name: '5-Phase Institutional Trader Roadmap',
+    name: 'Personal study checklist',
     badge: 'Curriculum Architecture',
     description: 'Progressive roadmap detailing required milestones from Foundations through IPDA Algorithmic Mastery.'
   }
@@ -545,8 +545,8 @@ export function resolveWorkbenchRoute(pathname: string): ResolvedWorkbenchRoute 
         tool: 'masterclass',
         canonicalUrl: '/tools/masterclass/',
         cleanPath: `/${segments.join('/')}/`,
-        metaTitle: 'ICT & SMC Masterclass Hub (34 Models & 15 PD Arrays) | LearnSMC',
-        metaDescription: 'Complete institutional compendium of 34 ICT masterclasses, 15 PD Arrays in hierarchical order, 5 A+ Entry Models, and 5 opening ranges.',
+        metaTitle: `ICT & SMC Masterclass Hub (${masterclassCollection.length} Lessons) | LearnSMC`,
+        metaDescription: `Browse ${masterclassCollection.length} model and reference lessons, including PD arrays, entry frameworks and opening ranges.`,
         badge: 'Visual Blueprint',
         isCanonical: true,
         masterclassCategory: 'all'
@@ -599,7 +599,7 @@ export function resolveWorkbenchRoute(pathname: string): ResolvedWorkbenchRoute 
       canonicalUrl: '/tools/masterclass/',
       cleanPath: `/${segments.join('/')}/`,
       metaTitle: 'ICT & SMC Masterclass Hub | LearnSMC',
-      metaDescription: '34 institutional masterclasses and 15 PD Arrays.',
+      metaDescription: `${masterclassCollection.length} model and reference lessons.`,
       badge: 'Visual Blueprint',
       isCanonical: false,
       masterclassCategory: 'all'
@@ -716,7 +716,7 @@ export function resolveWorkbenchRoute(pathname: string): ResolvedWorkbenchRoute 
         canonicalUrl: `/tools/backtest/${matchedStrat.slug}/`,
         cleanPath: `/${segments.join('/')}/`,
         metaTitle: `${matchedStrat.shortName} Backtest Strategy & Expectancy | LearnSMC`,
-        metaDescription: `${matchedStrat.description} Expected Win Rate: ${matchedStrat.expectedWinRate}, Average RR: ${matchedStrat.avgRR}.`,
+        metaDescription: `${matchedStrat.description} Explore user-selected hypothetical assumptions; no historical performance is claimed.`,
         badge: `${matchedStrat.avgRR} • Expectancy`,
         isCanonical: segments[2] === matchedStrat.slug,
         backtestStrategySlug: matchedStrat.slug
@@ -911,7 +911,7 @@ export function resolveWorkbenchRoute(pathname: string): ResolvedWorkbenchRoute 
         canonicalUrl: '/tools/profile/',
         cleanPath: `/${segments.join('/')}/`,
         metaTitle: 'Mastery Profile & Operator Credentials | LearnSMC',
-        metaDescription: 'Assessments, diagnostic quizzes, and operator credentials tracking your institutional mastery across 57 curriculum chapters.',
+        metaDescription: 'Device-local curriculum completion and fixed practice quizzes. Educational study only; no professional certification.',
         badge: 'Diagnostics',
         isCanonical: isCanonicalToolSlug,
         profileSubTab: 'roadmap'
@@ -984,7 +984,7 @@ export function resolveWorkbenchRoute(pathname: string): ResolvedWorkbenchRoute 
         canonicalUrl: '/tools/delivery-suite/',
         cleanPath: `/${segments.join('/')}/`,
         metaTitle: 'ICT Delivery Suite & Killzone Macro Clock | LearnSMC',
-        metaDescription: 'Real-time New York (EST) session clock, countdown to active Killzones, 8 macro windows, OTE calculator, and Asian Judas planner.',
+        metaDescription: 'Real-time New York (ET) session clock, countdown to active Killzones, 8 macro windows, OTE calculator, and Asian Judas planner.',
         badge: 'Tools & Macros',
         isCanonical: isCanonicalToolSlug,
         deliveryModuleSlug: 'macro-clock'

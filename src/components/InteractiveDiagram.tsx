@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Play, RotateCcw, Info, CheckCircle2, ChevronRight } from 'lucide-react';
 import { DiagramType } from '../types';
 import { MasterclassDiagrams, isMasterclassDiagram } from './MasterclassDiagrams';
@@ -15,8 +15,10 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
   const [step, setStep] = useState<number>(0);
   const [showExplanation, setShowExplanation] = useState<boolean>(true);
 
+  const animated = !['top_down_matrix', 'session_timeline', 'nested_structure', 'org_octant_grid', 'five_opening_ranges', 'standard_deviations', 'three_day_rule'].includes(type);
+  useEffect(() => setStep(0), [type]);
   const handleReset = () => setStep(0);
-  const handleNext = () => setStep((prev) => (prev < 4 ? prev + 1 : 0));
+  const handleNext = () => setStep((prev) => (prev < 3 ? prev + 1 : 0));
 
   return (
     <div className="p-5 sm:p-6 my-4 rounded-2xl border border-white/[0.08] bg-[#11141B] text-[#F5F7FA]">
@@ -43,17 +45,17 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
               type="button"
               onClick={handleReset}
               className="p-1.5 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] text-[#9BA1AE] hover:text-[#F5F7FA] transition-colors cursor-pointer"
-              title="Reset Animation"
+              title="Reset animation" aria-label="Reset animation" disabled={!animated}
             >
               <RotateCcw className="w-3.5 h-3.5" />
             </button>
             <button
               type="button"
-              onClick={handleNext}
+              onClick={handleNext} disabled={!animated}
               className="px-3.5 py-1.5 text-xs font-mono font-medium rounded-lg bg-[#5865FF] hover:bg-[#6F7BFF] text-white flex items-center gap-1.5 transition-all cursor-pointer"
             >
               <Play className="w-3 h-3 fill-white" />
-              <span>Step {step + 1} / 4</span>
+              <span>{animated ? `Step ${step + 1} / 4` : 'Static reference'}</span>
             </button>
           </div>
         )}
@@ -63,6 +65,18 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
       <div className="relative w-full min-h-[300px] h-76 sm:h-84 bg-[#0C0E13] border border-white/[0.06] rounded-xl my-4 overflow-hidden flex items-center justify-center p-3 select-none">
         
         {/* Dynamic Diagram Views based on Type */}
+        {type === 'mss_sequence' && (
+          <svg viewBox="0 0 600 300" role="img" aria-label="Illustrative swing break and displacement; not a forecast" className="w-full h-full">
+            <title>Structure confirmation sequence</title>
+            <path d="M 50 220 L 120 100 L 190 180 L 270 80 L 340 150" fill="none" stroke="#9BA1AE" strokeWidth="3" />
+            <line x1="120" x2="550" y1="180" y2="180" stroke="#55E6D1" strokeDasharray="5 5" />
+            <text x="50" y="265" fill="#F5F7FA" fontSize="14">Mark a significant swing before judging a break.</text>
+            {step >= 1 && <path d="M 340 150 L 390 240" stroke="#FF9AA6" strokeWidth="5" />}
+            {step >= 2 && <text x="300" y="285" fill="#FF9AA6" fontSize="13">Close beyond selected swing</text>}
+            {step >= 3 && <path d="M 390 240 L 450 185 L 530 250" fill="none" stroke="#F0D788" strokeWidth="3" />}
+          </svg>
+        )}
+
         {type === 'liquidity_sweep' && (
           <svg viewBox="0 0 600 300" className="w-full h-full max-h-76">
             {/* Old High Line (BSL) */}
@@ -338,11 +352,11 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
         {type === 'session_timeline' && (
           <div className="w-full h-full flex flex-col justify-center px-4 space-y-3">
             <div className="flex justify-between items-center text-xs font-mono text-[#9BA1AE] uppercase">
-              <span>00:00 UTC (8:00 PM NY)</span>
+              <span>20:00 New York (UTC varies with DST)</span>
               <span className="text-[#55E6D1] bg-[#55E6D1]/10 px-2.5 py-0.5 rounded border border-[#55E6D1]/20 text-[10px]">
                 New York Base
               </span>
-              <span>24:00 UTC (8:00 PM NY)</span>
+              <span>Next 20:00 New York</span>
             </div>
             
             <div className="w-full h-14 bg-white/[0.02] border border-white/[0.08] rounded-xl flex overflow-hidden">
@@ -405,9 +419,10 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
             <span className="font-medium">Key Methodological Rule:</span>
           </div>
           <p className="leading-relaxed font-light text-[#9BA1AE]">
+            {type === 'mss_sequence' && 'BOS describes a continuation break; CHoCH describes an early character change; MSS requires the selected structural pivot and displacement confirmation. Definitions depend on the stated timeframe and convention.'}
             {type === 'liquidity_sweep' && 'A sweep is an observation event, not an automatic entry. You must wait for displacement and a Market Structure Shift (MSS) before considering an entry.'}
             {type === 'fvg_formation' && 'Consequent Encroachment (50%) serves as a balanced institutional reference point inside the displacement corridor. If price closes beyond the FVG, it inverts into an IFVG.'}
-            {type === 'order_block' && 'An Order Block is valid only because of the displacement and structural consequence that followed it. Fresh unmitigated Order Blocks provide superior odds.'}
+            {type === 'order_block' && 'An Order Block is valid only because of the displacement and structural consequence that followed it. Freshness is a framework condition, not a measured probability here.'}
             {type === 'breaker_block' && 'A Breaker Block is created when an Order Block that swept liquidity fails and flips role to become opposing support or resistance.'}
             {type === 'po3_amd' && 'Power of Three frames the Daily candle: Open -> Manipulation below Open -> Distribution expansion -> Close near the high.'}
             {type === 'top_down_matrix' && 'Higher timeframes dictate the narrative and location; lower timeframes provide the precision execution entry.'}
@@ -416,16 +431,16 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
             {type === 'unicorn_model' && 'Unicorn Model: Breaker Block + overlapping Fair Value Gap. Requires a prior liquidity raid (Stop Hunt). Stop loss is placed above the Breaker & FVG high.'}
             {type === 'cisd_masterclass' && 'Change In State of Delivery (CISD): An Order Block is a Change in the State of Delivery. Validated when price body closes through the delivery candles into HTF level.'}
             {type === 'ifvg_inversion' && 'Inversion FVG (IFVG): A failed auction signature. When price decisively closes through an FVG with full body, it flips into opposing support or resistance.'}
-            {type === 'org_octant_grid' && 'Opening Range Gap (ORG): 9:30 AM Open vs 4:14 PM Settlement. Divided into Octant/Quadrant grid. 50% Consequent Encroachment is traded to ~70% of the time by 10:00 AM.'}
-            {type === 'mmxm_stage2' && 'Stage-2 Re-accumulation / Re-distribution: The holy grail of MMXM. The first leg from SMR must reach 50% of the distance to the target; Stage 2 accelerates violently.'}
+            {type === 'org_octant_grid' && 'Opening Range Gap (ORG): 09:30 cash open versus selected prior-session reference close. Divided into Octant/Quadrant grid. The 50% midpoint is a reference, with no hit rate established here.'}
+            {type === 'mmxm_stage2' && 'Stage-2 Re-accumulation / Re-distribution: The named framework of MMXM. The first leg from SMR must reach 50% of the distance to the target; Stage 2 accelerates violently.'}
             {type === 'five_opening_ranges' && 'The 5 Algorithmic Opening Ranges: Midnight (12:00 AM), London (1:30 AM), NY Killzone (7:00 AM), AM Session (9:30 AM - King), and PM Session (1:30 PM).'}
             {type === 'propulsion_block' && 'Propulsion Block: Retraces into a pre-existing Order Block, respects its 50% Mean Threshold, and violently propels price. An execution tool, not analysis tool.'}
             {type === 'implied_fvg' && 'Implied FVG: Forms when consecutive candles have overlapping long wicks without a traditional body void. Consequent encroachment of both wicks defines the implied gap.'}
             {type === 'rejection_block' && 'Rejection Block: Defined from the highest/lowest candle body close to the wick extreme. Acts as an algorithmic price delimiter and deferred entry zone.'}
             {type === 'mitigation_block' && 'Mitigation Block: A failed breaker that forms after a failure swing (no stop raid). Institutions use it to mitigate underwater positions at breakeven.'}
-            {type === 'standard_deviations' && 'Standard Deviations (STDV): Anchor to the manipulation range (0.0 to -1.0). High-probability extensions form at -1.5, -2.0 (PDL/PDH target), -2.5, and -4.0 (macro terminus).'}
+            {type === 'standard_deviations' && 'Standard Deviations (STDV): Anchor to the manipulation range (0.0 to -1.0). model-based extensions form at -1.5, -2.0 (PDL/PDH target), -2.5, and -4.0 (macro terminus).'}
             {type === 'ny_continuation_reversal' && 'New York Framework: Did London tap a HTF PD Array? If NO -> NY Continuation (retrace to London OB at 8:30/9:30). If YES -> NY Reversal with Judas sweep.'}
-            {type === 'first_presentation_fvg' && '1st Presented FVG: Only forms after 9:31 AM and after a stop raid. Must break away from balance with real displacement. Highest probability execution anchor.'}
+            {type === 'first_presentation_fvg' && '1st Presented FVG: Only forms after 9:31 AM and after a stop raid. Must break away from balance with real displacement. framework-selected execution anchor.'}
             {type === 'ote_model' && 'Optimal Trade Entry (OTE): 62% to 79% Fibonacci retracement with 70.5% sweet spot. Must align with displacement, SIBI/BISI rebalance, and time of day.'}
             {type === 'three_day_rule' && '3-Day Rule: "Your entire universe of liquidity and inefficiencies can be summed up in the last 3 days." Cluster previous daily range octants with wick grades.'}
           </p>

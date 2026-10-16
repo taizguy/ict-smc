@@ -249,7 +249,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
               </p>
               <ul className="list-disc pl-5 space-y-1.5 text-xs text-[#9BA1AE]">
                 <li>Your lesson bookmarking and chapter completion status.</li>
-                <li>Your trading journal notes written in the browser workbench.</li>
+                <li>Your trading journal records and drafts, practice quiz answers and results, and study checklists.</li>
                 <li>Your Cookie Consent preference response.</li>
               </ul>
               <p className="text-xs text-[#9BA1AE]">

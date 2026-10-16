@@ -23,7 +23,7 @@ export const conceptComparisons: ConceptComparison[] = [
         'Created by the failure and decisive breach of an existing FVG',
         'Expects price to retest the broken zone from the opposite side',
         'Represents structural regime shift and collapse of previous directional demand/supply',
-        'Highest probability when accompanied by a Market Structure Shift (MSS)'
+        'framework-selected when accompanied by a Market Structure Shift (MSS)'
       ],
       idealCondition: 'First retest of an FVG that was sliced through with strong opposite displacement following a major liquidity sweep.'
     },
@@ -41,8 +41,8 @@ export const conceptComparisons: ConceptComparison[] = [
       keyPoints: [
         'Origin of the original impulse move',
         'Acts in the same directional role as the initial displacement',
-        'High probability when unmitigated and originating after a liquidity sweep',
-        'Invalidated when price decisively trades through the entire candle range'
+        'model-based when unmitigated and originating after a liquidity sweep',
+        'Full-zone failure uses a decisive body close beyond the selected zone outer boundary; trade invalidation may be tighter'
       ],
       idealCondition: 'Fresh retracement into the last down-candle in Daily discount following an SSL sweep and bullish MSS.'
     },
@@ -271,7 +271,7 @@ export const conceptComparisons: ConceptComparison[] = [
     title: 'New Day Opening Gap (NDOG) vs. Regular Fair Value Gap (FVG)',
     conceptA: {
       name: 'New Day Opening Gap (NDOG)',
-      summary: 'The inter-session discontinuity between the 17:00 EST daily futures close and the 18:00 EST electronic re-open.',
+      summary: 'The inter-session discontinuity between the 17:00 ET daily futures close and the 18:00 ET electronic re-open.',
       keyPoints: [
         'Created by non-trading settlement maintenance windows, not continuous order flow',
         'Retains algorithmic memory throughout the entire following trading day and week',

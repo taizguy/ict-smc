@@ -246,7 +246,7 @@ export const MasterclassDiagrams: React.FC<MasterclassDiagramProps> = ({ type, s
 
             {/* 0.0 Low */}
             <line x1="70" y1="220" x2="550" y2="220" stroke="#9BA1AE" strokeWidth="2" />
-            <text x="80" y="215" fill="#F5F7FA" fontWeight="900">0.0 LOW (4:14 PM Settlement: $28,324.75)</text>
+            <text x="80" y="215" fill="#F5F7FA" fontWeight="900">0.0 LOW (selected prior-session reference close: $28,324.75)</text>
 
             {/* Standard Deviation Extensions Below */}
             <g className={step >= 2 ? 'opacity-100' : 'opacity-20'}>
@@ -564,7 +564,7 @@ export const MasterclassDiagrams: React.FC<MasterclassDiagramProps> = ({ type, s
           <text x="70" y="145" fill="#1040C0" fontWeight="bold">-1.5 SD (First Extension Zone)</text>
 
           <line x1="60" y1="180" x2="560" y2="180" stroke="#D02020" strokeWidth="2" strokeDasharray="4 4" />
-          <text x="70" y="175" fill="#D02020" fontWeight="900">-2.0 SD (High-Probability Target / Previous Daily Low)</text>
+          <text x="70" y="175" fill="#D02020" fontWeight="900">-2.0 SD (model-based Target / Previous Daily Low)</text>
 
           <line x1="60" y1="220" x2="560" y2="220" stroke="#166534" strokeWidth="1.5" strokeDasharray="3 3" />
           <text x="70" y="215" fill="#166534" fontWeight="bold">-2.5 SD (Extended Expansion)</text>

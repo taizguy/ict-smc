@@ -5,9 +5,9 @@ export const chartScenarios: ChartScenario[] = [
     id: 'btc_2022_bullish_model',
     title: 'BTC/USDT: 2022 Model Execution After Asian Low Sweep',
     asset: 'BTC/USDT',
-    timeframe: '5M',
+    timeframe: 'Compressed illustration (irregular / 30-minute labels)',
     htfContext: 'Daily Trend: Bullish | Higher Timeframe Location: Daily Discount (below 50% EQ) | Target: Previous Day High ($102,400)',
-    description: 'Clean textbook demonstration of the ICT 2022 Mentorship Model on BTC/USDT. Asian session consolidates, London executes Judas Swing below Asian Low into PDL, NY confirms bullish MSS with displacement, and price mitigates 5M FVG before launching to PDH.',
+    description: 'Authored BTC/USDT illustration of a range, move below reference lows, upward displacement, structure break and return to an FVG. Session names are narrative labels in compressed bars; no nested five-minute feed is supplied.',
     candles: [
       // Asian Session Consolidation (Candles 0-9)
       { time: '00:00', open: 100050, high: 100200, low: 99980, close: 100120, session: 'Asia' },
@@ -64,7 +64,7 @@ export const chartScenarios: ChartScenario[] = [
         priceLevel: 99200,
         candleIndexStart: 11,
         candleIndexEnd: 13,
-        description: 'London Open drives below Asian Low and Previous Day Low, collecting sell stops into Daily Discount.',
+        description: 'London Open drives below Asian Low and Previous Day Low, moving beyond lower references; actual stop inventories are not observed.',
         isBullish: true
       },
       {
@@ -106,7 +106,7 @@ export const chartScenarios: ChartScenario[] = [
         priceLevel: 100350,
         candleIndexStart: 20,
         candleIndexEnd: 20,
-        description: 'Price retraces into FVG CE at 10:00 AM NY Silver Bullet hour. Stop at $99,150, Target PDH $102,400 (3.2R).',
+        description: 'The illustration returns to the FVG midpoint reference at 100,350. The target reference is 102,400; choose and record a structural stop before calculating R.',
         isBullish: true
       },
       {
@@ -116,7 +116,7 @@ export const chartScenarios: ChartScenario[] = [
         priceLevel: 102400,
         candleIndexStart: 24,
         candleIndexEnd: 25,
-        description: 'Target reached during London Close expansion with full take profit execution.',
+        description: 'The illustration reaches the marked target; actual fill execution is not modeled.',
         isBullish: true
       }
     ],
@@ -201,9 +201,9 @@ export const chartScenarios: ChartScenario[] = [
     id: 'nq_silver_bullet_short',
     title: 'NQ Futures: 10:00 AM Silver Bullet Short',
     asset: 'NQ1! Futures',
-    timeframe: '1M',
+    timeframe: '5-minute timestamp illustration',
     htfContext: 'Daily Trend: Bearish | HTF Location: 4H Bearish FVG Premium | Draw on Liquidity: 10:00 AM Low & PDL',
-    description: 'Classic algorithmic Silver Bullet execution during the 10:00 AM - 11:00 AM New York window on NASDAQ Futures. Price raids morning BSL into HTF resistance, displaces lower, forms 1M FVG, and delivers 30 points to the morning low.',
+    description: 'Authored NQ illustration of a move above a reference high followed by bearish displacement, a five-minute-label FVG and a lower target. It is a study schematic, not an observed execution or nested one-minute feed.',
     candles: [
       { time: '09:45', open: 21100, high: 21125, low: 21090, close: 21120, session: 'New York AM' },
       { time: '09:50', open: 21120, high: 21140, low: 21110, close: 21135, session: 'New York AM' },
@@ -234,7 +234,7 @@ export const chartScenarios: ChartScenario[] = [
         priceLevel: 21130,
         candleIndexStart: 5,
         candleIndexEnd: 6,
-        description: 'Aggressive selling closes below protected 1M low with large real bodies.'
+        description: 'Aggressive selling closes below reference low with large real bodies.'
       },
       {
         id: 'nq-fvg',
@@ -253,7 +253,7 @@ export const chartScenarios: ChartScenario[] = [
         priceLevel: 21030,
         candleIndexStart: 9,
         candleIndexEnd: 10,
-        description: '+30 handles captured in 15 minutes.'
+        description: 'The illustration reaches the lower target. This does not represent an observed fill or measured strategy return.'
       }
     ],
     replaySteps: [
@@ -289,7 +289,7 @@ export const chartScenarios: ChartScenario[] = [
     asset: 'EUR/USD',
     timeframe: '15M',
     htfContext: 'Weekly Bias: Bearish | Daily Structure: Approaching Weekly Resistance | Target: Previous Week Low (1.0720)',
-    description: 'Demonstrating the transformation of a failed Order Block into a high-probability Bearish Breaker. Buyers step in at support, rally to sweep BSL, but get trapped as price collapses through the OB.',
+    description: 'Authored EUR/USD illustration of an initial bullish block reference, move above a high, failure through the zone and bearish retest. The breaker label describes this framework; no success probability or participant identity is measured.',
     candles: [
       { time: '08:00', open: 1.0820, high: 1.0835, low: 1.0815, close: 1.0830, session: 'London' },
       { time: '08:15', open: 1.0830, high: 1.0832, low: 1.0810, close: 1.0812, session: 'London' }, // Bullish OB origin candle
@@ -319,7 +319,7 @@ export const chartScenarios: ChartScenario[] = [
         priceLevel: 1.0872,
         candleIndexStart: 3,
         candleIndexEnd: 3,
-        description: 'Price raids BSL at 1.0872 before institutional selling overwhelms the market.'
+        description: 'Price raids BSL at 1.0872 before a bearish price move; participant identities are unknown.'
       },
       {
         id: 'eur-breaker',
@@ -338,7 +338,7 @@ export const chartScenarios: ChartScenario[] = [
         priceLevel: 1.0720,
         candleIndexStart: 7,
         candleIndexEnd: 8,
-        description: 'Target reached for +4.2R.'
+        description: 'The illustrative path reaches the marked target. R depends on the chosen entry and stop.'
       }
     ],
     replaySteps: [
@@ -372,9 +372,9 @@ export const chartScenarios: ChartScenario[] = [
     id: 'xauusd_gold_legacy_model',
     title: 'XAUUSD (Gold): The Gold Legacy Session Sweep & 50% FVG Invalidation Model',
     asset: 'XAUUSD (Gold)',
-    timeframe: '5M',
+    timeframe: 'Compressed illustration (irregular / 30-minute labels)',
     htfContext: 'Daily Bias: Bullish | Higher Timeframe Draw: Previous Day High ($2,385.00) | Benchmark: 00:00 NY Midnight Open ($2,350.00)',
-    description: 'Textbook execution of Trader Abdullah Masood\'s Gold Legacy Model on XAUUSD. Asian session establishes range, London Judas Swing executes a violent 25-pip stop-run below Asian Low and PDL, followed by rapid 5M displacement, MSS, and a limit entry at the 50% Consequent Encroachment of the FVG.',
+    description: 'Independent XAUUSD study illustration inspired by Gold Legacy terminology. Compressed bars show a reference range, lower sweep, bullish structure break and FVG midpoint reference. No observed fills or nested five-minute feed are supplied.',
     candles: [
       // Asian Session Consolidation (Candles 0-7)
       { time: '00:00', open: 2350.0, high: 2354.0, low: 2348.0, close: 2352.0, session: 'Asia' },
@@ -427,7 +427,7 @@ export const chartScenarios: ChartScenario[] = [
         priceLevel: 2331.5,
         candleIndexStart: 8,
         candleIndexEnd: 11,
-        description: 'London sweeps 10.5 points below the Asian Low, purging retail stops into institutional buy limits.'
+        description: 'London sweeps 10.5 points below the Asian Low, moving through a lower reference without identifying counterparties.'
       },
       {
         id: 'gold-mss',
@@ -436,7 +436,7 @@ export const chartScenarios: ChartScenario[] = [
         priceLevel: 2354.0,
         candleIndexStart: 13,
         candleIndexEnd: 14,
-        description: 'Full candle body closure above the previous 15M swing high confirming institutional buying sponsorship.'
+        description: 'Full candle body closure above the reference swing high in the illustrated bullish thesis.'
       },
       {
         id: 'gold-fvg',
@@ -456,7 +456,7 @@ export const chartScenarios: ChartScenario[] = [
         priceLevel: 2385.0,
         candleIndexStart: 20,
         candleIndexEnd: 21,
-        description: 'Draw on Liquidity successfully delivered for a massive +5.2R setup.'
+        description: 'The illustration reaches its marked upper target; calculate R from your chosen entry and stop.'
       }
     ],
     replaySteps: [
@@ -496,9 +496,9 @@ export const chartScenarios: ChartScenario[] = [
     id: 'eur_mmbm_propulsion_model',
     title: 'EUR/USD: Market Maker Buy Model (MMBM) with Propulsion Block',
     asset: 'EUR/USD',
-    timeframe: '15M',
+    timeframe: 'Hourly timestamp illustration',
     htfContext: 'Daily Trend: Bullish | IPDA 60-Day Lookback: Discount | Target: Equal Highs & Original Consolidation (1.0920)',
-    description: 'Textbook execution of the Month 6/7 Market Maker Buy Model (MMBM) on EUR/USD. Original consolidation at 1.0910-1.0920, sell-side curve sweeps Asian Low into 4H Bullish OB at 1.0820, Smart Money Reversal (SMR) prints MSS, followed by a violent Propulsion Block test that rockets into the Original Consolidation.',
+    description: 'Authored hourly-label EUR/USD illustration of a consolidation, lower sweep, structural reversal and return toward the original range. Higher-timeframe block labels are supplied assumptions, not a separate historical feed.',
     candles: [
       // Original Consolidation (Candles 0-4)
       { time: '01:00', open: 1.0910, high: 1.0922, low: 1.0905, close: 1.0915, session: 'Asia' },
@@ -611,9 +611,9 @@ export const chartScenarios: ChartScenario[] = [
     id: 'nq_2026_ath_alchemy_ndog_macro',
     title: '2026 NQ: NDOG Consequent Encroachment, 09:50 Macro IFVG & ATH Fibonacci Alchemy',
     asset: 'NQ (E-mini NASDAQ-100 Futures)',
-    timeframe: '5-Minute / 1-Minute Nested',
+    timeframe: '5-minute timestamp illustration (no nested feed)',
     htfContext: 'NASDAQ trading at All-Time Highs (ATH) with no historical resistance. Pre-market NDOG sits between 19,400 (close) and 19,450 (open) with 50% CE at 19,425. Recent dealing range: 19,150 low to 19,450 high. Target 1.618 Fibonacci expansion is 19,585.',
-    description: 'The definitive 2026 execution sequence: 08:30 pre-market sweep, 09:30 cash open Judas swing into the NDOG 50% CE, 09:50 AM Macro Inversion FVG long entry, and parabolic blue-sky expansion to the 1.618 Fibonacci dealing range target at 19,585.',
+    description: 'Authored five-minute-label NQ illustration combining opening-range references, an inversion hypothesis and a projected target. Prices and events are schematic and do not verify an observed trade or predictive timing rule.',
     candles: [
       { time: '09:15', open: 19445, high: 19455, low: 19438, close: 19440, session: 'New York AM' },
       { time: '09:20', open: 19440, high: 19448, low: 19432, close: 19435, session: 'New York AM' },
@@ -641,7 +641,7 @@ export const chartScenarios: ChartScenario[] = [
         priceBottom: 19400,
         candleIndexStart: 0,
         candleIndexEnd: 6,
-        description: 'New Day Opening Gap from 17:00 close to 18:00 re-open. The 50% Consequent Encroachment at 19,425 serves as key institutional support.',
+        description: 'New Day Opening Gap from 17:00 close to 18:00 re-open. The 50% Consequent Encroachment at 19,425 is a study reference; a reaction is not guaranteed.',
         isBullish: true
       },
       {
@@ -670,7 +670,7 @@ export const chartScenarios: ChartScenario[] = [
         priceBottom: 19452,
         candleIndexStart: 8,
         candleIndexEnd: 9,
-        description: 'Former bearish FVG sliced upward during 09:50 macro, inverting into unbreakable algorithmic support.',
+        description: 'Former bearish FVG sliced upward during 09:50 macro, inverting into a proposed support reference that can fail.',
         isBullish: true
       },
       {
@@ -680,7 +680,7 @@ export const chartScenarios: ChartScenario[] = [
         priceLevel: 19585,
         candleIndexStart: 13,
         candleIndexEnd: 15,
-        description: 'Algorithmic profit objective projected from 19,150-19,450 dealing range, hit precisely at 10:45 AM (+130 pts).'
+        description: 'Illustrative target projected from 19,150-19,450 dealing range, hit precisely at 10:45 AM (+130 pts).'
       }
     ],
     replaySteps: [

@@ -417,3 +417,15 @@ textarea:focus-visible {
 
 .skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 100; transform: translateY(-200%); background: #fff; color: #08090d; padding: .75rem 1rem; border-radius: .5rem; }
 .skip-link:focus { transform: translateY(0); }
+
+/* Tool pages prioritize readable content and usable keyboard controls. */
+.predikt-workbench-body p, .predikt-workbench-body li { line-height: 1.7; }
+.predikt-workbench-body .font-mono { font-family: var(--font-sans); }
+.predikt-workbench-body .text-xs { font-size: .875rem; }
+.predikt-workbench-body .text-\[10px\], .predikt-workbench-body .text-\[11px\] { font-size: .8125rem; }
+.predikt-workbench-body .text-\[\#656B78\] { color: #A7ACB8; }
+.predikt-workbench-body .text-\[\#5865FF\] { color: #A9B0FF; }
+.predikt-workbench-body button, nav[aria-label="Switch tool"] a { min-height: 44px; }
+[aria-current="page"], [aria-current="step"], [aria-pressed="true"] { border-color: #55E6D1; }
+button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid #55E6D1; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }

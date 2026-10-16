@@ -17,7 +17,7 @@ export const getStoredProgress = (): AcademyProgressState => {
     const freeRoamRaw = localStorage.getItem(STORAGE_KEY_FREE_ROAM);
     const answersRaw = localStorage.getItem(STORAGE_KEY_ANSWERS);
 
-    const completedChapterIds: number[] = completedRaw ? JSON.parse(completedRaw) : [1]; // Chapter 1 always unlocked & in progress
+    const completedChapterIds: number[] = completedRaw ? JSON.parse(completedRaw) : []; // Unlocking and completion are separate.
     const freeRoamMode: boolean = freeRoamRaw ? JSON.parse(freeRoamRaw) : false;
     const chapterAnswers: Record<string, number> = answersRaw ? JSON.parse(answersRaw) : {};
 
@@ -29,7 +29,7 @@ export const getStoredProgress = (): AcademyProgressState => {
   } catch (e) {
     console.warn('Failed to load academy progress from localStorage:', e);
     return {
-      completedChapterIds: [1],
+      completedChapterIds: [],
       freeRoamMode: false,
       chapterAnswers: {}
     };

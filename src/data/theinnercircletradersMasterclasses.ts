@@ -167,7 +167,7 @@ export const theinnercircletradersNewMasterclasses: MasterclassItem[] = [
     diagramType: 'po3_amd',
     coreRule: 'Before every session, mark the High and Low of the designated Reference Candle. Anticipate an initial manipulation sweep of one extreme, confirm with CISD/MSS, and ride the algorithmic delivery across to the opposite Reference Candle boundary.',
     orderOfOperations: [
-      'Step 1 (Reference Candle Selection): For London Open, mark Asian session candle (20:00-00:00 EST). For NY Open, mark London session candle (02:00-05:00 EST).',
+      'Step 1 (Reference Candle Selection): For London Open, mark Asian session candle (20:00-00:00 ET). For NY Open, mark London session candle (02:00-05:00 ET).',
       'Step 2 (HTF Bias Check): Check the 4-Hour and Daily bias to determine which boundary is likely the manipulation target vs the delivery target.',
       'Step 3 (Manipulation Sweep): Wait for the session open to drive price beyond one extreme of the Reference Candle.',
       'Step 4 (CISD & FVG Trigger): Wait for a Change in State of Delivery candle body close and enter on the First Presented FVG.',
@@ -185,7 +185,7 @@ export const theinnercircletradersNewMasterclasses: MasterclassItem[] = [
       'Stop loss placed beyond the manipulation wick extreme.'
     ],
     stepByStepBreakdown: [
-      { step: 1, title: 'Draw Reference Rays', detail: 'Before 02:00 EST or 09:30 EST, draw horizontal lines on the Reference Candle High and Low.' },
+      { step: 1, title: 'Draw Reference Rays', detail: 'Before 02:00 ET or 09:30 ET, draw horizontal lines on the Reference Candle High and Low.' },
       { step: 2, title: 'Wait for the Judas Sweep', detail: 'Do not touch the keyboard until price interacts with one of the two boundaries.' },
       { step: 3, title: 'Confirm the Shift', detail: 'Look for an LTF displacement candle closing back inside the Reference Candle boundary.' },
       { step: 4, title: 'Ride the Range', detail: 'Execute on the FVG and target the opposite boundary for a clean 1:2 to 1:3 delivery.' }
@@ -319,17 +319,17 @@ export const theinnercircletradersNewMasterclasses: MasterclassItem[] = [
     diagramType: 'session_timeline',
     coreRule: 'Algorithmic market makers do not run continuous random price movement. Price delivery is concentrated into 8 precise 20-minute macro windows throughout the New York trading day, where the Interbank Price Delivery Algorithm (IPDA) injects liquidity to reprice to the nearest PD array or liquidity pool.',
     orderOfOperations: [
-      '02:33 - 03:00 EST (London Pre-Open Macro): Prepares London Open by engineering Judas swing sweeps of Asian range.',
-      '08:50 - 09:10 EST (Pre-Market Equities Macro): Balances overnight futures inventory and tests NDOG/NWOG opening gaps.',
-      '09:50 - 10:10 EST (Morning Silver Bullet Macro): The premier morning macro; sweeps opening 09:30 range and creates the primary 2022 FVG.',
-      '10:50 - 11:10 EST (Late Morning Expansion Macro): Concludes morning trend leg or sets the morning session extreme.',
-      '11:50 - 12:10 EST (London Fix & Midday Macro): Executes European fixes and enters the midday lunch consolidation.',
-      '13:10 - 13:40 EST (Afternoon Resumption Macro): Re-activates institutional order flow for the afternoon expansion leg.',
-      '14:50 - 15:10 EST (Market on Close / MOC Macro): Executes massive mutual fund and institutional rebalancing orders.',
-      '15:50 - 16:00 EST (Closing Auction Cross Macro): Determines official equities closing settlement prices (do not enter new positions).'
+      '02:33 - 03:00 ET (London Pre-Open Macro): Prepares London Open by engineering Judas swing sweeps of Asian range.',
+      '08:50 - 09:10 ET (Pre-Market Equities Macro): Balances overnight futures inventory and tests NDOG/NWOG opening gaps.',
+      '09:50 - 10:10 ET (Morning Silver Bullet Macro): The premier morning macro; sweeps opening 09:30 range and creates the primary 2022 FVG.',
+      '10:50 - 11:10 ET (Late Morning Expansion Macro): Concludes morning trend leg or sets the morning session extreme.',
+      '11:50 - 12:10 ET (London Fix & Midday Macro): Executes European fixes and enters the midday lunch consolidation.',
+      '13:10 - 13:40 ET (Afternoon Resumption Macro): Re-activates institutional order flow for the afternoon expansion leg.',
+      '14:50 - 15:10 ET (Market on Close / MOC Macro): Executes massive mutual fund and institutional rebalancing orders.',
+      '15:50 - 16:00 ET (Closing Auction Cross Macro): A closing-window study reference; cash auction times and futures settlement conventions vary by instrument.'
     ],
     keyMistakes: [
-      'Entering positions at 12:30 PM EST during the dead lunch hour when algorithms are dormant.',
+      'Entering positions at 12:30 PM ET during the dead lunch hour when algorithms are dormant.',
       'Trading outside the macro windows and wondering why price is moving with low volatility and chopping.'
     ],
     invalidationChecklist: [
@@ -337,7 +337,7 @@ export const theinnercircletradersNewMasterclasses: MasterclassItem[] = [
     ],
     riskRules: [
       'Strictly schedule trade setups to execute within the active macro windows.',
-      'Shut down trading by 11:15 AM EST if morning targets are achieved.'
+      'Shut down trading by 11:15 AM ET if morning targets are achieved.'
     ],
     stepByStepBreakdown: [
       { step: 1, title: 'Set Alarm Clocks', detail: 'Set alerts at 5 minutes prior to each major macro window.' },
@@ -345,7 +345,7 @@ export const theinnercircletradersNewMasterclasses: MasterclassItem[] = [
       { step: 3, title: 'Observe Injection', detail: 'Watch for rapid, decisive displacement bars printing as the clock strikes the macro minute.' },
       { step: 4, title: 'Exit or Trail', detail: 'Take profits as the macro window concludes, protecting against counter-macro pullbacks.' }
     ],
-    visualAnatomy: 'Timeline bar across a 24-hour day with 8 highlighted color blocks marking the exact EST start and end minutes, each paired with its specific algorithmic function.',
+    visualAnatomy: 'Timeline bar across a 24-hour day with 8 highlighted color blocks marking the exact ET start and end minutes, each paired with its specific algorithmic function.',
     relatedPdArrays: ['Silver Bullet', 'IPDA Lookback', 'Killzones', 'Market on Close (MOC)'],
     quote: 'Price is not random; it is on a clock. If you know the exact minute the algorithm switches on, you never have to sit at your desk staring at empty candles.'
   }

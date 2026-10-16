@@ -1,3 +1,5 @@
+import { useToolStorage, isBooleanRecord } from '../hooks/useToolStorage';
+import { ToolContentNotice } from './ToolContentNotice';
 import React, { useState, useEffect } from 'react';
 import { 
   Flame, 
@@ -41,23 +43,25 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
   initialSubTab = 'blueprint',
   onNavigateUrl
 }) => {
+  const normalizedCategory = initialCategory === 'algorithmic_signatures' ? 'masterclass_34' : initialCategory;
   // Resolve initial item from slug if provided
   const resolvedInitialItem = initialModuleSlug
     ? masterclassCollection.find(m => getMasterclassSlug(m) === initialModuleSlug || m.id === initialModuleSlug)
-    : masterclassCollection[0];
+    : masterclassCollection.find(m => m.category === initialCategory || (initialCategory === 'masterclass_34' && m.category === 'algorithmic_signatures')) || masterclassCollection[0];
 
   const [selectedId, setSelectedId] = useState<string>(resolvedInitialItem ? resolvedInitialItem.id : masterclassCollection[0].id);
-  const [selectedCategory, setSelectedCategory] = useState<string>(initialCategory || 'all');
+  const [selectedCategory, setSelectedCategory] = useState<string>(normalizedCategory || 'all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [activeSubTab, setActiveSubTab] = useState<'blueprint' | 'order_of_ops' | 'invalidation' | 'risk_rules'>(initialSubTab);
-  const [checkedRules, setCheckedRules] = useState<{ [key: string]: boolean }>({});
+  const ruleStorage = useToolStorage('learnsmc_masterclass_checks_v1', {} as Record<string, boolean>, isBooleanRecord);
+  const checkedRules = ruleStorage.value;
 
   // Sync with prop changes (e.g. from browser back/forward or direct links)
   useEffect(() => {
-    if (initialCategory && initialCategory !== selectedCategory) {
-      setSelectedCategory(initialCategory);
+    if (normalizedCategory && normalizedCategory !== selectedCategory) {
+      setSelectedCategory(normalizedCategory);
     }
-  }, [initialCategory]);
+  }, [normalizedCategory]);
 
   useEffect(() => {
     if (initialModuleSlug) {
@@ -71,9 +75,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
   const activeItem = masterclassCollection.find(m => m.id === selectedId) || masterclassCollection[0];
 
   const updateUrl = (item: MasterclassItem, cat: string) => {
-    const targetUrl = cat !== 'all' && cat !== item.category
-      ? `/tools/masterclass/${cat}/`
-      : getMasterclassUrl(item);
+    const targetUrl = getMasterclassUrl(item);
 
     if (onNavigateUrl) {
       onNavigateUrl(targetUrl);
@@ -83,12 +85,10 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
   };
 
   const handleSelectMasterclass = (item: MasterclassItem) => {
-    setSelectedId(item.id);
     updateUrl(item, selectedCategory);
   };
 
   const handleSelectCategory = (catId: string) => {
-    setSelectedCategory(catId);
     const catMeta = MASTERCLASS_CATEGORIES.find(c => c.id === catId);
     const targetUrl = catId === 'all' 
       ? '/tools/masterclass/' 
@@ -102,7 +102,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
   };
 
   const filteredItems = masterclassCollection.filter(item => {
-    const matchesCategory = selectedCategory === 'all' || item.category === selectedCategory;
+    const matchesCategory = selectedCategory === 'all' || item.category === selectedCategory || (selectedCategory === 'masterclass_34' && item.category === 'algorithmic_signatures');
     const matchesSearch = searchQuery === '' || 
       item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.subtitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -111,18 +111,15 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
   });
 
   const toggleRuleCheck = (ruleKey: string) => {
-    setCheckedRules(prev => ({
-      ...prev,
-      [ruleKey]: !prev[ruleKey]
-    }));
+    ruleStorage.save({ ...checkedRules, [ruleKey]: !checkedRules[ruleKey] });
   };
 
   const categories = [
-    { id: 'all', label: 'All Masterclasses (34+)', icon: Flame },
+    { id: 'all', label: `All masterclasses (${masterclassCollection.length})`, icon: Flame },
     { id: 'masterclass_34', label: 'Core Masterclasses', icon: BookOpen },
-    { id: 'pd_array_15', label: '15 PD Arrays Hierarchy', icon: Layers },
-    { id: 'entry_model_5', label: '5 A+ Entry Models', icon: Target },
-    { id: 'opening_range_5', label: '5 Opening Ranges', icon: Clock },
+    { id: 'pd_array_15', label: 'PD array studies', icon: Layers },
+    { id: 'entry_model_5', label: 'Entry models', icon: Target },
+    { id: 'opening_range_5', label: 'Opening range studies', icon: Clock },
     { id: 'mentorship_2026', label: 'Mentorship Frameworks', icon: Zap }
   ];
 
@@ -143,6 +140,8 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
           { name: activeItem.title, path: canonicalPath }
         ]}
       />
+      <ToolContentNotice />
+      {ruleStorage.error && <p role="alert">{ruleStorage.error}</p>}
       {/* Top Banner: Masterclass Philosophy */}
       <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 relative overflow-hidden">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -152,7 +151,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                 Visual Blueprint
               </span>
               <span className="px-2.5 py-0.5 rounded-full bg-white/[0.04] text-[#55E6D1] border border-white/[0.08] text-[10px] font-mono uppercase">
-                34 Masterclasses • 15 PD Arrays • 5 Models
+                {masterclassCollection.length} model and reference lessons
               </span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[#F5F7FA]">
@@ -181,10 +180,10 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
               const Icon = cat.icon;
               const isActive = selectedCategory === cat.id;
               return (
-                <button
-                  key={cat.id}
-                  type="button"
-                  onClick={() => handleSelectCategory(cat.id)}
+                <a
+                  key={cat.id} aria-current={isActive ? 'page' : undefined}
+
+                  href={cat.id === 'all' ? '/tools/masterclass/' : `/tools/masterclass/${getMasterclassCategorySlug(cat.id)}/`}
                   className={`px-3.5 py-1.5 text-xs font-mono uppercase flex items-center gap-1.5 transition-all rounded-lg border cursor-pointer shrink-0 ${
                     isActive
                       ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20'
@@ -193,7 +192,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                 >
                   <Icon className="w-3.5 h-3.5" />
                   {cat.label}
-                </button>
+                </a>
               );
             })}
           </BauhausNavScroller>
@@ -205,7 +204,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search masterclasses..."
+              aria-label="Search masterclasses" placeholder="Search masterclasses..."
               className="w-full pl-9 pr-3 py-1.5 text-xs font-mono rounded-lg border border-white/[0.08] bg-[#151923] text-[#F5F7FA] placeholder-[#656B78] focus:outline-none focus:border-[#5865FF]"
             />
           </div>
@@ -231,14 +230,11 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
               {filteredItems.map((item) => {
                 const isSelected = item.id === activeItem.id;
                 return (
-                  <button
-                    key={item.id}
-                    type="button"
-                    onClick={() => {
-                      handleSelectMasterclass(item);
-                      window.scrollTo({ top: 120, behavior: 'smooth' });
-                    }}
-                    className={`w-full text-left p-3 text-xs font-mono transition-all rounded-xl border cursor-pointer ${
+                  <a
+                    key={item.id} aria-current={isSelected ? 'page' : undefined}
+
+                    href={getMasterclassUrl(item)}
+                    className={`block w-full text-left p-3 text-xs font-mono transition-all rounded-xl border cursor-pointer ${
                       isSelected
                         ? 'bg-white/[0.10] border-white/20 text-[#F5F7FA]'
                         : 'bg-white/[0.02] border-white/[0.06] text-[#9BA1AE] hover:text-[#F5F7FA] hover:bg-white/[0.05]'
@@ -249,7 +245,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                         #{item.number.toString().padStart(2, '0')}
                       </span>
                       <span className="text-[8px] px-1.5 py-0.5 rounded bg-white/[0.04] text-[#656B78] uppercase shrink-0">
-                        {item.category.replace('_', ' ')}
+                        {MASTERCLASS_CATEGORIES.find(c => c.slug === getMasterclassCategorySlug(item.category))?.name}
                       </span>
                     </div>
                     <div className="font-semibold uppercase tracking-tight text-[#F5F7FA] truncate text-xs">
@@ -258,7 +254,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                     <p className="text-[10px] text-[#9BA1AE] line-clamp-1 mt-0.5">
                       {item.subtitle}
                     </p>
-                  </button>
+                  </a>
                 );
               })}
             </div>
@@ -275,7 +271,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                   Unit #{activeItem.number.toString().padStart(2, '0')}
                 </span>
                 <span className="px-2.5 py-0.5 rounded-full bg-white/[0.04] text-[#9BA1AE] font-mono text-[10px] uppercase border border-white/[0.08]">
-                  {activeItem.category.replace('_', ' ')}
+                  {MASTERCLASS_CATEGORIES.find(c => c.slug === getMasterclassCategorySlug(activeItem.category))?.name}
                 </span>
               </div>
 
@@ -293,6 +289,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                     <button
                       key={tab.id}
                       type="button"
+                      aria-pressed={activeSubTab === tab.id}
                       onClick={() => setActiveSubTab(tab.id as any)}
                       className={`px-3 py-1.5 text-xs font-mono uppercase flex items-center gap-1 rounded-lg border transition-all cursor-pointer ${
                         isActive 
@@ -324,13 +321,13 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                 <span>The Core Rule:</span>
               </div>
               <p className="text-xs sm:text-sm font-mono text-[#F5F7FA] leading-relaxed">
-                "{activeItem.coreRule}"
+                {activeItem.coreRule}
               </p>
             </div>
 
             {/* Quote banner */}
             <div className="p-3 rounded-lg bg-[#0C0E13] border-l-2 border-[#5865FF] text-xs font-mono text-[#9BA1AE] italic">
-              « {activeItem.quote} »
+              Study summary: {activeItem.quote}
             </div>
           </div>
 
@@ -469,8 +466,9 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                       <button
                         key={idx}
                         type="button"
+                        aria-pressed={isChecked}
                         onClick={() => toggleRuleCheck(ruleKey)}
-                        className={`w-full text-left p-3.5 rounded-xl border flex items-start gap-3 transition-all cursor-pointer ${
+                        className={`block w-full text-left p-3.5 rounded-xl border flex items-start gap-3 transition-all cursor-pointer ${
                           isChecked 
                             ? 'bg-[#FF6B7A]/10 border-[#FF6B7A]/30 text-[#F5F7FA]' 
                             : 'bg-white/[0.02] border-white/[0.06] hover:bg-white/[0.04]'
@@ -558,135 +556,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
         </div>
       </div>
 
-      {/* SEO Engine & Structured Data */}
-      <SEO
-        title="Masterclass Hub (34 Models & 15 PD Arrays) | LearnSMC"
-        description="Explore 34 institutional masterclasses, 15 PD Arrays in hierarchical order, 5 high-probability entry models, and 5 opening range delivery profiles."
-        canonicalPath="/tools/masterclass/"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "LearnSMC Masterclass Hub",
-          "url": "https://learnsmc.xyz/tools/masterclass/",
-          "applicationCategory": "EducationalApplication",
-          "operatingSystem": "All",
-          "description": "Codified institutional library of 34 ICT masterclasses, 15 PD arrays in hierarchy, and 5 A+ entry models.",
-          "educationalUse": "Algorithmic model lookup and institutional execution reference",
-          "provider": {
-            "@type": "Organization",
-            "name": "LearnSMC",
-            "url": "https://learnsmc.xyz/"
-          }
-        }}
-      />
 
-      {/* Static Semantic HTML Documentation Block (Indexable by Googlebot & Search Engines) */}
-      <article className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-8 space-y-6 text-[#F5F7FA]">
-        <header className="border-b border-white/[0.07] pb-5">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="w-2 h-2 rounded-full bg-[#8A72FF]" />
-            <span className="text-[10px] font-mono uppercase tracking-[0.16em] text-[#8A72FF]">
-              DOCUMENTATION // MASTERCLASS CODEX
-            </span>
-          </div>
-          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F5F7FA]">
-            34 Institutional Masterclasses, 15 PD Arrays Hierarchy &amp; Algorithmic Models
-          </h2>
-          <p className="text-sm text-[#9BA1AE] mt-1">
-            Complete technical breakdown of the 15-tier Premium/Discount Array hierarchy, 5 high-probability entry models, and opening range delivery windows.
-          </p>
-        </header>
-
-        {/* Section 1: The 15 PD Arrays Hierarchy */}
-        <section className="space-y-3">
-          <h3 className="text-base sm:text-lg font-semibold text-[#55E6D1] flex items-center gap-2">
-            <Layers className="w-4 h-4 text-[#55E6D1]" />
-            1. The 15-Tier Premium &amp; Discount Array Hierarchy
-          </h3>
-          <p className="text-xs sm:text-sm text-[#C5CBD8] leading-relaxed">
-            The Interbank Price Delivery Algorithm (IPDA) parses liquidity through a codified, hierarchical matrix of reference points. 
-            When price seeks Premium to distribute or Discount to accumulate, it scans arrays in a strict mathematical order of priority. 
-            Operators must evaluate setups based on whether price has reached the nearest unmitigated array or is traversing toward higher-tier liquidity.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-            <div className="bg-[#151923] p-4 rounded-xl border border-white/[0.06] space-y-2">
-              <h4 className="text-xs font-mono uppercase tracking-wider text-[#FF6B7A] font-semibold">
-                Premium Arrays (Shorting / Target for Longs)
-              </h4>
-              <ul className="text-xs text-[#9BA1AE] space-y-1.5 list-disc pl-4 font-mono">
-                <li><strong className="text-[#F5F7FA]">1. Old High / Buy-Side Liquidity:</strong> Resting stop orders above swing highs.</li>
-                <li><strong className="text-[#F5F7FA]">2. Rejection Block:</strong> Wicks at extremes showing aggressive institutional selling.</li>
-                <li><strong className="text-[#F5F7FA]">3. Bearish Order Block:</strong> Last bullish candle preceding aggressive downward displacement.</li>
-                <li><strong className="text-[#F5F7FA]">4. Fair Value Gap (FVG):</strong> Three-candle imbalance lacking two-sided trade delivery.</li>
-                <li><strong className="text-[#F5F7FA]">5. Liquidity Void:</strong> Sudden gap or single directional jump in price.</li>
-                <li><strong className="text-[#F5F7FA]">6. Bearish Breaker Block:</strong> An invalidated order block that swept liquidity prior to MSS.</li>
-                <li><strong className="text-[#F5F7FA]">7. Mitigation Block:</strong> Failed swing high block offering structural resistance.</li>
-              </ul>
-            </div>
-            <div className="bg-[#151923] p-4 rounded-xl border border-white/[0.06] space-y-2">
-              <h4 className="text-xs font-mono uppercase tracking-wider text-[#55E6D1] font-semibold">
-                Discount Arrays (Buying / Target for Shorts)
-              </h4>
-              <ul className="text-xs text-[#9BA1AE] space-y-1.5 list-disc pl-4 font-mono">
-                <li><strong className="text-[#F5F7FA]">1. Old Low / Sell-Side Liquidity:</strong> Resting stop orders beneath swing lows.</li>
-                <li><strong className="text-[#F5F7FA]">2. Rejection Block:</strong> Extended lower wicks signaling aggressive liquidity absorption.</li>
-                <li><strong className="text-[#F5F7FA]">3. Bullish Order Block:</strong> Last bearish candle preceding upward displacement.</li>
-                <li><strong className="text-[#F5F7FA]">4. Bullish Fair Value Gap:</strong> Three-candle buying imbalance awaiting rebalance.</li>
-                <li><strong className="text-[#F5F7FA]">5. Liquidity Void:</strong> Downward vacuum seeking reciprocal price delivery.</li>
-                <li><strong className="text-[#F5F7FA]">6. Bullish Breaker Block:</strong> Order block swept into lower low before breaking swing high.</li>
-                <li><strong className="text-[#F5F7FA]">7. Mitigation Block:</strong> Higher low block offering support without prior sweep.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 2: 5 Codified Entry Models */}
-        <section className="space-y-3 pt-3 border-t border-white/[0.06]">
-          <h3 className="text-base sm:text-lg font-semibold text-[#5865FF] flex items-center gap-2">
-            <Target className="w-4 h-4 text-[#5865FF]" />
-            2. The 5 Institutional Entry Models
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-[#9BA1AE]">
-            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
-              <strong className="text-[#F5F7FA] block mb-1">Model 1: Turtle Soup Reversal</strong>
-              False breakout of an established swing high/low into an opposing HTF PD Array, followed by immediate price rejection and failure to hold.
-            </div>
-            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
-              <strong className="text-[#F5F7FA] block mb-1">Model 2: ICT 2022 Mentorship</strong>
-              Sweep of internal or external liquidity, followed by decisive displacement breaking market structure (MSS), leaving a clean FVG for entry.
-            </div>
-            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
-              <strong className="text-[#F5F7FA] block mb-1">Model 3: Breaker Block Execution</strong>
-              High-confluence entry utilizing the last up-candle before a lower low is printed, capitalizing on trapped traders forced to cover.
-            </div>
-            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
-              <strong className="text-[#F5F7FA] block mb-1">Model 4: ICT Silver Bullet</strong>
-              High-probability 1-hour window (10:00–11:00 AM NY) delivering minimum 10–15 handle moves toward the daily Draw on Liquidity.
-            </div>
-            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
-              <strong className="text-[#F5F7FA] block mb-1">Model 5: Judas Swing Expansion</strong>
-              Deceptive engineering of session liquidity during the first 30 minutes of London or New York session preceding true directional expansion.
-            </div>
-            <div className="bg-[#151923] p-3.5 rounded-xl border border-white/[0.06]">
-              <strong className="text-[#F5F7FA] block mb-1">Risk &amp; Execution Standard</strong>
-              Strict 1:2 to 1:3 minimum risk-to-reward ratio, partial profit taking at opposing liquidity pools, and stop loss placed mechanically at invalidation.
-            </div>
-          </div>
-        </section>
-
-        {/* Section 3: Invalidation Rules */}
-        <section className="space-y-3 pt-3 border-t border-white/[0.06]">
-          <h3 className="text-base sm:text-lg font-semibold text-[#FFB020] flex items-center gap-2">
-            <ShieldAlert className="w-4 h-4 text-[#FFB020]" />
-            3. Mechanical Invalidation &amp; Risk Sizing Rules
-          </h3>
-          <p className="text-xs sm:text-sm text-[#C5CBD8] leading-relaxed">
-            Institutional models do not rely on hope or trailing wide stops. If candle bodies violate the Consequent Encroachment (50%) of an FVG 
-            or close through the Mean Threshold of an Order Block, the trade thesis is instantly invalidated. Capital preservation requires taking the loss 
-            mechanically and waiting for the next algorithmic delivery cycle.
-          </p>
-        </section>
-      </article>
     </div>
   );
 };

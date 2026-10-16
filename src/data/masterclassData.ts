@@ -51,7 +51,7 @@ export const masterclassCollection: MasterclassItem[] = [
     ],
     stepByStepBreakdown: [
       { step: 1, title: 'Weekly Open Anchor', detail: 'Mark Sunday 18:00 ET opening price. Bullish weeks seek price below open (Discount); bearish weeks seek price above open (Premium).' },
-      { step: 2, title: 'Judas Swing Window', detail: 'Tuesday or Wednesday prints the high or low of the week ~70% of the time, typically between 02:00-05:00 ET (London) or 08:30-10:00 ET (NY).' },
+      { step: 2, title: 'Judas Swing Window', detail: 'This weekly-profile framework studies Tuesday/Wednesday extremes and London/New York windows. Their frequency is not established by a dataset here.' },
       { step: 3, title: 'True Expansion Leg', detail: 'Price accelerates violently away from the weekly open toward the HTF PD Array or major liquidity pool.' },
       { step: 4, title: 'TGIF Profiling', detail: 'Friday 10:00 AM macro triggers reversal/retracement as market makers hedge weekend risk.' }
     ],
@@ -73,7 +73,7 @@ export const masterclassCollection: MasterclassItem[] = [
       'Question 1: Where did price just come from? (Identifies the originating liquidity pool or HTF PD Array).',
       'Question 2: Where is price right now? (Premium vs Discount relative to the 20-day dealing range).',
       'Question 3: Where is price algorithmically compelled to go? (Target pool: Relative Equal Highs/Lows, Previous Daily High/Low, or Unbalanced FVG).',
-      'Question 4: What is the highest probability path of least resistance? (Low Resistance Liquidity Run vs High Resistance Liquidity Run).'
+      'Question 4: What is the framework-selected path of least resistance? (Low Resistance Liquidity Run vs High Resistance Liquidity Run).'
     ],
     keyMistakes: [
       'Executing on a lower timeframe FVG without knowing what HTF liquidity pool or imbalance the market is drawing toward.',
@@ -228,7 +228,7 @@ export const masterclassCollection: MasterclassItem[] = [
       'Step 5: Once target is reached, close platform. Do not trade outside the 60-minute window.'
     ],
     keyMistakes: [
-      'Greedily trying to hold a Silver Bullet trade for 100 handles when it is designed as a high-probability fixed-target model.',
+      'Greedily trying to hold a Silver Bullet trade for 100 handles when it is designed as a model-based fixed-target model.',
       'Taking trades at 10:55 AM right as the window closes.'
     ],
     invalidationChecklist: [
@@ -252,7 +252,7 @@ export const masterclassCollection: MasterclassItem[] = [
   {
     id: 'mc_07_unicorn_model',
     number: 7,
-    title: 'The ICT Unicorn Model (The Holy Grail Setup)',
+    title: 'The ICT Unicorn Model (Breaker and FVG Confluence)',
     subtitle: 'The Powerful Convergence of a Breaker Block Overlapping a Fair Value Gap',
     category: 'masterclass_34',
     diagramType: 'unicorn_model',
@@ -283,7 +283,7 @@ export const masterclassCollection: MasterclassItem[] = [
     ],
     visualAnatomy: 'Purple Breaker Block corridor overlapping yellow Fair Value Gap corridor, with an entry pin right at the intersection and target at clean equal lows.',
     relatedPdArrays: ['Breaker Block', 'Fair Value Gap', 'Stop Hunt / Liquidity Sweep'],
-    quote: 'When an institutional Breaker Block lines up with a Fair Value Gap, the market is presenting its highest-probability signature: the Unicorn.'
+    quote: 'When an institutional Breaker Block lines up with a Fair Value Gap, the market is presenting its framework-selected signature: the Unicorn.'
   },
 
   // 8. Opening Range Gap (ORG) Octant Grid (2026 Mentorship)
@@ -291,20 +291,20 @@ export const masterclassCollection: MasterclassItem[] = [
     id: 'mc_08_org_octant_grid',
     number: 8,
     title: 'The Opening Range Gap (ORG) & Octant Grid',
-    subtitle: 'ICT 2026 Mentorship: 9:30 AM Open vs 4:14 PM Settlement Mathematical Grid',
+    subtitle: 'ICT 2026 Mentorship: 09:30 cash open versus selected prior-session reference close Mathematical Grid',
     category: 'masterclass_34',
     diagramType: 'org_octant_grid',
-    coreRule: 'The Opening Range Gap (ORG) is the price void between the 9:30 AM New York Cash Open and the 4:14 PM previous day settlement price. Dividing this gap into an 8-part Octant Grid reveals algorithmic targets: the 50% Consequent Encroachment (CE) is traded to ~70% of the time by 10:00 AM!',
+    coreRule: 'For this study, define the ORG between the 09:30 New York cash open and an explicitly selected prior-session reference close. Exchange settlement and session-close conventions vary by instrument. An octant grid divides the selected range into eight equal parts; it does not predict a hit probability.',
     orderOfOperations: [
       'At 9:30 AM ET, note the opening print of the cash session.',
-      'Look back to the previous day 4:14 PM ET settlement price.',
-      'Calculate the difference: ORG = |9:30 Open - 4:14 PM Settlement|.',
+      'Select a prior-session reference close and record the instrument, venue and close convention.',
+      'Calculate the difference: ORG = |9:30 Open - selected prior-session reference close|.',
       'Divide the ORG into 8 mathematical octants: 0.125, 0.25 (Lower Quad), 0.375, 0.50 (Consequent Encroachment), 0.625, 0.75 (Upper Quad), 0.875, 1.0 (Full Range).',
-      'Anticipate a high-probability magnetic draw to the 0.50 CE by 10:00 AM ET.',
+      'Observe the 0.50 midpoint without assuming it must be reached or assigning a probability.',
       'Use 0.5 and 1.0 Standard Deviation extensions below 0.0 or above 1.0 for extended trend day targets.'
     ],
     keyMistakes: [
-      'Using the 4:00 PM close instead of the true 4:14 PM CME settlement price.',
+      'Confusing an exchange settlement price with a chart session-close reference; verify the convention for the selected instrument.',
       'Ignoring the 50% CE level when trading the 9:30-10:00 AM morning open.'
     ],
     invalidationChecklist: [
@@ -314,14 +314,14 @@ export const masterclassCollection: MasterclassItem[] = [
       'Risk 0.5% when trading early ORG fills before 10:00 AM; scale up to 1% on confirmed post-10:00 AM expansion.'
     ],
     stepByStepBreakdown: [
-      { step: 1, title: 'Calculate Gap Dimensions', detail: 'Example: NQ 9:30 Open at 28,576.75, 4:14 PM Settlement at 28,324.75 = 252.00 point ORG.' },
+      { step: 1, title: 'Calculate Gap Dimensions', detail: 'Example: NQ 9:30 Open at 28,576.75, selected prior-session reference close at 28,324.75 = 252.00 point ORG.' },
       { step: 2, title: 'Plot Octants', detail: 'Divide 252 by 8 = 31.50 points per octant. Plot 0.25, 0.50 (CE), 0.75.' },
-      { step: 3, title: 'Track 10:00 AM CE Hit', detail: 'Watch how price gravitates towards the 50% midpoint (~70% probability).' },
+      { step: 3, title: 'Track 10:00 AM CE Hit', detail: 'Observe whether the selected range midpoint is revisited; no hit probability is established here.' },
       { step: 4, title: 'Standard Deviation Target', detail: 'If CE breaks with displacement, project -0.5 and -1.0 SD extensions for afternoon targets.' }
     ],
     visualAnatomy: 'Horizontal octant grid with 8 parallel lines, highlighting the bold 0.50 Consequent Encroachment line and downward standard deviation projections.',
     relatedPdArrays: ['Consequent Encroachment', 'Standard Deviations', 'New Day Opening Gap (NDOG)'],
-    quote: 'The Opening Range Gap is the heartbeat of institutional index pricing. The 50% level is visited ~70% of the time before 10:00 AM.'
+    quote: 'The ORG midpoint is a study reference. A midpoint visit before 10:00 is not guaranteed or statistically established here.'
   },
 
   // 9. Second Stage Distribution / Re-accumulation (MMXM)
@@ -329,7 +329,7 @@ export const masterclassCollection: MasterclassItem[] = [
     id: 'mc_09_mmxm_stage2',
     number: 9,
     title: 'MMXM Second Stage Distribution / Reaccumulation',
-    subtitle: 'The Holy Grail of Market Maker Models: 50% Distance Rule & Violent Acceleration',
+    subtitle: 'The Named Framework of Market Maker Models: 50% Distance Rule & Violent Acceleration',
     category: 'masterclass_34',
     diagramType: 'mmxm_stage2',
     coreRule: 'In Market Maker Buy/Sell Models (MMBM/MMSM), the Smart Money Reversal (SMR) leg must reach at least 50% of the total distance to the original consolidation. Once verified, the Stage-2 Re-accumulation/Re-distribution setup offers the cleanest, most explosive acceleration leg in the entire model.',
@@ -484,7 +484,7 @@ export const masterclassCollection: MasterclassItem[] = [
     subtitle: 'Algorithmic Price Delimiter: The Space Between Wick Extremity & Highest Body Close',
     category: 'pd_array_15',
     diagramType: 'rejection_block',
-    coreRule: 'A Rejection Block is formed at swing highs/lows where long wicks reject a level. It is defined as the price corridor from the highest (or lowest) candle body close to the extreme tip of the wick. It serves as an algorithmic price delimiter and high-probability deferred entry zone.',
+    coreRule: 'A Rejection Block is formed at swing highs/lows where long wicks reject a level. It is defined as the price corridor from the highest (or lowest) candle body close to the extreme tip of the wick. It serves as an algorithmic price delimiter and model-based deferred entry zone.',
     orderOfOperations: [
       'Locate a key swing high or swing low characterized by multiple long rejection wicks.',
       'Draw a horizontal line at the HIGHEST CANDLE BODY CLOSE in that swing high formation.',
@@ -560,7 +560,7 @@ export const masterclassCollection: MasterclassItem[] = [
     subtitle: 'Predicting Exact Highs, Lows & Target Terminus Using -1.5, -2.0, -2.5 and -4.0 SDs',
     category: 'masterclass_34',
     diagramType: 'standard_deviations',
-    coreRule: 'Standard Deviations (STDV) are anchored across the manipulation swing or dealing range (0.0 to -1.0). The algorithm targets extension levels with mathematical precision: -1.5 (first reaction), -2.0 to -2.5 (high probability session high/low target), and -4.0 (macro trend terminus).',
+    coreRule: 'Standard Deviations (STDV) are anchored across the manipulation swing or dealing range (0.0 to -1.0). The algorithm targets extension levels with mathematical precision: -1.5 (first reaction), -2.0 to -2.5 (model-based session high/low target), and -4.0 (macro trend terminus).',
     orderOfOperations: [
       'Identify the manipulation swing (the Judas swing or initial dealing range).',
       'Place Fibonacci tool anchor: 0.0 at the manipulation high and 1.0 (or -1.0) at the dealing range low.',
@@ -672,7 +672,7 @@ export const masterclassCollection: MasterclassItem[] = [
     subtitle: 'Fibonacci Precision: 62%, 70.5% Sweet Spot & 79% Deep Discount Levels',
     category: 'entry_model_5',
     diagramType: 'ote_model',
-    coreRule: 'Optimal Trade Entry (OTE) measures a clean displacement impulse from Swing Low to Swing High. The high-probability institutional entry zone sits between the 62% and 79% Fibonacci retracement levels, with 70.5% being the institutional sweet spot, aligned with an overlapping FVG or Order Block.',
+    coreRule: 'Optimal Trade Entry (OTE) measures a clean displacement impulse from Swing Low to Swing High. The model-based institutional entry zone sits between the 62% and 79% Fibonacci retracement levels, with 70.5% being the institutional sweet spot, aligned with an overlapping FVG or Order Block.',
     orderOfOperations: [
       'Identify a clear displacement price leg (Swing Low to Swing High for bullish, or High to Low for bearish).',
       'Draw Fibonacci tool from the exact origin of the impulse to the terminus of the impulse.',

@@ -1,3 +1,5 @@
+import './styles/articles.css';
+import { articleCatalog } from './data/catalog.generated';
 import { PageReady } from './components/PageReady';
 import { chapterCount, lectureCount } from './utils/catalogCounts';
 import React, { useState, useEffect, lazy, Suspense } from 'react';
@@ -49,6 +51,7 @@ import {
 } from './utils/workbenchToolRoutes';
 
 // Code-split heavy interactive sub-modules for fast initial paint & Core Web Vitals
+const ArticlesView = lazy(() => import('./components/articles/ArticlesView').then(m => ({ default: m.ArticlesView })));
 const CurriculumView = lazy(() => import('./components/CurriculumView').then(m => ({ default: m.CurriculumView })));
 const WelcomeScreen = lazy(() => import('./components/WelcomeScreen').then(m => ({ default: m.WelcomeScreen })));
 const ChapterRoom = lazy(() => import('./components/ChapterRoom').then(m => ({ default: m.ChapterRoom })));
@@ -194,6 +197,11 @@ export const App: React.FC = () => {
           setAttemptedInvalidPath(window.location.pathname);
           return;
         }
+      }
+
+      if (path === '/articles' || articleCatalog.some(a => path === `/articles/${a.slug}`)) {
+        setActiveTab('articles');
+        return;
       }
 
       // 3. Curriculum hub: /curriculum
@@ -367,6 +375,7 @@ export const App: React.FC = () => {
   const navigateToTab = (tab: MainTabType) => {
     let targetPath = '/';
     if (tab === 'curriculum') targetPath = '/curriculum/';
+    else if (tab === 'articles') targetPath = '/articles/';
     else if (tab === 'masood') targetPath = '/masood/';
     else if (tab === 'tools') targetPath = '/tools/';
     else if (['disclaimer', 'privacy', 'terms', 'about', 'contact', 'adsense'].includes(tab)) targetPath = `/${tab}/`;
@@ -484,6 +493,8 @@ export const App: React.FC = () => {
             />
           <PageReady /></Suspense>
         )}
+
+        {activeTab === 'articles' && <Suspense fallback={<ViewLoadingFallback />}><ArticlesView slug={window.location.pathname.split('/').filter(Boolean)[1]} /><PageReady /></Suspense>}
 
         {/* PILLAR 1: OPEN SYLLABUS & CURRICULUM VIEW (All 57 Chapters Unlocked) */}
         {!isShowingWelcome && (activeTab === 'curriculum' || activeTab === 'world_map' || activeTab === 'textbook') && (

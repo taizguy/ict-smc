@@ -16,3 +16,6 @@
   Strict-Transport-Security: max-age=31536000
   Content-Security-Policy: object-src 'none'; base-uri 'self'; frame-ancestors 'self'; upgrade-insecure-requests
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+/articles/feed.xml
+  Content-Type: application/rss+xml; charset=utf-8

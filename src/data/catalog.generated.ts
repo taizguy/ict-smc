@@ -1,4 +1,30 @@
 // Generated from lesson data by scripts/generate-catalog.ts.
+export const articleCatalog = [
+  {
+    "slug": "a-good-trade-can-lose",
+    "title": "A good trade can lose. Your brain would like a word.",
+    "description": "Separate trading decisions from their outcomes with an illustrated story, a two-column journal and a practical review routine.",
+    "topic": "Psychology"
+  },
+  {
+    "slug": "drawdown-math-is-not-symmetric",
+    "title": "The hole gets deeper faster than the ladder gets taller.",
+    "description": "Why a 20% trading loss needs a 25% recovery: drawdown arithmetic, position sizing, costs and an illustrated risk-budget example.",
+    "topic": "Risk"
+  },
+  {
+    "slug": "liquidity-is-not-a-magnet",
+    "title": "Liquidity is not a magnet. So why does price go there?",
+    "description": "An illustrated explanation of liquidity, stop orders and sweeps that separates visible price action from claims about institutional intent.",
+    "topic": "Market mechanics"
+  },
+  {
+    "slug": "bitcoin-dashboard-is-not-a-crystal-ball",
+    "title": "Your Bitcoin dashboard is not a crystal ball.",
+    "description": "Understand realized price, MVRV and NUPL through a tiny fictional Bitcoin network, with formulas, data limits and a source checklist.",
+    "topic": "On-chain"
+  }
+];
 export const chapterCatalog = [
   {
     "id": 1,

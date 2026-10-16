@@ -1,3 +1,5 @@
+import { articlePages } from './article-pages';
+import { articles as writtenArticles } from '../src/data/articles';
 import 'dotenv/config';
 import { prepareRoutes, enrichRoute, renderContextualText, canonicalAliases } from './seo-content';
 import fs from 'fs';
@@ -90,7 +92,7 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
   html = html.replace('</head>', '<meta name="learnsmc-prerendered" content="true" /></head>');
   const verification = process.env.GOOGLE_SITE_VERIFICATION;
   if (verification) html = html.replace('</head>', `<meta name="google-site-verification" content="${escapeHtml(verification)}" /></head>`);
-  if (/\/(learn|masood\/lectures)\//.test(meta.canonical)) html = html.replace('property="og:type" content="website"', 'property="og:type" content="article"');
+  if (/\/(learn|masood\/lectures|articles\/[^/]+)\//.test(meta.canonical)) html = html.replace('property="og:type" content="website"', 'property="og:type" content="article"');
   html = html.replace('</head>', `<meta name="learnsmc-heading" content="${escapeHtml(meta.heading)}" /></head>`);
   if (meta.outputPath === '404.html') html = html.replace('</head>', '<meta name="learnsmc-status" content="404" /></head>');
   // Replace Title
@@ -130,6 +132,13 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
     `<meta name="twitter:description" content="${escapeHtml(meta.description)}" />`
   );
 
+  if (new URL(meta.canonical).pathname.startsWith('/articles/')) {
+    html = html.replace('</head>', '<link rel="alternate" type="application/rss+xml" title="LearnSMC Articles" href="https://learnsmc.xyz/articles/feed.xml" /></head>');
+    const article = writtenArticles.find(a => meta.canonical.endsWith(`/articles/${a.slug}/`));
+    const image = `https://learnsmc.xyz/images/articles/${article?.sketch || 'decision'}-social.png`;
+    html = html.replace(/(<meta (?:property="og:image"|name="twitter:image") content=")[^"]*(" \/>)/g, `$1${image}$2`);
+    html = html.replace(/(<meta property="og:image:alt" content=")[^"]*(" \/>)/, '$1Original LearnSMC illustrated trading essay$2');
+  }
   // Optional Schema.org JSON-LD injection
   if (meta.schemaJson) {
     const jsonLdString = `<script type="application/ld+json">\n${JSON.stringify(meta.schemaJson, null, 2).replace(/</g, '\\u003c')}\n</script>`;
@@ -160,6 +169,7 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
         <nav style="display: flex; gap: 1.25rem; font-size: 0.85rem; font-family: monospace;" aria-label="Main Navigation">
           <a href="/" style="color: #CBD5E1; text-decoration: none;">Home</a>
           <a href="/curriculum/" style="color: #CBD5E1; text-decoration: none;">57 Chapters</a>
+          <a href="/articles/" style="color: #CBD5E1; text-decoration: none;">Articles</a>
           <a href="/masood/" style="color: #CBD5E1; text-decoration: none;">Masood Academy</a>
           <a href="/tools/" style="color: #CBD5E1; text-decoration: none;">Workbench Lab</a>
           <a href="/about/" style="color: #CBD5E1; text-decoration: none;">About</a>
@@ -169,7 +179,7 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
       <!-- Main Article / Route Body -->
       <main id="main-content" tabindex="-1">
         <article>
-          <header style="margin-bottom: 2rem;">
+          ${new URL(meta.canonical).pathname.startsWith('/articles/') ? '' : `<header style="margin-bottom: 2rem;">
             <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 9999px; background: rgba(88, 101, 255, 0.15); border: 1px solid rgba(88, 101, 255, 0.3); color: #8A72FF; font-size: 0.75rem; font-family: monospace; margin-bottom: 0.75rem;">
               ${escapeHtml(meta.badge)}
             </div>
@@ -179,7 +189,7 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
             <p style="font-size: 1.1rem; color: #94A3B8; line-height: 1.6; margin: 0;">
               ${escapeHtml(meta.subheading)}
             </p>
-          </header>
+          </header>`}
 
           <div style="background: rgba(17, 20, 27, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 2rem; margin-bottom: 3rem;">
             ${meta.bodyHtml}
@@ -1626,6 +1636,8 @@ const notFoundPage: RouteMeta = {
   `
 };
 
+allRoutes.push(...articlePages(projectRoot, distDir));
+
 console.log(`Starting static prerendering for ${allRoutes.length} canonical routes...`);
 
 // Render and write all canonical routes
@@ -1665,7 +1677,7 @@ for (const route of allRoutes) {
 
     sitemapUrls.push({
       loc: route.url,
-      lastmod: todayIso,
+      lastmod: writtenArticles.find(a => route.canonical.endsWith(`/articles/${a.slug}/`))?.date || todayIso,
       changefreq,
       priority
     });

@@ -9,6 +9,7 @@ import { BauhausNavScroller } from './BauhausNavScroller';
 
 export type MainTabType = 
   | 'welcome'
+  | 'articles'
   | 'curriculum' 
   | 'chapter_room' 
   | 'masood' 
@@ -147,7 +148,7 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Center: Minimal Segmented Navigation */}
-        <nav className="hidden md:flex items-center gap-1 p-1 bg-white/[0.03] border border-white/[0.07] rounded-xl">
+        <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-1 p-1 bg-white/[0.03] border border-white/[0.07] rounded-xl">
           {/* Pillar 1: Curriculum */}
           <a href="/curriculum/"
             className={`px-4 py-2 rounded-lg text-xs font-medium tracking-tight transition-all cursor-pointer ${
@@ -159,6 +160,9 @@ export const Header: React.FC<HeaderProps> = ({
             <span>Curriculum</span>
             <span className="ml-1.5 text-[10px] font-mono text-[#656B78]">{chapterCount}</span>
           </a>
+
+          <a href="/articles/" aria-current={activeTab === 'articles' ? 'page' : undefined}
+            className={`px-4 py-2 rounded-lg text-xs font-medium transition-all ${activeTab === 'articles' ? 'bg-white/[0.08] text-[#F5F7FA]' : 'text-[#9BA1AE] hover:text-[#F5F7FA]'}`}>Articles</a>
 
           {/* Pillar 2: Masood's Academy */}
           <a href="/masood/"
@@ -224,7 +228,7 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Mobile Macro Navigation Bar */}
-      <div className="flex md:hidden border-t border-white/[0.06] px-3 py-2 bg-[#0C0E13]/70">
+      <div role="navigation" aria-label="Main navigation" className="flex lg:hidden border-t border-white/[0.06] px-3 py-2 bg-[#0C0E13]/70">
         <BauhausNavScroller innerClassName="gap-1.5">
           <a href="/curriculum/"
             className={`py-1.5 px-3 rounded-lg text-xs font-medium tracking-tight whitespace-nowrap transition-all shrink-0 ${
@@ -233,6 +237,8 @@ export const Header: React.FC<HeaderProps> = ({
           >
             Curriculum ({chapterCount})
           </a>
+          <a href="/articles/" aria-current={activeTab === 'articles' ? 'page' : undefined}
+            className={`min-h-11 inline-flex items-center px-3 rounded-lg text-xs font-medium whitespace-nowrap shrink-0 ${activeTab === 'articles' ? 'bg-white/[0.10] text-[#F5F7FA]' : 'text-[#9BA1AE]'}`}>Articles</a>
           <a href="/masood/"
             className={`py-1.5 px-3 rounded-lg text-xs font-medium tracking-tight whitespace-nowrap transition-all shrink-0 ${
               isMasoodActive ? 'bg-white/[0.10] text-[#F5F7FA]' : 'text-[#9BA1AE]'

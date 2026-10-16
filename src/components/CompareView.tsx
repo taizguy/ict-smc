@@ -79,7 +79,7 @@ export const CompareView: React.FC<CompareViewProps> = ({
 
         {/* Comparison Selector */}
         <div className="pt-4 border-t border-ink/[0.07]">
-          <div className="text-[10px] font-mono uppercase tracking-[0.16em] text-ink-muted mb-2">
+          <div className="text-[0.8125rem] font-sans tabular-nums uppercase tracking-[0.16em] text-ink-muted mb-2">
             SELECT PAIRING:
           </div>
           <BauhausNavScroller>
@@ -90,7 +90,7 @@ export const CompareView: React.FC<CompareViewProps> = ({
                   key={c.id} aria-current={isSelected ? 'page' : undefined}
 
                   href={getComparisonUrl(c.id)}
-                  className={`px-3.5 py-1.5 text-xs font-mono uppercase whitespace-nowrap transition-all rounded-lg border cursor-pointer shrink-0 ${
+                  className={`px-3.5 py-1.5 text-xs font-sans tabular-nums uppercase whitespace-nowrap transition-all rounded-lg border cursor-pointer shrink-0 ${
                     isSelected
                       ? 'bg-ink/[0.12] text-ink border-ink/20'
                       : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06] hover:bg-ink/[0.05]'
@@ -110,7 +110,7 @@ export const CompareView: React.FC<CompareViewProps> = ({
           <h3 className="text-xl sm:text-2xl font-semibold text-ink tracking-tight">
             {comparison.title}
           </h3>
-          <p className="text-xs font-mono text-teal uppercase bg-teal/10 px-3 py-1 rounded-full border border-teal/20 inline-block">
+          <p className="text-xs font-sans tabular-nums text-teal uppercase bg-teal/10 px-3 py-1 rounded-full border border-teal/20 inline-block">
             {comparison.keyDifference}
           </p>
         </div>
@@ -127,7 +127,7 @@ export const CompareView: React.FC<CompareViewProps> = ({
           {/* Concept A Card */}
           <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-7 space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-ink/[0.07]">
-              <span className="px-3 py-0.5 rounded bg-brand/10 text-brand font-mono text-xs font-medium border border-brand/20 uppercase">
+              <span className="px-3 py-0.5 rounded bg-brand/10 text-brand font-sans tabular-nums text-xs font-medium border border-brand/20 uppercase">
                 {comparison.conceptA.name}
               </span>
             </div>
@@ -137,10 +137,10 @@ export const CompareView: React.FC<CompareViewProps> = ({
             </p>
 
             <div className="space-y-2">
-              <h5 className="text-[10px] font-mono text-brand uppercase tracking-wider">
+              <h5 className="text-[0.8125rem] font-sans tabular-nums text-brand uppercase tracking-wider">
                 Key Attributes:
               </h5>
-              <ul className="space-y-1.5 text-xs font-mono text-ink/90">
+              <ul className="space-y-1.5 text-xs font-sans tabular-nums text-ink/90">
                 {comparison.conceptA.keyPoints.map((pt, idx) => (
                   <li key={idx} className="flex items-start gap-2">
                     <span className="text-brand">•</span>
@@ -150,8 +150,8 @@ export const CompareView: React.FC<CompareViewProps> = ({
               </ul>
             </div>
 
-            <div className="pt-3 border-t border-ink/[0.06] text-xs font-mono bg-ink/[0.02] p-4 rounded-xl border border-ink/[0.06]">
-              <strong className="text-ink-muted uppercase block text-[10px] mb-0.5">
+            <div className="pt-3 border-t border-ink/[0.06] text-xs font-sans tabular-nums bg-ink/[0.02] p-4 rounded-xl border border-ink/[0.06]">
+              <strong className="text-ink-muted uppercase block text-[0.8125rem] mb-0.5">
                 Ideal Setup Condition:
               </strong>
               <span className="text-ink font-medium">{comparison.conceptA.idealCondition}</span>
@@ -161,7 +161,7 @@ export const CompareView: React.FC<CompareViewProps> = ({
           {/* Concept B Card */}
           <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-7 space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-ink/[0.07]">
-              <span className="px-3 py-0.5 rounded bg-teal/10 text-teal font-mono text-xs font-medium border border-teal/20 uppercase">
+              <span className="px-3 py-0.5 rounded bg-teal/10 text-teal font-sans tabular-nums text-xs font-medium border border-teal/20 uppercase">
                 {comparison.conceptB.name}
               </span>
             </div>
@@ -171,10 +171,10 @@ export const CompareView: React.FC<CompareViewProps> = ({
             </p>
 
             <div className="space-y-2">
-              <h5 className="text-[10px] font-mono text-teal uppercase tracking-wider">
+              <h5 className="text-[0.8125rem] font-sans tabular-nums text-teal uppercase tracking-wider">
                 Key Attributes:
               </h5>
-              <ul className="space-y-1.5 text-xs font-mono text-ink/90">
+              <ul className="space-y-1.5 text-xs font-sans tabular-nums text-ink/90">
                 {comparison.conceptB.keyPoints.map((pt, idx) => (
                   <li key={idx} className="flex items-start gap-2">
                     <span className="text-teal">•</span>
@@ -184,8 +184,8 @@ export const CompareView: React.FC<CompareViewProps> = ({
               </ul>
             </div>
 
-            <div className="pt-3 border-t border-ink/[0.06] text-xs font-mono bg-ink/[0.02] p-4 rounded-xl border border-ink/[0.06]">
-              <strong className="text-ink-muted uppercase block text-[10px] mb-0.5">
+            <div className="pt-3 border-t border-ink/[0.06] text-xs font-sans tabular-nums bg-ink/[0.02] p-4 rounded-xl border border-ink/[0.06]">
+              <strong className="text-ink-muted uppercase block text-[0.8125rem] mb-0.5">
                 Ideal Setup Condition:
               </strong>
               <span className="text-ink font-medium">{comparison.conceptB.idealCondition}</span>
@@ -195,16 +195,16 @@ export const CompareView: React.FC<CompareViewProps> = ({
 
         {/* The Decisive Separation Rule Card */}
         <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-7 space-y-4">
-          <div className="flex items-center gap-2 text-ink font-mono text-xs uppercase">
+          <div className="flex items-center gap-2 text-ink font-sans tabular-nums text-xs uppercase">
             <Scale className="w-4 h-4 text-brand" />
             <span className="font-semibold">The Decisive Execution Rule</span>
           </div>
 
-          <div className="bg-emerald-500/5 p-4 rounded-xl border border-emerald-500/20 font-mono text-xs text-emerald-700 leading-relaxed">
+          <div className="bg-emerald-500/5 p-4 rounded-xl border border-emerald-500/20 font-sans tabular-nums text-xs text-emerald-700 leading-relaxed">
             {comparison.decisionRule}
           </div>
 
-          <div className="flex items-start gap-3 bg-rose-500/5 p-4 rounded-xl border border-rose-500/20 text-xs font-mono text-ink-secondary">
+          <div className="flex items-start gap-3 bg-rose-500/5 p-4 rounded-xl border border-rose-500/20 text-xs font-sans tabular-nums text-ink-secondary">
             <AlertTriangle className="w-4 h-4 text-rose-700 shrink-0 mt-0.5" />
             <div>
               <strong className="text-rose-700 uppercase">Common Retail Mistake: </strong>

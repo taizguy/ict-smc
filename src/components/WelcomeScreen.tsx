@@ -44,7 +44,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
       <div className="w-full px-5 py-3.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-ink/[0.08] bg-surface/80 backdrop-blur-md rounded-2xl">
         <div className="flex items-center gap-3">
           <div className="w-2.5 h-2.5 rounded-full bg-brand shadow-[0_0_12px_rgba(37,101,82,0.7)]" />
-          <span className="text-[11px] font-mono tracking-[0.18em] uppercase text-ink-secondary">
+          <span className="text-[0.8125rem] font-sans tabular-nums tracking-[0.18em] uppercase text-ink-secondary">
             INSTITUTIONAL CURRICULUM · OPEN ACCESS CODEX
           </span>
         </div>
@@ -80,11 +80,11 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
               
               {/* Eyebrow */}
               <div className="flex items-center gap-3">
-                <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-teal font-medium">
+                <span className="text-[0.8125rem] font-sans tabular-nums tracking-[0.2em] uppercase text-teal font-medium">
                   00 / THE INNER CIRCLE TRADER
                 </span>
                 <span className="text-ink">·</span>
-                <span className="text-[11px] font-mono tracking-[0.16em] uppercase text-ink-muted">
+                <span className="text-[0.8125rem] font-sans tabular-nums tracking-[0.16em] uppercase text-ink-muted">
                   SMART MONEY CONCEPTS
                 </span>
               </div>
@@ -130,11 +130,11 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
 
               {/* Dynamic Algorithmic Quote */}
               <div className="p-4 rounded-xl bg-ink/[0.02] border border-ink/[0.06] space-y-1.5 max-w-xl">
-                <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.16em] text-ink-muted">
+                <div className="flex items-center gap-2 text-[0.8125rem] font-sans tabular-nums uppercase tracking-[0.16em] text-ink-muted">
                   <Clock className="w-3 h-3 text-brand" />
                   <span>ALGORITHMIC DICTUM</span>
                 </div>
-                <p className="text-xs sm:text-sm text-ink/80 italic font-light">
+                <p className="text-xs sm:text-sm text-ink/80 italic font-normal">
                   {quotes[quoteIndex]}
                 </p>
               </div>
@@ -148,11 +148,11 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                 <div className="flex items-center justify-between pb-3 border-b border-ink/[0.07]">
                   <div className="flex items-center gap-2.5">
                     <span className="w-2 h-2 rounded-full bg-teal" />
-                    <span className="text-[11px] font-mono tracking-[0.16em] uppercase text-ink">
+                    <span className="text-[0.8125rem] font-sans tabular-nums tracking-[0.16em] uppercase text-ink">
                       DEDICATION &amp; TRIBUTE
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono text-brand bg-brand/10 px-2.5 py-0.5 rounded-full border border-brand/20">
+                  <span className="text-[0.8125rem] font-sans tabular-nums text-brand bg-brand/10 px-2.5 py-0.5 rounded-full border border-brand/20">
                     100% UNLOCKED
                   </span>
                 </div>
@@ -160,17 +160,17 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                 {/* Framed Image */}
                 <div className="relative rounded-xl overflow-hidden bg-surface-muted border border-ink/[0.08] aspect-[640/570]">
                   <AcademyStudyIllustration />
-                  <div className="absolute bottom-3 left-3 bg-canvas/85 backdrop-blur-md text-ink px-3 py-1 text-[10px] font-mono rounded-md border border-ink/[0.09] tracking-wider uppercase">
+                  <div className="absolute bottom-3 left-3 bg-canvas/85 backdrop-blur-md text-ink px-3 py-1 text-[0.8125rem] font-sans tabular-nums rounded-md border border-ink/[0.09] tracking-wider uppercase">
                     FOCUS // ORDERFLOW DISCIPLINE
                   </div>
                 </div>
 
                 {/* Inscription */}
                 <div className="p-3.5 rounded-xl bg-ink/[0.03] border border-ink/[0.06] text-xs space-y-1">
-                  <div className="font-mono text-[10px] text-teal tracking-[0.14em] uppercase">
+                  <div className="font-sans tabular-nums text-[0.8125rem] text-teal tracking-[0.14em] uppercase">
                     IN HONOR OF TRADER ABDULLAH MASOOD
                   </div>
-                  <p className="text-ink-secondary text-xs leading-relaxed font-light">
+                  <p className="text-ink-secondary text-xs leading-relaxed font-normal">
                     Transforming thousands of retail traders through relentless dedication to open education, algorithmic precision, and disciplined risk psychology.
                   </p>
                 </div>
@@ -178,16 +178,16 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                 {/* Metrics */}
                 <div className="grid grid-cols-3 gap-3 text-center">
                   <div className="p-3 rounded-xl bg-ink/[0.02] border border-ink/[0.06]">
-                    <div className="text-2xl font-semibold text-ink font-mono">{chapterCount}</div>
-                    <div className="text-[10px] uppercase text-ink-muted font-mono tracking-wider mt-0.5">Chapters</div>
+                    <div className="text-2xl font-semibold text-ink font-sans tabular-nums">{chapterCount}</div>
+                    <div className="text-[0.8125rem] uppercase text-ink-muted font-sans tabular-nums tracking-wider mt-0.5">Chapters</div>
                   </div>
                   <div className="p-3 rounded-xl bg-ink/[0.02] border border-ink/[0.06]">
-                    <div className="text-2xl font-semibold text-negative font-mono">{lectureCount}</div>
-                    <div className="text-[10px] uppercase text-ink-muted font-mono tracking-wider mt-0.5">Lectures</div>
+                    <div className="text-2xl font-semibold text-negative font-sans tabular-nums">{lectureCount}</div>
+                    <div className="text-[0.8125rem] uppercase text-ink-muted font-sans tabular-nums tracking-wider mt-0.5">Lectures</div>
                   </div>
                   <div className="p-3 rounded-xl bg-ink/[0.02] border border-ink/[0.06]">
-                    <div className="text-2xl font-semibold text-teal font-mono">10</div>
-                    <div className="text-[10px] uppercase text-ink-muted font-mono tracking-wider mt-0.5">Tools</div>
+                    <div className="text-2xl font-semibold text-teal font-sans tabular-nums">10</div>
+                    <div className="text-[0.8125rem] uppercase text-ink-muted font-sans tabular-nums tracking-wider mt-0.5">Tools</div>
                   </div>
                 </div>
 
@@ -201,7 +201,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
         <ScrollReveal y={30} delay={0.15}>
           <div className="space-y-4 pt-8">
             <div className="flex items-center gap-2">
-              <span className="text-[11px] font-mono uppercase tracking-[0.18em] text-ink-muted">
+              <span className="text-[0.8125rem] font-sans tabular-nums uppercase tracking-[0.18em] text-ink-muted">
                 01 / THREE PILLARS OF MASTERY
               </span>
             </div>
@@ -214,10 +214,10 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                 className="predikt-card p-6 sm:p-7 space-y-4 cursor-pointer group"
               >
                 <div className="flex items-center justify-between">
-                  <div className="w-9 h-9 rounded-lg bg-ink/[0.04] border border-ink/[0.08] flex items-center justify-center font-mono text-xs text-brand font-semibold">
+                  <div className="w-9 h-9 rounded-lg bg-ink/[0.04] border border-ink/[0.08] flex items-center justify-center font-sans tabular-nums text-xs text-brand font-semibold">
                     01
                   </div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-ink-muted">
+                  <span className="text-[0.8125rem] font-sans tabular-nums uppercase tracking-wider text-ink-muted">
                     OPEN SYLLABUS
                   </span>
                 </div>
@@ -241,10 +241,10 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                 className="predikt-card p-6 sm:p-7 space-y-4 cursor-pointer group"
               >
                 <div className="flex items-center justify-between">
-                  <div className="w-9 h-9 rounded-lg bg-ink/[0.04] border border-ink/[0.08] flex items-center justify-center font-mono text-xs text-negative font-semibold">
+                  <div className="w-9 h-9 rounded-lg bg-ink/[0.04] border border-ink/[0.08] flex items-center justify-center font-sans tabular-nums text-xs text-negative font-semibold">
                     02
                   </div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-ink-muted">
+                  <span className="text-[0.8125rem] font-sans tabular-nums uppercase tracking-wider text-ink-muted">
                     VIDEO SYNDICATE
                   </span>
                 </div>
@@ -268,10 +268,10 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                 className="predikt-card p-6 sm:p-7 space-y-4 cursor-pointer group"
               >
                 <div className="flex items-center justify-between">
-                  <div className="w-9 h-9 rounded-lg bg-ink/[0.04] border border-ink/[0.08] flex items-center justify-center font-mono text-xs text-teal font-semibold">
+                  <div className="w-9 h-9 rounded-lg bg-ink/[0.04] border border-ink/[0.08] flex items-center justify-center font-sans tabular-nums text-xs text-teal font-semibold">
                     03
                   </div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-ink-muted">
+                  <span className="text-[0.8125rem] font-sans tabular-nums uppercase tracking-wider text-ink-muted">
                     INTERACTIVE LAB
                   </span>
                 </div>

@@ -155,8 +155,8 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
 
   // Generate Crawlable Structural Layout
   const renderedContent = `
-    <div id="static-content" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f6f7f2; color: #223b35; min-height: 100vh; padding: 2rem 1.5rem; max-width: 1200px; margin: 0 auto; box-sizing: border-box;">
-      <style>#static-content a{color:#23796d;text-underline-offset:3px}#static-content p,#static-content li{line-height:1.75}#static-content section{margin-block:1.5rem}#static-content li{margin-block:.5rem}#static-content ul{padding-left:1.25rem}</style>
+    <div id="static-content" style="font-family: var(--font-sans, system-ui); background-color: #f6f7f2; color: #223b35; min-height: 100vh; padding: 2rem 1.5rem; max-width: 1200px; margin: 0 auto; box-sizing: border-box;">
+      <style>#static-content a{color:#23796d;text-underline-offset:3px}#static-content p,#static-content li{line-height:1.75;font-size:1rem!important;max-inline-size:68ch}#static-content h1{font-size:clamp(2rem,1.5rem + 2vw,3.5rem)!important;line-height:1.15}#static-content nav{flex-wrap:wrap}#static-content section{margin-block:1.5rem}#static-content li{margin-block:.5rem}#static-content ul{padding-left:1.25rem}</style>
       <a href="#main-content" style="color:#23796d">Skip to main content</a>
       <!-- Crawlable Header -->
       <header style="border-bottom: 1px solid rgba(34,59,53,0.08); padding-bottom: 1.5rem; margin-bottom: 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">

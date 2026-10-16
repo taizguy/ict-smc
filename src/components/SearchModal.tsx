@@ -100,12 +100,12 @@ export const SearchModal: React.FC<SearchModalProps> = ({
           {/* Concepts Section */}
           {filteredConcepts.length > 0 && (
             <div className="space-y-3">
-              <div className="text-[11px] text-ink-secondary uppercase tracking-wider flex items-center justify-between font-mono pb-1 border-b border-ink/[0.06]">
+              <div className="text-[0.8125rem] text-ink-secondary uppercase tracking-wider flex items-center justify-between font-sans tabular-nums pb-1 border-b border-ink/[0.06]">
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-brand" />
                   <span>ENCYCLOPEDIA CONCEPTS</span>
                 </div>
-                <span className="text-[10px] text-ink-muted">
+                <span className="text-[0.8125rem] text-ink-muted">
                   {filteredConcepts.length} MATCHES
                 </span>
               </div>
@@ -124,7 +124,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                         <span className="font-medium text-sm text-ink group-hover:text-brand transition-colors truncate">
                           {c.name}
                         </span>
-                        <span className="text-[9px] px-2 py-0.5 rounded bg-ink/[0.04] text-ink-secondary uppercase font-mono shrink-0">
+                        <span className="text-[0.8125rem] px-2 py-0.5 rounded bg-ink/[0.04] text-ink-secondary uppercase font-sans tabular-nums shrink-0">
                           {c.category}
                         </span>
                       </div>
@@ -143,12 +143,12 @@ export const SearchModal: React.FC<SearchModalProps> = ({
           {/* Chapters Section */}
           {filteredChapters.length > 0 && (
             <div className="space-y-3">
-              <div className="text-[11px] text-ink-secondary uppercase tracking-wider flex items-center justify-between font-mono pb-1 border-b border-ink/[0.06]">
+              <div className="text-[0.8125rem] text-ink-secondary uppercase tracking-wider flex items-center justify-between font-sans tabular-nums pb-1 border-b border-ink/[0.06]">
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-teal" />
                   <span>TEXTBOOK CHAPTERS</span>
                 </div>
-                <span className="text-[10px] text-ink-muted">
+                <span className="text-[0.8125rem] text-ink-muted">
                   {filteredChapters.length} MATCHES
                 </span>
               </div>
@@ -164,7 +164,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                   >
                     <div className="space-y-1 min-w-0">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs font-mono font-medium text-teal">
+                        <span className="text-xs font-sans tabular-nums font-medium text-teal">
                           CH {ch.id < 10 ? `0${ch.id}` : ch.id}
                         </span>
                         <span className="font-medium text-sm text-ink group-hover:text-teal transition-colors truncate">
@@ -185,13 +185,13 @@ export const SearchModal: React.FC<SearchModalProps> = ({
           {filteredConcepts.length === 0 && filteredChapters.length === 0 && filteredArticles.length === 0 && (
             <div className="text-center py-8 space-y-2">
               <p className="text-ink-secondary text-sm">No matches found for "{query}".</p>
-              <p className="text-xs text-ink-muted font-mono">Try searching for FVG, Liquidity, Order Block, or Level 1.</p>
+              <p className="text-xs text-ink-muted font-sans tabular-nums">Try searching for FVG, Liquidity, Order Block, or Level 1.</p>
             </div>
           )}
         </div>
 
         {/* Footer shortcuts */}
-        <div className="p-3 bg-surface-muted border-t border-ink/[0.06] flex items-center justify-between text-[11px] font-mono text-ink-muted">
+        <div className="p-3 bg-surface-muted border-t border-ink/[0.06] flex items-center justify-between text-[0.8125rem] font-sans tabular-nums text-ink-muted">
           <div className="flex items-center gap-3">
             <span>↑↓ Navigate</span>
             <span>↵ Select</span>

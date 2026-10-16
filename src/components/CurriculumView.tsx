@@ -71,11 +71,11 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
               
               {/* Technical Eyebrow */}
               <div className="flex items-center gap-3">
-                <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-teal">
+                <span className="text-[0.8125rem] font-sans tabular-nums tracking-[0.2em] uppercase text-teal">
                   01 / CURRICULUM ARCHITECTURE
                 </span>
                 <span className="text-ink">·</span>
-                <span className="text-[11px] font-mono tracking-[0.16em] uppercase text-ink-muted">
+                <span className="text-[0.8125rem] font-sans tabular-nums tracking-[0.16em] uppercase text-ink-muted">
                   {chapterCount} CODIFIED CHAPTERS
                 </span>
               </div>
@@ -97,7 +97,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
                     placeholder="SEARCH CHAPTERS, CONCEPTS, TERMS..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-10 py-2.5 bg-surface-muted border border-ink/[0.09] rounded-xl text-xs sm:text-sm font-mono text-ink placeholder-[#5f7064] uppercase tracking-wider focus:outline-none focus:border-brand/60 transition-all"
+                    className="w-full pl-10 pr-10 py-2.5 bg-surface-muted border border-ink/[0.09] rounded-xl text-xs sm:text-sm font-sans tabular-nums text-ink placeholder-[#5f7064] uppercase tracking-wider focus:outline-none focus:border-brand/60 transition-all"
                   />
                   {searchQuery && (
                     <button
@@ -122,28 +122,28 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
             <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
               
               <div className="flex-1 bg-ink/[0.02] border border-ink/[0.07] p-4 sm:p-5 rounded-xl">
-                <div className="text-3xl sm:text-4xl font-semibold font-mono text-ink tracking-tight leading-none">
+                <div className="text-3xl sm:text-4xl font-semibold font-sans tabular-nums text-ink tracking-tight leading-none">
                   {chapterCount}
                 </div>
-                <div className="text-xs text-ink-secondary mt-1 font-mono tracking-wider uppercase">
+                <div className="text-xs text-ink-secondary mt-1 font-sans tabular-nums tracking-wider uppercase">
                   Textbook Chapters
                 </div>
               </div>
 
               <div className="flex-1 bg-ink/[0.02] border border-ink/[0.07] p-4 sm:p-5 rounded-xl">
-                <div className="text-3xl sm:text-4xl font-semibold font-mono text-brand tracking-tight leading-none">
+                <div className="text-3xl sm:text-4xl font-semibold font-sans tabular-nums text-brand tracking-tight leading-none">
                   {topicClusters.length}
                 </div>
-                <div className="text-xs text-ink-secondary mt-1 font-mono tracking-wider uppercase">
+                <div className="text-xs text-ink-secondary mt-1 font-sans tabular-nums tracking-wider uppercase">
                   Curriculum Modules
                 </div>
               </div>
 
               <div className="flex-1 bg-ink/[0.02] border border-ink/[0.07] p-4 sm:p-5 rounded-xl">
-                <div className="text-3xl sm:text-4xl font-semibold font-mono text-teal tracking-tight leading-none">
+                <div className="text-3xl sm:text-4xl font-semibold font-sans tabular-nums text-teal tracking-tight leading-none">
                   100%
                 </div>
-                <div className="text-xs text-ink-secondary mt-1 font-mono tracking-wider uppercase">
+                <div className="text-xs text-ink-secondary mt-1 font-sans tabular-nums tracking-wider uppercase">
                   Unrestricted &amp; Open
                 </div>
               </div>
@@ -159,11 +159,11 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
         <section className="space-y-3">
           <div className="flex items-center justify-between gap-4 pb-2 border-b border-ink/[0.07]">
             <div className="flex items-center gap-2">
-              <span className="text-xs font-mono uppercase tracking-[0.16em] text-ink-secondary">
+              <span className="text-xs font-sans tabular-nums uppercase tracking-[0.16em] text-ink-secondary">
                 FILTER BY CURRICULUM MODULE
               </span>
             </div>
-            <div className="text-xs font-mono text-ink-muted">
+            <div className="text-xs font-sans tabular-nums text-ink-muted">
               {filteredChapters.length} of {textbookChapters.length} Chapters
             </div>
           </div>
@@ -223,10 +223,10 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
               <div className="space-y-4">
                 {/* Card Header Metadata */}
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-semibold text-brand tracking-wider">
+                  <span className="text-xs font-sans tabular-nums font-semibold text-brand tracking-wider">
                     {ch.id < 10 ? `0${ch.id}` : ch.id} / 57
                   </span>
-                  <span className="text-[10px] font-mono tracking-wider uppercase text-ink-muted">
+                  <span className="text-[0.8125rem] font-sans tabular-nums tracking-wider uppercase text-ink-muted">
                     LEVEL {ch.level} · {partShort}
                   </span>
                 </div>
@@ -245,8 +245,8 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
               </div>
 
               {/* Card Footer */}
-              <div className="pt-4 border-t border-ink/[0.06] flex items-center justify-between gap-3 text-xs font-mono">
-                <div className="flex items-center gap-2 text-ink-muted text-[11px]">
+              <div className="pt-4 border-t border-ink/[0.06] flex items-center justify-between gap-3 text-xs font-sans tabular-nums">
+                <div className="flex items-center gap-2 text-ink-muted text-[0.8125rem]">
                   <span>{ch.sections.length} SEC</span>
                   <span>·</span>
                   <span>{ch.keyTerms.length} TERMS</span>

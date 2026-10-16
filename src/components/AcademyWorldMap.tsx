@@ -120,12 +120,12 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
           {/* Top telemetry bar */}
           <div className="flex flex-wrap items-center justify-between gap-4 border-b border-line pb-4">
             <div className="flex flex-wrap items-center gap-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-surface border border-[#25734f]/40 text-[#25734f] text-xs font-mono font-bold">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-surface border border-[#25734f]/40 text-[#25734f] text-xs font-sans tabular-nums font-bold">
                 <span className="w-2 h-2 bg-[#25734f] animate-pulse" />
                 <span>ACADEMY ONLINE</span>
               </div>
 
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-surface border border-line text-xs font-mono">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-surface border border-line text-xs font-sans tabular-nums">
                 <span className="text-ink-secondary">OPERATOR DOSSIER:</span>
                 <span className={`font-bold ${operatorRank.color}`}>{operatorRank.title} (Tier {operatorRank.level})</span>
               </div>
@@ -134,7 +134,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
             {/* Operator / Free Roam Mode Toggle */}
             <div className="flex items-center gap-3">
               <label 
-                className="flex items-center gap-2 text-xs font-mono text-ink-secondary cursor-pointer hover:text-ink transition-colors"
+                className="flex items-center gap-2 text-xs font-sans tabular-nums text-ink-secondary cursor-pointer hover:text-ink transition-colors"
                 title="Toggle Free Roam to inspect any room regardless of progression requirements"
               >
                 <input 
@@ -151,7 +151,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
 
               <button
                 onClick={onOpenSearch}
-                className="px-3.5 py-1.5 bg-surface hover:bg-line text-ink border border-line text-xs font-mono flex items-center gap-2 transition-all duration-100 cursor-pointer"
+                className="px-3.5 py-1.5 bg-surface hover:bg-line text-ink border border-line text-xs font-sans tabular-nums flex items-center gap-2 transition-all duration-100 cursor-pointer"
               >
                 <Search className="w-3.5 h-3.5 text-teal" />
                 <span className="hidden sm:inline">Search Matrix (Ctrl+K)</span>
@@ -162,7 +162,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
           {/* Core HUD Header: Where am I & What is next */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
             <div className="lg:col-span-7 space-y-2">
-              <div className="text-xs font-mono uppercase tracking-[0.2em] text-teal font-bold flex items-center gap-2">
+              <div className="text-xs font-sans tabular-nums uppercase tracking-[0.2em] text-teal font-bold flex items-center gap-2">
                 <span>ACADEMY WORLD MAP</span>
                 <span>•</span>
                 <span>{textbookChapters.length} CURRICULUM CHAMBERS</span>
@@ -178,11 +178,11 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
             {/* Next Recommended Chamber Card */}
             <div className="lg:col-span-5 p-4 sm:p-5 bg-surface border border-line space-y-3 relative overflow-hidden group">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono uppercase font-bold tracking-wider text-teal bg-teal/10 px-2.5 py-0.5 border border-teal/30 flex items-center gap-1.5">
+                <span className="text-[0.8125rem] font-sans tabular-nums uppercase font-bold tracking-wider text-teal bg-teal/10 px-2.5 py-0.5 border border-teal/30 flex items-center gap-1.5">
                   <Radio className="w-3 h-3 animate-pulse text-teal" />
                   CURRENT OBJECTIVE
                 </span>
-                <span className="text-xs font-mono text-ink-secondary font-semibold">Chamber {currentActiveChapter.id}</span>
+                <span className="text-xs font-sans tabular-nums text-ink-secondary font-semibold">Chamber {currentActiveChapter.id}</span>
               </div>
 
               <div>
@@ -196,7 +196,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
 
               <button
                 onClick={() => onEnterChapter(currentActiveChapter.id, currentActiveChapter.slug)}
-                className="w-full py-2.5 px-4 bg-brand hover:bg-brand-hover text-on-brand text-xs font-mono font-bold uppercase tracking-wider flex items-center justify-center gap-2 border border-brand hover:border-brand-hover transition-all duration-100 cursor-pointer"
+                className="w-full py-2.5 px-4 bg-brand hover:bg-brand-hover text-on-brand text-xs font-sans tabular-nums font-bold uppercase tracking-wider flex items-center justify-center gap-2 border border-brand hover:border-brand-hover transition-all duration-100 cursor-pointer"
               >
                 <span>ENTER MISSION CHAMBER {currentActiveChapter.id}</span>
                 <ArrowRight className="w-4 h-4 text-on-brand" />
@@ -206,7 +206,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
 
           {/* Progress Bar & Telemetry */}
           <div className="space-y-2 pt-2">
-            <div className="flex items-center justify-between text-xs font-mono">
+            <div className="flex items-center justify-between text-xs font-sans tabular-nums">
               <span className="text-ink-secondary">Total Academy Clearance</span>
               <span className="text-ink font-bold">{completedCount} of {totalChapters} Chambers Illuminated ({progressPercent}%)</span>
             </div>
@@ -225,11 +225,11 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
         <div className="flex items-center justify-between px-1">
           <div className="flex items-center gap-2">
             <Layers className="w-4 h-4 text-rust" />
-            <h3 className="text-xs font-mono uppercase tracking-wider text-ink-secondary font-bold">
+            <h3 className="text-xs font-sans tabular-nums uppercase tracking-wider text-ink-secondary font-bold">
               ACADEMY TRAINING FACILITIES
             </h3>
           </div>
-          <span className="text-[11px] font-mono text-ink-muted">Live Simulation, Research & Tape Archives</span>
+          <span className="text-[0.8125rem] font-sans tabular-nums text-ink-muted">Live Simulation, Research & Tape Archives</span>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2.5">
@@ -242,7 +242,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
               <BarChart2 className="w-3.5 h-3.5" />
             </div>
             <div className="text-xs font-bold text-ink font-space tracking-tight">Training Floor</div>
-            <div className="text-[10px] text-ink-secondary font-mono">Chart Lab</div>
+            <div className="text-[0.8125rem] text-ink-secondary font-sans tabular-nums">Chart Lab</div>
           </button>
 
           {/* Execution Room */}
@@ -254,7 +254,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
               <PlayCircle className="w-3.5 h-3.5" />
             </div>
             <div className="text-xs font-bold text-ink font-space tracking-tight">Execution Room</div>
-            <div className="text-[10px] text-ink-secondary font-mono">Simulator</div>
+            <div className="text-[0.8125rem] text-ink-secondary font-sans tabular-nums">Simulator</div>
           </button>
 
           {/* Research Room */}
@@ -266,7 +266,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
               <Cpu className="w-3.5 h-3.5" />
             </div>
             <div className="text-xs font-bold text-ink font-space tracking-tight">Research Room</div>
-            <div className="text-[10px] text-ink-secondary font-mono">Backtest Lab</div>
+            <div className="text-[0.8125rem] text-ink-secondary font-sans tabular-nums">Backtest Lab</div>
           </button>
 
           {/* Trader's Log */}
@@ -278,7 +278,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
               <BookMarked className="w-3.5 h-3.5" />
             </div>
             <div className="text-xs font-bold text-ink font-space tracking-tight">Trader's Log</div>
-            <div className="text-[10px] text-ink-secondary font-mono">Journal</div>
+            <div className="text-[0.8125rem] text-ink-secondary font-sans tabular-nums">Journal</div>
           </button>
 
           {/* Concept Archive */}
@@ -290,7 +290,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
               <GitFork className="w-3.5 h-3.5" />
             </div>
             <div className="text-xs font-bold text-ink font-space tracking-tight">Concept Archive</div>
-            <div className="text-[10px] text-ink-secondary font-mono">Knowledge Graph</div>
+            <div className="text-[0.8125rem] text-ink-secondary font-sans tabular-nums">Knowledge Graph</div>
           </button>
 
           {/* Knowledge Library */}
@@ -302,7 +302,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
               <Compass className="w-3.5 h-3.5" />
             </div>
             <div className="text-xs font-bold text-ink font-space tracking-tight">Knowledge Library</div>
-            <div className="text-[10px] text-ink-secondary font-mono">Encyclopedia</div>
+            <div className="text-[0.8125rem] text-ink-secondary font-sans tabular-nums">Encyclopedia</div>
           </button>
 
           {/* Training Profile */}
@@ -314,7 +314,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
               <Award className="w-3.5 h-3.5" />
             </div>
             <div className="text-xs font-bold text-ink font-space tracking-tight">Training Profile</div>
-            <div className="text-[10px] text-ink-secondary font-mono">Mastery Dossier</div>
+            <div className="text-[0.8125rem] text-ink-secondary font-sans tabular-nums">Mastery Dossier</div>
           </button>
 
           {/* Master Tape Archive */}
@@ -326,14 +326,14 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
               <Youtube className="w-3.5 h-3.5" />
             </div>
             <div className="text-xs font-bold text-ink font-space tracking-tight">Master Tape</div>
-            <div className="text-[10px] text-ink-secondary font-mono">Masood 52 Tape</div>
+            <div className="text-[0.8125rem] text-ink-secondary font-sans tabular-nums">Masood 52 Tape</div>
           </button>
         </div>
       </div>
 
       {/* Sector Selection Filter Bar */}
       <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
-        <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
+        <div className="flex flex-wrap items-center gap-2 text-xs font-sans tabular-nums">
           <button
             onClick={() => setSelectedSectorFilter('all')}
             className={`px-3.5 py-1.5 rounded-full transition-all cursor-pointer font-bold ${
@@ -412,7 +412,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
           </button>
         </div>
 
-        <div className="text-xs font-mono text-ink-muted">
+        <div className="text-xs font-sans tabular-nums text-ink-muted">
           Click any illuminated or active room to enter
         </div>
       </div>
@@ -429,21 +429,21 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-ink/[0.08]">
                 <div className="space-y-1.5">
                   <div className="flex items-center gap-3">
-                    <span className={`px-3 py-1 rounded-full text-xs font-mono font-bold border ${sector.info.badge}`}>
+                    <span className={`px-3 py-1 rounded-full text-xs font-sans tabular-nums font-bold border ${sector.info.badge}`}>
                       {sector.info.sectorNumber}
                     </span>
-                    <span className="text-xs font-mono text-ink-muted uppercase tracking-wider font-semibold">
+                    <span className="text-xs font-sans tabular-nums text-ink-muted uppercase tracking-wider font-semibold">
                       {sector.partName}
                     </span>
                     {sector.isSectorComplete && (
-                      <span className="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-700 bg-emerald-50/60 px-2 py-0.5 rounded-full border border-emerald-500/30">
+                      <span className="inline-flex items-center gap-1 text-[0.8125rem] font-sans tabular-nums text-emerald-700 bg-emerald-50/60 px-2 py-0.5 rounded-full border border-emerald-500/30">
                         <CheckCircle2 className="w-3 h-3" />
                         SECTOR CLEARED
                       </span>
                     )}
                   </div>
 
-                  <h2 className="text-xl sm:text-2xl font-black text-ink font-display tracking-tight">
+                  <h2 className="text-xl sm:text-2xl font-bold text-ink font-display tracking-tight">
                     {sector.info.title}
                   </h2>
                   <p className="text-xs sm:text-sm text-ink-muted max-w-3xl font-sans">
@@ -452,13 +452,13 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
                 </div>
 
                 <div className="flex items-center gap-3 shrink-0">
-                  <div className="text-right font-mono">
+                  <div className="text-right font-sans tabular-nums">
                     <div className="text-xs text-ink-muted">Sector Clearance</div>
                     <div className="text-sm font-bold text-ink">
                       {sector.completedCount} / {sector.chapters.length} Chambers
                     </div>
                   </div>
-                  <div className="w-12 h-12 rounded-2xl bg-surface border border-ink/[0.08] flex items-center justify-center font-mono text-xs font-bold text-ink">
+                  <div className="w-12 h-12 rounded-2xl bg-surface border border-ink/[0.08] flex items-center justify-center font-sans tabular-nums text-xs font-bold text-ink">
                     {Math.round((sector.completedCount / Math.max(sector.chapters.length, 1)) * 100)}%
                   </div>
                 </div>
@@ -489,7 +489,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
                         {/* Top Node Badge & State */}
                         <div className="flex items-start justify-between gap-3 mb-3">
                           <div className="flex items-center gap-2">
-                            <div className={`w-8 h-8 rounded-xl font-mono text-xs font-black flex items-center justify-center border ${
+                            <div className={`w-8 h-8 rounded-xl font-sans tabular-nums text-xs font-bold flex items-center justify-center border ${
                               isCurrent
                                 ? 'bg-rust text-on-brand border-amber shadow-md shadow-rust/40 on-accent'
                                 : isCompleted
@@ -501,7 +501,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
                               {ch.id < 10 ? `0${ch.id}` : ch.id}
                             </div>
 
-                            <span className="text-[11px] font-mono text-ink-muted">
+                            <span className="text-[0.8125rem] font-sans tabular-nums text-ink-muted">
                               Level {ch.level}
                             </span>
                           </div>
@@ -509,21 +509,21 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
                           {/* State Tag */}
                           <div>
                             {isCompleted ? (
-                              <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50/60 px-2 py-0.5 rounded-full border border-emerald-500/40">
+                              <span className="inline-flex items-center gap-1 text-[0.8125rem] font-sans tabular-nums font-bold text-emerald-700 bg-emerald-50/60 px-2 py-0.5 rounded-full border border-emerald-500/40">
                                 <CheckCircle2 className="w-3 h-3" />
                                 ILLUMINATED
                               </span>
                             ) : isCurrent ? (
-                              <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold text-rust bg-rust/15 px-2 py-0.5 rounded-full border border-rust/40 animate-pulse">
+                              <span className="inline-flex items-center gap-1 text-[0.8125rem] font-sans tabular-nums font-bold text-rust bg-rust/15 px-2 py-0.5 rounded-full border border-rust/40 animate-pulse">
                                 <span className="w-1.5 h-1.5 rounded-full bg-rust" />
                                 ACTIVE
                               </span>
                             ) : unlocked ? (
-                              <span className="text-[10px] font-mono text-ink-muted bg-surface-muted px-2 py-0.5 rounded-full border border-line">
+                              <span className="text-[0.8125rem] font-sans tabular-nums text-ink-muted bg-surface-muted px-2 py-0.5 rounded-full border border-line">
                                 UNLOCKED
                               </span>
                             ) : (
-                              <span className="inline-flex items-center gap-1 text-[10px] font-mono text-ink-muted bg-surface-muted/80 px-2 py-0.5 rounded-full border border-line">
+                              <span className="inline-flex items-center gap-1 text-[0.8125rem] font-sans tabular-nums text-ink-muted bg-surface-muted/80 px-2 py-0.5 rounded-full border border-line">
                                 <Lock className="w-2.5 h-2.5" />
                                 LOCKED
                               </span>
@@ -533,7 +533,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
 
                         {/* Room Content Details */}
                         <div className="space-y-2 mb-4">
-                          <h3 className={`text-sm sm:text-base font-black font-display leading-snug line-clamp-2 transition-colors ${
+                          <h3 className={`text-sm sm:text-base font-bold font-display leading-snug line-clamp-2 transition-colors ${
                             unlocked ? 'text-ink group-hover:text-amber' : 'text-ink-muted'
                           }`}>
                             {ch.title}
@@ -545,7 +545,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
                         </div>
 
                         {/* Room Meta (Sections count & Key terms) */}
-                        <div className="pt-3 border-t border-ink/[0.05] flex items-center justify-between text-[11px] font-mono text-ink-muted">
+                        <div className="pt-3 border-t border-ink/[0.05] flex items-center justify-between text-[0.8125rem] font-sans tabular-nums text-ink-muted">
                           <span>{ch.sections.length} Codified Sections</span>
                           <span>{ch.keyTerms.length} Key Terms</span>
                         </div>
@@ -555,7 +555,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
                           {unlocked ? (
                             <button
                               onClick={() => onEnterChapter(ch.id, ch.slug)}
-                              className={`w-full py-2.5 px-3 rounded-xl font-mono text-xs font-bold flex items-center justify-center gap-2 transition-all cursor-pointer ${
+                              className={`w-full py-2.5 px-3 rounded-xl font-sans tabular-nums text-xs font-bold flex items-center justify-center gap-2 transition-all cursor-pointer ${
                                 isCurrent
                                   ? 'bg-gradient-to-r from-rust to-amber text-on-brand shadow-md shadow-rust/25 hover:brightness-110 on-accent'
                                   : isCompleted
@@ -569,7 +569,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
                           ) : (
                             <button
                               onClick={() => onToggleFreeRoam(true)}
-                              className="w-full py-2 px-3 rounded-xl bg-surface-muted/50 border border-line/80 text-ink-muted font-mono text-[11px] flex items-center justify-center gap-1.5 hover:text-ink-secondary transition-colors cursor-pointer"
+                              className="w-full py-2 px-3 rounded-xl bg-surface-muted/50 border border-line/80 text-ink-muted font-sans tabular-nums text-[0.8125rem] flex items-center justify-center gap-1.5 hover:text-ink-secondary transition-colors cursor-pointer"
                               title="Click to enable Operator Mode and inspect this room"
                             >
                               <Lock className="w-3 h-3" />

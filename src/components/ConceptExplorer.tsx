@@ -223,7 +223,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
       />
 
       {/* Breadcrumb Hierarchy */}
-      <div className="flex items-center gap-2 text-xs font-mono text-ink-secondary px-1">
+      <div className="flex items-center gap-2 text-xs font-sans tabular-nums text-ink-secondary px-1">
         <a 
           href="/tools/" 
           className="hover:text-ink transition-colors"
@@ -261,7 +261,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
 
               aria-current={selectedCategory === cat.id ? 'page' : undefined}
               href={cat.id === 'all' ? '/tools/glossary/' : getGlossaryCategoryPath(cat.slug)}
-              className={`px-3.5 py-1.5 text-xs font-mono uppercase whitespace-nowrap transition-all rounded-lg border cursor-pointer shrink-0 ${
+              className={`px-3.5 py-1.5 text-xs font-sans tabular-nums uppercase whitespace-nowrap transition-all rounded-lg border cursor-pointer shrink-0 ${
                 selectedCategory === cat.id
                   ? 'bg-ink/[0.12] text-ink border-ink/20'
                   : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06] hover:bg-ink/[0.05]'
@@ -276,12 +276,12 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
       {/* Deep Sub-Concepts Quick Bar (If category or concept has specialized deep sub-concepts) */}
       {availableSubConcepts.length > 0 && (
         <div className="bg-surface-raised border border-brand/20 rounded-xl p-3.5 space-y-2">
-          <div className="flex items-center justify-between text-[11px] font-mono">
+          <div className="flex items-center justify-between text-[0.8125rem] font-sans tabular-nums">
             <span className="text-teal uppercase tracking-wider flex items-center gap-1.5 font-semibold">
               <CornerDownRight className="w-3.5 h-3.5" />
               Deep Sub-Concepts ({availableSubConcepts.length} Specialized Analyses):
             </span>
-            <span className="text-[10px] text-ink-secondary">Hierarchical Multi-Tier Exploration</span>
+            <span className="text-[0.8125rem] text-ink-secondary">Hierarchical Multi-Tier Exploration</span>
           </div>
 
           <div className="flex flex-wrap gap-2 pt-1">
@@ -292,7 +292,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                   key={sub.id}
 
                   href={getGlossarySubConceptPath(sub.categorySlug, sub.slug)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all flex items-center gap-1.5 cursor-pointer border ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-sans tabular-nums transition-all flex items-center gap-1.5 cursor-pointer border ${
                     isSubActive
                       ? 'bg-brand/25 border-brand text-ink shadow-sm'
                       : 'bg-ink/[0.03] border-ink/[0.08] text-ink-secondary hover:text-ink hover:bg-ink/[0.06]'
@@ -300,7 +300,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-teal" />
                   <span>{sub.name}</span>
-                  <span className="text-[9px] uppercase px-1.5 py-0.2 rounded bg-teal/10 text-teal">
+                  <span className="text-[0.8125rem] uppercase px-1.5 py-0.2 rounded bg-teal/10 text-teal">
                     Sub-Concept
                   </span>
                 </a>
@@ -314,9 +314,9 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
         {/* Left Side: Concepts Directory */}
         <div className="lg:col-span-4 xl:col-span-3 space-y-3">
           <div className="bg-surface border border-ink/[0.08] rounded-2xl p-5 space-y-3">
-            <div className="flex items-center justify-between pb-3 border-b border-ink/[0.07] text-xs font-mono">
-              <span className="text-ink-secondary uppercase tracking-wider text-[11px]">Concept Index</span>
-              <span className="text-brand font-medium bg-brand/10 px-2.5 py-0.5 rounded-full border border-brand/20 text-[10px] uppercase">
+            <div className="flex items-center justify-between pb-3 border-b border-ink/[0.07] text-xs font-sans tabular-nums">
+              <span className="text-ink-secondary uppercase tracking-wider text-[0.8125rem]">Concept Index</span>
+              <span className="text-brand font-medium bg-brand/10 px-2.5 py-0.5 rounded-full border border-brand/20 text-[0.8125rem] uppercase">
                 {filteredConcepts.length} Topics
               </span>
             </div>
@@ -332,7 +332,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                     key={c.id} aria-current={isSelected ? 'page' : undefined}
 
                     href={(() => { const mapping = getConceptBySlugOrId(c.id); return mapping ? getGlossaryConceptPath(mapping.slug, mapping.categorySlug) : '/tools/glossary/'; })()}
-                    className={`block w-full text-left p-3 text-xs font-mono transition-all space-y-1.5 rounded-xl border cursor-pointer ${
+                    className={`block w-full text-left p-3 text-xs font-sans tabular-nums transition-all space-y-1.5 rounded-xl border cursor-pointer ${
                       isSelected
                         ? 'bg-ink/[0.10] border-ink/20 text-ink'
                         : 'bg-ink/[0.02] border-ink/[0.06] text-ink-secondary hover:text-ink hover:bg-ink/[0.05]'
@@ -340,11 +340,11 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                   >
                     <div className="flex items-center justify-between gap-1">
                       <span className="font-semibold uppercase tracking-tight truncate text-ink">{c.name}</span>
-                      <span className="text-[9px] px-1.5 py-0.5 rounded bg-ink/[0.04] text-ink-muted uppercase shrink-0">
+                      <span className="text-[0.8125rem] px-1.5 py-0.5 rounded bg-ink/[0.04] text-ink-muted uppercase shrink-0">
                         {c.category}
                       </span>
                     </div>
-                    <p className="text-[11px] text-ink-secondary line-clamp-1 font-normal">
+                    <p className="text-[0.8125rem] text-ink-secondary line-clamp-1 font-normal">
                       {c.shortDefinition}
                     </p>
                   </a>
@@ -360,9 +360,9 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
           {/* SPECIALIZED DEEP SUB-CONCEPT CARD IF ACTIVE */}
           {activeSubConcept && (
             <div className="bg-gradient-to-br from-surface to-surface border-2 border-brand/40 rounded-2xl p-6 sm:p-8 space-y-5 relative overflow-hidden shadow-xl">
-              <div className="flex items-center justify-between flex-wrap gap-2 text-xs font-mono">
+              <div className="flex items-center justify-between flex-wrap gap-2 text-xs font-sans tabular-nums">
                 <div className="flex items-center gap-2">
-                  <span className="px-3 py-1 rounded-full bg-brand/20 text-teal border border-brand/30 uppercase text-[11px] font-semibold tracking-wider flex items-center gap-1.5">
+                  <span className="px-3 py-1 rounded-full bg-brand/20 text-teal border border-brand/30 uppercase text-[0.8125rem] font-semibold tracking-wider flex items-center gap-1.5">
                     <Compass className="w-3.5 h-3.5" />
                     Deep Sub-Concept Analysis
                   </span>
@@ -371,7 +371,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                 </div>
                 <a
                   href={(() => { const c = getConceptBySlugOrId(concept.id); return c ? getGlossaryConceptPath(c.slug, c.categorySlug) : '/tools/glossary/'; })()}
-                  className="text-[11px] text-ink-secondary hover:text-ink underline font-mono cursor-pointer"
+                  className="text-[0.8125rem] text-ink-secondary hover:text-ink underline font-sans tabular-nums cursor-pointer"
                 >
                   Return to Main Concept
                 </a>
@@ -381,7 +381,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                 <h2 className="text-2xl sm:text-3xl font-bold text-ink tracking-tight">
                   {activeSubConcept.name}
                 </h2>
-                <div className="text-xs sm:text-sm font-mono text-teal">
+                <div className="text-xs sm:text-sm font-sans tabular-nums text-teal">
                   {activeSubConcept.subtitle}
                 </div>
                 <div className="text-sm text-ink-secondary leading-relaxed pt-1">
@@ -391,7 +391,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
 
               {/* 4 Key Points */}
               <div className="p-4 sm:p-5 rounded-xl bg-surface-muted/80 border border-ink/[0.08] space-y-3">
-                <div className="text-xs font-mono uppercase text-brand font-semibold flex items-center gap-2">
+                <div className="text-xs font-sans tabular-nums uppercase text-brand font-semibold flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-brand" />
                   <span>Decisive Operational Criteria &amp; Rules of Thumb:</span>
                 </div>
@@ -408,9 +408,9 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
               </div>
 
               {/* Invalidation & Example Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-sans tabular-nums">
                 <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 space-y-1.5">
-                  <span className="text-rose-700 uppercase tracking-wider font-semibold block text-[11px]">
+                  <span className="text-rose-700 uppercase tracking-wider font-semibold block text-[0.8125rem]">
                     Structural Invalidation Protocol:
                   </span>
                   <p className="text-ink-secondary font-normal leading-relaxed">
@@ -418,7 +418,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                   </p>
                 </div>
                 <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 space-y-1.5">
-                  <span className="text-emerald-700 uppercase tracking-wider font-semibold block text-[11px]">
+                  <span className="text-emerald-700 uppercase tracking-wider font-semibold block text-[0.8125rem]">
                     Institutional Market Scenario:
                   </span>
                   <p className="text-ink-secondary font-normal leading-relaxed">
@@ -431,13 +431,13 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
 
           {/* Concept Header Card with Source Provenance */}
           <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-7 relative overflow-hidden space-y-4">
-            <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+            <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-sans tabular-nums">
               <div className="flex items-center gap-2 flex-wrap">
-                <span className="px-2.5 py-0.5 rounded bg-brand/10 text-brand border border-brand/20 uppercase text-[10px]">
+                <span className="px-2.5 py-0.5 rounded bg-brand/10 text-brand border border-brand/20 uppercase text-[0.8125rem]">
                   {concept.category} • ICT Core Framework
                 </span>
                 {concept.source && (
-                  <span className="px-2.5 py-0.5 rounded bg-ink/[0.04] border border-ink/[0.08] text-ink-secondary text-[10px] uppercase flex items-center gap-1">
+                  <span className="px-2.5 py-0.5 rounded bg-ink/[0.04] border border-ink/[0.08] text-ink-secondary text-[0.8125rem] uppercase flex items-center gap-1">
                     <FileText className="w-3 h-3 text-teal" />
                     {concept.source.approximateDate} • {concept.source.conceptStatus}
                   </span>
@@ -474,17 +474,17 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
 
             {/* Source Reference Sub-Banner */}
             {concept.source && (
-              <div className="p-4 rounded-xl bg-surface-muted border border-ink/[0.06] grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-mono">
+              <div className="p-4 rounded-xl bg-surface-muted border border-ink/[0.06] grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-sans tabular-nums">
                 <div>
-                  <span className="text-ink-muted block text-[10px] uppercase">Primary Mentorship</span>
+                  <span className="text-ink-muted block text-[0.8125rem] uppercase">Primary Mentorship</span>
                   <span className="text-ink font-medium uppercase truncate block">{concept.source.mentorship}</span>
                 </div>
                 <div>
-                  <span className="text-ink-muted block text-[10px] uppercase">Original Terminology</span>
+                  <span className="text-ink-muted block text-[0.8125rem] uppercase">Original Terminology</span>
                   <span className="text-brand font-medium uppercase truncate block">{concept.source.originalTerminology}</span>
                 </div>
                 <div>
-                  <span className="text-ink-muted block text-[10px] uppercase">Lecture Reference</span>
+                  <span className="text-ink-muted block text-[0.8125rem] uppercase">Lecture Reference</span>
                   <span className="text-negative font-medium uppercase truncate block">{concept.source.lectureReference || 'Core Series'}</span>
                 </div>
               </div>
@@ -492,7 +492,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
 
             {/* Layer Tabs with Scroller */}
             <div className="pt-4 border-t border-ink/[0.07]">
-              <div className="text-[10px] font-mono uppercase tracking-[0.16em] text-ink-muted mb-2">
+              <div className="text-[0.8125rem] font-sans tabular-nums uppercase tracking-[0.16em] text-ink-muted mb-2">
                 ANALYSIS MODULES:
               </div>
               <BauhausNavScroller>
@@ -513,7 +513,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                       key={tab.id}
                       type="button"
                       aria-pressed={activeLayerTab === tab.id as any} onClick={() => setActiveLayerTab(tab.id as any)}
-                      className={`px-3.5 py-1.5 text-xs font-mono uppercase flex items-center gap-1.5 transition-all rounded-lg border cursor-pointer shrink-0 ${
+                      className={`px-3.5 py-1.5 text-xs font-sans tabular-nums uppercase flex items-center gap-1.5 transition-all rounded-lg border cursor-pointer shrink-0 ${
                         isActive
                           ? 'bg-ink/[0.12] text-ink border-ink/20'
                           : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06] hover:bg-ink/[0.05]'
@@ -533,7 +533,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-3">
-                  <div className="flex items-center gap-2 text-negative font-mono text-xs uppercase">
+                  <div className="flex items-center gap-2 text-negative font-sans tabular-nums text-xs uppercase">
                     <Zap className="w-4 h-4" />
                     <h3 className="font-semibold">Why It Exists</h3>
                   </div>
@@ -543,7 +543,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                 </div>
 
                 <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-3">
-                  <div className="flex items-center gap-2 text-brand font-mono text-xs uppercase">
+                  <div className="flex items-center gap-2 text-brand font-sans tabular-nums text-xs uppercase">
                     <HelpCircle className="w-4 h-4" />
                     <h3 className="font-semibold">Problem It Solves</h3>
                   </div>
@@ -554,7 +554,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
               </div>
 
               <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-7 space-y-4">
-                <div className="flex items-center gap-2 text-teal font-mono text-xs uppercase">
+                <div className="flex items-center gap-2 text-teal font-sans tabular-nums text-xs uppercase">
                   <Activity className="w-4 h-4" />
                   <h3 className="font-semibold">How It Forms</h3>
                 </div>
@@ -570,11 +570,11 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
             <div className="space-y-6">
               <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-4">
                 <div className="flex items-center justify-between pb-3 border-b border-ink/[0.07]">
-                  <div className="flex items-center gap-2 font-mono text-xs uppercase text-ink">
+                  <div className="flex items-center gap-2 font-sans tabular-nums text-xs uppercase text-ink">
                     <Layers className="w-4 h-4 text-teal" />
                     <span>Interactive Architectural Delivery Canvas</span>
                   </div>
-                  <span className="text-[10px] font-mono uppercase bg-ink/[0.04] text-ink-secondary px-2 py-0.5 rounded border border-ink/[0.08]">
+                  <span className="text-[0.8125rem] font-sans tabular-nums uppercase bg-ink/[0.04] text-ink-secondary px-2 py-0.5 rounded border border-ink/[0.08]">
                     {concept.diagramType}
                   </span>
                 </div>
@@ -586,11 +586,11 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
               </div>
 
               <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-3">
-                <div className="flex items-center gap-2 font-mono text-xs uppercase text-teal">
+                <div className="flex items-center gap-2 font-sans tabular-nums text-xs uppercase text-teal">
                   <BookOpen className="w-4 h-4" />
                   <h4 className="font-semibold">Visual Anatomy &amp; Identification</h4>
                 </div>
-                <div className="text-xs sm:text-sm text-ink-secondary leading-relaxed font-mono bg-surface-muted p-4 rounded-xl border border-ink/[0.06]">
+                <div className="text-xs sm:text-sm text-ink-secondary leading-relaxed font-sans tabular-nums bg-surface-muted p-4 rounded-xl border border-ink/[0.06]">
                   <ContextualInternalLinker text={concept.chartAnatomy} />
                 </div>
               </div>
@@ -602,11 +602,11 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
             <div className="space-y-6">
               <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-4">
                 <div className="flex items-center justify-between border-b border-ink/[0.07] pb-3">
-                  <div className="flex items-center gap-2 font-mono text-xs uppercase text-teal">
+                  <div className="flex items-center gap-2 font-sans tabular-nums text-xs uppercase text-teal">
                     <Cpu className="w-4 h-4" />
                     <span>Source Fidelity Tripartite Engine</span>
                   </div>
-                  <span className="text-[10px] font-mono uppercase text-ink-secondary">3 Perspectives</span>
+                  <span className="text-[0.8125rem] font-sans tabular-nums uppercase text-ink-secondary">3 Perspectives</span>
                 </div>
 
                 <div className="grid grid-cols-3 gap-2">
@@ -619,7 +619,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                       key={t.id}
                       type="button"
                       aria-pressed={activeTripartiteTab === t.id} onClick={() => setActiveTripartiteTab(t.id as any)}
-                      className={`p-3 text-xs font-mono text-center rounded-xl border transition-all cursor-pointer ${
+                      className={`p-3 text-xs font-sans tabular-nums text-center rounded-xl border transition-all cursor-pointer ${
                         activeTripartiteTab === t.id
                           ? 'bg-ink/[0.10] border-ink/20 text-ink font-semibold'
                           : 'bg-ink/[0.02] border-ink/[0.06] text-ink-secondary hover:text-ink'
@@ -633,19 +633,19 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                 <div className="p-5 rounded-xl bg-surface-muted border border-ink/[0.06] text-xs sm:text-sm text-ink leading-relaxed">
                   {activeTripartiteTab === 'ict' && (
                     <div className="space-y-2">
-                      <div className="text-[10px] font-mono uppercase text-brand">Explicit ICT Teaching:</div>
+                      <div className="text-[0.8125rem] font-sans tabular-nums uppercase text-brand">Explicit ICT Teaching:</div>
                       <ContextualInternalLinker text={concept.tripartiteView.ictTeaching} />
                     </div>
                   )}
                   {activeTripartiteTab === 'observable' && (
                     <div className="space-y-2">
-                      <div className="text-[10px] font-mono uppercase text-positive">Observable Market Microstructure:</div>
+                      <div className="text-[0.8125rem] font-sans tabular-nums uppercase text-positive">Observable Market Microstructure:</div>
                       <ContextualInternalLinker text={concept.tripartiteView.observableMarketBehavior} />
                     </div>
                   )}
                   {activeTripartiteTab === 'derived' && (
                     <div className="space-y-2">
-                      <div className="text-[10px] font-mono uppercase text-amber">Derived SMC Formalization:</div>
+                      <div className="text-[0.8125rem] font-sans tabular-nums uppercase text-amber">Derived SMC Formalization:</div>
                       <ContextualInternalLinker text={concept.tripartiteView.derivedInterpretation} />
                     </div>
                   )}
@@ -658,11 +658,11 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
           {activeLayerTab === 'ladder' && (
             <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-7 space-y-6">
               <div className="flex items-center justify-between border-b border-ink/[0.07] pb-4">
-                <div className="flex items-center gap-2 font-mono text-xs uppercase text-teal">
+                <div className="flex items-center gap-2 font-sans tabular-nums text-xs uppercase text-teal">
                   <GraduationCap className="w-4 h-4" />
                   <span>5-Level Conceptual Depth Ladder</span>
                 </div>
-                <span className="text-[10px] font-mono text-ink-secondary uppercase">Level {ladderLevel} of 5</span>
+                <span className="text-[0.8125rem] font-sans tabular-nums text-ink-secondary uppercase">Level {ladderLevel} of 5</span>
               </div>
 
               <div className="grid grid-cols-5 gap-2">
@@ -677,13 +677,13 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                     key={item.level}
                     type="button"
                     aria-pressed={ladderLevel === item.level} onClick={() => setLadderLevel(item.level as any)}
-                    className={`p-2.5 rounded-xl border text-center font-mono text-xs transition-all cursor-pointer ${
+                    className={`p-2.5 rounded-xl border text-center font-sans tabular-nums text-xs transition-all cursor-pointer ${
                       ladderLevel === item.level
                         ? 'bg-brand/20 border-brand text-ink font-semibold'
                         : 'bg-ink/[0.02] border-ink/[0.06] text-ink-secondary hover:text-ink'
                     }`}
                   >
-                    <div className="text-[10px] text-ink-muted">L0{item.level}</div>
+                    <div className="text-[0.8125rem] text-ink-muted">L0{item.level}</div>
                     <div className="truncate mt-0.5">{item.label}</div>
                   </button>
                 ))}
@@ -692,31 +692,31 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
               <div className="p-6 rounded-xl bg-surface-muted border border-ink/[0.06] text-xs sm:text-sm text-ink leading-relaxed">
                 {ladderLevel === 1 && (
                   <div className="space-y-2">
-                    <span className="text-[10px] font-mono uppercase text-positive">Level 1: Everyday Analogy</span>
+                    <span className="text-[0.8125rem] font-sans tabular-nums uppercase text-positive">Level 1: Everyday Analogy</span>
                     <p className="italic text-ink-secondary">"{concept.explanationLadder.level1Child}"</p>
                   </div>
                 )}
                 {ladderLevel === 2 && (
                   <div className="space-y-2">
-                    <span className="text-[10px] font-mono uppercase text-teal">Level 2: Beginner Chart Behavior</span>
+                    <span className="text-[0.8125rem] font-sans tabular-nums uppercase text-teal">Level 2: Beginner Chart Behavior</span>
                     <ContextualInternalLinker text={concept.explanationLadder.level2Beginner} />
                   </div>
                 )}
                 {ladderLevel === 3 && (
                   <div className="space-y-2">
-                    <span className="text-[10px] font-mono uppercase text-brand">Level 3: Active Retail Execution</span>
+                    <span className="text-[0.8125rem] font-sans tabular-nums uppercase text-brand">Level 3: Active Retail Execution</span>
                     <ContextualInternalLinker text={concept.explanationLadder.level3Trader} />
                   </div>
                 )}
                 {ladderLevel === 4 && (
                   <div className="space-y-2">
-                    <span className="text-[10px] font-mono uppercase text-amber">Level 4: Advanced Microstructure</span>
+                    <span className="text-[0.8125rem] font-sans tabular-nums uppercase text-amber">Level 4: Advanced Microstructure</span>
                     <ContextualInternalLinker text={concept.explanationLadder.level4Advanced} />
                   </div>
                 )}
                 {ladderLevel === 5 && (
                   <div className="space-y-2">
-                    <span className="text-[10px] font-mono uppercase text-negative">Level 5: ICT Interbank IPDA Engine</span>
+                    <span className="text-[0.8125rem] font-sans tabular-nums uppercase text-negative">Level 5: ICT Interbank IPDA Engine</span>
                     <ContextualInternalLinker text={concept.explanationLadder.level5ICTFramework} />
                   </div>
                 )}
@@ -728,7 +728,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
           {activeLayerTab === 'traps_counterexamples' && (
             <div className="space-y-6">
               <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-4">
-                <div className="flex items-center gap-2 font-mono text-xs uppercase text-negative pb-3 border-b border-ink/[0.07]">
+                <div className="flex items-center gap-2 font-sans tabular-nums text-xs uppercase text-negative pb-3 border-b border-ink/[0.07]">
                   <ShieldAlert className="w-4 h-4" />
                   <h3 className="font-semibold">Retail Traps &amp; Counterexamples</h3>
                 </div>
@@ -736,9 +736,9 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                 <div className="grid grid-cols-1 gap-4">
                   {(concept.counterexamples || []).map((trap, idx) => (
                     <div key={idx} className="p-5 rounded-xl bg-rose-500/5 border border-rose-500/20 space-y-2">
-                      <div className="flex items-center justify-between text-xs font-mono">
+                      <div className="flex items-center justify-between text-xs font-sans tabular-nums">
                         <span className="text-rose-700 font-semibold uppercase">{trap.title}</span>
-                        <span className="text-[10px] text-ink-muted uppercase">Common Fallacy</span>
+                        <span className="text-[0.8125rem] text-ink-muted uppercase">Common Fallacy</span>
                       </div>
                       <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
                         <strong className="text-ink">The Trap:</strong> {trap.trapDescription}
@@ -746,7 +746,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                       <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
                         <strong className="text-teal">Why It Fails:</strong> {trap.whyItFails}
                       </p>
-                      <div className="text-xs font-mono text-positive pt-1">
+                      <div className="text-xs font-sans tabular-nums text-positive pt-1">
                         Rule of thumb: {trap.ruleOfThumb}
                       </div>
                     </div>
@@ -761,7 +761,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-3">
-                  <div className="flex items-center gap-2 text-positive font-mono text-xs uppercase">
+                  <div className="flex items-center gap-2 text-positive font-sans tabular-nums text-xs uppercase">
                     <CheckCircle2 className="w-4 h-4" />
                     <h3 className="font-semibold">Valid Signatures</h3>
                   </div>
@@ -776,7 +776,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                 </div>
 
                 <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-3">
-                  <div className="flex items-center gap-2 text-negative font-mono text-xs uppercase">
+                  <div className="flex items-center gap-2 text-negative font-sans tabular-nums text-xs uppercase">
                     <XCircle className="w-4 h-4" />
                     <h3 className="font-semibold">Invalid Signatures</h3>
                   </div>
@@ -792,7 +792,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
               </div>
 
               <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-3">
-                <div className="flex items-center gap-2 text-amber font-mono text-xs uppercase">
+                <div className="flex items-center gap-2 text-amber font-sans tabular-nums text-xs uppercase">
                   <ShieldCheck className="w-4 h-4" />
                   <h3 className="font-semibold">Mechanical Invalidation Threshold</h3>
                 </div>
@@ -808,7 +808,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-3">
-                  <div className="flex items-center gap-2 text-positive font-mono text-xs uppercase">
+                  <div className="flex items-center gap-2 text-positive font-sans tabular-nums text-xs uppercase">
                     <ArrowUpRight className="w-4 h-4" />
                     <h3 className="font-semibold">Bullish Execution Scenario</h3>
                   </div>
@@ -818,7 +818,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                 </div>
 
                 <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-3">
-                  <div className="flex items-center gap-2 text-negative font-mono text-xs uppercase">
+                  <div className="flex items-center gap-2 text-negative font-sans tabular-nums text-xs uppercase">
                     <ArrowDownRight className="w-4 h-4" />
                     <h3 className="font-semibold">Bearish Execution Scenario</h3>
                   </div>
@@ -858,28 +858,28 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                   <div className="space-y-6">
                     <div className="p-6 rounded-2xl bg-surface-raised border border-ink/[0.08] space-y-3">
                       <div className="flex items-center justify-between flex-wrap gap-2">
-                        <span className="px-2.5 py-0.5 rounded bg-brand/15 text-brand text-[10px] font-mono uppercase">
+                        <span className="px-2.5 py-0.5 rounded bg-brand/15 text-brand text-[0.8125rem] font-sans tabular-nums uppercase">
                           Masterclass Protocol • Unit #{matchedMasterclass.number.toString().padStart(2, '0')}
                         </span>
-                        <span className="text-xs font-mono text-teal uppercase">
+                        <span className="text-xs font-sans tabular-nums text-teal uppercase">
                           {matchedMasterclass.category.replace(/_/g, ' ')}
                         </span>
                       </div>
                       <h3 className="text-xl sm:text-2xl font-semibold text-ink tracking-tight">
                         {matchedMasterclass.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-ink-secondary font-mono italic">
+                      <p className="text-xs sm:text-sm text-ink-secondary font-sans tabular-nums italic">
                         "{matchedMasterclass.coreRule}"
                       </p>
                     </div>
 
                     <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-4">
                       <div className="flex items-center justify-between pb-3 border-b border-ink/[0.07]">
-                        <div className="flex items-center gap-2 font-mono text-xs uppercase text-ink">
+                        <div className="flex items-center gap-2 font-sans tabular-nums text-xs uppercase text-ink">
                           <Layers className="w-4 h-4 text-brand" />
                           <span>Interactive Architectural Delivery Canvas</span>
                         </div>
-                        <span className="text-[10px] font-mono uppercase bg-ink/[0.04] text-ink-secondary px-2 py-0.5 rounded border border-ink/[0.08]">
+                        <span className="text-[0.8125rem] font-sans tabular-nums uppercase bg-ink/[0.04] text-ink-secondary px-2 py-0.5 rounded border border-ink/[0.08]">
                           {matchedMasterclass.diagramType}
                         </span>
                       </div>
@@ -891,17 +891,17 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                     </div>
 
                     <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-4">
-                      <div className="flex items-center gap-2 font-mono text-xs uppercase text-ink pb-2 border-b border-ink/[0.07]">
+                      <div className="flex items-center gap-2 font-sans tabular-nums text-xs uppercase text-ink pb-2 border-b border-ink/[0.07]">
                         <Clock className="w-4 h-4 text-teal" />
                         <span>Step-by-Step Order of Operations</span>
                       </div>
                       <div className="space-y-2.5">
                         {matchedMasterclass.orderOfOperations.map((op, idx) => (
                           <div key={idx} className="p-3.5 rounded-xl bg-ink/[0.02] border border-ink/[0.06] flex items-start gap-3">
-                            <span className="w-6 h-6 rounded-md bg-ink/[0.04] border border-ink/[0.08] text-brand font-mono text-xs flex items-center justify-center shrink-0 mt-0.5">
+                            <span className="w-6 h-6 rounded-md bg-ink/[0.04] border border-ink/[0.08] text-brand font-sans tabular-nums text-xs flex items-center justify-center shrink-0 mt-0.5">
                               {idx + 1}
                             </span>
-                            <div className="text-xs font-mono text-ink-secondary leading-relaxed">
+                            <div className="text-xs font-sans tabular-nums text-ink-secondary leading-relaxed">
                               <ContextualInternalLinker text={op} />
                             </div>
                           </div>

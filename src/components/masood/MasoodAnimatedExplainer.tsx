@@ -112,15 +112,15 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
       <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-ink/[0.08] relative z-10">
         <div>
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-extrabold bg-rust/15 text-amber border border-rust/30 shadow-xs">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-sans tabular-nums font-bold bg-rust/15 text-amber border border-rust/30 shadow-xs">
               <Activity className="w-3.5 h-3.5 text-rust animate-pulse" />
               DYNAMIC ANIMATED DEMONSTRATOR
             </span>
-            <span className="text-xs text-ink-muted font-mono font-bold hidden sm:inline">
+            <span className="text-xs text-ink-muted font-sans tabular-nums font-bold hidden sm:inline">
               Visual Learning Engine
             </span>
           </div>
-          <h3 className="text-lg md:text-xl font-black text-ink mt-1 font-display tracking-tight">
+          <h3 className="text-lg md:text-xl font-bold text-ink mt-1 font-display tracking-tight">
             {selectedType === 'po3_expansion' && 'Power of 3 (PO3): The 4 Stages of the Daily Candle'}
             {selectedType === 'seek_and_destroy' && 'Seek & Destroy: Dual-Sided Stop Hunt Trap Simulator'}
             {selectedType === 'smt_divergence' && 'SMT Divergence: Uncovering Smart Money Accumulation'}
@@ -139,7 +139,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
         <div className="flex items-center gap-2">
           <button
             onClick={() => setIsPlaying(!isPlaying)}
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-ink/[0.08] text-ink-secondary text-xs font-mono font-bold hover:bg-surface-raised transition-all shadow-xs cursor-pointer"
+            className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-ink/[0.08] text-ink-secondary text-xs font-sans tabular-nums font-bold hover:bg-surface-raised transition-all shadow-xs cursor-pointer"
             title={isPlaying ? 'Pause Animation' : 'Play Animation'}
           >
             {isPlaying ? <Pause className="w-3.5 h-3.5 text-amber-700 fill-amber-400" /> : <Play className="w-3.5 h-3.5 text-emerald-700 fill-emerald-400" />}
@@ -197,7 +197,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                   setSelectedType(tab.id as AnimationKind);
                   setProgress(0);
                 }}
-                className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full font-mono text-xs font-bold whitespace-nowrap shrink-0 transition-all cursor-pointer ${
+                className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full font-sans tabular-nums text-xs font-bold whitespace-nowrap shrink-0 transition-all cursor-pointer ${
                   isActive
                     ? 'bg-gradient-to-r from-rust to-amber text-on-brand shadow-md shadow-rust/25 scale-[1.02] on-accent'
                     : 'bg-surface hover:bg-surface-raised text-ink-muted hover:text-ink border border-ink/[0.08] shadow-xs'
@@ -231,7 +231,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
             {/* Left: Interactive Animated Candle */}
             <div className="w-full md:w-1/2 flex flex-col items-center justify-center relative min-h-[260px]">
               {/* Price scale grid */}
-              <div className="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-40 text-[10px] font-mono text-ink-muted">
+              <div className="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-40 text-[0.8125rem] font-sans tabular-nums text-ink-muted">
                 <div className="border-b border-dashed border-line pb-0.5">High of Day (Distribution) — 20,450.00</div>
                 <div className="border-b border-dashed border-line pb-0.5">Cash Close — 20,420.00</div>
                 <div className="border-b border-dashed border-amber-500 pb-0.5 text-amber-700 font-bold">Midnight Open (00:00 NY) — 20,300.00</div>
@@ -317,22 +317,22 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
               {/* Live phase badge */}
               <div className="mt-2 text-center">
                 {progress < 25 && (
-                  <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-50 text-amber-700 border border-amber-500/40">
+                  <span className="px-3 py-1 rounded-full text-xs font-sans tabular-nums font-bold bg-amber-50 text-amber-700 border border-amber-500/40">
                     PHASE 1: 00:00 Midnight NY Open & Asian Range
                   </span>
                 )}
                 {progress >= 25 && progress < 50 && (
-                  <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-rose-50 text-rose-700 border border-rose-500/40 animate-pulse">
+                  <span className="px-3 py-1 rounded-full text-xs font-sans tabular-nums font-bold bg-rose-50 text-rose-700 border border-rose-500/40 animate-pulse">
                     PHASE 2: Judas Swing Manipulation (Dipping to Discount)
                   </span>
                 )}
                 {progress >= 50 && progress < 85 && (
-                  <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-50 text-emerald-700 border border-emerald-500/40">
+                  <span className="px-3 py-1 rounded-full text-xs font-sans tabular-nums font-bold bg-emerald-50 text-emerald-700 border border-emerald-500/40">
                     PHASE 3: Explosive Trend Expansion (New York AM Window)
                   </span>
                 )}
                 {progress >= 85 && (
-                  <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-cyan-50 text-cyan-700 border border-cyan-500/40">
+                  <span className="px-3 py-1 rounded-full text-xs font-sans tabular-nums font-bold bg-cyan-50 text-cyan-700 border border-cyan-500/40">
                     PHASE 4: Cash Close & High of Day Distribution
                   </span>
                 )}
@@ -353,14 +353,14 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
 
               <div className="grid grid-cols-2 gap-2.5 text-xs">
                 <div className="p-3 rounded-xl bg-surface-muted/80 border border-line shadow-xs">
-                  <span className="text-ink-muted block text-[10px] uppercase font-mono font-bold">Retail Trap</span>
+                  <span className="text-ink-muted block text-[0.8125rem] uppercase font-sans tabular-nums font-bold">Retail Trap</span>
                   <span className="text-rose-700 font-bold block mt-0.5">Selling the Judas Dip</span>
-                  <p className="text-[11px] text-ink-muted mt-1">Retail sees red candles at 09:30 AM and panic shorts at the absolute daily low.</p>
+                  <p className="text-[0.8125rem] text-ink-muted mt-1">Retail sees red candles at 09:30 AM and panic shorts at the absolute daily low.</p>
                 </div>
                 <div className="p-3 rounded-xl bg-surface-muted/80 border border-line shadow-xs">
-                  <span className="text-ink-muted block text-[10px] uppercase font-mono font-bold">Smart Money Rule</span>
+                  <span className="text-ink-muted block text-[0.8125rem] uppercase font-sans tabular-nums font-bold">Smart Money Rule</span>
                   <span className="text-emerald-700 font-bold block mt-0.5">Buy Below Midnight Open</span>
-                  <p className="text-[11px] text-ink-muted mt-1">Wait for Judas dip into Discount FVG, confirm 5M MSS, and ride expansion to PDH.</p>
+                  <p className="text-[0.8125rem] text-ink-muted mt-1">Wait for Judas dip into Discount FVG, confirm 5M MSS, and ride expansion to PDH.</p>
                 </div>
               </div>
             </div>
@@ -424,7 +424,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
               </svg>
 
               <div className="w-full text-center mt-2">
-                <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-50 text-amber-700 border border-amber-500/40">
+                <span className="px-3 py-1 rounded-full text-xs font-sans tabular-nums font-bold bg-amber-50 text-amber-700 border border-amber-500/40">
                   SEEK & DESTROY PROFILE: Both Highs & Lows Purged with Zero Expansion
                 </span>
               </div>
@@ -466,9 +466,9 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
             <div className="w-full md:w-3/5 flex flex-col sm:flex-row items-center justify-center gap-4">
               {/* Chart 1: US100 (NASDAQ) */}
               <div className="w-full sm:w-1/2 p-3.5 bg-surface-muted/90 rounded-2xl border border-line shadow-xs">
-                <div className="flex justify-between items-center text-xs font-mono mb-2">
+                <div className="flex justify-between items-center text-xs font-sans tabular-nums mb-2">
                   <span className="font-bold text-cyan-700">US100 (NASDAQ)</span>
-                  <span className="text-rose-700 text-[10px] font-bold">Swept Low (Lower Low)</span>
+                  <span className="text-rose-700 text-[0.8125rem] font-bold">Swept Low (Lower Low)</span>
                 </div>
                 <svg className="w-full h-36" viewBox="0 0 140 100">
                   {/* Swing Low 1 */}
@@ -484,16 +484,16 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                   {/* Liquidity line */}
                   <line x1="15" y1="60" x2="130" y2="60" stroke="#64748b" strokeDasharray="2 2" strokeWidth="1" />
                 </svg>
-                <div className="text-[11px] text-ink-muted text-center font-mono">
+                <div className="text-[0.8125rem] text-ink-muted text-center font-sans tabular-nums">
                   Swept Sell Stops Below Low 1
                 </div>
               </div>
 
               {/* Chart 2: US500 (ES) */}
               <div className="w-full sm:w-1/2 p-3.5 bg-surface-muted/90 rounded-2xl border border-emerald-500/40 shadow-xs">
-                <div className="flex justify-between items-center text-xs font-mono mb-2">
+                <div className="flex justify-between items-center text-xs font-sans tabular-nums mb-2">
                   <span className="font-bold text-emerald-700">US500 (S&P 500)</span>
-                  <span className="text-emerald-700 text-[10px] font-bold">Failed (Higher Low)</span>
+                  <span className="text-emerald-700 text-[0.8125rem] font-bold">Failed (Higher Low)</span>
                 </div>
                 <svg className="w-full h-36" viewBox="0 0 140 100">
                   {/* Swing Low 1 */}
@@ -509,7 +509,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                   {/* Liquidity line */}
                   <line x1="15" y1="60" x2="130" y2="60" stroke="#64748b" strokeDasharray="2 2" strokeWidth="1" />
                 </svg>
-                <div className="text-[11px] text-emerald-700 text-center font-mono font-bold">
+                <div className="text-[0.8125rem] text-emerald-700 text-center font-sans tabular-nums font-bold">
                   Refused to Sweep Low 1 (Accumulation)
                 </div>
               </div>
@@ -576,7 +576,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                 <text x="240" y="110" fill="#286e98" fontSize="9" fontWeight="bold">Buy-Side Curve (Re-accumulation)</text>
               </svg>
 
-              <div className="text-xs font-mono text-center text-ink-muted mt-2 font-bold">
+              <div className="text-xs font-sans tabular-nums text-center text-ink-muted mt-2 font-bold">
                 Stage: {progress < 35 ? '1. Sell-Side Engineering' : progress < 55 ? '2. Smart Money Reversal (SMR)' : progress < 85 ? '3. Low Risk Buy & Re-accumulation' : '4. Target Mitigation into Original Consolidation'}
               </div>
             </div>
@@ -603,7 +603,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
               {/* Type A: Standard Fair Value Gap */}
               <div className="w-full sm:w-1/2 p-3.5 bg-surface-muted/90 rounded-2xl border border-line shadow-xs">
                 <div className="text-xs font-bold text-cyan-700 mb-1">Standard Fair Value Gap (FVG)</div>
-                <div className="text-[10px] text-ink-muted font-mono mb-2">3-Candle Wick Void</div>
+                <div className="text-[0.8125rem] text-ink-muted font-sans tabular-nums mb-2">3-Candle Wick Void</div>
                 <svg className="w-full h-36" viewBox="0 0 120 120">
                   {/* Candle 1 */}
                   <line x1="30" y1="20" x2="30" y2="60" stroke="#25734f" strokeWidth="2" />
@@ -621,7 +621,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                   <rect x="20" y="50" width="80" height="15" fill="#286e98" fillOpacity="0.25" stroke="#0284c7" strokeDasharray="2 2" />
                   <text x="25" y="61" fill="#286e98" fontSize="8" fontWeight="bold">FVG Gap</text>
                 </svg>
-                <div className="text-[10px] text-ink-muted text-center font-mono">
+                <div className="text-[0.8125rem] text-ink-muted text-center font-sans tabular-nums">
                   Gap between Candle 1 & Candle 3 wicks
                 </div>
               </div>
@@ -629,7 +629,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
               {/* Type B: Volume Imbalance */}
               <div className="w-full sm:w-1/2 p-3.5 bg-surface-muted/90 rounded-2xl border border-amber-500/40 shadow-xs">
                 <div className="text-xs font-bold text-amber-700 mb-1">Volume Imbalance (VI)</div>
-                <div className="text-[10px] text-ink-muted font-mono mb-2">Body-to-Body Open Gap</div>
+                <div className="text-[0.8125rem] text-ink-muted font-sans tabular-nums mb-2">Body-to-Body Open Gap</div>
                 <svg className="w-full h-36" viewBox="0 0 120 120">
                   {/* Candle 1 (Down) */}
                   <line x1="45" y1="20" x2="45" y2="95" stroke="#b44746" strokeWidth="2" />
@@ -643,7 +643,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                   <rect x="30" y="60" width="60" height="10" fill="#94631f" fillOpacity="0.3" stroke="#d97706" strokeDasharray="2 2" />
                   <text x="35" y="68" fill="#94631f" fontSize="7" fontWeight="bold">VI (Body Gap)</text>
                 </svg>
-                <div className="text-[10px] text-amber-700 text-center font-mono font-bold">
+                <div className="text-[0.8125rem] text-amber-700 text-center font-sans tabular-nums font-bold">
                   Wicks overlap, but BODIES have open gap!
                 </div>
               </div>
@@ -667,19 +667,19 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
             <div className="w-full md:w-1/2 flex flex-col items-center justify-center">
               <div className="relative w-64 h-64 rounded-full border-4 border-line flex items-center justify-center bg-surface-muted shadow-xl">
                 {/* 24-Hour Markers */}
-                <span className="absolute top-2 text-[11px] font-mono text-ink-muted font-bold">00:00 Midnight NY</span>
-                <span className="absolute right-2 text-[11px] font-mono text-ink-muted font-bold">06:00</span>
-                <span className="absolute bottom-2 text-[11px] font-mono text-ink-muted font-bold">12:00 Lunch</span>
-                <span className="absolute left-2 text-[11px] font-mono text-ink-muted font-bold">18:00</span>
+                <span className="absolute top-2 text-[0.8125rem] font-sans tabular-nums text-ink-muted font-bold">00:00 Midnight NY</span>
+                <span className="absolute right-2 text-[0.8125rem] font-sans tabular-nums text-ink-muted font-bold">06:00</span>
+                <span className="absolute bottom-2 text-[0.8125rem] font-sans tabular-nums text-ink-muted font-bold">12:00 Lunch</span>
+                <span className="absolute left-2 text-[0.8125rem] font-sans tabular-nums text-ink-muted font-bold">18:00</span>
 
                 {/* Killzone arcs */}
                 <div className="absolute inset-4 rounded-full border-2 border-dashed border-line pointer-events-none" />
 
                 {/* Center time readout */}
                 <div className="text-center z-10">
-                  <div className="text-2xl font-bold font-mono text-ink">09:30 AM</div>
-                  <div className="text-xs font-mono text-amber-700 font-bold">New York Cash Open</div>
-                  <div className="text-[10px] text-ink-muted mt-1">High Volatility Injection</div>
+                  <div className="text-2xl font-bold font-sans tabular-nums text-ink">09:30 AM</div>
+                  <div className="text-xs font-sans tabular-nums text-amber-700 font-bold">New York Cash Open</div>
+                  <div className="text-[0.8125rem] text-ink-muted mt-1">High Volatility Injection</div>
                 </div>
 
                 {/* Animated Clock Hand */}
@@ -694,7 +694,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                   <button
                     key={sess}
                     onClick={() => setSelectedSession(sess)}
-                    className={`px-2.5 py-1 rounded-md text-[11px] font-mono uppercase font-bold transition-colors ${
+                    className={`px-2.5 py-1 rounded-md text-[0.8125rem] font-sans tabular-nums uppercase font-bold transition-colors ${
                       selectedSession === sess 
                         ? 'bg-cyan-600 text-on-brand shadow-xs on-accent'
                         : 'bg-surface-muted border border-line text-ink-muted hover:text-ink hover:bg-surface-raised'
@@ -710,7 +710,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
             <div className="w-full md:w-1/2 space-y-3 text-sm">
               {selectedSession === 'asia' && (
                 <div className="p-4 rounded-2xl bg-surface-muted/90 border border-line shadow-xs">
-                  <span className="text-xs font-mono font-bold text-cyan-700">20:00 - 00:00 EST</span>
+                  <span className="text-xs font-sans tabular-nums font-bold text-cyan-700">20:00 - 00:00 EST</span>
                   <h4 className="font-bold text-ink text-base mt-1">Asian Range Accumulation</h4>
                   <p className="text-xs text-ink-secondary mt-2 leading-relaxed">
                     The initial liquidity range of the day. Map the exact Asian High and Asian Low. In normal daily delivery, London or New York AM will sweep one or both boundaries before establishing the true expansion.
@@ -719,7 +719,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
               )}
               {selectedSession === 'london' && (
                 <div className="p-4 rounded-2xl bg-surface-muted/90 border border-line shadow-xs">
-                  <span className="text-xs font-mono font-bold text-rose-700">02:00 - 05:00 EST</span>
+                  <span className="text-xs font-sans tabular-nums font-bold text-rose-700">02:00 - 05:00 EST</span>
                   <h4 className="font-bold text-ink text-base mt-1">London Killzone & Judas Swing</h4>
                   <p className="text-xs text-ink-secondary mt-2 leading-relaxed">
                     London produces the classic false move (Judas Swing) sweeping the Asian high or low. On a bullish day, London frequently establishes the Low of the Day for European trading.
@@ -728,7 +728,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
               )}
               {selectedSession === 'ny_am' && (
                 <div className="p-4 rounded-2xl bg-surface-muted/90 border border-amber-500/40 shadow-xs">
-                  <span className="text-xs font-mono font-bold text-amber-700">08:00 - 11:30 EST</span>
+                  <span className="text-xs font-sans tabular-nums font-bold text-amber-700">08:00 - 11:30 EST</span>
                   <h4 className="font-bold text-ink text-base mt-1">New York AM Prime Execution Engine</h4>
                   <p className="text-xs text-ink-secondary mt-2 leading-relaxed">
                     The highest volume and cleanest algorithmic displacement of the day. Includes the 08:30 red folder releases, the 09:30 cash equities open, and the 10:00 AM Silver Bullet macro window.
@@ -737,7 +737,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
               )}
               {selectedSession === 'lunch' && (
                 <div className="p-4 rounded-2xl bg-rose-50/40 border border-rose-500/40">
-                  <span className="text-xs font-mono font-bold text-rose-700">12:00 - 13:15 EST</span>
+                  <span className="text-xs font-sans tabular-nums font-bold text-rose-700">12:00 - 13:15 EST</span>
                   <h4 className="font-bold text-rose-700 text-base mt-1">The Midday Retail Graveyard</h4>
                   <p className="text-xs text-ink-secondary mt-2 leading-relaxed">
                     Volume drops, institutions step away for lunch, and algorithms rebalance inside tight ranges. Never enter new trades during lunch hour; this is where traders give back morning gains.
@@ -746,7 +746,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
               )}
               {selectedSession === 'ny_pm' && (
                 <div className="p-4 rounded-2xl bg-surface-muted/90 border border-line shadow-xs">
-                  <span className="text-xs font-mono font-bold text-emerald-700">13:30 - 16:00 EST</span>
+                  <span className="text-xs font-sans tabular-nums font-bold text-emerald-700">13:30 - 16:00 EST</span>
                   <h4 className="font-bold text-ink text-base mt-1">New York PM Session & Settlement</h4>
                   <p className="text-xs text-ink-secondary mt-2 leading-relaxed">
                     Second wave of volume. 13:30 Macro triggers afternoon trend continuation or sharp reversal into the 16:00 cash close.
@@ -763,10 +763,10 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
             <div className="w-full md:w-3/5 space-y-2">
               <div className="p-3.5 bg-surface-muted/90 rounded-xl border border-cyan-500/40 shadow-xs flex items-center justify-between">
                 <div>
-                  <span className="text-[10px] font-mono text-cyan-700 font-bold uppercase">Step 1: Daily Chart</span>
+                  <span className="text-[0.8125rem] font-sans tabular-nums text-cyan-700 font-bold uppercase">Step 1: Daily Chart</span>
                   <div className="text-xs font-bold text-ink">Determine Draw on Liquidity (DOL)</div>
                 </div>
-                <span className="text-xs font-mono text-ink-secondary bg-surface-raised px-2 py-1 rounded">Daily Bias</span>
+                <span className="text-xs font-sans tabular-nums text-ink-secondary bg-surface-raised px-2 py-1 rounded">Daily Bias</span>
               </div>
 
               <div className="flex justify-center">
@@ -775,10 +775,10 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
 
               <div className="p-3.5 bg-surface-muted/90 rounded-xl border border-amber-500/40 shadow-xs flex items-center justify-between">
                 <div>
-                  <span className="text-[10px] font-mono text-amber-700 font-bold uppercase">Step 2: 15-Minute Chart</span>
+                  <span className="text-[0.8125rem] font-sans tabular-nums text-amber-700 font-bold uppercase">Step 2: 15-Minute Chart</span>
                   <div className="text-xs font-bold text-ink">Identify Session Liquidity Sweep & Judas Trap</div>
                 </div>
-                <span className="text-xs font-mono text-ink-secondary bg-surface-raised px-2 py-1 rounded">Structural Framing</span>
+                <span className="text-xs font-sans tabular-nums text-ink-secondary bg-surface-raised px-2 py-1 rounded">Structural Framing</span>
               </div>
 
               <div className="flex justify-center">
@@ -787,10 +787,10 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
 
               <div className="p-3.5 bg-surface-muted/90 rounded-xl border border-emerald-500/40 shadow-xs flex items-center justify-between">
                 <div>
-                  <span className="text-[10px] font-mono text-emerald-700 font-bold uppercase">Step 3: 5M & 1M Chart</span>
+                  <span className="text-[0.8125rem] font-sans tabular-nums text-emerald-700 font-bold uppercase">Step 3: 5M & 1M Chart</span>
                   <div className="text-xs font-bold text-ink">Displacement + FVG Limit Entry during Macro Window</div>
                 </div>
-                <span className="text-xs font-mono text-emerald-700 bg-emerald-50 px-2 py-1 rounded font-bold border border-emerald-500/40">Sniper Entry</span>
+                <span className="text-xs font-sans tabular-nums text-emerald-700 bg-emerald-50 px-2 py-1 rounded font-bold border border-emerald-500/40">Sniper Entry</span>
               </div>
             </div>
 
@@ -812,11 +812,11 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
             <div className="w-full lg:w-3/5 space-y-4">
               <div className="grid grid-cols-3 gap-2">
                 <div>
-                  <label className="text-[10px] font-mono text-ink-muted font-bold block mb-1">ACCOUNT SIZE</label>
+                  <label className="text-[0.8125rem] font-sans tabular-nums text-ink-muted font-bold block mb-1">ACCOUNT SIZE</label>
                   <select 
                     value={propAccountSize} 
                     onChange={(e) => setPropAccountSize(Number(e.target.value))}
-                    className="w-full bg-surface-muted border border-line text-xs text-ink rounded-lg p-2 focus:outline-none focus:border-cyan-500 font-mono shadow-2xs"
+                    className="w-full bg-surface-muted border border-line text-xs text-ink rounded-lg p-2 focus:outline-none focus:border-cyan-500 font-sans tabular-nums shadow-2xs"
                   >
                     <option value={50000}>$50,000</option>
                     <option value={100000}>$100,000</option>
@@ -824,13 +824,13 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                   </select>
                 </div>
                 <div>
-                  <label className="text-[10px] font-mono text-ink-muted font-bold block mb-1">RISK % PER TRADE</label>
+                  <label className="text-[0.8125rem] font-sans tabular-nums text-ink-muted font-bold block mb-1">RISK % PER TRADE</label>
                   <div className="flex gap-1">
                     {[0.5, 1.0, 2.0].map(r => (
                       <button
                         key={r}
                         onClick={() => setPropRiskPct(r)}
-                        className={`flex-1 py-1.5 rounded-lg text-xs font-mono font-bold transition-all ${
+                        className={`flex-1 py-1.5 rounded-lg text-xs font-sans tabular-nums font-bold transition-all ${
                           propRiskPct === r 
                             ? (r === 0.5 ? 'bg-emerald-600 text-on-brand font-bold shadow-xs on-accent' : r === 1.0 ? 'bg-amber-500 text-on-brand font-bold shadow-xs' : 'bg-rose-600 text-on-brand font-bold shadow-xs on-accent')
                             : 'bg-surface-muted text-ink-muted border border-line hover:text-ink hover:bg-surface-raised'
@@ -842,11 +842,11 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                   </div>
                 </div>
                 <div>
-                  <label className="text-[10px] font-mono text-ink-muted font-bold block mb-1">STOP LOSS (PTS)</label>
+                  <label className="text-[0.8125rem] font-sans tabular-nums text-ink-muted font-bold block mb-1">STOP LOSS (PTS)</label>
                   <select 
                     value={propStopLossPoints} 
                     onChange={(e) => setPropStopLossPoints(Number(e.target.value))}
-                    className="w-full bg-surface-muted border border-line text-xs text-ink rounded-lg p-2 focus:outline-none focus:border-cyan-500 font-mono shadow-2xs"
+                    className="w-full bg-surface-muted border border-line text-xs text-ink rounded-lg p-2 focus:outline-none focus:border-cyan-500 font-sans tabular-nums shadow-2xs"
                   >
                     <option value={15}>15 Points</option>
                     <option value={25}>25 Points (Std)</option>
@@ -865,33 +865,33 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                 return (
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                     <div className="p-3 bg-surface-muted/90 rounded-xl border border-line shadow-xs">
-                      <span className="text-[10px] font-mono text-ink-muted font-bold">MAX $ RISK</span>
-                      <div className="text-base font-bold text-ink font-mono mt-0.5">${dollarRisk.toLocaleString()}</div>
-                      <span className="text-[10px] text-ink-muted font-mono">Per single setup</span>
+                      <span className="text-[0.8125rem] font-sans tabular-nums text-ink-muted font-bold">MAX $ RISK</span>
+                      <div className="text-base font-bold text-ink font-sans tabular-nums mt-0.5">${dollarRisk.toLocaleString()}</div>
+                      <span className="text-[0.8125rem] text-ink-muted font-sans tabular-nums">Per single setup</span>
                     </div>
 
                     <div className="p-3 bg-surface-muted/90 rounded-xl border border-emerald-500/40 shadow-xs">
-                      <span className="text-[10px] font-mono text-emerald-700 font-bold">MNQ MICROS ($2/PT)</span>
-                      <div className="text-base font-bold text-emerald-700 font-mono mt-0.5">{mnqContracts} Contracts</div>
-                      <span className="text-[10px] text-emerald-700 font-mono">Ideal precision size</span>
+                      <span className="text-[0.8125rem] font-sans tabular-nums text-emerald-700 font-bold">MNQ MICROS ($2/PT)</span>
+                      <div className="text-base font-bold text-emerald-700 font-sans tabular-nums mt-0.5">{mnqContracts} Contracts</div>
+                      <span className="text-[0.8125rem] text-emerald-700 font-sans tabular-nums">Ideal precision size</span>
                     </div>
 
                     <div className="p-3 bg-surface-muted/90 rounded-xl border border-amber-500/40 shadow-xs">
-                      <span className="text-[10px] font-mono text-amber-700 font-bold">NQ MINIS ($20/PT)</span>
-                      <div className="text-base font-bold text-amber-700 font-mono mt-0.5">{nqContracts} Minis</div>
-                      <span className="text-[10px] text-amber-700 font-mono">1 Mini = 10 Micros</span>
+                      <span className="text-[0.8125rem] font-sans tabular-nums text-amber-700 font-bold">NQ MINIS ($20/PT)</span>
+                      <div className="text-base font-bold text-amber-700 font-sans tabular-nums mt-0.5">{nqContracts} Minis</div>
+                      <span className="text-[0.8125rem] text-amber-700 font-sans tabular-nums">1 Mini = 10 Micros</span>
                     </div>
 
                     <div className={`p-3 rounded-xl border shadow-xs ${
                       propRiskPct <= 0.5 ? 'border-emerald-500/40 bg-emerald-50/40' : propRiskPct <= 1.0 ? 'border-amber-500/40 bg-amber-50/40' : 'border-rose-500/40 bg-rose-50/40'
                     }`}>
-                      <span className="text-[10px] font-mono font-bold text-ink-secondary">4% DD SURVIVAL</span>
-                      <div className={`text-base font-bold font-mono mt-0.5 ${
+                      <span className="text-[0.8125rem] font-sans tabular-nums font-bold text-ink-secondary">4% DD SURVIVAL</span>
+                      <div className={`text-base font-bold font-sans tabular-nums mt-0.5 ${
                         propRiskPct <= 0.5 ? 'text-emerald-700' : propRiskPct <= 1.0 ? 'text-amber-700' : 'text-rose-700 animate-pulse'
                       }`}>
                         {maxLossesBefore4Pct} Losses
                       </div>
-                      <span className="text-[10px] text-ink-muted font-mono">
+                      <span className="text-[0.8125rem] text-ink-muted font-sans tabular-nums">
                         {propRiskPct <= 0.5 ? 'Institutional safe' : propRiskPct <= 1.0 ? 'Moderate buffer' : 'High blowup risk!'}
                       </span>
                     </div>
@@ -901,7 +901,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
 
               {/* Visual Drawdown Comparison Bar */}
               <div className="p-3.5 bg-surface-muted/90 rounded-xl border border-line shadow-xs space-y-2">
-                <div className="flex items-center justify-between text-xs font-mono">
+                <div className="flex items-center justify-between text-xs font-sans tabular-nums">
                   <span className="text-ink-secondary">Survival Margin Against 4% Daily Drawdown:</span>
                   <span className="text-emerald-700 font-bold">
                     {propRiskPct === 0.5 ? '8 Trade Buffer (98% Survival)' : propRiskPct === 1.0 ? '4 Trade Buffer (65% Survival)' : '2 Trade Buffer (15% Survival - Gambler Trap)'}
@@ -948,7 +948,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                   onClick={() => setActiveGoldTab('gold')}
                   className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 ${
                     activeGoldTab === 'gold' 
-                      ? 'bg-amber-500 text-on-brand shadow-md font-black'
+                      ? 'bg-amber-500 text-on-brand shadow-md font-bold'
                       : 'bg-surface-muted text-ink-muted border border-line hover:text-ink hover:bg-surface-raised'
                   }`}
                 >
@@ -959,7 +959,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                   onClick={() => setActiveGoldTab('nasdaq')}
                   className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 ${
                     activeGoldTab === 'nasdaq' 
-                      ? 'bg-cyan-600 text-on-brand shadow-md font-black on-accent'
+                      ? 'bg-cyan-600 text-on-brand shadow-md font-bold on-accent'
                       : 'bg-surface-muted text-ink-muted border border-line hover:text-ink hover:bg-surface-raised'
                   }`}
                 >
@@ -971,8 +971,8 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
               {activeGoldTab === 'gold' ? (
                 <div className="p-4 bg-surface-muted/90 rounded-2xl border border-amber-500/40 shadow-xs space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono font-bold text-amber-700">XAUUSD ALGORITHMIC TRAITS</span>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-500/40 font-bold">Deep Asian Sweeps</span>
+                    <span className="text-xs font-sans tabular-nums font-bold text-amber-700">XAUUSD ALGORITHMIC TRAITS</span>
+                    <span className="text-[0.8125rem] font-sans tabular-nums px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-500/40 font-bold">Deep Asian Sweeps</span>
                   </div>
                   <ul className="text-xs text-ink-secondary space-y-2">
                     <li className="flex items-start gap-2">
@@ -992,8 +992,8 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
               ) : (
                 <div className="p-4 bg-surface-muted/90 rounded-2xl border border-cyan-500/40 shadow-xs space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono font-bold text-cyan-700">US100 (NQ) ALGORITHMIC TRAITS</span>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-50 text-cyan-700 border border-cyan-500/40 font-bold">09:30 AM Cash Open</span>
+                    <span className="text-xs font-sans tabular-nums font-bold text-cyan-700">US100 (NQ) ALGORITHMIC TRAITS</span>
+                    <span className="text-[0.8125rem] font-sans tabular-nums px-2 py-0.5 rounded bg-cyan-50 text-cyan-700 border border-cyan-500/40 font-bold">09:30 AM Cash Open</span>
                   </div>
                   <ul className="text-xs text-ink-secondary space-y-2">
                     <li className="flex items-start gap-2">
@@ -1018,7 +1018,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
               <p className="text-xs text-ink-secondary leading-relaxed">
                 "Do not trade Gold and NASDAQ with the same mindset. In NASDAQ, 1 point is $2 on Micros and $20 on Minis. In Gold, 1 standard lot moves $100 per dollar change. Furthermore, Gold loves to pierce liquidity levels deeper than retail expects. Always wait for the 5-minute candle to close back inside the range before taking your limit order."
               </p>
-              <div className="p-2.5 bg-surface-muted rounded-lg border border-line text-[11px] font-mono text-ink-muted flex items-center justify-between">
+              <div className="p-2.5 bg-surface-muted rounded-lg border border-line text-[0.8125rem] font-sans tabular-nums text-ink-muted flex items-center justify-between">
                 <span>Gold Spread Buffer: 25-40 Cents</span>
                 <span className="text-emerald-700 font-bold">Recommended: 0.5% Risk</span>
               </div>
@@ -1047,7 +1047,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                       : 'bg-surface-muted text-ink-muted border border-line hover:text-ink hover:bg-surface-raised'
                   }`}
                 >
-                  <div className={`text-[10px] font-mono ${tapeStep === s.step ? 'text-cyan-700' : 'text-ink-muted'}`}>{s.time}</div>
+                  <div className={`text-[0.8125rem] font-sans tabular-nums ${tapeStep === s.step ? 'text-cyan-700' : 'text-ink-muted'}`}>{s.time}</div>
                   <div className="text-xs font-bold mt-0.5">{s.label}</div>
                 </button>
               ))}
@@ -1057,10 +1057,10 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
             <div className="p-4 bg-surface-muted/90 rounded-2xl border border-line shadow-xs flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="w-full md:w-3/5 space-y-2">
                 <div className="flex items-center gap-2">
-                  <span className="px-2 py-0.5 rounded bg-cyan-50 text-cyan-700 border border-cyan-500/40 font-mono text-xs font-bold">
+                  <span className="px-2 py-0.5 rounded bg-cyan-50 text-cyan-700 border border-cyan-500/40 font-sans tabular-nums text-xs font-bold">
                     TAPE PHASE {tapeStep} OF 5
                   </span>
-                  <span className="text-xs text-ink-secondary font-mono font-medium">
+                  <span className="text-xs text-ink-secondary font-sans tabular-nums font-medium">
                     {tapeStep === 1 && 'Pre-Market Preparation Routine'}
                     {tapeStep === 2 && 'Hands Off Keyboard! Initial Price Auction'}
                     {tapeStep === 3 && 'The Trap: Retail Breakout Traders Get Trapped'}
@@ -1079,7 +1079,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
               </div>
 
               <div className="w-full md:w-2/5 p-3.5 bg-amber-50/40 rounded-xl border border-amber-500/40 space-y-2 text-xs">
-                <div className="font-bold text-amber-700 font-mono flex items-center gap-1.5">
+                <div className="font-bold text-amber-700 font-sans tabular-nums flex items-center gap-1.5">
                   <Activity className="w-3.5 h-3.5 text-amber-700" />
                   Masood’s Live Desk Commentary
                 </div>
@@ -1120,7 +1120,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                       : 'bg-surface-muted text-ink-muted border border-line hover:text-ink hover:bg-surface-raised'
                   }`}
                 >
-                  <span className="text-[10px] font-mono block opacity-75">LAW {law.num}</span>
+                  <span className="text-[0.8125rem] font-sans tabular-nums block opacity-75">LAW {law.num}</span>
                   <span className="text-xs leading-tight font-medium line-clamp-1">{law.title}</span>
                 </button>
               ))}
@@ -1130,7 +1130,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
               <div className="w-full md:w-3/5 space-y-2">
                 <div className="flex items-center gap-2">
                   <Award className="w-4 h-4 text-amber-700" />
-                  <span className="text-xs font-mono font-bold text-amber-700">
+                  <span className="text-xs font-sans tabular-nums font-bold text-amber-700">
                     SANCTUM CHARTER — LAW {selectedLaw}
                   </span>
                 </div>
@@ -1163,7 +1163,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
               </div>
 
               <div className="w-full md:w-2/5 p-4 bg-amber-50/40 rounded-xl border border-amber-500/40 space-y-2 text-xs">
-                <div className="text-amber-700 font-mono font-bold">The Operator’s Affirmation:</div>
+                <div className="text-amber-700 font-sans tabular-nums font-bold">The Operator’s Affirmation:</div>
                 <p className="text-ink-secondary italic leading-relaxed">
                   "I am an institutional market operator. I execute without fear, accept losses without anger, and close my desk without greed. My edge is patience and discipline."
                 </p>
@@ -1173,7 +1173,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
         )}
 
         {/* Progress Bar Bottom */}
-        <div className="mt-4 pt-3 border-t border-line flex items-center justify-between text-xs text-ink-muted font-mono">
+        <div className="mt-4 pt-3 border-t border-line flex items-center justify-between text-xs text-ink-muted font-sans tabular-nums">
           <span>Animation Progress: {Math.round(progress)}%</span>
           <div className="w-48 bg-surface-muted h-1.5 rounded-full overflow-hidden border border-line">
             <div 

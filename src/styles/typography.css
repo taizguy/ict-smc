@@ -1,0 +1,54 @@
+/* Local Latin variable fonts, licensed under the SIL Open Font License. */
+@font-face {
+  font-family: 'Source Sans 3';
+  src: url('/fonts/source-sans-3.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lora;
+  src: url('/fonts/lora.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lora;
+  src: url('/fonts/lora-italic.woff2') format('woff2');
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+}
+@theme {
+  --text-xs: .8125rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: .9375rem;
+  --text-sm--line-height: 1.6;
+  --text-base: 1rem;
+  --text-base--line-height: 1.65;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.65;
+}
+@layer base {
+  html { font-size: 100%; -webkit-text-size-adjust: 100%; }
+  body { line-height: 1.65; }
+  h1, h2, h3 { text-wrap: balance; overflow-wrap: break-word; }
+  p, li { overflow-wrap: break-word; }
+  input, select, textarea { font: inherit; font-size: max(1rem, 16px); }
+  pre { overflow-x: auto; }
+}
+.predikt-workbench-body :is(p, li) { line-height: 1.75; }
+.predikt-workbench-body :is(h1, h2, h3) { line-height: 1.25; }
+.article-body { max-inline-size: 68ch; }
+.font-mono { font-variant-numeric: tabular-nums; }
+/* Keep editable fields readable and avoid automatic input zoom on iOS. */
+html :is(input:not([type=checkbox], [type=radio], [type=range], [type=hidden]), select, textarea) {
+  font-family: var(--font-sans);
+  font-size: max(1rem, 16px);
+  line-height: 1.5;
+}
+@media (max-width: 40rem) {
+  .predikt-workbench-body h1 { font-size: clamp(1.75rem, 1.3rem + 2vw, 2.25rem); }
+  .predikt-workbench-body h2 { font-size: clamp(1.375rem, 1.1rem + 1vw, 1.75rem); }
+}

@@ -1,9 +1,12 @@
 @import "tailwindcss";
 @import "./styles/light-theme.css";
+@import "./styles/typography.css";
 
 @theme {
-  --font-sans: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
+  --font-sans: "Source Sans 3", system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", Consolas, monospace;
+  --font-editorial: "Lora", Georgia, serif;
+  --font-display: var(--font-editorial);
   --color-predikt-bg: var(--color-canvas);
   --color-predikt-bg-secondary: var(--color-surface-muted);
   --color-predikt-surface: var(--color-surface);
@@ -59,7 +62,7 @@
 
   html {
     scroll-behavior: smooth;
-    font-family: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: var(--font-sans);
     background-color: #f6f7f2;
     color: #223b35;
   }
@@ -110,23 +113,23 @@
   }
 
   body {
-    font-family: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: var(--font-sans);
     background-color: #f6f7f2;
     color: #223b35;
     overflow-x: hidden;
-    letter-spacing: -0.012em;
+    letter-spacing: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    letter-spacing: -0.035em;
+    font-family: var(--font-sans);
+    letter-spacing: -0.02em;
     font-weight: 600;
   }
 
-  code, pre, .font-mono, .font-mono * {
-    font-family: 'IBM Plex Mono', monospace !important;
+  code, pre {
+    font-family: var(--font-mono);
   }
 }
 
@@ -135,27 +138,27 @@
    ======================================================== */
 
 .predikt-hero-title {
-  font-family: 'Geist', 'Inter', sans-serif;
-  font-size: clamp(4rem, 9.5vw, 8.5rem);
-  font-weight: 650;
-  line-height: 0.92;
-  letter-spacing: -0.055em;
+  font-family: var(--font-editorial);
+  font-size: clamp(2.75rem, 1.75rem + 4vw, 5.75rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
   color: #223b35;
 }
 
 .predikt-section-title {
-  font-family: 'Geist', 'Inter', sans-serif;
-  font-size: clamp(2.4rem, 5.2vw, 4.2rem);
+  font-family: var(--font-editorial);
+  font-size: clamp(2rem, 1.4rem + 2vw, 3.5rem);
   font-weight: 600;
-  line-height: 0.96;
-  letter-spacing: -0.04em;
+  line-height: 1.16;
+  letter-spacing: -0.025em;
   color: #223b35;
 }
 
 .predikt-eyebrow {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.18em;
+  font-family: var(--font-sans);
+  font-size: .8125rem;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: #52645b;
 }
@@ -421,9 +424,7 @@ textarea:focus-visible {
 
 /* Tool pages prioritize readable content and usable keyboard controls. */
 .predikt-workbench-body p, .predikt-workbench-body li { line-height: 1.7; }
-.predikt-workbench-body .font-mono { font-family: var(--font-sans); }
 .predikt-workbench-body .text-xs { font-size: .875rem; }
-.predikt-workbench-body .text-\[10px\], .predikt-workbench-body .text-\[11px\] { font-size: .8125rem; }
 .predikt-workbench-body button, nav[aria-label="Switch tool"] a { min-height: 44px; }
 [aria-current="page"], [aria-current="step"], [aria-pressed="true"] { border-color: #23796d; }
 button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid #23796d; outline-offset: 3px; }

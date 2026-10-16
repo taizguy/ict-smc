@@ -74,13 +74,13 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
       <nav aria-label="Breadcrumb" className="flex items-center justify-between gap-4 mb-8 pb-4 border-b border-ink/[0.08]">
         <button
           onClick={onBackToCurriculum}
-          className="inline-flex items-center gap-2 text-xs font-mono text-ink-secondary hover:text-teal transition-colors py-2 px-3 rounded-lg hover:bg-ink/[0.04]"
+          className="inline-flex items-center gap-2 text-xs font-sans tabular-nums text-ink-secondary hover:text-teal transition-colors py-2 px-3 rounded-lg hover:bg-ink/[0.04]"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>&larr; Return to Curriculum Directory</span>
         </button>
 
-        <div className="flex items-center gap-2 text-xs font-mono text-ink-muted">
+        <div className="flex items-center gap-2 text-xs font-sans tabular-nums text-ink-muted">
           <span>learnsmc.xyz</span>
           <span>/</span>
           <span className="text-teal uppercase">{currentTab}</span>
@@ -106,7 +106,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
               <button
                 key={t.id}
                 onClick={() => onTabChange(t.id)}
-                className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-mono font-medium transition-all ${
+                className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-sans tabular-nums font-medium transition-all ${
                   isActive
                     ? 'bg-[#1D2230] text-ink border border-ink/[0.12] shadow-sm'
                     : 'text-ink-secondary hover:text-ink hover:bg-ink/[0.04]'
@@ -128,7 +128,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
         {currentTab === 'disclaimer' && (
           <section className="space-y-6 animate-fade-in text-sm text-ink-secondary leading-relaxed">
             <header className="border-b border-ink/[0.08] pb-5">
-              <div className="flex items-center gap-2 text-xs font-mono text-amber-700 uppercase tracking-widest mb-1">
+              <div className="flex items-center gap-2 text-xs font-sans tabular-nums text-amber-700 uppercase tracking-widest mb-1">
                 <ShieldAlert className="w-4 h-4" />
                 <span>Education and simulated performance</span>
               </div>
@@ -183,7 +183,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
         {currentTab === 'privacy' && (
           <section className="space-y-6 animate-fade-in text-sm text-ink-secondary leading-relaxed">
             <header className="border-b border-ink/[0.08] pb-5">
-              <div className="flex items-center gap-2 text-xs font-mono text-teal uppercase tracking-widest mb-1">
+              <div className="flex items-center gap-2 text-xs font-sans tabular-nums text-teal uppercase tracking-widest mb-1">
                 <Lock className="w-4 h-4" />
                 <span>Privacy &amp; Cookie Policy · Google Publisher Policies</span>
               </div>
@@ -245,7 +245,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
             <div className="space-y-4">
               <h3 className="text-base font-bold text-ink">2. Browser LocalStorage &amp; Non-Tracking Preferences</h3>
               <p>
-                LearnSMC uses client-side browser <code className="text-teal font-mono text-xs bg-ink/[0.05] px-1.5 py-0.5 rounded">localStorage</code> solely to preserve:
+                LearnSMC uses client-side browser <code className="text-teal font-sans tabular-nums text-xs bg-ink/[0.05] px-1.5 py-0.5 rounded">localStorage</code> solely to preserve:
               </p>
               <ul className="list-disc pl-5 space-y-1.5 text-xs text-ink-secondary">
                 <li>Your lesson bookmarking and chapter completion status.</li>
@@ -274,7 +274,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
         {currentTab === 'terms' && (
           <section className="space-y-6 animate-fade-in text-sm text-ink-secondary leading-relaxed">
             <header className="border-b border-ink/[0.08] pb-5">
-              <div className="flex items-center gap-2 text-xs font-mono text-violet uppercase tracking-widest mb-1">
+              <div className="flex items-center gap-2 text-xs font-sans tabular-nums text-violet uppercase tracking-widest mb-1">
                 <FileText className="w-4 h-4" />
                 <span>Terms of Use · Educational Repository</span>
               </div>
@@ -339,7 +339,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
         {currentTab === 'contact' && (
           <section className="space-y-6 animate-fade-in text-sm text-ink-secondary leading-relaxed">
             <header className="border-b border-ink/[0.08] pb-5">
-              <div className="flex items-center gap-2 text-xs font-mono text-teal uppercase tracking-widest mb-1">
+              <div className="flex items-center gap-2 text-xs font-sans tabular-nums text-teal uppercase tracking-widest mb-1">
                 <Mail className="w-4 h-4" />
                 <span>Publisher Channels · Support &amp; Inquiries</span>
               </div>
@@ -361,8 +361,8 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
                   </h3>
                   <div className="space-y-2 text-xs">
                     <div>
-                      <span className="text-ink-muted font-mono block">Primary Support &amp; Inquiries:</span>
-                      <a href="mailto:itsmuhammadumerijaz@gmail.com" className="text-teal font-mono hover:underline">
+                      <span className="text-ink-muted font-sans tabular-nums block">Primary Support &amp; Inquiries:</span>
+                      <a href="mailto:itsmuhammadumerijaz@gmail.com" className="text-teal font-sans tabular-nums hover:underline">
                         itsmuhammadumerijaz@gmail.com
                       </a>
                     </div>
@@ -402,7 +402,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
                   <form onSubmit={handleContactSubmit} className="space-y-4">
                     <h3 className="font-bold text-ink text-sm">Send an Editorial Message</h3>
                     <div>
-                      <label className="block text-xs font-mono text-ink-secondary mb-1">Your Name</label>
+                      <label className="block text-xs font-sans tabular-nums text-ink-secondary mb-1">Your Name</label>
                       <input
                         type="text"
                         required
@@ -414,7 +414,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
                     </div>
 
                     <div>
-                      <label className="block text-xs font-mono text-ink-secondary mb-1">Your Email</label>
+                      <label className="block text-xs font-sans tabular-nums text-ink-secondary mb-1">Your Email</label>
                       <input
                         type="email"
                         required
@@ -426,7 +426,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
                     </div>
 
                     <div>
-                      <label className="block text-xs font-mono text-ink-secondary mb-1">Topic</label>
+                      <label className="block text-xs font-sans tabular-nums text-ink-secondary mb-1">Topic</label>
                       <select
                         value={contactForm.subject}
                         onChange={(e) => setContactForm({ ...contactForm, subject: e.target.value })}
@@ -440,7 +440,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
                     </div>
 
                     <div>
-                      <label className="block text-xs font-mono text-ink-secondary mb-1">Message</label>
+                      <label className="block text-xs font-sans tabular-nums text-ink-secondary mb-1">Message</label>
                       <textarea
                         required
                         rows={4}
@@ -469,7 +469,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
         {currentTab === 'adsense' && (
           <section className="space-y-6 animate-fade-in text-sm text-ink-secondary leading-relaxed">
             <header className="border-b border-ink/[0.08] pb-5">
-              <div className="flex items-center gap-2 text-xs font-mono text-positive uppercase tracking-widest mb-1">
+              <div className="flex items-center gap-2 text-xs font-sans tabular-nums text-positive uppercase tracking-widest mb-1">
                 <CheckCircle2 className="w-4 h-4" />
                 <span>Google AdSense · Official Publisher Verification</span>
               </div>
@@ -483,17 +483,17 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
 
             <div className="bg-surface-raised border border-ink/[0.08] rounded-xl p-5 space-y-4">
               <div className="flex items-center justify-between flex-wrap gap-2">
-                <span className="text-xs font-mono text-teal">ROOT DOMAIN ADS.TXT RECORD:</span>
+                <span className="text-xs font-sans tabular-nums text-teal">ROOT DOMAIN ADS.TXT RECORD:</span>
                 <button
                   onClick={handleCopyAdsTxt}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-ink/[0.06] hover:bg-ink/[0.12] text-xs font-mono text-ink transition-colors"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-ink/[0.06] hover:bg-ink/[0.12] text-xs font-sans tabular-nums text-ink transition-colors"
                 >
                   <Copy className="w-3.5 h-3.5" />
                   <span>{copiedAdsTxt ? 'Copied to Clipboard!' : 'Copy ads.txt Entry'}</span>
                 </button>
               </div>
 
-              <div className="bg-canvas p-3 rounded-lg font-mono text-xs text-positive select-all border border-ink/[0.06]">
+              <div className="bg-canvas p-3 rounded-lg font-sans tabular-nums text-xs text-positive select-all border border-ink/[0.06]">
                 google.com, pub-6985025314302607, DIRECT, f08c47fec0942fa0
               </div>
 

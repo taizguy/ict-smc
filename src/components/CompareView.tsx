@@ -47,7 +47,7 @@ export const CompareView: React.FC<CompareViewProps> = ({
   const canonicalPath = `/tools/compare/${comparisonSlug}/`;
 
   return (
-    <div className="space-y-6 text-[#F5F7FA]">
+    <div className="space-y-6 text-ink">
       <SEO
         title={`${comparison.title} — Compare Matrix | LearnSMC`}
         description={`Key Difference: ${comparison.keyDifference} Institutional side-by-side comparison of ${comparison.conceptA.name} and ${comparison.conceptB.name}.`}
@@ -62,24 +62,24 @@ export const CompareView: React.FC<CompareViewProps> = ({
 
       <ToolContentNotice />
       {/* Top Header */}
-      <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-4">
+      <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-7 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="w-2 h-2 rounded-full bg-[#5865FF]" />
-              <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F5F7FA]">
+              <span className="w-2 h-2 rounded-full bg-brand" />
+              <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-ink">
                 ICT Concept Comparison Matrix
               </h2>
             </div>
-            <p className="text-[#9BA1AE] text-xs sm:text-sm">
+            <p className="text-ink-secondary text-xs sm:text-sm">
               Dissect subtle differences and eliminate the most common conceptual confusions in Smart Money trading.
             </p>
           </div>
         </div>
 
         {/* Comparison Selector */}
-        <div className="pt-4 border-t border-white/[0.07]">
-          <div className="text-[10px] font-mono uppercase tracking-[0.16em] text-[#656B78] mb-2">
+        <div className="pt-4 border-t border-ink/[0.07]">
+          <div className="text-[10px] font-mono uppercase tracking-[0.16em] text-ink-muted mb-2">
             SELECT PAIRING:
           </div>
           <BauhausNavScroller>
@@ -92,8 +92,8 @@ export const CompareView: React.FC<CompareViewProps> = ({
                   href={getComparisonUrl(c.id)}
                   className={`px-3.5 py-1.5 text-xs font-mono uppercase whitespace-nowrap transition-all rounded-lg border cursor-pointer shrink-0 ${
                     isSelected
-                      ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20'
-                      : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06] hover:bg-white/[0.05]'
+                      ? 'bg-ink/[0.12] text-ink border-ink/20'
+                      : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06] hover:bg-ink/[0.05]'
                   }`}
                 >
                   {c.title.split(':')[0]}
@@ -107,15 +107,15 @@ export const CompareView: React.FC<CompareViewProps> = ({
       {/* Main Side-by-Side Comparison Container */}
       <div className="space-y-6">
         <div className="text-center space-y-2 py-1">
-          <h3 className="text-xl sm:text-2xl font-semibold text-[#F5F7FA] tracking-tight">
+          <h3 className="text-xl sm:text-2xl font-semibold text-ink tracking-tight">
             {comparison.title}
           </h3>
-          <p className="text-xs font-mono text-[#55E6D1] uppercase bg-[#55E6D1]/10 px-3 py-1 rounded-full border border-[#55E6D1]/20 inline-block">
+          <p className="text-xs font-mono text-teal uppercase bg-teal/10 px-3 py-1 rounded-full border border-teal/20 inline-block">
             {comparison.keyDifference}
           </p>
         </div>
 
-        <div className="overflow-x-auto rounded-xl border border-white/10" tabIndex={0} role="region" aria-label="Comparison table, scroll horizontally on small screens">
+        <div className="overflow-x-auto rounded-xl border border-ink/10" tabIndex={0} role="region" aria-label="Comparison table, scroll horizontally on small screens">
           <table className="w-full text-left text-sm">
             <caption className="p-3">{comparison.title}: definitions and study conditions</caption>
             <thead><tr><th scope="col" className="p-3">Feature</th><th scope="col" className="p-3">{comparison.conceptA.name}</th><th scope="col" className="p-3">{comparison.conceptB.name}</th></tr></thead>
@@ -125,90 +125,90 @@ export const CompareView: React.FC<CompareViewProps> = ({
         {/* Dual Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Concept A Card */}
-          <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-white/[0.07]">
-              <span className="px-3 py-0.5 rounded bg-[#5865FF]/10 text-[#5865FF] font-mono text-xs font-medium border border-[#5865FF]/20 uppercase">
+          <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-7 space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-ink/[0.07]">
+              <span className="px-3 py-0.5 rounded bg-brand/10 text-brand font-mono text-xs font-medium border border-brand/20 uppercase">
                 {comparison.conceptA.name}
               </span>
             </div>
 
-            <p className="text-[#9BA1AE] text-sm leading-relaxed font-normal">
+            <p className="text-ink-secondary text-sm leading-relaxed font-normal">
               {comparison.conceptA.summary}
             </p>
 
             <div className="space-y-2">
-              <h5 className="text-[10px] font-mono text-[#5865FF] uppercase tracking-wider">
+              <h5 className="text-[10px] font-mono text-brand uppercase tracking-wider">
                 Key Attributes:
               </h5>
-              <ul className="space-y-1.5 text-xs font-mono text-[#F5F7FA]/90">
+              <ul className="space-y-1.5 text-xs font-mono text-ink/90">
                 {comparison.conceptA.keyPoints.map((pt, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <span className="text-[#5865FF]">•</span>
+                    <span className="text-brand">•</span>
                     <span>{pt}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="pt-3 border-t border-white/[0.06] text-xs font-mono bg-white/[0.02] p-4 rounded-xl border border-white/[0.06]">
-              <strong className="text-[#656B78] uppercase block text-[10px] mb-0.5">
+            <div className="pt-3 border-t border-ink/[0.06] text-xs font-mono bg-ink/[0.02] p-4 rounded-xl border border-ink/[0.06]">
+              <strong className="text-ink-muted uppercase block text-[10px] mb-0.5">
                 Ideal Setup Condition:
               </strong>
-              <span className="text-[#F5F7FA] font-medium">{comparison.conceptA.idealCondition}</span>
+              <span className="text-ink font-medium">{comparison.conceptA.idealCondition}</span>
             </div>
           </div>
 
           {/* Concept B Card */}
-          <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-white/[0.07]">
-              <span className="px-3 py-0.5 rounded bg-[#55E6D1]/10 text-[#55E6D1] font-mono text-xs font-medium border border-[#55E6D1]/20 uppercase">
+          <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-7 space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-ink/[0.07]">
+              <span className="px-3 py-0.5 rounded bg-teal/10 text-teal font-mono text-xs font-medium border border-teal/20 uppercase">
                 {comparison.conceptB.name}
               </span>
             </div>
 
-            <p className="text-[#9BA1AE] text-sm leading-relaxed font-normal">
+            <p className="text-ink-secondary text-sm leading-relaxed font-normal">
               {comparison.conceptB.summary}
             </p>
 
             <div className="space-y-2">
-              <h5 className="text-[10px] font-mono text-[#55E6D1] uppercase tracking-wider">
+              <h5 className="text-[10px] font-mono text-teal uppercase tracking-wider">
                 Key Attributes:
               </h5>
-              <ul className="space-y-1.5 text-xs font-mono text-[#F5F7FA]/90">
+              <ul className="space-y-1.5 text-xs font-mono text-ink/90">
                 {comparison.conceptB.keyPoints.map((pt, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <span className="text-[#55E6D1]">•</span>
+                    <span className="text-teal">•</span>
                     <span>{pt}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="pt-3 border-t border-white/[0.06] text-xs font-mono bg-white/[0.02] p-4 rounded-xl border border-white/[0.06]">
-              <strong className="text-[#656B78] uppercase block text-[10px] mb-0.5">
+            <div className="pt-3 border-t border-ink/[0.06] text-xs font-mono bg-ink/[0.02] p-4 rounded-xl border border-ink/[0.06]">
+              <strong className="text-ink-muted uppercase block text-[10px] mb-0.5">
                 Ideal Setup Condition:
               </strong>
-              <span className="text-[#F5F7FA] font-medium">{comparison.conceptB.idealCondition}</span>
+              <span className="text-ink font-medium">{comparison.conceptB.idealCondition}</span>
             </div>
           </div>
         </div>
 
         {/* The Decisive Separation Rule Card */}
-        <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 space-y-4">
-          <div className="flex items-center gap-2 text-[#F5F7FA] font-mono text-xs uppercase">
-            <Scale className="w-4 h-4 text-[#5865FF]" />
+        <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-7 space-y-4">
+          <div className="flex items-center gap-2 text-ink font-mono text-xs uppercase">
+            <Scale className="w-4 h-4 text-brand" />
             <span className="font-semibold">The Decisive Execution Rule</span>
           </div>
 
-          <div className="bg-emerald-500/5 p-4 rounded-xl border border-emerald-500/20 font-mono text-xs text-emerald-200 leading-relaxed">
+          <div className="bg-emerald-500/5 p-4 rounded-xl border border-emerald-500/20 font-mono text-xs text-emerald-700 leading-relaxed">
             {comparison.decisionRule}
           </div>
 
-          <div className="flex items-start gap-3 bg-rose-500/5 p-4 rounded-xl border border-rose-500/20 text-xs font-mono text-[#9BA1AE]">
-            <AlertTriangle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+          <div className="flex items-start gap-3 bg-rose-500/5 p-4 rounded-xl border border-rose-500/20 text-xs font-mono text-ink-secondary">
+            <AlertTriangle className="w-4 h-4 text-rose-700 shrink-0 mt-0.5" />
             <div>
-              <strong className="text-rose-400 uppercase">Common Retail Mistake: </strong>
-              <span className="text-[#F5F7FA]/90">{comparison.commonConfusion}</span>
+              <strong className="text-rose-700 uppercase">Common Retail Mistake: </strong>
+              <span className="text-ink/90">{comparison.commonConfusion}</span>
             </div>
           </div>
         </div>

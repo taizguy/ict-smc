@@ -94,10 +94,10 @@ export const getSectorInfo = (partName: string) => {
       code: 'FOUNDATIONS',
       title: 'Market Foundations & Orderflow Mechanics',
       description: 'The physical architecture of exchanges, order book depth, limit vs market consumption, and the origin of price displacement.',
-      accent: '#22C55E', // emerald
+      accent: '#25734f', // emerald
       gradient: 'from-emerald-500/20 via-emerald-900/10 to-transparent',
       border: 'border-emerald-500/30',
-      badge: 'bg-emerald-950/80 text-emerald-300 border-emerald-500/30'
+      badge: 'bg-emerald-50/80 text-emerald-700 border-emerald-500/30'
     };
   }
   if (partName.includes('Part II') || partName.includes('Structure')) {
@@ -106,10 +106,10 @@ export const getSectorInfo = (partName: string) => {
       code: 'STRUCTURE',
       title: 'Price Structure & Order Book Shifts',
       description: 'Fractal swing points, Market Structure Shifts (MSS), Break of Structure (BOS), Breaker blocks, and liquidity voids.',
-      accent: '#06B6D4', // cyan
+      accent: '#23796d', // cyan
       gradient: 'from-cyan-500/20 via-cyan-900/10 to-transparent',
       border: 'border-cyan-500/30',
-      badge: 'bg-cyan-950/80 text-cyan-300 border-cyan-500/30'
+      badge: 'bg-cyan-50/80 text-cyan-700 border-cyan-500/30'
     };
   }
   if (partName.includes('Part III') || partName.includes('Delivery')) {
@@ -118,10 +118,10 @@ export const getSectorInfo = (partName: string) => {
       code: 'DELIVERY',
       title: 'Price Delivery & Institutional PD Arrays',
       description: 'Algorithmic Fair Value Gaps (FVG), Inversion FVGs, Balanced Price Ranges, Order Blocks, and premium/discount dealing arrays.',
-      accent: '#FF5722', // signature amber/orange
-      gradient: 'from-[#FF5722]/20 via-[#FF5722]/5 to-transparent',
-      border: 'border-[#FF5722]/30',
-      badge: 'bg-[#FF5722]/15 text-[#FF7A00] border-[#FF5722]/30'
+      accent: '#b34e30', // signature amber/orange
+      gradient: 'from-rust/20 via-rust/5 to-transparent',
+      border: 'border-rust/30',
+      badge: 'bg-rust/15 text-amber border-rust/30'
     };
   }
   if (partName.includes('Part IV') || partName.includes('Time') || partName.includes('Liquidity')) {
@@ -130,10 +130,10 @@ export const getSectorInfo = (partName: string) => {
       code: 'TEMPORAL',
       title: 'Liquidity Pools & Temporal Killzones',
       description: 'Buy Side (BSL) and Sell Side (SSL) pools, New York & London algorithmic killzones, Power of 3 (PO3 / AMD), and dealing ranges.',
-      accent: '#A855F7', // purple
+      accent: '#705692', // purple
       gradient: 'from-purple-500/20 via-purple-900/10 to-transparent',
       border: 'border-purple-500/30',
-      badge: 'bg-purple-950/80 text-purple-300 border-purple-500/30'
+      badge: 'bg-purple-50/80 text-purple-700 border-purple-500/30'
     };
   }
   if (partName.includes('Special') || partName.includes('Field Guide')) {
@@ -142,10 +142,10 @@ export const getSectorInfo = (partName: string) => {
       code: 'TACTICAL',
       title: 'Practical Field Execution Guide',
       description: 'Real-world tape reading, execution risk rules, dealing range math, and psychological safeguards for funded accounts.',
-      accent: '#F59E0B', // amber
+      accent: '#94631f', // amber
       gradient: 'from-amber-500/20 via-amber-900/10 to-transparent',
       border: 'border-amber-500/30',
-      badge: 'bg-amber-950/80 text-amber-300 border-amber-500/30'
+      badge: 'bg-amber-50/80 text-amber-700 border-amber-500/30'
     };
   }
   // Advanced Part IX, X, XI, XII
@@ -154,19 +154,19 @@ export const getSectorInfo = (partName: string) => {
     code: 'INSTITUTIONAL',
     title: 'Advanced Charter Models & Tape Reading Series',
     description: 'ICT Charter price action models, Intermarket SMT divergences, and the 2025/2026 Core Content master lectures.',
-    accent: '#3B82F6', // blue
+    accent: '#405a98', // blue
     gradient: 'from-blue-500/20 via-blue-900/10 to-transparent',
     border: 'border-blue-500/30',
-    badge: 'bg-blue-950/80 text-blue-300 border-blue-500/30'
+    badge: 'bg-blue-50/80 text-blue-700 border-blue-500/30'
   };
 };
 
 export const getOperatorRank = (completedCount: number, totalCount: number) => {
   const percentage = (completedCount / totalCount) * 100;
-  if (percentage >= 90) return { title: 'Master Tape Reader (Charter)', level: 5, color: 'text-amber-400', badge: 'bg-amber-500/15 border-amber-500/40 text-amber-300' };
-  if (percentage >= 70) return { title: 'Institutional Executioner', level: 4, color: 'text-[#FF5722]', badge: 'bg-[#FF5722]/15 border-[#FF5722]/40 text-[#FF7A00]' };
-  if (percentage >= 45) return { title: 'PD Array Engineer', level: 3, color: 'text-purple-400', badge: 'bg-purple-500/15 border-purple-500/40 text-purple-300' };
-  if (percentage >= 25) return { title: 'Market Structure Specialist', level: 2, color: 'text-cyan-400', badge: 'bg-cyan-500/15 border-cyan-500/40 text-cyan-300' };
-  if (percentage >= 10) return { title: 'Order Book Apprentice', level: 1, color: 'text-emerald-400', badge: 'bg-emerald-500/15 border-emerald-500/40 text-emerald-300' };
-  return { title: 'Novice Recruit', level: 0, color: 'text-zinc-400', badge: 'bg-zinc-800/80 border-zinc-700 text-zinc-300' };
+  if (percentage >= 90) return { title: 'Master Tape Reader (Charter)', level: 5, color: 'text-amber-700', badge: 'bg-amber-500/15 border-amber-500/40 text-amber-700' };
+  if (percentage >= 70) return { title: 'Institutional Executioner', level: 4, color: 'text-rust', badge: 'bg-rust/15 border-rust/40 text-amber' };
+  if (percentage >= 45) return { title: 'PD Array Engineer', level: 3, color: 'text-purple-700', badge: 'bg-purple-500/15 border-purple-500/40 text-purple-700' };
+  if (percentage >= 25) return { title: 'Market Structure Specialist', level: 2, color: 'text-cyan-700', badge: 'bg-cyan-500/15 border-cyan-500/40 text-cyan-700' };
+  if (percentage >= 10) return { title: 'Order Book Apprentice', level: 1, color: 'text-emerald-700', badge: 'bg-emerald-500/15 border-emerald-500/40 text-emerald-700' };
+  return { title: 'Novice Recruit', level: 0, color: 'text-ink-muted', badge: 'bg-surface-raised/80 border-line text-ink-secondary' };
 };

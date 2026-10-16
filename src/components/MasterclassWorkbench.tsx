@@ -128,7 +128,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
   const canonicalPath = `/tools/masterclass/${currentCatSlug}/${currentItemSlug}/`;
 
   return (
-    <div className="space-y-6 text-[#F5F7FA]">
+    <div className="space-y-6 text-ink">
       <SEO
         title={`${activeItem.title} — ICT Masterclass Hub | LearnSMC`}
         description={`${activeItem.subtitle}. Institutional rule: ${activeItem.coreRule.substring(0, 140)}...`}
@@ -143,37 +143,37 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
       <ToolContentNotice />
       {ruleStorage.error && <p role="alert">{ruleStorage.error}</p>}
       {/* Top Banner: Masterclass Philosophy */}
-      <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 sm:p-7 relative overflow-hidden">
+      <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-7 relative overflow-hidden">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-1.5 max-w-2xl">
             <div className="flex items-center gap-2">
-              <span className="px-2.5 py-0.5 rounded-full bg-[#5865FF]/10 text-[#5865FF] border border-[#5865FF]/20 text-[10px] font-mono uppercase">
+              <span className="px-2.5 py-0.5 rounded-full bg-brand/10 text-brand border border-brand/20 text-[10px] font-mono uppercase">
                 Visual Blueprint
               </span>
-              <span className="px-2.5 py-0.5 rounded-full bg-white/[0.04] text-[#55E6D1] border border-white/[0.08] text-[10px] font-mono uppercase">
+              <span className="px-2.5 py-0.5 rounded-full bg-ink/[0.04] text-teal border border-ink/[0.08] text-[10px] font-mono uppercase">
                 {masterclassCollection.length} model and reference lessons
               </span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[#F5F7FA]">
+            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-ink">
               ICT &amp; SMC Masterclass Visual Compendium
             </h2>
-            <p className="text-xs sm:text-sm text-[#9BA1AE] leading-relaxed">
+            <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
               Step-by-step institutional order of operations, failed auction mechanics, 
               exact invalidation checklists, and interactive visual delivery signatures.
             </p>
           </div>
 
           <div className="flex items-center gap-3 shrink-0">
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-3 text-center min-w-[90px]">
-              <span className="block text-[10px] font-mono uppercase text-[#656B78]">Selected Unit</span>
-              <span className="text-lg font-semibold font-mono text-[#5865FF]">#{activeItem.number.toString().padStart(2, '0')}</span>
+            <div className="bg-ink/[0.04] border border-ink/[0.08] rounded-xl p-3 text-center min-w-[90px]">
+              <span className="block text-[10px] font-mono uppercase text-ink-muted">Selected Unit</span>
+              <span className="text-lg font-semibold font-mono text-brand">#{activeItem.number.toString().padStart(2, '0')}</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Category Pills Header */}
-      <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-3 space-y-3">
+      <div className="bg-surface border border-ink/[0.08] rounded-2xl p-3 space-y-3">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <BauhausNavScroller>
             {categories.map((cat) => {
@@ -186,8 +186,8 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                   href={cat.id === 'all' ? '/tools/masterclass/' : `/tools/masterclass/${getMasterclassCategorySlug(cat.id)}/`}
                   className={`px-3.5 py-1.5 text-xs font-mono uppercase flex items-center gap-1.5 transition-all rounded-lg border cursor-pointer shrink-0 ${
                     isActive
-                      ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20'
-                      : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06] hover:bg-white/[0.05]'
+                      ? 'bg-ink/[0.12] text-ink border-ink/20'
+                      : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06] hover:bg-ink/[0.05]'
                   }`}
                 >
                   <Icon className="w-3.5 h-3.5" />
@@ -199,13 +199,13 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
 
           {/* Quick Search */}
           <div className="relative min-w-[220px]">
-            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[#656B78]" />
+            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               aria-label="Search masterclasses" placeholder="Search masterclasses..."
-              className="w-full pl-9 pr-3 py-1.5 text-xs font-mono rounded-lg border border-white/[0.08] bg-[#151923] text-[#F5F7FA] placeholder-[#656B78] focus:outline-none focus:border-[#5865FF]"
+              className="w-full pl-9 pr-3 py-1.5 text-xs font-mono rounded-lg border border-ink/[0.08] bg-surface-raised text-ink placeholder-[#5f7064] focus:outline-none focus:border-brand"
             />
           </div>
         </div>
@@ -215,10 +215,10 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left Side: Masterclass Navigation Directory */}
         <div className="lg:col-span-4 xl:col-span-4 space-y-3">
-          <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-4">
-            <div className="flex items-center justify-between pb-3 border-b border-white/[0.07] mb-3 text-xs font-mono">
-              <span className="text-[#9BA1AE] uppercase tracking-wider text-[11px]">Curriculum Index</span>
-              <span className="text-[#5865FF] bg-[#5865FF]/10 border border-[#5865FF]/20 px-2 py-0.5 rounded-full text-[10px] uppercase">
+          <div className="bg-surface border border-ink/[0.08] rounded-2xl p-4">
+            <div className="flex items-center justify-between pb-3 border-b border-ink/[0.07] mb-3 text-xs font-mono">
+              <span className="text-ink-secondary uppercase tracking-wider text-[11px]">Curriculum Index</span>
+              <span className="text-brand bg-brand/10 border border-brand/20 px-2 py-0.5 rounded-full text-[10px] uppercase">
                 {filteredItems.length} Units
               </span>
             </div>
@@ -236,22 +236,22 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                     href={getMasterclassUrl(item)}
                     className={`block w-full text-left p-3 text-xs font-mono transition-all rounded-xl border cursor-pointer ${
                       isSelected
-                        ? 'bg-white/[0.10] border-white/20 text-[#F5F7FA]'
-                        : 'bg-white/[0.02] border-white/[0.06] text-[#9BA1AE] hover:text-[#F5F7FA] hover:bg-white/[0.05]'
+                        ? 'bg-ink/[0.10] border-ink/20 text-ink'
+                        : 'bg-ink/[0.02] border-ink/[0.06] text-ink-secondary hover:text-ink hover:bg-ink/[0.05]'
                     }`}
                   >
                     <div className="flex items-center justify-between gap-1 mb-1">
-                      <span className="text-[10px] px-1.5 py-0.2 bg-white/[0.04] text-[#5865FF] rounded">
+                      <span className="text-[10px] px-1.5 py-0.2 bg-ink/[0.04] text-brand rounded">
                         #{item.number.toString().padStart(2, '0')}
                       </span>
-                      <span className="text-[8px] px-1.5 py-0.5 rounded bg-white/[0.04] text-[#656B78] uppercase shrink-0">
+                      <span className="text-[8px] px-1.5 py-0.5 rounded bg-ink/[0.04] text-ink-muted uppercase shrink-0">
                         {MASTERCLASS_CATEGORIES.find(c => c.slug === getMasterclassCategorySlug(item.category))?.name}
                       </span>
                     </div>
-                    <div className="font-semibold uppercase tracking-tight text-[#F5F7FA] truncate text-xs">
+                    <div className="font-semibold uppercase tracking-tight text-ink truncate text-xs">
                       {item.title}
                     </div>
-                    <p className="text-[10px] text-[#9BA1AE] line-clamp-1 mt-0.5">
+                    <p className="text-[10px] text-ink-secondary line-clamp-1 mt-0.5">
                       {item.subtitle}
                     </p>
                   </a>
@@ -264,13 +264,13 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
         {/* Right Side: Active Masterclass Deep Dive */}
         <div className="lg:col-span-8 xl:col-span-8 space-y-6">
           {/* Header Card */}
-          <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-4">
+          <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <div className="flex items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded-full bg-[#5865FF]/10 text-[#5865FF] font-mono text-[10px] uppercase border border-[#5865FF]/20">
+                <span className="px-2.5 py-0.5 rounded-full bg-brand/10 text-brand font-mono text-[10px] uppercase border border-brand/20">
                   Unit #{activeItem.number.toString().padStart(2, '0')}
                 </span>
-                <span className="px-2.5 py-0.5 rounded-full bg-white/[0.04] text-[#9BA1AE] font-mono text-[10px] uppercase border border-white/[0.08]">
+                <span className="px-2.5 py-0.5 rounded-full bg-ink/[0.04] text-ink-secondary font-mono text-[10px] uppercase border border-ink/[0.08]">
                   {MASTERCLASS_CATEGORIES.find(c => c.slug === getMasterclassCategorySlug(activeItem.category))?.name}
                 </span>
               </div>
@@ -293,8 +293,8 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                       onClick={() => setActiveSubTab(tab.id as any)}
                       className={`px-3 py-1.5 text-xs font-mono uppercase flex items-center gap-1 rounded-lg border transition-all cursor-pointer ${
                         isActive 
-                          ? 'bg-white/[0.12] text-[#F5F7FA] border-white/20'
-                          : 'bg-white/[0.02] text-[#9BA1AE] hover:text-[#F5F7FA] border-white/[0.06] hover:bg-white/[0.05]'
+                          ? 'bg-ink/[0.12] text-ink border-ink/20'
+                          : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06] hover:bg-ink/[0.05]'
                       }`}
                     >
                       <Icon className="w-3.5 h-3.5" />
@@ -306,27 +306,27 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
             </div>
 
             <div>
-              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[#F5F7FA]">
+              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-ink">
                 {activeItem.title}
               </h2>
-              <p className="text-xs sm:text-sm text-[#55E6D1] font-mono mt-1">
+              <p className="text-xs sm:text-sm text-teal font-mono mt-1">
                 {activeItem.subtitle}
               </p>
             </div>
 
             {/* Core Rule Highlight */}
-            <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.08] space-y-1">
-              <div className="flex items-center gap-2 text-[#F0B35B] font-mono uppercase text-[10px] tracking-wider">
-                <ShieldCheck className="w-4 h-4 text-[#F0B35B]" />
+            <div className="p-4 rounded-xl bg-ink/[0.02] border border-ink/[0.08] space-y-1">
+              <div className="flex items-center gap-2 text-amber font-mono uppercase text-[10px] tracking-wider">
+                <ShieldCheck className="w-4 h-4 text-amber" />
                 <span>The Core Rule:</span>
               </div>
-              <p className="text-xs sm:text-sm font-mono text-[#F5F7FA] leading-relaxed">
+              <p className="text-xs sm:text-sm font-mono text-ink leading-relaxed">
                 {activeItem.coreRule}
               </p>
             </div>
 
             {/* Quote banner */}
-            <div className="p-3 rounded-lg bg-[#0C0E13] border-l-2 border-[#5865FF] text-xs font-mono text-[#9BA1AE] italic">
+            <div className="p-3 rounded-lg bg-surface-muted border-l-2 border-brand text-xs font-mono text-ink-secondary italic">
               Study summary: {activeItem.quote}
             </div>
           </div>
@@ -335,13 +335,13 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
           {activeSubTab === 'blueprint' && (
             <div className="space-y-6">
               {/* Interactive Diagram Component */}
-              <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-5 space-y-4">
-                <div className="flex items-center justify-between pb-3 border-b border-white/[0.07]">
-                  <div className="flex items-center gap-2 font-mono text-xs uppercase text-[#F5F7FA]">
-                    <Layers className="w-4 h-4 text-[#5865FF]" />
+              <div className="bg-surface border border-ink/[0.08] rounded-2xl p-5 space-y-4">
+                <div className="flex items-center justify-between pb-3 border-b border-ink/[0.07]">
+                  <div className="flex items-center gap-2 font-mono text-xs uppercase text-ink">
+                    <Layers className="w-4 h-4 text-brand" />
                     <span>Interactive Architectural Delivery Canvas</span>
                   </div>
-                  <span className="text-[10px] font-mono uppercase bg-white/[0.04] text-[#9BA1AE] px-2 py-0.5 rounded border border-white/[0.08]">
+                  <span className="text-[10px] font-mono uppercase bg-ink/[0.04] text-ink-secondary px-2 py-0.5 rounded border border-ink/[0.08]">
                     Diagram: {activeItem.diagramType}
                   </span>
                 </div>
@@ -354,9 +354,9 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
               </div>
 
               {/* Step-by-Step Breakdown Grid */}
-              <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-4">
-                <div className="flex items-center gap-2 font-mono text-xs uppercase text-[#F5F7FA] pb-2 border-b border-white/[0.07]">
-                  <GitBranch className="w-4 h-4 text-[#55E6D1]" />
+              <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-4">
+                <div className="flex items-center gap-2 font-mono text-xs uppercase text-ink pb-2 border-b border-ink/[0.07]">
+                  <GitBranch className="w-4 h-4 text-teal" />
                   <span>Sequential Algorithmic Stages</span>
                 </div>
 
@@ -364,20 +364,20 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                   {activeItem.stepByStepBreakdown.map((s) => (
                     <div 
                       key={s.step} 
-                      className="p-4 rounded-xl bg-[#151923] border border-white/[0.06] space-y-2 relative"
+                      className="p-4 rounded-xl bg-surface-raised border border-ink/[0.06] space-y-2 relative"
                     >
                       <div className="flex items-center justify-between">
-                        <span className="w-6 h-6 rounded-lg bg-white/[0.04] text-[#5865FF] font-mono text-xs flex items-center justify-center border border-white/[0.08]">
+                        <span className="w-6 h-6 rounded-lg bg-ink/[0.04] text-brand font-mono text-xs flex items-center justify-center border border-ink/[0.08]">
                           0{s.step}
                         </span>
-                        <span className="text-[10px] font-mono text-[#55E6D1] uppercase">
+                        <span className="text-[10px] font-mono text-teal uppercase">
                           Phase 0{s.step}
                         </span>
                       </div>
-                      <h4 className="font-semibold text-xs font-mono text-[#F5F7FA]">
+                      <h4 className="font-semibold text-xs font-mono text-ink">
                         {s.title}
                       </h4>
-                      <p className="text-xs font-mono text-[#9BA1AE] leading-relaxed">
+                      <p className="text-xs font-mono text-ink-secondary leading-relaxed">
                         {s.detail}
                       </p>
                     </div>
@@ -390,13 +390,13 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
           {/* TAB 2: ORDER OF OPERATIONS */}
           {activeSubTab === 'order_of_ops' && (
             <div className="space-y-6">
-              <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-4">
-                <div className="flex items-center justify-between pb-3 border-b border-white/[0.07]">
-                  <div className="flex items-center gap-2 font-mono text-xs uppercase text-[#F5F7FA]">
-                    <GitBranch className="w-4 h-4 text-[#5865FF]" />
+              <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-4">
+                <div className="flex items-center justify-between pb-3 border-b border-ink/[0.07]">
+                  <div className="flex items-center gap-2 font-mono text-xs uppercase text-ink">
+                    <GitBranch className="w-4 h-4 text-brand" />
                     <span>Exact Order of Operations (Strict Protocol)</span>
                   </div>
-                  <span className="text-[10px] font-mono uppercase text-[#55E6D1]">
+                  <span className="text-[10px] font-mono uppercase text-teal">
                     Execution Protocol
                   </span>
                 </div>
@@ -405,16 +405,16 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                   {activeItem.orderOfOperations.map((stepText, idx) => (
                     <div 
                       key={idx}
-                      className="p-4 bg-[#151923] rounded-xl border border-white/[0.06] flex items-start gap-3"
+                      className="p-4 bg-surface-raised rounded-xl border border-ink/[0.06] flex items-start gap-3"
                     >
-                      <span className="w-7 h-7 rounded-lg bg-[#5865FF]/10 text-[#5865FF] font-mono text-xs flex items-center justify-center shrink-0 mt-0.5 border border-[#5865FF]/20">
+                      <span className="w-7 h-7 rounded-lg bg-brand/10 text-brand font-mono text-xs flex items-center justify-center shrink-0 mt-0.5 border border-brand/20">
                         {idx + 1}
                       </span>
                       <div className="space-y-1">
-                        <span className="text-[10px] font-mono uppercase text-[#656B78] block">
+                        <span className="text-[10px] font-mono uppercase text-ink-muted block">
                           Step #{idx + 1} Mandate
                         </span>
-                        <p className="text-xs sm:text-sm font-mono text-[#F5F7FA] leading-relaxed">
+                        <p className="text-xs sm:text-sm font-mono text-ink leading-relaxed">
                           {stepText}
                         </p>
                       </div>
@@ -424,16 +424,16 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
               </div>
 
               {/* Related PD Arrays & Confluences */}
-              <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-3">
-                <h4 className="text-xs font-mono uppercase text-[#F5F7FA] flex items-center gap-2">
-                  <Layers className="w-4 h-4 text-[#F0B35B]" />
+              <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-3">
+                <h4 className="text-xs font-mono uppercase text-ink flex items-center gap-2">
+                  <Layers className="w-4 h-4 text-amber" />
                   Confluent PD Arrays Required
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {activeItem.relatedPdArrays.map((arr, i) => (
                     <span 
                       key={i} 
-                      className="px-3 py-1 rounded-lg bg-white/[0.03] border border-white/[0.07] text-xs font-mono uppercase text-[#9BA1AE]"
+                      className="px-3 py-1 rounded-lg bg-ink/[0.03] border border-ink/[0.07] text-xs font-mono uppercase text-ink-secondary"
                     >
                       {arr}
                     </span>
@@ -447,13 +447,13 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
           {activeSubTab === 'invalidation' && (
             <div className="space-y-6">
               {/* Interactive Invalidation Checklist */}
-              <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-4">
-                <div className="flex items-center justify-between pb-3 border-b border-white/[0.07]">
-                  <div className="flex items-center gap-2 font-mono text-xs uppercase text-[#FF6B7A]">
+              <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-4">
+                <div className="flex items-center justify-between pb-3 border-b border-ink/[0.07]">
+                  <div className="flex items-center gap-2 font-mono text-xs uppercase text-negative">
                     <ShieldAlert className="w-4 h-4" />
                     <span>Mandatory Invalidation Conditions (Exit Criteria)</span>
                   </div>
-                  <span className="text-[10px] font-mono uppercase bg-[#FF6B7A]/10 text-[#FF6B7A] border border-[#FF6B7A]/20 px-2 py-0.5 rounded-full">
+                  <span className="text-[10px] font-mono uppercase bg-negative/10 text-negative border border-negative/20 px-2 py-0.5 rounded-full">
                     Immediate Invalidation
                   </span>
                 </div>
@@ -470,20 +470,20 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                         onClick={() => toggleRuleCheck(ruleKey)}
                         className={`block w-full text-left p-3.5 rounded-xl border flex items-start gap-3 transition-all cursor-pointer ${
                           isChecked 
-                            ? 'bg-[#FF6B7A]/10 border-[#FF6B7A]/30 text-[#F5F7FA]' 
-                            : 'bg-white/[0.02] border-white/[0.06] hover:bg-white/[0.04]'
+                            ? 'bg-negative/10 border-negative/30 text-ink'
+                            : 'bg-ink/[0.02] border-ink/[0.06] hover:bg-ink/[0.04]'
                         }`}
                       >
                         <div className={`w-5 h-5 rounded border flex items-center justify-center shrink-0 mt-0.5 ${
-                          isChecked ? 'bg-[#FF6B7A] border-[#FF6B7A] text-white' : 'border-white/20 bg-white/[0.04]'
+                          isChecked ? 'bg-negative border-negative text-on-brand on-accent' : 'border-ink/20 bg-ink/[0.04]'
                         }`}>
                           {isChecked && <CheckCircle2 className="w-3.5 h-3.5" />}
                         </div>
                         <div className="space-y-0.5">
-                          <span className="text-[10px] font-mono uppercase text-[#FF6B7A]">
+                          <span className="text-[10px] font-mono uppercase text-negative">
                             Invalidation Criterion #{idx + 1}
                           </span>
-                          <p className="text-xs font-mono text-[#9BA1AE] leading-relaxed">
+                          <p className="text-xs font-mono text-ink-secondary leading-relaxed">
                             {rule}
                           </p>
                         </div>
@@ -494,16 +494,16 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
               </div>
 
               {/* Retail Traps & What Retail Misses */}
-              <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-3">
-                <div className="flex items-center gap-2 font-mono text-xs uppercase text-[#F0B35B] pb-2 border-b border-white/[0.07]">
-                  <AlertTriangle className="w-4 h-4 text-[#F0B35B]" />
+              <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-3">
+                <div className="flex items-center gap-2 font-mono text-xs uppercase text-amber pb-2 border-b border-ink/[0.07]">
+                  <AlertTriangle className="w-4 h-4 text-amber" />
                   <span>Key Points Missed By Retail Traders</span>
                 </div>
 
                 <div className="space-y-2">
                   {activeItem.keyMistakes.map((mistake, idx) => (
-                    <div key={idx} className="flex items-start gap-2.5 text-xs font-mono text-[#9BA1AE]">
-                      <span className="text-[#FF6B7A] font-bold">✕</span>
+                    <div key={idx} className="flex items-start gap-2.5 text-xs font-mono text-ink-secondary">
+                      <span className="text-negative font-bold">✕</span>
                       <p className="leading-relaxed">{mistake}</p>
                     </div>
                   ))}
@@ -515,13 +515,13 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
           {/* TAB 4: RISK & EXECUTION MATRIX */}
           {activeSubTab === 'risk_rules' && (
             <div className="space-y-6">
-              <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-4">
-                <div className="flex items-center justify-between pb-3 border-b border-white/[0.07]">
-                  <div className="flex items-center gap-2 font-mono text-xs uppercase text-[#F5F7FA]">
-                    <Target className="w-4 h-4 text-[#5865FF]" />
+              <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-4">
+                <div className="flex items-center justify-between pb-3 border-b border-ink/[0.07]">
+                  <div className="flex items-center gap-2 font-mono text-xs uppercase text-ink">
+                    <Target className="w-4 h-4 text-brand" />
                     <span>Risk Allocation &amp; Execution Sizing</span>
                   </div>
-                  <span className="text-[10px] font-mono uppercase bg-white/[0.04] text-[#55E6D1] px-2 py-0.5 rounded-full border border-white/[0.08]">
+                  <span className="text-[10px] font-mono uppercase bg-ink/[0.04] text-teal px-2 py-0.5 rounded-full border border-ink/[0.08]">
                     Capital Preservation
                   </span>
                 </div>
@@ -530,10 +530,10 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                   {activeItem.riskRules.map((rule, idx) => (
                     <div 
                       key={idx}
-                      className="p-4 bg-[#151923] rounded-xl border border-white/[0.06] flex items-center gap-3"
+                      className="p-4 bg-surface-raised rounded-xl border border-ink/[0.06] flex items-center gap-3"
                     >
-                      <ShieldCheck className="w-5 h-5 text-[#55E6D1] shrink-0" />
-                      <p className="text-xs sm:text-sm font-mono text-[#F5F7FA]">
+                      <ShieldCheck className="w-5 h-5 text-teal shrink-0" />
+                      <p className="text-xs sm:text-sm font-mono text-ink">
                         {rule}
                       </p>
                     </div>
@@ -542,12 +542,12 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
               </div>
 
               {/* Visual Anatomy Summary */}
-              <div className="bg-[#11141B] border border-white/[0.08] rounded-2xl p-6 space-y-3">
-                <div className="flex items-center gap-2 font-mono text-xs uppercase text-[#9BA1AE]">
-                  <Info className="w-4 h-4 text-[#5865FF]" />
+              <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-3">
+                <div className="flex items-center gap-2 font-mono text-xs uppercase text-ink-secondary">
+                  <Info className="w-4 h-4 text-brand" />
                   <span>Visual Chart Anatomy Specification</span>
                 </div>
-                <p className="text-xs font-mono text-[#9BA1AE] leading-relaxed bg-[#0C0E13] p-4 rounded-xl border border-white/[0.06]">
+                <p className="text-xs font-mono text-ink-secondary leading-relaxed bg-surface-muted p-4 rounded-xl border border-ink/[0.06]">
                   {activeItem.visualAnatomy}
                 </p>
               </div>

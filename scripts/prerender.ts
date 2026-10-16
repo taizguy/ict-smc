@@ -155,24 +155,24 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
 
   // Generate Crawlable Structural Layout
   const renderedContent = `
-    <div id="static-content" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #08090D; color: #F5F7FA; min-height: 100vh; padding: 2rem 1.5rem; max-width: 1200px; margin: 0 auto; box-sizing: border-box;">
-      <style>#static-content a{color:#55e6d1;text-underline-offset:3px}#static-content p,#static-content li{line-height:1.75}#static-content section{margin-block:1.5rem}#static-content li{margin-block:.5rem}#static-content ul{padding-left:1.25rem}</style>
-      <a href="#main-content" style="color:#55e6d1">Skip to main content</a>
+    <div id="static-content" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f6f7f2; color: #223b35; min-height: 100vh; padding: 2rem 1.5rem; max-width: 1200px; margin: 0 auto; box-sizing: border-box;">
+      <style>#static-content a{color:#23796d;text-underline-offset:3px}#static-content p,#static-content li{line-height:1.75}#static-content section{margin-block:1.5rem}#static-content li{margin-block:.5rem}#static-content ul{padding-left:1.25rem}</style>
+      <a href="#main-content" style="color:#23796d">Skip to main content</a>
       <!-- Crawlable Header -->
-      <header style="border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 1.5rem; margin-bottom: 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <header style="border-bottom: 1px solid rgba(34,59,53,0.08); padding-bottom: 1.5rem; margin-bottom: 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
         <div>
-          <a href="/" style="font-weight: 800; font-size: 1.25rem; color: #ffffff; text-decoration: none; letter-spacing: -0.02em;">
-            LearnSMC <span style="font-size: 0.85rem; color: #55E6D1; font-weight: normal; font-family: monospace;">// ICT &amp; SMC ACADEMY</span>
+          <a href="/" style="font-weight: 800; font-size: 1.25rem; color: #223b35; text-decoration: none; letter-spacing: -0.02em;">
+            LearnSMC <span style="font-size: 0.85rem; color: #23796d; font-weight: normal; font-family: monospace;">// ICT &amp; SMC ACADEMY</span>
           </a>
-          <p style="margin: 0.25rem 0 0 0; font-size: 0.8rem; color: #94A3B8;">Free Institutional Smart Money Concepts Curriculum &amp; Research Matrix</p>
+          <p style="margin: 0.25rem 0 0 0; font-size: 0.8rem; color: #52645b;">Free Institutional Smart Money Concepts Curriculum &amp; Research Matrix</p>
         </div>
         <nav style="display: flex; gap: 1.25rem; font-size: 0.85rem; font-family: monospace;" aria-label="Main Navigation">
-          <a href="/" style="color: #CBD5E1; text-decoration: none;">Home</a>
-          <a href="/curriculum/" style="color: #CBD5E1; text-decoration: none;">57 Chapters</a>
-          <a href="/articles/" style="color: #CBD5E1; text-decoration: none;">Articles</a>
-          <a href="/masood/" style="color: #CBD5E1; text-decoration: none;">Masood Academy</a>
-          <a href="/tools/" style="color: #CBD5E1; text-decoration: none;">Workbench Lab</a>
-          <a href="/about/" style="color: #CBD5E1; text-decoration: none;">About</a>
+          <a href="/" style="color: #52645b; text-decoration: none;">Home</a>
+          <a href="/curriculum/" style="color: #52645b; text-decoration: none;">57 Chapters</a>
+          <a href="/articles/" style="color: #52645b; text-decoration: none;">Articles</a>
+          <a href="/masood/" style="color: #52645b; text-decoration: none;">Masood Academy</a>
+          <a href="/tools/" style="color: #52645b; text-decoration: none;">Workbench Lab</a>
+          <a href="/about/" style="color: #52645b; text-decoration: none;">About</a>
         </nav>
       </header>
 
@@ -180,54 +180,54 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
       <main id="main-content" tabindex="-1">
         <article>
           ${new URL(meta.canonical).pathname.startsWith('/articles/') ? '' : `<header style="margin-bottom: 2rem;">
-            <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 9999px; background: rgba(88, 101, 255, 0.15); border: 1px solid rgba(88, 101, 255, 0.3); color: #8A72FF; font-size: 0.75rem; font-family: monospace; margin-bottom: 0.75rem;">
+            <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 9999px; background: rgba(37,101,82, 0.15); border: 1px solid rgba(37,101,82, 0.3); color: #705692; font-size: 0.75rem; font-family: monospace; margin-bottom: 0.75rem;">
               ${escapeHtml(meta.badge)}
             </div>
-            <h1 style="font-size: 2.25rem; font-weight: 800; color: #ffffff; margin: 0 0 0.75rem 0; letter-spacing: -0.03em; line-height: 1.2;">
+            <h1 style="font-size: 2.25rem; font-weight: 800; color: #223b35; margin: 0 0 0.75rem 0; letter-spacing: -0.03em; line-height: 1.2;">
               ${escapeHtml(meta.heading)}
             </h1>
-            <p style="font-size: 1.1rem; color: #94A3B8; line-height: 1.6; margin: 0;">
+            <p style="font-size: 1.1rem; color: #52645b; line-height: 1.6; margin: 0;">
               ${escapeHtml(meta.subheading)}
             </p>
           </header>`}
 
-          <div style="background: rgba(17, 20, 27, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 2rem; margin-bottom: 3rem;">
+          <div style="background: #ffffff; border: 1px solid rgba(34,59,53,0.08); border-radius: 14px; padding: 2rem; margin-bottom: 3rem;">
             ${meta.bodyHtml}
           </div>
         </article>
       </main>
 
       <!-- Crawlable Static Footer -->
-      <footer style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem; margin-top: 4rem; font-size: 0.85rem; color: #64748B;">
+      <footer style="border-top: 1px solid rgba(34,59,53,0.08); padding-top: 2rem; margin-top: 4rem; font-size: 0.85rem; color: #64748B;">
         <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; margin-bottom: 2rem;">
           <div>
-            <div style="color: #ffffff; font-weight: 600; margin-bottom: 0.5rem;">LearnSMC · ICT &amp; SMC Academy</div>
+            <div style="color: #223b35; font-weight: 600; margin-bottom: 0.5rem;">LearnSMC · ICT &amp; SMC Academy</div>
             <p style="margin: 0; max-width: 400px; line-height: 1.5;">Free, open-access institutional education. Empowering retail traders with institutional auction literacy.</p>
           </div>
           <div style="display: flex; gap: 2rem; font-family: monospace;">
             <div>
-              <div style="color: #CBD5E1; font-weight: 600; margin-bottom: 0.5rem;">Navigation</div>
+              <div style="color: #52645b; font-weight: 600; margin-bottom: 0.5rem;">Navigation</div>
               <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
-                <li><a href="/" style="color: #94A3B8; text-decoration: none;">Home</a></li>
-                <li><a href="/curriculum/" style="color: #94A3B8; text-decoration: none;">Curriculum</a></li>
-                <li><a href="/masood/" style="color: #94A3B8; text-decoration: none;">Masood Academy</a></li>
-                <li><a href="/tools/" style="color: #94A3B8; text-decoration: none;">Trading Tools</a></li>
+                <li><a href="/" style="color: #52645b; text-decoration: none;">Home</a></li>
+                <li><a href="/curriculum/" style="color: #52645b; text-decoration: none;">Curriculum</a></li>
+                <li><a href="/masood/" style="color: #52645b; text-decoration: none;">Masood Academy</a></li>
+                <li><a href="/tools/" style="color: #52645b; text-decoration: none;">Trading Tools</a></li>
               </ul>
             </div>
             <div>
-              <div style="color: #CBD5E1; font-weight: 600; margin-bottom: 0.5rem;">Legal &amp; Policy</div>
+              <div style="color: #52645b; font-weight: 600; margin-bottom: 0.5rem;">Legal &amp; Policy</div>
               <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
-                <li><a href="/disclaimer/" style="color: #94A3B8; text-decoration: none;">Financial Disclaimer</a></li>
-                <li><a href="/privacy/" style="color: #94A3B8; text-decoration: none;">Privacy Policy</a></li>
-                <li><a href="/terms/" style="color: #94A3B8; text-decoration: none;">Terms of Service</a></li>
-                <li><a href="/about/" style="color: #94A3B8; text-decoration: none;">About Publisher</a></li><li><a href="/about/#editorial-policy">Editorial policy</a></li>
-                <li><a href="/contact/" style="color: #94A3B8; text-decoration: none;">Contact Us</a></li>
-                <li><a href="/adsense/" style="color: #94A3B8; text-decoration: none;">AdSense Transparency</a></li>
+                <li><a href="/disclaimer/" style="color: #52645b; text-decoration: none;">Financial Disclaimer</a></li>
+                <li><a href="/privacy/" style="color: #52645b; text-decoration: none;">Privacy Policy</a></li>
+                <li><a href="/terms/" style="color: #52645b; text-decoration: none;">Terms of Service</a></li>
+                <li><a href="/about/" style="color: #52645b; text-decoration: none;">About Publisher</a></li><li><a href="/about/#editorial-policy">Editorial policy</a></li>
+                <li><a href="/contact/" style="color: #52645b; text-decoration: none;">Contact Us</a></li>
+                <li><a href="/adsense/" style="color: #52645b; text-decoration: none;">AdSense Transparency</a></li>
               </ul>
             </div>
           </div>
         </div>
-        <div style="text-align: center; font-family: monospace; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 1.5rem;">
+        <div style="text-align: center; font-family: monospace; font-size: 0.75rem; border-top: 1px solid rgba(34,59,53,0.04); padding-top: 1.5rem;">
           © 2026 LearnSMC. Published strictly for educational purposes. No financial advice.
         </div>
       </footer>
@@ -270,48 +270,48 @@ const homePage: RouteMeta = {
   badge: 'Institutional Curriculum · Open Access Codex',
   bodyHtml: `
     <section style="margin-bottom: 2.5rem;">
-      <h2 style="font-size: 1.5rem; color: #ffffff; margin-bottom: 1rem;">Codified Institutional Curriculum</h2>
-      <p style="line-height: 1.7; color: #C5CBD8; margin-bottom: 1.5rem;">
+      <h2 style="font-size: 1.5rem; color: #223b35; margin-bottom: 1rem;">Codified Institutional Curriculum</h2>
+      <p style="line-height: 1.7; color: #435b50; margin-bottom: 1.5rem;">
         LearnSMC is an open-access educational institution preserving and codifying Smart Money Concepts (SMC) and Inner Circle Trader (ICT) market mechanics. 
         Unlike retail technical analysis that relies on lagging indicators and trendlines, our curriculum teaches how central banks, algorithmic market makers, 
         and high-frequency matching engines deliver price across electronic auctions.
       </p>
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem;">
-        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1.25rem;">
-          <h3 style="font-size: 1.1rem; color: #55E6D1; margin-top: 0; margin-bottom: 0.5rem;">57 Digital Textbook Chapters</h3>
-          <p style="color: #94A3B8; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem;">From auction theory and limit order books to complex algorithmic delivery models.</p>
-          <a href="/curriculum/" style="color: #8A72FF; text-decoration: none; font-weight: 600; font-size: 0.85rem;">Browse 57 Chapters &rarr;</a>
+        <div style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1.25rem;">
+          <h3 style="font-size: 1.1rem; color: #23796d; margin-top: 0; margin-bottom: 0.5rem;">57 Digital Textbook Chapters</h3>
+          <p style="color: #52645b; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem;">From auction theory and limit order books to complex algorithmic delivery models.</p>
+          <a href="/curriculum/" style="color: #705692; text-decoration: none; font-weight: 600; font-size: 0.85rem;">Browse 57 Chapters &rarr;</a>
         </div>
-        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1.25rem;">
-          <h3 style="font-size: 1.1rem; color: #55E6D1; margin-top: 0; margin-bottom: 0.5rem;">52 Abdullah Masood Masterclasses</h3>
-          <p style="color: #94A3B8; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem;">Curated video lectures, timestamped breakdown notes, and mechanical checklists.</p>
-          <a href="/masood/" style="color: #8A72FF; text-decoration: none; font-weight: 600; font-size: 0.85rem;">Explore Masood Academy &rarr;</a>
+        <div style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1.25rem;">
+          <h3 style="font-size: 1.1rem; color: #23796d; margin-top: 0; margin-bottom: 0.5rem;">52 Abdullah Masood Masterclasses</h3>
+          <p style="color: #52645b; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem;">Curated video lectures, timestamped breakdown notes, and mechanical checklists.</p>
+          <a href="/masood/" style="color: #705692; text-decoration: none; font-weight: 600; font-size: 0.85rem;">Explore Masood Academy &rarr;</a>
         </div>
-        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1.25rem;">
-          <h3 style="font-size: 1.1rem; color: #55E6D1; margin-top: 0; margin-bottom: 0.5rem;">Interactive Trading Workbench</h3>
-          <p style="color: #94A3B8; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem;">Chart Lab, algorithmic trade simulator, backtest expectancy engine, and journal.</p>
-          <a href="/tools/" style="color: #8A72FF; text-decoration: none; font-weight: 600; font-size: 0.85rem;">Launch Workbench &rarr;</a>
+        <div style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1.25rem;">
+          <h3 style="font-size: 1.1rem; color: #23796d; margin-top: 0; margin-bottom: 0.5rem;">Interactive Trading Workbench</h3>
+          <p style="color: #52645b; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem;">Chart Lab, algorithmic trade simulator, backtest expectancy engine, and journal.</p>
+          <a href="/tools/" style="color: #705692; text-decoration: none; font-weight: 600; font-size: 0.85rem;">Launch Workbench &rarr;</a>
         </div>
       </div>
     </section>
     <section style="margin-bottom: 2rem;">
-      <h2 style="font-size: 1.3rem; color: #ffffff; margin-bottom: 1rem;">Foundational Learning Tracks</h2>
+      <h2 style="font-size: 1.3rem; color: #223b35; margin-bottom: 1rem;">Foundational Learning Tracks</h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem;">
-        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 1rem; border-radius: 6px;">
-          <h4 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Part I · Market Foundations</h4>
-          <p style="color: #94A3B8; font-size: 0.8rem; margin: 0;">Auction mechanics, CLOB limit order books, liquidity consumption, and market structure.</p>
+        <div style="background: rgba(34,59,53,0.02); border: 1px solid rgba(34,59,53,0.06); padding: 1rem; border-radius: 6px;">
+          <h4 style="color: #223b35; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Part I · Market Foundations</h4>
+          <p style="color: #52645b; font-size: 0.8rem; margin: 0;">Auction mechanics, CLOB limit order books, liquidity consumption, and market structure.</p>
         </div>
-        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 1rem; border-radius: 6px;">
-          <h4 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Part II · Core ICT Frameworks</h4>
-          <p style="color: #94A3B8; font-size: 0.8rem; margin: 0;">Fair Value Gaps (FVG), Order Blocks, Breaker Blocks, and institutional mitigation.</p>
+        <div style="background: rgba(34,59,53,0.02); border: 1px solid rgba(34,59,53,0.06); padding: 1rem; border-radius: 6px;">
+          <h4 style="color: #223b35; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Part II · Core ICT Frameworks</h4>
+          <p style="color: #52645b; font-size: 0.8rem; margin: 0;">Fair Value Gaps (FVG), Order Blocks, Breaker Blocks, and institutional mitigation.</p>
         </div>
-        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 1rem; border-radius: 6px;">
-          <h4 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Part III · Sessions & Algorithmic Time</h4>
-          <p style="color: #94A3B8; font-size: 0.8rem; margin: 0;">ICT Killzones, London Open Judas Swing, New York AM/PM sessions, and Power of 3 (PO3).</p>
+        <div style="background: rgba(34,59,53,0.02); border: 1px solid rgba(34,59,53,0.06); padding: 1rem; border-radius: 6px;">
+          <h4 style="color: #223b35; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Part III · Sessions & Algorithmic Time</h4>
+          <p style="color: #52645b; font-size: 0.8rem; margin: 0;">ICT Killzones, London Open Judas Swing, New York AM/PM sessions, and Power of 3 (PO3).</p>
         </div>
-        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 1rem; border-radius: 6px;">
-          <h4 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Part IV · Execution Protocols</h4>
-          <p style="color: #94A3B8; font-size: 0.8rem; margin: 0;">2022 Mentorship Model, Silver Bullet algorithm, and OTE Fibonacci matrix.</p>
+        <div style="background: rgba(34,59,53,0.02); border: 1px solid rgba(34,59,53,0.06); padding: 1rem; border-radius: 6px;">
+          <h4 style="color: #223b35; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Part IV · Execution Protocols</h4>
+          <p style="color: #52645b; font-size: 0.8rem; margin: 0;">2022 Mentorship Model, Silver Bullet algorithm, and OTE Fibonacci matrix.</p>
         </div>
       </div>
     </section>
@@ -331,8 +331,8 @@ const legalPages: RouteMeta[] = [
     badge: 'Institutional Publisher & Mission',
     bodyHtml: `
       <section style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 0.75rem;">1. Our Publisher Mission</h2>
-        <p style="margin-bottom: 1rem; line-height: 1.7; color: #C5CBD8;">
+        <h2 style="font-size: 1.4rem; color: #223b35; margin-bottom: 0.75rem;">1. Our Publisher Mission</h2>
+        <p style="margin-bottom: 1rem; line-height: 1.7; color: #435b50;">
           LearnSMC was founded to bridge the divide between predatory retail trading lore and genuine institutional auction delivery. 
           Historically, Inner Circle Trader (ICT) concepts and Smart Money Concepts (SMC) have been obscured behind expensive paywalls, 
           unverified signal services, and misleading affiliate schemes. LearnSMC publishes a peer-reviewed, free-for-life 57-chapter curriculum 
@@ -340,19 +340,19 @@ const legalPages: RouteMeta[] = [
         </p>
       </section>
       <section style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 0.75rem;">2. Rigorous Editorial Architecture & Tripartite Model</h2>
-        <p style="margin-bottom: 1rem; line-height: 1.7; color: #C5CBD8;">
+        <h2 style="font-size: 1.4rem; color: #223b35; margin-bottom: 0.75rem;">2. Rigorous Editorial Architecture & Tripartite Model</h2>
+        <p style="margin-bottom: 1rem; line-height: 1.7; color: #435b50;">
           Every concept published on LearnSMC is broken down through a strict tripartite model:
         </p>
-        <ul style="padding-left: 1.5rem; margin-bottom: 1rem; line-height: 1.8; color: #C5CBD8;">
-          <li><strong style="color: #fff;">1. Original ICT Pedagogy:</strong> Michael J. Huddleston's primary teaching from the 2016–2024 mentorships.</li>
-          <li><strong style="color: #fff;">2. Observable Market Behavior:</strong> What empirical auction order flow, limit books, and tick data show on live charts.</li>
-          <li><strong style="color: #fff;">3. Institutional Invalidation Rules:</strong> Quantitative rules that definitively void the trade idea before real capital is committed.</li>
+        <ul style="padding-left: 1.5rem; margin-bottom: 1rem; line-height: 1.8; color: #435b50;">
+          <li><strong style="color: #223b35;">1. Original ICT Pedagogy:</strong> Michael J. Huddleston's primary teaching from the 2016–2024 mentorships.</li>
+          <li><strong style="color: #223b35;">2. Observable Market Behavior:</strong> What empirical auction order flow, limit books, and tick data show on live charts.</li>
+          <li><strong style="color: #223b35;">3. Institutional Invalidation Rules:</strong> Quantitative rules that definitively void the trade idea before real capital is committed.</li>
         </ul>
       </section>
       <section style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 0.75rem;">3. Publisher & Editorial Board</h2>
-        <p style="line-height: 1.7; color: #C5CBD8;">
+        <h2 style="font-size: 1.4rem; color: #223b35; margin-bottom: 0.75rem;">3. Publisher & Editorial Board</h2>
+        <p style="line-height: 1.7; color: #435b50;">
           Editorial oversight is led by senior market analysts specializing in foreign exchange liquidity, index futures delivery, and algorithmic auction models. 
           All materials are reviewed annually to update market microstructure references and regulatory guidelines.
         </p>
@@ -371,21 +371,21 @@ const legalPages: RouteMeta[] = [
     bodyHtml: `
       <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
         <h3 style="color: #F87171; margin-top: 0; font-size: 1.15rem; font-weight: bold;">HIGH RISK WARNING & CAPITAL PRESERVATION NOTICE</h3>
-        <p style="margin: 0; line-height: 1.6; color: #FCA5A5;">
+        <p style="margin: 0; line-height: 1.6; color: #b44746;">
           Trading foreign exchange (Forex), commodities, futures, equities, and digital assets on margin carries a high level of risk and may not be suitable for all investors. 
           The high degree of leverage can work against you as well as for you. Before deciding to trade foreign exchange or any financial market, you should carefully consider your investment objectives, level of experience, and risk appetite. 
           There is a possibility that you may sustain a loss of some or all of your initial investment and therefore you should not invest money that you cannot afford to lose.
         </p>
       </div>
       <section style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 0.75rem;">CFTC RULE 4.41 - HYPOTHETICAL PERFORMANCE DISCLOSURE</h2>
-        <p style="line-height: 1.7; color: #C5CBD8; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.4rem; color: #223b35; margin-bottom: 0.75rem;">CFTC RULE 4.41 - HYPOTHETICAL PERFORMANCE DISCLOSURE</h2>
+        <p style="line-height: 1.7; color: #435b50; margin-bottom: 1rem;">
           HYPOTHETICAL OR SIMULATED PERFORMANCE RESULTS HAVE CERTAIN INHERENT LIMITATIONS. UNLIKE AN ACTUAL PERFORMANCE RECORD, SIMULATED RESULTS DO NOT REPRESENT ACTUAL TRADING. ALSO, SINCE THE TRADES HAVE NOT ACTUALLY BEEN EXECUTED, THE RESULTS MAY HAVE UNDER- OR OVER-COMPENSATED FOR THE IMPACT, IF ANY, OF CERTAIN MARKET FACTORS, SUCH AS LACK OF LIQUIDITY. SIMULATED TRADING PROGRAMS IN GENERAL ARE ALSO SUBJECT TO THE FACT THAT THEY ARE DESIGNED WITH THE BENEFIT OF HINDSIGHT. NO REPRESENTATION IS BEING MADE THAT ANY ACCOUNT WILL OR IS LIKELY TO ACHIEVE PROFITS OR LOSSES SIMILAR TO THOSE SHOWN.
         </p>
       </section>
       <section style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 0.75rem;">Educational Only Mandate</h2>
-        <p style="line-height: 1.7; color: #C5CBD8;">
+        <h2 style="font-size: 1.4rem; color: #223b35; margin-bottom: 0.75rem;">Educational Only Mandate</h2>
+        <p style="line-height: 1.7; color: #435b50;">
           All content, software tools, charts, simulations, and materials provided on LearnSMC (learnsmc.xyz) are published strictly for educational and informational purposes. 
           Under no circumstances does any material on this website constitute financial, investment, legal, or tax advice. LearnSMC does not operate an investment fund, manage assets, or recommend specific brokerages or trading platforms.
         </p>
@@ -403,21 +403,21 @@ const legalPages: RouteMeta[] = [
     badge: 'User Privacy & Data Protection',
     bodyHtml: `
       <section style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 0.75rem;">1. Data Collection & Usage</h2>
-        <p style="line-height: 1.7; color: #C5CBD8; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.4rem; color: #223b35; margin-bottom: 0.75rem;">1. Data Collection & Usage</h2>
+        <p style="line-height: 1.7; color: #435b50; margin-bottom: 1rem;">
           LearnSMC does not sell, rent, or lease personal customer data to any third party. 
           When you use our open educational resources, your study progress, bookmarks, journal notes, and simulation data are stored locally in your browser via HTML5 LocalStorage, ensuring complete privacy.
         </p>
       </section>
       <section style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 0.75rem;">2. Google AdSense & Third-Party Cookies</h2>
-        <p style="line-height: 1.7; color: #C5CBD8; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.4rem; color: #223b35; margin-bottom: 0.75rem;">2. Google AdSense & Third-Party Cookies</h2>
+        <p style="line-height: 1.7; color: #435b50; margin-bottom: 1rem;">
           We use Google AdSense (Publisher ID: ca-pub-6985025314302607) to serve contextual educational advertisements. 
           Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites. 
           Google's use of advertising cookies enables it and its partners to serve ads to users based on their visits to LearnSMC and/or other sites on the Internet.
         </p>
-        <p style="line-height: 1.7; color: #C5CBD8;">
-          Users may opt out of personalized advertising by visiting Google Ad Settings (<a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" style="color: #55E6D1;">https://adssettings.google.com</a>) or via the Network Advertising Initiative opt-out page (<a href="https://optout.networkadvertising.org" target="_blank" rel="noopener noreferrer" style="color: #55E6D1;">https://optout.networkadvertising.org</a>).
+        <p style="line-height: 1.7; color: #435b50;">
+          Users may opt out of personalized advertising by visiting Google Ad Settings (<a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" style="color: #23796d;">https://adssettings.google.com</a>) or via the Network Advertising Initiative opt-out page (<a href="https://optout.networkadvertising.org" target="_blank" rel="noopener noreferrer" style="color: #23796d;">https://optout.networkadvertising.org</a>).
         </p>
       </section>
     `
@@ -433,14 +433,14 @@ const legalPages: RouteMeta[] = [
     badge: 'Terms of Service',
     bodyHtml: `
       <section style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 0.75rem;">1. Acceptance of Terms</h2>
-        <p style="line-height: 1.7; color: #C5CBD8; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.4rem; color: #223b35; margin-bottom: 0.75rem;">1. Acceptance of Terms</h2>
+        <p style="line-height: 1.7; color: #435b50; margin-bottom: 1rem;">
           By accessing or using LearnSMC (learnsmc.xyz), you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.
         </p>
       </section>
       <section style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 0.75rem;">2. Open Educational License</h2>
-        <p style="line-height: 1.7; color: #C5CBD8;">
+        <h2 style="font-size: 1.4rem; color: #223b35; margin-bottom: 0.75rem;">2. Open Educational License</h2>
+        <p style="line-height: 1.7; color: #435b50;">
           All textbook chapters, syllabus materials, and analytical tools are provided for individual study, personal development, and non-commercial educational use. Reproduction, redistribution, or mirroring of proprietary code or interactive engines without prior written authorization is strictly prohibited.
         </p>
       </section>
@@ -457,13 +457,13 @@ const legalPages: RouteMeta[] = [
     badge: 'Publisher Inquiries',
     bodyHtml: `
       <section style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 0.75rem;">Direct Communication Channels</h2>
-        <p style="line-height: 1.7; color: #C5CBD8; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.4rem; color: #223b35; margin-bottom: 0.75rem;">Direct Communication Channels</h2>
+        <p style="line-height: 1.7; color: #435b50; margin-bottom: 1rem;">
           For educational questions, technical bugs, peer-review contributions, or copyright inquiries, reach us at:
         </p>
-        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;">
-          <p style="margin: 0 0 0.5rem 0; font-family: monospace; font-size: 1rem; color: #55E6D1;">support@learnsmc.xyz</p>
-          <p style="margin: 0; font-size: 0.85rem; color: #94A3B8;">Average response turnaround: 24 to 48 business hours.</p>
+        <div style="background: rgba(34,59,53,0.04); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;">
+          <p style="margin: 0 0 0.5rem 0; font-family: monospace; font-size: 1rem; color: #23796d;">support@learnsmc.xyz</p>
+          <p style="margin: 0; font-size: 0.85rem; color: #52645b;">Average response turnaround: 24 to 48 business hours.</p>
         </div>
       </section>
     `
@@ -479,10 +479,10 @@ const legalPages: RouteMeta[] = [
     badge: 'Publisher Verification',
     bodyHtml: `
       <section style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 0.75rem;">Publisher Record</h2>
-        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;">
-          <div style="font-family: monospace; color: #55E6D1; margin-bottom: 0.5rem;">Publisher ID: ca-pub-6985025314302607</div>
-          <div style="font-family: monospace; color: #8A72FF;">ads.txt Entry: google.com, pub-6985025314302607, DIRECT, f08c47fec0942fa0</div>
+        <h2 style="font-size: 1.4rem; color: #223b35; margin-bottom: 0.75rem;">Publisher Record</h2>
+        <div style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;">
+          <div style="font-family: monospace; color: #23796d; margin-bottom: 0.5rem;">Publisher ID: ca-pub-6985025314302607</div>
+          <div style="font-family: monospace; color: #705692;">ads.txt Entry: google.com, pub-6985025314302607, DIRECT, f08c47fec0942fa0</div>
         </div>
       </section>
     `
@@ -501,18 +501,18 @@ const curriculumHubPage: RouteMeta = {
   badge: 'Complete Syllabus Overview',
   bodyHtml: `
     <section style="margin-bottom: 2rem;">
-      <h2 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 1rem;">Curriculum Phases & Modules</h2>
-      <p style="line-height: 1.7; color: #C5CBD8; margin-bottom: 1.5rem;">
+      <h2 style="font-size: 1.4rem; color: #223b35; margin-bottom: 1rem;">Curriculum Phases & Modules</h2>
+      <p style="line-height: 1.7; color: #435b50; margin-bottom: 1.5rem;">
         The LearnSMC curriculum is engineered in a logical, cumulative order. Each chapter builds upon foundational electronic auction mechanics, progressing into advanced intraday delivery algorithms.
       </p>
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;">
         ${textbookChapters.map(ch => `
-          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem;">
-            <div style="font-size: 0.75rem; font-family: monospace; color: #55E6D1; margin-bottom: 0.25rem;">Chapter ${ch.id} · Level ${ch.level}</div>
-            <a href="${getLessonPath(ch.slug)}" style="color: #ffffff; text-decoration: none; font-weight: bold; font-size: 0.95rem; display: block; margin-bottom: 0.5rem;">
+          <div style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem;">
+            <div style="font-size: 0.75rem; font-family: monospace; color: #23796d; margin-bottom: 0.25rem;">Chapter ${ch.id} · Level ${ch.level}</div>
+            <a href="${getLessonPath(ch.slug)}" style="color: #223b35; text-decoration: none; font-weight: bold; font-size: 0.95rem; display: block; margin-bottom: 0.5rem;">
               ${escapeHtml(ch.title)}
             </a>
-            <p style="color: #94A3B8; font-size: 0.8rem; line-height: 1.4; margin: 0;">${escapeHtml(ch.summary[0])}</p>
+            <p style="color: #52645b; font-size: 0.8rem; line-height: 1.4; margin: 0;">${escapeHtml(ch.summary[0])}</p>
           </div>
         `).join('')}
       </div>
@@ -532,23 +532,23 @@ const masoodHubPage: RouteMeta = {
   badge: 'Masterclass Archive',
   bodyHtml: `
     <section style="margin-bottom: 2rem;">
-      <h2 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 0.75rem;">Mentorship Curriculum</h2>
-      <p style="line-height: 1.7; color: #C5CBD8; margin-bottom: 1.5rem;">
+      <h2 style="font-size: 1.4rem; color: #223b35; margin-bottom: 0.75rem;">Mentorship Curriculum</h2>
+      <p style="line-height: 1.7; color: #435b50; margin-bottom: 1.5rem;">
         Trader Abdullah Masood has distilled complex institutional algorithmic mechanics into crystal-clear, actionable rules. 
         Browse all 6 playlist series covering Beginner Foundations, Gold Legacy, Core ICT Mentorship, Advanced Market Geometry, and Live Trade Breakdowns.
       </p>
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
-        <a href="/masood/animations/" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
-          <div style="color: #55E6D1; font-weight: bold; margin-bottom: 0.25rem;">Animated Explainers</div>
-          <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">Visual step-by-step animations of PO3, Fair Value Gap formation, and Liquidity Sweeps.</p>
+        <a href="/masood/animations/" style="background: rgba(34,59,53,0.04); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+          <div style="color: #23796d; font-weight: bold; margin-bottom: 0.25rem;">Animated Explainers</div>
+          <p style="margin: 0; font-size: 0.8rem; color: #52645b;">Visual step-by-step animations of PO3, Fair Value Gap formation, and Liquidity Sweeps.</p>
         </a>
-        <a href="/masood/bias-calculator/" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
-          <div style="color: #8A72FF; font-weight: bold; margin-bottom: 0.25rem;">Daily Bias Calculator</div>
-          <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">Systematic 4-step framework to determine higher timeframe daily candle direction.</p>
+        <a href="/masood/bias-calculator/" style="background: rgba(34,59,53,0.04); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+          <div style="color: #705692; font-weight: bold; margin-bottom: 0.25rem;">Daily Bias Calculator</div>
+          <p style="margin: 0; font-size: 0.8rem; color: #52645b;">Systematic 4-step framework to determine higher timeframe daily candle direction.</p>
         </a>
-        <a href="/masood/golden-rules/" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
-          <div style="color: #FF5722; font-weight: bold; margin-bottom: 0.25rem;">Golden Execution Rules</div>
-          <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">Non-negotiable risk management principles and entry execution criteria.</p>
+        <a href="/masood/golden-rules/" style="background: rgba(34,59,53,0.04); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+          <div style="color: #b34e30; font-weight: bold; margin-bottom: 0.25rem;">Golden Execution Rules</div>
+          <p style="margin: 0; font-size: 0.8rem; color: #52645b;">Non-negotiable risk management principles and entry execution criteria.</p>
         </a>
       </div>
     </section>
@@ -567,7 +567,7 @@ const masoodSubPages: RouteMeta[] = [
     subheading: 'Watch price action unfold step-by-step with interactive institutional diagrams.',
     badge: 'Visual Animations',
     bodyHtml: `
-      <p style="line-height: 1.7; color: #C5CBD8;">
+      <p style="line-height: 1.7; color: #435b50;">
         Visualize algorithmic market maker models with high-fidelity animated charts. Understand Accumulation, Manipulation, and Distribution (PO3), the mechanics of Judas Swings at 09:30 AM, and how Fair Value Gaps form during energetic institutional displacement.
       </p>
     `
@@ -582,7 +582,7 @@ const masoodSubPages: RouteMeta[] = [
     subheading: 'Determine high-probability daily expansion direction before the session opens.',
     badge: 'Quantitative Decision Tool',
     bodyHtml: `
-      <p style="line-height: 1.7; color: #C5CBD8;">
+      <p style="line-height: 1.7; color: #435b50;">
         Trading without directional bias is gambling. The Masood Daily Bias Calculator evaluates Higher Timeframe market structure, whether price is currently in Premium or Discount relative to the dealing range, and whether Buy-Side or Sell-Side liquidity was recently swept.
       </p>
     `
@@ -597,11 +597,11 @@ const masoodSubPages: RouteMeta[] = [
     subheading: 'Essential risk parameters, psychological frameworks, and trade management rules.',
     badge: 'Core Tenets',
     bodyHtml: `
-      <ul style="padding-left: 1.5rem; line-height: 1.8; color: #C5CBD8;">
-        <li><strong style="color: #fff;">Rule 1:</strong> Never enter a trade during the 09:30 AM equities open without a pre-market higher timeframe draw on liquidity.</li>
-        <li><strong style="color: #fff;">Rule 2:</strong> Invalidation occurs at the candle body close beyond the Consequent Encroachment (50%) of the Fair Value Gap.</li>
-        <li><strong style="color: #fff;">Rule 3:</strong> Risk strictly 1% or less of total equity per idea. Capital preservation precedes capital accumulation.</li>
-        <li><strong style="color: #fff;">Rule 4:</strong> Align multi-timeframe narrative from the Daily down to the 1-Minute chart before executing limit orders.</li>
+      <ul style="padding-left: 1.5rem; line-height: 1.8; color: #435b50;">
+        <li><strong style="color: #223b35;">Rule 1:</strong> Never enter a trade during the 09:30 AM equities open without a pre-market higher timeframe draw on liquidity.</li>
+        <li><strong style="color: #223b35;">Rule 2:</strong> Invalidation occurs at the candle body close beyond the Consequent Encroachment (50%) of the Fair Value Gap.</li>
+        <li><strong style="color: #223b35;">Rule 3:</strong> Risk strictly 1% or less of total equity per idea. Capital preservation precedes capital accumulation.</li>
+        <li><strong style="color: #223b35;">Rule 4:</strong> Align multi-timeframe narrative from the Daily down to the 1-Minute chart before executing limit orders.</li>
       </ul>
     `
   }
@@ -620,47 +620,47 @@ const workbenchTools: RouteMeta[] = [
     badge: 'Laboratory Suite',
     bodyHtml: `
       <section style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 0.75rem;">Interactive Workbench Facilities</h2>
+        <h2 style="font-size: 1.4rem; color: #223b35; margin-bottom: 0.75rem;">Interactive Workbench Facilities</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem;">
-          <a href="/tools/masterclass/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
-            <div style="font-weight: bold; color: #5865FF; margin-bottom: 0.25rem;">Masterclass Hub</div>
-            <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">34 Masterclasses, 15 PD Arrays in hierarchical order, and 5 A+ entry models.</p>
+          <a href="/tools/masterclass/" style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+            <div style="font-weight: bold; color: #256552; margin-bottom: 0.25rem;">Masterclass Hub</div>
+            <p style="margin: 0; font-size: 0.8rem; color: #52645b;">34 Masterclasses, 15 PD Arrays in hierarchical order, and 5 A+ entry models.</p>
           </a>
-          <a href="/tools/chartlab/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
-            <div style="font-weight: bold; color: #55E6D1; margin-bottom: 0.25rem;">Chart Lab</div>
-            <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">8-stage candlestick auction replay with multi-layer ICT overlays.</p>
+          <a href="/tools/chartlab/" style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+            <div style="font-weight: bold; color: #23796d; margin-bottom: 0.25rem;">Chart Lab</div>
+            <p style="margin: 0; font-size: 0.8rem; color: #52645b;">8-stage candlestick auction replay with multi-layer ICT overlays.</p>
           </a>
-          <a href="/tools/simulator/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
-            <div style="font-weight: bold; color: #8A72FF; margin-bottom: 0.25rem;">Trade Simulator</div>
-            <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">Algorithmic limit order execution simulator with realistic slippage.</p>
+          <a href="/tools/simulator/" style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+            <div style="font-weight: bold; color: #705692; margin-bottom: 0.25rem;">Trade Simulator</div>
+            <p style="margin: 0; font-size: 0.8rem; color: #52645b;">Algorithmic limit order execution simulator with realistic slippage.</p>
           </a>
-          <a href="/tools/backtest/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
-            <div style="font-weight: bold; color: #FF5722; margin-bottom: 0.25rem;">Backtest Lab</div>
-            <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">Statistical expectancy, Win Rate, and Drawdown curve calculator.</p>
+          <a href="/tools/backtest/" style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+            <div style="font-weight: bold; color: #b34e30; margin-bottom: 0.25rem;">Backtest Lab</div>
+            <p style="margin: 0; font-size: 0.8rem; color: #52645b;">Statistical expectancy, Win Rate, and Drawdown curve calculator.</p>
           </a>
-          <a href="/tools/journal/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
-            <div style="font-weight: bold; color: #00E5FF; margin-bottom: 0.25rem;">Trading Journal</div>
-            <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">7-point institutional trade audit and rule validation logger.</p>
+          <a href="/tools/journal/" style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+            <div style="font-weight: bold; color: #23796d; margin-bottom: 0.25rem;">Trading Journal</div>
+            <p style="margin: 0; font-size: 0.8rem; color: #52645b;">7-point institutional trade audit and rule validation logger.</p>
           </a>
-          <a href="/tools/knowledge-graph/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
-            <div style="font-weight: bold; color: #55E6D1; margin-bottom: 0.25rem;">Knowledge Graph</div>
-            <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">10-step institutional pipeline and connected concept network.</p>
+          <a href="/tools/knowledge-graph/" style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+            <div style="font-weight: bold; color: #23796d; margin-bottom: 0.25rem;">Knowledge Graph</div>
+            <p style="margin: 0; font-size: 0.8rem; color: #52645b;">10-step institutional pipeline and connected concept network.</p>
           </a>
-          <a href="/tools/glossary/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
-            <div style="font-weight: bold; color: #8A72FF; margin-bottom: 0.25rem;">Concepts Glossary</div>
-            <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">Searchable encyclopedia of 41+ ICT concepts, categories, and deep sub-concepts.</p>
+          <a href="/tools/glossary/" style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+            <div style="font-weight: bold; color: #705692; margin-bottom: 0.25rem;">Concepts Glossary</div>
+            <p style="margin: 0; font-size: 0.8rem; color: #52645b;">Searchable encyclopedia of 41+ ICT concepts, categories, and deep sub-concepts.</p>
           </a>
-          <a href="/tools/compare/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
-            <div style="font-weight: bold; color: #FB7185; margin-bottom: 0.25rem;">Compare Matrix</div>
-            <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">Side-by-side contrast of overlapping or misunderstood concepts.</p>
+          <a href="/tools/compare/" style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+            <div style="font-weight: bold; color: #b44746; margin-bottom: 0.25rem;">Compare Matrix</div>
+            <p style="margin: 0; font-size: 0.8rem; color: #52645b;">Side-by-side contrast of overlapping or misunderstood concepts.</p>
           </a>
-          <a href="/tools/profile/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
-            <div style="font-weight: bold; color: #34D399; margin-bottom: 0.25rem;">Mastery Profile</div>
-            <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">Assessments, diagnostic quizzes, and operator credentials.</p>
+          <a href="/tools/profile/" style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+            <div style="font-weight: bold; color: #25734f; margin-bottom: 0.25rem;">Mastery Profile</div>
+            <p style="margin: 0; font-size: 0.8rem; color: #52645b;">Assessments, diagnostic quizzes, and operator credentials.</p>
           </a>
-          <a href="/tools/delivery-suite/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
-            <div style="font-weight: bold; color: #FF6B7A; margin-bottom: 0.25rem;">ICT Delivery Suite</div>
-            <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">OTE calculator, Asian Judas planner, and 8 macro execution windows.</p>
+          <a href="/tools/delivery-suite/" style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+            <div style="font-weight: bold; color: #b44746; margin-bottom: 0.25rem;">ICT Delivery Suite</div>
+            <p style="margin: 0; font-size: 0.8rem; color: #52645b;">OTE calculator, Asian Judas planner, and 8 macro execution windows.</p>
           </a>
         </div>
       </section>
@@ -675,7 +675,7 @@ const workbenchTools: RouteMeta[] = [
     heading: 'Masterclass Hub (34 Models & 15 PD Arrays)',
     subheading: 'Deep-dive reference into algorithmic premium/discount arrays and high-probability entry models.',
     badge: 'Advanced Models',
-    bodyHtml: '<p style="line-height: 1.7; color: #C5CBD8;">Explore the 15-tier PD Array hierarchy from Old High/Low down to Mitigation Blocks, alongside 5 specialized opening range setups.</p>'
+    bodyHtml: '<p style="line-height: 1.7; color: #435b50;">Explore the 15-tier PD Array hierarchy from Old High/Low down to Mitigation Blocks, alongside 5 specialized opening range setups.</p>'
   },
   {
     url: 'https://learnsmc.xyz/tools/chartlab/',
@@ -686,7 +686,7 @@ const workbenchTools: RouteMeta[] = [
     heading: 'Interactive Chart Laboratory',
     subheading: 'Multi-layer ICT candlestick auction engine with algorithmic overlays.',
     badge: 'Chart Laboratory',
-    bodyHtml: '<p style="line-height: 1.7; color: #C5CBD8;">Explore interactive candlestick sequences across historical London and New York Killzone sessions. Identify displacement candles, mark fair value gaps, and observe order block mitigation in real time.</p>'
+    bodyHtml: '<p style="line-height: 1.7; color: #435b50;">Explore interactive candlestick sequences across historical London and New York Killzone sessions. Identify displacement candles, mark fair value gaps, and observe order block mitigation in real time.</p>'
   },
   {
     url: 'https://learnsmc.xyz/tools/simulator/',
@@ -697,7 +697,7 @@ const workbenchTools: RouteMeta[] = [
     heading: 'Trade Simulator & Execution Engine',
     subheading: 'Blind test your ICT execution protocols without risking real capital.',
     badge: 'Execution Simulator',
-    bodyHtml: '<p style="line-height: 1.7; color: #C5CBD8;">Simulate real-market conditions with step-by-step candle advance, limit order placement, stop loss setting, and profit target tracking.</p>'
+    bodyHtml: '<p style="line-height: 1.7; color: #435b50;">Simulate real-market conditions with step-by-step candle advance, limit order placement, stop loss setting, and profit target tracking.</p>'
   },
   {
     url: 'https://learnsmc.xyz/tools/backtest/',
@@ -708,7 +708,7 @@ const workbenchTools: RouteMeta[] = [
     heading: 'Backtesting Laboratory & Expectancy Engine',
     subheading: 'Measure Win Rate, Profit Factor, Risk-to-Reward, and Max Drawdown curves.',
     badge: 'Quantitative Research',
-    bodyHtml: '<p style="line-height: 1.7; color: #C5CBD8;">Validate your trading edge statistically. Model win rates across different setup confluence grades before committing live money.</p>'
+    bodyHtml: '<p style="line-height: 1.7; color: #435b50;">Validate your trading edge statistically. Model win rates across different setup confluence grades before committing live money.</p>'
   },
   {
     url: 'https://learnsmc.xyz/tools/journal/',
@@ -719,7 +719,7 @@ const workbenchTools: RouteMeta[] = [
     heading: 'Institutional Trading Journal',
     subheading: 'Audit every trade setup against institutional rules and emotional states.',
     badge: 'Discipline Audit',
-    bodyHtml: '<p style="line-height: 1.7; color: #C5CBD8;">Track setup type, session, entry model, risk-reward ratio, and mistake tags in local browser storage.</p>'
+    bodyHtml: '<p style="line-height: 1.7; color: #435b50;">Track setup type, session, entry model, risk-reward ratio, and mistake tags in local browser storage.</p>'
   },
   {
     url: 'https://learnsmc.xyz/tools/knowledge-graph/',
@@ -730,7 +730,7 @@ const workbenchTools: RouteMeta[] = [
     heading: 'SMC Interactive Knowledge Graph',
     subheading: 'Connect liquidity concepts, market structure, and algorithmic timing models.',
     badge: 'Concept Matrix',
-    bodyHtml: '<p style="line-height: 1.7; color: #C5CBD8;">Explore the conceptual dependency tree connecting liquidity pools, displacement, market structure shifts, and optimal trade entries.</p>'
+    bodyHtml: '<p style="line-height: 1.7; color: #435b50;">Explore the conceptual dependency tree connecting liquidity pools, displacement, market structure shifts, and optimal trade entries.</p>'
   },
   {
     url: 'https://learnsmc.xyz/tools/glossary/',
@@ -743,12 +743,12 @@ const workbenchTools: RouteMeta[] = [
     badge: 'Encyclopedia',
     bodyHtml: `
       <section style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.3rem; color: #ffffff; margin-bottom: 0.75rem;">Glossary Categories &amp; Knowledge Structure</h2>
+        <h2 style="font-size: 1.3rem; color: #223b35; margin-bottom: 0.75rem;">Glossary Categories &amp; Knowledge Structure</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem;">
           ${GLOSSARY_CATEGORIES.map(cat => `
-            <a href="/tools/glossary/${cat.slug}/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
-              <div style="font-weight: bold; color: #55E6D1; margin-bottom: 0.25rem;">${escapeHtml(cat.name)}</div>
-              <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">${escapeHtml(cat.description)}</p>
+            <a href="/tools/glossary/${cat.slug}/" style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+              <div style="font-weight: bold; color: #23796d; margin-bottom: 0.25rem;">${escapeHtml(cat.name)}</div>
+              <p style="margin: 0; font-size: 0.8rem; color: #52645b;">${escapeHtml(cat.description)}</p>
             </a>
           `).join('')}
         </div>
@@ -764,7 +764,7 @@ const workbenchTools: RouteMeta[] = [
     heading: 'Concept Comparison Matrix',
     subheading: 'Side-by-side technical breakdown of frequently confused institutional concepts.',
     badge: 'Side-by-Side Analysis',
-    bodyHtml: '<p style="line-height: 1.7; color: #C5CBD8;">Direct contrast between Order Blocks vs Breaker Blocks, MSS vs BOS, and Liquidity Sweeps vs Real Structural Breaks.</p>'
+    bodyHtml: '<p style="line-height: 1.7; color: #435b50;">Direct contrast between Order Blocks vs Breaker Blocks, MSS vs BOS, and Liquidity Sweeps vs Real Structural Breaks.</p>'
   },
   {
     url: 'https://learnsmc.xyz/tools/profile/',
@@ -775,7 +775,7 @@ const workbenchTools: RouteMeta[] = [
     heading: 'Mastery Profile & Operator Diagnostics',
     subheading: 'Track curriculum completion, test scores, and institutional skill readiness.',
     badge: 'Diagnostics',
-    bodyHtml: '<p style="line-height: 1.7; color: #C5CBD8;">Verify your mastery across 57 curriculum chapters and track your progression from Novice to Certified Institutional Operator.</p>'
+    bodyHtml: '<p style="line-height: 1.7; color: #435b50;">Verify your mastery across 57 curriculum chapters and track your progression from Novice to Certified Institutional Operator.</p>'
   },
   {
     url: 'https://learnsmc.xyz/tools/delivery-suite/',
@@ -786,7 +786,7 @@ const workbenchTools: RouteMeta[] = [
     heading: 'ICT Delivery Suite & Macro Clock',
     subheading: 'Real-time countdown to algorithmic Killzones and macro windows.',
     badge: 'Timing & Macros',
-    bodyHtml: '<p style="line-height: 1.7; color: #C5CBD8;">Calculators for 62% - 79% Optimal Trade Entry, Asian range projections, and New York macro algorithmic clocks.</p>'
+    bodyHtml: '<p style="line-height: 1.7; color: #435b50;">Calculators for 62% - 79% Optimal Trade Entry, Asian range projections, and New York macro algorithmic clocks.</p>'
   }
 ];
 
@@ -817,16 +817,16 @@ const masterclassCategoryRoutes: RouteMeta[] = MASTERCLASS_CATEGORIES
       },
       bodyHtml: `
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: 1.3rem; color: #ffffff; margin-bottom: 0.75rem;">Masterclasses in ${escapeHtml(cat.name)}</h2>
+          <h2 style="font-size: 1.3rem; color: #223b35; margin-bottom: 0.75rem;">Masterclasses in ${escapeHtml(cat.name)}</h2>
           <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;">
             ${catItems.map(m => `
-              <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1.25rem;">
-                <div style="font-size: 0.75rem; font-family: monospace; color: #5865FF; margin-bottom: 0.25rem;">Masterclass #${m.number}</div>
-                <a href="${getMasterclassUrl(m)}" style="color: #ffffff; text-decoration: none; font-weight: bold; font-size: 1rem; display: block; margin-bottom: 0.5rem;">
+              <div style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1.25rem;">
+                <div style="font-size: 0.75rem; font-family: monospace; color: #256552; margin-bottom: 0.25rem;">Masterclass #${m.number}</div>
+                <a href="${getMasterclassUrl(m)}" style="color: #223b35; text-decoration: none; font-weight: bold; font-size: 1rem; display: block; margin-bottom: 0.5rem;">
                   ${escapeHtml(m.title)}
                 </a>
-                <p style="color: #94A3B8; font-size: 0.85rem; line-height: 1.5; margin: 0 0 0.75rem 0;">${escapeHtml(m.subtitle)}</p>
-                <div style="font-size: 0.8rem; color: #55E6D1; font-family: monospace;">Rule: ${escapeHtml(m.coreRule.substring(0, 90))}...</div>
+                <p style="color: #52645b; font-size: 0.85rem; line-height: 1.5; margin: 0 0 0.75rem 0;">${escapeHtml(m.subtitle)}</p>
+                <div style="font-size: 0.8rem; color: #23796d; font-family: monospace;">Rule: ${escapeHtml(m.coreRule.substring(0, 90))}...</div>
               </div>
             `).join('')}
           </div>
@@ -863,14 +863,14 @@ const masterclassModuleRoutes: RouteMeta[] = masterclassCollection.map(m => {
       }
     },
     bodyHtml: `
-      <article style="line-height: 1.7; color: #C5CBD8;">
-        <div style="background: rgba(88, 101, 255, 0.08); border-left: 3px solid #5865FF; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
-          <h3 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 1.1rem;">Core Institutional Execution Rule</h3>
-          <p style="color: #E0E7FF; font-size: 0.95rem; margin: 0; line-height: 1.6;">${escapeHtml(m.coreRule)}</p>
+      <article style="line-height: 1.7; color: #435b50;">
+        <div style="background: rgba(37,101,82, 0.08); border-left: 3px solid #256552; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
+          <h3 style="color: #223b35; margin: 0 0 0.5rem 0; font-size: 1.1rem;">Core Institutional Execution Rule</h3>
+          <p style="color: #223b35; font-size: 0.95rem; margin: 0; line-height: 1.6;">${escapeHtml(m.coreRule)}</p>
         </div>
 
         <div style="margin-bottom: 1.75rem;">
-          <h3 style="color: #ffffff; font-size: 1.15rem; margin-bottom: 0.75rem;">Step-by-Step Order of Operations</h3>
+          <h3 style="color: #223b35; font-size: 1.15rem; margin-bottom: 0.75rem;">Step-by-Step Order of Operations</h3>
           <ol style="padding-left: 1.5rem; line-height: 1.8;">
             ${m.orderOfOperations.map(step => `<li>${escapeHtml(step)}</li>`).join('')}
           </ol>
@@ -878,19 +878,19 @@ const masterclassModuleRoutes: RouteMeta[] = masterclassCollection.map(m => {
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.75rem;">
           <div style="background: rgba(244,63,94,0.08); border: 1px solid rgba(244,63,94,0.2); border-radius: 8px; padding: 1rem;">
-            <h4 style="color: #FB7185; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Structural Invalidation Criteria</h4>
+            <h4 style="color: #b44746; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Structural Invalidation Criteria</h4>
             <ul style="padding-left: 1.25rem; margin: 0; font-size: 0.85rem; line-height: 1.6;">
               ${m.invalidationChecklist.map(inv => `<li>${escapeHtml(inv)}</li>`).join('')}
             </ul>
           </div>
           <div style="background: rgba(85,230,209,0.08); border: 1px solid rgba(85,230,209,0.2); border-radius: 8px; padding: 1rem;">
-            <h4 style="color: #55E6D1; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Visual Anatomy Signature</h4>
+            <h4 style="color: #23796d; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Visual Anatomy Signature</h4>
             <p style="margin: 0; font-size: 0.85rem; line-height: 1.6;">${escapeHtml(m.visualAnatomy || m.coreRule)}</p>
           </div>
         </div>
 
-        <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.25rem; font-size: 0.85rem; color: #94A3B8;">
-          Cross-reference this blueprint with the <a href="/tools/glossary/" style="color: #55E6D1;">Concepts Glossary</a> and test live execution inside the <a href="/tools/simulator/" style="color: #8A72FF;">Trade Simulator</a>.
+        <div style="border-top: 1px solid rgba(34,59,53,0.06); padding-top: 1.25rem; font-size: 0.85rem; color: #52645b;">
+          Cross-reference this blueprint with the <a href="/tools/glossary/" style="color: #23796d;">Concepts Glossary</a> and test live execution inside the <a href="/tools/simulator/" style="color: #705692;">Trade Simulator</a>.
         </div>
       </article>
     `
@@ -920,14 +920,14 @@ const chartLabScenarioRoutes: RouteMeta[] = chartScenarios.map(s => {
       'operatingSystem': 'Any Web Browser'
     },
     bodyHtml: `
-      <article style="line-height: 1.7; color: #C5CBD8;">
-        <div style="background: rgba(85, 230, 209, 0.08); border-left: 3px solid #55E6D1; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
-          <h3 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 1.1rem;">Scenario Objective &amp; Learning Takeaway</h3>
-          <p style="color: #E0E7FF; font-size: 0.95rem; margin: 0;">${escapeHtml(s.description)}</p>
+      <article style="line-height: 1.7; color: #435b50;">
+        <div style="background: rgba(85, 230, 209, 0.08); border-left: 3px solid #23796d; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
+          <h3 style="color: #223b35; margin: 0 0 0.5rem 0; font-size: 1.1rem;">Scenario Objective &amp; Learning Takeaway</h3>
+          <p style="color: #223b35; font-size: 0.95rem; margin: 0;">${escapeHtml(s.description)}</p>
         </div>
 
         <div style="margin-bottom: 1.75rem;">
-          <h3 style="color: #ffffff; font-size: 1.15rem; margin-bottom: 0.75rem;">8-Stage Sequential Execution Protocol</h3>
+          <h3 style="color: #223b35; font-size: 1.15rem; margin-bottom: 0.75rem;">8-Stage Sequential Execution Protocol</h3>
           <ol style="padding-left: 1.5rem; line-height: 1.8;">
             <li><strong>Stage 1 (Liquidity Pool):</strong> Identify resting Buy-Side (BSL) or Sell-Side (SSL) stops.</li>
             <li><strong>Stage 2 (Sweep):</strong> Mark the candle wick penetrating resting stops to engineer liquidity.</li>
@@ -940,8 +940,8 @@ const chartLabScenarioRoutes: RouteMeta[] = chartScenarios.map(s => {
           </ol>
         </div>
 
-        <p style="font-size: 0.85rem; color: #94A3B8;">
-          Ready to trade this setup? Open the <a href="/tools/chartlab/" style="color: #55E6D1;">Interactive Chart Lab</a> for step-by-step candle advance and automatic feedback.
+        <p style="font-size: 0.85rem; color: #52645b;">
+          Ready to trade this setup? Open the <a href="/tools/chartlab/" style="color: #23796d;">Interactive Chart Lab</a> for step-by-step candle advance and automatic feedback.
         </p>
       </article>
     `
@@ -968,30 +968,30 @@ const simulatorModelRoutes: RouteMeta[] = SIMULATOR_MODELS.map(m => {
       'applicationCategory': 'Financial Application'
     },
     bodyHtml: `
-      <article style="line-height: 1.7; color: #C5CBD8;">
-        <p style="font-size: 1rem; color: #fff; margin-bottom: 1.25rem;">${escapeHtml(m.description)}</p>
+      <article style="line-height: 1.7; color: #435b50;">
+        <p style="font-size: 1rem; color: #223b35; margin-bottom: 1.25rem;">${escapeHtml(m.description)}</p>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.75rem;">
-          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem;">
-            <div style="font-size: 0.75rem; font-family: monospace; color: #55E6D1;">Direction &amp; Higher Timeframe Bias</div>
-            <div style="font-weight: bold; color: #fff; margin-top: 0.25rem;">${m.direction} (${m.htfBias} in ${m.location})</div>
+          <div style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem;">
+            <div style="font-size: 0.75rem; font-family: monospace; color: #23796d;">Direction &amp; Higher Timeframe Bias</div>
+            <div style="font-weight: bold; color: #223b35; margin-top: 0.25rem;">${m.direction} (${m.htfBias} in ${m.location})</div>
           </div>
-          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem;">
-            <div style="font-size: 0.75rem; font-family: monospace; color: #8A72FF;">Liquidity Event &amp; Confirmation</div>
-            <div style="font-weight: bold; color: #fff; margin-top: 0.25rem;">${m.liquidityEvent} ➔ ${m.confirmation}</div>
+          <div style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem;">
+            <div style="font-size: 0.75rem; font-family: monospace; color: #705692;">Liquidity Event &amp; Confirmation</div>
+            <div style="font-weight: bold; color: #223b35; margin-top: 0.25rem;">${m.liquidityEvent} ➔ ${m.confirmation}</div>
           </div>
-          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem;">
-            <div style="font-size: 0.75rem; font-family: monospace; color: #FF5722;">Entry Array &amp; Invalidation Stop</div>
-            <div style="font-weight: bold; color: #fff; margin-top: 0.25rem;">${m.entryArray} (Stop: ${m.stopPlacement})</div>
+          <div style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem;">
+            <div style="font-size: 0.75rem; font-family: monospace; color: #b34e30;">Entry Array &amp; Invalidation Stop</div>
+            <div style="font-weight: bold; color: #223b35; margin-top: 0.25rem;">${m.entryArray} (Stop: ${m.stopPlacement})</div>
           </div>
-          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem;">
-            <div style="font-size: 0.75rem; font-family: monospace; color: #34D399;">Profit Target Objective</div>
-            <div style="font-weight: bold; color: #fff; margin-top: 0.25rem;">${m.targetType}</div>
+          <div style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem;">
+            <div style="font-size: 0.75rem; font-family: monospace; color: #25734f;">Profit Target Objective</div>
+            <div style="font-weight: bold; color: #223b35; margin-top: 0.25rem;">${m.targetType}</div>
           </div>
         </div>
 
-        <p style="font-size: 0.85rem; color: #94A3B8;">
-          Test your execution rules live in the <a href="/tools/simulator/" style="color: #8A72FF;">Trade Simulator</a> or explore backtested win rates in the <a href="/tools/backtest/" style="color: #FF5722;">Backtest Lab</a>.
+        <p style="font-size: 0.85rem; color: #52645b;">
+          Test your execution rules live in the <a href="/tools/simulator/" style="color: #705692;">Trade Simulator</a> or explore backtested win rates in the <a href="/tools/backtest/" style="color: #b34e30;">Backtest Lab</a>.
         </p>
       </article>
     `
@@ -1018,26 +1018,26 @@ const backtestStrategyRoutes: RouteMeta[] = BACKTEST_STRATEGIES.map(s => {
       'applicationCategory': 'Quantitative Finance Research'
     },
     bodyHtml: `
-      <article style="line-height: 1.7; color: #C5CBD8;">
-        <p style="font-size: 1rem; color: #fff; margin-bottom: 1.25rem;">${escapeHtml(s.description)}</p>
+      <article style="line-height: 1.7; color: #435b50;">
+        <p style="font-size: 1rem; color: #223b35; margin-bottom: 1.25rem;">${escapeHtml(s.description)}</p>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.75rem;">
-          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-align: center;">
-            <div style="font-size: 0.75rem; font-family: monospace; color: #94A3B8;">Expected Win Rate</div>
-            <div style="font-size: 1.5rem; font-weight: bold; color: #34D399; margin-top: 0.25rem;">${s.expectedWinRate}</div>
+          <div style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem; text-align: center;">
+            <div style="font-size: 0.75rem; font-family: monospace; color: #52645b;">Expected Win Rate</div>
+            <div style="font-size: 1.5rem; font-weight: bold; color: #25734f; margin-top: 0.25rem;">${s.expectedWinRate}</div>
           </div>
-          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-align: center;">
-            <div style="font-size: 0.75rem; font-family: monospace; color: #94A3B8;">Average R-Multiple</div>
-            <div style="font-size: 1.5rem; font-weight: bold; color: #55E6D1; margin-top: 0.25rem;">${s.avgRR}</div>
+          <div style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem; text-align: center;">
+            <div style="font-size: 0.75rem; font-family: monospace; color: #52645b;">Average R-Multiple</div>
+            <div style="font-size: 1.5rem; font-weight: bold; color: #23796d; margin-top: 0.25rem;">${s.avgRR}</div>
           </div>
-          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-align: center;">
-            <div style="font-size: 0.75rem; font-family: monospace; color: #94A3B8;">Profit Factor Range</div>
-            <div style="font-size: 1.5rem; font-weight: bold; color: #8A72FF; margin-top: 0.25rem;">${s.profitFactor}</div>
+          <div style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem; text-align: center;">
+            <div style="font-size: 0.75rem; font-family: monospace; color: #52645b;">Profit Factor Range</div>
+            <div style="font-size: 1.5rem; font-weight: bold; color: #705692; margin-top: 0.25rem;">${s.profitFactor}</div>
           </div>
         </div>
 
-        <p style="font-size: 0.85rem; color: #94A3B8;">
-          Run Monte Carlo simulations for this strategy in the <a href="/tools/backtest/" style="color: #FF5722;">Backtest Lab</a>.
+        <p style="font-size: 0.85rem; color: #52645b;">
+          Run Monte Carlo simulations for this strategy in the <a href="/tools/backtest/" style="color: #b34e30;">Backtest Lab</a>.
         </p>
       </article>
     `
@@ -1064,11 +1064,11 @@ const journalSectionRoutes: RouteMeta[] = JOURNAL_SECTIONS.map(s => {
       'applicationCategory': 'Trading Journal'
     },
     bodyHtml: `
-      <article style="line-height: 1.7; color: #C5CBD8;">
-        <p style="font-size: 1rem; color: #fff; margin-bottom: 1.25rem;">${escapeHtml(s.description)}</p>
+      <article style="line-height: 1.7; color: #435b50;">
+        <p style="font-size: 1rem; color: #223b35; margin-bottom: 1.25rem;">${escapeHtml(s.description)}</p>
 
-        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1.25rem; margin-bottom: 1.5rem;">
-          <h3 style="color: #55E6D1; margin-top: 0; font-size: 1.1rem;">The 7-Point Institutional Quality Audit</h3>
+        <div style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1.25rem; margin-bottom: 1.5rem;">
+          <h3 style="color: #23796d; margin-top: 0; font-size: 1.1rem;">The 7-Point Institutional Quality Audit</h3>
           <ul style="padding-left: 1.5rem; line-height: 1.8;">
             <li>1. HTF Daily Bias Aligned with clear liquidity draw</li>
             <li>2. Execution strictly in Discount (Buy) or Premium (Sell)</li>
@@ -1080,8 +1080,8 @@ const journalSectionRoutes: RouteMeta[] = JOURNAL_SECTIONS.map(s => {
           </ul>
         </div>
 
-        <p style="font-size: 0.85rem; color: #94A3B8;">
-          Log your executions with automated local storage in the <a href="/tools/journal/" style="color: #00E5FF;">Institutional Trading Journal</a>.
+        <p style="font-size: 0.85rem; color: #52645b;">
+          Log your executions with automated local storage in the <a href="/tools/journal/" style="color: #23796d;">Institutional Trading Journal</a>.
         </p>
       </article>
     `
@@ -1108,16 +1108,16 @@ const knowledgeGraphStepRoutes: RouteMeta[] = KNOWLEDGE_GRAPH_STEPS.map(s => {
       'description': s.shortDesc
     },
     bodyHtml: `
-      <article style="line-height: 1.7; color: #C5CBD8;">
-        <p style="font-size: 1.05rem; color: #fff; margin-bottom: 1.25rem;">${escapeHtml(s.shortDesc)}</p>
+      <article style="line-height: 1.7; color: #435b50;">
+        <p style="font-size: 1.05rem; color: #223b35; margin-bottom: 1.25rem;">${escapeHtml(s.shortDesc)}</p>
 
-        <div style="background: rgba(85,230,209,0.08); border-left: 3px solid #55E6D1; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
-          <h3 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 1.1rem;">Algorithmic Causality</h3>
-          <p style="color: #E0E7FF; font-size: 0.95rem; margin: 0;">Step ${s.step} represents a deterministic link in institutional auction mechanics. Smart money relies on resting liquidity pools to fill large position blocks before triggering displacement.</p>
+        <div style="background: rgba(85,230,209,0.08); border-left: 3px solid #23796d; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
+          <h3 style="color: #223b35; margin: 0 0 0.5rem 0; font-size: 1.1rem;">Algorithmic Causality</h3>
+          <p style="color: #223b35; font-size: 0.95rem; margin: 0;">Step ${s.step} represents a deterministic link in institutional auction mechanics. Smart money relies on resting liquidity pools to fill large position blocks before triggering displacement.</p>
         </div>
 
-        <p style="font-size: 0.85rem; color: #94A3B8;">
-          Interact with this causal node and view interconnected concept prerequisites in the <a href="/tools/knowledge-graph/" style="color: #55E6D1;">Interactive Knowledge Graph</a>.
+        <p style="font-size: 0.85rem; color: #52645b;">
+          Interact with this causal node and view interconnected concept prerequisites in the <a href="/tools/knowledge-graph/" style="color: #23796d;">Interactive Knowledge Graph</a>.
         </p>
       </article>
     `
@@ -1139,12 +1139,12 @@ const knowledgeGraphNetworkRoute: RouteMeta = {
     'name': 'Knowledge Graph Network'
   },
   bodyHtml: `
-    <article style="line-height: 1.7; color: #C5CBD8;">
-      <p style="font-size: 1rem; color: #fff; margin-bottom: 1.25rem;">
+    <article style="line-height: 1.7; color: #435b50;">
+      <p style="font-size: 1rem; color: #223b35; margin-bottom: 1.25rem;">
         The Smart Money Concepts knowledge graph links core concepts into a cohesive causal web: Liquidity Sweeps ➔ Displacement ➔ Fair Value Gaps ➔ Market Structure Shifts ➔ Institutional Order Blocks ➔ Killzone Execution Models.
       </p>
-      <p style="font-size: 0.85rem; color: #94A3B8;">
-        Explore the 2D visual layout in the <a href="/tools/knowledge-graph/" style="color: #55E6D1;">Knowledge Graph</a>.
+      <p style="font-size: 0.85rem; color: #52645b;">
+        Explore the 2D visual layout in the <a href="/tools/knowledge-graph/" style="color: #23796d;">Knowledge Graph</a>.
       </p>
     </article>
   `
@@ -1171,22 +1171,22 @@ const compareSubRoutes: RouteMeta[] = conceptComparisons.map(c => {
       'description': c.keyDifference
     },
     bodyHtml: `
-      <article style="line-height: 1.7; color: #C5CBD8;">
-        <div style="background: rgba(88, 101, 255, 0.08); border-left: 3px solid #5865FF; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
-          <h3 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 1.1rem;">The Crucial Operational Distinction</h3>
-          <p style="color: #E0E7FF; font-size: 0.95rem; margin: 0;">${escapeHtml(c.keyDifference)}</p>
+      <article style="line-height: 1.7; color: #435b50;">
+        <div style="background: rgba(37,101,82, 0.08); border-left: 3px solid #256552; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
+          <h3 style="color: #223b35; margin: 0 0 0.5rem 0; font-size: 1.1rem;">The Crucial Operational Distinction</h3>
+          <p style="color: #223b35; font-size: 0.95rem; margin: 0;">${escapeHtml(c.keyDifference)}</p>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.75rem;">
-          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem;">
-            <h4 style="color: #55E6D1; margin: 0 0 0.5rem 0;">${escapeHtml(c.conceptA.name)}</h4>
+          <div style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem;">
+            <h4 style="color: #23796d; margin: 0 0 0.5rem 0;">${escapeHtml(c.conceptA.name)}</h4>
             <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">${escapeHtml(c.conceptA.summary)}</p>
             <ul style="padding-left: 1.25rem; margin: 0; font-size: 0.8rem; line-height: 1.5;">
               ${c.conceptA.keyPoints.map(kp => `<li>${escapeHtml(kp)}</li>`).join('')}
             </ul>
           </div>
-          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem;">
-            <h4 style="color: #8A72FF; margin: 0 0 0.5rem 0;">${escapeHtml(c.conceptB.name)}</h4>
+          <div style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem;">
+            <h4 style="color: #705692; margin: 0 0 0.5rem 0;">${escapeHtml(c.conceptB.name)}</h4>
             <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">${escapeHtml(c.conceptB.summary)}</p>
             <ul style="padding-left: 1.25rem; margin: 0; font-size: 0.8rem; line-height: 1.5;">
               ${c.conceptB.keyPoints.map(kp => `<li>${escapeHtml(kp)}</li>`).join('')}
@@ -1196,17 +1196,17 @@ const compareSubRoutes: RouteMeta[] = conceptComparisons.map(c => {
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.75rem;">
           <div style="background: rgba(244,63,94,0.08); border: 1px solid rgba(244,63,94,0.2); border-radius: 8px; padding: 1rem;">
-            <strong style="color: #FB7185;">Common Confusion:</strong>
+            <strong style="color: #b44746;">Common Confusion:</strong>
             <p style="margin: 0.5rem 0 0 0; font-size: 0.85rem;">${escapeHtml(c.commonConfusion)}</p>
           </div>
           <div style="background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2); border-radius: 8px; padding: 1rem;">
-            <strong style="color: #34D399;">Mechanical Decision Rule:</strong>
+            <strong style="color: #25734f;">Mechanical Decision Rule:</strong>
             <p style="margin: 0.5rem 0 0 0; font-size: 0.85rem;">${escapeHtml(c.decisionRule)}</p>
           </div>
         </div>
 
-        <p style="font-size: 0.85rem; color: #94A3B8;">
-          View all pairings in the <a href="/tools/compare/" style="color: #FB7185;">Compare Matrix</a> or search definitions in the <a href="/tools/glossary/" style="color: #55E6D1;">Concepts Glossary</a>.
+        <p style="font-size: 0.85rem; color: #52645b;">
+          View all pairings in the <a href="/tools/compare/" style="color: #b44746;">Compare Matrix</a> or search definitions in the <a href="/tools/glossary/" style="color: #23796d;">Concepts Glossary</a>.
         </p>
       </article>
     `
@@ -1229,8 +1229,8 @@ const profileRoadmapRoute: RouteMeta = {
     'name': 'Mastery Roadmap'
   },
   bodyHtml: `
-    <article style="line-height: 1.7; color: #C5CBD8;">
-      <p style="font-size: 1rem; color: #fff; margin-bottom: 1.25rem;">
+    <article style="line-height: 1.7; color: #435b50;">
+      <p style="font-size: 1rem; color: #223b35; margin-bottom: 1.25rem;">
         The LearnSMC curriculum spans 6 rigorous phases of deliberate practice:
       </p>
       <ul style="padding-left: 1.5rem; line-height: 2;">
@@ -1241,8 +1241,8 @@ const profileRoadmapRoute: RouteMeta = {
         <li><strong>Level 4:</strong> Time, Killzones & Daily/Weekly Profiles (Chapters 19 - 21)</li>
         <li><strong>Level 5:</strong> 2026 Smart Money Concepts, ATH Alchemy & Trinity Rules (Chapters 22 - 57)</li>
       </ul>
-      <p style="font-size: 0.85rem; color: #94A3B8;">
-        Test your readiness across these levels in the <a href="/tools/profile/exams/" style="color: #34D399;">Mastery Diagnostic Exams</a>.
+      <p style="font-size: 0.85rem; color: #52645b;">
+        Test your readiness across these levels in the <a href="/tools/profile/exams/" style="color: #25734f;">Mastery Diagnostic Exams</a>.
       </p>
     </article>
   `
@@ -1263,18 +1263,18 @@ const profileExamsRootRoute: RouteMeta = {
     'name': 'Institutional Diagnostic Exams'
   },
   bodyHtml: `
-    <article style="line-height: 1.7; color: #C5CBD8;">
-      <p style="font-size: 1rem; color: #fff; margin-bottom: 1.25rem;">
+    <article style="line-height: 1.7; color: #435b50;">
+      <p style="font-size: 1rem; color: #223b35; margin-bottom: 1.25rem;">
         Benchmark your institutional market understanding with interactive diagnostic assessments:
       </p>
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem;">
         ${MASTERY_EXAMS.map(e => `
-          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1.25rem;">
-            <div style="font-size: 0.75rem; font-family: monospace; color: #34D399; margin-bottom: 0.25rem;">${e.level}</div>
-            <a href="/tools/profile/exams/${e.slug}/" style="color: #ffffff; text-decoration: none; font-weight: bold; font-size: 1rem; display: block; margin-bottom: 0.5rem;">
+          <div style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1.25rem;">
+            <div style="font-size: 0.75rem; font-family: monospace; color: #25734f; margin-bottom: 0.25rem;">${e.level}</div>
+            <a href="/tools/profile/exams/${e.slug}/" style="color: #223b35; text-decoration: none; font-weight: bold; font-size: 1rem; display: block; margin-bottom: 0.5rem;">
               ${escapeHtml(e.title)}
             </a>
-            <p style="color: #94A3B8; font-size: 0.85rem; margin: 0;">${escapeHtml(e.description)}</p>
+            <p style="color: #52645b; font-size: 0.85rem; margin: 0;">${escapeHtml(e.description)}</p>
           </div>
         `).join('')}
       </div>
@@ -1302,16 +1302,16 @@ const profileExamDetailRoutes: RouteMeta[] = MASTERY_EXAMS.map(e => {
       'educationalLevel': e.level
     },
     bodyHtml: `
-      <article style="line-height: 1.7; color: #C5CBD8;">
-        <p style="font-size: 1.05rem; color: #fff; margin-bottom: 1.25rem;">${escapeHtml(e.description)}</p>
+      <article style="line-height: 1.7; color: #435b50;">
+        <p style="font-size: 1.05rem; color: #223b35; margin-bottom: 1.25rem;">${escapeHtml(e.description)}</p>
 
-        <div style="background: rgba(52,211,153,0.08); border-left: 3px solid #34D399; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
-          <h3 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 1.1rem;">Exam Parameters</h3>
-          <p style="color: #E0E7FF; font-size: 0.95rem; margin: 0;">Passing score: 75% or higher. Evaluates conceptual mastery, operational rules, and invalidation recognition under pressure.</p>
+        <div style="background: rgba(52,211,153,0.08); border-left: 3px solid #25734f; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
+          <h3 style="color: #223b35; margin: 0 0 0.5rem 0; font-size: 1.1rem;">Exam Parameters</h3>
+          <p style="color: #223b35; font-size: 0.95rem; margin: 0;">Passing score: 75% or higher. Evaluates conceptual mastery, operational rules, and invalidation recognition under pressure.</p>
         </div>
 
-        <p style="font-size: 0.85rem; color: #94A3B8;">
-          Take this exam with instant scoring in the <a href="/tools/profile/" style="color: #34D399;">Mastery Profile</a>.
+        <p style="font-size: 0.85rem; color: #52645b;">
+          Take this exam with instant scoring in the <a href="/tools/profile/" style="color: #25734f;">Mastery Profile</a>.
         </p>
       </article>
     `
@@ -1338,16 +1338,16 @@ const deliverySuiteSubRoutes: RouteMeta[] = DELIVERY_SUITE_MODULES.map(m => {
       'applicationCategory': 'Financial Application'
     },
     bodyHtml: `
-      <article style="line-height: 1.7; color: #C5CBD8;">
-        <p style="font-size: 1.05rem; color: #fff; margin-bottom: 1.25rem;">${escapeHtml(m.description)}</p>
+      <article style="line-height: 1.7; color: #435b50;">
+        <p style="font-size: 1.05rem; color: #223b35; margin-bottom: 1.25rem;">${escapeHtml(m.description)}</p>
 
-        <div style="background: rgba(255,107,122,0.08); border-left: 3px solid #FF6B7A; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
-          <h3 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 1.1rem;">Mathematical &amp; Algorithmic Foundation</h3>
-          <p style="color: #FFE4E6; font-size: 0.95rem; margin: 0;">Derived from the canonical algorithms of Inner Circle Trader delivery mechanics. Time and price must synchronize for highest expectancy setups.</p>
+        <div style="background: rgba(255,107,122,0.08); border-left: 3px solid #b44746; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
+          <h3 style="color: #223b35; margin: 0 0 0.5rem 0; font-size: 1.1rem;">Mathematical &amp; Algorithmic Foundation</h3>
+          <p style="color: #223b35; font-size: 0.95rem; margin: 0;">Derived from the canonical algorithms of Inner Circle Trader delivery mechanics. Time and price must synchronize for highest expectancy setups.</p>
         </div>
 
-        <p style="font-size: 0.85rem; color: #94A3B8;">
-          Access the live interactive calculator in the <a href="/tools/delivery-suite/" style="color: #FF6B7A;">ICT Delivery Suite</a>.
+        <p style="font-size: 0.85rem; color: #52645b;">
+          Access the live interactive calculator in the <a href="/tools/delivery-suite/" style="color: #b44746;">ICT Delivery Suite</a>.
         </p>
       </article>
     `
@@ -1368,15 +1368,15 @@ const glossaryCategoryRoutes: RouteMeta[] = GLOSSARY_CATEGORIES.map(cat => {
     badge: `${cat.badge} • Category`,
     bodyHtml: `
       <section style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.3rem; color: #ffffff; margin-bottom: 0.75rem;">${escapeHtml(cat.name)} Topics (${catConcepts.length})</h2>
+        <h2 style="font-size: 1.3rem; color: #223b35; margin-bottom: 0.75rem;">${escapeHtml(cat.name)} Topics (${catConcepts.length})</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;">
           ${catConcepts.map(c => {
             const mapping = CONCEPT_SLUG_MAP[c.id];
             const cSlug = mapping?.slug || c.id.replace(/_/g, '-');
             return `
-              <a href="/tools/glossary/${cat.slug}/${cSlug}/" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
-                <div style="font-weight: bold; color: #55E6D1; margin-bottom: 0.25rem;">${escapeHtml(c.name)}</div>
-                <p style="margin: 0; font-size: 0.8rem; color: #94A3B8;">${escapeHtml(c.shortDefinition)}</p>
+              <a href="/tools/glossary/${cat.slug}/${cSlug}/" style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit;">
+                <div style="font-weight: bold; color: #23796d; margin-bottom: 0.25rem;">${escapeHtml(c.name)}</div>
+                <p style="margin: 0; font-size: 0.8rem; color: #52645b;">${escapeHtml(c.shortDefinition)}</p>
               </a>
             `;
           }).join('\n')}
@@ -1403,22 +1403,22 @@ const glossaryConceptRoutes: RouteMeta[] = ictConcepts.map(c => {
     subheading: c.shortDefinition,
     badge: `${c.category} • ICT Framework`,
     bodyHtml: `
-      <article style="line-height: 1.7; color: #C5CBD8;">
+      <article style="line-height: 1.7; color: #435b50;">
         <section style="margin-bottom: 1.5rem;">
-          <h3 style="color: #55E6D1; font-size: 1.1rem; margin-bottom: 0.5rem;">1. Mechanism &amp; Operational Logic</h3>
-          <p><strong style="color: #fff;">Why It Exists:</strong> ${escapeHtml(c.whyItExists)}</p>
-          <p><strong style="color: #fff;">Problem It Solves:</strong> ${escapeHtml(c.problemItSolves)}</p>
-          <p><strong style="color: #fff;">How It Forms:</strong> ${escapeHtml(c.howItForms)}</p>
+          <h3 style="color: #23796d; font-size: 1.1rem; margin-bottom: 0.5rem;">1. Mechanism &amp; Operational Logic</h3>
+          <p><strong style="color: #223b35;">Why It Exists:</strong> ${escapeHtml(c.whyItExists)}</p>
+          <p><strong style="color: #223b35;">Problem It Solves:</strong> ${escapeHtml(c.problemItSolves)}</p>
+          <p><strong style="color: #223b35;">How It Forms:</strong> ${escapeHtml(c.howItForms)}</p>
         </section>
         <section style="margin-bottom: 1.5rem;">
-          <h3 style="color: #5865FF; font-size: 1.1rem; margin-bottom: 0.5rem;">2. Visual Anatomy &amp; Identification Rules</h3>
+          <h3 style="color: #256552; font-size: 1.1rem; margin-bottom: 0.5rem;">2. Visual Anatomy &amp; Identification Rules</h3>
           <p>${escapeHtml(c.chartAnatomy)}</p>
           <ul style="padding-left: 1.5rem; margin-top: 0.5rem;">
             ${(c.identificationRules || []).map(r => `<li>${escapeHtml(r)}</li>`).join('')}
           </ul>
         </section>
         <section style="margin-bottom: 1.5rem;">
-          <h3 style="color: #FFB300; font-size: 1.1rem; margin-bottom: 0.5rem;">3. Mechanical Invalidation Threshold</h3>
+          <h3 style="color: #94631f; font-size: 1.1rem; margin-bottom: 0.5rem;">3. Mechanical Invalidation Threshold</h3>
           <p>${escapeHtml(c.invalidationCriteria)}</p>
         </section>
       </article>
@@ -1439,21 +1439,21 @@ const deepSubConceptRoutes: RouteMeta[] = DEEP_SUB_CONCEPTS.map(sub => {
     subheading: sub.subtitle,
     badge: `Deep Sub-Concept • ${sub.categorySlug}`,
     bodyHtml: `
-      <article style="line-height: 1.7; color: #C5CBD8;">
-        <p style="font-size: 1rem; color: #fff; margin-bottom: 1rem;">${escapeHtml(sub.shortDefinition)}</p>
-        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1.25rem; margin-bottom: 1.5rem;">
-          <h4 style="color: #55E6D1; margin-top: 0;">Decisive Operational Criteria &amp; Rules of Thumb</h4>
+      <article style="line-height: 1.7; color: #435b50;">
+        <p style="font-size: 1rem; color: #223b35; margin-bottom: 1rem;">${escapeHtml(sub.shortDefinition)}</p>
+        <div style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1.25rem; margin-bottom: 1.5rem;">
+          <h4 style="color: #23796d; margin-top: 0;">Decisive Operational Criteria &amp; Rules of Thumb</h4>
           <ul style="padding-left: 1.5rem;">
             ${sub.keyPoints.map(pt => `<li>${escapeHtml(pt)}</li>`).join('')}
           </ul>
         </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
           <div style="background: rgba(244,63,94,0.08); border: 1px solid rgba(244,63,94,0.2); border-radius: 8px; padding: 1rem;">
-            <strong style="color: #FB7185;">Structural Invalidation:</strong>
+            <strong style="color: #b44746;">Structural Invalidation:</strong>
             <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">${escapeHtml(sub.invalidation)}</p>
           </div>
           <div style="background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2); border-radius: 8px; padding: 1rem;">
-            <strong style="color: #34D399;">Market Scenario:</strong>
+            <strong style="color: #25734f;">Market Scenario:</strong>
             <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">${escapeHtml(sub.exampleScenario)}</p>
           </div>
         </div>
@@ -1512,36 +1512,36 @@ for (const ch of textbookChapters) {
     },
     bodyHtml: `
       <section style="margin-bottom: 2rem;">
-        <blockquote style="border-left: 3px solid #5865FF; padding-left: 1rem; margin: 0 0 1.5rem 0; font-style: italic; color: #CBD5E1;">
+        <blockquote style="border-left: 3px solid #256552; padding-left: 1rem; margin: 0 0 1.5rem 0; font-style: italic; color: #52645b;">
           "${escapeHtml(ch.quote)}"
         </blockquote>
-        <h2 style="font-size: 1.35rem; color: #ffffff; margin-bottom: 0.75rem;">Chapter Executive Summary</h2>
-        <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; line-height: 1.8; color: #C5CBD8;">
+        <h2 style="font-size: 1.35rem; color: #223b35; margin-bottom: 0.75rem;">Chapter Executive Summary</h2>
+        <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; line-height: 1.8; color: #435b50;">
           ${ch.summary.map(s => `<li>${escapeHtml(s)}</li>`).join('')}
         </ul>
       </section>
 
       <section style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.35rem; color: #ffffff; margin-bottom: 0.75rem;">Core Vocabulary & Key Terms</h2>
+        <h2 style="font-size: 1.35rem; color: #223b35; margin-bottom: 0.75rem;">Core Vocabulary & Key Terms</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
           ${ch.keyTerms.map(kt => `
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem;">
-              <div style="font-weight: bold; color: #8A72FF; font-family: monospace; margin-bottom: 0.25rem;">${escapeHtml(kt.term)}</div>
-              <div style="color: #C5CBD8; font-size: 0.85rem; line-height: 1.5;">${escapeHtml(kt.definition)}</div>
+            <div style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1rem;">
+              <div style="font-weight: bold; color: #705692; font-family: monospace; margin-bottom: 0.25rem;">${escapeHtml(kt.term)}</div>
+              <div style="color: #435b50; font-size: 0.85rem; line-height: 1.5;">${escapeHtml(kt.definition)}</div>
             </div>
           `).join('')}
         </div>
       </section>
 
       <section style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.35rem; color: #ffffff; margin-bottom: 0.75rem;">Detailed Lesson Sections</h2>
+        <h2 style="font-size: 1.35rem; color: #223b35; margin-bottom: 0.75rem;">Detailed Lesson Sections</h2>
         ${ch.sections.map((sec, idx) => `
-          <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.25rem; margin-top: 1.25rem;">
-            <h3 style="color: #ffffff; font-size: 1.15rem; margin-bottom: 0.5rem;">${idx + 1}. ${escapeHtml(sec.title)}</h3>
-            <p style="color: #C5CBD8; line-height: 1.7; margin-bottom: 0.75rem;">${renderContextualText(sec.content, getLessonPath(ch.slug))}</p>
+          <div style="border-top: 1px solid rgba(34,59,53,0.06); padding-top: 1.25rem; margin-top: 1.25rem;">
+            <h3 style="color: #223b35; font-size: 1.15rem; margin-bottom: 0.5rem;">${idx + 1}. ${escapeHtml(sec.title)}</h3>
+            <p style="color: #435b50; line-height: 1.7; margin-bottom: 0.75rem;">${renderContextualText(sec.content, getLessonPath(ch.slug))}</p>
             ${sec.keyTakeaway ? `
-              <div style="background: rgba(88, 101, 255, 0.08); border-left: 3px solid #8A72FF; padding: 0.75rem 1rem; border-radius: 4px; font-size: 0.85rem; color: #E0E7FF;">
-                <strong style="color: #A5B4FC;">Key Takeaway:</strong> ${escapeHtml(sec.keyTakeaway)}
+              <div style="background: rgba(37,101,82, 0.08); border-left: 3px solid #705692; padding: 0.75rem 1rem; border-radius: 4px; font-size: 0.85rem; color: #223b35;">
+                <strong style="color: #405a98;">Key Takeaway:</strong> ${escapeHtml(sec.keyTakeaway)}
               </div>
             ` : ''}
           </div>
@@ -1549,8 +1549,8 @@ for (const ch of textbookChapters) {
       </section>
 
       <section style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.35rem; color: #ffffff; margin-bottom: 0.75rem;">Practical Invalidation Rules & Practice</h2>
-        <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; line-height: 1.8; color: #C5CBD8;">
+        <h2 style="font-size: 1.35rem; color: #223b35; margin-bottom: 0.75rem;">Practical Invalidation Rules & Practice</h2>
+        <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; line-height: 1.8; color: #435b50;">
           ${ch.practiceQuestions.map(pq => `<li>${escapeHtml(pq)}</li>`).join('')}
         </ul>
       </section>
@@ -1574,29 +1574,29 @@ for (const lec of allMasoodLectures) {
     badge: `Lecture ${lec.lectureNumber} · ${lec.playlistType.toUpperCase()}`,
     bodyHtml: `
       <section style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.35rem; color: #ffffff; margin-bottom: 0.75rem;">Executive Summary</h2>
-        <p style="color: #C5CBD8; line-height: 1.7; margin-bottom: 1.5rem;">${escapeHtml(lec.shortSummary)}</p>
+        <h2 style="font-size: 1.35rem; color: #223b35; margin-bottom: 0.75rem;">Executive Summary</h2>
+        <p style="color: #435b50; line-height: 1.7; margin-bottom: 1.5rem;">${escapeHtml(lec.shortSummary)}</p>
 
-        <h3 style="font-size: 1.15rem; color: #ffffff; margin-bottom: 0.5rem;">Core Institutional Rules</h3>
-        <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; line-height: 1.8; color: #C5CBD8;">
+        <h3 style="font-size: 1.15rem; color: #223b35; margin-bottom: 0.5rem;">Core Institutional Rules</h3>
+        <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; line-height: 1.8; color: #435b50;">
           ${lec.coreRules.map(r => `<li>${escapeHtml(r)}</li>`).join('')}
         </ul>
 
-        <h3 style="font-size: 1.15rem; color: #ffffff; margin-bottom: 0.5rem;">Key Takeaways</h3>
-        <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; line-height: 1.8; color: #C5CBD8;">
+        <h3 style="font-size: 1.15rem; color: #223b35; margin-bottom: 0.5rem;">Key Takeaways</h3>
+        <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; line-height: 1.8; color: #435b50;">
           ${lec.keyTakeaways.map(t => `<li>${escapeHtml(t)}</li>`).join('')}
         </ul>
 
         ${lec.tradingChecklist ? `
-          <h3 style="font-size: 1.15rem; color: #ffffff; margin-bottom: 0.5rem;">Pre-Flight Execution Checklist</h3>
-          <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; line-height: 1.8; color: #C5CBD8;">
+          <h3 style="font-size: 1.15rem; color: #223b35; margin-bottom: 0.5rem;">Pre-Flight Execution Checklist</h3>
+          <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; line-height: 1.8; color: #435b50;">
             ${lec.tradingChecklist.map(c => `<li>${escapeHtml(c)}</li>`).join('')}
           </ul>
         ` : ''}
 
         ${lec.youtubeId ? `
           <div style="margin-top: 1.5rem;">
-            <a href="https://www.youtube.com/watch?v=${lec.youtubeId}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.65rem 1.25rem; background: #E11D48; color: #fff; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 0.85rem;">
+            <a href="https://www.youtube.com/watch?v=${lec.youtubeId}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.65rem 1.25rem; background: #E11D48; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 0.85rem;">
               Watch Lecture on YouTube &rarr;
             </a>
           </div>
@@ -1621,14 +1621,14 @@ const notFoundPage: RouteMeta = {
   isNoindex: true,
   bodyHtml: `
     <div style="text-align: center; padding: 2rem 1rem;">
-      <p style="font-size: 1.1rem; color: #CBD5E1; margin-bottom: 2rem;">
+      <p style="font-size: 1.1rem; color: #52645b; margin-bottom: 2rem;">
         The requested URL was not found on LearnSMC.
       </p>
       <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-        <a href="/curriculum/" style="display: inline-block; padding: 0.75rem 1.5rem; background: #5865FF; color: #fff; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 0.9rem;">
+        <a href="/curriculum/" style="display: inline-block; padding: 0.75rem 1.5rem; background: #256552; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 0.9rem;">
           View 57 Curriculum Chapters &rarr;
         </a>
-        <a href="/" style="display: inline-block; padding: 0.75rem 1.5rem; background: rgba(255,255,255,0.06); color: #CBD5E1; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.12);">
+        <a href="/" style="display: inline-block; padding: 0.75rem 1.5rem; background: rgba(34,59,53,0.06); color: #52645b; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 0.9rem; border: 1px solid rgba(34,59,53,0.12);">
           Return to Homepage
         </a>
       </div>
@@ -1707,8 +1707,8 @@ for (const ch of textbookChapters) {
     <meta http-equiv="refresh" content="0; url=${getLessonPath(ch.slug)}" />
     <script>window.location.replace('${getLessonPath(ch.slug)}');</script>
   </head>
-  <body style="background: #08090D; color: #fff; font-family: sans-serif; padding: 2rem; text-align: center;">
-    <p>Navigating to Chapter ${ch.id}: <a href="${getLessonPath(ch.slug)}" style="color: #55E6D1;">${escapeHtml(ch.title)}</a>...</p>
+  <body style="background: #f6f7f2; color: #223b35; font-family: sans-serif; padding: 2rem; text-align: center;">
+    <p>Navigating to Chapter ${ch.id}: <a href="${getLessonPath(ch.slug)}" style="color: #23796d;">${escapeHtml(ch.title)}</a>...</p>
   </body>
 </html>`;
 
@@ -1729,8 +1729,8 @@ const chapterRootHtml = `<!doctype html>
     <meta http-equiv="refresh" content="0; url=/curriculum/" />
     <script>window.location.replace('/curriculum/');</script>
   </head>
-  <body style="background: #08090D; color: #fff; font-family: sans-serif; padding: 2rem; text-align: center;">
-    <p>Navigating to Curriculum: <a href="/curriculum/" style="color: #55E6D1;">Curriculum</a>...</p>
+  <body style="background: #f6f7f2; color: #223b35; font-family: sans-serif; padding: 2rem; text-align: center;">
+    <p>Navigating to Curriculum: <a href="/curriculum/" style="color: #23796d;">Curriculum</a>...</p>
   </body>
 </html>`;
 fs.writeFileSync(path.resolve(chapterRootDir, 'index.html'), chapterRootHtml, 'utf-8');
@@ -1749,8 +1749,8 @@ const legacyConceptsHtml = `<!doctype html>
     <meta http-equiv="refresh" content="0; url=/tools/glossary/" />
     <script>window.location.replace('/tools/glossary/');</script>
   </head>
-  <body style="background: #08090D; color: #fff; font-family: sans-serif; padding: 2rem; text-align: center;">
-    <p>Navigating to Glossary: <a href="/tools/glossary/" style="color: #55E6D1;">Glossary</a>...</p>
+  <body style="background: #f6f7f2; color: #223b35; font-family: sans-serif; padding: 2rem; text-align: center;">
+    <p>Navigating to Glossary: <a href="/tools/glossary/" style="color: #23796d;">Glossary</a>...</p>
   </body>
 </html>`;
 fs.writeFileSync(path.resolve(legacyConceptsDir, 'index.html'), legacyConceptsHtml, 'utf-8');
@@ -1770,8 +1770,8 @@ const legacyWorkbenchHtml = `<!doctype html>
     <meta http-equiv="refresh" content="0; url=/tools/" />
     <script>window.location.replace('/tools/');</script>
   </head>
-  <body style="background: #08090D; color: #fff; font-family: sans-serif; padding: 2rem; text-align: center;">
-    <p>Navigating to Workbench: <a href="/tools/" style="color: #55E6D1;">Workbench</a>...</p>
+  <body style="background: #f6f7f2; color: #223b35; font-family: sans-serif; padding: 2rem; text-align: center;">
+    <p>Navigating to Workbench: <a href="/tools/" style="color: #23796d;">Workbench</a>...</p>
   </body>
 </html>`;
 fs.writeFileSync(path.resolve(legacyWorkbenchDir, 'index.html'), legacyWorkbenchHtml, 'utf-8');
@@ -1801,8 +1801,8 @@ for (const alias of aliasMappings) {
     <meta http-equiv="refresh" content="0; url=${alias.toUrl}" />
     <script>window.location.replace('${alias.toUrl}');</script>
   </head>
-  <body style="background: #08090D; color: #fff; font-family: sans-serif; padding: 2rem; text-align: center;">
-    <p>Redirecting to <a href="${alias.toUrl}" style="color: #55E6D1;">${alias.title}</a>...</p>
+  <body style="background: #f6f7f2; color: #223b35; font-family: sans-serif; padding: 2rem; text-align: center;">
+    <p>Redirecting to <a href="${alias.toUrl}" style="color: #23796d;">${alias.title}</a>...</p>
   </body>
 </html>`;
   fs.writeFileSync(path.resolve(aliasDir, 'index.html'), aliasHtml, 'utf-8');

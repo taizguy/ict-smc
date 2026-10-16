@@ -2,6 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // Enhance the readable HTML only when JavaScript is available. Never show two layouts.
+      (function () {
+        var html = document.documentElement;
+        html.dataset.appStartup = 'loading';
+        window.setTimeout(function () {
+          if (html.dataset.appStartup === 'loading') {
+            html.dataset.appStartup = 'fallback';
+            window.dispatchEvent(new Event('learnsmc:startup-timeout'));
+          }
+        }, 8000);
+      })();
+    </script>
+    <style>
+      #app-startup { display: none; }
+      html[data-app-startup="loading"] { background: #08090d; }
+      html[data-app-startup="loading"] #root { visibility: hidden; }
+      html[data-app-startup="loading"] #app-startup { position: fixed; inset: 0; display: grid; place-content: center; gap: 1rem; background: #08090d; color: #c4c9d6; font: 14px system-ui, sans-serif; text-align: center; z-index: 100; }
+      #app-startup strong { color: #f5f7fa; font-size: 20px; letter-spacing: -.025em; }
+      #app-startup::before { content: ''; width: 28px; height: 28px; margin: 0 auto; border: 2px solid #29313d; border-top-color: #55e6d1; border-radius: 50%; animation: startup-spin .8s linear infinite; }
+      @keyframes startup-spin { to { transform: rotate(360deg); } }
+      @media (prefers-reduced-motion: reduce) { #app-startup::before { animation: none; } }
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learn ICT &amp; Smart Money Concepts | LearnSMC</title>
     <meta name="description" content="Master Inner Circle Trader (ICT) and Smart Money Concepts (SMC) with a free 57-chapter institutional curriculum, 52 Abdullah Masood masterclasses, interactive Chart Lab, and algorithmic trade simulator." />
@@ -60,6 +83,7 @@
 
   </head>
   <body>
+    <div id="app-startup" role="status" aria-live="polite"><strong>LearnSMC</strong><span>Opening your page...</span></div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

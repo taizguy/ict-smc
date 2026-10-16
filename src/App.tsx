@@ -1,3 +1,4 @@
+import { PageReady } from './components/PageReady';
 import { chapterCount, lectureCount } from './utils/catalogCounts';
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { AdsenseLoader } from './components/AdsenseLoader';
@@ -106,6 +107,8 @@ export const App: React.FC = () => {
   // Initialize buttery smooth momentum mouse scrolling
   useSmoothScroll();
 
+  // Resolve the requested route before mounting any page module.
+  const [routeResolved, setRouteResolved] = useState(false);
   // Route state
   const [activeTab, setActiveTab] = useState<MainTabType>('welcome');
   const [selectedChapterId, setSelectedChapterId] = useState<number>(1);
@@ -148,6 +151,7 @@ export const App: React.FC = () => {
   // Centralized URL Parser for Deep Linking, Direct Access & Browser History
   const parseCurrentUrl = async () => {
     if (typeof window === 'undefined') return;
+    setRouteResolved(false);
 
     try {
       if (document.querySelector('meta[name="learnsmc-status"]')?.getAttribute('content') === '404') {
@@ -331,7 +335,10 @@ export const App: React.FC = () => {
       setActiveTab('not_found');
       setAttemptedInvalidPath(window.location.pathname);
     } catch {
-      setActiveTab('welcome');
+      document.documentElement.dataset.appStartup = 'fallback';
+      window.dispatchEvent(new Event('learnsmc:startup-timeout'));
+    } finally {
+      setRouteResolved(true);
     }
   };
 
@@ -459,6 +466,8 @@ export const App: React.FC = () => {
     }
   };
 
+  if (!routeResolved) return <ViewLoadingFallback />;
+
   const isShowingWelcome = activeTab === 'welcome';
 
   return (
@@ -516,7 +525,7 @@ export const App: React.FC = () => {
                 setIsMentorSpotlightOpen(true);
               }}
             />
-          </Suspense>
+          <PageReady /></Suspense>
         )}
 
         {/* PILLAR 1: OPEN SYLLABUS & CURRICULUM VIEW (All 57 Chapters Unlocked) */}
@@ -524,7 +533,7 @@ export const App: React.FC = () => {
           <Suspense fallback={<ViewLoadingFallback />}><CurriculumView
             onSelectChapter={handleSelectChapter}
             onOpenSearch={() => setIsSearchOpen(true)}
-          /></Suspense>
+          /><PageReady /></Suspense>
         )}
 
         {/* PILLAR 1 DETAIL: DEDICATED CHAPTER ROOM */}
@@ -539,7 +548,7 @@ export const App: React.FC = () => {
               onCompleteChapter={handleCompleteChapter}
               isCompleted={completedChapterIds.includes(selectedChapterId)}
             />
-          </Suspense>
+          <PageReady /></Suspense>
         )}
 
         {/* PILLAR 2: TRADER ABDULLAH MASOOD ACADEMY (52 MASTERCLASSES & TOOLS) */}
@@ -551,7 +560,7 @@ export const App: React.FC = () => {
               onSubTabChange={handleMasoodSubTabChange}
               onLectureSelect={handleMasoodLectureSelect}
             />
-          </Suspense>
+          <PageReady /></Suspense>
         )}
 
         {/* PILLAR 3: TRADING TOOLS WORKBENCH */}
@@ -581,7 +590,7 @@ export const App: React.FC = () => {
               profileExamSlug={profileExamSlug}
               deliveryModuleSlug={deliveryModuleSlug}
             />
-          </Suspense>
+          <PageReady /></Suspense>
         )}
 
         {/* PILLAR 4: STANDALONE CRAWLABLE LEGAL & POLICY PAGES */}
@@ -592,7 +601,7 @@ export const App: React.FC = () => {
               onTabChange={navigateToTab}
               onBackToCurriculum={() => navigateToTab('curriculum')}
             />
-          </Suspense>
+          <PageReady /></Suspense>
         )}
 
         {/* 404 NOT FOUND STATE */}
@@ -603,7 +612,7 @@ export const App: React.FC = () => {
               onNavigate={navigateToTab}
               onSelectChapter={handleSelectChapter}
             />
-          </Suspense>
+          <PageReady /></Suspense>
         )}
 
       </main>

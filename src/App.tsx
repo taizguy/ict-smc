@@ -354,57 +354,46 @@ export const App: React.FC = () => {
   const totalChapters = textbookChapters.length;
   const progressPercent = Math.round((completedChapterIds.length / totalChapters) * 100);
 
-  // Jump and navigation handlers
-  const navigateToTab = (tab: MainTabType) => {
-    setActiveTab(tab);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    if (typeof window !== 'undefined') {
-      let targetPath = '/';
-      if (tab === 'curriculum') targetPath = '/curriculum/';
-      else if (tab === 'masood') targetPath = '/masood/';
-      else if (tab === 'tools') {
-        targetPath = '/tools/';
-        setInitialTool('overview');
-      }
-      else if (['disclaimer', 'privacy', 'terms', 'about', 'contact', 'adsense'].includes(tab)) targetPath = `/${tab}/`;
-      else if (tab === 'welcome') targetPath = '/';
-      if (window.location.pathname !== targetPath || window.location.search) {
-        window.location.assign(targetPath);
-      }
+  // Let a document navigation finish before changing the outgoing page's state.
+  const openDocument = (targetPath: string) => {
+    if (window.location.pathname !== targetPath || window.location.search) {
+      window.location.assign(targetPath);
+      return true;
     }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return false;
+  };
+
+  const navigateToTab = (tab: MainTabType) => {
+    let targetPath = '/';
+    if (tab === 'curriculum') targetPath = '/curriculum/';
+    else if (tab === 'masood') targetPath = '/masood/';
+    else if (tab === 'tools') targetPath = '/tools/';
+    else if (['disclaimer', 'privacy', 'terms', 'about', 'contact', 'adsense'].includes(tab)) targetPath = `/${tab}/`;
+    if (openDocument(targetPath)) return;
+    setActiveTab(tab);
+    if (tab === 'tools') setInitialTool('overview');
   };
 
   const handleSelectChapter = (chapterId: number, slug?: string) => {
+    const ch = textbookChapters.find(c => c.id === chapterId) || textbookChapters[0];
+    const targetPath = getLessonPath(slug || ch?.slug || String(chapterId));
+    if (openDocument(targetPath)) return;
     setSelectedChapterId(chapterId);
     setActiveTab('chapter_room');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    if (typeof window !== 'undefined') {
-      const ch = textbookChapters.find(c => c.id === chapterId) || textbookChapters[0];
-      const targetSlug = slug || ch?.slug || String(chapterId);
-      const targetPath = getLessonPath(targetSlug);
-      if (window.location.pathname !== targetPath) {
-        window.location.assign(targetPath);
-      }
-    }
   };
 
   const handleSelectConcept = (conceptId: string, slug?: string) => {
+    const mapping = getConceptBySlugOrId(conceptId);
+    const catSlug = mapping?.categorySlug || 'foundations';
+    const cSlug = slug || mapping?.slug || conceptId.replace(/_/g, '-');
+    if (openDocument(getGlossaryConceptPath(cSlug, catSlug))) return;
     setSelectedConceptId(conceptId);
     setInitialTool('concepts');
     setActiveTab('tools');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    if (typeof window !== 'undefined') {
-      const mapping = getConceptBySlugOrId(conceptId);
-      const catSlug = mapping?.categorySlug || 'foundations';
-      const cSlug = slug || mapping?.slug || conceptId.replace(/_/g, '-');
-      const targetPath = getGlossaryConceptPath(cSlug, catSlug);
-      setGlossaryCategory(catSlug);
-      setGlossaryConceptId(conceptId);
-      setGlossarySubConceptId(undefined);
-      if (window.location.pathname !== targetPath) {
-        window.location.assign(targetPath);
-      }
-    }
+    setGlossaryCategory(catSlug);
+    setGlossaryConceptId(conceptId);
+    setGlossarySubConceptId(undefined);
   };
 
   const handleCompleteChapter = (chapterId: number) => {
@@ -412,58 +401,26 @@ export const App: React.FC = () => {
     setCompletedChapterIds(updated);
   };
 
-  // Switch to specific trading workbench tool
   const handleWorkbenchToolChange = (toolId: TradingToolId | 'overview', customUrl?: string) => {
+    const toolPaths: Partial<Record<TradingToolId | 'overview', string>> = {
+      overview: '/tools/', concepts: '/tools/glossary/', graph: '/tools/knowledge-graph/',
+      dashboard: '/tools/profile/', ict_suite: '/tools/delivery-suite/',
+    };
+    if (openDocument(customUrl || toolPaths[toolId] || `/tools/${toolId}/`)) return;
     setInitialTool(toolId);
     setActiveTab('tools');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    if (typeof window !== 'undefined') {
-      let targetPath = '/tools/';
-      if (customUrl) {
-        targetPath = customUrl;
-      } else if (toolId === 'overview') {
-        targetPath = '/tools/';
-      } else if (toolId === 'concepts') {
-        targetPath = '/tools/glossary/';
-      } else if (toolId === 'graph') {
-        targetPath = '/tools/knowledge-graph/';
-      } else if (toolId === 'dashboard') {
-        targetPath = '/tools/profile/';
-      } else if (toolId === 'ict_suite') {
-        targetPath = '/tools/delivery-suite/';
-      } else {
-        targetPath = `/tools/${toolId}/`;
-      }
-      if (window.location.pathname !== targetPath) {
-        window.location.assign(targetPath);
-      }
-    }
   };
 
-  // Switch Masood subtabs
   const handleMasoodSubTabChange = (subTab: 'lectures' | 'animations' | 'bias_calc' | 'rules') => {
+    const paths = { lectures: '/masood/', animations: '/masood/animations/', bias_calc: '/masood/bias-calculator/', rules: '/masood/golden-rules/' };
+    if (openDocument(paths[subTab])) return;
     setMasoodSubTab(subTab);
     setMasoodLectureId(null);
-    if (typeof window !== 'undefined') {
-      let targetPath = '/masood/';
-      if (subTab === 'animations') targetPath = '/masood/animations/';
-      else if (subTab === 'bias_calc') targetPath = '/masood/bias-calculator/';
-      else if (subTab === 'rules') targetPath = '/masood/golden-rules/';
-      if (window.location.pathname !== targetPath) {
-        window.location.assign(targetPath);
-      }
-    }
   };
 
-  // Select specific Masood lecture
   const handleMasoodLectureSelect = (lectureId: string | null) => {
+    if (openDocument(lectureId ? `/masood/lectures/${lectureId}/` : '/masood/')) return;
     setMasoodLectureId(lectureId);
-    if (typeof window !== 'undefined') {
-      const targetPath = lectureId ? `/masood/lectures/${lectureId}/` : '/masood/';
-      if (window.location.pathname !== targetPath) {
-        window.location.assign(targetPath);
-      }
-    }
   };
 
   if (!routeResolved) return <ViewLoadingFallback />;

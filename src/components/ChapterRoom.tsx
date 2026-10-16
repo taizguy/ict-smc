@@ -209,17 +209,17 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
       <ScrollReveal y={15} duration={0.4}>
         <div className="bg-surface border border-ink/[0.08] rounded-xl p-3.5 flex flex-wrap items-center justify-between gap-4">
           
-          <div className="flex items-center gap-3">
+          <div className="flex min-w-0 w-full xl:w-auto xl:flex-1 items-center gap-3">
             <button
               onClick={onReturnToMap}
-              className="btn-predikt-secondary text-xs py-1.5 px-3"
+              className="btn-predikt-secondary shrink-0 text-xs py-1.5 px-3"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>All Chapters</span>
             </button>
 
             {/* Quick jump dropdown */}
-            <div className="flex items-center gap-2">
+            <div className="flex min-w-0 flex-1 items-center gap-2">
               <span className="text-[0.8125rem] font-sans tabular-nums text-ink-muted uppercase hidden sm:inline">JUMP:</span>
               <select
                 value={chapter.id}
@@ -228,7 +228,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                   const targetCh = textbookChapters.find(c => c.id === targetId);
                   onSelectChapter(targetId, targetCh?.slug);
                 }}
-                className="px-3 py-1.5 bg-surface-muted border border-ink/[0.08] rounded-lg text-xs font-sans tabular-nums text-ink focus:outline-none focus:border-brand/60 cursor-pointer"
+                className="min-w-0 w-full flex-1 px-3 py-1.5 bg-surface-muted border border-ink/[0.08] rounded-lg text-xs font-sans tabular-nums text-ink focus:outline-none focus:border-brand/60 cursor-pointer"
               >
                 {textbookChapters.map((ch) => (
                   <option key={ch.id} value={ch.id} className="bg-surface-muted text-ink">

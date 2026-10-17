@@ -1,4 +1,4 @@
-import { TERMS_SECTIONS, ABOUT_GUIDANCE, CONTACT_GUIDANCE } from '../data/publisherPageCopy';
+import { TERMS_SECTIONS, ABOUT_GUIDANCE, CONTACT_GUIDANCE, publisherPageRevision } from '../data/publisherPageCopy';
 import { authorContact } from '../utils/publisher';
 import { chapterCount, lectureCount } from '../utils/catalogCounts';
 import React, { useState, useEffect } from 'react';
@@ -493,7 +493,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
           </section>
         )}
 
-        {(currentTab === 'about' || currentTab === 'contact') && <p className="text-sm">Page updated: <time dateTime="2026-10-16">16 October 2026</time>. <a href="/about/#editorial-policy" className="underline">Editorial policy</a>.</p>}
+        {(currentTab === 'about' || currentTab === 'contact') && <p className="text-sm">Page updated: <time dateTime={publisherPageRevision.iso}>{publisherPageRevision.label}</time>. <a href="/about/#editorial-policy" className="underline">Editorial policy</a>.</p>}
       </article>
     </div>
   );

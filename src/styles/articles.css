@@ -97,6 +97,11 @@
 .article-section, .article-sources, .article-sources li { scroll-margin-top: 180px; }
 .article-sketch { margin: 2rem 0; padding: 1rem; background: #ffffff; border: 1px solid #d8d7c5; border-radius: 5px; }
 .article-sketch-svg { width: 100%; height: auto; display: block; }
+.study-sketch-expedition { border-style: dashed; border-color: #9ba985; border-radius: 2px; }
+.study-sketch-mission { border-color: #9bbccc; border-radius: 18px; }
+.study-sketch-museum { border: 3px double #b49a73; border-radius: 0; }
+.study-sketch-theatre { border-color: #c49b9a; border-radius: 8px 8px 0 0; }
+.study-sketch-laboratory { border-color: #b4a6ce; border-radius: 4px; }
 .article-sketch figcaption { font-size: .85rem; line-height: 1.65; margin-top: .7rem; }
 .article-sketch figcaption p { font-family: var(--font-sans); font-size: .9rem; line-height: 1.7; margin: .5rem 0 1rem; min-height: 4.6em; }
 .sketch-controls { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }

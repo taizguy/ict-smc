@@ -1,4 +1,7 @@
-export type ArticleTopic = 'Psychology' | 'Risk' | 'Market mechanics' | 'On-chain';
+import { studyArticles } from './articles-study-series';
+
+export type ArticleTopic = 'Psychology' | 'Risk' | 'Market mechanics' | 'On-chain' | 'Learning process' | 'Trading frameworks' | 'Sessions & timing';
+export type VisualSeries = 'expedition' | 'mission' | 'museum' | 'theatre' | 'laboratory';
 export type SketchKind = 'decision' | 'drawdown' | 'auction' | 'onchain';
 export interface ArticleSection {
   id: string;
@@ -15,6 +18,7 @@ export interface Article {
   description: string;
   topic: ArticleTopic;
   sketch: SketchKind;
+  visualSeries?: VisualSeries;
   date: string;
   updated?: string;
   intro: string[];
@@ -25,6 +29,7 @@ export interface Article {
 
 /** Original LearnSMC writing. Stories and numbers are explicitly illustrative. */
 export const articles: Article[] = [
+  ...studyArticles,
   {
     slug: 'a-good-trade-can-lose', seoTitle: 'Trading Psychology: Good Decisions Can Still Lose | LearnSMC',
     title: 'A good trade can lose. Your brain would like a word.',
@@ -209,6 +214,8 @@ export const articles: Article[] = [
   }
 ];
 
+export const articleImageKey = (article: Article) => article.visualSeries || article.sketch;
+export const articleDateLabel = (date: string) => new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${date}T12:00:00Z`));
 export const articlePath = (article: Article) => `/articles/${article.slug}/`;
 export function articleWordCount(article: Article) {
   return [...article.intro, ...article.sections.flatMap(s => [s.title, ...s.paragraphs, s.takeaway || ''])].join(' ').trim().split(/\s+/).length;

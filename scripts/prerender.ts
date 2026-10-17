@@ -1,5 +1,5 @@
 import { articlePages } from './article-pages';
-import { articles as writtenArticles } from '../src/data/articles';
+import { articles as writtenArticles, articleImageKey } from '../src/data/articles';
 import 'dotenv/config';
 import { prepareRoutes, enrichRoute, renderContextualText, canonicalAliases } from './seo-content';
 import fs from 'fs';
@@ -135,7 +135,7 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
   if (new URL(meta.canonical).pathname.startsWith('/articles/')) {
     html = html.replace('</head>', '<link rel="alternate" type="application/rss+xml" title="LearnSMC Articles" href="https://learnsmc.xyz/articles/feed.xml" /></head>');
     const article = writtenArticles.find(a => meta.canonical.endsWith(`/articles/${a.slug}/`));
-    const image = `https://learnsmc.xyz/images/articles/${article?.sketch || 'decision'}-social.png`;
+    const image = `https://learnsmc.xyz/images/articles/${article ? articleImageKey(article) : 'decision'}-social.png`;
     html = html.replace(/(<meta (?:property="og:image"|name="twitter:image") content=")[^"]*(" \/>)/g, `$1${image}$2`);
     html = html.replace(/(<meta property="og:image:alt" content=")[^"]*(" \/>)/, '$1Original LearnSMC illustrated trading essay$2');
   }

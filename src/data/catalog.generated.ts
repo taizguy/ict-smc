@@ -1,6 +1,36 @@
 // Generated from lesson data by scripts/generate-catalog.ts.
 export const articleCatalog = [
   {
+    "slug": "how-to-study-ict-without-collecting-setups",
+    "title": "Your chart has 37 labels. It needs a study plan.",
+    "description": "A beginner-friendly ICT study routine: learn market mechanics, define one setup, replay without hindsight and keep an honest journal.",
+    "topic": "Learning process"
+  },
+  {
+    "slug": "higher-timeframe-bias-to-lower-timeframe-execution",
+    "title": "Your daily bias needs an exit door.",
+    "description": "Build a conditional higher-timeframe trading bias, distinguish it from an entry trigger, and define when to wait, revise or abandon the idea.",
+    "topic": "Trading frameworks"
+  },
+  {
+    "slug": "pd-arrays-fvg-order-blocks-and-inversions",
+    "title": "Welcome to the museum of price boxes. Please read the labels.",
+    "description": "Understand ICT PD-array conventions, fair value gaps, order blocks, balanced price ranges and inversions with original diagrams and defined limits.",
+    "topic": "Market mechanics"
+  },
+  {
+    "slug": "opening-range-vs-opening-gap-new-york",
+    "title": "The opening bell is not your doorbell. You do not have to answer.",
+    "description": "Separate an opening range from an opening gap, handle New York time correctly, calculate range extensions and avoid using future range information.",
+    "topic": "Sessions & timing"
+  },
+  {
+    "slug": "compare-ict-entry-models-without-hindsight",
+    "title": "Five entry models enter a laboratory. Only the rules get a clipboard.",
+    "description": "Compare ICT-style entry models with written rules, correct sequence, realistic fills and unseen examples instead of selecting a winner after the move.",
+    "topic": "Trading frameworks"
+  },
+  {
     "slug": "a-good-trade-can-lose",
     "title": "A good trade can lose. Your brain would like a word.",
     "description": "Separate trading decisions from their outcomes with an illustrated story, a two-column journal and a practical review routine.",

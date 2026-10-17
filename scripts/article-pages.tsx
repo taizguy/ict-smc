@@ -13,7 +13,14 @@ export function articlePages(projectRoot: string, distDir: string): RouteMeta[] 
   const base = 'https://learnsmc.xyz';
   const imageDir = path.join(distDir, 'images/articles');
   fs.mkdirSync(imageDir, { recursive: true });
-  for (const a of articles) fs.writeFileSync(path.join(imageDir, `${articleImageKey(a)}.svg`), renderToStaticMarkup(a.visualSeries ? <StudySketchSvg series={a.visualSeries} /> : <SketchSvg kind={a.sketch} />));
+  // SVG images cannot inherit the document font. Embed the small local face so
+  // cards and related-article thumbnails use the same lettering on every device.
+  const drawingFont = fs.readFileSync(path.join(projectRoot, 'public/fonts/patrick-hand-latin.woff2')).toString('base64');
+  const fontStyle = `<style>@font-face{font-family:'Article Hand';src:url(data:font/woff2;base64,${drawingFont}) format('woff2')}</style>`;
+  for (const a of articles) {
+    const svg = renderToStaticMarkup(a.visualSeries ? <StudySketchSvg series={a.visualSeries} /> : <SketchSvg kind={a.sketch} cover />);
+    fs.writeFileSync(path.join(imageDir, `${articleImageKey(a)}.svg`), svg.replace(/(<svg[^>]*>)/, `$1${fontStyle}`));
+  }
   const routes: RouteMeta[] = [{
     url: `${base}/articles/`, canonical: `${base}/articles/`, outputPath: 'articles/index.html',
     title: 'Illustrated Trading Articles: Psychology, Risk & Markets | LearnSMC',

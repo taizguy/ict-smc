@@ -1,3 +1,4 @@
+export const publisherPageRevision = { iso: '2026-10-17', label: '17 October 2026' };
 /** Shared visible publisher copy keeps static pages and interactive views in sync. */
 export const TERMS_SECTIONS = [
   {

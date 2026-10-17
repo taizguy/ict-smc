@@ -1,4 +1,4 @@
-import { TERMS_SECTIONS, ABOUT_GUIDANCE, CONTACT_GUIDANCE } from '../src/data/publisherPageCopy';
+import { TERMS_SECTIONS, ABOUT_GUIDANCE, CONTACT_GUIDANCE, publisherPageRevision } from '../src/data/publisherPageCopy';
 import { searchTitle, searchDescription, conciseHeading, studyTopics } from '../src/utils/searchMetadata';
 import { toolStudyGuide } from '../src/utils/toolStudyGuides';
 import { correctToolDocument } from './tools-content';
@@ -168,12 +168,12 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
     ...(path === '/' ? [] : [{ name: r.heading, url: r.canonical }])];
   if (path !== '/') r.bodyHtml = `<nav aria-label="Breadcrumb">${crumbs.map(c => link(new URL(c.url).pathname, c.name)).join(' / ')}</nav>` + r.bodyHtml;
   if (['/', '/curriculum/', '/about/', '/contact/'].includes(path) || path.startsWith('/tools/compare/')) {
-    r.bodyHtml += '<p>Page updated: <time datetime="2026-10-16">16 October 2026</time>. ' + link('/about/#editorial-policy', 'Editorial policy') + '</p>';
-    if (r.schemaJson) r.schemaJson = { ...r.schemaJson, dateModified: '2026-10-16' };
+    r.bodyHtml += `<p>Page updated: <time datetime="${publisherPageRevision.iso}">${publisherPageRevision.label}</time>. ` + link('/about/#editorial-policy', 'Editorial policy') + '</p>';
+    if (r.schemaJson) r.schemaJson = { ...r.schemaJson, dateModified: publisherPageRevision.iso };
   }
   r.schemaJson = { '@context': 'https://schema.org', '@graph': [publisher, lessonAuthor,
     { '@type': 'WebSite', '@id': 'https://learnsmc.xyz/#website', name: 'LearnSMC', url: 'https://learnsmc.xyz/' },
     { '@type': 'BreadcrumbList', itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })) },
-    r.schemaJson || { '@type': children.length ? 'CollectionPage' : 'WebPage', name: r.heading, description: r.description, url: r.canonical, publisher, ...(['/', '/curriculum/', '/about/', '/contact/'].includes(path) || path.startsWith('/tools/compare/') ? { dateModified: '2026-10-16' } : {}) },
+    r.schemaJson || { '@type': children.length ? 'CollectionPage' : 'WebPage', name: r.heading, description: r.description, url: r.canonical, publisher, ...(['/', '/curriculum/', '/about/', '/contact/'].includes(path) || path.startsWith('/tools/compare/') ? { dateModified: publisherPageRevision.iso } : {}) },
   ] };
 }

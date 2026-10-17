@@ -63,7 +63,7 @@
   html {
     scroll-behavior: smooth;
     font-family: var(--font-sans);
-    background-color: #f6f7f2;
+    background-color: #ffffff;
     color: #223b35;
   }
 
@@ -114,7 +114,7 @@
 
   body {
     font-family: var(--font-sans);
-    background-color: #f6f7f2;
+    background-color: #ffffff;
     color: #223b35;
     overflow-x: hidden;
     letter-spacing: normal;
@@ -188,7 +188,7 @@
   gap: 0.5rem;
   padding: 0.65rem 1.25rem;
   background-color: #223b35;
-  color: #f6f7f2;
+  color: #ffffff;
   font-weight: 600;
   font-size: 0.8125rem;
   border-radius: 10px;
@@ -287,7 +287,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f6f7f2;
+  background: #ffffff;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -419,7 +419,7 @@ textarea:focus-visible {
 }
 
 
-.skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 100; transform: translateY(-200%); background: #fff; color: #f6f7f2; padding: .75rem 1rem; border-radius: .5rem; }
+.skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 100; transform: translateY(-200%); background: #fff; color: #ffffff; padding: .75rem 1rem; border-radius: .5rem; }
 .skip-link:focus { transform: translateY(0); }
 
 /* Tool pages prioritize readable content and usable keyboard controls. */

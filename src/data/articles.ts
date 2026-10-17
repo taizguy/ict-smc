@@ -16,6 +16,7 @@ export interface Article {
   topic: ArticleTopic;
   sketch: SketchKind;
   date: string;
+  updated?: string;
   intro: string[];
   sections: ArticleSection[];
   sources: { title: string; url: string; note: string }[];
@@ -28,7 +29,7 @@ export const articles: Article[] = [
     slug: 'a-good-trade-can-lose', seoTitle: 'Trading Psychology: Good Decisions Can Still Lose | LearnSMC',
     title: 'A good trade can lose. Your brain would like a word.',
     description: 'Separate trading decisions from their outcomes with an illustrated story, a two-column journal and a practical review routine.',
-    topic: 'Psychology', sketch: 'decision', date: '2026-10-16',
+    topic: 'Psychology', sketch: 'decision', date: '2026-10-16', updated: '2026-10-17',
     intro: [
       'A trader follows the plan, takes a small loss, and feels foolish. On the next trade, the same trader ignores the plan, moves the stop, and gets rescued by a bounce. That one feels brilliant. The account has just delivered a very confusing performance review.',
       'Meet Ari, our fictional trader. Ari is not a case study, a client, or a disguised version of the author. Ari is a convenient little person with a very large urge to judge every decision by the last number on the screen. This article follows that urge, then builds a more useful review process.',
@@ -71,7 +72,7 @@ export const articles: Article[] = [
   {
     slug: 'drawdown-math-is-not-symmetric', seoTitle: 'Drawdown Math: Why a 20% Loss Needs a 25% Gain | LearnSMC', title: 'The hole gets deeper faster than the ladder gets taller.',
     description: 'Why a 20% trading loss needs a 25% recovery: drawdown arithmetic, position sizing, costs and an illustrated risk-budget example.',
-    topic: 'Risk', sketch: 'drawdown', date: '2026-10-16',
+    topic: 'Risk', sketch: 'drawdown', date: '2026-10-16', updated: '2026-10-17',
     intro: [
       'Start with 100 imaginary tokens. Lose 20%. You have 80. Gain 20% on those 80 and you have 96. Four tokens have apparently wandered off during a conversation that sounded perfectly symmetrical.',
       'No market trick is required. The loss and the gain use different starting amounts. A drawdown changes the base from which recovery is measured. This small arithmetic fact explains why recovering a damaged account can feel much harder than the original percentage suggested.',
@@ -114,7 +115,7 @@ export const articles: Article[] = [
   {
     slug: 'liquidity-is-not-a-magnet', seoTitle: 'Liquidity Sweeps, Stop Orders & Market Mechanics | LearnSMC', title: 'Liquidity is not a magnet. So why does price go there?',
     description: 'An illustrated explanation of liquidity, stop orders and sweeps that separates visible price action from claims about institutional intent.',
-    topic: 'Market mechanics', sketch: 'auction', date: '2026-10-16',
+    topic: 'Market mechanics', sketch: 'auction', date: '2026-10-16', updated: '2026-10-17',
     intro: [
       'Draw a line above yesterday’s high. Label it “liquidity.” Watch price approach. It is tempting to imagine a little magnet pulling every candle upward. Unfortunately, the magnet has no order ID, and the exchange has not installed one.',
       'Liquidity is a useful word with several meanings. It can describe the ability to transact with limited price impact, the quoted orders available at a venue, or a charting framework’s hypothesis about potential stop orders near a reference level. Confusing those meanings makes a neat drawing sound more certain than the evidence permits.',
@@ -161,7 +162,7 @@ export const articles: Article[] = [
   {
     slug: 'bitcoin-dashboard-is-not-a-crystal-ball', seoTitle: 'Bitcoin MVRV, Realized Price & NUPL Explained | LearnSMC', title: 'Your Bitcoin dashboard is not a crystal ball.',
     description: 'Understand realized price, MVRV and NUPL through a tiny fictional Bitcoin network, with formulas, data limits and a source checklist.',
-    topic: 'On-chain', sketch: 'onchain', date: '2026-10-16',
+    topic: 'On-chain', sketch: 'onchain', date: '2026-10-16', updated: '2026-10-17',
     intro: [
       'Open an on-chain dashboard and the market acquires a second personality. There are ratios, bands, heatmaps and colors with the confidence of a weather forecast. A line enters a green zone and a small voice says: surely someone has finally turned uncertainty into a household appliance.',
       'Dashboards such as BlockHorizon are useful places to discover questions. What is realized price? Does a valuation ratio identify a particular entry? Are two agreeing indicators actually two independent pieces of evidence? Answering those questions starts with definitions, not with the color of the latest cell.',

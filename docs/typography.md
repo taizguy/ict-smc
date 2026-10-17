@@ -8,7 +8,7 @@
 - Three locally hosted Latin WOFF2 files total 107,432 bytes. Other writing systems use system fallback. SIL OFL licenses are alongside the files.
 - Removed the external Geist, Inter and IBM Plex Mono stylesheet requests, their connection hints, old family declarations, duplicate hero overrides and tiny fixed-pixel HTML text utilities. No font package dependencies were installed or required removal. Tailwind still provides layout and responsive utilities.
 - Keep the root at 100% to respect browser font preferences. UI text uses rem, generally 16px body, 15px secondary and 13px metadata at the default browser setting. Lesson prose is 16–18px; essays scale approximately 17–19px. Headings use bounded rem + viewport scales, with the homepage display heading 44–92px. Form fields are at least 16px. These are design choices, not Google ranking requirements.
-- Unitless leading, balanced headings and roughly 68ch essay width improve sustained reading. SVG chart coordinates retain their own diagram scaling.
+- Unitless leading, balanced headings and responsive essay columns with a wider desktop reading area improve sustained reading. SVG chart coordinates retain their own diagram scaling.
 - All local fonts use font-display: swap. Only the interface face is preloaded; Lora loads when used. Keep text visible on slow font downloads.
 
 ## Primary guidance

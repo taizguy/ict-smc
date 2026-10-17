@@ -1,6 +1,6 @@
 /* LearnSMC's single light palette. These roles are shared by tools and reading views. */
 @theme {
-  --color-canvas: #f6f7f2;
+  --color-canvas: #ffffff;
   --color-surface: #ffffff;
   --color-surface-muted: #f0f3eb;
   --color-surface-raised: #edf1e8;
@@ -54,7 +54,7 @@
 :root { color-scheme: light; accent-color: var(--color-brand); }
 body { background: var(--color-canvas); color: var(--color-ink); }
 ::selection { background: #d6e8db; color: #173e30; }
-html .site-wash { background: radial-gradient(ellipse at 60% 0, #e5eddf80, transparent 65%); }
+html .site-wash { display: none; }
 html .predikt-grain { display: none; }
 html .btn-predikt-primary { background: var(--color-brand); color: var(--color-on-brand); }
 html .btn-predikt-primary:hover, html .btn-predikt-blue:hover { background: var(--color-brand-hover); color: var(--color-on-brand); box-shadow: 0 5px 16px rgb(37 101 82 / .12); }
@@ -72,7 +72,7 @@ progress { accent-color: var(--color-brand); }
 button, a, input, select, textarea { -webkit-tap-highlight-color: #d6e8db; }
 html .predikt-workbench-body table th { color: var(--color-ink); }
 html .predikt-workbench-body table td { color: var(--color-ink-secondary); }
-html .fieldnotes { box-shadow: 0 5px 24px rgb(34 59 53 / .04); border: 1px solid #dce1d4; }
+html .fieldnotes { box-shadow: none; border: 0; }
 html .modal-scrollable, [data-lenis-prevent] { scrollbar-color: #9aaa9b #edf1e8; }
 html .modal-scrollable::-webkit-scrollbar-track { background: #edf1e8; }
 html .modal-scrollable::-webkit-scrollbar-thumb { background: #9aaa9b; }

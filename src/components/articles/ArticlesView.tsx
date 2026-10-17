@@ -7,10 +7,10 @@ export function ArticlesView({ slug, staticMode = false }: { slug?: string; stat
   const [query, setQuery] = useState('');
   const article = articles.find(a => a.slug === slug);
   if (slug && !article) return <section><h1>Article not found</h1><a href="/articles/">Browse all articles</a></section>;
-  if (article) return <article className="fieldnotes article-detail">
+  if (article) return <div className="article-layout"><article className="fieldnotes article-detail">
     <header className="article-title-block"><nav aria-label="Article breadcrumb"><a href="/articles/">← All articles</a><span>{article.topic}</span></nav><p className="notes-eyebrow">LearnSMC / Field notes</p><h1>{article.title}</h1><p className="article-deck">{article.description}</p></header>
     <ArticleContent article={article} staticMode={staticMode} />
-  </article>;
+  </article><aside className="article-sidebar" aria-labelledby="more-articles-heading"><div className="article-sidebar-inner"><p className="notes-eyebrow">Keep exploring</p><h2 id="more-articles-heading">Other articles</h2><nav aria-label="Other articles">{articles.filter(a => a.slug !== article.slug).map(a => <a className="sidebar-article" key={a.slug} href={articlePath(a)}><img src={`/images/articles/${a.sketch}.svg`} alt="" width="720" height="350" loading="lazy" /><span className="notes-label">{a.topic} · {readingMinutes(a)} min</span><strong>{a.title}</strong></a>)}</nav><a className="notes-read" href="/articles/">Browse all articles →</a></div></aside></div>;
   const visible = articles.filter(a => (topic === 'All' || a.topic === topic) && `${a.title} ${a.description} ${a.topic}`.toLowerCase().includes(query.trim().toLowerCase()));
   const featured = articles[0];
   return <div className="fieldnotes articles-index">

@@ -26,7 +26,7 @@ export function articlePages(projectRoot: string, distDir: string): RouteMeta[] 
     bodyHtml: renderToStaticMarkup(<ArticlesView slug={a.slug} staticMode />),
     schemaJson: { '@type': 'BlogPosting', '@id': base + articlePath(a) + '#article', headline: a.title, description: a.description,
       url: base + articlePath(a), mainEntityOfPage: base + articlePath(a), author: lessonAuthor, publisher,
-      datePublished: `${a.date}T12:00:00+05:00`, dateModified: `${a.date}T12:00:00+05:00`,
+      datePublished: `${a.date}T12:00:00+05:00`, dateModified: `${a.updated || a.date}T12:00:00+05:00`,
       image: [`${base}/images/articles/${a.sketch}-social.png`], inLanguage: 'en', isAccessibleForFree: true,
       articleSection: a.topic, wordCount: articleWordCount(a), timeRequired: `PT${readingMinutes(a)}M`,
       citation: a.sources.map(s => s.url), isPartOf: { '@type': 'Blog', name: 'LearnSMC Articles', url: `${base}/articles/` }

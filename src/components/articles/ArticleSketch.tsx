@@ -26,7 +26,7 @@ const stories: Record<SketchKind, { title: string; frames: string[] }> = {
 
 function Person({ x, y, raised = false }: { x: number; y: number; raised?: boolean }) {
   return <g transform={`translate(${x} ${y})`} fill="none" stroke="#263c3a" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M-16 -54 C-19 -80 16 -81 18 -57 C19 -35 -13 -33 -16 -54Z" fill="#fffdf6" />
+    <path d="M-16 -54 C-19 -80 16 -81 18 -57 C19 -35 -13 -33 -16 -54Z" fill="#ffffff" />
     <path d="M1 -34 L-1 23 M0 22 L-24 63 M0 22 L26 62" />
     <path d={raised ? 'M0 -18 L-29 -40 L-40 -64 M0 -18 L33 -49 L42 -72' : 'M0 -18 L-32 5 M0 -18 L32 3'} />
     <path d="M-6 -59 L-5 -57 M7 -59 L8 -57 M-4 -48 Q2 -44 7 -49" strokeWidth="2" />
@@ -38,10 +38,10 @@ export function SketchSvg({ kind, step = 0 }: { kind: SketchKind; step?: number 
   const titleId = useId();
   return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 350" width="720" height="350" className="article-sketch-svg" role="img" aria-labelledby={titleId}>
     <title id={titleId}>{`${stories[kind].title}. ${stories[kind].frames[step]}`}</title>
-    <rect width="720" height="350" rx="14" fill="#f4efdf" />
+    <rect width="720" height="350" rx="14" fill="#ffffff" />
     <path d="M32 306 Q330 298 686 307" stroke="#b8beac" strokeWidth="2" fill="none" />
     {kind === 'decision' && <>
-      <path d="M230 73 L430 68 L435 265 L225 270Z" fill="#fffdf6" stroke="#263c3a" strokeWidth="3" />
+      <path d="M230 73 L430 68 L435 265 L225 270Z" fill="#ffffff" stroke="#263c3a" strokeWidth="3" />
       <text x="256" y="112" fill="#263c3a" fontSize="24" fontFamily="sans-serif">THE PLAN</text>
       {[145, 180, 215].map((y, i) => <g key={y}><path d={`M256 ${y} l7 7 14 -18`} stroke="#39766c" strokeWidth="4" fill="none" /><path d={`M294 ${y} l${90 - i * 12} -2`} stroke="#a4afa0" strokeWidth="3" /></g>)}
       <Person x={137} y={231} raised={step === 0} />
@@ -60,7 +60,7 @@ export function SketchSvg({ kind, step = 0 }: { kind: SketchKind; step?: number 
     </>}
     {kind === 'auction' && <>
       <Person x={105} y={233} raised={step === 1} />
-      <path d="M222 100 L628 104 L623 279 L219 273Z" fill="#fffdf6" stroke="#263c3a" strokeWidth="3" />
+      <path d="M222 100 L628 104 L623 279 L219 273Z" fill="#ffffff" stroke="#263c3a" strokeWidth="3" />
       <text x="248" y="144" fontSize="22" fill="#263c3a" fontFamily="sans-serif">PRICE</text><text x="405" y="144" fontSize="22" fill="#263c3a" fontFamily="sans-serif">OFFERED UNITS</text>
       {[0, 1].map(row => <g key={row}><text x="250" y={194 + row * 55} fontSize="28" fill="#263c3a" fontFamily="serif">{row ? '101' : '100'}</text>{Array.from({ length: row ? 4 : 3 }, (_, i) => <rect key={i} x={412 + i * 43} y={171 + row * 55} width="29" height="29" rx="5" stroke="#39766c" strokeWidth="2" fill={step > 0 && (row === 0 || i < 2) ? '#e5a07d' : '#cee2d5'} />)}</g>)}
       <path d="M145 177 L202 177 m-12 -10 12 10 -12 10" stroke="#263c3a" strokeWidth="3" fill="none" />

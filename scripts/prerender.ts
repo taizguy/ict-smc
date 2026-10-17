@@ -155,7 +155,7 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
 
   // Generate Crawlable Structural Layout
   const renderedContent = `
-    <div id="static-content" style="font-family: var(--font-sans, system-ui); background-color: #f6f7f2; color: #223b35; min-height: 100vh; padding: 2rem 1.5rem; max-width: 1200px; margin: 0 auto; box-sizing: border-box;">
+    <div id="static-content" style="font-family: var(--font-sans, system-ui); background-color: #ffffff; color: #223b35; min-height: 100vh; padding: 2rem 1.5rem; max-width: 1200px; margin: 0 auto; box-sizing: border-box;">
       <style>#static-content a{color:#23796d;text-underline-offset:3px}#static-content p,#static-content li{line-height:1.75;font-size:1rem!important;max-inline-size:68ch}#static-content h1{font-size:clamp(2rem,1.5rem + 2vw,3.5rem)!important;line-height:1.15}#static-content nav{flex-wrap:wrap}#static-content section{margin-block:1.5rem}#static-content li{margin-block:.5rem}#static-content ul{padding-left:1.25rem}</style>
       <a href="#main-content" style="color:#23796d">Skip to main content</a>
       <!-- Crawlable Header -->
@@ -1677,7 +1677,7 @@ for (const route of allRoutes) {
 
     sitemapUrls.push({
       loc: route.url,
-      lastmod: writtenArticles.find(a => route.canonical.endsWith(`/articles/${a.slug}/`))?.date || todayIso,
+      lastmod: (() => { const a = writtenArticles.find(a => route.canonical.endsWith(`/articles/${a.slug}/`)); return a?.updated || a?.date || todayIso; })(),
       changefreq,
       priority
     });
@@ -1707,7 +1707,7 @@ for (const ch of textbookChapters) {
     <meta http-equiv="refresh" content="0; url=${getLessonPath(ch.slug)}" />
     <script>window.location.replace('${getLessonPath(ch.slug)}');</script>
   </head>
-  <body style="background: #f6f7f2; color: #223b35; font-family: sans-serif; padding: 2rem; text-align: center;">
+  <body style="background: #ffffff; color: #223b35; font-family: sans-serif; padding: 2rem; text-align: center;">
     <p>Navigating to Chapter ${ch.id}: <a href="${getLessonPath(ch.slug)}" style="color: #23796d;">${escapeHtml(ch.title)}</a>...</p>
   </body>
 </html>`;
@@ -1729,7 +1729,7 @@ const chapterRootHtml = `<!doctype html>
     <meta http-equiv="refresh" content="0; url=/curriculum/" />
     <script>window.location.replace('/curriculum/');</script>
   </head>
-  <body style="background: #f6f7f2; color: #223b35; font-family: sans-serif; padding: 2rem; text-align: center;">
+  <body style="background: #ffffff; color: #223b35; font-family: sans-serif; padding: 2rem; text-align: center;">
     <p>Navigating to Curriculum: <a href="/curriculum/" style="color: #23796d;">Curriculum</a>...</p>
   </body>
 </html>`;
@@ -1749,7 +1749,7 @@ const legacyConceptsHtml = `<!doctype html>
     <meta http-equiv="refresh" content="0; url=/tools/glossary/" />
     <script>window.location.replace('/tools/glossary/');</script>
   </head>
-  <body style="background: #f6f7f2; color: #223b35; font-family: sans-serif; padding: 2rem; text-align: center;">
+  <body style="background: #ffffff; color: #223b35; font-family: sans-serif; padding: 2rem; text-align: center;">
     <p>Navigating to Glossary: <a href="/tools/glossary/" style="color: #23796d;">Glossary</a>...</p>
   </body>
 </html>`;
@@ -1770,7 +1770,7 @@ const legacyWorkbenchHtml = `<!doctype html>
     <meta http-equiv="refresh" content="0; url=/tools/" />
     <script>window.location.replace('/tools/');</script>
   </head>
-  <body style="background: #f6f7f2; color: #223b35; font-family: sans-serif; padding: 2rem; text-align: center;">
+  <body style="background: #ffffff; color: #223b35; font-family: sans-serif; padding: 2rem; text-align: center;">
     <p>Navigating to Workbench: <a href="/tools/" style="color: #23796d;">Workbench</a>...</p>
   </body>
 </html>`;
@@ -1801,7 +1801,7 @@ for (const alias of aliasMappings) {
     <meta http-equiv="refresh" content="0; url=${alias.toUrl}" />
     <script>window.location.replace('${alias.toUrl}');</script>
   </head>
-  <body style="background: #f6f7f2; color: #223b35; font-family: sans-serif; padding: 2rem; text-align: center;">
+  <body style="background: #ffffff; color: #223b35; font-family: sans-serif; padding: 2rem; text-align: center;">
     <p>Redirecting to <a href="${alias.toUrl}" style="color: #23796d;">${alias.title}</a>...</p>
   </body>
 </html>`;

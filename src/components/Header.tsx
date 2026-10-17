@@ -1,4 +1,3 @@
-import { chapterCount, lectureCount } from '../utils/catalogCounts';
 import React, { useState, useEffect } from 'react';
 import { 
   Search, 
@@ -158,7 +157,6 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             <span>Curriculum</span>
-            <span className="ml-1.5 text-[0.8125rem] font-sans tabular-nums text-ink-muted">{chapterCount}</span>
           </a>
 
           <a href="/articles/" aria-current={activeTab === 'articles' ? 'page' : undefined}
@@ -173,7 +171,6 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             <span>Masood Academy</span>
-            <span className="ml-1.5 text-[0.8125rem] font-sans tabular-nums text-ink-muted">{lectureCount}</span>
           </a>
 
           {/* Pillar 3: Trading Tools */}
@@ -185,7 +182,6 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             <span>Workbench &amp; Lab</span>
-            <span className="ml-1.5 text-[0.8125rem] font-sans tabular-nums text-ink-muted">10</span>
           </a>
         </nav>
 
@@ -235,7 +231,7 @@ export const Header: React.FC<HeaderProps> = ({
               isCurriculumActive ? 'bg-ink/[0.10] text-ink' : 'text-ink-secondary'
             }`}
           >
-            Curriculum ({chapterCount})
+            Curriculum
           </a>
           <a href="/articles/" aria-current={activeTab === 'articles' ? 'page' : undefined}
             className={`min-h-11 inline-flex items-center px-3 rounded-lg text-sm font-semibold whitespace-nowrap shrink-0 ${activeTab === 'articles' ? 'bg-ink/[0.10] text-ink' : 'text-ink-secondary'}`}>Articles</a>
@@ -244,14 +240,14 @@ export const Header: React.FC<HeaderProps> = ({
               isMasoodActive ? 'bg-ink/[0.10] text-ink' : 'text-ink-secondary'
             }`}
           >
-            Masood Academy ({lectureCount})
+            Masood Academy
           </a>
           <a href="/tools/"
             className={`py-1.5 px-3 rounded-lg text-sm font-semibold tracking-tight whitespace-nowrap transition-all shrink-0 ${
               isToolsActive ? 'bg-ink/[0.10] text-ink' : 'text-ink-secondary'
             }`}
           >
-            Workbench &amp; Lab (10)
+            Workbench &amp; Lab
           </a>
         </BauhausNavScroller>
       </div>

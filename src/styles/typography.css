@@ -40,7 +40,6 @@
 }
 .predikt-workbench-body :is(p, li) { line-height: 1.75; }
 .predikt-workbench-body :is(h1, h2, h3) { line-height: 1.25; }
-.article-body { max-inline-size: 68ch; }
 .font-mono { font-variant-numeric: tabular-nums; }
 /* Keep editable fields readable and avoid automatic input zoom on iOS. */
 html :is(input:not([type=checkbox], [type=radio], [type=range], [type=hidden]), select, textarea) {

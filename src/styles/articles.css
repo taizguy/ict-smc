@@ -144,3 +144,19 @@
 /* Keep links legible in the script-free reading fallback as well. */
 #static-content .fieldnotes a { color: var(--ink); }
 @media (prefers-reduced-motion: reduce) { .sketch-controls button:last-child { display: none; } }
+
+/* Local OFL font is scoped to original editorial drawings, never body copy. */
+@font-face { font-family: 'Article Hand'; src: url('/fonts/patrick-hand-latin.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+.editorial-drawing { overflow: visible; }
+.editorial-drawing text { font-family: 'Article Hand', 'Comic Sans MS', 'Segoe Print', cursive; }
+@keyframes editorial-ink-in { from { opacity: .25; transform: translateY(3px); } to { opacity: 1; transform: translateY(0); } }
+.drawing-step { animation: editorial-ink-in .35s ease-out; }
+@media (prefers-reduced-motion: reduce) { .drawing-step { animation: none; } }
+
+.drawing-zoom-dialog { width: min(1100px, calc(100vw - 2rem)); max-width: none; max-height: calc(100dvh - 2rem); padding: 1rem; border: 1px solid #6b7780; border-radius: 10px; background: white; color: #292b39; margin: auto; }
+.drawing-zoom-dialog::backdrop { background: rgb(24 31 37 / .65); }
+.drawing-zoom-heading { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.drawing-zoom-heading strong { font-size: 1rem; }
+.drawing-zoom-dialog p { font: .9rem/1.6 var(--font-sans); margin: 1rem 0; }
+.drawing-zoom-canvas { overflow: auto; max-height: 65dvh; border: 1px solid #e3e7e5; }
+.drawing-zoom-canvas svg { min-width: 720px; }

@@ -33,3 +33,18 @@ Public primary references are linked with a statement of what they support. CFTC
 ## Integration
 
 New routes flow through the existing catalog and static article generator into the sitemap, RSS feed, metadata, BlogPosting/CollectionPage structured data, article filters, search and related links. Each new series has a distinct SVG cover and social-preview PNG. Date labels now come from article data. Original four article routes remain unchanged.
+
+
+## Illustration revision — 17 October 2026
+
+The first release repeated one composition per study series, with different captions and minor pose changes. That did not provide forty distinct visual explanations. It has been replaced across all nine essays.
+
+- `EditorialDrawing.tsx` contains 72 explicit scene compositions: eight for each of nine articles. Shared pen, lettering, character and prop helpers do not select the scene; each passage has its own arrangement, action and visual explanation.
+- Scenes mix maps, conversations, close-ups, diagrams and visual jokes. Examples include an overloaded acronym backpack, tomorrow trying to enter replay, a museum gift shop with certainty out of stock, a drawdown ladder, and a dashboard wearing an aftermarket wizard hat.
+- Colorful fills, asymmetric pen paths, facial expressions and locally hosted OFL Patrick Hand lettering replace the pale generic panels. No Wait But Why images or characters are copied.
+- The first/final scenes and six section illustrations are different within every essay. Existing explanatory captions, finite playback controls and reduced-motion handling remain. Selected diagrams and gestures change with their explanation steps. A native modal lets phone readers enlarge and pan a drawing; Escape and the close button dismiss it.
+- The FVG scene explicitly shows the outer-candle non-overlap while the middle candle crosses the interval. Recovery arithmetic, example order quantities, and matching-input MVRV/NUPL calculations remain unchanged.
+- Covers and all nine social-preview PNGs use the revised artwork. Standalone SVG covers embed the compressed local lettering face; article body text keeps the existing fonts. Image dimensions match the 720 × 400 drawing canvas.
+- Article prose, routes, source citations and financial disclosures are preserved. The static article generator continues to include all nine canonical article URLs in sitemap, feed and structured metadata.
+
+Visual review covered all 72 compositions in a browser gallery, with follow-up corrections for lettering, speech-tail direction and props covering faces. The gallery and working render files are local review material and are not published.

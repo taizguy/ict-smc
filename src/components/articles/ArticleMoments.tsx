@@ -1,4 +1,5 @@
-import React, { useEffect, useId, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { DrawingZoom, EditorialDrawing } from './EditorialDrawing';
 import type { SketchKind } from '../../data/articles';
 
 type Scene = 'cards' | 'sample' | 'pause' | 'journal' | 'bridge' | 'budget' | 'fork' | 'lens';
@@ -45,35 +46,6 @@ const moments: Record<SketchKind, Moment[]> = {
   ]
 };
 
-function Person({ x, y, step }: { x: number; y: number; step: number }) {
-  return <g transform={`translate(${x} ${y})`} stroke="#263c3a" strokeWidth="3.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
-    <circle cy="-55" r="19" fill="white" /><path d="M0 -36v57m0 0-22 40m22-40 24 40" />
-    <path d={step === 1 ? 'M0 -18 -27 -39 -38 -58 M0 -18 28 -38 42 -60' : step === 2 ? 'M0 -18 -25 1 M0 -18 27 -12 43 -31' : 'M0 -18 -28 7 M0 -18 27 6'} />
-    <path d="M-7 -58h1m12 0h1M-7 -47q7 7 14 0" strokeWidth="2" />
-  </g>;
-}
-
-function MomentSvg({ item, step }: { item: Moment; step: number }) {
-  const id = useId();
-  return <svg viewBox="0 0 720 300" width="720" height="300" className="article-sketch-svg" role="img" aria-labelledby={id}>
-    <title id={id}>{`${item.title}. ${item.frames[step]}`}</title>
-    <rect width="720" height="300" rx="12" fill="white" />
-    <path d="M26 265Q360 258 694 265" stroke="#cfd8cd" fill="none" strokeWidth="2" />
-    <Person x={100 + (step === 2 ? 12 : 0)} y={192} step={step} />
-    <g stroke="#263c3a" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round">
-      {item.scene === 'cards' && <>{[230, 460].map((x, i) => <g key={x} transform={`translate(${x} 60) rotate(${i ? 2 : -2})`}><rect width="195" height="170" rx="8" fill={step === i ? '#e4efe8' : 'white'} /><path d="M24 50h147M24 80h116M24 110h130" stroke="#8ca696" />{step === 2 && <path d="m70 135 15 15 30-30" stroke="#256552" />}</g>)}</>}
-      {item.scene === 'sample' && <><circle cx="265" cy="135" r="42" fill="#f6e7cf" />{[0,1,2,3,4,5].map(i => <g key={i} transform={`translate(${435 + i % 3 * 75} ${92 + Math.floor(i / 3) * 90})`} opacity={step === 0 ? .25 : 1}><circle r="20" fill={i % 2 ? '#e4efe8' : 'white'} /><path d="M0 20v25m0-17-16 10m16-10 16 10" /></g>)}<path d="M325 140h55m-12-10 12 10-12 10" /></>}
-      {item.scene === 'pause' && <><rect x="215" y="70" width="185" height="145" rx="12" fill="#f7e4db" /><path d="M245 110h125M245 140h90" /><circle cx="545" cy="140" r="65" fill="#e4efe8" /><path d={step === 0 ? 'M527 112 568 140 527 168Z' : 'M529 112v56m30-56v56'} strokeWidth="9" />{step === 2 && <path d="m438 225 20 12 32-30" stroke="#256552" />}</>}
-      {item.scene === 'journal' && <><path d="M220 65q100-25 205 0 100-25 205 0v165q-100-22-205 0-100-22-205 0Z" fill="#f5f8f4" /><path d="M425 65v165" />{[105,140,175].map((y,i)=><g key={y}><path d={`M245 ${y}h145M450 ${y}h145`} stroke={step > i-1 ? '#6d9380' : '#cfd8cd'} />{step === 2 && <path d={`M601 ${y-5}l6 6 10-13`} stroke="#256552" />}</g>)}</>}
-      {item.scene === 'bridge' && <><path d="M205 155h130v100H205m310-100h140v100H515" fill="#e4efe8" /><path d="M335 155q90-105 180 0" strokeDasharray={step === 0 ? '9 9' : '0'} stroke="#a66b46" /><path d="m413 115 22 20m0-20-22 20" stroke="#b44746" /><path d="M375 220h95" strokeDasharray="5 9" /></>}
-      {item.scene === 'budget' && <><rect x="220" y="65" width="185" height="175" rx="12" fill="#e4efe8" /><rect x="460" y="65" width="185" height="175" rx="12" fill="white" />{[0,1,2,3].map(i=><g key={i}><rect x="244" y={90+i*32} width="137" height="17" rx="4" fill="#9dbfab" /><rect x="484" y={90+i*32} width={step ? 137-i*24 : 137} height="17" rx="4" fill="#d9bb96" /></g>)}</>}
-      {item.scene === 'fork' && <><path d="M215 155h140m0 0 110-75h165m-275 75 110 75h165" stroke="#729983" strokeWidth="5" /><circle cx="355" cy="155" r="19" fill="white" /><path d="m615 65 15 15-15 15m0 120 15 15-15 15" /><circle cx={step === 1 ? 515 : step === 2 ? 555 : 275} cy={step === 1 ? 80 : step === 2 ? 230 : 155} r="13" fill="#d9bb96" /></>}
-      {item.scene === 'lens' && <><rect x="225" y="65" width="200" height="180" rx="6" fill="#f5f8f4" /><path d="M250 105h145M250 140h100M250 175h135M250 210h90" stroke="#8ca696" /><circle cx={step === 1 ? 470 : 510} cy="130" r="58" fill="#e4efe8" fillOpacity=".75" /><path d={step === 1 ? 'M512 172 575 235' : 'M552 172 615 235'} strokeWidth="12" /></>}
-    </g>
-    <g fill="#263c3a" fontFamily="var(--font-sans, sans-serif)" fontSize="17" fontWeight="600" textAnchor="middle"><text x="315" y="37">{item.labels[0]}</text><text x="550" y="37">{item.labels[1]}</text></g>
-  </svg>;
-}
-
 export function ArticleMoment({ kind, index, staticMode = false }: { kind: SketchKind; index: number; staticMode?: boolean }) {
   const item = moments[kind][index];
   const [step, setStep] = useState(0);
@@ -85,11 +57,12 @@ export function ArticleMoment({ kind, index, staticMode = false }: { kind: Sketc
     return () => window.clearTimeout(timer);
   }, [playing, step]);
   return <figure className="article-sketch article-moment">
-    <MomentSvg item={item} step={step} />
+    <EditorialDrawing series={kind} index={index === 0 ? 0 : index + 1} step={step} title={item.title} description={item.frames[step]} />
     <figcaption><strong>{item.title}</strong><p aria-live={playing ? 'off' : 'polite'}>{item.frames[step]}</p></figcaption>
     {!staticMode && <div className="sketch-controls" role="group" aria-label={`${item.title}: illustration controls`}>
       {item.frames.map((_, i) => <button type="button" key={i} aria-label={`Show illustration step ${i + 1}`} aria-pressed={step === i} onClick={() => { setPlaying(false); setStep(i); }}>{i + 1}</button>)}
       <button type="button" onClick={() => { if (playing) setPlaying(false); else { setStep(0); setPlaying(true); } }}>{playing ? 'Pause sketch' : 'Play sketch'}</button>
+      <DrawingZoom series={kind} index={index === 0 ? 0 : index + 1} step={step} title={item.title} description={item.frames[step]} />
     </div>}
     <details><summary>Read all three steps</summary><ol>{item.frames.map(frame => <li key={frame}>{frame}</li>)}</ol></details>
   </figure>;

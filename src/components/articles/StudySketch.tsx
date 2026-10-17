@@ -1,4 +1,5 @@
-import React, { useEffect, useId, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { DrawingZoom, EditorialDrawing } from './EditorialDrawing';
 import type { VisualSeries } from '../../data/articles';
 
 type Beat = { title: string; joke: string; labels: [string, string]; steps: [string, string, string] };
@@ -56,47 +57,9 @@ const stories: Record<VisualSeries, Beat[]> = {
   ]
 };
 
-const palette: Record<VisualSeries, { ink: string; accent: string; soft: string; name: string }> = {
-  expedition: { ink: '#314c35', accent: '#697844', soft: '#edf3e9', name: 'Pencil field expedition' },
-  mission: { ink: '#29455e', accent: '#287b91', soft: '#eaf4f8', name: 'Mission-control comic' },
-  museum: { ink: '#5b4331', accent: '#a57638', soft: '#faf1df', name: 'Museum sketchbook' },
-  theatre: { ink: '#603a3c', accent: '#a44350', soft: '#fcf0ed', name: 'Opening-bell theatre' },
-  laboratory: { ink: '#4d4269', accent: '#785cab', soft: '#f1eef8', name: 'Graph-paper laboratory' }
-};
-
-function Character({ series, step, x = 155, y = 225 }: { series: VisualSeries; step: number; x?: number; y?: number }) {
-  const p = palette[series];
-  return <g transform={`translate(${x + step * 7} ${y})`} stroke={p.ink} strokeWidth={series === 'expedition' ? 2.6 : 3.6} strokeLinecap="round" strokeLinejoin="round" fill="none">
-    {series === 'museum' ? <ellipse cy="-59" rx="20" ry="23" fill="white" /> : <circle cy="-59" r={series === 'mission' ? 25 : 21} fill="white" />}
-    <path d="M0-37v57m0 0-24 40m24-40 26 40" />
-    <path d={step === 0 ? 'M0-20-29 1m29-21 30 4' : step === 1 ? 'M0-20-26-39-36-56m36 36 29-40' : 'M0-20-23 4m23-24 29-14 18-20'} />
-    <path d="M-8-62h1m13 0h1M-7-49q7 7 14 0" strokeWidth="2" />
-    {series === 'expedition' && <><path d="M-29-77h56M-19-78l6-16h22l8 16" fill={p.soft} /><rect x="-24" y="-31" width="19" height="40" rx="6" fill={p.soft} /></>}
-    {series === 'mission' && <><rect x="-18" y="-74" width="36" height="20" rx="8" fill={p.soft} /><path d="M-16-33h32v40h-32Z" fill={p.soft} /><circle cx="5" cy="-17" r="4" fill={p.accent} /></>}
-    {series === 'museum' && <><path d="M-27-79h54m-43 0v-21h31v21" fill={p.soft} /><path d="m-7-27 7 8 7-8M-4-19v14" stroke={p.accent} /></>}
-    {series === 'theatre' && <><path d="m-8-31 8 8 8-8M0-23v14" stroke={p.accent} /><path d="m-23 60h-13m62 0h13" /></>}
-    {series === 'laboratory' && <><path d="m-14-34-9 54 23-7 23 7-9-54" fill={p.soft} /><path d="M-18-65h15v13h-15Zm21 0h15v13H3Zm-6 6h6" strokeWidth="2" /></>}
-  </g>;
-}
-
-/** Original SVG scenes. Each series uses its own characters, props and visual language. */
 export function StudySketchSvg({ series, index = 0, step = 0 }: { series: VisualSeries; index?: number; step?: number }) {
-  const p = palette[series], item = stories[series][index], id = useId();
-  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" width="720" height="360" className="article-sketch-svg" role="img" aria-labelledby={id}>
-    <title id={id}>{`${p.name}: ${item.title}. ${item.steps[step]}`}</title>
-    <rect width="720" height="360" fill="white" rx="12" />
-    {series === 'expedition' && <g stroke={p.accent} strokeWidth="1.5" fill="none"><path d="M25 290 85 108 166 286 249 161 329 290" opacity=".2" /><path d="M38 305Q160 265 290 302T675 285" strokeDasharray="3 9" /><path d="M34 319q330-9 650 0" /><path d="M290 97 652 84 660 266 282 278Z" fill={p.soft} />{[0,1,2].map(i=><path key={i} d={`M${320+i*95} 115q-30 65 20 120`} opacity=".4" />)}<path d={`M317 237q55-${40+index*3} 100-20t${100+step*30}-50`} strokeWidth="4" /><circle cx={417+step*50} cy={217-step*25} r="8" fill={p.accent} /></g>}
-    {series === 'mission' && <g stroke={p.ink} strokeWidth="2" fill="none"><rect x="282" y="82" width="380" height="179" rx="18" fill={p.soft} /><circle cx="352" cy="155" r="46" /><ellipse cx="352" cy="155" rx="62" ry="19" transform="rotate(-24 352 155)" /><circle cx={325+step*24} cy={126+step*13} r="7" fill={p.accent} />{[0,1,2].map(i=><g key={i}><rect x="447" y={112+i*41} width="176" height="25" rx="5" /><rect x="450" y={115+i*41} width={30+(step+i+index)%5*27} height="19" rx="3" fill={p.accent} opacity=".35" /></g>)}<path d="M304 262v35h330v-35M442 297v22m51-22v22" /><path d="M32 319h650" strokeDasharray="2 7" /></g>}
-    {series === 'museum' && <g stroke={p.ink} fill="none"><path d="M31 318h651" />{[285,490].map((x,i)=><g key={x}><rect x={x} y="91" width="168" height="156" strokeWidth="7" stroke={p.accent} /><rect x={x+11} y="102" width="146" height="134" fill={p.soft} /><path d={`M${x+25} 200l28-${30+(index%3)*8} 30 18 35-${45+step*8} 23 20`} strokeWidth="4" />{step===2&&<path d={`m${x+105} 212 10 9 17-20`} stroke={p.accent} strokeWidth="3" />}<rect x={x+30} y="269" width="108" height="19" fill="white" /><path d={`M${x+84} 289v29`} /></g>)}</g>}
-    {series === 'theatre' && <g stroke={p.ink} strokeWidth="2" fill="none"><path d="M20 86h680v222H20Z" /><path d="M20 86q50 85 108 0v189q-55-40-108 10ZM700 86q-50 85-108 0v189q55-40 108 10Z" fill={p.accent} opacity=".18" /><path d="M20 307h680v18H20Z" fill={p.soft} /><circle cx="460" cy="171" r="66" fill={p.soft} /><path d={`M460 171v-43m0 43 ${step===0?'29-18':step===1?'35 11':'-26 27'}`} strokeWidth="5" /><path d="M351 262h218" />{[0,1,2,3].map(i=><circle key={i} cx={360+i*66} cy="290" r="5" fill={step===i%3?p.accent:'white'} />)}</g>}
-    {series === 'laboratory' && <g stroke={p.ink} strokeWidth="2" fill="none">{Array.from({length:17},(_,i)=><path key={i} d={`M${28+i*40} 85v225`} opacity=".07" />)}{[0,1,2,3,4,5].map(i=><path key={i} d={`M28 ${88+i*40}h660`} opacity=".07" />)}<path d="M272 270h390v17H272Z" fill={p.soft} /><path d="M297 287v33m340-33v33" />{[0,1,2].map(i=><g key={i}><path d={`M${315+i*118} 122v52l-27 66q-4 14 12 14h60q16 0 12-14l-27-66v-52`} fill={p.soft} /><path d={`M${309+i*118} 122h42M${300+i*118} 218h62`} /><circle cx={326+i*118} cy={234-step*13-i*4} r="8" fill={p.accent} opacity=".45" />{step===2&&<path d={`m${322+i*118} 105 7 6 11-15`} stroke={p.accent} />}</g>)}{index===0&&<path d="m142 135 13-26 6 29" fill={p.soft} />}</g>}
-    <Character series={series} step={step} x={series==='theatre'?195:153} />
-    <g fontFamily="sans-serif" textAnchor="middle" fill={p.ink}>
-      <rect x="190" y="12" width="470" height="47" rx={series==='mission'?8:20} fill={p.soft} />
-      <text x="425" y="42" fontSize="19">{item.joke}</text>
-      <text x="370" y="344" fontSize="15" fontWeight="600">{item.labels[step === 0 ? 0 : 1]}</text>
-    </g>
-  </svg>;
+  const item = stories[series][index];
+  return <EditorialDrawing series={series} index={index} step={step} title={item.title} description={item.steps[step]} />;
 }
 
 export function StudySketch({ series, index, staticMode = false }: { series: VisualSeries; index: number; staticMode?: boolean }) {
@@ -114,6 +77,7 @@ export function StudySketch({ series, index, staticMode = false }: { series: Vis
     {!staticMode && <div className="sketch-controls" role="group" aria-label={`${item.title}: illustration controls`}>
       {item.steps.map((_,i)=><button type="button" key={i} aria-label={`Show illustration step ${i+1}`} aria-pressed={step===i} onClick={()=>{setPlaying(false);setStep(i);}}>{i+1}</button>)}
       <button type="button" onClick={()=>{if(playing)setPlaying(false);else{setStep(0);setPlaying(true);}}}>{playing?'Pause sketch':'Play sketch'}</button>
+      <DrawingZoom series={series} index={index} step={step} title={item.title} description={item.steps[step]} />
     </div>}
     <details><summary>Read all three steps</summary><ol>{item.steps.map(s=><li key={s}>{s}</li>)}</ol></details>
   </figure>;

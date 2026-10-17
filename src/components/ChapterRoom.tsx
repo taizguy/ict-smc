@@ -1,3 +1,4 @@
+import { conciseHeading, studyTopics } from '../utils/searchMetadata';
 import { FinancialDisclaimer } from './FinancialDisclaimer';
 import { LessonRelatedLinks } from './LessonRelatedLinks';
 import React, { useState, useMemo, useEffect } from 'react';
@@ -345,7 +346,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
           {/* Chapter Title & Inscription */}
           <div className="space-y-4 max-w-4xl">
             <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-ink leading-tight">
-              {chapter.title}
+              {studyTopics[`/learn/${chapter.slug}/`] || conciseHeading(chapter.title)}
             </h1>
 
             {/* Principle callout */}

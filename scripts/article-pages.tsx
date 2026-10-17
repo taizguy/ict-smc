@@ -2,8 +2,9 @@ import React from 'react';
 import fs from 'node:fs';
 import path from 'node:path';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { articles, articlePath, articleWordCount, readingMinutes } from '../src/data/articles';
+import { articles, articleImageKey, articlePath, articleWordCount, readingMinutes } from '../src/data/articles';
 import { ArticlesView } from '../src/components/articles/ArticlesView';
+import { StudySketchSvg } from '../src/components/articles/StudySketch';
 import { SketchSvg } from '../src/components/articles/ArticleSketch';
 import { lessonAuthor, publisher } from '../src/utils/publisher';
 import type { RouteMeta } from './prerender';
@@ -12,11 +13,11 @@ export function articlePages(projectRoot: string, distDir: string): RouteMeta[] 
   const base = 'https://learnsmc.xyz';
   const imageDir = path.join(distDir, 'images/articles');
   fs.mkdirSync(imageDir, { recursive: true });
-  for (const a of articles) fs.writeFileSync(path.join(imageDir, `${a.sketch}.svg`), renderToStaticMarkup(<SketchSvg kind={a.sketch} />));
+  for (const a of articles) fs.writeFileSync(path.join(imageDir, `${articleImageKey(a)}.svg`), renderToStaticMarkup(a.visualSeries ? <StudySketchSvg series={a.visualSeries} /> : <SketchSvg kind={a.sketch} />));
   const routes: RouteMeta[] = [{
     url: `${base}/articles/`, canonical: `${base}/articles/`, outputPath: 'articles/index.html',
     title: 'Illustrated Trading Articles: Psychology, Risk & Markets | LearnSMC',
-    description: 'Original illustrated essays about trading psychology, drawdown, liquidity and Bitcoin on-chain data. Read thoughtful explanations by Muhammad Umer Ijaz.',
+    description: 'Original illustrated essays about trading psychology, risk, ICT study methods, PD arrays, session timing and market data. Read thoughtful explanations by Muhammad Umer Ijaz.',
     heading: 'Markets are complicated. Let’s draw them out.', subheading: 'Original illustrated trading essays', badge: 'Articles',
     bodyHtml: renderToStaticMarkup(<ArticlesView staticMode />),
     schemaJson: { '@type': 'CollectionPage', name: 'LearnSMC Articles', url: `${base}/articles/`, publisher, mainEntity: { '@type': 'ItemList', itemListElement: articles.map((a, i) => ({ '@type': 'ListItem', position: i + 1, url: base + articlePath(a), name: a.title })) } }
@@ -27,7 +28,7 @@ export function articlePages(projectRoot: string, distDir: string): RouteMeta[] 
     schemaJson: { '@type': 'BlogPosting', '@id': base + articlePath(a) + '#article', headline: a.title, description: a.description,
       url: base + articlePath(a), mainEntityOfPage: base + articlePath(a), author: lessonAuthor, publisher,
       datePublished: `${a.date}T12:00:00+05:00`, dateModified: `${a.updated || a.date}T12:00:00+05:00`,
-      image: [`${base}/images/articles/${a.sketch}-social.png`], inLanguage: 'en', isAccessibleForFree: true,
+      image: [`${base}/images/articles/${articleImageKey(a)}-social.png`], inLanguage: 'en', isAccessibleForFree: true,
       articleSection: a.topic, wordCount: articleWordCount(a), timeRequired: `PT${readingMinutes(a)}M`,
       citation: a.sources.map(s => s.url), isPartOf: { '@type': 'Blog', name: 'LearnSMC Articles', url: `${base}/articles/` }
     }

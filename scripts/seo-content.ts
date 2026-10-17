@@ -1,3 +1,5 @@
+import { TERMS_SECTIONS, ABOUT_GUIDANCE, CONTACT_GUIDANCE } from '../src/data/publisherPageCopy';
+import { searchTitle, searchDescription, conciseHeading, studyTopics } from '../src/utils/searchMetadata';
 import { toolStudyGuide } from '../src/utils/toolStudyGuides';
 import { correctToolDocument } from './tools-content';
 import { textbookChapters } from '../src/data/chaptersData';
@@ -48,6 +50,7 @@ export function prepareRoutes(routes: RouteMeta[]) {
   }
   routes.push(...topicClusters.map(cluster => route(`/curriculum/${cluster.slug}/`, cluster.part,
     `Study ${cluster.chapters.length} lessons in ${cluster.part.replace(/^Part [IVXLCDM]+ - /, '')}, with definitions, worked explanations and practice questions.`,
+    (cluster.guidance.length ? section('How to use this learning path', cluster.guidance.map(p => `<p>${escape(p)}</p>`).join('')) : '') +
     section('Learning path', list(cluster.chapters.map(c => link(`/learn/${c.slug}/`, c.title)))) +
     cluster.chapters.map(c => section(c.title, `<p>${escape(c.summary[0])}</p>` + list(c.summary.slice(1).map(escape)) + link(`/learn/${c.slug}/`, 'Read the complete lesson'))).join(''))));
   routes.push(...masoodPlaylistsData.map(p => route(`/masood/playlists/${p.id}/`, `${p.badge} — Abdullah Masood lectures`,
@@ -124,6 +127,10 @@ export function prepareRoutes(routes: RouteMeta[]) {
     `<section id="editorial-policy"><h2>Editorial policy</h2>` + '<p>These pages explain trading frameworks for study. Framework claims and simulated examples are not proof of profitable outcomes. Test assumptions independently and check the original video sources. Named expert or peer review is not claimed.</p>' + '</section>' +
     section('Corrections and contact', `<p>${link('/contact/', 'Send a correction, source reference or copyright inquiry')}.</p>`) + notice;
   about.bodyHtml += section('Publisher contact', contactHtml);
+  about.bodyHtml += section('How to use LearnSMC', ABOUT_GUIDANCE.map(text => `<p>${escape(text)}</p>`).join(''));
+  const terms = routes.find(r => r.canonical.endsWith('/terms/'))!;
+  terms.bodyHtml = TERMS_SECTIONS.map(item => section(item.title, `<p>${escape(item.text)}</p>`)).join('');
+  contact.bodyHtml += section('How to send a useful inquiry', CONTACT_GUIDANCE.map(text => `<p>${escape(text)}</p>`).join(''));
   about.schemaJson = { '@type': 'AboutPage', name: 'About LearnSMC', mainEntity: lessonAuthor, publisher };
 }
 
@@ -136,9 +143,10 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   r.title = counts(r.title); r.description = counts(r.description); r.bodyHtml = counts(r.bodyHtml);
   r.heading = counts(r.heading); r.subheading = counts(r.subheading);
   if (path === '/') { r.title = 'Learn ICT & Smart Money Concepts | LearnSMC'; r.description = 'Study ICT and Smart Money Concepts with free trading lessons, Abdullah Masood video notes, chart exercises and risk education.'; }
-  if (r.title.length > 80) r.title = r.title.slice(0, 65).replace(/\s+\S*$/, '') + ' | LearnSMC';
-  r.description = r.description.replace(/\s+/g, ' ').trim();
-  if (r.description.length > 165) r.description = r.description.slice(0, 162).replace(/\s+\S*$/, '') + '…';
+  r.title = searchTitle(r.title, path);
+  r.description = searchDescription(r.description, r.title, path);
+  if (/^\/(learn|masood\/lectures)\//.test(path)) r.heading = studyTopics[path] || conciseHeading(r.heading);
+  if (path === '/tools/glossary/order-blocks/propulsion-and-reclaimed/') r.heading = 'Propulsion & Reclaimed Blocks: Comparison and Rules';
   if (/^\/tools\/(journal|profile)\//.test(path) || path === '/adsense/') r.isNoindex = true;
   const chapter = textbookChapters.find(c => path === `/learn/${c.slug}/`);
   if (chapter) {

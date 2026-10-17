@@ -160,3 +160,7 @@
 .drawing-zoom-dialog p { font: .9rem/1.6 var(--font-sans); margin: 1rem 0; }
 .drawing-zoom-canvas { overflow: auto; max-height: 65dvh; border: 1px solid #e3e7e5; }
 .drawing-zoom-canvas svg { min-width: 720px; }
+
+.notes-card-link { display: block; text-decoration: none; color: inherit; }
+.notes-card-link:hover h3 { color: #39766c; }
+.notes-card-link:focus-visible { outline: 2px solid #39766c; outline-offset: 6px; }

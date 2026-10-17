@@ -1,3 +1,4 @@
+import { conciseHeading, studyTopics } from '../utils/searchMetadata';
 import { useState } from 'react';
 import { MasoodLecture } from '../types';
 import { masoodPlaylistsData } from '../data/masoodData';
@@ -19,7 +20,7 @@ export function MasoodLecturePage({ lecture }: { lecture: MasoodLecture }) {
       <a href={`/masood/playlists/${playlist.id}/`}>{playlist.badge}</a>
     </nav>
     <header className="space-y-4">
-      <h1 className="text-3xl font-semibold text-ink">{lecture.title}</h1>
+      <h1 className="text-3xl font-semibold text-ink">{studyTopics[`/masood/lectures/${lecture.id}/`] || conciseHeading(lecture.title)}</h1>
       <p>{lecture.shortSummary}</p>
       <p className="text-sm">Written study notes by <a className="underline" href="/about/#author">Muhammad Umer Ijaz</a>. Video source: Trader Abdullah Masood. These notes are independently published by LearnSMC.</p>
     </header>

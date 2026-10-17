@@ -25,7 +25,15 @@ for (const route of routes) {
   check(!titles.has(route.title), `Duplicate title: ${route.path}`); titles.add(route.title);
   check(!descriptions.has(route.description), `Duplicate description: ${route.path}`); descriptions.add(route.description);
   check((html.match(/<h1\b/g) || []).length === 1, `Expected one h1: ${route.path}`);
-  check(route.description.length >= 40 && route.description.length <= 165, `Description length: ${route.path}`);
+  // Project snippet budgets, not indexing requirements imposed by Google.
+  check(route.title.length <= 60, `Title exceeds editorial budget: ${route.path}`);
+  check(route.description.length >= 40 && route.description.length <= 155, `Description length: ${route.path}`);
+  const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] || '';
+  const levels = [...main.matchAll(/<h([1-6])\b/g)].map(m => Number(m[1]));
+  check(levels.every((level, i) => !i || level <= levels[i - 1] + 1), `Skipped heading level: ${route.path}`);
+  for (const image of main.matchAll(/<img\b[^>]*src="\/images\/articles\/[^"]+"[^>]*>/g)) {
+    check(/alt="[^"]+"/.test(image[0]), `Article illustration alternative missing: ${route.path}`);
+  }
   check(html.includes(`href="https://learnsmc.xyz${route.path}"`), `Canonical: ${route.path}`);
   check(sitemap.includes(`<loc>https://learnsmc.xyz${route.path}</loc>`) === route.indexable, `Sitemap indexability: ${route.path}`);
   check(html.includes('content="noindex, follow"') === !route.indexable, `Robots directive: ${route.path}`);
@@ -44,6 +52,7 @@ for (const route of routes) {
     const url = new URL(match[1].replace(/&amp;/g, '&'), `https://learnsmc.xyz${route.path}`);
     if (url.origin !== 'https://learnsmc.xyz') continue;
     let target = url.pathname;
+    check(!aliases.has(target), `Internal link takes a redirect hop: ${route.path} -> ${target}`);
     target = aliases.get(target) || target;
     const file = path.join(dist, target.replace(/^\//, ''), target.endsWith('/') ? 'index.html' : '');
     check(fs.existsSync(file), `Broken internal link ${route.path} -> ${target}`);

@@ -221,3 +221,19 @@ export function articleWordCount(article: Article) {
   return [...article.intro, ...article.sections.flatMap(s => [s.title, ...s.paragraphs, s.takeaway || ''])].join(' ').trim().split(/\s+/).length;
 }
 export const readingMinutes = (article: Article) => Math.max(1, Math.ceil(articleWordCount(article) / 210));
+
+/** Cover alternatives describe the original scene, rather than repeating the title. */
+export function articleCoverAlt(article: Article): string {
+  const alternatives: Record<string, string> = {
+    expedition: 'A student carries a stack of chart acronyms but has forgotten to choose a study question.',
+    mission: 'An astronaut holds a bullish view beside an exit door labeled If I am wrong.',
+    museum: 'A museum visitor asks what an unexplained purple rectangle actually claims.',
+    theatre: 'A surprised trader mistakes the session opening bell for a delivery notification.',
+    laboratory: 'A unicorn-themed model is asked to supply written rules for peer review.',
+    decision: 'A worried trader treats a minus-one-R result as a verdict on their whole personality.',
+    drawdown: 'A trader discovers that a loss from 100 to 80 changes the base for recovery percentages.',
+    auction: 'A trader questions the evidence behind a colorful price-magnet costume.',
+    onchain: 'A Bitcoin dashboard wears an aftermarket wizard hat but cannot predict tomorrow.',
+  };
+  return alternatives[articleImageKey(article)];
+}

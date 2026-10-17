@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { searchTitle, searchDescription } from '../utils/searchMetadata';
 import { normalizeCanonicalUrl } from '../utils/url';
 
 export interface SEOProps {
@@ -27,7 +28,9 @@ export const SEO: React.FC<SEOProps> = ({
     const canonicalUrl = normalizeCanonicalUrl(targetPath);
 
     // 2. Document Title
-    document.title = title;
+    const pageTitle = searchTitle(title, new URL(canonicalUrl).pathname);
+    const pageDescription = searchDescription(description, pageTitle, new URL(canonicalUrl).pathname);
+    document.title = pageTitle;
 
     // Helper to set or update meta tag by name or property
     const setMetaTag = (attribute: 'name' | 'property', key: string, content: string) => {
@@ -41,17 +44,17 @@ export const SEO: React.FC<SEOProps> = ({
     };
 
     // 3. Standard Description & OpenGraph Tags
-    setMetaTag('name', 'description', description);
-    setMetaTag('property', 'og:title', title);
-    setMetaTag('property', 'og:description', description);
+    setMetaTag('name', 'description', pageDescription);
+    setMetaTag('property', 'og:title', pageTitle);
+    setMetaTag('property', 'og:description', pageDescription);
     setMetaTag('property', 'og:url', canonicalUrl);
     setMetaTag('property', 'og:type', type);
     setMetaTag('property', 'og:site_name', 'LearnSMC');
 
     // 4. Twitter Card Tags
     setMetaTag('name', 'twitter:card', 'summary_large_image');
-    setMetaTag('name', 'twitter:title', title);
-    setMetaTag('name', 'twitter:description', description);
+    setMetaTag('name', 'twitter:title', pageTitle);
+    setMetaTag('name', 'twitter:description', pageDescription);
 
     // 5. Canonical Link
     let canonicalTag = document.querySelector('link[rel="canonical"]');

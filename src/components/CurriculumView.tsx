@@ -88,6 +88,8 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
                 </p>
               </div>
 
+              {selectedPart !== 'all' && topicClusters.find(c => c.part === selectedPart)?.guidance.length > 0 && <section className="max-w-3xl space-y-3 text-sm leading-relaxed text-ink-secondary"><h2 className="text-lg font-semibold text-ink">How to use this learning path</h2>{topicClusters.find(c => c.part === selectedPart)?.guidance.map(p => <p key={p}>{p}</p>)}</section>}
+
               {/* Search Bar */}
               <div className="pt-2 flex flex-col sm:flex-row gap-3 max-w-xl">
                 <div className="relative flex-1">

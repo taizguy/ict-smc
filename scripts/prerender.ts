@@ -298,19 +298,19 @@ const homePage: RouteMeta = {
       <h2 style="font-size: 1.3rem; color: #223b35; margin-bottom: 1rem;">Foundational Learning Tracks</h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem;">
         <div style="background: rgba(34,59,53,0.02); border: 1px solid rgba(34,59,53,0.06); padding: 1rem; border-radius: 6px;">
-          <h4 style="color: #223b35; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Part I · Market Foundations</h4>
+          <h3 style="color: #223b35; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Part I · Market Foundations</h3>
           <p style="color: #52645b; font-size: 0.8rem; margin: 0;">Auction mechanics, CLOB limit order books, liquidity consumption, and market structure.</p>
         </div>
         <div style="background: rgba(34,59,53,0.02); border: 1px solid rgba(34,59,53,0.06); padding: 1rem; border-radius: 6px;">
-          <h4 style="color: #223b35; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Part II · Core ICT Frameworks</h4>
+          <h3 style="color: #223b35; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Part II · Core ICT Frameworks</h3>
           <p style="color: #52645b; font-size: 0.8rem; margin: 0;">Fair Value Gaps (FVG), Order Blocks, Breaker Blocks, and institutional mitigation.</p>
         </div>
         <div style="background: rgba(34,59,53,0.02); border: 1px solid rgba(34,59,53,0.06); padding: 1rem; border-radius: 6px;">
-          <h4 style="color: #223b35; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Part III · Sessions & Algorithmic Time</h4>
+          <h3 style="color: #223b35; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Part III · Sessions & Algorithmic Time</h3>
           <p style="color: #52645b; font-size: 0.8rem; margin: 0;">ICT Killzones, London Open Judas Swing, New York AM/PM sessions, and Power of 3 (PO3).</p>
         </div>
         <div style="background: rgba(34,59,53,0.02); border: 1px solid rgba(34,59,53,0.06); padding: 1rem; border-radius: 6px;">
-          <h4 style="color: #223b35; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Part IV · Execution Protocols</h4>
+          <h3 style="color: #223b35; margin: 0 0 0.5rem 0; font-size: 0.95rem;">Part IV · Execution Protocols</h3>
           <p style="color: #52645b; font-size: 0.8rem; margin: 0;">2022 Mentorship Model, Silver Bullet algorithm, and OTE Fibonacci matrix.</p>
         </div>
       </div>
@@ -370,7 +370,7 @@ const legalPages: RouteMeta[] = [
     badge: 'Legal & Risk Disclosures',
     bodyHtml: `
       <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
-        <h3 style="color: #F87171; margin-top: 0; font-size: 1.15rem; font-weight: bold;">HIGH RISK WARNING & CAPITAL PRESERVATION NOTICE</h3>
+        <h2 style="color: #F87171; margin-top: 0; font-size: 1.15rem; font-weight: bold;">Trading risk and capital preservation</h2>
         <p style="margin: 0; line-height: 1.6; color: #b44746;">
           Trading foreign exchange (Forex), commodities, futures, equities, and digital assets on margin carries a high level of risk and may not be suitable for all investors. 
           The high degree of leverage can work against you as well as for you. Before deciding to trade foreign exchange or any financial market, you should carefully consider your investment objectives, level of experience, and risk appetite. 
@@ -1442,7 +1442,7 @@ const deepSubConceptRoutes: RouteMeta[] = DEEP_SUB_CONCEPTS.map(sub => {
       <article style="line-height: 1.7; color: #435b50;">
         <p style="font-size: 1rem; color: #223b35; margin-bottom: 1rem;">${escapeHtml(sub.shortDefinition)}</p>
         <div style="background: rgba(34,59,53,0.03); border: 1px solid rgba(34,59,53,0.08); border-radius: 8px; padding: 1.25rem; margin-bottom: 1.5rem;">
-          <h4 style="color: #23796d; margin-top: 0;">Decisive Operational Criteria &amp; Rules of Thumb</h4>
+          <h2 style="color: #23796d; margin-top: 0;">Study criteria and rules of thumb</h2>
           <ul style="padding-left: 1.5rem;">
             ${sub.keyPoints.map(pt => `<li>${escapeHtml(pt)}</li>`).join('')}
           </ul>

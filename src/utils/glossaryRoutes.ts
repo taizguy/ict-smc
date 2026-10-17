@@ -565,7 +565,7 @@ export const DEEP_SUB_CONCEPTS: DeepSubConceptInfo[] = [
     slug: 'propulsion-and-reclaimed',
     categorySlug: 'order-blocks',
     parentConceptId: 'order_block',
-    name: 'Propulsion Blocks & Reclaimed Order Blocks',
+    name: 'Propulsion & Reclaimed Blocks: Comparison and Rules',
     subtitle: 'Momentum Re-Ignition & Multi-Layered Institutional Entries',
     shortDefinition: 'Advanced Order Block subtypes where a subsequent candle tests an existing Order Block and explodes outward, creating a secondary propulsion engine.',
     metaTitle: 'Propulsion Blocks & Reclaimed Order Blocks — Deep Sub-Concept | LearnSMC',
@@ -1093,13 +1093,13 @@ export const KEYWORD_CROSS_LINKS: KeywordCrossLink[] = [
   },
   {
     term: 'Optimal Trade Entry',
-    url: '/tools/ict-suite/',
+    url: '/tools/delivery-suite/',
     tooltip: '62% - 79% Fibonacci retracement sweet spot into a key PD array.',
     badge: 'Tool'
   },
   {
     term: 'OTE',
-    url: '/tools/ict-suite/',
+    url: '/tools/delivery-suite/',
     tooltip: 'Optimal Trade Entry: 62% to 79% retracement level.',
     badge: 'Tool'
   },

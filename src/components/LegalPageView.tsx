@@ -1,16 +1,17 @@
+import { TERMS_SECTIONS, ABOUT_GUIDANCE, CONTACT_GUIDANCE } from '../data/publisherPageCopy';
 import { authorContact } from '../utils/publisher';
 import { chapterCount, lectureCount } from '../utils/catalogCounts';
 import React, { useState, useEffect } from 'react';
-import { 
-  ShieldAlert, 
-  Lock, 
-  FileText, 
-  Mail, 
-  Scale, 
-  ArrowLeft, 
-  CheckCircle2, 
-  ExternalLink, 
-  Copy, 
+import {
+  ShieldAlert,
+  Lock,
+  FileText,
+  Mail,
+  Scale,
+  ArrowLeft,
+  CheckCircle2,
+  ExternalLink,
+  Copy,
   AlertTriangle,
   Building,
   Send,
@@ -108,7 +109,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
                 onClick={() => onTabChange(t.id)}
                 className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-sans tabular-nums font-medium transition-all ${
                   isActive
-                    ? 'bg-[#1D2230] text-ink border border-ink/[0.12] shadow-sm'
+                    ? 'bg-brand on-accent border border-brand shadow-sm [&_svg]:text-current'
                     : 'text-ink-secondary hover:text-ink hover:bg-ink/[0.04]'
                 }`}
                 aria-current={isActive ? 'page' : undefined}
@@ -123,7 +124,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
 
       {/* Standalone Content Card */}
       <article className="bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-10 shadow-xl space-y-8">
-        
+
         {/* TAB 1: FINANCIAL RISK & CFTC RULE 4.41 */}
         {currentTab === 'disclaimer' && (
           <section className="space-y-6 animate-fade-in text-sm text-ink-secondary leading-relaxed">
@@ -219,10 +220,10 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
                 </li>
                 <li>
                   Users may opt out of personalized advertising by visiting{' '}
-                  <a 
-                    href="https://adssettings.google.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://adssettings.google.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-teal underline"
                   >
                     Google Ads Settings (adssettings.google.com)
@@ -230,13 +231,13 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
                 </li>
                 <li>
                   Alternatively, you can opt out of a third-party vendor's use of cookies for personalized advertising by visiting{' '}
-                  <a 
-                    href="https://www.aboutads.info/choices" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://thenai.org/how-to-opt-out/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-teal underline"
                   >
-                    www.aboutads.info/choices
+                    Network Advertising Initiative opt-out guide
                   </a>.
                 </li>
               </ul>
@@ -286,33 +287,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
               </p>
             </header>
 
-            <div className="space-y-4">
-              <h3 className="text-base font-bold text-ink">1. Acceptance of Terms</h3>
-              <p>
-                By accessing or using LearnSMC (<strong className="text-ink">https://learnsmc.xyz</strong>), you agree to be bound by these Terms of Service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-base font-bold text-ink">2. Open Educational License</h3>
-              <p>
-                All editorial curriculum text, diagrams, and educational software modules on learnsmc.xyz are made available freely for personal, non-commercial educational study. You may not re-package, paywall, or sell our codified chapters or interactive tools as proprietary coursework without explicit written authorization from LearnSMC.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-base font-bold text-ink">3. Disclaimer of Warranties</h3>
-              <p>
-                The materials on LearnSMC are provided on an 'as is' basis. LearnSMC makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-base font-bold text-ink">4. Limitation of Liability</h3>
-              <p>
-                In no event shall LearnSMC or its contributors be liable for any damages (including, without limitation, damages for loss of trading capital, profits, or data) arising out of the use or inability to use the educational materials on learnsmc.xyz, even if authorized representatives have been notified orally or in writing of the possibility of such damage.
-              </p>
-            </div>
+            {TERMS_SECTIONS.map(section => <div className="space-y-4" key={section.title}><h3 className="text-base font-bold text-ink">{section.title}</h3><p>{section.text}</p></div>)}
           </section>
         )}
 
@@ -326,6 +301,8 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
               <p><a className="underline" href={`tel:${authorContact.telephone}`}>{authorContact.telephone}</a></p>
               <p>{authorContact.streetAddress}, Daska, Pakistan</p>
             </address>
+            <h3 className="text-xl font-semibold">How to use this project</h3>
+            {ABOUT_GUIDANCE.map(text => <p key={text}>{text}</p>)}
             <h3 className="text-xl font-semibold">Source attribution</h3>
             <p>Videos attributed to Trader Abdullah Masood link to their original YouTube sources. Written study notes are independently published and are not claimed to be reviewed or endorsed by the source educator.</p>
             <h3 id="editorial-policy" className="text-xl font-semibold">Editorial policy</h3>
@@ -351,6 +328,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
               </p>
             </header>
 
+            <section className="space-y-3"><h3 className="font-semibold text-ink">How to send a useful inquiry</h3>{CONTACT_GUIDANCE.map(text => <p key={text}>{text}</p>)}</section>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Left Column: Direct Info */}
               <div className="space-y-5">
@@ -456,7 +434,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
                       className="w-full btn-predikt-primary text-xs flex items-center justify-center gap-2 py-2.5"
                     >
                       <Send className="w-3.5 h-3.5" />
-                      <span>Transmit Inquiry</span>
+                      <span>Open email draft</span>
                     </button>
                   </form>
                 )}

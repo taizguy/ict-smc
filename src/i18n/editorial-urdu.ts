@@ -1,5 +1,14 @@
 /** Human-written headlines, interface wording and drawing captions override draft translations. */
 export const editorialUrdu: Record<string, string> = {
+  'A small study routine': 'مطالعے کے چند آسان مراحل',
+  'A little less guessing.': 'اندازے ذرا کم۔',
+  'A little more process.': 'واضح طریقہ ذرا زیادہ۔',
+  'Read the context': 'پس منظر سمجھیں',
+  'Start with the foundations.': 'بنیادی باتوں سے ابتدا کریں۔',
+  'Question the label': 'لیبل سے آگے سوال کریں',
+  'Compare the definitions.': 'تعریفوں کا موازنہ کریں۔',
+  'Try it in replay': 'ری پلے میں آزما کر دیکھیں',
+  'Practice before risking capital.': 'سرمایہ خطرے میں ڈالنے سے پہلے مشق کریں۔',
   'Markets are complicated.': 'مارکیٹوں کو سمجھنا آسان نہیں۔',
   'Let’s draw them out.': 'آئیے تصویروں سے سمجھیں۔',
   'Thoughtful articles about trading, the decisions behind it, and the data we sometimes trust a little too much.': 'ٹریڈنگ، فیصلوں کے پیچھے کی سوچ، اور اُس ڈیٹا پر مضامین جس پر ہم کبھی کبھی ضرورت سے زیادہ بھروسا کر لیتے ہیں۔',

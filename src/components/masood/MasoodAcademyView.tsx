@@ -1,5 +1,6 @@
 import { withoutLocale } from '../../i18n/locale';
 import { useTranslation } from '../../i18n/TranslationProvider';
+import { AccentText } from '../AccentText';
 import { matchesSearch as matchesLocalizedSearch } from '../../i18n/search';
 import { MasoodLecturePage } from '../MasoodLecturePage';
 import React, { useState, useMemo, useEffect } from 'react';
@@ -156,7 +157,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
             </div>
 
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-ink leading-none">
-              {activePlaylist ? activePlaylist.title : activeTab === 'animations' ? 'Animated ICT & SMC Explainers' : activeTab === 'bias_calc' ? 'Daily Bias Calculator' : activeTab === 'rules' ? 'Golden Trading Rules' : 'Abdullah Masood Academy'}
+              <AccentText text={activePlaylist ? activePlaylist.title : activeTab === 'animations' ? 'Animated ICT & SMC Explainers' : activeTab === 'bias_calc' ? 'Daily Bias Calculator' : activeTab === 'rules' ? 'Golden Trading Rules' : 'Abdullah Masood Academy'} focus="Academy" urduFocus="اکیڈمی" tone="coral"/>
             </h1>
 
             <p className="text-sm sm:text-base text-ink-secondary leading-relaxed max-w-3xl">

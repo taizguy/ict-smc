@@ -11,6 +11,7 @@ import {
   Clock
 } from 'lucide-react';
 import { AcademyStudyIllustration } from './AcademyStudyIllustration';
+import { StudyTrail } from './StudyTrail';
 import { MainTabType } from './Header';
 import { ScrollReveal } from './ScrollReveal';
 
@@ -87,7 +88,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
 
               {/* Enormous Editorial Display Title */}
               <h1 className="predikt-hero-title">{t("Read the")}<br />
-                <span className="text-brand">{t("market.")}</span>
+                <span className="ink-accent ink-accent--sage">{t("market.")}</span>
               </h1>
 
               {/* Supporting Educational Description */}
@@ -138,7 +139,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
 
             {/* Right Column: Visual Showcase Card */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-7 relative overflow-hidden space-y-5 transition-all hover:border-ink/[0.15]">
+              <div className="hero-study-frame bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-7 relative overflow-hidden space-y-5 transition-all hover:border-ink/[0.15]">
                 
                 <div className="flex items-center justify-between pb-3 border-b border-ink/[0.07]">
                   <div className="flex items-center gap-2.5">
@@ -182,6 +183,8 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
           </div>
         </ScrollReveal>
 
+        <StudyTrail />
+
         {/* 3 Pillars Section */}
         <ScrollReveal y={30} delay={0.15}>
           <div className="space-y-4 pt-8">
@@ -192,12 +195,12 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               
               {/* Pillar 1: Textbook */}
-              <div 
-                onClick={() => onEnterAcademy('curriculum')}
+              <a
+                href={href('/curriculum/')}
                 className="predikt-card p-6 sm:p-7 space-y-4 cursor-pointer group"
               >
                 <div className="flex items-center justify-between">
-                  <div className="w-9 h-9 rounded-lg bg-ink/[0.04] border border-ink/[0.08] flex items-center justify-center font-sans tabular-nums text-xs text-brand font-semibold">
+                  <div className="tactile-icon w-9 h-9 rounded-lg bg-ink/[0.04] border border-ink/[0.08] flex items-center justify-center font-sans tabular-nums text-xs text-brand font-semibold">
                     01
                   </div>
                   <span className="text-[0.8125rem] font-sans tabular-nums uppercase tracking-wider text-ink-muted">{t("OPEN SYLLABUS")}</span>
@@ -212,15 +215,15 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                   <span>{t("Read Chapters")}</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
-              </div>
+              </a>
 
               {/* Pillar 2: Masood Academy */}
-              <div 
-                onClick={() => onEnterAcademy('masood')}
+              <a
+                href={href('/masood/')}
                 className="predikt-card p-6 sm:p-7 space-y-4 cursor-pointer group"
               >
                 <div className="flex items-center justify-between">
-                  <div className="w-9 h-9 rounded-lg bg-ink/[0.04] border border-ink/[0.08] flex items-center justify-center font-sans tabular-nums text-xs text-negative font-semibold">
+                  <div className="tactile-icon w-9 h-9 rounded-lg bg-ink/[0.04] border border-ink/[0.08] flex items-center justify-center font-sans tabular-nums text-xs text-negative font-semibold">
                     02
                   </div>
                   <span className="text-[0.8125rem] font-sans tabular-nums uppercase tracking-wider text-ink-muted">{t("VIDEO SYNDICATE")}</span>
@@ -235,15 +238,15 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                   <span>{t("Watch Masterclasses")}</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
-              </div>
+              </a>
 
               {/* Pillar 3: Trading Workbench */}
-              <div 
-                onClick={() => onEnterAcademy('tools')}
+              <a
+                href={href('/tools/')}
                 className="predikt-card p-6 sm:p-7 space-y-4 cursor-pointer group"
               >
                 <div className="flex items-center justify-between">
-                  <div className="w-9 h-9 rounded-lg bg-ink/[0.04] border border-ink/[0.08] flex items-center justify-center font-sans tabular-nums text-xs text-teal font-semibold">
+                  <div className="tactile-icon w-9 h-9 rounded-lg bg-ink/[0.04] border border-ink/[0.08] flex items-center justify-center font-sans tabular-nums text-xs text-teal font-semibold">
                     03
                   </div>
                   <span className="text-[0.8125rem] font-sans tabular-nums uppercase tracking-wider text-ink-muted">{t("INTERACTIVE LAB")}</span>
@@ -256,7 +259,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                   <span>{t("Launch Laboratory")}</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
-              </div>
+              </a>
 
             </div>
           </div>

@@ -4,6 +4,7 @@ import App from './App.tsx';
 import { ErrorBoundary } from './components/ErrorBoundary.tsx';
 import './index.css';
 import './styles/urdu.css';
+import './styles/design-details.css';
 import { TranslationProvider } from './i18n/TranslationProvider';
 import { localeFromPath } from './i18n/locale';
 import { URDU_PUBLISHED } from './i18n/release';

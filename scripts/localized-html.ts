@@ -56,6 +56,18 @@ export function localizeHtml(source: string, pathname: string, catalog: Translat
         head = node;
         node.childNodes = node.childNodes.filter(child => !('tagName' in child && child.tagName === 'link' && attribute(child, 'hreflang')));
       }
+      const accentSource = attribute(node, 'data-accent-source');
+      if (accentSource) {
+        const sentence = translate(accentSource);
+        const focus = attribute(node, 'data-accent-focus-ur') || translate(attribute(node, 'data-accent-focus') || '');
+        const index = sentence.toLowerCase().indexOf(focus.toLowerCase());
+        const tone = ['sage', 'coral', 'violet'].includes(attribute(node, 'data-accent-tone') || '') ? attribute(node, 'data-accent-tone')! : 'sage';
+        const markup = index < 0 || !focus ? escaped(sentence) : `${escaped(sentence.slice(0, index))}<span class="ink-accent ink-accent--${tone}">${escaped(sentence.slice(index, index + focus.length))}</span>${escaped(sentence.slice(index + focus.length))}`;
+        const replacement = parseFragment(markup);
+        node.childNodes = [];
+        for (const child of [...replacement.childNodes]) defaultTreeAdapter.appendChild(node, child);
+        set(node, 'translate', 'no');
+      }
       if (node.tagName === 'p' && attribute(node, 'data-lesson-content') !== undefined) {
         const translated = translate(textContent(node));
         const fragments = contextualFragments(translated, pathname).map(fragment => fragment.href ? `<a href="${escaped(fragment.href)}">${escaped(fragment.text)}</a>` : escaped(fragment.text)).join('');

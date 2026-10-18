@@ -1,5 +1,6 @@
 import { withoutLocale } from '../i18n/locale';
 import { useTranslation } from '../i18n/TranslationProvider';
+import { AccentText } from './AccentText';
 import { matchesSearch as matchesLocalizedSearch } from '../i18n/search';
 import { chapterCount, lectureCount } from '../utils/catalogCounts';
 import { topicClusters, topicSlug } from '../utils/topicClusters';
@@ -86,7 +87,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
 
               {/* Large Section Headline */}
               <div className="space-y-1">
-                <h1 className="predikt-section-title">{selectedPart === 'all' ? 'ICT & SMC Syllabus' : selectedPart}</h1>
+                <h1 className="predikt-section-title">{selectedPart === 'all' ? <AccentText text="ICT & SMC Syllabus" focus="Syllabus" urduFocus="نصاب" tone="violet"/> : selectedPart}</h1>
                 <p className="text-sm sm:text-base text-ink-secondary leading-relaxed max-w-2xl font-normal pt-1">
                   The complete {chapterCount}-chapter institutional trading curriculum organized with rigorous technical hierarchy. Examine order flow, liquidity voids, and algorithmic delivery with zero artificial barriers.
                 </p>

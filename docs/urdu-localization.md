@@ -4,6 +4,8 @@
 
 The English edition retains its existing URLs. The Urdu edition uses `/ur/` and includes 373 matching documents: 359 indexable pages and 14 excluded utilities. The combined sitemap contains 718 indexable URLs. Each indexable pair has reciprocal English, Urdu and English x-default alternates, plus its own canonical URL. Urdu HTML has `lang="ur"`, `dir="rtl"`, translated metadata and structured-data descriptions. Publisher/person identity IDs stay consistent across languages. RSS, error documents, article covers and the AI-readable directory include Urdu equivalents.
 
+The redirect generator places all 256 exact aliases before the 12 wildcard fallbacks. Cloudflare's redirect classification is order-sensitive; appending the translated exact aliases after an earlier wildcard exceeded its dynamic-rule budget. Build-time ordering now keeps both language editions within the limits without changing destinations.
+
 The visible language switch opens the equivalent document and preserves its query and anchor. It also appears in static HTML. Navigation, contextual lesson links, related articles, search and tool subpages retain the selected language. No IP or browser-language redirect is used.
 
 ## Translation sources and review

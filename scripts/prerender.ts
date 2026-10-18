@@ -1,6 +1,7 @@
 import { articlePages } from './article-pages';
 import { URDU_PUBLISHED } from '../src/i18n/release';
 import { generateUrduPages } from './urdu-pages';
+import { orderRedirectRules } from './redirect-rules';
 import { lessonParagraphs } from '../src/utils/lessonText';
 import { articles as writtenArticles, articleImageKey } from '../src/data/articles';
 import 'dotenv/config';
@@ -1899,7 +1900,7 @@ const uniqueRedirectLines = redirectsLines.filter(line => {
   redirectTargets.set(source, destination);
   return true;
 });
-const redirectsContent = uniqueRedirectLines.join('\n');
+const redirectsContent = orderRedirectRules(uniqueRedirectLines.join('\n'));
 fs.writeFileSync(path.resolve(distDir, '_redirects'), redirectsContent, 'utf-8');
 
 console.log(`✓ Generated _redirects with ${textbookChapters.length * 2 + 17} legacy 301 rules`);

@@ -12,6 +12,7 @@ import { articles, articleImageKey } from '../src/data/articles';
 import { StudySketchSvg } from '../src/components/articles/StudySketch';
 import { SketchSvg } from '../src/components/articles/ArticleSketch';
 import type { RouteMeta } from './prerender';
+import { orderRedirectRules } from './redirect-rules';
 
 export function generateUrduPages(dist: string, routes: RouteMeta[]) {
   const preview = !URDU_PUBLISHED;
@@ -72,7 +73,7 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
       if (parts.length !== 3 || !parts[0].startsWith('/') || !parts[1].startsWith('/')) return [];
       return [`/ur${parts[0]} ${localizedHref(parts[1], 'ur')} ${parts[2]}`];
     });
-    fs.writeFileSync(redirectsPath, `${redirects}\n# Urdu legacy aliases\n${localizedRedirects.join('\n')}\n`);
+    fs.writeFileSync(redirectsPath, orderRedirectRules(`${redirects}\n# Urdu legacy aliases\n${localizedRedirects.join('\n')}\n`));
   }
   fs.writeFileSync(path.join(dist, 'seo-manifest.json'), JSON.stringify(manifest, null, 2));
   fs.mkdirSync('outputs/urdu-localization', { recursive: true });

@@ -11,6 +11,7 @@ export const editorialUrdu: Record<string, string> = {
   'Practice before risking capital.': 'سرمایہ خطرے میں ڈالنے سے پہلے مشق کریں۔',
   'Markets are complicated.': 'مارکیٹوں کو سمجھنا آسان نہیں۔',
   'Let’s draw them out.': 'آئیے تصویروں سے سمجھیں۔',
+  'Markets are complicated. Let’s draw them out.': 'مارکیٹوں کو سمجھنا آسان نہیں۔ آئیے تصویروں سے سمجھیں۔',
   'Thoughtful articles about trading, the decisions behind it, and the data we sometimes trust a little too much.': 'ٹریڈنگ، فیصلوں کے پیچھے کی سوچ، اور اُس ڈیٹا پر مضامین جس پر ہم کبھی کبھی ضرورت سے زیادہ بھروسا کر لیتے ہیں۔',
   'A few things worth thinking about.': 'چند خیال جن پر ٹھہر کر سوچیں۔',
   'Original essays. Small drawings. Room for doubt.': 'اصل مضامین۔ چھوٹی تصویریں۔ سوال اٹھانے کی گنجائش۔',

@@ -83,9 +83,10 @@ function legacyRedirectsPlugin() {
 
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss(), legacyRedirectsPlugin()],
+    plugins: [react({ jsxImportSource: '@learnsmc/i18n' }), tailwindcss(), legacyRedirectsPlugin()],
     resolve: {
       alias: {
+        '@learnsmc/i18n': path.resolve(__dirname, 'src/i18n'),
         '@': path.resolve(__dirname, '.'),
       },
     },

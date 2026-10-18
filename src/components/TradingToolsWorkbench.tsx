@@ -1,3 +1,4 @@
+import { currentDocumentHref } from '../i18n/navigation';
 import { masterclassCollection } from '../data/masterclassData';
 import { toolStudyGuide } from '../utils/toolStudyGuides';
 import { FinancialDisclaimer } from './FinancialDisclaimer';
@@ -108,7 +109,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
 
   const handleSelectTool = (toolId: TradingToolId | 'overview', customUrl?: string) => {
     if (onToolChange) { onToolChange(toolId, customUrl); return; }
-    window.location.assign(customUrl || `/tools/${tools.find(t => t.id === toolId)?.slug || toolId}/`);
+    window.location.assign(currentDocumentHref(customUrl || `/tools/${tools.find(t => t.id === toolId)?.slug || toolId}/`));
   };
 
   const tools = [

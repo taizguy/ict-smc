@@ -1,4 +1,5 @@
 import { textbookChapters } from '../data/chaptersData';
+import { withoutLocale } from '../i18n/locale';
 import { KEYWORD_CROSS_LINKS } from './glossaryRoutes';
 
 export interface TextFragment { text: string; href?: string }
@@ -22,6 +23,7 @@ const keywords = [
 
 /** Shared by React and static HTML: escape output in the HTML renderer, never scan markup. */
 export function contextualFragments(text: string | string[], currentPath = '', maxLinks = 4): TextFragment[] {
+  currentPath = withoutLocale(currentPath);
   const value = Array.isArray(text) ? text.join('\n\n') : text;
   const ranges: Array<{ start: number; end: number; href: string }> = [];
   const linkedUrls = new Set<string>();

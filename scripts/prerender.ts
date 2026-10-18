@@ -1,4 +1,7 @@
 import { articlePages } from './article-pages';
+import { URDU_PUBLISHED } from '../src/i18n/release';
+import { generateUrduPages } from './urdu-pages';
+import { lessonParagraphs } from '../src/utils/lessonText';
 import { articles as writtenArticles, articleImageKey } from '../src/data/articles';
 import 'dotenv/config';
 import { prepareRoutes, enrichRoute, renderContextualText, canonicalAliases } from './seo-content';
@@ -42,7 +45,7 @@ import {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
-const distDir = path.resolve(projectRoot, 'dist');
+const distDir = path.resolve(projectRoot, process.env.PRERENDER_OUT_DIR || 'dist');
 const templatePath = path.resolve(distDir, 'index.html');
 
 if (!fs.existsSync(templatePath)) {
@@ -1538,7 +1541,7 @@ for (const ch of textbookChapters) {
         ${ch.sections.map((sec, idx) => `
           <div style="border-top: 1px solid rgba(34,59,53,0.06); padding-top: 1.25rem; margin-top: 1.25rem;">
             <h3 style="color: #223b35; font-size: 1.15rem; margin-bottom: 0.5rem;">${idx + 1}. ${escapeHtml(sec.title)}</h3>
-            <p style="color: #435b50; line-height: 1.7; margin-bottom: 0.75rem;">${renderContextualText(sec.content, getLessonPath(ch.slug))}</p>
+            ${lessonParagraphs(sec.content).map(paragraph => `<p data-lesson-content style="color: #435b50; line-height: 1.7; margin-bottom: 0.75rem;">${renderContextualText(paragraph, getLessonPath(ch.slug))}</p>`).join('')}
             ${sec.keyTakeaway ? `
               <div style="background: rgba(37,101,82, 0.08); border-left: 3px solid #705692; padding: 0.75rem 1rem; border-radius: 4px; font-size: 0.85rem; color: #223b35;">
                 <strong style="color: #405a98;">Key Takeaway:</strong> ${escapeHtml(sec.keyTakeaway)}
@@ -1916,3 +1919,6 @@ const llms = '# LearnSMC\n\n> Independent ICT and Smart Money Concepts study not
   }).join('\n') + '\n\n## Attribution\n\nWritten notes: Muhammad Umer Ijaz. Linked videos retain their original authorship; linking does not imply endorsement or review. Canonical HTML pages are the primary source.\n';
 fs.writeFileSync(path.join(distDir, 'llms.txt'), llms);
 fs.writeFileSync(path.join(distDir, 'llms-full.txt'), llms + '\n## Published page directory\n\n' + allRoutes.filter(r => !r.isNoindex).map(r => `- [${r.heading}](${r.canonical}): ${r.description}`).join('\n') + '\n');
+
+// Only completed language editions enter the public sitemap. Review builds remain noindex.
+if (URDU_PUBLISHED || process.env.URDU_FULL_PREVIEW === 'true') generateUrduPages(distDir, allRoutes);

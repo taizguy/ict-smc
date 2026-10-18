@@ -129,7 +129,7 @@ const sitemapPath = path.resolve(distDir, 'sitemap.xml');
 assert(fs.existsSync(sitemapPath), 'dist/sitemap.xml exists');
 const sitemapContent = fs.readFileSync(sitemapPath, 'utf-8');
 assert(sitemapContent.startsWith('<?xml'), 'sitemap.xml begins with valid XML declaration');
-assert(sitemapContent.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'), 'sitemap.xml has standard sitemap 0.9 schema');
+assert(/<urlset\b[^>]*\bxmlns="http:\/\/www.sitemaps.org\/schemas\/sitemap\/0.9"/.test(sitemapContent), 'sitemap.xml has standard sitemap 0.9 schema');
 
 // Verify all 53 chapters have exact trailing-slash entries in sitemap.xml
 let missingSitemapChapters = 0;
@@ -171,7 +171,7 @@ for (const sub of DEEP_SUB_CONCEPTS) {
 assert(missingGlossaryEntries === 0, `All glossary categories, concepts, and deep sub-concepts present in sitemap.xml`);
 
 // Verify sitemap does NOT contain non-canonical or query URLs in <loc> entries
-const sitemapLocs = (sitemapContent.match(/<loc>[\s\S]*?<\/loc>/g) || []);
+const sitemapLocs: string[] = (sitemapContent.match(/<loc>[\s\S]*?<\/loc>/g) || []);
 const hasQueryInLoc = sitemapLocs.some(loc => loc.includes('?'));
 assert(!hasQueryInLoc, 'sitemap.xml <loc> entries contain ZERO query parameter URLs');
 const hasLegacyChapterInLoc = sitemapLocs.some(loc => loc.includes('/chapter/'));

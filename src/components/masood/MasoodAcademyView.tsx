@@ -1,3 +1,6 @@
+import { withoutLocale } from '../../i18n/locale';
+import { useTranslation } from '../../i18n/TranslationProvider';
+import { matchesSearch as matchesLocalizedSearch } from '../../i18n/search';
 import { MasoodLecturePage } from '../MasoodLecturePage';
 import React, { useState, useMemo, useEffect } from 'react';
 import { 
@@ -27,7 +30,8 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
   onSubTabChange,
   onLectureSelect
 }) => {
-  const [activePlaylistId, setActivePlaylistId] = useState<'all' | MasoodPlaylistId>(() => masoodPlaylistsData.find(p => location.pathname === `/masood/playlists/${p.id}/`)?.id || 'all');
+  const { t: translateSearch } = useTranslation();
+  const [activePlaylistId, setActivePlaylistId] = useState<'all' | MasoodPlaylistId>(() => masoodPlaylistsData.find(p => withoutLocale(location.pathname) === `/masood/playlists/${p.id}/`)?.id || 'all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedLecture, setSelectedLecture] = useState<MasoodLecture | null>(null);
   const [activeAnimation, setActiveAnimation] = useState<AnimationKind>('po3_expansion');
@@ -99,10 +103,10 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
       const q = searchQuery.toLowerCase();
       const matchesQuery = 
         !q ||
-        lec.title.toLowerCase().includes(q) ||
-        lec.shortSummary.toLowerCase().includes(q) ||
-        lec.keyTakeaways.some((t) => t.toLowerCase().includes(q)) ||
-        lec.coreRules.some((r) => r.toLowerCase().includes(q));
+        matchesLocalizedSearch(q, [lec.title], translateSearch) ||
+        matchesLocalizedSearch(q, [lec.shortSummary], translateSearch) ||
+        lec.keyTakeaways.some((t) => matchesLocalizedSearch(q, [t], translateSearch)) ||
+        lec.coreRules.some((r) => matchesLocalizedSearch(q, [r], translateSearch));
       return matchesPlaylist && matchesQuery;
     });
   }, [allLectures, activePlaylistId, searchQuery]);

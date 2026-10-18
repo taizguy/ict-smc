@@ -1,3 +1,5 @@
+import { useTranslation } from '../i18n/TranslationProvider';
+import { matchesSearch } from '../i18n/search';
 import { articleCatalog as articles } from '../data/catalog.generated';
 import React, { useState, useEffect } from 'react';
 import { ictConcepts } from '../data/conceptsData';
@@ -18,6 +20,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   onSelectConcept,
   onSelectChapter
 }) => {
+  const { t, href, message } = useTranslation();
   const [query, setQuery] = useState<string>('');
 
   useModalScrollLock(isOpen);
@@ -39,30 +42,18 @@ export const SearchModal: React.FC<SearchModalProps> = ({
 
   const filteredConcepts = query.trim() === ''
     ? ictConcepts.slice(0, 6)
-    : ictConcepts.filter(
-        (c) =>
-          c.name.toLowerCase().includes(query.toLowerCase()) ||
-          c.shortDefinition.toLowerCase().includes(query.toLowerCase()) ||
-          c.category.toLowerCase().includes(query.toLowerCase())
-      );
-
+    : ictConcepts.filter(c => matchesSearch(query, [c.name, c.shortDefinition, c.category], t));
   const filteredChapters = query.trim() === ''
     ? textbookChapters.slice(0, 4)
-    : textbookChapters.filter(
-        (ch) =>
-          ch.title.toLowerCase().includes(query.toLowerCase()) ||
-          ch.summary.some((s) => s.toLowerCase().includes(query.toLowerCase())) ||
-          ch.keyTerms.some((kt) => kt.term.toLowerCase().includes(query.toLowerCase()))
-      );
-
-  const filteredArticles = articles.filter(a => !query.trim() || `${a.title} ${a.description} ${a.topic}`.toLowerCase().includes(query.toLowerCase()));
+    : textbookChapters.filter(ch => matchesSearch(query, [ch.title, ...ch.summary, ...ch.keyTerms.map(kt => kt.term)], t));
+  const filteredArticles = articles.filter(a => matchesSearch(query, [a.title, a.description, a.topic], t));
   return (
     <div 
       className="fixed inset-0 z-50 bg-ink/35 backdrop-blur-md flex items-start justify-center pt-16 sm:pt-24 p-4 text-ink overflow-y-auto"
       data-lenis-prevent="true"
       role="dialog"
       aria-modal="true"
-      aria-label="Search"
+      aria-label={t('Search')}
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
@@ -80,13 +71,13 @@ export const SearchModal: React.FC<SearchModalProps> = ({
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search concepts, chapters, algorithms (FVG, OB, AMD)..."
+            placeholder={t('Search concepts, chapters, algorithms (FVG, OB, AMD)...')}
             className="w-full bg-transparent text-ink placeholder-[#5f7064] text-sm focus:outline-none font-sans"
           />
           <button 
             onClick={onClose} 
             className="p-1.5 rounded-lg bg-ink/[0.04] hover:bg-ink/[0.1] text-ink-secondary hover:text-ink transition-colors cursor-pointer"
-            title="Close Search (Esc)"
+            title={t('Close Search (Esc)')}
           >
             <X className="w-4 h-4" />
           </button>
@@ -103,10 +94,10 @@ export const SearchModal: React.FC<SearchModalProps> = ({
               <div className="text-[0.8125rem] text-ink-secondary uppercase tracking-wider flex items-center justify-between font-sans tabular-nums pb-1 border-b border-ink/[0.06]">
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-brand" />
-                  <span>ENCYCLOPEDIA CONCEPTS</span>
+                  <span>{t('ENCYCLOPEDIA CONCEPTS')}</span>
                 </div>
                 <span className="text-[0.8125rem] text-ink-muted">
-                  {filteredConcepts.length} MATCHES
+                  {filteredConcepts.length} {t('MATCHES')}
                 </span>
               </div>
               <div className="space-y-1.5">
@@ -122,14 +113,14 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                     <div className="space-y-1 min-w-0">
                       <div className="flex items-center gap-2">
                         <span className="font-medium text-sm text-ink group-hover:text-brand transition-colors truncate">
-                          {c.name}
+                          {t(c.name)}
                         </span>
                         <span className="text-[0.8125rem] px-2 py-0.5 rounded bg-ink/[0.04] text-ink-secondary uppercase font-sans tabular-nums shrink-0">
-                          {c.category}
+                          {t(c.category)}
                         </span>
                       </div>
                       <p className="text-xs text-ink-secondary line-clamp-1">
-                        {c.shortDefinition}
+                        {t(c.shortDefinition)}
                       </p>
                     </div>
                     <ArrowRight className="w-4 h-4 text-ink-muted group-hover:text-ink group-hover:translate-x-0.5 transition-all shrink-0" />
@@ -139,17 +130,17 @@ export const SearchModal: React.FC<SearchModalProps> = ({
             </div>
           )}
 
-          {filteredArticles.length > 0 && <section className="space-y-3"><h2 className="text-sm font-semibold">Articles</h2>{filteredArticles.map(a => <a key={a.slug} href={`/articles/${a.slug}/`} className="block p-3 rounded-xl border border-ink/10 hover:bg-ink/5"><span className="text-teal text-xs">{a.topic}</span><h3 className="text-sm mt-1">{a.title}</h3></a>)}</section>}
+          {filteredArticles.length > 0 && <section className="space-y-3"><h2 className="text-sm font-semibold">{t('Articles')}</h2>{filteredArticles.map(a => <a key={a.slug} href={href(`/articles/${a.slug}/`)} className="block p-3 rounded-xl border border-ink/10 hover:bg-ink/5"><span className="text-teal text-xs">{t(a.topic)}</span><h3 className="text-sm mt-1">{t(a.title)}</h3></a>)}</section>}
           {/* Chapters Section */}
           {filteredChapters.length > 0 && (
             <div className="space-y-3">
               <div className="text-[0.8125rem] text-ink-secondary uppercase tracking-wider flex items-center justify-between font-sans tabular-nums pb-1 border-b border-ink/[0.06]">
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-teal" />
-                  <span>TEXTBOOK CHAPTERS</span>
+                  <span>{t('TEXTBOOK CHAPTERS')}</span>
                 </div>
                 <span className="text-[0.8125rem] text-ink-muted">
-                  {filteredChapters.length} MATCHES
+                  {filteredChapters.length} {t('MATCHES')}
                 </span>
               </div>
               <div className="space-y-1.5">
@@ -168,11 +159,11 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                           CH {ch.id < 10 ? `0${ch.id}` : ch.id}
                         </span>
                         <span className="font-medium text-sm text-ink group-hover:text-teal transition-colors truncate">
-                          {ch.title}
+                          {t(ch.title)}
                         </span>
                       </div>
                       <p className="text-xs text-ink-secondary line-clamp-1 italic">
-                        "{ch.quote}"
+                        "{t(ch.quote)}"
                       </p>
                     </div>
                     <ArrowRight className="w-4 h-4 text-ink-muted group-hover:text-ink group-hover:translate-x-0.5 transition-all shrink-0" />
@@ -184,8 +175,8 @@ export const SearchModal: React.FC<SearchModalProps> = ({
 
           {filteredConcepts.length === 0 && filteredChapters.length === 0 && filteredArticles.length === 0 && (
             <div className="text-center py-8 space-y-2">
-              <p className="text-ink-secondary text-sm">No matches found for "{query}".</p>
-              <p className="text-xs text-ink-muted font-sans tabular-nums">Try searching for FVG, Liquidity, Order Block, or Level 1.</p>
+              <p className="text-ink-secondary text-sm">{message('No matches found for "{query}".', { query })}</p>
+              <p className="text-xs text-ink-muted font-sans tabular-nums">{t('Try searching for FVG, Liquidity, Order Block, or Level 1.')}</p>
             </div>
           )}
         </div>
@@ -193,13 +184,13 @@ export const SearchModal: React.FC<SearchModalProps> = ({
         {/* Footer shortcuts */}
         <div className="p-3 bg-surface-muted border-t border-ink/[0.06] flex items-center justify-between text-[0.8125rem] font-sans tabular-nums text-ink-muted">
           <div className="flex items-center gap-3">
-            <span>↑↓ Navigate</span>
-            <span>↵ Select</span>
-            <span>Esc Close</span>
+            <span>{t('↑↓ Navigate')}</span>
+            <span>{t('↵ Select')}</span>
+            <span>{t('Esc Close')}</span>
           </div>
           <div className="flex items-center gap-2 text-ink-secondary">
             <BookOpen className="w-3.5 h-3.5" />
-            <span>ICT Knowledge Base</span>
+            <span>{t('ICT Knowledge Base')}</span>
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
+import { useTranslation } from '../i18n/TranslationProvider';
 import { useState } from 'react';
 import { advertisingAllowed, CONSENT_KEY, CONSENT_EVENT } from '../utils/consent';
 export function CookieConsentBanner({ onOpenPrivacyPolicy }: { onOpenPrivacyPolicy: () => void }) {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(() => {
     try { return JSON.parse(localStorage.getItem(CONSENT_KEY) || 'null')?.version !== 2; }
     catch { return true; }
@@ -12,15 +14,15 @@ export function CookieConsentBanner({ onOpenPrivacyPolicy }: { onOpenPrivacyPoli
     window.dispatchEvent(new Event(CONSENT_EVENT));
   };
   return <>
-    <button className="underline text-sm p-3 relative z-10" onClick={() => setIsOpen(true)}>Privacy choices</button>
-    {isOpen && <aside aria-label="Privacy choices" className="fixed bottom-0 inset-x-0 z-50 p-4">
+    <button className="underline text-sm p-3 relative z-10" onClick={() => setIsOpen(true)}>{t("Privacy choices")}</button>
+    {isOpen && <aside aria-label={t("Privacy choices")} className="fixed bottom-0 inset-x-0 z-50 p-4">
       <div className="max-w-3xl mx-auto bg-surface border border-ink/20 rounded-xl p-5 shadow-xl space-y-4 text-sm">
-        <h2 className="font-semibold">Your privacy choices</h2>
-        <p>Study progress and notes are saved in your browser. Advertising is optional. Allowing advertising loads Google AdSense, which may use cookies and process device information. You can change your choice here at any time.</p>
-        <p><button className="underline" onClick={onOpenPrivacyPolicy}>Read our privacy and cookie policy</button></p>
+        <h2 className="font-semibold">{t("Your privacy choices")}</h2>
+        <p>{t("Study progress and notes are saved in your browser. Advertising is optional. Allowing advertising loads Google AdSense, which may use cookies and process device information. You can change your choice here at any time.")}</p>
+        <p><button className="underline" onClick={onOpenPrivacyPolicy}>{t("Read our privacy and cookie policy")}</button></p>
         <div className="flex flex-wrap gap-3">
-          <button className="btn-predikt-secondary" onClick={() => save(false)}>Continue without advertising</button>
-          <button className="btn-predikt-secondary" onClick={() => save(true)}>Allow advertising</button>
+          <button className="btn-predikt-secondary" onClick={() => save(false)}>{t("Continue without advertising")}</button>
+          <button className="btn-predikt-secondary" onClick={() => save(true)}>{t("Allow advertising")}</button>
         </div>
       </div>
     </aside>}

@@ -1,3 +1,6 @@
+import { currentDocumentHref } from './i18n/navigation';
+import { useTranslation } from './i18n/TranslationProvider';
+import { withoutLocale } from './i18n/locale';
 import './styles/articles.css';
 import { articleCatalog } from './data/catalog.generated';
 import { PageReady } from './components/PageReady';
@@ -107,6 +110,7 @@ const toolSlugMap: Record<string, TradingToolId> = {
 };
 
 export const App: React.FC = () => {
+  const { t, href, message, preview } = useTranslation();
   // Initialize buttery smooth momentum mouse scrolling
   useSmoothScroll();
 
@@ -160,7 +164,7 @@ export const App: React.FC = () => {
       if (document.querySelector('meta[name="learnsmc-status"]')?.getAttribute('content') === '404') {
         setActiveTab('not_found'); setAttemptedInvalidPath(window.location.pathname); return;
       }
-      const path = window.location.pathname.toLowerCase().replace(/\/$/, '') || '/';
+      const path = withoutLocale(window.location.pathname).toLowerCase().replace(/\/$/, '') || '/';
       const params = new URLSearchParams(window.location.search);
       const chapterParam = params.get('chapter');
       const tabParam = params.get('tab') as MainTabType | null;
@@ -307,7 +311,7 @@ export const App: React.FC = () => {
 
           // If the visited path was an alias or non-canonical (e.g. /tools/graph/ or /tools/ict-suite/), update URL seamlessly without reload
           if (!resolvedWb.isCanonical && typeof window !== 'undefined' && window.location.pathname !== resolvedWb.canonicalUrl) {
-            window.location.replace(resolvedWb.canonicalUrl);
+            window.location.replace(currentDocumentHref(resolvedWb.canonicalUrl));
           }
           return;
         }
@@ -364,8 +368,9 @@ export const App: React.FC = () => {
 
   // Let a document navigation finish before changing the outgoing page's state.
   const openDocument = (targetPath: string) => {
+    targetPath = href(targetPath);
     if (window.location.pathname !== targetPath || window.location.search) {
-      window.location.assign(targetPath);
+      window.location.assign(currentDocumentHref(targetPath));
       return true;
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -438,9 +443,10 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-canvas text-ink flex flex-col font-sans selection:bg-brand selection:text-on-brand relative overflow-x-hidden">
-      <a href="#main-content" className="skip-link">Skip to main content</a>
+      <a href="#main-content" className="skip-link">{t("Skip to main content")}</a>
       <div className="site-wash fixed inset-0 pointer-events-none z-0" aria-hidden="true" />
 
+      {preview && <aside className="p-4 text-center border-b border-amber-700/20 bg-white text-sm" role="note">{t("This Urdu edition is being translated and reviewed. It is not the published website. Links to unfinished sections open the English edition.")}</aside>}
       <Header
         activeTab={activeTab}
         setActiveTab={(tab) => {
@@ -473,7 +479,7 @@ export const App: React.FC = () => {
           <PageReady /></Suspense>
         )}
 
-        {activeTab === 'articles' && <Suspense fallback={<ViewLoadingFallback />}><ArticlesView slug={window.location.pathname.split('/').filter(Boolean)[1]} /><PageReady /></Suspense>}
+        {activeTab === 'articles' && <Suspense fallback={<ViewLoadingFallback />}><ArticlesView slug={withoutLocale(window.location.pathname).split('/').filter(Boolean)[1]} /><PageReady /></Suspense>}
 
         {/* PILLAR 1: OPEN SYLLABUS & CURRICULUM VIEW (All 57 Chapters Unlocked) */}
         {!isShowingWelcome && (activeTab === 'curriculum' || activeTab === 'world_map' || activeTab === 'textbook') && (
@@ -600,12 +606,12 @@ export const App: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-[0.8125rem] font-sans tabular-nums tracking-[0.16em] uppercase text-ink-secondary flex items-center gap-2">
-                    <span className="text-teal">MENTORSHIP TRIBUTE</span>
+                    <span className="text-teal">{t("MENTORSHIP TRIBUTE")}</span>
                     <span className="text-ink">/</span>
-                    <span>TRADER ABDULLAH MASOOD</span>
+                    <span>{t("TRADER ABDULLAH MASOOD")}</span>
                   </div>
                   <p className="text-xs sm:text-sm text-ink/90 mt-1 leading-relaxed font-normal">
-                    Master educator of ICT &amp; Smart Money Concepts algorithmic delivery. {lectureCount} independent study guides with original video source links.
+                    {message('Master educator of ICT & Smart Money Concepts algorithmic delivery. {lectures} independent study guides with original video source links.', { lectures: lectureCount })}
                   </p>
                 </div>
               </div>
@@ -619,14 +625,12 @@ export const App: React.FC = () => {
                   className="btn-predikt-primary text-xs"
                 >
                   <Youtube className="w-4 h-4 text-red-700" />
-                  <span>Masood Academy ({lectureCount})</span>
+                  <span>{message('Masood Academy ({lectures})', { lectures: lectureCount })}</span>
                 </button>
                 <button
                   onClick={() => setIsMentorSpotlightOpen(true)}
                   className="btn-predikt-secondary text-xs"
-                >
-                  View Tribute
-                </button>
+                >{t("View Tribute")}</button>
                 <a
                   href="https://www.youtube.com/@TraderAbdullahMasood"
                   target="_blank"
@@ -634,7 +638,7 @@ export const App: React.FC = () => {
                   className="btn-predikt-secondary text-xs"
                 >
                   <Youtube className="w-4 h-4 text-red-700" />
-                  <span>YouTube Channel</span>
+                  <span>{t("YouTube Channel")}</span>
                 </a>
               </div>
             </div>
@@ -646,19 +650,17 @@ export const App: React.FC = () => {
               <div className="flex items-start gap-3">
                 <ShieldAlert className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
                 <p className="text-[0.8125rem] sm:text-xs text-ink-secondary">
-                  <strong className="text-amber-700 font-semibold uppercase tracking-wider">Regulatory Risk Disclosure:</strong> Trading foreign exchange, futures, indices, and financial derivatives carries high risk and may not be suitable for all investors. All materials on <strong className="text-ink">learnsmc.xyz</strong> are strictly for educational and research purposes. Past performance is not indicative of future results.
+                  <strong className="text-amber-700 font-semibold uppercase tracking-wider">{t("Regulatory Risk Disclosure:")}</strong> {t(" Trading foreign exchange, futures, indices, and financial derivatives carries high risk and may not be suitable for all investors. All materials on ")}<strong className="text-ink">learnsmc.xyz</strong>{t(" are strictly for educational and research purposes. Past performance is not indicative of future results.")}
                 </p>
               </div>
               <a
-                href="/disclaimer/"
+                href={href("/disclaimer/")}
                 onClick={(e) => {
                   e.preventDefault();
                   navigateToTab('disclaimer');
                 }}
                 className="text-[0.8125rem] font-sans tabular-nums text-amber-700 hover:text-amber-700 underline shrink-0 whitespace-nowrap self-end md:self-center"
-              >
-                Read Full Risk Disclosure &rarr;
-              </a>
+              >{t("Read Full Risk Disclosure →")}</a>
             </div>
           </ScrollReveal>
 
@@ -666,7 +668,7 @@ export const App: React.FC = () => {
           <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-ink/[0.06] text-xs font-sans tabular-nums text-ink-muted">
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
               <a
-                href="/disclaimer/"
+                href={href("/disclaimer/")}
                 onClick={(e) => {
                   e.preventDefault();
                   navigateToTab('disclaimer');
@@ -674,11 +676,11 @@ export const App: React.FC = () => {
                 className="hover:text-amber-700 transition-colors flex items-center gap-1.5"
               >
                 <ShieldAlert className="w-3.5 h-3.5 text-amber-700" />
-                <span>Risk Disclaimer</span>
+                <span>{t("Risk Disclaimer")}</span>
               </a>
 
               <a
-                href="/privacy/"
+                href={href("/privacy/")}
                 onClick={(e) => {
                   e.preventDefault();
                   navigateToTab('privacy');
@@ -686,11 +688,11 @@ export const App: React.FC = () => {
                 className="hover:text-teal transition-colors flex items-center gap-1.5"
               >
                 <Lock className="w-3.5 h-3.5 text-teal" />
-                <span>Privacy Policy</span>
+                <span>{t("Privacy Policy")}</span>
               </a>
 
               <a
-                href="/terms/"
+                href={href("/terms/")}
                 onClick={(e) => {
                   e.preventDefault();
                   navigateToTab('terms');
@@ -698,11 +700,11 @@ export const App: React.FC = () => {
                 className="hover:text-violet transition-colors flex items-center gap-1.5"
               >
                 <FileText className="w-3.5 h-3.5 text-violet" />
-                <span>Terms of Service</span>
+                <span>{t("Terms of Service")}</span>
               </a>
 
               <a
-                href="/about/"
+                href={href("/about/")}
                 onClick={(e) => {
                   e.preventDefault();
                   navigateToTab('about');
@@ -710,11 +712,11 @@ export const App: React.FC = () => {
                 className="hover:text-ink transition-colors flex items-center gap-1.5"
               >
                 <Building className="w-3.5 h-3.5 text-ink" />
-                <span>About &amp; Editorial</span>
+                <span>{t("About & Editorial")}</span>
               </a>
 
               <a
-                href="/contact/"
+                href={href("/contact/")}
                 onClick={(e) => {
                   e.preventDefault();
                   navigateToTab('contact');
@@ -722,11 +724,11 @@ export const App: React.FC = () => {
                 className="hover:text-teal transition-colors flex items-center gap-1.5"
               >
                 <Mail className="w-3.5 h-3.5 text-teal" />
-                <span>Contact</span>
+                <span>{t("Contact")}</span>
               </a>
 
               <a
-                href="/adsense/"
+                href={href("/adsense/")}
                 onClick={(e) => {
                   e.preventDefault();
                   navigateToTab('adsense');
@@ -734,12 +736,12 @@ export const App: React.FC = () => {
                 className="text-teal/90 hover:text-teal transition-colors flex items-center gap-1.5"
               >
                 <CheckCircle2 className="w-3.5 h-3.5 text-teal" />
-                <span>Advertising information</span>
+                <span>{t("Advertising information")}</span>
               </a>
             </div>
 
             <div className="text-[0.8125rem] text-ink-muted flex items-center gap-2">
-              <span>Domain:</span>
+              <span>{t("Domain:")}</span>
               <a 
                 href="https://learnsmc.xyz/" 
                 target="_blank" 
@@ -755,16 +757,16 @@ export const App: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans tabular-nums text-ink-secondary pt-4 border-t border-ink/[0.06]">
               <div className="flex items-center gap-2.5">
                 <span className="w-2 h-2 rounded-full bg-brand" />
-                <span className="font-medium text-ink">ICT &amp; SMC ACADEMY</span>
+                <span className="font-medium text-ink">{t("ICT & SMC ACADEMY")}</span>
                 <span className="text-ink">|</span>
-                <span>OPEN INSTITUTIONAL CURRICULUM</span>
+                <span>{t("OPEN INSTITUTIONAL CURRICULUM")}</span>
               </div>
               <div className="text-ink-muted flex items-center gap-3">
-                <span>{chapterCount} CHAPTERS</span>
+                <span>{chapterCount} {t("CHAPTERS")}</span>
                 <span>·</span>
-                <span>{lectureCount} LECTURES</span>
+                <span>{lectureCount} {t("LECTURES")}</span>
                 <span>·</span>
-                <span>LABORATORY</span>
+                <span>{t("LABORATORY")}</span>
               </div>
             </div>
           </ScrollReveal>

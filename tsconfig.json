@@ -15,7 +15,9 @@
     "moduleDetection": "force",
     "allowJs": true,
     "jsx": "react-jsx",
+    "jsxImportSource": "@learnsmc/i18n",
     "paths": {
+      "@learnsmc/i18n/*": ["./src/i18n/*"],
       "@/*": [
         "./*"
       ]

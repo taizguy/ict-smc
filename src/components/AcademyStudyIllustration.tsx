@@ -1,10 +1,12 @@
+import { useTranslation } from '../i18n/TranslationProvider';
 import React, { useId } from 'react';
 
 /** Original code-native illustration for the light academy theme. */
 export function AcademyStudyIllustration() {
+  const { t } = useTranslation();
   const titleId = useId();
   return <svg className="study-illustration" viewBox="0 0 640 570" width="640" height="570" role="img" aria-labelledby={titleId} xmlns="http://www.w3.org/2000/svg">
-    <title id={titleId}>A student studies a price chart, risk notes and a notebook in a quiet, sunlit workspace.</title>
+    <title id={titleId}>{t("A student studies a price chart, risk notes and a notebook in a quiet, sunlit workspace.")}</title>
     <rect x="35" y="25" width="565" height="510" rx="110" fill="#e9eee1" />
     <circle cx="480" cy="120" r="55" fill="#eee0b7" />
     <g fill="none" stroke="#a8b8a1" strokeWidth="1.5"><path d="M76 88h145m-145 35h95M490 362h77m-77 22h60" /><path d="M62 290q30-20 58 0m367 188h65" /></g>
@@ -31,6 +33,6 @@ export function AcademyStudyIllustration() {
       <path d="M543 314l-11 43h-32l-10-43Z" fill="#c58c65" />
       <path d="M516 315v-73m0 32q-35-5-28-35 32 3 28 35Zm0-12q31-6 31-34-31-3-31 34Zm0-12q-26-19-12-44 24 17 12 44Z" fill="#8eac83" stroke="#557950" strokeWidth="2" />
     </g>
-    <text x="343" y="97" fill="#52645b" fontFamily="sans-serif" fontSize="13" letterSpacing="2">OBSERVE · QUESTION · PRACTICE</text>
+    <text x="343" y="97" fill="#52645b" fontFamily="sans-serif" fontSize="13" letterSpacing="2">{t("OBSERVE · QUESTION · PRACTICE")}</text>
   </svg>;
 }

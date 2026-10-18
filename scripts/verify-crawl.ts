@@ -26,8 +26,10 @@ for (const route of routes) {
   check(!descriptions.has(route.description), `Duplicate description: ${route.path}`); descriptions.add(route.description);
   check((html.match(/<h1\b/g) || []).length === 1, `Expected one h1: ${route.path}`);
   // Project snippet budgets, not indexing requirements imposed by Google.
-  check(route.title.length <= 60, `Title exceeds editorial budget: ${route.path}`);
-  check(route.description.length >= 40 && route.description.length <= 155, `Description length: ${route.path}`);
+  const isUrdu = route.path.startsWith('/ur/');
+  // Urdu uses different word lengths and shaping; these remain editorial budgets, not Google rules.
+  check(route.title.length <= (isUrdu ? 90 : 60), `Title exceeds editorial budget: ${route.path}`);
+  check(route.description.length >= 40 && route.description.length <= (isUrdu ? 220 : 155), `Description length: ${route.path}`);
   const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] || '';
   const levels = [...main.matchAll(/<h([1-6])\b/g)].map(m => Number(m[1]));
   check(levels.every((level, i) => !i || level <= levels[i - 1] + 1), `Skipped heading level: ${route.path}`);

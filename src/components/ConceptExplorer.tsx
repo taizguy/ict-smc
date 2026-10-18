@@ -1,3 +1,4 @@
+import { currentDocumentHref } from '../i18n/navigation';
 import { ToolContentNotice } from './ToolContentNotice';
 import React, { useState, useEffect } from 'react';
 import { ictConcepts } from '../data/conceptsData';
@@ -148,7 +149,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
     if (typeof window !== 'undefined') {
       const catObj = getCategoryBySlugOrId(catId);
       const targetPath = catId === 'all' ? getGlossaryRootPath() : getGlossaryCategoryPath(catObj?.slug || catId);
-      window.location.assign(targetPath);
+      window.location.assign(currentDocumentHref(targetPath));
     }
   };
 
@@ -160,7 +161,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
     const targetPath = getGlossaryConceptPath(conceptSlug, catSlug);
 
     if (typeof window !== 'undefined') {
-      window.location.assign(targetPath);
+      window.location.assign(currentDocumentHref(targetPath));
     }
 
   };
@@ -169,7 +170,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
     const targetPath = getGlossarySubConceptPath(subConcept.categorySlug, subConcept.slug);
 
     if (typeof window !== 'undefined') {
-      window.location.assign(targetPath);
+      window.location.assign(currentDocumentHref(targetPath));
     }
   };
 

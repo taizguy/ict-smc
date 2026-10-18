@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useId, useRef, useState } from 'react';
+import { useTranslation } from '../../i18n/TranslationProvider';
 import type { SketchKind, VisualSeries } from '../../data/articles';
 
 export type DrawingSeries = SketchKind | VisualSeries;
@@ -12,10 +13,14 @@ function Ink({ d, color = 'ink', fill = 'none', width = 3 }: { d: string; color?
   return <path d={d} stroke={C[color]} strokeWidth={width} fill={fill} strokeLinecap="round" strokeLinejoin="round" />;
 }
 function Words({ x, y, children, size = 24, color = 'ink', rotate = 0, maxWidth }: { x: number; y: number; children: string; size?: number; color?: Tone; rotate?: number; maxWidth?: number }) {
+  const { t, locale } = useTranslation();
+  children = t(children);
+  // The surrounding article defines bilingual terms; small drawing labels keep the Urdu and short acronyms.
+  if (locale === 'ur') children = children.replace(/\(([A-Za-z][A-Za-z -]{6,})\)/g, '').replace(/ {2,}/g, ' ').trim();
   const available = maxWidth ?? Math.min(680, x * 2 - 20, (720 - x) * 2 - 20);
   const longest = Math.max(...children.split('|').map(line => line.length));
-  size = Math.min(size, Math.max(18, available / (longest * .51)));
-  return <text x={x} y={y} fill={C[color]} stroke="none" fontSize={size} textAnchor="middle" transform={`rotate(${rotate} ${x} ${y})`} fontFamily="'Article Hand', 'Comic Sans MS', 'Segoe Print', cursive">{children.split('|').map((line, i) => <tspan key={i} x={x} dy={i ? size * 1.15 : 0}>{line}</tspan>)}</text>;
+  size = Math.min(size, Math.max(locale === 'ur' ? 14 : 18, available / (longest * .51)));
+  return <text x={x} y={y} fill={C[color]} stroke="none" fontSize={size} textAnchor="middle" direction={locale === 'ur' ? 'rtl' : 'ltr'} transform={`rotate(${rotate} ${x} ${y})`} fontFamily={locale === 'ur' ? "'Noto Naskh Arabic', Tahoma, sans-serif" : "'Article Hand', 'Comic Sans MS', 'Segoe Print', cursive"}>{children.split('|').map((line, i) => <tspan key={i} x={x} dy={i ? size * (locale === 'ur' ? 1.4 : 1.15) : 0}>{line}</tspan>)}</text>;
 }
 function Person({ x, y, scale = 1, pose = 'shrug', tone = 'blue', face = 'happy', hat }: { x: number; y: number; scale?: number; pose?: Pose; tone?: Tone; face?: 'happy' | 'worried' | 'flat' | 'surprised'; hat?: 'explorer' | 'space' | 'lab' | 'crown' }) {
   const step = useContext(DrawingStep);

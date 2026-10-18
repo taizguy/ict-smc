@@ -1,3 +1,4 @@
+import { currentDocumentHref } from '../i18n/navigation';
 import { ToolContentNotice } from './ToolContentNotice';
 import React, { useState, useEffect } from 'react';
 import { conceptComparisons } from '../data/comparisonsData';
@@ -37,8 +38,8 @@ export const CompareView: React.FC<CompareViewProps> = ({
     const targetUrl = getComparisonUrl(id);
     if (onNavigateUrl) {
       onNavigateUrl(targetUrl);
-    } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
-      window.location.assign(targetUrl);
+    } else if (typeof window !== 'undefined' && window.location.pathname !== currentDocumentHref(targetUrl)) {
+      window.location.assign(currentDocumentHref(targetUrl));
     }
   };
 

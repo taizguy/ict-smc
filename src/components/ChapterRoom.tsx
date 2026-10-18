@@ -423,7 +423,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
 
                       {/* Section Content with Automatic Contextual Internal Link Mesh */}
                       <div className="text-base sm:text-lg text-ink-secondary leading-relaxed font-normal whitespace-pre-line space-y-4">
-                        <ContextualInternalLinker text={sec.content.replace(/[*#]/g, '')} />
+                        <ContextualInternalLinker text={sec.content} />
                       </div>
 
                       {/* "Explain Simpler" Component */}

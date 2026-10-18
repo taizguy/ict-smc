@@ -1,4 +1,5 @@
 import { masterclassCollection } from '../data/masterclassData';
+import { AccentText } from './AccentText';
 import { textbookChapters } from '../data/chaptersData';
 import React, { useState } from 'react';
 import { 
@@ -227,7 +228,7 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
 
             <div className="space-y-3">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-ink leading-tight">
-                Trading Study Workbench <br className="hidden sm:inline" />
+                <AccentText text="Trading Study Workbench" focus="Study" urduFocus="مشق" tone="violet"/> <br className="hidden sm:inline" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal via-brand to-[#705692]">
                   Reference, Practice and Review
                 </span>
@@ -295,13 +296,13 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
           return (
             <div
               key={tool.id}
-              className="group flex flex-col justify-between rounded-2xl bg-surface border border-ink/[0.08] hover:border-ink/20 p-6 sm:p-7 transition-all duration-300 hover:shadow-xl hover:shadow-black/40 hover:-translate-y-1"
+              className="tool-surface group flex flex-col justify-between rounded-2xl bg-surface border border-ink/[0.08] hover:border-ink/20 p-6 sm:p-7 transition-colors duration-300"
             >
               <div className="space-y-4">
                 {/* Header */}
                 <div className="flex items-center justify-between">
                   <div 
-                    className="w-12 h-12 rounded-xl flex items-center justify-center transition-transform group-hover:scale-105"
+                    className="tactile-icon w-12 h-12 rounded-xl flex items-center justify-center"
                     style={{ backgroundColor: `${tool.accentColor}15`, color: tool.accentColor }}
                   >
                     <Icon className="w-6 h-6" />

@@ -1,3 +1,5 @@
+import { useTranslation } from '../i18n/TranslationProvider';
+import { matchesSearch as matchesLocalizedSearch } from '../i18n/search';
 import React, { useState } from 'react';
 import { 
   AlertTriangle, 
@@ -23,13 +25,14 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({
   onNavigate,
   onSelectChapter
 }) => {
+  const { t: translateSearch } = useTranslation();
   const [query, setQuery] = useState('');
 
   const matchingChapters = query.trim()
     ? textbookChapters.filter(ch => 
-        ch.title.toLowerCase().includes(query.toLowerCase()) ||
-        ch.slug.toLowerCase().includes(query.toLowerCase()) ||
-        ch.summary.some(s => s.toLowerCase().includes(query.toLowerCase()))
+        matchesLocalizedSearch(query, [ch.title], translateSearch) ||
+        matchesLocalizedSearch(query, [ch.slug], translateSearch) ||
+        ch.summary.some(s => matchesLocalizedSearch(query, [s], translateSearch))
       ).slice(0, 4)
     : [];
 

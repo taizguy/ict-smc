@@ -1,3 +1,4 @@
+import { useTranslation } from '../i18n/TranslationProvider';
 import React, { useState, useEffect } from 'react';
 import { 
   Search, 
@@ -5,6 +6,7 @@ import {
   Clock
 } from 'lucide-react';
 import { BauhausNavScroller } from './BauhausNavScroller';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export type MainTabType = 
   | 'welcome'
@@ -50,6 +52,7 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenWelcomeIntro,
   progressPercent = 0
 }) => {
+  const { t, href } = useTranslation();
   const [nyTime, setNyTime] = useState<string>('');
   const [activeSession, setActiveSession] = useState<string>('Asian');
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -109,7 +112,7 @@ export const Header: React.FC<HeaderProps> = ({
         : 'bg-canvas/60 backdrop-blur-md border-ink/[0.05]'
     }`}>
       {/* Top Main Navigation Bar */}
-      <div className="max-w-[1560px] w-full mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between gap-4">
+      <div className="max-w-[1560px] w-full mx-auto px-4 sm:px-6 lg:px-8 min-h-16 h-auto sm:h-18 py-2 sm:py-0 flex flex-wrap sm:flex-nowrap items-center justify-between gap-4">
         
         {/* Left: Brand Identity */}
         <div className="flex items-center gap-6">
@@ -125,8 +128,8 @@ export const Header: React.FC<HeaderProps> = ({
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             className="flex items-center gap-3 text-left cursor-pointer group select-none"
-            title="Return to Welcome Screen"
-            aria-label="Return to Welcome Screen"
+            title={t("Return to Welcome Screen")}
+            aria-label={t("Return to Welcome Screen")}
           >
             {/* Minimal Technical Emblem */}
             <div className="w-8 h-8 rounded-lg bg-ink/[0.04] border border-ink/[0.09] flex items-center justify-center group-hover:border-ink/20 transition-all">
@@ -139,70 +142,69 @@ export const Header: React.FC<HeaderProps> = ({
                 <span className="text-ink">/</span>
                 <span className="text-ink-secondary">SMC</span>
               </div>
-              <div className="text-[0.8125rem] font-sans tabular-nums tracking-[0.16em] uppercase text-ink-muted mt-0.5">
-                ACADEMY
-              </div>
+              <div className="text-[0.8125rem] font-sans tabular-nums tracking-[0.16em] uppercase text-ink-muted mt-0.5">{t("ACADEMY")}</div>
             </div>
           </button>
         </div>
 
         {/* Center: Minimal Segmented Navigation */}
-        <nav aria-label="Main navigation" className="hidden xl:flex items-center gap-1 p-1 bg-ink/[0.03] border border-ink/[0.07] rounded-xl">
+        <nav aria-label={t("Main navigation")} className="hidden xl:flex items-center gap-1 p-1 bg-ink/[0.03] border border-ink/[0.07] rounded-xl">
           {/* Pillar 1: Curriculum */}
-          <a href="/curriculum/"
+          <a href={href("/curriculum/")}
             className={`px-4 py-2 rounded-lg text-sm font-semibold tracking-tight transition-all cursor-pointer ${
               isCurriculumActive
                 ? 'bg-ink/[0.08] text-ink shadow-sm'
                 : 'text-ink-secondary hover:text-ink hover:bg-ink/[0.03]'
             }`}
           >
-            <span>Curriculum</span>
+            <span>{t("Curriculum")}</span>
           </a>
 
-          <a href="/articles/" aria-current={activeTab === 'articles' ? 'page' : undefined}
-            className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${activeTab === 'articles' ? 'bg-ink/[0.08] text-ink' : 'text-ink-secondary hover:text-ink'}`}>Articles</a>
+          <a href={href("/articles/")} aria-current={activeTab === 'articles' ? 'page' : undefined}
+            className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${activeTab === 'articles' ? 'bg-ink/[0.08] text-ink' : 'text-ink-secondary hover:text-ink'}`}>{t("Articles")}</a>
 
           {/* Pillar 2: Masood's Academy */}
-          <a href="/masood/"
+          <a href={href("/masood/")}
             className={`px-4 py-2 rounded-lg text-sm font-semibold tracking-tight transition-all cursor-pointer ${
               isMasoodActive
                 ? 'bg-ink/[0.08] text-ink shadow-sm'
                 : 'text-ink-secondary hover:text-ink hover:bg-ink/[0.03]'
             }`}
           >
-            <span>Masood Academy</span>
+            <span>{t("Masood Academy")}</span>
           </a>
 
           {/* Pillar 3: Trading Tools */}
-          <a href="/tools/"
+          <a href={href("/tools/")}
             className={`px-4 py-2 rounded-lg text-sm font-semibold tracking-tight transition-all cursor-pointer ${
               isToolsActive
                 ? 'bg-ink/[0.08] text-ink shadow-sm'
                 : 'text-ink-secondary hover:text-ink hover:bg-ink/[0.03]'
             }`}
           >
-            <span>Workbench &amp; Lab</span>
+            <span>{t("Workbench & Lab")}</span>
           </a>
         </nav>
 
         {/* Right: Search, Market Clock, Tribute */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 ms-auto">
+          <LanguageSwitcher />
           {/* NY Market Session Clock */}
           <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-ink/[0.02] border border-ink/[0.07] text-xs font-sans tabular-nums">
             <span className="w-1.5 h-1.5 rounded-full bg-positive animate-pulse" />
-            <span className="text-ink-secondary uppercase">{activeSession}</span>
+            <span className="text-ink-secondary uppercase">{t(activeSession)}</span>
             <span className="text-ink">|</span>
-            <span className="text-ink font-medium">{nyTime || 'Loading time…'} ET</span>
+            <span className="text-ink font-medium" dir="ltr">{nyTime || t('Loading time…')} ET</span>
           </div>
 
           {/* Search Button */}
           <button
             onClick={onOpenSearch}
             className="flex items-center gap-2.5 px-3 py-1.5 rounded-lg bg-ink/[0.03] hover:bg-ink/[0.07] border border-ink/[0.07] hover:border-ink/15 text-xs text-ink-secondary hover:text-ink transition-all cursor-pointer"
-            title="Search (⌘K)"
+            title={t("Search (⌘K)")}
           >
             <Search className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline text-xs font-sans">Search</span>
+            <span className="hidden sm:inline text-xs font-sans">{t("Search")}</span>
             <kbd className="hidden sm:inline px-1.5 py-0.5 text-[0.8125rem] font-sans tabular-nums bg-ink/[0.06] border border-ink/[0.08] rounded text-ink-secondary">
               ⌘K
             </kbd>
@@ -213,8 +215,8 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               onClick={onOpenMentorSpotlight}
               className="p-2 rounded-lg bg-ink/[0.03] hover:bg-ink/[0.08] border border-ink/[0.07] text-ink-secondary hover:text-ink transition-all cursor-pointer"
-              title="Trader Abdullah Masood Tribute"
-              aria-label="Trader Abdullah Masood Tribute"
+              title={t("Trader Abdullah Masood Tribute")}
+              aria-label={t("Trader Abdullah Masood Tribute")}
             >
               <Sparkles className="w-4 h-4 text-teal" />
             </button>
@@ -224,31 +226,25 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Mobile Macro Navigation Bar */}
-      <div role="navigation" aria-label="Main navigation" className="flex xl:hidden border-t border-ink/[0.06] px-3 py-2 bg-surface-muted/70">
+      <div role="navigation" aria-label={t("Main navigation")} className="flex xl:hidden border-t border-ink/[0.06] px-3 py-2 bg-surface-muted/70">
         <BauhausNavScroller innerClassName="gap-1.5">
-          <a href="/curriculum/"
+          <a href={href("/curriculum/")}
             className={`py-1.5 px-3 rounded-lg text-sm font-semibold tracking-tight whitespace-nowrap transition-all shrink-0 ${
               isCurriculumActive ? 'bg-ink/[0.10] text-ink' : 'text-ink-secondary'
             }`}
-          >
-            Curriculum
-          </a>
-          <a href="/articles/" aria-current={activeTab === 'articles' ? 'page' : undefined}
-            className={`min-h-11 inline-flex items-center px-3 rounded-lg text-sm font-semibold whitespace-nowrap shrink-0 ${activeTab === 'articles' ? 'bg-ink/[0.10] text-ink' : 'text-ink-secondary'}`}>Articles</a>
-          <a href="/masood/"
+          >{t("Curriculum")}</a>
+          <a href={href("/articles/")} aria-current={activeTab === 'articles' ? 'page' : undefined}
+            className={`min-h-11 inline-flex items-center px-3 rounded-lg text-sm font-semibold whitespace-nowrap shrink-0 ${activeTab === 'articles' ? 'bg-ink/[0.10] text-ink' : 'text-ink-secondary'}`}>{t("Articles")}</a>
+          <a href={href("/masood/")}
             className={`py-1.5 px-3 rounded-lg text-sm font-semibold tracking-tight whitespace-nowrap transition-all shrink-0 ${
               isMasoodActive ? 'bg-ink/[0.10] text-ink' : 'text-ink-secondary'
             }`}
-          >
-            Masood Academy
-          </a>
-          <a href="/tools/"
+          >{t("Masood Academy")}</a>
+          <a href={href("/tools/")}
             className={`py-1.5 px-3 rounded-lg text-sm font-semibold tracking-tight whitespace-nowrap transition-all shrink-0 ${
               isToolsActive ? 'bg-ink/[0.10] text-ink' : 'text-ink-secondary'
             }`}
-          >
-            Workbench &amp; Lab
-          </a>
+          >{t("Workbench & Lab")}</a>
         </BauhausNavScroller>
       </div>
     </header>

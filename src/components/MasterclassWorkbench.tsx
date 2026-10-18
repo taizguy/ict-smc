@@ -1,3 +1,6 @@
+import { useTranslation } from '../i18n/TranslationProvider';
+import { matchesSearch as matchesLocalizedSearch } from '../i18n/search';
+import { currentDocumentHref } from '../i18n/navigation';
 import { useToolStorage, isBooleanRecord } from '../hooks/useToolStorage';
 import { ToolContentNotice } from './ToolContentNotice';
 import React, { useState, useEffect } from 'react';
@@ -43,6 +46,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
   initialSubTab = 'blueprint',
   onNavigateUrl
 }) => {
+  const { t: translateSearch } = useTranslation();
   const normalizedCategory = initialCategory === 'algorithmic_signatures' ? 'masterclass_34' : initialCategory;
   // Resolve initial item from slug if provided
   const resolvedInitialItem = initialModuleSlug
@@ -79,8 +83,8 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
 
     if (onNavigateUrl) {
       onNavigateUrl(targetUrl);
-    } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
-      window.location.assign(targetUrl);
+    } else if (typeof window !== 'undefined' && window.location.pathname !== currentDocumentHref(targetUrl)) {
+      window.location.assign(currentDocumentHref(targetUrl));
     }
   };
 
@@ -96,17 +100,17 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
     
     if (onNavigateUrl) {
       onNavigateUrl(targetUrl);
-    } else if (typeof window !== 'undefined' && window.location.pathname !== targetUrl) {
-      window.location.assign(targetUrl);
+    } else if (typeof window !== 'undefined' && window.location.pathname !== currentDocumentHref(targetUrl)) {
+      window.location.assign(currentDocumentHref(targetUrl));
     }
   };
 
   const filteredItems = masterclassCollection.filter(item => {
     const matchesCategory = selectedCategory === 'all' || item.category === selectedCategory || (selectedCategory === 'masterclass_34' && item.category === 'algorithmic_signatures');
     const matchesSearch = searchQuery === '' || 
-      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.subtitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.coreRule.toLowerCase().includes(searchQuery.toLowerCase());
+      matchesLocalizedSearch(searchQuery, [item.title], translateSearch) ||
+      matchesLocalizedSearch(searchQuery, [item.subtitle], translateSearch) ||
+      matchesLocalizedSearch(searchQuery, [item.coreRule], translateSearch);
     return matchesCategory && matchesSearch;
   });
 
@@ -290,6 +294,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                       key={tab.id}
                       type="button"
                       aria-pressed={activeSubTab === tab.id}
+                      aria-label={tab.label}
                       onClick={() => setActiveSubTab(tab.id as any)}
                       className={`px-3 py-1.5 text-xs font-sans tabular-nums uppercase flex items-center gap-1 rounded-lg border transition-all cursor-pointer ${
                         isActive 

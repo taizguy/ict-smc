@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { BauhausNavScroller } from './BauhausNavScroller';
 import { ScrollReveal } from './ScrollReveal';
+import { MentorshipsTeaser, MentorshipsView } from './MentorshipsView';
 
 interface CurriculumViewProps {
   onSelectChapter: (chapterId: number, slug?: string) => void;
@@ -58,8 +59,12 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
     });
   }, [selectedPart, searchQuery]);
 
+  const mentorshipRoute = withoutLocale(location.pathname).match(/^\/curriculum\/mentorships(?:\/([^/]+))?\/?$/);
+  if (mentorshipRoute) return <MentorshipsView slug={mentorshipRoute[1]} />;
+
   return (
     <div className="space-y-12 sm:space-y-16 pb-20">
+      <MentorshipsTeaser />
       
       <details className="curriculum-topics"><summary>Browse curriculum topics</summary><nav aria-label="Curriculum topics" className="grid sm:grid-cols-2 gap-2 pt-4">
         <a className="underline" href="/curriculum/">All lessons</a>

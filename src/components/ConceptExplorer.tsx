@@ -1,5 +1,6 @@
 import { currentDocumentHref } from '../i18n/navigation';
 import { ToolContentNotice } from './ToolContentNotice';
+import { ReviewedModelSource } from './ReviewedModelSource';
 import React, { useState, useEffect } from 'react';
 import { ictConcepts } from '../data/conceptsData';
 import { masterclassCollection } from '../data/masterclassData';
@@ -486,11 +487,12 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                 </div>
                 <div>
                   <span className="text-ink-muted block text-[0.8125rem] uppercase">Lecture Reference</span>
-                  <span className="text-negative font-medium uppercase truncate block">{concept.source.lectureReference || 'Core Series'}</span>
+                  {concept.source.lectureReference?.startsWith('https://') ? <a className="text-negative font-medium underline block" href={concept.source.lectureReference}>Open source reference</a> : <span className="text-negative font-medium uppercase truncate block">{concept.source.lectureReference || 'Core Series'}</span>}
                 </div>
               </div>
             )}
 
+            <ReviewedModelSource modelId={concept.id} />
             {/* Layer Tabs with Scroller */}
             <div className="pt-4 border-t border-ink/[0.07]">
               <div className="text-[0.8125rem] font-sans tabular-nums uppercase tracking-[0.16em] text-ink-muted mb-2">

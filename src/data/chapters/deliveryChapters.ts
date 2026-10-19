@@ -65,93 +65,65 @@ export const deliveryChapters: TextbookChapter[] = [
 
   // CHAPTER 14: Inverse Fair Value Gaps (IFVG): Role Reversal Imbalances
   {
-    id: 14,
-    slug: 'inverse-fair-value-gaps-ifvg-role-reversal-imbalances',
-    part: 'Part III - Price Delivery',
-    title: 'Inverse Fair Value Gaps (IFVG): Role Reversal Imbalances — Exploiting Failed Market Inefficiencies',
-    quote: "An IFVG describes a proposed role reversal after price crosses a previously marked FVG. A later retest can hold or fail; support and resistance are never impenetrable.",
-    level: 2,
-    summary: [
-      'The mechanical definition of an Inverse Fair Value Gap (IFVG).',
-      'Why FVGs fail: Detecting institutional regime change when an imbalance is violated.',
-      'The Polarity Flip: Turning broken BISI into resistance and broken SIBI into support.',
-      'The "Reaper IFVG" trap: How market makers harvest retail SMC stops at inversion levels.',
-      'Complete IFVG execution protocol: Entry timing, candle body invalidation, and profit targets.'
-    ],
-    keyTerms: [
-      { term: 'Inverse Fair Value Gap (IFVG)', definition: 'A Fair Value Gap that was violated and closed through with displacement, which subsequently flips its role to act as the opposite support or resistance zone upon retest.' },
-      { term: 'Polarity Flip', definition: 'The structural transition where a bullish imbalance (support) converts into bearish resistance, or a bearish imbalance converts into bullish support.' },
-      { term: 'Violating Candle', definition: 'The authoritative displacement candle whose body closes completely beyond the distal boundary of an existing FVG, triggering the inversion.' },
-      { term: 'Reaper IFVG', definition: 'An advanced trap pattern where price fakes an inversion retest to lure retail breakout traders before aggressively expanding in the authentic macro direction.' }
-    ],
-    practiceQuestions: [
-      'What specific condition must be satisfied for a standard FVG to officially convert into an Inverse FVG?',
-      'Why does an IFVG often provide a more reliable trade setup than a standard first-touch FVG?',
-      'When a bullish BISI is violated by a red displacement candle, what role does that box play when price subsequently rallies back into it?',
-      'Where should a trader place their stop loss when entering a trade off an IFVG retest?',
-      'How does combining an IFVG with a higher-timeframe Market Structure Shift (MSS) create a high-probability institutional setup?'
-    ],
-    sections: [
-      {
-        id: '14.1',
-        title: '14.1 The Mechanism of Inversion: Why Imbalances Flip',
-        content: `In orthodox technical analysis, traders learn that "old support becomes new resistance."
-In institutional Smart Money Concepts, this exact same market truth is codified with mathematical precision through Inverse Fair Value Gaps (IFVGs).
-
-Consider what an FVG represents: it is a price corridor where institutional algorithms delivered one-sided liquidity. Under normal trending conditions, when price retraces to that gap, the algorithm steps in to defend it and continue the trend.
-
-However, financial markets do not trend forever. When a market reaches a major macroeconomic Draw on Liquidity, the institutional algorithm switches from trend continuation to reversal distribution.
-
-When this occurs, an existing FVG is approached. Instead of bouncing off the gap, an aggressive, high-velocity displacement candle plows straight through the box and closes its solid body completely beyond the outer boundary of the gap.
-
-What just happened in the order book?
-1. The buyers who were attempting to defend the bullish FVG were completely overwhelmed by institutional market sell orders.
-2. The limit orders inside the gap were consumed, and the remaining order book was wiped clean.
-3. The failed bullish gap is now mechanically converted into a Bearish Inverse Fair Value Gap (IFVG)!
-The box does not disappear from your chart. Instead, you keep the exact same box coordinates, but you now treat it as a stone wall of institutional resistance!`,
-        keyTakeaway: 'When price closes completely through an FVG with displacement, the gap flips polarity: a failed bullish gap becomes bearish resistance, and vice versa.'
-      },
-      {
-        id: '14.2',
-        title: '14.2 Step-by-Step IFVG Execution Protocol',
-        content: `Trading Inverse Fair Value Gaps provides some of the highest-conviction entries in modern algorithmic trading because the inversion itself provides physical proof that the previous trend is broken.
-
-The Mechanical Step-by-Step IFVG Execution Blueprint:
-
-1. Step 1: Identify the Broken FVG
-Mark a clear, well-defined 3-candle Fair Value Gap on your chart.
-- Example: A Bearish SIBI formed on a 5-minute chart.
-
-2. Step 2: Verify the Authoritative Close Through
-Wait for price to rally through the SIBI. A candle must close its solid BODY completely above the upper boundary of the gap. If price only pokes a wick through and closes back inside, it is NOT an IFVG—it is a failed sweep!
-
-3. Step 3: Wait for the Retracement (The Retest)
-Once the candle closes above, do not chase! Price will almost always retrace back down into the inverted box to test its new role as support.
-
-4. Step 4: Order Placement & Invalidation
-- Entry: Place a Limit Buy Order at the upper boundary or 50% Consequent Encroachment of the inverted box.
-- Stop Loss Placement: Place your stop loss strictly below the lower boundary of the inverted box (or below the swing low created during the retest).
-- Strict Invalidation Rule: If a subsequent candle closes its body back below the lower boundary of the IFVG, the setup is invalidated immediately. Close the trade!
-
-5. Step 5: Target the Draw on Liquidity
-Target the next unpurged Buy-Side Liquidity pool (e.g., Previous Day High, Asian High, or higher-timeframe FVG).`,
-        keyTakeaway: 'Wait for a full candle body close through the gap. Enter on the retest of the inverted boundary; invalidate if candle bodies close back inside the old range.'
-      },
-      {
-        id: '14.3',
-        title: '14.3 The "Reaper IFVG" Trap: Navigating False Inversions',
-        content: `As retail Smart Money Concepts grew in popularity, algorithmic market makers began deploying specialized stop-hunting patterns around obvious IFVGs. The most deadly of these is the Reaper IFVG.
-
-How the Reaper IFVG Works:
-1. A bearish FVG is penetrated upward by a modest candle, leading retail traders to declare: "Bullish IFVG formed! I will buy the retest!"
-2. Price pulls back into the box, produces a tiny, weak bounce, enticing retail buyers to pile in and place their tight stop losses directly underneath the box.
-3. Suddenly, an algorithmic Macro Window arrives (such as 09:50 AM EST).
-4. A massive, high-volume red candle appears out of nowhere, violently slicing downward through the box, triggering all the retail stop losses, and trapping the breakout buyers.
-5. The tape reader does not panic. They recognize that the first "inversion" was an engineered retail trap. They immediately enter SHORT on the underside retest of the box, riding the explosive momentum generated by the liquidation of the trapped retail buyers!`,
-        keyTakeaway: 'Beware of slow, sluggish inversions outside of killzones. A true IFVG displaces with authority and defends its boundaries vigorously.'
-      }
-    ]
-  },
+  "id": 14,
+  "slug": "inverse-fair-value-gaps-ifvg-role-reversal-imbalances",
+  "part": "Part III - Price Delivery",
+  "title": "Inverse Fair Value Gaps (IFVG): Role Reversal Imbalances — Exploiting Failed Market Inefficiencies",
+  "quote": "An IFVG describes a proposed role reversal after price crosses a previously marked FVG. A later retest can hold or fail; support and resistance are never impenetrable.",
+  "level": 2,
+  "summary": [
+    "The mechanical definition of an Inverse Fair Value Gap (IFVG).",
+    "Why FVGs fail: Detecting institutional regime change when an imbalance is violated.",
+    "The Polarity Flip: Turning broken BISI into resistance and broken SIBI into support.",
+    "An IFVG retest can fail. Record the failed role-change idea without inventing a new named model or automatically reversing the position.",
+    "Complete IFVG execution protocol: Entry timing, candle body invalidation, and profit targets."
+  ],
+  "keyTerms": [
+    {
+      "term": "Inverse Fair Value Gap (IFVG)",
+      "definition": "A Fair Value Gap that was violated and closed through with displacement, which subsequently flips its role to act as the opposite support or resistance zone upon retest."
+    },
+    {
+      "term": "Polarity Flip",
+      "definition": "The structural transition where a bullish imbalance (support) converts into bearish resistance, or a bearish imbalance converts into bullish support."
+    },
+    {
+      "term": "Violating Candle",
+      "definition": "The authoritative displacement candle whose body closes completely beyond the distal boundary of an existing FVG, triggering the inversion."
+    },
+    {
+      "term": "Failed inversion",
+      "definition": "An IFVG retest can fail. Record the failed role-change idea without inventing a new named model or automatically reversing the position."
+    }
+  ],
+  "practiceQuestions": [
+    "What specific condition must be satisfied for a standard FVG to officially convert into an Inverse FVG?",
+    "Why does an IFVG often provide a more reliable trade setup than a standard first-touch FVG?",
+    "When a bullish BISI is violated by a red displacement candle, what role does that box play when price subsequently rallies back into it?",
+    "Where should a trader place their stop loss when entering a trade off an IFVG retest?",
+    "How does combining an IFVG with a higher-timeframe Market Structure Shift (MSS) create a high-probability institutional setup?"
+  ],
+  "sections": [
+    {
+      "id": "14.1",
+      "title": "14.1 The Mechanism of Inversion: Why Imbalances Flip",
+      "content": "In orthodox technical analysis, traders learn that \"old support becomes new resistance.\"\nIn institutional Smart Money Concepts, this exact same market truth is codified with mathematical precision through Inverse Fair Value Gaps (IFVGs).\n\nConsider what an FVG represents: it is a price corridor where institutional algorithms delivered one-sided liquidity. Under normal trending conditions, when price retraces to that gap, the algorithm steps in to defend it and continue the trend.\n\nHowever, financial markets do not trend forever. When a market reaches a major macroeconomic Draw on Liquidity, the institutional algorithm switches from trend continuation to reversal distribution.\n\nWhen this occurs, an existing FVG is approached. Instead of bouncing off the gap, an aggressive, high-velocity displacement candle plows straight through the box and closes its solid body completely beyond the outer boundary of the gap.\n\nWhat just happened in the order book?\n1. The buyers who were attempting to defend the bullish FVG were completely overwhelmed by institutional market sell orders.\n2. The limit orders inside the gap were consumed, and the remaining order book was wiped clean.\n3. The failed bullish gap is now mechanically converted into a Bearish Inverse Fair Value Gap (IFVG)!\nThe box does not disappear from your chart. Instead, you keep the exact same box coordinates, but you now treat it as a stone wall of institutional resistance!",
+      "keyTakeaway": "When price closes completely through an FVG with displacement, the gap flips polarity: a failed bullish gap becomes bearish resistance, and vice versa."
+    },
+    {
+      "id": "14.2",
+      "title": "14.2 Step-by-Step IFVG Execution Protocol",
+      "content": "Trading Inverse Fair Value Gaps provides some of the highest-conviction entries in modern algorithmic trading because the inversion itself provides physical proof that the previous trend is broken.\n\nThe Mechanical Step-by-Step IFVG Execution Blueprint:\n\n1. Step 1: Identify the Broken FVG\nMark a clear, well-defined 3-candle Fair Value Gap on your chart.\n- Example: A Bearish SIBI formed on a 5-minute chart.\n\n2. Step 2: Verify the Authoritative Close Through\nWait for price to rally through the SIBI. A candle must close its solid BODY completely above the upper boundary of the gap. If price only pokes a wick through and closes back inside, it is NOT an IFVG—it is a failed sweep!\n\n3. Step 3: Wait for the Retracement (The Retest)\nOnce the candle closes above, do not chase! Price will almost always retrace back down into the inverted box to test its new role as support.\n\n4. Step 4: Order Placement & Invalidation\n- Entry: Place a Limit Buy Order at the upper boundary or 50% Consequent Encroachment of the inverted box.\n- Stop Loss Placement: Place your stop loss strictly below the lower boundary of the inverted box (or below the swing low created during the retest).\n- Strict Invalidation Rule: If a subsequent candle closes its body back below the lower boundary of the IFVG, the setup is invalidated immediately. Close the trade!\n\n5. Step 5: Target the Draw on Liquidity\nTarget the next unpurged Buy-Side Liquidity pool (e.g., Previous Day High, Asian High, or higher-timeframe FVG).",
+      "keyTakeaway": "Wait for a full candle body close through the gap. Enter on the retest of the inverted boundary; invalidate if candle bodies close back inside the old range."
+    },
+    {
+      "id": "14.3",
+      "title": "14.3 Failed inversions and the limits of a model label",
+      "content": "A zone that appears to change role can later be crossed again. Mark the original FVG boundaries, the selected break condition and the subsequent retest separately. A return through the zone is evidence that the selected reaction failed; it does not prove why traders acted or that every participant was liquidated.\n\nAn official execution titled Reaper FVG exists, but the reviewed passages do not authenticate the previous inversion-of-inversion checklist. Do not treat every failed IFVG as that named model or respond by immediately reversing a position. Reassess the context and the prewritten risk plan. A later label does not erase the losing observation from the study.",
+      "keyTakeaway": "An IFVG retest can fail. Record the failed role-change idea without inventing a new named model or automatically reversing the position."
+    }
+  ]
+},
 
   // CHAPTER 15: Order Blocks (OB) & Mitigation
   {

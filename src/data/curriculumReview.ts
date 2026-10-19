@@ -1,5 +1,6 @@
 import type { TextbookChapter } from '../types';
 import { reviewed2022Sources as r } from './ict2022Sources';
+import { charterReviewSources } from './mentorshipReviewSources';
 
 // This date records our editorial clarification, not a full video/transcript review.
 export const curriculumReviewDate = '2026-10-19';
@@ -15,6 +16,39 @@ export interface CurriculumSource {
   passages?: { label: string; url: string; note: string }[];
 }
 export const curriculumSources = {
+  reaperVariant2026: { title: 'Futures Commentary — 9 June 2026: Reaper Variant', url: 'https://www.youtube.com/watch?v=18vX-vv2bsg&t=1010s', scope: 'Original-caption passages at approximately 14:40–19:40 and chart frames at 17:17 and 19:10 were reviewed. ICT identifies nested first-utilization and inversion-gap references within a breaker context as a Reaper variant; this does not authenticate every failed-inversion rule.' },
+  suspension2026: { title: 'ICT 2026 Futures Weekend Review — 11 April 2026', url: 'https://www.youtube.com/watch?v=RY67bW2UhxY&t=650s', scope: 'Original-caption passages at approximately 08:20–15:00 and chart frames at 11:45, 12:45 and 14:10 were reviewed. The source compares body-price gaps, a breaker reference and front-month versus continuous contracts.' },
+  enigma2026: { title: 'Enigma FVG Projections & Protractions — 27 June 2026', url: 'https://www.youtube.com/watch?v=rbNhlJSXDaA&t=660s', scope: 'Selected original-caption passages at 03:00–09:00 and 10:00–22:00 were reviewed. The source discusses FVG measurement boundaries and projections; the previous two-candle definition is not established by these passages.' },
+  reaperExample2026: { title: 'ICT Reaper FVG — Long NQ Terminus Daily V.I., 8 June 2026', url: 'https://www.youtube.com/watch?v=kzeFqGK9gCQ', scope: 'Selected original-caption execution and management passages were reviewed. The title does not authenticate the previous inversion-of-inversion definition or a universal reversal-entry rule.' },
+  premarket2026: { title: 'Midnight ET Principles in Relationship to Pre-Market Session', url: 'https://www.youtube.com/watch?v=KHkUPAsdyfk', scope: 'The original-caption opening through approximately 03:10 was reviewed. This example defines a roughly 07:00–09:00 New York pre-market observation period and distinguishes earlier preparation.' },
+  firstHour2026: { title: 'Friday Review on NQ — Pre-Market Session Rules Revisited', url: 'https://www.youtube.com/watch?v=4KW2acdPi-M&t=1050s', scope: 'Original-caption passages at approximately 17:30–21:00 were reviewed. This example studies a 09:30–10:30 first-hour range; it does not make every course’s opening range one hour long.' },
+  quarterlyCore: { title: 'ICT Core Month 5 — Using IPDA Data Ranges', url: 'https://www.youtube.com/watch?v=LRKtiysz4nA&t=996s', scope: 'Selected original-caption passages were reviewed. The discussion distinguishes quarterly shifts from a compulsory March/June/September/December calendar.' },
+  allocationCore: { title: 'ICT Core Month 5 — Money Management', url: 'https://www.youtube.com/watch?v=crPpMwgwa7k&t=382s', scope: 'Selected original-caption passages were reviewed. A percentage of allocated capital must be distinguished from the same percentage of the entire account.' },
+  twentyPipsCore: { title: 'ICT Core Month 9 — 20 Pips Per Day', url: 'https://www.youtube.com/watch?v=km0haQkTalc', scope: 'The opening original-caption passage was reviewed. The title is explicitly not a promise of 20 pips every day.' },
+  routineCore: { title: 'ICT Core Month 9 — Day Trade Routine', url: 'https://www.youtube.com/watch?v=cqf8nH54bb8&t=2576s', scope: 'Selected original-caption passages were reviewed. Day trading does not require trading every day or acting on every fluctuation.' },
+  reversalsCore: { title: 'ICT Core Month 9 — Market Reversals', url: 'https://www.youtube.com/watch?v=KrGTimL3YRQ&t=483s', scope: 'Selected original-caption passages were reviewed. Not every old high produces a reversal; some price runs continue.' },
+  venom2025: { title: '2025 ICT Lecture — Venom Model Tutorial, 3 April 2025', url: 'https://www.youtube.com/watch?v=7wL2oyebbvU', scope: 'Selected original-caption passages and two chart frames were reviewed. Entry variations are distinguished; performance claims are not independently verified.', passages: [
+    { label: '13:55 — Reference window and chart context', url: 'https://www.youtube.com/watch?v=7wL2oyebbvU&t=835s', note: 'The lesson marks the preceding 08:00–09:30 New York window. Its raid and deferred-entry examples do not establish the previous mandatory five-stage CRT/SMT/FVG definition.' },
+  ] },
+  sickSister2023: { title: '2023 ICT — Sick Sister Consolidation Example, 8 May 2023', url: 'https://www.youtube.com/watch?v=VSSwM6rDIg0', scope: 'Selected original-caption passages from approximately 01:00–10:50 were reviewed. The weaker index is considered for a contextual catch-up long, contradicting an always-short-the-weakest rule.' },
+  onboarding2026: { title: '2026 ICT — How New Students Should Start, Part 1', url: 'https://www.youtube.com/watch?v=BWEPtHZ1Y2Y', scope: 'Selected original-caption passages were reviewed, including preparation and the distinction between timing and direction. A full-course review is not claimed.', passages: [
+    { label: '64:00 — A macro is not directional information', url: 'https://www.youtube.com/watch?v=BWEPtHZ1Y2Y&t=3840s', note: 'The explanation uses a time window to observe an existing analysis, and explicitly says that the macro does not supply directional information.' },
+  ] },
+  nfp2026: { title: '2026 ICT — NFP Nasdaq Study Example', url: 'https://www.youtube.com/watch?v=hIusATccCcM', scope: 'The opening original-caption passage was reviewed. The source warns against inexperienced participation; displayed results are not independently verified.' },
+  firstGap2025: { title: '2025 ICT Lecture — How to Disqualify First Presented FVGs', url: 'https://www.youtube.com/watch?v=y63zsrLCcCw&t=480s', scope: 'Selected original-caption passages and chart frames were reviewed. The filter belongs to this example, not every possible FVG definition.', passages: [
+    { label: '08:00 — Check the preceding balanced range', url: 'https://www.youtube.com/watch?v=y63zsrLCcCw&t=480s', note: 'The apparent first gap is compared with previous bodies and wick delivery. The explanation rejects the overlapping candidate and distinguishes a later gap that leaves that area.' },
+  ] },
+  coreMultiAsset: { title: 'ICT Core Month 10 — Importance of Multi-Asset Analysis', url: 'https://www.youtube.com/watch?v=gs3KMgz84yc', scope: 'The opening original-caption passage was reviewed. The supplied Month 10 titles were catalogued; later month groups are not established by these files.', passages: [
+    { label: '00:00 — Why compare asset classes?', url: 'https://www.youtube.com/watch?v=gs3KMgz84yc&t=0s', note: 'The introduction connects bonds, currencies, commodities and stocks as a study of relationships, and distinguishes the mentorship from a trade-signal service. This does not prove a fixed predictive correlation.' },
+  ] },
+  charter13: { title: 'ICT Charter Price Action Model 13 — 2022 Model Follow-up', url: 'https://www.youtube.com/watch?v=kNlySn81dmo', scope: 'Selected original-caption passages were reviewed. This is not continuous viewing or verification of trading results.', passages: [
+    { label: '00:00 — Relationship to the public series', url: 'https://www.youtube.com/watch?v=kNlySn81dmo&t=0s', note: 'The introduction explicitly identifies Model 13 with the public 2022 model and assumes prior study of that series. Keep the public foundation and amplified follow-up distinguishable.' },
+    { label: '14:00 — Partial exits involve judgment', url: 'https://www.youtube.com/watch?v=kNlySn81dmo&t=840s', note: 'The discussion does not prescribe one partial-exit fraction for every learner. Record a chosen management rule before replay rather than selecting it after the outcome.' },
+  ] },
+  silverBullet2023: { title: '2023 ICT Mentorship — Silver Bullet Time Based Trading Model', url: 'https://www.youtube.com/watch?v=tRq1hyGGtl4', scope: 'Selected original-caption passages were reviewed. Example ranges and timing conventions do not establish expected returns.', passages: [
+    { label: '00:00 — Framework versus captured range', url: 'https://www.youtube.com/watch?v=tRq1hyGGtl4&t=0s', note: 'The introduction distinguishes the potential price framework from the portion captured between entry and exit. The numerical framework is not a guaranteed profit target.' },
+    { label: '09:00 — Entry window and exit timing', url: 'https://www.youtube.com/watch?v=tRq1hyGGtl4&t=540s', note: 'Use New York local time with daylight saving by date. In the London example, entry occurs inside the hour; the source explicitly allows the position to continue beyond that hour.' },
+  ] },
   structure: { title: 'ICT 2022 Mentorship — Episode 3', url: 'https://www.youtube.com/watch?v=nQfHZ2DEJ8c', scope: 'Selected chart frames and local machine-transcript passages were reviewed. Transcript positions are approximate; consult the original recording. The annotated example is not a verified statistical study.', passages: [
     { label: '01:24 — Choosing the reference', url: 'https://www.youtube.com/watch?v=nQfHZ2DEJ8c&t=84s', note: 'The opening discussion considers an alternative prior high and a preference for a higher group of similar highs. State which reference you selected before judging the later move.' },
     { label: '02:25 — Intraday shift versus longer-duration break', url: 'https://www.youtube.com/watch?v=nQfHZ2DEJ8c&t=145s', note: 'The discussion distinguishes an intraday directional leg from a structural break associated with a longer-duration move. An intraday shift need not establish a multi-day reversal.' },
@@ -54,6 +88,7 @@ const interpretation = {
 export function curriculumReview(chapter: TextbookChapter) {
   const kind = chapter.id === 23 ? 'masood' : chapter.id <= 6 ? 'foundations' : chapter.id <= 11 ? 'structure' : chapter.id <= 17 ? 'delivery' : chapter.id <= 22 ? 'time' : 'advanced';
   const checked: Record<number, CurriculumSource[]> = {
+    ...charterReviewSources,
     7: [curriculumSources.structure, r[12]],
     13: [curriculumSources.gaps, r[4], r[24], curriculumSources.stops],
     15: [curriculumSources.orderBlocks2022, r[18], curriculumSources.stops],
@@ -62,11 +97,22 @@ export function curriculumReview(chapter: TextbookChapter) {
     21: [r[7], r[9], r[21]],
     22: [r[5], r[22], r[26], r[41]],
     24: [r[24], curriculumSources.hours, curriculumSources.clock],
+    25: [curriculumSources.firstGap2025, curriculumSources.gaps, curriculumSources.stops],
     26: [r[35], r[38]],
-    36: [r[2], curriculumSources.structure, curriculumSources.gaps, r[29], r[41]],
+    36: [curriculumSources.charter13, r[2], curriculumSources.structure, curriculumSources.gaps, r[29], r[41]],
     38: [r[11], r[27], r[41], curriculumSources.stops],
+    41: [curriculumSources.quarterlyCore, curriculumSources.allocationCore, curriculumSources.stops],
+    45: [curriculumSources.twentyPipsCore, curriculumSources.routineCore, curriculumSources.reversalsCore],
+    46: [curriculumSources.coreMultiAsset],
+    47: [curriculumSources.onboarding2026, curriculumSources.nfp2026, curriculumSources.clock, curriculumSources.employment, curriculumSources.fed, curriculumSources.stops],
+    48: [curriculumSources.premarket2026, curriculumSources.firstHour2026, curriculumSources.venom2025, curriculumSources.onboarding2026, curriculumSources.clock],
     50: [r[34], curriculumSources.orderBlocks2022, r[18]],
     51: [r[9], r[32], r[37], curriculumSources.hours],
+    53: [curriculumSources.venom2025, curriculumSources.clock, curriculumSources.stops],
+    14: [curriculumSources.reaperVariant2026, curriculumSources.gaps, curriculumSources.stops],
+    55: [curriculumSources.suspension2026, curriculumSources.reaperVariant2026, curriculumSources.reaperExample2026, curriculumSources.stops],
+    56: [curriculumSources.enigma2026, curriculumSources.gaps, curriculumSources.stops],
+    57: [curriculumSources.sickSister2023, curriculumSources.stops],
     52: [r[23], r[40], curriculumSources.mnq, curriculumSources.employment, curriculumSources.fed, curriculumSources.stops],
   };
   // Specific sources are related reading, never fabricated line-level verification.

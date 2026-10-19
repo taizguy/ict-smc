@@ -211,7 +211,7 @@ export const conceptComparisons: ConceptComparison[] = [
     title: 'ICT 2022 Mentorship vs. Silver Bullet: Study Variants',
     conceptA: {
       name: 'ICT 2022 Mentorship Model',
-      summary: 'A source-guided study of liquidity references, displacement, local structure and possible FVG retracement. The public 2022 model is not authenticated here as numbered Charter Model 13.',
+      summary: 'A source-guided study of liquidity references, displacement, local structure and possible FVG retracement. The opening of the Charter Model 13 lecture explicitly connects it to the public 2022 model.',
       keyPoints: [
         'State the product, timeframe and source-specific observation window.',
         'Requires a confirmed sweep of a prominent swing high/low (BSL or SSL)',
@@ -222,18 +222,18 @@ export const conceptComparisons: ConceptComparison[] = [
     },
     conceptB: {
       name: 'ICT Silver Bullet Model',
-      summary: 'A time-window-restricted algorithmic execution model targeting an immediate 10–15 handle / 20–30 pip run inside dedicated 60-minute windows.',
+      summary: 'A time-based study model with entry windows in New York local time. The source distinguishes the available price framework from the smaller portion a trader might capture; exit need not occur within the entry hour.',
       keyPoints: [
-        'Strictly bound to exact clock hours: 03:00–04:00 AM (London), 10:00–11:00 AM (NY AM), 02:00–03:00 PM (NY PM)',
-        'Does NOT require a structural sweep inside the window; it executes on the first valid FVG moving toward the existing draw on liquidity',
-        'Fixed mechanical targets: 5 to 10 index handles or 15 to 25 forex pips',
-        'Algorithmically engineered delivery window with high trade completion velocity'
+        'Source entry windows: 03:00–04:00, 10:00–11:00 and 14:00–15:00, all New York local time with date-appropriate daylight saving.',
+        'Study the likely draw on liquidity and a qualifying FVG in the selected window. Do not assume that every window supplies a setup.',
+        'The introduction uses a minimum potential framework of 10 index points (40 ticks for the illustrated index futures) or 15 Forex pips. These are source study conventions, not mandatory captured profit.',
+        'The source explicitly allows a position to continue beyond the entry hour under its trade plan; there is no guaranteed fill, target or completion speed.'
       ],
       idealCondition: 'At 10:05 AM NY time, following a 09:30 AM open run, price creates a clean 1m/5m FVG aligned with the Daily draw on liquidity.'
     },
     keyDifference: 'The 2022 sources discuss context and structure alongside time. A time-window variant is a separate research specification; neither label guarantees an entry or outcome.',
-    commonConfusion: 'Thinking Silver Bullet requires a brand new sweep inside the 10:00–11:00 AM window. Silver Bullet simply trades the first clean FVG aligned with the established session draw.',
-    decisionRule: 'Choose the source, observation window and entry variant before replay. The 2022 collection does not authenticate every Silver Bullet rule listed in this comparison.',
+    commonConfusion: 'Confusing an entry window with an exit deadline, or the source’s potential framework with guaranteed captured profit. Check the original explanation before specifying either rule.',
+    decisionRule: 'Choose the source, observation window and entry variant before replay. For Silver Bullet, consult the original 2023 lecture: the introduction explains framework versus captured range, and around 11:00 it distinguishes entry timing from exit timing.',
     diagramSnippet: '2022 study: context → reference → displacement → possible FVG | Time-window study: stated clock interval + predefined setup'
   },
   {

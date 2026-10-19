@@ -41,7 +41,13 @@ const routeTitles: Record<string, string> = {
   '/tools/simulator/ict-2022-model/': 'ICT 2022 Model: Trade-Plan Exercise',
   '/tools/masterclass/core-masterclasses/unicorn-model/': 'ICT Unicorn Model: Breaker & FVG',
   '/tools/masterclass/core-masterclasses/mmxm-stage2/': 'MMXM Second-Stage Distribution',
-  '/tools/masterclass/entry-models/venom-model/': 'Venom Model: 2025–2026 Study Guide',
+  '/tools/masterclass/entry-models/venom-model/': 'Venom Model: 2025 Opening-Session Study',
+  '/tools/masterclass/pd-arrays/reaper-ifvg/': 'Reaper FVG Study: Nested Gaps & Breakers',
+  '/tools/glossary/imbalances/ict-reaper-ifvg/': 'Reaper FVG Definition & Source Context',
+  '/tools/masterclass/pd-arrays/suspension-block/': 'Suspension Block Study: Futures Charts',
+  '/tools/glossary/order-blocks/suspension-block/': 'Suspension Block Definition & Body Gaps',
+  '/tools/masterclass/pd-arrays/rdrb-balanced-price-range/': 'RDRB Study: Balanced-Range Revisits',
+  '/tools/glossary/imbalances/redelivered-balanced-price-range/': 'RDRB Definition & Evidence Limits',
   '/tools/compare/internal-vs-external-liquidity/': 'Internal vs. External Range Liquidity',
   '/tools/compare/standard-ifvg-vs-reaper-ifvg/': 'Standard IFVG vs. Reaper IFVG',
   '/tools/glossary/time-and-sessions/sessions-killzones/': 'Trading Sessions & Killzones: London & New York',
@@ -60,6 +66,15 @@ export function searchTitle(value: string, path = '/'): string {
 }
 
 export function searchDescription(value: string, title: string, path: string): string {
+  const reviewedDescriptions: Record<string, string> = {
+    '/tools/masterclass/pd-arrays/reaper-ifvg/': 'Study the sourced Reaper variant with nested gaps and a breaker. Compare the chart context, invalidation assumptions and limits.',
+    '/tools/glossary/imbalances/ict-reaper-ifvg/': 'Define the Reaper FVG label using a June 2026 source example. Distinguish a nested-gap variant from an ordinary failed inversion.',
+    '/tools/masterclass/pd-arrays/suspension-block/': 'Study Suspension Block examples by comparing body gaps, breaker context and front-month versus continuous futures charts.',
+    '/tools/glossary/order-blocks/suspension-block/': 'Understand the Suspension Block example: adjacent body-price gaps, overlapping wicks and source-specific contract references.',
+    '/tools/masterclass/pd-arrays/rdrb-balanced-price-range/': 'Plan a balanced-range revisit study with fixed touch-counting rules, failed zones and costs. Second-touch performance is not established.',
+    '/tools/glossary/imbalances/redelivered-balanced-price-range/': 'Understand RDRB as a descriptive later revisit to a balanced-price reference, with clear limits on its unverified named rules.',
+  };
+  if (Object.prototype.hasOwnProperty.call(reviewedDescriptions, path)) return reviewedDescriptions[path];
   const topic = primaryTopic(title);
   let text = path.startsWith('/learn/') ? `Study ${topic}. Review definitions, chart examples, failure conditions and the limits of the framework.`
     : path.startsWith('/masood/lectures/') ? `Study ${topic}. Independent Abdullah Masood video notes, with key points, practice and source links.`

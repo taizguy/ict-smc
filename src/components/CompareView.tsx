@@ -1,5 +1,6 @@
 import { currentDocumentHref } from '../i18n/navigation';
 import { ToolContentNotice } from './ToolContentNotice';
+import { ReviewedModelSource } from './ReviewedModelSource';
 import React, { useState, useEffect } from 'react';
 import { conceptComparisons } from '../data/comparisonsData';
 import { AlertTriangle, Scale, GitCompare, Layers, ShieldCheck, CheckCircle2 } from 'lucide-react';
@@ -105,6 +106,7 @@ export const CompareView: React.FC<CompareViewProps> = ({
         </div>
       </div>
 
+      <ReviewedModelSource modelId={comparison.id} />
       {/* Main Side-by-Side Comparison Container */}
       <div className="space-y-6">
         <div className="text-center space-y-2 py-1">

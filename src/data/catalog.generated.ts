@@ -179,7 +179,7 @@ export const chapterCatalog = [
   {
     "id": 25,
     "slug": "the-1st-presented-fvg-the-0931-rule",
-    "title": "25.1 The 1st Presented FVG (The 09:31 Rule) — Immediate Execution Advantage",
+    "title": "First Presented FVG: Qualification & Balanced-Range Context",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
   },
   {
@@ -239,7 +239,7 @@ export const chapterCatalog = [
   {
     "id": 35,
     "slug": "ict-charter-models-10-11-and-12",
-    "title": "ICT Charter Models 10, 11 & 12: Dealing Ranges, Liquidity Runs & OB/FVG Synergy",
+    "title": "ICT Charter Models 10, 11 & 12: Swing, Day Trading & Scalping",
     "part": "Part X - ICT Charter Price Action Models Curriculum"
   },
   {
@@ -275,7 +275,7 @@ export const chapterCatalog = [
   {
     "id": 41,
     "slug": "core-content-month-5-quarterly-shifts-and-position-trading",
-    "title": "ICT Core Content Month 5: 90-Day Quarterly Shifts, 6-Month IPDA & Position Trading",
+    "title": "ICT Core Month 5: Quarterly Shifts, IPDA Lookbacks & Position Risk",
     "part": "Part XI - ICT Mentorship Core Content Master Curriculum"
   },
   {
@@ -305,19 +305,19 @@ export const chapterCatalog = [
   {
     "id": 46,
     "slug": "core-content-months-10-11-12-multi-asset-mega-trades-top-down",
-    "title": "ICT Core Content Months 10, 11 & 12: Multi-Asset Mastery, Mega-Trades & Master Top-Down Execution",
+    "title": "ICT Core Content: Multi-Asset Study & Top-Down Planning",
     "part": "Part XI - ICT Mentorship Core Content Master Curriculum"
   },
   {
     "id": 47,
     "slug": "2026-onboarding-from-vision-to-execution",
-    "title": "The 2026 Onboarding Protocol & \"From Vision to Execution\"",
+    "title": "2026 ICT Onboarding: Preparation, Timing & a Written Study Plan",
     "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
   },
   {
     "id": 48,
     "slug": "nq-es-premarket-session-rules-morning-engine",
-    "title": "NQ & ES Pre-Market Session Rules & The Morning Execution Engine",
+    "title": "NQ & ES Pre-Market: Source Windows, Cash Open & Uncertainty",
     "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
   },
   {
@@ -347,7 +347,7 @@ export const chapterCatalog = [
   {
     "id": 53,
     "slug": "the-ict-venom-model-five-stage-delivery",
-    "title": "The ICT Venom Model — 2025/2026 Five-Stage Institutional Delivery Framework",
+    "title": "ICT Venom Model: The 2025 Opening-Session Example",
     "part": "Part XIII - Advanced 2025/2026 Institutional Delivery Systems & Tape Reading"
   },
   {
@@ -359,19 +359,19 @@ export const chapterCatalog = [
   {
     "id": 55,
     "slug": "reaper-ifvg-and-suspension-block-advancements",
-    "title": "The ICT Reaper IFVG & Suspension Block — Next-Generation PD Array Variants",
+    "title": "Suspension Blocks & Reaper FVG: Source Context and Limits",
     "part": "Part XIII - Advanced 2025/2026 Institutional Delivery Systems & Tape Reading"
   },
   {
     "id": 56,
     "slug": "rdrb-balanced-price-range-and-enigma-fvg",
-    "title": "RDRB (Redelivered Balanced Price Range) & The Enigma FVG",
+    "title": "Balanced-Range Revisits & Enigma: Measurements, Not Guarantees",
     "part": "Part XIII - Advanced 2025/2026 Institutional Delivery Systems & Tape Reading"
   },
   {
     "id": 57,
     "slug": "sick-sister-strategy-and-double-purge-framework",
-    "title": "The Sick Sister Strategy & Double Purge Framework",
+    "title": "Sick Sister: Contextual Market Selection & Two-Sided Sweep Studies",
     "part": "Part XIII - Advanced 2025/2026 Institutional Delivery Systems & Tape Reading"
   }
 ];

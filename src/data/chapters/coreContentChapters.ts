@@ -239,75 +239,54 @@ When US 10-Year Yields rise relative to German Bunds, capital flows into the US 
     ]
   },
   {
-    id: 41,
-    slug: 'core-content-month-5-quarterly-shifts-and-position-trading',
-    title: 'ICT Core Content Month 5: 90-Day Quarterly Shifts, 6-Month IPDA & Position Trading',
-    part: 'Part XI - ICT Mentorship Core Content Master Curriculum',
-    level: 3,
-    quote: 'Smart money realigns their books every 90 days. When you combine quarterly shifts with the 6-month IPDA lookback range, you capture hundreds of pips on multi-month position trades.',
-    summary: [
-      'The 90-Day Quarterly Shift calendar: Institutional balance sheet realignments (Jan, Apr, Jul, Oct).',
-      'The 6-Month IPDA Data Range: Utilizing 20, 40, and 60-day institutional lookback cycles.',
-      'Open Float Liquidity Pools and institutional accumulation and distribution phases.',
-      'Position trade management: Setting structural stops and holding through intraday noise.'
-    ],
-    keyTerms: [
-      { term: '90-Day Quarterly Shift', definition: 'The macro institutional cycle where banks, corporate treasuries, and sovereign funds balance portfolios, sparking major seasonal reversals.' },
-      { term: 'IPDA Lookback Data Range', definition: 'The rolling 20-day, 40-day, and 60-day price ranges examined by the Interbank algorithm to locate resting liquidity.' },
-      { term: 'Open Float', definition: 'The total pool of outstanding retail and commercial orders available to be absorbed in a market.' },
-      { term: 'Position Trading', definition: 'Executing trades on Monthly/Weekly charts with 300 to 1,000+ pip objectives held over several months.' }
-    ],
-    practiceQuestions: [
-      'When do the primary 90-day quarterly shifts occur during the calendar trading year?',
-      'How does the 60-day IPDA lookback range define whether the current market is in Discount or Premium?',
-      'How should a position trader manage trailing stop losses across multi-month market trends?'
-    ],
-    sections: [
-      {
-        id: '41.1',
-        title: '41.1 The 90-Day Quarterly Shift: The True Macro Calendar',
-        content: `In ICT Core Content Month 5, the curriculum expands to macro institutional mechanics: The 90-Day Quarterly Shift.
-
-Financial institutions operate on fiscal quarters:
-- Q1: January - March (Rebalancing and setting yearly bias)
-- Q2: April - June (Spring expansion and seasonal runs)
-- Q3: July - September (Summer doldrums followed by August/September reversals)
-- Q4: October - December (Year-end profit-taking and rally cycles)
-
-Every 90 to 120 days, the interbank market initiates a trend reversal or major continuation. Position traders look for market structure shifts near the start of each quarterly shift, aligning with 30-year historical seasonal tendencies to capture multi-month moves of 500 to 1,000+ pips.`
-      },
-      {
-        id: '41.2',
-        title: '41.2 The 6-Month IPDA Data Range (20, 40, 60 Days)',
-        content: `The Interbank Price Delivery Algorithm (IPDA) does not look back at arbitrary historical data. It operates on structured rolling lookback windows:
-- 20-Day Lookback: Used primarily for short-term and intraday trading. Identifies the most immediate dealing range.
-- 40-Day Lookback: Intermediate-term perspective defining recent swing highs/lows.
-- 60-Day Lookback: The quarterly range boundary.
-
-To apply this: Count back 60 trading days from today. Mark the highest high and lowest low within that 60-day window. Calculate the 50% Equilibrium. If price is currently in the lower half of that 60-day window, the macro algorithm views the asset as priced at a Discount, favoring institutional accumulation.`
-      },
-      {
-        id: '41.3',
-        title: '41.3 Open Float Liquidity Pools & Institutional Accumulation',
-        content: `Open Float represents all active orders resting in the market that have not yet been executed. 
-
-Smart Money tracks Open Float to locate where retail liquidity is heavily clustered:
-- In an accumulation phase, price is held within a tight range near a quarterly shift.
-- Market makers allow retail traders to build large positions with predictable stop placement.
-- Once the Open Float reaches critical mass, the algorithm executes a sharp manipulation run (sweeping the float) before launching the true multi-month expansion.`
-      },
-      {
-        id: '41.4',
-        title: '41.4 Position Trade Management: Holding Through Noise',
-        content: `Trading position timeframes requires iron psychological discipline:
-1. Entry is framed on the Weekly or Daily timeframe inside a Monthly/Weekly PD Array.
-2. The initial stop loss is placed 1 tick outside the Monthly/Weekly swing point.
-3. Intraday volatility and daily counter-trend swings are completely ignored.
-4. Trailing stops are adjusted ONLY when a new Daily/Weekly Market Structure Shift and fresh PD Array is confirmed.
-5. Scale-outs are executed at major 60-day liquidity boundaries and quarterly shift endpoints.`
-      }
-    ]
-  },
+  "id": 41,
+  "slug": "core-content-month-5-quarterly-shifts-and-position-trading",
+  "title": "ICT Core Month 5: Quarterly Shifts, IPDA Lookbacks & Position Risk",
+  "part": "Part XI - ICT Mentorship Core Content Master Curriculum",
+  "level": 3,
+  "quote": "A rolling lookback is a chart-study convention, not proof of a hidden controller or a scheduled reversal.",
+  "summary": [
+    "A rolling lookback is a chart-study convention, not proof of a hidden controller or a scheduled reversal.",
+    "The 20-, 40- and 60-trading-day lookbacks are nested research windows used in this teaching framework. They are not six calendar months. State the anchor date, trading calendar and treatment of the current incomplete session.",
+    "Match the invalidation and holding period to the chosen research model. A one-tick buffer outside a monthly swing is not a universal stop rule. Wider stops, correlated positions, contract increments, gaps and financing costs change exposure."
+  ],
+  "keyTerms": [
+    {
+      "term": "IPDA lookback",
+      "definition": "The 20-, 40- and 60-trading-day lookbacks are nested research windows used in this teaching framework. They are not six calendar months. State the anchor date, trading calendar and treatment of the current incomplete session."
+    },
+    {
+      "term": "Allocation denominator",
+      "definition": "The Month 5 money-management example discusses an allocation within capital. A percentage applied to an allocated portion is not the same as that percentage of the whole account. State the denominator, combine simultaneous risk and calculate the potential cash loss before sizing. A stop order does not guarantee the planned exit price."
+    }
+  ],
+  "practiceQuestions": [
+    "How do 60 trading days differ from six calendar months?",
+    "Which evidence would distinguish an observed range break from inferred institutional intent?"
+  ],
+  "sections": [
+    {
+      "id": "41.1",
+      "title": "41.1 Quarterly shifts are not a fixed calendar",
+      "content": "ICT’s quarterly-shift discussion is a framework for studying changes in delivery over time. The reviewed IPDA lesson explicitly notes that shifts do not always coincide with March, June, September or December. Calendar quarters and a selected rolling observation window are different references.\n\nMark a candidate shift using information available on that date. Record the chosen swing, displacement and invalidation before revealing later prices. Include continuation, delayed and failed examples. Neither the name nor a selected historical chart establishes a reversal every 90–120 days or a 500–1,000 pip outcome."
+    },
+    {
+      "id": "41.2",
+      "title": "41.2 Define the rolling lookback precisely",
+      "content": "The 20-, 40- and 60-trading-day lookbacks are nested research windows used in this teaching framework. They are not six calendar months. State the anchor date, trading calendar and treatment of the current incomplete session.\n\nFor a selected window, record the highest high, lowest low and midpoint. Premium and discount describe price relative to that selected range; a different anchor can produce a different classification. Being below a midpoint alone does not prove accumulation or supply a long entry. Compare the same rule across unseen data rather than choosing the best-looking window afterward."
+    },
+    {
+      "id": "41.3",
+      "title": "41.3 Observed prices versus inferred orders",
+      "content": "Open float is used in these lessons to discuss potential resting interest around selected highs and lows. The chart shows traded prices; it does not reveal every pending order, trader identity or a measurable threshold at which institutions must launch a move.\n\nKeep the observation separate from the interpretation: a range boundary and its breach can be measured. Calling that sequence institutional accumulation or a deliberate stop hunt is a model interpretation. Identify what additional order-book or execution data would be needed to test a stronger claim."
+    },
+    {
+      "id": "41.4",
+      "title": "41.4 Allocation, position sizing and exit uncertainty",
+      "content": "Match the invalidation and holding period to the chosen research model. A one-tick buffer outside a monthly swing is not a universal stop rule. Wider stops, correlated positions, contract increments, gaps and financing costs change exposure.\n\nThe Month 5 money-management example discusses an allocation within capital. A percentage applied to an allocated portion is not the same as that percentage of the whole account. State the denominator, combine simultaneous risk and calculate the potential cash loss before sizing. A stop order does not guarantee the planned exit price."
+    }
+  ]
+},
   {
     id: 42,
     slug: 'core-content-month-6-swing-trading-mastery',
@@ -516,154 +495,102 @@ If you are bullish, you NEVER buy above the daily open. You wait for price to dr
     ]
   },
   {
-    id: 45,
-    slug: 'core-content-month-9-consolidations-and-bread-and-butter',
-    title: 'ICT Core Content Month 9: Range Consolidations, Institutional Pricing & Bread and Butter Setups',
-    part: 'Part XI - ICT Mentorship Core Content Master Curriculum',
-    level: 3,
-    quote: 'Consolidations are not dead time—they are algorithmic order accumulation. When you recognize how institutions fill the numbers at 00, 20, 50, and 80, everyday trading becomes mechanical bread and butter.',
-    summary: [
-      'Trading inside consolidations: Accumulation, Manipulation, and Distribution (AMD) mechanics.',
-      'The Sentiment Effect: How extreme public sentiment creates institutional liquidity.',
-      'Institutional Pricing Theory: "Filling the Numbers" at 00, 20, 50, and 80 price tiers.',
-      'Bread and Butter Setups: High-frequency mechanical 20-30 pip daily cash flow models.'
-    ],
-    keyTerms: [
-      { term: 'Institutional Pricing Theory', definition: 'The reality that interbank algorithms execute around key psychological round numbers: Big Figures (00, 50) and Mid Figures (20, 80).' },
-      { term: 'Filling the Numbers', definition: 'Algorithmic delivery cycling from 00 to 20, 50, 80, and back to 00 like an institutional clock.' },
-      { term: 'Bread and Butter Setup', definition: 'A low-stress, mechanical 20 to 30 pip intraday execution setup designed for consistent daily cash flow.' },
-      { term: 'Sentiment Extreme', definition: 'When retail sentiment reaches 85%+ one-sided bias, signaling an imminent algorithmic stop-clearing reversal.' }
-    ],
-    practiceQuestions: [
-      'What are the 4 key institutional pricing levels (the "Numbers") that algorithms gravitate toward?',
-      'How does the Accumulation-Manipulation-Distribution (AMD) pattern operate inside a multi-day consolidation?',
-      'What rules define the ICT Bread and Butter daily cash flow setup?'
-    ],
-    sections: [
-      {
-        id: '45.1',
-        title: '45.1 Trading in Consolidations: The AMD Engine',
-        content: `In ICT Core Content Month 9, the focus turns to the most frequent market state: Consolidations.
-
-Consolidations are not random drift:
-- They represent the Accumulation phase of the Power of Three (AMD).
-- Market makers keep price inside a tight horizontal channel to entice retail breakout traders and encourage stop placement above the ceiling and below the floor.
-- Once both sides are saturated with resting liquidity, the Manipulation leg sweeps one side (running stops into an HTF PD Array) before the Distribution leg launches the true expansion in the opposite direction.`
-      },
-      {
-        id: '45.2',
-        title: '45.2 The Sentiment Effect: Exploiting Retail Despair',
-        content: `Institutions monitor retail sentiment gauges (DSI - Daily Sentiment Index and retail broker positioning):
-- When retail sentiment hits 85% to 90% bullish, virtually all retail money is already long. There are no buyers left to push price higher.
-- This creates an extreme liquidity imbalance. The algorithm executes an aggressive reversal to target the resting sell stops of the entire retail herd.
-- Month 9 teaches traders to embrace sentiment extremes as confirmation that an HTF reversal is imminent.`
-      },
-      {
-        id: '45.3',
-        title: '45.3 Filling the Numbers: Institutional Pricing Theory',
-        content: `Interbank orders are never placed at arbitrary decimal points like 1.08473. Algorithms operate on standardized institutional price tiers:
-
-The Key Institutional Pricing Levels:
-1. The Big Figure (00): Major institutional psychological level (e.g., 1.1000, 1.0800).
-2. The Mid Figure (50): The halfway equilibrium level (e.g., 1.1050, 1.0850).
-3. The Institutional Quartiles (20 and 80):
-   - 20: Institutional accumulation discount level.
-   - 80: Institutional distribution premium level.
-
-When price moves, it cycles through these numbers: 00 -> 20 -> 50 -> 80 -> 00. Placing limit orders and targets at these institutional tiers ensures immediate algorithmic execution.`
-      },
-      {
-        id: '45.4',
-        title: '45.4 Bread and Butter Setups: The 20-30 Pip Daily Cash Flow',
-        content: `The Bread and Butter Setup is designed for everyday trading peace:
-1. Setup Requirements:
-   - Clear Daily Bias aligned with the Weekly profile.
-   - Session Killzone timing (London Open 02:00 - 05:00 EST or NY Open 07:00 - 10:00 EST).
-   - Sweep of previous session high/low or an internal liquidity pool.
-2. Execution:
-   - 5-minute Market Structure Shift with displacement leaving a clean Fair Value Gap.
-   - Limit order placed at the FVG boundary or 50% CE.
-   - Stop loss: 10 to 15 pips max outside the swing extreme.
-3. Target:
-   - Fixed 20 to 30 pips targeting the next institutional number (20, 50, 80, 00).
-   - Take profit, close terminal, and walk away.`
-      }
-    ]
-  },
+  "id": 45,
+  "slug": "core-content-month-9-consolidations-and-bread-and-butter",
+  "title": "ICT Core Content Month 9: Range Consolidations, Institutional Pricing & Bread and Butter Setups",
+  "part": "Part XI - ICT Mentorship Core Content Master Curriculum",
+  "level": 3,
+  "quote": "A recurring study objective is not guaranteed daily income. Preserve days with no qualifying setup.",
+  "summary": [
+    "Study consolidation boundaries and failures without assuming an institutional inventory threshold.",
+    "Round-number references and pip objectives depend on the instrument and quote convention.",
+    "A recurring study objective is not guaranteed daily income. Preserve days with no qualifying setup."
+  ],
+  "keyTerms": [
+    {
+      "term": "Bread and Butter Setup",
+      "definition": "A recurring setup studied within a defined model. The reviewed 20-pip lesson explicitly does not promise 20 pips every day."
+    },
+    {
+      "term": "Round-number reference",
+      "definition": "A selected quoted-price level, not proof that an institution must execute there."
+    }
+  ],
+  "practiceQuestions": [
+    "How will you record a day with no qualifying setup or a missed fill?",
+    "Why does a sweep of an old high not guarantee a reversal?"
+  ],
+  "sections": [
+    {
+      "id": "45.1",
+      "title": "45.1 Define a consolidation before the breakout",
+      "content": "Select the instrument, session and range boundaries before looking at the subsequent move. Record both false breakouts and successful continuations. A candle chart cannot show that an order inventory reached critical mass or that every breakout trader was trapped."
+    },
+    {
+      "id": "45.2",
+      "title": "45.2 A price reference is not a forecast",
+      "content": "The reviewed Market Reversals lesson notes that not every old high creates a reversal. Some price runs continue. Round numbers, sentiment measures and a selected swing can form research inputs, but none alone proves the next direction. Do not use an unsupported 85% sentiment threshold as an automatic reversal rule."
+    },
+    {
+      "id": "45.3",
+      "title": "45.3 Twenty pips is an example objective",
+      "content": "The official lesson titled 20 Pips Per Day explicitly separates its title from a promise to earn that amount every day. It is not a daily income schedule. Another Month 9 routine discussion distinguishes day trading from trading every day, and scalping from acting on every fluctuation.\n\nA source objective measured in Forex pips is not mechanically interchangeable with Nasdaq handles or futures ticks. State the contract, tick value, spread and costs. Record days without trades, losses, partial exits and unfilled orders. A chosen objective does not establish expectancy."
+    },
+    {
+      "id": "45.4",
+      "title": "45.4 Evaluate the whole sample",
+      "content": "Choose the setup and invalidation before replay. Keep later data separate from the examples used to select the rules. Compare results after costs and disclose every excluded session. An attractive historical example is useful for explanation; it is not an independently verified performance record."
+    }
+  ]
+},
   {
-    id: 46,
-    slug: 'core-content-months-10-11-12-multi-asset-mega-trades-top-down',
-    title: 'ICT Core Content Months 10, 11 & 12: Multi-Asset Mastery, Mega-Trades & Master Top-Down Execution',
-    part: 'Part XI - ICT Mentorship Core Content Master Curriculum',
-    level: 3,
-    quote: 'The master trader does not look at charts in isolation. From US Treasury bonds and Index Futures to currencies and commodities, the entire financial matrix is unified through one algorithmic top-down protocol.',
-    summary: [
-      'Multi-Asset Analysis (Month 10): Index Futures range projections, Commodity COT, and Bond opening range split sessions.',
-      'Mega-Trades (Month 11): Institutional life-changing setups capturing 500 to 1,500+ pips across asset classes.',
-      'The Master Top-Down Execution Protocol (Month 12): Seamless alignment from Monthly charts down to 1-minute execution.',
-      'Integrating the Breaker & Mitigation Matrix for maximum trade validation.'
-    ],
-    keyTerms: [
-      { term: 'Multi-Asset Matrix', definition: 'Cross-market correlation analysis tracking Bonds, Equities, Currencies, and Commodities to confirm macro institutional direction.' },
-      { term: 'Bond Split Session', definition: 'The institutional bond trading schedule dividing the trading day into distinct liquidity delivery windows.' },
-      { term: 'Mega-Trade', definition: 'A rare, high-conviction macro setup lasting several months that captures 500 to 1,500+ pips with generational compounding power.' },
-      { term: 'Master Top-Down Funnel', definition: 'The rigorous four-tier timeframe filtering protocol moving from Monthly/Weekly direction to 1-minute execution.' }
-    ],
-    practiceQuestions: [
-      'How does the 30-Year Treasury Bond opening range predict volatility in Index Futures and Currencies?',
-      'What specific macroeconomic and technical conditions must align to trigger an ICT Mega-Trade?',
-      'Describe the exact 4-tier timeframe filtering process required in the Month 12 Top-Down Protocol.'
-    ],
-    sections: [
-      {
-        id: '46.1',
-        title: '46.1 Multi-Asset Analysis (Month 10): Indices, Bonds & Commodities',
-        content: `Month 10 expands the trader's vision across the global multi-asset landscape:
-- Index Futures (ES, NQ, YM): Learn to calculate the Projected Daily Range based on ADR and opening range gaps. Track opening bell macros (09:30 AM EST) and afternoon settlement runs.
-- Treasury Bond Markets (ZB, ZN): Bonds lead equities and currencies. If the 30-Year Bond breaks a swing low during its split session opening range, the US Dollar will surge and Equities will face immediate selling pressure.
-- Commodities (Crude Oil, Gold, Wheat): Applying 30-year seasonal tendencies and commercial COT hedging to capture commodity super-cycles.`
-      },
-      {
-        id: '46.2',
-        title: '46.2 Mega-Trades (Month 11): Capturing 500 to 1,500+ Pips',
-        content: `Month 11 is dedicated to Mega-Trades—the life-changing setups that appear 2 to 4 times per year across major asset classes:
-
-Criteria for a Mega-Trade:
-1. Macro Alignment: 90-Day Quarterly Shift aligns with a multi-year seasonal tendency.
-2. Commercial COT Extremes: Commercial hedgers hold historically extreme net positions.
-3. Yield Divergence: SMT divergence between 10-Year and 30-Year Treasury Yields.
-4. Monthly PD Array: Price reacts at a pristine Monthly Bullish/Bearish Order Block or Breaker.
-5. Execution: Position is established on a Weekly/Daily displacement and held for 3 to 6 months, pyramiding lot sizes as new weekly order blocks form, delivering 500 to 1,500+ pips.`
-      },
-      {
-        id: '46.3',
-        title: '46.3 The Master Top-Down Execution Protocol (Month 12)',
-        content: `Month 12 synthesizes the entire 12-month mentorship into a rigorous 4-step execution funnel:
-
-Tier 1: Macro Context (Monthly & Weekly Charts)
-- Where has price come from? What is the current 60-day IPDA lookback range?
-- What is the Draw on Liquidity? Are we moving toward Buy-Side or Sell-Side Liquidity?
-
-Tier 2: Intermediate Range (Daily Chart)
-- What is today's Daily Bias? Are we seeking an expansion, retracement, or reversal?
-- Mark the key Daily PD Arrays: FVGs, Order Blocks, and Breakers.
-
-Tier 3: Structural Framing (4-Hour & 1-Hour Charts)
-- Identify internal session liquidity pools (Asian High/Low, Previous Day High/Low).
-- Wait for price to enter a Killzone (London Open, NY AM, NY PM).
-
-Tier 4: Precision Execution (15-Minute, 5-Minute & 1-Minute Charts)
-- Wait for the Liquidity Raid.
-- Confirm explosive Displacement and Market Structure Shift (MSS) with full candle body closes.
-- Execute limit order at the Fair Value Gap boundary or 50% Consequent Encroachment with structural stop loss.`
-      },
-      {
-        id: '46.4',
-        title: '46.4 The Breaker & Mitigation Matrix Integration',
-        content: `In the final graduation lecture of Month 12, ICT emphasizes the absolute supremacy of Breaker and Mitigation Blocks in high-conviction execution:
-- While regular Order Blocks can fail during high-volatility liquidity sweeps, a Breaker Block carries the highest win-rate because it is born from an already-completed liquidity raid.
-- When an execution Fair Value Gap nests directly inside a Higher Timeframe Breaker Block, the confluence is algorithmic perfection—offering maximum precision, minimal drawdown, and immediate directional expansion.`
-      }
-    ]
-  }
+  "id": 46,
+  "slug": "core-content-months-10-11-12-multi-asset-mega-trades-top-down",
+  "title": "ICT Core Content: Multi-Asset Study & Top-Down Planning",
+  "part": "Part XI - ICT Mentorship Core Content Master Curriculum",
+  "level": 3,
+  "quote": "Compare markets with a question and a defined observation period; correlation is not a promise about the next move.",
+  "summary": [
+    "Locate the supplied Month 10 lessons on bonds, index futures, commodities and stocks.",
+    "Separate a related-market observation from a directional prediction.",
+    "Write a top-down research plan without inventing missing course attribution."
+  ],
+  "keyTerms": [
+    {
+      "term": "Cross-market comparison",
+      "definition": "Comparing specified instruments over aligned periods, with different contract specifications and trading hours recorded."
+    },
+    {
+      "term": "Top-down study plan",
+      "definition": "An explicit sequence from broader context to a narrower observation. It is a study method, not proof that a higher timeframe predicts a lower one."
+    }
+  ],
+  "practiceQuestions": [
+    "Which Month 10 original lesson supports the claim you are investigating?",
+    "Are your instruments aligned by date, trading session and contract?",
+    "What evidence would contradict your proposed relationship?"
+  ],
+  "sections": [
+    {
+      "id": "46.1",
+      "title": "46.1 What the supplied Month 10 collection contains",
+      "content": "The supplied catalogue contains 19 Month 10 recordings. Their original titles cover bond opening ranges, consolidation and trending days, split sessions, index-futures AM and PM trends, projected ranges, commodity seasonals, Commitment of Traders, open interest, relative strength and stock watchlists. Use the original-recording directory to choose a specific lesson. A catalogue title establishes the topic, not that every rule in the recording has been independently verified."
+    },
+    {
+      "id": "46.2",
+      "title": "46.2 Availability is not evidence for Months 11–12",
+      "content": "The supplied core files cover month groups 1–10. We have not established Months 11–12 from this collection. Earlier wording attributed mega-trade targets and a mandatory four-tier protocol to those missing months; that attribution has been withdrawn. This does not establish whether those recordings exist elsewhere. The existing page address remains available so saved links continue to work."
+    },
+    {
+      "id": "46.3",
+      "title": "46.3 A repeatable multi-asset research exercise",
+      "content": "Choose one question, such as whether corresponding highs in two specified contracts diverge during the same session. Record the data feed, contract month, timezone, observation interval and rule for selecting each high. Keep a separate column for what happened afterward. Include cases where the divergence disappears or the expected move fails. Bonds do not mechanically force an immediate opposite move in equities, and a seasonal tendency does not establish this year’s outcome."
+    },
+    {
+      "id": "46.4",
+      "title": "46.4 Turn context into a written study specification",
+      "content": "Write the higher-timeframe reference, the lower-timeframe event you will observe, the invalidation condition and the point at which the idea expires. Distinguish a source rule from your own research variation. A narrower stop can increase sensitivity to noise and execution costs; several overlapping labels do not establish a higher win rate. Compare variants with the same assumptions and keep later data separate from the examples used to choose the rules."
+    }
+  ]
+}
 ];

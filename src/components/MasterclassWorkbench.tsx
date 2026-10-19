@@ -3,6 +3,7 @@ import { matchesSearch as matchesLocalizedSearch } from '../i18n/search';
 import { currentDocumentHref } from '../i18n/navigation';
 import { useToolStorage, isBooleanRecord } from '../hooks/useToolStorage';
 import { ToolContentNotice } from './ToolContentNotice';
+import { ReviewedModelSource } from './ReviewedModelSource';
 import React, { useState, useEffect } from 'react';
 import { 
   Flame, 
@@ -358,6 +359,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                 />
               </div>
 
+              <ReviewedModelSource modelId={activeItem.id} />
               {/* Step-by-Step Breakdown Grid */}
               <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 space-y-4">
                 <div className="flex items-center gap-2 font-sans tabular-nums text-xs uppercase text-ink pb-2 border-b border-ink/[0.07]">

@@ -2,6 +2,10 @@ import { TERMS_SECTIONS, ABOUT_GUIDANCE, CONTACT_GUIDANCE, publisherPageRevision
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { CurriculumReview } from '../src/components/CurriculumReview';
+import { ReviewedModelSource } from '../src/components/ReviewedModelSource';
+import { reviewedModelSources } from '../src/data/reviewedModelSources';
+import { MentorshipsView, MentorshipsTeaser } from '../src/components/MentorshipsView';
+import { mentorshipTracks, mentorshipPath } from '../src/data/mentorshipTracks';
 import { curriculumReview, curriculumReviewDate } from '../src/data/curriculumReview';
 import { searchTitle, searchDescription, conciseHeading, studyTopics } from '../src/utils/searchMetadata';
 import { toolStudyGuide } from '../src/utils/toolStudyGuides';
@@ -45,6 +49,19 @@ export const canonicalAliases: Record<string, string> = {
 };
 
 export function prepareRoutes(routes: RouteMeta[]) {
+  const mentorshipHub = route('/curriculum/mentorships/', 'Compare ICT Mentorships & Study Paths',
+    'Compare six ICT mentorships, choose a study path and find related lessons, original recordings, prerequisites and clearly stated review coverage.',
+    renderToStaticMarkup(createElement(MentorshipsView, { embedded: true })));
+  mentorshipHub.heading = 'Which ICT mentorship should I study?';
+  mentorshipHub.schemaJson = { '@type':'CollectionPage', name:'ICT mentorship study paths', mainEntity:{ '@type':'ItemList', itemListElement:mentorshipTracks.map((track,index) => ({'@type':'ListItem',position:index+1,name:track.title,url:'https://learnsmc.xyz'+mentorshipPath(track.slug)})) } };
+  routes.push(mentorshipHub, ...mentorshipTracks.map(track => {
+    const page = route(mentorshipPath(track.slug), `${track.title}: Learning Path`,
+      `Explore ${track.title} with related study notes, original source recordings, preparation guidance and review coverage.`,
+      renderToStaticMarkup(createElement(MentorshipsView, { slug:track.slug, embedded:true })));
+    page.heading = track.title;
+    page.schemaJson = { '@type':'CollectionPage', name:track.title, about:track.focus, isAccessibleForFree:true, dateModified:'2026-10-19' };
+    return page;
+  }));
   for (const r of routes) {
     const old = new URL(r.canonical).pathname;
     if (canonicalAliases[old]) {
@@ -64,6 +81,7 @@ export function prepareRoutes(routes: RouteMeta[]) {
     section('Lecture directory', list(p.lectures.map(l => link(`/masood/lectures/${l.id}/`, l.title)))) +
     p.lectures.map(l => section(l.title, `<p>${escape(l.shortSummary)}</p>` + list(l.keyTakeaways.map(escape)) + link(`/masood/lectures/${l.id}/`, 'Read the study notes'))).join(''))));
   const root = routes.find(r => r.canonical === 'https://learnsmc.xyz/curriculum/')!;
+  root.bodyHtml = renderToStaticMarkup(createElement(MentorshipsTeaser)) + root.bodyHtml;
   root.bodyHtml += section('Browse by topic', list(topicClusters.map(c => link(`/curriculum/${c.slug}/`, c.part))));
 
   const hub = routes.find(r => r.canonical === 'https://learnsmc.xyz/masood/')!;
@@ -166,6 +184,12 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   if (children.length && path !== '/') r.bodyHtml += section('Explore this topic', list(children.map(c => link(new URL(c.canonical).pathname, c.heading))));
   const guide = toolStudyGuide(path);
   if (guide) r.bodyHtml += section(guide.title, guide.paragraphs.map(p => `<p>${escape(p)}</p>`).join(''));
+  if (path.startsWith('/tools/')) {
+    r.bodyHtml += renderToStaticMarkup(createElement(ReviewedModelSource, { modelId: path }));
+    const review = reviewedModelSources(path);
+    if (review) r.schemaJson = { ...r.schemaJson, dateModified: curriculumReviewDate,
+      citation: review.sources.map(source => ({ '@type': 'CreativeWork', name: source.title, url: source.url })) };
+  }
   if (/^\/(learn|masood|tools)\//.test(path) && !r.isNoindex) r.bodyHtml += notice;
   const parentRoutes = routes.filter(c => c !== r && c.canonical !== 'https://learnsmc.xyz/' &&
     path.startsWith(new URL(c.canonical).pathname)).sort((a, b) => a.canonical.length - b.canonical.length);

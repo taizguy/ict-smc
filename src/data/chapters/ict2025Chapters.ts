@@ -33,51 +33,39 @@ export const ict2025Chapters: TextbookChapter[] = [
     id: 25,
     slug: 'the-1st-presented-fvg-the-0931-rule',
     part: 'Part IX - ICT 2025 Official Mentorship Curriculum',
-    title: '25.1 The 1st Presented FVG (The 09:31 Rule) — Immediate Execution Advantage',
+    title: "First Presented FVG: Qualification & Balanced-Range Context",
     quote: "The first qualifying FVG is a time-ordered observation. Its risk, fill rate and subsequent outcome depend on context and execution rules, not on being first alone.",
     level: 2,
-    summary: [
-      'The foundational definition of the "First Presented FVG".',
-      'The 09:31 Rule in high-velocity open tape reading.',
-      "Comparing first and later pullbacks without assuming their relative win rates.",
-      'Consequent Encroachment (50% CE) execution parameters.',
-      'Discipline: Knowing when an FVG has been over-mitigated and must be abandoned.'
-    ],
-    keyTerms: [
-      { term: 'First Presented FVG', definition: 'The very first 3-candle imbalance created during the initial displacement wave following a liquidity sweep or Market Structure Shift.' },
-      { term: '09:31 Rule', definition: "A timing label used in these study notes. A qualifying gap requires completed candles and stated conditions, not just a clock reading." },
-      { term: 'Secondary Retracement Risk', definition: "The possibility that later pullbacks behave differently; the direction and size of that difference require a defined sample." },
-      { term: 'Wick Invalidation', definition: 'The immediate cancellation of a trade setup when an execution candle fails to respect the proximal boundary of the First Presented FVG.' }
-    ],
-    practiceQuestions: [
-      "How would you compare first and later FVGs using identical execution assumptions and a separate evaluation sample?",
-      'If price penetrates more than 50% through the First Presented FVG, what should you do with your limit order?',
-      'How does the 09:31 rule differentiate between a genuine trend initiation and opening noise?',
-      'Where is your invalidation stop loss placed when entering strictly on the First Presented FVG?',
-      'What should you do if the first presented FVG is over 50 index points wide on Nasdaq?'
-    ],
-    sections: [
-      {
-        id: '25.1',
-        title: '25.1 The Primacy of the First Presented Imbalance',
-        content: "For this study, the first presented FVG is the first qualifying completed three-candle gap after your predefined displacement or structure-shift condition. Specify when the observation window begins; a gap appearing at 09:31 is not automatically valid simply because of its timestamp.\n\nCompare first and later qualifying gaps under the same entry, stop, target and cost assumptions. A first gap can fail, never retrace, or produce a larger drawdown than a later one. No superiority or near-zero drawdown is established by the name.\n\nThe exact claim about introduction in a particular 2025 or 2026 lecture has not been verified here. Consult the original lesson before attributing that historical claim or a fixed execution sequence to ICT.",
-        keyTakeaway: "Define first before replay; measure performance instead of assuming that an earlier gap is superior."
-      },
-      {
-        id: '25.2',
-        title: '25.2 The Mechanical 09:31 Execution Protocol',
-        content: `On volatile morning sessions (such as index futures or forex majors), the first presented imbalance can form almost immediately following a sweep:
-
-The 4-Step Execution Checklist:
-1. Identify the Liquidity Purge: Confirm that price has swept the Asian High/Low, Previous Day High/Low, or a Key HTF Level.
-2. Watch the Displacement Bar: Look for a decisive, large-bodied candle breaking the immediate counter-trend swing point.
-3. Box the First FVG: The moment Candle 3 closes, draw your horizontal box across the gap between Candle 1's wick and Candle 3's wick.
-4. Deploy Limit Order at 50% CE: Place a limit order at the exact 50% midpoint of the box. Place your stop 2 to 3 ticks beyond the swing extreme that initiated the move.
-
-If price returns to the gap, taps it, and rejects within 1 to 3 candles, the trade is on. If price begins consolidating inside the gap with heavy overlapping candle bodies, cancel your order: the algorithm has lost its urgency!`,
-        keyTakeaway: 'Mark the first FVG immediately upon Candle 3 close; enter at 50% CE with stops behind the origin swing. Abandon the setup if candle bodies stall inside the gap.'
-      }
-    ]
+    summary: ["Check the preceding balanced range before selecting the first qualifying gap.", "Distinguish the source example from a universal clock-based trigger.", "Record rejected candidates, failed setups and unfilled orders alongside successes."],
+    "keyTerms": [
+  {
+    "term": "First Presented FVG",
+    "definition": "The first qualifying gap under a stated source and observation rule. Being first in clock order is insufficient if the candidate lies within already balanced price action."
+  },
+  {
+    "term": "Balanced-range context",
+    "definition": "Prior overlapping delivery that can disqualify a candidate in the reviewed example. State how you identify the range before choosing a gap."
+  }
+],
+    "practiceQuestions": [
+  "Which preceding candle ranges make the apparent gap questionable?",
+  "Does the candidate break away from the prior balanced range, or sit within it?",
+  "Which entry and invalidation rules belong to this particular source example?"
+],
+    "sections": [
+  {
+    "id": "25.1",
+    "title": "25.1 First must also mean qualifying",
+    "content": "A three-candle shape and an early timestamp do not settle whether a candidate qualifies in a particular model. In the reviewed 2025 disqualification lesson, ICT compares an apparent first gap with the preceding candle bodies and wick ranges. He rejects the candidate because it sits within a previously balanced area rather than breaking away from it. A later candidate is then distinguished from that overlapping area. This is a source-specific contextual filter, not a claim that every conventional FVG definition uses the same exclusion.",
+    "keyTakeaway": "Check the preceding range before labelling a candidate the first qualifying gap."
+  },
+  {
+    "id": "25.2",
+    "title": "25.2 A source-led replay checklist",
+    "content": "Pause before the later move is visible. Mark the preceding range, the candidate gap boundaries and why the candidate does or does not escape that range. Save both rejected and accepted candidates. Then compare the result using the same feed, session and contract.\n\nThe original example enters at consequent encroachment of the selected gap, but it does not establish a universal 09:31 trigger, a mandatory two-to-three-tick stop, or guaranteed rejection within three candles. Specify those decisions separately if you research a variation. The first qualifying gap can fail, never retrace or be too wide for a chosen risk budget. No trade is a valid study outcome.",
+    "keyTakeaway": "Keep the example’s contextual filter separate from execution rules you add yourself."
+  }
+]
   },
 
   // CHAPTER 26: SMT Divergence Mechanics

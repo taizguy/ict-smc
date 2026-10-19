@@ -287,35 +287,35 @@ export const CONCEPT_SLUG_MAP: Record<string, ConceptSlugMapping> = {
     metaDescription: 'How interbank settlement gaps (NDOG & NWOG) act as perpetual gravitational attractors and magnet levels for intraday algorithms.'
   },
   'ict_reaper_ifvg': {
-    id: 'ict_reaper_ifvg',
-    slug: 'ict-reaper-ifvg',
-    category: 'imbalances',
-    categorySlug: 'imbalances',
-    name: 'ICT Reaper IFVG (Predatory Inversion Trap)',
-    shortName: 'Reaper IFVG',
-    metaTitle: 'ICT Reaper IFVG: Predatory Imbalance Trap Setup | LearnSMC',
-    metaDescription: 'High-conviction entry setup capitalizing on trapped retail buyers who defended a doomed FVG before an opposing displacement sweep.'
-  },
+  "id": "ict_reaper_ifvg",
+  "slug": "ict-reaper-ifvg",
+  "category": "imbalances",
+  "categorySlug": "imbalances",
+  "name": "Reaper FVG: A Sourced Nested-Gap Variant",
+  "shortName": "Reaper FVG",
+  "metaTitle": "Reaper FVG: A Sourced Nested-Gap Variant | LearnSMC",
+  "metaDescription": "Study ICT’s June 2026 Reaper variant: nested inversion and first-utilization gaps in a breaker context, with source references and limitations."
+},
   'ict_rdrb': {
-    id: 'ict_rdrb',
-    slug: 'redelivered-balanced-price-range',
-    category: 'imbalances',
-    categorySlug: 'imbalances',
-    name: 'ICT RDRB (Redelivered Balanced Price Range)',
-    shortName: 'Balanced Price Range',
-    metaTitle: 'Balanced Price Range (BPR) & Redelivered Pricing (RDRB) | LearnSMC',
-    metaDescription: 'Overlapping bullish and bearish FVGs creating a fully balanced price range where price is expected to slice through cleanly.'
-  },
+  "id": "ict_rdrb",
+  "slug": "redelivered-balanced-price-range",
+  "category": "imbalances",
+  "categorySlug": "imbalances",
+  "name": "RDRB: A Later Balanced-Range Visit",
+  "shortName": "Balanced Price Range",
+  "metaTitle": "RDRB: A Later Balanced-Range Visit | LearnSMC",
+  "metaDescription": "These notes use RDRB descriptively for a later revisit to a selected balanced-price reference. A precise originating explanation for the previous named second-touch model has not been verified. Keep this limitation visible instead of attributing a universal second-touch rule to ICT."
+},
   'ict_enigma_fvg': {
-    id: 'ict_enigma_fvg',
-    slug: 'ict-enigma-fvg',
-    category: 'imbalances',
-    categorySlug: 'imbalances',
-    name: 'ICT Enigma FVG (Two-Candle Imbalance Variant)',
-    shortName: 'Enigma FVG',
-    metaTitle: 'ICT Enigma FVG: Advanced Two-Candle Imbalance | LearnSMC',
-    metaDescription: 'Two-candle structural anomaly where an extended wick and rapid follow-through create a synthetic FVG on higher timeframe consolidations.'
-  },
+  "id": "ict_enigma_fvg",
+  "slug": "ict-enigma-fvg",
+  "category": "imbalances",
+  "categorySlug": "imbalances",
+  "name": "Enigma: FVG Measurements and Projections",
+  "shortName": "Enigma FVG",
+  "metaTitle": "Enigma: FVG Measurements and Projections | LearnSMC",
+  "metaDescription": "The reviewed June 2026 Enigma lecture discusses FVG measurements, volume imbalances and projections into a price range that has not yet traded. It identifies the middle candle of a three-candle FVG and distinguishes wick-based and body-based measurements. It does not establish the previous two-candle FVG definition on this page."
+},
   'order_block': {
     id: 'order_block',
     slug: 'order-block',
@@ -347,15 +347,15 @@ export const CONCEPT_SLUG_MAP: Record<string, ConceptSlugMapping> = {
     metaDescription: 'A candle that retraces into an active Order Block and violently launches away, creating a secondary springboard for trend continuation.'
   },
   'ict_suspension_block': {
-    id: 'ict_suspension_block',
-    slug: 'suspension-block',
-    category: 'order_blocks',
-    categorySlug: 'order-blocks',
-    name: 'ICT Suspension Block (Order Block Variant)',
-    shortName: 'Suspension Block',
-    metaTitle: 'ICT Suspension Block: Advanced PD Array Variant | LearnSMC',
-    metaDescription: 'Price hovering immediately above or below an Order Block without touching it, suspending order book execution until a key macro opens.'
-  },
+  "id": "ict_suspension_block",
+  "slug": "suspension-block",
+  "category": "order_blocks",
+  "categorySlug": "order-blocks",
+  "name": "Suspension Block: Body Gaps and Contract Context",
+  "shortName": "Suspension Block",
+  "metaTitle": "Suspension Block: Body Gaps and Contract Context | LearnSMC",
+  "metaDescription": "In the reviewed April 2026 explanation, ICT examines separations between adjacent candle bodies while their wicks touch or overlap. These are volume imbalances in his terminology. Mark the actual close/open prices around the selected candle; an isolated counter-trend pause alone is not the definition illustrated here."
+},
   'ict_hangman_pd_array': {
     id: 'ict_hangman_pd_array',
     slug: 'hangman-pd-array',
@@ -511,10 +511,10 @@ export const CONCEPT_SLUG_MAP: Record<string, ConceptSlugMapping> = {
     slug: 'ict-venom-model',
     category: 'models',
     categorySlug: 'trade-models',
-    name: 'ICT Venom Model (High-Velocity Execution)',
+    name: 'ICT Venom Model: The 2025 Opening-Session Example',
     shortName: 'Venom Model',
-    metaTitle: 'ICT Venom Model: High-Velocity Trend Expansion Setup | LearnSMC',
-    metaDescription: 'Rapid intraday entry framework targeting the explosive second phase of institutional distribution following a liquidity sweep.'
+    metaTitle: 'ICT Venom Model: 2025 Source & Opening-Session Study | LearnSMC',
+    metaDescription: 'Study the official 2025 Venom example: the 08:00–09:30 New York reference window, liquidity raid, entry variations and limitations.'
   },
   'ict_crt_candle_range_theory': {
     id: 'ict_crt_candle_range_theory',
@@ -534,7 +534,7 @@ export const CONCEPT_SLUG_MAP: Record<string, ConceptSlugMapping> = {
     name: 'ICT Sick Sister Strategy (Correlated SMT Execution)',
     shortName: 'Sick Sister Strategy',
     metaTitle: 'ICT Sick Sister Strategy: Relative Weakness Execution | LearnSMC',
-    metaDescription: 'Selecting the weakest correlated asset to short (or strongest asset to buy) based on divergence at structural key levels.'
+    metaDescription: 'Study ICT’s 2023 Sick Sister consolidation example, conditional catch-up longs and why relative weakness is not an automatic short signal.'
   }
 };
 

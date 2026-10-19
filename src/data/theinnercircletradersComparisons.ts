@@ -35,67 +35,54 @@ export const theinnercircletradersNewComparisons: ConceptComparison[] = [
 
   // 2. Standard IFVG vs Reaper IFVG
   {
-    id: 'standard_ifvg_vs_reaper_ifvg',
-    title: 'Standard IFVG vs. ICT Reaper IFVG (The Predatory Inversion Trap)',
-    conceptA: {
-      name: 'Standard Inversion FVG (IFVG)',
-      summary: 'A Fair Value Gap that is breached with displacement, cleanly flipping its institutional role from support to resistance (or vice-versa).',
-      keyPoints: [
-        'Functions as a classic support-becomes-resistance flip',
-        'Supported by HTF directional alignment in the direction of the inversion',
-        'Candle bodies respect the outer edge or 50% Consequent Encroachment of the broken gap',
-        'Provides model-based trend-continuation entries during active macros'
-      ],
-      idealCondition: 'A bearish FVG is sliced upward during a bullish morning trend; price retests the top of the box and launches upward.'
-    },
-    conceptB: {
-      name: 'ICT Reaper IFVG',
-      summary: 'A predatory trap where an apparent IFVG breach lures retail SMC breakout traders into long/short positions, only to immediately re-invert violently and harvest their stop losses.',
-      keyPoints: [
-        'Engineered against retail SMC traders who blindly buy every broken FVG',
-        'Occurs against the true Higher Timeframe Draw on Liquidity',
-        'Price produces a shallow, weak reaction before a massive displacement candle cuts back through',
-        'The true trade is shorting the re-inversion to feast on trapped retail stop orders'
-      ],
-      idealCondition: 'An apparent bullish IFVG bounce fails as a 09:50 AM macro candle engulfs the zone downward, liquidating all trapped longs.'
-    },
-    keyDifference: 'A standard IFVG holds as new support/resistance because the HTF program supports it; a Reaper IFVG fails aggressively because the initial inversion was a manufactured retail trap.',
-    commonConfusion: 'Re-buying a failing IFVG multiple times. If the IFVG candle bodies close completely back through the zone, it is a Reaper setup—flip your position.',
-    decisionRule: 'Always verify HTF Draw on Liquidity: if the HTF draw is downward, treat upward IFVG breaches as potential Reaper traps and look to short the re-inversion.',
-    diagramSnippet: 'FVG ──[Breached Up]──> Retail Buys IFVG ──[Reaper Macro Candle Slices Down]──> Trapped Longs Liquidated'
+  "id": "standard_ifvg_vs_reaper_ifvg",
+  "title": "Standard IFVG & Reaper: Definition and Source Context",
+  "conceptA": {
+    "name": "Standard Inversion FVG (IFVG)",
+    "summary": "An IFVG study asks whether a previously defined FVG changes its role after a specified price break. Define the break and retest rules; a later failure is still possible.",
+    "keyPoints": [
+      "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay."
+    ],
+    "idealCondition": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay."
   },
+  "conceptB": {
+    "name": "Reaper FVG",
+    "summary": "In the 9 June 2026 review, ICT explicitly describes a Reaper variant with two nested gaps in a breaker context. In the bearish example, a previously bullish gap is validated as an inversion after a close below it, while a bearish FVG supplies a first-utilization reference. The lesson examines their overlap, wick excursions and body placement together; it does not define every failed inversion as a Reaper.",
+    "keyPoints": [
+      "Study a failed IFVG as a failed IFVG unless the precise named variation is supported by an original explanation. Save the initial gap boundaries, the break criterion, the retest and the later failure separately. Neither the price sequence nor its label identifies every participant or proves that all retail stops were harvested."
+    ],
+    "idealCondition": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay."
+  },
+  "keyDifference": "A standard IFVG study concerns a role change in a selected gap. The reviewed Reaper variant combines nested gap references with a breaker context; it is not every failed inversion.",
+  "commonConfusion": "A failed IFVG is not an automatic instruction to reverse a live position.",
+  "decisionRule": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay."
+},
 
   // 3. Suspension Block vs Propulsion Block vs Order Block
   {
-    id: 'suspension_vs_propulsion_vs_ob',
-    title: 'ICT Suspension Block vs. Propulsion Block vs. Standard Order Block',
-    conceptA: {
-      name: 'ICT Suspension Block (2025)',
-      summary: 'A single counter-trend continuation candle formed mid-air in open space between internal and external liquidity pools during an aggressive trend run.',
-      keyPoints: [
-        'Suspended in open space without interacting with prior swing structure',
-        'Forms when algorithmic momentum is too high to allow deep 50% discount pullbacks',
-        'Acts as an in-flight refueling station during Low Resistance Liquidity Runs (LRLR)',
-        'Requires entry on the very first touch with extremely tight stops behind the body'
-      ],
-      idealCondition: 'A 5-minute red candle sits isolated mid-trend between 20,400 and 20,500 on NQ; price wicks it and surges to ATH.'
-    },
-    conceptB: {
-      name: 'Propulsion Block',
-      summary: 'A candle that trades into and rejects an already active Order Block, creating a secondary springboard that propels price into rapid expansion.',
-      keyPoints: [
-        'Must physically retest and overlap with a pre-existing validated Order Block',
-        'Acts as a secondary accelerator candle rather than an isolated mid-trend pause',
-        'Demonstrates institutional defense of an already established level',
-        'Invalidated if price trades below the 50% midpoint of the underlying Order Block'
-      ],
-      idealCondition: 'Price pulls back into an existing Bullish Order Block, forms a green rejection candle, and then retests that specific rejection candle.'
-    },
-    keyDifference: 'A Propulsion Block sits directly on top of an existing Order Block; a Suspension Block hangs isolated in open air mid-trend between dealing ranges.',
-    commonConfusion: 'Waiting for an Order Block or Propulsion Block during an runaway trend day. Suspension blocks are the only entries the algorithm offers on maximum-velocity trend days.',
-    decisionRule: 'Use standard Order Blocks at dealing range origins, Propulsion Blocks on initial breakout retests, and Suspension Blocks mid-trend during Low Resistance Liquidity Runs.',
-    diagramSnippet: 'Origin OB [Ground Level] ──> Propulsion Block [First Launchpad] ──> Suspension Block [Mid-Air Refuel] ──> Target [Space]'
+  "id": "suspension_vs_propulsion_vs_ob",
+  "title": "ICT Suspension Block vs. Propulsion Block vs. Standard Order Block",
+  "conceptA": {
+    "name": "Suspension Block",
+    "summary": "In the reviewed April 2026 explanation, ICT examines separations between adjacent candle bodies while their wicks touch or overlap. These are volume imbalances in his terminology. Mark the actual close/open prices around the selected candle; an isolated counter-trend pause alone is not the definition illustrated here.",
+    "keyPoints": [
+      "The source compares the nearby/front-month futures contract with a continuous chart. Their candle shapes and absolute prices differ. ICT prefers a candidate agreeing with a selected breaker reference in this example and discusses comparing other candidate levels. Record the symbol, delivery month, adjustment setting and timeframe. Do not transplant a continuous-chart price directly into a different contract.",
+      "Body-price separation is observable. Concluding that an institution refuelled a trend, that no deep retracement can occur, or that the first touch is safe requires additional evidence. The reviewed passage does not establish a universal first-touch entry, one-percent risk rule or midpoint stop. Keep the chosen invalidation and the contract’s tick value explicit."
+    ],
+    "idealCondition": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay."
   },
+  "conceptB": {
+    "name": "Propulsion Block",
+    "summary": "A propulsion study compares a reaction with a previously selected order-block reference. State the candle and overlap criteria; the chart does not prove institutional defence.",
+    "keyPoints": [
+      "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay."
+    ],
+    "idealCondition": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay."
+  },
+  "keyDifference": "The reviewed Suspension Block example identifies body-price gaps and contract-specific context. A propulsion study refers to interaction with a selected prior order block.",
+  "commonConfusion": "A candle suspended in open space alone does not establish a Suspension Block or a safe first-touch entry.",
+  "decisionRule": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay."
+},
 
   // 4. Candle Range Theory (CRT) vs Power of 3 (AMD)
   {
@@ -131,65 +118,51 @@ export const theinnercircletradersNewComparisons: ConceptComparison[] = [
 
   // 5. Balanced Price Range (BPR) vs. RDRB (Redelivered BPR)
   {
-    id: 'bpr_vs_rdrb',
-    title: 'Balanced Price Range (BPR) vs. ICT RDRB (Redelivered BPR)',
-    conceptA: {
-      name: 'Balanced Price Range (BPR)',
-      summary: 'A price zone formed by overlapping bullish and bearish Fair Value Gaps, representing instantaneous two-sided institutional rebalancing.',
-      keyPoints: [
-        'Created when an aggressive up-move is immediately followed by an aggressive down-move (or vice-versa)',
-        'Both sides of the book (buy-side and sell-side) have been delivered efficiently',
-        'Acts as an immediate magnet and barrier on its first test',
-        'Traded on anticipation of initial reaction'
-      ],
-      idealCondition: 'A 15-minute BISI and subsequent SIBI overlap perfectly between 5,830 and 5,840.'
-    },
-    conceptB: {
-      name: 'ICT RDRB (Redelivered BPR)',
-      summary: 'The second delivery into an established BPR where institutional algorithms defend the zone with Consequent Encroachment wick rejections.',
-      keyPoints: [
-        'Requires that the BPR has already produced a successful first reaction',
-        'Enters on confirmation: order book defense has already been empirically verified',
-        'Candle bodies must strictly respect the 50% Consequent Encroachment (CE) midpoint',
-        'Offers significantly lower drawdown and higher win-rate expectancy than first touches'
-      ],
-      idealCondition: 'Price returns to the 5,830-5,840 BPR at 14:50 MOC macro; twin wicks kiss 5,835 CE and reject sharply.'
-    },
-    keyDifference: 'BPR is the initial formation and first test; RDRB is the second institutional re-delivery that provides confirmation that smart money continues to defend the balance.',
-    commonConfusion: 'Assuming every BPR test will hold. The RDRB requires checking that candle bodies do not close beyond the 50% CE on the second test.',
-    decisionRule: 'Take lighter risk on first BPR touches (anticipation); take standard or aggressive risk on RDRB touches with confirmed wick rejections (confirmation).',
-    diagramSnippet: 'Overlapping FVGs ──[Touch 1: BPR Reaction]──> [Touch 2: RDRB 50% CE Rejection & Rocket]'
+  "id": "bpr_vs_rdrb",
+  "title": "Balanced Price Range (BPR) vs. ICT RDRB (Redelivered BPR)",
+  "conceptA": {
+    "name": "Balanced Price Range (BPR)",
+    "summary": "For this exercise, a BPR is the overlap of explicitly selected opposing FVG intervals. Save the interval boundaries before counting revisits.",
+    "keyPoints": [
+      "An overlap of selected opposing FVG price intervals is chart geometry. It does not prove that every order was matched, that the order book is empty or that an institution will defend the midpoint. Number the revisits with a stated rule: consecutive candles inside one visit are not automatically separate touches."
+    ],
+    "idealCondition": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay."
   },
+  "conceptB": {
+    "name": "RDRB",
+    "summary": "These notes use RDRB descriptively for a later revisit to a selected balanced-price reference. A precise originating explanation for the previous named second-touch model has not been verified. Keep this limitation visible instead of attributing a universal second-touch rule to ICT.",
+    "keyPoints": [
+      "Compare first and later visits using the same entry, expiry, invalidation and costs. Preserve zones that failed on their first test instead of excluding them after the fact. A second reaction does not by itself establish lower drawdown, a higher win rate or permission to increase risk."
+    ],
+    "idealCondition": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay."
+  },
+  "keyDifference": "A formation and a later revisit are different observations. The named second-touch rules and improved expectancy have not been authenticated here.",
+  "commonConfusion": "A second reaction does not justify increasing risk or deleting failed first tests from a study.",
+  "decisionRule": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay."
+},
 
   // 6. Silver Bullet 60-Minute Precision Window vs 3 AM London Open
   {
-    id: 'silver_bullet_vs_3am_london',
-    title: 'Silver Bullet 60-Minute Window vs. 3 AM London Open Execution',
-    conceptA: {
-      name: 'ICT Silver Bullet Strategy',
-      summary: 'A strictly mechanical 60-minute execution window (03:00-04:00, 10:00-11:00, 14:00-15:00 ET) designed to harvest a fixed 10-15 handle delivery off the First Presented FVG.',
-      keyPoints: [
-        'Strict 60-minute time constraint: trade must set up and trigger within the hour',
-        'Rules-based targeting: 10-15 handles on NQ/ES, 15-20 pips on EUR/GBP',
-        'Executes exclusively on the First Presented FVG following liquidity interaction',
-        'Designed for prop firm traders needing repeatable, mechanical daily expectancy'
-      ],
-      idealCondition: '10:05 AM ET prints a 5-minute MSS and FVG on NQ; trader enters, hits +15 handles, and closes terminal by 10:30 AM.'
-    },
-    conceptB: {
-      name: 'Classical 3 AM London Open Execution',
-      summary: 'A multi-hour session profile targeting the creation of the High or Low of the Day through the London Judas Swing.',
-      keyPoints: [
-        'Broad 3-hour window (02:00-05:00 ET) capturing the full European expansion leg',
-        'Targets multi-session liquidity: Asian High/Low, Previous Day High/Low, or HTF targets',
-        'Captures 40 to 100+ pips by holding through minor intraday pullbacks',
-        'Requires endurance and flexibility across multiple algorithmic macro windows'
-      ],
-      idealCondition: 'London open sweeps Asian low at 02:40 ET; trader holds long through 05:00 ET London close for a +65 pip day.'
-    },
-    keyDifference: 'Silver Bullet is a surgical 60-minute, fixed-target scalp (10-15 handles); Classical London Open is a full session swing targeting the daily high/low formation (40-100 pips).',
-    commonConfusion: 'Holding a Silver Bullet trade for 4 hours hoping for a massive runner, or conversely closing a London Open swing after only 10 handles.',
-    decisionRule: 'Trade the London Silver Bullet (03:00-04:00 ET) for quick, stress-free morning profits; trade the full London Open session when HTF bias offers massive expansion potential.',
-    diagramSnippet: 'Silver Bullet: [03:00 ──> 04:00 ET: 10-15 Handles Banked] | London Open: [02:00 ──> 05:00 ET: High/Low of Day Captured]'
-  }
+  "id": "silver_bullet_vs_3am_london",
+  "title": "Silver Bullet 60-Minute Window vs. 3 AM London Open Execution",
+  "conceptA": {
+    "name": "ICT Silver Bullet Strategy",
+    "summary": "The reviewed Silver Bullet lesson uses 03:00–04:00, 10:00–11:00 and 14:00–15:00 New York local entry windows. An entry hour is not a compulsory exit deadline.",
+    "keyPoints": [
+      "Illustrated index-point and Forex-pip ranges describe a source framework, not guaranteed captured profit or a fixed daily return. Keep each instrument’s units distinct."
+    ],
+    "idealCondition": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay."
+  },
+  "conceptB": {
+    "name": "London-session study",
+    "summary": "A London-session study uses a broader session context. Record the source’s timezone, date and selected range; the session label does not guarantee the daily high, daily low or a fixed pip gain.",
+    "keyPoints": [
+      "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay."
+    ],
+    "idealCondition": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay."
+  },
+  "keyDifference": "The London Silver Bullet entry hour overlaps part of a broader London-session study. Their entry conditions and exit rules should be stated separately.",
+  "commonConfusion": "Do not treat 05:00 New York time as London’s exchange close or assume every time window supplies a trade.",
+  "decisionRule": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay."
+}
 ];

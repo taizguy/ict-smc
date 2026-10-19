@@ -3,274 +3,250 @@ import { ICTConcept } from '../types';
 export const theinnercircletradersNewConcepts: ICTConcept[] = [
   // 1. ICT VENOM MODEL (2025 Institutional Delivery Framework)
   {
-    id: 'ict_venom_model',
-    name: 'ICT Venom Model (2025 Framework)',
-    category: 'models',
-    shortDefinition: 'A five-stage institutional delivery framework combining Higher Timeframe MMXM phases, Candle Range Theory (CRT) reference candle boundaries, SMT divergence confirmation at manipulation extremes, and First Presented FVG execution.',
-    source: {
-      mentorship: '2024–2025 Mentorship Master Lectures',
-      seriesOrMonth: 'Advanced Multi-Model Delivery Pipelines',
-      approximateDate: '2025',
-      originalTerminology: 'Venom Model & Five-Stage Confluence Chain',
-      conceptStatus: 'Advanced Execution',
-      lectureReference: 'The Inner Circle Traders 2025 Model Architecture'
-    },
-    tripartiteView: {
-      ictTeaching: 'Michael teaches that genuine institutional moves do not fire on a single isolated trigger. The algorithm operates through multi-model confluence: HTF curve direction (MMXM), reference candle boundary manipulation (CRT), intermarket non-confirmation (SMT), and immediate displacement execution (First Presented FVG).',
-      observableMarketBehavior: 'At key session turning points, one asset breaches a prior session extreme while a sister asset fails to reach it (SMT). Immediately following this non-confirmation, aggressive selling/buying creates an imbalance that acts as the sole valid entry.',
-      derivedInterpretation: 'A multi-factor statistical filter chain that requires HTF directional alignment, an algorithmic liquidity sweep, intermarket order flow decoupling, and local momentum displacement before placing risk.'
-    },
-    explanationLadder: {
-      level1Child: 'Think of a bank vault that requires 5 different keys turned at the exact same time before opening. The Venom Model waits for all 5 keys to turn before taking a trade.',
-      level2Beginner: 'Instead of taking every Fair Value Gap you see, the Venom Model forces you to wait until price sweeps a specific candle high or low, shows SMT divergence, and then enters on the very first FVG.',
-      level3Trader: 'Execute inside London or NY Silver Bullet windows. Wait for price to sweep the CRT Reference Candle High/Low. Confirm SMT divergence with a correlated pair. Enter on the First Presented FVG with stop above the manipulation high. Target the opposite CRT extreme for 1:3+ R:R.',
-      level4Advanced: 'Synthesizes Market Maker Buy/Sell Models with intraday Candle Range Theory. The SMT divergence at the CRT extreme proves that one market is being accumulated while the other is being used as liquidity bait.',
-      level5ICTFramework: 'Interbank Price Delivery Algorithm (IPDA) repricing sequence: Phase 1 HTF DOL alignment -> Phase 2 Reference Candle boundary sweep -> Phase 3 Intermarket SMT absorption -> Phase 4 Displacement into First Presented FVG -> Phase 5 Delivery to opposing dealing range liquidity.',
-      whenItMatters: 'During London Open (02:00-05:00 ET) and New York AM (09:30-11:00 ET) when correlated index futures (NQ/ES/YM) or FX pairs (EUR/GBP) approach prior session extremes.',
-      whenToIgnore: 'During mid-day consolidation (12:00-13:00 ET), bank holidays, or when correlated assets are moving in identical lockstep without any SMT divergence.'
-    },
-    whyItExists: 'Institutional algorithms require massive counterparty liquidity before executing major curve distributions. They engineer sweeps at obvious reference candles and use correlated pairs to absorb retail stops.',
-    problemItSolves: 'Stops traders from entering early on false displacements or trading into high-resistance chop without intermarket confirmation.',
-    howItForms: [
-      'Stage 1: Establish Higher Timeframe Daily Bias and identify current MMXM phase (Accumulation, Manipulation, or Distribution).',
-      'Stage 2: Select the CRT Reference Candle (e.g., Asian Session Candle for London Open, or London Session Candle for NY Open). Mark its High and Low.',
-      'Stage 3: Watch price manipulate beyond the Reference Candle extreme. Require SMT Divergence between correlated pairs (e.g., NQ sweeps high while ES fails to sweep high).',
-      'Stage 4: Wait for Change in State of Delivery (CISD) and identify the First Presented FVG formed during displacement.',
-      'Stage 5: Enter at the First Presented FVG (or its 50% Consequent Encroachment) and target the opposite Reference Candle extreme or HTF Draw on Liquidity.'
-    ],
-    chartAnatomy: 'Chart shows a Reference Candle with High and Low marked. An aggressive wick sweeps the High into SMT divergence with ES. A sharp bearish displacement candle slices down, leaving a crisp Fair Value Gap labeled "First Presented FVG (Venom Entry)". Price retraces into the FVG and dumps toward the Reference Candle Low.',
-    identificationRules: [
-      'The sweep must occur at a designated CRT Reference Candle extreme.',
-      'Correlated asset (NQ vs ES, or EURUSD vs GBPUSD) MUST exhibit clear SMT divergence at the extreme.',
-      'Displacement candle must close decisively through the opposing candle bodies (CISD).',
-      'Entry is strictly placed at the First Presented FVG—do not wait for 2nd or 3rd secondary gaps.'
-    ],
-    validCharacteristics: [
-      'Clean SMT divergence where one asset sweeps and the other leaves an obvious failure swing.',
-      'Heavy body displacement leaving a clean 3-candle imbalance with no immediate wick overlap.',
-      'Target provides at least 2.5x the distance of the required stop loss.'
-    ],
-    invalidCharacteristics: [
-      'Both correlated assets make new highs simultaneously (no SMT divergence).',
-      'The FVG is immediately filled and breached by counter-displacement candles.',
-      'Entry taken during off-hours outside institutional killzones.'
-    ],
-    howICTUsesIt: 'ICT teaches the Venom Model to advanced students as the gold standard for high-stakes prop firm evaluation trading, where high win-rate and low drawdown are mandatory.',
-    commonMistakes: [
-      'Entering before SMT divergence confirms—jumping into the sweep while price is still expanding.',
-      'Skipping the First Presented FVG and chasing price as it runs toward the target.'
-    ],
-    advancedNuances: 'If the First Presented FVG aligns directly with an old Breaker Block (the Unicorn confluence), the Venom Model reaches its highest statistical expectancy.',
-    prerequisites: ['power_of_three_amd', 'smt_divergence', 'fair_value_gap', 'breaker_block'],
-    relatedConcepts: ['Unicorn Model', 'Candle Range Theory', 'SMT Divergence', 'First Presented FVG', 'MMXM'],
-    bullishScenario: 'London Open CRT: Asian Low is swept at 02:45 ET. GBPUSD breaks Asian low, but EURUSD forms a higher low (Bullish SMT). A 5-minute displacement candle rallies, printing a clean BISI. Trader enters on 50% CE of the First Presented FVG, stop below the manipulation low, targeting Asian High for a +45 pip run.',
-    bearishScenario: 'NY AM Session: NQ sweeps London High at 09:55 ET, but ES fails to reach its London High (Bearish SMT). NQ prints a rapid bearish displacement candle closing below the opening price of the upward leg (CISD). Trader limits into the First Presented FVG at 10:02 ET, targeting the London Low for +85 points.',
-    counterexample: 'Taking an FVG entry when NQ and ES both broke the high cleanly with no divergence, resulting in getting stopped out as institutional buying continued higher.',
-    invalidationCriteria: 'A candle body close beyond the extreme manipulation high/low or failure of the First Presented FVG.',
-    diagramType: 'fvg_formation',
-    simplifiedExplanation: 'Wait for price to fake out beyond an important session high or low. Check if sister markets disagree (SMT). When price snaps back like a venomous strike, enter on the very first gap and ride it to the other side.'
+  "id": "ict_venom_model",
+  "name": "ICT Venom Model: The 2025 Opening-Session Example",
+  "category": "models",
+  "shortDefinition": "Establish the directional premise and selected liquidity reference before looking for an entry. A range by itself supplies no direction.",
+  "source": {
+    "mentorship": "ICT official YouTube",
+    "seriesOrMonth": "ICT Venom Model: The 2025 Opening-Session Example",
+    "approximateDate": "3 April 2025",
+    "originalTerminology": "ICT Venom Model: The 2025 Opening-Session Example",
+    "conceptStatus": "Advanced Execution",
+    "lectureReference": "https://www.youtube.com/watch?v=7wL2oyebbvU"
   },
+  "tripartiteView": {
+    "ictTeaching": "Establish the directional premise and selected liquidity reference before looking for an entry. A range by itself supplies no direction.",
+    "observableMarketBehavior": "At 09:30 New York local time, mark the high and low of the preceding 08:00–09:30 window. Use the correct date and daylight-saving offset.",
+    "derivedInterpretation": "This is a selected-passage study of the official 3 April 2025 tutorial. Candle patterns do not prove institutional intent, and no win rate, zero-drawdown claim or fixed profit-taking percentage is verified here."
+  },
+  "whyItExists": "Establish the directional premise and selected liquidity reference before looking for an entry. A range by itself supplies no direction.",
+  "problemItSolves": "In the bearish example, price raids the selected highs with an inefficient candle closing above them, followed by inefficient delivery in the opposite direction.",
+  "howItForms": [
+    "At 09:30 New York local time, mark the high and low of the preceding 08:00–09:30 window. Use the correct date and daylight-saving offset.",
+    "Establish the directional premise and selected liquidity reference before looking for an entry. A range by itself supplies no direction.",
+    "In the bearish example, price raids the selected highs with an inefficient candle closing above them, followed by inefficient delivery in the opposite direction.",
+    "Study the subsequent shift and return to the selected order-block opening reference. Distinguish the aggressive raid entry from a deferred entry.",
+    "The tutorial also illustrates a deferred First Presented FVG entry. This does not make an FVG, CRT or a five-stage confluence chain a mandatory definition of Venom.",
+    "Record the entry variation, invalidation, expiry, costs and missed fills before replay. A target is a hypothesis, not a promised return."
+  ],
+  "chartAnatomy": "At 09:30 New York local time, mark the high and low of the preceding 08:00–09:30 window. Use the correct date and daylight-saving offset.",
+  "identificationRules": [
+    "At 09:30 New York local time, mark the high and low of the preceding 08:00–09:30 window. Use the correct date and daylight-saving offset.",
+    "Establish the directional premise and selected liquidity reference before looking for an entry. A range by itself supplies no direction.",
+    "In the bearish example, price raids the selected highs with an inefficient candle closing above them, followed by inefficient delivery in the opposite direction."
+  ],
+  "validCharacteristics": [
+    "At 09:30 New York local time, mark the high and low of the preceding 08:00–09:30 window. Use the correct date and daylight-saving offset.",
+    "Record the entry variation, invalidation, expiry, costs and missed fills before replay. A target is a hypothesis, not a promised return."
+  ],
+  "invalidCharacteristics": [
+    "This is a selected-passage study of the official 3 April 2025 tutorial. Candle patterns do not prove institutional intent, and no win rate, zero-drawdown claim or fixed profit-taking percentage is verified here."
+  ],
+  "howICTUsesIt": "Establish the directional premise and selected liquidity reference before looking for an entry. A range by itself supplies no direction.",
+  "commonMistakes": [
+    "This is a selected-passage study of the official 3 April 2025 tutorial. Candle patterns do not prove institutional intent, and no win rate, zero-drawdown claim or fixed profit-taking percentage is verified here."
+  ],
+  "advancedNuances": "This is a selected-passage study of the official 3 April 2025 tutorial. Candle patterns do not prove institutional intent, and no win rate, zero-drawdown claim or fixed profit-taking percentage is verified here.",
+  "prerequisites": [
+    "fair_value_gap",
+    "market_structure_shift"
+  ],
+  "relatedConcepts": [
+    "SMT Divergence",
+    "Order Block",
+    "Fair Value Gap"
+  ],
+  "bullishScenario": "Record the entry variation, invalidation, expiry, costs and missed fills before replay. A target is a hypothesis, not a promised return.",
+  "bearishScenario": "In the bearish example, price raids the selected highs with an inefficient candle closing above them, followed by inefficient delivery in the opposite direction.",
+  "counterexample": "This is a selected-passage study of the official 3 April 2025 tutorial. Candle patterns do not prove institutional intent, and no win rate, zero-drawdown claim or fixed profit-taking percentage is verified here.",
+  "invalidationCriteria": "Record the entry variation, invalidation, expiry, costs and missed fills before replay. A target is a hypothesis, not a promised return.",
+  "diagramType": "fvg_formation",
+  "simplifiedExplanation": "Establish the directional premise and selected liquidity reference before looking for an entry. A range by itself supplies no direction."
+},
 
   // 2. ICT REAPER IFVG (2025 Inversion FVG Variant)
   {
-    id: 'ict_reaper_ifvg',
-    name: 'ICT Reaper IFVG (Predatory Inversion Trap)',
-    category: 'imbalances',
-    shortDefinition: 'An advanced 2025 Inversion Fair Value Gap variant: an apparent IFVG that baits retail breakout traders into entering an inversion, only to immediately re-invert violently and harvest their stop orders.',
-    source: {
-      mentorship: '2024–2025 Advanced Inversion Research',
-      seriesOrMonth: 'Predatory Orderflow & Retest Traps',
-      approximateDate: '2025',
-      originalTerminology: 'Reaper IFVG & Liquidity Harvesting',
-      conceptStatus: 'Advanced Execution',
-      lectureReference: 'The Inner Circle Traders 2025 Inversion Mechanics'
-    },
-    tripartiteView: {
-      ictTeaching: 'Institutions know retail smart money traders buy broken FVGs (IFVGs). To harvest liquidity, the algorithm deliberately allows price to pierce an IFVG, print a shallow confirmation to trap late retail buyers, and then immediately cuts back through it with ferocious institutional displacement.',
-      observableMarketBehavior: 'Price breaches a bearish FVG upward, tempting breakout buyers. It hovers briefly at the top of the zone, then an enormous bearish candle engulfs the entire zone in a single print, trapping all long breakout participants.',
-      derivedInterpretation: 'A dual-liquidity trap pattern where an established technical level is temporarily validated to induce resting stop orders behind it before being liquidated by dominant order flow.'
-    },
-    explanationLadder: {
-      level1Child: 'Imagine a trapdoor disguised as a solid wooden bridge. When everyone steps onto it thinking it is safe, the trapdoor drops them through.',
-      level2Beginner: 'Standard IFVG traders buy as soon as a gap is breached. The Reaper IFVG punishes them by faking a bounce and then plunging straight through their stop losses.',
-      level3Trader: 'Look for a bearish FVG that gets penetrated upward during a low-volume pre-macro window. When the macro hits, observe if price immediately fails to hold the IFVG and prints a strong bearish candle back through both boundaries. Enter short on the re-inversion, targeting the trapped retail stops below.',
-      level4Advanced: 'The Reaper IFVG is diagnosed by checking HTF Draw on Liquidity. If the HTF bias is bearish, an upward breach of an LTF FVG is merely a liquidity inducement (IDM) engineered to sell into premium liquidity.',
-      level5ICTFramework: 'Algorithmic liquidity re-harvesting: The primary market maker program remains in sell-delivery. The shallow inversion was an engineered imbalance fill to accumulate sell-side inventory against retail limit orders.',
-      whenItMatters: 'During the 09:50-10:10 AM or 13:10-13:40 PM macro windows when retail traders are aggressively trading lower-timeframe IFVG flips.',
-      whenToIgnore: 'When the higher-timeframe structure has already broken in the direction of the first inversion with massive daily displacement.'
-    },
-    whyItExists: 'As standard IFVG trading became widely adopted by retail SMC communities, institutional algorithms adjusted by engineering secondary traps at the exact inversion boundaries.',
-    problemItSolves: 'Prevents traders from getting chopped up in failed IFVG entries and provides a high-velocity reversal setup when an inversion fails.',
-    howItForms: [
-      'Step 1: A bearish FVG forms during earlier price action.',
-      'Step 2: Price moves upward and penetrates the FVG, leading retail traders to mark it as a bullish Inversion FVG (support).',
-      'Step 3: Price prints a small, weak reaction off the IFVG zone to induce retail buying and trap stop orders directly below the zone.',
-      'Step 4: The institutional algorithm executes aggressive sell orders, smashing through the IFVG with heavy candle bodies (The Reaper Re-Inversion).',
-      'Step 5: Enter short on the underside retest of the Reaper zone, with stops above the fakeout wick, targeting the sell-side liquidity resting below the origin.'
-    ],
-    chartAnatomy: 'Box showing a prior Bearish FVG. Price wicks above it, looks like an IFVG flip, then a massive solid red candle cuts through it, leaving trapped long wicks. Retest of the bottom of the box rejects downward violently.',
-    identificationRules: [
-      'The initial inversion must lack sustained HTF displacement follow-through.',
-      'The re-inversion candle body must cleanly close completely back through the opposite side of the gap.',
-      'Higher timeframe Draw on Liquidity must align with the direction of the Reaper re-inversion.'
-    ],
-    validCharacteristics: [
-      'Fast, aggressive rejection immediately following the retail inducement bounce.',
-      'Clear pool of retail stop losses resting beneath the setup.'
-    ],
-    invalidCharacteristics: [
-      'Price lingers inside the zone without clear displacement in either direction.',
-      'Higher timeframe structure strongly supports the initial inversion.'
-    ],
-    howICTUsesIt: 'Used to punish retail SMC complacency and catch high-velocity expansion legs fueled by the liquidation of trapped breakout traders.',
-    commonMistakes: [
-      'Fighting the Reaper move and stubbornly re-buying a failing IFVG.',
-      'Not identifying the true HTF Draw on Liquidity before trading lower-timeframe inversions.'
-    ],
-    advancedNuances: 'Reaper IFVGs frequently form at the 50% Consequent Encroachment of a higher-timeframe Fair Value Gap, combining multi-timeframe liquidity mechanics.',
-    prerequisites: ['fair_value_gap', 'inverse_fair_value_gap', 'displacement_engine'],
-    relatedConcepts: ['Standard IFVG', 'Trapdoor Liquidity', 'Consequent Encroachment', 'Draw on Liquidity'],
-    bullishScenario: 'Bullish Reaper: A bullish FVG is sliced down, tempting retail bears to short the IFVG. Price bounces weakly, then an institutional green candle engulfs the entire zone upward. Enter long on the top-side retest, targeting buy stops above the range.',
-    bearishScenario: 'Bearish Reaper: A 15-minute SIBI is breached upward on NQ at 09:40 AM. Retail traders buy the IFVG. At 09:50 AM macro, a 40-point red candle annihilates the IFVG. Trader enters short on the underside retest at 09:54 AM, targeting London Lows.',
-    counterexample: 'Assuming an IFVG will always hold as support without checking whether the HTF bias has completed its draw on liquidity.',
-    invalidationCriteria: 'Price accepting and closing back above the Reaper manipulation extreme.',
-    diagramType: 'ifvg_inversion',
-    simplifiedExplanation: 'When an Inversion FVG fails to hold and price aggressively reverses back through it, do not cry about the loss—flip your bias immediately and ride the Reaper move that harvests everyone who got trapped.'
+  "id": "ict_reaper_ifvg",
+  "name": "Reaper FVG: A Sourced Nested-Gap Variant",
+  "category": "imbalances",
+  "shortDefinition": "In the 9 June 2026 review, ICT explicitly describes a Reaper variant with two nested gaps in a breaker context. In the bearish example, a previously bullish gap is validated as an inversion after a close below it, while a bearish FVG supplies a first-utilization reference. The lesson examines their overlap, wick excursions and body placement together; it does not define every failed inversion as a Reaper.",
+  "source": {
+    "mentorship": "ICT official source review",
+    "seriesOrMonth": "Futures Commentary — 9 June 2026",
+    "approximateDate": "Reviewed 19 October 2026",
+    "originalTerminology": "Reaper variant",
+    "conceptStatus": "Advanced Execution",
+    "lectureReference": "https://www.youtube.com/watch?v=18vX-vv2bsg&t=1010s"
   },
+  "tripartiteView": {
+    "ictTeaching": "In the 9 June 2026 review, ICT explicitly describes a Reaper variant with two nested gaps in a breaker context. In the bearish example, a previously bullish gap is validated as an inversion after a close below it, while a bearish FVG supplies a first-utilization reference. The lesson examines their overlap, wick excursions and body placement together; it does not define every failed inversion as a Reaper.",
+    "observableMarketBehavior": "An official June 2026 execution is titled Reaper FVG. Its reviewed passages show trade management, but they do not authenticate the previous definition of Reaper as every inversion-of-inversion, a mandatory 09:50 trap or an immediate instruction to reverse position. A source title alone cannot supply those rules.",
+    "derivedInterpretation": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay."
+  },
+  "whyItExists": "In the 9 June 2026 review, ICT explicitly describes a Reaper variant with two nested gaps in a breaker context. In the bearish example, a previously bullish gap is validated as an inversion after a close below it, while a bearish FVG supplies a first-utilization reference. The lesson examines their overlap, wick excursions and body placement together; it does not define every failed inversion as a Reaper.",
+  "problemItSolves": "Study a failed IFVG as a failed IFVG unless the precise named variation is supported by an original explanation. Save the initial gap boundaries, the break criterion, the retest and the later failure separately. Neither the price sequence nor its label identifies every participant or proves that all retail stops were harvested.",
+  "howItForms": [
+    "In the 9 June 2026 review, ICT explicitly describes a Reaper variant with two nested gaps in a breaker context. In the bearish example, a previously bullish gap is validated as an inversion after a close below it, while a bearish FVG supplies a first-utilization reference. The lesson examines their overlap, wick excursions and body placement together; it does not define every failed inversion as a Reaper.",
+    "An official June 2026 execution is titled Reaper FVG. Its reviewed passages show trade management, but they do not authenticate the previous definition of Reaper as every inversion-of-inversion, a mandatory 09:50 trap or an immediate instruction to reverse position. A source title alone cannot supply those rules.",
+    "Study a failed IFVG as a failed IFVG unless the precise named variation is supported by an original explanation. Save the initial gap boundaries, the break criterion, the retest and the later failure separately. Neither the price sequence nor its label identifies every participant or proves that all retail stops were harvested."
+  ],
+  "chartAnatomy": "The generic drawing illustrates foundational FVG geometry. It is not a source chart or a complete diagram of this specialist label. Use the linked original explanation for the actual contract, candle boundaries and measurement context.",
+  "identificationRules": [
+    "In the 9 June 2026 review, ICT explicitly describes a Reaper variant with two nested gaps in a breaker context. In the bearish example, a previously bullish gap is validated as an inversion after a close below it, while a bearish FVG supplies a first-utilization reference. The lesson examines their overlap, wick excursions and body placement together; it does not define every failed inversion as a Reaper.",
+    "An official June 2026 execution is titled Reaper FVG. Its reviewed passages show trade management, but they do not authenticate the previous definition of Reaper as every inversion-of-inversion, a mandatory 09:50 trap or an immediate instruction to reverse position. A source title alone cannot supply those rules.",
+    "Study a failed IFVG as a failed IFVG unless the precise named variation is supported by an original explanation. Save the initial gap boundaries, the break criterion, the retest and the later failure separately. Neither the price sequence nor its label identifies every participant or proves that all retail stops were harvested."
+  ],
+  "validCharacteristics": [
+    "An official June 2026 execution is titled Reaper FVG. Its reviewed passages show trade management, but they do not authenticate the previous definition of Reaper as every inversion-of-inversion, a mandatory 09:50 trap or an immediate instruction to reverse position. A source title alone cannot supply those rules."
+  ],
+  "invalidCharacteristics": [
+    "Study a failed IFVG as a failed IFVG unless the precise named variation is supported by an original explanation. Save the initial gap boundaries, the break criterion, the retest and the later failure separately. Neither the price sequence nor its label identifies every participant or proves that all retail stops were harvested."
+  ],
+  "howICTUsesIt": "In the 9 June 2026 review, ICT explicitly describes a Reaper variant with two nested gaps in a breaker context. In the bearish example, a previously bullish gap is validated as an inversion after a close below it, while a bearish FVG supplies a first-utilization reference. The lesson examines their overlap, wick excursions and body placement together; it does not define every failed inversion as a Reaper.",
+  "commonMistakes": [
+    "Study a failed IFVG as a failed IFVG unless the precise named variation is supported by an original explanation. Save the initial gap boundaries, the break criterion, the retest and the later failure separately. Neither the price sequence nor its label identifies every participant or proves that all retail stops were harvested."
+  ],
+  "advancedNuances": "Study a failed IFVG as a failed IFVG unless the precise named variation is supported by an original explanation. Save the initial gap boundaries, the break criterion, the retest and the later failure separately. Neither the price sequence nor its label identifies every participant or proves that all retail stops were harvested.",
+  "prerequisites": [
+    "fair_value_gap",
+    "inverse_fair_value_gap",
+    "displacement_engine"
+  ],
+  "relatedConcepts": [
+    "Fair Value Gap",
+    "Volume Imbalance",
+    "Order Block"
+  ],
+  "bullishScenario": "The reviewed passage illustrates a bearish variant. A mirrored bullish checklist is not independently authenticated here.",
+  "bearishScenario": "In the 9 June 2026 review, ICT explicitly describes a Reaper variant with two nested gaps in a breaker context. In the bearish example, a previously bullish gap is validated as an inversion after a close below it, while a bearish FVG supplies a first-utilization reference. The lesson examines their overlap, wick excursions and body placement together; it does not define every failed inversion as a Reaper.",
+  "counterexample": "Study a failed IFVG as a failed IFVG unless the precise named variation is supported by an original explanation. Save the initial gap boundaries, the break criterion, the retest and the later failure separately. Neither the price sequence nor its label identifies every participant or proves that all retail stops were harvested.",
+  "invalidationCriteria": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay.",
+  "diagramType": "fvg_formation",
+  "simplifiedExplanation": "In the 9 June 2026 review, ICT explicitly describes a Reaper variant with two nested gaps in a breaker context. In the bearish example, a previously bullish gap is validated as an inversion after a close below it, while a bearish FVG supplies a first-utilization reference. The lesson examines their overlap, wick excursions and body placement together; it does not define every failed inversion as a Reaper."
+},
 
   // 3. ICT SUSPENSION BLOCK (2025 Order Block Variant)
   {
-    id: 'ict_suspension_block',
-    name: 'ICT Suspension Block (2025 Order Block Variant)',
-    category: 'order_blocks',
-    shortDefinition: 'An institutional order block hanging suspended between internal and external liquidity pools where price pauses during an aggressive trend expansion before launching the second leg of delivery.',
-    source: {
-      mentorship: '2024–2025 Advanced Order Block Series',
-      seriesOrMonth: 'In-Flight Institutional Refueling Models',
-      approximateDate: '2025',
-      originalTerminology: 'Suspension Block & Mid-Range Accumulation',
-      conceptStatus: 'Advanced Execution',
-      lectureReference: 'The Inner Circle Traders 2025 Order Block Compendium'
-    },
-    tripartiteView: {
-      ictTeaching: 'When the market is in a violent Low Resistance Liquidity Run (LRLR), the algorithm does not return all the way to origin order blocks. Instead, it creates a brief suspension block midway between dealing ranges to collect resting limit orders before expanding into external liquidity.',
-      observableMarketBehavior: 'In a strong trending day, price consolidates into a single opposing candle in the middle of a price void. It taps this candle by only a few ticks and immediately surges in trend direction without deep retracement.',
-      derivedInterpretation: 'A continuation order block formed during momentum acceleration that serves as an institutional re-accumulation node when volatility prevents full equilibrium pullbacks.'
-    },
-    explanationLadder: {
-      level1Child: 'Like an airplane refueling mid-air without landing at the airport, a suspension block refuels price in mid-flight so it can keep speeding to its destination.',
-      level2Beginner: 'Traders waiting for a 50% discount retracement miss the whole move on trend days. A suspension block is the shallow resting block where institutions jump back in.',
-      level3Trader: 'Identify a strong trending session where internal liquidity has been cleared and price is driving toward an obvious HTF target. Mark the single opposing candle formed during the continuation pause. Enter on the first touch of the suspension block candle high/low with a tight stop behind its body.',
-      level4Advanced: 'Distinguish between a Propulsion Block and a Suspension Block: A Propulsion Block re-tests an existing Order Block that previously triggered; a Suspension Block forms in open space suspended between two distinct liquidity pools.',
-      level5ICTFramework: 'Algorithmic delivery mode: Low Resistance Liquidity Run (LRLR). The algorithm is running a programmatic delivery sequence to external liquidity and cannot allow deep retracements that would grant retail participants favorable discount pricing.',
-      whenItMatters: 'During clean trend days (e.g., post-CPI, NFP expansion, or Wednesday/Thursday weekly expansion days) when price refuses to retrace to equilibrium.',
-      whenToIgnore: 'In range-bound, choppy, or High Resistance Liquidity Run (HRLR) conditions where deep pullbacks and double sweeps are standard.'
-    },
-    whyItExists: 'Institutional programs cannot risk missing HTF targets during high-urgency delivery runs. They match orders at suspended continuation levels rather than giving the market a full retracement.',
-    problemItSolves: 'Solves the classic trader dilemma of being left behind on the strongest trending days of the month while waiting for deep OTE retracements that never come.',
-    howItForms: [
-      'Step 1: Price initiates a Low Resistance Liquidity Run (LRLR) from an originating HTF PD array.',
-      'Step 2: External Draw on Liquidity remains clear and distant (e.g., multi-day equal highs or weekly buy-side liquidity).',
-      'Step 3: Mid-trend, price prints 1 or 2 small counter-trend candles that pause momentum without breaking any structural swing low/high.',
-      'Step 4: Immediate displacement candle resumes the trend, leaving the counter-trend candle suspended in open space (The Suspension Block).',
-      'Step 5: When price dips back into the high of this candle (for bullish) or low (for bearish), enter immediately with stop placed just past the suspension block body.'
-    ],
-    chartAnatomy: 'A steep 45-degree upward trend. In the middle of the run, two small down-candles sit isolated like a ledge. A green expansion candle launches off them. The zone is tagged as "Suspension Block Re-Entry".',
-    identificationRules: [
-      'Must occur between an internal liquidity clearing event and an unreached external liquidity pool.',
-      'The suspension candle body must be small relative to the preceding and following expansion candles.',
-      'Price must not close beyond 50% of the suspension block candle body on the retest.'
-    ],
-    validCharacteristics: [
-      'Clear, unhindered price void between the suspension block and the external target.',
-      'Fast rejection upon touch with minimal wick drawdown.'
-    ],
-    invalidCharacteristics: [
-      'Price closes through the entire suspension block—signals delivery exhaustion or pending reversal.',
-      'Formation occurs near major higher timeframe resistance/support.'
-    ],
-    howICTUsesIt: 'Used as an aggressive re-entry vehicle for traders who missed the morning open or need to pyramid winning trend positions safely.',
-    commonMistakes: [
-      'Waiting for price to reach the 0.618 OTE level when a suspension block has already initiated the next leg.',
-      'Using suspension blocks in consolidating or choppy market conditions.'
-    ],
-    advancedNuances: 'Suspension blocks that overlap with a New Day Opening Gap (NDOG) or New Week Opening Gap (NWOG) provide unmatched continuation velocity.',
-    prerequisites: ['order_block', 'displacement_engine', 'lrlr_vs_hrlr'],
-    relatedConcepts: ['Propulsion Block', 'Order Block', 'LRLR', 'Pyramiding'],
-    bullishScenario: 'Gold rallies from $2,620 to $2,660. At $2,642, price prints a single 5-minute red candle and then explodes to $2,652. On a quick 3-minute dip back to $2,643, trader enters long on the Suspension Block, risking 15 pips to target $2,665.',
-    bearishScenario: 'NQ sells off 150 points post-cash open. At 10:15 AM, a single 1-minute green candle forms at 20,420 before another 40-point sell wave. Price retraces to 20,418. Trader shorts the Suspension Block, stop at 20,425, targeting 20,350.',
-    counterexample: 'Attempting to trade a suspension block when price is only 5 points away from the daily high, buying directly into terminal resistance.',
-    invalidationCriteria: 'A candle body close violating the distal boundary of the suspension block.',
-    diagramType: 'propulsion_block',
-    simplifiedExplanation: 'When a rocket is blasting into space, it does not fly back to earth to pick up more fuel. The Suspension Block is an in-flight refueling station where smart money hops on board mid-trend.'
+  "id": "ict_suspension_block",
+  "name": "Suspension Block: Body Gaps and Contract Context",
+  "category": "order_blocks",
+  "shortDefinition": "In the reviewed April 2026 explanation, ICT examines separations between adjacent candle bodies while their wicks touch or overlap. These are volume imbalances in his terminology. Mark the actual close/open prices around the selected candle; an isolated counter-trend pause alone is not the definition illustrated here.",
+  "source": {
+    "mentorship": "ICT official source review",
+    "seriesOrMonth": "Suspension Block: Body Gaps and Contract Context",
+    "approximateDate": "Reviewed 19 October 2026",
+    "originalTerminology": "Suspension Block: Body Gaps and Contract Context",
+    "conceptStatus": "Advanced Execution",
+    "lectureReference": "https://www.youtube.com/watch?v=RY67bW2UhxY&t=650s"
   },
+  "tripartiteView": {
+    "ictTeaching": "In the reviewed April 2026 explanation, ICT examines separations between adjacent candle bodies while their wicks touch or overlap. These are volume imbalances in his terminology. Mark the actual close/open prices around the selected candle; an isolated counter-trend pause alone is not the definition illustrated here.",
+    "observableMarketBehavior": "In the reviewed April 2026 explanation, ICT examines separations between adjacent candle bodies while their wicks touch or overlap. These are volume imbalances in his terminology. Mark the actual close/open prices around the selected candle; an isolated counter-trend pause alone is not the definition illustrated here.",
+    "derivedInterpretation": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay."
+  },
+  "whyItExists": "In the reviewed April 2026 explanation, ICT examines separations between adjacent candle bodies while their wicks touch or overlap. These are volume imbalances in his terminology. Mark the actual close/open prices around the selected candle; an isolated counter-trend pause alone is not the definition illustrated here.",
+  "problemItSolves": "Body-price separation is observable. Concluding that an institution refuelled a trend, that no deep retracement can occur, or that the first touch is safe requires additional evidence. The reviewed passage does not establish a universal first-touch entry, one-percent risk rule or midpoint stop. Keep the chosen invalidation and the contract’s tick value explicit.",
+  "howItForms": [
+    "In the reviewed April 2026 explanation, ICT examines separations between adjacent candle bodies while their wicks touch or overlap. These are volume imbalances in his terminology. Mark the actual close/open prices around the selected candle; an isolated counter-trend pause alone is not the definition illustrated here.",
+    "The source compares the nearby/front-month futures contract with a continuous chart. Their candle shapes and absolute prices differ. ICT prefers a candidate agreeing with a selected breaker reference in this example and discusses comparing other candidate levels. Record the symbol, delivery month, adjustment setting and timeframe. Do not transplant a continuous-chart price directly into a different contract.",
+    "Body-price separation is observable. Concluding that an institution refuelled a trend, that no deep retracement can occur, or that the first touch is safe requires additional evidence. The reviewed passage does not establish a universal first-touch entry, one-percent risk rule or midpoint stop. Keep the chosen invalidation and the contract’s tick value explicit."
+  ],
+  "chartAnatomy": "The generic drawing illustrates foundational FVG geometry. It is not a source chart or a complete diagram of this specialist label. Use the linked original explanation for the actual contract, candle boundaries and measurement context.",
+  "identificationRules": [
+    "In the reviewed April 2026 explanation, ICT examines separations between adjacent candle bodies while their wicks touch or overlap. These are volume imbalances in his terminology. Mark the actual close/open prices around the selected candle; an isolated counter-trend pause alone is not the definition illustrated here.",
+    "The source compares the nearby/front-month futures contract with a continuous chart. Their candle shapes and absolute prices differ. ICT prefers a candidate agreeing with a selected breaker reference in this example and discusses comparing other candidate levels. Record the symbol, delivery month, adjustment setting and timeframe. Do not transplant a continuous-chart price directly into a different contract.",
+    "Body-price separation is observable. Concluding that an institution refuelled a trend, that no deep retracement can occur, or that the first touch is safe requires additional evidence. The reviewed passage does not establish a universal first-touch entry, one-percent risk rule or midpoint stop. Keep the chosen invalidation and the contract’s tick value explicit."
+  ],
+  "validCharacteristics": [
+    "In the reviewed April 2026 explanation, ICT examines separations between adjacent candle bodies while their wicks touch or overlap. These are volume imbalances in his terminology. Mark the actual close/open prices around the selected candle; an isolated counter-trend pause alone is not the definition illustrated here."
+  ],
+  "invalidCharacteristics": [
+    "Body-price separation is observable. Concluding that an institution refuelled a trend, that no deep retracement can occur, or that the first touch is safe requires additional evidence. The reviewed passage does not establish a universal first-touch entry, one-percent risk rule or midpoint stop. Keep the chosen invalidation and the contract’s tick value explicit."
+  ],
+  "howICTUsesIt": "In the reviewed April 2026 explanation, ICT examines separations between adjacent candle bodies while their wicks touch or overlap. These are volume imbalances in his terminology. Mark the actual close/open prices around the selected candle; an isolated counter-trend pause alone is not the definition illustrated here.",
+  "commonMistakes": [
+    "Body-price separation is observable. Concluding that an institution refuelled a trend, that no deep retracement can occur, or that the first touch is safe requires additional evidence. The reviewed passage does not establish a universal first-touch entry, one-percent risk rule or midpoint stop. Keep the chosen invalidation and the contract’s tick value explicit."
+  ],
+  "advancedNuances": "Body-price separation is observable. Concluding that an institution refuelled a trend, that no deep retracement can occur, or that the first touch is safe requires additional evidence. The reviewed passage does not establish a universal first-touch entry, one-percent risk rule or midpoint stop. Keep the chosen invalidation and the contract’s tick value explicit.",
+  "prerequisites": [
+    "order_block",
+    "displacement_engine",
+    "lrlr_vs_hrlr"
+  ],
+  "relatedConcepts": [
+    "Fair Value Gap",
+    "Volume Imbalance",
+    "Order Block"
+  ],
+  "bullishScenario": "In the reviewed April 2026 explanation, ICT examines separations between adjacent candle bodies while their wicks touch or overlap. These are volume imbalances in his terminology. Mark the actual close/open prices around the selected candle; an isolated counter-trend pause alone is not the definition illustrated here.",
+  "bearishScenario": "In the reviewed April 2026 explanation, ICT examines separations between adjacent candle bodies while their wicks touch or overlap. These are volume imbalances in his terminology. Mark the actual close/open prices around the selected candle; an isolated counter-trend pause alone is not the definition illustrated here.",
+  "counterexample": "Body-price separation is observable. Concluding that an institution refuelled a trend, that no deep retracement can occur, or that the first touch is safe requires additional evidence. The reviewed passage does not establish a universal first-touch entry, one-percent risk rule or midpoint stop. Keep the chosen invalidation and the contract’s tick value explicit.",
+  "invalidationCriteria": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay.",
+  "diagramType": "fvg_formation",
+  "simplifiedExplanation": "In the reviewed April 2026 explanation, ICT examines separations between adjacent candle bodies while their wicks touch or overlap. These are volume imbalances in his terminology. Mark the actual close/open prices around the selected candle; an isolated counter-trend pause alone is not the definition illustrated here."
+},
 
   // 4. ICT RDRB (Redelivered Balanced Price Range)
   {
-    id: 'ict_rdrb',
-    name: 'ICT RDRB (Redelivered Balanced Price Range)',
-    category: 'imbalances',
-    shortDefinition: 'When an existing Balanced Price Range (BPR)—formed by overlapping opposing FVGs—is revisited, respected, and defended a second time, providing an model-based confirmation entry.',
-    source: {
-      mentorship: '2024–2025 Balanced Price Range Refinements',
-      seriesOrMonth: 'Re-delivery Mechanics & CE Defense',
-      approximateDate: '2025',
-      originalTerminology: 'RDRB & Two-Sided Algorithmic Defense',
-      conceptStatus: 'Advanced Execution',
-      lectureReference: 'The Inner Circle Traders 2025 Imbalance Masterclass'
-    },
-    tripartiteView: {
-      ictTeaching: 'A Balanced Price Range is the ultimate two-sided efficiency zone created when a bullish FVG and a bearish FVG completely overlap. When price re-delivers into this zone a second time (RDRB) and closes within Consequent Encroachment (50%), the level is virtually unbreakable.',
-      observableMarketBehavior: 'An overlapping gap zone acts as instant resistance on the first bounce. Price pushes away, returns to test the level once more, forms a clean wick rejection without candle bodies penetrating the 50% midpoint, and then accelerates away.',
-      derivedInterpretation: 'A proven equilibrium level where institutional liquidity has already traded both sides of the spread, leaving zero directional imbalance and transforming the area into an immovable algorithmic pivot.'
-    },
-    explanationLadder: {
-      level1Child: 'Think of a bridge that was tested by an elephant once and held strong. When the elephant steps on it a second time, you know with 100% confidence it will not break.',
-      level2Beginner: 'A Balanced Price Range is where buyers and sellers were matched equally. The RDRB is when price returns to that balance a second time and bounces cleanly.',
-      level3Trader: 'Identify an established BPR from an earlier session or morning open. On the second visit (RDRB), wait for price to touch the BPR without candle bodies closing beyond the 50% Consequent Encroachment. Enter on the rejection candle close with stop just outside the BPR boundary.',
-      level4Advanced: 'RDRB trades offer higher win rates than initial BPR touches because institutional order book commitment is empirically confirmed rather than hypothesized.',
-      level5ICTFramework: 'IPDA re-delivery verification: The algorithm has successfully rebalanced both buy and sell liquidity. The second delivery tests residual resting volume; once absorbed, the market shifts directly to aggressive distribution.',
-      whenItMatters: 'During London Close (10:00-12:00 ET) and NY PM sessions when morning BPR zones are re-tested before the final daily expansion.',
-      whenToIgnore: 'A tighter midpoint-based trade may invalidate there. Distinguish that stop rule from failure beyond the full selected BPR zone.'
-    },
-    whyItExists: 'Algorithms must ensure that large volume tranches transferred during two-sided imbalance creation are fully settled before expanding price to new extremes.',
-    problemItSolves: 'Removes the anxiety of trading unconfirmed imbalances by providing an entry that has already demonstrated active institutional defense.',
-    howItForms: [
-      'Step 1: Rapid up-move creates a bullish FVG; immediate rapid down-move creates a bearish FVG over the exact same price coordinates (BPR formed).',
-      'Step 2: Price delivers into the BPR the first time and reacts away (First Delivery).',
-      'Step 3: Price moves back toward the BPR for a second delivery (The RDRB - Redelivery Phase).',
-      'Step 4: Price wicks into the BPR but candle bodies strictly respect the 50% Consequent Encroachment midpoint.',
-      'Step 5: Enter upon confirmation of the wick rejection, targeting the recent structural swing high/low.'
-    ],
-    chartAnatomy: 'Two overlapping shaded boxes showing a bullish and bearish FVG occupying the same price band. Arrow 1 shows initial bounce. Arrow 2 shows the RDRB re-test with twin wicks rejecting the 50% dotted CE line and exploding away.',
-    identificationRules: [
-      'The BPR must consist of genuine opposing displacement FVGs that share common price coordinates.',
-      'The re-delivery must respect the Consequent Encroachment (50% midpoint) on a candle body closing basis.',
-      'Volume on the second re-delivery should contract during entry and expand violently on exit.'
-    ],
-    validCharacteristics: [
-      'Clean wick rejection touching the outer edge or midpoint of the BPR.',
-      'Candle bodies stay firmly outside the opposing boundary.'
-    ],
-    invalidCharacteristics: [
-      'Candle bodies close completely through the BPR, destroying the balance zone.',
-      'Lack of clear HTF Draw on Liquidity to pull price away from the re-delivery.'
-    ],
-    howICTUsesIt: 'ICT highlights the RDRB as a core weapon for conservative traders who prefer trading off established footprints rather than anticipating first-time reactions.',
-    commonMistakes: [
-      'Entering before the second touch candle closes, risking getting caught in an unexpected through-run.',
-      'Confusing a standard single FVG retest with a genuine dual-sided BPR re-delivery.'
-    ],
-    advancedNuances: 'When an RDRB occurs inside an institutional Killzone while SMT divergence is active, it forms one of the rarest 90%+ hit-rate setups in the entire ICT curriculum.',
-    prerequisites: ['fair_value_gap', 'consequent_encroachment', 'inverse_fair_value_gap'],
-    relatedConcepts: ['Balanced Price Range (BPR)', 'Consequent Encroachment', 'Two-Sided Delivery', 'Wick Rejection'],
-    bullishScenario: 'EURUSD prints overlapping 15m FVGs at 1.0820-1.0830. Initial morning rally pushes away. At 10:15 AM London Close macro, price dips back into 1.0825 (RDRB), wicks off 50% CE, and launches +50 pips to daily high.',
-    bearishScenario: 'ES prints a BPR at 5,840-5,845. Afternoon dip tests 5,842. Twin wicks reject without a single 5-minute body closing above 5,843. Trader shorts the RDRB, stop at 5,847, targets 5,815.',
-    counterexample: 'Taking an RDRB trade where the second touch saw an aggressive candle body close all the way through the bottom of the BPR, invalidating the setup.',
-    invalidationCriteria: 'A candle body close through the distal edge of the Balanced Price Range.',
-    diagramType: 'fvg_formation',
-    simplifiedExplanation: 'When a fortress wall has already repelled one army, you know it is strong. The RDRB is returning to that fortress wall a second time to trade safely behind institutional shields.'
+  "id": "ict_rdrb",
+  "name": "RDRB: A Later Balanced-Range Visit",
+  "category": "imbalances",
+  "shortDefinition": "These notes use RDRB descriptively for a later revisit to a selected balanced-price reference. A precise originating explanation for the previous named second-touch model has not been verified. Keep this limitation visible instead of attributing a universal second-touch rule to ICT.",
+  "source": {
+    "mentorship": "ICT official source review",
+    "seriesOrMonth": "RDRB: A Later Balanced-Range Visit",
+    "approximateDate": "Reviewed 19 October 2026",
+    "originalTerminology": "RDRB: A Later Balanced-Range Visit",
+    "conceptStatus": "Advanced Execution",
+    "lectureReference": "https://www.youtube.com/innercircletrader"
   },
+  "tripartiteView": {
+    "ictTeaching": "These notes use RDRB descriptively for a later revisit to a selected balanced-price reference. A precise originating explanation for the previous named second-touch model has not been verified. Keep this limitation visible instead of attributing a universal second-touch rule to ICT.",
+    "observableMarketBehavior": "These notes use RDRB descriptively for a later revisit to a selected balanced-price reference. A precise originating explanation for the previous named second-touch model has not been verified. Keep this limitation visible instead of attributing a universal second-touch rule to ICT.",
+    "derivedInterpretation": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay."
+  },
+  "whyItExists": "These notes use RDRB descriptively for a later revisit to a selected balanced-price reference. A precise originating explanation for the previous named second-touch model has not been verified. Keep this limitation visible instead of attributing a universal second-touch rule to ICT.",
+  "problemItSolves": "Compare first and later visits using the same entry, expiry, invalidation and costs. Preserve zones that failed on their first test instead of excluding them after the fact. A second reaction does not by itself establish lower drawdown, a higher win rate or permission to increase risk.",
+  "howItForms": [
+    "These notes use RDRB descriptively for a later revisit to a selected balanced-price reference. A precise originating explanation for the previous named second-touch model has not been verified. Keep this limitation visible instead of attributing a universal second-touch rule to ICT.",
+    "An overlap of selected opposing FVG price intervals is chart geometry. It does not prove that every order was matched, that the order book is empty or that an institution will defend the midpoint. Number the revisits with a stated rule: consecutive candles inside one visit are not automatically separate touches.",
+    "Compare first and later visits using the same entry, expiry, invalidation and costs. Preserve zones that failed on their first test instead of excluding them after the fact. A second reaction does not by itself establish lower drawdown, a higher win rate or permission to increase risk."
+  ],
+  "chartAnatomy": "The generic drawing illustrates foundational FVG geometry. It is not a source chart or a complete diagram of this specialist label. Use the linked original explanation for the actual contract, candle boundaries and measurement context.",
+  "identificationRules": [
+    "These notes use RDRB descriptively for a later revisit to a selected balanced-price reference. A precise originating explanation for the previous named second-touch model has not been verified. Keep this limitation visible instead of attributing a universal second-touch rule to ICT.",
+    "An overlap of selected opposing FVG price intervals is chart geometry. It does not prove that every order was matched, that the order book is empty or that an institution will defend the midpoint. Number the revisits with a stated rule: consecutive candles inside one visit are not automatically separate touches.",
+    "Compare first and later visits using the same entry, expiry, invalidation and costs. Preserve zones that failed on their first test instead of excluding them after the fact. A second reaction does not by itself establish lower drawdown, a higher win rate or permission to increase risk."
+  ],
+  "validCharacteristics": [
+    "These notes use RDRB descriptively for a later revisit to a selected balanced-price reference. A precise originating explanation for the previous named second-touch model has not been verified. Keep this limitation visible instead of attributing a universal second-touch rule to ICT."
+  ],
+  "invalidCharacteristics": [
+    "Compare first and later visits using the same entry, expiry, invalidation and costs. Preserve zones that failed on their first test instead of excluding them after the fact. A second reaction does not by itself establish lower drawdown, a higher win rate or permission to increase risk."
+  ],
+  "howICTUsesIt": "These notes use RDRB descriptively for a later revisit to a selected balanced-price reference. A precise originating explanation for the previous named second-touch model has not been verified. Keep this limitation visible instead of attributing a universal second-touch rule to ICT.",
+  "commonMistakes": [
+    "Compare first and later visits using the same entry, expiry, invalidation and costs. Preserve zones that failed on their first test instead of excluding them after the fact. A second reaction does not by itself establish lower drawdown, a higher win rate or permission to increase risk."
+  ],
+  "advancedNuances": "Compare first and later visits using the same entry, expiry, invalidation and costs. Preserve zones that failed on their first test instead of excluding them after the fact. A second reaction does not by itself establish lower drawdown, a higher win rate or permission to increase risk.",
+  "prerequisites": [
+    "fair_value_gap",
+    "consequent_encroachment",
+    "inverse_fair_value_gap"
+  ],
+  "relatedConcepts": [
+    "Fair Value Gap",
+    "Volume Imbalance",
+    "Order Block"
+  ],
+  "bullishScenario": "These notes use RDRB descriptively for a later revisit to a selected balanced-price reference. A precise originating explanation for the previous named second-touch model has not been verified. Keep this limitation visible instead of attributing a universal second-touch rule to ICT.",
+  "bearishScenario": "These notes use RDRB descriptively for a later revisit to a selected balanced-price reference. A precise originating explanation for the previous named second-touch model has not been verified. Keep this limitation visible instead of attributing a universal second-touch rule to ICT.",
+  "counterexample": "Compare first and later visits using the same entry, expiry, invalidation and costs. Preserve zones that failed on their first test instead of excluding them after the fact. A second reaction does not by itself establish lower drawdown, a higher win rate or permission to increase risk.",
+  "invalidationCriteria": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay.",
+  "diagramType": "fvg_formation",
+  "simplifiedExplanation": "These notes use RDRB descriptively for a later revisit to a selected balanced-price reference. A precise originating explanation for the previous named second-touch model has not been verified. Keep this limitation visible instead of attributing a universal second-touch rule to ICT."
+},
 
   // 5. CANDLE RANGE THEORY (CRT) STRATEGY
   {
@@ -341,70 +317,66 @@ export const theinnercircletradersNewConcepts: ICTConcept[] = [
 
   // 6. ICT SICK SISTER STRATEGY (Trading Correlated SMT Divergence)
   {
-    id: 'ict_sick_sister_strategy',
-    name: 'ICT Sick Sister Strategy (Correlated SMT Execution)',
-    category: 'models',
-    shortDefinition: 'An institutional pair-selection framework that uses SMT divergence to identify the weakest (or strongest) correlated asset and trade that specific asset for maximum velocity and profit.',
-    source: {
-      mentorship: '2023–2025 Mentorship Master Lectures',
-      seriesOrMonth: 'Intermarket Correlation & Relative Strength',
-      approximateDate: '2024',
-      originalTerminology: 'Sick Sister & Relative Weakness Arbitrage',
-      conceptStatus: 'Active Core',
-      lectureReference: 'The Inner Circle Traders SMT Master Series'
-    },
-    tripartiteView: {
-      ictTeaching: 'In a basket of correlated assets (such as NQ, ES, and YM in equity futures, or EURUSD, GBPUSD, and AUDUSD in forex), genuine institutional buying or selling does not distribute equally. The asset that fails to make a higher high during a bullish sweep is under heavy institutional distribution (the "sick sister" to short).',
-      observableMarketBehavior: 'During an index rally, ES and YM break to new highs while NQ lags and prints a lower high. When the market reverses, NQ falls twice as fast and twice as far as ES and YM.',
-      derivedInterpretation: 'Relative strength and weakness arbitrage within correlated instruments that maximizes beta and momentum capture by shorting the weakest component or buying the strongest component.'
-    },
-    explanationLadder: {
-      level1Child: 'If three runners are racing up a hill and one of them starts stumbling and falling behind, you know that runner will be the first one to roll all the way back down when the hill gets steep.',
-      level2Beginner: 'When comparing NQ and ES, if ES makes a new high but NQ fails to make a new high, NQ is the "sick sister". If you want to short, short NQ, because it has already shown it has no buyers.',
-      level3Trader: 'Monitor NQ, ES, and YM side-by-side at key session macro times. When SMT divergence occurs at a key liquidity pool, identify which index shows relative weakness. Enter short on the sick sister using its First Presented FVG. Expect deeper targets and faster delivery.',
-      level4Advanced: 'In Forex: If EURUSD sweeps a swing high while GBPUSD refuses to sweep its high, GBP is the sick sister. When the DXY rallies, GBPUSD will dump harder than EURUSD.',
-      level5ICTFramework: 'Institutional order flow concentration: Smart money uses the liquid leader (e.g. ES) to engineer a cosmetic breakout to absorb retail stops, while quietly offloading heavy institutional inventory in the weaker asset (e.g. NQ).',
-      whenItMatters: 'At major macro inflection points (09:50 AM Silver Bullet, London Open 03:00 AM) when choosing which specific contract to trade from a watchlist.',
-      whenToIgnore: 'When all assets are moving in identical correlation without any divergence, or during isolated single-asset idiosyncratic news (e.g. Apple earnings affecting NQ only).'
-    },
-    whyItExists: 'Institutional market makers allocate order flow across multiple related exchanges and use correlated proxies to disguise their true net directional exposure.',
-    problemItSolves: 'Eliminates the frustration of choosing the "wrong pair" that barely moves while a correlated peer makes a 100-point trend run.',
-    howItForms: [
-      'Step 1: Open synchronized charts of correlated assets (e.g. NQ and ES, or EURUSD and GBPUSD).',
-      'Step 2: Observe price approaching a key liquidity pool (e.g. Previous Day High).',
-      'Step 3: Instrument A pushes into the liquidity pool and prints a higher high.',
-      'Step 4: Instrument B fails to reach the equivalent liquidity pool and prints an obvious lower high (SMT Divergence confirmed).',
-      'Step 5: Instrument B is classified as the "Sick Sister". Execute short trades exclusively on Instrument B on its first displacement FVG.'
-    ],
-    chartAnatomy: 'Two stacked charts: Top chart (ES) shows a higher high sweeping liquidity. Bottom chart (NQ) shows a lower high failing to sweep. Downward arrow shows NQ plunging 120 points while ES only drops 30 points.',
-    identificationRules: [
-      'Both instruments must be highly correlated (historical correlation > 0.85).',
-      'The divergence must occur simultaneously at the exact same minute timestamp.',
-      'The sick sister must confirm with an immediate displacement candle and FVG.'
-    ],
-    validCharacteristics: [
-      'Clear, undeniable visual difference at the swing points (one swept, one failed).',
-      'Follow-through displacement in the sick sister produces clean, large-body candles.'
-    ],
-    invalidCharacteristics: [
-      'Divergence is minor or ambiguous due to slight timing lags.',
-      'Attempting to short the leader instead of the sick sister.'
-    ],
-    howICTUsesIt: 'ICT uses the Sick Sister strategy to maximize profit factor and trade efficiency by always holding the asset that offers the least path of resistance.',
-    commonMistakes: [
-      'Shorting the asset that made the higher high (the leader) because it "looks higher", while the sick sister drops without you.',
-      'Ignoring the strategy on Gold/Silver or Index futures where it provides daily actionable edge.'
-    ],
-    advancedNuances: 'The inverse also applies: In a bullish market where ES makes a lower low but NQ prints a higher low, NQ is the "strong sister" (leader) and should be bought for explosive upside runs.',
-    prerequisites: ['smt_divergence', 'market_structure_bos_mss_choch', 'fair_value_gap'],
-    relatedConcepts: ['SMT Divergence', 'Relative Strength', 'Asset Selection', 'Unicorn Model'],
-    bullishScenario: 'Bullish Strong Sister: ES sweeps overnight low at 09:32 AM. NQ refuses to break overnight low, holding 20 points above it (Bullish SMT). Trader buys NQ. NQ surges +140 points while ES only crawls +25 points.',
-    bearishScenario: 'Bearish Sick Sister: London Open: EURUSD spikes through 1.0850 high. GBPUSD stalls at 1.2980, 15 pips below its high (Sick Sister). Trader shorts GBPUSD on the 5m FVG at 1.2975. GBPUSD drops 70 pips while EURUSD only drops 25 pips.',
-    counterexample: 'Shorting ES because it made the new high, only to watch ES stay stubborn and chop while NQ collapsed 100 points.',
-    invalidationCriteria: 'The sick sister suddenly prints an explosive move that breaks above the divergence high, invalidating the weakness thesis.',
-    diagramType: 'nested_structure',
-    simplifiedExplanation: 'When picking which horse to bet against, pick the one that is already limping. The Sick Sister Strategy finds the asset that cannot even reach the highs, so when the sell-off comes, it falls like a stone.'
+  "id": "ict_sick_sister_strategy",
+  "name": "Sick Sister: Contextual Relative Performance",
+  "category": "models",
+  "shortDefinition": "In that example, Dow takes both selected highs, ES takes one and Nasdaq takes neither. The lagging Nasdaq is studied for a conditional catch-up long after a selected discount reference.",
+  "source": {
+    "mentorship": "ICT official YouTube",
+    "seriesOrMonth": "Sick Sister: Contextual Relative Performance",
+    "approximateDate": "8 May 2023",
+    "originalTerminology": "Sick Sister: Contextual Relative Performance",
+    "conceptStatus": "Advanced Execution",
+    "lectureReference": "https://www.youtube.com/watch?v=VSSwM6rDIg0"
   },
+  "tripartiteView": {
+    "ictTeaching": "In that example, Dow takes both selected highs, ES takes one and Nasdaq takes neither. The lagging Nasdaq is studied for a conditional catch-up long after a selected discount reference.",
+    "observableMarketBehavior": "The official 8 May 2023 consolidation example compares corresponding highs in Dow, ES and Nasdaq. Use aligned sessions and contract references.",
+    "derivedInterpretation": "The reviewed example is contextual, not a universal SMT rule or a verified improvement in profit factor. No fixed safe risk percentage or superior trade velocity is established."
+  },
+  "whyItExists": "In that example, Dow takes both selected highs, ES takes one and Nasdaq takes neither. The lagging Nasdaq is studied for a conditional catch-up long after a selected discount reference.",
+  "problemItSolves": "This is not a rule to always short the weakest market or immediately buy an index because another index rose. Market condition, time and entry location matter together.",
+  "howItForms": [
+    "The official 8 May 2023 consolidation example compares corresponding highs in Dow, ES and Nasdaq. Use aligned sessions and contract references.",
+    "In that example, Dow takes both selected highs, ES takes one and Nasdaq takes neither. The lagging Nasdaq is studied for a conditional catch-up long after a selected discount reference.",
+    "This is not a rule to always short the weakest market or immediately buy an index because another index rose. Market condition, time and entry location matter together.",
+    "Relative weakness does not prove that buyers disappeared. A catch-up move can fail, and divergence can disappear.",
+    "Before replay, define the comparison points, range, discount reference, entry condition and invalidation. Preserve failed and unfilled examples as well as successful ones."
+  ],
+  "chartAnatomy": "The official 8 May 2023 consolidation example compares corresponding highs in Dow, ES and Nasdaq. Use aligned sessions and contract references.",
+  "identificationRules": [
+    "The official 8 May 2023 consolidation example compares corresponding highs in Dow, ES and Nasdaq. Use aligned sessions and contract references.",
+    "In that example, Dow takes both selected highs, ES takes one and Nasdaq takes neither. The lagging Nasdaq is studied for a conditional catch-up long after a selected discount reference.",
+    "This is not a rule to always short the weakest market or immediately buy an index because another index rose. Market condition, time and entry location matter together."
+  ],
+  "validCharacteristics": [
+    "The official 8 May 2023 consolidation example compares corresponding highs in Dow, ES and Nasdaq. Use aligned sessions and contract references.",
+    "Before replay, define the comparison points, range, discount reference, entry condition and invalidation. Preserve failed and unfilled examples as well as successful ones."
+  ],
+  "invalidCharacteristics": [
+    "The reviewed example is contextual, not a universal SMT rule or a verified improvement in profit factor. No fixed safe risk percentage or superior trade velocity is established."
+  ],
+  "howICTUsesIt": "In that example, Dow takes both selected highs, ES takes one and Nasdaq takes neither. The lagging Nasdaq is studied for a conditional catch-up long after a selected discount reference.",
+  "commonMistakes": [
+    "The reviewed example is contextual, not a universal SMT rule or a verified improvement in profit factor. No fixed safe risk percentage or superior trade velocity is established."
+  ],
+  "advancedNuances": "The reviewed example is contextual, not a universal SMT rule or a verified improvement in profit factor. No fixed safe risk percentage or superior trade velocity is established.",
+  "prerequisites": [
+    "fair_value_gap",
+    "market_structure_shift"
+  ],
+  "relatedConcepts": [
+    "SMT Divergence",
+    "Order Block",
+    "Fair Value Gap"
+  ],
+  "bullishScenario": "In that example, Dow takes both selected highs, ES takes one and Nasdaq takes neither. The lagging Nasdaq is studied for a conditional catch-up long after a selected discount reference.",
+  "bearishScenario": "This is not a rule to always short the weakest market or immediately buy an index because another index rose. Market condition, time and entry location matter together.",
+  "counterexample": "The reviewed example is contextual, not a universal SMT rule or a verified improvement in profit factor. No fixed safe risk percentage or superior trade velocity is established.",
+  "invalidationCriteria": "Before replay, define the comparison points, range, discount reference, entry condition and invalidation. Preserve failed and unfilled examples as well as successful ones.",
+  "diagramType": "top_down_matrix",
+  "simplifiedExplanation": "In that example, Dow takes both selected highs, ES takes one and Nasdaq takes neither. The lagging Nasdaq is studied for a conditional catch-up long after a selected discount reference."
+},
 
   // 7. ICT DOUBLE PURGE STRATEGY
   {
@@ -542,70 +514,64 @@ export const theinnercircletradersNewConcepts: ICTConcept[] = [
 
   // 9. ICT ENIGMA FVG (2025 Two-Candle Specialized Imbalance Variant)
   {
-    id: 'ict_enigma_fvg',
-    name: 'ICT Enigma FVG (Two-Candle Imbalance Variant)',
-    category: 'imbalances',
-    shortDefinition: 'A specialized two-candle Fair Value Gap variant formed by an ultra-aggressive momentum candle that leaves an immediate unmitigated price void, requiring rapid single-candle rebalance before explosive delivery.',
-    source: {
-      mentorship: '2024–2025 Advanced Execution Series',
-      seriesOrMonth: 'High-Frequency Imbalance Anomalies',
-      approximateDate: '2025',
-      originalTerminology: 'Enigma FVG & Rapid Orderbook Skips',
-      conceptStatus: 'Advanced Execution',
-      lectureReference: 'The Inner Circle Traders 2025 Technical Briefing'
-    },
-    tripartiteView: {
-      ictTeaching: 'In classical ICT, an FVG is defined by Candle 1 wick and Candle 3 wick. The Enigma variant recognizes that under modern algorithmic speed, certain imbalances are created between two adjacent momentum bars where price skips liquidity levels entirely, creating an immediate magnetic rebalance zone.',
-      observableMarketBehavior: 'Price prints an immense displacement bar. The very next bar immediately wicks into the midpoint of the prior bar open, absorbs liquidity, and violently continues the trend, leaving no 3-candle gap for standard traders to see.',
-      derivedInterpretation: 'A fast-orderbook gap where aggressive market orders exhaust bids/asks in a single timeframe interval, creating an instantaneous liquidity vacuum that is resolved on the immediate subsequent print.'
-    },
-    explanationLadder: {
-      level1Child: 'Think of skipping a stair when running up the steps. You pause for half a second to steady your foot on the skipped stair and then sprint up the rest of the staircase.',
-      level2Beginner: 'Standard traders wait for a 3-candle pattern and miss the fastest moves. The Enigma FVG lets you catch the immediate re-test on the very next candle.',
-      level3Trader: 'Identify an explosive displacement bar that breaks a significant swing level. Notice if the spread between the opening of the bar and the preceding close leaves an body/open-close price nonoverlap, which does not establish missing volume. Enter on the immediate pullback to the opening price with tight invalidation.',
-      level4Advanced: 'The Enigma FVG is closely related to Volume Imbalances (VI) but occurs during active breakout momentum rather than between session closes.',
-      level5ICTFramework: 'High-frequency IPDA liquidity skip: The algorithm accelerates past resting liquidity to reach an urgent benchmark before opposing order matching can stabilize.',
-      whenItMatters: 'During high-impact news releases (CPI, PPI) or at the exact 09:30:00 AM cash open on equities.',
-      whenToIgnore: 'In low-volatility Asian sessions or midday lunch periods where standard 3-candle structures are required.'
-    },
-    whyItExists: 'Algorithmic execution speed has increased. Modern algorithms often rebalance high-velocity imbalances in the very next candle rather than waiting multiple bars.',
-    problemItSolves: 'Enables traders to participate in runaway momentum trends without waiting for a traditional 3-candle FVG that never forms.',
-    howItForms: [
-      'Step 1: Market experiences an aggressive news injection or open bell impulse.',
-      'Step 2: Candle 1 prints an enormous body with virtually no wicks.',
-      'Step 3: Candle 2 opens, dips rapidly into the upper third of Candle 1 body, and rejects immediately.',
-      'Step 4: The dip in Candle 2 creates the Enigma rebalance entry.',
-      'Step 5: Ride the continuation into the primary Draw on Liquidity.'
-    ],
-    chartAnatomy: 'Two large green candles side by side. A tiny lower wick on Candle 2 dips into the top of Candle 1. A bracket labels this single-candle touch as the "Enigma FVG Entry".',
-    identificationRules: [
-      'Candle 1 must exhibit exceptional displacement volume.',
-      'The retest must occur on Candle 2—if Candle 2 closes without dipping, the Enigma setup is invalid.',
-      'Higher Timeframe Draw on Liquidity must be uncontested and distant.'
-    ],
-    validCharacteristics: [
-      'Instantaneous rejection within the first 30-60 seconds of Candle 2 open.',
-      'Clear trend acceleration without subsequent counter-trend wicks.'
-    ],
-    invalidCharacteristics: [
-      'Candle 2 closes as a counter-trend reversal bar.',
-      'Attempting to trade the setup into an opposing HTF order block.'
-    ],
-    howICTUsesIt: 'ICT highlights the Enigma FVG as an elite tape-reading technique for active intraday scalpers on 1-minute and 30-second charts.',
-    commonMistakes: [
-      'Hesitating and waiting for a 3rd candle to confirm, by which time price has already exploded 30 points.',
-      'Trading it in low-volatility regimes where standard 3-candle rules apply.'
-    ],
-    advancedNuances: 'Enigma FVGs that form at the 09:50 AM macro frequently produce the entire range of the morning session in less than 15 minutes.',
-    prerequisites: ['displacement_engine', 'fair_value_gap', 'volume_imbalance'],
-    relatedConcepts: ['Volume Imbalance', 'First Presented FVG', 'Runaway Imbalance'],
-    bullishScenario: 'NQ prints a 45-point green bar at 09:31 AM. Candle 2 opens at 20,440, dips to 20,432 (Enigma touch), and launches to 20,490. Trader catches the 20,435 fill for a rapid +55 point scalp.',
-    bearishScenario: 'ES dumps 15 points on CPI release. Candle 2 opens at 5,830, wicks to 5,833, and collapses to 5,805. Trader shorts 5,832, stop at 5,836, banking +25 points.',
-    counterexample: 'Trying to trade an Enigma FVG at 12:30 PM lunch when volume has dried up and candles are printing chop.',
-    invalidationCriteria: 'Candle 2 closing beyond the midpoint of Candle 1 body.',
-    diagramType: 'fvg_formation',
-    simplifiedExplanation: 'When price moves at supersonic speed, it does not wait 3 candles to leave an entry. The Enigma FVG is the quick tap on the very next candle that lets you jump onto the express train.'
+  "id": "ict_enigma_fvg",
+  "name": "Enigma: FVG Measurements and Projections",
+  "category": "imbalances",
+  "shortDefinition": "The reviewed June 2026 Enigma lecture discusses FVG measurements, volume imbalances and projections into a price range that has not yet traded. It identifies the middle candle of a three-candle FVG and distinguishes wick-based and body-based measurements. It does not establish the previous two-candle FVG definition on this page.",
+  "source": {
+    "mentorship": "ICT official source review",
+    "seriesOrMonth": "Enigma: FVG Measurements and Projections",
+    "approximateDate": "Reviewed 19 October 2026",
+    "originalTerminology": "Enigma: FVG Measurements and Projections",
+    "conceptStatus": "Advanced Execution",
+    "lectureReference": "https://www.youtube.com/watch?v=rbNhlJSXDaA&t=660s"
   },
+  "tripartiteView": {
+    "ictTeaching": "The reviewed June 2026 Enigma lecture discusses FVG measurements, volume imbalances and projections into a price range that has not yet traded. It identifies the middle candle of a three-candle FVG and distinguishes wick-based and body-based measurements. It does not establish the previous two-candle FVG definition on this page.",
+    "observableMarketBehavior": "The reviewed June 2026 Enigma lecture discusses FVG measurements, volume imbalances and projections into a price range that has not yet traded. It identifies the middle candle of a three-candle FVG and distinguishes wick-based and body-based measurements. It does not establish the previous two-candle FVG definition on this page.",
+    "derivedInterpretation": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay."
+  },
+  "whyItExists": "The reviewed June 2026 Enigma lecture discusses FVG measurements, volume imbalances and projections into a price range that has not yet traded. It identifies the middle candle of a three-candle FVG and distinguishes wick-based and body-based measurements. It does not establish the previous two-candle FVG definition on this page.",
+  "problemItSolves": "The lecture’s examples and the instructor’s claims are not an independently verified statistical sample. State which candle information existed at the decision time: a completed FVG, a wick and a projected future boundary become available at different moments. Test missed targets, changed anchors and losses as well as successful examples.",
+  "howItForms": [
+    "The reviewed June 2026 Enigma lecture discusses FVG measurements, volume imbalances and projections into a price range that has not yet traded. It identifies the middle candle of a three-candle FVG and distinguishes wick-based and body-based measurements. It does not establish the previous two-candle FVG definition on this page.",
+    "An implied or unrealized dealing range is a proposed future interval, not an interval price has already traversed. Freeze the anchor prices and target before exposing later candles. The source illustrates different measurement boundaries and a 1.25 projection in a particular example; this is not a compulsory ratio for all instruments or proof of a target’s likelihood.",
+    "The lecture’s examples and the instructor’s claims are not an independently verified statistical sample. State which candle information existed at the decision time: a completed FVG, a wick and a projected future boundary become available at different moments. Test missed targets, changed anchors and losses as well as successful examples."
+  ],
+  "chartAnatomy": "The generic drawing illustrates foundational FVG geometry. It is not a source chart or a complete diagram of this specialist label. Use the linked original explanation for the actual contract, candle boundaries and measurement context.",
+  "identificationRules": [
+    "The reviewed June 2026 Enigma lecture discusses FVG measurements, volume imbalances and projections into a price range that has not yet traded. It identifies the middle candle of a three-candle FVG and distinguishes wick-based and body-based measurements. It does not establish the previous two-candle FVG definition on this page.",
+    "An implied or unrealized dealing range is a proposed future interval, not an interval price has already traversed. Freeze the anchor prices and target before exposing later candles. The source illustrates different measurement boundaries and a 1.25 projection in a particular example; this is not a compulsory ratio for all instruments or proof of a target’s likelihood.",
+    "The lecture’s examples and the instructor’s claims are not an independently verified statistical sample. State which candle information existed at the decision time: a completed FVG, a wick and a projected future boundary become available at different moments. Test missed targets, changed anchors and losses as well as successful examples."
+  ],
+  "validCharacteristics": [
+    "The reviewed June 2026 Enigma lecture discusses FVG measurements, volume imbalances and projections into a price range that has not yet traded. It identifies the middle candle of a three-candle FVG and distinguishes wick-based and body-based measurements. It does not establish the previous two-candle FVG definition on this page."
+  ],
+  "invalidCharacteristics": [
+    "The lecture’s examples and the instructor’s claims are not an independently verified statistical sample. State which candle information existed at the decision time: a completed FVG, a wick and a projected future boundary become available at different moments. Test missed targets, changed anchors and losses as well as successful examples."
+  ],
+  "howICTUsesIt": "The reviewed June 2026 Enigma lecture discusses FVG measurements, volume imbalances and projections into a price range that has not yet traded. It identifies the middle candle of a three-candle FVG and distinguishes wick-based and body-based measurements. It does not establish the previous two-candle FVG definition on this page.",
+  "commonMistakes": [
+    "The lecture’s examples and the instructor’s claims are not an independently verified statistical sample. State which candle information existed at the decision time: a completed FVG, a wick and a projected future boundary become available at different moments. Test missed targets, changed anchors and losses as well as successful examples."
+  ],
+  "advancedNuances": "The lecture’s examples and the instructor’s claims are not an independently verified statistical sample. State which candle information existed at the decision time: a completed FVG, a wick and a projected future boundary become available at different moments. Test missed targets, changed anchors and losses as well as successful examples.",
+  "prerequisites": [
+    "displacement_engine",
+    "fair_value_gap",
+    "volume_imbalance"
+  ],
+  "relatedConcepts": [
+    "Fair Value Gap",
+    "Volume Imbalance",
+    "Order Block"
+  ],
+  "bullishScenario": "The reviewed June 2026 Enigma lecture discusses FVG measurements, volume imbalances and projections into a price range that has not yet traded. It identifies the middle candle of a three-candle FVG and distinguishes wick-based and body-based measurements. It does not establish the previous two-candle FVG definition on this page.",
+  "bearishScenario": "The reviewed June 2026 Enigma lecture discusses FVG measurements, volume imbalances and projections into a price range that has not yet traded. It identifies the middle candle of a three-candle FVG and distinguishes wick-based and body-based measurements. It does not establish the previous two-candle FVG definition on this page.",
+  "counterexample": "The lecture’s examples and the instructor’s claims are not an independently verified statistical sample. State which candle information existed at the decision time: a completed FVG, a wick and a projected future boundary become available at different moments. Test missed targets, changed anchors and losses as well as successful examples.",
+  "invalidationCriteria": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay.",
+  "diagramType": "fvg_formation",
+  "simplifiedExplanation": "The reviewed June 2026 Enigma lecture discusses FVG measurements, volume imbalances and projections into a price range that has not yet traded. It identifies the middle candle of a three-candle FVG and distinguishes wick-based and body-based measurements. It does not establish the previous two-candle FVG definition on this page."
+},
 
   // 10. CISD VS MSS (Change in State of Delivery vs Market Structure Shift)
   {

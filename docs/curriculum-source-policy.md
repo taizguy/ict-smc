@@ -13,6 +13,8 @@ Date the actual editorial change. Do not claim expert, author or full-transcript
 
 ## Subsequent local-recording review
 
+Further evidence on 19 October 2026: the supplied Charter Model 13 lecture explicitly identifies its relationship to the public 2022 model. This supersedes the earlier uncertainty about that specific relationship. See [the multi-collection review record](ict-mentorship-library-review.md) for current coverage, verified corrections and remaining work. It does not authenticate all other numbered models or later-course claims.
+
 The publisher later supplied the downloaded 2022 recordings. [The local source-review record](ict-2022-source-review.md) records selected-passage and chart-frame coverage across all 41 files, extending the initial Episode 3/6 batch to the remaining 39. Forty official videos supplied English automatic captions; silent Episode 28 was sampled visually. Important wording in Episodes 3, 6, 18, 35 and 41 also received separate local transcription checks. This is not continuous viewing of every minute or verification of every assertion. Timestamped pointers support further bilingual revisions to structure, FVGs, order blocks, bias, session times, SMT, opening gaps, journaling and risk. Description-only references remain labelled; 2022 evidence does not authenticate other course labels. Original media and raw research files are not deployed.
 
 ## Initial 19 October 2026 review record

@@ -2,174 +2,104 @@ import { TextbookChapter } from "../../types";
 
 export const ict2026Chapters: TextbookChapter[] = [
   {
-    id: 47,
-    slug: '2026-onboarding-from-vision-to-execution',
-    title: 'The 2026 Onboarding Protocol & "From Vision to Execution"',
-    part: 'Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series',
-    level: 1,
-    quote: 'Execution is not where profitability is born; execution is merely the closing gesture of a vision that was mathematically and narratively mapped before the order was ever conceived.',
-    summary: [
-      'The 2026 Roadmap for New Students: 6-12 months demo incubation, single-asset and single-session specialization.',
-      'From Vision to Execution: The trinity rule—Time, Price, and Narrative must align before risking capital.',
-      'Economic Calendar Triage: Filtering red-folder events, NFP weeks, and interest rate announcements.',
-      'Trading Psychology & Risk Foundations: Eliminating over-trading and the illusion of intraday randomness.'
-    ],
-    keyTerms: [
-      { term: 'From Vision to Execution', definition: 'The mental and mechanical framework where trade narrative and liquidity targets are fully projected prior to entering an order.' },
-      { term: 'Single-Session Specialization', definition: 'Restricting trading execution strictly to one specific session window (e.g. 09:30 to 11:00 AM EST on NQ) to eliminate cognitive fatigue.' },
-      { term: 'Red-Folder Triage', definition: 'Pre-market evaluation of high-impact macroeconomic releases (CPI, PPI, FOMC, NFP) to determine whether market delivery will be low or high resistance.' },
-      { term: 'Paper Incubation Protocol', definition: "A structured period of simulated practice. No fixed duration or trade count certifies readiness for live risk." }
-    ],
-    practiceQuestions: [
-      "What can demo practice teach, and which live financial and emotional risks does it fail to reproduce?",
-      'What are the three components of the trinity rule in "From Vision to Execution"?',
-      'How does economic calendar triage protect traders from algorithmic whipsaws and high resistance liquidity runs?'
-    ],
-    sections: [
-      {
-        id: '47.1',
-        title: '47.1 The 2026 New Student Roadmap: Incubation, Specialization & Discipline',
-        content: "A practical study routine can focus on one instrument and one session to reduce the number of changing variables. This is LearnSMC’s organizational suggestion, not a verified quotation or fixed mandate from a particular 2026 ICT lecture.\n\nUse a demo or replay environment while learning execution and record both rule adherence and outcomes after costs. A fixed number of months or twenty compliant trades cannot certify readiness for live risk. Simulation omits important financial and emotional pressures.\n\nKeep a readable chart, an actual event calendar and a written risk limit. Restricting screen time may help some learners manage attention, but trading all day does not mechanically guarantee a loss, and specialization does not guarantee success."
-      },
-      {
-        id: '47.2',
-        title: '47.2 "From Vision to Execution": The Trinity of Time, Price & Narrative',
-        content: `The core philosophy driving the 2026 lectures is summarized in the master principle: "From Vision to Execution."
-
-The Trinity Rule of Algorithmic Trading:
-Never click a button unless all three pillars are in complete alignment:
-
-1. Narrative (The Why):
-- Where has price come from, and where does it need to go?
-- Has price swept Higher Timeframe Sell-Side Liquidity into a Daily Discount PD Array?
-- What is the current Draw on Liquidity (DOL)? If you cannot state the target liquidity pool in one sentence, you have NO trade.
-
-2. Price (The Where):
-- Price must trade into a valid, confirmed institutional PD Array (Fair Value Gap, Inversion FVG, Propulsion Block, or Breaker Block).
-- Entry must never be chased in market orders; it must be patiently waited for at the boundary or 50% Consequent Encroachment / Mean Threshold.
-
-3. Time (The When):
-- Time is the master key. Even the most perfect technical chart pattern will fail if it occurs outside of algorithmic delivery windows.
-- Setups must unfold inside defined Macro Windows (08:30, 09:50 - 10:10, 10:50 - 11:10, 11:50 - 12:10, 13:30 - 14:00, or 15:00 - 15:30 EST).`
-      },
-      {
-        id: '47.3',
-        title: '47.3 Macroeconomic Calendar Triage & The Weekly Profile Filter',
-        content: `Before opening a chart each morning, the 2026 protocol begins with the Economic Calendar (Forex Factory / DailyFX):
-
-1. Identifying High-Impact (Red Folder) Events:
-- 08:30 AM EST releases: CPI (Consumer Price Index), PPI (Producer Price Index), Non-Farm Payroll (NFP), Core Retail Sales, and Weekly Jobless Claims.
-- 10:00 AM EST releases: ISM Manufacturing/Services PMI, Consumer Sentiment, and New Home Sales.
-- 14:00 PM EST releases: FOMC Statement, Fed Funds Rate Decision, and FOMC Press Conference (14:30 PM).
-
-2. Classifying Market Delivery Types:
-- Low-Impact / Clean Days: Days with 08:30 or 10:00 AM single news events that provide clean displacement into an HTF array, followed by a smooth Low Resistance Liquidity Run (LRLR).
-- High-Resistance / Seek & Destroy Days: Days preceding major rate decisions or the Thursday before NFP. The algorithm intentionally engineers heavy consolidation and double-sided sweeps to trap retail orders.
-
-3. The Weekly Narrative Map:
-- Monday: Typically establishes the Accumulation or initial range; often an interior or consolidation day unless an 08:30 AM catalyst is present.
-- Tuesday / Wednesday: Historically forms the Low of the Week (in bullish weeks) or High of the Week (in bearish weeks).
-- Thursday: Continuation day or initial profit extraction; on NFP weeks, Thursday is notoriously high-resistance.
-- Friday: Non-Farm Payroll catalyst (08:30 AM) or reversal / London close profit-taking into weekly settlement.`
-      },
-      {
-        id: '47.4',
-        title: '47.4 Risk Architecture & Psychological Mastery in Modern Markets',
-        content: `In 2026, algorithmic speed and high-frequency order book matching punish emotional traders more ruthlessly than ever before. ICT lays out strict psychological and capital protection laws:
-
-1. Maximum Daily Loss Limit:
-- Never risk more than 1% of account equity on any single trade setup (0.5% recommended for beginner futures accounts).
-- If two consecutive trades fail in a single morning session, TERMINATE the trading platform immediately for the rest of the day. Trading through two losses leads directly to tilt and catastrophic blowouts.
-
-2. The Illusion of Control & Outcome Detachment:
-- You cannot force the market to give you money. You can only position yourself where the algorithm has mathematical incentives to rebalance.
-- Accept that a losing trade with perfect rule adherence is a successful trade; a winning trade taken out of impulsive FOMO is a poison that destroys long-term consistency.
-
-3. Journaling Requirements for 2026:
-- Screenshot 1: Higher Timeframe context (Daily / 1H) showing the Draw on Liquidity.
-- Screenshot 2: Pre-market chart showing Asian/London ranges and NDOG/NWOG levels.
-- Screenshot 3: Execution chart (1M / 5M) showing the displacement, FVG, entry candle, stop loss placement, and target.
-- Notes: Emotional state before entry, during the trade, and at exit.`
-      }
-    ]
-  },
+  "id": 47,
+  "slug": "2026-onboarding-from-vision-to-execution",
+  "title": "2026 ICT Onboarding: Preparation, Timing & a Written Study Plan",
+  "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series",
+  "level": 1,
+  "quote": "A time window tells you when to observe; it does not tell you which direction price must move.",
+  "summary": [
+    "Use the original new-student lesson for calendar preparation and a readable chart workspace.",
+    "Separate a timing convention from directional analysis.",
+    "Record uncertainty, invalidation and no-trade outcomes before evaluating results."
+  ],
+  "keyTerms": [
+    {
+      "term": "Timing reference",
+      "definition": "A predefined observation interval. A clock reading is not a directional signal or evidence that hidden orders are present."
+    },
+    {
+      "term": "Study specification",
+      "definition": "A record of the instrument, data, session, observation rule, invalidation and evaluation method selected before replay."
+    }
+  ],
+  "practiceQuestions": [
+    "What does the source say a macro window cannot tell you?",
+    "Which calendar and timezone will you use for the date under study?",
+    "What would make you record no setup rather than invent an entry?"
+  ],
+  "sections": [
+    {
+      "id": "47.1",
+      "title": "47.1 Prepare before following the chart",
+      "content": "The reviewed new-student recording begins with weekend preparation for the coming week and month. Selected passages discuss the economic calendar, marking daily highs and lows, and keeping chart layouts manageable. Treat this as a preparation routine rather than a promise that a marked level will determine the next session.\n\nChoose one instrument and a manageable observation session while learning. This is LearnSMC’s organizational suggestion. Demo and replay practice can help record rule adherence, but a fixed number of months or successful examples cannot certify readiness for live risk."
+    },
+    {
+      "id": "47.2",
+      "title": "47.2 Time does not supply direction",
+      "content": "Around 64–65 minutes, ICT explicitly separates a macro observation window from directional information. The time reference is when he looks for an already developed analysis to begin expressing itself. It is not the reason for choosing bullish or bearish direction.\n\nKeep three questions separate: what reference are you watching, what price event would qualify, and during which interval will you observe it? A qualifying pattern can fail; an expected move may never develop. The reviewed passage does not establish that every pattern outside a listed window must fail or that every window contains a trade."
+    },
+    {
+      "id": "47.3",
+      "title": "47.3 Check the actual event schedule",
+      "content": "Use the relevant release authority and exchange calendar for the actual date. Distinguish a release from a later press conference, and account for holidays and daylight saving with America/New_York. Do not apply a permanent EST offset throughout the year.\n\nThe reviewed NFP example opens with a warning against inexperienced participation around those conditions. It is an example of restricting participation, not an invitation to trade news. Weekday profiles are hypotheses to investigate; a Tuesday label or a red calendar icon does not determine whether price will expand, consolidate or reverse."
+    },
+    {
+      "id": "47.4",
+      "title": "47.4 Keep a decision record, including failures",
+      "content": "Before replay, save the broader context, selected level, observation window and conditions that would invalidate the idea. Record rejected candidates and no-trade days alongside apparent successes. Distinguish what was visible at the decision time from what became obvious afterward.\n\nA personal loss limit and stopping rule belong in a written risk plan. The selected sources do not establish a universally safe account percentage or prove that exactly two losses cause a blowout. Simulation does not reproduce live financial pressure, and a protective order may not fill at its intended price. Evaluate process adherence separately from profit."
+    }
+  ]
+},
   {
-    id: 48,
-    slug: 'nq-es-premarket-session-rules-morning-engine',
-    title: 'NQ & ES Pre-Market Session Rules & The Morning Execution Engine',
-    part: 'Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series',
-    level: 2,
-    quote: 'The 09:30 AM equities open is not a signal to trade; it is the bell that unleashes the Judas Swing. Only those who wait for the smoke to clear at 09:50 AM capture the true institutional expansion.',
-    summary: [
-      'Pre-Market Session Architecture: Mapping the 06:00 - 08:30 AM EST digestion phase and session ranges.',
-      '08:30 AM News Delivery Mechanics: How CPI, PPI, and Jobless Claims reprice into existing HTF PD Arrays.',
-      '09:30 AM Equities Open Dynamics: The Opening Judas Swing, initial balance discovery, and avoiding the 1-minute trap.',
-      'The 09:50 - 10:10 AM Macro & 10:50 - 11:10 AM Morning Culmination Windows.'
-    ],
-    keyTerms: [
-      { term: 'Pre-Market Range (PMR)', definition: 'The highest high and lowest low established between 06:00 AM and 08:30 AM EST in index futures.' },
-      { term: '08:30 AM Macro Repricing', definition: 'The instantaneous algorithmic delivery that occurs on 08:30 AM economic releases, driving price into overnight or HTF PD Arrays.' },
-      { term: '09:30 AM Judas Swing', definition: 'The initial deceptive thrust at the equities cash open designed to trigger retail breakout orders before reversing into the true morning trend.' },
-      { term: '09:50 - 10:10 AM Macro', definition: 'The highest-probability morning algorithmic expansion window in NQ and ES futures, typically producing the clean morning impulse run.' }
-    ],
-    practiceQuestions: [
-      'Why is taking an immediate market order at 09:30:00 AM considered a high-risk gamble?',
-      'How does the 08:30 AM news release prepare the chart for the 09:50 AM macro entry?',
-      'What specific structural evidence confirms that the 09:30 AM Judas Swing has completed its reversal?'
-    ],
-    sections: [
-      {
-        id: '48.1',
-        title: '48.1 Pre-Market Session Architecture (06:00 - 08:30 AM EST)',
-        content: "For a defined pre-market study, mark the high and low of 06:00 to 08:30 in America/New_York time and record the date, contract and data feed. This is a selected observation range, not the complete overnight session or a universal institutional boundary.\n\nCheck whether an economic release is actually scheduled and whether the exchange calendar has an exception. A narrow range does not guarantee expansion at 08:30 or 09:30. Expansion may arrive later, fail immediately, or not occur in the chosen window.\n\nRecord nearby higher-timeframe levels and alternative paths before the cash open. A previous directional move does not restrict the next session to only two possible outcomes. Do not infer executable fills or fixed stop distances from a completed chart."
-      },
-      {
-        id: '48.2',
-        title: '48.2 The 08:30 AM News Delivery Mechanics',
-        content: `At 08:30 AM EST, major macroeconomic data reports hit the wires (CPI, PPI, Retail Sales, Unemployment Claims):
-
-1. The Algorithmic Delivery:
-- The algorithm does NOT read the news numbers or calculate economic spreadsheets. The news release is merely the time catalyst to rapidly reprice the asset to an existing PD Array.
-- In the 08:30 to 08:35 AM window, price will frequently spike aggressively in one direction to sweep resting liquidity (e.g. Asian High or Pre-Market High) directly into an HTF Bearish Order Block.
-- Watch how candle bodies close on the 5-minute chart: if price wicks beyond a level but closes back inside, the liquidity raid is complete.
-
-2. The 08:30 - 09:15 AM Transition:
-- If 08:30 news creates a large displacement leaving a wide Fair Value Gap, this FVG will frequently act as the magnet for the 09:30 equities cash open retracement.`
-      },
-      {
-        id: '48.3',
-        title: '48.3 The 09:30 AM Equities Open Dynamics & The Judas Swing Trap',
-        content: `At 09:30 AM EST, the New York Stock Exchange (NYSE) and NASDAQ cash equities markets open for trading:
-
-1. The Opening Bell Trap:
-- Retail traders sit with their fingers on the buy/sell buttons, trying to scalp the opening 1-minute candle at 09:30:00. This is gambling.
-- The 09:30 open is almost always accompanied by violent spread widening, algorithmic slippage, and a sharp deceptive move: The 09:30 Judas Swing.
-
-2. Identifying the Judas Swing:
-- If the true daily bias is BULLISH: The algorithm will frequently dump price between 09:30 and 09:40 AM, breaking overnight lows to trigger sell stops into a discount PD Array (or NDOG Consequent Encroachment).
-- If the true daily bias is BEARISH: The algorithm will spike price upward between 09:30 and 09:40 AM, triggering buy stops into a premium PD Array.
-
-3. The Confirmation Signal:
-- Do not guess the reversal. Wait for the 1-minute or 5-minute Market Structure Shift (MSS) with displacement that cleanly breaks the opposing swing point and prints a fresh Fair Value Gap.`
-      },
-      {
-        id: '48.4',
-        title: '48.4 The 09:50 - 10:10 AM Macro & 10:50 - 11:10 AM Trend Culmination',
-        content: `The 2026 lectures place immense focus on the algorithmic macro delivery windows that execute inside the morning session:
-
-1. The 09:50 - 10:10 AM Macro:
-- This is the premier execution window of the morning. By 09:50 AM, the 09:30 Judas Swing has concluded, the liquidity sweep is in the rearview mirror, and institutional algorithms begin the true sustained directional expansion.
-- Look for price to retrace into a 1M or 5M Fair Value Gap (or an Inversion FVG) between 09:50 and 10:05 AM.
-- Entry: Limit order at the FVG boundary or 50% Consequent Encroachment with stop tucked safely behind the Judas Swing low/high.
-- Delivery: Price expands aggressively toward the primary Draw on Liquidity (e.g. Previous Day High or Equal Highs).
-
-2. The 10:50 - 11:10 AM Macro:
-- Between 10:50 and 11:10 AM EST, the morning trend typically reaches its climax.
-- The algorithm delivers the final push into resting session liquidity or the Mean Threshold of an HTF PD Array.
-- This is the signal to extract full profits or scale out 80% of position size before the market rolls into the midday lunch period.`
-      }
-    ]
-  },
+  "id": 48,
+  "slug": "nq-es-premarket-session-rules-morning-engine",
+  "title": "NQ & ES Pre-Market: Source Windows, Cash Open & Uncertainty",
+  "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series",
+  "level": 2,
+  "quote": "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay.",
+  "summary": [
+    "The reviewed 2026 pre-market observation is roughly 07:00–09:00 New York local time.",
+    "Opening-range intervals differ between sources and should be named explicitly.",
+    "A chart label is not an entry instruction or proof of institutional intent. Define the rule, invalidation and costs before replay."
+  ],
+  "keyTerms": [
+    {
+      "term": "Pre-market observation window",
+      "definition": "The reviewed 2026 lesson defines its pre-market observation as roughly 07:00–09:00 New York local time, with optional preparation from about 06:30. This is distinct from the previous 06:00–08:30 study range and from the 08:00–09:30 window in the 2025 Venom example. Name the source and the date rather than combining them into one universal session."
+    },
+    {
+      "term": "Macro",
+      "definition": "A 09:50–10:10 or 10:50–11:10 observation window does not prove that the opening reversal is complete, that the morning trend must climax, or that 80% of a position must be closed. The onboarding source explicitly separates timing from direction. Fix your own study’s entry condition, expiry and exit convention before replay; no clock reading makes a stop safe."
+    }
+  ],
+  "practiceQuestions": [
+    "How do the 2026 pre-market and 2025 Venom reference windows differ?",
+    "What can invalidate the directional idea despite entering a preferred time window?"
+  ],
+  "sections": [
+    {
+      "id": "48.1",
+      "title": "48.1 Use the source-specific pre-market window",
+      "content": "The reviewed 2026 lesson defines its pre-market observation as roughly 07:00–09:00 New York local time, with optional preparation from about 06:30. This is distinct from the previous 06:00–08:30 study range and from the 08:00–09:30 window in the 2025 Venom example. Name the source and the date rather than combining them into one universal session."
+    },
+    {
+      "id": "48.2",
+      "title": "48.2 News is a risk condition, not a guaranteed pattern",
+      "content": "Check the actual economic calendar. A scheduled announcement can change volatility, spreads and executable prices; the chart does not establish that economic information is irrelevant. A wick beyond a level followed by a close inside is an observation, not proof that a raid is finished or that the next candle must reverse."
+    },
+    {
+      "id": "48.3",
+      "title": "48.3 Distinguish the opening-range conventions",
+      "content": "For ordinary U.S. cash-equity sessions, the 09:30 New York open is a time reference, not a direction. The reviewed 2026 example also measures a 09:30–10:30 first-hour range. The 2025 Venom tutorial discusses the first 30 minutes. Keep these source-specific intervals separate, and record whether the session trended, consolidated or reversed."
+    },
+    {
+      "id": "48.4",
+      "title": "48.4 A macro supplies a time reference",
+      "content": "A 09:50–10:10 or 10:50–11:10 observation window does not prove that the opening reversal is complete, that the morning trend must climax, or that 80% of a position must be closed. The onboarding source explicitly separates timing from direction. Fix your own study’s entry condition, expiry and exit convention before replay; no clock reading makes a stop safe."
+    }
+  ]
+},
   {
     id: 49,
     slug: 'market-alchemy-trading-all-time-highs-ath',

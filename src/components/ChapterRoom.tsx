@@ -1,6 +1,9 @@
 import { conciseHeading, studyTopics } from '../utils/searchMetadata';
 import { FinancialDisclaimer } from './FinancialDisclaimer';
 import { CurriculumReview } from './CurriculumReview';
+import { MentorshipLessonNav } from './MentorshipLessonNav';
+import { mentorshipTracks, mentorshipLessonPath } from '../data/mentorshipTracks';
+import { currentDocumentHref } from '../i18n/navigation';
 import { LessonRelatedLinks } from './LessonRelatedLinks';
 import React, { useState, useMemo, useEffect } from 'react';
 import { 
@@ -46,9 +49,19 @@ interface ChapterRoomProps {
 
 export const ChapterRoom: React.FC<ChapterRoomProps> = ({
   chapterId,
-  onSelectChapter,
-  onReturnToMap
+  onSelectChapter: selectFromApp,
+  onReturnToMap,
+  onCompleteChapter,
+  isCompleted = false
 }) => {
+  const pathSlug = typeof window === 'undefined' ? null : new URLSearchParams(window.location.search).get('mentorship');
+  const studyTrack = mentorshipTracks.find(t => t.slug === pathSlug && t.chapterIds.includes(chapterId));
+  const orderedChapters = useMemo(() => studyTrack ? studyTrack.chapterIds.map(id => textbookChapters.find(c => c.id === id)).filter(Boolean) : textbookChapters, [studyTrack]);
+  const onSelectChapter = (id:number, slug?:string) => {
+    const selected = textbookChapters.find(c => c.id === id);
+    if (studyTrack && selected && studyTrack.chapterIds.includes(id)) window.location.assign(currentDocumentHref(mentorshipLessonPath(selected.slug, studyTrack.slug)));
+    else selectFromApp(id, slug);
+  };
   const [activeScene, setActiveScene] = useState<'text' | 'visual' | 'terms' | 'checkpoint' | 'briefing'>('text');
   const [revealedQuestions, setRevealedQuestions] = useState<Record<number, boolean>>({});
   const [selectedQuizAnswers, setSelectedQuizAnswers] = useState<Record<string, number>>({});
@@ -112,14 +125,14 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
 
   // Chapter boundary helpers
   const prevChapter = useMemo(() => {
-    const idx = textbookChapters.findIndex(c => c.id === chapter.id);
-    return idx > 0 ? textbookChapters[idx - 1] : null;
-  }, [chapter]);
+    const idx = orderedChapters.findIndex(c => c.id === chapter.id);
+    return idx > 0 ? orderedChapters[idx - 1] : null;
+  }, [chapter, orderedChapters]);
 
   const nextChapter = useMemo(() => {
-    const idx = textbookChapters.findIndex(c => c.id === chapter.id);
-    return idx < textbookChapters.length - 1 ? textbookChapters[idx + 1] : null;
-  }, [chapter]);
+    const idx = orderedChapters.findIndex(c => c.id === chapter.id);
+    return idx < orderedChapters.length - 1 ? orderedChapters[idx + 1] : null;
+  }, [chapter, orderedChapters]);
 
   // Pick suitable diagram type
   const primaryDiagramType = useMemo((): 'liquidity_sweep' | 'fvg_formation' | 'order_block' | 'breaker_block' | 'mss_sequence' | 'po3_amd' | 'top_down_matrix' | 'session_timeline' | 'nested_structure' => {
@@ -206,6 +219,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
 
   return (
     <div className="space-y-8 sm:space-y-12 pb-24 text-ink">
+      <MentorshipLessonNav chapterId={chapter.id} />
       
       {/* Top Minimal Navigation Bar */}
       <ScrollReveal y={15} duration={0.4}>
@@ -295,7 +309,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
             )}
 
             <div className="px-3 py-1.5 rounded-lg bg-ink/[0.04] border border-ink/[0.08] text-xs font-sans tabular-nums text-ink-secondary">
-              {chapter.id} / {textbookChapters.length}
+              <bdi dir="ltr">{orderedChapters.findIndex(c => c.id === chapter.id) + 1} / {orderedChapters.length}</bdi>
             </div>
 
             {nextChapter && (
@@ -896,6 +910,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
         </div>
       </ScrollReveal>
 
+      {onCompleteChapter && <div className="mentorship-read-action"><button className="btn-predikt-secondary" disabled={isCompleted} onClick={() => onCompleteChapter(chapter.id)}>{isCompleted ? 'Note marked as read' : 'Mark this note as read'}</button><p>Reading progress is a personal checklist, not a trading qualification.</p></div>}
       <CurriculumReview chapter={chapter} />
       <LessonRelatedLinks chapterId={chapter.id} />
       <FinancialDisclaimer />

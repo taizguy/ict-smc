@@ -7,37 +7,32 @@ export const charterModelsChapters: TextbookChapter[] = [
     title: 'ICT Charter Model 1: Intraday Scalping & The 20-Day IPDA Data Range',
     part: 'Part X - ICT Charter Price Action Models Curriculum',
     level: 3,
-    quote: 'Model 1 is engineered for precision intraday scalping. By looking back 20 days on the IPDA engine, we know precisely whether price is priced at a discount or premium before raiding previous daily levels.',
-    summary: [
-      'The complete Trade Plan & Algorithmic Theory of ICT Charter Price Action Model 1.',
-      'How the 20-Day IPDA data range establishes institutional directional bias and dealing range boundaries.',
-      'Execution mechanics within the New York Kill Zone (07:00 AM - 11:00 AM NY time).',
-      'The Optimal Trade Entry (OTE 62% to 79%) retracement framework and non-negotiable stop loss placement.',
-      'Target metrics: capturing 10, 20, or 30 pips beyond the previous day range with zero emotional hesitation.'
-    ],
-    keyTerms: [
-      { term: '20-Day IPDA Range', definition: 'The algorithmic lookback window used by the Interbank Price Delivery Algorithm to determine institutional dealing ranges.' },
-      { term: 'Model 1 Intraday Scalp', definition: 'The flagship Charter model targeting 10 to 30 pips following an intraday raid of previous day high or low.' },
-      { term: 'Optimal Trade Entry (OTE)', definition: 'The high-probability Fibonacci retracement zone between 62% and 79%, centered at the 70.5% sweet spot.' }
-    ],
-    practiceQuestions: [
-      'Why is the 20-day IPDA lookback period prioritized over arbitrary moving averages for determining daily premium or discount?',
-      'What specific market condition must occur during the London or New York session before initiating a Model 1 entry?',
-      'Where is the stop loss placed for a Model 1 long setup, and under what condition can it be moved to breakeven?'
-    ],
+    "quote": "Study the model’s prior references and its own trade plan. A scalping label does not require trading every day.",
+    "summary": [
+  "Model 1 foundations, an amplified explanation and a separate trade plan serve different purposes.",
+  "A 20-day lookback supplies candidate prior references, not proof of hidden orders.",
+  "Multiple orders share the total setup risk budget rather than multiply it."
+],
+    "keyTerms": [
+  {
+    "term": "20-Day IPDA Range",
+    "definition": "A source lookback convention for selecting prior references. It is an analytical framework, not independently established access to a central market algorithm."
+  },
+  {
+    "term": "Total setup risk",
+    "definition": "The combined planned loss across all orders expressing the same idea, before allowing for execution costs and slippage."
+  }
+],
+    "practiceQuestions": [
+  "Which prior reference was selected before the later move was visible?",
+  "How is the total risk budget divided if the idea uses three orders?",
+  "Which conditions would leave you with no qualifying setup this week?"
+],
     sections: [
       {
         id: '28.1',
         title: '28.1 Model 1 Trade Plan & Strategic Objective',
-        content: `ICT Charter Price Action Model 1 is designed for intraday traders seeking high-frequency, rule-based scalping opportunities without overnight holding risk.
-
-Key Trade Plan Specifications:
-1. Operational Objective: Capture 10, 20, or 30 pips (or 20 to 50 index points on NQ/ES) per setup.
-2. Execution Timeframe: 5-minute and 1-minute execution charts, anchored to the 60-minute and Daily timeframes.
-3. Prime Operating Window: The New York Kill Zone between 07:00 AM and 11:00 AM New York time.
-4. Risk Management Ceiling: Maximum 1% to 1.5% account equity risk per executed idea.
-
-The core philosophy of Model 1 rejects predicting long-term trends. Instead, it capitalizes on the mechanical rebalancing that occurs immediately after institutional smart money raids liquidity resting above the Previous Day High (PDH) or below the Previous Day Low (PDL).`
+        content: "The original Model 1 lecture presents intraday scalping using prior-day references within a defined lookback. The separate trade-plan introduction describes a 15–20-pip teaching objective and assumes prior study of the underlying lessons. Keep its currency example separate from an index-futures variation; pips do not convert into one fixed number of ES or NQ points.\n\nThe amplified discussion explicitly distinguishes looking for one particular setup from scalping every day. A weekly opportunity is not guaranteed, and neither an objective nor a model label establishes a live fill or return.\n\nAround 26 minutes in the trade-plan lecture, multiple orders divide a single idea’s total risk allowance. In a hypothetical three-order example with a total planned loss budget of 90 units, allocating 30 units to each order preserves that budget before costs. Risking 90 on each instead triples it. Use actual pip or tick value, correlated exposure and execution costs when researching a variation."
       },
       {
         id: '28.2',
@@ -470,142 +465,101 @@ The Geometry of the Model:
     title: 'ICT Charter Models 8 & 9: Advanced Precision (25 Pips/Wk) & One Shot One Kill (OSOK)',
     part: 'Part X - ICT Charter Price Action Models Curriculum',
     level: 3,
-    quote: 'Model 8 proves that capturing just 25 pips a week with military discipline compounds into massive wealth. Model 9 teaches the sniper mindset: one shot, one kill, and walk away victorious.',
-    summary: [
-      'Model 8 Trade Plan: Compounding wealth through a non-negotiable 25 pips per week objective.',
-      'Algorithmic time-price convergence, counter-bias manipulation, and tight 15-pip stop loss profiles.',
-      'Model 9 Trade Plan: The legendary One Shot One Kill (OSOK) sniper methodology.',
-      'Amplified Lecture: Mastering the interplay between Internal Range Liquidity and External Range Liquidity.'
-    ],
-    keyTerms: [
-      { term: '25 Pips Per Week Model', definition: 'The disciplined mathematical approach targeting 25 pips weekly with 15-pip risk to generate consistent compounding returns.' },
-      { term: 'One Shot One Kill (OSOK)', definition: 'The patient sniper framework executing only the single cleanest weekly setup and refusing low-conviction noise.' },
-      { term: 'Internal vs External Liquidity', definition: 'The continuous oscillation of price between internal imbalances (FVGs, Order Blocks) and external swing boundaries (Old Highs/Lows).' }
-    ],
-    practiceQuestions: [
-      'How does targeting only 25 pips per week protect traders from psychological burnout and overtrading?',
-      'What is the core premise of One Shot One Kill (OSOK) regarding trade frequency?',
-      'How does an entry taken at Internal Range Liquidity deliver toward External Range Liquidity?'
-    ],
-    sections: [
-      {
-        id: '34.1',
-        title: '34.1 Model 8: The Compounding Power of 25 Pips/Week',
-        content: `ICT Charter Price Action Model 8 was revealed to demonstrate that trading success does not require catching hundreds of pips every single day.
-
-The Mathematical Architecture:
-- Objective: Capture exactly 25 pips (or 40 index points) once per week.
-- Risk Profile: Fixed 15-pip stop loss on 5-minute charts.
-- Compounding Effect: A consistent 25-pip gain per week at 1.5% risk yields over 6% monthly growth. Compounded over 12 to 24 months, this outpaces virtually all retail traders who overtrade daily.`
-      },
-      {
-        id: '34.2',
-        title: '34.2 Algorithmic Time-Price Convergence in Model 8',
-        content: `To achieve extreme precision with a tight 15-pip stop, Model 8 demands time-price convergence:
-
-1. Waiting for Counter-Bias Manipulation:
-If weekly bias is bullish, do not buy during green expansion candles. Wait for an intraday volatility injection that pushes price aggressively against the higher timeframe trend into an established Discount FVG.
-
-2. Five-Minute Execution:
-On the 5-minute chart, wait for the down-move to halt inside the FVG. The moment an up-close candle shifts internal structure, enter at market or limit with a 15-pip stop placed immediately below the swing low.
-
-3. Complete Detachment:
-Once 25 pips are booked, the trading platform is closed for the rest of the week. No further trades are permitted.`
-      },
-      {
-        id: '34.3',
-        title: '34.3 Model 9: One Shot One Kill (OSOK) Strategic Delivery',
-        content: `ICT Charter Price Action Model 9 is known as One Shot One Kill (OSOK):
-
-Core Tenets of OSOK:
-- Mindset: Treat yourself as a military sniper. You have one bullet for the week. You do not fire at every passing target; you wait for the high-value target to walk into your crosshairs.
-- Weekly Directional Anchor: Analyze institutional order flow on the Weekly chart. Establish whether the weekly candle is expanding upward or downward.
-- The Weekly Cycle Timing: Wait until Tuesday London or Wednesday New York presents the definitive setup of the week. Execute with total focus.`
-      },
-      {
-        id: '34.4',
-        title: '34.4 Amplified Lecture: Internal to External Liquidity Engine',
-        content: `In the Amplified Lecture for Model 9, ICT unpacks the algorithmic heartbeat:
-
-The Cycle of Liquidity Delivery:
-1. Price rests at External Range Liquidity (Old Highs or Lows).
-2. Once External Liquidity is swept, algorithms reverse to seek Internal Range Liquidity (Fair Value Gaps, Liquidity Voids, Order Blocks).
-3. The OSOK Entry: Enter at the Internal Range Liquidity level when price rebalances the imbalance.
-4. The OSOK Target: Ride price as the algorithm expands all the way back out to the opposing External Range Liquidity pool (equal highs or old daily swing extremes).`
-      }
-    ]
+    "quote": "A planning objective is not a promised return. Compare the original setup and management rules before combining models.",
+    "summary": [
+  "Model 8: distinguish a weekly objective, locked-in position and realised profit.",
+  "Model 9: study weekly context without expecting a successful trade every week.",
+  "Keep illustrative percentage growth separate from verified returns."
+],
+    "keyTerms": [
+  {
+    "term": "25 Pips Per Week Model",
+    "definition": "A source model with a weekly planning objective. Its name does not establish a consistent return or a direct index-point equivalent."
   },
   {
-    id: 35,
-    slug: 'ict-charter-models-10-11-and-12',
-    title: 'ICT Charter Models 10, 11 & 12: Dealing Ranges, Liquidity Runs & OB/FVG Synergy',
-    part: 'Part X - ICT Charter Price Action Models Curriculum',
-    level: 3,
-    quote: 'Models 10, 11, and 12 refine the execution engine: defining mathematical dealing ranges, hunting daily liquidity sweeps, and exploiting the instantaneous synergy of Order Blocks nested in Fair Value Gaps.',
-    summary: [
-      'Model 10 Trade Plan: Systematic 50 to 75 pip weekly swing captures through anchored dealing ranges.',
-      'Model 11 Trade Plan: Day trading 30 pips per trade through daily high/low runs and 60-minute rebalances.',
-      'Model 12 Trade Plan: Scalping 20 pips per trade via the rapid pairing of Order Blocks and Fair Value Gaps.',
-      'Amplified Lecture: How nested imbalances deliver instantaneous expansion with zero drawdown.'
-    ],
-    keyTerms: [
-      { term: 'Anchored Dealing Range', definition: 'A discrete price range anchored from a major swing high to swing low with a calculated 50% Equilibrium dividing line.' },
-      { term: 'Model 11 Daily Run', definition: 'A day trading setup targeting 30 pips immediately after price sweeps the previous daily high or low.' },
-      { term: 'OB/FVG Synergy', definition: 'The powerful confluence of an Order Block sitting immediately adjacent to or within a Fair Value Gap.' }
-    ],
-    practiceQuestions: [
-      'How does Model 10 use the 50% Equilibrium level to determine when a dealing range trade has reached maturity?',
-      'What specific Fibonacci retracement level is utilized on the 60-minute chart in Model 11?',
-      'Why does the synergy between an Order Block and an FVG in Model 12 minimize trade drawdown?'
-    ],
+    "term": "One Shot One Kill (OSOK)",
+    "definition": "The name of Model 9. Read the source’s setup and management conditions rather than inferring a mandatory number of orders from the name."
+  }
+],
+    "practiceQuestions": [
+  "What is the difference between locking in a position and closing it?",
+  "Which losing and no-setup weeks have you included in the evaluation?",
+  "Why does compounding arithmetic fail to prove achievable trading returns?"
+],
     sections: [
-      {
-        id: '35.1',
-        title: '35.1 Model 10: Anchored Dealing Ranges & Equilibrium Swings',
-        content: `ICT Charter Price Action Model 10 is geared toward capturing 50 to 75 pips per week by operating within anchored dealing ranges.
-
-Operational Blueprint:
-1. Anchor the Active Range: Identify the highest swing high and lowest swing low on the 4-Hour or Daily chart that has not been violated.
-2. Mark Equilibrium: Draw a horizontal line at precisely 50% of this range.
-3. The Setup:
-- When price sweeps the external high of the dealing range, wait for a reversal back inside the range.
-- Enter short targeting the 50% Equilibrium line as Target 1, and the lower extreme of the dealing range as Target 2.
-- Inversely, when price sweeps the external low, buy the return into the range targeting Equilibrium and the premium ceiling.`
-      },
-      {
-        id: '35.2',
-        title: '35.2 Model 11: Daily Liquidity Runs & 60-Minute Rebalances',
-        content: `ICT Charter Price Action Model 11 is a day trading framework aimed at capturing ~30 pips per trade:
-
-Execution Sequence:
-1. Daily Liquidity Sweep: Price must run above an old daily high or below an old daily low during the session.
-2. 60-Minute Confirmation: Drop to the 60-minute chart. Observe whether the candle body respects the raid or closes violently back inside the prior range, forming a 60-minute Fair Value Gap (BISI or SIBI).
-3. The 62% OTE Entry: Apply the Fibonacci tool across the 60-minute displacement swing. Enter at the 62% retracement on the 15-minute or 5-minute chart.
-4. Target: 30 pips or the opposite session liquidity pool.`
-      },
-      {
-        id: '35.3',
-        title: '35.3 Model 12: Scalping with Order Block & FVG Synergy',
-        content: `ICT Charter Price Action Model 12 is a rapid scalping model targeting 20 pips:
-
-The Synergy Engine:
-- An Order Block on its own can sometimes suffer deep retracements before holding.
-- A Fair Value Gap on its own can sometimes be breached before rebalancing.
-- However, when an Order Block is created and the very next candle explodes with displacement leaving an immediate Fair Value Gap, these two arrays create powerful synergy.
-- Limit Order Placement: Place a limit order at the open of the Order Block nested inside the FVG body.
-- When price dips into the FVG and touches the Order Block threshold, algorithms react with violent speed, launching price into immediate profit.`
-      },
-      {
-        id: '35.4',
-        title: '35.4 Amplified Lecture: Zero-Drawdown Execution',
-        content: `In the Amplified Lecture for Models 10, 11, and 12, ICT highlights the mechanics of zero-drawdown entries:
-
-- When institutional algorithms are in an active expansion program, they will not permit price to close deep into the body of an Order Block that is protected by a Fair Value Gap.
-- If a candle closes through the 50% Mean Threshold of the Order Block in Model 12, the setup is invalid. Cut the position immediately without waiting for the full stop loss to be hit.
-- This ruthless risk mitigation preserves capital and keeps the win-rate exceptionally high.`
-      }
-    ]
+  {
+    "id": "34.1",
+    "title": "34.1 Model 8: An objective is not a return forecast",
+    "content": "The Model 8 source presents a 25-pip weekly objective and an aspiration of 6% monthly growth. These describe the teaching model’s goal, not a verified return series or a promise of doubling an account. The original discussion distinguishes locking in a 25-pip position from immediately taking all profit at 25 pips. It considers later partial exits if the move extends.\n\nDo not convert those Forex pips into a fixed number of index points. Contract values, spreads, stops, costs and the distribution of losses matter. Compounding arithmetic assumes a sequence of returns; it does not establish that the sequence can be achieved."
   },
+  {
+    "id": "34.2",
+    "title": "34.2 Keep Model 8 entry and management distinct",
+    "content": "Study the original framework and its separate trade plan together. The plan contains a historical risk and stop-management example. Its numerical assumptions belong to that example; they do not establish a universally suitable stop distance or safe account percentage.\n\nThe reviewed source does not support replacing its management discussion with a universal rule to close the platform immediately after booking exactly 25 pips. Before replay, state when the position would be opened, when its stop would change, which portion would be closed and when the remaining idea expires."
+  },
+  {
+    "id": "34.3",
+    "title": "34.3 Model 9: Weekly context without a weekly promise",
+    "content": "The One Shot One Kill introduction discusses a 50–75-pip weekly objective but explicitly warns learners not to expect it every week and to expect losses. The separate trade-plan lecture describes an example with a first objective and possible remaining exposure.\n\nThe name is not evidence that only one order may ever be placed, that a particular weekday must supply a setup, or that the weekly high or low can be known in advance. Read the actual setup and management conditions rather than turning the name into a trading rule."
+  },
+  {
+    "id": "34.4",
+    "title": "34.4 Compare the two plans in replay",
+    "content": "Keep a separate record for each model: source, selected range, entry condition, risk budget, stop changes, partial exits and final outcome after costs. Record weeks with no qualifying entry and distinguish an unfilled order from a losing trade.\n\nA later chart can make the target appear obvious. Preserve what was visible before entry, and evaluate a later period that was not used to select the rules. Neither a liquidity label nor a model number establishes a mechanical reversal, a minimum profit or an independently verified advantage."
+  }
+]
+  },
+  {
+  "id": 35,
+  "slug": "ict-charter-models-10-11-and-12",
+  "title": "ICT Charter Models 10, 11 & 12: Swing, Day Trading & Scalping",
+  "part": "Part X - ICT Charter Price Action Models Curriculum",
+  "level": 3,
+  "quote": "The models have different planning objectives. Keep each model’s entry, management and risk assumptions together.",
+  "summary": [
+    "Model 10: a swing-trading source framework with illustrative 50–75-pip objectives.",
+    "Model 11: a day-trading plan discussing a 30-pip objective.",
+    "Model 12: an order-block and FVG sequence with a 20-pip source objective.",
+    "Objectives are study conventions, not guaranteed captured returns or zero-drawdown entries."
+  ],
+  "keyTerms": [
+    {
+      "term": "Model objective",
+      "definition": "The range or management goal used in the original plan, distinct from an expected or guaranteed result."
+    },
+    {
+      "term": "Execution variation",
+      "definition": "A change in entry, stop, partial exit or order type that must be recorded separately from the original source plan."
+    }
+  ],
+  "practiceQuestions": [
+    "Which source plan are you following, and which rule have you changed?",
+    "How does taking a partial exit differ from moving a protective stop?",
+    "Does your position-size calculation include the actual pip or tick value and costs?"
+  ],
+  "sections": [
+    {
+      "id": "35.1",
+      "title": "35.1 Model 10: Follow the swing and its management plan",
+      "content": "The original Model 10 introduction identifies a swing-trading approach with 50–75-pip objectives, while explaining that the framework can be adapted. Selected chart discussion follows weekly context, later swing lows and possible partial exits on a four-hour example. It does not reduce the model to automatically fading any dealing-range boundary toward its midpoint.\n\nRead the separate trade-plan lecture for preparation, opportunity discovery, planning, execution and management. A change in holding period, target or partial-exit schedule creates a variation; record it rather than merging it invisibly with the original model."
+    },
+    {
+      "id": "35.2",
+      "title": "35.2 Model 11: A different day-trading objective",
+      "content": "Model 11’s introduction describes a potential 30-pip day-trading objective in the context of weekly range expansion. Its trade-plan lecture supplies a particular stop-management sequence. The presence of an objective is not evidence that every session offers it or that a learner will capture it.\n\nDo not add a compulsory sixty-minute FVG or an exact 62% entry merely because another lesson uses those tools. Specify the actual source rule and the candle information available when it could have been recognized. A stop modification and a realised partial exit have different effects on remaining exposure."
+    },
+    {
+      "id": "35.3",
+      "title": "35.3 Model 12: Sequence before confluence",
+      "content": "The original Model 12 opening describes daily range expansion, an order block followed by an expansion swing, and a subsequent FVG opportunity. The source later discusses differences between broker feeds and the depth of retracement. This is more specific than simply finding two overlapping rectangles.\n\nThe separate plan uses a 20-pip objective and discusses protective-stop reductions as the example progresses. Treat those numbers as that source variant’s conventions. Neither an order block nor an adjacent FVG proves immediate profit, a fill at the desired price or absence of adverse movement."
+    },
+    {
+      "id": "35.4",
+      "title": "35.4 Compare the models without mixing their rules",
+      "content": "Create separate journal columns for the model, source lecture, context, qualifying event, entry convention, initial stop, partial exits and final exit. Use actual contract or pip value when sizing: account risk budget divided by loss per unit at the planned stop gives units before costs and slippage. A currency-pair example cannot be converted directly into index points.\n\nReview losing and unfilled examples as well as successful ones. A smaller stop increases position sensitivity and may increase cost relative to the intended move. The reviewed material does not establish a universal zero-drawdown technique or independently verified win rate."
+    }
+  ]
+},
   {
     id: 36,
     slug: 'ict-charter-model-13-2022-youtube-model',
@@ -620,7 +574,7 @@ The Synergy Engine:
       {
         id: '36.1',
         title: "36.1 Read the Original Context",
-        content: "The supplied 2022 collection contains an introduction and Episodes 2–41. Our review uses selected timestamped caption passages and chart frames across that collection, with local transcription checks for important wording. It is not an independent audit of the instructor’s results or a claim that every spoken assertion has been verified.\n\nThe introduction emphasizes a simpler learning model. Episodes 2–6 separate context, a prior liquidity reference, displacement, a local structure crossing and an FVG. Later episodes add applications, uncertainty, intermarket comparisons and risk discussion. LearnSMC organizes those ideas into original study notes.\n\nThis public mentorship is not established here as an authenticated numbered Charter Model 13. Reviewing 2022 recordings also does not authenticate private-course labels or later 2025/2026 lecture claims elsewhere in the curriculum."
+        content: "The supplied 2022 collection contains an introduction and Episodes 2–41. Our review uses selected timestamped caption passages and chart frames across that collection, with local transcription checks for important wording. It is not an independent audit of the instructor’s results or a claim that every spoken assertion has been verified.\n\nThe introduction emphasizes a simpler learning model. Episodes 2–6 separate context, a prior liquidity reference, displacement, a local structure crossing and an FVG. Later episodes add applications, uncertainty, intermarket comparisons and risk discussion. LearnSMC organizes those ideas into original study notes.\n\nThe original Charter Model 13 lecture identifies its subject as the public 2022 model at the opening and assumes prior study of the public series. Treat that lecture as a follow-up, not a substitute for the 2022 foundation. This verifies the relationship between those sources; it does not authenticate every numbered model or every later curriculum claim."
       },
       {
         id: '36.2',

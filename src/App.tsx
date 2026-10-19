@@ -1,6 +1,7 @@
 import { currentDocumentHref } from './i18n/navigation';
 import { useTranslation } from './i18n/TranslationProvider';
 import { withoutLocale } from './i18n/locale';
+import { mentorshipTracks } from './data/mentorshipTracks';
 import './styles/articles.css';
 import { articleCatalog } from './data/catalog.generated';
 import { PageReady } from './components/PageReady';
@@ -210,6 +211,9 @@ export const App: React.FC = () => {
 
       // 3. Curriculum hub: /curriculum
       if (path === '/curriculum' || path.startsWith('/curriculum/') || tabParam === 'curriculum') {
+        if (path.startsWith('/curriculum/mentorships/') && !mentorshipTracks.some(t => path === `/curriculum/mentorships/${t.slug}`)) {
+          setActiveTab('not_found'); setAttemptedInvalidPath(window.location.pathname); return;
+        }
         setActiveTab('curriculum');
         return;
       }

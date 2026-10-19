@@ -208,14 +208,14 @@ export const conceptComparisons: ConceptComparison[] = [
   },
   {
     id: 'model_13_2022_vs_silver_bullet',
-    title: 'Charter Model 13 (2022 Mentorship) vs. ICT Silver Bullet',
+    title: 'ICT 2022 Mentorship vs. Silver Bullet: Study Variants',
     conceptA: {
-      name: 'Charter Model 13: 2022 Mentorship Model',
-      summary: 'The universal price action framework based on a Higher Timeframe liquidity raid, Market Structure Shift (MSS) with displacement, and entry at the resulting Fair Value Gap.',
+      name: 'ICT 2022 Mentorship Model',
+      summary: 'A source-guided study of liquidity references, displacement, local structure and possible FVG retracement. The public 2022 model is not authenticated here as numbered Charter Model 13.',
       keyPoints: [
-        'Applicable across all sessions (London, NY AM, NY PM, Asia) and any timeframe',
+        'State the product, timeframe and source-specific observation window.',
         'Requires a confirmed sweep of a prominent swing high/low (BSL or SSL)',
-        'Displacement MUST break market structure with a full candle body close',
+        'Separate the initial structure crossing from later FVG completion; do not impose one universal body-close rule.',
         'Entry is taken at the FVG boundary or 50% Consequent Encroachment'
       ],
       idealCondition: 'Price sweeps Previous Day High at 09:45 AM, violently breaks a 5m swing low with a huge down-candle, leaving an FVG for a short entry.'
@@ -231,10 +231,10 @@ export const conceptComparisons: ConceptComparison[] = [
       ],
       idealCondition: 'At 10:05 AM NY time, following a 09:30 AM open run, price creates a clean 1m/5m FVG aligned with the Daily draw on liquidity.'
     },
-    keyDifference: 'Charter Model 13 is structure-driven (requires a sweep + MSS + FVG regardless of time); the Silver Bullet is time-driven (executes exclusively within fixed 60-minute algorithmic macro windows).',
+    keyDifference: 'The 2022 sources discuss context and structure alongside time. A time-window variant is a separate research specification; neither label guarantees an entry or outcome.',
     commonConfusion: 'Thinking Silver Bullet requires a brand new sweep inside the 10:00–11:00 AM window. Silver Bullet simply trades the first clean FVG aligned with the established session draw.',
-    decisionRule: 'Outside of 10:00–11:00 AM or across other sessions, use Charter Model 13. When the clock strikes 10:00 AM NY time, look for the Silver Bullet delivery sequence.',
-    diagramSnippet: 'Model 13: Sweep ──> MSS ──> FVG (Any time) | Silver Bullet: 10:00 AM Clock ──> Valid FVG ──> 15-Handle Target'
+    decisionRule: 'Choose the source, observation window and entry variant before replay. The 2022 collection does not authenticate every Silver Bullet rule listed in this comparison.',
+    diagramSnippet: '2022 study: context → reference → displacement → possible FVG | Time-window study: stated clock interval + predefined setup'
   },
   {
     id: 'csod_vs_mss',

@@ -7,100 +7,59 @@ export const deliveryChapters: TextbookChapter[] = [
     slug: 'fair-value-gaps-fvg-and-consequent-encroachment',
     part: 'Part III - Price Delivery',
     title: 'Fair Value Gaps (FVG) & Consequent Encroachment — The Core Institutional Imbalance',
-    quote: 'A Fair Value Gap is not a missing bar; it is an area where the algorithm delivered only one side of the market with extreme urgency, leaving an inefficiency that must mathematically be rebalanced to establish true fair value.',
+    quote: "An FVG is a three-candle range relationship used in ICT chart study. Its boundaries and midpoint are measurable; a future revisit, reaction or profitable entry is uncertain.",
     level: 2,
     summary: [
       'The exact 3-candle anatomical formation of Bullish (BISI) and Bearish (SIBI) FVGs.',
-      'The mathematical mechanics of Consequent Encroachment (50% CE) and why candle bodies matter.',
+      "Calculating Consequent Encroachment (50% CE) and choosing a testable violation rule.",
       'Premium vs. Discount FVGs: Aligning execution with higher-timeframe dealing ranges.',
       'The life cycle of an FVG: Virgin, Mitigated, Fully Rebalanced, and Inverted.',
-      'Execution blueprint: Limit order placement, stop loss rules, and targeting external liquidity.'
+      "Paper-study design: compare entry variants, invalidation, costs and unfilled orders."
     ],
     keyTerms: [
-      { term: 'Fair Value Gap (FVG)', definition: 'A three-candle price pattern where a large middle candle expands so aggressively that the wick of Candle 1 and the wick of Candle 3 do not overlap, leaving an unfilled price imbalance.' },
-      { term: 'BISI (Buyside Imbalance Sellside Inefficiency)', definition: 'A bullish FVG created when an aggressive up-close candle delivers only buyside liquidity, leaving an inefficiency where no sellside liquidity was offered.' },
-      { term: 'SIBI (Sellside Imbalance Buyside Inefficiency)', definition: 'A bearish FVG created when an aggressive down-close candle delivers only sellside liquidity, leaving an inefficiency where no buyside liquidity was offered.' },
-      { term: 'Consequent Encroachment (CE)', definition: 'The exact 50% midpoint of a Fair Value Gap, serving as the critical mathematical balance point where institutional algorithms typically react.' },
+      { term: 'Fair Value Gap (FVG)', definition: "A three-candle range pattern in which the outer candle ranges do not overlap across the middle candle. It does not imply an absence of trades inside that interval." },
+      { term: 'BISI (Buyside Imbalance Sellside Inefficiency)', definition: "A bullish FVG: candle 1 high is below candle 3 low after the third candle completes. BISI is ICT terminology, not evidence that only buying occurred." },
+      { term: 'SIBI (Sellside Imbalance Buyside Inefficiency)', definition: "A bearish FVG: candle 1 low is above candle 3 high after the third candle completes. SIBI is ICT terminology, not evidence that only selling occurred." },
+      { term: 'Consequent Encroachment (CE)', definition: "The arithmetic midpoint of an FVG. Whether price reacts there is a separate empirical question." },
       { term: 'Virgin FVG', definition: 'A newly printed Fair Value Gap that has not experienced any subsequent price interaction or mitigation.' }
     ],
     practiceQuestions: [
       'What are the exact three candles that compose a Fair Value Gap, and where are the upper and lower boundaries measured?',
-      'Why is the 50% Consequent Encroachment (CE) considered the most vital level within an FVG?',
-      'What does it indicate about institutional order flow if a candle body closes completely beyond the 50% CE of an FVG?',
-      'How does the concept of Premium vs. Discount dictate which FVGs you are permitted to trade?',
+      "How is CE calculated, and why does its arithmetic not guarantee a reaction?",
+      "How would you distinguish a midpoint violation from a close through the full FVG, using a rule chosen before replay?",
+      "How does your chosen dealing range change whether the same FVG is labelled premium or discount?",
       'What is the structural difference between a Fair Value Gap, a Volume Imbalance, and a Liquidity Void?'
     ],
     sections: [
       {
         id: '13.1',
         title: '13.1 The Three-Candle Anatomical Structure of an FVG',
-        content: `A Fair Value Gap (FVG) is the foundational PD array of modern ICT and SMC trading. It represents a physical price zone where the Interbank Price Delivery Algorithm (IPDA) delivered price so rapidly that it offered liquidity to only one side of the order book.
-
-An FVG is strictly formed across three consecutive candlesticks:
-
-1. The Bullish FVG (BISI — Buyside Imbalance Sellside Inefficiency):
-- Candle 1: A baseline candle that establishes a high (mark the extreme High of Candle 1's wick).
-- Candle 2 (The Displacement Candle): A large, explosive green candle that expands vertically upward.
-- Candle 3: The candle immediately following Candle 2, which establishes a low (mark the extreme Low of Candle 3's wick).
-- The Imbalance Zone: If the Low of Candle 3 does NOT overlap the High of Candle 1, the open space between them is the BISI!
-- Lower Boundary: High of Candle 1.
-- Upper Boundary: Low of Candle 3.
-
-2. The Bearish FVG (SIBI — Sellside Imbalance Buyside Inefficiency):
-- Candle 1: A baseline candle establishing a low (mark the extreme Low of Candle 1's wick).
-- Candle 2 (The Displacement Candle): A massive red candle that plunges vertically downward.
-- Candle 3: The subsequent candle establishing a high (mark the extreme High of Candle 3's wick).
-- The Imbalance Zone: If the High of Candle 3 does NOT overlap the Low of Candle 1, the space between them is the SIBI!
-- Upper Boundary: Low of Candle 1.
-- Lower Boundary: High of Candle 3.
-
-Inside this gap, the market moved too fast for normal two-sided auctioning to take place. The algorithm has an inherent mathematical imperative to return to this zone to offer the missing side of liquidity before continuing its macro journey.`,
-        keyTakeaway: 'An FVG is a 3-candle imbalance. The gap exists between the wick of Candle 1 and the wick of Candle 3, representing one-sided liquidity delivery.'
+        content: "Use three completed candles on one stated timeframe. A bullish FVG exists when the high of candle 1 is below the low of candle 3. Its lower boundary is candle 1 high and its upper boundary is candle 3 low. A bearish FVG exists when candle 1 low is above candle 3 high; its boundaries are candle 3 high and candle 1 low.\n\nThe middle candle trades through the interval. Non-overlap between the outer candles does not mean that no transactions occurred there or that only one side traded. OHLC candles do not identify a particular institution or expose its inventory.\n\nMark the gap only when candle 3 has completed. Record the feed and timeframe: different aggregation or pricing can change the pattern. An FVG is a chart definition, not a standalone entry signal or a debt the market must repay.",
+        keyTakeaway: "Bullish FVG: candle 1 high is below candle 3 low. Bearish FVG: candle 1 low is above candle 3 high. Wait for candle 3 to close."
       },
       {
         id: '13.2',
-        title: '13.2 The Sacred 50% Consequent Encroachment (CE)',
-        content: `Within every Fair Value Gap lies its most critical mathematical level: Consequent Encroachment (CE).
-
-Consequent Encroachment is the exact 50% midpoint of the gap:
-CE = (Upper Boundary + Lower Boundary) / 2
-
-Why is the 50% CE level so vital to institutional tape reading?
-Because an imbalance does not need to be 100% closed to achieve institutional equilibrium. When price returns into an FVG, tapping the 50% CE level satisfies the algorithm's requirement for fair value rebalancing!
-
-The Golden Rules of Consequent Encroachment Defense:
-1. Wicks Can Penetrate, Bodies Must Respect:
-During a retest of an FVG, price wicks may frequently probe through the 50% CE level to sweep micro-stops or test liquidity depth. However, in a healthy, high-probability setup, candle bodies must close above the 50% CE (for a bullish BISI) or below the 50% CE (for a bearish SIBI).
-2. The Invalidation Signature:
-If a candle body closes fully beyond the 50% CE level, the institutional algorithm is no longer defending the gap. This is a severe warning signal that the imbalance is failing and is likely to convert into an Inverse Fair Value Gap (IFVG).
-3. Execution Advantage:
-Entering at the 50% CE with a limit order significantly improves your average fill price, reduces your required stop loss size, and substantially expands your final Risk-to-Reward ratio.`,
-        keyTakeaway: 'The 50% CE is the mathematical equilibrium of an FVG. Candle bodies closing beyond the 50% CE signal that the imbalance is failing.'
+        title: "13.2 Measuring Consequent Encroachment (CE)",
+        content: "Consequent Encroachment is the midpoint of the gap: CE = (upper boundary + lower boundary) / 2. If the boundaries are 100 and 104, CE is 102. This arithmetic does not establish market fair value or prove that an algorithm must defend 102.\n\nBefore replay, choose what counts as a test or failure: a wick through the midpoint, a close through it, or a close through the far boundary are different rules. State the timeframe and do not switch the rule after seeing the outcome. A midpoint violation alone does not automatically establish an IFVG.\n\nA deeper limit entry may improve the planned reward-to-risk ratio for the same stop and target, but it can remain unfilled. A tighter stop can increase the chance of a stop-out. Include spread, fees and slippage before comparing entry variants.",
+        keyTakeaway: "CE is a midpoint, not a guaranteed reaction level. Define the failure rule before reviewing outcomes."
       },
       {
         id: '13.3',
         title: '13.3 The Life Cycle of an FVG and Execution Protocols',
-        content: `To trade Fair Value Gaps with elite consistency, you must track their four evolutionary states:
-
-1. State 1: Virgin FVG
-The gap has just formed during displacement. It is fresh, untouched, and holds the highest probability of an energetic, immediate reaction upon first contact.
-
-2. State 2: Mitigated FVG (Partial Rebalance)
-Price retraces into the gap, touches the proximal boundary or 50% CE, and rejects. The gap is now "partially mitigated." While it can still be traded on a second touch, its reaction potency is diminished.
-
-3. State 3: Fully Rebalanced (Closed)
-Price completely fills the entire open space from upper boundary to lower boundary. The auction is now fully balanced. The gap ceases to exist as an active PD array.
-
-4. State 4: Inverted (IFVG)
-Price blows straight through the gap with a full candle body close, disrespecting the zone entirely. The gap now flips its polarity from support to resistance or vice versa.
-
-The Mechanical Execution Blueprint:
-- Context First: In an overall bullish market, only buy in Discount FVGs (located below the 50% equilibrium of the dealing range). Never buy an FVG sitting in extreme Premium!
-- Order Placement: Place your limit buy order at the upper edge or 50% CE of the BISI.
-- Stop Loss Placement: Place your stop loss 2 to 5 ticks below the low of Candle 1 (or the origin swing low).
-- Target: The opposing External Range Liquidity pool (old swing high or Equal Highs).`,
-        keyTakeaway: 'Only trade Virgin FVGs aligned with dealing range discount/premium. Enter at proximal edge or 50% CE; place stops safely behind Candle 1.'
-      }
+        content: "Track whether a gap is untouched, partially revisited, fully traversed, or crossed and later tested from the other side. These are descriptive states. A first touch is not automatically the best trade, and a full traversal does not prove that an entire market is balanced.\n\nFor a paper study, select the dealing range before marking premium or discount. Write the required context, entry price, invalidation and target. A midpoint entry and an edge entry are separate variants; measure both instead of choosing whichever looks better afterward.\n\nDo not use a universal two-to-five-tick stop across instruments. Stop distance and position size must reflect the chosen invalidation, contract value, volatility, costs and risk budget. Stops do not guarantee a fill at the requested price. Record gaps that never retrace and setups that fail as well as attractive examples.",
+        keyTakeaway: "Compare predefined entry variants on sequential examples, including failures, costs and unfilled orders."
+      },
+{
+  "id": "13.4-source-reading",
+  "title": "13.4 Reading the Original Example Without Hindsight",
+  "content": "In Episode 6, the bearish FVG slide places the three-candle pattern in the context of a preceding run into buy-side liquidity. Keep two observations separate: whether a gap exists, and whether its location fits the example being taught. A correctly drawn box is not automatically a complete setup.\n\nFor an original LearnSMC exercise, pause replay before the third candle closes. Mark only the highs and lows already visible, then advance one candle at a time. Record when the pattern first becomes identifiable, whether a return occurs, and what happens under your predefined invalidation. Do not move the box or the chosen liquidity reference to fit the finished chart.",
+  "keyTakeaway": "Separate pattern recognition, context and the later result; each becomes known at a different point in time."
+},
+{
+  "id": "13.5-source-reading",
+  "title": "13.5 When the Pattern Does Not Qualify",
+  "content": "Episode 4 checks an initial move that does not produce the required FVG and continues waiting. Episode 24 likewise distinguishes an anticipated price area from actual displacement and a qualifying gap. A price touching your forecast area is not the same as the entry model appearing.\n\nIn your replay log, include no-setup days, qualifying gaps that never retrace, and entries that fail. Decide the observation window before replay. Lowering the timeframe after seeing the result can manufacture a pattern that was not part of the original plan."
+}
     ]
   },
 
@@ -110,7 +69,7 @@ The Mechanical Execution Blueprint:
     slug: 'inverse-fair-value-gaps-ifvg-role-reversal-imbalances',
     part: 'Part III - Price Delivery',
     title: 'Inverse Fair Value Gaps (IFVG): Role Reversal Imbalances — Exploiting Failed Market Inefficiencies',
-    quote: 'When an imbalance fails to hold price, it does not die; it transforms. An Inverse Fair Value Gap is the algorithmic flip where broken support becomes impenetrable resistance.',
+    quote: "An IFVG describes a proposed role reversal after price crosses a previously marked FVG. A later retest can hold or fail; support and resistance are never impenetrable.",
     level: 2,
     summary: [
       'The mechanical definition of an Inverse Fair Value Gap (IFVG).',
@@ -199,92 +158,36 @@ How the Reaper IFVG Works:
     id: 15,
     slug: 'order-blocks-ob-and-mitigation',
     part: 'Part III - Price Delivery',
-    title: 'Order Blocks (OB) & Mitigation — Institutional Volume Absorption and Mean Threshold',
-    quote: 'An Order Block is not simply the last opposite candle before a move. It is the specific price footprint where an institution absorbed retail liquidity to build a massive directional inventory.',
+    title: "Order Blocks & Mitigation — Reference Candles and Mean Threshold",
+    quote: "Mark the reference candle or candle run and its boundaries before the retest. An opening price or midpoint is a chart reference, not a view into an institution’s inventory.",
     level: 2,
-    summary: [
-      'The strict institutional definition of an Order Block (OB).',
-      'Bullish OB vs. Bearish OB: The anatomy of the manipulation candle.',
-      'The Mean Threshold (50% MT): The mathematical line of institutional defense.',
-      'The Mitigation Cycle: Why price returns to the Order Block to release smart money hedges.',
-      'Order Block qualification rules: Filtering high-probability OBs from random chart candles.'
-    ],
-    keyTerms: [
-      { term: 'Order Block (OB)', definition: 'The final candlestick of the opposite color immediately preceding an aggressive displacement wave that sweeps liquidity and breaks market structure.' },
-      { term: 'Bullish Order Block (+OB)', definition: 'The lowest down-close candle (or consecutive series of down candles) prior to a violent upward displacement that breaks a swing high.' },
-      { term: 'Bearish Order Block (-OB)', definition: 'The highest up-close candle (or series of up candles) prior to a violent downward displacement that breaks a swing low.' },
-      { term: 'Mean Threshold (MT)', definition: 'The exact 50% midpoint of the entire Order Block candle body; a close beyond MT signals institutional failure.' },
-      { term: 'Mitigation', definition: 'The algorithmic return of price to an Order Block allowing institutional dealers to neutralize, absorb, or close residual counter-trend exposure at break-even.' }
-    ],
-    practiceQuestions: [
-      'Why must an authentic Order Block be accompanied by displacement and a Market Structure Shift to be considered valid?',
-      'What is the difference between measuring the 50% Mean Threshold of an Order Block versus the 50% Consequent Encroachment of an FVG?',
-      'If price penetrates deep into an Order Block but the candle body closes above the Mean Threshold, is the Order Block still structurally intact?',
-      'Why does an institution need to "mitigate" an Order Block after initiating an aggressive move?',
-      'How does an Order Block that swept a major liquidity pool compare in reliability to an Order Block that formed in open consolidation?'
-    ],
+    summary: ["Episode 3’s consecutive-candle example and opening reference.","Change in delivery as an interpretation within the ICT framework.","Context filters without claiming to observe bank inventory.","Mean Threshold arithmetic and the chosen body or range convention.","Retests, failed reactions, invalidation and execution costs."],
+    keyTerms: [{"term":"Order Block (OB)","definition":"A reference candle or defined candle run used in an ICT study model. State which candles, boundaries and opening reference the example uses."},{"term":"Bullish Order Block (+OB)","definition":"In the Episode 3 example, a selected down-close run and its opening reference are studied around a bullish change in delivery. The run need not be reduced to one last candle."},{"term":"Bearish Order Block (-OB)","definition":"A selected up-close candle or run studied with a bearish change in delivery under the stated model. It does not establish who sold or the size of their position."},{"term":"Mean Threshold (MT)","definition":"The midpoint of the specifically selected block boundaries. State whether these use the candle body or full range; do not silently switch conventions."},{"term":"Mitigation","definition":"A framework label for a return to a selected reference zone. A retest alone does not prove that an institution closed a hedge at break-even."}],
+    practiceQuestions: ["Which candles form the run in the original example, and which opening reference is used?","How would selecting only the final candle change the opening price and the zone?","What is observable on the chart, and what would require evidence of actual institutional positions?","Does your midpoint use body boundaries or full candle ranges, and how is failure defined?","How do an unfilled limit order and slippage affect your replay result?"],
     sections: [
       {
         id: '15.1',
-        title: '15.1 The True Institutional Nature of an Order Block',
-        content: `In the retail trading space, an Order Block (OB) is often casually described as "the last down candle before an up move, or the last up candle before a down move."
-If this simplistic definition were true, every single chart would be covered in dozens of order blocks, and none of them would work.
-
-To understand an Order Block, you must understand institutional inventory management:
-
-When an institutional bank wants to buy 10,000 contracts of E-mini S&P futures, they cannot simply buy. They must engineer liquidity.
-To engineer liquidity, they deliberately sell into the market to push price below a key support level. This artificial selling triggers retail stop-loss orders (stop sells) and induces breakout sellers to short.
-
-Now, look at the last down candle that printed before price took off:
-- In that down candle, the institution accumulated their massive long position by buying all the panic sells.
-- BUT, to push price down, the institution also had to open some short positions!
-- Then, the institution unleashes aggressive market buy orders, generating violent Displacement upward, leaving a Fair Value Gap, and causing a Market Structure Shift (MSS).
-
-Now the institution has a problem:
-Their long positions are in massive profit, but their initial short positions (opened during that down candle) are underwater!
-Therefore, the algorithm later guides price back down into that exact origin candle.
-This return is called Mitigation: it allows the institution to close out their underwater short positions at break-even and inject fresh long limit orders into the market!`,
-        keyTakeaway: 'An Order Block is the physical zone where an institution accumulated inventory and held temporary counter-trend risk. Mitigation allows them to close that risk at break-even.'
+        title: "15.1 The Candle Run in the Original Example",
+        content: "In Episode 3, the bullish discussion treats a consecutive run of down-close candles as one reference and extends its opening price forward. Later, the bearish discussion uses an up-close run and a move through its opening reference to explain a change in delivery within the ICT framework.\n\nThis is more specific than marking whichever final opposite-colour candle is easiest to see afterward. Record the run, its first opening reference and the surrounding liquidity context before reviewing a return. If a study uses a single-candle variant, label it explicitly and do not present it as identical to the shown multi-candle example.\n\nThe opening price is observable; the actual owners, inventory and hedges behind the move are not visible in OHLC bars. A return does not demonstrate that a bank deliberately pushed price away and then closed a losing counter-position at break-even.",
+        keyTakeaway: "Preserve the candle-run and opening-reference definition used in the example; do not infer invisible inventory from the later reaction."
       },
       {
         id: '15.2',
-        title: '15.2 The Three Validation Filters of an Authentic Order Block',
-        content: `Never mark an Order Block unless it passes all three of these institutional filters:
-
-1. Filter 1: Prior Liquidity Purge
-The Order Block must have actively swept liquidity. A bullish OB must have probed below an old swing low, equal lows, or session low. A bearish OB must have probed above an old swing high. If it did not sweep liquidity, it is not an institutional accumulation block.
-
-2. Filter 2: Explosive Displacement Wave
-The candle (or series of candles) leaving the Order Block must be explosive. It cannot be slow or hesitant. It must produce a rapid displacement wave with large bodies.
-
-3. Filter 3: Creation of an Unfilled Fair Value Gap (FVG)
-This is the ultimate litmus test: the displacement wave leaving the Order Block MUST leave behind a valid 3-candle Fair Value Gap.
-If the move away from the candle does not create an FVG, the move lacked institutional urgency, and the candle should be discarded!
-
-When all three filters align, you have identified a Grade-A Institutional Order Block.`,
-        keyTakeaway: 'A valid Order Block must: (1) Sweep liquidity, (2) Produce violent displacement, and (3) Leave behind an unfilled Fair Value Gap.'
+        title: "15.2 Context and Study Filters",
+        content: "In the linked example, the candle run is considered together with the liquidity reference, a change in delivery and an FVG. These observations explain the selected illustration. They do not prove that every candle with the opposite colour is meaningful or that every marked block must produce a reaction.\n\nFor a repeatable study, state which preceding liquidity event is required, how displacement is measured and whether the model requires an FVG. Those are recorded filters. Do not assign a Grade-A win probability simply because all boxes are ticked; no tested probability is established here.\n\nInclude cases that meet the definition and later fail. Otherwise the finished chart will select attractive blocks for you and hide the cost of acting before the outcome is known.",
+        keyTakeaway: "Write the filters before selecting examples, and measure results rather than assigning confidence from a label."
       },
       {
         id: '15.3',
-        title: '15.3 The Sacred Mean Threshold (50% MT) Execution Rule',
-        content: `Just as an FVG has its 50% Consequent Encroachment, an Order Block has its mathematical core: Mean Threshold (MT).
-
-Mean Threshold Calculation:
-- Take the total body of the Order Block candle (from Open to Close).
-- The exact 50% midpoint of the body is the Mean Threshold (MT).
-
-The Golden Execution and Invalidation Rules:
-1. The Entry Trigger:
-- Aggressive Entry: Placed at the open of the Order Block candle (proximal edge).
-- Precision Entry: Placed at the 50% Mean Threshold of the Order Block candle body. This gives you maximum R:R and minimal drawdown.
-2. The Invalidation Rule:
-Price is permitted to wick into the Order Block, and wicks can probe past the Mean Threshold.
-However: NO CANDLE BODY IS PERMITTED TO CLOSE BEYOND THE 50% MEAN THRESHOLD!
-If a candle body closes beyond the Mean Threshold of the Order Block body, the institutional order flow has failed. The setup is dead. Close the position immediately.
-3. Stop Loss Placement:
-Place your stop loss safely 2 to 5 ticks beyond the extreme wick of the Order Block candle.`,
-        keyTakeaway: 'The 50% Mean Threshold of the Order Block body is the line of institutional defense. Candle bodies closing beyond MT invalidate the block.'
-      }
+        title: "15.3 Midpoints, Retests and Invalidation",
+        content: "State the selected boundaries before calculating Mean Threshold: midpoint = (upper boundary + lower boundary) / 2. A body-based midpoint and a full-range midpoint can differ. The run’s opening reference is another distinct level and must not be silently replaced by either midpoint.\n\nChoose the retest and failure rules before replay. A midpoint touch, a wick beyond it and a close beyond the full zone are different events. A tighter trade-specific stop does not make midpoint penetration a universal failure of every order block. The arithmetic alone cannot show that an institution is defending the level.\n\nCompare entry variants using the same targets and realistic fills. A deeper limit may remain unfilled; a stop-market order may slip; a stop-limit may not execute. There is no universally safe two-to-five-tick buffer and no guarantee of minimal drawdown.",
+        keyTakeaway: "Keep the run opening, chosen midpoint and full-zone boundary distinct; define execution and failure before seeing the retest."
+      },
+{
+  "id": "15.4-source-reading",
+  "title": "15.4 Why the Last Opposite Candle Is Not Enough",
+  "content": "Episode 18 refines the selected order-block reference using the surrounding FVG and change in delivery, rather than simply choosing the last opposite-colour candle. Episode 19 also treats consecutive down-close candles as a run in a bullish example. These are context-specific selections, not permission to choose any candle after seeing a successful reaction.\n\nWrite which original example you are studying, which candles form the reference and which opening or midpoint you use. Compare the original chart with your feed before drawing a boundary. If the definition changes between examples, document the difference instead of claiming one candle-colour shortcut covers every case."
+}
     ]
   },
 

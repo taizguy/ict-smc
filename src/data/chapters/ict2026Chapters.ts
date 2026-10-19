@@ -18,10 +18,10 @@ export const ict2026Chapters: TextbookChapter[] = [
       { term: 'From Vision to Execution', definition: 'The mental and mechanical framework where trade narrative and liquidity targets are fully projected prior to entering an order.' },
       { term: 'Single-Session Specialization', definition: 'Restricting trading execution strictly to one specific session window (e.g. 09:30 to 11:00 AM EST on NQ) to eliminate cognitive fatigue.' },
       { term: 'Red-Folder Triage', definition: 'Pre-market evaluation of high-impact macroeconomic releases (CPI, PPI, FOMC, NFP) to determine whether market delivery will be low or high resistance.' },
-      { term: 'Paper Incubation Protocol', definition: 'A mandatory 6 to 12-month simulation phase requiring 20 consecutive rule-compliant journaled trades before live capital allocation.' }
+      { term: 'Paper Incubation Protocol', definition: "A structured period of simulated practice. No fixed duration or trade count certifies readiness for live risk." }
     ],
     practiceQuestions: [
-      'Why does Michael J. Huddleston mandate 6 to 12 months of demo trading before taking live positions?',
+      "What can demo practice teach, and which live financial and emotional risks does it fail to reproduce?",
       'What are the three components of the trinity rule in "From Vision to Execution"?',
       'How does economic calendar triage protect traders from algorithmic whipsaws and high resistance liquidity runs?'
     ],
@@ -29,21 +29,7 @@ export const ict2026Chapters: TextbookChapter[] = [
       {
         id: '47.1',
         title: '47.1 The 2026 New Student Roadmap: Incubation, Specialization & Discipline',
-        content: `In the 2026 Smart Money Concepts introductory lectures, Michael J. Huddleston delivers an uncompromising blueprint for new traders entering modern algorithmic markets:
-
-1. The Six-to-Twelve Month Demo Incubation Stage:
-- Trading real capital prematurely is financial suicide. The market algorithm (IPDA) is designed to prey upon untrained human emotions—fear, greed, impatience, and revenge.
-- Students must spend a minimum of 6 to 12 months on a paper-trading account (such as TradingView Paper or simulated futures accounts in NinjaTrader/Tradovate).
-- The graduation requirement: Successfully execute and journal at least 20 consecutive trades following an exact rule set without a single impulsive deviation.
-
-2. Single-Asset & Single-Session Specialization:
-- Retail traders fail because they flip between 15 different currency pairs, crypto assets, and commodities.
-- The 2026 directive: Master ONE asset only. ICT recommends either the E-mini NASDAQ (NQ / MNQ) or E-mini S&P 500 (ES / MES).
-- Master ONE time window: The New York Morning Session (09:30 AM to 11:00 AM EST). Trading all day guarantees over-trading and capital decay.
-
-3. Clean Chart Architecture:
-- Strip away all retail indicators: RSI, MACD, Bollinger Bands, Moving Averages, and Stochastics.
-- Your chart must feature only: Clean Japanese candlesticks, New York local time (UTC-4 / UTC-5 EST), Session breaks, and institutional PD Arrays (FVGs, Order Blocks, Liquidity Pools, NDOGs).`
+        content: "A practical study routine can focus on one instrument and one session to reduce the number of changing variables. This is LearnSMC’s organizational suggestion, not a verified quotation or fixed mandate from a particular 2026 ICT lecture.\n\nUse a demo or replay environment while learning execution and record both rule adherence and outcomes after costs. A fixed number of months or twenty compliant trades cannot certify readiness for live risk. Simulation omits important financial and emotional pressures.\n\nKeep a readable chart, an actual event calendar and a written risk limit. Restricting screen time may help some learners manage attention, but trading all day does not mechanically guarantee a loss, and specialization does not guarantee success."
       },
       {
         id: '47.2',
@@ -135,16 +121,7 @@ Never click a button unless all three pillars are in complete alignment:
       {
         id: '48.1',
         title: '48.1 Pre-Market Session Architecture (06:00 - 08:30 AM EST)',
-        content: `Between 06:00 AM and 08:30 AM EST, the institutional groundwork for the US equities day is quietly laid out in NQ and ES futures:
-
-1. Mapping the Key Reference Levels:
-- Asian Session High & Low (19:00 - 00:00 EST): Defines the overnight liquidity pool boundaries.
-- London Session High & Low (02:00 - 05:00 EST): London frequently establishes one extreme of the daily range (e.g. Low of Day or High of Day).
-- Pre-Market High & Low (06:00 - 08:30 EST): Mark the highest high and lowest low of this window. If price is consolidating tightly inside this range, an explosive 08:30 or 09:30 expansion is guaranteed.
-
-2. Analyzing Overnight Order Flow:
-- Did London expand directionally or consolidate? If London produced a 150-point run on NQ, expect New York to either mitigate that move or consolidate before continuing.
-- Mark all unmitigated 15M and 1H Fair Value Gaps formed during the European session; these serve as primary reaction zones during the US pre-market.`
+        content: "For a defined pre-market study, mark the high and low of 06:00 to 08:30 in America/New_York time and record the date, contract and data feed. This is a selected observation range, not the complete overnight session or a universal institutional boundary.\n\nCheck whether an economic release is actually scheduled and whether the exchange calendar has an exception. A narrow range does not guarantee expansion at 08:30 or 09:30. Expansion may arrive later, fail immediately, or not occur in the chosen window.\n\nRecord nearby higher-timeframe levels and alternative paths before the cash open. A previous directional move does not restrict the next session to only two possible outcomes. Do not infer executable fills or fixed stop distances from a completed chart."
       },
       {
         id: '48.2',
@@ -287,85 +264,30 @@ Never click a button unless all three pillars are in complete alignment:
     title: 'Opening Gap Matrices (NDOG, NWOG, NSOG) & Changing State of Delivery (CSoD)',
     part: 'Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series',
     level: 2,
-    quote: 'The opening gap is not dead air; it is an algorithmic footprint etched into the order book. When price revisits an NDOG Consequent Encroachment, it reveals the Changing State of Delivery in its purest form.',
-    summary: [
-      'New Day Opening Gap (NDOG) calculation (17:00 close to 18:00 re-open) and Consequent Encroachment (50% CE).',
-      'New Week Opening Gap (NWOG) long-term institutional magnetic pull across multi-day delivery.',
-      'New Session Opening Gap (NSOG) mechanics at the 09:30 AM cash open.',
-      'Changing State of Delivery (CSoD) & Change of Character (CHoCH): order flow flip from BISI to SIBI.'
-    ],
-    keyTerms: [
-      { term: 'New Day Opening Gap (NDOG)', definition: 'The price gap formed between the 17:00 EST daily settlement close and the 18:00 EST electronic re-open in futures markets.' },
-      { term: 'New Week Opening Gap (NWOG)', definition: 'The price gap formed between Friday 17:00 EST close and Sunday 18:00 EST open, serving as a multi-week institutional anchor.' },
-      { term: 'New Session Opening Gap (NSOG)', definition: 'The price differential between the 09:29:59 pre-market close and 09:30:00 equities cash open candle.' },
-      { term: 'Changing State of Delivery (CSoD)', definition: 'The precise structural moment when an order flow stream transitions from offering buy-side liquidity to sell-side liquidity, confirmed by candle closes violating prior candle opens.' }
-    ],
-    practiceQuestions: [
-      'How is the Consequent Encroachment (50% CE) of an NDOG calculated, and why is it significant?',
-      'What is the precise mechanical difference between a Changing State of Delivery (CSoD) and a standard Market Structure Shift (MSS)?',
-      'How does an algorithmic trader use NWOGs that were created three to five days prior?'
-    ],
+    quote: "An opening gap supplies observable price references. A later reaction does not prove institutional memory or a required return.",
+    summary: ["Define the prints, feed and session used for an opening-gap comparison.","Separate trading-break close from official settlement.","Record returns, partial traversals and no-return examples.","Preserve the selected candle-opening reference for delivery interpretation."],
+    keyTerms: [{"term":"Selected opening gap","definition":"The difference between explicitly selected pre-break and reopening prices on the same product and feed."},{"term":"Consequent Encroachment (CE)","definition":"The arithmetic midpoint of the chosen gap boundaries, not a guaranteed reaction price."},{"term":"Changing State of Delivery (CSoD)","definition":"A framework interpretation using selected candle opening references; distinguish its crossing rule from a swing break."}],
+    practiceQuestions: ["Which two prints define the selected gap?","Is the reference a last trade or an official settlement?","What happens if price never revisits the gap?"],
     sections: [
       {
         id: '50.1',
         title: '50.1 New Day Opening Gap (NDOG) Calculation & Consequent Encroachment',
-        content: `In the 2026 lecture series, New Day Opening Gaps (NDOG) are elevated to one of the most powerful institutional reference points in intraday futures trading:
-
-1. How NDOG is Formed:
-- In CME futures (NQ, ES, YM), the trading day closes at 17:00 EST for a 60-minute settlement maintenance window and re-opens at 18:00 EST.
-- The distance between the 17:00 EST closing price and the 18:00 EST opening price is the New Day Opening Gap (NDOG).
-- Even if electronic trading prints candles filling this space overnight, institutional algorithms remember the exact coordinates of this gap for the entire next trading day.
-
-2. Marking the NDOG Levels:
-- Top of the Gap (High)
-- Bottom of the Gap (Low)
-- Consequent Encroachment (CE 50%): The exact midpoint between the High and Low of the gap.
-
-3. How the Algorithm Treats NDOG:
-- Support / Resistance Pivot: During the 09:30 AM open or 09:50 AM macro, price will often dump or rally directly into the 50% CE of the NDOG.
-- If candle bodies respect the 50% CE (leaving only wicks), the gap acts as an institutional launchpad for continuation in the direction of the daily bias.`
+        content: "For an opening-gap study, identify the last traded price before a defined trading break and the first price after the reopening on the same contract and feed. Confirm the applicable product calendar instead of assuming every market uses identical hours.\n\nCalculate the selected gap’s lower boundary, upper boundary and midpoint. A trading-break close is not automatically the official settlement price. The observed boundaries do not establish that an algorithm remembers them or must launch price from their midpoint."
       },
       {
         id: '50.2',
         title: '50.2 New Week Opening Gap (NWOG) Long-Term Institutional Magnetism',
-        content: `The New Week Opening Gap (NWOG) operates on a larger timeframe horizon:
-
-1. Formation:
-- The gap between Friday 17:00 EST market close and Sunday 18:00 EST market open.
-- Because weekend news, geopolitical headlines, and macro announcements accumulate over 48 hours, NWOGs are typically wider than daily NDOGs.
-
-2. The Multi-Day Institutional Memory:
-- NWOGs do not expire when Monday closes. ICT demonstrates that an NWOG remains active in the algorithmic memory for the entire week, and often for 2 to 3 weeks into the future.
-- When price breaks away from an NWOG, it will frequently return to test its 50% Consequent Encroachment on Tuesday or Wednesday during the creation of the High or Low of the Week.
-- When multiple prior NWOGs overlap with an active Daily Fair Value Gap, this creates a High-Probability Institutional Confluence Zone.`
+        content: "Episode 34 extends a Sunday opening-gap reference through the week and notes that some weeks move away without returning. It is a reference for that chart study, not proof of a permanent institutional memory or a mandatory Tuesday or Wednesday revisit.\n\nRecord the exact preceding close and reopening prints, contract, feed and session calendar. Keep the upper boundary, lower boundary and arithmetic midpoint distinct. A return, partial traversal, full traversal and no return are separate outcomes to record.\n\nDo not use the trading-break close as a synonym for the official settlement price without checking the product’s settlement procedure. The 2022 example does not authenticate every NDOG, NSOG or later-year naming claim."
       },
       {
         id: '50.3',
         title: '50.3 New Session Opening Gap (NSOG) Mechanics at 09:30 AM',
-        content: `At 09:30:00 AM EST, when the US stock exchanges open, another critical gap is born:
-
-1. The NSOG Definition:
-- The price gap between the 09:29:59 AM close of the pre-market session and the 09:30:00 AM open of the regular trading hours (RTH) cash session.
-- Although electronic futures trade continuously, the sudden injection of cash market liquidity creates a micro-gap in the order book.
-
-2. Algorithmic Rebalancing:
-- Between 09:30 and 09:45 AM, the algorithm will almost always rebalance the NSOG before embarking on the primary morning trend.
-- If the market opens with a gap up, look for the initial Judas swing to drop down, fill the NSOG to its 50% CE, and reject before rallying.`
+        content: "A session-opening comparison requires an explicit definition: which product, which preceding print and which new opening print? A futures chart around the cash-equity open and a gap between two equity sessions are different observations.\n\nDo not assume that 09:30 creates an untraded order-book void or that a gap must rebalance before 09:45. Keep no-return examples alongside returns and distinguish a chart reference from a verified mechanism."
       },
       {
         id: '50.4',
         title: '50.4 Changing State of Delivery (CSoD) & Change of Character (CHoCH)',
-        content: `One of the most refined concepts in the 2026 lectures is the Changing State of Delivery (CSoD):
-
-1. The Mechanical Difference Between MSS and CSoD:
-- Market Structure Shift (MSS): Requires price to break an established swing high or swing low with displacement. MSS is a structural milestone.
-- Changing State of Delivery (CSoD): Occurs earlier, at the exact candle level where order flow flips from Buy-Side Imbalance (BISI) to Sell-Side Imbalance (SIBI).
-
-2. How to Identify a Bearish CSoD:
-- Price is in an upward run characterized by consecutive up-close (green) candles.
-- Suddenly, an aggressive down-close (red) candle forms and its candle body CLOSES BELOW THE OPENING PRICE of the lowest up-close candle that preceded it.
-- The moment this down-close candle closes, the State of Delivery has officially changed from bullish to bearish.
-- The open of that previous up-close candle now becomes the immediate algorithmic ceiling (resistance) for subsequent tests.`
+        content: "Episodes 3 and 18 discuss a change in delivery using selected candles and their opening references. Preserve the actual candle or run used by the example. A crossing of that opening reference and a later break of a swing high or low are different events.\n\nIf your research requires a body close rather than an intrabar crossing, state that additional condition. CSoD, CHoCH and MSS should not be silently substituted for one another, and the 2022 source review does not authenticate a universal later-year terminology hierarchy."
       }
     ]
   },
@@ -375,82 +297,30 @@ Never click a button unless all three pillars are in complete alignment:
     title: 'Midday & Afternoon Tape Reading: Lunch Macro, Afternoon Macros & The Final Hour ES',
     part: 'Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series',
     level: 3,
-    quote: 'Retail traders lose their morning gains during New York lunch because they cannot sit on their hands. Professional tape readers wait for the 13:30 macro and read the closing hour to see how the daily candle is carved.',
-    summary: [
-      'Navigating the Retail Graveyard of New York Lunch (12:00 - 13:00 EST).',
-      'The 11:50 AM - 12:10 PM Lunch Macro Execution Protocol.',
-      'The 13:30 - 14:00 PM Post-Lunch Acceleration Macro.',
-      'The 15:00 - 15:30 PM Settlement Macro & Final Hour (15:00 - 16:00 EST) Tape Reading.'
-    ],
-    keyTerms: [
-      { term: 'New York Lunch Hour', definition: 'The period between 12:00 PM and 13:00 PM EST characterized by reduced institutional participation and engineered retail stop runs.' },
-      { term: '11:50 - 12:10 PM Lunch Macro', definition: 'A 20-minute algorithmic repricing run that frequently sweeps morning session extremes before locking price into midday consolidation.' },
-      { term: '13:30 - 14:00 PM Afternoon Macro', definition: 'The post-lunch institutional reactivation window where the afternoon trend leg or daily reversal initiates.' },
-      { term: 'Final Hour Tape Reading', definition: 'Analyzing price delivery between 15:00 and 16:00 EST to anticipate how the market maker is shaping the Daily candle (Hammer, Doji, Marubozu).' }
-    ],
-    practiceQuestions: [
-      'Why is trading between 12:10 PM and 13:15 PM EST discouraged for all discretionary traders?',
-      'How does the 11:50 AM - 12:10 PM Lunch Macro set up afternoon session liquidity?',
-      'What specific clues in the final hour (15:00 - 16:00 EST) reveal whether index futures will close on their highs or reverse into settlement?'
-    ],
+    quote: "Morning and afternoon examples are separate opportunities to study. Missing one does not create an obligation to take another.",
+    summary: ["Product-specific morning, midday and afternoon observations.","Order expiry and position management as predefined decisions.","Multiple setups versus total exposure and optional participation.","Final-hour scenarios without a guaranteed closing direction."],
+    keyTerms: [{"term":"Afternoon observation window","definition":"A stated local-time interval for studying a particular product; the clock does not guarantee a setup."},{"term":"Aggregate exposure","definition":"The combined risk of open positions, including positions that depend on related markets."}],
+    practiceQuestions: ["What is your observation window, and which product calendar applies?","When does an unfilled order expire?","What would invalidate the afternoon scenario before entry?"],
     sections: [
       {
         id: '51.1',
         title: '51.1 Navigating the Retail Graveyard of New York Lunch (12:00 - 13:00 EST)',
-        content: `Between 12:00 PM and 13:00 PM EST, institutional trading desks in New York and London step away for lunch:
-
-1. What Happens to Market Mechanics:
-- Order book depth thins out drastically. Institutional liquidity providers widen bid-ask spreads and lower algorithmic matching frequency.
-- Price enters choppy, overlapping consolidations that produce endless false breakouts, small wicks on both sides, and no sustained directional displacement.
-
-2. The Psychological Trap:
-- Retail traders who missed the morning move or experienced a morning loss attempt to "make it back" during lunch.
-- They get chopped to pieces by small 5-point fluctuations that repeatedly trigger stops.
-- The Golden Law of Lunch: If you have open profits from the morning session, either trail your stop to breakeven + lock in partials, or completely close your platform until 13:15 PM EST.`
+        content: "Episodes 5 and 16 separate the New York morning and afternoon using a midday observation period. This is a teaching framework, not proof that all institutional desks leave or that every lunch-hour breakout is false.\n\nKeep the product and date-aware local clock visible. Record the morning range, whether the chosen objective was reached and whether another session is part of your written study plan. A missed morning move or a morning loss is not an entry condition."
       },
       {
         id: '51.2',
-        title: '51.2 The 11:50 AM - 12:10 PM Lunch Macro Execution Protocol',
-        content: `While general lunch trading is dangerous, the algorithm executes one precise 20-minute operational sequence right at the threshold:
-
-1. The Purpose of the Lunch Macro:
-- Between 11:50 AM and 12:10 PM EST, institutional algorithms execute a quick repricing run to clean up resting morning liquidity.
-- If morning price trended upward, the 11:50 macro will frequently stage a quick run to sweep the high of the morning session (BSL) or tag the 50% Consequent Encroachment of a higher-timeframe FVG.
-
-2. The Operational Rule:
-- This macro is an EXTRACTION window, not a new entry window.
-- If you entered long during the 09:50 AM macro, the 11:50 - 12:10 macro is where you close out your remaining contracts as price spikes into the target liquidity pool.
-- Once 12:10 PM arrives, step away from the charts.`
+        title: "51.2 Midday Observation and Order Expiry",
+        content: "If a research variant uses 11:50–12:10 as an observation or exit window, state that choice before replay. The supplied 2022 recordings do not establish that a specific twenty-minute program must run or that every trader must close at 12:10.\n\nDecide when an unfilled order expires and whether an existing position can continue under its original plan. Entering, taking a partial and moving a stop are different decisions; none should be credited retroactively because the next candles looked convenient."
       },
       {
         id: '51.3',
         title: '51.3 The 13:30 - 14:00 PM Post-Lunch Acceleration Macro',
-        content: `At 13:15 to 13:30 PM EST, institutional traders return from lunch, and European markets close (London Close occurs at 11:00 AM - 12:00 PM EST):
-
-1. The Afternoon Trend Resumption:
-- The 13:30 - 14:00 PM window represents the start of the New York PM Session.
-- The algorithm will seek liquidity engineered during the lunch consolidation.
-- Look for a 5-minute Market Structure Shift breaking out of the lunch range between 13:30 and 13:45 PM EST.
-
-2. Afternoon Entry Protocol:
-- Price pulls back into a 1M or 5M Fair Value Gap created by the post-lunch displacement.
-- Target: The opposite extreme of the daily range (e.g. Low of Day if trend is bearish, High of Day if bullish).
-- Risk is strictly defined: Stop loss rests above/below the lunch swing extreme.`
+        content: "Episode 5 discusses an afternoon focus around 13:30 New York local time, while Episode 9 illustrates an afternoon retracement setup. Use the already visible swing references and actual displacement in the chosen example. The clock alone does not establish a new trend.\n\nEpisode 16 shows multiple possible setups but does not require a student to take every one. Adding positions changes aggregate exposure even if individual entries look attractive. Record the combined risk and retain cases with no return or no qualifying pattern."
       },
       {
         id: '51.4',
-        title: '51.4 The 15:00 - 15:30 PM Settlement Macro & Final Hour ES Tape Reading',
-        content: `In the 2026 lecture "Practice Session Final Hour ES", ICT breaks down the art of reading the tape into the cash close (15:00 - 16:00 EST):
-
-1. The 15:00 - 15:30 PM Pre-Close Settlement Rush:
-- At 15:00 PM EST, institutional mutual funds, pension funds, and market makers prepare for the 16:00 PM equity market settlement.
-- The 15:00 - 15:30 PM macro produces rapid, aggressive price delivery as large-block rebalancing orders are pushed into the market.
-
-2. Daily Candle Shaping:
-- Professional traders do not guess the final hour direction; they look at the DAILY candle:
-  - If today is an expanding bullish trend day, the market maker wants the Daily candle to close near its highs (creating a Marubozu or tiny upper wick). Therefore, the final hour will rally into 16:00 PM.
-  - If today swept an HTF resistance pool and rejected, the market maker wants the Daily candle to close with a long upper wick (creating a Daily Shooting Star / Inverted Hammer). The final hour will dump into 16:00 PM.
-- Align your 15:00 PM tape reading with the structural anatomy of the Daily candle to capture the final 20 to 40-point run on ES and NQ.`
+        title: "51.4 Final-Hour Scenarios Without Predicting the Close",
+        content: "Episode 32 discusses a consolidation day and a late move around the cash close. Episode 37 shows how to record the time from a reference touch to later delivery. These are case studies, not proof that the final hour must extend the daily candle or reverse it.\n\nWrite the competing scenarios before the final hour begins. Separate the cash-market close, the futures trading break and the product’s settlement procedure. Do not infer a participant’s desired candle shape from a completed chart or assume a fixed number of points is available every afternoon."
       }
     ]
   },
@@ -460,107 +330,36 @@ Never click a button unless all three pillars are in complete alignment:
     title: 'Event Volatility, High Resistance Runs (NFP Thursdays & FOMC) & Futures vs. CFDs',
     part: 'Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series',
     level: 3,
-    quote: 'The difference between an amateur and a professional is knowing when NOT to trade. On NFP Thursdays and FOMC days, the algorithm is hunting both sides. Step aside, let the storm pass, and trade the calm that follows.',
-    summary: [
-      'High Resistance Liquidity Runs (HRLR) on NFP Thursdays: Algorithmic withholding and how to protect capital.',
-      '"Seek and Destroy" Market Maker Profiles during Jackson Hole, FOMC & CPI releases.',
-      'Futures (NQ / MNQ, ES / MES) vs. CFDs (US100, US500): Tick values, spread widening, and order execution.',
-      'Prop Firm Capital Preservation & The Complete 2026 Daily Master Execution Checklist.'
-    ],
-    keyTerms: [
-      { term: 'High Resistance Liquidity Run (HRLR)', definition: 'A market condition where price delivery is impeded by dense opposing structural blocks, resulting in choppy, slow, and wick-heavy price action.' },
-      { term: 'NFP Thursday Withholding', definition: 'The algorithmic phenomenon where the market consolidates tightly on the Thursday before Non-Farm Payroll, storing energy for Friday morning.' },
-      { term: 'Seek and Destroy Market Profile', definition: 'A highly hostile market maker model where the algorithm repeatedly sweeps both swing highs and swing lows without producing directional continuation.' },
-      { term: 'Micro Contract Precision (MNQ/MES)', definition: 'Using fractional futures sizing ($0.50/pt on MNQ vs $5/pt on NQ) to calibrate exact dollar risk during volatile market phases.' }
-    ],
-    practiceQuestions: [
-      'Why is the Thursday before Non-Farm Payroll (NFP) notorious for producing High Resistance Liquidity Runs?',
-      'What are the key execution differences between trading futures (NQ/ES) on a regulated exchange vs. trading CFDs (US100/US500) through a broker?',
-      'What three specific steps must a trader take when the market enters a Seek & Destroy profile?'
-    ],
+    quote: "An event calendar tells you when a release is scheduled. It cannot promise the direction, size or safety of the market reaction.",
+    summary: ["Actual release calendars rather than fixed weekday assumptions.","FOMC examples and their explicit risk limitations.","Futures versus broker-specific CFD contract values.","Points, ticks and product-specific execution assumptions."],
+    keyTerms: [{"term":"High Resistance Liquidity Run (HRLR)","definition":"A framework description of overlapping or obstructed price delivery; it is not direct evidence of withheld institutional orders."},{"term":"Release calendar","definition":"The official schedule for the particular announcement, checked by date and local timezone."},{"term":"Micro Contract Precision (MNQ/MES)","definition":"MNQ is $2 per index point and $0.50 per 0.25-point tick. Distinguish points from ticks and verify the product specification before sizing."}],
+    practiceQuestions: ["Which official calendar confirms the actual release time?","How does a point differ from a tick for the chosen contract?","What risks remain after a scheduled announcement has passed?"],
     sections: [
       {
         id: '52.1',
         title: '52.1 High Resistance Liquidity Runs (HRLR) on NFP Thursdays',
-        content: `In the dedicated lecture "Trading NFP Thursday High Resistance Liquidity Runs", ICT explains why the day before Non-Farm Payroll is a notorious retail trap:
-
-1. The Algorithmic Withholding Effect:
-- Non-Farm Payroll (released on the first Friday of each month at 08:30 AM EST) is the single most volatile economic event in the world.
-- On the Thursday preceding NFP, institutional market makers withhold directional capital. They do not want to initiate major expansion legs because Friday's numbers will drastically alter macro repricing.
-- As a result, Thursday price action turns into a High Resistance Liquidity Run (HRLR). Price grinds slowly, wicks back and forth across 15-minute ranges, and refuses to run clean equal highs or lows.
-
-2. How to Handle NFP Thursday:
-- Best approach: Do not trade at all. Use Thursday for chart observation, backtesting, and marking key levels for Friday.
-- If you must trade: Cut your normal position size by 75% (trade 1 micro contract instead of 4), take quick 10-15 point profits, and never hold through pullbacks.`
+        content: "Use the Bureau of Labor Statistics Employment Situation schedule for the actual release date and time. Do not assume an unchanging first-Friday rule or a fixed EST offset. The day before a release is not mechanically required to consolidate.\n\nA high-resistance-run label describes a chosen interpretation of overlapping or difficult price delivery; it does not reveal that institutions withheld capital. There is no verified universally safe 75% size reduction or fixed 10–15-point target here. Observe, define the study conditions, or stand aside."
       },
       {
         id: '52.2',
         title: '52.2 "Seek and Destroy" Market Maker Profiles during Jackson Hole & FOMC',
-        content: `In the 2026 lectures reviewing NQ price delivery during the Jackson Hole Symposium and FOMC announcements:
-
-1. The Anatomy of Seek and Destroy:
-- When central bankers speak (Fed Chair Jerome Powell at Jackson Hole or FOMC press conferences), algorithms enter "Seek and Destroy" mode.
-- Phase 1: Price spikes above the morning high, triggering buy stops (BSL).
-- Phase 2: Instead of running higher, price reverses violently and plunges below the morning low, triggering sell stops (SSL).
-- Phase 3: Price snaps right back to the midpoint (Equilibrium), leaving both breakout buyers and breakout sellers completely stopped out.
-
-2. Survival Strategy:
-- Recognize that Seek and Destroy is designed to cleanse open float liquidity from both retail sides.
-- Do not trade during the active speech or 14:00 - 14:30 PM FOMC announcement.
-- Wait for the next day: Once the speech is digested, the algorithm returns to smooth Low Resistance Liquidity Runs (LRLR), providing clean, effortless trend delivery.`
+        content: "Central-bank announcements and speeches can produce rapid changes, two-sided moves or a limited response. Episode 23’s FOMC case study explicitly warns beginners against treating the example as an invitation to trade the event.\n\nConfirm the actual Federal Reserve meeting and release calendar. A decision statement and a press conference are separate events. Waiting until the next day does not guarantee a smooth trend or remove execution risk. Record what happened rather than assigning every event the same three-phase path."
       },
       {
         id: '52.3',
         title: '52.3 Futures (NQ / MNQ, ES / MES) vs. CFDs (US100, US500) Execution Realities',
-        content: `In the lecture "ICT 2026 Trading MNQ Futures & CFD US100", ICT compares real exchange-traded futures against broker-offered CFDs:
-
-1. Exchange-Traded Futures (CME Group):
-- Direct central limit order book (CME Globex).
-- Transparent Level 2 DOM (Depth of Market), time & sales, and authentic volume.
-- Fixed point values:
-  - E-mini NASDAQ (NQ): $20 per point ($5 per tick of 0.25).
-  - Micro E-mini NASDAQ (MNQ): $2 per point ($0.50 per tick of 0.25).
-  - E-mini S&P 500 (ES): $50 per point ($12.50 per tick of 0.25).
-  - Micro E-mini S&P 500 (MES): $5 per point ($1.25 per tick of 0.25).
-- Tighter spreads during regular hours (typically 1 tick).
-
-2. Contracts for Difference (CFDs - US100, US500):
-- OTC (Over-The-Counter) synthetic derivatives traded against an individual broker's dealing desk.
-- Spreads widen dramatically during macros (08:30 AM, 09:30 AM, 15:00 PM), often blowing past stops even when the futures market never touched the level.
-- Financing costs (overnight swap fees) apply.
-
-3. The ICT Recommendation:
-- If capital permits, trade regulated futures (MNQ / MES) through transparent futures brokers (Tradovate, NinjaTrader, AMP).
-- If trading prop firm accounts, ensure the firm provides true CME live data feeds rather than simulated CFD spreads.`
+        content: "Point and tick values are different. CME’s MNQ contract is $2 per index point; a 0.25-point tick is $0.50 per contract. NQ is $20 per point, ES is $50 per point and MES is $5 per point. Verify the specification for the actual product before sizing.\n\nFutures contract specifications and broker-specific CFD specifications are not interchangeable. Check the quote source, size increment, spread, fees, financing and order-execution terms. Displayed exchange depth is not the entirety of available liquidity.\n\nThis comparison is independent LearnSMC reference material. The reviewed 2022 recordings do not verify the earlier claim that a named 2026 lecture recommended particular brokers or account providers."
       },
       {
         id: '52.4',
-        title: '52.4 The Complete 2026 Daily Master Execution Checklist',
-        content: `Synthesizing the entire 2026 lecture curriculum into a daily operational checklist:
-
-Step 1: Pre-Market Preparation (07:00 - 08:30 AM EST)
-- Check Forex Factory: Are there 08:30 or 10:00 AM red-folder releases? Is today NFP Thursday or FOMC?
-- Mark Higher Timeframe Draw on Liquidity (Daily / 4H / 1H).
-- Mark overnight reference levels: Asian High/Low, London High/Low, Pre-Market High/Low (06:00-08:30).
-- Calculate and mark the New Day Opening Gap (NDOG) and its 50% Consequent Encroachment.
-
-Step 2: Morning Session Execution (09:30 - 11:00 AM EST)
-- 09:30 - 09:45 AM: Observe the Judas Swing. Do not chase the open. Identify which liquidity pool is swept into an HTF array.
-- 09:50 - 10:10 AM Macro: Look for 1M/5M Market Structure Shift with displacement leaving a clean Fair Value Gap or Inversion FVG.
-- Execute limit order at FVG boundary or 50% CE. Stop loss behind the swing extreme.
-- Target: Primary session Draw on Liquidity (Equal Highs, PDH, or 1.618 Fibonacci expansion at ATH).
-- 10:50 - 11:10 AM Macro: Extract profits as morning trend culminates.
-
-Step 3: Midday Discipline (11:50 AM - 13:15 PM EST)
-- 11:50 - 12:10 PM: Monitor the Lunch Macro for final runner extractions.
-- 12:10 - 13:15 PM: Close platform or step away. Zero trading during the New York lunch graveyard.
-
-Step 4: Afternoon Session & Final Hour (13:30 - 16:00 EST)
-- 13:30 - 14:00 PM: Watch for post-lunch breakout from the lunch consolidation range.
-- 15:00 - 15:30 PM: Settlement macro run.
-- 15:30 - 16:00 PM: Align tape reading with Daily candle profile completion.
-- Journal all trades with screenshots and rule compliance grades.`
-      }
+        title: "52.4 A Calendar-Aware Research Routine",
+        content: "Confirm the current official calendar and product specifications. Write your observation window, references, entry variant, risk budget and order expiry before looking at later candles. A scheduled event and a chart pattern are separate observations.\n\nRetain days with no setup and record spreads, commissions, slippage and any unfilled orders. If the smallest contract does not fit the budget, do not force the calculation. Keep simulated examples separate from actual trading records.\n\nThis is an original LearnSMC research routine informed by the linked sources. It is not a verified synthesis of an entire 2026 lecture series or an instruction to trade every listed session."
+      },
+{
+  "id": "52.5-source-reading",
+  "title": "52.5 News Examples Are Not Invitations to Trade",
+  "content": "Episode 23 explicitly warns that its FOMC case study is not an invitation to trade FOMC or NFP. Episode 30 examines a Fed-chair event, and Episode 40 uses the economic calendar when choosing which Forex pair to study. The volatility and price path differ between events.\n\nCheck the current official release schedule rather than treating an old video’s clock time as today’s calendar. A release can produce wider spreads, slippage or no useful setup. Waiting for a predefined observation period is a research choice, not a guarantee that the subsequent market is safe."
+}
     ]
   }
 ];

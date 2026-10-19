@@ -609,89 +609,33 @@ The Synergy Engine:
   {
     id: 36,
     slug: 'ict-charter-model-13-2022-youtube-model',
-    title: 'ICT Charter Model 13: The 2022 YouTube Mentorship Model & Master Charter Lecture',
+    title: "2022 ICT Mentorship Model — A Source-Based Study Guide",
     part: 'Part X - ICT Charter Price Action Models Curriculum',
     level: 3,
-    quote: 'Model 13 is the crown jewel taught in the 2022 Mentorship and amplified for Charter members. Raid session liquidity, wait for explosive displacement and MSS, and execute on the Fair Value Gap with total conviction.',
-    summary: [
-      'The complete Trade Plan & Algorithmic Theory of ICT Charter Price Action Model 13.',
-      'Raid mechanisms: Hunting AM Session Highs/Lows and Lunch Hour Highs/Lows.',
-      'Displacement criteria and Market Structure Shift (MSS) with full candle bodies.',
-      'Charter Amplified Lecture: 1-minute and 5-minute execution at the Discount/Premium FVG.',
-      'The Master Taxonomy: Comparative synthesis of all 13 ICT Charter Models for any market condition.'
-    ],
-    keyTerms: [
-      { term: 'Model 13 (2022 Model)', definition: 'The definitive ICT intraday model combining liquidity sweep, displacement, Market Structure Shift, and Fair Value Gap retest.' },
-      { term: 'Session Liquidity Raid', definition: 'The deliberate algorithmic purge of resting stop clusters above AM session highs or below lunch hour lows.' },
-      { term: 'PD Array Matrix Objective', definition: 'The target destination on the opposite side of the dealing range where institutional profit is extracted.' }
-    ],
-    practiceQuestions: [
-      'What are the mandatory operating hours for Model 13 in Forex vs Index Futures?',
-      'Why must the Fair Value Gap used for entry reside at or beyond the Equilibrium level of the dealing range?',
-      'How does Model 13 synthesize the core principles of all prior 12 Charter Price Action Models?'
-    ],
+    quote: "Study the liquidity reference, displacement, structure shift and possible FVG retracement as separate observations. A completed example does not establish a live fill or a win rate.",
+    summary: ["Selected-passage review across the introduction and Episodes 2–41.","Context, liquidity references, displacement and FVG completion as separate observations.","Conditional bias, source-specific variants and no-entry cases.","Risk and performance limitations without promised returns."],
+    keyTerms: [{"term":"Liquidity reference","definition":"A previously visible high, low or group of comparable levels selected before the later move. The chart does not reveal all orders resting there."},{"term":"Confirmation convention","definition":"The stated displacement and candle-completion rule used to recognize a particular example; it is not a guarantee about the next candle."},{"term":"Replay information boundary","definition":"The last completed candle available when an observation is recorded. Later candles must not be used to choose an earlier reference."}],
+    practiceQuestions: ["Which references were visible before the move, and which annotations only become clear afterward?","Which event marks the initial structure crossing in the chosen example, and which later event confirms the FVG?","How would unfilled orders, failed returns and execution costs affect the interpretation of the same chart?"],
     sections: [
       {
         id: '36.1',
-        title: '36.1 Model 13 Trade Plan: The Institutional 2022 Model',
-        content: `ICT Charter Price Action Model 13 is the cornerstone model introduced publicly in the 2022 YouTube Mentorship and thoroughly amplified in the private Charter lectures.
-
-Trade Plan Specifications:
-1. Operational Objective: Trade intraday market structure shifts that target opposing PD Array Matrix objectives.
-2. Active Trading Windows:
-   - Forex Markets: 07:00 AM to 10:00 AM EST (New York Kill Zone).
-   - Index Futures (NQ, ES, YM): 08:30 AM to 11:00 AM EST (Equity Open Window) and 13:30 PM to 15:30 PM EST (Afternoon PM Window).
-3. Risk Management: 1% to 2% maximum equity risk per setup.`
+        title: "36.1 Read the Original Context",
+        content: "The supplied 2022 collection contains an introduction and Episodes 2–41. Our review uses selected timestamped caption passages and chart frames across that collection, with local transcription checks for important wording. It is not an independent audit of the instructor’s results or a claim that every spoken assertion has been verified.\n\nThe introduction emphasizes a simpler learning model. Episodes 2–6 separate context, a prior liquidity reference, displacement, a local structure crossing and an FVG. Later episodes add applications, uncertainty, intermarket comparisons and risk discussion. LearnSMC organizes those ideas into original study notes.\n\nThis public mentorship is not established here as an authenticated numbered Charter Model 13. Reviewing 2022 recordings also does not authenticate private-course labels or later 2025/2026 lecture claims elsewhere in the curriculum."
       },
       {
         id: '36.2',
-        title: '36.2 The Setup Sequence: Raids, Displacement & MSS',
-        content: `Model 13 follows a rigorous four-step execution blueprint:
-
-Step 1: The Liquidity Raid
-- Bearish Setup: Price executes a rapid raid into the AM Session Highs, Lunch Hour Highs, or Previous Day High.
-- Bullish Setup: Price executes a rapid raid into the AM Session Lows, Lunch Hour Lows, or Previous Day Low.
-- The raid purges buy stops or sell stops, absorbing retail orders into institutional books.
-
-Step 2: Rapid Market Structure Shift (MSS)
-- Immediately following the raid, look for a sharp, energetic price movement in the opposite direction.
-- On the 5-minute down to 1-minute chart, price must close with a full candle body beyond a recent swing low (for bearish) or swing high (for bullish).
-- If the shift occurs with wicks only, the setup is invalid. Candle bodies validate true displacement.
-
-Step 3: Fair Value Gap Formation at Equilibrium
-- The displacement leg must leave behind a clean 3-candle Fair Value Gap.
-- For a Bearish Setup: The FVG must ideally sit at or above the 50% Equilibrium of the displacement range.
-- For a Bullish Setup: The FVG must ideally sit at or below the 50% Equilibrium of the displacement range.`
+        title: "36.2 Keep the Observations Separate",
+        content: "First select the prior liquidity reference. Then observe whether price moves beyond it. Assess displacement using the specific lesson’s convention, recording the initial structure crossing separately from later candle completion for an FVG. Finally record whether a return occurs.\n\nThese are separate observations, not proof of hidden institutional positions. A missing return, a continuation beyond the swept level or a failed reaction is a result to record, not a reason to redraw the setup afterward."
       },
       {
         id: '36.3',
-        title: '36.3 Charter Amplified Lecture: Limit Orders & Protection',
-        content: `In the Charter Lecture dedicated to Model 13, ICT details exact order placement mechanics:
-
-Order Execution:
-- Bearish Entry: Place a sell limit order at the high of the discount candle (lower boundary) of the Fair Value Gap, or at its 50% Consequent Encroachment.
-- Bullish Entry: Place a buy limit order at the low of the premium candle (upper boundary) of the Fair Value Gap, or at its 50% Consequent Encroachment.
-
-Stop Loss Protection:
-- For a Bearish Setup: Place the stop loss 1 tick above the swing high established during the liquidity raid. If the FVG is exceptionally large, place the stop above the high of the first candle forming the gap.
-- For a Bullish Setup: Place the stop loss 1 tick below the swing low established during the liquidity raid.
-
-Target Extraction:
-- Target opposing Discount or Premium PD Arrays at or below Equilibrium.
-- Previous session lows, previous day low, or equal relative lows with resting sell-side liquidity.`
+        title: "36.3 An Original Replay Exercise",
+        content: "Hide future candles, write the observation window and mark a reference that already exists. Advance one candle at a time and record the first moment each condition becomes visible. Specify whether the entry is a limit or market order and when an unfilled order expires.\n\nChoose invalidation before entry and calculate position size using the actual product increment and contract value. Include spread, commission and possible slippage. This exercise supplies no universal risk percentage, fixed tick stop or required reward-to-risk ratio, and it is not a claim that ICT prescribed these exact research steps."
       },
       {
         id: '36.4',
-        title: '36.4 The Master Taxonomy: Comparative Synthesis of All 13 Models',
-        content: `With all 13 ICT Charter Price Action Models unified, the institutional trader possesses a complete algorithmic toolkit tailored for every trading horizon:
-
-- Intraday Scalping: Model 1 (10-30 pips via 20-Day IPDA & OTE), Model 11 (30 pips via Daily High/Low runs), and Model 12 (20 pips via OB/FVG synergy).
-- Session Day Trading: Model 5 (40-60 pips via London Judas & NY continuation) and Model 13 (The 2022 flagship sweep + MSS + FVG framework).
-- Weekly Precision & Compounding: Model 2 (50-100 pips via Tuesday Low of the Week), Model 8 (Disciplined 25 pips/week compounding engine), and Model 9 (One Shot One Kill sniper delivery).
-- Dealing Range Mastery: Model 6 (Universal Buyside Range Expansion), Model 7 (The Sell-Side Curve & Market Maker Models), and Model 10 (50% Equilibrium Dealing Range swings).
-- Macro & Swing Horizons: Model 3 (100-300 pips via Commercial COT Hedging) and Model 4 (300-1,000 pips via Quarterly Shifts & Seasonal Tendencies).
-
-Every model obeys the same universal laws of time and price: liquidity must be swept, displacement must confirm intent, and price must rebalance into institutional imbalances before launching into the true Draw on Liquidity.`
+        title: "36.4 Applications and Limits Across the Later Recordings",
+        content: "Episodes 7 and 21 show why daily bias and opening-price references are conditional. Episode 26 deliberately illustrates a countertrend idea; an opposing daily label is not proof that no intraday opportunity can exist. These examples must not be combined into an unrestricted permission to trade every direction.\n\nEpisodes 14, 15 and the silent Episode 28 are execution demonstrations. Their entries, contract counts and exits do not establish a student return target, representative win rate or achievable live fill. Episode 29 explicitly distinguishes the paper-trading display from a promise that students can replicate it.\n\nEpisode 35 compares corresponding lows in ES and NQ for SMT and warns that an apparent divergence can disappear. Episode 41 finishes with risk and drawdown management. Choose one clearly specified study variant; collecting more model names does not validate it."
       }
     ]
   }

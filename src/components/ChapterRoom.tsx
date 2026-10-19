@@ -1,5 +1,6 @@
 import { conciseHeading, studyTopics } from '../utils/searchMetadata';
 import { FinancialDisclaimer } from './FinancialDisclaimer';
+import { CurriculumReview } from './CurriculumReview';
 import { LessonRelatedLinks } from './LessonRelatedLinks';
 import React, { useState, useMemo, useEffect } from 'react';
 import { 
@@ -340,6 +341,8 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                 <CheckCircle2 className="w-3 h-3" />
                 <a href="/about/#author" className="underline">Author and editorial policy</a>
               </span>
+              <span className="text-ink">·</span>
+              <a href="#curriculum-review-heading" className="underline">Sources and interpretation</a>
             </div>
           </div>
 
@@ -352,10 +355,10 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
             {/* Principle callout */}
             <div className="p-4 sm:p-5 rounded-xl bg-ink/[0.02] border-l-2 border-brand space-y-1">
               <div className="text-[0.8125rem] font-sans tabular-nums text-brand uppercase tracking-[0.16em]">
-                INSTITUTIONAL PRINCIPLE
+                LEARNSMC STUDY NOTE
               </div>
               <p className="text-xs sm:text-sm text-ink/90 italic font-normal leading-relaxed">
-                "{chapter.quote}"
+                {chapter.quote}
               </p>
             </div>
           </div>
@@ -399,7 +402,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                     TEXTBOOK SECTIONS ({chapter.sections.length} PARTS)
                   </h2>
                 </div>
-                <span className="text-xs font-sans tabular-nums text-ink-muted uppercase">AUTHENTIC MATERIAL</span>
+                <span className="text-xs font-sans tabular-nums text-ink-muted uppercase">INDEPENDENT STUDY NOTES</span>
               </div>
 
               {/* Sections List */}
@@ -446,7 +449,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                               SIMPLIFIED EXPLANATION
                             </div>
                             <p className="leading-relaxed font-normal text-ink/90">
-                              Think of this simply: {sec.keyTakeaway || "Smart money waits for the crowd's stop orders to cluster, sweeps them for execution fuel, and then triggers rapid price movement in the real intended direction."}
+                              Think of this simply: {sec.keyTakeaway || 'Identify what the chart shows, state the rule you are testing, and record what would contradict your interpretation.'}
                             </p>
                           </div>
                         )}
@@ -481,12 +484,12 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                   </div>
                   <h4 className="text-sm font-semibold text-ink">When is This Concept Violated?</h4>
                   <ul className="text-xs text-ink-secondary space-y-2 list-disc pl-4 leading-relaxed">
-                    <li><strong className="text-ink">Candle Body Violations:</strong> Invalidation occurs when a candle body (not merely a wick) closes past the key anchor level or 50% Consequent Encroachment (CE).</li>
-                    <li><strong className="text-ink">Lack of Displacement:</strong> If price lingers or consolidates inside an imbalance without immediate directional departure, the orderflow signature is degraded.</li>
-                    <li><strong className="text-ink">Time Window Expiration:</strong> Setups that do not trigger within the active ICT Killzone (London, NY AM, NY PM) are mechanically cancelled.</li>
+                    <li><strong className="text-ink">Candle Body Violations:</strong> Define whether a wick, midpoint close or full-zone close invalidates your chosen setup. These are different rules; no single rule applies to every chapter.</li>
+                    <li><strong className="text-ink">Lack of Displacement:</strong> Define displacement relative to the instrument and timeframe before replay; slow movement alone does not identify institutional intent.</li>
+                    <li><strong className="text-ink">Time Window Expiration:</strong> If your study uses an expiry time, state it in advance and cancel unfilled orders under that rule. A session boundary is not universal invalidation.</li>
                   </ul>
                   <div className="text-[0.8125rem] font-sans tabular-nums text-amber-700 bg-amber-500/10 border border-amber-500/20 rounded p-2.5">
-                    RULE: When an invalidation condition is triggered, the premise is falsified. Discard the setup immediately.
+                    RULE: Follow the invalidation written before entry; a stopped trade does not by itself disprove an entire framework.
                   </div>
                 </div>
 
@@ -498,9 +501,9 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                   </div>
                   <h4 className="text-sm font-semibold text-ink">Capital Preservation Architecture</h4>
                   <ul className="text-xs text-ink-secondary space-y-2 list-disc pl-4 leading-relaxed">
-                    <li><strong className="text-ink">Strict Capital Cap:</strong> Never risk more than 0.5% to 1.0% of total portfolio equity on any single institutional entry model.</li>
-                    <li><strong className="text-ink">Mechanical Stop-Loss:</strong> Placed strictly beyond the invalidating swing high/low or wick displacement—never arbitrarily chosen by pip count.</li>
-                    <li><strong className="text-ink">Asymmetric Payoff:</strong> Minimum 1:2.0 Risk-to-Reward ratio to maintain positive mathematical expectancy across all market regimes.</li>
+                    <li><strong className="text-ink">Strict Capital Cap:</strong> Choose a risk limit suitable for your circumstances. Include correlated positions, contract increments and possible losses beyond a planned stop; no percentage is universally safe.</li>
+                    <li><strong className="text-ink">Mechanical Stop-Loss:</strong> Connect the planned stop to a stated invalidation and instrument rules. A stop-market order may slip; a stop-limit order may remain unfilled.</li>
+                    <li><strong className="text-ink">Asymmetric Payoff:</strong> Planned reward-to-risk alone does not establish positive expectancy. Evaluate win frequency, average realized wins and losses, and costs together.</li>
                   </ul>
                   <div className="text-[0.8125rem] font-sans tabular-nums text-teal/90 bg-teal/10 border border-teal/20 rounded p-2.5">
                     PRINCIPLE: Trade management and survival precede profit. Invalidation must be predefined before entry.
@@ -784,10 +787,10 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                         {isRevealed && (
                           <div className="p-4 sm:p-5 bg-ink/[0.01] border-t border-ink/[0.06] text-xs sm:text-sm text-ink-secondary space-y-2">
                             <div className="font-sans tabular-nums text-[0.8125rem] uppercase text-teal tracking-[0.16em]">
-                              INSTITUTIONAL ANALYSIS &amp; MECHANICS:
+                              STUDY PROMPT
                             </div>
                             <p className="leading-relaxed font-normal">
-                              Verify how this analytical question connects directly to liquidity pools, resting limit orders, and algorithmic delivery sequences. Always ask: <em>Whose stop-loss was targeted, and what liquidity did the algorithm seek next?</em>
+                              Write an answer using the chapter’s definitions. Separate what is visible on the chart from what you infer, state any missing evidence, and describe an example that would contradict your interpretation.
                             </p>
                           </div>
                         )}
@@ -893,6 +896,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
         </div>
       </ScrollReveal>
 
+      <CurriculumReview chapter={chapter} />
       <LessonRelatedLinks chapterId={chapter.id} />
       <FinancialDisclaimer />
     </div>

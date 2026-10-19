@@ -2,6 +2,7 @@
 @source not "../outputs";
 @import "./styles/light-theme.css";
 @import "./styles/typography.css";
+@import "./styles/curriculum-review.css";
 
 @theme {
   --font-sans: "Source Sans 3", system-ui, sans-serif;

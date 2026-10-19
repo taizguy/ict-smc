@@ -1,4 +1,6 @@
 import { publisherUrdu } from './publisher-urdu';
+import curriculumCorrections from './curriculum-corrections-urdu.json';
+import { curriculumReviewUrdu } from './curriculum-review-urdu';
 import { terminology } from './terminology';
 import generated from './urdu-generated.json';
 import { editorialUrdu } from './editorial-urdu';
@@ -15,6 +17,8 @@ export const urdu: Record<string, string> = {
   ...toolsUrdu,
   ...reviewedExceptions,
   ...chapterHeadings,
+  ...curriculumCorrections,
+  ...curriculumReviewUrdu,
   'Search concepts, chapters, algorithms (FVG, OB, AMD)...': 'تصورات، ابواب اور ماڈلز تلاش کریں (FVG، OB، AMD)…',
   'Close Search (Esc)': 'تلاش بند کریں (Esc)',
   'ENCYCLOPEDIA CONCEPTS': 'اصطلاحات اور تصورات',

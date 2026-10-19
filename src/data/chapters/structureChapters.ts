@@ -7,70 +7,23 @@ export const structureChapters: TextbookChapter[] = [
     slug: 'what-is-a-swing-the-atom-of-structure',
     part: 'Part II - Price Structure',
     title: 'What Is a Swing? The Atom of Structure — 3-Candle Fractals & Multi-Timeframe Anchors',
-    quote: 'Before you can identify a trend, a break of structure, or a liquidity pool, you must know what constitutes a true market pivot. A swing is not a subjective curve drawn by eye; it is a mathematically defined, three-candle mechanical fractal.',
+    quote: "A stated swing convention makes chart observations reproducible. Choosing the timeframe and the relevant reference still requires context; a precise label is not a forecast.",
     level: 1,
-    summary: [
-      'The 3-candle fractal definition: The universal mechanical atom of market structure.',
-      'Swing High vs. Swing Low anatomy: Peak candle flanked by lower highs / higher lows.',
-      'Intermediate-Term Swings (ITS) vs. Short-Term Swings (STS) vs. Long-Term Swings (LTS).',
-      'Internal vs. External range swings: Mapping the true dealing range.',
-      'Mechanical filtering: How to prevent confusing minor intraday noise with genuine structural pivots.'
-    ],
-    keyTerms: [
-      { term: 'Swing High', definition: 'A three-candle mechanical formation where the middle candle has a higher high than both the candle immediately preceding it and the candle immediately following it.' },
-      { term: 'Swing Low', definition: 'A three-candle mechanical formation where the middle candle has a lower low than both the candle immediately preceding it and the candle immediately following it.' },
-      { term: 'Short-Term High / Low (STH/STL)', definition: 'A standard three-candle swing point formed on the active trading timeframe representing immediate local liquidity.' },
-      { term: 'Intermediate-Term High / Low (ITH/ITL)', definition: 'A swing point flanked by lower swing highs or higher swing lows that purges a short-term swing point, often forming inside a key PD array.' },
-      { term: 'Long-Term High / Low (LTH/LTL)', definition: 'A macro structural turning point formed on the Daily, Weekly, or Monthly timeframe that anchors major dealing ranges.' }
-    ],
-    practiceQuestions: [
-      'What exact candle-by-candle criteria must be satisfied for a 3-candle swing high to be mechanically confirmed?',
-      'Why is an Intermediate-Term Swing far more reliable as a structural anchor than a basic Short-Term Swing?',
-      'How does the concept of internal vs. external swings prevent a trader from misidentifying a minor pullback as a trend reversal?',
-      'Can a swing point be confirmed while the third candle is still open and ticking?',
-      'How does an algorithm use old swing highs and swing lows to gauge whether the market is in an expansion or retracement cycle?'
-    ],
+    summary: ["A stated three-candle convention for recognizing swing highs and lows.","Candle completion and the treatment of equal prices.","Short-, intermediate- and longer-term swings as a selected study hierarchy.","Timeframe and context when choosing the reference relevant to a setup."],
+    keyTerms: [{"term":"Swing High","definition":"Under the strict convention used here, a completed middle candle has a high above both neighboring highs."},{"term":"Swing Low","definition":"Under the strict convention used here, a completed middle candle has a low below both neighboring lows."},{"term":"Short-Term High / Low (STH/STL)","definition":"A local swing on the selected chart scale; identifying a swing does not measure the orders around it."},{"term":"Intermediate-Term High / Low (ITH/ITL)","definition":"A selected reference within the parent structure, interpreted using neighboring swings and the specific lesson context."},{"term":"Long-Term High / Low (LTH/LTL)","definition":"A parent structural reference relative to the scale being studied; it is not restricted to daily or higher charts."}],
+    practiceQuestions: ["When can the three-candle pattern first be identified under the chosen completion rule?","Which parent range and references were selected before the later move?","How would equal highs or lows change the classification under your stated tie policy?","What would invalidate the interpretation without changing the original annotation?"],
     sections: [
       {
         id: '7.1',
         title: '7.1 The Mechanical 3-Candle Fractal Definition',
-        content: `Many beginner traders struggle with market structure because they view swings subjectively. One trader looks at a squiggly line on an indicator, while another draws a diagonal trendline across random wicks. In institutional trading, subjectivity is fatal.
-
-A Swing is the indivisible atom of price structure. ICT defines swings mechanically using the Three-Candle Fractal Rule:
-
-1. The Mechanical Swing High:
-- Candle 1: Forms a high.
-- Candle 2 (The Apex): Advances and prints a High that is strictly higher than Candle 1's high.
-- Candle 3 (The Confirmation): Prints a High that is strictly lower than Candle 2's high.
-- Confirmation Rule: The Swing High is NOT validated until Candle 3 closes! While Candle 3 is still ticking, price could still exceed Candle 2's high, invalidating the pattern.
-
-2. The Mechanical Swing Low:
-- Candle 1: Forms a low.
-- Candle 2 (The Trough): Drops and prints a Low that is strictly lower than Candle 1's low.
-- Candle 3 (The Confirmation): Prints a Low that is strictly higher than Candle 2's low.
-- Confirmation Rule: The Swing Low is validated only when Candle 3 closes with a higher low than Candle 2.
-
-This definition is strictly binary: a 3-candle fractal either exists or it does not. There is zero room for guesswork or opinion. Every market structure shift, break of structure, and liquidity pool begins with this three-candle foundation.`,
-        keyTakeaway: 'A valid swing requires three consecutive candles where the middle candle creates an isolated extreme. It is only confirmed once the third candle closes.'
+        content: "For these notes, use a strict three-candle swing convention. A swing high has a middle candle whose high is above both neighboring highs; a swing low has a middle candle whose low is below both neighboring lows. Wait for the right-hand candle to complete. Before that, its changing high or low can remove the candidate pattern.\n\nState how equal highs or lows are handled. Under this strict convention, a tie does not qualify; a different research convention may group similar prices into a zone. Keep the selected rule fixed rather than changing it after seeing the later move.\n\nThe comparison becomes mechanical once the timeframe, completion rule and tie policy are chosen. Selecting which swing or group of highs matters for a setup still involves context. Episode 3’s opening reference selection is a useful example of that distinction; it is not evidence that every visible swing forecasts a reversal.",
+        keyTakeaway: "Define the three-candle and tie rules explicitly; keep mechanical pattern recognition separate from contextual reference selection."
       },
       {
         id: '7.2',
         title: '7.2 The Hierarchy of Swings: STS, ITS, and LTS',
-        content: `Not all swing points carry equal institutional weight. To read the tape accurately, you must organize swings into a three-tiered structural hierarchy:
-
-1. Short-Term Swings (STS):
-Basic 3-candle fractals that form continuously on any timeframe. On a 1-minute or 5-minute chart, you will see dozens of short-term highs and lows per session. These represent minor intraday fluctuations and local retail stop clusters.
-
-2. Intermediate-Term Swings (ITS):
-An Intermediate-Term High (ITH) is a swing high that has a lower swing high to its left and a lower swing high to its right. Crucially, an authentic ITS almost always performs a specific institutional task: it sweeps a prior Short-Term High into a higher-timeframe PD array (such as an FVG or Order Block) before reversing. 
-Intermediate swings are the primary turning points used to establish trend direction and anchor dealing ranges.
-
-3. Long-Term Swings (LTS):
-Formed on Daily, Weekly, and Monthly charts. These swings represent macroeconomic liquidity regimes. When a Long-Term Swing is swept or broken, it signals quarterly institutional portfolio rebalancing.
-
-The Golden Rule of Structural Integrity:
-A market cannot experience a genuine trend reversal until an Intermediate-Term Swing (ITS) has been structurally violated with displacement. Breaking a minor Short-Term Swing is frequently just internal range noise.`,
-        keyTakeaway: 'Filter market noise by recognizing swing hierarchy: Short-Term Swings provide intraday liquidity; Intermediate-Term Swings define directional structure; Long-Term Swings anchor macroeconomic regimes.'
+        content: "Swing hierarchy describes relationships within the selected chart scale; short-, intermediate- and long-term are not permanent labels assigned only by timeframe. In Episode 12, ICT uses a higher-timeframe parent structure to interpret smaller swings and also considers rebalancing when classifying an intermediate reference.\n\nDo not turn this into the rule that every daily swing proves a quarterly rebalance, or that an intermediate swing must always sweep a prior high. State the parent range, the selected references and what later price would invalidate the interpretation. A smaller swing can change while the larger reference remains intact.\n\nFor practice, mark the hierarchy before revealing the next candles. If an expected reference fails, retain the original annotation and reassess. A stopped example does not justify moving the reference afterward.",
+        keyTakeaway: "State the parent range and reference-selection rule; swing hierarchy is context, not evidence of institutional positions."
       },
       {
         id: '7.3',
@@ -282,24 +235,24 @@ The Conservative Approach (Confirmation Entry):
     slug: 'market-structure-shift-mss-verified-directional-shift',
     part: 'Part II - Price Structure',
     title: 'Market Structure Shift (MSS): Verified Directional Shift — The Institutional Reversal Blueprint',
-    quote: 'A true Market Structure Shift requires four non-negotiable pillars: a prior liquidity sweep into a higher-timeframe PD array, violent displacement, an authoritative candle body close through an intermediate swing, and the creation of an energetic Fair Value Gap.',
+    quote: "In this study template, an MSS combines a predefined swing break with displacement and broader context. The label describes observed structure; it does not verify the next market direction.",
     level: 1,
     summary: [
-      'The four non-negotiable pillars of a genuine Market Structure Shift (MSS).',
+      "A predefined MSS checklist and the limits of its confirmation.",
       'Differentiating authentic MSS from retail "fake-outs" and stop hunts.',
       'The role of the displacement anchor and the creation of the execution FVG.',
       'Top-down timeframe alignment: Pairing HTF narrative with LTF MSS confirmation.',
       'The complete mechanical execution template: Entry, Stop Loss, and Invalidation rules.'
     ],
     keyTerms: [
-      { term: 'Market Structure Shift (MSS)', definition: 'The verified, authoritative reversal of intermediate market structure characterized by a liquidity sweep, violent displacement, a candle body close through a significant swing point, and the creation of a Fair Value Gap.' },
+      { term: 'Market Structure Shift (MSS)', definition: "A shift through a selected prior swing, assessed with displacement and context under a stated rule. It describes observed structure and does not establish that a reversal will continue." },
       { term: 'Displacement Anchor', definition: 'The origin candle or price level from which the institutional impulse originated that broke the market structure.' },
       { term: 'Execution FVG', definition: 'The specific three-candle price imbalance created by the displacement wave during an MSS, serving as the primary entry zone on the subsequent retracement.' },
       { term: 'Structural Invalidation Level', definition: 'The extreme swing high or low formed during the liquidity sweep; a price close beyond this level completely invalidates the MSS setup.' }
     ],
     practiceQuestions: [
-      'What are the four mandatory criteria that must all be present simultaneously for an MSS to be valid?',
-      'Why is an MSS that occurs without a prior liquidity sweep considered a low-probability trap?',
+      "Which MSS conditions are definitions, and which are additional filters in this study template?",
+      "How would you compare shifts with and without a prior sweep without assuming either has a higher win rate?",
       'Where is the exact stop loss placed when trading a retracement following an MSS?',
       'How does the concept of Consequent Encroachment (50%) apply to the execution FVG created during an MSS?',
       'What is the difference in expectancy between an MSS confirmed on a 5-minute chart versus an MSS confirmed on a 15-minute or 1-Hour chart?'
@@ -307,68 +260,28 @@ The Conservative Approach (Confirmation Entry):
     sections: [
       {
         id: '11.1',
-        title: '11.1 The Four Non-Negotiable Pillars of an MSS',
-        content: `A Market Structure Shift (MSS) is the single most important execution pattern in the entire ICT and Smart Money Concepts methodology. It represents the precise moment when the Interbank Price Delivery Algorithm transitions from one directional regime to another.
-
-Because retail traders frequently label any broken line as an MSS, they get chopped to pieces in consolidations. To ensure you never fall into this trap, memorize The Four Pillars of a True MSS:
-
-1. Pillar 1: Prior Liquidity Sweep into HTF Key PD Array
-Price must first sweep a meaningful pool of Buy-Side or Sell-Side Liquidity (e.g., Previous Day High, Asian Range High, Equal Highs) and/or tap into an authentic Higher Timeframe PD Array (Daily FVG, 4H Order Block). Without this, there is no institutional catalyst for a reversal!
-
-2. Pillar 2: Violent Displacement Wave
-The reversal cannot be sluggish or hesitant. It must manifest as rapid, energetic displacement candles featuring large bodies and minimal wicks, demonstrating that institutional algorithms have cleared the opposing order book.
-
-3. Pillar 3: Candle Body Close Through an Intermediate Swing
-The displacement wave must shatter a confirmed Intermediate-Term Swing (not just a tiny 1-candle fluctuation). Furthermore, at least one candle must close its solid BODY beyond that swing point. A wick is an automatic invalidation!
-
-4. Pillar 4: Creation of a Clean Fair Value Gap (FVG)
-The displacement must be so aggressive that it creates an unmistakable three-candle imbalance. This FVG serves as physical proof of institutional imbalance and provides the exact entry vehicle for your trade.
-
-If even ONE of these four pillars is missing, DO NOT TAKE THE TRADE. The shift is unverified.`,
-        keyTakeaway: 'A true MSS requires: (1) Liquidity sweep, (2) Violent displacement, (3) Candle body close through an intermediate swing, and (4) Creation of an energetic Fair Value Gap.'
+        title: "11.1 A Defined MSS Study Checklist",
+        content: "Start with an identifiable swing and a stated timeframe. A bullish candidate breaks a selected prior swing high; a bearish candidate breaks a selected prior swing low. Record whether the rule requires a candle close. A wick-only break is a different observation, not proof of a particular participant’s intent.\n\nAssess displacement relative to recent candles rather than using words such as violent without a definition. A prior sweep, higher-timeframe reference and an FVG can be additional filters in a chosen execution model. Do not present this combined checklist as the universal definition used in every ICT lecture.\n\nThe broken swing must have been identifiable before the break. If a three-candle pivot needs a right-hand candle, wait for that candle to complete. A lower-timeframe break can occur inside a higher-timeframe continuation; neither the label nor the filter set guarantees a reversal.",
+        keyTakeaway: "Choose swing, close and displacement rules in advance. Additional confluence filters are model choices, not proof of future direction."
       },
       {
         id: '11.2',
         title: '11.2 The Complete Mechanical MSS Execution Blueprint',
-        content: `Once a valid Market Structure Shift has been verified on your execution timeframe (typically 1-minute, 5-minute, or 15-minute), you execute using a strict mechanical protocol:
-
-Step 1: Identify the Execution Array
-Locate the Fair Value Gap created during the displacement wave.
-- If the FVG is wide, mark its upper boundary, lower boundary, and calculate the 50% Consequent Encroachment (CE) using your Fibonacci or measurement tool.
-
-Step 2: Order Placement
-- Aggressive Entry: Place a Limit Order at the proximal boundary of the FVG (the first edge price reaches on retracement).
-- Conservative Entry: Place a Limit Order at the 50% Consequent Encroachment (CE) of the FVG. This offers a tighter stop and higher R:R, though you risk missing trades that only tap the outer edge.
-
-Step 3: Stop Loss Placement (The Invalidation Anchor)
-Place your Stop Loss strictly outside the extreme swing point established during the liquidity sweep (the high of the sweep for a short setup, or the low of the sweep for a long setup).
-Why? If price violates the extreme of the sweep, the entire institutional reversal narrative is mechanically dead!
-
-Step 4: Take-Profit Targeting (IRL to ERL)
-- Target 1 (Partial 50% TP): The 50% equilibrium of the higher-timeframe dealing range or the first internal FVG.
-- Target 2 (Final Runner TP): The opposing External Range Liquidity pool (e.g., the opposing session low, Previous Day Low, or Equal Lows).`,
-        keyTakeaway: 'Enter at the proximal edge or 50% CE of the displacement FVG; place stops beyond the sweep extreme; target the opposing external liquidity pool.'
+        content: "For a paper study of the illustrated model, select the liquidity reference and the nearby structure level before price reaches them. Record the timeframe and the candle-close condition. Observe whether the break shows displacement relative to surrounding candles; do not choose a new swing after seeing the result.\n\nIf a completed FVG follows, an edge entry and a midpoint entry are separate execution variants. Neither is automatically conservative or superior. A deeper order may improve the planned ratio but remain unfilled, while a tighter stop may be reached more often. Record the fill assumption explicitly.\n\nChoose the invalidation and target before entry. The sweep extreme can be one candidate for invalidation in this study, but the actual stop distance, size increment and costs depend on the instrument. Measure the outcome after spread, fees and slippage; do not infer an executable trade from the finished chart alone.",
+        keyTakeaway: "Treat edge and midpoint entries as different testable variants; state invalidation, fill assumptions and costs before comparing outcomes."
       },
       {
         id: '11.3',
-        title: '11.3 Real-Market Tape Reading: False Shifts vs. True Shifts',
-        content: `Let us examine why retail traders constantly get trapped by "False Market Structure Shifts":
-
-The Fake Shift Scenario:
-1. Price is in a strong 4-Hour uptrend.
-2. In the middle of the London session, price pulls back slightly and breaks a minor 5-minute low by 2 ticks.
-3. Retail traders see the break and shout: "MSS! Market has turned bearish! Short now!"
-4. What happened to Pillar 1? Price did NOT sweep a higher-timeframe buy-side liquidity pool; it was simply drifting in open space.
-5. What happened to Pillar 2? The break occurred with small, overlapping, choppy candles with long wicks.
-6. What happened to Pillar 4? No clean FVG was created.
-7. Within 15 minutes, the higher-timeframe algorithm resumes the bullish trend, driving price through the roof and vaporizing the retail short positions.
-
-The Professional Filter:
-Never look for an MSS in the middle of a range. Always ask:
-"Has the algorithm completed its objective on the higher timeframe?"
-Only when a major Draw on Liquidity has been satisfied should you pull out your magnifying glass and look for the four pillars of a Market Structure Shift.`,
-        keyTakeaway: 'False shifts occur in the middle of ranges with sluggish candles. True shifts occur only after major liquidity sweeps, backed by violent institutional displacement.'
-      }
+        title: "11.3 An Intraday Shift Is Not a Multi-Day Forecast",
+        content: "Early in Episode 3, ICT distinguishes an intraday market structure shift from a break associated with a longer-duration move. For study, a local directional change can produce an intraday leg without establishing that the higher-timeframe trend has ended.\n\nKeep the observation scale visible. A lower-timeframe break inside a larger uptrend may be a pullback, a more lasting reversal or an unresolved transition. The selected definition tells you when to label the local event; later price action determines which path actually develops.\n\nRecord both the original local reference and the higher-timeframe context before replay. If the intraday leg later reverses, retain that result. Avoid calling every unsuccessful example a fake shift merely because the outcome became known.",
+        keyTakeaway: "State the timeframe and evaluate the local event without assuming that it forecasts the final daily or weekly direction."
+      },
+{
+  "id": "11.4-source-reading",
+  "title": "11.4 The Displacement-and-Close Example in Episode 6",
+  "content": "Episode 6’s bearish MSS discussion emphasizes a quick displacement lower rather than a small, hesitant move. A close below the reference is described as preferable for greater significance. Do not turn a stated preference into a universal mandatory close rule.\n\nIn Episode 3’s bullish example around 13:45, the initial move through a short-term high does not have to close above that high. The discussion then waits for a later candle to complete to assess the FVG. The initial crossing, gap confirmation and possible entry are separate events.\n\nFor replay, write which lesson and example you are studying. Mark the prior reference before the crossing and record when each later condition becomes visible. If you add a stricter close filter for research, label it as your own variation rather than attributing that extra condition to every ICT setup.",
+  "keyTakeaway": "Match the rule to the specific example: the first swing crossing, FVG completion and entry are separate events."
+}
     ]
   }
 ];

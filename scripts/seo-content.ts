@@ -1,4 +1,8 @@
 import { TERMS_SECTIONS, ABOUT_GUIDANCE, CONTACT_GUIDANCE, publisherPageRevision } from '../src/data/publisherPageCopy';
+import { createElement } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { CurriculumReview } from '../src/components/CurriculumReview';
+import { curriculumReview, curriculumReviewDate } from '../src/data/curriculumReview';
 import { searchTitle, searchDescription, conciseHeading, studyTopics } from '../src/utils/searchMetadata';
 import { toolStudyGuide } from '../src/utils/toolStudyGuides';
 import { correctToolDocument } from './tools-content';
@@ -150,10 +154,12 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   if (/^\/tools\/(journal|profile)\//.test(path) || path === '/adsense/') r.isNoindex = true;
   const chapter = textbookChapters.find(c => path === `/learn/${c.slug}/`);
   if (chapter) {
+    r.bodyHtml += renderToStaticMarkup(createElement(CurriculumReview, { chapter }));
     r.bodyHtml += byline + section('Continue learning', list(relatedChapters(chapter.id).map(c => link(`/learn/${c.slug}/`, c.title)))) +
       link(`/curriculum/${topicClusters.find(c => c.part === chapter.part)!.slug}/`, `Explore ${chapter.part}`);
     r.schemaJson = { ...r.schemaJson, '@type': 'LearningResource', author: lessonAuthor, publisher,
-      url: r.canonical, inLanguage: 'en', isAccessibleForFree: true };
+      url: r.canonical, inLanguage: 'en', isAccessibleForFree: true, dateModified: curriculumReviewDate,
+      citation: curriculumReview(chapter).sources.map(source => ({ '@type': 'CreativeWork', name: source.title, url: source.url })) };
   }
   const children = routes.filter(c => c !== r && new URL(c.canonical).pathname.startsWith(path) &&
     !routes.some(mid => mid !== r && mid !== c && new URL(mid.canonical).pathname.startsWith(path) && new URL(c.canonical).pathname.startsWith(new URL(mid.canonical).pathname)));

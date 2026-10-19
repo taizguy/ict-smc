@@ -1,4 +1,5 @@
 import { articlePages } from './article-pages';
+import { curriculumReviewDate } from '../src/data/curriculumReview';
 import { URDU_PUBLISHED } from '../src/i18n/release';
 import { generateUrduPages } from './urdu-pages';
 import { orderRedirectRules } from './redirect-rules';
@@ -1517,7 +1518,7 @@ for (const ch of textbookChapters) {
     bodyHtml: `
       <section style="margin-bottom: 2rem;">
         <blockquote style="border-left: 3px solid #256552; padding-left: 1rem; margin: 0 0 1.5rem 0; font-style: italic; color: #52645b;">
-          "${escapeHtml(ch.quote)}"
+          ${escapeHtml(ch.quote)}
         </blockquote>
         <h2 style="font-size: 1.35rem; color: #223b35; margin-bottom: 0.75rem;">Chapter Executive Summary</h2>
         <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; line-height: 1.8; color: #435b50;">
@@ -1681,7 +1682,7 @@ for (const route of allRoutes) {
 
     sitemapUrls.push({
       loc: route.url,
-      lastmod: (() => { const a = writtenArticles.find(a => route.canonical.endsWith(`/articles/${a.slug}/`)); return a?.updated || a?.date || todayIso; })(),
+      lastmod: (() => { const a = writtenArticles.find(a => route.canonical.endsWith(`/articles/${a.slug}/`)); return a?.updated || a?.date || (textbookChapters.some(ch => route.canonical === getLessonCanonicalUrl(ch.slug)) ? curriculumReviewDate : todayIso); })(),
       changefreq,
       priority
     });

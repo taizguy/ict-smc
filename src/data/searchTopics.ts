@@ -31,7 +31,7 @@ export const studyTopics: Record<string, string> = {
   "/learn/ict-charter-models-6-and-7-universal-models/": "ICT Charter Models 6–7: Market Maker Curves",
   "/learn/ict-charter-models-8-and-9-precision-and-osok/": "ICT Charter Models 8–9: Precision & OSOK",
   "/learn/ict-charter-models-10-11-and-12/": "ICT Charter Models 10–12: Range & Liquidity",
-  "/learn/ict-charter-model-13-2022-youtube-model/": "ICT Charter Model 13: The 2022 Model",
+  "/learn/ict-charter-model-13-2022-youtube-model/": "ICT 2022 Mentorship: Source Study Guide",
   "/learn/core-content-month-1-elements-of-trade-setup/": "ICT Core Month 1: Trade Setup Basics",
   "/learn/core-content-month-2-growing-small-accounts/": "ICT Core Month 2: Account Risk & Reward",
   "/learn/core-content-month-3-institutional-sponsorship-and-traps/": "ICT Core Month 3: Timeframes & Traps",

@@ -78,62 +78,30 @@ Once a liquidity run completes and is met with a sharp displacement, an 'Impulse
     title: 'ICT Core Content Month 2: Growing Small Accounts & High-Reward Setups',
     part: 'Part XI - ICT Mentorship Core Content Master Curriculum',
     level: 3,
-    quote: 'You do not need 100 pips a day to become wealthy. Capturing 20 to 30 pips a week with consistent 3:1 reward-to-risk will compound a small account faster than any reckless gambling ever could.',
-    summary: [
-      'The mathematics of compounding small trading accounts without reckless leverage.',
-      'Framing asymmetric setups with minimum 3:1 to 5:1+ Reward-to-Risk ratios.',
-      'The 20 to 30 pips per week realistic target framework that eliminates overtrading.',
-      'Treating drawdowns and losses as normal operational business expenses.'
-    ],
-    keyTerms: [
-      { term: 'Asymmetric Risk', definition: 'A trade structure where potential profit is multiple times greater than the capital risked (e.g., risking $100 to make $300-$500).' },
-      { term: 'Compounding Plan', definition: 'Gradually increasing lot sizes in lockstep with equity milestones rather than over-leveraging individual trades.' },
-      { term: 'Operational Cost of Trading', definition: 'Viewing controlled stop loss executions not as emotional defeats, but as inventory expense.' },
-      { term: '20-Pip Standard', definition: 'The core weekly objective advocated by ICT to achieve consistent, stress-free profitability.' }
-    ],
-    practiceQuestions: [
-      'Why does ICT advocate targeting only 20 to 30 pips per week for account growth?',
-      'How does an asymmetric 3:1 reward-to-risk ratio protect a trader even with a 40% win rate?',
-      'What are the psychological triggers that cause small account traders to blow their capital?'
-    ],
+    quote: "Account growth is an uncertain result of realized wins, losses, costs and sizing. A weekly pip goal is not an income promise.",
+    summary: ["Compounding arithmetic versus uncertain realized returns.","Planned reward-to-risk versus expectancy after costs.","Drawdown, contract increments and emotional risk.","Distinguishing retrospective study from real-time execution."],
+    keyTerms: [{"term":"Planned reward-to-risk","definition":"The ratio of a proposed profit target to a proposed loss; actual outcomes can differ."},{"term":"Drawdown","definition":"A decline from a prior account-equity peak, measured using a stated balance or equity convention."},{"term":"Contract increment","definition":"The permitted position-size step for a product; it can prevent a small account from matching a chosen risk budget."}],
+    practiceQuestions: ["Which assumptions are missing from a smooth compounding projection?","How do costs and realized outcomes change planned reward-to-risk?","What would make the minimum contract size too large for your study budget?"],
     sections: [
       {
         id: '38.1',
-        title: '38.1 The Mathematics of Compounding: The 20-Pip Reality',
-        content: `Month 2 of the ICT Mentorship addresses the single greatest pitfall for retail traders: attempting to get rich overnight by flipping small accounts with maximum leverage.
-
-ICT deconstructs this delusion through compounding mathematics:
-- If a trader aims for just 20 to 30 pips per week with a disciplined 1% to 2% risk per trade, the compounding curve is exponential.
-- In a 4-week month, 80 to 100 pips of precision capture with structured lot sizing doubles and triples account equity across multi-month cycles without ever subjecting the account to catastrophic drawdown risk.
-- High-frequency scalp chasing (taking 5 to 10 trades a day) only generates broker commissions and cognitive exhaustion.`
+        title: "38.1 Compounding Arithmetic Is Not a Return Forecast",
+        content: "Compounding changes the base used for later position sizing. It does not supply a positive return. A fixed pip objective cannot determine account growth without the instrument’s pip value, position size, realized losses and costs.\n\nRemove the assumption that a few weeks of pip targets can double or triple equity without catastrophic drawdown risk. Leverage and concentrated exposure can produce severe losses even when each planned stop looks small. A displayed account run-up is not a representative distribution of outcomes.\n\nThe 2022 examples are related study material here; they do not authenticate every earlier Month 2 course label or weekly target. Compare flat and changing position sizes using the same recorded sequence rather than projecting a smooth growth curve."
       },
       {
         id: '38.2',
         title: '38.2 Asymmetric Risk: Framing 3:1 to 5:1+ Reward-to-Risk',
-        content: `To build small accounts safely, every setup must offer asymmetry:
-- Never enter a trade offering a 1:1 risk-to-reward ratio.
-- The standard minimum is 3:1; premium setups frequently deliver 5:1 or 8:1.
-- With a 3:1 reward-to-risk ratio:
-  - If you take 10 trades and lose 6 of them (-6R), your 4 winners generate +12R, leaving you net +6R profit despite winning only 40% of your trades.
-- Asymmetric setups are found by anchoring stop losses tightly behind HTF structural invalidation points (such as order block bodies or liquidity raid highs) while targeting expansive external liquidity pools.`
+        content: "Reward-to-risk compares a planned target with a planned loss. It does not by itself establish expectancy. In a purely hypothetical ten-trade sequence with four wins of 3R and six losses of 1R, the gross result is +6R before costs. This arithmetic does not establish a 40% win rate or prove that every win realizes its target.\n\nRecord actual average wins, losses, execution costs and unfilled orders. Tightening a stop changes which trades survive and may increase loss frequency. No minimum ratio makes every trade safe, and the 2022 review does not verify a compulsory 3:1 rule for all models."
       },
       {
         id: '38.3',
         title: '38.3 Managing Drawdown as the Operational Cost of Business',
-        content: `A merchant selling clothing expects to pay rent, electricity, and shipping costs. In trading, a stop loss execution is simply your operational cost of doing business.
-
-Small accounts fail because traders take losses personally:
-- When a loss occurs, an untrained trader experiences emotional pain, leading to revenge trading, doubling lot sizes, and skipping checklist rules.
-- Under the ICT Month 2 protocol, risk is pre-calculated to the exact penny before order submission. If the stop is hit, the trader accepts that the market simply chose an alternate liquidity route and moves on to the next session.`
+        content: "Episode 41 discusses reducing planned risk after losses rather than doubling exposure to recover quickly. Its percentage sequence is an illustrative teaching rule, not a universally safe allocation or a promise that drawdown stays below a fixed amount.\n\nTranslate a risk budget into the product’s actual contract or lot increment. If the smallest permitted size exceeds the budget, the arithmetic does not justify taking the trade anyway. Gaps, slippage and correlated positions can make realized loss exceed the planned amount.\n\nKeep financial losses visible in the journal; calling a loss an operating cost does not make it harmless. Define a stopping condition for emotional trading and review the strategy rather than assuming recovery must follow."
       },
       {
         id: '38.4',
         title: '38.4 The Anti-FOMO Execution Checklist & Trading Plan Discipline',
-        content: `To protect small accounts from self-sabotage, Month 2 outlines non-negotiable execution rules:
-1. One setup per day maximum during learning and small account compounding.
-2. If the first trade is a winner, turn off the charts for the day. Greed causes traders to give back morning profits during the afternoon session.
-3. If two consecutive losses occur in a week, cease trading until the following Monday.
-4. Log every trade in an institutional journal with pre-trade and post-trade screenshot evidence.`
+        content: "Episode 11 discusses the urge to trade again after a large win and describes using a paper account instead of immediately risking more live capital. Episode 24 discusses accepting a missed move. Neither establishes one compulsory daily trade count or a guaranteed recovery timetable.\n\nFor an original LearnSMC exercise, write your session limit, maximum planned exposure and reasons to stop before replay. Keep learning screenshots separate from actual execution records. Episode 27’s retrospective annotation exercise must not turn a hindsight description into a claimed real-time forecast.\n\nRecord what was known at entry, what was learned afterward and whether the rule was followed. A profitable rule violation is still a violation; a losing compliant example remains part of the evidence."
       }
     ]
   },
@@ -266,11 +234,7 @@ When US 10-Year Yields rise relative to German Bunds, capital flows into the US 
       {
         id: '40.4',
         title: '40.4 Rejection Blocks, Vacuum Blocks & Liquidity Voids',
-        content: `Rounding out the 10-tier PD Array Matrix:
-
-- Rejection Block: Formed when a swing high or low consists of very long wicks, but the candle bodies close tightly clustered together. The liquidity raid occurred in the wick, but the true institutional order flow is defined by the high/low of the candle bodies. Entry is placed at the body level, with stops just beyond the wicks.
-- Vacuum Block: A wide structural price gap created by a high-impact catalyst (NFP, CPI, interest rate surprises) where no trading occurred. Unlike an FVG, which occurs across three candles, a Vacuum Block is a true vacuum across price space that the algorithm will inevitably revisit to establish two-way liquidity.
-- Liquidity Void: A long stretch of consecutive single-direction candles with little to no overlap. The market is completely imbalanced. Price must eventually rebalance 100% of the void before the next macro leg can continue.`
+        content: "A rejection-block study can mark a selected candle-body region near a long wick. Define the boundaries and the candle-completion rule before testing a later return. The wick is a record of price movement, not identification of the traders responsible.\n\nSeparate a discontinuity between adjacent bars from an FVG between outer candles around a traded middle candle. A data gap, session closure and a rapid continuous move are not interchangeable. The feed and session settings affect the appearance.\n\nA rapid low-overlap move may be labelled a liquidity void in chart study. Neither that label nor a true session gap requires a later full fill. Test any revisit hypothesis with failures, elapsed time and costs included."
       }
     ]
   },

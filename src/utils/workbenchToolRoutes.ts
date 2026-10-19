@@ -243,7 +243,7 @@ export const BACKTEST_STRATEGIES: BacktestStrategyMeta[] = [
   {
     id: '2022_model',
     slug: '2022-mentorship-model',
-    title: 'ICT Charter Model 13 / 2022 Mentorship Model (Displacement + FVG)',
+    title: 'ICT 2022 Mentorship Model (Displacement + FVG)',
     shortName: '2022 Mentorship Model',
     description: 'Executes strictly when session liquidity is swept, followed by aggressive displacement and MSS creating a clean 50% CE FVG.',
     expectedWinRate: 'User-selected hypothetical assumption',

@@ -7,21 +7,21 @@ export const foundationsChapters: TextbookChapter[] = [
     slug: 'what-actually-moves-price',
     part: 'Part I - Market Foundations',
     title: 'What Actually Moves Price? — The Mechanics of the Electronic Auction',
-    quote: 'In every single trade in financial history, there is always exactly one buyer and one seller. Price moves because incoming market orders consume resting limit orders at the best quotes, forcing the matching engine to search higher or lower for fresh liquidity.',
+    quote: "Each executed trade has equal bought and sold quantity. Transaction prices and quoted prices are different: trading, new orders and cancellations all matter when interpreting the auction.",
     level: 0,
     summary: [
       'The foundational fallacy: Why "more buyers than sellers" is mathematically and mechanically impossible.',
       'The Central Limit Order Book (CLOB): How passive bids and asks form liquidity queues.',
       'Aggressive market orders vs. passive limit orders: The true catalyst of price change.',
       'Slippage, market impact, and liquidity voids: Why large institutional participants cannot enter like retail traders.',
-      'The birth of Smart Money Concepts (SMC): Why institutions engineer price to access resting retail stops.'
+      "ICT-style liquidity interpretation: distinguish a visible sweep from an unverified claim about who caused it."
     ],
     keyTerms: [
       { term: 'Central Limit Order Book (CLOB)', definition: 'The centralized, deterministic electronic ledger maintained by an exchange matching engine that tracks all outstanding limit orders sorted by price and arrival time.' },
       { term: 'Passive Liquidity', definition: 'Resting limit orders (bids below price, asks above price) that wait in the book to be filled, providing the counterparty volume necessary for market orders.' },
       { term: 'Aggressive Liquidity / Market Orders', definition: 'Orders submitted with immediate execution priority that cross the bid-ask spread and consume resting passive liquidity.' },
       { term: 'Market Impact', definition: 'The degree of price movement caused by an order consuming multiple price tiers of the order book due to insufficient resting depth at the top of the book.' },
-      { term: 'Liquidity Void', definition: 'A vertical price vacuum created when extreme aggressive market volume strips all resting limit orders across several ticks without two-sided auction interaction.' }
+      { term: 'Liquidity Void', definition: "A chart label for rapid movement through a range with limited candle overlap; it does not establish that no two-sided trades occurred." }
     ],
     practiceQuestions: [
       'If every transaction requires exactly one buyer and one seller in equal volume, why does price move at all?',
@@ -34,58 +34,20 @@ export const foundationsChapters: TextbookChapter[] = [
       {
         id: '1.1',
         title: '1.1 The Great Fallacy: "More Buyers Than Sellers"',
-        content: `Ask nearly any retail trader, financial news commentator, or textbook author why an asset's price rose, and you will almost certainly hear the reflexive answer: "Because there were more buyers than sellers."
-
-This explanation is not only mathematically flawed—it is physically and mechanically impossible in modern financial exchanges.
-
-In every single executed transaction in the history of financial markets—from the Amsterdam Stock Exchange in 1602 to the Chicago Mercantile Exchange (CME) Globex matching engine today—there is ALWAYS exactly one buyer and one seller. If an institution buys 5,000 contracts of the E-mini S&P (ES), someone else sold exactly 5,000 contracts. If 1,000,000 shares of Apple (AAPL) change hands, the volume of buying is precisely equal to the volume of selling. The buyer-to-seller ratio in transacted volume is always strictly 1:1.
-
-So if transacted volume is always equal, why does price ever fluctuate?
-
-Price moves not because of the number of participants, but because of an imbalance in order urgency and liquidity consumption. Price changes when participants using aggressive market orders exhaust the available resting limit orders at the current price tier, compelling the matching engine to advance to the next price level to fulfill the remaining order size. Understanding this core truth is the first prerequisite to dismantling retail trading myths and stepping into institutional tape reading.`,
-        keyTakeaway: 'In every executed trade, buy volume equals sell volume exactly. Price changes solely because aggressive market orders exhaust passive resting limit orders at the best available quotes.'
+        content: "Every executed trade matches bought and sold quantity. This does not mean there are equal numbers of interested people or equal quantities of unexecuted orders. One participant can trade with several counterparties.\n\nOn an exchange order book, an aggressive order can consume the best available quote and trade at further levels. A marketable limit order can do this too, subject to its limit. Quotes can also move when resting orders are added, amended or cancelled, even before another trade occurs.\n\nDistinguish the last transaction price from the current bid and ask. This is an introduction to an exchange auction, not a complete model of every market. Spot foreign exchange is fragmented across venues and dealers rather than one consolidated exchange order book.",
+        keyTakeaway: "Matched trade quantity is equal on both sides. Quotes can change through order additions and cancellations as well as executions."
       },
       {
         id: '1.2',
         title: '1.2 Inside the Matching Engine: Bids, Asks, and the Spread',
-        content: `To understand price delivery, you must visualize what exists behind the candlestick chart: the Central Limit Order Book (CLOB).
-
-The order book consists of two opposing camps of passive participants who are willing to wait for price to come to them:
-1. The Bids (Buyers): Placed below the current market price. These traders say: "I am willing to buy, but only if price drops to my specific limit or lower."
-2. The Asks / Offers (Sellers): Placed above the current market price. These traders say: "I am willing to sell, but only if price rises to my specific limit or higher."
-
-The gap between the highest price a buyer is currently willing to pay (the Best Bid) and the lowest price a seller is currently willing to accept (the Best Ask) is the Spread.
-
-Crucially: Limit orders resting in the order book do not move price. Ten million limit buy orders can sit at $100.00, and price will remain entirely stationary. Limit orders are passive; they represent resting liquidity waiting to be consumed.
-
-Price moves ONLY when an aggressive participant submits a Market Order. A market order instructs the exchange: "Execute my trade immediately at whatever price is currently available." 
-- When an aggressive market buy arrives, it immediately consumes the resting limit orders at the Best Ask.
-- If the market buy size is larger than the total quantity of shares or contracts offered at the Best Ask, the entire tier is cleared. The matching engine instantly shifts the Best Ask to the next higher price level.
-- The new transaction price is recorded higher, and a green tick prints on your chart.
-
-Conversely, aggressive market sell orders cross the spread to consume the resting limit orders at the Best Bid. When the bids at that level are exhausted, price drops to the next available bid tier below.`,
-        keyTakeaway: 'Passive limit orders build walls of liquidity; aggressive market orders act as battering rams that break those walls down.'
+        content: "The best bid is the highest displayed buying price; the best ask is the lowest displayed selling price. Their difference is the spread. Displayed depth is only the visible portion of liquidity on that venue.\n\nA buy market order or marketable buy limit order can execute against the ask. A sell market order or marketable sell limit order can execute against the bid. If the available quantity is insufficient, execution may continue at other prices, subject to the order type and venue rules.\n\nAdding a better-priced resting order can improve a quote without a trade. Cancelling the best quote can expose a worse one. It is therefore inaccurate to say that only market orders move price. Hidden orders, routing, auctions and dealer markets require additional explanation.",
+        keyTakeaway: "Separate the visible order book, execution prices and changes in quotes; they are related but different observations."
       },
       {
         id: '1.3',
         title: '1.3 The Institutional Liquidity Dilemma',
-        content: `Now consider the position of a Tier-1 institutional bank, a sovereign wealth fund, or a multibillion-dollar asset manager.
-
-A retail trader trading 1 micro lot or 50 shares of stock has instantaneous execution with negligible market impact. The retail trader can click "Buy Market" and be filled in 2 milliseconds at the exact price on their screen.
-
-An institutional entity seeking to accumulate a $300,000,000 position in EUR/USD or 10,000 contracts of Nasdaq futures (NQ) cannot do this. If they were to submit a single market buy order of that magnitude, they would instantly consume all resting limit asks across 40, 60, or 100 index points, creating severe slippage and driving their average entry price into a devastating loss.
-
-Institutions face the Liquidity Dilemma:
-They cannot buy unless an equal and opposite massive volume of sell orders is available at that exact moment and price level.
-
-Where in the market can an institution find hundreds of millions of dollars worth of willing sellers without moving the price higher?
-- Not in the normal, thin resting limit book.
-- They find it where retail traders and breakout participants cluster their Stop Loss orders!
-
-A retail trader who is long places a protective Stop Loss below a major swing low. What is a long trader's stop loss mechanically? It is a Stop-Sell order that converts into an aggressive market sell order the moment price triggers it.
-
-When thousands of retail traders place their stop losses below the same obvious support level, they inadvertently create a concentrated pool of resting sell liquidity. To an institutional desk that needs to buy $300M, that support level is not a barrier to respect—it is an oasis of liquidity. The institution drives price below the support level, triggers the retail stop-sell orders, and absorbs those panic sells to build their own massive long position. This is the mechanical reality behind what ICT terms a Liquidity Sweep or Turtle Soup.`,
-        keyTakeaway: 'Institutions do not trade chart patterns; they trade liquidity. Retail stop loss clusters provide the exact counterparty volume institutions require to fill large positions.'
+        content: "Large orders can face market impact because the desired quantity exceeds available liquidity. Small orders can also suffer slippage during fast markets or poor liquidity; an exact screen price and fixed execution time are not guaranteed.\n\nStops may cluster near obvious highs or lows, but a candle does not reveal their quantity, owners or purpose. A triggered stop-market order can add aggressive flow. A stop-limit order behaves differently and may remain unfilled. Confirm the instrument and broker rules.\n\nIn ICT-style chart study, a move through a prior high or low followed by rejection may be labelled a liquidity sweep. Treat the inferred orders and institutional motives as a hypothesis. The same level can break and continue; the chart alone does not establish deliberate manipulation.",
+        keyTakeaway: "A sweep describes price behavior. The size of hidden stops and the identity or intent of counterparties cannot be established from candles alone."
       }
     ]
   },
@@ -96,7 +58,7 @@ When thousands of retail traders place their stop losses below the same obvious 
     slug: 'how-an-exchange-matches-orders',
     part: 'Part I - Market Foundations',
     title: 'How an Exchange Matches Orders — Price-Time Priority and Liquidity Dynamics',
-    quote: 'The exchange matching engine is a deterministic algorithm. It follows strict mathematical rules: Price Priority first, Time Priority second. When you understand the queue, you understand why market makers manipulate boundaries.',
+    quote: "Matching and allocation rules depend on the exchange and product. FIFO, pro-rata and hybrid systems exist; a queue rule is not evidence of a participant’s trading intent.",
     level: 0,
     summary: [
       'The deterministic matching engine: How orders are processed on modern electronic exchanges.',
@@ -123,16 +85,8 @@ When thousands of retail traders place their stop losses below the same obvious 
       {
         id: '2.1',
         title: '2.1 The Two Fundamental Matching Engine Rules',
-        content: `Every modern futures exchange (such as CME, Eurex, ICE) and equity clearinghouse uses an automated electronic matching engine governed by deterministic queue priorities. The most universal of these is Price-Time Priority (FIFO):
-
-1. Rule 1: Price Priority
-The best price always executes first. A buyer willing to pay $100.05 will always have priority over a buyer offering $100.00, regardless of when the orders were submitted. A seller offering $100.10 executes ahead of a seller asking $100.15.
-
-2. Rule 2: Time Priority (FIFO Queue)
-When multiple orders exist at the identical price level, the order that was submitted earliest into the matching engine executes first. If Trader A places a limit buy for 10 contracts at $100.00 at 09:00:00.100 AM, and Trader B places 10 contracts at the same price at 09:00:00.105 AM, Trader A will receive fills before Trader B receives a single contract.
-
-Crucial Microstructure Rule: If a trader amends their order size upward or modifies their price, they lose their queue position and are pushed to the back of the line! This rule forces institutional algorithms to manage order book placement with microscopic precision.`,
-        keyTakeaway: 'Orders are processed with zero subjective bias: highest bid and lowest ask always execute first, with identical prices resolved by microsecond arrival time.'
+        content: "In a simplified continuous order book, better-priced eligible orders receive priority. Under FIFO, orders at the same price are generally matched in time order. Exchanges also use pro-rata and hybrid allocation; do not apply FIFO examples to every product.\n\nChanging an order can affect its queue priority. The result depends on the venue, product and amendment: increasing quantity or changing price may lose priority, while reducing quantity may be treated differently. Check the relevant exchange rules rather than assuming a universal reset.\n\nFor a paper exercise, place two same-price orders in a FIFO queue and allocate a smaller incoming order. Then repeat using proportional allocation. The example explains a matching rule, not how to predict a future candle.",
+        keyTakeaway: "Verify product-specific allocation and amendment rules; price-time priority is one matching model, not a universal description."
       },
       {
         id: '2.2',
@@ -216,7 +170,7 @@ The raw feed used by institutional algorithmic trading firms. It provides a real
 Retail traders looking at Level 2 DOM often fall into a classic psychological trap: they see a massive 2,000-contract resting buy order 10 ticks below current price and assume: "There is strong support here; I should go long!"
 
 In reality, smart institutional traders know that retail traders look at Level 2. That 2,000-contract order is frequently a Spoof—placed by an algorithmic dealer to manipulate retail sentiment, only to be canceled 5 milliseconds before price arrives. True institutional accumulation rarely shows its full hand on the public DOM.`,
-        keyTakeaway: 'The visible order book is only a partial view of market liquidity. Large displayed orders are frequently phantom mirages intended to herd retail traders.'
+        keyTakeaway: "Displayed depth is a partial view of liquidity. Cancellation alone does not establish spoofing; intent cannot be inferred from a large order disappearing."
       },
       {
         id: '3.2',

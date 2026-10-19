@@ -19,7 +19,7 @@ export const theinnercircletradersNewChapters: TextbookChapter[] = [
     keyTerms: [
       { term: 'Venom Model', definition: 'A proprietary five-stage institutional confluence framework combining HTF MMXM, CRT reference boundaries, intermarket SMT divergence, CISD, and First Presented FVG execution.' },
       { term: 'Reference Candle Boundary', definition: 'The established high or low of the designated pre-session candle (Asian Range for London, London Range for NY) that the algorithm manipulates.' },
-      { term: 'First Presented FVG', definition: 'The very first three-candle price imbalance printed during the initial displacement wave; provides the highest probability and lowest drawdown entry.' },
+      { term: 'First Presented FVG', definition: "The first qualifying FVG after a predefined displacement. Its win rate and drawdown must be measured rather than assumed." },
       { term: 'Change in State of Delivery (CISD)', definition: 'The specific moment when a series of consecutive buying or selling candles has its opening prices engulfed by displacement in the opposing direction.' }
     ],
     practiceQuestions: [
@@ -202,10 +202,10 @@ Institutions use this suspended pause to absorb remaining passive orders. When p
     slug: 'rdrb-balanced-price-range-and-enigma-fvg',
     part: 'Part XIII - Advanced 2025/2026 Institutional Delivery Systems & Tape Reading',
     title: 'RDRB (Redelivered Balanced Price Range) & The Enigma FVG',
-    quote: 'The first delivery into a Balanced Price Range is entered on anticipation. The RDRB is entered on confirmation: the institutional algorithm has already proven it defends this exact two-sided balance.',
+    quote: "A second reaction at a selected balance range can be studied as another observation. It does not prove institutional defense or that the next test will hold.",
     level: 3,
     summary: [
-      'The evolution of Balanced Price Ranges: How two-sided liquidity balance creates impenetrable barriers.',
+      "Balanced Price Ranges as chart reference zones that may hold or fail.",
       'The RDRB signature: Second-touch confirmation with Consequent Encroachment (50%) wick defense.',
       'The Enigma FVG: Modern two-candle high-velocity imbalance structures.',
       'Single-candle rebalances during cash open and high-impact economic releases.',
@@ -217,7 +217,7 @@ Institutions use this suspended pause to absorb remaining passive orders. When p
       { term: 'Two-Sided Efficiency', definition: 'A price state where both buyers and sellers have been matched, leaving zero directional liquidity imbalance.' }
     ],
     practiceQuestions: [
-      'Why does an RDRB provide higher statistical win-rate expectancy than a first-time BPR touch?',
+      "What data would be needed to compare first and second BPR touches after costs and without hindsight?",
       'What specific rule governs candle bodies when testing the Consequent Encroachment of an RDRB?',
       'How does an Enigma FVG differ from a classical 3-candle Fair Value Gap?',
       'Why do high-frequency algorithms create Enigma gaps during the 09:30 AM open bell?',
@@ -232,7 +232,7 @@ Institutions use this suspended pause to absorb remaining passive orders. When p
 While trading the initial return to a BPR is effective, the RDRB (Redelivered Balanced Price Range) offers superior consistency. When price returns to the BPR a second time, the tape reader inspects the 50% Consequent Encroachment (CE) line.
 
 If price probes the zone with wicks but all candle bodies close firmly outside the 50% CE, the institutional algorithm has confirmed active defense. Entering on this second-touch rejection allows traders to position behind institutional capital with minimal drawdown.`,
-        keyTakeaway: 'The RDRB turns theoretical balance into proven execution confirmation.'
+        keyTakeaway: "A second BPR reaction is another observation, not proof of future defense or improved expectancy."
       },
       {
         id: 'sec-56-2',
@@ -268,7 +268,7 @@ Traders who understand the Enigma FVG do not wait for a non-existent 3rd candle;
       'Intermarket pair selection: Using SMT divergence to identify the weakest or strongest asset.',
       'Why shorting the leader is a mistake: Capitalizing on the "Sick Sister" for maximum velocity.',
       'The Double Purge sequence: How algorithms wipe out both sides of retail orders prior to major expansions.',
-      'Navigating dual-sided stop hunts: Executing post-Sweep 2 with high statistical conviction.',
+      "Studying two-sided sweeps without assuming that the second sweep predicts a reversal.",
       'Complete operational execution rules for index futures and currency majors.'
     ],
     keyTerms: [

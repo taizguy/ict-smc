@@ -125,7 +125,7 @@ export const chapterCatalog = [
   {
     "id": 15,
     "slug": "order-blocks-ob-and-mitigation",
-    "title": "Order Blocks (OB) & Mitigation — Institutional Volume Absorption and Mean Threshold",
+    "title": "Order Blocks & Mitigation — Reference Candles and Mean Threshold",
     "part": "Part III - Price Delivery"
   },
   {
@@ -245,7 +245,7 @@ export const chapterCatalog = [
   {
     "id": 36,
     "slug": "ict-charter-model-13-2022-youtube-model",
-    "title": "ICT Charter Model 13: The 2022 YouTube Mentorship Model & Master Charter Lecture",
+    "title": "2022 ICT Mentorship Model — A Source-Based Study Guide",
     "part": "Part X - ICT Charter Price Action Models Curriculum"
   },
   {

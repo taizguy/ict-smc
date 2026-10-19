@@ -13,7 +13,7 @@ export const masoodChapters: TextbookChapter[] = [
       'Special masterclass chapter synthesizing the core teachings of Trader Abdullah Masood (@TraderAbdullahMasood).',
       'The 4-Pillar Daily Bias Engine: High-Timeframe DOL, PDH/PDL sweeps, 00:00 NY Midnight Open, and Asian Range boundaries.',
       'The Gold Legacy (XAUUSD): Mastering Gold’s aggressive volatility, 15-30 pip Asian sweeps, and 50% CE FVG precision entries.',
-      'Inducement (IDM) mechanics: Why 80% of retail SMC order blocks fail due to entering before internal liquidity is purged.',
+      "Inducement (IDM) as an interpretation: compare early entries and later confirmation without assuming an unverified failure rate.",
       'NASDAQ (NQ) 09:30 AM Opening Bell Execution & SMT Divergence across indices (NQ vs ES vs US30).',
       'Prop firm risk parameters, daily loss limits, and the psychological discipline of high-probability patience.'
     ],

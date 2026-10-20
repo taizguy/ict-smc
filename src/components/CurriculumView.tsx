@@ -65,7 +65,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
   if (mentorshipRoute) return <MentorshipsView slug={mentorshipRoute[1]} />;
 
   return (
-    <div className="space-y-12 sm:space-y-16 pb-20">
+    <div className="studio-curriculum space-y-12 sm:space-y-16 pb-20">
       <MentorshipsTeaser />
 
       <details className="curriculum-topics"><summary>Browse curriculum topics</summary><nav aria-label="Curriculum topics" className="grid sm:grid-cols-2 gap-2 pt-4">
@@ -74,7 +74,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
       </nav></details>
       {/* Editorial Header Section */}
       <ScrollReveal y={25} duration={0.6}>
-        <section className="bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-10 md:p-12 relative overflow-hidden">
+        <section className="studio-page-intro bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-10 md:p-12 relative overflow-hidden">
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
 

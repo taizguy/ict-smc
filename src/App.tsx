@@ -448,7 +448,7 @@ export const App: React.FC = () => {
   const isShowingWelcome = activeTab === 'welcome';
 
   return (
-    <div className="min-h-screen bg-canvas text-ink flex flex-col font-sans selection:bg-brand selection:text-on-brand relative overflow-x-hidden">
+    <div className="min-h-screen bg-canvas text-ink flex flex-col font-sans selection:bg-brand selection:text-on-brand relative overflow-x-clip">
       <a href="#main-content" className="skip-link">{t("Skip to main content")}</a>
       <div className="site-wash fixed inset-0 pointer-events-none z-0" aria-hidden="true" />
 
@@ -469,7 +469,7 @@ export const App: React.FC = () => {
       />
 
       {/* Main Educational Application Content */}
-      <main id="main-content" tabIndex={-1} className="flex-1 max-w-[1560px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10 space-y-10 sm:space-y-14">
+      <main id="main-content" data-home={isShowingWelcome ? "true" : undefined} tabIndex={-1} className="flex-1 max-w-[1560px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10 space-y-10 sm:space-y-14">
 
         {/* WELCOME / HOME SCREEN (Clean root experience at /) */}
         {isShowingWelcome && (
@@ -601,7 +601,7 @@ export const App: React.FC = () => {
       </Suspense>}
 
       {/* Predikt Editorial Footer */}
-      <footer className="border-t border-ink/[0.07] bg-canvas/80 backdrop-blur-md py-10 px-4 sm:px-6 lg:px-8 mt-auto relative z-10">
+      <footer className="studio-footer border-t border-ink/[0.07] bg-canvas/80 backdrop-blur-md py-10 px-4 sm:px-6 lg:px-8 mt-auto relative z-10">
         <div className="max-w-[1560px] w-full mx-auto space-y-8">
 
           {/* Tribute Banner - Sleek Dark Card */}

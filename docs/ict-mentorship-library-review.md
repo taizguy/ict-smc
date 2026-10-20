@@ -53,6 +53,16 @@ Public references are in `src/data/mentorshipReviewSources.ts`, `src/data/curric
 
 ## Limits and verification
 
+### Further targeted review — 20 October 2026
+
+Chapter 42 (Month 6 swing trading) was revised in English and Urdu after reading these original-caption windows: *Elements To Successful Swing Trading* (`Xs1i0aIeTME`), 00:24–06:20; *Classic Swing Trading Approach* (`g--tikwaupk`), 00:39–06:10; Month 10 *Commitment Of Traders* (`9H4iaaQXV5Y`), 00:48–06:40; and Month 10 *Open Interest & Smart Money Footprints* (`qRYkTWePXF0`), 02:18–05:00. These were targeted passage reviews, not full-recording viewing. First-pass coverage totals above have not increased.
+
+The Elements passage explicitly describes COT and seasonal confirmation as optional. The detailed COT/open-interest recordings retain their Month 10 attribution. The COT source says a net position alone is insufficient; open interest counts outstanding contracts, not a separately identifiable class of buyers. The chapter withdraws universal 100–300-pip/three-to-ten-day targets, a mandatory midpoint/FVG/stop recipe, imminent rallies from commercial extremes, automatic reversals from falling open interest and a prescribed 50/25/25 scale-out.
+
+Primary definitions were separately checked on 20 October against the CFTC's About COT, release schedule and explanatory notes, and CME Group's volume/open-interest definitions. The lesson now distinguishes report snapshot dates from publication dates, report categories, futures positioning from spot-FX orders, and contract-roll effects. Interpretation is explicitly distinguished from measurement. No strategy results or performance claims were independently validated. Seven visible sources and a chapter-specific 20 October review date are shared by interactive and static pages; unrelated chapter review dates remain unchanged.
+
+The sitemap revision ledger is documented in `docs/sitemap-dates.md`. It records evidenced content changes independently of the build clock.
+
 All supplied recordings now have a first-pass selected-passage or visual-sample review. Further continuous or targeted review is still needed before authenticating detailed rules not covered by those passages. Some older advanced-model claims elsewhere remain unverified against a specific source. Keep the interpretation warnings. **Do not present the entire 240-hour collection as reviewed or this as a completed comprehensive content audit.**
 
 The latest bilingual production build passed: 1,001 URL/canonical/redirect checks, crawl/schema/link checks across 760 generated documents, report regressions and routing checks. TypeScript and whitespace checks passed after the deeper source corrections. The Urdu publication guard checks explanatory text and metadata. The latest tools chunk is below the build’s 800 kB warning threshold; further performance work is separate from this review.

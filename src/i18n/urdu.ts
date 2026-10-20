@@ -1,5 +1,6 @@
 import { publisherUrdu } from './publisher-urdu';
 import mentorshipUrdu from './mentorships-urdu.json';
+import diagramUrdu from './diagrams-urdu.json';
 import curriculumCorrections from './curriculum-corrections-urdu.json';
 import { curriculumReviewUrdu } from './curriculum-review-urdu';
 import { terminology } from './terminology';
@@ -11,6 +12,7 @@ import chapterHeadings from './chapter-headings-urdu.json';
 import { refineTradingLanguage } from './trading-language';
 /** Original Urdu translations. Keys are exact English source text, never route IDs or calculation values. */
 export const urdu: Record<string, string> = {
+  ...diagramUrdu,
   ...generated,
   ...publisherUrdu,
   ...terminology,

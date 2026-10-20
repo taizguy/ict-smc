@@ -288,67 +288,59 @@ When US 10-Year Yields rise relative to German Bunds, capital flows into the US 
   ]
 },
   {
-    id: 42,
-    slug: 'core-content-month-6-swing-trading-mastery',
-    title: 'ICT Core Content Month 6: Swing Trading Mastery & Commercial COT Hedging',
-    part: 'Part XI - ICT Mentorship Core Content Master Curriculum',
-    level: 3,
-    quote: 'Swing trading is the sweet spot for serious traders. By aligning with Commercial COT Hedging extremes on the Weekly chart, you ride 100 to 300-pip trends over 3 to 10 days with minimal screen time.',
-    summary: [
-      'Identifying ideal swing trading conditions and explosive market expansion candidates.',
-      'High-probability bullish and bearish swing trade setups across Weekly and Daily charts.',
-      'Utilizing the Commitment of Traders (COT) Commercial Hedging program to confirm institutional intent.',
-      'Managing risk and staged scale-outs across multi-day swing holding periods.'
-    ],
-    keyTerms: [
-      { term: 'Swing Trading', definition: 'Capturing multi-day market price runs (typically 100 to 300 pips) lasting from 3 to 10 trading sessions.' },
-      { term: 'COT Commercials', definition: 'The producers, merchants, and multinational banks whose hedging positions reflect true smart money valuation.' },
-      { term: 'Open Interest', definition: 'The total number of outstanding derivative contracts; rising open interest during a trend confirms fresh institutional capital.' },
-      { term: 'Staged Scale-Out', definition: 'Taking partial profits at 50% Equilibrium, recent session liquidity, and final HTF PD Array targets.' }
-    ],
-    practiceQuestions: [
-      'Why are Commercial Hedgers considered the ultimate Smart Money proxy in COT report analysis?',
-      'What is the ideal holding period and pip objective for an ICT swing trade setup?',
-      'How does open interest confirm whether a price breakout is genuine or an institutional trap?'
-    ],
-    sections: [
-      {
-        id: '42.1',
-        title: '42.1 Ideal Swing Trading Conditions: The Sweet Spot',
-        content: `ICT Core Content Month 6 focuses on Swing Trading: capturing 100 to 300 pips over 3 to 10 days. 
-
-Swing trading eliminates the stress and execution friction of scalping while offering far higher frequency than position trading:
-- Ideal conditions occur when the Weekly chart has reached an HTF Discount or Premium PD Array, and the Daily chart produces a clear Market Structure Shift with displacement.
-- A swing trader does not care about 1-minute noise. They identify the directional draw for the week and ride the expansion of the Weekly candle.`
-      },
-      {
-        id: '42.2',
-        title: '42.2 High-Probability Bullish & Bearish Swing Setups',
-        content: `The Anatomy of a High-Probability Swing Setup:
-1. Higher Timeframe Context: Weekly chart is in an institutional order flow uptrend.
-2. Liquidity Sweep: Daily chart sweeps previous week's low or a significant swing low into a Daily Bullish Order Block or Fair Value Gap.
-3. Market Structure Shift (MSS): Daily or 4-Hour chart forms a strong displacement candle closing above the last swing high.
-4. Entry Execution: Place a limit order at the 50% Consequent Encroachment of the Fair Value Gap created by the displacement.
-5. Invalidation: Stop loss placed 10 to 20 pips below the swing low formed during the liquidity sweep.`
-      },
-      {
-        id: '42.3',
-        title: '42.3 Commercial COT Hedging Programs & Open Interest',
-        content: `To filter the most explosive swing markets, Month 6 integrates the CFTC Commitment of Traders (COT) report:
-- Commercial Hedgers (smart money) take the opposite side of retail speculators. When Commercials reach historic net long positions, a massive multi-week rally is imminent.
-- When Commercials reach historic net short positions, the market is primed for distribution.
-- Open Interest: If price breaks out to new highs and Open Interest spikes dramatically, commercial money is aggressively buying contracts. If price hits new highs but Open Interest collapses, the move is driven by short-covering, signaling an imminent reversal.`
-      },
-      {
-        id: '42.4',
-        title: '42.4 Multi-Day Risk Reduction & Staged Scale-Out Protocols',
-        content: `Managing a multi-day swing trade requires systematic profit extraction:
-1. Target 1 (First Scale-Out): At the 50% Equilibrium of the current dealing range or the first intermediate swing high, take off 50% of the position and move the stop loss to breakeven.
-2. Target 2 (Major Scale-Out): Take another 25% off at the Previous Week's High or prominent Buy-Side Liquidity pool.
-3. Target 3 (Runner): Leave the remaining 25% to capture the complete HTF Weekly PD Array target, trailing the stop behind each daily swing low.`
-      }
-    ]
-  },
+  "id": 42,
+  "slug": "core-content-month-6-swing-trading-mastery",
+  "title": "ICT Core Content Month 6: Swing Trading Context, COT & Open Interest",
+  "part": "Part XI - ICT Mentorship Core Content Master Curriculum",
+  "level": 3,
+  "quote": "Start with a testable market hypothesis. A positioning report can add context, but it cannot promise the next swing.",
+  "summary": [
+    "Study the monthly, weekly, daily and four-hour context before proposing a swing.",
+    "Distinguish ICT interpretation from observable price and positioning data.",
+    "Use COT and open interest with publication dates, report categories and explicit limitations."
+  ],
+  "keyTerms": [
+    {
+      "term": "Swing study",
+      "definition": "A multi-session price hypothesis with a defined instrument, invalidation and observation period; no universal pip target or holding period is implied."
+    },
+    {
+      "term": "COT report",
+      "definition": "A delayed snapshot of futures positioning by report category. It does not identify every participant or provide a live entry signal."
+    },
+    {
+      "term": "Open interest",
+      "definition": "Outstanding futures contracts, counting one side of each open contract. Each contract has both a buyer and a seller; volume counts trading activity instead."
+    }
+  ],
+  "practiceQuestions": [
+    "Why must a historical COT study distinguish Tuesday’s snapshot from its publication date?",
+    "What does open interest measure, and what can it not tell you about trader identity?",
+    "Which part of your swing hypothesis is interpretation, and what would invalidate it?"
+  ],
+  "sections": [
+    {
+      "id": "42.1",
+      "title": "42.1 Source sequence and the optional COT filter",
+      "content": "In the Month 6 Elements lesson, the 00:24–02:42 passage discusses a clear higher-timeframe trend, opposing PD arrays, rates and intermarket context. At approximately 01:17–01:45, ICT explicitly calls COT confirmation and seasonal tendencies optional. These are features of his framework, not independently verified improvements in accuracy.\n\nThe Classic Swing Trading Approach passage at 00:39–06:10 maps reference areas above and below price across monthly, weekly, daily and four-hour charts. LearnSMC treats the choice of range, relevant array and directional reading as judgment calls. A sharp move alone does not identify who traded it. The earlier fixed 100–300-pip, three-to-ten-day description and mandatory midpoint-entry recipe are withdrawn as universal rules."
+    },
+    {
+      "id": "42.2",
+      "title": "42.2 COT: context with a publication delay",
+      "content": "The detailed COT and open-interest recordings in the supplied library belong to Month 10. They are related reading here, not relabeled Month 6 lessons. In the COT recording at 00:48–06:40, ICT selects a futures-only report, explains net positions as longs minus shorts, and says the net figure alone is insufficient.\n\nThe CFTC normally publishes Friday at 15:30 Eastern using the preceding Tuesday snapshot; holidays can change the schedule. In historical replay, use the release that was actually available at your decision time, not Tuesday data before its later publication. Record whether you used Legacy, Disaggregated or Traders in Financial Futures categories, and futures-only or combined data. Their classifications are not interchangeable.\n\nCommercial classification concerns business and hedging activity. A net-long extreme does not prove an imminent rally, and noncommercial does not mean every participant is a small retail trader. A futures positioning report is not a complete spot-FX order book."
+    },
+    {
+      "id": "42.3",
+      "title": "42.3 Open interest: measurement versus inference",
+      "content": "The Month 10 open-interest passage at 02:18–05:00 defines outstanding contracts and introduces ICT’s price/open-interest interpretations. Separate that interpretation from the measurement: rising open interest means more outstanding contracts, with both a long and a short side. It does not, by itself, prove commercial buying or reveal the motives of either side. Falling open interest does not make a reversal inevitable.\n\nCompare the same contract and reporting basis. Expiry and contract roll can move open interest between maturities; a continuous price chart must not be compared carelessly with one expiring contract’s open interest. State the source date and any reporting delay."
+    },
+    {
+      "id": "42.4",
+      "title": "42.4 Build a falsifiable swing journal",
+      "content": "Before revealing later candles, record the instrument and contract, data available at the time, selected range, proposed direction, invalidation, observation horizon and transaction costs. State what would contradict the idea and allow a no-trade outcome. Keep range selection and COT filters consistent across the sample.\n\nA midpoint limit order, fixed pip stop or 50/25/25 exit split is not a universal rule established by the passages reviewed here. If you investigate a variation, label it as your test rule and evaluate losses, gaps, slippage and overnight costs alongside successes. A stop order cannot guarantee the execution price, and lower screen time does not make swing trading inherently safer."
+    }
+  ]
+},
   {
     id: 43,
     slug: 'core-content-month-7-short-term-trading-and-market-maker-templates',

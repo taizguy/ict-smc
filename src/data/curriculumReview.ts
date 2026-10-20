@@ -5,6 +5,9 @@ import { charterReviewSources } from './mentorshipReviewSources';
 // This date records our editorial clarification, not a full video/transcript review.
 export const curriculumReviewDate = '2026-10-19';
 export const curriculumReviewLabel = '19 October 2026';
+export const chapterReviewRevision = (id: number) => id === 42
+  ? { iso: '2026-10-20', label: '20 October 2026' }
+  : { iso: curriculumReviewDate, label: curriculumReviewLabel };
 export const ictOfficialAccounts = {
   youtube: 'https://www.youtube.com/innercircletrader',
   x: 'https://x.com/I_Am_The_ICT',
@@ -16,6 +19,13 @@ export interface CurriculumSource {
   passages?: { label: string; url: string; note: string }[];
 }
 export const curriculumSources = {
+  swingElementsCore: {"title": "ICT Core Month 6 — Elements To Successful Swing Trading", "url": "https://www.youtube.com/watch?v=Xs1i0aIeTME&t=24s", "scope": "Selected original-caption passages at 00:24–06:20 were reviewed. At approximately 01:17–01:45, COT and seasonal confirmation are optional in this framework; accuracy claims are not independently verified."},
+  swingClassicCore: {"title": "ICT Core Month 6 — Classic Swing Trading Approach", "url": "https://www.youtube.com/watch?v=g--tikwaupk&t=39s", "scope": "Selected original-caption passages at 00:39–06:10 were reviewed. Higher-timeframe PD-array mapping is described; no universal holding period or pip target is established by this selected passage."},
+  cotCore: {"title": "ICT Core Month 10 — Commitment Of Traders", "url": "https://www.youtube.com/watch?v=9H4iaaQXV5Y&t=48s", "scope": "Selected original-caption passages at 00:48–06:40 were reviewed. Futures-only net positioning is explained, and a net figure alone is insufficient. This is a Month 10 source, included as related reading for the swing chapter."},
+  openInterestCore: {"title": "ICT Core Month 10 — Open Interest & Smart Money Footprints", "url": "https://www.youtube.com/watch?v=qRYkTWePXF0&t=138s", "scope": "Selected original-caption passages at 02:18–05:00 were reviewed. Outstanding contracts and the source’s price/open-interest interpretation are distinguished from verified trader identity."},
+  cotDefinitions: {"title": "CFTC — About the COT Reports and release schedule", "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/AbouttheCOTReports/index.htm", "scope": "Reviewed 20 October 2026: report coverage, Tuesday snapshots and usual Friday 15:30 Eastern publication. Consult the release schedule for holiday exceptions."},
+  cotCategories: {"title": "CFTC — COT Explanatory Notes", "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/ExplanatoryNotes/index.htm", "scope": "Reviewed 20 October 2026: commercial classification and the limits of nonreportable-position categories. Category labels do not reveal every trader’s intent."},
+  openInterestDefinition: {"title": "CME Group — About Volume", "url": "https://www.cmegroup.com/trading/about-volume.html", "scope": "Reviewed 20 October 2026: each open contract has a buyer and seller, but open interest counts one side. The aggregate does not identify which category bought."},
   reaperVariant2026: { title: 'Futures Commentary — 9 June 2026: Reaper Variant', url: 'https://www.youtube.com/watch?v=18vX-vv2bsg&t=1010s', scope: 'Original-caption passages at approximately 14:40–19:40 and chart frames at 17:17 and 19:10 were reviewed. ICT identifies nested first-utilization and inversion-gap references within a breaker context as a Reaper variant; this does not authenticate every failed-inversion rule.' },
   suspension2026: { title: 'ICT 2026 Futures Weekend Review — 11 April 2026', url: 'https://www.youtube.com/watch?v=RY67bW2UhxY&t=650s', scope: 'Original-caption passages at approximately 08:20–15:00 and chart frames at 11:45, 12:45 and 14:10 were reviewed. The source compares body-price gaps, a breaker reference and front-month versus continuous contracts.' },
   enigma2026: { title: 'Enigma FVG Projections & Protractions — 27 June 2026', url: 'https://www.youtube.com/watch?v=rbNhlJSXDaA&t=660s', scope: 'Selected original-caption passages at 03:00–09:00 and 10:00–22:00 were reviewed. The source discusses FVG measurement boundaries and projections; the previous two-candle definition is not established by these passages.' },
@@ -101,6 +111,7 @@ export function curriculumReview(chapter: TextbookChapter) {
     26: [r[35], r[38]],
     36: [curriculumSources.charter13, r[2], curriculumSources.structure, curriculumSources.gaps, r[29], r[41]],
     38: [r[11], r[27], r[41], curriculumSources.stops],
+    42: [curriculumSources.swingElementsCore, curriculumSources.swingClassicCore, curriculumSources.cotCore, curriculumSources.openInterestCore, curriculumSources.cotDefinitions, curriculumSources.cotCategories, curriculumSources.openInterestDefinition],
     41: [curriculumSources.quarterlyCore, curriculumSources.allocationCore, curriculumSources.stops],
     45: [curriculumSources.twentyPipsCore, curriculumSources.routineCore, curriculumSources.reversalsCore],
     46: [curriculumSources.coreMultiAsset],

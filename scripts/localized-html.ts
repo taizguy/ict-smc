@@ -52,6 +52,7 @@ export function localizeHtml(source: string, pathname: string, catalog: Translat
   function visit(node: HTML.Node, skip = false) {
     if ('tagName' in node) {
       if (node.tagName === 'html') { set(node, 'lang', 'ur'); set(node, 'dir', 'rtl'); }
+      if (node.tagName === 'svg' && attribute(node, 'class')?.split(' ').includes('chapter-diagram-canvas')) set(node, 'lang', 'ur');
       if (node.tagName === 'head') {
         head = node;
         node.childNodes = node.childNodes.filter(child => !('tagName' in child && child.tagName === 'link' && attribute(child, 'hreflang')));

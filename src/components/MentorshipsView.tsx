@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { ChapterDiagram } from './ChapterDiagram';
 import { mentorshipTracks, mentorshipPath, mentorshipLessonPath } from '../data/mentorshipTracks';
 import { mentorshipRecordings } from '../data/mentorshipRecordings.generated';
 import { textbookChapters } from '../data/chaptersData';
@@ -90,6 +91,7 @@ export function MentorshipsView({ slug, embedded = false }: { slug?: string; emb
       <section><h2>Suggested reading order</h2><p>These are related LearnSMC study notes. Follow their source links when checking the precise rule in the original series.</p>
         <ol className="mentorship-note-list">{notes.map((chapter, index) => <li key={chapter.id}>
           <span className="mentorship-step" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <ChapterDiagram chapterId={chapter.id} thumbnail />
           <div><a href={mentorshipLessonPath(chapter.slug, track.slug)}>{chapter.title}</a><p>{chapter.summary[0]}</p></div>
           {completed.includes(chapter.id) && <span className="mentorship-status">Completed</span>}
         </li>)}</ol>

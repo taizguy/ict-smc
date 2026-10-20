@@ -2,11 +2,13 @@ import { TERMS_SECTIONS, ABOUT_GUIDANCE, CONTACT_GUIDANCE, publisherPageRevision
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { CurriculumReview } from '../src/components/CurriculumReview';
+import { ChapterDiagram } from '../src/components/ChapterDiagram';
+import { chapterIllustrationRevision } from '../src/data/chapters/diagrams';
 import { ReviewedModelSource } from '../src/components/ReviewedModelSource';
 import { reviewedModelSources } from '../src/data/reviewedModelSources';
 import { MentorshipsView, MentorshipsTeaser } from '../src/components/MentorshipsView';
 import { mentorshipTracks, mentorshipPath } from '../src/data/mentorshipTracks';
-import { curriculumReview, curriculumReviewDate } from '../src/data/curriculumReview';
+import { curriculumReview, curriculumReviewDate, chapterReviewRevision } from '../src/data/curriculumReview';
 import { searchTitle, searchDescription, conciseHeading, studyTopics } from '../src/utils/searchMetadata';
 import { toolStudyGuide } from '../src/utils/toolStudyGuides';
 import { correctToolDocument } from './tools-content';
@@ -73,7 +75,7 @@ export function prepareRoutes(routes: RouteMeta[]) {
     `Study ${cluster.chapters.length} lessons in ${cluster.part.replace(/^Part [IVXLCDM]+ - /, '')}, with definitions, worked explanations and practice questions.`,
     (cluster.guidance.length ? section('How to use this learning path', cluster.guidance.map(p => `<p>${escape(p)}</p>`).join('')) : '') +
     section('Learning path', list(cluster.chapters.map(c => link(`/learn/${c.slug}/`, c.title)))) +
-    cluster.chapters.map(c => section(c.title, `<p>${escape(c.summary[0])}</p>` + list(c.summary.slice(1).map(escape)) + link(`/learn/${c.slug}/`, 'Read the complete lesson'))).join(''))));
+    cluster.chapters.map(c => section(c.title, renderToStaticMarkup(createElement(ChapterDiagram, { chapterId:c.id, thumbnail:true, staticOnly:true })) + `<p>${escape(c.summary[0])}</p>` + list(c.summary.slice(1).map(escape)) + link(`/learn/${c.slug}/`, 'Read the complete lesson'))).join(''))));
   routes.push(...masoodPlaylistsData.map(p => route(`/masood/playlists/${p.id}/`, `${p.badge} — Abdullah Masood lectures`,
     `${p.subtitle}. Browse ${p.lectures.length} Abdullah Masood video study guides with notes, exercises and source links.`,
     `<p>${escape(p.description)}</p><p>${escape(p.targetAudience)}</p>` + source +
@@ -82,6 +84,7 @@ export function prepareRoutes(routes: RouteMeta[]) {
     p.lectures.map(l => section(l.title, `<p>${escape(l.shortSummary)}</p>` + list(l.keyTakeaways.map(escape)) + link(`/masood/lectures/${l.id}/`, 'Read the study notes'))).join(''))));
   const root = routes.find(r => r.canonical === 'https://learnsmc.xyz/curriculum/')!;
   root.bodyHtml = renderToStaticMarkup(createElement(MentorshipsTeaser)) + root.bodyHtml;
+  root.bodyHtml += `<div class="static-diagram-directory">${textbookChapters.map(c => `<a href="/learn/${escape(c.slug)}/">${renderToStaticMarkup(createElement(ChapterDiagram, { chapterId:c.id, thumbnail:true, staticOnly:true }))}</a>`).join('')}</div>`;
   root.bodyHtml += section('Browse by topic', list(topicClusters.map(c => link(`/curriculum/${c.slug}/`, c.part))));
 
   const hub = routes.find(r => r.canonical === 'https://learnsmc.xyz/masood/')!;
@@ -172,11 +175,12 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   if (/^\/tools\/(journal|profile)\//.test(path) || path === '/adsense/') r.isNoindex = true;
   const chapter = textbookChapters.find(c => path === `/learn/${c.slug}/`);
   if (chapter) {
+    r.bodyHtml = renderToStaticMarkup(createElement(ChapterDiagram, { chapterId:chapter.id, staticOnly:true })) + r.bodyHtml;
     r.bodyHtml += renderToStaticMarkup(createElement(CurriculumReview, { chapter }));
     r.bodyHtml += byline + section('Continue learning', list(relatedChapters(chapter.id).map(c => link(`/learn/${c.slug}/`, c.title)))) +
       link(`/curriculum/${topicClusters.find(c => c.part === chapter.part)!.slug}/`, `Explore ${chapter.part}`);
     r.schemaJson = { ...r.schemaJson, '@type': 'LearningResource', author: lessonAuthor, publisher,
-      url: r.canonical, inLanguage: 'en', isAccessibleForFree: true, dateModified: curriculumReviewDate,
+      url: r.canonical, inLanguage: 'en', isAccessibleForFree: true, dateModified: chapterReviewRevision(chapter.id).iso,
       citation: curriculumReview(chapter).sources.map(source => ({ '@type': 'CreativeWork', name: source.title, url: source.url })) };
   }
   const children = routes.filter(c => c !== r && new URL(c.canonical).pathname.startsWith(path) &&
@@ -198,9 +202,14 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
     ...(path === '/' ? [] : [{ name: r.heading, url: r.canonical }])];
   if (path !== '/') r.bodyHtml = `<nav aria-label="Breadcrumb">${crumbs.map(c => link(new URL(c.url).pathname, c.name)).join(' / ')}</nav>` + r.bodyHtml;
   if (['/', '/curriculum/', '/about/', '/contact/'].includes(path) || path.startsWith('/tools/compare/')) {
-    r.bodyHtml += `<p>Page updated: <time datetime="${publisherPageRevision.iso}">${publisherPageRevision.label}</time>. ` + link('/about/#editorial-policy', 'Editorial policy') + '</p>';
+    const revision = path === '/curriculum/' ? chapterIllustrationRevision : publisherPageRevision;
+    r.bodyHtml += `<p>Page updated: <time datetime="${revision.iso}">${revision.label}</time>. ` + link('/about/#editorial-policy', 'Editorial policy') + '</p>';
     if (r.schemaJson) r.schemaJson = { ...r.schemaJson, dateModified: publisherPageRevision.iso };
   }
+  if (r.bodyHtml.includes('data-chapter-diagram=')) r.schemaJson = {
+    ...(r.schemaJson || { '@type': children.length ? 'CollectionPage' : 'WebPage', name:r.heading, description:r.description, url:r.canonical, publisher }),
+    dateModified: chapterIllustrationRevision.iso,
+  };
   r.schemaJson = { '@context': 'https://schema.org', '@graph': [publisher, lessonAuthor,
     { '@type': 'WebSite', '@id': 'https://learnsmc.xyz/#website', name: 'LearnSMC', url: 'https://learnsmc.xyz/' },
     { '@type': 'BreadcrumbList', itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })) },

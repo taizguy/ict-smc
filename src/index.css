@@ -4,6 +4,7 @@
 @import "./styles/typography.css";
 @import "./styles/curriculum-review.css";
 @import "./styles/mentorships.css";
+@import "./styles/chapter-diagrams.css";
 
 @theme {
   --font-sans: "Source Sans 3", system-ui, sans-serif;

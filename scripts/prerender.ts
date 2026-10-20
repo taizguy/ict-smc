@@ -1,5 +1,5 @@
 import { articlePages } from './article-pages';
-import { curriculumReviewDate } from '../src/data/curriculumReview';
+import { applySitemapDates } from './sitemap-dates';
 import { URDU_PUBLISHED } from '../src/i18n/release';
 import { generateUrduPages } from './urdu-pages';
 import { orderRedirectRules } from './redirect-rules';
@@ -260,8 +260,7 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
 // -------------------------------------------------------------
 
 const allRoutes: RouteMeta[] = [];
-const sitemapUrls: { loc: string; lastmod: string; changefreq: string; priority: string }[] = [];
-const todayIso = new Date().toISOString().split('T')[0];
+const sitemapUrls: { loc: string; changefreq: string; priority: string }[] = [];
 
 // 0. Institutional Homepage (Root /)
 const homePage: RouteMeta = {
@@ -1682,7 +1681,6 @@ for (const route of allRoutes) {
 
     sitemapUrls.push({
       loc: route.url,
-      lastmod: (() => { const a = writtenArticles.find(a => route.canonical.endsWith(`/articles/${a.slug}/`)); return a?.updated || a?.date || (textbookChapters.some(ch => route.canonical === getLessonCanonicalUrl(ch.slug)) ? curriculumReviewDate : todayIso); })(),
       changefreq,
       priority
     });
@@ -1820,7 +1818,6 @@ console.log(`✓ Generated ${textbookChapters.length} legacy /chapter/:id redire
 const finalSitemapUrls = [
   {
     loc: 'https://learnsmc.xyz/',
-    lastmod: todayIso,
     changefreq: 'weekly',
     priority: '1.0'
   },
@@ -1924,3 +1921,4 @@ fs.writeFileSync(path.join(distDir, 'llms-full.txt'), llms + '\n## Published pag
 
 // Only completed language editions enter the public sitemap. Review builds remain noindex.
 if (URDU_PUBLISHED || process.env.URDU_FULL_PREVIEW === 'true') generateUrduPages(distDir, allRoutes);
+applySitemapDates(distDir);

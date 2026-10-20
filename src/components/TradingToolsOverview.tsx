@@ -1,4 +1,5 @@
 import { masterclassCollection } from '../data/masterclassData';
+import { StudioSketch } from './StudioSketch';
 import { AccentText } from './AccentText';
 import { textbookChapters } from '../data/chaptersData';
 import React, { useState } from 'react';
@@ -60,11 +61,11 @@ export const WORKBENCH_TOOL_CATALOG: ToolCardData[] = [
     url: '/tools/chartlab/',
     name: 'Chart Laboratory',
     category: 'execution',
-    categoryLabel: 'Market Replay',
-    badge: 'Trading Floor',
+    categoryLabel: 'Chart Recognition',
+    badge: 'Visual Practice',
     number: '02',
-    desc: 'High-definition candlestick auction engine with multi-layer ICT overlays. Replay 8-stage price delivery sequences across London and NY Killzones.',
-    features: ['8-stage candle sequence marking', 'Authored FVG and block overlays', 'Macro liquidity sweep visualization'],
+    desc: 'Identify sweeps, displacement and three-candle gaps with selectable candles and visual hints.',
+    features: ['Selectable candles and visual hints', 'Three observation drills', 'Six authored illustrative examples'],
     icon: BarChart2,
     accentColor: '#23796d'
   },
@@ -77,7 +78,7 @@ export const WORKBENCH_TOOL_CATALOG: ToolCardData[] = [
     categoryLabel: 'Execution Engine',
     badge: 'Blind Testing',
     number: '03',
-    desc: 'Review a fictional trade plan, check its assumptions, and reconcile entry, stop, target and signed R.',
+    desc: 'Lock a plan before revealing future candles. Explore stops, targets, gaps and the choice not to trade.',
     features: ['Authored illustrative scenarios', 'Transparent price and R arithmetic', 'No historical fills or outcome prediction'],
     icon: PlayCircle,
     accentColor: '#256552'
@@ -89,10 +90,10 @@ export const WORKBENCH_TOOL_CATALOG: ToolCardData[] = [
     name: 'Backtest Lab',
     category: 'execution',
     categoryLabel: 'Quantitative Testing',
-    badge: 'Expectancy Lab',
+    badge: 'Rule Research',
     number: '04',
-    desc: 'Explore hypothetical independent trade outcomes with editable assumptions, reproducible paths, costs and calculated statistics.',
-    features: ['Monte Carlo & drawdown modeling', 'Win-rate vs R:R expectancy matrix', 'Exportable generated trade ledgers'],
+    desc: 'Scan a transparent FVG teaching rule on synthetic demo candles or your local CSV, with training and hold-out samples.',
+    features: ['Local OHLC CSV import', 'Chronological training and hold-out', 'Individual trade charts and CSV ledger'],
     icon: Cpu,
     accentColor: '#25734f'
   },
@@ -194,7 +195,7 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
     : WORKBENCH_TOOL_CATALOG.filter(t => t.category === filterCategory);
 
   return (
-    <div className="space-y-10 sm:space-y-12 pb-20 text-ink">
+    <div className="studio-tools space-y-10 sm:space-y-12 pb-20 text-ink">
       <SEO 
         title="ICT Trading Workbench & Analytical Laboratories | LearnSMC"
         description="Explore 10 empirical trading facilities: interactive Chart Lab, trade simulator, backtester, multi-tier concepts glossary, and ICT Delivery Suite."
@@ -229,7 +230,7 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
             <div className="space-y-3">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-ink leading-tight">
                 <AccentText text="Trading Study Workbench" focus="Study" urduFocus="مشق" tone="violet"/> <br className="hidden sm:inline" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal via-brand to-[#705692]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal via-brand to-violet">
                   Reference, Practice and Review
                 </span>
               </h1>
@@ -241,8 +242,8 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
             {/* Quick Metrics */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
               <div className="p-3.5 rounded-xl bg-ink/[0.03] border border-ink/[0.06]">
-                <div className="text-xs font-sans tabular-nums uppercase text-ink-muted">Replay Stages</div>
-                <div className="text-xl font-bold text-teal font-sans tabular-nums mt-0.5">8 Stages</div>
+                <div className="text-xs font-sans tabular-nums uppercase text-ink-muted">Observation Drills</div>
+                <div className="text-xl font-bold text-teal font-sans tabular-nums mt-0.5">3 Drills</div>
               </div>
               <div className="p-3.5 rounded-xl bg-ink/[0.03] border border-ink/[0.06]">
                 <div className="text-xs font-sans tabular-nums uppercase text-ink-muted">Glossary Concepts</div>
@@ -315,6 +316,7 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
                   </div>
                 </div>
 
+                {(['chartlab','simulator','backtest'].includes(tool.id)) && <StudioSketch kind={tool.id === 'chartlab' ? 'recognize' : tool.id === 'simulator' ? 'decide' : 'evaluate'}/>}
                 {/* Title & Desc */}
                 <div className="space-y-2">
                   <h3 className="text-xl font-bold text-ink group-hover:text-ink tracking-tight flex items-center justify-between">
@@ -372,7 +374,7 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
           <div className="p-4 rounded-xl bg-ink/[0.02] border border-ink/[0.06] space-y-2">
             <h4 className="font-semibold text-ink font-sans tabular-nums text-xs uppercase text-teal">1. Execution &amp; Replay</h4>
             <p className="text-xs text-ink-secondary leading-relaxed">
-              Step through authored illustrative candle sequences in the Chart Lab, review fictional trade-plan assumptions in the Trade Simulator, and inspect generated hypothetical outcomes in the Expectancy Lab.
+              Identify chart features in Chart Laboratory, lock a fictional decision in Trade Simulator, and scan a defined rule on synthetic or local CSV candles in Backtest Lab.
             </p>
           </div>
           <div className="p-4 rounded-xl bg-ink/[0.02] border border-ink/[0.06] space-y-2">

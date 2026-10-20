@@ -6,6 +6,7 @@
 @import "./styles/mentorships.css";
 @import "./styles/chapter-diagrams.css";
 @import "./styles/visual-learning.css";
+@import "./styles/studio.css";
 
 @theme {
   --font-sans: "Source Sans 3", system-ui, sans-serif;

@@ -108,7 +108,7 @@ export const Header: React.FC<HeaderProps> = ({
   ].includes(activeTab);
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 border-b ${
+    <header className={`studio-header sticky top-0 z-50 transition-all duration-300 border-b ${
       isScrolled
         ? 'bg-canvas/90 backdrop-blur-xl border-ink/[0.08] shadow-[0_4px_30px_rgba(34,59,53,0.06)]'
         : 'bg-canvas/60 backdrop-blur-md border-ink/[0.05]'
@@ -129,23 +129,12 @@ export const Header: React.FC<HeaderProps> = ({
               }
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="flex items-center gap-3 text-left cursor-pointer group select-none"
+            className="studio-brand flex items-center gap-3 text-left cursor-pointer group select-none"
             title={t("Return to Welcome Screen")}
             aria-label={t("Return to Welcome Screen")}
           >
-            {/* Minimal Technical Emblem */}
-            <div className="w-8 h-8 rounded-lg bg-ink/[0.04] border border-ink/[0.09] flex items-center justify-center group-hover:border-ink/20 transition-all">
-              <span className="w-2 h-2 rounded-full bg-brand group-hover:scale-125 transition-transform" />
-            </div>
-
-            <div>
-              <div className="font-semibold text-sm sm:text-base tracking-tight text-ink flex items-center gap-1.5 leading-none">
-                <span>ICT</span>
-                <span className="text-ink">/</span>
-                <span className="text-ink-secondary">SMC</span>
-              </div>
-              <div className="text-[0.8125rem] font-sans tabular-nums tracking-[0.16em] uppercase text-ink-muted mt-0.5">{t("ACADEMY")}</div>
-            </div>
+            <span className="studio-brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40" width="40" height="40"><path d="M10 22v12m10-23v19M30 6v14"/><path d="M6 25h8v5H6zM16 16h8v9h-8zM26 10h8v6h-8z"/></svg></span>
+            <span><span className="studio-brand-name">LearnSMC<span aria-hidden="true">↗</span></span><span className="studio-brand-subtitle">ICT / SMC {t('ACADEMY')}</span></span>
           </button>
         </div>
 
@@ -193,7 +182,7 @@ export const Header: React.FC<HeaderProps> = ({
           <LanguageSwitcher />
           <ThemePicker />
           {/* NY Market Session Clock */}
-          <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-ink/[0.02] border border-ink/[0.07] text-xs font-sans tabular-nums">
+          <div className="studio-clock hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-ink/[0.02] border border-ink/[0.07] text-xs font-sans tabular-nums">
             <span className="w-1.5 h-1.5 rounded-full bg-positive animate-pulse" />
             <span className="text-ink-secondary uppercase">{t(activeSession)}</span>
             <span className="text-ink">|</span>
@@ -217,7 +206,7 @@ export const Header: React.FC<HeaderProps> = ({
           {onOpenMentorSpotlight && (
             <button
               onClick={onOpenMentorSpotlight}
-              className="p-2 rounded-lg bg-ink/[0.03] hover:bg-ink/[0.08] border border-ink/[0.07] text-ink-secondary hover:text-ink transition-all cursor-pointer"
+              className="studio-tribute p-2 rounded-lg bg-ink/[0.03] hover:bg-ink/[0.08] border border-ink/[0.07] text-ink-secondary hover:text-ink transition-all cursor-pointer"
               title={t("Trader Abdullah Masood Tribute")}
               aria-label={t("Trader Abdullah Masood Tribute")}
             >

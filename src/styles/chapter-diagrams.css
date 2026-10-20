@@ -1,4 +1,4 @@
-.chapter-diagram{--diagram-teal:#19766b;--diagram-coral:#bd503f;--diagram-violet:#7752ad;--diagram-ink:#39534c;margin:0;min-width:0;border:1px solid #dce7e2;border-radius:16px;overflow:hidden;background:#fff;color:#223b35}
+.chapter-diagram{--diagram-teal:#19766b;--diagram-coral:#bd503f;--diagram-violet:#7752ad;--diagram-ink:#39534c;margin:0;min-width:0;border:1px solid #dce7e2;border-radius:16px;overflow:hidden;background:#fff;color:#121c32}
 .chapter-diagram-heading{display:grid;gap:.3rem;padding:1rem 1.15rem 0}
 .chapter-diagram-heading>span{font-size:.6875rem;text-transform:uppercase;letter-spacing:.12em;color:#63786d;font-weight:600}
 .chapter-diagram-heading>strong{font-size:1rem;line-height:1.4;font-weight:600}

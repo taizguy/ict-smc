@@ -1,5 +1,5 @@
 import { useTranslation } from '../i18n/TranslationProvider';
-import { LearningHero } from './LearningHero';
+import { PricePlayground } from './PricePlayground';
 import { FinancialDisclaimer } from './FinancialDisclaimer';
 import { StudioSketch } from './StudioSketch';
 import type { MainTabType } from './Header';
@@ -7,7 +7,7 @@ import type { MainTabType } from './Header';
 export function WelcomeScreen(_props:{onEnterAcademy:(targetTab?:MainTabType)=>void;onOpenMentorSpotlight:()=>void}) {
   const {t,href} = useTranslation();
   return <div className="new-home studio-home">
-    <LearningHero/>
+    <PricePlayground/>
     <div className="studio-divider" aria-hidden="true"><span>ICT / SMC</span><span>✳</span><span>LearnSMC</span></div>
     <section className="home-practice">
       <div className="studio-section-heading"><div><span className="lab-eyebrow">{t('LESS READING ABOUT PRACTICE. MORE PRACTICE.')}</span><h2>{t('Three labs.')}<em>{t('Three different skills.')}</em></h2></div><p>{t('See it. Decide. Then check the evidence.')}</p></div>

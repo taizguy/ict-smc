@@ -2,17 +2,17 @@
 @theme {
   --color-canvas: #ffffff;
   --color-surface: #ffffff;
-  --color-surface-muted: #f0f3eb;
-  --color-surface-raised: #edf1e8;
-  --color-surface-hover: #e3ebde;
-  --color-ink: #223b35;
-  --color-ink-secondary: #52645b;
-  --color-ink-muted: #5f7064;
-  --color-line: #cfd8cd;
-  --color-brand: #256552;
-  --color-brand-hover: #1d5545;
+  --color-surface-muted: #f3f6ff;
+  --color-surface-raised: #eaf0ff;
+  --color-surface-hover: #e4ecff;
+  --color-ink: #121c32;
+  --color-ink-secondary: #4f5d75;
+  --color-ink-muted: #637088;
+  --color-line: #dce3f0;
+  --color-brand: #2453ef;
+  --color-brand-hover: #183ec3;
   --color-on-brand: #ffffff;
-  --color-teal: #23796d;
+  --color-teal: #2453ef;
   --color-positive: #25734f;
   --color-negative: #b44746;
   --color-amber: #94631f;
@@ -35,8 +35,8 @@
   --color-yellow-700: #875817;
   --color-orange-500: #b34e30;
   --color-orange-700: #a3482b;
-  --color-cyan-500: #23796d;
-  --color-cyan-600: #23796d;
+  --color-cyan-500: #2453ef;
+  --color-cyan-600: #2453ef;
   --color-cyan-700: #206d64;
   --color-blue-500: #405a98;
   --color-blue-700: #3b528e;
@@ -73,13 +73,13 @@ button, a, input, select, textarea { -webkit-tap-highlight-color: #d6e8db; }
 html .predikt-workbench-body table th { color: var(--color-ink); }
 html .predikt-workbench-body table td { color: var(--color-ink-secondary); }
 html .fieldnotes { box-shadow: none; border: 0; }
-html .modal-scrollable, [data-lenis-prevent] { scrollbar-color: #9aaa9b #edf1e8; }
-html .modal-scrollable::-webkit-scrollbar-track { background: #edf1e8; }
+html .modal-scrollable, [data-lenis-prevent] { scrollbar-color: #9aaa9b #eaf0ff; }
+html .modal-scrollable::-webkit-scrollbar-track { background: #eaf0ff; }
 html .modal-scrollable::-webkit-scrollbar-thumb { background: #9aaa9b; }
 html .modal-scrollable::-webkit-scrollbar-thumb:hover { background: #6c8172; }
 .study-illustration { width: 100%; height: auto; }
 @media print {
-  body { background: #fff; color: #223b35; }
+  body { background: #fff; color: #121c32; }
   .site-wash { display: none; }
 }
 

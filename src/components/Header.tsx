@@ -54,10 +54,22 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenWelcomeIntro,
   progressPercent = 0
 }) => {
-  const { t, href } = useTranslation();
+  const { t, href, locale } = useTranslation();
   const [nyTime, setNyTime] = useState<string>('');
   const [activeSession, setActiveSession] = useState<string>('Asian');
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+  useEffect(() => {
+    const closeLibrary = (event: KeyboardEvent | PointerEvent) => {
+      if (event instanceof KeyboardEvent && event.key !== 'Escape') return;
+      document.querySelectorAll<HTMLDetailsElement>('.playground-library[open]').forEach(menu => {
+        if (event instanceof KeyboardEvent || !menu.contains(event.target as Node)) menu.open = false;
+      });
+    };
+    document.addEventListener('keydown', closeLibrary);
+    document.addEventListener('pointerdown', closeLibrary);
+    return () => { document.removeEventListener('keydown', closeLibrary); document.removeEventListener('pointerdown', closeLibrary); };
+  }, []);
 
   // Scroll detection for backdrop effect
   useEffect(() => {
@@ -179,6 +191,20 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Right: Search, Market Clock, Tribute */}
         <div className="flex items-center gap-2 sm:gap-3 ms-auto">
+          <details className="playground-library">
+            <summary>{locale === 'ur' ? 'لائبریری' : 'The library'} <span aria-hidden="true">＋</span></summary>
+            <nav aria-label={locale === 'ur' ? 'تعلیمی لائبریری' : 'Learning library'}>
+              <p>{locale === 'ur' ? 'آج کیا سیکھنا چاہتے ہیں؟' : 'Where does your curiosity go next?'}</p>
+              {([
+                ['/curriculum/', 'Curriculum', 'نصاب', '01'],
+                ['/curriculum/mentorships/', 'Mentorships', 'مینٹورشپس', '02'],
+                ['/tools/', 'Workbench & Lab', 'ورک بینچ اور لیب', '03'],
+                ['/articles/', 'Articles', 'مضامین', '04'],
+                ['/masood/', 'Masood Academy', 'مسعود اکیڈمی', '05'],
+                ['/resources/ict-smc-cheat-sheet/', 'Free cheat sheet', 'مفت چیٹ شیٹ', '06'],
+              ] as const).map(([path,en,ur,n]) => <a key={path} href={href(path)}><small>{n}</small><span>{locale === 'ur' ? ur : en}</span><span aria-hidden="true">↗</span></a>)}
+            </nav>
+          </details>
           <LanguageSwitcher />
           <ThemePicker />
           {/* NY Market Session Clock */}

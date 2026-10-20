@@ -1,4 +1,8 @@
 import { lessonAuthor, publisher } from '../src/utils/publisher';
+import { labGuides } from '../src/data/labGuides';
+import { createElement } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { ChapterDiagram } from '../src/components/ChapterDiagram';
 import type { RouteMeta } from './prerender';
 import { masterclassCollection } from '../src/data/masterclassData';
 import { textbookChapters } from '../src/data/chaptersData';
@@ -11,11 +15,23 @@ const section=(title:string,items:string[])=>`<section><h2>${e(title)}</h2>${ite
 export function correctToolDocument(r:RouteMeta,path:string){
  if(!path.startsWith('/tools/'))return;
  const parts=path.split('/').filter(Boolean),tool=parts[1],slug=parts.at(-1);
+ if(Object.hasOwn(labGuides,tool)){
+  const guide=labGuides[tool];
+  const names:Record<string,string>={btc_2022_bullish_model:'BTC: Liquidity & FVG',nq_silver_bullet_short:'NQ: Silver Bullet',eurusd_failed_ob_breaker:'EUR/USD: Failed Block',xauusd_gold_legacy_model:'Gold: Sweep & Reference',eur_mmbm_propulsion_model:'EUR/USD: Price Curve',nq_2026_ath_alchemy_ndog_macro:'NQ: Opening Gap'};
+  const scenario=chartScenarios.find(s=>getChartScenarioSlug(s.id)===slug);
+  const context=tool==='chartlab'?(scenario?names[scenario.id]:'Chart Laboratory'):tool==='simulator'?(SIMULATOR_MODELS.find(m=>m.slug===slug)?.name||'Trade Simulator'):(BACKTEST_STRATEGIES.find(m=>m.slug===slug)?.shortName||'Backtest Lab');
+  r.title=`${context}: ${tool==='backtest'?'Rule Study':tool==='simulator'?'Decision Practice':'Chart Practice'} | LearnSMC`;
+  r.heading=`${context}: ${guide.title}`;
+  r.description=`${context}. ${guide.description}`;
+  r.bodyHtml=section(guide.title,guide.paragraphs)+renderToStaticMarkup(createElement(ChapterDiagram,{chapterId:tool==='chartlab'?13:tool==='simulator'?22:38,staticOnly:true}))+`<p><a href="/tools/chartlab/">Chart Laboratory</a> · <a href="/tools/simulator/">Trade Simulator</a> · <a href="/tools/backtest/">Backtest Lab</a> · <a href="/resources/ict-smc-cheat-sheet/">Free glossary and cheat sheet</a></p>`;
+  r.schemaJson={'@type':'WebApplication',name:context,description:guide.description,url:r.canonical,applicationCategory:'EducationalApplication',operatingSystem:'Web browser',isAccessibleForFree:true,author:lessonAuthor,publisher,dateModified:'2026-10-20'};
+  return;
+ }
  const evidence=section('Definitions and evidence conventions',[INTERPRETATION_GUIDANCE,FVG_GUIDANCE,OB_GUIDANCE]);
  if(!tool){r.title='Trading Study Tools, Charts and Reference | LearnSMC';r.heading='Trading study workbench';r.description='Explore chart exercises, trade-plan arithmetic, hypothetical expectancy, a device-local journal and ICT/SMC reference lessons.';r.bodyHtml=section('Choose a study task',[
  `Browse ${masterclassCollection.length} independent masterclass/reference lessons, 41 glossary concepts and sixteen comparison pages. The tools describe their assumptions and do not award professional credentials.`,
- 'Chart Lab contains six authored illustrative sequences with graded marking tasks and manual replay. It is not a sourced historical or live feed. The Trade Simulator is a trade-plan reasoning exercise with fictional prices and user-selected exit assumptions; it does not predict wins or model realistic order fills.',
- 'Backtest Lab generates hypothetical independent trade paths from editable assumptions. No historical strategy win rate is supplied. The journal stores user-entered records and drafts in this browser; export backups. The profile displays actual lesson completion and fixed practice quizzes.',
+ 'Chart Lab contains six authored illustrative sequences with visual recognition drills and selectable candles. It is not a sourced historical or live feed. The Trade Simulator locks a fictional plan before the learner reveals later candles, including losses, gaps and ambiguous outcomes.',
+ 'Backtest Lab scans a transparent FVG teaching rule on synthetic demo candles or a local OHLC CSV. Training and hold-out samples are separate. No independently verified strategy win rate is supplied. The journal stores user-entered records and drafts in this browser; export backups. The profile displays actual lesson completion and fixed practice quizzes.',
  'The delivery suite provides a New York clock, tick-aware retracement arithmetic, whole-contract futures sizing, range-multiple projections and a device-local study checklist. Calculations do not independently validate a setup.'
  ]);}
  else if(tool==='simulator'){

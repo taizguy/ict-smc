@@ -6,6 +6,7 @@ import { lessonParagraphs } from '../src/utils/lessonText';
 import { editorialUrdu } from '../src/i18n/editorial-urdu';
 import { toolsUrdu } from '../src/i18n/tools-urdu';
 import { terminology } from '../src/i18n/terminology';
+import learningUpdate from '../src/i18n/learning-update-urdu.json';
 
 // Keep the complete editorial catalog for HTML generation, but send visitors only
 // interface/search labels and the long copy belonging to their current section.
@@ -53,7 +54,7 @@ walk('src');
 const sourceKeys = new Set(groups.flatMap(group => [...keys[group]]));
 for (const key of sourceKeys) if (key.length <= 35 || searchKeys.has(key)) keys.shared.add(key);
 // Handwritten overrides also include derived labels assembled at runtime.
-for (const key of Object.keys({ ...editorialUrdu, ...toolsUrdu, ...terminology })) if (!sourceKeys.has(key)) keys.shared.add(key);
+for (const key of Object.keys({ ...editorialUrdu, ...toolsUrdu, ...terminology, ...learningUpdate })) if (!sourceKeys.has(key)) keys.shared.add(key);
 const output = 'src/i18n/runtime';
 fs.mkdirSync(output, { recursive: true });
 for (const group of groups) {

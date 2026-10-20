@@ -7,9 +7,9 @@ import { topicClusters, topicSlug } from '../utils/topicClusters';
 import React, { useState, useMemo } from 'react';
 import { textbookChapters } from '../data/chaptersData';
 import { getLessonPath } from '../utils/url';
-import { 
-  Search, 
-  ArrowRight, 
+import {
+  Search,
+  ArrowRight,
   X
 } from 'lucide-react';
 import { BauhausNavScroller } from './BauhausNavScroller';
@@ -67,7 +67,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
   return (
     <div className="space-y-12 sm:space-y-16 pb-20">
       <MentorshipsTeaser />
-      
+
       <details className="curriculum-topics"><summary>Browse curriculum topics</summary><nav aria-label="Curriculum topics" className="grid sm:grid-cols-2 gap-2 pt-4">
         <a className="underline" href="/curriculum/">All lessons</a>
         {topicClusters.map(c => <a key={c.slug} className="underline text-teal" href={`/curriculum/${c.slug}/`}>{c.part}</a>)}
@@ -75,12 +75,12 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
       {/* Editorial Header Section */}
       <ScrollReveal y={25} duration={0.6}>
         <section className="bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-10 md:p-12 relative overflow-hidden">
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            
+
             {/* Left Column */}
             <div className="lg:col-span-8 space-y-6">
-              
+
               {/* Technical Eyebrow */}
               <div className="flex items-center gap-3">
                 <span className="text-[0.8125rem] font-sans tabular-nums tracking-[0.2em] uppercase text-teal">
@@ -134,7 +134,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
 
             {/* Right Column: Stats Block */}
             <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
-              
+
               <div className="flex-1 bg-ink/[0.02] border border-ink/[0.07] p-4 sm:p-5 rounded-xl">
                 <div className="text-3xl sm:text-4xl font-semibold font-sans tabular-nums text-ink tracking-tight leading-none">
                   {chapterCount}
@@ -238,7 +238,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
                 {/* Card Header Metadata */}
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-sans tabular-nums font-semibold text-brand tracking-wider">
-                    {ch.id < 10 ? `0${ch.id}` : ch.id} / 57
+                    {String(textbookChapters.indexOf(ch) + 1).padStart(2, '0')} / {chapterCount}
                   </span>
                   <span className="text-[0.8125rem] font-sans tabular-nums tracking-wider uppercase text-ink-muted">
                     LEVEL {ch.level} · {partShort}
@@ -251,7 +251,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
                   <h3 className="text-base sm:text-lg font-semibold text-ink group-hover:text-brand transition-colors leading-snug">
                     {ch.title}
                   </h3>
-                  
+
                   {/* Quote Callout */}
                   <div className="mt-3 p-3 rounded-lg bg-ink/[0.02] border-l-2 border-brand text-xs text-ink-secondary italic line-clamp-2 leading-relaxed">
                     "{ch.quote}"

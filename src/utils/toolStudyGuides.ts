@@ -1,4 +1,5 @@
 import { withoutLocale } from '../i18n/locale';
+import { labGuides } from '../data/labGuides';
 /** Visible tool guidance shared by the interactive view and crawlable document. */
 const guides: Record<string, { title: string; paragraphs: string[] }> = {
   chartlab: { title: 'How to study a chart scenario', paragraphs: ['Choose a scenario and identify its timeframe, reference range and marked price levels. Read the explanation before advancing through the diagram. Record what would confirm the pattern and what would invalidate it. The drawing simplifies price action; it is not a live market feed.', 'For practice, hide the next part of the scenario and write down two possible outcomes. A move through a previous high can continue or reverse. Compare your observation with the lesson definition instead of assuming that every sweep predicts a reversal.'] },
@@ -10,5 +11,6 @@ const guides: Record<string, { title: string; paragraphs: string[] }> = {
   glossary: { title: 'How to use the trading glossary', paragraphs: ['Start with the definition, then compare the term with related ideas. Terms such as liquidity sweep, market structure shift and fair value gap refer to different observations. Seeing one condition does not establish that the others are present.', 'For a study exercise, describe a chart in ordinary language before assigning a label. Record the timeframe and the price levels used in your definition. Follow a related lesson for examples, common mistakes and invalidation conditions. Definitions organize observations; they do not establish a profitable trading rule.'] },
 };
 export function toolStudyGuide(path: string) {
-  return guides[withoutLocale(path).split('/')[2]];
+  const key=withoutLocale(path).split('/')[2];
+  return Object.hasOwn(labGuides,key) ? labGuides[key] : Object.hasOwn(guides,key) ? guides[key] : undefined;
 }

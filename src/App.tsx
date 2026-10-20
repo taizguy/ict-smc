@@ -13,15 +13,15 @@ import { Header, MainTabType } from './components/Header';
 import { TradingToolId } from './components/TradingToolsWorkbench';
 import { chapterCatalog as textbookChapters, lectureCatalog as allMasoodLectures, playlistCatalog as masoodPlaylistsData } from './data/catalog.generated';
 
-import { 
-  getStoredProgress, 
-  saveCompletedChapter 
+import {
+  getStoredProgress,
+  saveCompletedChapter
 } from './utils/academyProgress';
-import { 
-  Youtube, 
-  Sparkles, 
-  ArrowRight, 
-  BookOpen, 
+import {
+  Youtube,
+  Sparkles,
+  ArrowRight,
+  BookOpen,
   Wrench,
   GraduationCap,
   ShieldAlert,
@@ -37,25 +37,26 @@ import { ScrollReveal } from './components/ScrollReveal';
 import type { LegalModalTab } from './components/LegalModal';
 import { CookieConsentBanner } from './components/CookieConsentBanner';
 import type { LegalTabType } from './components/LegalPageView';
-import { 
-  normalizeCanonicalUrl, 
-  normalizePath, 
-  getLessonCanonicalUrl, 
-  getLessonPath, 
-  resolveLegacyChapter 
+import {
+  normalizeCanonicalUrl,
+  normalizePath,
+  getLessonCanonicalUrl,
+  getLessonPath,
+  resolveLegacyChapter
 } from './utils/url';
-import { 
-  resolveGlossaryUrl, 
-  getConceptBySlugOrId, 
+import {
+  resolveGlossaryUrl,
+  getConceptBySlugOrId,
   getGlossaryConceptPath,
-  getGlossaryRootPath 
+  getGlossaryRootPath
 } from './utils/glossaryRoutes';
-import { 
+import {
   type WorkbenchToolId
 } from './utils/workbenchToolRoutes';
 
 // Code-split heavy interactive sub-modules for fast initial paint & Core Web Vitals
 const ArticlesView = lazy(() => import('./components/articles/ArticlesView').then(m => ({ default: m.ArticlesView })));
+const CheatSheetPage = lazy(() => import('./components/CheatSheetPage').then(m => ({ default: m.CheatSheetPage })));
 const CurriculumView = lazy(() => import('./components/CurriculumView').then(m => ({ default: m.CurriculumView })));
 const WelcomeScreen = lazy(() => import('./components/WelcomeScreen').then(m => ({ default: m.WelcomeScreen })));
 const ChapterRoom = lazy(() => import('./components/ChapterRoom').then(m => ({ default: m.ChapterRoom })));
@@ -166,6 +167,7 @@ export const App: React.FC = () => {
         setActiveTab('not_found'); setAttemptedInvalidPath(window.location.pathname); return;
       }
       const path = withoutLocale(window.location.pathname).toLowerCase().replace(/\/$/, '') || '/';
+      if (path === '/resources/ict-smc-cheat-sheet') { setActiveTab('resources'); return; }
       const params = new URLSearchParams(window.location.search);
       const chapterParam = params.get('chapter');
       const tabParam = params.get('tab') as MainTabType | null;
@@ -233,8 +235,8 @@ export const App: React.FC = () => {
         const lectureMatch = path.match(/^\/masood\/lectures\/([^/]+)$/i);
         if (lectureMatch) {
           const lecParam = lectureMatch[1];
-          const matchedLec = allMasoodLectures.find(l => 
-            l.id.toLowerCase() === lecParam.toLowerCase() || 
+          const matchedLec = allMasoodLectures.find(l =>
+            l.id.toLowerCase() === lecParam.toLowerCase() ||
             String(l.lectureNumber) === lecParam
           );
           if (matchedLec) {
@@ -468,7 +470,7 @@ export const App: React.FC = () => {
 
       {/* Main Educational Application Content */}
       <main id="main-content" tabIndex={-1} className="flex-1 max-w-[1560px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10 space-y-10 sm:space-y-14">
-        
+
         {/* WELCOME / HOME SCREEN (Clean root experience at /) */}
         {isShowingWelcome && (
           <Suspense fallback={<ViewLoadingFallback />}>
@@ -484,6 +486,7 @@ export const App: React.FC = () => {
         )}
 
         {activeTab === 'articles' && <Suspense fallback={<ViewLoadingFallback />}><ArticlesView slug={withoutLocale(window.location.pathname).split('/').filter(Boolean)[1]} /><PageReady /></Suspense>}
+        {activeTab === 'resources' && <Suspense fallback={<ViewLoadingFallback />}><CheatSheetPage/><PageReady/></Suspense>}
 
         {/* PILLAR 1: OPEN SYLLABUS & CURRICULUM VIEW (All 57 Chapters Unlocked) */}
         {!isShowingWelcome && (activeTab === 'curriculum' || activeTab === 'world_map' || activeTab === 'textbook') && (
@@ -511,7 +514,7 @@ export const App: React.FC = () => {
         {/* PILLAR 2: TRADER ABDULLAH MASOOD ACADEMY (52 MASTERCLASSES & TOOLS) */}
         {!isShowingWelcome && activeTab === 'masood' && (
           <Suspense fallback={<ViewLoadingFallback />}>
-            <MasoodAcademyView 
+            <MasoodAcademyView
               initialSubTab={masoodSubTab}
               initialLectureId={masoodLectureId || undefined}
               onSubTabChange={handleMasoodSubTabChange}
@@ -600,7 +603,7 @@ export const App: React.FC = () => {
       {/* Predikt Editorial Footer */}
       <footer className="border-t border-ink/[0.07] bg-canvas/80 backdrop-blur-md py-10 px-4 sm:px-6 lg:px-8 mt-auto relative z-10">
         <div className="max-w-[1560px] w-full mx-auto space-y-8">
-          
+
           {/* Tribute Banner - Sleek Dark Card */}
           <ScrollReveal y={30} duration={0.6}>
             <div className="p-6 sm:p-7 bg-surface border border-ink/[0.08] rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 transition-colors hover:border-ink/[0.14]">
@@ -746,10 +749,10 @@ export const App: React.FC = () => {
 
             <div className="text-[0.8125rem] text-ink-muted flex items-center gap-2">
               <span>{t("Domain:")}</span>
-              <a 
-                href="https://learnsmc.xyz/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://learnsmc.xyz/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-ink-secondary hover:text-teal underline"
               >
                 learnsmc.xyz

@@ -1,29 +1,31 @@
 import { useTranslation } from '../i18n/TranslationProvider';
 import React, { useState, useEffect } from 'react';
-import { 
-  Search, 
+import {
+  Search,
   Sparkles,
   Clock
 } from 'lucide-react';
 import { BauhausNavScroller } from './BauhausNavScroller';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { ThemePicker } from './ThemePicker';
 
-export type MainTabType = 
+export type MainTabType =
   | 'welcome'
   | 'articles'
-  | 'curriculum' 
-  | 'chapter_room' 
-  | 'masood' 
+  | 'resources'
+  | 'curriculum'
+  | 'chapter_room'
+  | 'masood'
   | 'tools'
-  | 'world_map' 
-  | 'textbook' 
-  | 'concepts' 
-  | 'chartlab' 
-  | 'graph' 
-  | 'compare' 
-  | 'simulator' 
-  | 'journal' 
-  | 'backtest' 
+  | 'world_map'
+  | 'textbook'
+  | 'concepts'
+  | 'chartlab'
+  | 'graph'
+  | 'compare'
+  | 'simulator'
+  | 'journal'
+  | 'backtest'
   | 'dashboard'
   | 'masterclass'
   | 'ict_suite'
@@ -44,11 +46,11 @@ interface HeaderProps {
   progressPercent?: number;
 }
 
-export const Header: React.FC<HeaderProps> = ({ 
-  activeTab, 
-  setActiveTab, 
-  onOpenSearch, 
-  onOpenMentorSpotlight, 
+export const Header: React.FC<HeaderProps> = ({
+  activeTab,
+  setActiveTab,
+  onOpenSearch,
+  onOpenMentorSpotlight,
   onOpenWelcomeIntro,
   progressPercent = 0
 }) => {
@@ -107,13 +109,13 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 border-b ${
-      isScrolled 
+      isScrolled
         ? 'bg-canvas/90 backdrop-blur-xl border-ink/[0.08] shadow-[0_4px_30px_rgba(34,59,53,0.06)]'
         : 'bg-canvas/60 backdrop-blur-md border-ink/[0.05]'
     }`}>
       {/* Top Main Navigation Bar */}
       <div className="max-w-[1560px] w-full mx-auto px-4 sm:px-6 lg:px-8 min-h-16 h-auto sm:h-18 py-2 sm:py-0 flex flex-wrap sm:flex-nowrap items-center justify-between gap-4">
-        
+
         {/* Left: Brand Identity */}
         <div className="flex items-center gap-6">
           <button
@@ -189,6 +191,7 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Right: Search, Market Clock, Tribute */}
         <div className="flex items-center gap-2 sm:gap-3 ms-auto">
           <LanguageSwitcher />
+          <ThemePicker />
           {/* NY Market Session Clock */}
           <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-ink/[0.02] border border-ink/[0.07] text-xs font-sans tabular-nums">
             <span className="w-1.5 h-1.5 rounded-full bg-positive animate-pulse" />

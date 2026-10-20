@@ -5,7 +5,7 @@ import { contextualFragments } from '../src/utils/contextualLinks';
 
 const textAttributes = new Set(['title', 'alt', 'aria-label', 'aria-description', 'placeholder']);
 const schemaTextKeys = new Set(['name', 'headline', 'description', 'text', 'articleSection', 'alternativeHeadline', 'about', 'educationalLevel', 'learningResourceType']);
-const documentTypes = new Set(['WebPage', 'Article', 'BlogPosting', 'LearningResource', 'CollectionPage', 'ItemPage', 'DefinedTermSet', 'AboutPage', 'ContactPage', 'FAQPage']);
+const documentTypes = new Set(['WebPage', 'Article', 'BlogPosting', 'LearningResource', 'CollectionPage', 'DigitalDocument', 'WebApplication', 'ItemPage', 'DefinedTermSet', 'AboutPage', 'ContactPage', 'FAQPage']);
 const escaped = (text: string) => text.replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]!));
 const textContent = (node: HTML.Node): string => node.nodeName === '#text' ? (node as HTML.TextNode).value : 'childNodes' in node ? node.childNodes.map(textContent).join('') : '';
 const switcher = (pathname: string, locale: 'en' | 'ur') => `<nav data-language-switcher class="language-switcher" aria-label="${locale === 'ur' ? 'زبان منتخب کریں' : 'Choose language'}" dir="ltr"><a href="${localizedHref(pathname, 'en')}" hreflang="en" lang="en" translate="no"${locale === 'en' ? ' aria-current="page"' : ''}>English</a><a href="${localizedHref(pathname, 'ur')}" hreflang="ur" lang="ur" translate="no"${locale === 'ur' ? ' aria-current="page"' : ''}>اردو</a></nav>`;
@@ -36,7 +36,7 @@ export function localizeHtml(source: string, pathname: string, catalog: Translat
     if (Array.isArray(value)) return value.map(v => schema(v, key, identity));
     if (value && typeof value === 'object') {
       const isIdentity = ['Person', 'Organization', 'WebSite'].includes(value['@type']);
-      const result = Object.fromEntries(Object.entries(value).map(([k, v]) => [k, schema(v, k, isIdentity)]));
+      const result = Object.fromEntries(Object.entries(value).map(([k, v]) => [k, k === 'inLanguage' && value['@type'] === 'MediaObject' ? v : schema(v, k, isIdentity)]));
       if (documentTypes.has(value['@type'])) result.inLanguage = 'ur';
       if (value['@type'] === 'WebSite') result.inLanguage = ['en', 'ur'];
       return result;

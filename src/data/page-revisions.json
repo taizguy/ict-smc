@@ -1,0 +1,2507 @@
+{
+  "version": 1,
+  "pages": {
+    "/": {
+      "fingerprint": "f507d1b909fbffcfc35de6695d83f96ff6db845aaf90f1bbbc0a9b02bd2e7828"
+    },
+    "/about/": {
+      "fingerprint": "43b5575564e3ebec2cd567b2725c30f771f5b5a95bb9022de4fdc95277513bb5"
+    },
+    "/articles/": {
+      "fingerprint": "676019903000a22e91dd7a2a52b44d7897843fa79f54b486003afbda9ca47e68"
+    },
+    "/articles/a-good-trade-can-lose/": {
+      "fingerprint": "e76304030114afd950c033b671d65548e7686f126406daad04a3606dca1eb3e3",
+      "lastmod": "2026-10-17",
+      "evidence": "Existing article publication/update metadata; historical English edition."
+    },
+    "/articles/bitcoin-dashboard-is-not-a-crystal-ball/": {
+      "fingerprint": "2f8a3b1550a3f48e3018240edbd045073e76a36c439126c4b420bcc5edcbcf78",
+      "lastmod": "2026-10-17",
+      "evidence": "Existing article publication/update metadata; historical English edition."
+    },
+    "/articles/compare-ict-entry-models-without-hindsight/": {
+      "fingerprint": "331567776f7c04b97b4a8d4365dc3fb253110ed0dcfe76fc4c4d40aae2f5d13a",
+      "lastmod": "2026-10-17",
+      "evidence": "Existing article publication/update metadata; historical English edition."
+    },
+    "/articles/drawdown-math-is-not-symmetric/": {
+      "fingerprint": "c1998309067098b349786ba20f6be0b2681e1695b4ae62d0013b75df5c7b6b4d",
+      "lastmod": "2026-10-17",
+      "evidence": "Existing article publication/update metadata; historical English edition."
+    },
+    "/articles/higher-timeframe-bias-to-lower-timeframe-execution/": {
+      "fingerprint": "939092fe618c5aa3522c8b1b2bafabc2183ca514234f7dbf06db6bba3d24dd69",
+      "lastmod": "2026-10-17",
+      "evidence": "Existing article publication/update metadata; historical English edition."
+    },
+    "/articles/how-to-study-ict-without-collecting-setups/": {
+      "fingerprint": "e44d24459efb5fd8d04481504beca921ebe6973ca74fe27d590f4b0d5475e738",
+      "lastmod": "2026-10-17",
+      "evidence": "Existing article publication/update metadata; historical English edition."
+    },
+    "/articles/liquidity-is-not-a-magnet/": {
+      "fingerprint": "1b8281db851d0b1bd964a3352d70d962c04604dc6d45262d1c47d180f188e8c7",
+      "lastmod": "2026-10-17",
+      "evidence": "Existing article publication/update metadata; historical English edition."
+    },
+    "/articles/opening-range-vs-opening-gap-new-york/": {
+      "fingerprint": "5422145076f5a7f27cdd2ea921c6a69d6002deab91e82975137dc2353e327e35",
+      "lastmod": "2026-10-17",
+      "evidence": "Existing article publication/update metadata; historical English edition."
+    },
+    "/articles/pd-arrays-fvg-order-blocks-and-inversions/": {
+      "fingerprint": "fde2f29702f00463f2c90aca476d0d291b1536da07b329a0d6c41dce6a0fba1b",
+      "lastmod": "2026-10-17",
+      "evidence": "Existing article publication/update metadata; historical English edition."
+    },
+    "/contact/": {
+      "fingerprint": "a3981a6f0d354649d9ff01b73ab1b56273f0b87f240fbfc193da6ff9e6f8aa89"
+    },
+    "/curriculum/": {
+      "fingerprint": "203062c23e61414c67233436b1b3f766ac25275f3bacf1a649a149bd67f7ade0",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/curriculum/advanced-2025-2026-institutional-delivery-systems-tape-reading/": {
+      "fingerprint": "422958742b14e239f6b9adba972740f50a38cb85b0f220193c6d5d30f3823a6e",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/curriculum/ict-2025-official-mentorship-curriculum/": {
+      "fingerprint": "248e1d299c4aad673cff32a27e293e7f77dee08c2c2f83c00e3263bd4f62ea7f",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/curriculum/ict-charter-price-action-models-curriculum/": {
+      "fingerprint": "b45b22bf50c779929166650bdde4f435dc2885d5eade70ff2901cebda2edfb9f",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/curriculum/ict-mentorship-core-content-master-curriculum/": {
+      "fingerprint": "48b1a291805d97cb6fc89141d84ccebf571c00ce929488c3a39253cd63ff2f1e",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/curriculum/liquidity-and-time/": {
+      "fingerprint": "99dd3f00ddc981291fffea39fffb7fe9901a94a82e4f11e2ace8f64412736ef4",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/curriculum/market-foundations/": {
+      "fingerprint": "a324a9b64daf34722b1034012e16c69100294a8152fb398f7b992f6431362eaa",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/curriculum/mentorships/": {
+      "fingerprint": "b90c2d65cbd6b40bd7eaf545548050d35497a295ef4efa86fda0057df882b55c",
+      "lastmod": "2026-10-19",
+      "evidence": "New bilingual mentorship pages released in PR #16."
+    },
+    "/curriculum/mentorships/2022/": {
+      "fingerprint": "7e33ce53337663351222743c6046074f21e045002402579a8a48921733e6f3e6",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/curriculum/mentorships/2023/": {
+      "fingerprint": "30140bb805135daacc13f8b9de1d724be3fe3761acd2c9429ba7d0e17460c772",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/curriculum/mentorships/2025/": {
+      "fingerprint": "4e4532d47fe01e2908a28280d070f2d9cff0b6f79fdb9b88ce9afae060177607",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/curriculum/mentorships/2026/": {
+      "fingerprint": "3dfc4e9e1371b7cc8146d50602e13c2d8a803d37664411e911dc6b1dcd1798cc",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/curriculum/mentorships/charter/": {
+      "fingerprint": "0abcd39663c850da9cafc6be7e932cff4a5a9ac06355d1014939aa31a982537c",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/curriculum/mentorships/core-2016-2017/": {
+      "fingerprint": "9127f3296d6e754b8c8b9c23d07fb21986f6853cbe5c16697abf403a1bd6da04",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/curriculum/price-delivery/": {
+      "fingerprint": "955f8268b3631ce72ce1da2c296ed82986f2eabd9a041ea8765f66cd3e449ac6",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/curriculum/price-structure/": {
+      "fingerprint": "d297474f2d52852ab3e426463c0ad3116868c4828a89b9e03d27113533052ee3",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/curriculum/special-mentorship-track-practical-field-guide/": {
+      "fingerprint": "bd65aaacb2f9fa369b4d37d4c29392bac0e60773615f72c2d68dcced163238bc",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/curriculum/the-2026-ict-smart-money-concepts-master-lectures-tape-reading-series/": {
+      "fingerprint": "27a86adc2f1ceffd287a700a47469798c9cbcdd90fa92d86715ff7b533c86f27",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/curriculum/time-based-delivery/": {
+      "fingerprint": "1fc491b9c29088b1b5978709191bc5149777b823c995f9811ec39b9ce57dfb72",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/disclaimer/": {
+      "fingerprint": "786bf5fc274fd478c7a6e327b5f89908cc96a3a23f93eca72665c97248fa1cd8"
+    },
+    "/learn/0930-am-opening-range-theory/": {
+      "fingerprint": "cb5a26f0f7934936aa348e58cffc336277bd93f246bee9b8ab4a0b1f19946637",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/2026-onboarding-from-vision-to-execution/": {
+      "fingerprint": "800acea6a48d48547203597ca3d6739548c2d08922aa75dc690901ff9dd2a9de",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/break-of-structure-bos-trend-continuation/": {
+      "fingerprint": "75ab6df4daadff960658650fef6b2b00d9430751f71ec1b68d0ce929b09d63b1",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/breaker-blocks-trading-failed-order-blocks/": {
+      "fingerprint": "83c810fed06f6d5ae9acb9b04215ef1c3d02acc14926c4a5187b7951b343064c",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/candle-range-theory-crt-strategy/": {
+      "fingerprint": "6a568f1df0d507759eeaae5f93efd93ebaae8d7b9aff9b363fade1bbb37fb143",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/change-of-character-choch-the-first-warning/": {
+      "fingerprint": "aaf1a4f39a144bb33fd936e8609565c145680538195037cbc78e456284782185",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/core-content-month-1-elements-of-trade-setup/": {
+      "fingerprint": "8ce4c3eff30c051292de424b5631d19be229aa418d81c244a3a0b392e8f33b9c",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/core-content-month-2-growing-small-accounts/": {
+      "fingerprint": "fd8b968c160fd3aca739ea1e5eb02f2a1ba53dbffff2bcb908d2a4896c4ecfc4",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/core-content-month-3-institutional-sponsorship-and-traps/": {
+      "fingerprint": "85030be5efde35d28a07d4c060dbd0cb3ea45a33c108fc00a0b1cfbc63476787",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/core-content-month-4-advanced-pd-arrays-and-yields/": {
+      "fingerprint": "cd2e66581017b7e01c84ed439126773d81c5987c7cecbbd1cc67a94ea11379e8",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/core-content-month-5-quarterly-shifts-and-position-trading/": {
+      "fingerprint": "5ef499a437431796941b41fcf6f5d7c33cc7e6c9503e914f950623d6f7ca45c4",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/core-content-month-6-swing-trading-mastery/": {
+      "fingerprint": "6132bd530914bd47d61b54d9d441771c5e463c0f7514d7e0f1154d1b9846f533",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/core-content-month-7-short-term-trading-and-market-maker-templates/": {
+      "fingerprint": "1eefa8efa548c9512ad955c102d3a271d80a97d9242ecd543b41f10f711188bb",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/core-content-month-8-daily-range-and-intraday-profiles/": {
+      "fingerprint": "0f3af198e8551577e1253f93e28665adbd775c85b4a2479e1287b94d4b556693",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/core-content-month-9-consolidations-and-bread-and-butter/": {
+      "fingerprint": "4c1d021c09600d3609ad76918c06f30625ab49fd41430195ef4c49de6d9cda1e",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/core-content-months-10-11-12-multi-asset-mega-trades-top-down/": {
+      "fingerprint": "9406f05a9c1b5a88e2d43fb0e22e9323fc000be58626824b4378503f17754a84",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/daily-profiles-and-intraday-power-of-three-po3/": {
+      "fingerprint": "71459ca9f58af86c8247f2b9a559f62f77b08ded1ce77625b5f5962ef259ed5e",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/event-volatility-hrlr-futures-vs-cfds/": {
+      "fingerprint": "a90e8b2b3753bbfe49fb6c8ca5f707cc89af798dedd4c6f674406fcb8d662dd8",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/fair-value-gaps-fvg-and-consequent-encroachment/": {
+      "fingerprint": "e65204bb63bfa5b09eb2eb005c87ebda73778ac63c7e7f1d0a77471d2b7fc714",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/how-an-exchange-matches-orders/": {
+      "fingerprint": "0f6f6a9ae869778acd808c5606fb701dadbb0b1df51bbfa8b85a5c97a7db5353",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/ict-charter-model-1-intraday-scalping/": {
+      "fingerprint": "3f7e5b246cd769a01cbc75410a642e1b78f8d5eddddd60d2f1889a555e1e1e4f",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/ict-charter-model-13-2022-youtube-model/": {
+      "fingerprint": "2fdbcf2e04a20ae18288d6238c72b499cb707c350c1f423efa5342f333716859",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/ict-charter-model-2-weekly-range-expansion/": {
+      "fingerprint": "423c7d6d48d858da3da66f5bb846e565996cbbc8d516a2e1d3b863446e433abf",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/ict-charter-model-3-swing-trading-cot/": {
+      "fingerprint": "065d129c96c61850f7ab12488e3499bea989a43eb5ef0dda30ae1625a3cee06b",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/ict-charter-model-4-position-trading/": {
+      "fingerprint": "84510043707e18e3c1a76f1cf38888c188a482b55431b6a0732bab7f63c87aaf",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/ict-charter-model-5-session-day-trading/": {
+      "fingerprint": "40e831c4ab7ca96707b1e7eaf830f9ff47d6e28d4920e3558cc3bfe67ea459e8",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/ict-charter-models-10-11-and-12/": {
+      "fingerprint": "f121038ec8288902527c54c3565f0f22669539a411fb5608dbbd3fd64415f74a",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/ict-charter-models-6-and-7-universal-models/": {
+      "fingerprint": "d7589753383f5f5e1a8c751ddc210fd18c85bd472d8e340e7c3056a15633a0d0",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/ict-charter-models-8-and-9-precision-and-osok/": {
+      "fingerprint": "71a9aeea13723e1cdb4afb8443cc2bd6dad84fbee5fc3459669c461b1019b886",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/inverse-fair-value-gaps-ifvg-role-reversal-imbalances/": {
+      "fingerprint": "5f4696f11c43e210e7729dde60c2425f1f14c9d1b5e87f8f8d6e39f118e7aa58",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/liquidity-engineering-and-liquidity-runs/": {
+      "fingerprint": "8fbf7a4e511a2a5123802231c99b036223fd19681283e85a83bedc22233b3278",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/liquidity-the-most-misunderstood-word-in-trading/": {
+      "fingerprint": "8da3b119c9e502059bc20fb3294b61172c2e2f213d2188c7262e073697b06038",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/market-alchemy-trading-all-time-highs-ath/": {
+      "fingerprint": "c2d98cbebae891afd03ef8eba442b03f02f4afbd83a47ada7c214c42d77f3e06",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/market-structure-shift-mss-verified-directional-shift/": {
+      "fingerprint": "f4ddc80701b12b2290a1c7f02f51dbab15bc414192bb85f2826cffe5022f6c85",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/midday-afternoon-tape-reading-macros-final-hour/": {
+      "fingerprint": "329fde2c2463b3474de95ce069d57ec287014c0c728e564dc8a823c7bf8959b1",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/nq-es-premarket-session-rules-morning-engine/": {
+      "fingerprint": "388b61ceac07d9153fcbcf1ad6ff6bacb49a5d267ca05c9ca7be89b367334e71",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/opening-gap-matrices-ndog-nwog-csod/": {
+      "fingerprint": "c5878f3a4093f3e46202eb0341e049e26eb2a4d1656dde361272a29da8e2f893",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/order-blocks-ob-and-mitigation/": {
+      "fingerprint": "82d15686142e5ae311f4c895c1a7f83b9ad3a6175541f1edb7d5c8131b6b8808",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/rdrb-balanced-price-range-and-enigma-fvg/": {
+      "fingerprint": "1aed2a233c614b1c71f90eb086db857d81e74816b6bb31d97ec94b617a8aa9e1",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/reaper-ifvg-and-suspension-block-advancements/": {
+      "fingerprint": "4b6a2a2543c0ae6d591bfcc31b40b3330b35b0525a5fad6355537f417b841981",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/sick-sister-strategy-and-double-purge-framework/": {
+      "fingerprint": "fed58fd04ffc81f4abe9565620840d9aa3c687156962b80a1d4b5b703a35633d",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/smt-divergence-mechanics/": {
+      "fingerprint": "d0cce35e791386cad323732d3c389731e935f5e86896041a06b2c5b19da82efc",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/the-12-weekly-profiles/": {
+      "fingerprint": "de852a520ffb7cd81dc07c9a198e5693ca2bcd0a3d3e347ff3466a602a5f6445",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/the-1st-presented-fvg-the-0931-rule/": {
+      "fingerprint": "fac1dead701bcd7d9526d7c975b9fba5b654950b2def02ee9daa5dc4b641ef8b",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/the-complete-ict-top-down-model-and-execution-blueprint/": {
+      "fingerprint": "02f688fe088c832c93e1b8ff1a75cae28e7f4be42d5ca37811fd3bdc0132d140",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/the-ict-venom-model-five-stage-delivery/": {
+      "fingerprint": "74cc75176e408aa66b35d92cca7aed9d050f1cf161a16179da1491b8a0d346fc",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/the-order-book-in-depth/": {
+      "fingerprint": "a29c07c77b1d369ab107cdaae0b40552728034a81efa11abf4edbde5807caaf3",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/the-weekly-profile-and-five-day-delivery-model/": {
+      "fingerprint": "51524a4c64bd028194d599163bb83f25b6893c2d9609ecc85e1d2d100272f0f7",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/time-and-session-liquidity-the-global-clock/": {
+      "fingerprint": "892b6b2fc95c032a11174593c46302ebaa4068d22b560ab657a285a1fd351a7e",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/trader-abdullah-masood-masterclass/": {
+      "fingerprint": "94b99a4a5e397c7568cb98fc942ff4e276ed9c183cc154983b20bff0f99a0692",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/what-actually-moves-price/": {
+      "fingerprint": "629565c17a36de2ff3974ed559812f7c1ae1f2fe7cc81f3144964929fa0381af",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/what-is-a-swing-the-atom-of-structure/": {
+      "fingerprint": "4edf761f43480440063749c7f7b87b1eddea0d31aff824d4f2973f6346351696",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/why-candles-form-and-how-displacement-arises/": {
+      "fingerprint": "c49a98fa7b3b8c46b2b0241b9ce45954a592e5625c1384f60597184845c170cc",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/masood/": {
+      "fingerprint": "53750767917fe8905476d5d3f92cdef0e99095952259e04163069e28b4870b4b"
+    },
+    "/masood/animations/": {
+      "fingerprint": "5c7519b28880bc0fb7fef0232629474016a4c9336307f0bb8e7e24da8bbb5b88"
+    },
+    "/masood/bias-calculator/": {
+      "fingerprint": "97a816fc3155ebb9471a44e3f170a6d3226c6c0c0264667dba44b3299130f56d"
+    },
+    "/masood/golden-rules/": {
+      "fingerprint": "6e2b4d5a64de73f0bf55c27e373c5ef3a04baaba8300f70f2374f6e54df4791c"
+    },
+    "/masood/lectures/masood-adv-1/": {
+      "fingerprint": "53be00ce3de52d59a5872f5abb06ea7eaf7e699112833a31c18eb06f51a1ca0b"
+    },
+    "/masood/lectures/masood-adv-10/": {
+      "fingerprint": "749378afd05beba54474ba231f581bf82d0c41648aaef2e0c37bb8915f9c773b"
+    },
+    "/masood/lectures/masood-adv-11/": {
+      "fingerprint": "32a94f3b409cfccd45eb1a3c0e0b01afb1114598ec6e5f1e8c1b95f64d0b630e"
+    },
+    "/masood/lectures/masood-adv-12/": {
+      "fingerprint": "b96b6533817c5a42cc52ecaf755ed6a2d524f50e48dd5c9b6d14ce410db528b9"
+    },
+    "/masood/lectures/masood-adv-13/": {
+      "fingerprint": "762b2383afe4dfeaf264270a7696bfd1e900588c0f2c20e98f43e8f7889edccd"
+    },
+    "/masood/lectures/masood-adv-14/": {
+      "fingerprint": "a212c54bfb2090c750059d2b7578a1a0c667ef769364264d0baee8d6301104a2"
+    },
+    "/masood/lectures/masood-adv-15/": {
+      "fingerprint": "9a7c6dc21294e56b41530482c2f15194b645d0c73ccbe6f46e55b949debacd1e"
+    },
+    "/masood/lectures/masood-adv-16/": {
+      "fingerprint": "0b4784317505fe25f7b4f5ad9d36876872729d971e452f20ca7e46c0bd640936"
+    },
+    "/masood/lectures/masood-adv-17/": {
+      "fingerprint": "1330f394db649e11c835b2614c5afa713d69470c662b718b53eb5bf7a00b915f"
+    },
+    "/masood/lectures/masood-adv-19/": {
+      "fingerprint": "3a6ecc14d60d27c35ab52a42314c419b7fcd224ad0f43db983b77bbb20aa6f19"
+    },
+    "/masood/lectures/masood-adv-2/": {
+      "fingerprint": "47cb6225d39fa9b6232f90c3bd523576d2c294a6b468e017d60cffa616837f2f"
+    },
+    "/masood/lectures/masood-adv-20/": {
+      "fingerprint": "39b67dec044ee7802098bb8bef13a6351e83aecb6d13d650c9c2e21ba88222e7"
+    },
+    "/masood/lectures/masood-adv-21/": {
+      "fingerprint": "9de56fc3c850404943e707179194b99cd7ebed82c551890a0008a78ddc22caf6"
+    },
+    "/masood/lectures/masood-adv-3/": {
+      "fingerprint": "919fd8774c68de085d2fcbe630d0afde8a703162245b67d2fd2443aa2b8b09cb"
+    },
+    "/masood/lectures/masood-adv-4/": {
+      "fingerprint": "012c4388673651f60e44c600d8e9fec578db19ae03e4a4baaca0dab892ce2683"
+    },
+    "/masood/lectures/masood-adv-5/": {
+      "fingerprint": "70ab2cec65320d61fa15dd887283e305ea69f6bbdbcffc55072d23f08c298b03"
+    },
+    "/masood/lectures/masood-adv-6/": {
+      "fingerprint": "d0d38a8c1577ac52a06f64753bde44b72f98779d87ba87ac5d98b7e840e609ad"
+    },
+    "/masood/lectures/masood-adv-7/": {
+      "fingerprint": "85efb3169c0cfaa0be6590d16d8b3f7a61602561b5f1bfdf119c5835c26fbed9"
+    },
+    "/masood/lectures/masood-adv-8/": {
+      "fingerprint": "59aaf0bb1fd4ffff368fdaebb70e5642655bb72691d6c6ec29b9faa147d1a8b3"
+    },
+    "/masood/lectures/masood-beg-1/": {
+      "fingerprint": "1a0b7da0fb9632757fa78f6449cce7e37c163007e19f52911d38d7b3d2ca1b4d"
+    },
+    "/masood/lectures/masood-beg-2/": {
+      "fingerprint": "5769545c1d2e1e27c4d632ec54c38165a5c54f109844a1003ec3e0e19daba9e1"
+    },
+    "/masood/lectures/masood-beg-3/": {
+      "fingerprint": "18c263a5399125be45aa9132a2d484deeb5d310317080ba973922ab28a00886d"
+    },
+    "/masood/lectures/masood-beg-4/": {
+      "fingerprint": "e908419bc6caf10ca5657ed2c35174b1a6f60759099d040fe95b245312bcfb2f"
+    },
+    "/masood/lectures/masood-beg-5/": {
+      "fingerprint": "cba23dcbb36d7726a00282c68216fecc8b1f5a13fc74ba1e61ad96e8e90e25ee"
+    },
+    "/masood/lectures/masood-beg-6/": {
+      "fingerprint": "145a4a92dc907d89ec8f52bf404742b8b43a8e3a4307cef51cf01486ad760d81"
+    },
+    "/masood/lectures/masood-beg-7/": {
+      "fingerprint": "f9ac989308617ef455c13427a68fbf27f2cfd9294d025c02c0110005d8b53a30"
+    },
+    "/masood/lectures/masood-beg-8/": {
+      "fingerprint": "c0c116523441b12f3245fd37bcbee132f4cac5af72fd385d64e9621a22a2debd"
+    },
+    "/masood/lectures/masood-db-1/": {
+      "fingerprint": "e1cb3d5f19bdeef81450ae17ce404c60a3315c865bf0157c683cede6e02373de"
+    },
+    "/masood/lectures/masood-db-11/": {
+      "fingerprint": "69b0fabb1f450c24718c6d5298687e427a35148a52ae1068431c69590a125151"
+    },
+    "/masood/lectures/masood-db-12/": {
+      "fingerprint": "f8d47f5b7d945201f4575b24e1431c879081307f76e2eec667a71ca12a113519"
+    },
+    "/masood/lectures/masood-db-13/": {
+      "fingerprint": "83a4750b2528631f9f84dd7ce653c4ca0ea7811222c3bb4ed2bdee73df817d6d"
+    },
+    "/masood/lectures/masood-db-14/": {
+      "fingerprint": "3879e1aae604c4bad042814a3b874a7a3f8f9012d66c56a2878b9f741665cce5"
+    },
+    "/masood/lectures/masood-db-15/": {
+      "fingerprint": "50f67d0c9e9ea125f6be8ce57749727f6691c2060e7e8e81b0d14b8a82a5ac90"
+    },
+    "/masood/lectures/masood-db-16/": {
+      "fingerprint": "9b1f9ce565a120a5d97881ea32a39d7fec8f6e437b52c314d38a7eb2db9827fb"
+    },
+    "/masood/lectures/masood-db-17/": {
+      "fingerprint": "9680d176924474f9df3ff8655550593c35683238cdf9861183d11bd0498e5f17"
+    },
+    "/masood/lectures/masood-db-18/": {
+      "fingerprint": "3787b3c406731f1c8e5d5b2f85c299090d963a12d48a3541057f0f9195536d63"
+    },
+    "/masood/lectures/masood-db-19/": {
+      "fingerprint": "7402c4b43827acb86f1a483580c3dd62bfcc6d5a4fd1f1ea0a319a34f57b2e2a"
+    },
+    "/masood/lectures/masood-db-20/": {
+      "fingerprint": "8617d40b63c06a58b21f5a10de473209b8081831396093d8cc9737357e7e1a29"
+    },
+    "/masood/lectures/masood-db-3/": {
+      "fingerprint": "722973d348c5a63532a2645e5287d551427b3bdf95a54b133d940f73f6edfca5"
+    },
+    "/masood/lectures/masood-db-4/": {
+      "fingerprint": "5f214cdaa835e6409608057ed28abf668e969c45d589a985a5027b6a0756e82e"
+    },
+    "/masood/lectures/masood-db-5/": {
+      "fingerprint": "adec1b841a25d018fbf2d448a2da4edc8ef919826db580b42200dd02748d5d4e"
+    },
+    "/masood/lectures/masood-db-6/": {
+      "fingerprint": "f4d5ba85e062768026ddffebb50b3f7155ba5da44b01ae2393bba1dc6189d1ad"
+    },
+    "/masood/lectures/masood-db-7/": {
+      "fingerprint": "d2b551afbeab943d4b3ed8b0733c877b4ded8a149d573c9195648337fe784209"
+    },
+    "/masood/lectures/masood-db-8/": {
+      "fingerprint": "3fd1dac57d3f3904ed5166a0398fd27e25ea4c805de4210b4a488abd77879b3b"
+    },
+    "/masood/lectures/masood-db-9/": {
+      "fingerprint": "9952f232cee2c3cf4f3cda6305f4d836670a02c2cba112a4c2899cb9ac640f80"
+    },
+    "/masood/lectures/masood-db-fomc-special/": {
+      "fingerprint": "ef1962a2e5178a3d28d5a9428c049eb6d0e608d3e0c3ff5de843bd3c931e2aab"
+    },
+    "/masood/lectures/masood-gf-1/": {
+      "fingerprint": "4376495b1ac489e08a48198453c2b682d23d76657e5fe35073091405fb699a06"
+    },
+    "/masood/lectures/masood-gf-2/": {
+      "fingerprint": "45f795fbd02f84d2cd7782c1a8bdc6a5d16d987a79501e90b6f630133dd7f607"
+    },
+    "/masood/lectures/masood-gf-3/": {
+      "fingerprint": "0b4e3a489f7cbd7fba03b5fb7f992f15dae3ac959d6e5f1002ee239f67bf9f53"
+    },
+    "/masood/lectures/masood-gf-4/": {
+      "fingerprint": "44b751040482ceba31c3738bc1deffaac6ea3dd972f371602bcce729994cd284"
+    },
+    "/masood/lectures/masood-gf-5/": {
+      "fingerprint": "ad9ecd80d23d2930fe06aff1d1106849a0c482a378ec8392170a061ed2e9c0dd"
+    },
+    "/masood/lectures/masood-gf-6/": {
+      "fingerprint": "48e50bd972812df024d09ad21919f88471ebd009e52dc286f58c3b7040f0641c"
+    },
+    "/masood/lectures/masood-gf-7/": {
+      "fingerprint": "7edb2a1e43993b2e7ae5fc269869244792dc7bb163ade773a04b7b5f3549da41"
+    },
+    "/masood/lectures/masood-gf-8/": {
+      "fingerprint": "f70f6e36c2fd8ed96df2679a276ccdd9224a752a702ce505f09fd6d9d63d0dfd"
+    },
+    "/masood/lectures/masood-gf-9/": {
+      "fingerprint": "65159b33d9ab9ad65c5f8410557f2e5c695887c1cd24df9cf5d9198271aff0d8"
+    },
+    "/masood/lectures/masood-psy-1/": {
+      "fingerprint": "1a44d58a7e7536885f7e619b40f97cd5c91e373ec09bd9f38238e49226b14297"
+    },
+    "/masood/lectures/masood-psy-10/": {
+      "fingerprint": "2db5540de88cbd26f83fdc5098cd5208dd9bac81874b06a3409d07154f13c7aa"
+    },
+    "/masood/lectures/masood-psy-11/": {
+      "fingerprint": "6b0a1e8c137a394b0379456bfc5e4c2b1a83fc8c50eb03b2629d6170df8f8e98"
+    },
+    "/masood/lectures/masood-psy-12/": {
+      "fingerprint": "613f2b9621e2a9aefed5ee00c9c9b186b3adc8600532dbf2b6a2fd553f7c3760"
+    },
+    "/masood/lectures/masood-psy-13/": {
+      "fingerprint": "d9687de46d72edaead6fddc5eaffa2aa389ff8c3b7ac2edc3aee93ce76f5fd9a"
+    },
+    "/masood/lectures/masood-psy-14/": {
+      "fingerprint": "aa560d2e03bad49403b9d586f860eac266bc3d1519cd0a2877e284f6551aeef7"
+    },
+    "/masood/lectures/masood-psy-15/": {
+      "fingerprint": "7eba9b2728dd4c922e1c12dd6bee835613e972ce411c39010582761bc88838a3"
+    },
+    "/masood/lectures/masood-psy-16/": {
+      "fingerprint": "2b4805e21ca1a4ed6cd90eb35fab2136196bdd3576e73dc2d2fb38679efc0c01"
+    },
+    "/masood/lectures/masood-psy-17/": {
+      "fingerprint": "e61e8ee51f5102d3777bdd88360937140216ce229b428ce1d35312850d448d35"
+    },
+    "/masood/lectures/masood-psy-18/": {
+      "fingerprint": "7b382e81b6ddbb43e56db5b6663b0cd1cc2eadc64ae2ab61f255a81096260928"
+    },
+    "/masood/lectures/masood-psy-19/": {
+      "fingerprint": "ec5e3dab78e91e8ed5c227a2901f7f28798c7af463442bde218e0786b9302d53"
+    },
+    "/masood/lectures/masood-psy-2/": {
+      "fingerprint": "f3bf71bb0d936e6f53d7b97f4e4ad399a714896573f73c3fab8880208423aaeb"
+    },
+    "/masood/lectures/masood-psy-3/": {
+      "fingerprint": "d2a5215ff532a3baf6ddd1b91c66861f31727805f7d8cc03e2b6dacd6c071f1c"
+    },
+    "/masood/lectures/masood-psy-4/": {
+      "fingerprint": "2740f1ffb403c9c129daf8e592c8d124a6325b549af9fbf9361f3c25f7d8e792"
+    },
+    "/masood/lectures/masood-psy-5/": {
+      "fingerprint": "2541a9dc9d22b05cd1a4bb7f8da456c1eeeddd5613d7b4bc22a5fea141b3f5e6"
+    },
+    "/masood/lectures/masood-psy-6/": {
+      "fingerprint": "fbad04ef0fb8d000f25191d13d06cb7c4d89d7eb5af68b32ba6615270d1c7885"
+    },
+    "/masood/lectures/masood-psy-7/": {
+      "fingerprint": "81824c7435a7d2dde9c16b8046caf81b3b8ce0a92f7d8fd0303f16dacd6c7b65"
+    },
+    "/masood/lectures/masood-psy-8/": {
+      "fingerprint": "02d8882ecf64212c311c84f5b3a9941e2bc03cf91ef57d255beaa87a9dfabee9"
+    },
+    "/masood/lectures/masood-psy-9/": {
+      "fingerprint": "44035e33faa660cb9a9069c2bac11c5ba283d59791b93f62b5efbb6280a8ea91"
+    },
+    "/masood/lectures/masood-syn-1/": {
+      "fingerprint": "567fdf6c40d1f5a762974affa12d51c6173d85e7d0ac0fb1cf66766bb8c8a770"
+    },
+    "/masood/lectures/masood-syn-10/": {
+      "fingerprint": "380f995a7a05430d48a95dd2e7e3203543e12b3bfb563f68513abda2ec7bd620"
+    },
+    "/masood/lectures/masood-syn-11/": {
+      "fingerprint": "09c991e07c9706d3e645dd856576dca9884f8b71e8a53c6737841fc2fcf52ea1"
+    },
+    "/masood/lectures/masood-syn-12/": {
+      "fingerprint": "2e9bf6b568b40d5235a806be6ddb9ba22421ec06862b90810ed215ae914c73c5"
+    },
+    "/masood/lectures/masood-syn-13/": {
+      "fingerprint": "49e1d3db212971ef4f1cd628cfd4ebb469580c9ad779118298cfde85fa94eb5a"
+    },
+    "/masood/lectures/masood-syn-14/": {
+      "fingerprint": "d6476a61d8826fe3d5b6ff66330936dcd3220916be04bf4f7854bf264c4a1a07"
+    },
+    "/masood/lectures/masood-syn-15/": {
+      "fingerprint": "cfd4e97b1ac75463292862c57283fa92a7b01f66aa87075a372b7b40990bfcd3"
+    },
+    "/masood/lectures/masood-syn-16/": {
+      "fingerprint": "c06bc43f11b86e550018641a0b6be12e75683c1bbe7cc4344f23d0fda4800f3a"
+    },
+    "/masood/lectures/masood-syn-17/": {
+      "fingerprint": "a7375a56981ddedf8f585fc94e08bbda9a3e1d119425be2168d9456e781529b5"
+    },
+    "/masood/lectures/masood-syn-18/": {
+      "fingerprint": "4119e91eeaf2143e1146fefd1e10397e5d4d7b61a004757789b186e14d96c55f"
+    },
+    "/masood/lectures/masood-syn-19/": {
+      "fingerprint": "3a3e1bcbf1a3dcffa7ed0ae7e9c2e1b2b3fe6032127a344a99fc9814cbca70c5"
+    },
+    "/masood/lectures/masood-syn-2/": {
+      "fingerprint": "88a97ea2bbf043170a66c8149db9102ad554a6158f51d44a5a3cae6771982dc7"
+    },
+    "/masood/lectures/masood-syn-20/": {
+      "fingerprint": "f12564feec5fd156196bef4dd43f66b811b855f32bb7e00728b55858f41f21f9"
+    },
+    "/masood/lectures/masood-syn-21/": {
+      "fingerprint": "8f37a3492ddc8d0a12eceb070d67d34008736f3c27c282cff4ffe7975baaad57"
+    },
+    "/masood/lectures/masood-syn-22/": {
+      "fingerprint": "4b87f79112a286f604f7d52e93b55fa46945236408e6ea56ef33e5865d7ff19d"
+    },
+    "/masood/lectures/masood-syn-23/": {
+      "fingerprint": "9dcbf71250f62bc8b2119cfbae69091981d6d8d302f92be23d8e04ee6f91c8fb"
+    },
+    "/masood/lectures/masood-syn-24/": {
+      "fingerprint": "b122b89d29cc9c8f6b8e13692aba61dec4b15b5d12677aec53e54917efc180f5"
+    },
+    "/masood/lectures/masood-syn-25/": {
+      "fingerprint": "1d792734410862a81350afeca40daad3feac50362c1a10265799f51b2d8af428"
+    },
+    "/masood/lectures/masood-syn-26/": {
+      "fingerprint": "8f454099cb618bed18b000ea20ce01858ac69d161d3c88e70169cd02347f745f"
+    },
+    "/masood/lectures/masood-syn-27/": {
+      "fingerprint": "b12e79ed5cc0d38d3ae93088db5ec94df492fe83096504d80201c6090a15ff52"
+    },
+    "/masood/lectures/masood-syn-28/": {
+      "fingerprint": "fb5c357bca7d0e239375c9bb925312d8d2d4cb2a5a3d94ea10c0246d0550e8a7"
+    },
+    "/masood/lectures/masood-syn-29/": {
+      "fingerprint": "7fca3d228f202d9f07fca00ff46062733d6dbd08e00035624249cc9f73080f79"
+    },
+    "/masood/lectures/masood-syn-3/": {
+      "fingerprint": "77caff88950de2bdbd58a491bd109a57d19cbf80a0049e296f34e392cd330cac"
+    },
+    "/masood/lectures/masood-syn-30/": {
+      "fingerprint": "99e60a91b2fcca1bc4935bc75e1ab31b523ad3c4443cce39233f97826c63a04d"
+    },
+    "/masood/lectures/masood-syn-31/": {
+      "fingerprint": "4abd0f98307c8dab6724598fb732131b8b4161f3774d611d524b1d4e8f81a970"
+    },
+    "/masood/lectures/masood-syn-32/": {
+      "fingerprint": "615cfaf362155d6f71ae12d273b4697c1088803c1bbd9b28a34f0349d85394c5"
+    },
+    "/masood/lectures/masood-syn-33/": {
+      "fingerprint": "5b7ae29d14e7a0fbed2766d782c9a409e4c51f608e9286c48ed9e774fba71c2e"
+    },
+    "/masood/lectures/masood-syn-34/": {
+      "fingerprint": "077b82c314db163ed80a40b5747629b92604e709d2c0c16e5a472c105b95883e"
+    },
+    "/masood/lectures/masood-syn-35/": {
+      "fingerprint": "0daff1d00a91fe15613534beefda14c2bb113e7868602f8223b6fd5a7f6a2f58"
+    },
+    "/masood/lectures/masood-syn-36/": {
+      "fingerprint": "ec8f0fb58ce7da4d11983f77608a2209c20983778d1a0ccdf871b373583bc30d"
+    },
+    "/masood/lectures/masood-syn-37/": {
+      "fingerprint": "a0fcc7f735867a9cadca70cae87db5e916d17a8c1aaee8dd1b2a02e11210fe44"
+    },
+    "/masood/lectures/masood-syn-38/": {
+      "fingerprint": "b1b6c761116a89723fda5681dc036fbaf743c66bea3527f7b2f8885036fcbec4"
+    },
+    "/masood/lectures/masood-syn-39/": {
+      "fingerprint": "7b4f03af2a9e9a12466a385eee10aa0c5aca7a0f6ff7477bfc9bb3ede06ee1f9"
+    },
+    "/masood/lectures/masood-syn-4/": {
+      "fingerprint": "036caae33aa266af44a48aa7ffe28f346d216b75217effb859a9e1e5a39f5b06"
+    },
+    "/masood/lectures/masood-syn-40/": {
+      "fingerprint": "bd74e011a579989b6fac73742a8618b31dd0e60783eb70689cd0e0028a113cfa"
+    },
+    "/masood/lectures/masood-syn-41/": {
+      "fingerprint": "a4f46550f127777a5a31e7009961389e5d7d5cd5fb09dea8df374906a2bb348c"
+    },
+    "/masood/lectures/masood-syn-42/": {
+      "fingerprint": "19920e87ca9861352266c2c2548686dbc306fb1ad7954d835442a1157f37c500"
+    },
+    "/masood/lectures/masood-syn-43/": {
+      "fingerprint": "5e22386eb50d5007db19a21780db7918ad02df8e450ca03b4869108322e7b8b7"
+    },
+    "/masood/lectures/masood-syn-44/": {
+      "fingerprint": "182f0f2f3cfdc73610de53dab17d200ea1de04c10dc32d46e5aa9b1ff79488a4"
+    },
+    "/masood/lectures/masood-syn-5/": {
+      "fingerprint": "ffcb7179ea5282e5febb5498082be0850f3f3fd17bd00a482c3ce72e7d3e51ee"
+    },
+    "/masood/lectures/masood-syn-6/": {
+      "fingerprint": "de454b14fb624fbb53a82a1cc4df56d986bf074b2060013a846e0fb6ce0b3f0d"
+    },
+    "/masood/lectures/masood-syn-7/": {
+      "fingerprint": "1557e8f29dbb769b10d2b741fbac326e78bfe316ac6a01960c10787231f212e9"
+    },
+    "/masood/lectures/masood-syn-8/": {
+      "fingerprint": "2a00ffd93ca792bcdce7d05e96a0d589bab49ac4762803f2761b7dd569c76c76"
+    },
+    "/masood/lectures/masood-syn-9/": {
+      "fingerprint": "571e22212d991a066ad27fc91f24bf0f616720b6715711acb92a34876ceb4cf3"
+    },
+    "/masood/playlists/advanced/": {
+      "fingerprint": "b69154c04c76c5fa4f6c2214ff52b6cc094c5c0f4f006322ae644e6ee31a9d39"
+    },
+    "/masood/playlists/beginners/": {
+      "fingerprint": "5a6faf1aea5dbdd2f9df5d0e6ab860bca5dd4dee2a4c397782d6c73c872744c1"
+    },
+    "/masood/playlists/daily_bias/": {
+      "fingerprint": "80018528f9469eb9cd346fd068e37f17ab57cd3b72f82759a2767b548e5c5b91"
+    },
+    "/masood/playlists/godfather/": {
+      "fingerprint": "a41611efa1baad8cc7f84e688c890faec13160c9e82113ea1cb0977568312499"
+    },
+    "/masood/playlists/psychology/": {
+      "fingerprint": "81a0fceee35a97910b248e8697515794149c72ef6d0b4bfb8e1beec5d22dff67"
+    },
+    "/masood/playlists/syndicate/": {
+      "fingerprint": "46779dbbeba51142303b1bcd5f1e0f86aa6f616b2c62704869435d265c1c3768"
+    },
+    "/privacy/": {
+      "fingerprint": "50ad5a367055e6b3939e6d89a2bf52062151ccbf5883d696fa18a57800b7aaf8"
+    },
+    "/terms/": {
+      "fingerprint": "92c4c56c81a0413bd546737d8d5e54425563df0f580c4d30351bf4d0802098c3"
+    },
+    "/tools/": {
+      "fingerprint": "5fb54eb523c17dc63a214b06e23089e3f99a7305d4f24b480a5730a595ff7e2d"
+    },
+    "/tools/backtest/": {
+      "fingerprint": "09c2a3e9722546a1d39faada435ef5ec84c1722a26ea9f62885cdc11482dc7f7"
+    },
+    "/tools/backtest/2022-mentorship-model/": {
+      "fingerprint": "0d30aa83dc735b18422a3d725acdf1dc342d45a7b07881025a7663f437004131"
+    },
+    "/tools/backtest/breaker-reversal/": {
+      "fingerprint": "10dc8fa9ac70d2fe96bf56f75d1a6207f0a83a354c11cb0923cc7ca08762f412"
+    },
+    "/tools/backtest/charter-model-1/": {
+      "fingerprint": "fdea23f40c466e4eb199271c4c8a9330141a3d06944b21eca78b98db39cf9112"
+    },
+    "/tools/backtest/charter-model-8/": {
+      "fingerprint": "41de1ce42a4b5ce012528d0f11fa6e1dee782b50747b22712d708cc46fcb8aa4"
+    },
+    "/tools/backtest/charter-model-9/": {
+      "fingerprint": "78f0757a68bcb783fd5c766249603178ee41c1e46ca18e41211ab4f548073bfc"
+    },
+    "/tools/backtest/silver-bullet/": {
+      "fingerprint": "390c29df995beefed84041d5004675238cd23005241460606d977a5d4a43c532"
+    },
+    "/tools/chartlab/": {
+      "fingerprint": "f9ccf9998f5dc7b5d9fd7e68eeceb96c222e32fa165e56ce53f5fa3c8efade52"
+    },
+    "/tools/chartlab/btc-2022-bullish-model/": {
+      "fingerprint": "c53ee7dba9f19ec20497eaf0afd8cc0f969b4721b65fe4431d003ea0bc12344d"
+    },
+    "/tools/chartlab/eur-mmbm-propulsion-model/": {
+      "fingerprint": "db3bf2cd045c2fbd5a9f3053cc8b530a800b2922d8a1ea55404fcecad3cd0f1a"
+    },
+    "/tools/chartlab/eurusd-failed-ob-breaker/": {
+      "fingerprint": "82a081858930f8642f3eb392d5edb44a609e7a2139d3d86030c3c0ce7292c00c"
+    },
+    "/tools/chartlab/nq-ath-alchemy-ndog-macro/": {
+      "fingerprint": "3c43514410ab43a0618222884ea2394aeabaa88f221f96f40a3aeb2f93b28c11"
+    },
+    "/tools/chartlab/nq-silver-bullet-short/": {
+      "fingerprint": "b4e6a44deef681e43c73be87074e9fcdc7287d744f6e1c2ea27a4f2bdb46a9f9"
+    },
+    "/tools/chartlab/xauusd-gold-legacy-model/": {
+      "fingerprint": "309ae47e0018434d79aeab8b4cb98d0ec3f8963551812c10150685f1e5da1940"
+    },
+    "/tools/compare/": {
+      "fingerprint": "8233eb7741ba62ed584391d667609280eeb2ab1365cd46254edad47af0a256e1"
+    },
+    "/tools/compare/bos-vs-mss-vs-choch/": {
+      "fingerprint": "addebcbc7485a2faa06ba3c65f86f4205d9582a38762323dfaf62d66795fa09f"
+    },
+    "/tools/compare/bpr-vs-rdrb/": {
+      "fingerprint": "01925d5b9e4511c1c962dd9f546ad46e1af3ff950b5309ab98eb8c10b5a55257"
+    },
+    "/tools/compare/cisd-vs-mss/": {
+      "fingerprint": "89c6e3669b10af01b7ba3266d39e1691bf0ab79f2716475474579aa5f7d185c3"
+    },
+    "/tools/compare/crt-vs-amd/": {
+      "fingerprint": "5cb0319db5305ebbe8769b08d064d60d0d0091a1fedc318f34d0fa61d6e09e79"
+    },
+    "/tools/compare/csod-vs-mss/": {
+      "fingerprint": "e39bb34abdbe2eb57f61126bc6965dfe60dfcff1fc22bae9f1c1b9ad098f0c97"
+    },
+    "/tools/compare/fvg-vs-ifvg/": {
+      "fingerprint": "4444b1812f4bdcd31eb6ff1dbec511529729eb0aa3d868dc74ff4c40a55f84e0"
+    },
+    "/tools/compare/internal-vs-external-liquidity/": {
+      "fingerprint": "09ea74718e25e37533b0a97ef28d9e033ec4392024c754616db003c846549bfa"
+    },
+    "/tools/compare/model-1-scalp-vs-model-9-osok/": {
+      "fingerprint": "5d27a1048761bee005a3a0a69582250154c8a7beabf9c9a79657e809e2122bbe"
+    },
+    "/tools/compare/model-13-2022-vs-silver-bullet/": {
+      "fingerprint": "b9ebced08eb8755c1761c1a9584333e36a472b283f55c50885a1b89c64a4b22e"
+    },
+    "/tools/compare/ndog-vs-fvg/": {
+      "fingerprint": "5b710ff96452918d6ffad58a059b5a7fdf7ac2631455ac1c779c3149a941a3b4"
+    },
+    "/tools/compare/ob-vs-breaker/": {
+      "fingerprint": "544eee3ed156feabd7c2ea403c699fe32aab9662a5302504255872fe0fc920ef"
+    },
+    "/tools/compare/ob-vs-mitigation/": {
+      "fingerprint": "4577619f1246fc0f908e2572b0495aced784b09b11201e1a6b33d313c0b58e59"
+    },
+    "/tools/compare/silver-bullet-vs-3am-london/": {
+      "fingerprint": "c89a6bd3860798b8dd04981087f53033454d489fb20bb2b9178191ca816e97cd"
+    },
+    "/tools/compare/standard-ifvg-vs-reaper-ifvg/": {
+      "fingerprint": "d39940193cf134272d278d2024efee15a876035cd5362a2a4b3374b9c7dd717c"
+    },
+    "/tools/compare/suspension-vs-propulsion-vs-ob/": {
+      "fingerprint": "110d71d98bad4059383491235f847778c194997614f8b4baaef85a5c43103b87"
+    },
+    "/tools/compare/sweep-vs-breakout/": {
+      "fingerprint": "5ff41dd526078d10e26088da7ff030d80d2307d6d95bda8a15b246ef57227211"
+    },
+    "/tools/delivery-suite/": {
+      "fingerprint": "a944c44179679fdf65dbd690365c4fc50706599676af433a21b8a663337fc537"
+    },
+    "/tools/delivery-suite/judas-planner/": {
+      "fingerprint": "c987a21d2489d31a1c56afea439930fcaeba9faa46b65c0069fa9b0258b376ed"
+    },
+    "/tools/delivery-suite/learning-path/": {
+      "fingerprint": "10853235ed0c8015a4f8903d2ad18a9fe35e9795bb45bbf5cae3e2d4f7cadb67"
+    },
+    "/tools/delivery-suite/macro-clock/": {
+      "fingerprint": "71397895806db8e77299ca61f55bf18d1c986e8ed37e4d1972ba43d21a1d39c7"
+    },
+    "/tools/delivery-suite/ote-calculator/": {
+      "fingerprint": "97708ccc9ae9b298d16cb4e8b9c3f09d71badbbe732d41d06bb9604746bc1027"
+    },
+    "/tools/glossary/": {
+      "fingerprint": "e2e65c48c43f65a765c0e006b67591309dea3eb609427738daccee2faea8b3c0"
+    },
+    "/tools/glossary/foundations/": {
+      "fingerprint": "6541c9b832ee0c1c4eba7b695dcefe5447ee46adcbe87642db00c6537a415be3"
+    },
+    "/tools/glossary/foundations/interest-rate-triad/": {
+      "fingerprint": "048d1b63c8b13dba9984801e2133d6046ea4ab84b786a43d29f4fbf7ffc730a2"
+    },
+    "/tools/glossary/foundations/order-book-market-liquidity/": {
+      "fingerprint": "a446bacd1d700e32467ca8a6480128bb4398d4651e4c578081c5b07fc2c781a5"
+    },
+    "/tools/glossary/imbalances/": {
+      "fingerprint": "ee7532066a96266ca3542adb22e69092588f7746c5e49b3254469ef66ffb00b5"
+    },
+    "/tools/glossary/imbalances/consequent-encroachment-and-gaps/": {
+      "fingerprint": "bd3294cecd47e1f9cd5fe767c0e00748bf78c888cd718790526e2c12ab1d7153"
+    },
+    "/tools/glossary/imbalances/consequent-encroachment/": {
+      "fingerprint": "2fc203e7863107dd94b21e373400c06d2a0fb9aac9f58ac345ef121bae649d8d"
+    },
+    "/tools/glossary/imbalances/displacement/": {
+      "fingerprint": "dcb5de86f1a055a507cb720684a65f38ad4adc35cd20bd2ff508690d6e25f324"
+    },
+    "/tools/glossary/imbalances/fair-value-gap/": {
+      "fingerprint": "90212e6267c5a13bc64ec892dd3e64c9a986ba2f148161f9d37b6e6b7a62f900"
+    },
+    "/tools/glossary/imbalances/fair-value-gaps-and-inversions/": {
+      "fingerprint": "d7cedbbd88525c98d7319b23fcd7e8b7bb4533a4d86bbe7f1b06ee3a71226ae1"
+    },
+    "/tools/glossary/imbalances/ict-enigma-fvg/": {
+      "fingerprint": "5284b1b862a2e57b4d4eb73d77a751cbc521843acb2bbcff8206510765df601f"
+    },
+    "/tools/glossary/imbalances/ict-reaper-ifvg/": {
+      "fingerprint": "85a07ccd4c0f17d5ab49c31501f40ca8a8bb01721afcb495d65d6ec68512a4d1"
+    },
+    "/tools/glossary/imbalances/inverse-fair-value-gap/": {
+      "fingerprint": "cc10220ad959b43801ff2ee6e5131c8a7c731f8ec39a9142da0a9df945dddda0"
+    },
+    "/tools/glossary/imbalances/opening-gap-matrix/": {
+      "fingerprint": "14539504d0415d04136052d0c6fb7e4ada53b7357a6c843edb2f5ff06b156525"
+    },
+    "/tools/glossary/imbalances/redelivered-balanced-price-range/": {
+      "fingerprint": "1f3f44c8fafb2e609324ed45376878e494a1cd286f85ccc517c8a9f1e4182be3"
+    },
+    "/tools/glossary/liquidity/": {
+      "fingerprint": "79e04dd245a263d8195c26dff2800d1a29a1a16e7b58d708ea08d00980eb26f5"
+    },
+    "/tools/glossary/liquidity/buy-side-and-sell-side-pools/": {
+      "fingerprint": "fe8f0507c28bd1b9e56547a88f8953a089dc97955a3f6adc69af13185fef5bbe"
+    },
+    "/tools/glossary/liquidity/buy-side-liquidity/": {
+      "fingerprint": "5123ffef6aa8bfdd90317e5444f975a9ff5436e264ce5c08610ad003bb3f643a"
+    },
+    "/tools/glossary/liquidity/event-volatility-hrlr/": {
+      "fingerprint": "e38c4e993e128a7385587e94e9aa8376fffb826a8423550737b9d8967d3426ee"
+    },
+    "/tools/glossary/liquidity/ict-double-purge/": {
+      "fingerprint": "8331bc17cef27fcc60a935e961bbe92bfc6f01a4e055ea94c0f6358a98d74f03"
+    },
+    "/tools/glossary/liquidity/inducement-vs-external-liquidity/": {
+      "fingerprint": "0174674bb33731477dded4a60baee071cd9be3fed582bd2ae0f655d2a35a52a1"
+    },
+    "/tools/glossary/liquidity/inducement-vs-external-range/": {
+      "fingerprint": "07c1950ef97fc35409eab6d5eb861355d945bfbeb5f90cafd556fe10553ad265"
+    },
+    "/tools/glossary/liquidity/low-resistance-liquidity-runs/": {
+      "fingerprint": "ae7c569d924c7ea512591a7f9e16db842a5db78f3b126adaaf2ce65737b46846"
+    },
+    "/tools/glossary/liquidity/sell-side-liquidity/": {
+      "fingerprint": "6dd1ab0c5655071f78df6c203b01dcface7a7619b555b74238b25443be5d7f52"
+    },
+    "/tools/glossary/order-blocks/": {
+      "fingerprint": "83e8ee6bafc68ebdc704fb2573440c3db866fdc73c61cd83f93cdcd7ba79b480"
+    },
+    "/tools/glossary/order-blocks/breaker-block/": {
+      "fingerprint": "7e6400259685f6124e0450e36ff45731a29906707aa35754d641518e4fb13d33"
+    },
+    "/tools/glossary/order-blocks/hangman-pd-array/": {
+      "fingerprint": "22f2d2061b02c497ec9661f8111a7761b40a1eb769ecd97070f401ea23fc4432"
+    },
+    "/tools/glossary/order-blocks/mitigation-and-breakers/": {
+      "fingerprint": "1aa104e125c06711ad6565d4c6b3094e6f48d878cd83c3a3d87853863fb3a51d"
+    },
+    "/tools/glossary/order-blocks/order-block/": {
+      "fingerprint": "f325789563a0248b0f1af19ef1ee91e2e6f5eda7b05c5f75042caa7ff54e1ee4"
+    },
+    "/tools/glossary/order-blocks/propulsion-and-reclaimed/": {
+      "fingerprint": "7720f6a6e9cb3f6829787a7d1802490e7dc22d2a215a7463c5fd51cb52add108"
+    },
+    "/tools/glossary/order-blocks/propulsion-reclaimed-blocks/": {
+      "fingerprint": "8899a03dec016d99b57ea2d49fb7c7c54652ec75456cb265d2ab289e0aa444b5"
+    },
+    "/tools/glossary/order-blocks/suspension-and-hangman/": {
+      "fingerprint": "ee6ca73a2d70b1512427b6879740edab3b37dc22cd87a0623357edf0e6759a26"
+    },
+    "/tools/glossary/order-blocks/suspension-block/": {
+      "fingerprint": "0dd049330e090e11c47eb32c72e72bcf33c9da886464c4217314004a6164dd3e"
+    },
+    "/tools/glossary/structure/": {
+      "fingerprint": "1be53807bbe852abdbdd3ea48b2abba535577cc3954085e6506039e8e2e16fd3"
+    },
+    "/tools/glossary/structure/bos-vs-mss-breakdowns/": {
+      "fingerprint": "ace780c2f7237c440e3e43bd0afc43ddae0050c2693daecc267cb71347367991"
+    },
+    "/tools/glossary/structure/changing-state-of-delivery/": {
+      "fingerprint": "e9f60ff8ad2f81d19f047149e77f0140aa049d32282e077a7eb861b36018b33b"
+    },
+    "/tools/glossary/structure/cisd-vs-mss/": {
+      "fingerprint": "f15169d34d83c6e2ab743ac1f98d39438335d347ab55011103e3394817c1902d"
+    },
+    "/tools/glossary/structure/market-structure-bos-mss-choch/": {
+      "fingerprint": "57a981b59dbb97455f1f3a58c7c25576afc5958765081774f7e422cb13ff17b5"
+    },
+    "/tools/glossary/time-and-sessions/": {
+      "fingerprint": "36fca2e71049d9f57aadf44f4604e4d0c6b5e74dfab56c145d97a0d0fef2860d"
+    },
+    "/tools/glossary/time-and-sessions/daily-bias-engine/": {
+      "fingerprint": "591d875662e5b245558552589d892a7ab6282bb081ecfe15c3971da69a83d0ad"
+    },
+    "/tools/glossary/time-and-sessions/intraday-macro-continuum/": {
+      "fingerprint": "e739e70e17ab9dadc3ed221676a0604b7312ea51bf646c7e48cc5b91499a0ba1"
+    },
+    "/tools/glossary/time-and-sessions/power-of-three-amd-phases/": {
+      "fingerprint": "8b947947cdb13f6aa1f95a39be670553a51fe6087d306034589b580947b2765e"
+    },
+    "/tools/glossary/time-and-sessions/power-of-three-amd/": {
+      "fingerprint": "36e84c1833778333dd5a9e2832940ff1f003dd81818cf9ac2797749e266f1f85"
+    },
+    "/tools/glossary/time-and-sessions/quarterly-shifts-ipda/": {
+      "fingerprint": "97ab7d14b41e72eb71945a6cc2588b63195898b67fdbbb6668fdd41ec2a169a9"
+    },
+    "/tools/glossary/time-and-sessions/sessions-killzones/": {
+      "fingerprint": "f6f1029c42746923d7e378f4cb7dfac135451252b00b5baf887369e3eecd822f"
+    },
+    "/tools/glossary/trade-models/": {
+      "fingerprint": "89b7230fa2c128c1b3ec58151e7b831a41dd5e19a121ffb33af662402541efbf"
+    },
+    "/tools/glossary/trade-models/candle-range-theory/": {
+      "fingerprint": "777bf2be29df7d6182f9fb31fdadbd87c75c7c452ab15777f1a97b7ecbef9c1f"
+    },
+    "/tools/glossary/trade-models/from-vision-to-execution/": {
+      "fingerprint": "0d59f972806de3dff0af62e18348624e3d66485444b8b59caaa237e3430e1425"
+    },
+    "/tools/glossary/trade-models/gold-legacy-smc/": {
+      "fingerprint": "6e49a6b2b7f575dc4a6ca4cadf2f2866a5436e1146834712a26788cda33c1ab3"
+    },
+    "/tools/glossary/trade-models/ict-2022-and-silver-bullet-mechanics/": {
+      "fingerprint": "a7928b8d0046a14889cb01228cbc6ca278b2acaeaef5c82dbad66d5bb008448a"
+    },
+    "/tools/glossary/trade-models/ict-2022-model/": {
+      "fingerprint": "2ae8665bd58753385907f9778dc1c3812d54d672cbeae2819a6470eb70f194bb"
+    },
+    "/tools/glossary/trade-models/ict-venom-model/": {
+      "fingerprint": "c105aab2848da01fc20c23d6401ba10094e722d42b5b7596bdd519efe8ace5ce"
+    },
+    "/tools/glossary/trade-models/institutional-pricing-theory/": {
+      "fingerprint": "1482fc630dde27b9d517a131fa3349f74755c30c7a21e8823d4839c57359d38b"
+    },
+    "/tools/glossary/trade-models/market-alchemy-ath/": {
+      "fingerprint": "0babfa37981cc7660db1e5b14a191ab986430926ae371a8c5a39f66172723c25"
+    },
+    "/tools/glossary/trade-models/mega-trades-framework/": {
+      "fingerprint": "da74fc71b8942a69aa1b45d5148b396b2e4ded3100c09cb567f0cb7fddacb74f"
+    },
+    "/tools/glossary/trade-models/nasdaq-session-open/": {
+      "fingerprint": "4134f1137b3fa52b4ba071367b50c7d29371262c18459f2df6c44408598b1a1a"
+    },
+    "/tools/glossary/trade-models/sick-sister-strategy/": {
+      "fingerprint": "2f20b26cd22f021ee60b870b9069e03ed25f616eb2b887de053e1579bec49da2"
+    },
+    "/tools/glossary/trade-models/silver-bullet-model/": {
+      "fingerprint": "2a62ced87ebda5fc3b7b5bb0d2fdf8eee5fd62585f8ba38300b55250d2c287cb"
+    },
+    "/tools/glossary/trade-models/smt-divergence/": {
+      "fingerprint": "464e41bc623af3c1b888ed293624f811e60183e30a1505450b559a11570cf359"
+    },
+    "/tools/knowledge-graph/": {
+      "fingerprint": "84aa2eab24aa5b90eb5f5e67337b9948dfebb8a615865d46874e193ef68a2cec"
+    },
+    "/tools/knowledge-graph/network/fair_value_gap/": {
+      "fingerprint": "3a3c7110210f0ae88c137d1b264a2243ce5cd66017f65ceec2116d2321f57998"
+    },
+    "/tools/knowledge-graph/pipeline/step-1/": {
+      "fingerprint": "d77f67a96a835ea00af895c2462be4a07cc5c72988f6f676ada3e511b93d0937"
+    },
+    "/tools/knowledge-graph/pipeline/step-10/": {
+      "fingerprint": "f5282330973a54417e28da586303089130ea97ab686c7dd66d1723094fe4c496"
+    },
+    "/tools/knowledge-graph/pipeline/step-2/": {
+      "fingerprint": "b4a5311c90f166fcc6dfa7479dbc31e3a84c8c29ca5e26890b294f73b284a3bf"
+    },
+    "/tools/knowledge-graph/pipeline/step-3/": {
+      "fingerprint": "371e6d36facdfb8c2bc02b29b258d4dc4faaa824373d93aa88f28793289e4b79"
+    },
+    "/tools/knowledge-graph/pipeline/step-4/": {
+      "fingerprint": "583f8c514ad16c8a608d4ebffb2c667f2148bfd1bd32e2dc6487824451965073"
+    },
+    "/tools/knowledge-graph/pipeline/step-5/": {
+      "fingerprint": "dd689f4a439d0c7ea8b88368b42f67a4221e61dafb2c5868a8484677754d49b5"
+    },
+    "/tools/knowledge-graph/pipeline/step-6/": {
+      "fingerprint": "0504a549552cc450dd37b9a5a5d24773acdc97694d02734c1b73e23a21af2d65"
+    },
+    "/tools/knowledge-graph/pipeline/step-7/": {
+      "fingerprint": "8cd8dec253ddc7fcbc5fc43af7dd06deb9466c3ab19d224b050884418c40b3b8"
+    },
+    "/tools/knowledge-graph/pipeline/step-8/": {
+      "fingerprint": "b579b6aeff37009b789264c332f635ca6ddb51280e9a40e2086ab0ebadd5b52f"
+    },
+    "/tools/knowledge-graph/pipeline/step-9/": {
+      "fingerprint": "b8ca88b4d68a77718b3b287a1352ed3dad95a1ff5c0ed3d70137d1b0fcaf63f9"
+    },
+    "/tools/masterclass/": {
+      "fingerprint": "b25e85dc66d335c735161c77eb9c8496c5c7cf0bd63be1a098cf154d5b909c39"
+    },
+    "/tools/masterclass/core-masterclasses/": {
+      "fingerprint": "dbf4442bfa1d6ee1838274f8bd8fffb1373775f5ed6973114ab0a3ec022dd877"
+    },
+    "/tools/masterclass/core-masterclasses/2022-model/": {
+      "fingerprint": "ecab2283a7afb76bbde642422a6fc25122757aec92aca60944c35ce1c6ac60d5"
+    },
+    "/tools/masterclass/core-masterclasses/cisd-masterclass/": {
+      "fingerprint": "3320f5fb4931d455c6b762e504d2776bdb3175537b9e9b3c74ad89e820af2e03"
+    },
+    "/tools/masterclass/core-masterclasses/crt-candle-range-theory/": {
+      "fingerprint": "079547bb0eba3ed059559911ea1d2fe04d4fcbe701fd70a57ab145fece3f6504"
+    },
+    "/tools/masterclass/core-masterclasses/draw-on-liquidity/": {
+      "fingerprint": "d7de7b646d79e07003f310750b13ba7cf4074b8848ca9a55a99593db672ffd21"
+    },
+    "/tools/masterclass/core-masterclasses/ifvg-masterclass/": {
+      "fingerprint": "a9f83e41334b2d1157e8d2507a6444d55bdea66390e75dc5095543a793ca1aaa"
+    },
+    "/tools/masterclass/core-masterclasses/mmxm-stage2/": {
+      "fingerprint": "89051c8138fd8bf259a364e541da0d75ae80ddfc4a4c68fd39aba6bf5b651d8e"
+    },
+    "/tools/masterclass/core-masterclasses/ny-continuation-reversal/": {
+      "fingerprint": "81ec33c78d92e4fd1ad3e5db99c1c67b5c8f45096a8217cfa24c75abb6690409"
+    },
+    "/tools/masterclass/core-masterclasses/org-octant-grid/": {
+      "fingerprint": "9a9bfa6aaa53d9078db400be2925716b1870c601dbdaa3b569302c9c00fd5ae5"
+    },
+    "/tools/masterclass/core-masterclasses/silver-bullet/": {
+      "fingerprint": "3df44f78b08531460e03364cef5e1f1b4c4dd593df7131d3ad0bd0921fbaa26b"
+    },
+    "/tools/masterclass/core-masterclasses/smt-masterclass/": {
+      "fingerprint": "22d91c142b4ba1169dfb95888827ec08dee492cce7a156d44055bce19e956eac"
+    },
+    "/tools/masterclass/core-masterclasses/standard-deviations/": {
+      "fingerprint": "144c08e57f673e53787b60e86d10527094369564baabff1a6a7caa4546152360"
+    },
+    "/tools/masterclass/core-masterclasses/unicorn-model/": {
+      "fingerprint": "a3facf3449d20f017c8885605d19336a9935823a0491e3b65d20fd5a8b75b7e3"
+    },
+    "/tools/masterclass/core-masterclasses/weekly-move/": {
+      "fingerprint": "fe6bb7bf66dd077d5810ab823bd09d17ce6391f45d2ab5f7f671dc86aff528bc"
+    },
+    "/tools/masterclass/entry-models/": {
+      "fingerprint": "311313afae8a28b43eafa93fc1500a14cd2f335028b090ed3265ab8bbf7ca030"
+    },
+    "/tools/masterclass/entry-models/double-purge/": {
+      "fingerprint": "768f2c53ad5adeab9c51ca534faa15e05a67dcb1b0777cff0d46795773a430cc"
+    },
+    "/tools/masterclass/entry-models/first-presentation-fvg/": {
+      "fingerprint": "1baa35c763b8886f52b37fe752c4920b151b2ef9b152cdb5c48be7b4c7ab7f44"
+    },
+    "/tools/masterclass/entry-models/ote-model/": {
+      "fingerprint": "ab2f132a6f22b74f0b7ab083bf4175a15bf62e3ac8116d5c0a8442ae927bd28b"
+    },
+    "/tools/masterclass/entry-models/sick-sister-strategy/": {
+      "fingerprint": "946da299af974918216ba18ca5db5905e234830ae46e7ad13d1f0191f8e0c948"
+    },
+    "/tools/masterclass/entry-models/venom-model/": {
+      "fingerprint": "0fe1232f4fb56eee0e76b267a98ac22df7e42d49a023e16d8f8c164724925630"
+    },
+    "/tools/masterclass/mentorship-frameworks/": {
+      "fingerprint": "438eda2780a2a001c12f31c520bdfc6f9038eddc676b0f19d9bf700fa520b588"
+    },
+    "/tools/masterclass/mentorship-frameworks/algorithmic-macros-schedule/": {
+      "fingerprint": "2a6768019ba4bb80ab9effc788cc63179acf31c2e1988c653680a75ed341eeb8"
+    },
+    "/tools/masterclass/mentorship-frameworks/three-day-rule/": {
+      "fingerprint": "30de710c2072b5b8755bae32432af6bec970bab9b15049875e067875c9090b73"
+    },
+    "/tools/masterclass/opening-ranges/": {
+      "fingerprint": "127dd2a64c6415cc9cac1a66395e5c2a64e849a7db7808fabf5df8ce5ed2e540"
+    },
+    "/tools/masterclass/opening-ranges/five-opening-ranges/": {
+      "fingerprint": "950131df3bd19f3ff3e29cb6a6a64abd06ee9b4091758b9f1ea5098d299c0fd5"
+    },
+    "/tools/masterclass/pd-arrays/": {
+      "fingerprint": "dc139ade118b7dd17d8eb21be897e3ea2eadff5bc5b3809aee58baf74b2ca159"
+    },
+    "/tools/masterclass/pd-arrays/hangman-pd-array/": {
+      "fingerprint": "4f35becd66915b989c33ab96f944bb72ecc10a77d286a1eb6799d811843cdb0a"
+    },
+    "/tools/masterclass/pd-arrays/implied-fvg/": {
+      "fingerprint": "6077956ebccb6665d699c65d00807b73f87d3edc19aa21809b9d6405b30b48b0"
+    },
+    "/tools/masterclass/pd-arrays/mitigation-block/": {
+      "fingerprint": "aaa3402a929a33565fb7ddaf14f5105ab9466fa303268cf795efa5e154e956e8"
+    },
+    "/tools/masterclass/pd-arrays/propulsion-block/": {
+      "fingerprint": "c38e3366a1363e0d0af64e04ecc1adb206654efef6cb6719bbad45eb972cb6d9"
+    },
+    "/tools/masterclass/pd-arrays/rdrb-balanced-price-range/": {
+      "fingerprint": "a6173afca687b9be609f30d570752f587cc56e205931eb45ca4c2ea724d44590"
+    },
+    "/tools/masterclass/pd-arrays/reaper-ifvg/": {
+      "fingerprint": "0294547a2169f20c0b3cee16212f7ecb84d7a14e3b7009eecc6ce242f93e2075"
+    },
+    "/tools/masterclass/pd-arrays/rejection-block/": {
+      "fingerprint": "f5acc1f8e7511fcc2e9f3b4df09caa1ffadb8b4409ab93a8acbbe06e307be3ad"
+    },
+    "/tools/masterclass/pd-arrays/suspension-block/": {
+      "fingerprint": "4aafaf92242e8d9cfae69ec620d6e3a512242ea317471b00bdaa66c9c5950a87"
+    },
+    "/tools/simulator/": {
+      "fingerprint": "64190de857a8480b8b58a0b8a9979450d6975a0f0dd36fdeb98457bfb085f0cc"
+    },
+    "/tools/simulator/failed-ob-breaker/": {
+      "fingerprint": "79bf67ff1675375ee9044f03eaa5f1fdfd9c73d5234d4b0bed111e44ec48db79"
+    },
+    "/tools/simulator/ict-2022-model/": {
+      "fingerprint": "7d08750c2fc1961c8439ce4fb68654ca2f4c67a99b95f593273c54f0d3d36381"
+    },
+    "/tools/simulator/london-judas-swing/": {
+      "fingerprint": "cb4ff2de2685bd98a379b9e9255845babfdd9ad993b9c0f5f36eca189996f7d5"
+    },
+    "/tools/simulator/news-driver-reversal/": {
+      "fingerprint": "a72a471340991d51956c9e52c163b1b2dfe43537c73efeeca834349233e9fb5d"
+    },
+    "/tools/simulator/ote-expansion-long/": {
+      "fingerprint": "188c5aa49b5096870bf150fe8e5cb73345d82fa331675f3e3852b73b7a120cd9"
+    },
+    "/tools/simulator/silver-bullet-short/": {
+      "fingerprint": "ce4d309c88627633a0b4a765a75d867c14ae9ff767acfbf84319c95db9203f2c"
+    },
+    "/ur/": {
+      "fingerprint": "2facbc6955caf4ed91c2de358b0cc30d0e43643e8a9bf7a258bf1bf4d2d64f09"
+    },
+    "/ur/about/": {
+      "fingerprint": "ad9c27b63d1db2391c80d4973f0500ee322dcf078fb378cfd44a5371bb89a966"
+    },
+    "/ur/articles/": {
+      "fingerprint": "7125a2208d2cd99004688aef3a88791b7bae0d15dcb197b10641008032c2bd24"
+    },
+    "/ur/articles/a-good-trade-can-lose/": {
+      "fingerprint": "d4fc3b323264052ef7005cf0148e03f2f68c7e0877c3b596dc603a4fc8fab7a4"
+    },
+    "/ur/articles/bitcoin-dashboard-is-not-a-crystal-ball/": {
+      "fingerprint": "6541112d9930a9fd8085d443f3d15a726b061a21b1cbe8fa0e81a70929742f0d"
+    },
+    "/ur/articles/compare-ict-entry-models-without-hindsight/": {
+      "fingerprint": "b20cdc0ee9aa2d014d5228f99085211c22cd2fffa1e02bf3bea2bc8e0458219c"
+    },
+    "/ur/articles/drawdown-math-is-not-symmetric/": {
+      "fingerprint": "eae5a8af53653cef6847b8a4d29cdf1b1c66df16e84b36ac43f1012fb474ca3c"
+    },
+    "/ur/articles/higher-timeframe-bias-to-lower-timeframe-execution/": {
+      "fingerprint": "6cf0c6fc4d9975cc6c62f6864aad997e41d51983785dbfed23f980807b338645"
+    },
+    "/ur/articles/how-to-study-ict-without-collecting-setups/": {
+      "fingerprint": "acdf23a6aac3d4522fdd56b796ad80f8bbaada6494fb8465a1b714b52f60d3b7"
+    },
+    "/ur/articles/liquidity-is-not-a-magnet/": {
+      "fingerprint": "4757b07caec0a53fc1395efd6d2d143e3199174c56418ccdb6277804b8bbec0a"
+    },
+    "/ur/articles/opening-range-vs-opening-gap-new-york/": {
+      "fingerprint": "9c6f8c2b36ac32a458d2bdbf91d641d31fd43ce389a325fd1f2ce74675947116"
+    },
+    "/ur/articles/pd-arrays-fvg-order-blocks-and-inversions/": {
+      "fingerprint": "6eb05744cea55793ccb75ac230168c466b4a64c2ac5541c26fbb7cc614a55b94"
+    },
+    "/ur/contact/": {
+      "fingerprint": "f4938e663130a217b08d5797305d44c79bd9c615d4d117c91e7a0edf28d56748"
+    },
+    "/ur/curriculum/": {
+      "fingerprint": "34c4a833f4a731d77f7679e62c490c091e70d79830495c15e9393aad6b4793f7",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/curriculum/advanced-2025-2026-institutional-delivery-systems-tape-reading/": {
+      "fingerprint": "1b6ca1a853f07d930bb8b428ccd63722a758d0e83bb988a778e528cc8625b7ef",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/curriculum/ict-2025-official-mentorship-curriculum/": {
+      "fingerprint": "e68e8a99c80cfacd26e9c580ba8e1b816028df13a3aa2f4499b6e28ddf3fb078",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/curriculum/ict-charter-price-action-models-curriculum/": {
+      "fingerprint": "342edd7cece3251afc7d5f789cbcc6263e8db25a291916ef93295460a35c8916",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/curriculum/ict-mentorship-core-content-master-curriculum/": {
+      "fingerprint": "2d3b2c2a748937db7571a78d0535d5064892ab79308b78a3927abb33aa2f73f1",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/curriculum/liquidity-and-time/": {
+      "fingerprint": "ce0dbbe9bd3eb493f5a6dceb8458bcbaf98ec2647f3622167ade0ab2d5ed656f",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/curriculum/market-foundations/": {
+      "fingerprint": "b6b9a2bb6a65d8d4472088656abb16efcf8a6d301473e4dd5b8dfc3c4f5a40ff",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/curriculum/mentorships/": {
+      "fingerprint": "c5a13fe010db6110f883e7ba6050f79861362f4b7f85048fe52bd1772aa769aa",
+      "lastmod": "2026-10-19",
+      "evidence": "New bilingual mentorship pages released in PR #16."
+    },
+    "/ur/curriculum/mentorships/2022/": {
+      "fingerprint": "e843ed0dd4d21b842fa485bea32060bfe41535b7331c3585b3c416444afdfe07",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/curriculum/mentorships/2023/": {
+      "fingerprint": "4fc508a92924177bd45638b914ab9790f47a203313bb22639dd59be279deb2f0",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/curriculum/mentorships/2025/": {
+      "fingerprint": "556874a7d5d542ee082b14ba91d889f2080d1a70bd9e9564cb6d0ac9cff52080",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/curriculum/mentorships/2026/": {
+      "fingerprint": "c1c89fa30ee7da04ed402bd2768056f61e7084a72e4b7fade941ed4606c38641",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/curriculum/mentorships/charter/": {
+      "fingerprint": "2530567a65eaedf5fb09c55b56fe09920594affa29ad2429423a5bf0c4d981d6",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/curriculum/mentorships/core-2016-2017/": {
+      "fingerprint": "0dcac7611304118b94e2377ab6b0890de186f707a592311acfc03853ed91832d",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/curriculum/price-delivery/": {
+      "fingerprint": "b408206f93efe350f6bec4f2b0d4a8d7d86e6560248e9a77751cbd723459461c",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/curriculum/price-structure/": {
+      "fingerprint": "a0dbf8360a7674d929448f669e0a512025798a5c9897aca57ec8eb1d07ac02c6",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/curriculum/special-mentorship-track-practical-field-guide/": {
+      "fingerprint": "2f75d682f7170f536f533ead39e3d4176944f0b376d3182f403d62fb37355a49",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/curriculum/the-2026-ict-smart-money-concepts-master-lectures-tape-reading-series/": {
+      "fingerprint": "e7bbb8b0d2440214ad1814554c5d53b087877aa54e3d0f2b9e6f2aefeb525938",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/curriculum/time-based-delivery/": {
+      "fingerprint": "068098b6218aa47de353bb1e361fe3931a2bb498983e67cf039f04e733a53f5b",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/disclaimer/": {
+      "fingerprint": "4e736a833bb9ae397784225851cf144385ee257532bbe5da58e41c6afa1ba9f6"
+    },
+    "/ur/learn/0930-am-opening-range-theory/": {
+      "fingerprint": "88b8e53a1df92fe8b6a27576f857417605fe2f4f0c785ed6b61a6ce3d11a2970",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/2026-onboarding-from-vision-to-execution/": {
+      "fingerprint": "8db0cba968f0f1c7b790f60fd9a06836285b793651ca64346a9bb92da3c2a5d6",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/break-of-structure-bos-trend-continuation/": {
+      "fingerprint": "1a0f4fc182f6dea2d140b7e85acf09970079b954de3cc8992bd0e11080453de6",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/breaker-blocks-trading-failed-order-blocks/": {
+      "fingerprint": "3f0c2d5c49ddcde3b5c9a793734a8a20d070f2293ff8d9fe6909976e1f475b38",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/candle-range-theory-crt-strategy/": {
+      "fingerprint": "a890c0d4e3f68f95cc384fd6dae788e5ef47e728de8d6719cc6cc496541e9697",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/change-of-character-choch-the-first-warning/": {
+      "fingerprint": "7787fbb7aa050b9ca5b33592e85f2f005910f09a07f9640fee434064a764dd63",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/core-content-month-1-elements-of-trade-setup/": {
+      "fingerprint": "1e473d389ad571efc999d8483bae1df2520886fdd163d8b5399da420c3a550b1",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/core-content-month-2-growing-small-accounts/": {
+      "fingerprint": "5af001d555cdb6cd2d1ab17a403e29e46b47821ee3fd290a57743d7e344c74f7",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/core-content-month-3-institutional-sponsorship-and-traps/": {
+      "fingerprint": "2fcd281482ef0c585f8d87071515468e1c6ab956995a1580a1e54edeeca2b963",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/core-content-month-4-advanced-pd-arrays-and-yields/": {
+      "fingerprint": "7f2d8983588b9e102e0ba3ad185b4a00ccb82877bacbd62c74015333b556a4df",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/core-content-month-5-quarterly-shifts-and-position-trading/": {
+      "fingerprint": "744744edfd282e88fa0363effa0c9c170f31eb29b57ce871b038e2e20e12b5f5",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/core-content-month-6-swing-trading-mastery/": {
+      "fingerprint": "65996b28d54665dc99c2f4dcfbaa151d2e3b6699b3032e3c6e928984eab34ab2",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/core-content-month-7-short-term-trading-and-market-maker-templates/": {
+      "fingerprint": "81a7bd892e577bdd65b15cb8135801db67a433689a75194a3601ac86ad62333f",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/core-content-month-8-daily-range-and-intraday-profiles/": {
+      "fingerprint": "58a763f6d5a9c5b3cbf35f976e9722c832363cca7ebef245c22baf1ca13a39ea",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/core-content-month-9-consolidations-and-bread-and-butter/": {
+      "fingerprint": "2a673a5d10d8c023c78199169e2b8b85249115fe7c4752d05a574f524679fb4e",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/core-content-months-10-11-12-multi-asset-mega-trades-top-down/": {
+      "fingerprint": "a30b34d1cfd2d14ae99b00f4b15c95ee8c43a13dc58b9e47f19b4b2a9795966c",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/daily-profiles-and-intraday-power-of-three-po3/": {
+      "fingerprint": "1563ebaa91ae8c7843478b547a47c2a3ceb14a41bca4007ee397649f07b0ed6d",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/event-volatility-hrlr-futures-vs-cfds/": {
+      "fingerprint": "a24bd8d29899fb0dfe8a24f9d51b9f30f936c4e90692558b57f7bb9924a21c96",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/fair-value-gaps-fvg-and-consequent-encroachment/": {
+      "fingerprint": "6c279893d1b0731ecac1b9ef63d8fc13e6ce98bf4286a681dc8599ad2a35bcdc",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/how-an-exchange-matches-orders/": {
+      "fingerprint": "8cf9d4e7e15002585f4d8a496eddac2d306da254e066b749ba27b3c1523049ec",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/ict-charter-model-1-intraday-scalping/": {
+      "fingerprint": "cb9dc536f63f5465bb36affbe160c504e6a53234e4fd7656142cc0ceb7f92585",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/ict-charter-model-13-2022-youtube-model/": {
+      "fingerprint": "c7f9bd8e39ecf94b8c13c09880759d378c029e66caf239d98b8966a6338441b4",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/ict-charter-model-2-weekly-range-expansion/": {
+      "fingerprint": "142533144c10b5ad25c6a8f1c721ef5990838131060ee5e70e9a82d23eb24563",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/ict-charter-model-3-swing-trading-cot/": {
+      "fingerprint": "45451d4d5551b5077ad2717cfc5b12304fa918a0b5cb030af7bac08067745e36",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/ict-charter-model-4-position-trading/": {
+      "fingerprint": "78bd078a6c66f80e6f8fd1cf7b7951aa13c8ecb82c2557a02cc7364646a4323e",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/ict-charter-model-5-session-day-trading/": {
+      "fingerprint": "05c908ba9418de9ae5f3808e2965d14f16ba0c7aad0e1994f4c91f00794d2c39",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/ict-charter-models-10-11-and-12/": {
+      "fingerprint": "6d777c8405d64ba49312cd226c72da6dd63144727cee6d4aac22bffd644bd44a",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/ict-charter-models-6-and-7-universal-models/": {
+      "fingerprint": "ed031d9a93e87904118d787c6ebd00aa163aa6362e8f9c06335f91ca186cdf7c",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/ict-charter-models-8-and-9-precision-and-osok/": {
+      "fingerprint": "490dca36d8666393525ce6f5d8ecf7388d933bf4c99daeeed25c5797ce9f5fd6",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/inverse-fair-value-gaps-ifvg-role-reversal-imbalances/": {
+      "fingerprint": "80b5da27fbec46d410febc3fc971d81425fa8fd55ea0d45422ad9aacbbad3fa6",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/liquidity-engineering-and-liquidity-runs/": {
+      "fingerprint": "aac8f105b36141ca09419b733b0535cceb564dfb1ad77fd5eed1379dfa031e4d",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/liquidity-the-most-misunderstood-word-in-trading/": {
+      "fingerprint": "d74fb0e4318136f07e4ffaa14bea262751c2d2a4888adf103aaeacb3aba0c7e4",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/market-alchemy-trading-all-time-highs-ath/": {
+      "fingerprint": "f3389a40f8c374dae793408cf129acc3bb1acfefd37402edf111171fb71691f7",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/market-structure-shift-mss-verified-directional-shift/": {
+      "fingerprint": "848c5708f0fcc05880541caa9df7002dcd2d0adb6babdd07af63150662262c4b",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/midday-afternoon-tape-reading-macros-final-hour/": {
+      "fingerprint": "efc0c01969adf99a2f74c60d5480d131f96bcc1a43a837faa2a17cb149fffcc7",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/nq-es-premarket-session-rules-morning-engine/": {
+      "fingerprint": "35f7b95d6aeb86f4674bba193856c53e5d01b73c612d992390c913fa65170cdc",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/opening-gap-matrices-ndog-nwog-csod/": {
+      "fingerprint": "f8a2cebe431b8156ab4b2ae1db96946cf455b236586ecee9eb017869a1c5281f",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/order-blocks-ob-and-mitigation/": {
+      "fingerprint": "1d297fbb34a1882c5484de3de9e1bc42ef0630214538a317092afba5b4c8e445",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/rdrb-balanced-price-range-and-enigma-fvg/": {
+      "fingerprint": "a904b46c908c4da865dae557e2185c98a281095ee7b9935eb2f66e9591321147",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/reaper-ifvg-and-suspension-block-advancements/": {
+      "fingerprint": "69d47288b82389a1802b5a70eb3c7dd8f0c752ac5fea77cd6051e6116e7d313e",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/sick-sister-strategy-and-double-purge-framework/": {
+      "fingerprint": "353f19a68ecb00a1996c2b9026d5c5a8f60dc9bb1c477bff200a850e3ff90667",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/smt-divergence-mechanics/": {
+      "fingerprint": "91f75beff9fd9d212903f3a45ab7bb927c8c468a4ca1158cd7aa523909355b9a",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/the-12-weekly-profiles/": {
+      "fingerprint": "ba902b456047187a19431971c137700fd9a708966f6c388ad2326a25d74cc3e9",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/the-1st-presented-fvg-the-0931-rule/": {
+      "fingerprint": "ed0fb47d6808b25ef04bd71fd9c521902eaace2b62ab206fcf8171cd55ca1f5c",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/the-complete-ict-top-down-model-and-execution-blueprint/": {
+      "fingerprint": "8f1dcd609f17bc75950e73f5248db8ef40d29dae1111bb5d5a2c278f76d57bea",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/the-ict-venom-model-five-stage-delivery/": {
+      "fingerprint": "0bbbf1cb8aa87f9fe0f5c8b424ae80617f92201d23f86c0e69997b08ec625367",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/the-order-book-in-depth/": {
+      "fingerprint": "ff07fe0ce5246d9edc42a33f9f3363a30cdb54d435393f93575518dad98785d6",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/the-weekly-profile-and-five-day-delivery-model/": {
+      "fingerprint": "fde72385a4676c0e614047dd3c3561327c85932bc5fe703e532a382130b2008d",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/time-and-session-liquidity-the-global-clock/": {
+      "fingerprint": "108557b3098437448ef0e90909a9b4caa8bab5c73345dd9407a8bb961553b4c1",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/trader-abdullah-masood-masterclass/": {
+      "fingerprint": "70c4d8089f532516d35acbc450ee8fc1aa3ab91e8b56dd9aec0c27ed2adbcbdf",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/what-actually-moves-price/": {
+      "fingerprint": "ccd5564a24e836aa002f04e4995fcb61a182ac361bbb00c19270f9018a2754ff",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/what-is-a-swing-the-atom-of-structure/": {
+      "fingerprint": "0328afe4691870ec30131fb8064b5e05fb307cf7035b535940e5f50f62703f5b",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/why-candles-form-and-how-displacement-arises/": {
+      "fingerprint": "11d6a1572ad24a8f6bc011ac448d99b97878ecbcef2e95c98ea92f4511c34d2b",
+      "lastmod": "2026-10-20",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/masood/": {
+      "fingerprint": "db0b4f5aa2fbbd2915e20d5ec308bccf3473eed574d630389b2ebb6133df4866"
+    },
+    "/ur/masood/animations/": {
+      "fingerprint": "c0a9d8405f358c3f5506e5e387db167132b4a286193a6dad5dc113cc1bc97443"
+    },
+    "/ur/masood/bias-calculator/": {
+      "fingerprint": "f3814e363400781813730773d37d8dd54e6a670ef522d7dd6c3e6f2406be25ce"
+    },
+    "/ur/masood/golden-rules/": {
+      "fingerprint": "92c755a41b53ea9f0d79790cbd1d473f7493839feb625d44b6e322cf840e48aa"
+    },
+    "/ur/masood/lectures/masood-adv-1/": {
+      "fingerprint": "a4f243d75267a96c07f29357c2c490b177f1bd863216c708395d2776f2507e60"
+    },
+    "/ur/masood/lectures/masood-adv-10/": {
+      "fingerprint": "6cd265dc5d9e0ae8cd787bf31d4fd5f1cdc3afd6e40978c772375e4028ee9fb3"
+    },
+    "/ur/masood/lectures/masood-adv-11/": {
+      "fingerprint": "34128fde9e697e62c51ed6969b846505c0b6e32fbb2f79970b54eac42139de48"
+    },
+    "/ur/masood/lectures/masood-adv-12/": {
+      "fingerprint": "f8fb7141bc2a95efe77317a6186849ab12e508026dac46b80f2e7a490847ea6d"
+    },
+    "/ur/masood/lectures/masood-adv-13/": {
+      "fingerprint": "0a3d88c2ff272ce025bfdd0b9e486659fb70877214651ecc95d8552c0449d47c"
+    },
+    "/ur/masood/lectures/masood-adv-14/": {
+      "fingerprint": "03b68646cb390b023e2f5d94f6d6608890df71e1daffa3feab8c1907bec7592a"
+    },
+    "/ur/masood/lectures/masood-adv-15/": {
+      "fingerprint": "dfb86bee813b9fe85d12980ad90fda5666bb75a60872e9c9152fb2e106567339"
+    },
+    "/ur/masood/lectures/masood-adv-16/": {
+      "fingerprint": "fbceae5b15fc6f9678cd0432c698fcb28ff3140d0c69071ca5cb6fb13e37b425"
+    },
+    "/ur/masood/lectures/masood-adv-17/": {
+      "fingerprint": "1f9851050b05dce421e011053231125354a95f924004f1baf26df802233ed824"
+    },
+    "/ur/masood/lectures/masood-adv-19/": {
+      "fingerprint": "d4b3edda5fb2946d6f566113009154c176c1cecf5b646aa11d3c92c2d16e9f94"
+    },
+    "/ur/masood/lectures/masood-adv-2/": {
+      "fingerprint": "74bc56aec1fe204511d75f521b7ecf30eaf933c9564b5c38fd0f5273b4456014"
+    },
+    "/ur/masood/lectures/masood-adv-20/": {
+      "fingerprint": "942931531000fe11dd81491ceea8f98a4e3e65c16a944207d03f1a87e72703a9"
+    },
+    "/ur/masood/lectures/masood-adv-21/": {
+      "fingerprint": "5f627f0377efb1d5f50b1ea627f36aeebbd5a63e50565fc834002d6a18cac924"
+    },
+    "/ur/masood/lectures/masood-adv-3/": {
+      "fingerprint": "d8c7da9b65fa81d231dd234cec4d5cf68a48f7cf2408d91f62a4d91549fe29bc"
+    },
+    "/ur/masood/lectures/masood-adv-4/": {
+      "fingerprint": "8af68790436cb34ef7debdf3313dfdb26c941c88b65ee027fdd0cf54ad327668"
+    },
+    "/ur/masood/lectures/masood-adv-5/": {
+      "fingerprint": "0bfe61aced0a99a9fbc4add6e86f5005c83e85b2b18addd553076c51edcd6a0b"
+    },
+    "/ur/masood/lectures/masood-adv-6/": {
+      "fingerprint": "743a0cf930e91f5dc3144a361ff3c8ff9250df2ac5a701e90722d2c1b75f2715"
+    },
+    "/ur/masood/lectures/masood-adv-7/": {
+      "fingerprint": "dee21fe42bab8af8db3267449473ce7d9b89a0de6b34438bc58caf45359d5eff"
+    },
+    "/ur/masood/lectures/masood-adv-8/": {
+      "fingerprint": "700a572c5f3352a274e66f547234c77de6c2c155fa6d431a4d02bb6cff86de21"
+    },
+    "/ur/masood/lectures/masood-beg-1/": {
+      "fingerprint": "68aae8d541220a1f1261f7cfbb19f9db39d33c7c89d278cbc1bd85edfe70dcee"
+    },
+    "/ur/masood/lectures/masood-beg-2/": {
+      "fingerprint": "619dc72b96fbc97b41bc1556a09f44f15dd231d70c03c99364e7589d1eb5c1fa"
+    },
+    "/ur/masood/lectures/masood-beg-3/": {
+      "fingerprint": "5aec25ccfb613ae1c7cdb16315881ea1b7820246bd4e9f5a2bb9664f434d8428"
+    },
+    "/ur/masood/lectures/masood-beg-4/": {
+      "fingerprint": "66855c45ac96177980b1ef51cf428eb2c69ca161e6e699257227871ee252c66f"
+    },
+    "/ur/masood/lectures/masood-beg-5/": {
+      "fingerprint": "6162f32f18589f552f3e755a47182584fe2b5d0673aff16891a03bacc25cc5f6"
+    },
+    "/ur/masood/lectures/masood-beg-6/": {
+      "fingerprint": "5a3749849440992ea5b395a8d222aa933e99d0d8764d61395f62a91f9002529b"
+    },
+    "/ur/masood/lectures/masood-beg-7/": {
+      "fingerprint": "56c2dd2ecd2abfc56a5f79966bb3c581babb5e49c1b010d056773f2b524dd125"
+    },
+    "/ur/masood/lectures/masood-beg-8/": {
+      "fingerprint": "78c14dba6cdcd207d47ce55563e998a72101afc3d671bc0d9dff621bdbded266"
+    },
+    "/ur/masood/lectures/masood-db-1/": {
+      "fingerprint": "410c436de4e06ba650e5dbdc688b76229a85a72a78402354ed587d1424e6cc9c"
+    },
+    "/ur/masood/lectures/masood-db-11/": {
+      "fingerprint": "7964990e652e351ebf373819f02cd5627f5464a0959b06bdfa18811c9f302220"
+    },
+    "/ur/masood/lectures/masood-db-12/": {
+      "fingerprint": "fef36636d7a60a2560dd93ffe6705d90c484b8db70a729ef7fe38f62d527c74c"
+    },
+    "/ur/masood/lectures/masood-db-13/": {
+      "fingerprint": "db23622f649d2cdf614b48f90cdb0dd4dd3852f284ce8330171d9c67fa3de820"
+    },
+    "/ur/masood/lectures/masood-db-14/": {
+      "fingerprint": "b3a7476841af09de362aeeb18928266f9d051107d5c7f2dbff3bcf1bb29cdf1e"
+    },
+    "/ur/masood/lectures/masood-db-15/": {
+      "fingerprint": "512e19b62648a292357aee803b9fc4e62bd6b880e00129b132482a68b2310f23"
+    },
+    "/ur/masood/lectures/masood-db-16/": {
+      "fingerprint": "2707651b5afc7d752150a132e5cabca2741a98ba43fb714eff4d77a814a28d9f"
+    },
+    "/ur/masood/lectures/masood-db-17/": {
+      "fingerprint": "1609d393ddd3c7bce01c08e784ff342cc323ccdfef8ca00fd8163624962d49f8"
+    },
+    "/ur/masood/lectures/masood-db-18/": {
+      "fingerprint": "4da83fe403508482a76f44dd51eb39afc043ccc1d87721f26b09fba4fd08f81a"
+    },
+    "/ur/masood/lectures/masood-db-19/": {
+      "fingerprint": "3ac2640638f9488b2520c12ed34e52da5d2f746e9b7faa5405fb8a09c6398daf"
+    },
+    "/ur/masood/lectures/masood-db-20/": {
+      "fingerprint": "cc078c82d9bee5f193f94e78d4e50e06447d95e5497c2a14b93c42305b6f06ff"
+    },
+    "/ur/masood/lectures/masood-db-3/": {
+      "fingerprint": "417210e8fb345aad85c9dde5acf475814b8078e2e7dd35eb67e4d59e3e3b3e41"
+    },
+    "/ur/masood/lectures/masood-db-4/": {
+      "fingerprint": "bb85323bca0c3c4eb18c662ae4d00fb17d10f8e7b09add20c5e0d1ff3ca42a8a"
+    },
+    "/ur/masood/lectures/masood-db-5/": {
+      "fingerprint": "0f37fe5aba8bd5d1b587d45439ed1e6cffa4eb2704d60223c89387d99cde6f5b"
+    },
+    "/ur/masood/lectures/masood-db-6/": {
+      "fingerprint": "acff97e953528a290f6b6ae570fd6f2fdf32adcf909be6f8dc30ba7f4838f35c"
+    },
+    "/ur/masood/lectures/masood-db-7/": {
+      "fingerprint": "b5918f29a046b5983c7e043ff1524beed541bc4c1eeccae8f7ec3cee0d3a8d37"
+    },
+    "/ur/masood/lectures/masood-db-8/": {
+      "fingerprint": "50eeb74d9d0cae28e75142d0f314e62a9aea9f8383d255cb2f3c08e6cbbceea1"
+    },
+    "/ur/masood/lectures/masood-db-9/": {
+      "fingerprint": "0b65db072efcb058ce899cd323d55664e70e23624a38849cc70f6f18bbfaca69"
+    },
+    "/ur/masood/lectures/masood-db-fomc-special/": {
+      "fingerprint": "16f23e4fb202862df954ec84491002c26726e695835a39af4e46bf4d31b64044"
+    },
+    "/ur/masood/lectures/masood-gf-1/": {
+      "fingerprint": "c78818ea5023d40708d2d4d728da2369b3aad2d2d9b2613a0dccdd8a150afd6e"
+    },
+    "/ur/masood/lectures/masood-gf-2/": {
+      "fingerprint": "80aecca9ea5ee2da8d9c4f16b3316fba46a43612c0730340c12c57dc0ab1d9c5"
+    },
+    "/ur/masood/lectures/masood-gf-3/": {
+      "fingerprint": "e25da3c19b84907b94e1f602a33b97236c3fe0e5a6613f08f2a22c48b540c56b"
+    },
+    "/ur/masood/lectures/masood-gf-4/": {
+      "fingerprint": "c56eac6069d5cd5c99aeb2f183b9d7e79b07f37118f7455da19de754139d1088"
+    },
+    "/ur/masood/lectures/masood-gf-5/": {
+      "fingerprint": "a7016239a170a3a8857b710a474bc2ba015b789fdd2f6796b1bb699942d88e3e"
+    },
+    "/ur/masood/lectures/masood-gf-6/": {
+      "fingerprint": "eefae5094dd99f180292948d4d4bb14ea22b18fd1137733d3ba8d7c1f47c151c"
+    },
+    "/ur/masood/lectures/masood-gf-7/": {
+      "fingerprint": "47efd076318c4f5c1a4570d4221a6bfbb8194c93ba699882052f90a4020177be"
+    },
+    "/ur/masood/lectures/masood-gf-8/": {
+      "fingerprint": "5205e4ddda2cdb8eba73b97b51f99e87d8a8df742bb4b14e84b1d570034b989f"
+    },
+    "/ur/masood/lectures/masood-gf-9/": {
+      "fingerprint": "eb2d1f9b81a2935d6a77f4ec8cf9d9b89d2ac7457c974f8ae7cd028518d43d7b"
+    },
+    "/ur/masood/lectures/masood-psy-1/": {
+      "fingerprint": "a86fed3da760dfd19ced8207d9842408abdbf455f214f577f0d10587a47de044"
+    },
+    "/ur/masood/lectures/masood-psy-10/": {
+      "fingerprint": "52d0bbb27b1bfbf5176ee1d2cca0c88d9f2adccd1665a9e9c32c0fcfa1227a5b"
+    },
+    "/ur/masood/lectures/masood-psy-11/": {
+      "fingerprint": "43a241bfc19b0b743e724e377b8a569335e5d73ee6cdb285a73588f1db402c4d"
+    },
+    "/ur/masood/lectures/masood-psy-12/": {
+      "fingerprint": "6ad9c851459d9b374acbad5641303caf6cbfaefe2fa181ffe0bab88d4c9c9777"
+    },
+    "/ur/masood/lectures/masood-psy-13/": {
+      "fingerprint": "c448aeacf2112ca9c68d50d196823517f7b37b97a81066cd9d3bb72baefdaeb4"
+    },
+    "/ur/masood/lectures/masood-psy-14/": {
+      "fingerprint": "b60db318970c8af60da0656f7350591c0484bea2a0d6ab4aa9255f133611e7e5"
+    },
+    "/ur/masood/lectures/masood-psy-15/": {
+      "fingerprint": "399495094bfe143fac534638ecb21cd1e48ad4d3ba60e7abec4bf0a2b15d9670"
+    },
+    "/ur/masood/lectures/masood-psy-16/": {
+      "fingerprint": "ebb5d8a74490292986d280a80352afcd6020e50c3ffd7a785531bd70c60b60af"
+    },
+    "/ur/masood/lectures/masood-psy-17/": {
+      "fingerprint": "c21c77dac56723a4a56d32d56f89a584c850f6f753ac3a15ea60712a5863e6d3"
+    },
+    "/ur/masood/lectures/masood-psy-18/": {
+      "fingerprint": "5ac6ace76b2db1703f4e83119a694a415cfd7e1d6a019c6158c65c56d4ef0b4c"
+    },
+    "/ur/masood/lectures/masood-psy-19/": {
+      "fingerprint": "fa8c1c108dd1a9aa108211d9abbd69b867deed0f3c1bac1e7f813559d13d0bca"
+    },
+    "/ur/masood/lectures/masood-psy-2/": {
+      "fingerprint": "dc74832a5ce919dacc45d6a19dadfc65c875a76d57681e98609d28e141f7a824"
+    },
+    "/ur/masood/lectures/masood-psy-3/": {
+      "fingerprint": "e78f67ce166edee7cc03c19a2afa3c2059586a199da1806e1f10a6ee1030c8dc"
+    },
+    "/ur/masood/lectures/masood-psy-4/": {
+      "fingerprint": "fe7178cad56521e9d522283ce857a85b95a615f74b40dff32869fe6177721e83"
+    },
+    "/ur/masood/lectures/masood-psy-5/": {
+      "fingerprint": "435d1518daa40a37aaaeb3b76b7f1d0baf8ce28a000d1b0f2d0920bdb33f69c4"
+    },
+    "/ur/masood/lectures/masood-psy-6/": {
+      "fingerprint": "26becfe90192d009a896be2994266134757ff9fa2833a8eedd7456018fcdef12"
+    },
+    "/ur/masood/lectures/masood-psy-7/": {
+      "fingerprint": "b8b5747f3b319734953a2efb081f16f7bad730ea3286179cab07e2cb80c1506f"
+    },
+    "/ur/masood/lectures/masood-psy-8/": {
+      "fingerprint": "9ae11a4761110f8a3ca8dbb4aab6426b2b4ba26f45d54b43ce304f86ef203cc5"
+    },
+    "/ur/masood/lectures/masood-psy-9/": {
+      "fingerprint": "4f17efa78551407894ced291dbb3de42b0a7e31cc736f30ccf9226d43940cb8e"
+    },
+    "/ur/masood/lectures/masood-syn-1/": {
+      "fingerprint": "5105211c20d45c0d4ab1c219bf3a3df589e045b9eaab032035a341ef2ebc044a"
+    },
+    "/ur/masood/lectures/masood-syn-10/": {
+      "fingerprint": "57fab41246b9c9051988439e95a5c27fe0dd38fcda96e8526fa5367fcfbebc9a"
+    },
+    "/ur/masood/lectures/masood-syn-11/": {
+      "fingerprint": "1239fff50d4afc5bcc6b45e8e4389fed9c9f50509bbd48601a6cab984e035d66"
+    },
+    "/ur/masood/lectures/masood-syn-12/": {
+      "fingerprint": "a008da13bd7aa10b2f53101b84dacca20c027636695b1d659106dfa29b20275a"
+    },
+    "/ur/masood/lectures/masood-syn-13/": {
+      "fingerprint": "7137119a1f884d868cf6ba632b1c59a9abe33fb0c29233932c63a0079004ef2b"
+    },
+    "/ur/masood/lectures/masood-syn-14/": {
+      "fingerprint": "96e7fc0abd89b776f170e6bc8d58f71466bdd0c2a73228f0057332c56f38f149"
+    },
+    "/ur/masood/lectures/masood-syn-15/": {
+      "fingerprint": "35f15f6302755070f7e0e75abb8b6f54597ed5c4c2c39fd019e85608d7208447"
+    },
+    "/ur/masood/lectures/masood-syn-16/": {
+      "fingerprint": "877a9785e7c98b6bd91a0a45cfb4b67e16a95e3918473374c6212c3eff41bd88"
+    },
+    "/ur/masood/lectures/masood-syn-17/": {
+      "fingerprint": "6e12d0db5372ec7e8e526e59e5931ec6dbbb3666c4380c5f81f1b13184430ac1"
+    },
+    "/ur/masood/lectures/masood-syn-18/": {
+      "fingerprint": "f3fac86b4c1b671fa076dcfeba4f8302c880546708c5e220e30e0541201d0af0"
+    },
+    "/ur/masood/lectures/masood-syn-19/": {
+      "fingerprint": "986f0506efb8cc791190bbe424b47433cc97d06368a3a17e63105441ad87f058"
+    },
+    "/ur/masood/lectures/masood-syn-2/": {
+      "fingerprint": "5986ce0280c6efa99cf08b7cd4ce89e1feff2a0f5245f912910051e763c6a3b1"
+    },
+    "/ur/masood/lectures/masood-syn-20/": {
+      "fingerprint": "e91e8e1e3cb1f6bb7c069aeea491bfbd6043c9494fa344f7a24b470c36b2c2ef"
+    },
+    "/ur/masood/lectures/masood-syn-21/": {
+      "fingerprint": "f18014f01a7b38ff6a88f20c371cef25c14923f6cccb520c1a0d24bfc2d1ef0d"
+    },
+    "/ur/masood/lectures/masood-syn-22/": {
+      "fingerprint": "69b814da4ecfd5839b14708648be222fec7f55f496b75ed3f605d5e7f6d91ed2"
+    },
+    "/ur/masood/lectures/masood-syn-23/": {
+      "fingerprint": "e454fbac2a64c66789b22398850568512e9f7f10129e76d8ad1d95f6798889d7"
+    },
+    "/ur/masood/lectures/masood-syn-24/": {
+      "fingerprint": "bdfcb6ac6793b6c98901e83d41e6e087e25f26abe7f05e1a0352713ba5beb44a"
+    },
+    "/ur/masood/lectures/masood-syn-25/": {
+      "fingerprint": "039e3c09ae98b70b031fc1f645c6e84b9ba04431caf92d7d56bc9b3108bb0e8f"
+    },
+    "/ur/masood/lectures/masood-syn-26/": {
+      "fingerprint": "1196ad621c17feebab4ac95bfc7f53e41802ec358f32272db25541432591d338"
+    },
+    "/ur/masood/lectures/masood-syn-27/": {
+      "fingerprint": "eb5b04655e56d6a4a08ac8cdcf90ae7b78020ebe9391325063601b26d66d11f6"
+    },
+    "/ur/masood/lectures/masood-syn-28/": {
+      "fingerprint": "909eeede328097b00ce87eebb07abc4842c25a5263ef139b7990cdae180dcd8a"
+    },
+    "/ur/masood/lectures/masood-syn-29/": {
+      "fingerprint": "9a6ab8c779bdcfe3e11da1a8c9123abf0d5c872516a3e45822f4318f8869205c"
+    },
+    "/ur/masood/lectures/masood-syn-3/": {
+      "fingerprint": "b8ee84d69316771129e5dcda0e1075a6e6934c275473ccd117e9d328157c1a5c"
+    },
+    "/ur/masood/lectures/masood-syn-30/": {
+      "fingerprint": "388ea62a161189159307759fccd4d73268d0557bee7d3406cbfda2b0f5b1e48d"
+    },
+    "/ur/masood/lectures/masood-syn-31/": {
+      "fingerprint": "07a88f8d99ab3decb78f9b58eb32ac213f7d00c2cba0156f2b0c57fc62e956b9"
+    },
+    "/ur/masood/lectures/masood-syn-32/": {
+      "fingerprint": "69b93a3e948d012e5a7ec5ba57791aef661e292189bd23bd4c7f39e5003f49d8"
+    },
+    "/ur/masood/lectures/masood-syn-33/": {
+      "fingerprint": "f3e4763160ce52091bf60d27c416e171e5283315733066757ee50af4e90fda44"
+    },
+    "/ur/masood/lectures/masood-syn-34/": {
+      "fingerprint": "7bfb524ffdad091e672be3519f3251630e067a1f74cf45b7d7c5ae7c8ad94136"
+    },
+    "/ur/masood/lectures/masood-syn-35/": {
+      "fingerprint": "4daad57f3e7412c770dbd6a4cdad3b16aa308baaf1c9fc29740f99f21cc17d86"
+    },
+    "/ur/masood/lectures/masood-syn-36/": {
+      "fingerprint": "bdbfa94275e1501ad620130ce39861c99b10e11c6996bf8ba7cf1f4b5d919bd0"
+    },
+    "/ur/masood/lectures/masood-syn-37/": {
+      "fingerprint": "257e88e990a80eeb3b23ce870e0c64cd872fde152769fbf2420c71cecae4014e"
+    },
+    "/ur/masood/lectures/masood-syn-38/": {
+      "fingerprint": "d559d487077f59645059f72c07a9321f3503d987372294ff0b4e56bb6f4fa407"
+    },
+    "/ur/masood/lectures/masood-syn-39/": {
+      "fingerprint": "9895d80e6c921082ce8ac601ea6ec751313a2baa4f9430be7721a8f0b370e5b9"
+    },
+    "/ur/masood/lectures/masood-syn-4/": {
+      "fingerprint": "4e32a331799757ed6c283b83c7cacd5fe0af25465d3fdab024c2f65b962909b6"
+    },
+    "/ur/masood/lectures/masood-syn-40/": {
+      "fingerprint": "78aab9d0761fe34a0c05e51353ba3c8891777c32d30ff55424319fe5106f7e5d"
+    },
+    "/ur/masood/lectures/masood-syn-41/": {
+      "fingerprint": "85788666b285da1a4c9a9874202d92e6fa1300920adcb753c5b834792ce14116"
+    },
+    "/ur/masood/lectures/masood-syn-42/": {
+      "fingerprint": "a5a3406be0e59b17e8f7a23d9f5cdcec9386351f282720a601a95fac882b3ed1"
+    },
+    "/ur/masood/lectures/masood-syn-43/": {
+      "fingerprint": "a938762f62f2cd9e5d558b6dd6a7256da8acf564a690fbb2a22097f79d1b862a"
+    },
+    "/ur/masood/lectures/masood-syn-44/": {
+      "fingerprint": "0733e1f7b90b694aaf94f44b8530b8b4799abe6e2be7cb043b2a8e9277a8add4"
+    },
+    "/ur/masood/lectures/masood-syn-5/": {
+      "fingerprint": "97d776872fdfb00ed0c536a8927232756cc315061867e4ce14a8ee16cb253521"
+    },
+    "/ur/masood/lectures/masood-syn-6/": {
+      "fingerprint": "b6a0dbaec8af59a0af5420b29ddfb51e357f049f94a197c309ca0c7e648411fe"
+    },
+    "/ur/masood/lectures/masood-syn-7/": {
+      "fingerprint": "dc661977c12404d8abf84b8e024c3206f495cde78e4456ae4022670591d7f4d0"
+    },
+    "/ur/masood/lectures/masood-syn-8/": {
+      "fingerprint": "da6f055ed50979ad010dbdb42f90040ea475e3232f815f71c1d6b603d1c79376"
+    },
+    "/ur/masood/lectures/masood-syn-9/": {
+      "fingerprint": "67282386b4b44378652ddfc62a4f7e5e078c958dad02cc93145c837410c6ad9e"
+    },
+    "/ur/masood/playlists/advanced/": {
+      "fingerprint": "2820154dd6e5491be65754e81c12e44b296359220c3dd594f2a4164f01dfa35e"
+    },
+    "/ur/masood/playlists/beginners/": {
+      "fingerprint": "710cb77c4b29f59c19ab5b2ad1ebc7e14221f3add5b2b0fc5a9f96576f1a857f"
+    },
+    "/ur/masood/playlists/daily_bias/": {
+      "fingerprint": "b11aae114c1166d558b71f9d81d7556c1b52941a1d15fa3ca39bccc382d85a89"
+    },
+    "/ur/masood/playlists/godfather/": {
+      "fingerprint": "1bb5b7e8dd4e65a34ee35de60e650877bd17ffcd03b58a989c4b9edd7d67c6d3"
+    },
+    "/ur/masood/playlists/psychology/": {
+      "fingerprint": "7c16b0731b1a59916138cc08ccedb4eea40d94a7bad5b541b78f0fb5fa0a6e58"
+    },
+    "/ur/masood/playlists/syndicate/": {
+      "fingerprint": "3399999faae49b350c1acaf45732f28b3ccf7a9fbd0b71b8b1e88c0499196448"
+    },
+    "/ur/privacy/": {
+      "fingerprint": "78f4eb9391833a28302c081d01b36c04e915ff77270b7dd6e61928ece78fbf3d"
+    },
+    "/ur/terms/": {
+      "fingerprint": "6dce974e8160e66dfc02a430b828879e67b7ae829c8b59995b47d07c9a810ab0"
+    },
+    "/ur/tools/": {
+      "fingerprint": "63304170554cf822b40141c607a0808997a0316ba729fce2ca8d731949a6a67b"
+    },
+    "/ur/tools/backtest/": {
+      "fingerprint": "da30413a9a42091557e4e862e86e2c3a2e5b71fc1dce6d00be0ec3debeb08b96"
+    },
+    "/ur/tools/backtest/2022-mentorship-model/": {
+      "fingerprint": "486d1198c250d6392ec3a1ef58a68160f5f9d08fc780df0310e798dd6adc4af6"
+    },
+    "/ur/tools/backtest/breaker-reversal/": {
+      "fingerprint": "074c10a9c888c14347fc702e46db32ddd4a082b6babe65e6c86d6c1f30b0d74d"
+    },
+    "/ur/tools/backtest/charter-model-1/": {
+      "fingerprint": "34bdf2bb4f0276434e1603f5e7addf1c0d49926c06d3e4cf9d591f530c607892"
+    },
+    "/ur/tools/backtest/charter-model-8/": {
+      "fingerprint": "410fa416094c0704656cedfd56b44b974f8caf816881f65b45dcea5564a432da"
+    },
+    "/ur/tools/backtest/charter-model-9/": {
+      "fingerprint": "1be5c832c3f5552df5e4eee21d08b3fbb75590377f09c71f61547ff03596b102"
+    },
+    "/ur/tools/backtest/silver-bullet/": {
+      "fingerprint": "a42ec8d91b60da3090b142a4efd6b1c7f5326bd95aed52fdfc263478afb9205b"
+    },
+    "/ur/tools/chartlab/": {
+      "fingerprint": "642a3e0caff5cb3c923a6109d767b8a6b764a775164447f4650ee3e5c5ad4e08"
+    },
+    "/ur/tools/chartlab/btc-2022-bullish-model/": {
+      "fingerprint": "3ef9d8dd48d3556c89d6aa4b3421f952da70b6109517452d1c40b94431d79b8b"
+    },
+    "/ur/tools/chartlab/eur-mmbm-propulsion-model/": {
+      "fingerprint": "078673a4c926ca9bb9a061a431b0da7246214bde0f0cf1d88d9879dbde294f54"
+    },
+    "/ur/tools/chartlab/eurusd-failed-ob-breaker/": {
+      "fingerprint": "7610c43744419852a7449a6435d4e3e9fd524ba809787d5ea5e7975aefcd46db"
+    },
+    "/ur/tools/chartlab/nq-ath-alchemy-ndog-macro/": {
+      "fingerprint": "eac2d8fd10174e7e4663e8492bf395d959cf56b44f6e2be6a5e829601d5896a8"
+    },
+    "/ur/tools/chartlab/nq-silver-bullet-short/": {
+      "fingerprint": "68aab97fa263f776352c2ffd81adb12765ba60d78e5868d68735fc3f5c51a7af"
+    },
+    "/ur/tools/chartlab/xauusd-gold-legacy-model/": {
+      "fingerprint": "6ecf9f4a7f1b8a8bde7a08bc9111bc58ef862b9ead851443b4a56e28df96ea2b"
+    },
+    "/ur/tools/compare/": {
+      "fingerprint": "8ec4622e3c7216c6616f3aa7a98dd66a8a3ce1aa328348ccbd55bc94a52f9e39"
+    },
+    "/ur/tools/compare/bos-vs-mss-vs-choch/": {
+      "fingerprint": "bc5002ebff4cbdf5424b3e5f66a52e2df0d0a787c2f2c7c0d61e56609b0830a7"
+    },
+    "/ur/tools/compare/bpr-vs-rdrb/": {
+      "fingerprint": "61cf4048b4ed3f5d3d57dc82179c5ab22de4c8438fd65d75455d2a9f3cb593c7"
+    },
+    "/ur/tools/compare/cisd-vs-mss/": {
+      "fingerprint": "fbe36196f64288db4f44a820798d8cdb9fea1529cee47c61b6fe24cd52953ad8"
+    },
+    "/ur/tools/compare/crt-vs-amd/": {
+      "fingerprint": "316226f1dcf1cbf0632d0e00ea7039cc6d776d69118b26b81271b767f6a1a52d"
+    },
+    "/ur/tools/compare/csod-vs-mss/": {
+      "fingerprint": "08739cfca41f3e1d866e5ac53ec6a9cf7f58ab02fc2c46cba0963606cf2836a9"
+    },
+    "/ur/tools/compare/fvg-vs-ifvg/": {
+      "fingerprint": "091e611eb49e121394d92a5e067d27436dcc30dd90813c32429881f8e5dd50fd"
+    },
+    "/ur/tools/compare/internal-vs-external-liquidity/": {
+      "fingerprint": "63719f042607093ecea3515692baa7f1ce2b11766c92b1b1fb5408d189f1f9c1"
+    },
+    "/ur/tools/compare/model-1-scalp-vs-model-9-osok/": {
+      "fingerprint": "651f6c6035b42e893f47f0c9790fb378dc8ebb498a84b006db8510e1f0380b7d"
+    },
+    "/ur/tools/compare/model-13-2022-vs-silver-bullet/": {
+      "fingerprint": "44e27e6e451fe39dafb700f91f685a7f9b0a8f56e1af6428be3594e7df1938f4"
+    },
+    "/ur/tools/compare/ndog-vs-fvg/": {
+      "fingerprint": "45c7420ec5e6444e81e9fabddc23942491e23d04aeb417327f73118bd38e04bd"
+    },
+    "/ur/tools/compare/ob-vs-breaker/": {
+      "fingerprint": "e4009388098bf93357e3a9cd5ce9bd8f0f1d41d5757c40a0492cc9d90529609d"
+    },
+    "/ur/tools/compare/ob-vs-mitigation/": {
+      "fingerprint": "6e8030034404a7b7897df2e519a8a24da936679cf61d6bef87f1855edf80bab4"
+    },
+    "/ur/tools/compare/silver-bullet-vs-3am-london/": {
+      "fingerprint": "f61718d8dafc09c898c122ae908d4ee8aea8e46d4cb6b81073e586915b1efa6a"
+    },
+    "/ur/tools/compare/standard-ifvg-vs-reaper-ifvg/": {
+      "fingerprint": "bb7bec45517168e48fc7f273dc1bd66b5a6173cf771ecc5940dda4578d58fe19"
+    },
+    "/ur/tools/compare/suspension-vs-propulsion-vs-ob/": {
+      "fingerprint": "6d85c315d9fb3b974584f5938f0e19ca0d6b4b6fc591ecbb831cb867cc29f378"
+    },
+    "/ur/tools/compare/sweep-vs-breakout/": {
+      "fingerprint": "2af8611e718054e45a85574375ad6dfd99ee2bf88d1f24ebdfa94c4b83e9751c"
+    },
+    "/ur/tools/delivery-suite/": {
+      "fingerprint": "a1f0c9303be83a81ff981107e2486a55cc42c3f6b7eb4d2decffdb165831c12a"
+    },
+    "/ur/tools/delivery-suite/judas-planner/": {
+      "fingerprint": "ee38b74550e192c7e0d5d7f1a5c1b28d13f7da96d1b050bb6e3162f66378262d"
+    },
+    "/ur/tools/delivery-suite/learning-path/": {
+      "fingerprint": "e5ba388867f716647d4a5fea0024a23f7e3e218aeb281fd635424f90924f125b"
+    },
+    "/ur/tools/delivery-suite/macro-clock/": {
+      "fingerprint": "409778c2de756e0bf24af0f5ae6e3e6ebaedeef27a0bd6484bfd10f2b848b3e4"
+    },
+    "/ur/tools/delivery-suite/ote-calculator/": {
+      "fingerprint": "e9ba4187b5e109575b9bb89b93961243692ffaccd4dc7bd9856ad99a2d7a23c7"
+    },
+    "/ur/tools/glossary/": {
+      "fingerprint": "1117f5231d3ab28114d79fdef7b86d4e1ca9241f690df9c36c13c49fd152ed97"
+    },
+    "/ur/tools/glossary/foundations/": {
+      "fingerprint": "601bf4d90e22544b84873df017d2e950012811c096965c48bdea02ff8e73f82f"
+    },
+    "/ur/tools/glossary/foundations/interest-rate-triad/": {
+      "fingerprint": "f139a6643eb1177420ba084e6c9a3e2c05c036a9a1b6c4187c06a38bdaffe871"
+    },
+    "/ur/tools/glossary/foundations/order-book-market-liquidity/": {
+      "fingerprint": "1d75b90e1a3ee62421ab9fa1c59702274ae42638c903729ea30458c32ad1ed80"
+    },
+    "/ur/tools/glossary/imbalances/": {
+      "fingerprint": "af05568dc17ecaf1a404842dbb0e6eef9ed705b0c868b99d455b6b21a4cd6183"
+    },
+    "/ur/tools/glossary/imbalances/consequent-encroachment-and-gaps/": {
+      "fingerprint": "15b316c92f14faafb1c5c5f5280f4ac5de461b15b6fc4d41b6d816850b096d11"
+    },
+    "/ur/tools/glossary/imbalances/consequent-encroachment/": {
+      "fingerprint": "561d4e6883958869fa3185d657b10921d6c54da4d5e0368398fcc1dedf7af911"
+    },
+    "/ur/tools/glossary/imbalances/displacement/": {
+      "fingerprint": "5dd1c772f6171826a270c855f9d2b05f6c8e28f5e226a53ca7cebfaea6aa6481"
+    },
+    "/ur/tools/glossary/imbalances/fair-value-gap/": {
+      "fingerprint": "4fe88fb5f46736ae7f80ace2c2d2c58640188db3bafe5ebfe375cdc2a0dabdfd"
+    },
+    "/ur/tools/glossary/imbalances/fair-value-gaps-and-inversions/": {
+      "fingerprint": "5a355c65de4f69cb55f68387fca3d85862437e3631c7173c19df50b6638b9b3a"
+    },
+    "/ur/tools/glossary/imbalances/ict-enigma-fvg/": {
+      "fingerprint": "1ae6e277db5c1a312437646c057bc24cba7c0db3655aefe27d688705b11ae9bd"
+    },
+    "/ur/tools/glossary/imbalances/ict-reaper-ifvg/": {
+      "fingerprint": "1a5ae1a3b0f5ffcd6bf270ef97acf01981df7fac9d6642b0f25c58bc129a06fe"
+    },
+    "/ur/tools/glossary/imbalances/inverse-fair-value-gap/": {
+      "fingerprint": "85735dd06f79d62122b561c2197354ce53405eefb6a0b02466dce8942e7f5a05"
+    },
+    "/ur/tools/glossary/imbalances/opening-gap-matrix/": {
+      "fingerprint": "4ee39e04b8ce13a0e39cf224c83da988aee2a8007b720ea6afb41160799a1a4d"
+    },
+    "/ur/tools/glossary/imbalances/redelivered-balanced-price-range/": {
+      "fingerprint": "af55ed306046b90a731774f1dfb45a0b4b2755689f87bff5e623d5d2616f9d3d"
+    },
+    "/ur/tools/glossary/liquidity/": {
+      "fingerprint": "c023d0b5ef3a49c2a94d0e3ce4172880a6346b01391d1fa2495aa6652072eb1d"
+    },
+    "/ur/tools/glossary/liquidity/buy-side-and-sell-side-pools/": {
+      "fingerprint": "40a7a725cc5cd790b6323c8c124df12659c9861386bd4e69cf368f651205258e"
+    },
+    "/ur/tools/glossary/liquidity/buy-side-liquidity/": {
+      "fingerprint": "edd43ddfb96a0a8e4a0563e58311474085eec02adfd30fc45eba0b089504e623"
+    },
+    "/ur/tools/glossary/liquidity/event-volatility-hrlr/": {
+      "fingerprint": "16ad830e9525b14805f71a6fbc315dd0b3bb1097fc875fbdabe81af06bd1c979"
+    },
+    "/ur/tools/glossary/liquidity/ict-double-purge/": {
+      "fingerprint": "fb1a0f45a8e6d4812f13e2f58152ebd9aca71a06425ba2611a9ad6a5bf4b2e04"
+    },
+    "/ur/tools/glossary/liquidity/inducement-vs-external-liquidity/": {
+      "fingerprint": "9fbe7eaadf00d7f204e4174e4b1993c1ef6c69716c9dcd2a97b40ba80eaba423"
+    },
+    "/ur/tools/glossary/liquidity/inducement-vs-external-range/": {
+      "fingerprint": "b2ab0807b094a5747e52016939e2966e59fbba48928e7a2b2fa7469acc5598ce"
+    },
+    "/ur/tools/glossary/liquidity/low-resistance-liquidity-runs/": {
+      "fingerprint": "cca2d5859f1f398022eabc8fa72f5845a69905093e15dbd995f910b6d06f2b2f"
+    },
+    "/ur/tools/glossary/liquidity/sell-side-liquidity/": {
+      "fingerprint": "7bcc03f992cf8ce4961005baf1d90fc9426413819f61ef8b004ad9b8268a9a8e"
+    },
+    "/ur/tools/glossary/order-blocks/": {
+      "fingerprint": "7037025a8a88bbffb309b85d64e2fdf585f8d23753ec9ade358024ec559bce01"
+    },
+    "/ur/tools/glossary/order-blocks/breaker-block/": {
+      "fingerprint": "d5daad4021c105b70cc5b9f407621c8f5af386adabaa229e4e95642b6f3091d6"
+    },
+    "/ur/tools/glossary/order-blocks/hangman-pd-array/": {
+      "fingerprint": "35677733bf06ed684f648d5e7dd6d877f6557e808534958abf17d7f29f4250be"
+    },
+    "/ur/tools/glossary/order-blocks/mitigation-and-breakers/": {
+      "fingerprint": "9856cd640b3fca457d291175758cde1554b6d09ca13e40e7c3912631a70a631b"
+    },
+    "/ur/tools/glossary/order-blocks/order-block/": {
+      "fingerprint": "ca6514c81330765192a9208f21502cd3c79fb3ef08ecbe54efeb4299774a0561"
+    },
+    "/ur/tools/glossary/order-blocks/propulsion-and-reclaimed/": {
+      "fingerprint": "08eec6a43c356dc6704101226efc2a3773b8d9cde0037d6f23293a2b65d2e860"
+    },
+    "/ur/tools/glossary/order-blocks/propulsion-reclaimed-blocks/": {
+      "fingerprint": "9c64ab35d3dae2da44a279a4464ae38915dbee44b93448e0f8b1304825b8bc85"
+    },
+    "/ur/tools/glossary/order-blocks/suspension-and-hangman/": {
+      "fingerprint": "132c75193ed02fdeab7097c83a3298ee5068dbda4ab82633318ce21c7eaf0f5e"
+    },
+    "/ur/tools/glossary/order-blocks/suspension-block/": {
+      "fingerprint": "00427e3978848bff53b8498a912e45a0b242e50e097a0e9ef0ecb16342fe2fda"
+    },
+    "/ur/tools/glossary/structure/": {
+      "fingerprint": "a121ccfacdd4ec8b1d7517765a7d0bd6e65ea232d4bc223aae47e44a37cdf12e"
+    },
+    "/ur/tools/glossary/structure/bos-vs-mss-breakdowns/": {
+      "fingerprint": "eac2fad21ccb562dabbc06d88f696f3ddb1b0fc277ca18bfce36314596b83338"
+    },
+    "/ur/tools/glossary/structure/changing-state-of-delivery/": {
+      "fingerprint": "80b0c5f2ae8313d148c24704b4449e4d41289f1efaf9f380d04d07d014cff504"
+    },
+    "/ur/tools/glossary/structure/cisd-vs-mss/": {
+      "fingerprint": "060f9093a7f11d1493c1720f46fb3a9c6c0f6063b7529e42457d533cad666352"
+    },
+    "/ur/tools/glossary/structure/market-structure-bos-mss-choch/": {
+      "fingerprint": "9ef27197349d408f40ed864a539ddd0c5ada50bf9d4e0b009c9c1c4a431fed4b"
+    },
+    "/ur/tools/glossary/time-and-sessions/": {
+      "fingerprint": "8f9d0c0553f8b17c5582548f9b9689ca64d86264f30dac6e14d925dcda5db5ac"
+    },
+    "/ur/tools/glossary/time-and-sessions/daily-bias-engine/": {
+      "fingerprint": "7958fe2146a39b4aaee19e80917f1180072c962b89622491f82b6a4b1bdbb2e3"
+    },
+    "/ur/tools/glossary/time-and-sessions/intraday-macro-continuum/": {
+      "fingerprint": "e3da3113a22a4eee00da710181de10cb7593782fa418af0d9d92fc068ded146c"
+    },
+    "/ur/tools/glossary/time-and-sessions/power-of-three-amd-phases/": {
+      "fingerprint": "548adc13e98ce7e62f42007e9a6935d77a310d91e18c656229342dbad371dd92"
+    },
+    "/ur/tools/glossary/time-and-sessions/power-of-three-amd/": {
+      "fingerprint": "01f23238b9fa44b4c4b0d27f08eff2e0bb60db0fd152bd35602ac425e67a132f"
+    },
+    "/ur/tools/glossary/time-and-sessions/quarterly-shifts-ipda/": {
+      "fingerprint": "2ea48267d695ad3f405857b22fcdd25fbd8383af029485f7ad495703907a56a2"
+    },
+    "/ur/tools/glossary/time-and-sessions/sessions-killzones/": {
+      "fingerprint": "4c587ee00a4441195be6dbd97337853437abda0a76695a5e27c6f1cf969d6d15"
+    },
+    "/ur/tools/glossary/trade-models/": {
+      "fingerprint": "24771d214d61c573a45865bdc412483bccb1c6258bf58721cf4e640d5e357cdb"
+    },
+    "/ur/tools/glossary/trade-models/candle-range-theory/": {
+      "fingerprint": "4d97d895c7aafdac2f332cbddcb01d82dafc80938cccc6d48f7dae1d2b0f3eaa"
+    },
+    "/ur/tools/glossary/trade-models/from-vision-to-execution/": {
+      "fingerprint": "0b26997bb348a037da7746d896491c614607cbb3241dd7161aa00bd1e52db196"
+    },
+    "/ur/tools/glossary/trade-models/gold-legacy-smc/": {
+      "fingerprint": "2a80ee213bfaf1d97c5562f104735ec216091fb7e2246d7f821f4ab296ccc21a"
+    },
+    "/ur/tools/glossary/trade-models/ict-2022-and-silver-bullet-mechanics/": {
+      "fingerprint": "eb4b42fcbdec2ac51dd8725c2817333bb3f36f77c692e8be6f14c770934f4964"
+    },
+    "/ur/tools/glossary/trade-models/ict-2022-model/": {
+      "fingerprint": "9115aed25ed63c8c567ef66aa52a086d9fa6f368feae6ec271d470baf58af734"
+    },
+    "/ur/tools/glossary/trade-models/ict-venom-model/": {
+      "fingerprint": "83116aabbd72f4031f2004f4a3dbf8c4858d65ac2868534fefc572cdd0933fac"
+    },
+    "/ur/tools/glossary/trade-models/institutional-pricing-theory/": {
+      "fingerprint": "e6b09d2ea662b3fc91e6637a8ec0641eb5f965a24db2acae9dc1ccc24038d261"
+    },
+    "/ur/tools/glossary/trade-models/market-alchemy-ath/": {
+      "fingerprint": "d0f98c00e561bba9f933b473ae4dea52284586fb68ea2ed648c5a2f5d8bcf184"
+    },
+    "/ur/tools/glossary/trade-models/mega-trades-framework/": {
+      "fingerprint": "fd75e01517e1be067b13b75e225ed3fdae2619a54f2e73ea28d5f2a8545ce8dc"
+    },
+    "/ur/tools/glossary/trade-models/nasdaq-session-open/": {
+      "fingerprint": "221e18db3c7cb70c452ceaa066ebbbd7d90171df5394733a05a4c02b58687cf3"
+    },
+    "/ur/tools/glossary/trade-models/sick-sister-strategy/": {
+      "fingerprint": "c28bf1618a091cac9f569c8302e443c9f0d37577454831770e9f78d1824e081a"
+    },
+    "/ur/tools/glossary/trade-models/silver-bullet-model/": {
+      "fingerprint": "2d052ff1e67c2b30303402447e5c3482fdd250757ee5455ae23fb1eefd8ba11a"
+    },
+    "/ur/tools/glossary/trade-models/smt-divergence/": {
+      "fingerprint": "b9ef9922a7b0c758452ac367591a16baad86101df515a76950475dbdb296ea40"
+    },
+    "/ur/tools/knowledge-graph/": {
+      "fingerprint": "8f46a8aef1a82fd31bdf1d90473f89045c178777184046debdd1f4ac152f4fa3"
+    },
+    "/ur/tools/knowledge-graph/network/fair_value_gap/": {
+      "fingerprint": "462fa92082483f2b90bdc54243d4f4e773fdac2a8b1147f99bea3fb1571714dc"
+    },
+    "/ur/tools/knowledge-graph/pipeline/step-1/": {
+      "fingerprint": "6991f72990b412f11573a017c73db1c79b7e96c6fb432eddbb69be4227d4dfd3"
+    },
+    "/ur/tools/knowledge-graph/pipeline/step-10/": {
+      "fingerprint": "632263fb1e4629e4e22a578310041b4878569c7a0847b4860550b1bb13665b05"
+    },
+    "/ur/tools/knowledge-graph/pipeline/step-2/": {
+      "fingerprint": "88058caacd2b1b6295216b0a1a7d401d4896ab7640665f11a18363dad33c386a"
+    },
+    "/ur/tools/knowledge-graph/pipeline/step-3/": {
+      "fingerprint": "0b55023eea2e23834a75b0472ee9d16ce4bd8e883d2c43e80d31203030425be8"
+    },
+    "/ur/tools/knowledge-graph/pipeline/step-4/": {
+      "fingerprint": "b0e894d868bd852a23a4f71989c742a5fabc2224556b4f0f23f791dca40df48c"
+    },
+    "/ur/tools/knowledge-graph/pipeline/step-5/": {
+      "fingerprint": "ed40e0b58e5fbce20c244cb383393a315811e704d3c5eb081b7c03860e992d40"
+    },
+    "/ur/tools/knowledge-graph/pipeline/step-6/": {
+      "fingerprint": "0843e0807ec5691a292d75ba4fe52bb8b779d0781812d4ea1f721aa915bcc56f"
+    },
+    "/ur/tools/knowledge-graph/pipeline/step-7/": {
+      "fingerprint": "64889c342c855f65eebe722eeb6d7ebe9132a735a93df64c8dc32299f27a5010"
+    },
+    "/ur/tools/knowledge-graph/pipeline/step-8/": {
+      "fingerprint": "de869c6e1ef522f3b08d5324af359296e889ea956b385f5395fe9aab47398c80"
+    },
+    "/ur/tools/knowledge-graph/pipeline/step-9/": {
+      "fingerprint": "f178efbbb1477d19adcdf4321afd5b62103c90f7c60f61695412b5676071bc55"
+    },
+    "/ur/tools/masterclass/": {
+      "fingerprint": "3c4734d048f518461eb43559bab517ab8915d3f530f2bc5ce43010fd0cb5280f"
+    },
+    "/ur/tools/masterclass/core-masterclasses/": {
+      "fingerprint": "8579863c1ed1e3d26a41864a15dd98cc1ce2c7b010b37ba0dc19e0ca1888a696"
+    },
+    "/ur/tools/masterclass/core-masterclasses/2022-model/": {
+      "fingerprint": "be2a88f7fabd09ee6aa4e116e3c7b2387434073a9f87b4bbfe2164924db23c1d"
+    },
+    "/ur/tools/masterclass/core-masterclasses/cisd-masterclass/": {
+      "fingerprint": "bc9117ad2a2761cd0a6fcf0531ddbea971dc905f5782cea39eb9a02905ae4b69"
+    },
+    "/ur/tools/masterclass/core-masterclasses/crt-candle-range-theory/": {
+      "fingerprint": "8f6658090ce8dece83d186703808e337e12f59a7daf85b425b7a8d9c06ba9c93"
+    },
+    "/ur/tools/masterclass/core-masterclasses/draw-on-liquidity/": {
+      "fingerprint": "e247e15c28ca12e92729cad24850cd8f17c356acc2b236df95cf742cedc73ecc"
+    },
+    "/ur/tools/masterclass/core-masterclasses/ifvg-masterclass/": {
+      "fingerprint": "377634d535fa8da90eb4d55e65b3d485f8cfd36baff1712956ee0baf224c65e5"
+    },
+    "/ur/tools/masterclass/core-masterclasses/mmxm-stage2/": {
+      "fingerprint": "56fac8eb2309c595c80b81b904c165dff0bc102e89453484779273da1daba018"
+    },
+    "/ur/tools/masterclass/core-masterclasses/ny-continuation-reversal/": {
+      "fingerprint": "2a5a72145c26c9aec33eaa56f0afb5d4b249db006e51d1cf0f7bdcde52f693c9"
+    },
+    "/ur/tools/masterclass/core-masterclasses/org-octant-grid/": {
+      "fingerprint": "909c2d6714132ead162d69c43b49153cf017c52bda88c2279581c80c199a7c77"
+    },
+    "/ur/tools/masterclass/core-masterclasses/silver-bullet/": {
+      "fingerprint": "aac71362ee540bc1893acf5bed6d1af6b2e1f3a1078ea73de3bd923f9eb4ed77"
+    },
+    "/ur/tools/masterclass/core-masterclasses/smt-masterclass/": {
+      "fingerprint": "8b0ef7f9a955121d4d90ba648aeea398418105ee5c841d8c8a8832cd1f410590"
+    },
+    "/ur/tools/masterclass/core-masterclasses/standard-deviations/": {
+      "fingerprint": "d93e71338b3f69333308bbc5ab4e723060f5ffe626ead8f48118bc8f9f957a9f"
+    },
+    "/ur/tools/masterclass/core-masterclasses/unicorn-model/": {
+      "fingerprint": "7f8c0d8e279c0640136562dca609ecc2e33e3f6011536ebb2c1ea68bbf2bf11f"
+    },
+    "/ur/tools/masterclass/core-masterclasses/weekly-move/": {
+      "fingerprint": "8d6c31ef5c58075a7a14673e7bb06020f2be31cf36b645476919dbc325cc3c94"
+    },
+    "/ur/tools/masterclass/entry-models/": {
+      "fingerprint": "b68bae0f434224f1b378a5ed35865b1cf0ee9d0e49d67b0c1c36d793b249d190"
+    },
+    "/ur/tools/masterclass/entry-models/double-purge/": {
+      "fingerprint": "2dd6076300a300068816bfcfe068c0946b73e09a083bf5303f921a137739a93f"
+    },
+    "/ur/tools/masterclass/entry-models/first-presentation-fvg/": {
+      "fingerprint": "4d2424977b43d15a98cc24cb1df8cb6e27e3b8b61c77866ee0bc5e4965556a23"
+    },
+    "/ur/tools/masterclass/entry-models/ote-model/": {
+      "fingerprint": "2c7161d7fbf63632eb8bfdbac05ccdfc53c7052645533bc3490cd4ae93fdde7d"
+    },
+    "/ur/tools/masterclass/entry-models/sick-sister-strategy/": {
+      "fingerprint": "26395dd73bbb9bb4587e1a1d48a3657309dfca3fba790795347e3ee09ddfc7d7"
+    },
+    "/ur/tools/masterclass/entry-models/venom-model/": {
+      "fingerprint": "20fe2a9f75efd15bff57030d069a134aef4d6be2594983d9e2fad5968eaa349b"
+    },
+    "/ur/tools/masterclass/mentorship-frameworks/": {
+      "fingerprint": "25a5f0081232cbabf16a8e5018a04a730ba0c16164ce75f690b0ed7254b8f544"
+    },
+    "/ur/tools/masterclass/mentorship-frameworks/algorithmic-macros-schedule/": {
+      "fingerprint": "c77c8e40d5b2afbe7ed8d7f752d23c0244ce1a0a511b0ea555478cbbc16650a7"
+    },
+    "/ur/tools/masterclass/mentorship-frameworks/three-day-rule/": {
+      "fingerprint": "dc5ec6ee3ad02f83c845770dd8cafde9184ef2fe6713142f2b1fdc771d35e57a"
+    },
+    "/ur/tools/masterclass/opening-ranges/": {
+      "fingerprint": "d418501ca19249b53e794cabdeda53911ea6d6a5f6d32d403492ddfb7a568bb5"
+    },
+    "/ur/tools/masterclass/opening-ranges/five-opening-ranges/": {
+      "fingerprint": "139a8637839e2c1c86454fa6f65ce4709567ce1ad4d0fc1eee9e5e30b97ac6d7"
+    },
+    "/ur/tools/masterclass/pd-arrays/": {
+      "fingerprint": "76b7c62b31e637f257f0a5c34e2d35072a59ab3b358b27ac371913c220a31d1b"
+    },
+    "/ur/tools/masterclass/pd-arrays/hangman-pd-array/": {
+      "fingerprint": "41fe49cebfc10cc059fb0e9bf4fb54b038424018921e6e3af5effe2d71015ab2"
+    },
+    "/ur/tools/masterclass/pd-arrays/implied-fvg/": {
+      "fingerprint": "d51660e24c1b0a0faaa4322f61db22bed6fdba31fb121d0337ab128a38bc42e6"
+    },
+    "/ur/tools/masterclass/pd-arrays/mitigation-block/": {
+      "fingerprint": "4930587495c95f1ad14e122d9acfaa4494a2c2eb9d00120fa7852310140740af"
+    },
+    "/ur/tools/masterclass/pd-arrays/propulsion-block/": {
+      "fingerprint": "c9915bffd31d967374bf27fc5e0dd658a89131072145ef411bdb1b15d920c1f8"
+    },
+    "/ur/tools/masterclass/pd-arrays/rdrb-balanced-price-range/": {
+      "fingerprint": "58e121d7a97bf86d4a9e8d945e75a17d327edb1eee24fdb1e4cda6436feb4f5d"
+    },
+    "/ur/tools/masterclass/pd-arrays/reaper-ifvg/": {
+      "fingerprint": "9b6b9ed9d2d75320adcf072bfc610326fd847e25d446aff9ee673db6ecd936ea"
+    },
+    "/ur/tools/masterclass/pd-arrays/rejection-block/": {
+      "fingerprint": "d6be36455237a666458dd5bd42580f08e3bbd68d268a8450c48463d13ba5ee49"
+    },
+    "/ur/tools/masterclass/pd-arrays/suspension-block/": {
+      "fingerprint": "a1a0b5bfe19e189eae81eb312437ca094ecc269c3e0805db73792b92ccff78a6"
+    },
+    "/ur/tools/simulator/": {
+      "fingerprint": "8e078f9d7f03275a87e44d7447d8b538c15b00c2e4043464a7cb6d98bebe1dd7"
+    },
+    "/ur/tools/simulator/failed-ob-breaker/": {
+      "fingerprint": "7a8dc3319c4215978ab698bd2d4f34344d239f96af6c323c5aacc603fdd72d1c"
+    },
+    "/ur/tools/simulator/ict-2022-model/": {
+      "fingerprint": "1c8b94f8257edff5f253278d681ac9eddd7cb52802cdeec50e7715afc383feae"
+    },
+    "/ur/tools/simulator/london-judas-swing/": {
+      "fingerprint": "b8e03838c3c998df833ca4b163fe1b6616e410f0bd06bca914b3268c473e22be"
+    },
+    "/ur/tools/simulator/news-driver-reversal/": {
+      "fingerprint": "52b77d59b2380fc20fe9f71c2f5776ce6d3fab42e11698c57fda1781f834f5e0"
+    },
+    "/ur/tools/simulator/ote-expansion-long/": {
+      "fingerprint": "844b38f599793069827b623fa5a7ac9b1ed736f57a4bbbee698b58f4c59787d2"
+    },
+    "/ur/tools/simulator/silver-bullet-short/": {
+      "fingerprint": "1cc38a54ebc19f33e8f015f063eaf2f7c3cf9447c95dd60ecf29c25bfcb25343"
+    }
+  }
+}

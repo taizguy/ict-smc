@@ -281,7 +281,7 @@ export const chapterCatalog = [
   {
     "id": 42,
     "slug": "core-content-month-6-swing-trading-mastery",
-    "title": "ICT Core Content Month 6: Swing Trading Mastery & Commercial COT Hedging",
+    "title": "ICT Core Content Month 6: Swing Trading Context, COT & Open Interest",
     "part": "Part XI - ICT Mentorship Core Content Master Curriculum"
   },
   {

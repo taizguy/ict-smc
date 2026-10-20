@@ -1,0 +1,44 @@
+.chapter-diagram{--diagram-teal:#19766b;--diagram-coral:#bd503f;--diagram-violet:#7752ad;--diagram-ink:#39534c;margin:0;min-width:0;border:1px solid #dce7e2;border-radius:16px;overflow:hidden;background:#fff;color:#223b35}
+.chapter-diagram-heading{display:grid;gap:.3rem;padding:1rem 1.15rem 0}
+.chapter-diagram-heading>span{font-size:.6875rem;text-transform:uppercase;letter-spacing:.12em;color:#63786d;font-weight:600}
+.chapter-diagram-heading>strong{font-size:1rem;line-height:1.4;font-weight:600}
+.chapter-diagram-canvas{display:block;width:100%;height:auto;max-height:340px;direction:ltr;overflow:hidden}
+.chapter-diagram-canvas g{stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.chapter-diagram-canvas text{font-family:var(--font-sans,system-ui);font-size:17px;font-weight:600}
+.chapter-diagram-canvas:lang(ur) text{font-family:'Noto Naskh Arabic',serif;font-size:18px}
+.diagram-grid{color:#eaf0ed;stroke-width:1!important}
+.diagram-tone-ink{color:var(--diagram-ink)}.diagram-tone-teal{color:var(--diagram-teal)}.diagram-tone-coral{color:var(--diagram-coral)}.diagram-tone-violet{color:var(--diagram-violet)}
+.diagram-zone{fill:currentColor;fill-opacity:.1;stroke:currentColor;stroke-opacity:.6}
+.diagram-stage{opacity:1;transition:opacity .3s ease}
+.diagram-stage--future{opacity:.12}
+.chapter-diagram--thumbnail{border-radius:10px}
+.chapter-diagram--thumbnail .chapter-diagram-heading{padding:.75rem .8rem 0;min-height:64px;align-content:start}
+.chapter-diagram--thumbnail .chapter-diagram-heading>span{display:none}
+.chapter-diagram--thumbnail .chapter-diagram-heading>strong{font-size:.8125rem;line-height:1.45}
+.chapter-diagram--thumbnail .chapter-diagram-canvas{max-height:180px}
+.chapter-diagram--thumbnail .diagram-stage{opacity:1}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){a:hover .chapter-diagram--thumbnail .diagram-stage,a:focus-visible .chapter-diagram--thumbnail .diagram-stage{animation:diagram-reveal .65s ease both}}
+@keyframes diagram-reveal{from{opacity:.15;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
+.chapter-diagram--playing .diagram-trace{animation:diagram-draw .8s ease both}
+@keyframes diagram-draw{from{stroke-dasharray:100;stroke-dashoffset:100}to{stroke-dasharray:100;stroke-dashoffset:0}}
+.chapter-diagram--lesson{margin:1.5rem 0;max-width:900px}
+.chapter-diagram--lesson figcaption{padding:0 1rem 1rem}
+.diagram-controls{display:flex;align-items:center;gap:.75rem;margin-bottom:.8rem}
+.diagram-controls button{background:#edf5f1;border:1px solid #bbd6c9;border-radius:9px;padding:.65rem 1rem;font:inherit;font-size:.875rem;font-weight:600;cursor:pointer;min-height:44px}
+.diagram-controls p{font-size:.875rem;margin:0}
+.diagram-steps{display:grid;gap:.4rem;list-style:none!important;padding:0!important;margin:0!important}
+.diagram-steps li{margin:0!important;list-style:none!important}
+.diagram-steps button,.diagram-steps li>span{display:flex;gap:.65rem;align-items:start;width:100%;border:1px solid transparent;border-radius:9px;background:transparent;padding:.6rem .65rem;text-align:start;font:inherit;font-size:.9375rem;line-height:1.5;color:inherit}
+.diagram-steps button{cursor:pointer;min-height:44px}
+.diagram-steps b{display:grid;place-items:center;background:#eef3f0;border-radius:50%;flex:0 0 25px;height:25px;font-size:.75rem;color:#19766b}
+.diagram-step--active button{background:#f3f7f5;border-color:#bbd6c9}
+.diagram-steps button:hover{background:#f3f7f5}
+.diagram-controls button:focus-visible,.diagram-steps button:focus-visible{outline:3px solid #7752ad;outline-offset:2px}
+.diagram-note{margin:.7rem .65rem 0;font-size:.75rem!important;color:#63786d;line-height:1.5}
+.mentorship-note-list .chapter-diagram{width:160px;flex:0 0 160px}
+.mentorship-note-list .chapter-diagram-heading{display:none}
+.static-diagram-directory{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:1rem;margin-block:1.5rem}
+.static-diagram-directory>a{text-decoration:none!important;min-width:0}
+@media(max-width:640px){.mentorship-note-list li{flex-wrap:wrap}.mentorship-note-list .chapter-diagram{margin-inline-start:2rem}.mentorship-note-list li>div{flex-basis:100%;padding-inline-start:2rem}}
+@media(max-width:640px){.chapter-diagram--lesson .chapter-diagram-canvas{max-height:none}.chapter-diagram-heading{padding:.85rem .85rem 0}.mentorship-note-list .chapter-diagram{width:100%;max-width:220px;flex-basis:auto}.chapter-diagram--lesson figcaption{padding:0 .65rem .8rem}.diagram-steps button{font-size:.875rem}}
+@media(prefers-reduced-motion:reduce){.chapter-diagram *{animation:none!important;transition:none!important}}

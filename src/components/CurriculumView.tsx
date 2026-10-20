@@ -15,6 +15,8 @@ import {
 import { BauhausNavScroller } from './BauhausNavScroller';
 import { ScrollReveal } from './ScrollReveal';
 import { MentorshipsTeaser, MentorshipsView } from './MentorshipsView';
+import { ChapterDiagram } from './ChapterDiagram';
+import { chapterIllustrationRevision } from '../data/chapters/diagrams';
 
 interface CurriculumViewProps {
   onSelectChapter: (chapterId: number, slug?: string) => void;
@@ -243,6 +245,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
                   </span>
                 </div>
 
+                <ChapterDiagram chapterId={ch.id} thumbnail />
                 {/* Chapter Title */}
                 <div>
                   <h3 className="text-base sm:text-lg font-semibold text-ink group-hover:text-brand transition-colors leading-snug">
@@ -299,7 +302,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
         </div>
       )}
 
-      <section className="space-y-3 text-sm leading-relaxed"><h2 className="text-xl font-semibold">How to study a chapter</h2><p>Read the definition, identify its conditions on a historical chart, and record an example where the pattern fails. Hide future candles to reduce hindsight bias. Keep observations separate from assumptions about institutional intent.</p><p>Page updated: <time dateTime="2026-10-16">16 October 2026</time>. <a className="underline" href="/about/#editorial-policy">Editorial policy</a>.</p></section>
+      <section className="space-y-3 text-sm leading-relaxed"><h2 className="text-xl font-semibold">How to study a chapter</h2><p>Read the definition, identify its conditions on a historical chart, and record an example where the pattern fails. Hide future candles to reduce hindsight bias. Keep observations separate from assumptions about institutional intent.</p><p>Page updated: <time dateTime={chapterIllustrationRevision.iso}>{chapterIllustrationRevision.label}</time>. <a className="underline" href="/about/#editorial-policy">Editorial policy</a>.</p></section>
     </div>
   );
 };

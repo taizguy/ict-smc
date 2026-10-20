@@ -1,11 +1,12 @@
 import type { TextbookChapter } from '../types';
-import { curriculumReview, curriculumReviewCopy as copy, curriculumReviewDate, curriculumReviewLabel, ictOfficialAccounts } from '../data/curriculumReview';
+import { curriculumReview, curriculumReviewCopy as copy, chapterReviewRevision, ictOfficialAccounts } from '../data/curriculumReview';
 
 export function CurriculumReview({ chapter }: { chapter: TextbookChapter }) {
   const review = curriculumReview(chapter);
+  const revision = chapterReviewRevision(chapter.id);
   return <aside className="curriculum-review" aria-labelledby="curriculum-review-heading">
     <h2 id="curriculum-review-heading">{copy.heading}</h2>
-    <p className="curriculum-review-date"><span>{copy.date}</span>: <time dateTime={curriculumReviewDate}>{curriculumReviewLabel}</time></p>
+    <p className="curriculum-review-date"><span>{copy.date}</span>: <time dateTime={revision.iso}>{revision.label}</time></p>
     <p>{copy.scope}</p>
     <h3>{copy.subjectivity}</h3>
     <p>{review.interpretation}</p>

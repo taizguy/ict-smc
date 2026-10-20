@@ -13,6 +13,21 @@ import chapterHeadings from './chapter-headings-urdu.json';
 import { refineTradingLanguage } from './trading-language';
 /** Original Urdu translations. Keys are exact English source text, never route IDs or calculation values. */
 export const urdu: Record<string, string> = {
+  'Don’t just read price. Explore it.': 'صرف قیمت پڑھیں نہیں۔ اسے سمجھیں۔',
+  'The Price Playground': 'پرائس پلے گراؤنڈ',
+  'PRICE IS A STORY.': 'قیمت ایک کہانی ہے۔',
+  'WELCOME TO THE PRICE PLAYGROUND': 'پرائس پلے گراؤنڈ میں خوش آمدید',
+  'Don’t just': 'صرف قیمت',
+  'read price.': 'پڑھیں نہیں۔',
+  'Explore it.': 'اسے سمجھیں۔',
+  'A chart is more interesting when you can take it apart.': 'چارٹ کو حصوں میں سمجھنا سیکھنے کو دلچسپ بناتا ہے۔',
+  'Show me something': 'مجھے کچھ دکھائیں',
+  'I’d rather follow a learning path →': 'میں ترتیب سے سیکھنا چاہتا ہوں ←',
+  '{count} lessons. No paywall. A little curiosity goes a long way.': '{count} اسباق۔ بالکل مفت۔ تھوڑا تجسس بہت کچھ سکھاتا ہے۔',
+  'An illustrative chart—not live prices. Explore the concepts with the numbered buttons.': 'یہ تعلیمی چارٹ ہے، لائیو قیمتیں نہیں۔ نمبر والے بٹن سے تصورات سمجھیں۔',
+  'Illustrative bullish and bearish candles': 'صعودی اور نزولی کینڈلز کی تعلیمی مثال',
+  'Drag to rotate the illustrative chart, or use the view buttons.': 'تعلیمی چارٹ گھمانے کے لیے ڈریگ کریں یا بٹن استعمال کریں۔',
+  'Synthetic price. Real questions. Educational illustration · No trading signals.': 'فرضی قیمتیں۔ حقیقی سوالات۔ تعلیمی مثال · ٹریڈنگ سگنلز نہیں۔',
   ...learningUpdate,
   ...diagramUrdu,
   ...generated,

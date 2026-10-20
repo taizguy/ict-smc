@@ -39,3 +39,5 @@ if (document.documentElement.dataset.appStartup !== 'fallback') {
     </StrictMode>,
   );
 }
+
+import './styles/playground.css';

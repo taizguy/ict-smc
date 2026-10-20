@@ -24,11 +24,11 @@
       #app-startup { display: none; }
       html[data-app-startup="loading"] { background: #ffffff; }
       html[data-app-startup="loading"] #root { visibility: hidden; }
-      html[data-theme="dark"],html[data-theme="dark"][data-app-startup="loading"] { background:#111c24; color:#e4eeea; }
-      html[data-theme="dark"] #app-startup { background:#111c24!important;color:#aabdb5!important; }
-      html[data-theme="dark"] #app-startup strong { color:#e4eeea; }
+      html[data-theme="dark"],html[data-theme="dark"][data-app-startup="loading"] { background:#101625; color:#f0f4ff; }
+      html[data-theme="dark"] #app-startup { background:#101625!important;color:#bcc9e0!important; }
+      html[data-theme="dark"] #app-startup strong { color:#f0f4ff; }
       html[data-app-startup="loading"] #app-startup { position: fixed; inset: 0; display: grid; place-content: center; gap: 1rem; background: #ffffff; color: #435b50; font: 14px system-ui, sans-serif; text-align: center; z-index: 100; }
-      #app-startup strong { color: #223b35; font-size: 20px; letter-spacing: -.025em; }
+      #app-startup strong { color: #121c32; font-size: 20px; letter-spacing: -.025em; }
       #app-startup::before { content: ''; width: 28px; height: 28px; margin: 0 auto; border: 2px solid #29313d; border-top-color: #23796d; border-radius: 50%; animation: startup-spin .8s linear infinite; }
       @keyframes startup-spin { to { transform: rotate(360deg); } }
       @media (prefers-reduced-motion: reduce) { #app-startup::before { animation: none; } }
@@ -89,4 +89,3 @@
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

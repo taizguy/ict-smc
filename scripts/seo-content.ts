@@ -4,7 +4,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { CurriculumReview } from '../src/components/CurriculumReview';
 import { ChapterDiagram } from '../src/components/ChapterDiagram';
 import { CheatSheetPage } from '../src/components/CheatSheetPage';
-import { LearningHero } from '../src/components/LearningHero';
+import { PricePlayground } from '../src/components/PricePlayground';
 import { chapterIllustrationRevision } from '../src/data/chapters/diagrams';
 import { ReviewedModelSource } from '../src/components/ReviewedModelSource';
 import { reviewedModelSources } from '../src/data/reviewedModelSources';
@@ -175,7 +175,7 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   const counts = (text: string) => text.replace(/\b57(?=[- ](?:chapter|Chapter|CHAPTER))/g, String(chapterCount)).replace(/\b52(?=[- ](?:Abdullah|lecture|Lecture|LECTURE|Masterclass|masterclass))/g, String(lectureCount));
   r.title = counts(r.title); r.description = counts(r.description); r.bodyHtml = counts(r.bodyHtml);
   r.heading = counts(r.heading); r.subheading = counts(r.subheading);
-  if (path === '/') { r.title = 'Learn ICT & Smart Money Concepts | LearnSMC'; r.description = 'Study ICT and Smart Money Concepts with free trading lessons, Abdullah Masood video notes, chart exercises and risk education.'; r.heading='Understand the chart. Practice the decision.'; r.bodyHtml=renderToStaticMarkup(createElement(LearningHero,{staticOnly:true}))+r.bodyHtml; }
+  if (path === '/') { r.title = 'Learn ICT & Smart Money Concepts | LearnSMC'; r.description = 'Study ICT and Smart Money Concepts with free trading lessons, Abdullah Masood video notes, chart exercises and risk education.'; r.heading='Don’t just read price. Explore it.'; r.bodyHtml=renderToStaticMarkup(createElement(PricePlayground,{staticOnly:true}))+r.bodyHtml; }
   r.title = searchTitle(r.title, path);
   r.description = searchDescription(r.description, r.title, path);
   if (/^\/(learn|masood\/lectures)\//.test(path)) r.heading = studyTopics[path] || conciseHeading(r.heading);

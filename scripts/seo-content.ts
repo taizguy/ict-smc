@@ -3,6 +3,8 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { CurriculumReview } from '../src/components/CurriculumReview';
 import { ChapterDiagram } from '../src/components/ChapterDiagram';
+import { CheatSheetPage } from '../src/components/CheatSheetPage';
+import { LearningHero } from '../src/components/LearningHero';
 import { chapterIllustrationRevision } from '../src/data/chapters/diagrams';
 import { ReviewedModelSource } from '../src/components/ReviewedModelSource';
 import { reviewedModelSources } from '../src/data/reviewedModelSources';
@@ -51,6 +53,12 @@ export const canonicalAliases: Record<string, string> = {
 };
 
 export function prepareRoutes(routes: RouteMeta[]) {
+  const cheat = route('/resources/ict-smc-cheat-sheet/', 'Free ICT/SMC Glossary & Cheat Sheet PDF',
+    'Download free English and Urdu ICT/SMC glossary PDFs with 20 definitions, original diagrams, risk examples and an observation checklist.',
+    renderToStaticMarkup(createElement(CheatSheetPage, {staticOnly:true})));
+  cheat.schemaJson = {'@type':'DigitalDocument',name:'ICT/SMC Glossary & Cheat Sheet',url:cheat.canonical,author:lessonAuthor,publisher,datePublished:'2026-10-20',dateModified:'2026-10-20',isAccessibleForFree:true,
+    encoding:['en','ur'].map(language=>({'@type':'MediaObject',encodingFormat:'application/pdf',inLanguage:language,contentUrl:`https://learnsmc.xyz/downloads/learnsmc-ict-smc-cheat-sheet-${language}.pdf`}))};
+  routes.push(cheat);
   const mentorshipHub = route('/curriculum/mentorships/', 'Compare ICT Mentorships & Study Paths',
     'Compare six ICT mentorships, choose a study path and find related lessons, original recordings, prerequisites and clearly stated review coverage.',
     renderToStaticMarkup(createElement(MentorshipsView, { embedded: true })));
@@ -167,7 +175,7 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   const counts = (text: string) => text.replace(/\b57(?=[- ](?:chapter|Chapter|CHAPTER))/g, String(chapterCount)).replace(/\b52(?=[- ](?:Abdullah|lecture|Lecture|LECTURE|Masterclass|masterclass))/g, String(lectureCount));
   r.title = counts(r.title); r.description = counts(r.description); r.bodyHtml = counts(r.bodyHtml);
   r.heading = counts(r.heading); r.subheading = counts(r.subheading);
-  if (path === '/') { r.title = 'Learn ICT & Smart Money Concepts | LearnSMC'; r.description = 'Study ICT and Smart Money Concepts with free trading lessons, Abdullah Masood video notes, chart exercises and risk education.'; }
+  if (path === '/') { r.title = 'Learn ICT & Smart Money Concepts | LearnSMC'; r.description = 'Study ICT and Smart Money Concepts with free trading lessons, Abdullah Masood video notes, chart exercises and risk education.'; r.heading='Understand the chart. Practice the decision.'; r.bodyHtml=renderToStaticMarkup(createElement(LearningHero,{staticOnly:true}))+r.bodyHtml; }
   r.title = searchTitle(r.title, path);
   r.description = searchDescription(r.description, r.title, path);
   if (/^\/(learn|masood\/lectures)\//.test(path)) r.heading = studyTopics[path] || conciseHeading(r.heading);
@@ -202,7 +210,7 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
     ...(path === '/' ? [] : [{ name: r.heading, url: r.canonical }])];
   if (path !== '/') r.bodyHtml = `<nav aria-label="Breadcrumb">${crumbs.map(c => link(new URL(c.url).pathname, c.name)).join(' / ')}</nav>` + r.bodyHtml;
   if (['/', '/curriculum/', '/about/', '/contact/'].includes(path) || path.startsWith('/tools/compare/')) {
-    const revision = path === '/curriculum/' ? chapterIllustrationRevision : publisherPageRevision;
+    const revision = path === '/curriculum/' || path === '/' ? chapterIllustrationRevision : publisherPageRevision;
     r.bodyHtml += `<p>Page updated: <time datetime="${revision.iso}">${revision.label}</time>. ` + link('/about/#editorial-policy', 'Editorial policy') + '</p>';
     if (r.schemaJson) r.schemaJson = { ...r.schemaJson, dateModified: publisherPageRevision.iso };
   }

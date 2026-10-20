@@ -3,14 +3,14 @@ import { masterclassCollection } from '../data/masterclassData';
 import { toolStudyGuide } from '../utils/toolStudyGuides';
 import { FinancialDisclaimer } from './FinancialDisclaimer';
 import React, { useState, useEffect } from 'react';
-import { 
-  BarChart2, 
-  PlayCircle, 
-  Cpu, 
-  BookMarked, 
-  GitFork, 
-  Layers, 
-  GitCompare, 
+import {
+  BarChart2,
+  PlayCircle,
+  Cpu,
+  BookMarked,
+  GitFork,
+  Layers,
+  GitCompare,
   Award,
   Wrench,
   Flame,
@@ -32,16 +32,16 @@ import { TradingToolsOverview } from './TradingToolsOverview';
 import { ScrollReveal } from './ScrollReveal';
 import { SEO } from './SEO';
 
-export type TradingToolId = 
-  | 'chartlab' 
-  | 'simulator' 
-  | 'backtest' 
-  | 'journal' 
-  | 'graph' 
-  | 'concepts' 
-  | 'compare' 
-  | 'dashboard' 
-  | 'masterclass' 
+export type TradingToolId =
+  | 'chartlab'
+  | 'simulator'
+  | 'backtest'
+  | 'journal'
+  | 'graph'
+  | 'concepts'
+  | 'compare'
+  | 'dashboard'
+  | 'masterclass'
   | 'ict_suite';
 
 export interface TradingToolsWorkbenchProps {
@@ -126,7 +126,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
       slug: 'chartlab',
       name: 'Chart Lab',
       badge: 'Trading Floor',
-      desc: 'Interactive 8-stage candle sequence marking & price delivery',
+      desc: 'Find sweeps, displacement and FVGs with visual hints',
       icon: BarChart2
     },
     {
@@ -134,7 +134,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
       slug: 'simulator',
       name: 'Trade Simulator',
       badge: 'Execution Room',
-      desc: 'Simulated market entry, limit orders, and fill mechanics',
+      desc: 'Lock a plan, reveal candles and review the outcome',
       icon: PlayCircle
     },
     {
@@ -142,7 +142,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
       slug: 'backtest',
       name: 'Backtest Lab',
       badge: 'Research Lab',
-      desc: 'Statistical expectancy, win-rates, and drawdown analysis',
+      desc: 'Scan candle data, compare samples and inspect every trade',
       icon: Cpu
     },
     {
@@ -198,8 +198,8 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
   // If in Overview mode, render the full Hub Overview
   if (activeTool === 'overview') {
     return (
-      <TradingToolsOverview 
-        onSelectTool={(toolId, customUrl) => handleSelectTool(toolId, customUrl)} 
+      <TradingToolsOverview
+        onSelectTool={(toolId, customUrl) => handleSelectTool(toolId, customUrl)}
       />
     );
   }
@@ -208,7 +208,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
 
   return (
     <div className="space-y-8 sm:space-y-12 pb-20 text-ink">
-      
+
       <header className="rounded-2xl border border-ink/10 bg-surface p-4 sm:p-5 space-y-3">
         <div className="flex items-center justify-between gap-4 text-sm">
           <a href="/tools/" className="underline text-teal">All tools</a>
@@ -226,71 +226,71 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
       <div>
         <div className="predikt-workbench-body">
           {activeTool === 'masterclass' && (
-            <MasterclassWorkbench 
+            <MasterclassWorkbench
               initialCategory={masterclassCategory}
               initialModuleSlug={masterclassModuleSlug}
               onNavigateUrl={(url) => handleSelectTool('masterclass', url)}
             />
           )}
           {activeTool === 'chartlab' && (
-            <ChartLab 
+            <ChartLab
               initialScenarioSlug={chartScenarioSlug}
               initialStepSlug={chartStepSlug}
               onNavigateUrl={(url) => handleSelectTool('chartlab', url)}
             />
           )}
           {activeTool === 'simulator' && (
-            <TradeSimulator 
+            <TradeSimulator
               initialModelSlug={simulatorModelSlug}
               onNavigateUrl={(url) => handleSelectTool('simulator', url)}
             />
           )}
           {activeTool === 'backtest' && (
-            <BacktestLab 
+            <BacktestLab
               initialStrategySlug={backtestStrategySlug}
               onNavigateUrl={(url) => handleSelectTool('backtest', url)}
             />
           )}
           {activeTool === 'journal' && (
-            <TradingJournal 
+            <TradingJournal
               initialSectionSlug={journalSectionSlug}
               onNavigateUrl={(url) => handleSelectTool('journal', url)}
             />
           )}
           {activeTool === 'graph' && (
-            <KnowledgeGraph 
+            <KnowledgeGraph
               initialViewMode={graphViewMode}
               initialStep={graphStep}
               initialNodeId={graphNodeId}
-              onSelectConcept={onSelectConcept || (() => {})} 
+              onSelectConcept={onSelectConcept || (() => {})}
               onNavigateUrl={(url) => handleSelectTool('graph', url)}
             />
           )}
           {activeTool === 'concepts' && (
-            <ConceptExplorer 
+            <ConceptExplorer
               initialCategory={glossaryCategory}
               initialConceptId={glossaryConceptId}
               initialSubConceptId={glossarySubConceptId}
-              onSelectConcept={onSelectConcept || (() => {})} 
-              onOpenSimulator={() => handleSelectTool('simulator', '/tools/simulator/')} 
+              onSelectConcept={onSelectConcept || (() => {})}
+              onOpenSimulator={() => handleSelectTool('simulator', '/tools/simulator/')}
             />
           )}
           {activeTool === 'compare' && (
-            <CompareView 
+            <CompareView
               initialComparisonSlug={comparisonSlug}
               onNavigateUrl={(url) => handleSelectTool('compare', url)}
             />
           )}
           {activeTool === 'dashboard' && (
-            <MasteryDashboard 
+            <MasteryDashboard
               initialSubTab={profileSubTab}
               initialExamSlug={profileExamSlug}
-              onSelectTab={(tab) => handleSelectTool(tab as any)} 
+              onSelectTab={(tab) => handleSelectTool(tab as any)}
               onNavigateUrl={(url) => handleSelectTool('dashboard', url)}
             />
           )}
           {activeTool === 'ict_suite' && (
-            <InstitutionalToolsSuite 
+            <InstitutionalToolsSuite
               initialModuleSlug={deliveryModuleSlug}
               onNavigateUrl={(url) => handleSelectTool('ict_suite', url)}
             />
@@ -298,7 +298,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
         </div>
       </div>
 
-      {(() => { const guide = toolStudyGuide(window.location.pathname); return guide ? <section className="space-y-3 text-sm leading-relaxed"><h2 className="text-xl font-semibold">{guide.title}</h2>{guide.paragraphs.map(p => <p key={p}>{p}</p>)}<p><a href="/curriculum/" className="underline">Study the curriculum</a> and <a href="/about/#editorial-policy" className="underline">editorial policy</a>.</p><FinancialDisclaimer /></section> : null; })()}
+      {(() => { const guide = toolStudyGuide(window.location.pathname); return guide ? <details className="space-y-3 text-sm leading-relaxed"><summary className="cursor-pointer py-3">{guide.title}</summary>{guide.paragraphs.map(p => <p key={p}>{p}</p>)}<p><a href="/curriculum/" className="underline">Study the curriculum</a> and <a href="/about/#editorial-policy" className="underline">editorial policy</a>.</p><FinancialDisclaimer /></details> : null; })()}
     </div>
   );
 };

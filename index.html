@@ -6,6 +6,11 @@
       // Enhance the readable HTML only when JavaScript is available. Never show two layouts.
       (function () {
         var html = document.documentElement;
+        try {
+          var theme = localStorage.getItem('learnsmc-theme');
+          html.dataset.theme = theme === 'dark' || theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          html.style.colorScheme = html.dataset.theme;
+        } catch (_) {}
         html.dataset.appStartup = 'loading';
         window.setTimeout(function () {
           if (html.dataset.appStartup === 'loading') {
@@ -19,17 +24,19 @@
       #app-startup { display: none; }
       html[data-app-startup="loading"] { background: #ffffff; }
       html[data-app-startup="loading"] #root { visibility: hidden; }
+      html[data-theme="dark"],html[data-theme="dark"][data-app-startup="loading"] { background:#111c24; color:#e4eeea; }
+      html[data-theme="dark"] #app-startup { background:#111c24!important;color:#aabdb5!important; }
+      html[data-theme="dark"] #app-startup strong { color:#e4eeea; }
       html[data-app-startup="loading"] #app-startup { position: fixed; inset: 0; display: grid; place-content: center; gap: 1rem; background: #ffffff; color: #435b50; font: 14px system-ui, sans-serif; text-align: center; z-index: 100; }
       #app-startup strong { color: #223b35; font-size: 20px; letter-spacing: -.025em; }
       #app-startup::before { content: ''; width: 28px; height: 28px; margin: 0 auto; border: 2px solid #29313d; border-top-color: #23796d; border-radius: 50%; animation: startup-spin .8s linear infinite; }
       @keyframes startup-spin { to { transform: rotate(360deg); } }
       @media (prefers-reduced-motion: reduce) { #app-startup::before { animation: none; } }
     </style>
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="color-scheme" content="light" />
+    <meta name="color-scheme" content="light dark" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learn ICT &amp; Smart Money Concepts | LearnSMC</title>
-    <meta name="description" content="Master Inner Circle Trader (ICT) and Smart Money Concepts (SMC) with a free 57-chapter institutional curriculum, 52 Abdullah Masood masterclasses, interactive Chart Lab, and algorithmic trade simulator." />
+    <meta name="description" content="Master Inner Circle Trader (ICT) and Smart Money Concepts (SMC) with a free 53-chapter institutional curriculum, 118 Abdullah Masood masterclasses, interactive Chart Lab, and algorithmic trade simulator." />
     <meta name="author" content="Muhammad Umer Ijaz" />
     <meta name="theme-color" content="#ffffff" />
     <link rel="canonical" href="https://learnsmc.xyz/" />
@@ -46,7 +53,7 @@
     <!-- Open Graph / Facebook / Discord / Slack -->
     <meta property="og:site_name" content="ICT &amp; SMC Academy" />
     <meta property="og:title" content="ICT &amp; SMC Academy - Smart Money Concepts Curriculum" />
-    <meta property="og:description" content="Master Inner Circle Trader (ICT) and Smart Money Concepts with a complete 57-chapter institutional curriculum and 52 Abdullah Masood lectures." />
+    <meta property="og:description" content="Master Inner Circle Trader (ICT) and Smart Money Concepts with a complete 53-chapter institutional curriculum and 118 Abdullah Masood lectures." />
     <meta property="og:url" content="https://learnsmc.xyz/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
@@ -58,7 +65,7 @@
     <!-- Twitter / X Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="ICT &amp; SMC Academy - Institutional Trading Curriculum" />
-    <meta name="twitter:description" content="Free 57-chapter institutional curriculum, 52 Abdullah Masood lectures, interactive Chart Lab, and algorithmic price delivery models." />
+    <meta name="twitter:description" content="Free 53-chapter institutional curriculum, 118 Abdullah Masood lectures, interactive Chart Lab, and algorithmic price delivery models." />
     <meta name="twitter:image" content="https://learnsmc.xyz/og-image.png" />
 
     <!-- Robots Directives -->

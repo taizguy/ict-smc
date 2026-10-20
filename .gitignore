@@ -7,3 +7,6 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Local artifact delivery copies; production downloads live in public/downloads.
+/output/

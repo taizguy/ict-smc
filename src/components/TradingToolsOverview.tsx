@@ -275,7 +275,7 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
               key={tab.id}
               aria-pressed={filterCategory === tab.id}
               onClick={() => setFilterCategory(tab.id as any)}
-              className={`px-4 py-2 rounded-xl text-xs font-sans tabular-nums uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer ${
+              className={`px-4 py-2 rounded-xl text-xs font-sans tabular-nums uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,opacity,transform] whitespace-nowrap cursor-pointer ${
                 filterCategory === tab.id
                   ? 'bg-ink/[0.12] text-ink border border-ink/20 shadow-sm'
                   : 'text-ink-secondary hover:text-ink hover:bg-ink/[0.04]'
@@ -346,7 +346,7 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
                 <a
 
                   href={tool.url}
-                  className="w-full py-2.5 px-4 rounded-xl bg-ink/[0.04] hover:bg-ink/[0.10] border border-ink/[0.08] hover:border-ink/20 text-xs font-sans tabular-nums uppercase tracking-wider text-ink hover:text-ink flex items-center justify-center gap-2 transition-all cursor-pointer group/btn"
+                  className="w-full py-2.5 px-4 rounded-xl bg-ink/[0.04] hover:bg-ink/[0.10] border border-ink/[0.08] hover:border-ink/20 text-xs font-sans tabular-nums uppercase tracking-wider text-ink hover:text-ink flex items-center justify-center gap-2 transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer group/btn"
                 >
                   <span>Launch Module</span>
                   <ArrowRight className="w-3.5 h-3.5 text-teal group-hover/btn:translate-x-1 transition-transform" />

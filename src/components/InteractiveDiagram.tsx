@@ -52,7 +52,7 @@ export const InteractiveDiagram: React.FC<InteractiveDiagramProps> = ({ type: ra
             <button
               type="button"
               onClick={handleNext} disabled={!animated}
-              className="px-3.5 py-1.5 text-xs font-sans tabular-nums font-medium rounded-lg bg-brand hover:bg-brand-hover text-on-brand flex items-center gap-1.5 transition-all cursor-pointer on-accent"
+              className="px-3.5 py-1.5 text-xs font-sans tabular-nums font-medium rounded-lg bg-brand hover:bg-brand-hover text-on-brand flex items-center gap-1.5 transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer on-accent"
             >
               <Play className="w-3 h-3 fill-ink" />
               <span>{animated ? `Step ${step + 1} / 4` : 'Static reference'}</span>

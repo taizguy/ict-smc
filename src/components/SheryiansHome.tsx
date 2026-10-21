@@ -57,7 +57,7 @@ export const SheryiansHome: React.FC<SheryiansHomeProps> = ({
         <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
           <button
             onClick={() => onNavigate('textbook')}
-            className="px-8 py-4 rounded-full bg-gradient-to-r from-rust to-amber hover:from-rust hover:to-amber text-on-brand font-sans tabular-nums font-bold text-sm flex items-center gap-3 shadow-[0_10px_35px_rgba(255,87,34,0.35)] transition-all hover:scale-105 active:scale-95 cursor-pointer group on-accent"
+            className="px-8 py-4 rounded-full bg-gradient-to-r from-rust to-amber hover:from-rust hover:to-amber text-on-brand font-sans tabular-nums font-bold text-sm flex items-center gap-3 shadow-[0_10px_35px_rgba(255,87,34,0.35)] transition-[color,background-color,border-color,box-shadow,opacity,transform] hover:scale-105 active:scale-[0.96] cursor-pointer group on-accent"
           >
             <BookOpen className="w-4 h-4" />
             <span>Explore 31 Modules</span>
@@ -66,7 +66,7 @@ export const SheryiansHome: React.FC<SheryiansHomeProps> = ({
 
           <button
             onClick={() => onNavigate('chartlab')}
-            className="px-7 py-4 rounded-full bg-surface hover:bg-surface-raised text-ink-secondary hover:text-ink border border-ink/[0.08] hover:border-rust/50 font-sans tabular-nums font-bold text-sm flex items-center gap-2.5 transition-all hover:scale-105 active:scale-95 cursor-pointer shadow-lg"
+            className="px-7 py-4 rounded-full bg-surface hover:bg-surface-raised text-ink-secondary hover:text-ink border border-ink/[0.08] hover:border-rust/50 font-sans tabular-nums font-bold text-sm flex items-center gap-2.5 transition-[color,background-color,border-color,box-shadow,opacity,transform] hover:scale-105 active:scale-[0.96] cursor-pointer shadow-lg"
           >
             <BarChart2 className="w-4 h-4 text-rust" />
             <span>Launch Chart Lab</span>
@@ -74,7 +74,7 @@ export const SheryiansHome: React.FC<SheryiansHomeProps> = ({
 
           <button
             onClick={onOpenMentorSpotlight}
-            className="px-6 py-4 rounded-full bg-rose-50/30 hover:bg-rose-50/40 text-rose-700 border border-rose-500/30 font-sans tabular-nums font-bold text-sm flex items-center gap-2 transition-all hover:scale-105 active:scale-95 cursor-pointer"
+            className="px-6 py-4 rounded-full bg-rose-50/30 hover:bg-rose-50/40 text-rose-700 border border-rose-500/30 font-sans tabular-nums font-bold text-sm flex items-center gap-2 transition-[color,background-color,border-color,box-shadow,opacity,transform] hover:scale-105 active:scale-[0.96] cursor-pointer"
           >
             <Youtube className="w-4 h-4 text-rose-700" />
             <span>Masood Mentorship Tribute</span>
@@ -137,7 +137,7 @@ export const SheryiansHome: React.FC<SheryiansHomeProps> = ({
         {/* Sheryians Course Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* COURSE 1: THE CORE BIBLE */}
-          <div className="bg-surface hover:bg-surface border border-ink/[0.08] hover:border-rust/40 rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 shadow-xl group">
+          <div className="bg-surface hover:bg-surface border border-ink/[0.08] hover:border-rust/40 rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-300 hover:-translate-y-1.5 shadow-xl group">
             <div className="space-y-5">
               <div className="flex items-center justify-between gap-2">
                 <span className="px-3 py-1 rounded-full bg-emerald-50/80 text-emerald-700 border border-emerald-500/40 text-[0.8125rem] font-sans tabular-nums font-bold">
@@ -180,7 +180,7 @@ export const SheryiansHome: React.FC<SheryiansHomeProps> = ({
           </div>
 
           {/* COURSE 2: MASOOD ACADEMY */}
-          <div className="bg-surface hover:bg-surface border border-ink/[0.08] hover:border-rose-500/40 rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 shadow-xl group">
+          <div className="bg-surface hover:bg-surface border border-ink/[0.08] hover:border-rose-500/40 rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-300 hover:-translate-y-1.5 shadow-xl group">
             <div className="space-y-5">
               <div className="flex items-center justify-between gap-2">
                 <span className="px-3 py-1 rounded-full bg-rose-50/80 text-rose-700 border border-rose-500/40 text-[0.8125rem] font-sans tabular-nums font-bold flex items-center gap-1">
@@ -224,7 +224,7 @@ export const SheryiansHome: React.FC<SheryiansHomeProps> = ({
           </div>
 
           {/* COURSE 3: INTERACTIVE CHART LAB */}
-          <div className="bg-surface hover:bg-surface border border-ink/[0.08] hover:border-rust/40 rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 shadow-xl group">
+          <div className="bg-surface hover:bg-surface border border-ink/[0.08] hover:border-rust/40 rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-300 hover:-translate-y-1.5 shadow-xl group">
             <div className="space-y-5">
               <div className="flex items-center justify-between gap-2">
                 <span className="px-3 py-1 rounded-full bg-cyan-50/80 text-cyan-700 border border-cyan-500/40 text-[0.8125rem] font-sans tabular-nums font-bold">
@@ -267,7 +267,7 @@ export const SheryiansHome: React.FC<SheryiansHomeProps> = ({
           </div>
 
           {/* COURSE 4: TRADE SIMULATOR & JOURNAL */}
-          <div className="bg-surface hover:bg-surface border border-ink/[0.08] hover:border-emerald-500/40 rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 shadow-xl group">
+          <div className="bg-surface hover:bg-surface border border-ink/[0.08] hover:border-emerald-500/40 rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-300 hover:-translate-y-1.5 shadow-xl group">
             <div className="space-y-5">
               <div className="flex items-center justify-between gap-2">
                 <span className="px-3 py-1 rounded-full bg-emerald-50/80 text-emerald-700 border border-emerald-500/40 text-[0.8125rem] font-sans tabular-nums font-bold">
@@ -310,7 +310,7 @@ export const SheryiansHome: React.FC<SheryiansHomeProps> = ({
           </div>
 
           {/* COURSE 5: QUANTITATIVE BACKTEST LAB */}
-          <div className="bg-surface hover:bg-surface border border-ink/[0.08] hover:border-amber-500/40 rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 shadow-xl group">
+          <div className="bg-surface hover:bg-surface border border-ink/[0.08] hover:border-amber-500/40 rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-300 hover:-translate-y-1.5 shadow-xl group">
             <div className="space-y-5">
               <div className="flex items-center justify-between gap-2">
                 <span className="px-3 py-1 rounded-full bg-amber-50/80 text-amber-700 border border-amber-500/40 text-[0.8125rem] font-sans tabular-nums font-bold">
@@ -353,7 +353,7 @@ export const SheryiansHome: React.FC<SheryiansHomeProps> = ({
           </div>
 
           {/* COURSE 6: ENCYCLOPEDIA & MATRIX */}
-          <div className="bg-surface hover:bg-surface border border-ink/[0.08] hover:border-purple-500/40 rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 shadow-xl group">
+          <div className="bg-surface hover:bg-surface border border-ink/[0.08] hover:border-purple-500/40 rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-300 hover:-translate-y-1.5 shadow-xl group">
             <div className="space-y-5">
               <div className="flex items-center justify-between gap-2">
                 <span className="px-3 py-1 rounded-full bg-purple-50/80 text-purple-700 border border-purple-500/40 text-[0.8125rem] font-sans tabular-nums font-bold">
@@ -515,7 +515,7 @@ export const SheryiansHome: React.FC<SheryiansHomeProps> = ({
                 onSelectChapter(chapter.id);
                 onNavigate('textbook');
               }}
-              className="p-4 rounded-2xl bg-surface hover:bg-surface border border-ink/[0.06] hover:border-rust/50 transition-all cursor-pointer group flex items-start gap-3.5 shadow-sm"
+              className="p-4 rounded-2xl bg-surface hover:bg-surface border border-ink/[0.06] hover:border-rust/50 transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer group flex items-start gap-3.5 shadow-sm"
             >
               <div className="w-9 h-9 rounded-xl bg-surface text-rust font-sans tabular-nums font-bold text-xs flex items-center justify-center border border-ink/[0.06] shrink-0 group-hover:bg-rust group-hover:text-on-brand transition-colors">
                 {chapter.id}
@@ -538,7 +538,7 @@ export const SheryiansHome: React.FC<SheryiansHomeProps> = ({
         <div className="text-center pt-2">
           <button
             onClick={() => onNavigate('textbook')}
-            className="px-6 py-2.5 rounded-full bg-surface hover:bg-surface-raised text-ink-secondary hover:text-ink border border-ink/[0.08] font-sans tabular-nums text-xs font-bold inline-flex items-center gap-2 transition-all cursor-pointer"
+            className="px-6 py-2.5 rounded-full bg-surface hover:bg-surface-raised text-ink-secondary hover:text-ink border border-ink/[0.08] font-sans tabular-nums text-xs font-bold inline-flex items-center gap-2 transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer"
           >
             <span>View All 31 Chapters in Syllabus Grid</span>
             <ArrowRight className="w-3.5 h-3.5 text-rust" />
@@ -566,7 +566,7 @@ export const SheryiansHome: React.FC<SheryiansHomeProps> = ({
           <div className="pt-3 flex flex-wrap items-center justify-center gap-3">
             <button
               onClick={() => onNavigate('textbook')}
-              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-rust to-amber hover:from-rust hover:to-amber text-on-brand font-sans tabular-nums font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-rust/30 hover:scale-105 transition-all cursor-pointer on-accent"
+              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-rust to-amber hover:from-rust hover:to-amber text-on-brand font-sans tabular-nums font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-rust/30 hover:scale-105 transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer on-accent"
             >
               <BookOpen className="w-4 h-4" />
               <span>Begin With Chapter 1</span>
@@ -574,7 +574,7 @@ export const SheryiansHome: React.FC<SheryiansHomeProps> = ({
 
             <button
               onClick={() => onNavigate('masood')}
-              className="px-7 py-3.5 rounded-full bg-surface hover:bg-surface-raised text-ink-secondary border border-ink/[0.08] font-sans tabular-nums font-bold text-xs sm:text-sm flex items-center gap-2 hover:scale-105 transition-all cursor-pointer"
+              className="px-7 py-3.5 rounded-full bg-surface hover:bg-surface-raised text-ink-secondary border border-ink/[0.08] font-sans tabular-nums font-bold text-xs sm:text-sm flex items-center gap-2 hover:scale-105 transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer"
             >
               <Youtube className="w-4 h-4 text-rose-700" />
               <span>Masood's Academy</span>

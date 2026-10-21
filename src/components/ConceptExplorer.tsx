@@ -264,7 +264,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
 
               aria-current={selectedCategory === cat.id ? 'page' : undefined}
               href={cat.id === 'all' ? '/tools/glossary/' : getGlossaryCategoryPath(cat.slug)}
-              className={`px-3.5 py-1.5 text-xs font-sans tabular-nums uppercase whitespace-nowrap transition-all rounded-lg border cursor-pointer shrink-0 ${
+              className={`px-3.5 py-1.5 text-xs font-sans tabular-nums uppercase whitespace-nowrap transition-[color,background-color,border-color,box-shadow,opacity,transform] rounded-lg border cursor-pointer shrink-0 ${
                 selectedCategory === cat.id
                   ? 'bg-ink/[0.12] text-ink border-ink/20'
                   : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06] hover:bg-ink/[0.05]'
@@ -295,7 +295,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                   key={sub.id}
 
                   href={getGlossarySubConceptPath(sub.categorySlug, sub.slug)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-sans tabular-nums transition-all flex items-center gap-1.5 cursor-pointer border ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-sans tabular-nums transition-[color,background-color,border-color,box-shadow,opacity,transform] flex items-center gap-1.5 cursor-pointer border ${
                     isSubActive
                       ? 'bg-brand/25 border-brand text-ink shadow-sm'
                       : 'bg-ink/[0.03] border-ink/[0.08] text-ink-secondary hover:text-ink hover:bg-ink/[0.06]'
@@ -335,7 +335,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                     key={c.id} aria-current={isSelected ? 'page' : undefined}
 
                     href={(() => { const mapping = getConceptBySlugOrId(c.id); return mapping ? getGlossaryConceptPath(mapping.slug, mapping.categorySlug) : '/tools/glossary/'; })()}
-                    className={`block w-full text-left p-3 text-xs font-sans tabular-nums transition-all space-y-1.5 rounded-xl border cursor-pointer ${
+                    className={`block w-full text-left p-3 text-xs font-sans tabular-nums transition-[color,background-color,border-color,box-shadow,opacity,transform] space-y-1.5 rounded-xl border cursor-pointer ${
                       isSelected
                         ? 'bg-ink/[0.10] border-ink/20 text-ink'
                         : 'bg-ink/[0.02] border-ink/[0.06] text-ink-secondary hover:text-ink hover:bg-ink/[0.05]'
@@ -518,7 +518,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                       key={tab.id}
                       type="button"
                       aria-pressed={activeLayerTab === tab.id as any} onClick={() => setActiveLayerTab(tab.id as any)}
-                      className={`px-3.5 py-1.5 text-xs font-sans tabular-nums uppercase flex items-center gap-1.5 transition-all rounded-lg border cursor-pointer shrink-0 ${
+                      className={`px-3.5 py-1.5 text-xs font-sans tabular-nums uppercase flex items-center gap-1.5 transition-[color,background-color,border-color,box-shadow,opacity,transform] rounded-lg border cursor-pointer shrink-0 ${
                         isActive
                           ? 'bg-ink/[0.12] text-ink border-ink/20'
                           : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06] hover:bg-ink/[0.05]'
@@ -624,7 +624,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                       key={t.id}
                       type="button"
                       aria-pressed={activeTripartiteTab === t.id} onClick={() => setActiveTripartiteTab(t.id as any)}
-                      className={`p-3 text-xs font-sans tabular-nums text-center rounded-xl border transition-all cursor-pointer ${
+                      className={`p-3 text-xs font-sans tabular-nums text-center rounded-xl border transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer ${
                         activeTripartiteTab === t.id
                           ? 'bg-ink/[0.10] border-ink/20 text-ink font-semibold'
                           : 'bg-ink/[0.02] border-ink/[0.06] text-ink-secondary hover:text-ink'
@@ -682,7 +682,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
                     key={item.level}
                     type="button"
                     aria-pressed={ladderLevel === item.level} onClick={() => setLadderLevel(item.level as any)}
-                    className={`p-2.5 rounded-xl border text-center font-sans tabular-nums text-xs transition-all cursor-pointer ${
+                    className={`p-2.5 rounded-xl border text-center font-sans tabular-nums text-xs transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer ${
                       ladderLevel === item.level
                         ? 'bg-brand/20 border-brand text-ink font-semibold'
                         : 'bg-ink/[0.02] border-ink/[0.06] text-ink-secondary hover:text-ink'

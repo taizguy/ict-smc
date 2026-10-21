@@ -69,7 +69,7 @@ export const Header: React.FC<HeaderProps> = ({activeTab, onOpenSearch, onOpenWe
   } as const;
   const disclosure=(id:Panel,label:string,active:boolean)=><button type="button" ref={node=>{triggers.current[id]=node||undefined;}}
     className={active?'is-current':''} aria-expanded={panel===id} aria-controls="desktop-learning-panel"
-    onMouseEnter={()=>setPanel(id)} onFocus={()=>setPanel(id)} onClick={()=>setPanel(id)}>{t(label)}</button>;
+    onMouseEnter={()=>setPanel(id)} onClick={()=>setPanel(current=>current===id?null:id)}>{t(label)}</button>;
   const selected=panel?groups[panel]:null;
   return <header ref={header} className="site-header" onMouseLeave={()=>setPanel(null)} onBlur={event=>{if(!event.currentTarget.contains(event.relatedTarget as Node))setPanel(null);}}>
     <div className="site-nav-bar">

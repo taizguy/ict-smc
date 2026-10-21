@@ -170,7 +170,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                 href="https://www.youtube.com/@TraderAbdullahMasood"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand hover:bg-[#1d5545] text-on-brand text-xs font-sans tabular-nums uppercase tracking-wider transition-all cursor-pointer shadow-lg shadow-brand/20 on-accent"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand hover:bg-[#1d5545] text-on-brand text-xs font-sans tabular-nums uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer shadow-lg shadow-brand/20 on-accent"
               >
                 <Youtube className="w-4 h-4" />
                 <span>YouTube Channel</span>
@@ -179,7 +179,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
 
               <button
                 onClick={() => handleSelectTab('animations')}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-ink/[0.04] hover:bg-ink/[0.08] text-ink text-xs font-sans tabular-nums uppercase tracking-wider border border-ink/[0.08] transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-ink/[0.04] hover:bg-ink/[0.08] text-ink text-xs font-sans tabular-nums uppercase tracking-wider border border-ink/[0.08] transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer"
               >
                 <Sparkles className="w-4 h-4 text-teal" />
                 <span>Animated Explainers</span>
@@ -187,7 +187,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
 
               <button
                 onClick={() => handleSelectTab('bias_calc')}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-ink/[0.04] hover:bg-ink/[0.08] text-ink text-xs font-sans tabular-nums uppercase tracking-wider border border-ink/[0.08] transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-ink/[0.04] hover:bg-ink/[0.08] text-ink text-xs font-sans tabular-nums uppercase tracking-wider border border-ink/[0.08] transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer"
               >
                 <Zap className="w-4 h-4 text-amber" />
                 <span>Daily Bias Engine</span>
@@ -195,7 +195,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
 
               <button
                 onClick={() => handleSelectTab('rules')}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-ink/[0.04] hover:bg-ink/[0.08] text-ink text-xs font-sans tabular-nums uppercase tracking-wider border border-ink/[0.08] transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-ink/[0.04] hover:bg-ink/[0.08] text-ink text-xs font-sans tabular-nums uppercase tracking-wider border border-ink/[0.08] transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer"
               >
                 <Shield className="w-4 h-4 text-brand" />
                 <span>10 Golden Rules</span>
@@ -223,7 +223,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                   <button
                     key={tab.id}
                     onClick={() => handleSelectTab(tab.id as any)}
-                    className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-sans tabular-nums uppercase tracking-wider whitespace-nowrap transition-all border cursor-pointer shrink-0 ${
+                    className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-sans tabular-nums uppercase tracking-wider whitespace-nowrap transition-[color,background-color,border-color,box-shadow,opacity,transform] border cursor-pointer shrink-0 ${
                       isActive
                         ? 'bg-ink/[0.12] text-ink border-ink/20 shadow-sm'
                         : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06] hover:bg-ink/[0.05]'
@@ -268,7 +268,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
               <BauhausNavScroller innerClassName="gap-2" showArrowsAlways={true}>
                 <button
                   onClick={() => setActivePlaylistId('all')}
-                  className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-sans tabular-nums uppercase tracking-wider whitespace-nowrap shrink-0 border transition-all cursor-pointer ${
+                  className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-sans tabular-nums uppercase tracking-wider whitespace-nowrap shrink-0 border transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer ${
                     activePlaylistId === 'all'
                       ? 'bg-brand text-on-brand border-brand on-accent'
                       : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06] hover:bg-ink/[0.05]'
@@ -286,7 +286,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                   <button
                     key={pl.id}
                     onClick={() => setActivePlaylistId(pl.id)}
-                    className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-sans tabular-nums uppercase tracking-wider whitespace-nowrap shrink-0 border transition-all cursor-pointer ${
+                    className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-sans tabular-nums uppercase tracking-wider whitespace-nowrap shrink-0 border transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer ${
                       activePlaylistId === pl.id
                         ? 'bg-brand text-on-brand border-brand on-accent'
                         : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06] hover:bg-ink/[0.05]'
@@ -337,7 +337,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                     .map((lecture) => (
                       <div
                         key={lecture.id}
-                        className="bg-surface border border-ink/[0.08] rounded-2xl flex flex-col justify-between overflow-hidden hover:border-ink/20 transition-all"
+                        className="bg-surface border border-ink/[0.08] rounded-2xl flex flex-col justify-between overflow-hidden hover:border-ink/20 transition-[color,background-color,border-color,box-shadow,opacity,transform]"
                       >
                         {/* Thumbnail Header */}
                         <div className="relative aspect-video bg-surface-muted overflow-hidden border-b border-ink/[0.08]">
@@ -370,7 +370,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                             onClick={() => handleOpenLecture(lecture)}
                             className="absolute inset-0 flex items-center justify-center cursor-pointer group bg-black/20 hover:bg-black/40 transition-colors"
                           >
-                            <div className="w-11 h-11 rounded-full bg-ink/[0.1] backdrop-blur-md text-on-brand border border-ink/20 flex items-center justify-center group-hover:bg-brand group-hover:scale-105 transition-all on-accent">
+                            <div className="w-11 h-11 rounded-full bg-ink/[0.1] backdrop-blur-md text-on-brand border border-ink/20 flex items-center justify-center group-hover:bg-brand group-hover:scale-105 transition-[color,background-color,border-color,box-shadow,opacity,transform] on-accent">
                               <Play className="w-4 h-4 fill-current ml-0.5" />
                             </div>
                           </button>
@@ -483,7 +483,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                     <button
                       key={opt.id}
                       onClick={() => setCalcStep1(opt.id as any)}
-                      className={`p-4 rounded-xl border text-left text-xs transition-all cursor-pointer ${
+                      className={`p-4 rounded-xl border text-left text-xs transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer ${
                         calcStep1 === opt.id
                           ? 'bg-brand/15 border-brand text-ink'
                           : 'bg-surface-raised border-ink/[0.06] text-ink-secondary hover:text-ink hover:bg-ink/[0.04]'
@@ -512,7 +512,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                     <button
                       key={opt.id}
                       onClick={() => setCalcStep2(opt.id as any)}
-                      className={`p-4 rounded-xl border text-left text-xs transition-all cursor-pointer ${
+                      className={`p-4 rounded-xl border text-left text-xs transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer ${
                         calcStep2 === opt.id
                           ? 'bg-brand/15 border-brand text-ink'
                           : 'bg-surface-raised border-ink/[0.06] text-ink-secondary hover:text-ink hover:bg-ink/[0.04]'
@@ -541,7 +541,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                     <button
                       key={opt.id}
                       onClick={() => setCalcStep3(opt.id as any)}
-                      className={`p-4 rounded-xl border text-left text-xs transition-all cursor-pointer ${
+                      className={`p-4 rounded-xl border text-left text-xs transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer ${
                         calcStep3 === opt.id
                           ? 'bg-brand/15 border-brand text-ink'
                           : 'bg-surface-raised border-ink/[0.06] text-ink-secondary hover:text-ink hover:bg-ink/[0.04]'
@@ -569,7 +569,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                     <button
                       key={opt.id}
                       onClick={() => setCalcStep4(opt.id as any)}
-                      className={`p-4 rounded-xl border text-left text-xs transition-all cursor-pointer ${
+                      className={`p-4 rounded-xl border text-left text-xs transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer ${
                         calcStep4 === opt.id
                           ? 'bg-negative/15 border-negative text-ink'
                           : 'bg-surface-raised border-ink/[0.06] text-ink-secondary hover:text-ink hover:bg-ink/[0.04]'
@@ -704,7 +704,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                 ].map((item) => (
                   <div 
                     key={item.num} 
-                    className="p-5 rounded-xl bg-surface-raised border border-ink/[0.06] space-y-2 hover:border-ink/20 transition-all"
+                    className="p-5 rounded-xl bg-surface-raised border border-ink/[0.06] space-y-2 hover:border-ink/20 transition-[color,background-color,border-color,box-shadow,opacity,transform]"
                   >
                     <div className="flex items-center gap-3">
                       <span className="w-7 h-7 rounded-lg bg-brand/15 text-brand border border-brand/20 font-sans tabular-nums text-xs flex items-center justify-center font-semibold shrink-0">
@@ -817,7 +817,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                   href={`https://www.youtube.com/watch?v=${selectedLecture.youtubeId}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand hover:bg-[#1d5545] text-on-brand text-xs font-sans tabular-nums uppercase tracking-wider transition-all cursor-pointer shadow-lg shadow-brand/20 on-accent"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand hover:bg-[#1d5545] text-on-brand text-xs font-sans tabular-nums uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer shadow-lg shadow-brand/20 on-accent"
                 >
                   <Youtube className="w-4 h-4" />
                   <span>Open on YouTube</span>

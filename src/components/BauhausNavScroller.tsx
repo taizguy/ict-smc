@@ -68,7 +68,7 @@ export const BauhausNavScroller: React.FC<BauhausNavScrollerProps> = ({
           onClick={() => handleScroll('left')}
           disabled={!canScrollLeft && !showArrowsAlways}
           aria-label={t("Scroll left")}
-          className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 border border-ink/[0.08] transition-all cursor-pointer select-none ${
+          className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 border border-ink/[0.08] transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer select-none ${
             canScrollLeft || showArrowsAlways
               ? 'bg-ink/[0.04] hover:bg-ink/[0.1] text-ink'
               : 'opacity-20 cursor-not-allowed text-ink-muted'
@@ -96,7 +96,7 @@ export const BauhausNavScroller: React.FC<BauhausNavScrollerProps> = ({
           onClick={() => handleScroll('right')}
           disabled={!canScrollRight && !showArrowsAlways}
           aria-label={t("Scroll right")}
-          className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 border border-ink/[0.08] transition-all cursor-pointer select-none ${
+          className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 border border-ink/[0.08] transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer select-none ${
             canScrollRight || showArrowsAlways
               ? 'bg-ink/[0.04] hover:bg-ink/[0.1] text-ink'
               : 'opacity-20 cursor-not-allowed text-ink-muted'

@@ -113,7 +113,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
                     placeholder="SEARCH CHAPTERS, CONCEPTS, TERMS..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-10 py-2.5 bg-surface-muted border border-ink/[0.09] rounded-xl text-xs sm:text-sm font-sans tabular-nums text-ink placeholder-[#5f7064] uppercase tracking-wider focus:outline-none focus:border-brand/60 transition-all"
+                    className="w-full pl-10 pr-10 py-2.5 bg-surface-muted border border-ink/[0.09] rounded-xl text-xs sm:text-sm font-sans tabular-nums text-ink placeholder-[#5f7064] uppercase tracking-wider focus:outline-none focus:border-brand/60 transition-[color,background-color,border-color,box-shadow,opacity,transform]"
                   />
                   {searchQuery && (
                     <button
@@ -189,7 +189,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
           <BauhausNavScroller innerClassName="gap-2 py-1" showArrowsAlways={true}>
             <button
               onClick={() => setSelectedPart('all')}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-medium tracking-tight whitespace-nowrap border transition-all cursor-pointer shrink-0 ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-medium tracking-tight whitespace-nowrap border transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer shrink-0 ${
                 selectedPart === 'all'
                   ? 'bg-ink/[0.12] text-ink border-ink/20'
                   : 'bg-ink/[0.02] hover:bg-ink/[0.06] text-ink-secondary hover:text-ink border-ink/[0.06]'
@@ -207,7 +207,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
                 <button
                   key={p}
                   onClick={() => setSelectedPart(p)}
-                  className={`px-3.5 py-1.5 rounded-lg text-xs font-medium tracking-tight whitespace-nowrap border transition-all cursor-pointer shrink-0 ${
+                  className={`px-3.5 py-1.5 rounded-lg text-xs font-medium tracking-tight whitespace-nowrap border transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer shrink-0 ${
                     isSelected
                       ? 'bg-ink/[0.12] text-ink border-ink/20'
                       : 'bg-ink/[0.02] hover:bg-ink/[0.06] text-ink-secondary hover:text-ink border-ink/[0.06]'

@@ -156,7 +156,7 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
           <div className="flex items-center p-1.5 rounded-full bg-surface border border-ink/[0.08] shadow-inner shrink-0">
             <button
               onClick={() => setViewMode('syllabus')}
-              className={`px-5 py-2 rounded-full text-xs font-sans tabular-nums font-bold flex items-center gap-2 transition-all ${
+              className={`px-5 py-2 rounded-full text-xs font-sans tabular-nums font-bold flex items-center gap-2 transition-[color,background-color,border-color,box-shadow,opacity,transform] ${
                 viewMode === 'syllabus'
                   ? 'bg-gradient-to-r from-rust to-amber text-on-brand shadow-lg shadow-rust/30 scale-[1.02] on-accent'
                   : 'text-ink-muted hover:text-ink'
@@ -167,7 +167,7 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
             </button>
             <button
               onClick={() => setViewMode('reader')}
-              className={`px-5 py-2 rounded-full text-xs font-sans tabular-nums font-bold flex items-center gap-2 transition-all ${
+              className={`px-5 py-2 rounded-full text-xs font-sans tabular-nums font-bold flex items-center gap-2 transition-[color,background-color,border-color,box-shadow,opacity,transform] ${
                 viewMode === 'reader'
                   ? 'bg-gradient-to-r from-rust to-amber text-on-brand shadow-lg shadow-rust/30 scale-[1.02] on-accent'
                   : 'text-ink-muted hover:text-ink'
@@ -196,7 +196,7 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
             >
               <button
                 onClick={() => setSelectedPartFilter('all')}
-                className={`px-4 py-1.5 rounded-full text-xs font-sans tabular-nums font-bold whitespace-nowrap transition-all ${
+                className={`px-4 py-1.5 rounded-full text-xs font-sans tabular-nums font-bold whitespace-nowrap transition-[color,background-color,border-color,box-shadow,opacity,transform] ${
                   selectedPartFilter === 'all'
                     ? 'bg-gradient-to-r from-rust to-amber text-on-brand shadow-md shadow-rust/30 scale-[1.02] on-accent'
                     : 'bg-surface text-ink-muted border border-ink/[0.08] hover:text-ink hover:bg-surface-raised shadow-xs'
@@ -211,7 +211,7 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                   <button
                     key={partName}
                     onClick={() => setSelectedPartFilter(shortLabel)}
-                    className={`px-4 py-1.5 rounded-full text-xs font-sans tabular-nums font-bold whitespace-nowrap transition-all ${
+                    className={`px-4 py-1.5 rounded-full text-xs font-sans tabular-nums font-bold whitespace-nowrap transition-[color,background-color,border-color,box-shadow,opacity,transform] ${
                       isSelected
                         ? 'bg-gradient-to-r from-rust to-amber text-on-brand shadow-md shadow-rust/30 scale-[1.02] on-accent'
                         : 'bg-surface text-ink-muted border border-ink/[0.08] hover:text-ink hover:bg-surface-raised shadow-xs'
@@ -230,7 +230,7 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                 placeholder="Search syllabus topics & terms..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-surface border border-ink/[0.08] rounded-full pl-9 pr-4 py-2 text-xs font-sans tabular-nums text-ink-secondary focus:outline-none focus:border-rust focus:ring-1 focus:ring-rust/50 transition-all placeholder:text-ink-muted shadow-sm"
+                className="w-full bg-surface border border-ink/[0.08] rounded-full pl-9 pr-4 py-2 text-xs font-sans tabular-nums text-ink-secondary focus:outline-none focus:border-rust focus:ring-1 focus:ring-rust/50 transition-[color,background-color,border-color,box-shadow,opacity,transform] placeholder:text-ink-muted shadow-sm"
               />
             </div>
           </div>
@@ -269,7 +269,7 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                         return (
                           <div
                             key={ch.id}
-                            className="group bg-surface border border-ink/[0.08] rounded-3xl p-6 flex flex-col justify-between gap-4 hover:border-rust/50 hover:-translate-y-1 transition-all duration-300 shadow-xl"
+                            className="group bg-surface border border-ink/[0.08] rounded-3xl p-6 flex flex-col justify-between gap-4 hover:border-rust/50 hover:-translate-y-1 transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-300 shadow-xl"
                           >
                             <div className="space-y-3">
                               {/* Top Bar of Card */}
@@ -305,7 +305,7 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                                   setViewMode('reader');
                                   window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }}
-                                className="px-4 py-1.5 rounded-full bg-surface-muted hover:bg-rust hover:text-on-brand text-ink-secondary border border-ink/[0.1] hover:border-rust font-bold transition-all flex items-center gap-1.5 shadow-xs"
+                                className="px-4 py-1.5 rounded-full bg-surface-muted hover:bg-rust hover:text-on-brand text-ink-secondary border border-ink/[0.1] hover:border-rust font-bold transition-[color,background-color,border-color,box-shadow,opacity,transform] flex items-center gap-1.5 shadow-xs"
                               >
                                 <span>Read Unit</span>
                                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -356,7 +356,7 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                         setSelectedChapterId(ch.id);
                         setExplainSimpler(false);
                       }}
-                      className={`w-full text-left p-3 rounded-2xl text-xs font-sans tabular-nums transition-all flex items-start justify-between gap-2 ${
+                      className={`w-full text-left p-3 rounded-2xl text-xs font-sans tabular-nums transition-[color,background-color,border-color,box-shadow,opacity,transform] flex items-start justify-between gap-2 ${
                         isSelected
                           ? 'bg-rust/15 text-ink border-2 border-rust font-bold shadow-md shadow-rust/20'
                           : 'text-ink-muted hover:text-ink hover:bg-surface-raised border border-transparent'
@@ -409,7 +409,7 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
               <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-ink/[0.08]">
                 <button
                   onClick={() => setExplainSimpler(!explainSimpler)}
-                  className={`px-5 py-2.5 rounded-full text-xs font-sans tabular-nums font-bold flex items-center gap-2 transition-all ${
+                  className={`px-5 py-2.5 rounded-full text-xs font-sans tabular-nums font-bold flex items-center gap-2 transition-[color,background-color,border-color,box-shadow,opacity,transform] ${
                     explainSimpler
                       ? 'bg-amber-500/25 text-amber-700 border border-amber-500/50 shadow-md shadow-amber-500/10'
                       : 'bg-amber-500/10 hover:bg-amber-500/20 text-amber-700 border border-amber-500/30'
@@ -421,7 +421,7 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
 
                 <button
                   onClick={onOpenQuiz}
-                  className="px-5 py-2.5 rounded-full text-xs font-sans tabular-nums font-bold bg-gradient-to-r from-rust to-amber hover:from-rust hover:to-amber text-on-brand flex items-center gap-2 transition-all shadow-lg shadow-rust/30 hover:scale-105 on-accent"
+                  className="px-5 py-2.5 rounded-full text-xs font-sans tabular-nums font-bold bg-gradient-to-r from-rust to-amber hover:from-rust hover:to-amber text-on-brand flex items-center gap-2 transition-[color,background-color,border-color,box-shadow,opacity,transform] shadow-lg shadow-rust/30 hover:scale-105 on-accent"
                 >
                   <Lightbulb className="w-4 h-4 text-ink fill-ink" />
                   Test Me On This Concept
@@ -558,7 +558,7 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
               <button
                 onClick={handlePrevChapter}
                 disabled={currentIndex === 0}
-                className={`px-6 py-3 rounded-full text-xs font-sans tabular-nums font-bold flex items-center gap-2 transition-all ${
+                className={`px-6 py-3 rounded-full text-xs font-sans tabular-nums font-bold flex items-center gap-2 transition-[color,background-color,border-color,box-shadow,opacity,transform] ${
                   currentIndex === 0
                     ? 'bg-surface text-ink-muted border border-ink/[0.05] cursor-not-allowed'
                     : 'bg-surface hover:bg-surface-raised text-ink-secondary border border-ink/[0.1] shadow-md'
@@ -571,7 +571,7 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
               <button
                 onClick={handleNextChapter}
                 disabled={currentIndex === textbookChapters.length - 1}
-                className={`px-7 py-3 rounded-full text-xs font-sans tabular-nums font-bold flex items-center gap-2 transition-all shadow-lg ${
+                className={`px-7 py-3 rounded-full text-xs font-sans tabular-nums font-bold flex items-center gap-2 transition-[color,background-color,border-color,box-shadow,opacity,transform] shadow-lg ${
                   currentIndex === textbookChapters.length - 1
                     ? 'bg-surface text-ink-muted border border-ink/[0.05] cursor-not-allowed'
                     : 'bg-gradient-to-r from-rust to-amber hover:from-rust hover:to-amber text-on-brand shadow-rust/30 hover:scale-105 on-accent'

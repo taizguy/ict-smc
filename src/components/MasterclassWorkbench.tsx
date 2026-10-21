@@ -191,7 +191,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                   key={cat.id} aria-current={isActive ? 'page' : undefined}
 
                   href={cat.id === 'all' ? '/tools/masterclass/' : `/tools/masterclass/${getMasterclassCategorySlug(cat.id)}/`}
-                  className={`px-3.5 py-1.5 text-xs font-sans tabular-nums uppercase flex items-center gap-1.5 transition-all rounded-lg border cursor-pointer shrink-0 ${
+                  className={`px-3.5 py-1.5 text-xs font-sans tabular-nums uppercase flex items-center gap-1.5 transition-[color,background-color,border-color,box-shadow,opacity,transform] rounded-lg border cursor-pointer shrink-0 ${
                     isActive
                       ? 'bg-ink/[0.12] text-ink border-ink/20'
                       : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06] hover:bg-ink/[0.05]'
@@ -241,7 +241,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                     key={item.id} aria-current={isSelected ? 'page' : undefined}
 
                     href={getMasterclassUrl(item)}
-                    className={`block w-full text-left p-3 text-xs font-sans tabular-nums transition-all rounded-xl border cursor-pointer ${
+                    className={`block w-full text-left p-3 text-xs font-sans tabular-nums transition-[color,background-color,border-color,box-shadow,opacity,transform] rounded-xl border cursor-pointer ${
                       isSelected
                         ? 'bg-ink/[0.10] border-ink/20 text-ink'
                         : 'bg-ink/[0.02] border-ink/[0.06] text-ink-secondary hover:text-ink hover:bg-ink/[0.05]'
@@ -299,7 +299,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                       aria-pressed={activeSubTab === tab.id}
                       aria-label={tab.label}
                       onClick={() => setActiveSubTab(tab.id as any)}
-                      className={`px-3 py-1.5 text-xs font-sans tabular-nums uppercase flex items-center gap-1 rounded-lg border transition-all cursor-pointer ${
+                      className={`px-3 py-1.5 text-xs font-sans tabular-nums uppercase flex items-center gap-1 rounded-lg border transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer ${
                         isActive 
                           ? 'bg-ink/[0.12] text-ink border-ink/20'
                           : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06] hover:bg-ink/[0.05]'
@@ -477,7 +477,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
                         type="button"
                         aria-pressed={isChecked}
                         onClick={() => toggleRuleCheck(ruleKey)}
-                        className={`block w-full text-left p-3.5 rounded-xl border flex items-start gap-3 transition-all cursor-pointer ${
+                        className={`block w-full text-left p-3.5 rounded-xl border flex items-start gap-3 transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer ${
                           isChecked 
                             ? 'bg-negative/10 border-negative/30 text-ink'
                             : 'bg-ink/[0.02] border-ink/[0.06] hover:bg-ink/[0.04]'

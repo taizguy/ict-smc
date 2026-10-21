@@ -139,7 +139,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
         <div className="flex items-center gap-2">
           <button
             onClick={() => setIsPlaying(!isPlaying)}
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-ink/[0.08] text-ink-secondary text-xs font-sans tabular-nums font-bold hover:bg-surface-raised transition-all shadow-xs cursor-pointer"
+            className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-ink/[0.08] text-ink-secondary text-xs font-sans tabular-nums font-bold hover:bg-surface-raised transition-[color,background-color,border-color,box-shadow,opacity,transform] shadow-xs cursor-pointer"
             title={isPlaying ? 'Pause Animation' : 'Play Animation'}
           >
             {isPlaying ? <Pause className="w-3.5 h-3.5 text-amber-700 fill-amber-400" /> : <Play className="w-3.5 h-3.5 text-emerald-700 fill-emerald-400" />}
@@ -147,7 +147,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
           </button>
           <button
             onClick={handleReset}
-            className="p-2 rounded-full bg-surface border border-ink/[0.08] text-ink-secondary hover:text-ink hover:bg-surface-raised transition-all shadow-xs cursor-pointer"
+            className="p-2 rounded-full bg-surface border border-ink/[0.08] text-ink-secondary hover:text-ink hover:bg-surface-raised transition-[color,background-color,border-color,box-shadow,opacity,transform] shadow-xs cursor-pointer"
             title="Restart Animation"
           >
             <RotateCcw className="w-3.5 h-3.5" />
@@ -160,7 +160,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
         <button
           type="button"
           onClick={() => scrollPills('left')}
-          className={`flex items-center justify-center w-8 h-8 rounded-full bg-surface border border-ink/[0.08] text-ink-muted hover:text-ink shadow-xs transition-all mr-2 shrink-0 cursor-pointer ${
+          className={`flex items-center justify-center w-8 h-8 rounded-full bg-surface border border-ink/[0.08] text-ink-muted hover:text-ink shadow-xs transition-[color,background-color,border-color,box-shadow,opacity,transform] mr-2 shrink-0 cursor-pointer ${
             canScrollLeft ? 'opacity-100 hover:bg-surface-raised' : 'opacity-25 pointer-events-none'
           }`}
           title="Scroll left"
@@ -197,7 +197,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                   setSelectedType(tab.id as AnimationKind);
                   setProgress(0);
                 }}
-                className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full font-sans tabular-nums text-xs font-bold whitespace-nowrap shrink-0 transition-all cursor-pointer ${
+                className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full font-sans tabular-nums text-xs font-bold whitespace-nowrap shrink-0 transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer ${
                   isActive
                     ? 'bg-gradient-to-r from-rust to-amber text-on-brand shadow-md shadow-rust/25 scale-[1.02] on-accent'
                     : 'bg-surface hover:bg-surface-raised text-ink-muted hover:text-ink border border-ink/[0.08] shadow-xs'
@@ -213,7 +213,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
         <button
           type="button"
           onClick={() => scrollPills('right')}
-          className={`flex items-center justify-center w-8 h-8 rounded-full bg-surface border border-ink/[0.08] text-ink-muted hover:text-ink shadow-sm transition-all ml-2 shrink-0 cursor-pointer ${
+          className={`flex items-center justify-center w-8 h-8 rounded-full bg-surface border border-ink/[0.08] text-ink-muted hover:text-ink shadow-sm transition-[color,background-color,border-color,box-shadow,opacity,transform] ml-2 shrink-0 cursor-pointer ${
             canScrollRight ? 'opacity-100 hover:bg-surface-raised' : 'opacity-25 pointer-events-none'
           }`}
           title="Scroll right"
@@ -263,7 +263,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                     y2={progress < 45 ? 130 + (progress - 15) * 2.2 : 195} 
                     stroke="#b44746"
                     strokeWidth="3" 
-                    className="transition-all"
+                    className="transition-[color,background-color,border-color,box-shadow,opacity,transform]"
                   />
                 )}
 
@@ -684,7 +684,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
 
                 {/* Animated Clock Hand */}
                 <div 
-                  className="absolute w-1.5 h-28 bg-gradient-to-t from-cyan-500 to-transparent origin-bottom transition-all duration-300 rounded-full"
+                  className="absolute w-1.5 h-28 bg-gradient-to-t from-cyan-500 to-transparent origin-bottom transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-300 rounded-full"
                   style={{ transform: `rotate(${(progress / 100) * 360}deg)`, bottom: '50%' }}
                 />
               </div>
@@ -830,7 +830,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                       <button
                         key={r}
                         onClick={() => setPropRiskPct(r)}
-                        className={`flex-1 py-1.5 rounded-lg text-xs font-sans tabular-nums font-bold transition-all ${
+                        className={`flex-1 py-1.5 rounded-lg text-xs font-sans tabular-nums font-bold transition-[color,background-color,border-color,box-shadow,opacity,transform] ${
                           propRiskPct === r 
                             ? (r === 0.5 ? 'bg-emerald-600 text-on-brand font-bold shadow-xs on-accent' : r === 1.0 ? 'bg-amber-500 text-on-brand font-bold shadow-xs' : 'bg-rose-600 text-on-brand font-bold shadow-xs on-accent')
                             : 'bg-surface-muted text-ink-muted border border-line hover:text-ink hover:bg-surface-raised'
@@ -909,7 +909,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                 </div>
                 <div className="h-2.5 bg-surface-raised rounded-full overflow-hidden flex border border-line">
                   <div 
-                    className={`h-full transition-all duration-300 ${
+                    className={`h-full transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-300 ${
                       propRiskPct === 0.5 ? 'w-full bg-emerald-500' : propRiskPct === 1.0 ? 'w-1/2 bg-amber-500' : 'w-1/4 bg-rose-500'
                     }`} 
                   />
@@ -946,7 +946,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
               <div className="flex gap-2">
                 <button
                   onClick={() => setActiveGoldTab('gold')}
-                  className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 ${
+                  className={`flex-1 py-2 rounded-xl text-xs font-bold transition-[color,background-color,border-color,box-shadow,opacity,transform] flex items-center justify-center gap-2 ${
                     activeGoldTab === 'gold' 
                       ? 'bg-amber-500 text-on-brand shadow-md font-bold'
                       : 'bg-surface-muted text-ink-muted border border-line hover:text-ink hover:bg-surface-raised'
@@ -957,7 +957,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                 </button>
                 <button
                   onClick={() => setActiveGoldTab('nasdaq')}
-                  className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 ${
+                  className={`flex-1 py-2 rounded-xl text-xs font-bold transition-[color,background-color,border-color,box-shadow,opacity,transform] flex items-center justify-center gap-2 ${
                     activeGoldTab === 'nasdaq' 
                       ? 'bg-cyan-600 text-on-brand shadow-md font-bold on-accent'
                       : 'bg-surface-muted text-ink-muted border border-line hover:text-ink hover:bg-surface-raised'
@@ -1041,7 +1041,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                 <button
                   key={s.step}
                   onClick={() => setTapeStep(s.step)}
-                  className={`p-2.5 rounded-xl text-left transition-all ${
+                  className={`p-2.5 rounded-xl text-left transition-[color,background-color,border-color,box-shadow,opacity,transform] ${
                     tapeStep === s.step 
                       ? 'bg-cyan-600 text-on-brand shadow-md border border-cyan-500 font-bold on-accent'
                       : 'bg-surface-muted text-ink-muted border border-line hover:text-ink hover:bg-surface-raised'
@@ -1114,7 +1114,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
                 <button
                   key={law.num}
                   onClick={() => setSelectedLaw(law.num)}
-                  className={`p-2 rounded-xl text-left transition-all ${
+                  className={`p-2 rounded-xl text-left transition-[color,background-color,border-color,box-shadow,opacity,transform] ${
                     selectedLaw === law.num 
                       ? 'bg-amber-500 text-on-brand font-bold shadow-md'
                       : 'bg-surface-muted text-ink-muted border border-line hover:text-ink hover:bg-surface-raised'
@@ -1177,7 +1177,7 @@ export const MasoodAnimatedExplainer: React.FC<MasoodAnimatedExplainerProps> = (
           <span>Animation Progress: {Math.round(progress)}%</span>
           <div className="w-48 bg-surface-muted h-1.5 rounded-full overflow-hidden border border-line">
             <div 
-              className="bg-gradient-to-r from-cyan-500 to-blue-500 h-full rounded-full transition-all duration-75"
+              className="bg-gradient-to-r from-cyan-500 to-blue-500 h-full rounded-full transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-75"
               style={{ width: `${progress}%` }}
             />
           </div>

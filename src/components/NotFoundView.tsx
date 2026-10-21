@@ -68,7 +68,7 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({
               placeholder="Search by topic (e.g. Fair Value Gap, Liquidity, PO3)..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="w-full bg-canvas border border-ink/[0.08] rounded-xl pl-9 pr-4 py-2.5 text-xs font-sans tabular-nums text-ink placeholder-[#5f7064] focus:outline-none focus:border-brand transition-all"
+              className="w-full bg-canvas border border-ink/[0.08] rounded-xl pl-9 pr-4 py-2.5 text-xs font-sans tabular-nums text-ink placeholder-[#5f7064] focus:outline-none focus:border-brand transition-[color,background-color,border-color,box-shadow,opacity,transform]"
             />
           </div>
 
@@ -83,13 +83,13 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({
                   <button
                     key={ch.id}
                     onClick={() => onSelectChapter ? onSelectChapter(ch.id, ch.slug) : onNavigate('chapter_room')}
-                    className="w-full text-left p-2.5 rounded-lg bg-ink/[0.03] hover:bg-ink/[0.07] border border-ink/[0.06] text-xs flex items-center justify-between group transition-all cursor-pointer"
+                    className="w-full text-left p-2.5 rounded-lg bg-ink/[0.03] hover:bg-ink/[0.07] border border-ink/[0.06] text-xs flex items-center justify-between group transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer"
                   >
                     <div>
                       <span className="font-sans tabular-nums text-brand text-[0.8125rem] mr-2">CH {ch.id < 10 ? `0${ch.id}` : ch.id}</span>
                       <span className="text-ink group-hover:text-teal transition-colors">{ch.title}</span>
                     </div>
-                    <ArrowRight className="w-3.5 h-3.5 text-ink-muted group-hover:text-teal group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="w-3.5 h-3.5 text-ink-muted group-hover:text-teal group-hover:translate-x-1 transition-[color,background-color,border-color,box-shadow,opacity,transform]" />
                   </button>
                 ))}
               </div>
@@ -103,7 +103,7 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({
         
         <button
           onClick={() => onNavigate('curriculum')}
-          className="p-5 rounded-xl bg-ink/[0.02] hover:bg-ink/[0.05] border border-ink/[0.08] hover:border-brand/40 text-left space-y-2 group transition-all cursor-pointer"
+          className="p-5 rounded-xl bg-ink/[0.02] hover:bg-ink/[0.05] border border-ink/[0.08] hover:border-brand/40 text-left space-y-2 group transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer"
         >
           <div className="w-8 h-8 rounded-lg bg-brand/10 border border-brand/20 flex items-center justify-center text-brand">
             <BookOpen className="w-4 h-4" />
@@ -118,7 +118,7 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({
 
         <button
           onClick={() => onNavigate('masood')}
-          className="p-5 rounded-xl bg-ink/[0.02] hover:bg-ink/[0.05] border border-ink/[0.08] hover:border-negative/40 text-left space-y-2 group transition-all cursor-pointer"
+          className="p-5 rounded-xl bg-ink/[0.02] hover:bg-ink/[0.05] border border-ink/[0.08] hover:border-negative/40 text-left space-y-2 group transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer"
         >
           <div className="w-8 h-8 rounded-lg bg-negative/10 border border-negative/20 flex items-center justify-center text-negative">
             <Youtube className="w-4 h-4" />
@@ -133,7 +133,7 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({
 
         <button
           onClick={() => onNavigate('tools')}
-          className="p-5 rounded-xl bg-ink/[0.02] hover:bg-ink/[0.05] border border-ink/[0.08] hover:border-teal/40 text-left space-y-2 group transition-all cursor-pointer"
+          className="p-5 rounded-xl bg-ink/[0.02] hover:bg-ink/[0.05] border border-ink/[0.08] hover:border-teal/40 text-left space-y-2 group transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer"
         >
           <div className="w-8 h-8 rounded-lg bg-teal/10 border border-teal/20 flex items-center justify-center text-teal">
             <Wrench className="w-4 h-4" />
@@ -148,7 +148,7 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({
 
         <button
           onClick={() => onNavigate('welcome')}
-          className="p-5 rounded-xl bg-ink/[0.02] hover:bg-ink/[0.05] border border-ink/[0.08] hover:border-ink/30 text-left space-y-2 group transition-all cursor-pointer"
+          className="p-5 rounded-xl bg-ink/[0.02] hover:bg-ink/[0.05] border border-ink/[0.08] hover:border-ink/30 text-left space-y-2 group transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer"
         >
           <div className="w-8 h-8 rounded-lg bg-ink/[0.04] border border-ink/[0.08] flex items-center justify-center text-ink">
             <Home className="w-4 h-4" />

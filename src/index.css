@@ -203,7 +203,7 @@
   font-size: 0.8125rem;
   border-radius: 10px;
   border: 1px solid transparent;
-  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out, box-shadow 150ms ease-out, transform 150ms ease-out;
   cursor: pointer;
 }
 
@@ -225,7 +225,7 @@
   font-size: 0.8125rem;
   border-radius: 10px;
   border: 1px solid rgba(34,59,53, 0.1);
-  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out, box-shadow 150ms ease-out, transform 150ms ease-out;
   cursor: pointer;
 }
 
@@ -247,7 +247,7 @@
   font-size: 0.8125rem;
   border-radius: 10px;
   border: 1px solid rgba(34,59,53, 0.09);
-  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out, box-shadow 150ms ease-out, transform 150ms ease-out;
   cursor: pointer;
 }
 

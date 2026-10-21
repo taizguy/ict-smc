@@ -9,6 +9,7 @@
 @import "./styles/studio.css";
 @import "./styles/topic-learning.css";
 @import "./styles/navigation.css";
+@import "./styles/guided-lab.css";
 
 @theme {
   --font-sans: "Source Sans 3", system-ui, sans-serif;

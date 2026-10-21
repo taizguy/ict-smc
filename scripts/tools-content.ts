@@ -7,6 +7,7 @@ import type { RouteMeta } from './prerender';
 import { masterclassCollection } from '../src/data/masterclassData';
 import { textbookChapters } from '../src/data/chaptersData';
 import { chartScenarios } from '../src/data/chartScenarios';
+import { guidedChartRevision } from '../src/utils/guidedChartDrills';
 import { SIMULATOR_MODELS, BACKTEST_STRATEGIES, MASTERY_EXAMS, DELIVERY_SUITE_MODULES, getChartScenarioSlug } from '../src/utils/workbenchToolRoutes';
 import { FVG_GUIDANCE, OB_GUIDANCE, INTERPRETATION_GUIDANCE } from '../src/data/tradingDefinitions';
 const e=(s:unknown)=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
@@ -24,7 +25,7 @@ export function correctToolDocument(r:RouteMeta,path:string){
   r.heading=`${context}: ${guide.title}`;
   r.description=`${context}. ${guide.description}`;
   r.bodyHtml=section(guide.title,guide.paragraphs)+renderToStaticMarkup(createElement(ChapterDiagram,{chapterId:tool==='chartlab'?13:tool==='simulator'?22:38,staticOnly:true}))+`<p><a href="/tools/chartlab/">Chart Laboratory</a> · <a href="/tools/simulator/">Trade Simulator</a> · <a href="/tools/backtest/">Backtest Lab</a> · <a href="/resources/ict-smc-cheat-sheet/">Free glossary and cheat sheet</a></p>`;
-  r.schemaJson={'@type':'WebApplication',name:context,description:guide.description,url:r.canonical,applicationCategory:'EducationalApplication',operatingSystem:'Web browser',isAccessibleForFree:true,author:lessonAuthor,publisher,dateModified:'2026-10-20'};
+  r.schemaJson={'@type':'WebApplication',name:context,description:guide.description,url:r.canonical,applicationCategory:'EducationalApplication',operatingSystem:'Web browser',isAccessibleForFree:true,author:lessonAuthor,publisher,dateModified:tool==='chartlab'?guidedChartRevision:'2026-10-20'};
   return;
  }
  const evidence=section('Definitions and evidence conventions',[INTERPRETATION_GUIDANCE,FVG_GUIDANCE,OB_GUIDANCE]);

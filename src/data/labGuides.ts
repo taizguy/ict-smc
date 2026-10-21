@@ -1,6 +1,8 @@
 export const labGuides:Record<string,{title:string;description:string;paragraphs:string[]}>={
  chartlab:{title:'Visual chart recognition',description:'Identify sweeps, displacement and three-candle gaps with selectable candles and visual hints.',paragraphs:[
- 'Choose an authored scenario, select a candle and compare your observation with the stated criterion. Reveal a visual hint when needed. This is recognition practice, not a prediction score.',
+ 'Observe one event at a time. Later candles stay hidden while you identify the current pattern.',
+ 'Each task reveals only its required observation window. Sweep references come from earlier displayed candles; displacement compares open-to-close bodies in the stated window. The FVG task checks completed outer-wick non-overlap before the authored study window ends. If none qualifies, it uses the reference-area task.',
+ 'Hints are recorded only for this attempt. Nothing here is a prediction score, an independent assessment or saved account progress.',
  'The gap drill checks actual outer-candle non-overlap. When no qualifying gap is found, it uses the annotated reference area instead. A chart label does not reveal institutional orders.',
  ]},
  simulator:{title:'Candle-by-candle decision practice',description:'Lock a plan before revealing future candles. Explore stops, targets, gaps and the choice not to trade.',paragraphs:[

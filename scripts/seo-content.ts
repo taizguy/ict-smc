@@ -5,6 +5,8 @@ import { CurriculumReview } from '../src/components/CurriculumReview';
 import { ChapterDiagram } from '../src/components/ChapterDiagram';
 import { CheatSheetPage } from '../src/components/CheatSheetPage';
 import { PricePlayground } from '../src/components/PricePlayground';
+import { SearchFocusGuide } from '../src/components/SearchFocusGuide';
+import { focusPaths, searchFocusRevision, type SearchFocusKind } from '../src/data/searchFocus';
 import { chapterIllustrationRevision } from '../src/data/chapters/diagrams';
 import { ReviewedModelSource } from '../src/components/ReviewedModelSource';
 import { reviewedModelSources } from '../src/data/reviewedModelSources';
@@ -203,6 +205,11 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
       citation: review.sources.map(source => ({ '@type': 'CreativeWork', name: source.title, url: source.url })) };
   }
   if (/^\/(learn|masood|tools)\//.test(path) && !r.isNoindex) r.bodyHtml += notice;
+  const focusKind = (Object.keys(focusPaths) as SearchFocusKind[]).find(key => focusPaths[key] === path);
+  if (focusKind) {
+    r.bodyHtml = renderToStaticMarkup(createElement(SearchFocusGuide, { kind: focusKind })) + r.bodyHtml;
+    if (r.schemaJson) r.schemaJson = { ...r.schemaJson, dateModified: searchFocusRevision.iso };
+  }
   const parentRoutes = routes.filter(c => c !== r && c.canonical !== 'https://learnsmc.xyz/' &&
     path.startsWith(new URL(c.canonical).pathname)).sort((a, b) => a.canonical.length - b.canonical.length);
   const crumbs = [{ name: 'Home', url: 'https://learnsmc.xyz/' },
@@ -210,13 +217,17 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
     ...(path === '/' ? [] : [{ name: r.heading, url: r.canonical }])];
   if (path !== '/') r.bodyHtml = `<nav aria-label="Breadcrumb">${crumbs.map(c => link(new URL(c.url).pathname, c.name)).join(' / ')}</nav>` + r.bodyHtml;
   if (['/', '/curriculum/', '/about/', '/contact/'].includes(path) || path.startsWith('/tools/compare/')) {
-    const revision = path === '/curriculum/' || path === '/' ? chapterIllustrationRevision : publisherPageRevision;
+    const revision = focusKind ? { iso: searchFocusRevision.iso, label: searchFocusRevision.iso } : path === '/curriculum/' || path === '/' ? chapterIllustrationRevision : publisherPageRevision;
     r.bodyHtml += `<p>Page updated: <time datetime="${revision.iso}">${revision.label}</time>. ` + link('/about/#editorial-policy', 'Editorial policy') + '</p>';
     if (r.schemaJson) r.schemaJson = { ...r.schemaJson, dateModified: publisherPageRevision.iso };
   }
   if (r.bodyHtml.includes('data-chapter-diagram=')) r.schemaJson = {
     ...(r.schemaJson || { '@type': children.length ? 'CollectionPage' : 'WebPage', name:r.heading, description:r.description, url:r.canonical, publisher }),
     dateModified: chapterIllustrationRevision.iso,
+  };
+  if (focusKind) r.schemaJson = {
+    ...(r.schemaJson || { '@type': focusKind === 'fvg' ? 'LearningResource' : 'CollectionPage', name:r.heading, description:r.description, url:r.canonical, publisher }),
+    dateModified: searchFocusRevision.iso,
   };
   r.schemaJson = { '@context': 'https://schema.org', '@graph': [publisher, lessonAuthor,
     { '@type': 'WebSite', '@id': 'https://learnsmc.xyz/#website', name: 'LearnSMC', url: 'https://learnsmc.xyz/' },

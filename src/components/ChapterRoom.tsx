@@ -2,6 +2,7 @@ import { conciseHeading, studyTopics } from '../utils/searchMetadata';
 import { FinancialDisclaimer } from './FinancialDisclaimer';
 import { CurriculumReview } from './CurriculumReview';
 import { ChapterDiagram } from './ChapterDiagram';
+import { SearchFocusGuide } from './SearchFocusGuide';
 import { MentorshipLessonNav } from './MentorshipLessonNav';
 import { mentorshipTracks, mentorshipLessonPath } from '../data/mentorshipTracks';
 import { currentDocumentHref } from '../i18n/navigation';
@@ -378,6 +379,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
             </div>
           </div>
 
+          {chapter.id === 13 && <SearchFocusGuide kind="fvg" />}
           <ChapterDiagram key={chapter.id} chapterId={chapter.id} />
           {/* Scene Tabs Selector */}
           <div className="pt-4 border-t border-ink/[0.07]">

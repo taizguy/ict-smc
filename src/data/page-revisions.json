@@ -61,8 +61,8 @@
       "fingerprint": "a3981a6f0d354649d9ff01b73ab1b56273f0b87f240fbfc193da6ff9e6f8aa89"
     },
     "/curriculum/": {
-      "fingerprint": "203062c23e61414c67233436b1b3f766ac25275f3bacf1a649a149bd67f7ade0",
-      "lastmod": "2026-10-20",
+      "fingerprint": "fbaf35e0904c4a3e18e6ff9aaa74c4315311087c44586a2c4631c836908ace4d",
+      "lastmod": "2026-10-21",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/advanced-2025-2026-institutional-delivery-systems-tape-reading/": {
@@ -249,8 +249,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/fair-value-gaps-fvg-and-consequent-encroachment/": {
-      "fingerprint": "e65204bb63bfa5b09eb2eb005c87ebda73778ac63c7e7f1d0a77471d2b7fc714",
-      "lastmod": "2026-10-20",
+      "fingerprint": "267122864545870e91ec1353bbd4d2de29c2d39df39485d872ded5b77d887299",
+      "lastmod": "2026-10-21",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/how-an-exchange-matches-orders/": {
@@ -1173,7 +1173,9 @@
       "fingerprint": "b8ca88b4d68a77718b3b287a1352ed3dad95a1ff5c0ed3d70137d1b0fcaf63f9"
     },
     "/tools/masterclass/": {
-      "fingerprint": "b25e85dc66d335c735161c77eb9c8496c5c7cf0bd63be1a098cf154d5b909c39"
+      "fingerprint": "25ab6a79c154474099d3f7077ff628dbded7a801204e0ce75545006545c6a674",
+      "lastmod": "2026-10-21",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/masterclass/core-masterclasses/": {
       "fingerprint": "dbf4442bfa1d6ee1838274f8bd8fffb1373775f5ed6973114ab0a3ec022dd877"
@@ -1354,8 +1356,8 @@
       "fingerprint": "f4938e663130a217b08d5797305d44c79bd9c615d4d117c91e7a0edf28d56748"
     },
     "/ur/curriculum/": {
-      "fingerprint": "34c4a833f4a731d77f7679e62c490c091e70d79830495c15e9393aad6b4793f7",
-      "lastmod": "2026-10-20",
+      "fingerprint": "a5f3b68c91f20e24f16a9ef856effa891c35d453a2cccab3139e46ffbb77f176",
+      "lastmod": "2026-10-21",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/advanced-2025-2026-institutional-delivery-systems-tape-reading/": {
@@ -1542,8 +1544,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/fair-value-gaps-fvg-and-consequent-encroachment/": {
-      "fingerprint": "6c279893d1b0731ecac1b9ef63d8fc13e6ce98bf4286a681dc8599ad2a35bcdc",
-      "lastmod": "2026-10-20",
+      "fingerprint": "05d663b25135ac96470421ef658941d90307688adae95c392af41bc57003dbac",
+      "lastmod": "2026-10-21",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/how-an-exchange-matches-orders/": {
@@ -2466,7 +2468,9 @@
       "fingerprint": "f178efbbb1477d19adcdf4321afd5b62103c90f7c60f61695412b5676071bc55"
     },
     "/ur/tools/masterclass/": {
-      "fingerprint": "3c4734d048f518461eb43559bab517ab8915d3f530f2bc5ce43010fd0cb5280f"
+      "fingerprint": "aacf5f6a756996c96711356e291a0209015b7203275fa44499db151b99f02804",
+      "lastmod": "2026-10-21",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/masterclass/core-masterclasses/": {
       "fingerprint": "8579863c1ed1e3d26a41864a15dd98cc1ce2c7b010b37ba0dc19e0ca1888a696"

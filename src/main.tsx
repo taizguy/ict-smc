@@ -41,3 +41,4 @@ if (document.documentElement.dataset.appStartup !== 'fallback') {
 }
 
 import './styles/playground.css';
+import './styles/search-focus.css';

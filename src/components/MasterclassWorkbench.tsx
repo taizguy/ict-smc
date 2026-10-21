@@ -4,6 +4,7 @@ import { currentDocumentHref } from '../i18n/navigation';
 import { useToolStorage, isBooleanRecord } from '../hooks/useToolStorage';
 import { ToolContentNotice } from './ToolContentNotice';
 import { ReviewedModelSource } from './ReviewedModelSource';
+import { SearchFocusGuide } from './SearchFocusGuide';
 import React, { useState, useEffect } from 'react';
 import { 
   Flame, 
@@ -146,6 +147,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
         ]}
       />
       <ToolContentNotice />
+      {!initialModuleSlug && (!initialCategory || initialCategory === 'all') && <SearchFocusGuide kind="masterclass" />}
       {ruleStorage.error && <p role="alert">{ruleStorage.error}</p>}
       {/* Top Banner: Masterclass Philosophy */}
       <div className="bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-7 relative overflow-hidden">

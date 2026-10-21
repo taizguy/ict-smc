@@ -16,6 +16,7 @@ import { BauhausNavScroller } from './BauhausNavScroller';
 import { ScrollReveal } from './ScrollReveal';
 import { MentorshipsTeaser, MentorshipsView } from './MentorshipsView';
 import { ChapterDiagram } from './ChapterDiagram';
+import { SearchFocusGuide } from './SearchFocusGuide';
 import { chapterIllustrationRevision } from '../data/chapters/diagrams';
 
 interface CurriculumViewProps {
@@ -96,7 +97,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
               <div className="space-y-1">
                 <h1 className="predikt-section-title">{selectedPart === 'all' ? <AccentText text="ICT & SMC Syllabus" focus="Syllabus" urduFocus="نصاب" tone="violet"/> : selectedPart}</h1>
                 <p className="text-sm sm:text-base text-ink-secondary leading-relaxed max-w-2xl font-normal pt-1">
-                  The complete {chapterCount}-chapter institutional trading curriculum organized with rigorous technical hierarchy. Examine order flow, liquidity voids, and algorithmic delivery with zero artificial barriers.
+                  {translateSearch('Study ICT and Smart Money Concepts with free lessons, original diagrams and chart exercises. Start with market foundations, then learn structure, liquidity and price patterns at your own pace.')}
                 </p>
               </div>
 
@@ -168,6 +169,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
         </section>
       </ScrollReveal>
 
+      {selectedPart === 'all' && <SearchFocusGuide kind="curriculum" />}
       {/* Part Filter Section */}
       <ScrollReveal y={20} delay={0.1}>
         <section className="space-y-3">

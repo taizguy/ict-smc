@@ -1,4 +1,5 @@
 import { publisherUrdu } from './publisher-urdu';
+import { searchFocusUrdu } from '../data/searchFocus';
 import mentorshipUrdu from './mentorships-urdu.json';
 import diagramUrdu from './diagrams-urdu.json';
 import learningUpdate from './learning-update-urdu.json';
@@ -13,6 +14,7 @@ import chapterHeadings from './chapter-headings-urdu.json';
 import { refineTradingLanguage } from './trading-language';
 /** Original Urdu translations. Keys are exact English source text, never route IDs or calculation values. */
 export const urdu: Record<string, string> = {
+  'Study ICT and Smart Money Concepts with free lessons, original diagrams and chart exercises. Start with market foundations, then learn structure, liquidity and price patterns at your own pace.': 'مفت اسباق، اصل خاکوں اور چارٹ مشقوں کے ساتھ ICT اور Smart Money Concepts سیکھیں۔ مارکیٹ کی بنیادوں سے شروع کریں، پھر اپنی رفتار سے اسٹرکچر، لیکویڈیٹی اور قیمت کے پیٹرن سمجھیں۔',
   'Don’t just read price. Explore it.': 'صرف قیمت پڑھیں نہیں۔ اسے سمجھیں۔',
   'The Price Playground': 'پرائس پلے گراؤنڈ',
   'PRICE IS A STORY.': 'قیمت ایک کہانی ہے۔',
@@ -40,6 +42,7 @@ export const urdu: Record<string, string> = {
   ...curriculumCorrections,
   ...mentorshipUrdu,
   ...curriculumReviewUrdu,
+  ...searchFocusUrdu,
   'Search concepts, chapters, algorithms (FVG, OB, AMD)...': 'تصورات، ابواب اور ماڈلز تلاش کریں (FVG، OB، AMD)…',
   'Close Search (Esc)': 'تلاش بند کریں (Esc)',
   'ENCYCLOPEDIA CONCEPTS': 'اصطلاحات اور تصورات',

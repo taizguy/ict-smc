@@ -501,7 +501,7 @@ const curriculumHubPage: RouteMeta = {
   description: 'Explore the complete 57-chapter institutional trading curriculum covering Market Structure, Liquidity Sweeps, Fair Value Gaps, PO3, and Algorithmic Execution.',
   canonical: 'https://learnsmc.xyz/curriculum/',
   heading: 'The 57-Chapter Institutional Curriculum',
-  subheading: 'Master algorithmic price delivery, market microstructure, and high-probability trade execution protocols.',
+  subheading: 'Study ICT and Smart Money Concepts with free lessons, original diagrams and chart exercises. Start with market foundations, then learn structure, liquidity and price patterns at your own pace.',
   badge: 'Complete Syllabus Overview',
   bodyHtml: `
     <section style="margin-bottom: 2rem;">

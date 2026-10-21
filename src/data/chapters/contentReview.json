@@ -1,0 +1,1017 @@
+{
+  "2": {
+    "sections": {
+      "1": {
+        "content": "A resting limit order can supply liquidity; a marketable order takes available liquidity. Maker–taker venues can rebate posted liquidity, while inverted venues charge for posting. Fees depend on the venue, product, participant and tier. Check the actual schedule rather than assuming every maker is paid.\n\nQuotes can be added, cancelled or repriced. A fast chart move does not establish which firm withdrew quotes or prove that a three-candle FVG contains no executed trades.",
+        "keyTakeaway": "A resting limit order can supply liquidity; a marketable order takes available liquidity."
+      },
+      "2": {
+        "content": "Cumulative Volume Delta (CVD) accumulates a feed’s classification of buyer-initiated minus seller-initiated executed volume. Price and delta may diverge. Repeated selling without a lower traded price can motivate an absorption hypothesis, but does not identify an institution or guarantee a reversal.\n\nRecord the feed, classification method, reset time and instrument. Spot-FX broker volume is not consolidated exchange-wide volume. Compare continuation and failed-reversal cases as well as attractive examples.",
+        "keyTakeaway": "Cumulative Volume Delta (CVD) accumulates a feed’s classification of buyer-initiated minus seller-initiated executed volume."
+      }
+    },
+    "keyTerms": [
+      {
+        "term": "Price–time priority",
+        "definition": "A matching convention that prioritizes price, then arrival time at that price; the product may use another allocation algorithm."
+      },
+      {
+        "term": "Maker–taker pricing",
+        "definition": "A venue fee structure that distinguishes adding from removing liquidity; rebates are not universal."
+      },
+      {
+        "term": "Cumulative Volume Delta (CVD)",
+        "definition": "Cumulative classified buyer-initiated volume minus seller-initiated volume for a stated feed and reset interval."
+      },
+      {
+        "term": "Absorption hypothesis",
+        "definition": "An interpretation of executed flow and limited price progress; it does not establish participant identity."
+      }
+    ],
+    "summary": [
+      "A resting limit order can supply liquidity; a marketable order takes available liquidity.",
+      "Cumulative Volume Delta (CVD) accumulates a feed’s classification of buyer-initiated minus seller-initiated executed volume."
+    ]
+  },
+  "3": {
+    "sections": {
+      "0": {
+        "content": "Market-data products expose different information: top-of-book prices, aggregated depth or order-level messages. Availability, latency, hidden quantity and venue coverage vary. Displayed depth is not the whole market or a record of every stop order.\n\nA large quote can disappear through execution, cancellation or amendment. The disappearance alone does not establish spoofing intent. Compare quote messages with trades where available, and state what the feed omits.",
+        "keyTakeaway": "Market-data products expose different information: top-of-book prices, aggregated depth or order-level messages."
+      },
+      "1": {
+        "content": "TWAP distributes execution over a stated time schedule; VWAP execution seeks a volume-weighted benchmark using a chosen participation profile. An iceberg displays only part of its total quantity under the venue’s rules. None eliminates market impact or guarantees a benchmark fill.\n\nThese are execution concepts, not candle-reading proof. An order-block rectangle cannot identify a particular execution algorithm, its remaining inventory or the participant using it.",
+        "keyTakeaway": "TWAP distributes execution over a stated time schedule; VWAP execution seeks a volume-weighted benchmark using a chosen participation profile."
+      }
+    },
+    "summary": [
+      "Market-data products expose different information: top-of-book prices, aggregated depth or order-level messages.",
+      "TWAP distributes execution over a stated time schedule; VWAP execution seeks a volume-weighted benchmark using a chosen participation profile."
+    ],
+    "quote": "Market-data products expose different information: top-of-book prices, aggregated depth or order-level messages.",
+    "keyTerms": [
+      {
+        "term": "Market-data coverage",
+        "definition": "The information a particular feed exposes, including covered venues, price levels, aggregation and hidden-quantity limitations."
+      },
+      {
+        "term": "Execution benchmark",
+        "definition": "A defined reference measure used to compare execution, such as a time-weighted or volume-weighted average price; matching it is not guaranteed."
+      }
+    ],
+    "title": "The Order Book in Depth — Data Feeds & Execution Algorithms"
+  },
+  "4": {
+    "sections": {
+      "0": {
+        "content": "Market liquidity concerns the ability to transact a stated quantity at available prices with associated spread and price impact. ICT’s buy-side and sell-side labels instead mark hypothesized order interest beyond selected highs and lows. Keep these two uses of liquidity distinct.\n\nA visible high is an observable reference. The number, ownership and exact prices of stops beyond it are not visible in an OHLC candle. Select the reference before the later breach.",
+        "keyTakeaway": "Market liquidity concerns the ability to transact a stated quantity at available prices with associated spread and price impact."
+      },
+      "1": {
+        "content": "A sweep study records a trade beyond a previously selected high or low, followed by a specified response. State whether a wick or close counts and how long a return may take. A breach can continue rather than reverse.\n\nTriggered stop-market orders and stop-limit orders behave differently. Execution price, available quantity and slippage are not established by the sweep label. A return inside the range does not prove that every stop was filled or reveal who took the other side.",
+        "keyTakeaway": "A sweep study records a trade beyond a previously selected high or low, followed by a specified response."
+      },
+      "2": {
+        "content": "Within a selected dealing range, an internal reference may be an FVG or another chosen price interval; external references may be the range extremes. This is a chart framework, not a closed-loop law requiring price to alternate between them.\n\nMark the boundaries and observation horizon in advance. Record a return, partial return, continuation and no return separately. Moving the range afterward changes the study and can hide failed hypotheses.",
+        "title": "4.3 Internal and External Range References",
+        "keyTakeaway": "Within a selected dealing range, an internal reference may be an FVG or another chosen price interval; external references may be the range extremes."
+      }
+    },
+    "keyTerms": [
+      {
+        "term": "Buy-side reference",
+        "definition": "A selected high or group of highs used to study a possible breach; resting buy stops are a hypothesis, not measured quantity."
+      },
+      {
+        "term": "Sell-side reference",
+        "definition": "A selected low or group of lows used to study a possible breach without assuming a reversal."
+      },
+      {
+        "term": "Internal range reference",
+        "definition": "A selected price interval inside a defined dealing range."
+      },
+      {
+        "term": "External range reference",
+        "definition": "A selected boundary of the same dealing range; the range must be named."
+      }
+    ],
+    "summary": [
+      "Market liquidity concerns the ability to transact a stated quantity at available prices with associated spread and price impact.",
+      "A sweep study records a trade beyond a previously selected high or low, followed by a specified response.",
+      "Within a selected dealing range, an internal reference may be an FVG or another chosen price interval; external references may be the range extremes."
+    ],
+    "quote": "Market liquidity concerns the ability to transact a stated quantity at available prices with associated spread and price impact."
+  },
+  "5": {
+    "sections": {
+      "0": {
+        "content": "A candle records the open, high, low and close over a specified interval and feed. Its body spans open to close; its wicks show the remaining extremes. These four values do not show where most volume traded, the exact intrabar path or participant identity.\n\nCheck whether the chart uses trades, bids, asks or another price series. Two feeds or session boundaries can produce different candles without either candle proving manipulation.\n\nA wick crossing a level and a body close beyond it are different observations. Choose the rule required by the particular lesson. The reviewed 2022 Episode 3 discussion does not require a universal body-close rule for every initial structure crossing.\n\nA wick is not automatically a false move, and a body close is not proof of genuine institutional intent. Record the initial crossing and later candle completion separately rather than deciding which one counted after seeing the outcome.",
+        "keyTakeaway": "A candle records the open, high, low and close over a specified interval and feed."
+      },
+      "1": {
+        "content": "Displacement describes a relatively strong move under a stated measurement convention. For example, compare body size or range with a prior sample on the same instrument and timeframe. No universal candle count, wick size or volume threshold is supplied here.\n\nA completed three-candle FVG is a separate geometric observation. Strong movement can occur without that pattern, and its presence does not identify a bank or guarantee a later retracement. Define the measure before replay.",
+        "keyTakeaway": "Displacement describes a relatively strong move under a stated measurement convention."
+      }
+    },
+    "keyTerms": [
+      {
+        "term": "Candle body",
+        "definition": "The price interval between a candle’s open and close, not a volume profile."
+      },
+      {
+        "term": "Wick",
+        "definition": "The part of the high–low range outside the body; it does not reveal motive."
+      },
+      {
+        "term": "OHLC",
+        "definition": "Open, high, low and close for a stated interval and feed; their values do not encode the full price path."
+      },
+      {
+        "term": "Displacement",
+        "definition": "A relatively strong price movement measured using an explicitly chosen reference."
+      }
+    ],
+    "summary": [
+      "A candle records the open, high, low and close over a specified interval and feed.",
+      "Displacement describes a relatively strong move under a stated measurement convention."
+    ],
+    "quote": "A candle records the open, high, low and close over a specified interval and feed."
+  },
+  "7": {
+    "sections": {
+      "2": {
+        "content": "A swing’s role depends on the timeframe and selection rule. A minor break may be a local retracement or part of a wider reversal; neither label is known with certainty from the break alone. Higher-timeframe references provide context, not an infallible hierarchy.\n\nFreeze the three-candle pivot rule, tie handling and confirmation delay. A pivot requiring a right-hand candle is not available before that candle forms. Compare how the same event appears on two timeframes without backdating the signal.",
+        "keyTakeaway": "A swing’s role depends on the timeframe and selection rule."
+      }
+    }
+  },
+  "9": {
+    "sections": {
+      "0": {
+        "content": "For this study, a bullish continuation BOS is a break above a selected prior swing high within an already defined upward structure; reverse the logic for bearish continuation. State whether an intrabar crossing or a completed close qualifies.\n\nA break is an observable price event, not proof that institutions control the next move. Displacement and a completed FVG can be additional conditions in a named variation, but are not automatically present after every break.",
+        "keyTakeaway": "For this study, a bullish continuation BOS is a break above a selected prior swing high within an already defined upward structure; reverse the logic for bearish continuation."
+      },
+      "1": {
+        "content": "A protected swing is the reference whose breach would contradict your stated structural interpretation. Weak high or weak low is a framework label for a candidate objective. Neither describes a level that cannot break or a target that must be reached.\n\nSelect the reference while it is visible, record its timestamp, and define wick-versus-close invalidation. Different swing selection can change the label; disclose that judgment rather than moving the reference after a losing example.",
+        "keyTakeaway": "A protected swing is the reference whose breach would contradict your stated structural interpretation."
+      },
+      "2": {
+        "content": "A breakout entry and a retracement entry are distinct research variations. Waiting for a return to a completed FVG may change price, stop distance and fill frequency; the return may never occur. Neither method has a verified advantage established by this chapter.\n\nSpecify order type, expiry, invalidation and costs before replay. Keep unfilled orders and failed continuations in the sample. A close beyond structure does not make a stop safe or establish positive expectancy.",
+        "title": "9.3 Breakout and Retracement Entry Variations",
+        "keyTakeaway": "A breakout entry and a retracement entry are distinct research variations."
+      }
+    },
+    "summary": [
+      "For this study, a bullish continuation BOS is a break above a selected prior swing high within an already defined upward structure; reverse the logic for bearish continuation.",
+      "A protected swing is the reference whose breach would contradict your stated structural interpretation.",
+      "A breakout entry and a retracement entry are distinct research variations."
+    ],
+    "quote": "For this study, a bullish continuation BOS is a break above a selected prior swing high within an already defined upward structure; reverse the logic for bearish continuation.",
+    "keyTerms": [
+      {
+        "term": "Continuation BOS",
+        "definition": "A break of a selected prior swing in the direction of a previously defined trend, under a stated wick-or-close rule."
+      },
+      {
+        "term": "Protected swing",
+        "definition": "The selected swing whose breach would contradict the stated structural interpretation; protected does not mean unbreakable."
+      },
+      {
+        "term": "Entry variation",
+        "definition": "A separately documented change to an entry condition, order type, price or timing, evaluated with its own fill assumptions."
+      }
+    ],
+    "title": "Break of Structure (BOS): Continuation Rules & Limitations"
+  },
+  "10": {
+    "sections": {
+      "0": {
+        "content": "CHoCH is used here for a first break against a previously selected local structural direction. For example, a selected internal low breaks during an upward sequence. This flags a change to investigate, not a confirmed new downtrend.\n\nChoose the swing and wick-or-close rule in advance. The same local event may be a retracement on a wider chart. A candle chart cannot establish whether the move came from profit taking, new positions or a particular institution.",
+        "keyTakeaway": "CHoCH is used here for a first break against a previously selected local structural direction."
+      },
+      "1": {
+        "content": "CHoCH and MSS are used differently across trading communities and source lessons. Do not impose a universal hierarchy in which one label mathematically verifies a regime change. The separate MSS chapter records the reviewed source’s crossing and displacement conventions.\n\nWrite which event you mean: crossing a chosen swing, closing beyond it, or completing an FVG. Higher-timeframe location can be a context filter in your selected variation; it does not prove the next direction.",
+        "keyTakeaway": "CHoCH and MSS are used differently across trading communities and source lessons."
+      },
+      "2": {
+        "content": "An earlier entry can have a different fill price and failure rate from an entry deferred until more candles complete. A smaller planned stop or larger reward-to-risk ratio does not establish a better outcome. No comparative win rate is verified here.\n\nKeep the variants separate and apply the same transaction-cost assumptions. Save the information visible at each decision. Include false breaks and missed entries rather than comparing only completed winners.",
+        "keyTakeaway": "An earlier entry can have a different fill price and failure rate from an entry deferred until more candles complete."
+      }
+    },
+    "summary": [
+      "CHoCH is used here for a first break against a previously selected local structural direction.",
+      "CHoCH and MSS are used differently across trading communities and source lessons.",
+      "An earlier entry can have a different fill price and failure rate from an entry deferred until more candles complete."
+    ],
+    "quote": "CHoCH is used here for a first break against a previously selected local structural direction.",
+    "keyTerms": [
+      {
+        "term": "CHoCH",
+        "definition": "A first selected local structural break against the preceding direction; it can be a retracement rather than a wider reversal."
+      },
+      {
+        "term": "Confirmation convention",
+        "definition": "The explicit event used to recognize a condition, such as an intrabar crossing or a completed close beyond a chosen boundary."
+      },
+      {
+        "term": "Entry timing",
+        "definition": "The moment an entry condition becomes actionable using information available then; waiting for more evidence creates a different variation."
+      }
+    ]
+  },
+  "14": {
+    "sections": {
+      "0": {
+        "content": "An inversion FVG study begins with an already completed FVG and its saved boundaries. Under a selected close-through rule, a breach invalidates its original directional use. A later return from the other side can be studied as a role-change hypothesis.\n\nThe zone is not an emptied order book or unbreakable support/resistance. Specify the exact breach boundary and candle-completion rule. An intrabar excursion and a close beyond the far boundary are different conditions.",
+        "keyTakeaway": "An inversion FVG study begins with an already completed FVG and its saved boundaries."
+      },
+      "1": {
+        "content": "For a bearish example, preserve a bullish FVG, wait for the chosen close below its lower boundary, and observe any later retest from below. Record no retest as no entry under that variant. A return can fail rather than reject.\n\nChoose invalidation separately, such as a specified close beyond the upper boundary; do not silently switch to a midpoint rule after entry. Compare filled, unfilled and failed examples. This chapter supplies no independently verified superior win rate or drawdown.",
+        "keyTakeaway": "For a bearish example, preserve a bullish FVG, wait for the chosen close below its lower boundary, and observe any later retest from below."
+      }
+    },
+    "summary": [
+      "An inversion FVG study begins with an already completed FVG and its saved boundaries.",
+      "For a bearish example, preserve a bullish FVG, wait for the chosen close below its lower boundary, and observe any later retest from below."
+    ],
+    "quote": "An inversion FVG study begins with an already completed FVG and its saved boundaries.",
+    "keyTerms": [
+      {
+        "term": "Inversion FVG",
+        "definition": "A saved completed FVG studied for a possible opposite role after the selected breach criterion is met; a retest can fail."
+      },
+      {
+        "term": "Close-through rule",
+        "definition": "A qualification rule requiring a completed candle close beyond an explicitly named boundary; a wick alone does not satisfy it."
+      }
+    ]
+  },
+  "16": {
+    "sections": {
+      "0": {
+        "content": "A bearish breaker illustration uses a high, low, higher high beyond the first high, and a later break below the intervening low. The selected up-close reference region is then watched on a possible return from below. A bullish illustration reverses the direction.\n\nSave the swing-selection rule, reference candle or run, and breach criterion. The pattern describes prices; trapped institutional positions are an interpretation. No lowest-drawdown or highest-expectancy claim is established by the shape.",
+        "keyTakeaway": "A bearish breaker illustration uses a high, low, higher high beyond the first high, and a later break below the intervening low."
+      },
+      "1": {
+        "content": "In this teaching distinction, a breaker includes a sweep of the selected preceding extreme; a mitigation-block illustration uses a failure to exceed that extreme before the structural break. Terminology and boundary conventions must remain tied to the chosen source.\n\nNeither geometry proves that orders unwind at breakeven. Identify the swing sequence before selecting an entry region, and retain examples that never return or continue through the region.",
+        "keyTakeaway": "In this teaching distinction, a breaker includes a sweep of the selected preceding extreme; a mitigation-block illustration uses a failure to exceed that extreme before the structural break."
+      },
+      "2": {
+        "content": "A Unicorn study combines a selected breaker reference with an overlapping completed FVG. Check the actual price intervals: two labels on nearby rectangles do not establish overlap. Preserve when each condition first became visible.\n\nAn overlap is confluence within a framework, not a requirement for price to rebalance or evidence of a superior win rate. Specify the entry, stop, expiry and costs for your variation. A tightly placed stop can be reached before any later move.",
+        "keyTakeaway": "A Unicorn study combines a selected breaker reference with an overlapping completed FVG."
+      }
+    },
+    "summary": [
+      "A bearish breaker illustration uses a high, low, higher high beyond the first high, and a later break below the intervening low.",
+      "In this teaching distinction, a breaker includes a sweep of the selected preceding extreme; a mitigation-block illustration uses a failure to exceed that extreme before the structural break.",
+      "A Unicorn study combines a selected breaker reference with an overlapping completed FVG."
+    ],
+    "quote": "A bearish breaker illustration uses a high, low, higher high beyond the first high, and a later break below the intervening low.",
+    "keyTerms": [
+      {
+        "term": "Bearish breaker sequence",
+        "definition": "In this illustration: high, intervening low, higher high beyond the first high, then a break below that intervening low."
+      },
+      {
+        "term": "Mitigation-block distinction",
+        "definition": "In the chosen teaching distinction, price fails to exceed the prior extreme before the structural break, rather than sweeping it as in the breaker example."
+      },
+      {
+        "term": "Unicorn confluence",
+        "definition": "An overlap between a selected breaker reference and an independently completed FVG; the overlap alone does not establish a trading advantage."
+      }
+    ],
+    "title": "Breaker Blocks: Swing Sequence, Mitigation & Unicorn"
+  },
+  "23": {
+    "sections": {
+      "0": {
+        "content": "This chapter is LearnSMC’s independent study guide to the linked Abdullah Masood material, not a verified biography, endorsement or record of his trading performance. Keep his video attribution separate from LearnSMC authorship.\n\nOrganize an example by directional hypothesis, selected liquidity reference, observation time and entry condition. These are study questions, not proof of a mechanical four-pillar system with a guaranteed daily result. Use the linked lesson to check a particular teaching claim.",
+        "keyTakeaway": "This chapter is LearnSMC’s independent study guide to the linked Abdullah Masood material, not a verified biography, endorsement or record of his trading performance."
+      },
+      "1": {
+        "content": "For a gold example, first record the exact symbol, broker or exchange, quote increment and value per unit. A pip label is not a universal dollar move, and gold CFD specifications are not automatically futures specifications.\n\nAn FVG midpoint or an order-block reference can define a research entry, but neither establishes exceptional profitability. A news waiting period is a chosen restriction, not proof that spreads or fills become safe afterward. Record costs, invalidation and unfilled orders.",
+        "keyTakeaway": "For a gold example, first record the exact symbol, broker or exchange, quote increment and value per unit."
+      },
+      "2": {
+        "content": "Inducement is an interpretation that a selected nearer swing could attract orders before price reaches another reference. Mark the nearer and farther references before the move; a chart does not reveal who placed orders or deliberately trapped another trader.\n\nDo not turn the label into a rule that the first order block must fail. Compare first reactions, later reactions, continuations and no-return examples under the same entry and expiry rules.",
+        "keyTakeaway": "Inducement is an interpretation that a selected nearer swing could attract orders before price reaches another reference."
+      },
+      "3": {
+        "content": "SMT compares corresponding highs or lows in specified related markets over aligned times. A divergence may be visible and later disappear; correlation varies and does not establish immediate institutional intent.\n\nDefine the market condition and selected price reference before considering a trade. The midnight opening price is a time-and-price reference, while premium or discount is measured against the midpoint of a named range. They are not interchangeable definitions. Keep uncertainty visible even when several labels agree.",
+        "keyTakeaway": "SMT compares corresponding highs or lows in specified related markets over aligned times."
+      }
+    },
+    "summary": [
+      "This chapter is LearnSMC’s independent study guide to the linked Abdullah Masood material, not a verified biography, endorsement or record of his trading performance.",
+      "For a gold example, first record the exact symbol, broker or exchange, quote increment and value per unit.",
+      "Inducement is an interpretation that a selected nearer swing could attract orders before price reaches another reference.",
+      "SMT compares corresponding highs or lows in specified related markets over aligned times."
+    ],
+    "quote": "This chapter is LearnSMC’s independent study guide to the linked Abdullah Masood material, not a verified biography, endorsement or record of his trading performance.",
+    "keyTerms": [
+      {
+        "term": "Directional hypothesis",
+        "definition": "A provisional bullish, bearish or neutral interpretation with explicit evidence and invalidation, not a known future direction."
+      },
+      {
+        "term": "Product increment",
+        "definition": "A product’s permitted price or position-size step; identify which unit is meant before using it in a sizing calculation."
+      },
+      {
+        "term": "Inducement",
+        "definition": "An interpretation that a selected nearer reference may attract orders before another level; deliberate trapping is not visible in candles."
+      },
+      {
+        "term": "SMT comparison",
+        "definition": "A comparison of corresponding highs or lows in specified related markets over aligned times; an apparent divergence may disappear."
+      }
+    ]
+  },
+  "28": {
+    "sections": {
+      "1": {
+        "content": "A 20-day lookback is a selected research window. State its anchor, trading calendar and whether the current incomplete day is excluded. Mark the high, low and candidate prior references using only data available at that point.\n\nThe midpoint partitions that chosen range into premium and discount. It is not an inventory measurement or a reason price must reverse. Rolling the window or selecting a different anchor changes the references and must be recorded.",
+        "keyTakeaway": "A 20-day lookback is a selected research window."
+      },
+      "2": {
+        "content": "Treat an OTE retracement, an FVG return and an order-block return as separately specified entry variations unless the linked source explicitly combines them. A familiar Fibonacci percentage does not by itself authenticate the original Model 1 trade plan.\n\nBefore replay, state the reference swing, entry order and invalidation. A one- or two-tick buffer and an automatic breakeven move are not universally suitable. Product increment, spread and slippage change the execution assumptions.",
+        "keyTakeaway": "Treat an OTE retracement, an FVG return and an order-block return as separately specified entry variations unless the linked source explicitly combines them."
+      },
+      "3": {
+        "content": "A partial exit realizes profit or loss on only the closed portion; a stop modification changes the remaining order’s exposure without realizing that amount. Keep these actions distinct when comparing the original plan and a research variation.\n\nFixed exit splits and pip distances are not universal evidence of positive expectancy. Record all orders, costs, missed fills and the final net outcome. Three orders sharing one idea still contribute to one combined risk budget.",
+        "keyTakeaway": "A partial exit realizes profit or loss on only the closed portion; a stop modification changes the remaining order’s exposure without realizing that amount."
+      }
+    },
+    "summary": [
+      "A 20-day lookback is a selected research window.",
+      "Treat an OTE retracement, an FVG return and an order-block return as separately specified entry variations unless the linked source explicitly combines them.",
+      "A partial exit realizes profit or loss on only the closed portion; a stop modification changes the remaining order’s exposure without realizing that amount."
+    ]
+  },
+  "29": {
+    "sections": {
+      "0": {
+        "content": "Model 2 is studied here as a shorter-horizon weekly-context plan. The original framework and separate trade plan should be read together; a title or selected chart does not establish a universal 50–100-pip return or its equivalent in index points.\n\nRecord the chosen higher-timeframe range, observation horizon, entry condition and expiry. Distinguish an objective from realized performance. Overnight exposure, gaps and costs still matter even when the chart appears to offer a wide target.",
+        "keyTakeaway": "Model 2 is studied here as a shorter-horizon weekly-context plan."
+      },
+      "1": {
+        "content": "At the start of a week, its eventual high and low are unknown. A proposed Tuesday low is a scenario, not an already confirmed weekly extreme. Mark what is visible and state what would contradict the proposal.\n\nA weekday tendency requires a defined sample and measured frequency. Do not assign an unsupported probability or discard weeks that trend, consolidate or turn on another day. Keep source examples separate from a validated calendar rule.",
+        "keyTakeaway": "At the start of a week, its eventual high and low are unknown."
+      },
+      "2": {
+        "content": "A multi-session entry study can combine a selected wider range with a narrower price event. Name the instrument, date and timezone for every session; a London-local time is not the same clock reading as New York time.\n\nObserve the selected sweep or structural break before evaluating a possible return. The session name supplies no direction, and a later successful move does not justify moving an earlier anchor. Retain no-entry examples.",
+        "title": "29.3 Date-Aware Multi-Session Study",
+        "keyTakeaway": "A multi-session entry study can combine a selected wider range with a narrower price event."
+      },
+      "3": {
+        "content": "Plan partial exits, order expiry and the final observation time before the week develops. A Thursday or Friday label does not require a target to be reached or establish a fixed profit-taking percentage.\n\nCompare the full sequence after costs, including stopped positions, unfilled orders and positions still open at the cutoff. If a time-based exit is part of your variation, apply it to unsuccessful examples as consistently as to winners.",
+        "keyTakeaway": "Plan partial exits, order expiry and the final observation time before the week develops."
+      }
+    },
+    "summary": [
+      "Model 2 is studied here as a shorter-horizon weekly-context plan.",
+      "At the start of a week, its eventual high and low are unknown.",
+      "A multi-session entry study can combine a selected wider range with a narrower price event.",
+      "Plan partial exits, order expiry and the final observation time before the week develops."
+    ],
+    "quote": "Model 2 is studied here as a shorter-horizon weekly-context plan.",
+    "keyTerms": [
+      {
+        "term": "Weekly-context plan",
+        "definition": "A written plan linking selected weekly references to entry conditions, an observation horizon, invalidation and management rules."
+      },
+      {
+        "term": "Weekday scenario",
+        "definition": "A possible sequence organized by trading day, not a predetermined appointment for the final weekly high or low."
+      },
+      {
+        "term": "Session clock",
+        "definition": "The named local timezone and actual date used to interpret a session interval, including applicable daylight saving."
+      },
+      {
+        "term": "Time-based exit",
+        "definition": "An exit condition tied to a time chosen before the outcome, distinct from cancelling an unfilled entry order."
+      }
+    ]
+  },
+  "30": {
+    "sections": {
+      "0": {
+        "content": "The Model 3 swing study uses broader context and a longer observation horizon than an intraday study. No universal holding period, monthly opportunity count or 100–300-pip result is verified here. Read the original lesson and its separate management plan.\n\nRecord the instrument, source variant, reference range and invalidation. A wider chart scale changes the exposure and evaluation horizon; it does not make a trade inherently safer or establish the direction.",
+        "keyTakeaway": "The Model 3 swing study uses broader context and a longer observation horizon than an intraday study."
+      },
+      "1": {
+        "content": "COT is a delayed positioning report, not a live order book. In replay, distinguish the snapshot date from the later publication time and use only a release already available at the decision point. Select the report family and futures-only or combined basis explicitly.\n\nNet positions are longs minus shorts within a category. A commercial net-long reading does not alone predict an imminent rally or represent all spot-FX participants. The related Month 10 source discusses why the net number alone is insufficient.",
+        "keyTakeaway": "COT is a delayed positioning report, not a live order book."
+      },
+      "2": {
+        "content": "A 40- or 60-trading-day lookback can supply broader references. It is not a measured central-bank inventory cycle. State the anchor and the treatment of incomplete sessions; compare premium and discount only within the named range.\n\nPositioning context and chart location are separate inputs. Neither makes the other correct. Keep dates aligned and record instances when the proposed direction fails or a candidate entry never develops.",
+        "keyTakeaway": "A 40- or 60-trading-day lookback can supply broader references."
+      },
+      "3": {
+        "content": "A daily reference can be refined on a four-hour chart as a named study variation. Save the actual entry condition, initial stop and expiry. A wider stop does not guarantee survival, and a narrower one may be reached before a later favorable move.\n\nPartial-exit percentages are management choices, not universal rules. Include overnight costs, gaps, slippage and correlated positions in combined exposure. Evaluate realized outcomes rather than assuming a particular exit split creates an edge.",
+        "keyTakeaway": "A daily reference can be refined on a four-hour chart as a named study variation."
+      }
+    },
+    "summary": [
+      "The Model 3 swing study uses broader context and a longer observation horizon than an intraday study.",
+      "COT is a delayed positioning report, not a live order book.",
+      "A 40- or 60-trading-day lookback can supply broader references.",
+      "A daily reference can be refined on a four-hour chart as a named study variation."
+    ],
+    "quote": "The Model 3 swing study uses broader context and a longer observation horizon than an intraday study.",
+    "keyTerms": [
+      {
+        "term": "Swing horizon",
+        "definition": "The specified multi-session period over which a swing hypothesis is observed or a position is intended to be held."
+      },
+      {
+        "term": "COT availability",
+        "definition": "The point when a particular COT release was publicly available, distinct from its earlier positioning snapshot date."
+      },
+      {
+        "term": "Rolling lookback",
+        "definition": "A trailing observation window with an explicit length, anchor and calendar; moving the anchor changes the included data."
+      },
+      {
+        "term": "Combined exposure",
+        "definition": "The exposure across simultaneous positions, including shared market risks, execution costs and possible losses beyond planned stops."
+      }
+    ]
+  },
+  "31": {
+    "sections": {
+      "0": {
+        "content": "Model 4 is a position-trading study over a wider horizon. A multi-month objective describes a planning example, not a verified 300–1,000-pip expectation or a guarantee of suitability for any type of investor.\n\nKeep monthly and weekly context separate from an eventual entry. State the product, intended horizon, invalidation and financing assumptions. A slow chart does not remove gap risk, leverage risk or the possibility that a proposed trend never develops.",
+        "keyTakeaway": "Model 4 is a position-trading study over a wider horizon."
+      },
+      "1": {
+        "content": "Calendar quarters and rolling lookbacks are different measurements. The reviewed Core Month 5 source explicitly does not require every quarterly shift to coincide with March, June, September or December. A six-month chart window is also not the same as 60 trading days.\n\nSelect the observation window before evaluating a turn. A range extreme near a date is a hypothesis to investigate, not evidence that central banks must reverse price on a fixed schedule.",
+        "title": "31.2 Calendar Quarters and Rolling Windows",
+        "keyTakeaway": "Calendar quarters and rolling lookbacks are different measurements."
+      },
+      "2": {
+        "content": "Stage, setup and pattern can organize three levels of a study: broad context, a selected reference region and a narrower observable event. Write the actual timeframes and conditions instead of treating those words as an automatic execution system.\n\nA later MSS or FVG can fail. Preserve the first time each observation becomes available and distinguish the source plan from any added filter. No entry is a valid outcome when the specified pattern never completes.",
+        "keyTakeaway": "Stage, setup and pattern can organize three levels of a study: broad context, a selected reference region and a narrower observable event."
+      },
+      "3": {
+        "content": "Seasonality summarizes a chosen historical sample; its result depends on the years, product and contract handling. It does not supply institutional certainty about the present year. Keep the sample period and out-of-sample evaluation visible.\n\nPyramiding adds exposure. Recalculate combined loss under the actual stop and gap assumptions before adding a position. Existing unrealized profit is not realized cash, and scaling cannot guarantee an exponential return or prevent a drawdown.",
+        "keyTakeaway": "Seasonality summarizes a chosen historical sample; its result depends on the years, product and contract handling."
+      }
+    },
+    "summary": [
+      "Model 4 is a position-trading study over a wider horizon.",
+      "Calendar quarters and rolling lookbacks are different measurements.",
+      "Stage, setup and pattern can organize three levels of a study: broad context, a selected reference region and a narrower observable event.",
+      "Seasonality summarizes a chosen historical sample; its result depends on the years, product and contract handling."
+    ],
+    "quote": "Model 4 is a position-trading study over a wider horizon.",
+    "keyTerms": [
+      {
+        "term": "Position-trading horizon",
+        "definition": "A selected longer-term holding or evaluation period; its length alone does not establish a return or make the position safer."
+      },
+      {
+        "term": "Quarterly-shift hypothesis",
+        "definition": "A proposed change in price-delivery conditions studied over a wider cycle; it is not a compulsory calendar-quarter reversal."
+      },
+      {
+        "term": "Stage–setup–pattern",
+        "definition": "An organizational sequence of broader context, a selected setup region and a narrower observable pattern, each with stated conditions."
+      },
+      {
+        "term": "Seasonality",
+        "definition": "A historical pattern associated with time of year in a stated sample, not a guarantee that the present year repeats it."
+      }
+    ]
+  },
+  "32": {
+    "sections": {
+      "0": {
+        "content": "A session day-trading plan defines the instrument, observation window and intended holding horizon. Its illustrative pip objective cannot be converted to one fixed number of index points or treated as expected income. Read the source’s setup and separate management conditions.\n\nUse one explicitly chosen timeframe sequence. Record skipped sessions and costs as well as completed trades. Finishing within a day avoids some overnight exposure but does not make execution or loss limits certain.",
+        "keyTakeaway": "A session day-trading plan defines the instrument, observation window and intended holding horizon."
+      },
+      "1": {
+        "content": "If your chosen source uses an Asian-range reference, define its exact interval, date and America/New_York clock before marking the high and low. Other products and lessons use different sessions; the range is not a universal benchmark.\n\nA Judas-swing study observes a move beyond a chosen boundary followed by a specified reversal condition. The initial breach can continue instead. Do not assume that the eventual daily high or low is already known during the observation.",
+        "keyTakeaway": "If your chosen source uses an Asian-range reference, define its exact interval, date and America/New_York clock before marking the high and low."
+      },
+      "2": {
+        "content": "London expansion does not force New York continuation. Write both continuation and failure conditions before the later session begins. A retest into a selected FVG is a possible event, not a required entry or guaranteed fill.\n\nAverage Daily Range is the mean of completed daily high–low ranges over a chosen sample. It is not a statistical upper limit or evidence that algorithms stop at 90–100% of it. State the lookback and session boundaries; a day can exceed its historical average.",
+        "keyTakeaway": "London expansion does not force New York continuation."
+      },
+      "3": {
+        "content": "Check the actual release calendar and your participation restriction before a news session. Staying out is an available choice. A post-release candle or a fixed waiting period does not guarantee normal spreads, a reversal or an executable entry.\n\nIf a research variation observes post-news displacement, specify the measurement, order type, expiry and slippage assumptions. Include rapid continuations, whipsaws and no-entry outcomes. Do not turn an illustrative news sequence into an instruction to trade every announcement.",
+        "keyTakeaway": "Check the actual release calendar and your participation restriction before a news session."
+      }
+    },
+    "summary": [
+      "A session day-trading plan defines the instrument, observation window and intended holding horizon.",
+      "If your chosen source uses an Asian-range reference, define its exact interval, date and America/New_York clock before marking the high and low.",
+      "London expansion does not force New York continuation.",
+      "Check the actual release calendar and your participation restriction before a news session."
+    ],
+    "quote": "A session day-trading plan defines the instrument, observation window and intended holding horizon.",
+    "keyTerms": [
+      {
+        "term": "Session plan",
+        "definition": "A written specification of the product, observation interval, qualifying conditions, expiry and management for one selected session."
+      },
+      {
+        "term": "Asian-range reference",
+        "definition": "The high and low of an explicitly defined completed Asian-session interval on a stated date, clock and feed."
+      },
+      {
+        "term": "Average Daily Range",
+        "definition": "The arithmetic mean of completed daily high–low ranges over a stated lookback; it is not the maximum possible daily move."
+      },
+      {
+        "term": "News participation rule",
+        "definition": "A predefined restriction on whether and when to participate around a scheduled release; waiting does not guarantee safe execution."
+      }
+    ]
+  },
+  "33": {
+    "sections": {
+      "0": {
+        "content": "Model 6’s buyside study organizes selected discount references within a defined range. A list of PD-array names is not a compulsory sequence that price must respect. Define the range and the actual reference used by your example.\n\nA discount-only entry can be a rule of a selected variation; it is not evidence that every bullish opportunity above a midpoint is impossible. The word universal does not validate transfer across every asset, feed or timeframe.",
+        "keyTakeaway": "Model 6’s buyside study organizes selected discount references within a defined range."
+      },
+      "1": {
+        "content": "A Market Maker Sell Model sketch starts with a selected consolidation, an upward curve, a candidate reversal region and a later downward curve. A Buy Model sketch reverses that sequence. These are chart-study narratives, not observed institutional inventory cycles.\n\nMark the initial range before the later move. Reaccumulation and redistribution labels describe interpretation of intermediate ranges. A return to the original consolidation is a proposed objective, not a required final destination.",
+        "keyTakeaway": "A Market Maker Sell Model sketch starts with a selected consolidation, an upward curve, a candidate reversal region and a later downward curve."
+      },
+      "2": {
+        "content": "Smart Money Reversal names a proposed turning region in the framework. Define a higher-timeframe reference and a narrower price condition before evaluating it. The name does not identify the participants responsible for a turn.\n\nSMT can be an additional comparison when the specified markets and times align. A divergence may disappear and does not prove that accumulation ceased. Record the structural event, any completed FVG and entry expiry as separate observations.",
+        "keyTakeaway": "Smart Money Reversal names a proposed turning region in the framework."
+      },
+      "3": {
+        "content": "A later return to a prior consolidation can be studied without chasing the initial move. Preserve its original boundaries and specify the required response. A consolidation does not automatically become an inversion FVG; an FVG requires its own completed three-candle geometry.\n\nLikewise, a breaker requires a defined swing and breach sequence. Check each condition independently rather than renaming every retest as confluence. Include failed retests and no-return examples before drawing a conclusion about a trading variation.",
+        "keyTakeaway": "A later return to a prior consolidation can be studied without chasing the initial move."
+      }
+    },
+    "summary": [
+      "Model 6’s buyside study organizes selected discount references within a defined range.",
+      "A Market Maker Sell Model sketch starts with a selected consolidation, an upward curve, a candidate reversal region and a later downward curve.",
+      "Smart Money Reversal names a proposed turning region in the framework.",
+      "A later return to a prior consolidation can be studied without chasing the initial move."
+    ],
+    "quote": "Model 6’s buyside study organizes selected discount references within a defined range.",
+    "keyTerms": [
+      {
+        "term": "Discount reference",
+        "definition": "A selected level or interval below the midpoint of a named dealing range; its classification changes if that range changes."
+      },
+      {
+        "term": "Market Maker Model",
+        "definition": "A chart-study narrative using consolidation, a directional curve, a candidate turn and a possible opposing curve; it does not measure inventory."
+      },
+      {
+        "term": "Smart Money Reversal",
+        "definition": "The framework’s name for a candidate turning region assessed with predefined price conditions, not identification of the traders behind it."
+      },
+      {
+        "term": "Array qualification",
+        "definition": "Checking that a proposed PD-array label meets its own price-sequence, boundary and completion rules before combining it with another label."
+      }
+    ]
+  },
+  "37": {
+    "sections": {
+      "0": {
+        "content": "ICT uses smart-money language as an explanatory framework for selected price patterns. A claim that one interbank algorithm controls all markets is not established by an OHLC chart or by this curriculum. Exchanges, dealers, hedgers and speculators participate under different market structures.\n\nA large participant may use several execution methods; neither market orders nor liquidity provision belongs exclusively to one group. A candle cannot divide all traders into informed institutions and uninformed retail or show who deliberately moved a price.",
+        "keyTakeaway": "ICT uses smart-money language as an explanatory framework for selected price patterns."
+      },
+      "1": {
+        "content": "Expansion, retracement, reversal and consolidation are descriptive categories relative to a chosen scale. Expansion is a directional departure; retracement is a counter-move within the selected context; reversal changes that context; consolidation stays within selected bounds.\n\nChoose the timeframe, boundaries and confirmation delay. The same price path may consolidate on one chart and expand on another. No category by itself establishes institutional sponsorship, an inevitable FVG or what the next candle must do.",
+        "keyTakeaway": "Expansion, retracement, reversal and consolidation are descriptive categories relative to a chosen scale."
+      },
+      "2": {
+        "content": "Select a high and low to define a dealing range, then calculate midpoint = (high + low) / 2. Above that midpoint is premium and below it is discount relative to this range. A different range can change the classification.\n\nPremium and discount are not measurements of fair economic value or proof of distribution and accumulation. A discount-only entry is a chosen model restriction, not a universal law forbidding all purchases above a midpoint.",
+        "keyTakeaway": "Select a high and low to define a dealing range, then calculate midpoint = (high + low) / 2."
+      },
+      "3": {
+        "content": "A run beyond a selected high or low is observable. Calling it an intentional raid is an interpretation that requires more evidence than the completed candle. Orders can be triggered without a later reversal, and not every stop order becomes a market order.\n\nA subsequent impulse can define a new research range if your rule specifies when the swing completes. Save the previous range and do not redraw it retroactively to remove failed examples. Timing and participant identity remain separate questions.",
+        "keyTakeaway": "A run beyond a selected high or low is observable."
+      }
+    },
+    "summary": [
+      "ICT uses smart-money language as an explanatory framework for selected price patterns.",
+      "Expansion, retracement, reversal and consolidation are descriptive categories relative to a chosen scale.",
+      "Select a high and low to define a dealing range, then calculate midpoint = (high + low) / 2.",
+      "A run beyond a selected high or low is observable."
+    ],
+    "quote": "ICT uses smart-money language as an explanatory framework for selected price patterns.",
+    "keyTerms": [
+      {
+        "term": "Smart-money interpretation",
+        "definition": "An explanatory attribution of a price pattern to informed or institutional activity; candles alone do not verify that attribution."
+      },
+      {
+        "term": "Market condition",
+        "definition": "A descriptive classification such as expansion, retracement, reversal or consolidation relative to a specified timeframe and range."
+      },
+      {
+        "term": "Range midpoint",
+        "definition": "The arithmetic average of a selected range’s high and low: midpoint = (high + low) / 2."
+      },
+      {
+        "term": "Liquidity-run observation",
+        "definition": "A recorded move beyond a previously selected high or low; reversal and the identity of affected traders remain separate questions."
+      }
+    ]
+  },
+  "39": {
+    "sections": {
+      "0": {
+        "content": "Top-down study starts with a broader question and narrows the observation scale. Monthly, weekly and daily references can disagree; a higher-timeframe label does not tell you in advance which weekday will form the weekly extreme.\n\nChoose the sequence appropriate to the research horizon and write what evidence would contradict the initial bias. A one-minute entry needs its own observable condition. Do not treat the larger timeframe as permission to ignore adverse movement or change the stop after entry.",
+        "keyTakeaway": "Top-down study starts with a broader question and narrows the observation scale."
+      },
+      "1": {
+        "content": "Institutional sponsorship is an interpretation, not an identity visible in candle geometry. A large body, an FVG or a fast break can be measured, but cannot by itself identify a bank, verify its inventory or establish its intended target.\n\nDefine displacement relative to a prior sample. A three-candle FVG records non-overlap between outer wicks while the middle candle may have traded through that region. Choppy candles do not prove that institutions are absent.",
+        "title": "39.2 Institutional Sponsorship: Interpretation and Evidence",
+        "keyTakeaway": "Institutional sponsorship is an interpretation, not an identity visible in candle geometry."
+      },
+      "2": {
+        "content": "A trendline connects selected pivots under a chosen rule. A break below it can be measured, but the line does not reveal the number of stops or prove that a centralized algorithm deliberately harvested them.\n\nChoose the pivots before the breach and state whether a wick or close counts. Record continuation, reversal and no follow-through. Moving the line after the event changes the observation and can make a weak rule appear stronger.",
+        "keyTakeaway": "A trendline connects selected pivots under a chosen rule."
+      },
+      "3": {
+        "content": "Head-and-shoulders patterns and comparable highs or lows can supply research references. They do not require either a textbook reversal or a stop-run reversal. Define the tolerances and structural condition rather than assuming every trader sees the same pattern.\n\nKeep the observed prices separate from the story attached to them. A breakout may continue or fail. The chart does not establish that all retail participants were short or that an institution accumulated against them at a particular neckline.",
+        "keyTakeaway": "Head-and-shoulders patterns and comparable highs or lows can supply research references."
+      }
+    },
+    "summary": [
+      "Top-down study starts with a broader question and narrows the observation scale.",
+      "Institutional sponsorship is an interpretation, not an identity visible in candle geometry.",
+      "A trendline connects selected pivots under a chosen rule.",
+      "Head-and-shoulders patterns and comparable highs or lows can supply research references."
+    ],
+    "quote": "Top-down study starts with a broader question and narrows the observation scale.",
+    "keyTerms": [
+      {
+        "term": "Top-down sequence",
+        "definition": "A defined progression from a broader chart context to narrower observations; different timeframes can still disagree."
+      },
+      {
+        "term": "Institutional sponsorship",
+        "definition": "An interpretation that institutional participation supports a move; a large candle or FVG alone cannot establish participant identity."
+      },
+      {
+        "term": "Trendline reference",
+        "definition": "A line connecting pivots selected under a stated rule, not a direct display of stops or participant intent."
+      },
+      {
+        "term": "Pattern hypothesis",
+        "definition": "A proposed relationship between a predefined chart pattern and a later outcome, evaluated with failures as well as successes."
+      }
+    ]
+  },
+  "40": {
+    "sections": {
+      "0": {
+        "content": "An interest-rate comparison must distinguish a bond’s price, its yield and the instrument being charted. The earlier three-item list is not a verified universal definition of ICT’s Interest Rate Triad; consult the exact original lesson before applying that label.\n\nComparing specified maturities or sovereign yield spreads can be a contextual research input. Align dates, units and release times. A rising yield differential does not guarantee a currency move or reveal the true direction days in advance.",
+        "title": "40.1 Rate-Market Comparisons and Source Limits",
+        "keyTakeaway": "An interest-rate comparison must distinguish a bond’s price, its yield and the instrument being charted."
+      },
+      "1": {
+        "content": "Define each array from its price sequence, not an assumed inventory story. An order-block study preserves the selected candle or run and boundary convention. A bearish breaker illustration includes a selected high–low–higher-high sequence followed by a break of the intervening low.\n\nA mitigation-block variation distinguishes a failure to exceed the prior extreme before the break. Save the source-specific swing and close rules. A later return does not prove trapped orders unwound at breakeven.",
+        "keyTakeaway": "Define each array from its price sequence, not an assumed inventory story."
+      },
+      "2": {
+        "content": "A propulsion study marks a selected reaction candle at a prior order-block reference. A reclaimed-block study records a breach and later recovery of a saved region. State which body, wick or opening boundary defines each example.\n\nThese labels do not establish that underlying liquidity was exhausted or that price cannot retrace through a midpoint. Preserve the original bounds and include failed reactions. A reclaimed region can fail again; no renewed institutional support is observable from the label alone.",
+        "keyTakeaway": "A propulsion study marks a selected reaction candle at a prior order-block reference."
+      }
+    },
+    "summary": [
+      "An interest-rate comparison must distinguish a bond’s price, its yield and the instrument being charted.",
+      "Define each array from its price sequence, not an assumed inventory story.",
+      "A propulsion study marks a selected reaction candle at a prior order-block reference."
+    ],
+    "quote": "An interest-rate comparison must distinguish a bond’s price, its yield and the instrument being charted.",
+    "keyTerms": [
+      {
+        "term": "Rate-market comparison",
+        "definition": "A comparison of specified rate instruments with price, yield, maturity, units and dates kept explicit; no fixed currency response is implied."
+      },
+      {
+        "term": "Array sequence",
+        "definition": "The ordered price events and completion conditions required for a particular PD-array interpretation; nearby rectangles are not interchangeable."
+      },
+      {
+        "term": "Reclaimed reference",
+        "definition": "A previously saved price region that was breached and subsequently recovered under a stated crossing rule; it may fail again."
+      }
+    ],
+    "title": "ICT Core Content Month 4: PD Array Studies & Rate-Market Comparisons"
+  },
+  "43": {
+    "sections": {
+      "0": {
+        "content": "A rolling 20-trading-day window and a proposed weekly profile are separate references. A price in the upper half of that range is in premium relative to that selection, not proof that the coming week must become a Sell Model.\n\nRecord both continuation and reversal hypotheses before the session. The intended holding horizon and pip objective belong to a selected plan, not a universal 1–3-day or 40–80-pip expectation. Retain weeks without an entry.",
+        "keyTakeaway": "A rolling 20-trading-day window and a proposed weekly profile are separate references."
+      },
+      "1": {
+        "content": "A Buy Model sketch can move from an initial consolidation through a downward curve, a candidate turning area and a possible recovery. A Sell Model mirrors the direction. The completed narrative is not necessarily available at the proposed entry.\n\nSpecify the turning condition and invalidation before revealing later candles. The recovery need not mirror each earlier swing or reach the original consolidation. Curve labels describe a hypothesis, not measured institutional inventory or compulsory delivery.",
+        "keyTakeaway": "A Buy Model sketch can move from an initial consolidation through a downward curve, a candidate turning area and a possible recovery."
+      },
+      "2": {
+        "content": "LRLR and HRLR are framework descriptions of a proposed path with fewer or more selected opposing references. Their classification depends on the timeframe and which arrays or swings you count. A visually clear path is not frictionless execution.\n\nFreeze the classification before the move. Compare elapsed time, adverse movement, spread and failed objectives across both groups. The labels alone establish neither the easiest profits nor a verified rule that only one group may be traded.",
+        "keyTakeaway": "LRLR and HRLR are framework descriptions of a proposed path with fewer or more selected opposing references."
+      },
+      "3": {
+        "content": "A midweek reversal is a possible scenario, not a Wednesday appointment. The eventual weekly high or low cannot be identified with certainty before the week completes. No measured weekday probability is established in this chapter.\n\nDefine the candidate reference, reversal condition and expiry. Record weeks that continue through Wednesday or turn on another day. An event calendar can change the observation context but does not impose a compulsory return to Monday’s open.",
+        "keyTakeaway": "A midweek reversal is a possible scenario, not a Wednesday appointment."
+      }
+    },
+    "summary": [
+      "A rolling 20-trading-day window and a proposed weekly profile are separate references.",
+      "A Buy Model sketch can move from an initial consolidation through a downward curve, a candidate turning area and a possible recovery.",
+      "LRLR and HRLR are framework descriptions of a proposed path with fewer or more selected opposing references.",
+      "A midweek reversal is a possible scenario, not a Wednesday appointment."
+    ],
+    "quote": "A rolling 20-trading-day window and a proposed weekly profile are separate references.",
+    "keyTerms": [
+      {
+        "term": "Weekly hypothesis",
+        "definition": "A conditional proposal about the coming week using references already visible, with explicit invalidation and no-trade cases."
+      },
+      {
+        "term": "Buy/Sell Model curve",
+        "definition": "The directional part of a selected Buy or Sell Model sketch, not proof of a mechanically mirrored recovery or institutional inventory."
+      },
+      {
+        "term": "LRLR / HRLR",
+        "definition": "A relative classification of fewer or more selected opposing references along a proposed path; it does not promise easy fills or profit."
+      },
+      {
+        "term": "Midweek reversal",
+        "definition": "A possible change in weekly direction during the middle of the week; no fixed Wednesday probability is established here."
+      }
+    ],
+    "title": "ICT Core Content Month 7: Short-Term Studies & Market Maker Models"
+  },
+  "44": {
+    "sections": {
+      "0": {
+        "content": "A bullish daily candle closes above its open; it does not reveal whether the low or high occurred first. OLHC is one possible intraday sequence, not the definition of every bullish day. Choose the daily session and feed before identifying its open.\n\nMidnight New York, a futures session opening and the cash-equity open are different references. A daily low may form at any time. Being above the daily open is not the same as being in premium of a selected high–low range.",
+        "keyTakeaway": "A bullish daily candle closes above its open; it does not reveal whether the low or high occurred first."
+      },
+      "1": {
+        "content": "Weekly context can frame a daily hypothesis but does not make every pullback a high-probability entry. Choose the weekly reference before the daily setup and record what would contradict the bias.\n\nAfter a proposed weekly objective is reached, continuation, consolidation and reversal all remain possible. Do not assign a lower probability to Thursday or Friday without a defined dataset. A target touch and a completed daily entry condition are separate observations.",
+        "keyTakeaway": "Weekly context can frame a daily hypothesis but does not make every pullback a high-probability entry."
+      },
+      "2": {
+        "content": "A London-open Judas-swing example and a London-close retracement study use different observation windows. Name the source, date and local timezone; use America/New_York where that is the source clock, not fixed EST throughout the year.\n\nNeither interval must produce the day’s absolute extreme. A later retracement need not equal 20% or 38.2% of the range. Select the reference and response condition before replay, and keep days with no reversal in the sample.",
+        "keyTakeaway": "A London-open Judas-swing example and a London-close retracement study use different observation windows."
+      },
+      "3": {
+        "content": "Weekday profiles are hypotheses for organizing observations. They do not establish that Tuesday has a 70% probability of forming the weekly extreme, or that Thursday must reach a target and Friday must take profits.\n\nDefine the instrument, years, session boundaries and trending-week selection before counting outcomes. Report the denominator and failed cases. Knowing which weeks trended only after completion creates hindsight bias if used to select earlier trades.",
+        "keyTakeaway": "Weekday profiles are hypotheses for organizing observations."
+      }
+    },
+    "summary": [
+      "A bullish daily candle closes above its open; it does not reveal whether the low or high occurred first.",
+      "Weekly context can frame a daily hypothesis but does not make every pullback a high-probability entry.",
+      "A London-open Judas-swing example and a London-close retracement study use different observation windows.",
+      "Weekday profiles are hypotheses for organizing observations."
+    ],
+    "quote": "A bullish daily candle closes above its open; it does not reveal whether the low or high occurred first.",
+    "keyTerms": [
+      {
+        "term": "OLHC scenario",
+        "definition": "One possible intraday order of open, low, high and close; a bullish daily candle does not require that order."
+      },
+      {
+        "term": "Weekly context",
+        "definition": "The selected broader weekly range and references used to frame a daily question, not knowledge of the final weekly extremes."
+      },
+      {
+        "term": "Session reversal study",
+        "definition": "A study of a predefined turning condition within a named session interval, including days that continue rather than reverse."
+      },
+      {
+        "term": "Weekday sample",
+        "definition": "A stated set of dated observations used to count weekday outcomes; the denominator and selection method must be disclosed."
+      }
+    ]
+  },
+  "49": {
+    "sections": {
+      "0": {
+        "content": "At an all-time high, the selected price history has no earlier traded price above the current extreme. Specify the instrument, feed, history length and any contract adjustments; a continuous futures chart and an unadjusted contract can have different historical highs.\n\nThe absence of overhead historical prices does not prove that one algorithm controls price or that traders have no reference points. Prior swings, opening references and volatility measures still exist. A new high can continue, consolidate or reverse.",
+        "keyTakeaway": "At an all-time high, the selected price history has no earlier traded price above the current extreme."
+      },
+      "1": {
+        "content": "For an original projection exercise, choose a low L and high H already visible. A ratio projection is P = L + r × (H − L). For L = 100, H = 110 and r = 1.618, P = 116.18. State the orientation; changing tool anchors changes the output.\n\nA calculated level is not an institutional order, verified probability or required target. The earlier exact ratio list and two-to-five-tick exit offset are not authenticated universal rules here. Freeze anchors and record misses as well as hits.",
+        "keyTakeaway": "For an original projection exercise, choose a low L and high H already visible."
+      },
+      "2": {
+        "content": "An IFVG at a new high still requires a saved completed gap and a stated breach convention. A propulsion reference still needs its own source-specific candle selection. The ATH label does not change either definition into an unbreakable launchpad.\n\nA retest may not arrive, may fail, or may trade through a chosen midpoint. Specify the entry, expiry and invalidation before the return. Do not claim minimal drawdown or exceptional probability from two overlapping labels.",
+        "keyTakeaway": "An IFVG at a new high still requires a saved completed gap and a stated breach convention."
+      },
+      "3": {
+        "content": "A body-price separation with overlapping wicks is a volume-imbalance observation in this terminology; it is not a direct measurement of traded volume. Smaller bodies and upper wicks record price geometry, not proof of distribution by a particular participant.\n\nIf you study exhaustion, state the reference, confirmation event and observation horizon before the next candle. A small body or a Fibonacci touch can precede continuation. Preserve failed reversal hypotheses rather than identifying exhaustion only after a decline.",
+        "keyTakeaway": "A body-price separation with overlapping wicks is a volume-imbalance observation in this terminology; it is not a direct measurement of traded volume."
+      }
+    },
+    "summary": [
+      "At an all-time high, the selected price history has no earlier traded price above the current extreme.",
+      "For an original projection exercise, choose a low L and high H already visible.",
+      "An IFVG at a new high still requires a saved completed gap and a stated breach convention.",
+      "A body-price separation with overlapping wicks is a volume-imbalance observation in this terminology; it is not a direct measurement of traded volume."
+    ],
+    "quote": "At an all-time high, the selected price history has no earlier traded price above the current extreme.",
+    "keyTerms": [
+      {
+        "term": "All-time high reference",
+        "definition": "The highest price in the specified instrument’s available history, with feed coverage and contract adjustments disclosed."
+      },
+      {
+        "term": "Ratio projection",
+        "definition": "A calculated level from saved anchors, such as P = L + r × (H − L); arithmetic does not establish target probability."
+      },
+      {
+        "term": "ATH retest",
+        "definition": "A later return to a selected reference after a new historical high; the new-high label does not guarantee a hold."
+      },
+      {
+        "term": "Exhaustion hypothesis",
+        "definition": "A proposed weakening of a move assessed with predefined evidence and a horizon; a small candle alone does not confirm a reversal."
+      }
+    ]
+  },
+  "54": {
+    "sections": {
+      "0": {
+        "content": "Candle Range Theory is used here as a descriptive range-study exercise; a precise originating ICT lecture for the earlier named multi-session system has not been verified. Choose one completed candle, its timeframe and session, then save its high and low.\n\nA later breach is an observation, not proof of intentional manipulation. Do not treat the Asian range, London range and 2025 Venom reference as interchangeable. Each requires its own interval and source; a session does not have to cross the entire prior range.",
+        "title": "Reference Candles: A Descriptive Study",
+        "keyTakeaway": "Candle Range Theory is used here as a descriptive range-study exercise; a precise originating ICT lecture for the earlier named multi-session system has not been verified."
+      },
+      "1": {
+        "content": "If you study consecutive sessions, keep a separate completed reference for each one. Do not mark a whole London session as completed at 08:30 New York while simultaneously defining that same session through a later time. State boundaries consistently.\n\nThe midpoint is the arithmetic average of the saved high and low. It is not a compulsory rejection, partial-exit level or source of a new FVG. A later completed FVG needs its own three-candle geometry.",
+        "keyTakeaway": "If you study consecutive sessions, keep a separate completed reference for each one."
+      },
+      "2": {
+        "content": "For an original replay variation: select the completed reference candle, mark both extremes and midpoint, then advance one candle. Record any breach and your previously chosen return-inside rule. Only evaluate a subsequent entry if its separate conditions complete.\n\nThe opposite boundary is a hypothetical objective, not a guaranteed destination. Define expiry, invalidation and costs; retain continuations outside the range and no-entry cases. This exercise is not a verified mandatory ICT execution checklist.",
+        "title": "An Original Range-Replay Exercise",
+        "keyTakeaway": "For an original replay variation: select the completed reference candle, mark both extremes and midpoint, then advance one candle."
+      }
+    },
+    "summary": [
+      "Candle Range Theory is used here as a descriptive range-study exercise; a precise originating ICT lecture for the earlier named multi-session system has not been verified.",
+      "If you study consecutive sessions, keep a separate completed reference for each one.",
+      "For an original replay variation: select the completed reference candle, mark both extremes and midpoint, then advance one candle."
+    ],
+    "quote": "Candle Range Theory is used here as a descriptive range-study exercise; a precise originating ICT lecture for the earlier named multi-session system has not been verified.",
+    "keyTerms": [
+      {
+        "term": "Reference Candle",
+        "definition": "A completed candle chosen before the later move, with its timeframe, session, high and low saved as the study boundaries."
+      },
+      {
+        "term": "Session range midpoint",
+        "definition": "The arithmetic average of a saved session range’s high and low, not a compulsory reaction or exit price."
+      },
+      {
+        "term": "Return-inside variation",
+        "definition": "A separately specified study requiring a chosen boundary breach and a later qualifying return inside; the opposite boundary is not guaranteed."
+      }
+    ]
+  },
+  "1": {
+    "summary": [
+      "Every executed quantity has both a buying and selling side; participant counts need not be equal.",
+      "A quoted price can change through orders and cancellations without a new trade at that price.",
+      "Marketable orders consume available liquidity subject to the venue’s rules."
+    ],
+    "keyTerms": [
+      {
+        "term": "Central Limit Order Book (CLOB)",
+        "definition": "A venue’s book of orders under its matching rules; displayed depth may exclude hidden interest."
+      },
+      {
+        "term": "Marketable order",
+        "definition": "An order capable of executing against an available opposite-side quote; it can be a market or limit order."
+      },
+      {
+        "term": "Bid–ask spread",
+        "definition": "The difference between the best displayed offer and bid on the stated venue and feed."
+      }
+    ]
+  },
+  "20": {
+    "keyTerms": [
+      {
+        "term": "High of the Week (HOW)",
+        "definition": "The highest price in the selected completed week; its day is not known in advance."
+      },
+      {
+        "term": "Low of the Week (LOW)",
+        "definition": "The lowest price in the selected completed week; a Tuesday low is only a scenario while the week is open."
+      },
+      {
+        "term": "Weekly scenario",
+        "definition": "A conditional path proposed before the week completes, including continuation, reversal and no-trade outcomes."
+      }
+    ],
+    "summary": [
+      "A completed weekly candle does not disclose the order of its high and low.",
+      "Weekday profiles are conditional study scenarios, not scheduled weekly extremes."
+    ]
+  },
+  "27": {
+    "keyTerms": [
+      {
+        "term": "Weekly profile",
+        "definition": "A proposed weekly path used to organize a study, not a verified twelve-template calendar program."
+      },
+      {
+        "term": "Midweek reversal",
+        "definition": "A possible change of direction during the week; no specific weekday or frequency is established here."
+      },
+      {
+        "term": "Seek and Destroy",
+        "definition": "A descriptive label for a selected two-sided or choppy example, not a forecast of every news session."
+      }
+    ],
+    "summary": [
+      "Compare competing weekly scenarios without assuming a known schedule.",
+      "Define invalidation and preserve weeks that do not fit the proposed profile."
+    ],
+    "quote": "A weekly profile organizes uncertainty; it does not remove it.",
+    "sections": {
+      "1": {
+        "keyTakeaway": "Prepare competing scenarios and invalidation before the week develops."
+      }
+    },
+    "title": "Weekly Profiles: Conditional Scenarios & Invalidation"
+  },
+  "11": {
+    "keyTerms": [
+      {
+        "term": "Market Structure Shift (MSS)",
+        "definition": "A selected structural crossing with the lesson’s displacement and context conventions, not verification of the next direction."
+      },
+      {
+        "term": "Displacement reference",
+        "definition": "A relatively strong move assessed against a stated instrument, timeframe and prior sample."
+      },
+      {
+        "term": "Execution FVG",
+        "definition": "A completed three-candle gap selected for a particular entry variation; a later return or fill is not guaranteed."
+      }
+    ],
+    "title": "Market Structure Shift (MSS): Source Conventions & Context",
+    "summary": [
+      "Record a selected swing crossing separately from later displacement and FVG completion.",
+      "A local structural change is not verification of a continuing reversal or a multi-day forecast.",
+      "Specify entry, expiry, invalidation and costs before comparing a source example with a research variation."
+    ]
+  },
+  "50": {
+    "sections": {
+      "1": {
+        "title": "50.2 NWOG References and No-Return Examples"
+      }
+    }
+  },
+  "51": {
+    "sections": {
+      "0": {
+        "title": "51.1 New York Midday Observation"
+      },
+      "2": {
+        "title": "51.3 Afternoon Observation Around 13:30 New York"
+      }
+    }
+  },
+  "52": {
+    "sections": {
+      "0": {
+        "title": "52.1 Event Calendars and High-Resistance Conditions"
+      }
+    },
+    "title": "Event Volatility: Calendars, HRLR & Futures vs. CFDs"
+  },
+  "13": {
+    "title": "Fair Value Gaps (FVG) & Consequent Encroachment"
+  },
+  "55": {
+    "keyTerms": [
+      {
+        "term": "Suspension Block",
+        "definition": "In the reviewed April 2026 explanation, ICT examines separations between adjacent candle bodies while their wicks touch or overlap. These are volume imbalances in his terminology. Mark the actual close/open prices around the selected candle; an isolated counter-trend pause alone is not the definition illustrated here."
+      },
+      {
+        "term": "Reaper FVG",
+        "definition": "In the reviewed bearish Reaper variant, price closes below a saved bullish FVG; its inversion overlaps a bearish FVG within a breaker context. This source-specific variation does not define every failed inversion as a Reaper."
+      }
+    ],
+    "summary": [
+      "In the reviewed April 2026 explanation, ICT examines separations between adjacent candle bodies while their wicks touch or overlap.",
+      "The source compares the nearby/front-month futures contract with a continuous chart.",
+      "In the reviewed bearish Reaper variant, price closes below a saved bullish FVG; its inversion overlaps a bearish FVG within a breaker context. This source-specific variation does not define every failed inversion as a Reaper."
+    ]
+  }
+}

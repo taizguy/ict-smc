@@ -1,0 +1,532 @@
+{
+  "1": {
+    "question": "A quote changes without a trade. What could explain it?",
+    "options": [
+      "An order was added, cancelled or repriced.",
+      "Executed buying quantity exceeded executed selling quantity.",
+      "A candle proves a bank changed its inventory."
+    ],
+    "correctIndex": 0,
+    "explanation": "Quoted prices and transaction prices are different observations."
+  },
+  "2": {
+    "question": "Two orders share a price. What determines priority?",
+    "options": [
+      "The product’s matching algorithm, which may use time or allocation rules.",
+      "The larger order always fills first on every venue.",
+      "Every venue uses the same FIFO rule."
+    ],
+    "correctIndex": 0,
+    "explanation": "Check the exchange and product rules before interpreting the queue."
+  },
+  "3": {
+    "question": "A large displayed quote disappears. What is established?",
+    "options": [
+      "The visible quote changed; the cause needs message and trade data.",
+      "Spoofing intent is proven.",
+      "Every hidden order was filled."
+    ],
+    "correctIndex": 0,
+    "explanation": "Execution, cancellation and amendment can all change displayed depth."
+  },
+  "4": {
+    "question": "Price trades above a selected high. What follows necessarily?",
+    "options": [
+      "That reference was exceeded; reversal is still uncertain.",
+      "All buy stops were filled.",
+      "Price must now fall."
+    ],
+    "correctIndex": 0,
+    "explanation": "A breach is observable; stop quantity and the next direction are not established."
+  },
+  "5": {
+    "question": "What can one OHLC candle establish?",
+    "options": [
+      "Four price references for its interval and feed.",
+      "The exact order of every intrabar trade.",
+      "Which institution caused the move."
+    ],
+    "correctIndex": 0,
+    "explanation": "The body is open-to-close, not a map of where most volume traded."
+  },
+  "7": {
+    "question": "A pivot needs a right-hand candle. When is it confirmed?",
+    "options": [
+      "Only when the required right-hand information is available.",
+      "At the middle candle’s open.",
+      "Before the left-hand candle forms."
+    ],
+    "correctIndex": 0,
+    "explanation": "Backdating pivot confirmation introduces information from the future."
+  },
+  "9": {
+    "question": "Which makes a BOS study reproducible?",
+    "options": [
+      "A selected swing and a stated wick-or-close rule.",
+      "Redrawing the swing after a loss.",
+      "Calling every wick a false break."
+    ],
+    "correctIndex": 0,
+    "explanation": "The break criterion must be selected before the outcome is known."
+  },
+  "10": {
+    "question": "Does a local CHoCH prove a new higher-timeframe trend?",
+    "options": [
+      "No; it can also be a retracement within wider structure.",
+      "Yes, regardless of the chosen swing.",
+      "Yes, if the term is written in capitals."
+    ],
+    "correctIndex": 0,
+    "explanation": "A local crossing and a wider regime interpretation are different claims."
+  },
+  "11": {
+    "question": "An initial swing crossing occurs before an FVG completes. How should it be recorded?",
+    "options": [
+      "As separate events at their actual observation times.",
+      "As an already completed FVG.",
+      "As proof of tomorrow’s direction."
+    ],
+    "correctIndex": 0,
+    "explanation": "The source’s initial crossing and a later completed gap need not occur at the same moment."
+  },
+  "13": {
+    "question": "Candle 1 high is 100 and candle 3 low is 104. What is the bullish FVG midpoint?",
+    "options": [
+      "102",
+      "100",
+      "104"
+    ],
+    "correctIndex": 0,
+    "explanation": "The interval is 100–104 and its arithmetic midpoint is (100 + 104) / 2 = 102."
+  },
+  "14": {
+    "question": "A bullish FVG is 100–104. Your bearish inversion rule requires a close below the lower bound. Which qualifies?",
+    "options": [
+      "A completed close at 99.",
+      "A wick at 99 but close at 102.",
+      "A close at 103."
+    ],
+    "correctIndex": 0,
+    "explanation": "Under this stated rule, an intrabar excursion alone does not qualify."
+  },
+  "15": {
+    "question": "The source marks a consecutive down-close run. Which reference should you preserve?",
+    "options": [
+      "The selected run and its stated opening/boundary convention.",
+      "Any last red candle chosen after the rally.",
+      "An assumed bank inventory level."
+    ],
+    "correctIndex": 0,
+    "explanation": "A candle-run convention must not be silently replaced with a last-candle shortcut."
+  },
+  "16": {
+    "question": "Which sequence matches the bearish breaker illustration?",
+    "options": [
+      "High, low, higher high, then a break below the intervening low.",
+      "Two arbitrary overlapping rectangles.",
+      "A small pause with no selected swing."
+    ],
+    "correctIndex": 0,
+    "explanation": "The sweep and subsequent structural breach define this illustration; the name alone is insufficient."
+  },
+  "18": {
+    "question": "A line connects three lows. What does it not reveal?",
+    "options": [
+      "The exact quantity and ownership of stops below it.",
+      "The chosen lows’ prices.",
+      "The line’s selected anchors."
+    ],
+    "correctIndex": 0,
+    "explanation": "Chart references are visible; complete resting-order information is not."
+  },
+  "19": {
+    "question": "Which timezone avoids a fixed year-round EST assumption?",
+    "options": [
+      "America/New_York for the actual date.",
+      "UTC−5 for every day.",
+      "The viewer’s clock without conversion."
+    ],
+    "correctIndex": 0,
+    "explanation": "Use a date-aware timezone and the product’s actual calendar."
+  },
+  "20": {
+    "question": "It is Tuesday and a new weekly low forms. What is known?",
+    "options": [
+      "It is the lowest price so far, not necessarily the final weekly low.",
+      "The final weekly low is confirmed.",
+      "Thursday must reverse."
+    ],
+    "correctIndex": 0,
+    "explanation": "The remaining trading days can establish a lower price."
+  },
+  "21": {
+    "question": "Does a bullish daily close prove that its low formed before its high?",
+    "options": [
+      "No; daily OHLC alone does not encode the intraday sequence.",
+      "Yes, on every bullish day.",
+      "Yes, whenever midnight is marked."
+    ],
+    "correctIndex": 0,
+    "explanation": "PO3 is a scenario framework; use intraday data to check the actual path."
+  },
+  "22": {
+    "question": "Broader and narrower timeframes disagree. What is appropriate?",
+    "options": [
+      "State the conflict and apply the selected study rule, including no entry.",
+      "Assume the larger chart cannot be wrong.",
+      "Move invalidation until both look bullish."
+    ],
+    "correctIndex": 0,
+    "explanation": "Context does not validate every lower-timeframe signal."
+  },
+  "23": {
+    "question": "For XAUUSD, what must be checked before sizing?",
+    "options": [
+      "The actual product’s increment, value per unit and execution terms.",
+      "A universal gold pip-to-dollar conversion.",
+      "The number of confluence labels alone."
+    ],
+    "correctIndex": 0,
+    "explanation": "Broker-specific CFDs and exchange futures do not share automatic sizing assumptions."
+  },
+  "24": {
+    "question": "What does 09:30 New York establish on an ordinary cash-equity session?",
+    "options": [
+      "A scheduled opening reference, not a direction.",
+      "A mandatory reversal.",
+      "A guaranteed winning entry."
+    ],
+    "correctIndex": 0,
+    "explanation": "The opening schedule and the subsequent price path are separate facts."
+  },
+  "25": {
+    "question": "The first FVG forms inside the excluded balanced region. What should the source-led study do?",
+    "options": [
+      "Reject it if it fails the stated qualification rule.",
+      "Trade it because first always means best.",
+      "Move the balanced-region boundaries afterward."
+    ],
+    "correctIndex": 0,
+    "explanation": "First presented must still mean first qualifying under the chosen source conditions."
+  },
+  "26": {
+    "question": "An SMT divergence disappears on the next observation. What should be recorded?",
+    "options": [
+      "Both its initial appearance and later disappearance.",
+      "Only the first screenshot.",
+      "A confirmed permanent institutional position."
+    ],
+    "correctIndex": 0,
+    "explanation": "A divergence is time-dependent and can fail; preserve its evolution."
+  },
+  "27": {
+    "question": "What is a weekly profile useful for?",
+    "options": [
+      "Organizing conditional scenarios and their invalidation.",
+      "Knowing the week’s path in advance.",
+      "Eliminating all no-trade weeks."
+    ],
+    "correctIndex": 0,
+    "explanation": "A taxonomy of examples is not proof of a fixed calendar program."
+  },
+  "28": {
+    "question": "One idea has a 90-unit total planned risk budget and three equal orders. What is planned risk per order before costs?",
+    "options": [
+      "30 units",
+      "90 units",
+      "270 units"
+    ],
+    "correctIndex": 0,
+    "explanation": "Dividing 90 by three preserves the total; assigning 90 to each triples exposure."
+  },
+  "29": {
+    "question": "When can the final weekly low be known?",
+    "options": [
+      "After the defined week is complete.",
+      "At every Tuesday open.",
+      "As soon as Monday’s low is swept."
+    ],
+    "correctIndex": 0,
+    "explanation": "A weekly scenario must not use an extreme confirmed only by later data."
+  },
+  "30": {
+    "question": "In replay, when may a COT snapshot be used?",
+    "options": [
+      "After its actual publication, not merely its snapshot date.",
+      "Before the data is released.",
+      "Whenever its later chart looks useful."
+    ],
+    "correctIndex": 0,
+    "explanation": "Availability at the decision time prevents look-ahead bias."
+  },
+  "31": {
+    "question": "A seasonal pattern aligns with a range extreme. What does this establish?",
+    "options": [
+      "A hypothesis to evaluate, not a certain quarterly reversal.",
+      "An unavoidable reversal every 90 days.",
+      "Risk-free pyramiding."
+    ],
+    "correctIndex": 0,
+    "explanation": "Historical seasonal averages do not fix the present year’s outcome."
+  },
+  "32": {
+    "question": "A day exceeds its historical Average Daily Range. Is that impossible?",
+    "options": [
+      "No; an average is not an upper bound.",
+      "Yes; ADR is the daily maximum.",
+      "Yes; algorithms must stop at 100%."
+    ],
+    "correctIndex": 0,
+    "explanation": "ADR depends on the selected completed-day sample and can be exceeded."
+  },
+  "33": {
+    "question": "Does a prior consolidation automatically become an inversion FVG on retest?",
+    "options": [
+      "No; the FVG needs its own completed geometry and breach rule.",
+      "Yes, every rectangle is an FVG.",
+      "Yes, if the curve is symmetrical."
+    ],
+    "correctIndex": 0,
+    "explanation": "Different array labels require different observable conditions."
+  },
+  "34": {
+    "question": "A plan names a 25-pip objective. What does the number establish?",
+    "options": [
+      "The stated planning goal, not guaranteed weekly realized profit.",
+      "A verified weekly return.",
+      "A fixed equivalent in NQ points."
+    ],
+    "correctIndex": 0,
+    "explanation": "An objective, protected open profit and realized profit are different quantities."
+  },
+  "35": {
+    "question": "You add an exact Fibonacci entry to a source plan that did not specify it. What is that?",
+    "options": [
+      "A separate research variation that must be labeled.",
+      "Automatically the original rule.",
+      "Proof of improved expectancy."
+    ],
+    "correctIndex": 0,
+    "explanation": "Do not silently combine management and entry rules from different models."
+  },
+  "36": {
+    "question": "A source demonstration shows a profitable paper trade. What can it establish?",
+    "options": [
+      "An illustration, not representative student returns or live fills.",
+      "A verified student win rate.",
+      "A guaranteed live fill at the same price."
+    ],
+    "correctIndex": 0,
+    "explanation": "Selected demonstrations are not an independent performance sample."
+  },
+  "37": {
+    "question": "A chosen range is 100–120 and price is 108. Where is it relative to the midpoint?",
+    "options": [
+      "Discount relative to this range.",
+      "Premium relative to this range.",
+      "Proof of institutional accumulation."
+    ],
+    "correctIndex": 0,
+    "explanation": "The midpoint is 110. Relative location is measurable; ownership and motive are not."
+  },
+  "38": {
+    "question": "Four wins of 3R and six losses of 1R produce what gross result?",
+    "options": [
+      "+6R before costs.",
+      "+12R after all costs.",
+      "A proven future 40% win rate."
+    ],
+    "correctIndex": 0,
+    "explanation": "4 × 3R − 6 × 1R = 6R; the hypothetical arithmetic does not forecast performance."
+  },
+  "39": {
+    "question": "A large displacement candle appears. Which claim still needs other evidence?",
+    "options": [
+      "A specific bank caused the move.",
+      "The candle has a measurable body.",
+      "The candle has recorded highs and lows."
+    ],
+    "correctIndex": 0,
+    "explanation": "Geometry alone does not identify institutional sponsorship."
+  },
+  "40": {
+    "question": "A breached region is later reclaimed. Is it now unbreakable?",
+    "options": [
+      "No; the reclaimed reference can fail again.",
+      "Yes; all liquidity has been absorbed.",
+      "Yes; the midpoint cannot be crossed."
+    ],
+    "correctIndex": 0,
+    "explanation": "Reclaimed and propulsion labels do not guarantee a later reaction."
+  },
+  "41": {
+    "question": "Is a 60-trading-day lookback the same as six calendar months?",
+    "options": [
+      "No; define the trading calendar and anchor explicitly.",
+      "Yes, on every instrument.",
+      "Yes, if the chart is daily."
+    ],
+    "correctIndex": 0,
+    "explanation": "Trading-day windows and calendar-month windows count different intervals."
+  },
+  "42": {
+    "question": "Open interest rises. What does this directly measure?",
+    "options": [
+      "More outstanding contracts, each with a long and a short side.",
+      "Only commercial buying.",
+      "A required price reversal."
+    ],
+    "correctIndex": 0,
+    "explanation": "Open interest counts one side of each outstanding contract, not the motive of either side."
+  },
+  "43": {
+    "question": "An LRLR label is assigned after a successful move. What is the research problem?",
+    "options": [
+      "Hindsight selection; classification should be frozen beforehand.",
+      "The label removes all costs.",
+      "The label proves frictionless execution."
+    ],
+    "correctIndex": 0,
+    "explanation": "A path that looks clear afterward is not evidence of a predictive rule."
+  },
+  "44": {
+    "question": "A daily candle closes above its open. Which path is required?",
+    "options": [
+      "No single high–low sequence is required by that close alone.",
+      "The low must form at 02:00 New York.",
+      "The high must form before the low."
+    ],
+    "correctIndex": 0,
+    "explanation": "A bullish close does not reveal the order or clock time of the extremes."
+  },
+  "45": {
+    "question": "Does a lesson called 20 Pips Per Day promise daily income?",
+    "options": [
+      "No; the reviewed source explicitly separates the title from such a promise.",
+      "Yes, if no losing days are recorded.",
+      "Yes, every session must be traded."
+    ],
+    "correctIndex": 0,
+    "explanation": "Preserve losses, no-trade days and missed fills when evaluating an objective."
+  },
+  "46": {
+    "question": "The supplied core collection verifies Months 1–10. What should be said about Months 11–12?",
+    "options": [
+      "Their attribution is not established by this collection.",
+      "Their exact rules are automatically verified.",
+      "They cannot exist anywhere."
+    ],
+    "correctIndex": 0,
+    "explanation": "Unavailable evidence must not be replaced with invented course attribution."
+  },
+  "47": {
+    "question": "A macro window begins. What does the clock supply?",
+    "options": [
+      "An observation interval, not a bullish or bearish signal.",
+      "A guaranteed bullish entry.",
+      "Proof that hidden orders are present."
+    ],
+    "correctIndex": 0,
+    "explanation": "The onboarding source separates timing from directional analysis."
+  },
+  "48": {
+    "question": "Which window belongs to the reviewed 2026 pre-market example?",
+    "options": [
+      "Roughly 07:00–09:00 New York local time.",
+      "A universal 08:00–09:30 window for every course.",
+      "The same as every opening-range interval."
+    ],
+    "correctIndex": 0,
+    "explanation": "Keep this example separate from the 2025 Venom and first-hour conventions."
+  },
+  "49": {
+    "question": "For L = 100, H = 110 and r = 1.618, what is L + r × (H − L)?",
+    "options": [
+      "116.18",
+      "161.8",
+      "A guaranteed next price."
+    ],
+    "correctIndex": 0,
+    "explanation": "100 + 1.618 × 10 = 116.18. The projection remains a hypothesis."
+  },
+  "50": {
+    "question": "The trading-break close is recorded. Is it automatically the official settlement?",
+    "options": [
+      "No; check the product’s settlement procedure.",
+      "Yes, for every futures contract.",
+      "Yes, whenever an opening gap exists."
+    ],
+    "correctIndex": 0,
+    "explanation": "A selected last-trade reference and an exchange settlement calculation are different."
+  },
+  "51": {
+    "question": "You missed the morning move. What follows for the afternoon?",
+    "options": [
+      "Nothing automatic; an afternoon entry needs its own qualifying conditions.",
+      "A compulsory recovery trade.",
+      "A guaranteed final-hour continuation."
+    ],
+    "correctIndex": 0,
+    "explanation": "Missing a move is not an entry condition or permission to increase exposure."
+  },
+  "52": {
+    "question": "MNQ is $2 per point with a 0.25-point tick. What is one tick per contract?",
+    "options": [
+      "$0.50",
+      "$2.00",
+      "$5.00"
+    ],
+    "correctIndex": 0,
+    "explanation": "2 × 0.25 = $0.50. Verify the actual product before sizing."
+  },
+  "53": {
+    "question": "Which reference window belongs to the reviewed 2025 Venom tutorial?",
+    "options": [
+      "08:00–09:30 New York local time.",
+      "Any Asian candle selected afterward.",
+      "A mandatory full London session."
+    ],
+    "correctIndex": 0,
+    "explanation": "Preserve the tutorial’s own interval and distinguish aggressive from deferred entry."
+  },
+  "54": {
+    "question": "A reference candle is still forming. Can its final high and low be used as already known?",
+    "options": [
+      "No; wait for completion under the selected rule.",
+      "Yes, if the later result is favorable.",
+      "Yes, because every range must be crossed."
+    ],
+    "correctIndex": 0,
+    "explanation": "A completed reference and a live changing range supply different information."
+  },
+  "55": {
+    "question": "Which geometry matches the reviewed suspension illustration?",
+    "options": [
+      "Separated adjacent bodies with touching or overlapping wicks.",
+      "Any isolated counter-trend candle.",
+      "Every failed inversion FVG."
+    ],
+    "correctIndex": 0,
+    "explanation": "Body-price separation differs from a standard three-candle outer-wick FVG."
+  },
+  "56": {
+    "question": "A projection points into an unrealized range. What has price already done?",
+    "options": [
+      "It has not necessarily traded through that proposed interval.",
+      "It has already filled every target.",
+      "It has verified a compulsory two-candle FVG."
+    ],
+    "correctIndex": 0,
+    "explanation": "A projected future boundary and a completed price interval are different observations."
+  },
+  "57": {
+    "question": "In the reviewed Sick Sister consolidation example, is the lagging index automatically a short?",
+    "options": [
+      "No; the example considers a conditional catch-up long after a discount reference.",
+      "Yes; weakness always means sell immediately.",
+      "Yes; divergence cannot disappear."
+    ],
+    "correctIndex": 0,
+    "explanation": "Market condition and entry location matter; relative weakness alone is not the signal."
+  }
+}

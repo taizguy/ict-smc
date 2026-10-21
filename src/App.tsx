@@ -631,7 +631,7 @@ export const App: React.FC = () => {
                   }}
                   className="btn-predikt-primary text-xs"
                 >
-                  <Youtube className="w-4 h-4 text-red-700" />
+                  <Youtube className="w-4 h-4 text-current" />
                   <span>{message('Masood Academy ({lectures})', { lectures: lectureCount })}</span>
                 </button>
                 <button
@@ -644,7 +644,7 @@ export const App: React.FC = () => {
                   rel="noopener noreferrer"
                   className="btn-predikt-secondary text-xs"
                 >
-                  <Youtube className="w-4 h-4 text-red-700" />
+                  <Youtube className="w-4 h-4 text-current" />
                   <span>{t("YouTube Channel")}</span>
                 </a>
               </div>
@@ -655,9 +655,9 @@ export const App: React.FC = () => {
           <ScrollReveal y={20} delay={0.05}>
             <div className="p-4 sm:p-5 rounded-xl bg-amber-500/[0.04] border border-amber-500/20 text-ink-secondary text-xs leading-relaxed flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div className="flex items-start gap-3">
-                <ShieldAlert className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
+                <ShieldAlert className="w-4 h-4 text-amber shrink-0 mt-0.5" />
                 <p className="text-[0.8125rem] sm:text-xs text-ink-secondary">
-                  <strong className="text-amber-700 font-semibold uppercase tracking-wider">{t("Regulatory Risk Disclosure:")}</strong> {t(" Trading foreign exchange, futures, indices, and financial derivatives carries high risk and may not be suitable for all investors. All materials on ")}<strong className="text-ink">learnsmc.xyz</strong>{t(" are strictly for educational and research purposes. Past performance is not indicative of future results.")}
+                  <strong className="text-amber font-semibold uppercase tracking-wider">{t("Regulatory Risk Disclosure:")}</strong> {t(" Trading foreign exchange, futures, indices, and financial derivatives carries high risk and may not be suitable for all investors. All materials on ")}<strong className="text-ink">learnsmc.xyz</strong>{t(" are strictly for educational and research purposes. Past performance is not indicative of future results.")}
                 </p>
               </div>
               <a
@@ -666,7 +666,7 @@ export const App: React.FC = () => {
                   e.preventDefault();
                   navigateToTab('disclaimer');
                 }}
-                className="text-[0.8125rem] font-sans tabular-nums text-amber-700 hover:text-amber-700 underline shrink-0 whitespace-nowrap self-end md:self-center"
+                className="text-[0.8125rem] font-sans tabular-nums text-amber hover:text-amber underline shrink-0 whitespace-nowrap self-end md:self-center"
               >{t("Read Full Risk Disclosure →")}</a>
             </div>
           </ScrollReveal>
@@ -680,9 +680,9 @@ export const App: React.FC = () => {
                   e.preventDefault();
                   navigateToTab('disclaimer');
                 }}
-                className="hover:text-amber-700 transition-colors flex items-center gap-1.5"
+                className="hover:text-amber transition-colors flex items-center gap-1.5"
               >
-                <ShieldAlert className="w-3.5 h-3.5 text-amber-700" />
+                <ShieldAlert className="w-3.5 h-3.5 text-amber" />
                 <span>{t("Risk Disclaimer")}</span>
               </a>
 

@@ -11,6 +11,7 @@ import { topicJourneys, topicJourneyRevision } from '../src/data/topicJourneys';
 import { guidedChartRevision } from '../src/utils/guidedChartDrills';
 import { focusPaths, searchFocusRevision, type SearchFocusKind } from '../src/data/searchFocus';
 import { chapterIllustrationRevision } from '../src/data/chapters/diagrams';
+import { ChapterQuiz } from '../src/components/ChapterQuiz';
 import { ReviewedModelSource } from '../src/components/ReviewedModelSource';
 import { reviewedModelSources } from '../src/data/reviewedModelSources';
 import { MentorshipsView, MentorshipsTeaser } from '../src/components/MentorshipsView';
@@ -190,6 +191,7 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   if (chapter) {
     r.bodyHtml = renderToStaticMarkup(createElement(TopicLearningGuide, { chapterId: chapter.id, staticOnly: true })) + r.bodyHtml;
     r.bodyHtml = renderToStaticMarkup(createElement(ChapterDiagram, { chapterId:chapter.id, staticOnly:true })) + r.bodyHtml;
+    r.bodyHtml += renderToStaticMarkup(createElement(ChapterQuiz, { chapter, staticOnly:true }));
     r.bodyHtml += renderToStaticMarkup(createElement(CurriculumReview, { chapter }));
     r.bodyHtml += byline + section('Continue learning', list(relatedChapters(chapter.id).map(c => link(`/learn/${c.slug}/`, c.title)))) +
       link(`/curriculum/${topicClusters.find(c => c.part === chapter.part)!.slug}/`, `Explore ${chapter.part}`);
@@ -244,6 +246,9 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
     r.schemaJson = { ...r.schemaJson, dateModified: topicJourneyRevision };
   }
   if (path.startsWith('/tools/chartlab/')) r.schemaJson = { ...r.schemaJson, dateModified: guidedChartRevision };
+  // The chapter review includes its copy, diagrams and quizzes; older shared-widget
+  // revisions must not overwrite the chapter's actual editorial revision.
+  if (chapter) r.schemaJson = { ...r.schemaJson, dateModified: chapterReviewRevision(chapter.id).iso };
   r.schemaJson = { '@context': 'https://schema.org', '@graph': [publisher, lessonAuthor,
     { '@type': 'WebSite', '@id': 'https://learnsmc.xyz/#website', name: 'LearnSMC', url: 'https://learnsmc.xyz/' },
     { '@type': 'BreadcrumbList', itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })) },

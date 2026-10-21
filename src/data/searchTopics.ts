@@ -22,7 +22,7 @@ export const studyTopics: Record<string, string> = {
   "/learn/0930-am-opening-range-theory/": "9:30 AM Opening Range & Initial Balance",
   "/learn/the-1st-presented-fvg-the-0931-rule/": "First Presented FVG: Context & Qualification",
   "/learn/smt-divergence-mechanics/": "SMT Divergence & Intermarket Comparisons",
-  "/learn/the-12-weekly-profiles/": "The 12 ICT Weekly Profiles",
+  "/learn/the-12-weekly-profiles/": "ICT Weekly Profiles: Scenarios & Limits",
   "/learn/ict-charter-model-1-intraday-scalping/": "ICT Charter Model 1: Intraday Scalping",
   "/learn/ict-charter-model-2-weekly-range-expansion/": "ICT Charter Model 2: Weekly Range",
   "/learn/ict-charter-model-3-swing-trading-cot/": "ICT Charter Model 3: Swing Trading & COT",

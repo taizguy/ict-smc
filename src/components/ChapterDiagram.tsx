@@ -62,6 +62,7 @@ export function ChapterDiagram({ chapterId, thumbnail = false, staticOnly = fals
       {!staticOnly && <div className="diagram-controls">
         {!reduced && <button type="button" onClick={() => { if (playing) setPlaying(false); else { if (step === null || step === 2) setStep(0); setPlaying(true); } }}>{t(playing ? 'Pause explanation' : step === 2 ? 'Replay explanation' : 'Play explanation')}</button>}
         {reduced && <p>{t('Reduced motion: use the numbered steps.')}</p>}
+        {step !== null && <button type="button" onClick={() => { setPlaying(false); setStep(null); }}>{t('Show complete diagram')}</button>}
       </div>}
       <ol className="diagram-steps" aria-label={t('Illustrated steps')}>
         {spec.steps.map((copy, index) => <li key={index} className={step === index ? 'diagram-step--active' : ''}>

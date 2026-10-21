@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { useTranslation } from '../i18n/TranslationProvider';
 import { cheatSheetTerms, cheatSheetQuestions, cheatSheetSources } from '../data/cheatSheet';
 import { ChapterDiagram } from './ChapterDiagram';
+import { TopicJourneyLinks } from './TopicLearningGuide';
 export function CheatSheetPage({staticOnly=false}:{staticOnly?:boolean}){
  const Heading = staticOnly ? 'h2' : 'h1';
  const {t,href}=useTranslation();const [copied,setCopied]=useState(false),[copyError,setCopyError]=useState(false);
  const citation='LearnSMC / Muhammad Umer Ijaz (2026). ICT/SMC Glossary & Cheat Sheet. https://learnsmc.xyz/resources/ict-smc-cheat-sheet/';
  return <article className="cheat-sheet-page"><header><p className="lab-eyebrow">{t('A FREE LEARNSMC REFERENCE')}</p><Heading>{t('ICT/SMC Glossary & Cheat Sheet')}</Heading><p>{t('Twenty clear definitions, original diagrams and a six-question observation checklist. Save the free guide or share this reference page.')}</p><div className="lab-actions"><a className="lab-primary" href="/downloads/learnsmc-ict-smc-cheat-sheet-en.pdf" download>{t('Download English PDF')}</a><a href="/downloads/learnsmc-ict-smc-cheat-sheet-ur.pdf" download>{t('Download Urdu PDF')}</a></div><p className="lab-small">{t('No signup. Four pages per edition. Written by Muhammad Umer Ijaz. Reviewed 20 October 2026. Educational reference, not investment advice.')}</p></header>
  <section><h2>{t('Three patterns worth seeing clearly')}</h2><div className="cheat-diagrams">{[13,15,18].map(id=><ChapterDiagram key={id} chapterId={id} thumbnail staticOnly/>)}</div><p>{t('The diagrams are schematic. They explain range relationships and possible revisits, without promising a trading outcome.')}</p></section>
+ <TopicJourneyLinks />
  <section><h2>{t('The glossary')}</h2><dl className="cheat-terms">{cheatSheetTerms.map(([term,definition])=><div key={term}><dt>{t(term)}</dt><dd>{t(definition)}</dd></div>)}</dl></section>
  <section className="lab-workspace"><h2>{t('Before you mark a setup')}</h2><ol className="cheat-checklist">{cheatSheetQuestions.map(q=><li key={q}>{t(q)}</li>)}</ol><a href={href('/tools/chartlab/')}>{t('Practice these observations in Chart Laboratory')}</a></section>
  <section id="sharing"><h2>{t('Share the reference')}</h2><p>{t('Link to this page or share the unmodified free PDF with attribution to LearnSMC. For other reuse, contact the author. Linking does not imply endorsement.')}</p><blockquote translate="no" lang="en" dir="ltr">{citation}</blockquote>{!staticOnly&&<button className="lab-primary" onClick={async()=>{try{await navigator.clipboard.writeText(citation);setCopied(true);setCopyError(false);}catch{setCopyError(true);}}}>{t(copied?'Citation copied':'Copy citation')}</button>}{copyError&&<p role="status">{t('Copy the citation text above manually.')}</p>}</section>

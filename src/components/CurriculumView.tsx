@@ -17,6 +17,7 @@ import { ScrollReveal } from './ScrollReveal';
 import { MentorshipsTeaser, MentorshipsView } from './MentorshipsView';
 import { ChapterDiagram } from './ChapterDiagram';
 import { SearchFocusGuide } from './SearchFocusGuide';
+import { TopicJourneyLinks } from './TopicLearningGuide';
 import { chapterIllustrationRevision } from '../data/chapters/diagrams';
 
 interface CurriculumViewProps {
@@ -170,6 +171,7 @@ export const CurriculumView: React.FC<CurriculumViewProps> = ({
       </ScrollReveal>
 
       {selectedPart === 'all' && <SearchFocusGuide kind="curriculum" />}
+      {selectedPart === 'all' && <TopicJourneyLinks />}
       {/* Part Filter Section */}
       <ScrollReveal y={20} delay={0.1}>
         <section className="space-y-3">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArticleTopicLinks } from '../TopicLearningGuide';
 import { articleDateLabel, readingMinutes, type Article } from '../../data/articles';
 import { financialDisclaimer } from '../../utils/publisher';
 import { SketchStory } from './ArticleSketch';
@@ -22,6 +23,7 @@ export function ArticleContent({ article, staticMode = false }: { article: Artic
     </section>)}
     {article.visualSeries ? <StudySketch series={article.visualSeries} index={7} staticMode={staticMode} /> : <ArticleMoment kind={article.sketch} index={6} staticMode={staticMode} />}
     <section className="article-sources" id="sources"><h2>Sources &amp; what they support</h2><p>Sources were consulted on {articleDateLabel(article.updated || article.date)}. External links open their publishers’ pages. Examples and illustrations are original LearnSMC work; no live market readings are supplied.</p><ol>{article.sources.map((source, i) => <li id={`source-${i + 1}`} key={source.url}><a href={source.url}>{source.title}</a><p>{source.note}</p></li>)}</ol></section>
+    <ArticleTopicLinks slug={article.slug}/>
     <section className="article-next"><h2>Turn the idea into a study session</h2><ul>{article.links.map(link => <li key={link.href}><a href={link.href}>{link.title} <span aria-hidden="true">↗</span></a></li>)}</ul></section>
     <aside className="article-risk ymyl-disclaimer" aria-label="Financial education and risk notice"><h2>Financial education and risk</h2><p>{financialDisclaimer}</p><a href="/disclaimer/">Read the full risk disclosure</a></aside>
     <footer className="article-editorial"><p>Written and maintained by <a href="/about/#author">Muhammad Umer Ijaz</a>. <a href="/about/#editorial-policy">Editorial policy</a> · <a href="/contact/">Suggest a correction</a></p></footer>

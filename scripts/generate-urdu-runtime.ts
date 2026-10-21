@@ -34,6 +34,15 @@ function walk(folder: string) {
   for (const entry of fs.readdirSync(folder, { withFileTypes: true })) {
     const file = path.join(folder, entry.name).replace(/\\/g, '/');
     if (entry.isDirectory()) { if (entry.name !== 'i18n') walk(file); continue; }
+    if (/data\/chapters\/(?:contentReview|checkpoints)\.json$/.test(file)) {
+      const collect = (value: unknown) => {
+        if (typeof value === 'string') add(value, 'chapters');
+        else if (Array.isArray(value)) value.forEach(collect);
+        else if (value && typeof value === 'object') Object.values(value).forEach(collect);
+      };
+      collect(JSON.parse(fs.readFileSync(file, 'utf8')));
+      continue;
+    }
     if (!/\.tsx?$/.test(file) || /(?:AcademyWorldMap|TextbookReader|SheryiansHome|OpeningScreen)\.tsx$/.test(file)) continue;
     const source = ts.createSourceFile(file, fs.readFileSync(file, 'utf8'), ts.ScriptTarget.Latest, true, file.endsWith('x') ? ts.ScriptKind.TSX : ts.ScriptKind.TS);
     const group = groupFor(file);

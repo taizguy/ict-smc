@@ -71,7 +71,7 @@ export const chapterCatalog = [
   {
     "id": 3,
     "slug": "the-order-book-in-depth",
-    "title": "The Order Book in Depth — DOM Microstructure, Spoofing, and True Liquidity",
+    "title": "The Order Book in Depth — Data Feeds & Execution Algorithms",
     "part": "Part I - Market Foundations"
   },
   {
@@ -95,7 +95,7 @@ export const chapterCatalog = [
   {
     "id": 9,
     "slug": "break-of-structure-bos-trend-continuation",
-    "title": "Break of Structure (BOS): Trend Continuation — Validating Institutional Order Flow",
+    "title": "Break of Structure (BOS): Continuation Rules & Limitations",
     "part": "Part II - Price Structure"
   },
   {
@@ -107,13 +107,13 @@ export const chapterCatalog = [
   {
     "id": 11,
     "slug": "market-structure-shift-mss-verified-directional-shift",
-    "title": "Market Structure Shift (MSS): Verified Directional Shift — The Institutional Reversal Blueprint",
+    "title": "Market Structure Shift (MSS): Source Conventions & Context",
     "part": "Part II - Price Structure"
   },
   {
     "id": 13,
     "slug": "fair-value-gaps-fvg-and-consequent-encroachment",
-    "title": "Fair Value Gaps (FVG) & Consequent Encroachment — The Core Institutional Imbalance",
+    "title": "Fair Value Gaps (FVG) & Consequent Encroachment",
     "part": "Part III - Price Delivery"
   },
   {
@@ -131,7 +131,7 @@ export const chapterCatalog = [
   {
     "id": 16,
     "slug": "breaker-blocks-trading-failed-order-blocks",
-    "title": "Breaker Blocks: Trading Failed Order Blocks — The Ultimate High-Win-Rate Reversal Pattern",
+    "title": "Breaker Blocks: Swing Sequence, Mitigation & Unicorn",
     "part": "Part III - Price Delivery"
   },
   {
@@ -191,7 +191,7 @@ export const chapterCatalog = [
   {
     "id": 27,
     "slug": "the-12-weekly-profiles",
-    "title": "27.1 The 12 Weekly Profiles — Decoding Institutional Weekly Delivery Templates",
+    "title": "Weekly Profiles: Conditional Scenarios & Invalidation",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
   },
   {
@@ -269,7 +269,7 @@ export const chapterCatalog = [
   {
     "id": 40,
     "slug": "core-content-month-4-advanced-pd-arrays-and-yields",
-    "title": "ICT Core Content Month 4: The 10-Tier PD Array Matrix & The Interest Rate Triad",
+    "title": "ICT Core Content Month 4: PD Array Studies & Rate-Market Comparisons",
     "part": "Part XI - ICT Mentorship Core Content Master Curriculum"
   },
   {
@@ -287,7 +287,7 @@ export const chapterCatalog = [
   {
     "id": 43,
     "slug": "core-content-month-7-short-term-trading-and-market-maker-templates",
-    "title": "ICT Core Content Month 7: Short-Term Trading & Market Maker Manipulation Templates",
+    "title": "ICT Core Content Month 7: Short-Term Studies & Market Maker Models",
     "part": "Part XI - ICT Mentorship Core Content Master Curriculum"
   },
   {
@@ -341,7 +341,7 @@ export const chapterCatalog = [
   {
     "id": 52,
     "slug": "event-volatility-hrlr-futures-vs-cfds",
-    "title": "Event Volatility, High Resistance Runs (NFP Thursdays & FOMC) & Futures vs. CFDs",
+    "title": "Event Volatility: Calendars, HRLR & Futures vs. CFDs",
     "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
   },
   {

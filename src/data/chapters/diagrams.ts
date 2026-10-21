@@ -703,6 +703,13 @@ export const chapterDiagrams: Record<number, ChapterDiagramSpec> = {
         "tone": "teal"
       },
       {
+        "kind": "label",
+        "x": 155,
+        "y": 184,
+        "text": "2",
+        "stage": 1
+      },
+      {
         "kind": "candle",
         "x": 225,
         "open": 64,
@@ -716,7 +723,7 @@ export const chapterDiagrams: Record<number, ChapterDiagramSpec> = {
         "kind": "label",
         "x": 225,
         "y": 24,
-        "text": "2",
+        "text": "3",
         "stage": 1
       },
       {
@@ -816,176 +823,220 @@ export const chapterDiagrams: Record<number, ChapterDiagramSpec> = {
     ]
   },
   "15": {
-    "title": "Bullish order block and revisit",
+    "title": "A bullish candle-run reference",
     "steps": [
-      "A down candle is selected as the reference.",
-      "An upward displacement follows in this example.",
-      "A revisit may be studied as mitigation; it can fail."
+      "Select this consecutive down-close run and its first opening price.",
+      "An upward move crosses that opening reference in this example.",
+      "A possible revisit is separate from the original opening reference."
     ],
     "marks": [
       {
         "kind": "candle",
-        "x": 90,
-        "open": 106,
-        "close": 140,
-        "high": 90,
-        "low": 156,
+        "x": 65,
+        "open": 90,
+        "close": 119,
+        "high": 80,
+        "low": 130,
+        "stage": 0,
+        "tone": "coral"
+      },
+      {
+        "kind": "candle",
+        "x": 105,
+        "open": 119,
+        "close": 145,
+        "high": 108,
+        "low": 157,
         "stage": 0,
         "tone": "coral"
       },
       {
         "kind": "zone",
-        "x": 76,
-        "y": 106,
-        "w": 278,
+        "x": 48,
+        "y": 80,
+        "w": 300,
+        "h": 77,
+        "stage": 0,
+        "tone": "teal"
+      },
+      {
+        "kind": "line",
+        "x": 48,
+        "y": 90,
+        "x2": 348,
+        "y2": 90,
+        "stage": 0,
+        "tone": "violet",
+        "dashed": true
+      },
+      {
+        "kind": "label",
+        "x": 307,
+        "y": 78,
+        "text": "Open",
+        "stage": 0
+      },
+      {
+        "kind": "candle",
+        "x": 150,
+        "open": 145,
+        "close": 105,
+        "high": 96,
+        "low": 155,
+        "stage": 1,
+        "tone": "teal"
+      },
+      {
+        "kind": "candle",
+        "x": 190,
+        "open": 105,
+        "close": 59,
+        "high": 48,
+        "low": 112,
+        "stage": 1,
+        "tone": "teal"
+      },
+      {
+        "kind": "candle",
+        "x": 230,
+        "open": 59,
+        "close": 37,
+        "high": 25,
+        "low": 68,
+        "stage": 1,
+        "tone": "teal"
+      },
+      {
+        "kind": "path",
+        "d": "M230,37 L269,61 L318,112",
+        "stage": 2,
+        "tone": "violet",
+        "dashed": true
+      },
+      {
+        "kind": "label",
+        "x": 80,
+        "y": 186,
+        "text": "1",
+        "stage": 0
+      },
+      {
+        "kind": "label",
+        "x": 230,
+        "y": 20,
+        "text": "2",
+        "stage": 1
+      },
+      {
+        "kind": "label",
+        "x": 350,
+        "y": 137,
+        "text": "3",
+        "stage": 2
+      }
+    ]
+  },
+  "16": {
+    "title": "A bearish breaker swing sequence",
+    "steps": [
+      "Select the prior high, intervening low and up-close reference.",
+      "A higher high sweeps the prior high, then price breaks the intervening low.",
+      "A return to the saved reference is possible, not guaranteed."
+    ],
+    "marks": [
+      {
+        "kind": "path",
+        "d": "M35,112 L70,63 L115,139 L145,104",
+        "stage": 0,
+        "tone": "teal",
+        "dashed": false
+      },
+      {
+        "kind": "line",
+        "x": 70,
+        "y": 63,
+        "x2": 205,
+        "y2": 63,
+        "stage": 0,
+        "tone": "violet",
+        "dashed": true
+      },
+      {
+        "kind": "line",
+        "x": 115,
+        "y": 139,
+        "x2": 300,
+        "y2": 139,
+        "stage": 0,
+        "tone": "violet",
+        "dashed": true
+      },
+      {
+        "kind": "candle",
+        "x": 145,
+        "open": 137,
+        "close": 103,
+        "high": 96,
+        "low": 145,
+        "stage": 0,
+        "tone": "teal"
+      },
+      {
+        "kind": "zone",
+        "x": 130,
+        "y": 103,
+        "w": 225,
         "h": 34,
         "stage": 0,
         "tone": "teal"
       },
       {
         "kind": "label",
-        "x": 82,
-        "y": 182,
-        "text": "1",
+        "x": 70,
+        "y": 48,
+        "text": "H",
         "stage": 0
       },
       {
-        "kind": "candle",
-        "x": 145,
-        "open": 140,
-        "close": 98,
-        "high": 89,
-        "low": 149,
-        "stage": 1,
-        "tone": "teal"
-      },
-      {
-        "kind": "candle",
-        "x": 185,
-        "open": 98,
-        "close": 60,
-        "high": 51,
-        "low": 107,
-        "stage": 1,
-        "tone": "teal"
-      },
-      {
-        "kind": "candle",
-        "x": 225,
-        "open": 60,
-        "close": 40,
-        "high": 31,
-        "low": 69,
-        "stage": 1,
-        "tone": "teal"
-      },
-      {
         "kind": "label",
-        "x": 224,
-        "y": 23,
-        "text": "2",
-        "stage": 1
+        "x": 110,
+        "y": 165,
+        "text": "L",
+        "stage": 0
       },
       {
         "kind": "path",
-        "d": "M225,40 L268,69 L315,120",
-        "stage": 2,
-        "tone": "violet",
-        "dashed": true
-      },
-      {
-        "kind": "dot",
-        "x": 315,
-        "y": 120,
-        "stage": 2,
-        "tone": "violet"
-      },
-      {
-        "kind": "label",
-        "x": 353,
-        "y": 151,
-        "text": "3",
-        "stage": 2
-      },
-      {
-        "kind": "label",
-        "x": 303,
-        "y": 98,
-        "text": "OB",
-        "stage": 2
-      }
-    ]
-  },
-  "16": {
-    "title": "An order block can fail",
-    "steps": [
-      "Start with a selected bullish reference block.",
-      "Price trades through it instead of holding.",
-      "A breaker interpretation needs context and a defined rule."
-    ],
-    "marks": [
-      {
-        "kind": "zone",
-        "x": 50,
-        "y": 105,
-        "w": 305,
-        "h": 33,
-        "stage": 0,
-        "tone": "teal"
-      },
-      {
-        "kind": "candle",
-        "x": 70,
-        "open": 126,
-        "close": 80,
-        "high": 71,
-        "low": 135,
-        "stage": 0,
-        "tone": "teal"
-      },
-      {
-        "kind": "candle",
-        "x": 115,
-        "open": 80,
-        "close": 55,
-        "high": 46,
-        "low": 89,
-        "stage": 0,
-        "tone": "teal"
-      },
-      {
-        "kind": "path",
-        "d": "M116,55 L165,90 L208,165",
+        "d": "M145,104 L185,37 L215,85 L261,175",
         "stage": 1,
         "tone": "coral",
         "dashed": false
       },
       {
+        "kind": "label",
+        "x": 185,
+        "y": 23,
+        "text": "HH",
+        "stage": 1
+      },
+      {
+        "kind": "label",
+        "x": 265,
+        "y": 198,
+        "text": "LL",
+        "stage": 1
+      },
+      {
         "kind": "path",
-        "d": "M208,165 L278,120 L346,165",
+        "d": "M261,175 L306,120 L353,172",
         "stage": 2,
         "tone": "coral",
         "dashed": true
       },
       {
         "kind": "label",
-        "x": 50,
+        "x": 320,
         "y": 91,
-        "text": "1",
-        "stage": 0
-      },
-      {
-        "kind": "label",
-        "x": 210,
-        "y": 190,
-        "text": "2",
-        "stage": 1
-      },
-      {
-        "kind": "label",
-        "x": 284,
-        "y": 103,
-        "text": "3",
+        "text": "Retest?",
         "stage": 2
       }
     ]
@@ -2078,15 +2129,15 @@ export const chapterDiagrams: Record<number, ChapterDiagramSpec> = {
   "33": {
     "title": "Market-maker curves are interpretations",
     "steps": [
-      "Choose the starting consolidation.",
-      "Map the sell-side and possible turning area.",
-      "A mirrored recovery is illustrative, not inevitable."
+      "Choose the starting consolidation for this sell-model example.",
+      "Map an upward curve and a possible turning region.",
+      "A later downward curve is illustrative, not inevitable."
     ],
     "marks": [
       {
         "kind": "zone",
         "x": 35,
-        "y": 51,
+        "y": 136,
         "w": 80,
         "h": 35,
         "stage": 0,
@@ -2094,43 +2145,43 @@ export const chapterDiagrams: Record<number, ChapterDiagramSpec> = {
       },
       {
         "kind": "path",
-        "d": "M35,69 L75,62 L110,75",
+        "d": "M35,150 L75,161 L110,147",
         "stage": 0,
         "tone": "teal",
         "dashed": false
       },
       {
         "kind": "path",
-        "d": "M110,75 L157,108 L192,98 L224,171",
+        "d": "M110,147 L157,111 L192,121 L224,47",
         "stage": 1,
-        "tone": "coral",
+        "tone": "teal",
         "dashed": false
       },
       {
         "kind": "path",
-        "d": "M224,171 L260,107 L290,119 L350,68",
+        "d": "M224,47 L260,111 L290,99 L350,150",
         "stage": 2,
-        "tone": "teal",
+        "tone": "coral",
         "dashed": true
       },
       {
         "kind": "label",
         "x": 70,
-        "y": 38,
+        "y": 194,
         "text": "1",
         "stage": 0
       },
       {
         "kind": "label",
         "x": 224,
-        "y": 198,
+        "y": 30,
         "text": "2",
         "stage": 1
       },
       {
         "kind": "label",
         "x": 350,
-        "y": 51,
+        "y": 175,
         "text": "3",
         "stage": 2
       }
@@ -3559,7 +3610,7 @@ export const chapterDiagrams: Record<number, ChapterDiagramSpec> = {
     "title": "The Venom reference window",
     "steps": [
       "Mark 08:00–09:30 in New York local time.",
-      "Observe a raid of a selected boundary.",
+      "Observe the selected high raid and subsequent move lower.",
       "Aggressive and deferred entries are different variations."
     ],
     "marks": [
@@ -3598,16 +3649,16 @@ export const chapterDiagrams: Record<number, ChapterDiagramSpec> = {
       },
       {
         "kind": "path",
-        "d": "M210,125 L242,172 L277,90",
+        "d": "M210,125 L242,39 L277,125",
         "stage": 1,
         "tone": "coral",
         "dashed": false
       },
       {
         "kind": "path",
-        "d": "M277,90 L310,112 L355,58",
+        "d": "M277,125 L310,99 L355,171",
         "stage": 2,
-        "tone": "teal",
+        "tone": "coral",
         "dashed": true
       },
       {
@@ -3619,15 +3670,15 @@ export const chapterDiagrams: Record<number, ChapterDiagramSpec> = {
       },
       {
         "kind": "label",
-        "x": 239,
-        "y": 200,
+        "x": 242,
+        "y": 25,
         "text": "2",
         "stage": 1
       },
       {
         "kind": "label",
         "x": 350,
-        "y": 38,
+        "y": 195,
         "text": "3",
         "stage": 2
       }

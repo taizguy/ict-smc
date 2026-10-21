@@ -1541,7 +1541,7 @@ for (const ch of textbookChapters) {
         <h2 style="font-size: 1.35rem; color: #121c32; margin-bottom: 0.75rem;">Detailed Lesson Sections</h2>
         ${ch.sections.map((sec, idx) => `
           <div style="border-top: 1px solid rgba(34,59,53,0.06); padding-top: 1.25rem; margin-top: 1.25rem;">
-            <h3 style="color: #121c32; font-size: 1.15rem; margin-bottom: 0.5rem;">${idx + 1}. ${escapeHtml(sec.title)}</h3>
+            <h3 style="color: #121c32; font-size: 1.15rem; margin-bottom: 0.5rem;">${escapeHtml(sec.title)}</h3>
             ${lessonParagraphs(sec.content).map(paragraph => `<p data-lesson-content style="color: #435b50; line-height: 1.7; margin-bottom: 0.75rem;">${renderContextualText(paragraph, getLessonPath(ch.slug))}</p>`).join('')}
             ${sec.keyTakeaway ? `
               <div style="background: rgba(37,101,82, 0.08); border-left: 3px solid #705692; padding: 0.75rem 1rem; border-radius: 4px; font-size: 0.85rem; color: #121c32;">
@@ -1552,12 +1552,7 @@ for (const ch of textbookChapters) {
         `).join('')}
       </section>
 
-      <section style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.35rem; color: #121c32; margin-bottom: 0.75rem;">Practical Invalidation Rules & Practice</h2>
-        <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; line-height: 1.8; color: #435b50;">
-          ${ch.practiceQuestions.map(pq => `<li>${escapeHtml(pq)}</li>`).join('')}
-        </ul>
-      </section>
+
     `
   };
 

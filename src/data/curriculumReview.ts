@@ -5,9 +5,8 @@ import { charterReviewSources } from './mentorshipReviewSources';
 // This date records our editorial clarification, not a full video/transcript review.
 export const curriculumReviewDate = '2026-10-19';
 export const curriculumReviewLabel = '19 October 2026';
-export const chapterReviewRevision = (id: number) => id === 42
-  ? { iso: '2026-10-20', label: '20 October 2026' }
-  : { iso: curriculumReviewDate, label: curriculumReviewLabel };
+// Chapter-wide editorial/diagram/quiz consistency review; not a new full-recording review.
+export const chapterReviewRevision = (_id: number) => ({ iso: '2026-10-21', label: '21 October 2026' });
 export const ictOfficialAccounts = {
   youtube: 'https://www.youtube.com/innercircletrader',
   x: 'https://x.com/I_Am_The_ICT',

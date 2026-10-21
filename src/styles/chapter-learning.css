@@ -1,0 +1,35 @@
+/* Semantic colours shared by both palettes; direction remains green/red. */
+html .chapter-diagram {
+  --diagram-teal:var(--color-positive);--diagram-coral:var(--color-negative);
+  --diagram-violet:var(--color-violet);--diagram-ink:var(--color-ink-secondary);
+  background:var(--color-surface);color:var(--color-ink);border-color:var(--color-line);
+}
+html .chapter-diagram-heading>span,html .diagram-note{color:var(--color-ink-secondary)}
+html .diagram-grid{color:var(--color-line)}
+html .diagram-controls button{color:var(--color-brand);background:var(--color-surface-muted);border-color:var(--color-line)}
+html .diagram-steps b{color:var(--color-brand);background:var(--color-surface-raised)}
+html .diagram-step--active button,html .diagram-steps button:hover{color:var(--color-ink);background:var(--color-surface-muted);border-color:var(--color-brand)}
+.diagram-controls{flex-wrap:wrap}
+.chapter-quiz{display:grid;gap:1.5rem;min-width:0}
+.chapter-quiz>p{color:var(--color-ink-secondary);line-height:1.7}
+.chapter-quiz-status{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;color:var(--color-ink)}
+.chapter-quiz-status button{font-size:.875rem;min-height:44px}
+.chapter-quiz-status button:disabled{opacity:.55;cursor:default}
+.chapter-quiz-question{min-width:0;padding:1rem;border:1px solid var(--color-line);border-radius:14px;background:var(--color-surface)}
+.chapter-quiz-question legend{padding-inline:.4rem;font-size:1rem;font-weight:600;line-height:1.6;color:var(--color-ink);max-width:100%;overflow-wrap:anywhere}
+.chapter-quiz-context{margin:.3rem 0 1rem;line-height:1.7;color:var(--color-ink-secondary)}
+.chapter-quiz-options{display:grid;gap:.6rem}
+.chapter-quiz-option{display:flex;align-items:center;justify-content:space-between;gap:1rem;text-align:start;min-height:48px;padding:.85rem 1rem;border-radius:9px;border:1px solid var(--color-line);background:var(--color-surface-muted);color:var(--color-ink);font:inherit;font-size:.9375rem;line-height:1.6;cursor:pointer;overflow-wrap:anywhere}
+.chapter-quiz-option:not(:disabled):hover{border-color:var(--color-brand);background:var(--color-surface-hover)}
+.chapter-quiz-option:disabled{cursor:default;opacity:1}
+.chapter-quiz-option strong{font-size:.75rem;flex:0 0 auto;max-width:8rem}
+.chapter-quiz-option.is-correct{border-color:var(--color-positive);color:var(--color-positive);background:color-mix(in srgb,var(--color-positive) 9%,var(--color-surface))}
+.chapter-quiz-option.is-incorrect{border-color:var(--color-negative);color:var(--color-negative);background:color-mix(in srgb,var(--color-negative) 9%,var(--color-surface))}
+.chapter-quiz-feedback{margin-top:1rem;padding:1rem;border-inline-start:3px solid var(--color-brand);background:var(--color-surface-muted);color:var(--color-ink-secondary);line-height:1.7}
+.chapter-quiz-feedback strong{color:var(--color-ink)}
+.chapter-room button:focus-visible,.chapter-quiz button:focus-visible,html .diagram-controls button:focus-visible,html .diagram-steps button:focus-visible{outline:3px solid var(--color-brand);outline-offset:3px}
+.chapter-room :is(.btn-predikt-primary,.on-accent) svg,.studio-footer .btn-predikt-primary svg{color:inherit}
+.studio-footer .btn-predikt-secondary svg{color:inherit}
+.chapter-room .btn-predikt-primary,.studio-footer .btn-predikt-primary{color:var(--color-on-brand)}
+.chapter-room .btn-predikt-secondary,.studio-footer .btn-predikt-secondary{color:var(--color-ink);background:var(--color-surface-muted);border-color:var(--color-line)}
+@media(max-width:600px){.chapter-quiz-question{padding:.75rem}.chapter-quiz-option{flex-wrap:wrap;gap:.4rem;padding:.75rem}.chapter-quiz-option strong{max-width:none}.chapter-room .chapter-diagram{margin-block:.5rem}.chapter-quiz-status{align-items:flex-start}}

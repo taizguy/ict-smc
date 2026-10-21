@@ -2,6 +2,7 @@ import { conciseHeading, studyTopics } from '../utils/searchMetadata';
 import { FinancialDisclaimer } from './FinancialDisclaimer';
 import { CurriculumReview } from './CurriculumReview';
 import { ChapterDiagram } from './ChapterDiagram';
+import { chapterDiagrams } from '../data/chapters/diagrams';
 import { SearchFocusGuide } from './SearchFocusGuide';
 import { TopicLearningGuide } from './TopicLearningGuide';
 import { MentorshipLessonNav } from './MentorshipLessonNav';
@@ -34,10 +35,8 @@ import {
 } from 'lucide-react';
 import { textbookChapters } from '../data/chaptersData';
 import { getLessonCanonicalUrl } from '../utils/url';
-import { quizQuestions } from '../data/quizzesData';
-import { InteractiveDiagram } from './InteractiveDiagram';
+import { ChapterQuiz } from './ChapterQuiz';
 import { ChapterSection } from '../types';
-import { saveQuestionAnswer } from '../utils/academyProgress';
 import { BauhausNavScroller } from './BauhausNavScroller';
 import { ScrollReveal } from './ScrollReveal';
 import { ContextualInternalLinker } from './ContextualInternalLinker';
@@ -66,8 +65,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
     else selectFromApp(id, slug);
   };
   const [activeScene, setActiveScene] = useState<'text' | 'visual' | 'terms' | 'checkpoint' | 'briefing'>('text');
-  const [revealedQuestions, setRevealedQuestions] = useState<Record<number, boolean>>({});
-  const [selectedQuizAnswers, setSelectedQuizAnswers] = useState<Record<string, number>>({});
+  const [quizAttempt, setQuizAttempt] = useState<Record<string, number>>({});
   const [expandedSimpler, setExpandedSimpler] = useState<Record<number, boolean>>({});
   const [hasCopiedLink, setHasCopiedLink] = useState<boolean>(false);
   
@@ -79,6 +77,10 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
   // Instantly reset scroll to top and hydrate bookmarks/notes on chapter load
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
+    setActiveScene('text');
+    setQuizAttempt({});
+    setExpandedSimpler({});
+    setHasCopiedLink(false);
     try {
       const raw = localStorage.getItem('learnsmc_bookmarked_chapters');
       const bmarks = raw ? JSON.parse(raw) : [];
@@ -137,79 +139,11 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
     return idx < orderedChapters.length - 1 ? orderedChapters[idx + 1] : null;
   }, [chapter, orderedChapters]);
 
-  // Pick suitable diagram type
-  const primaryDiagramType = useMemo((): 'liquidity_sweep' | 'fvg_formation' | 'order_block' | 'breaker_block' | 'mss_sequence' | 'po3_amd' | 'top_down_matrix' | 'session_timeline' | 'nested_structure' => {
-    const title = chapter.title.toLowerCase();
-    const slug = chapter.slug?.toLowerCase() || '';
-
-    if (title.includes('fvg') || title.includes('fair value gap') || slug.includes('fair-value-gap')) {
-      return 'fvg_formation';
-    }
-    if (title.includes('order block') || slug.includes('order-block')) {
-      return 'order_block';
-    }
-    if (title.includes('breaker') || slug.includes('breaker')) {
-      return 'breaker_block';
-    }
-    if (title.includes('liquidity') || slug.includes('liquidity') || title.includes('sweep')) {
-      return 'liquidity_sweep';
-    }
-    if (title.includes('bos') || title.includes('mss') || title.includes('market structure') || title.includes('shift')) {
-      return 'mss_sequence';
-    }
-    if (title.includes('killzone') || title.includes('session') || title.includes('time')) {
-      return 'session_timeline';
-    }
-    if (title.includes('optimal trade entry') || title.includes('ote') || title.includes('fibonacci')) {
-      return 'top_down_matrix';
-    }
-    if (title.includes('discount') || title.includes('premium')) {
-      return 'nested_structure';
-    }
-    if (title.includes('po3') || title.includes('amd') || title.includes('accumulation')) {
-      return 'po3_amd';
-    }
-    return 'liquidity_sweep';
-  }, [chapter]);
-
-  // Quiz questions matching this chapter
-  const matchingQuizQuestions = useMemo(() => {
-    const slug = chapter.slug?.toLowerCase() || '';
-    const title = chapter.title.toLowerCase();
-
-    return quizQuestions.filter(q => {
-      const cid = q.conceptId.toLowerCase();
-      if (title.includes('order block') && cid.includes('order_block')) return true;
-      if (title.includes('breaker') && cid.includes('breaker')) return true;
-      if (title.includes('fair value') && cid.includes('fair_value_gap')) return true;
-      if (title.includes('liquidity') && (cid.includes('liquidity') || cid.includes('sweep'))) return true;
-      if (title.includes('market structure') && (cid.includes('mss') || cid.includes('market_structure'))) return true;
-      if (title.includes('ote') && cid.includes('optimal_trade_entry')) return true;
-      if (slug.includes('fvg') && cid.includes('fair_value_gap')) return true;
-      return false;
-    }).slice(0, 3);
-  }, [chapter]);
-
-  const handleToggleRevealQuestion = (qIndex: number) => {
-    setRevealedQuestions(prev => ({
-      ...prev,
-      [qIndex]: !prev[qIndex]
-    }));
-  };
-
   const handleToggleSimpler = (sIdx: number) => {
     setExpandedSimpler(prev => ({
       ...prev,
       [sIdx]: !prev[sIdx]
     }));
-  };
-
-  const handleSelectQuizOption = (questionId: string, optionIdx: number) => {
-    setSelectedQuizAnswers(prev => ({
-      ...prev,
-      [questionId]: optionIdx
-    }));
-    saveQuestionAnswer(questionId, optionIdx);
   };
 
   const scenes = [
@@ -221,7 +155,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
   ] as const;
 
   return (
-    <div className="space-y-8 sm:space-y-12 pb-24 text-ink">
+    <div className="chapter-room space-y-8 sm:space-y-12 pb-24 text-ink">
       <MentorshipLessonNav chapterId={chapter.id} />
       
       {/* Top Minimal Navigation Bar */}
@@ -264,15 +198,15 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
               onClick={handleToggleBookmark}
               className={`btn-predikt-secondary text-xs py-1.5 px-3 flex items-center gap-1.5 transition-colors ${
                 isBookmarked 
-                  ? 'text-amber-700 border-amber-400/40 bg-amber-400/10'
+                  ? 'text-amber border-amber-400/40 bg-amber-400/10'
                   : 'text-ink-secondary hover:text-ink'
               }`}
               title={isBookmarked ? 'Remove chapter from bookmarks' : 'Bookmark this chapter for quick study'}
             >
               {isBookmarked ? (
                 <>
-                  <BookmarkCheck className="w-3.5 h-3.5 text-amber-700" />
-                  <span className="text-amber-700 hidden md:inline">Saved</span>
+                  <BookmarkCheck className="w-3.5 h-3.5 text-amber" />
+                  <span className="text-amber hidden md:inline">Saved</span>
                 </>
               ) : (
                 <>
@@ -382,7 +316,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
 
           {chapter.id === 13 && <SearchFocusGuide kind="fvg" />}
           <TopicLearningGuide key={`topic-${chapter.id}`} chapterId={chapter.id}/>
-          <ChapterDiagram key={chapter.id} chapterId={chapter.id} />
+
           {/* Scene Tabs Selector */}
           <div className="pt-4 border-t border-ink/[0.07]">
             <BauhausNavScroller innerClassName="gap-2 pb-1" showArrowsAlways={false}>
@@ -392,6 +326,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                 return (
                   <button
                     key={scene.id}
+                    aria-pressed={isActive}
                     onClick={() => setActiveScene(scene.id)}
                     className={`px-3.5 py-2 rounded-lg text-xs font-medium tracking-tight flex items-center gap-2 shrink-0 border transition-all cursor-pointer ${
                       isActive
@@ -450,7 +385,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                       </div>
 
                       {/* "Explain Simpler" Component */}
-                      <div className="pt-2">
+                      {sec.keyTakeaway && <div className="pt-2">
                         <button
                           type="button"
                           onClick={() => handleToggleSimpler(sIdx)}
@@ -469,11 +404,11 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                               SIMPLIFIED EXPLANATION
                             </div>
                             <p className="leading-relaxed font-normal text-ink/90">
-                              Think of this simply: {sec.keyTakeaway || 'Identify what the chart shows, state the rule you are testing, and record what would contradict your interpretation.'}
+                              Think of this simply: {sec.keyTakeaway}
                             </p>
                           </div>
                         )}
-                      </div>
+                      </div>}
 
                       {/* Key Takeaway Banner */}
                       {sec.keyTakeaway && (
@@ -481,7 +416,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                           <Zap className="w-4 h-4 text-teal shrink-0 mt-0.5" />
                           <div>
                             <div className="text-[0.8125rem] font-sans tabular-nums text-teal uppercase tracking-[0.16em]">
-                              INSTITUTIONAL KEY TAKEAWAY
+                              KEY TAKEAWAY
                             </div>
                             <p className="text-xs sm:text-sm font-normal text-ink mt-1 leading-relaxed">
                               {sec.keyTakeaway}
@@ -498,18 +433,16 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-4 border-t border-ink/[0.08]">
                 {/* Invalidation Rules */}
                 <div className="bg-ink/[0.02] border border-ink/[0.07] rounded-xl p-5 space-y-3">
-                  <div className="flex items-center gap-2 text-xs font-sans tabular-nums uppercase tracking-wider text-rose-700">
+                  <div className="flex items-center gap-2 text-xs font-sans tabular-nums uppercase tracking-wider text-negative">
                     <AlertTriangle className="w-4 h-4 shrink-0" />
-                    <span>Explicit Invalidation &amp; Failure Rules</span>
+                    <span>Chapter Review Checklist</span>
                   </div>
-                  <h4 className="text-sm font-semibold text-ink">When is This Concept Violated?</h4>
-                  <ul className="text-xs text-ink-secondary space-y-2 list-disc pl-4 leading-relaxed">
-                    <li><strong className="text-ink">Candle Body Violations:</strong> Define whether a wick, midpoint close or full-zone close invalidates your chosen setup. These are different rules; no single rule applies to every chapter.</li>
-                    <li><strong className="text-ink">Lack of Displacement:</strong> Define displacement relative to the instrument and timeframe before replay; slow movement alone does not identify institutional intent.</li>
-                    <li><strong className="text-ink">Time Window Expiration:</strong> If your study uses an expiry time, state it in advance and cancel unfilled orders under that rule. A session boundary is not universal invalidation.</li>
-                  </ul>
-                  <div className="text-[0.8125rem] font-sans tabular-nums text-amber-700 bg-amber-500/10 border border-amber-500/20 rounded p-2.5">
-                    RULE: Follow the invalidation written before entry; a stopped trade does not by itself disprove an entire framework.
+                  <h4 className="text-sm font-semibold text-ink">Connect the explanation to the example</h4>
+                  <ol className="text-xs text-ink-secondary space-y-2 list-decimal ps-4 leading-relaxed">
+                    {chapterDiagrams[chapter.id].steps.map(step => <li key={step}>{step}</li>)}
+                  </ol>
+                  <div className="text-[0.8125rem] font-sans tabular-nums text-amber bg-amber-500/10 border border-amber-500/20 rounded p-2.5">
+                    Separate the visible example from any proposed trading application.
                   </div>
                 </div>
 
@@ -551,7 +484,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                   value={userNote}
                   onChange={(e) => setUserNote(e.target.value)}
                   placeholder="Record your personal tape observations, chart invalidation takeaways, and execution reflections for this chapter..."
-                  className="w-full bg-surface border border-ink/[0.08] rounded-lg p-3 text-xs text-ink placeholder-[#5f7064] focus:border-brand focus:outline-none resize-none leading-relaxed"
+                  className="w-full bg-surface border border-ink/[0.08] rounded-lg p-3 text-xs text-ink placeholder:text-ink-muted focus:border-brand focus:outline-none resize-none leading-relaxed"
                 />
                 <div className="flex items-center justify-between text-[0.8125rem] text-ink-muted font-sans tabular-nums">
                   <span>Saved locally in browser storage · 100% private</span>
@@ -588,25 +521,19 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-brand" />
                   <h2 className="text-base sm:text-lg font-semibold uppercase tracking-tight text-ink">
-                    INTERACTIVE DIAGRAM SIMULATOR
+                    CHAPTER-SPECIFIC INTERACTIVE DIAGRAM
                   </h2>
                 </div>
-                <span className="text-xs font-sans tabular-nums uppercase bg-ink/[0.04] text-ink-secondary px-2.5 py-1 rounded-md border border-ink/[0.08]">
-                  {primaryDiagramType.replace(/_/g, ' ')}
-                </span>
+
               </div>
 
               <p className="text-base text-ink-secondary leading-relaxed">
-                Step through the sequence of algorithmic delivery, observe liquidity consumption, and study how institutional order flow prints onto candles.
+                Use the numbered steps to explore this chapter’s example. Solid marks show the illustration; dashed paths show references or possible outcomes, not predictions.
               </p>
 
               {/* Embedded Diagram */}
               <div className="rounded-xl overflow-hidden border border-ink/[0.08] bg-surface-muted p-2">
-                <InteractiveDiagram 
-                  type={primaryDiagramType} 
-                  title={chapter.title} 
-                  isInteractive={true} 
-                />
+                <ChapterDiagram key={chapter.id} chapterId={chapter.id} />
               </div>
 
               <div className="pt-4 flex flex-wrap items-center justify-between gap-3 border-t border-ink/[0.07]">
@@ -637,7 +564,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-teal" />
                   <h2 className="text-base sm:text-lg font-semibold uppercase tracking-tight text-ink">
-                    KEY INSTITUTIONAL TERMS ({chapter.keyTerms.length} DEFINITIONS)
+                    CHAPTER KEY TERMS ({chapter.keyTerms.length} DEFINITIONS)
                   </h2>
                 </div>
                 <span className="text-xs font-sans tabular-nums text-ink-muted uppercase">CORE VOCABULARY</span>
@@ -697,133 +624,12 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                 <span className="text-xs font-sans tabular-nums text-ink-muted uppercase">ACTIVE RECALL</span>
               </div>
 
-              {/* Diagnostic Multiple Choice Check */}
-              {matchingQuizQuestions.length > 0 && (
-                <div className="space-y-6">
-                  <div className="text-xs font-sans tabular-nums uppercase tracking-[0.16em] text-ink-secondary pb-1 border-b border-ink/[0.06]">
-                    MULTIPLE-CHOICE DIAGNOSTIC QUESTIONS ({matchingQuizQuestions.length})
-                  </div>
-
-                  <div className="space-y-6">
-                    {matchingQuizQuestions.map((quiz, qIdx) => {
-                      const selectedOpt = selectedQuizAnswers[quiz.id];
-                      const isAnswered = selectedOpt !== undefined;
-                      const isCorrect = selectedOpt === quiz.correctIndex;
-
-                      return (
-                        <div 
-                          key={quiz.id}
-                          className="p-6 rounded-xl bg-ink/[0.02] border border-ink/[0.07] space-y-4"
-                        >
-                          <div className="text-sm sm:text-base font-medium text-ink">
-                            0{qIdx + 1}. {quiz.question}
-                          </div>
-
-                          <div className="space-y-2 pt-1">
-                            {quiz.options.map((opt, oIdx) => {
-                              const isThisSelected = selectedOpt === oIdx;
-                              const isThisCorrect = quiz.correctIndex === oIdx;
-
-                              let optClass = 'bg-ink/[0.02] hover:bg-ink/[0.05] border-ink/[0.08] text-ink-secondary hover:text-ink';
-                              if (isAnswered) {
-                                if (isThisCorrect) {
-                                  optClass = 'bg-emerald-500/10 border-emerald-500/40 text-emerald-700 font-medium';
-                                } else if (isThisSelected && !isCorrect) {
-                                  optClass = 'bg-rose-500/10 border-rose-500/40 text-rose-700 font-medium';
-                                } else {
-                                  optClass = 'bg-ink/[0.01] border-ink/[0.04] text-ink-muted opacity-50';
-                                }
-                              }
-
-                              return (
-                                <button
-                                  key={oIdx}
-                                  onClick={() => handleSelectQuizOption(quiz.id, oIdx)}
-                                  className={`w-full p-3.5 rounded-lg text-left text-xs sm:text-sm border transition-all flex items-center justify-between gap-3 cursor-pointer ${optClass}`}
-                                >
-                                  <span>{opt}</span>
-                                  {isAnswered && isThisCorrect && (
-                                    <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" />
-                                  )}
-                                </button>
-                              );
-                            })}
-                          </div>
-
-                          {/* Inline Explanation */}
-                          {isAnswered && (
-                            <div className={`p-4 rounded-xl text-xs sm:text-sm leading-relaxed border ${
-                              isCorrect 
-                                ? 'bg-emerald-500/5 border-emerald-500/20 text-emerald-700'
-                                : 'bg-ink/[0.03] border-ink/[0.08] text-ink-secondary'
-                            }`}>
-                              <strong className="text-ink">INSTITUTIONAL ANALYSIS:</strong> {quiz.explanation}
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
-
-              {/* Codified Practice Questions */}
-              <div className="space-y-4 pt-4 border-t border-ink/[0.07]">
-                <div className="flex items-center justify-between">
-                  <div className="text-xs font-sans tabular-nums uppercase tracking-[0.16em] text-ink-secondary">
-                    CODIFIED PRACTICE QUESTIONS ({chapter.practiceQuestions.length})
-                  </div>
-                  <span className="text-xs font-sans tabular-nums text-ink-muted uppercase">CLICK TO REVEAL</span>
-                </div>
-
-                <div className="space-y-3">
-                  {chapter.practiceQuestions.map((question, qIdx) => {
-                    const isRevealed = revealedQuestions[qIdx];
-                    return (
-                      <div 
-                        key={qIdx}
-                        className="rounded-xl border border-ink/[0.07] overflow-hidden bg-ink/[0.02]"
-                      >
-                        {/* Header */}
-                        <button
-                          onClick={() => handleToggleRevealQuestion(qIdx)}
-                          className="w-full p-4 sm:p-5 text-left flex items-start justify-between gap-3 transition-colors cursor-pointer hover:bg-ink/[0.03]"
-                        >
-                          <div className="flex items-start gap-3">
-                            <span className="w-6 h-6 rounded-md bg-ink/[0.04] border border-ink/[0.08] flex items-center justify-center font-sans tabular-nums text-xs font-semibold text-brand shrink-0 mt-0.5">
-                              Q{qIdx + 1}
-                            </span>
-                            <p className="text-xs sm:text-sm font-medium text-ink">
-                              {question}
-                            </p>
-                          </div>
-
-                          <ChevronDown className={`w-4 h-4 text-ink-secondary shrink-0 transition-transform duration-200 ${
-                            isRevealed ? 'rotate-180' : ''
-                          }`} />
-                        </button>
-
-                        {/* Expanded Explanation */}
-                        {isRevealed && (
-                          <div className="p-4 sm:p-5 bg-ink/[0.01] border-t border-ink/[0.06] text-xs sm:text-sm text-ink-secondary space-y-2">
-                            <div className="font-sans tabular-nums text-[0.8125rem] uppercase text-teal tracking-[0.16em]">
-                              STUDY PROMPT
-                            </div>
-                            <p className="leading-relaxed font-normal">
-                              Write an answer using the chapter’s definitions. Separate what is visible on the chart from what you infer, state any missing evidence, and describe an example that would contradict your interpretation.
-                            </p>
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
+              <ChapterQuiz key={chapter.id} chapter={chapter} attempt={quizAttempt} onAttemptChange={setQuizAttempt} />
 
               {/* Next Chapter CTA */}
               <div className="pt-6 border-t border-ink/[0.07] flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="text-xs font-sans tabular-nums text-ink-secondary uppercase tracking-wider">
-                  CHAPTER COMPLETED · READY TO ADVANCE?
+                  Continue when you are ready
                 </div>
 
                 {nextChapter ? (

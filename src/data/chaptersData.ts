@@ -1,4 +1,5 @@
 import { TextbookChapter } from '../types';
+import { applyContentReview } from './chapters/applyContentReview';
 import { foundationsChapters } from './chapters/foundationsChapters';
 import { structureChapters } from './chapters/structureChapters';
 import { deliveryChapters } from './chapters/deliveryChapters';
@@ -21,6 +22,6 @@ export const textbookChapters: TextbookChapter[] = [
   ...coreContentChapters,
   ...ict2026Chapters,
   ...theinnercircletradersNewChapters
-];
+].map(applyContentReview);
 
 export default textbookChapters;

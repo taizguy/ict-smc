@@ -1,6 +1,7 @@
 import { publisherUrdu } from './publisher-urdu';
 import { navigationUrdu } from './navigation-urdu';
 import { guidedLabUrdu } from './guided-lab-urdu';
+import chapterReviewUrdu from './chapter-review-urdu.json';
 import { searchFocusUrdu } from '../data/searchFocus';
 import { topicJourneyUrdu } from '../data/topicJourneys';
 import mentorshipUrdu from './mentorships-urdu.json';
@@ -43,6 +44,7 @@ export const urdu: Record<string, string> = {
   ...reviewedExceptions,
   ...chapterHeadings,
   ...curriculumCorrections,
+  ...chapterReviewUrdu,
   ...mentorshipUrdu,
   ...curriculumReviewUrdu,
   ...searchFocusUrdu,

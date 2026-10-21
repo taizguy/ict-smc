@@ -328,7 +328,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
                     key={scene.id}
                     aria-pressed={isActive}
                     onClick={() => setActiveScene(scene.id)}
-                    className={`px-3.5 py-2 rounded-lg text-xs font-medium tracking-tight flex items-center gap-2 shrink-0 border transition-all cursor-pointer ${
+                    className={`px-3.5 py-2 rounded-lg text-xs font-medium tracking-tight flex items-center gap-2 shrink-0 border transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer ${
                       isActive
                         ? 'bg-ink/[0.12] text-ink border-ink/20'
                         : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06] hover:bg-ink/[0.05]'

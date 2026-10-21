@@ -101,7 +101,7 @@ export const OpeningScreen: React.FC<OpeningScreenProps> = ({ onEnter, onOpenMen
         <div className="flex items-center gap-2 sm:gap-3">
           <button
             onClick={onOpenMentorSpotlight}
-            className="hidden sm:flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-amber-500/10 hover:bg-amber-500/20 text-amber-700 border border-amber-500/30 text-xs font-sans tabular-nums font-bold transition-all shadow-md shadow-amber-950/30 hover:scale-105"
+            className="hidden sm:flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-amber-500/10 hover:bg-amber-500/20 text-amber-700 border border-amber-500/30 text-xs font-sans tabular-nums font-bold transition-[color,background-color,border-color,box-shadow,opacity,transform] shadow-md shadow-amber-950/30 hover:scale-105"
           >
             <Youtube className="w-4 h-4 text-rose-700 fill-rose-500/20" />
             <span>Tribute: @TraderAbdullahMasood</span>
@@ -109,7 +109,7 @@ export const OpeningScreen: React.FC<OpeningScreenProps> = ({ onEnter, onOpenMen
 
           <button
             onClick={onEnter}
-            className="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-rust to-amber hover:from-rust hover:to-amber text-on-brand font-sans tabular-nums font-bold text-xs sm:text-sm shadow-lg shadow-rust/30 transition-all hover:scale-105 active:scale-95 on-accent"
+            className="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-rust to-amber hover:from-rust hover:to-amber text-on-brand font-sans tabular-nums font-bold text-xs sm:text-sm shadow-lg shadow-rust/30 transition-[color,background-color,border-color,box-shadow,opacity,transform] hover:scale-105 active:scale-[0.96] on-accent"
           >
             <span>Enter App</span>
             <ArrowRight className="w-4 h-4 stroke-[2.5]" />
@@ -207,7 +207,7 @@ export const OpeningScreen: React.FC<OpeningScreenProps> = ({ onEnter, onOpenMen
                   <span>Trader Mindset</span>
                   <Star className="w-3 h-3 text-amber-700 fill-amber-400/40" />
                 </div>
-                <p className="text-sm font-sans italic text-ink-secondary transition-all duration-500 leading-relaxed">
+                <p className="text-sm font-sans italic text-ink-secondary transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-500 leading-relaxed">
                   {studentQuotes[typedTextIndex]}
                 </p>
               </div>
@@ -263,7 +263,7 @@ export const OpeningScreen: React.FC<OpeningScreenProps> = ({ onEnter, onOpenMen
                 {/* Gratitude Heart Counter */}
                 <button
                   onClick={handleVoteGratitude}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-sans tabular-nums font-bold transition-all ${
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-sans tabular-nums font-bold transition-[color,background-color,border-color,box-shadow,opacity,transform] ${
                     hasVoted 
                       ? 'bg-rose-600 text-on-brand shadow-lg shadow-rose-600/30 scale-105 on-accent'
                       : 'bg-surface-muted hover:bg-rose-50/60 text-rose-700 border border-rose-500/40 shadow-xs'
@@ -307,7 +307,7 @@ export const OpeningScreen: React.FC<OpeningScreenProps> = ({ onEnter, onOpenMen
                   href="https://www.youtube.com/@TraderAbdullahMasood"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2.5 rounded-full bg-gradient-to-r from-rose-600 to-red-600 hover:from-rose-500 hover:to-red-500 text-ink font-sans tabular-nums font-bold text-xs flex items-center gap-1.5 shadow-md shadow-red-950/40 transition-all hover:scale-105"
+                  className="px-4 py-2.5 rounded-full bg-gradient-to-r from-rose-600 to-red-600 hover:from-rose-500 hover:to-red-500 text-ink font-sans tabular-nums font-bold text-xs flex items-center gap-1.5 shadow-md shadow-red-950/40 transition-[color,background-color,border-color,box-shadow,opacity,transform] hover:scale-105"
                 >
                   <Youtube className="w-4 h-4" />
                   <span>Subscribe</span>
@@ -319,7 +319,7 @@ export const OpeningScreen: React.FC<OpeningScreenProps> = ({ onEnter, onOpenMen
             <div className="pt-2 space-y-3">
               <button
                 onClick={onEnter}
-                className="w-full py-4 px-6 rounded-full bg-gradient-to-r from-rust via-rust to-amber hover:from-rust hover:to-amber text-on-brand font-sans tabular-nums font-bold text-base shadow-2xl shadow-rust/30 flex items-center justify-center gap-3 transition-all hover:scale-[1.02] active:scale-[0.98] on-accent"
+                className="w-full py-4 px-6 rounded-full bg-gradient-to-r from-rust via-rust to-amber hover:from-rust hover:to-amber text-on-brand font-sans tabular-nums font-bold text-base shadow-2xl shadow-rust/30 flex items-center justify-center gap-3 transition-[color,background-color,border-color,box-shadow,opacity,transform] hover:scale-[1.02] active:scale-[0.96] on-accent"
               >
                 <span>Enter Academy & Begin Learning</span>
                 <ArrowRight className="w-5 h-5 stroke-[2.5]" />

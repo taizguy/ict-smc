@@ -105,7 +105,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
         <div className="flex items-center gap-1 px-4 py-2 bg-surface border-b border-ink/[0.06] overflow-x-auto scrollbar-none">
           <button
             onClick={() => setActiveTab('disclaimer')}
-            className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all shrink-0 ${
+            className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-[color,background-color,border-color,box-shadow,opacity,transform] shrink-0 ${
               activeTab === 'disclaimer'
                 ? 'bg-amber/15 text-amber border border-amber/30 shadow-sm'
                 : 'text-ink-muted hover:text-ink hover:bg-ink/[0.04]'
@@ -117,7 +117,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
 
           <button
             onClick={() => setActiveTab('privacy')}
-            className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all shrink-0 ${
+            className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-[color,background-color,border-color,box-shadow,opacity,transform] shrink-0 ${
               activeTab === 'privacy'
                 ? 'bg-teal/15 text-teal border border-teal/30 shadow-sm'
                 : 'text-ink-muted hover:text-ink hover:bg-ink/[0.04]'
@@ -129,7 +129,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
 
           <button
             onClick={() => setActiveTab('terms')}
-            className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all shrink-0 ${
+            className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-[color,background-color,border-color,box-shadow,opacity,transform] shrink-0 ${
               activeTab === 'terms'
                 ? 'bg-brand/15 text-violet border border-brand/30 shadow-sm'
                 : 'text-ink-muted hover:text-ink hover:bg-ink/[0.04]'
@@ -141,7 +141,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
 
           <button
             onClick={() => setActiveTab('about')}
-            className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-all shrink-0 ${
+            className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium transition-[color,background-color,border-color,box-shadow,opacity,transform] shrink-0 ${
               activeTab === 'about'
                 ? 'bg-ink/10 text-ink border border-ink/20 shadow-sm'
                 : 'text-ink-muted hover:text-ink hover:bg-ink/[0.04]'
@@ -153,7 +153,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
 
           <button
             onClick={() => setActiveTab('adsense')}
-            className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-sans tabular-nums transition-all shrink-0 ml-auto ${
+            className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-sans tabular-nums transition-[color,background-color,border-color,box-shadow,opacity,transform] shrink-0 ml-auto ${
               activeTab === 'adsense'
                 ? 'bg-teal/20 text-teal border border-teal/40'
                 : 'text-ink-muted hover:text-teal hover:bg-ink/[0.04]'

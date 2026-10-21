@@ -215,7 +215,7 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
             <BauhausNavScroller innerClassName="gap-2" showArrowsAlways={false}>
               <button
                 onClick={() => setActiveTab('tribute')}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-sans tabular-nums uppercase tracking-wider transition-all border cursor-pointer shrink-0 ${
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-sans tabular-nums uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,opacity,transform] border cursor-pointer shrink-0 ${
                   activeTab === 'tribute'
                     ? 'bg-ink/[0.12] text-ink border-ink/20'
                     : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06]'
@@ -225,7 +225,7 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
               </button>
               <button
                 onClick={() => setActiveTab('curriculum')}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-sans tabular-nums uppercase tracking-wider transition-all border cursor-pointer shrink-0 ${
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-sans tabular-nums uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,opacity,transform] border cursor-pointer shrink-0 ${
                   activeTab === 'curriculum'
                     ? 'bg-ink/[0.12] text-ink border-ink/20'
                     : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06]'
@@ -235,7 +235,7 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
               </button>
               <button
                 onClick={() => setActiveTab('daily_bias_checklist')}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-sans tabular-nums uppercase tracking-wider transition-all border cursor-pointer shrink-0 ${
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-sans tabular-nums uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,opacity,transform] border cursor-pointer shrink-0 ${
                   activeTab === 'daily_bias_checklist'
                     ? 'bg-ink/[0.12] text-ink border-ink/20'
                     : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06]'
@@ -438,7 +438,7 @@ export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
                     <div 
                       key={item.id}
                       onClick={() => toggleCheck(item.id)}
-                      className={`p-4 rounded-xl border transition-all cursor-pointer flex items-start gap-3.5 select-none ${
+                      className={`p-4 rounded-xl border transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer flex items-start gap-3.5 select-none ${
                         isChecked 
                           ? 'bg-emerald-500/5 border-emerald-500/30' 
                           : 'bg-ink/[0.02] border-ink/[0.07] hover:border-ink/[0.14]'

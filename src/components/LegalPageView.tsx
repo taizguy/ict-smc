@@ -107,7 +107,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
               <button
                 key={t.id}
                 onClick={() => onTabChange(t.id)}
-                className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-sans tabular-nums font-medium transition-all ${
+                className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-sans tabular-nums font-medium transition-[color,background-color,border-color,box-shadow,opacity,transform] ${
                   isActive
                     ? 'bg-brand on-accent border border-brand shadow-sm [&_svg]:text-current'
                     : 'text-ink-secondary hover:text-ink hover:bg-ink/[0.04]'

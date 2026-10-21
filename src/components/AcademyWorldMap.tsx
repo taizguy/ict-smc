@@ -151,7 +151,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
 
               <button
                 onClick={onOpenSearch}
-                className="px-3.5 py-1.5 bg-surface hover:bg-line text-ink border border-line text-xs font-sans tabular-nums flex items-center gap-2 transition-all duration-100 cursor-pointer"
+                className="px-3.5 py-1.5 bg-surface hover:bg-line text-ink border border-line text-xs font-sans tabular-nums flex items-center gap-2 transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-100 cursor-pointer"
               >
                 <Search className="w-3.5 h-3.5 text-teal" />
                 <span className="hidden sm:inline">Search Matrix (Ctrl+K)</span>
@@ -196,7 +196,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
 
               <button
                 onClick={() => onEnterChapter(currentActiveChapter.id, currentActiveChapter.slug)}
-                className="w-full py-2.5 px-4 bg-brand hover:bg-brand-hover text-on-brand text-xs font-sans tabular-nums font-bold uppercase tracking-wider flex items-center justify-center gap-2 border border-brand hover:border-brand-hover transition-all duration-100 cursor-pointer"
+                className="w-full py-2.5 px-4 bg-brand hover:bg-brand-hover text-on-brand text-xs font-sans tabular-nums font-bold uppercase tracking-wider flex items-center justify-center gap-2 border border-brand hover:border-brand-hover transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-100 cursor-pointer"
               >
                 <span>ENTER MISSION CHAMBER {currentActiveChapter.id}</span>
                 <ArrowRight className="w-4 h-4 text-on-brand" />
@@ -212,7 +212,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
             </div>
             <div className="w-full h-2 bg-canvas border border-line p-0.5">
               <div 
-                className="h-full bg-gradient-to-r from-teal via-[#286e98] to-[#705692] transition-all duration-500"
+                className="h-full bg-gradient-to-r from-teal via-[#286e98] to-[#705692] transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-500"
                 style={{ width: `${Math.max(progressPercent, 2)}%` }}
               />
             </div>
@@ -236,7 +236,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
           {/* Training Floor */}
           <button
             onClick={() => onNavigateFacility('chartlab')}
-            className="p-3 bg-surface hover:bg-surface border border-line hover:border-teal transition-all duration-100 text-left group cursor-pointer"
+            className="p-3 bg-surface hover:bg-surface border border-line hover:border-teal transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-100 text-left group cursor-pointer"
           >
             <div className="w-7 h-7 bg-surface border border-line group-hover:border-teal flex items-center justify-center text-teal mb-2">
               <BarChart2 className="w-3.5 h-3.5" />
@@ -248,7 +248,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
           {/* Execution Room */}
           <button
             onClick={() => onNavigateFacility('simulator')}
-            className="p-3 bg-surface hover:bg-surface border border-line hover:border-[#25734f] transition-all duration-100 text-left group cursor-pointer"
+            className="p-3 bg-surface hover:bg-surface border border-line hover:border-[#25734f] transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-100 text-left group cursor-pointer"
           >
             <div className="w-7 h-7 bg-surface border border-line group-hover:border-[#25734f] flex items-center justify-center text-[#25734f] mb-2">
               <PlayCircle className="w-3.5 h-3.5" />
@@ -260,7 +260,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
           {/* Research Room */}
           <button
             onClick={() => onNavigateFacility('backtest')}
-            className="p-3 bg-surface hover:bg-surface border border-line hover:border-teal transition-all duration-100 text-left group cursor-pointer"
+            className="p-3 bg-surface hover:bg-surface border border-line hover:border-teal transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-100 text-left group cursor-pointer"
           >
             <div className="w-7 h-7 bg-surface border border-line group-hover:border-teal flex items-center justify-center text-teal mb-2">
               <Cpu className="w-3.5 h-3.5" />
@@ -272,7 +272,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
           {/* Trader's Log */}
           <button
             onClick={() => onNavigateFacility('journal')}
-            className="p-3 bg-surface hover:bg-surface border border-line hover:border-[#705692] transition-all duration-100 text-left group cursor-pointer"
+            className="p-3 bg-surface hover:bg-surface border border-line hover:border-[#705692] transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-100 text-left group cursor-pointer"
           >
             <div className="w-7 h-7 bg-surface border border-line group-hover:border-[#705692] flex items-center justify-center text-[#705692] mb-2">
               <BookMarked className="w-3.5 h-3.5" />
@@ -284,7 +284,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
           {/* Concept Archive */}
           <button
             onClick={() => onNavigateFacility('graph')}
-            className="p-3 bg-surface hover:bg-surface border border-line hover:border-[#286e98] transition-all duration-100 text-left group cursor-pointer"
+            className="p-3 bg-surface hover:bg-surface border border-line hover:border-[#286e98] transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-100 text-left group cursor-pointer"
           >
             <div className="w-7 h-7 bg-surface border border-line group-hover:border-[#286e98] flex items-center justify-center text-[#286e98] mb-2">
               <GitFork className="w-3.5 h-3.5" />
@@ -296,7 +296,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
           {/* Knowledge Library */}
           <button
             onClick={() => onNavigateFacility('concepts')}
-            className="p-3 bg-surface hover:bg-surface border border-line hover:border-[#94631f] transition-all duration-100 text-left group cursor-pointer"
+            className="p-3 bg-surface hover:bg-surface border border-line hover:border-[#94631f] transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-100 text-left group cursor-pointer"
           >
             <div className="w-7 h-7 bg-surface border border-line group-hover:border-[#94631f] flex items-center justify-center text-[#94631f] mb-2">
               <Compass className="w-3.5 h-3.5" />
@@ -308,7 +308,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
           {/* Training Profile */}
           <button
             onClick={() => onNavigateFacility('dashboard')}
-            className="p-3 bg-surface hover:bg-surface border border-line hover:border-[#25734f] transition-all duration-100 text-left group cursor-pointer"
+            className="p-3 bg-surface hover:bg-surface border border-line hover:border-[#25734f] transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-100 text-left group cursor-pointer"
           >
             <div className="w-7 h-7 bg-surface border border-line group-hover:border-[#25734f] flex items-center justify-center text-[#25734f] mb-2">
               <Award className="w-3.5 h-3.5" />
@@ -320,7 +320,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
           {/* Master Tape Archive */}
           <button
             onClick={() => onNavigateFacility('masood')}
-            className="p-3 bg-surface hover:bg-surface border border-line hover:border-[#b44746] transition-all duration-100 text-left group cursor-pointer"
+            className="p-3 bg-surface hover:bg-surface border border-line hover:border-[#b44746] transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-100 text-left group cursor-pointer"
           >
             <div className="w-7 h-7 bg-surface border border-line group-hover:border-[#b44746] flex items-center justify-center text-[#b44746] mb-2">
               <Youtube className="w-3.5 h-3.5" />
@@ -336,7 +336,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
         <div className="flex flex-wrap items-center gap-2 text-xs font-sans tabular-nums">
           <button
             onClick={() => setSelectedSectorFilter('all')}
-            className={`px-3.5 py-1.5 rounded-full transition-all cursor-pointer font-bold ${
+            className={`px-3.5 py-1.5 rounded-full transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer font-bold ${
               selectedSectorFilter === 'all'
                 ? 'bg-ink/[0.15] text-ink border border-ink/30 shadow-md'
                 : 'bg-surface text-ink-muted hover:text-ink border border-ink/[0.08]'
@@ -347,7 +347,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
 
           <button
             onClick={() => setSelectedSectorFilter('FOUNDATIONS')}
-            className={`px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
+            className={`px-3.5 py-1.5 rounded-full transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer ${
               selectedSectorFilter === 'FOUNDATIONS'
                 ? 'bg-emerald-500/20 text-emerald-700 font-bold border border-emerald-500/40 shadow-md'
                 : 'bg-surface text-ink-muted hover:text-emerald-700 border border-ink/[0.08]'
@@ -358,7 +358,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
 
           <button
             onClick={() => setSelectedSectorFilter('STRUCTURE')}
-            className={`px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
+            className={`px-3.5 py-1.5 rounded-full transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer ${
               selectedSectorFilter === 'STRUCTURE'
                 ? 'bg-cyan-500/20 text-cyan-700 font-bold border border-cyan-500/40 shadow-md'
                 : 'bg-surface text-ink-muted hover:text-cyan-700 border border-ink/[0.08]'
@@ -369,7 +369,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
 
           <button
             onClick={() => setSelectedSectorFilter('DELIVERY')}
-            className={`px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
+            className={`px-3.5 py-1.5 rounded-full transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer ${
               selectedSectorFilter === 'DELIVERY'
                 ? 'bg-rust text-on-brand font-bold shadow-md shadow-rust/30 on-accent'
                 : 'bg-surface text-ink-muted hover:text-amber border border-ink/[0.08]'
@@ -380,7 +380,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
 
           <button
             onClick={() => setSelectedSectorFilter('TEMPORAL')}
-            className={`px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
+            className={`px-3.5 py-1.5 rounded-full transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer ${
               selectedSectorFilter === 'TEMPORAL'
                 ? 'bg-purple-500 text-on-brand font-bold shadow-md shadow-purple-500/30 on-accent'
                 : 'bg-surface text-ink-muted hover:text-purple-700 border border-ink/[0.08]'
@@ -391,7 +391,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
 
           <button
             onClick={() => setSelectedSectorFilter('TACTICAL')}
-            className={`px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
+            className={`px-3.5 py-1.5 rounded-full transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer ${
               selectedSectorFilter === 'TACTICAL'
                 ? 'bg-amber-500/20 text-amber-700 font-bold border border-amber-500/40 shadow-md'
                 : 'bg-surface text-ink-muted hover:text-amber-700 border border-ink/[0.08]'
@@ -402,7 +402,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
 
           <button
             onClick={() => setSelectedSectorFilter('INSTITUTIONAL')}
-            className={`px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
+            className={`px-3.5 py-1.5 rounded-full transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer ${
               selectedSectorFilter === 'INSTITUTIONAL'
                 ? 'bg-blue-500 text-on-brand font-bold shadow-md shadow-blue-500/30 on-accent'
                 : 'bg-surface text-ink-muted hover:text-blue-700 border border-ink/[0.08]'
@@ -476,7 +476,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
                     return (
                       <div
                         key={ch.id}
-                        className={`relative rounded-2xl p-5 border transition-all duration-300 flex flex-col justify-between group select-none ${
+                        className={`relative rounded-2xl p-5 border transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-300 flex flex-col justify-between group select-none ${
                           isCurrent
                             ? 'bg-surface border-rust shadow-[0_0_30px_rgba(255,87,34,0.25)] ring-1 ring-rust'
                             : isCompleted
@@ -555,7 +555,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
                           {unlocked ? (
                             <button
                               onClick={() => onEnterChapter(ch.id, ch.slug)}
-                              className={`w-full py-2.5 px-3 rounded-xl font-sans tabular-nums text-xs font-bold flex items-center justify-center gap-2 transition-all cursor-pointer ${
+                              className={`w-full py-2.5 px-3 rounded-xl font-sans tabular-nums text-xs font-bold flex items-center justify-center gap-2 transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer ${
                                 isCurrent
                                   ? 'bg-gradient-to-r from-rust to-amber text-on-brand shadow-md shadow-rust/25 hover:brightness-110 on-accent'
                                   : isCompleted

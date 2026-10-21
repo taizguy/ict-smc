@@ -92,7 +92,7 @@ export const CompareView: React.FC<CompareViewProps> = ({
                   key={c.id} aria-current={isSelected ? 'page' : undefined}
 
                   href={getComparisonUrl(c.id)}
-                  className={`px-3.5 py-1.5 text-xs font-sans tabular-nums uppercase whitespace-nowrap transition-all rounded-lg border cursor-pointer shrink-0 ${
+                  className={`px-3.5 py-1.5 text-xs font-sans tabular-nums uppercase whitespace-nowrap transition-[color,background-color,border-color,box-shadow,opacity,transform] rounded-lg border cursor-pointer shrink-0 ${
                     isSelected
                       ? 'bg-ink/[0.12] text-ink border-ink/20'
                       : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06] hover:bg-ink/[0.05]'

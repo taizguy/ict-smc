@@ -1,4 +1,5 @@
 import { publisherUrdu } from './publisher-urdu';
+import { navigationUrdu } from './navigation-urdu';
 import { searchFocusUrdu } from '../data/searchFocus';
 import { topicJourneyUrdu } from '../data/topicJourneys';
 import mentorshipUrdu from './mentorships-urdu.json';
@@ -45,6 +46,7 @@ export const urdu: Record<string, string> = {
   ...curriculumReviewUrdu,
   ...searchFocusUrdu,
   ...topicJourneyUrdu,
+  ...navigationUrdu,
   'Search concepts, chapters, algorithms (FVG, OB, AMD)...': 'تصورات، ابواب اور ماڈلز تلاش کریں (FVG، OB، AMD)…',
   'Close Search (Esc)': 'تلاش بند کریں (Esc)',
   'ENCYCLOPEDIA CONCEPTS': 'اصطلاحات اور تصورات',

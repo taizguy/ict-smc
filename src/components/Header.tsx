@@ -1,11 +1,6 @@
 import { useTranslation } from '../i18n/TranslationProvider';
-import React, { useState, useEffect } from 'react';
-import {
-  Search,
-  Sparkles,
-  Clock
-} from 'lucide-react';
-import { BauhausNavScroller } from './BauhausNavScroller';
+import React, { useEffect, useRef, useState } from 'react';
+import { Search } from 'lucide-react';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { ThemePicker } from './ThemePicker';
 
@@ -46,227 +41,76 @@ interface HeaderProps {
   progressPercent?: number;
 }
 
-export const Header: React.FC<HeaderProps> = ({
-  activeTab,
-  setActiveTab,
-  onOpenSearch,
-  onOpenMentorSpotlight,
-  onOpenWelcomeIntro,
-  progressPercent = 0
-}) => {
-  const { t, href, locale } = useTranslation();
-  const [nyTime, setNyTime] = useState<string>('');
-  const [activeSession, setActiveSession] = useState<string>('Asian');
-  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+type Panel = 'curriculum' | 'tools' | 'resources';
 
-  useEffect(() => {
-    const closeLibrary = (event: KeyboardEvent | PointerEvent) => {
-      if (event instanceof KeyboardEvent && event.key !== 'Escape') return;
-      document.querySelectorAll<HTMLDetailsElement>('.playground-library[open]').forEach(menu => {
-        if (event instanceof KeyboardEvent || !menu.contains(event.target as Node)) menu.open = false;
-      });
+export const Header: React.FC<HeaderProps> = ({activeTab, onOpenSearch, onOpenWelcomeIntro}) => {
+  const {t,href,locale}=useTranslation();
+  const [panel,setPanel]=useState<Panel|null>(null);
+  const header=useRef<HTMLElement>(null);
+  const triggers=useRef<Partial<Record<Panel,HTMLButtonElement>>>({});
+  useEffect(()=>{
+    const close=(event:PointerEvent|KeyboardEvent)=>{
+      if(event instanceof KeyboardEvent){
+        if(event.key!=='Escape')return;
+        if(panel)triggers.current[panel]?.focus();
+      }else if(header.current?.contains(event.target as Node))return;
+      setPanel(null);
+      header.current?.querySelectorAll<HTMLDetailsElement>('.playground-library[open]').forEach(menu=>{menu.open=false;});
     };
-    document.addEventListener('keydown', closeLibrary);
-    document.addEventListener('pointerdown', closeLibrary);
-    return () => { document.removeEventListener('keydown', closeLibrary); document.removeEventListener('pointerdown', closeLibrary); };
-  }, []);
-
-  // Scroll detection for backdrop effect
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Clock in NY time (IPDA benchmark)
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      const nyTimeString = now.toLocaleTimeString('en-US', {
-        timeZone: 'America/New_York',
-        hour12: false,
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
-      });
-      setNyTime(nyTimeString);
-
-      const nyHour = parseInt(nyTimeString.split(':')[0], 10);
-      if (nyHour >= 20 || nyHour < 2) {
-        setActiveSession('Asia');
-      } else if (nyHour >= 2 && nyHour < 7) {
-        setActiveSession('London KZ');
-      } else if (nyHour >= 7 && nyHour < 12) {
-        setActiveSession('NY AM Killzone');
-      } else if (nyHour >= 12 && nyHour < 16) {
-        setActiveSession('NY PM Session');
-      } else {
-        setActiveSession('Post-Market');
-      }
-    };
-
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Determine which macro section is active
-  const isCurriculumActive = activeTab === 'curriculum' || activeTab === 'chapter_room' || activeTab === 'world_map' || activeTab === 'textbook';
-  const isMasoodActive = activeTab === 'masood';
-  const isToolsActive = activeTab === 'tools' || [
-    'chartlab', 'simulator', 'backtest', 'journal', 'graph', 'concepts', 'compare', 'dashboard', 'masterclass', 'ict_suite'
-  ].includes(activeTab);
-
-  return (
-    <header className={`studio-header sticky top-0 z-50 transition-all duration-300 border-b ${
-      isScrolled
-        ? 'bg-canvas/90 backdrop-blur-xl border-ink/[0.08] shadow-[0_4px_30px_rgba(34,59,53,0.06)]'
-        : 'bg-canvas/60 backdrop-blur-md border-ink/[0.05]'
-    }`}>
-      {/* Top Main Navigation Bar */}
-      <div className="max-w-[1560px] w-full mx-auto px-4 sm:px-6 lg:px-8 min-h-16 h-auto sm:h-18 py-2 sm:py-0 flex flex-wrap sm:flex-nowrap items-center justify-between gap-4">
-
-        {/* Left: Brand Identity */}
-        <div className="flex items-center gap-6">
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              if (onOpenWelcomeIntro) {
-                onOpenWelcomeIntro();
-              } else {
-                setActiveTab('welcome');
-              }
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-            className="studio-brand flex items-center gap-3 text-left cursor-pointer group select-none"
-            title={t("Return to Welcome Screen")}
-            aria-label={t("Return to Welcome Screen")}
-          >
-            <span className="studio-brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40" width="40" height="40"><path d="M10 22v12m10-23v19M30 6v14"/><path d="M6 25h8v5H6zM16 16h8v9h-8zM26 10h8v6h-8z"/></svg></span>
-            <span><span className="studio-brand-name">LearnSMC<span aria-hidden="true">↗</span></span><span className="studio-brand-subtitle">ICT / SMC {t('ACADEMY')}</span></span>
-          </button>
-        </div>
-
-        {/* Center: Minimal Segmented Navigation */}
-        <nav aria-label={t("Main navigation")} className="hidden xl:flex items-center gap-1 p-1 bg-ink/[0.03] border border-ink/[0.07] rounded-xl">
-          {/* Pillar 1: Curriculum */}
-          <a href={href("/curriculum/")}
-            className={`px-4 py-2 rounded-lg text-sm font-semibold tracking-tight transition-all cursor-pointer ${
-              isCurriculumActive
-                ? 'bg-ink/[0.08] text-ink shadow-sm'
-                : 'text-ink-secondary hover:text-ink hover:bg-ink/[0.03]'
-            }`}
-          >
-            <span>{t("Curriculum")}</span>
-          </a>
-
-          <a href={href("/articles/")} aria-current={activeTab === 'articles' ? 'page' : undefined}
-            className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${activeTab === 'articles' ? 'bg-ink/[0.08] text-ink' : 'text-ink-secondary hover:text-ink'}`}>{t("Articles")}</a>
-
-          {/* Pillar 2: Masood's Academy */}
-          <a href={href("/masood/")}
-            className={`px-4 py-2 rounded-lg text-sm font-semibold tracking-tight transition-all cursor-pointer ${
-              isMasoodActive
-                ? 'bg-ink/[0.08] text-ink shadow-sm'
-                : 'text-ink-secondary hover:text-ink hover:bg-ink/[0.03]'
-            }`}
-          >
-            <span>{t("Masood Academy")}</span>
-          </a>
-
-          {/* Pillar 3: Trading Tools */}
-          <a href={href("/tools/")}
-            className={`px-4 py-2 rounded-lg text-sm font-semibold tracking-tight transition-all cursor-pointer ${
-              isToolsActive
-                ? 'bg-ink/[0.08] text-ink shadow-sm'
-                : 'text-ink-secondary hover:text-ink hover:bg-ink/[0.03]'
-            }`}
-          >
-            <span>{t("Workbench & Lab")}</span>
-          </a>
+    document.addEventListener('pointerdown',close);document.addEventListener('keydown',close);
+    return()=>{document.removeEventListener('pointerdown',close);document.removeEventListener('keydown',close);};
+  },[panel]);
+  const isCurriculum=['curriculum','chapter_room','world_map','textbook'].includes(activeTab);
+  const isTools=['tools','chartlab','simulator','backtest','journal','graph','concepts','compare','dashboard','masterclass','ict_suite'].includes(activeTab);
+  const groups={
+    curriculum:{title:'Explore the curriculum',main:[['/curriculum/','All lessons'],['/curriculum/mentorships/','Mentorships'],['/learn/fair-value-gaps-fvg-and-consequent-encroachment/','Fair value gaps']],aside:[['/learn/what-actually-moves-price/','Start with the foundations'],['/resources/ict-smc-cheat-sheet/','Free cheat sheet']]},
+    tools:{title:'Explore the workbench',main:[['/tools/','All study tools'],['/tools/chartlab/','Chart Laboratory'],['/tools/simulator/','Trade Simulator'],['/tools/backtest/','Backtest Lab']],aside:[['/tools/glossary/','Glossary'],['/tools/compare/','Compare concepts'],['/tools/journal/','Trading journal']]},
+    resources:{title:'Keep learning',main:[['/resources/ict-smc-cheat-sheet/','Free cheat sheet'],['/articles/','Illustrated articles']],aside:[['/about/','About LearnSMC'],['/contact/','Contact & corrections']]},
+  } as const;
+  const disclosure=(id:Panel,label:string,active:boolean)=><button type="button" ref={node=>{triggers.current[id]=node||undefined;}}
+    className={active?'is-current':''} aria-expanded={panel===id} aria-controls="desktop-learning-panel"
+    onMouseEnter={()=>setPanel(id)} onFocus={()=>setPanel(id)} onClick={()=>setPanel(id)}>{t(label)}</button>;
+  const selected=panel?groups[panel]:null;
+  return <header ref={header} className="site-header" onMouseLeave={()=>setPanel(null)} onBlur={event=>{if(!event.currentTarget.contains(event.relatedTarget as Node))setPanel(null);}}>
+    <div className="site-nav-bar">
+      <a className="site-brand" href={href('/')} aria-label={t('LearnSMC home')} onClick={event=>{if(onOpenWelcomeIntro&&!event.ctrlKey&&!event.metaKey&&!event.shiftKey&&!event.altKey){event.preventDefault();onOpenWelcomeIntro();}}}>
+        <span className="site-brand-symbol" aria-hidden="true"><svg viewBox="0 0 40 40" width="30" height="30"><path d="M10 22v12m10-23v19M30 6v14"/><path d="M6 25h8v5H6zM16 16h8v9h-8zM26 10h8v6h-8z"/></svg></span>
+        <span translate="no">LearnSMC<span className="brand-period">.</span></span>
+      </a>
+      <nav className="desktop-navigation" aria-label={t('Main navigation')}>
+        {disclosure('curriculum','Curriculum',isCurriculum)}
+        <a href={href('/articles/')} aria-current={activeTab==='articles'?'page':undefined} onMouseEnter={()=>setPanel(null)} onFocus={()=>setPanel(null)}>{t('Articles')}</a>
+        <a href={href('/masood/')} aria-current={activeTab==='masood'?'page':undefined} onMouseEnter={()=>setPanel(null)} onFocus={()=>setPanel(null)}>{t('Masood Academy')}</a>
+        {disclosure('tools','Workbench & Lab',isTools)}
+        {disclosure('resources','Resources',activeTab==='resources')}
+      </nav>
+      <details className="playground-library mobile-library">
+        <summary>{locale==='ur'?'لائبریری':'The library'} <span aria-hidden="true">＋</span></summary>
+        <nav aria-label={locale==='ur'?'تعلیمی لائبریری':'Learning library'}>
+          <p>{locale==='ur'?'آج کیا سیکھنا چاہتے ہیں؟':'Where does your curiosity go next?'}</p>
+          {([
+            ['/curriculum/','Curriculum','نصاب','01'],
+            ['/curriculum/mentorships/','Mentorships','مینٹورشپس','02'],
+            ['/tools/','Workbench & Lab','ورک بینچ اور لیب','03'],
+            ['/articles/','Articles','مضامین','04'],
+            ['/masood/','Masood Academy','مسعود اکیڈمی','05'],
+            ['/resources/ict-smc-cheat-sheet/','Free cheat sheet','مفت چیٹ شیٹ','06'],
+          ] as const).map(([path,en,ur,n])=><a key={path} href={href(path)}><small>{n}</small><span>{locale==='ur'?ur:en}</span><span aria-hidden="true">↗</span></a>)}
         </nav>
-
-        {/* Right: Search, Market Clock, Tribute */}
-        <div className="flex items-center gap-2 sm:gap-3 ms-auto">
-          <details className="playground-library">
-            <summary>{locale === 'ur' ? 'لائبریری' : 'The library'} <span aria-hidden="true">＋</span></summary>
-            <nav aria-label={locale === 'ur' ? 'تعلیمی لائبریری' : 'Learning library'}>
-              <p>{locale === 'ur' ? 'آج کیا سیکھنا چاہتے ہیں؟' : 'Where does your curiosity go next?'}</p>
-              {([
-                ['/curriculum/', 'Curriculum', 'نصاب', '01'],
-                ['/curriculum/mentorships/', 'Mentorships', 'مینٹورشپس', '02'],
-                ['/tools/', 'Workbench & Lab', 'ورک بینچ اور لیب', '03'],
-                ['/articles/', 'Articles', 'مضامین', '04'],
-                ['/masood/', 'Masood Academy', 'مسعود اکیڈمی', '05'],
-                ['/resources/ict-smc-cheat-sheet/', 'Free cheat sheet', 'مفت چیٹ شیٹ', '06'],
-              ] as const).map(([path,en,ur,n]) => <a key={path} href={href(path)}><small>{n}</small><span>{locale === 'ur' ? ur : en}</span><span aria-hidden="true">↗</span></a>)}
-            </nav>
-          </details>
-          <LanguageSwitcher />
-          <ThemePicker />
-          {/* NY Market Session Clock */}
-          <div className="studio-clock hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-ink/[0.02] border border-ink/[0.07] text-xs font-sans tabular-nums">
-            <span className="w-1.5 h-1.5 rounded-full bg-positive animate-pulse" />
-            <span className="text-ink-secondary uppercase">{t(activeSession)}</span>
-            <span className="text-ink">|</span>
-            <span className="text-ink font-medium" dir="ltr">{nyTime || t('Loading time…')} ET</span>
-          </div>
-
-          {/* Search Button */}
-          <button
-            onClick={onOpenSearch}
-            className="flex items-center gap-2.5 px-3 py-1.5 rounded-lg bg-ink/[0.03] hover:bg-ink/[0.07] border border-ink/[0.07] hover:border-ink/15 text-xs text-ink-secondary hover:text-ink transition-all cursor-pointer"
-            title={t("Search (⌘K)")}
-          >
-            <Search className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline text-xs font-sans">{t("Search")}</span>
-            <kbd className="hidden sm:inline px-1.5 py-0.5 text-[0.8125rem] font-sans tabular-nums bg-ink/[0.06] border border-ink/[0.08] rounded text-ink-secondary">
-              ⌘K
-            </kbd>
-          </button>
-
-          {/* Mentor Tribute */}
-          {onOpenMentorSpotlight && (
-            <button
-              onClick={onOpenMentorSpotlight}
-              className="studio-tribute p-2 rounded-lg bg-ink/[0.03] hover:bg-ink/[0.08] border border-ink/[0.07] text-ink-secondary hover:text-ink transition-all cursor-pointer"
-              title={t("Trader Abdullah Masood Tribute")}
-              aria-label={t("Trader Abdullah Masood Tribute")}
-            >
-              <Sparkles className="w-4 h-4 text-teal" />
-            </button>
-          )}
-        </div>
-
+      </details>
+      <div className="site-nav-utilities">
+        <LanguageSwitcher/>
+        <span className="nav-utility-divider" aria-hidden="true"/>
+        <ThemePicker/>
+        <button type="button" className="nav-icon-button" onClick={()=>{setPanel(null);onOpenSearch();}} aria-label={t('Search')} title={t('Search (⌘K)')}><Search size={19} strokeWidth={1.6}/></button>
       </div>
-
-      {/* Mobile Macro Navigation Bar */}
-      <div role="navigation" aria-label={t("Main navigation")} className="flex xl:hidden border-t border-ink/[0.06] px-3 py-2 bg-surface-muted/70">
-        <BauhausNavScroller innerClassName="gap-1.5">
-          <a href={href("/curriculum/")}
-            className={`py-1.5 px-3 rounded-lg text-sm font-semibold tracking-tight whitespace-nowrap transition-all shrink-0 ${
-              isCurriculumActive ? 'bg-ink/[0.10] text-ink' : 'text-ink-secondary'
-            }`}
-          >{t("Curriculum")}</a>
-          <a href={href("/articles/")} aria-current={activeTab === 'articles' ? 'page' : undefined}
-            className={`min-h-11 inline-flex items-center px-3 rounded-lg text-sm font-semibold whitespace-nowrap shrink-0 ${activeTab === 'articles' ? 'bg-ink/[0.10] text-ink' : 'text-ink-secondary'}`}>{t("Articles")}</a>
-          <a href={href("/masood/")}
-            className={`py-1.5 px-3 rounded-lg text-sm font-semibold tracking-tight whitespace-nowrap transition-all shrink-0 ${
-              isMasoodActive ? 'bg-ink/[0.10] text-ink' : 'text-ink-secondary'
-            }`}
-          >{t("Masood Academy")}</a>
-          <a href={href("/tools/")}
-            className={`py-1.5 px-3 rounded-lg text-sm font-semibold tracking-tight whitespace-nowrap transition-all shrink-0 ${
-              isToolsActive ? 'bg-ink/[0.10] text-ink' : 'text-ink-secondary'
-            }`}
-          >{t("Workbench & Lab")}</a>
-        </BauhausNavScroller>
-      </div>
-    </header>
-  );
+    </div>
+    <div id="desktop-learning-panel" className={`desktop-learning-panel ${selected?'is-open':''}`} hidden={!selected}>
+      {selected&&<div className="desktop-panel-inner">
+        <div className="desktop-panel-primary"><p>{t(selected.title)}</p>{selected.main.map(([path,label])=><a href={href(path)} key={path}>{t(label)}</a>)}</div>
+        <div className="desktop-panel-secondary"><p>{t('A useful next step')}</p>{selected.aside.map(([path,label])=><a href={href(path)} key={path}>{t(label)}</a>)}</div>
+      </div>}
+    </div>
+  </header>;
 };
-
 export default Header;

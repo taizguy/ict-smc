@@ -1,0 +1,17 @@
+export const navigationUrdu: Record<string,string> = {
+  'LearnSMC home':'LearnSMC کا مرکزی صفحہ',
+  'Resources':'وسائل',
+  'Explore the curriculum':'نصاب دیکھیں',
+  'All lessons':'تمام اسباق',
+  'Fair value gaps':'فیئر ویلیو گیپس (FVG)',
+  'Start with the foundations':'بنیادوں سے آغاز کریں',
+  'Free cheat sheet':'مفت چیٹ شیٹ',
+  'Explore the workbench':'ورک بینچ دیکھیں',
+  'All study tools':'تمام تعلیمی ٹولز',
+  'Keep learning':'سیکھتے رہیں',
+  'Illustrated articles':'تصویری مضامین',
+  'About LearnSMC':'LearnSMC کے بارے میں',
+  'Contact & corrections':'رابطہ اور تصحیح',
+  'A useful next step':'ایک مفید اگلا قدم',
+  'Appearance':'ظاہری انداز',
+};

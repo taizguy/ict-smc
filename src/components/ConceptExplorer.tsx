@@ -1,6 +1,7 @@
 import { currentDocumentHref } from '../i18n/navigation';
 import { ToolContentNotice } from './ToolContentNotice';
 import { ReviewedModelSource } from './ReviewedModelSource';
+import { GlossaryTopicLink } from './TopicLearningGuide';
 import React, { useState, useEffect } from 'react';
 import { ictConcepts } from '../data/conceptsData';
 import { masterclassCollection } from '../data/masterclassData';
@@ -493,6 +494,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
             )}
 
             <ReviewedModelSource modelId={concept.id} />
+            <GlossaryTopicLink conceptId={concept.id}/>
             {/* Layer Tabs with Scroller */}
             <div className="pt-4 border-t border-ink/[0.07]">
               <div className="text-[0.8125rem] font-sans tabular-nums uppercase tracking-[0.16em] text-ink-muted mb-2">

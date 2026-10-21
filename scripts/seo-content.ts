@@ -6,6 +6,8 @@ import { ChapterDiagram } from '../src/components/ChapterDiagram';
 import { CheatSheetPage } from '../src/components/CheatSheetPage';
 import { PricePlayground } from '../src/components/PricePlayground';
 import { SearchFocusGuide } from '../src/components/SearchFocusGuide';
+import { TopicLearningGuide, TopicJourneyLinks, GlossaryTopicLink } from '../src/components/TopicLearningGuide';
+import { topicJourneys, topicJourneyRevision } from '../src/data/topicJourneys';
 import { focusPaths, searchFocusRevision, type SearchFocusKind } from '../src/data/searchFocus';
 import { chapterIllustrationRevision } from '../src/data/chapters/diagrams';
 import { ReviewedModelSource } from '../src/components/ReviewedModelSource';
@@ -185,6 +187,7 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   if (/^\/tools\/(journal|profile)\//.test(path) || path === '/adsense/') r.isNoindex = true;
   const chapter = textbookChapters.find(c => path === `/learn/${c.slug}/`);
   if (chapter) {
+    r.bodyHtml = renderToStaticMarkup(createElement(TopicLearningGuide, { chapterId: chapter.id, staticOnly: true })) + r.bodyHtml;
     r.bodyHtml = renderToStaticMarkup(createElement(ChapterDiagram, { chapterId:chapter.id, staticOnly:true })) + r.bodyHtml;
     r.bodyHtml += renderToStaticMarkup(createElement(CurriculumReview, { chapter }));
     r.bodyHtml += byline + section('Continue learning', list(relatedChapters(chapter.id).map(c => link(`/learn/${c.slug}/`, c.title)))) +
@@ -229,6 +232,16 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
     ...(r.schemaJson || { '@type': focusKind === 'fvg' ? 'LearningResource' : 'CollectionPage', name:r.heading, description:r.description, url:r.canonical, publisher }),
     dateModified: searchFocusRevision.iso,
   };
+  if (path === '/curriculum/') r.bodyHtml += renderToStaticMarkup(createElement(TopicJourneyLinks));
+  const glossaryTopic = path === '/tools/glossary/imbalances/fair-value-gap/' ? 'fair_value_gap' : path === '/tools/glossary/order-blocks/order-block/' ? 'order_block' : undefined;
+  if (glossaryTopic) {
+    r.bodyHtml += renderToStaticMarkup(createElement(GlossaryTopicLink, {conceptId:glossaryTopic}));
+    const sourceChapter = textbookChapters.find(c=>c.id===(glossaryTopic==='fair_value_gap' ? 13 : 15))!;
+    r.schemaJson = { ...r.schemaJson, citation: curriculumReview(sourceChapter).sources.map(source=>({'@type':'CreativeWork',name:source.title,url:source.url})) };
+  }
+  if (topicJourneys.some(journey => journey.path === path) || glossaryTopic || ['/resources/ict-smc-cheat-sheet/','/articles/pd-arrays-fvg-order-blocks-and-inversions/','/articles/liquidity-is-not-a-magnet/'].includes(path)) {
+    r.schemaJson = { ...r.schemaJson, dateModified: topicJourneyRevision };
+  }
   r.schemaJson = { '@context': 'https://schema.org', '@graph': [publisher, lessonAuthor,
     { '@type': 'WebSite', '@id': 'https://learnsmc.xyz/#website', name: 'LearnSMC', url: 'https://learnsmc.xyz/' },
     { '@type': 'BreadcrumbList', itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })) },

@@ -2,7 +2,7 @@ import { useTranslation } from '../../i18n/TranslationProvider';
 import type { LabBar } from '../../utils/backtestEngine';
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 export interface BoardZone { low:number; high:number; label:string; tone?:string }
-export function CandleBoard({bars,selected=[],onSelect,zones=[],levels=[],firstCandleNumber=1}:{firstCandleNumber?:number;bars:LabBar[];selected?:number[];onSelect?:(index:number)=>void;zones?:BoardZone[];levels?:{price:number;label:string;tone?:string}[]}){
+export function CandleBoard({bars,selected=[],onSelect,zones=[],levels=[],firstCandleNumber=1,minimumVisibleCandles=12}:{minimumVisibleCandles?:number;firstCandleNumber?:number;bars:LabBar[];selected?:number[];onSelect?:(index:number)=>void;zones?:BoardZone[];levels?:{price:number;label:string;tone?:string}[]}){
   const {t}=useTranslation();
   const container=useRef<HTMLDivElement>(null),[width,setWidth]=useState(800),[zoom,setZoom]=useState(false),[offset,setOffset]=useState(0);
   useEffect(()=>{const update=()=>setWidth(Math.max(350,Math.min(800,container.current?.clientWidth||800)));update();const observer=typeof ResizeObserver==='undefined'?null:new ResizeObserver(update);if(container.current)observer?.observe(container.current);window.addEventListener('resize',update);return()=>{observer?.disconnect();window.removeEventListener('resize',update);};},[]);
@@ -15,7 +15,7 @@ export function CandleBoard({bars,selected=[],onSelect,zones=[],levels=[],firstC
   const values=[...shown.flatMap(b=>[b.high,b.low]),...zones.flatMap(z=>[z.low,z.high]),...levels.map(l=>l.price)];
   const lo=Math.min(...values),hi=Math.max(...values),pad=(hi-lo)*.15||1,min=lo-pad,max=hi+pad;
   const decimals=hi-lo<.1?5:hi-lo<1?4:2;
-  const y=(p:number)=>280-(p-min)/(max-min)*245,dx=plot/Math.max(12,shown.length),x=(i:number)=>60+(i+.5)*dx;
+  const y=(p:number)=>280-(p-min)/(max-min)*245,dx=plot/Math.max(1,minimumVisibleCandles,shown.length),x=(i:number)=>60+(i+.5)*dx;
   return <div className="lab-board" ref={container}>
     <svg viewBox={`0 0 ${width} 325`} width={width} height="325" role="img" aria-label={t('Practice candlestick chart')}>
       <title>{t('Practice candlestick chart')}</title>

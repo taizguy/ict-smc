@@ -43,9 +43,9 @@
       "evidence": "Existing article publication/update metadata; historical English edition."
     },
     "/articles/liquidity-is-not-a-magnet/": {
-      "fingerprint": "1b8281db851d0b1bd964a3352d70d962c04604dc6d45262d1c47d180f188e8c7",
-      "lastmod": "2026-10-17",
-      "evidence": "Existing article publication/update metadata; historical English edition."
+      "fingerprint": "267d6b43bdce1977ba926d71e3469c20515e2db000f4486eadaaaf8a91af9400",
+      "lastmod": "2026-10-21",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/articles/opening-range-vs-opening-gap-new-york/": {
       "fingerprint": "5422145076f5a7f27cdd2ea921c6a69d6002deab91e82975137dc2353e327e35",
@@ -53,15 +53,15 @@
       "evidence": "Existing article publication/update metadata; historical English edition."
     },
     "/articles/pd-arrays-fvg-order-blocks-and-inversions/": {
-      "fingerprint": "fde2f29702f00463f2c90aca476d0d291b1536da07b329a0d6c41dce6a0fba1b",
-      "lastmod": "2026-10-17",
-      "evidence": "Existing article publication/update metadata; historical English edition."
+      "fingerprint": "e7591e56bb23707a0ba010656fc0901eb52032ace1fe717649ab19967815d868",
+      "lastmod": "2026-10-21",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/contact/": {
       "fingerprint": "a3981a6f0d354649d9ff01b73ab1b56273f0b87f240fbfc193da6ff9e6f8aa89"
     },
     "/curriculum/": {
-      "fingerprint": "fbaf35e0904c4a3e18e6ff9aaa74c4315311087c44586a2c4631c836908ace4d",
+      "fingerprint": "38b1283182677eaf223563506636729dbda0feed5f1fcd1f3013d53741a450f3",
       "lastmod": "2026-10-21",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
@@ -249,7 +249,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/fair-value-gaps-fvg-and-consequent-encroachment/": {
-      "fingerprint": "267122864545870e91ec1353bbd4d2de29c2d39df39485d872ded5b77d887299",
+      "fingerprint": "f1a20c4796b1edc7837f1a8dcd5770b700461536153a23008e73d1c8d2a26711",
       "lastmod": "2026-10-21",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
@@ -309,8 +309,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/liquidity-engineering-and-liquidity-runs/": {
-      "fingerprint": "8fbf7a4e511a2a5123802231c99b036223fd19681283e85a83bedc22233b3278",
-      "lastmod": "2026-10-20",
+      "fingerprint": "4bb187aba69ecbc2e3474333a2109763c2562bd0d59eda0ce75d37a346249ff1",
+      "lastmod": "2026-10-21",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/liquidity-the-most-misunderstood-word-in-trading/": {
@@ -344,8 +344,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/order-blocks-ob-and-mitigation/": {
-      "fingerprint": "82d15686142e5ae311f4c895c1a7f83b9ad3a6175541f1edb7d5c8131b6b8808",
-      "lastmod": "2026-10-20",
+      "fingerprint": "cf5276c0fbca0346cd9b67e4e56442e8200c60d3b9c4bf1bd51a926ea3b9c0c9",
+      "lastmod": "2026-10-21",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/rdrb-balanced-price-range-and-enigma-fvg/": {
@@ -811,8 +811,8 @@
       "fingerprint": "50ad5a367055e6b3939e6d89a2bf52062151ccbf5883d696fa18a57800b7aaf8"
     },
     "/resources/ict-smc-cheat-sheet/": {
-      "fingerprint": "518a3779b70837e94b50da4af96e65c183f3a763df8d22c70238a39635260c4c",
-      "lastmod": "2026-10-20",
+      "fingerprint": "469ccbbe4af1e34d91fed571dd240a9317063b65a4dce5b1eae21b0ac53e79f3",
+      "lastmod": "2026-10-21",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/terms/": {
@@ -972,7 +972,9 @@
       "fingerprint": "a446bacd1d700e32467ca8a6480128bb4398d4651e4c578081c5b07fc2c781a5"
     },
     "/tools/glossary/imbalances/": {
-      "fingerprint": "ee7532066a96266ca3542adb22e69092588f7746c5e49b3254469ef66ffb00b5"
+      "fingerprint": "3da5629f472786059f8e1fb674a955dffcfed3a4fadf12934d1d28695e5591ea",
+      "lastmod": "2026-10-21",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/glossary/imbalances/consequent-encroachment-and-gaps/": {
       "fingerprint": "bd3294cecd47e1f9cd5fe767c0e00748bf78c888cd718790526e2c12ab1d7153"
@@ -984,7 +986,9 @@
       "fingerprint": "dcb5de86f1a055a507cb720684a65f38ad4adc35cd20bd2ff508690d6e25f324"
     },
     "/tools/glossary/imbalances/fair-value-gap/": {
-      "fingerprint": "90212e6267c5a13bc64ec892dd3e64c9a986ba2f148161f9d37b6e6b7a62f900"
+      "fingerprint": "4ea8b6587308df46a8fd25d08d606151bbcbce0c2d767332ea0e90111d079f83",
+      "lastmod": "2026-10-21",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/glossary/imbalances/fair-value-gaps-and-inversions/": {
       "fingerprint": "d7cedbbd88525c98d7319b23fcd7e8b7bb4533a4d86bbe7f1b06ee3a71226ae1"
@@ -1032,7 +1036,9 @@
       "fingerprint": "6dd1ab0c5655071f78df6c203b01dcface7a7619b555b74238b25443be5d7f52"
     },
     "/tools/glossary/order-blocks/": {
-      "fingerprint": "83e8ee6bafc68ebdc704fb2573440c3db866fdc73c61cd83f93cdcd7ba79b480"
+      "fingerprint": "4f11d5501b673db9d20ca0b0fce56e0f59a3c41d9a52fa8d8a970b2f9ed70281",
+      "lastmod": "2026-10-21",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/glossary/order-blocks/breaker-block/": {
       "fingerprint": "7e6400259685f6124e0450e36ff45731a29906707aa35754d641518e4fb13d33"
@@ -1044,7 +1050,9 @@
       "fingerprint": "1aa104e125c06711ad6565d4c6b3094e6f48d878cd83c3a3d87853863fb3a51d"
     },
     "/tools/glossary/order-blocks/order-block/": {
-      "fingerprint": "f325789563a0248b0f1af19ef1ee91e2e6f5eda7b05c5f75042caa7ff54e1ee4"
+      "fingerprint": "914482f8204a12ffe3a5624a01c459fbf8c75029df3ab3e18df430b301a04621",
+      "lastmod": "2026-10-21",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/glossary/order-blocks/propulsion-and-reclaimed/": {
       "fingerprint": "7720f6a6e9cb3f6829787a7d1802490e7dc22d2a215a7463c5fd51cb52add108"
@@ -1344,19 +1352,23 @@
       "fingerprint": "acdf23a6aac3d4522fdd56b796ad80f8bbaada6494fb8465a1b714b52f60d3b7"
     },
     "/ur/articles/liquidity-is-not-a-magnet/": {
-      "fingerprint": "4757b07caec0a53fc1395efd6d2d143e3199174c56418ccdb6277804b8bbec0a"
+      "fingerprint": "f82102e90b0a8db91f20ac76b8417953d47949acf9a5202068a7a8ea6edf5b6c",
+      "lastmod": "2026-10-21",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/articles/opening-range-vs-opening-gap-new-york/": {
       "fingerprint": "9c6f8c2b36ac32a458d2bdbf91d641d31fd43ce389a325fd1f2ce74675947116"
     },
     "/ur/articles/pd-arrays-fvg-order-blocks-and-inversions/": {
-      "fingerprint": "6eb05744cea55793ccb75ac230168c466b4a64c2ac5541c26fbb7cc614a55b94"
+      "fingerprint": "ad07c7663eaddac4eb93f9f288ec815810a7680f3b1f8c3a7902164a94ef5384",
+      "lastmod": "2026-10-21",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/contact/": {
       "fingerprint": "f4938e663130a217b08d5797305d44c79bd9c615d4d117c91e7a0edf28d56748"
     },
     "/ur/curriculum/": {
-      "fingerprint": "a5f3b68c91f20e24f16a9ef856effa891c35d453a2cccab3139e46ffbb77f176",
+      "fingerprint": "2ab9359a35b850c9a2008e6f3201864057e667d7129cd3cceba33167da811295",
       "lastmod": "2026-10-21",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
@@ -1544,7 +1556,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/fair-value-gaps-fvg-and-consequent-encroachment/": {
-      "fingerprint": "05d663b25135ac96470421ef658941d90307688adae95c392af41bc57003dbac",
+      "fingerprint": "64356c88b4325c1407f88925019797cea16878d3ce2c1a98dd05637514f8d973",
       "lastmod": "2026-10-21",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
@@ -1604,8 +1616,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/liquidity-engineering-and-liquidity-runs/": {
-      "fingerprint": "aac8f105b36141ca09419b733b0535cceb564dfb1ad77fd5eed1379dfa031e4d",
-      "lastmod": "2026-10-20",
+      "fingerprint": "9cec77f42019d19a1fac074ae9001785b26f9723d524a822b67f929b8b8ef498",
+      "lastmod": "2026-10-21",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/liquidity-the-most-misunderstood-word-in-trading/": {
@@ -1639,8 +1651,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/order-blocks-ob-and-mitigation/": {
-      "fingerprint": "1d297fbb34a1882c5484de3de9e1bc42ef0630214538a317092afba5b4c8e445",
-      "lastmod": "2026-10-20",
+      "fingerprint": "a9bd6a7bfd0ab5ab1a870fe3a4677803f0eaf9f29a5d33cc70bc82a207807083",
+      "lastmod": "2026-10-21",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/rdrb-balanced-price-range-and-enigma-fvg/": {
@@ -2106,8 +2118,8 @@
       "fingerprint": "78f4eb9391833a28302c081d01b36c04e915ff77270b7dd6e61928ece78fbf3d"
     },
     "/ur/resources/ict-smc-cheat-sheet/": {
-      "fingerprint": "f2e997e083c98034a10c16b8e3f871be6c8a4738d6512157fcba1cee9a5d6a9b",
-      "lastmod": "2026-10-20",
+      "fingerprint": "b046ddc3afc418e9565a93941a344744a5b921053772f759432b97e866ac94d1",
+      "lastmod": "2026-10-21",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/terms/": {
@@ -2267,7 +2279,9 @@
       "fingerprint": "1d75b90e1a3ee62421ab9fa1c59702274ae42638c903729ea30458c32ad1ed80"
     },
     "/ur/tools/glossary/imbalances/": {
-      "fingerprint": "af05568dc17ecaf1a404842dbb0e6eef9ed705b0c868b99d455b6b21a4cd6183"
+      "fingerprint": "d698b6a856e038c31a29bc40a2208458de5e2931d382ddab3fd21a07f755fb28",
+      "lastmod": "2026-10-21",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/glossary/imbalances/consequent-encroachment-and-gaps/": {
       "fingerprint": "15b316c92f14faafb1c5c5f5280f4ac5de461b15b6fc4d41b6d816850b096d11"
@@ -2279,7 +2293,9 @@
       "fingerprint": "5dd1c772f6171826a270c855f9d2b05f6c8e28f5e226a53ca7cebfaea6aa6481"
     },
     "/ur/tools/glossary/imbalances/fair-value-gap/": {
-      "fingerprint": "4fe88fb5f46736ae7f80ace2c2d2c58640188db3bafe5ebfe375cdc2a0dabdfd"
+      "fingerprint": "8f99b448604a2295cc8ca193be5e3a84287f3d0e1f93cfe4abab6f0d40a0cef0",
+      "lastmod": "2026-10-21",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/glossary/imbalances/fair-value-gaps-and-inversions/": {
       "fingerprint": "5a355c65de4f69cb55f68387fca3d85862437e3631c7173c19df50b6638b9b3a"
@@ -2327,7 +2343,9 @@
       "fingerprint": "7bcc03f992cf8ce4961005baf1d90fc9426413819f61ef8b004ad9b8268a9a8e"
     },
     "/ur/tools/glossary/order-blocks/": {
-      "fingerprint": "7037025a8a88bbffb309b85d64e2fdf585f8d23753ec9ade358024ec559bce01"
+      "fingerprint": "91293d39e71420e6ff73b1ca9833f68253b42c0d8f83dff97e0a5c995b558ad3",
+      "lastmod": "2026-10-21",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/glossary/order-blocks/breaker-block/": {
       "fingerprint": "d5daad4021c105b70cc5b9f407621c8f5af386adabaa229e4e95642b6f3091d6"
@@ -2339,7 +2357,9 @@
       "fingerprint": "9856cd640b3fca457d291175758cde1554b6d09ca13e40e7c3912631a70a631b"
     },
     "/ur/tools/glossary/order-blocks/order-block/": {
-      "fingerprint": "ca6514c81330765192a9208f21502cd3c79fb3ef08ecbe54efeb4299774a0561"
+      "fingerprint": "28ee2d9141cd3d355ad1d5bb1b3c78c4af3e1d6daf0fd14b1a3b5c5e22383b2e",
+      "lastmod": "2026-10-21",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/glossary/order-blocks/propulsion-and-reclaimed/": {
       "fingerprint": "08eec6a43c356dc6704101226efc2a3773b8d9cde0037d6f23293a2b65d2e860"

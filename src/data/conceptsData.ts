@@ -1,3 +1,4 @@
+import { fvgReference, orderBlockReference } from './topicGlossary';
 import { ICTConcept } from '../types';
 import { theinnercircletradersNewConcepts } from './theinnercircletradersConcepts';
 
@@ -440,100 +441,7 @@ export const ictConcepts: ICTConcept[] = [
     diagramType: 'fvg_formation',
     simplifiedExplanation: 'Displacement is like a jet plane firing up its afterburners. You do not try to jump onto the jet while it is speeding down the runway; you wait for it to land at the next terminal.'
   },
-  {
-    id: 'fair_value_gap',
-    name: 'Fair Value Gap (FVG)',
-    category: 'imbalances',
-    shortDefinition: 'A 3-candlestick price imbalance where candle 1 wick and candle 3 wick do not overlap, leaving an unfilled single-sided price delivery zone in candle 2.',
-    source: {
-      mentorship: '2016 Core Content & 2022 YouTube Mentorship',
-      seriesOrMonth: '2022 Mentorship: Episode 1, 2, 3',
-      approximateDate: '2016 / 2022',
-      originalTerminology: 'Liquidity Imbalance / Single Price Delivery / Fair Value Gap',
-      conceptStatus: 'Active Core',
-      lectureReference: '2022 Mentorship Episode 1 (Timestamp 08:45)'
-    },
-    tripartiteView: {
-      ictTeaching: 'Michael teaches that the algorithm delivers price in two ways: balanced (buys and sells offered at every tick) and imbalanced (only buys or only sells offered). An FVG is an incomplete delivery that IPDA will return to re-balance.',
-      observableMarketBehavior: 'Low Volume Node / Single prints on Market Profile. Rapid price moves create a price gap where few limit orders had the opportunity to transact. The market frequently re-tests this zone to fill latent liquidity.',
-      derivedInterpretation: 'Inefficient price discovery: When an asset reprices rapidly, liquidity providers widen their spreads. When price retraces into the FVG, liquidity providers normalize spreads and institutional limit orders are filled.'
-    },
-    explanationLadder: {
-      level1Child: 'Imagine a painter who rushed across a wall with a paint roller and left a dry, unpainted patch in the middle. Later, the painter comes back to brush over the empty patch so the wall looks smooth.',
-      level2Beginner: 'Look at three candles in a row. If there is empty space between the tip of the first candle and the tip of the third candle, that empty window is a Fair Value Gap.',
-      level3Trader: 'Mark the 50% midpoint of the FVG (called Consequent Encroachment or CE). Use CE as your primary limit order entry, with your stop safely below the first candle.',
-      level4Advanced: 'An FVG in Discount territory aligned with a Higher Timeframe Bullish Order Block has the highest statistical win rate.',
-      level5ICTFramework: 'FVG is a primary PD Array. IPDA uses FVGs to draw price back into fair value before launching the next expansion wave toward external liquidity.',
-      whenItMatters: 'When the FVG is created by energetic displacement that successfully creates a Market Structure Shift (MSS).',
-      whenToIgnore: 'When the FVG forms against higher timeframe orderflow or inside a tight, choppy consolidation range.'
-    },
-    whyItExists: 'When violent buying or selling occurs, price moves too quickly for both sides of the market to be offered fairly. Only buyers or only sellers were serviced during candle 2.',
-    problemItSolves: 'Provides an exact, high-precision entry price zone and risk boundary rather than guessing where to enter on a moving market.',
-    howItForms: 'Occurs in a 3-candle sequence: In a bullish FVG, Candle 1 High is lower than Candle 3 Low, creating a gap between them. In a bearish FVG, Candle 1 Low is higher than Candle 3 High.',
-    chartAnatomy: 'Bullish FVG: Zone between Candle 1 High (bottom of FVG) and Candle 3 Low (top of FVG). Bearish FVG: Zone between Candle 1 Low (top of FVG) and Candle 3 High (bottom of FVG).',
-    identificationRules: [
-      'Look for a 3-candle sequence where the middle candle (Candle 2) is a large displacement candle.',
-      'Check that Candle 1 wick and Candle 3 wick DO NOT overlap.',
-      'Calculate the 50% midpoint = (Top of Gap + Bottom of Gap) / 2 = Consequent Encroachment (CE).',
-      'The FVG is fresh and active until price trades completely through it.'
-    ],
-    validCharacteristics: [
-      'Formed during a confirmed Market Structure Shift (MSS).',
-      'Displacement candle has high volume and clean body.',
-      'Resides in Discount for bullish setups or Premium for bearish setups.'
-    ],
-    invalidCharacteristics: [
-      'Wicks of Candle 1 and Candle 3 overlap (no gap exists).',
-      'Small tiny gap inside a sideways consolidating range without displacement.'
-    ],
-    howICTUsesIt: 'The primary entry trigger in the ICT 2022 Mentorship Model and Silver Bullet Model.',
-    commonMistakes: [
-      'Marking every tiny 1-pip gap across all candles and treating them all as trading zones.',
-      'Placing stop loss inside the FVG instead of beyond the swing low or Candle 1 origin.'
-    ],
-    advancedNuances: 'If candle bodies respect the 50% Consequent Encroachment (CE) and only wicks penetrate below it, the FVG is considered exceptionally strong.',
-    prerequisites: ['Displacement (The Engine)', 'Candlestick Anatomy', 'Market Structure'],
-    relatedConcepts: ['Consequent Encroachment', 'Inverse Fair Value Gap', '2022 Model', 'Silver Bullet'],
-    bullishScenario: 'Price sweeps Asian Low, displaces up on 5M chart, creates a 10-pip FVG between 1.0820 and 1.0830. Price retraces to 1.0825 (50% CE), fills limit buy, and rallies 40 pips to PDH.',
-    bearishScenario: 'Price sweeps PDH, crashes down through 15M structure, leaves a bearish FVG. Price retraces into the gap, rejects the top boundary, and targets Asian Low.',
-    counterexample: 'Price retraces to an FVG, but candle bodies close completely through the entire gap without pausing—this is an FVG violation, turning it into an Inverse FVG (IFVG).',
-    counterexamples: [
-      {
-        title: 'The Counter-Trend FVG Trap',
-        trapDescription: 'Buying a 5M bullish FVG formed during a massive Daily/4H bearish trend without an HTF liquidity sweep.',
-        whyItFails: 'Higher timeframe orderflow overrides lower timeframe imbalances. Price slices through the FVG without pausing.',
-        ruleOfThumb: 'Only trade FVGs that align with the Higher Timeframe Draw on Liquidity (DOL).'
-      },
-      {
-        title: 'The Consolidated FVG Trap',
-        trapDescription: 'Trading an FVG that formed in the middle of a 1-hour consolidation range with equal highs above and equal lows below.',
-        whyItFails: 'Price will oscillate through the gap repeatedly until liquidity on either side of the range is swept.',
-        ruleOfThumb: 'Never trade an FVG unless it originated from a clear liquidity sweep.'
-      }
-    ],
-    causalConnections: [
-      {
-        targetConceptId: 'consequent_encroachment',
-        targetLabel: 'Consequent Encroachment (CE 50%)',
-        whyThisFollows: 'Once an FVG is identified, the trader must calculate the mathematical 50% level of the gap.',
-        institutionalMechanic: 'The 50% level represents the equilibrium fair value of the imbalance where algorithms offer optimal rebalancing.',
-        riskOfSkipping: 'Entering at the edge of the gap gives a wider stop loss and worse risk-reward ratio.'
-      }
-    ],
-    timeframeMatrix: {
-      htfApplication: 'Daily and 4H FVGs act as massive magnet zones (Draws on Liquidity) and structural support/resistance.',
-      ltfApplication: '1M-5M FVGs provide the precision execution entry triggers within HTF POIs.',
-      sessionAndTiming: 'FVGs formed during 10:00-11:00 AM NY time (Silver Bullet) have the highest execution reliability.'
-    },
-    tradeRules: {
-      entryModels: ['Limit order at FVG boundary or 50% Consequent Encroachment (CE)'],
-      targetingLogic: ['Opposing Liquidity Pool (BSL/SSL) or unmitigated opposing FVG'],
-      invalidationCriteria: 'Candle body closes beyond the opposing boundary of the FVG (Candle 1 level).'
-    },
-    invalidationCriteria: 'Full candle body closing through the outer boundary (Candle 1 level) of the Fair Value Gap.',
-    diagramType: 'fvg_formation',
-    simplifiedExplanation: 'An FVG is like an elevator that skipped 5 floors on the way up. Eventually, the elevator has to go back down to pick up the passengers who were left behind before continuing to the penthouse.'
-  },
+  fvgReference,
   {
     id: 'consequent_encroachment',
     name: 'Consequent Encroachment (CE 50%)',
@@ -619,94 +527,7 @@ export const ictConcepts: ICTConcept[] = [
     diagramType: 'fvg_formation',
     simplifiedExplanation: 'CE is the bullseye on a target. Hitting the bullseye is all the algorithm needs to confirm the price is rebalanced.'
   },
-  {
-    id: 'order_block',
-    name: 'Order Block (OB)',
-    category: 'order_blocks',
-    shortDefinition: 'The last opposing candlestick (or consolidation block) prior to a violent displacement that sweeps liquidity and creates a Market Structure Shift.',
-    source: {
-      mentorship: '2016-2017 Core Content & Scout Sniper Series',
-      seriesOrMonth: 'Core Content Month 4: Order Block Anatomy & Validation',
-      approximateDate: '2016',
-      originalTerminology: 'Bullish / Bearish Order Block',
-      conceptStatus: 'Active Core',
-      lectureReference: 'Core Content Month 4 - Video 2'
-    },
-    tripartiteView: {
-      ictTeaching: 'Michael teaches that an Order Block is where smart money accumulated their positions. The last down candle before an up move is an institutional buy block; when price returns, institutions defend the position by adding volume.',
-      observableMarketBehavior: 'High volume accumulation node prior to trend breakout. The origin candle represents the point where large institutional limit orders absorbed opposing flow.',
-      derivedInterpretation: 'Supply and Demand zone with structural prerequisites: Unlike generic supply/demand, an authentic Order Block must have swept liquidity and created a structural break with displacement.'
-    },
-    explanationLadder: {
-      level1Child: 'Think of a spring being pressed down into the floor before jumping 10 feet into the air. The spot where the spring was pressed down is the Order Block.',
-      level2Beginner: 'The last red candle before a massive green rocket is a Bullish Order Block. The last green candle before a red crash is a Bearish Order Block.',
-      level3Trader: 'Do not mark the wicks as the main zone; focus on the candle BODY. The 50% midpoint of the candle body is called the Mean Threshold (MT). Candle bodies must respect MT.',
-      level4Advanced: 'An Order Block that forms AFTER sweeping a liquidity pool (BSL/SSL) has 10x higher probability than an Order Block formed inside a continuation trend.',
-      level5ICTFramework: 'Order Blocks represent institutional sponsorship. IPDA re-visits the OB to allow smart money to mitigate any remaining hedge orders before expanding.',
-      whenItMatters: 'When the OB swept prior liquidity, caused clean displacement, and broke market structure (MSS).',
-      whenToIgnore: 'When the candle is just a random pullback inside a consolidation range without any liquidity sweep or displacement.'
-    },
-    whyItExists: 'Institutions cannot enter all their size at once; they build positions in blocks. When price returns to this origin, they defend their inventory.',
-    problemItSolves: 'Identifies the exact origin of institutional buying or selling power on the chart.',
-    howItForms: 'Bullish OB: The lowest down-close candle (or consecutive down candles) prior to an aggressive upward displacement that breaks swing highs. Bearish OB: The highest up-close candle prior to downward displacement.',
-    chartAnatomy: 'Bullish OB: Highlighted from the Open of the down candle down to its Low. The Mean Threshold (MT) is the 50% line between the Open and Close/Low.',
-    identificationRules: [
-      'Identify the last opposing candle before a violent displacement.',
-      'Verify that the displacement created an MSS and left an FVG.',
-      'Check that the OB took out prior liquidity (swept an old high/low).',
-      'Calculate Mean Threshold (MT) = 50% of the candle body.'
-    ],
-    validCharacteristics: [
-      'Prior liquidity sweep (Turtle Soup / Stop run).',
-      'Subsequent displacement candle is large with heavy volume.',
-      'Creates a fresh Market Structure Shift (MSS).'
-    ],
-    invalidCharacteristics: [
-      'Random opposing candle that did not cause any structural break.',
-      'Candle with no displacement following it.'
-    ],
-    howICTUsesIt: 'Used as an institutional anchor for entries, stop-loss protection, and trend direction confirmation.',
-    commonMistakes: [
-      'Labeling every single red candle in an uptrend as an Order Block.',
-      'Ignoring Mean Threshold (MT) and allowing candle bodies to close deep below the OB.'
-    ],
-    advancedNuances: 'If an Order Block fails and price closes completely through it, that failed Order Block immediately converts into a Breaker Block or Mitigation Block.',
-    prerequisites: ['Displacement', 'Market Structure', 'Liquidity Sweeps'],
-    relatedConcepts: ['Breaker Block', 'Mitigation Block', 'Mean Threshold', '2022 Model'],
-    bullishScenario: 'Price sweeps Asian Low, prints a down candle at 1.0800, then explodes upward with 3 giant green candles breaking 1.0840. Price retraces to 1.0805 (OB Open), holds, and rallies to 1.0900.',
-    bearishScenario: 'Price sweeps PDH, prints an up candle, then crashes down breaking structure. Retracement into the up candle body provides a pristine short entry.',
-    counterexample: 'Price returns to an "Order Block", but slices straight through it without any rejection wicks—this was an invalid block with no institutional sponsorship.',
-    counterexamples: [
-      {
-        title: 'The "Random Candle" Trap',
-        trapDescription: 'Marking a red candle in the middle of a sideways chop and expecting it to act as an institutional Order Block.',
-        whyItFails: 'Without a prior liquidity sweep and subsequent displacement, the candle represents retail churn, not institutional positioning.',
-        ruleOfThumb: 'No liquidity sweep + No displacement = NOT an Order Block.'
-      }
-    ],
-    causalConnections: [
-      {
-        targetConceptId: 'breaker_block',
-        targetLabel: 'Breaker Block',
-        whyThisFollows: 'If market orderflow shifts and an Order Block is decisively broken after a liquidity sweep, the Order Block inverts into a Breaker Block.',
-        institutionalMechanic: 'Trapped institutional positions in the failed OB must be mitigated on the retest.',
-        riskOfSkipping: 'Failing to recognize an OB failure causes traders to keep buying a falling market instead of switching to short on the breaker.'
-      }
-    ],
-    timeframeMatrix: {
-      htfApplication: 'Daily/Weekly OBs represent major institutional support/resistance levels.',
-      ltfApplication: '1M-5M OBs provide tight-stop execution inside HTF zones.',
-      sessionAndTiming: 'OBs formed during London Open or 09:30 NY Open are the most reliable.'
-    },
-    tradeRules: {
-      entryModels: ['Limit order at OB Open or Mean Threshold (MT 50%)'],
-      targetingLogic: ['Opposing Liquidity Pool or opposing HTF PD Array'],
-      invalidationCriteria: 'Specify a trade-specific stop first. A midpoint breach can invalidate a tighter trade; full-zone failure uses a decisive body close beyond the selected outer boundary.'
-    },
-    invalidationCriteria: 'A midpoint-based stop is a trade-specific convention. Distinguish it from a decisive body close beyond the full selected order-block zone.',
-    diagramType: 'order_block',
-    simplifiedExplanation: 'An Order Block is the footprints left in wet cement by a giant. When price walks back to that footprint, it steps right into the same solid ground.'
-  },
+  orderBlockReference,
   {
     id: 'breaker_block',
     name: 'Breaker Block',

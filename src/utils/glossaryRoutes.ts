@@ -254,7 +254,7 @@ export const CONCEPT_SLUG_MAP: Record<string, ConceptSlugMapping> = {
     name: 'Fair Value Gap (FVG)',
     shortName: 'Fair Value Gap',
     metaTitle: 'Fair Value Gap (FVG) Institutional Mechanics & Rules | LearnSMC',
-    metaDescription: '3-candle price imbalance definition, premium/discount rebalancing, consequent encroachment, and precise invalidation rules for FVGs.'
+    metaDescription: 'Study FVG wick boundaries, midpoint arithmetic, overlapping non-examples and uncertainty. Follow the full lesson for sources and visual practice.'
   },
   'consequent_encroachment': {
     id: 'consequent_encroachment',
@@ -324,7 +324,7 @@ export const CONCEPT_SLUG_MAP: Record<string, ConceptSlugMapping> = {
     name: 'Order Block (OB)',
     shortName: 'Order Block',
     metaTitle: 'Institutional Order Block (OB): Definition & Trading Rules | LearnSMC',
-    metaDescription: 'The final opposing candle before violent displacement breaking structure, representing the price level where smart money injected capital.'
+    metaDescription: 'Study order-block candle runs, opening references, mitigation and midpoint conventions. Candles do not reveal institutional inventory.'
   },
   'breaker_block': {
     id: 'breaker_block',

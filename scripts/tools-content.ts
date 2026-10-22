@@ -25,7 +25,7 @@ export function correctToolDocument(r:RouteMeta,path:string){
   r.heading=`${context}: ${guide.title}`;
   r.description=`${context}. ${guide.description}`;
   r.bodyHtml=section(guide.title,guide.paragraphs)+renderToStaticMarkup(createElement(ChapterDiagram,{chapterId:tool==='chartlab'?13:tool==='simulator'?22:38,staticOnly:true}))+`<p><a href="/tools/chartlab/">Chart Laboratory</a> · <a href="/tools/simulator/">Trade Simulator</a> · <a href="/tools/backtest/">Backtest Lab</a> · <a href="/resources/ict-smc-cheat-sheet/">Free glossary and cheat sheet</a></p>`;
-  r.schemaJson={'@type':'WebApplication',name:context,description:guide.description,url:r.canonical,applicationCategory:'EducationalApplication',operatingSystem:'Web browser',isAccessibleForFree:true,author:lessonAuthor,publisher,dateModified:tool==='chartlab'?guidedChartRevision:'2026-10-20'};
+  r.schemaJson={'@type':'WebApplication',name:context,description:guide.description,url:r.canonical,applicationCategory:'EducationalApplication',operatingSystem:'Web browser',isAccessibleForFree:true,author:lessonAuthor,publisher,dateModified:guidedChartRevision};
   return;
  }
  const evidence=section('Definitions and evidence conventions',[INTERPRETATION_GUIDANCE,FVG_GUIDANCE,OB_GUIDANCE]);

@@ -11,6 +11,7 @@
 @import "./styles/navigation.css";
 @import "./styles/guided-lab.css";
 @import "./styles/chapter-learning.css";
+@import "./styles/lab-desk.css";
 
 @theme {
   --font-sans: "Source Sans 3", system-ui, sans-serif;

@@ -1,3 +1,4 @@
+import { LabDesk, downloadLabFile } from './labs/LabDesk';
 import { useMemo, useState } from 'react';
 import { useTranslation } from '../i18n/TranslationProvider';
 import { chartScenarios } from '../data/chartScenarios';
@@ -26,12 +27,18 @@ function GuidedChartLab({scenario,initialStepSlug}:{scenario:typeof chartScenari
   else if(drill.gap)setFeedback(t(Math.abs(i-drill.gap.middle)===1?'You chose an outer candle. Select the middle candle of the qualifying three-candle pattern.':'Check the outer wick ranges, then select the middle candle of the first qualifying pattern in this window.'));
   else setFeedback(t('This candle is outside the supplied reference. Use a hint to inspect the authored zone; do not invent an FVG.'));
  };
+ const markZone=(low:number,high:number)=>{
+  if(!drill.gap)return;
+  const tolerance=Math.max((drill.gap.high-drill.gap.low)*.12,1e-8);
+  const ok=Math.abs(low-drill.gap.low)<=tolerance&&Math.abs(high-drill.gap.high)<=tolerance;
+  setSolved(ok);setFeedback(t(ok?"Both boundaries match the outer-wick gap within the exercise tolerance. A future revisit is not guaranteed.":"Compare candle one’s wick with candle three’s wick. The middle candle’s body does not define these boundaries."));
+ };
  const next=()=>{setReview(r=>({...r,[stage]:hint}));setStage(s=>s+1);setChosen(null);setHint(false);setSolved(false);setFeedback('');};
  const restart=()=>{setStage(0);setReview({});setChosen(null);setHint(false);setSolved(false);setFeedback('');};
  const lesson=(id:number)=>'/learn/'+textbookChapters.find(c=>c.id===id)!.slug+'/';
  const visible=task.visible;
- return <div className="visual-lab guided-chart-lab">
-  <header className="lab-intro"><span className="lab-eyebrow">{t('01 / RECOGNIZE')}</span><h2>{t('Learn to see the chart.')}</h2><p>{t('Observe one event at a time. Later candles stay hidden while you identify the current pattern.')}</p><div className="lab-route-links">{chartScenarios.map(s=><a key={s.id} aria-current={s.id===scenario.id?'page':undefined} href={href(`/tools/chartlab/${getChartScenarioSlug(s.id)}/`)}>{t(s.asset)} · {chartScenarios.indexOf(s)+1}</a>)}</div></header>
+ return <div className="visual-lab lab-desk guided-chart-lab"><LabDesk mode="chartlab"/>
+  <header className="lab-intro"><h2>{t('Learn to see the chart.')}</h2><p>{t('Observe one event at a time. Later candles stay hidden while you identify the current pattern.')}</p><div className="lab-route-links">{chartScenarios.map(s=><a key={s.id} aria-current={s.id===scenario.id?'page':undefined} href={href(`/tools/chartlab/${getChartScenarioSlug(s.id)}/`)}>{t(s.asset)} · {chartScenarios.indexOf(s)+1}</a>)}</div></header>
   <ol className="lab-learning-steps" aria-label={t('Observation sequence')}>{drill.tasks.map((item,i)=><li key={item.title} aria-current={!complete&&stage===i?'step':undefined}><span aria-hidden="true">{i+1}</span><strong>{t(item.title)}</strong><small>{t(review[i]===undefined?'Not completed':review[i]?'Completed with a hint':'Completed without a hint')}</small></li>)}</ol>
   <section className="lab-workspace">
    <div className="lab-task"><span className="lab-step-count" dir="ltr">{Math.min(stage+1,3)} / 3</span><div><h3>{t(complete?'Review your observations':task.title)}</h3><p>{t(complete?'Completion records this exercise only. It is not a measure of trading skill or profitability.':task.copy)}</p></div></div>
@@ -39,13 +46,13 @@ function GuidedChartLab({scenario,initialStepSlug}:{scenario:typeof chartScenari
     <p className="lab-small">{message('Visible candles: 1–{count}. Later candles and outcomes are hidden.',{count:visible})}</p>
     {stage===0&&<p className="lab-small">{message('Supplied sweep window: candles {from}–{through}.',{from:drill.e.sweep.candleIndexStart+1,through:drill.e.sweep.candleIndexEnd+1})}</p>}
     {stage===1&&<p className="lab-small">{message('Compare bodies in candles {from}–{through}.',{from:drill.from+1,through:drill.through+1})}</p>}
-    <CandleBoard key={stage} bars={scenario.candles.slice(0,visible)} selected={hint||solved?stage===2&&drill.gap?[drill.gap.middle-1,drill.gap.middle,drill.gap.middle+1]:task.indices:chosen===null?[]:[chosen]} onSelect={choose} zones={stage===2&&drill.gap&&(hint||solved)?[{low:drill.gap.low,high:drill.gap.high,label:'FVG'}]:[]} levels={[{price:drill.reference,label:drill.e.bullish?'Prior low':'Prior high'}]}/>
-    <div className="lab-actions"><button type="button" onClick={()=>setHint(true)}>{t('Show a visual hint')}</button><button type="button" className="lab-primary" disabled={!solved} onClick={next}>{t(stage===2?'Review my observations':'Next observation')}</button></div>
+    <CandleBoard onMarkZone={stage===2&&drill.gap?markZone:undefined} key={stage} bars={scenario.candles.slice(0,visible)} selected={hint||solved?stage===2&&drill.gap?[drill.gap.middle-1,drill.gap.middle,drill.gap.middle+1]:task.indices:chosen===null?[]:[chosen]} onSelect={choose} zones={stage===2&&drill.gap&&(hint||solved)?[{low:drill.gap.low,high:drill.gap.high,label:'FVG'}]:[]} levels={[{price:drill.reference,label:drill.e.bullish?'Prior low':'Prior high'}]}/>
+    <p className="lab-small">{t(stage===2&&drill.gap?"Use the zone tool to mark both FVG boundaries, or select its middle candle. Exact price inputs are available below the chart.":"Select a candle directly on the chart. Keyboard selectors are available below it.")}</p><div className="lab-actions"><button type="button" onClick={()=>setHint(true)}>{t('Show a visual hint')}</button><button type="button" className="lab-primary" disabled={!solved} onClick={next}>{t(stage===2?'Review my observations':'Next observation')}</button></div>
     <p className="lab-feedback" role="status" aria-live="polite">{feedback}</p>{(solved||hint)&&<aside className="lab-insight">{t(task.learn)}</aside>}
     <a className="lab-lesson-link" href={href(lesson(task.chapter))}>{t('Need the explanation? Revisit this lesson')} →</a>
    </>}
    {complete&&<div className="lab-review-grid">{drill.tasks.map((item,i)=><article key={item.title}><h4>{t(item.title)}</h4><p className="lab-small">{t(review[i]===undefined?'Not completed':review[i]?'Completed with a hint':'Completed without a hint')}</p><p>{t(item.learn)}</p><a href={href(lesson(item.chapter))}>{t('Revisit the lesson')} →</a></article>)}</div>}
-   {complete&&<div className="lab-actions"><a className="lab-primary" href={href('/tools/simulator/')}>{t('Next: practise a decision with hidden candles')}</a><button type="button" onClick={restart}>{t('Start again')}</button></div>}
+   {complete&&<div className="lab-actions"><button onClick={()=>downloadLabFile("learnsmc-observations.json",{exercise:scenario.id,kind:"synthetic",observations:drill.tasks.map((item,i)=>({task:item.title,usedHint:review[i],explanation:item.learn})),scope:"Teaching exercise only; not a trading skill assessment"})}>{t("Export observations")}</button><a className="lab-primary" href={href('/tools/simulator/')}>{t('Next: practise a decision with hidden candles')}</a><button type="button" onClick={restart}>{t('Start again')}</button></div>}
   </section>
   <details className="lab-method"><summary>{t('How this guided exercise works')}</summary><p>{t('Each task reveals only its required observation window. Sweep references come from earlier displayed candles; displacement compares open-to-close bodies in the stated window. The FVG task checks completed outer-wick non-overlap before the authored study window ends. If none qualifies, it uses the reference-area task.')}</p><p>{t('Hints are recorded only for this attempt. Nothing here is a prediction score, an independent assessment or saved account progress.')}</p></details>
   <p className="lab-small">{t('Authored illustrative candles, not historical or live market data. Numbers below the chart are keyboard-accessible candle selectors.')}</p>

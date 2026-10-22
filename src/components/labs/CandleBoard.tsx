@@ -1,34 +1,45 @@
 import { useTranslation } from '../../i18n/TranslationProvider';
 import type { LabBar } from '../../utils/backtestEngine';
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
+import { ChevronLeft, ChevronRight, Crosshair, Maximize2, SquareDashed, ZoomIn } from 'lucide-react';
 export interface BoardZone { low:number; high:number; label:string; tone?:string }
-export function CandleBoard({bars,selected=[],onSelect,zones=[],levels=[],firstCandleNumber=1,minimumVisibleCandles=12}:{minimumVisibleCandles?:number;firstCandleNumber?:number;bars:LabBar[];selected?:number[];onSelect?:(index:number)=>void;zones?:BoardZone[];levels?:{price:number;label:string;tone?:string}[]}){
-  const {t}=useTranslation();
-  const container=useRef<HTMLDivElement>(null),[width,setWidth]=useState(800),[zoom,setZoom]=useState(false),[offset,setOffset]=useState(0);
-  useEffect(()=>{const update=()=>setWidth(Math.max(350,Math.min(800,container.current?.clientWidth||800)));update();const observer=typeof ResizeObserver==='undefined'?null:new ResizeObserver(update);if(container.current)observer?.observe(container.current);window.addEventListener('resize',update);return()=>{observer?.disconnect();window.removeEventListener('resize',update);};},[]);
-  const selection=selected.join(',');
-  useEffect(()=>{if(zoom&&selected.length)setOffset(Math.min(Math.max(0,selected[0]-4),Math.max(0,bars.length-12)));},[selection,zoom]);
-  useEffect(()=>{if(zoom&&!onSelect)setOffset(Math.max(0,bars.length-12));},[bars.length,zoom,onSelect]);
-  if(!bars.length)return null;
-  const start=zoom?Math.min(offset,Math.max(0,bars.length-12)):0,shown=zoom?bars.slice(start,start+12):bars;
-  const right=width-67,plot=width-125;
-  const values=[...shown.flatMap(b=>[b.high,b.low]),...zones.flatMap(z=>[z.low,z.high]),...levels.map(l=>l.price)];
-  const lo=Math.min(...values),hi=Math.max(...values),pad=(hi-lo)*.15||1,min=lo-pad,max=hi+pad;
-  const decimals=hi-lo<.1?5:hi-lo<1?4:2;
-  const y=(p:number)=>280-(p-min)/(max-min)*245,dx=plot/Math.max(1,minimumVisibleCandles,shown.length),x=(i:number)=>60+(i+.5)*dx;
-  return <div className="lab-board" ref={container}>
-    <svg viewBox={`0 0 ${width} 325`} width={width} height="325" role="img" aria-label={t('Practice candlestick chart')}>
-      <title>{t('Practice candlestick chart')}</title>
-      {[0,.25,.5,.75,1].map(f=><g key={f}><line x1="55" x2={right} y1={y(min+(max-min)*f)} y2={y(min+(max-min)*f)} className="lab-grid"/><text x="48" y={y(min+(max-min)*f)+4} textAnchor="end" className="lab-axis">{(min+(max-min)*f).toFixed(decimals)}</text></g>)}
-      {zones.map((z,i)=><g key={i} className={`lab-zone ${z.tone||''}`}><rect x="55" y={y(z.high)} width={right-55} height={Math.max(2,y(z.low)-y(z.high))}/><text x={right-5} y={y(z.high)-6} textAnchor="end">{t(z.label)}</text></g>)}
-      {shown.map((b,i)=><g key={i+start} style={{'--bar-index':i} as CSSProperties} className={`lab-candle ${b.close>=b.open?'up':'down'} ${selected.includes(i+start)?'selected':''}`} onClick={()=>onSelect?.(i+start)}>
-        <title>{`${i+start+firstCandleNumber}: O ${b.open.toFixed(decimals)}, H ${b.high.toFixed(decimals)}, L ${b.low.toFixed(decimals)}, C ${b.close.toFixed(decimals)}`}</title>
-        {selected.includes(i+start)&&<rect className="lab-selection" x={x(i)-dx*.45} y="28" width={dx*.9} height="255" rx="5"/>}
-        <line x1={x(i)} x2={x(i)} y1={y(b.high)} y2={y(b.low)}/><rect x={x(i)-dx*.28} y={Math.min(y(b.open),y(b.close))} width={dx*.56} height={Math.max(2,Math.abs(y(b.open)-y(b.close)))}/>
-        {(shown.length<=20||i%5===0)&&<text x={x(i)} y="309" textAnchor="middle" className="lab-axis">{i+start+firstCandleNumber}</text>}
-      </g>)}
-      {levels.map((l,i)=><g key={i} className={`lab-level ${l.tone||''}`}><line x1="55" x2={right} y1={y(l.price)} y2={y(l.price)}/><text x={right+5} y={y(l.price)+4}>{t(({Entry:'Entry level',Stop:'Stop level',Target:'Target level'} as Record<string,string>)[l.label]||l.label)}</text></g>)}
-    </svg>
-    {onSelect&&<><div className="lab-actions"><button onClick={()=>setZoom(z=>!z)}>{t(zoom?'Show all candles':'Zoom to 12 candles')}</button>{zoom&&<><button disabled={start===0} onClick={()=>setOffset(Math.max(0,start-6))}>{t('Earlier candles')}</button><button disabled={start+12>=bars.length} onClick={()=>setOffset(Math.min(bars.length-12,start+6))}>{t('Later candles')}</button></>}</div><div className="lab-candle-picker" aria-label={t('Choose a candle')}>{bars.map((_,i)=><button type="button" key={i} aria-pressed={selected.includes(i)} onClick={()=>onSelect(i)}>{i+1}</button>)}</div></>}
-  </div>;
+interface Props {minimumVisibleCandles?:number;firstCandleNumber?:number;bars:LabBar[];selected?:number[];onSelect?:(index:number)=>void;zones?:BoardZone[];levels?:{price:number;label:string;tone?:string}[];onMarkZone?:(low:number,high:number)=>void;onAdjustLevel?:(label:string,price:number)=>void}
+export function CandleBoard({bars,selected=[],onSelect,zones=[],levels=[],firstCandleNumber=1,minimumVisibleCandles=12,onMarkZone,onAdjustLevel}:Props){
+ const {t}=useTranslation();
+ const container=useRef<HTMLDivElement>(null),[width,setWidth]=useState(800),[zoom,setZoom]=useState(false),[offset,setOffset]=useState(0),[inspect,setInspect]=useState<number|null>(null),[drawing,setDrawing]=useState(false),[anchor,setAnchor]=useState<number|null>(null),[draft,setDraft]=useState<BoardZone|null>(null),[dragLevel,setDragLevel]=useState<string|null>(null),[dragPrice,setDragPrice]=useState<number|null>(null);
+ const [zoneError,setZoneError]=useState('');
+ const suppressSelection=useRef(false);
+ useEffect(()=>{if(!drawing&&!dragLevel)return;const cancel=(event:KeyboardEvent)=>{if(event.key==='Escape'){setDrawing(false);setAnchor(null);setDragLevel(null);setDragPrice(null);}};window.addEventListener('keydown',cancel);return()=>window.removeEventListener('keydown',cancel);},[drawing,dragLevel]);
+ useEffect(()=>{const update=()=>setWidth(Math.max(320,Math.min(1200,container.current?.clientWidth||800)));update();const observer=typeof ResizeObserver==='undefined'?null:new ResizeObserver(update);if(container.current)observer?.observe(container.current);return()=>observer?.disconnect();},[]);
+ useEffect(()=>{if(zoom)setOffset(Math.max(0,bars.length-12));},[bars.length,zoom]);
+ if(!bars.length)return null;
+ const start=zoom?Math.min(offset,Math.max(0,bars.length-12)):0,shown=zoom?bars.slice(start,start+12):bars;
+ const right=width-85,plot=width-140;
+ const values=[...shown.flatMap(b=>[b.high,b.low]),...zones.flatMap(z=>[z.low,z.high]),...levels.map(l=>l.price)];
+ const lo=Math.min(...values),hi=Math.max(...values),pad=(hi-lo)*.15||1,min=lo-pad,max=hi+pad;
+ const decimals=hi-lo<.1?5:hi-lo<1?4:2;
+ const y=(p:number)=>300-(p-min)/(max-min)*260,dx=plot/Math.max(1,minimumVisibleCandles,shown.length),x=(i:number)=>55+(i+.5)*dx;
+ const current=bars[Math.min(inspect??bars.length-1,bars.length-1)];
+ const mark=(price:number)=>{if(anchor===null){setAnchor(price);setDraft(null);}else{const low=Math.min(price,anchor),high=Math.max(price,anchor);setDraft({low,high,label:'Your zone'});setAnchor(null);setDrawing(false);onMarkZone?.(low,high);}};
+ return <div className="lab-board" ref={container}>
+  <div className="lab-chart-toolbar"><div role="group" aria-label={t('Chart controls')}><button title={t('Inspect candles')} aria-label={t('Inspect candles')} aria-pressed={!drawing} onClick={()=>{setDrawing(false);setAnchor(null);}}><Crosshair size={18}/></button>{onMarkZone&&<button title={t('Mark a price zone')} aria-label={t('Mark a price zone')} aria-pressed={drawing} onClick={()=>{setDrawing(!drawing);setAnchor(null);}}><SquareDashed size={18}/></button>}<button aria-label={t(zoom?'Show all candles':'Zoom to 12 candles')} title={t(zoom?'Show all candles':'Zoom to 12 candles')} onClick={()=>setZoom(v=>!v)}>{zoom?<Maximize2 size={18}/>:<ZoomIn size={18}/>}</button>{zoom&&<><button aria-label={t('Earlier candles')} disabled={start===0} onClick={()=>setOffset(Math.max(0,start-6))}><ChevronLeft size={18}/></button><button aria-label={t('Later candles')} disabled={start+12>=bars.length} onClick={()=>setOffset(Math.min(bars.length-12,start+6))}><ChevronRight size={18}/></button></>}</div><span>{t('Visible candles')} <bdi>{start+firstCandleNumber}–{start+shown.length+firstCandleNumber-1}</bdi></span></div>
+  <div className="lab-ohlc" dir="ltr" aria-live="off"><span>{current.time}</span>{(['open','high','low','close'] as const).map((key,i)=><span key={key}><abbr title={t(['Open','High','Low','Close'][i])}>{['O','H','L','C'][i]}</abbr> {current[key].toFixed(decimals)}</span>)}</div>
+  {[...zones,...(draft?[draft]:[])].length>0&&<div className="lab-zone-legend">{[...zones,...(draft?[draft]:[])].map((z,i)=><span key={i}>{t(z.label)} <bdi dir="ltr">{z.low.toFixed(decimals)}–{z.high.toFixed(decimals)}</bdi></span>)}</div>}{drawing&&<p className="lab-drawing-help" role="status">{t(anchor===null?'Tap the first price boundary, then the second.':'Tap the second price boundary. Escape cancels.')}</p>}
+  <svg viewBox={`0 0 ${width} 345`} width={width} height="345" role="img" aria-label={t('Practice candlestick chart')} className={drawing?'is-marking':''} onClickCapture={e=>{if(suppressSelection.current){e.stopPropagation();suppressSelection.current=false;}}} onPointerMove={e=>{if(drawing)return;const rect=e.currentTarget.getBoundingClientRect(),px=(e.clientX-rect.left)*width/rect.width;if(dragLevel){const py=(e.clientY-rect.top)*345/rect.height;setDragPrice(min+(300-Math.max(40,Math.min(300,py)))/260*(max-min));return;}setInspect(Math.max(start,Math.min(start+shown.length-1,start+Math.floor((px-55)/dx))));}} onPointerUp={()=>{if(dragLevel&&dragPrice!==null)onAdjustLevel?.(dragLevel,dragPrice);setDragLevel(null);setDragPrice(null);}} onPointerCancel={()=>{setDragLevel(null);setDragPrice(null);suppressSelection.current=false;}} onPointerDown={e=>{if(!drawing)return;const rect=e.currentTarget.getBoundingClientRect(),px=(e.clientX-rect.left)*width/rect.width,py=(e.clientY-rect.top)*345/rect.height;if(px<55||px>right||py<40||py>300)return;suppressSelection.current=true;mark(min+(300-py)/260*(max-min));}}>
+   <title>{t('Practice candlestick chart')}</title>
+   {[0,.25,.5,.75,1].map(f=><g key={f}><line x1="55" x2={right} y1={y(min+(max-min)*f)} y2={y(min+(max-min)*f)} className="lab-grid"/><text x="48" y={y(min+(max-min)*f)+4} textAnchor="end" className="lab-axis">{(min+(max-min)*f).toFixed(decimals)}</text></g>)}
+   {[...zones,...(draft?[draft]:[])].map((z,i)=><g key={i} className={`lab-zone ${z.tone||''}`}><rect x="55" y={y(z.high)} width={right-55} height={Math.max(2,y(z.low)-y(z.high))}/></g>)}
+   {anchor!==null&&<line x1="55" x2={right} y1={y(anchor)} y2={y(anchor)} className="lab-grid"/>}
+   {shown.map((b,i)=><g key={i+start} style={{'--bar-index':i} as CSSProperties} className={`lab-candle ${b.close>=b.open?'up':'down'} ${selected.includes(i+start)?'selected':''}`} onClick={()=>{if(!drawing){setInspect(i+start);onSelect?.(i+start);}}}>
+    <title>{`${i+start+firstCandleNumber}: O ${b.open.toFixed(decimals)}, H ${b.high.toFixed(decimals)}, L ${b.low.toFixed(decimals)}, C ${b.close.toFixed(decimals)}`}</title>
+    {selected.includes(i+start)&&<rect className="lab-selection" x={x(i)-dx*.45} y="28" width={dx*.9} height="275" rx="3"/>}
+    <line x1={x(i)} x2={x(i)} y1={y(b.high)} y2={y(b.low)}/><rect x={x(i)-dx*.28} y={Math.min(y(b.open),y(b.close))} width={dx*.56} height={Math.max(2,Math.abs(y(b.open)-y(b.close)))}/>
+    {(shown.length<=20||i%5===0)&&<text x={x(i)} y="330" textAnchor="middle" className="lab-axis">{i+start+firstCandleNumber}</text>}
+   </g>)}
+   {inspect!==null&&inspect>=start&&inspect<start+shown.length&&<line x1={x(inspect-start)} x2={x(inspect-start)} y1="30" y2="310" className="lab-crosshair"/>}
+   {dragPrice!==null&&<line x1="55" x2={right} y1={y(dragPrice)} y2={y(dragPrice)} className="lab-crosshair"/>}{levels.map((l,i)=><g key={i} className={`lab-level ${l.tone||''}`}><line x1="55" x2={right} y1={y(l.price)} y2={y(l.price)}/><text x={right-5} y={y(l.price)-6} textAnchor="end">{t(l.label)}</text>{onAdjustLevel&&l.label!=="Entry"&&<rect className="lab-level-handle" x={right-25} y={y(l.price)-14} width="100" height="28" fill="transparent" onPointerDown={e=>{e.stopPropagation();e.currentTarget.setPointerCapture(e.pointerId);setDragLevel(l.label);setDragPrice(l.price);}}/>}</g>)}
+  </svg>
+  <details className="lab-exact-controls"><summary>{t('Keyboard and exact values')}</summary><label>{t('Inspect candle')}<input type="range" min={0} max={bars.length-1} value={inspect??bars.length-1} onChange={e=>{setInspect(+e.target.value);if(zoom)setOffset(Math.max(0,Math.min(bars.length-12,+e.target.value-5)));}}/></label>{onSelect&&<div className="lab-candle-picker" aria-label={t('Choose a candle')}>{bars.map((_,i)=><button type="button" key={i} aria-pressed={selected.includes(i)} onClick={()=>{setInspect(i);onSelect(i);}}>{i+firstCandleNumber}</button>)}</div>}{onMarkZone&&<form className="lab-zone-form" onSubmit={e=>{e.preventDefault();const data=new FormData(e.currentTarget),low=Number(data.get('low')),high=Number(data.get('high'));if(!Number.isFinite(low)||!Number.isFinite(high)||low>=high){setZoneError("The lower boundary must be below the upper boundary.");return;}setZoneError('');setDraft({low,high,label:'Your zone'});onMarkZone(low,high);}}><label>{t('Lower boundary')}<input name="low" type="number" step="any" min={min} max={max} required/></label><label>{t('Upper boundary')}<input name="high" type="number" step="any" min={min} max={max} required/></label><button type="submit">{t('Check my zone')}</button></form>}{zoneError&&<p role="alert">{t(zoneError)}</p>}</details>
+  {drawing&&<button className="lab-cancel-drawing" onKeyDown={e=>{if(e.key==='Escape'){setDrawing(false);setAnchor(null);}}} onClick={()=>{setDrawing(false);setAnchor(null);}} autoFocus>{t('Cancel marking')}</button>}
+ </div>;
 }

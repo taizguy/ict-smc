@@ -1,7 +1,7 @@
 import type { ChartScenario } from '../types';
 import { chartExercise } from './chartTraining';
 
-export const guidedChartRevision = '2026-10-21';
+export const guidedChartRevision = '2026-10-22';
 /** Recognition windows stop at their observation, never at the final target/outcome. */
 export function guidedChartDrills(scenario: ChartScenario) {
   const e = chartExercise(scenario);

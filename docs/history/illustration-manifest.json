@@ -1,0 +1,1262 @@
+[
+  {
+    "article": 1,
+    "frame": 0,
+    "kind": "bowl",
+    "style": "flat",
+    "caption": "A shared bowl starts a relationship, not necessarily a sale. No prehistoric checkout queue is implied.",
+    "motion": "lift",
+    "path": "/images/articles/history/before-money-gifts-sharing-and-trust-0.svg"
+  },
+  {
+    "article": 1,
+    "frame": 1,
+    "kind": "hands",
+    "style": "flat",
+    "caption": "Reciprocity can leave the return open. An offered hand does not come with a universal price list.",
+    "motion": "exchange",
+    "path": "/images/articles/history/before-money-gifts-sharing-and-trust-1.svg"
+  },
+  {
+    "article": 1,
+    "frame": 2,
+    "kind": "gift",
+    "style": "flat",
+    "caption": "A gift can create an obligation even when nobody attaches a price tag.",
+    "motion": "lift",
+    "path": "/images/articles/history/before-money-gifts-sharing-and-trust-2.svg"
+  },
+  {
+    "article": 1,
+    "frame": 3,
+    "kind": "rope",
+    "style": "flat",
+    "caption": "A continuing relationship is a loose loop, not an automatic loan contract.",
+    "motion": "trace",
+    "path": "/images/articles/history/before-money-gifts-sharing-and-trust-3.svg"
+  },
+  {
+    "article": 1,
+    "frame": 4,
+    "kind": "book",
+    "style": "flat",
+    "caption": "Our modern reader wants a record. The prehistoric conversation has declined to provide one.",
+    "motion": "lift",
+    "path": "/images/articles/history/before-money-gifts-sharing-and-trust-4.svg"
+  },
+  {
+    "article": 1,
+    "frame": 5,
+    "kind": "circle",
+    "style": "flat",
+    "caption": "Sharing, gifts and exchange can coexist; this is not a staircase with money waiting at the top.",
+    "motion": "orbit",
+    "path": "/images/articles/history/before-money-gifts-sharing-and-trust-5.svg"
+  },
+  {
+    "article": 1,
+    "frame": 6,
+    "kind": "letter",
+    "style": "flat",
+    "caption": "The next question is direct exchange. A written invitation here is a playful modern metaphor.",
+    "motion": "exchange",
+    "path": "/images/articles/history/before-money-gifts-sharing-and-trust-6.svg"
+  },
+  {
+    "article": 2,
+    "frame": 0,
+    "kind": "net",
+    "style": "one-line",
+    "caption": "A spare net needs more than a seller: it needs somebody who wants that net.",
+    "motion": "lift",
+    "path": "/images/articles/history/barter-direct-exchange-and-its-limits-0.svg"
+  },
+  {
+    "article": 2,
+    "frame": 1,
+    "kind": "pot",
+    "style": "one-line",
+    "caption": "The potter may want food instead. The net has arrived at the wrong meeting.",
+    "motion": "lift",
+    "path": "/images/articles/history/barter-direct-exchange-and-its-limits-1.svg"
+  },
+  {
+    "article": 2,
+    "frame": 2,
+    "kind": "hands",
+    "style": "one-line",
+    "caption": "Two offers still need agreement about timing, quality and quantity.",
+    "motion": "exchange",
+    "path": "/images/articles/history/barter-direct-exchange-and-its-limits-2.svg"
+  },
+  {
+    "article": 2,
+    "frame": 3,
+    "kind": "rope",
+    "style": "one-line",
+    "caption": "Credit can connect two moments that an immediate swap cannot.",
+    "motion": "trace",
+    "path": "/images/articles/history/barter-direct-exchange-and-its-limits-3.svg"
+  },
+  {
+    "article": 2,
+    "frame": 4,
+    "kind": "scale",
+    "style": "one-line",
+    "caption": "Equal weight does not resolve every disagreement about value. A balance is not a negotiation coach.",
+    "motion": "balance",
+    "path": "/images/articles/history/barter-direct-exchange-and-its-limits-4.svg"
+  },
+  {
+    "article": 2,
+    "frame": 5,
+    "kind": "circle",
+    "style": "one-line",
+    "caption": "Barter can appear alongside money and credit, rather than occupy a universal first stage.",
+    "motion": "orbit",
+    "path": "/images/articles/history/barter-direct-exchange-and-its-limits-5.svg"
+  },
+  {
+    "article": 2,
+    "frame": 6,
+    "kind": "gift",
+    "style": "one-line",
+    "caption": "The gift is back: real exchange arrangements overlap more than the tidy textbook ladder suggests.",
+    "motion": "lift",
+    "path": "/images/articles/history/barter-direct-exchange-and-its-limits-6.svg"
+  },
+  {
+    "article": 3,
+    "frame": 0,
+    "kind": "obsidian",
+    "style": "halftone-line",
+    "caption": "Obsidian keeps a chemical clue to its source. It does not keep a diary of the journey.",
+    "motion": "lift",
+    "path": "/images/articles/history/stone-age-long-distance-trade-networks-0.svg"
+  },
+  {
+    "article": 3,
+    "frame": 1,
+    "kind": "route",
+    "style": "halftone-line",
+    "caption": "A connecting line represents a possible network, not a proven ancient itinerary.",
+    "motion": "trace",
+    "path": "/images/articles/history/stone-age-long-distance-trade-networks-1.svg"
+  },
+  {
+    "article": 3,
+    "frame": 2,
+    "kind": "flint",
+    "style": "halftone-line",
+    "caption": "A flaked stone can be a tool without being a currency. Shape alone cannot settle the question.",
+    "motion": "lift",
+    "path": "/images/articles/history/stone-age-long-distance-trade-networks-2.svg"
+  },
+  {
+    "article": 3,
+    "frame": 3,
+    "kind": "shell",
+    "style": "halftone-line",
+    "caption": "An ornament is not automatically a means of payment. The shell has not volunteered its job title.",
+    "motion": "lift",
+    "path": "/images/articles/history/stone-age-long-distance-trade-networks-3.svg"
+  },
+  {
+    "article": 3,
+    "frame": 4,
+    "kind": "boat",
+    "style": "halftone-line",
+    "caption": "People or objects could move in several ways. This boat is invented, not an excavated reconstruction.",
+    "motion": "sail",
+    "path": "/images/articles/history/stone-age-long-distance-trade-networks-4.svg"
+  },
+  {
+    "article": 3,
+    "frame": 5,
+    "kind": "beads",
+    "style": "halftone-line",
+    "caption": "A string of beads can carry meanings that no price tag captures.",
+    "motion": "exchange",
+    "path": "/images/articles/history/stone-age-long-distance-trade-networks-5.svg"
+  },
+  {
+    "article": 3,
+    "frame": 6,
+    "kind": "circle",
+    "style": "halftone-line",
+    "caption": "The network matters; the exact terms of each handover can remain unknown.",
+    "motion": "orbit",
+    "path": "/images/articles/history/stone-age-long-distance-trade-networks-6.svg"
+  },
+  {
+    "article": 4,
+    "frame": 0,
+    "kind": "cow",
+    "style": "teal-spot",
+    "caption": "Livestock can represent wealth. This cow is not a standardized denomination.",
+    "motion": "lift",
+    "path": "/images/articles/history/commodity-money-cattle-grain-salt-shells-beads-0.svg"
+  },
+  {
+    "article": 4,
+    "frame": 1,
+    "kind": "grain",
+    "style": "teal-spot",
+    "caption": "Stored grain needs care, measurement and recognized claims. The bag is not automatically a bank.",
+    "motion": "lift",
+    "path": "/images/articles/history/commodity-money-cattle-grain-salt-shells-beads-1.svg"
+  },
+  {
+    "article": 4,
+    "frame": 2,
+    "kind": "salt",
+    "style": "teal-spot",
+    "caption": "Useful salt can be valuable without explaining every ancient salary.",
+    "motion": "lift",
+    "path": "/images/articles/history/commodity-money-cattle-grain-salt-shells-beads-2.svg"
+  },
+  {
+    "article": 4,
+    "frame": 3,
+    "kind": "shell",
+    "style": "teal-spot",
+    "caption": "A cowrie becomes currency through a documented social practice, not through its shape alone.",
+    "motion": "lift",
+    "path": "/images/articles/history/commodity-money-cattle-grain-salt-shells-beads-3.svg"
+  },
+  {
+    "article": 4,
+    "frame": 4,
+    "kind": "beads",
+    "style": "teal-spot",
+    "caption": "Beads can be beautiful, ceremonial or monetary. Sometimes more than one description applies.",
+    "motion": "exchange",
+    "path": "/images/articles/history/commodity-money-cattle-grain-salt-shells-beads-4.svg"
+  },
+  {
+    "article": 4,
+    "frame": 5,
+    "kind": "scale",
+    "style": "teal-spot",
+    "caption": "Divisibility, storage and quality make different materials useful for different monetary jobs.",
+    "motion": "balance",
+    "path": "/images/articles/history/commodity-money-cattle-grain-salt-shells-beads-5.svg"
+  },
+  {
+    "article": 4,
+    "frame": 6,
+    "kind": "tablet",
+    "style": "teal-spot",
+    "caption": "The next practical problem is remembering the amount. A very early spreadsheet has entered the conversation.",
+    "motion": "lift",
+    "path": "/images/articles/history/commodity-money-cattle-grain-salt-shells-beads-6.svg"
+  },
+  {
+    "article": 5,
+    "frame": 0,
+    "kind": "tokens",
+    "style": "framed-panel",
+    "caption": "Clay counters make quantities tangible; identifying every small clay shape as a token remains risky.",
+    "motion": "exchange",
+    "path": "/images/articles/history/mesopotamia-tokens-temples-first-accounting-0.svg"
+  },
+  {
+    "article": 5,
+    "frame": 1,
+    "kind": "seal",
+    "style": "framed-panel",
+    "caption": "A seal can connect a record with responsibility. These marks are invented, not a decoded inscription.",
+    "motion": "stamp",
+    "path": "/images/articles/history/mesopotamia-tokens-temples-first-accounting-1.svg"
+  },
+  {
+    "article": 5,
+    "frame": 2,
+    "kind": "tablet",
+    "style": "framed-panel",
+    "caption": "Early accounting marks do not turn every tablet into circulating money.",
+    "motion": "lift",
+    "path": "/images/articles/history/mesopotamia-tokens-temples-first-accounting-2.svg"
+  },
+  {
+    "article": 5,
+    "frame": 3,
+    "kind": "store",
+    "style": "framed-panel",
+    "caption": "A store makes goods durable; institutions determine who may claim them.",
+    "motion": "lift",
+    "path": "/images/articles/history/mesopotamia-tokens-temples-first-accounting-3.svg"
+  },
+  {
+    "article": 5,
+    "frame": 4,
+    "kind": "book",
+    "style": "framed-panel",
+    "caption": "Our reader compares a record with its contents. The ledger cannot be eaten instead of the grain.",
+    "motion": "lift",
+    "path": "/images/articles/history/mesopotamia-tokens-temples-first-accounting-4.svg"
+  },
+  {
+    "article": 5,
+    "frame": 5,
+    "kind": "stamp",
+    "style": "framed-panel",
+    "caption": "Authorization and quantity answer different questions, even when one document combines them.",
+    "motion": "stamp",
+    "path": "/images/articles/history/mesopotamia-tokens-temples-first-accounting-5.svg"
+  },
+  {
+    "article": 5,
+    "frame": 6,
+    "kind": "grain",
+    "style": "framed-panel",
+    "caption": "The grain moves to another setting next: parallel Egyptian and Indus histories.",
+    "motion": "lift",
+    "path": "/images/articles/history/mesopotamia-tokens-temples-first-accounting-6.svg"
+  },
+  {
+    "article": 6,
+    "frame": 0,
+    "kind": "store",
+    "style": "line-interior",
+    "caption": "A schematic storehouse introduces grain administration. It is not a model of a specific excavated building.",
+    "motion": "lift",
+    "path": "/images/articles/history/egypt-indus-grain-weights-seals-0.svg"
+  },
+  {
+    "article": 6,
+    "frame": 1,
+    "kind": "grain",
+    "style": "line-interior",
+    "caption": "Grain can be inventory, a distribution or a payment; the surrounding arrangement matters.",
+    "motion": "lift",
+    "path": "/images/articles/history/egypt-indus-grain-weights-seals-1.svg"
+  },
+  {
+    "article": 6,
+    "frame": 2,
+    "kind": "scale",
+    "style": "line-interior",
+    "caption": "Comparable weights make quantities easier to discuss. They do not identify the political system by themselves.",
+    "motion": "balance",
+    "path": "/images/articles/history/egypt-indus-grain-weights-seals-2.svg"
+  },
+  {
+    "article": 6,
+    "frame": 3,
+    "kind": "seal",
+    "style": "line-interior",
+    "caption": "Indus seals are evidence; a universally accepted reading of their signs is still missing.",
+    "motion": "stamp",
+    "path": "/images/articles/history/egypt-indus-grain-weights-seals-3.svg"
+  },
+  {
+    "article": 6,
+    "frame": 4,
+    "kind": "tokens",
+    "style": "line-interior",
+    "caption": "Counting tools show coordination without supplying every lost conversation.",
+    "motion": "exchange",
+    "path": "/images/articles/history/egypt-indus-grain-weights-seals-4.svg"
+  },
+  {
+    "article": 6,
+    "frame": 5,
+    "kind": "book",
+    "style": "line-interior",
+    "caption": "A modern book stands in for the questions we ask of an ancient archive. No ancient paperback is implied.",
+    "motion": "lift",
+    "path": "/images/articles/history/egypt-indus-grain-weights-seals-5.svg"
+  },
+  {
+    "article": 6,
+    "frame": 6,
+    "kind": "route",
+    "style": "line-interior",
+    "caption": "Different regions developed overlapping practices, rather than waiting in one invention queue.",
+    "motion": "trace",
+    "path": "/images/articles/history/egypt-indus-grain-weights-seals-6.svg"
+  },
+  {
+    "article": 7,
+    "frame": 0,
+    "kind": "silver",
+    "style": "isometric-mono",
+    "caption": "Metal before a stamp: an invented ingot illustrates a material, not a particular weight standard.",
+    "motion": "lift",
+    "path": "/images/articles/history/silver-gold-by-weight-before-coins-0.svg"
+  },
+  {
+    "article": 7,
+    "frame": 1,
+    "kind": "scale",
+    "style": "isometric-mono",
+    "caption": "A balance checks a quantity. Composition remains another problem.",
+    "motion": "balance",
+    "path": "/images/articles/history/silver-gold-by-weight-before-coins-1.svg"
+  },
+  {
+    "article": 7,
+    "frame": 2,
+    "kind": "gold",
+    "style": "isometric-mono",
+    "caption": "A gold-colored object can represent a payment asset without proving where or when it circulated.",
+    "motion": "lift",
+    "path": "/images/articles/history/silver-gold-by-weight-before-coins-2.svg"
+  },
+  {
+    "article": 7,
+    "frame": 3,
+    "kind": "book",
+    "style": "isometric-mono",
+    "caption": "The written amount and the physically delivered material need not be the same thing.",
+    "motion": "lift",
+    "path": "/images/articles/history/silver-gold-by-weight-before-coins-3.svg"
+  },
+  {
+    "article": 7,
+    "frame": 4,
+    "kind": "shell",
+    "style": "isometric-mono",
+    "caption": "Chinese shell valuables belong to their own contexts, not a compulsory Mediterranean timeline.",
+    "motion": "lift",
+    "path": "/images/articles/history/silver-gold-by-weight-before-coins-4.svg"
+  },
+  {
+    "article": 7,
+    "frame": 5,
+    "kind": "knife",
+    "style": "isometric-mono",
+    "caption": "Tool-shaped money reminds us that a disc is only one possible monetary form.",
+    "motion": "lift",
+    "path": "/images/articles/history/silver-gold-by-weight-before-coins-5.svg"
+  },
+  {
+    "article": 7,
+    "frame": 6,
+    "kind": "stamp",
+    "style": "isometric-mono",
+    "caption": "Next comes the stamp, which adds an issuer’s mark without magically eliminating every trust problem.",
+    "motion": "stamp",
+    "path": "/images/articles/history/silver-gold-by-weight-before-coins-6.svg"
+  },
+  {
+    "article": 8,
+    "frame": 0,
+    "kind": "coin",
+    "style": "vintage-emblem",
+    "caption": "A generic coin represents recognizable marks, not the exact image of the first coin ever made.",
+    "motion": "coin",
+    "path": "/images/articles/history/lydia-first-coins-electrum-croesus-0.svg"
+  },
+  {
+    "article": 8,
+    "frame": 1,
+    "kind": "silver",
+    "style": "vintage-emblem",
+    "caption": "Weighed metal did not retire the moment coins appeared.",
+    "motion": "lift",
+    "path": "/images/articles/history/lydia-first-coins-electrum-croesus-1.svg"
+  },
+  {
+    "article": 8,
+    "frame": 2,
+    "kind": "stamp",
+    "style": "vintage-emblem",
+    "caption": "A stamp communicates authority. It is not a tiny machine for manufacturing confidence.",
+    "motion": "stamp",
+    "path": "/images/articles/history/lydia-first-coins-electrum-croesus-2.svg"
+  },
+  {
+    "article": 8,
+    "frame": 3,
+    "kind": "gold",
+    "style": "vintage-emblem",
+    "caption": "Croesus’s later reform belongs after early electrum issues; the two are not one event.",
+    "motion": "lift",
+    "path": "/images/articles/history/lydia-first-coins-electrum-croesus-3.svg"
+  },
+  {
+    "article": 8,
+    "frame": 4,
+    "kind": "scale",
+    "style": "vintage-emblem",
+    "caption": "Weight and quality still matter when the object carries an official mark.",
+    "motion": "balance",
+    "path": "/images/articles/history/lydia-first-coins-electrum-croesus-4.svg"
+  },
+  {
+    "article": 8,
+    "frame": 5,
+    "kind": "seal",
+    "style": "vintage-emblem",
+    "caption": "These seal-like marks are a visual analogy for authorization, not copied Lydian inscriptions.",
+    "motion": "stamp",
+    "path": "/images/articles/history/lydia-first-coins-electrum-croesus-5.svg"
+  },
+  {
+    "article": 8,
+    "frame": 6,
+    "kind": "book",
+    "style": "vintage-emblem",
+    "caption": "Our modern record book closes one question and opens the Greek monetary world next.",
+    "motion": "lift",
+    "path": "/images/articles/history/lydia-first-coins-electrum-croesus-6.svg"
+  },
+  {
+    "article": 9,
+    "frame": 0,
+    "kind": "coin",
+    "style": "outlined-cartoon",
+    "caption": "A civic coin can carry identity as well as a denomination. This design is entirely invented.",
+    "motion": "coin",
+    "path": "/images/articles/history/greek-city-states-coins-agora-bankers-0.svg"
+  },
+  {
+    "article": 9,
+    "frame": 1,
+    "kind": "store",
+    "style": "outlined-cartoon",
+    "caption": "The agora combined public activities; it was more than a row of tills.",
+    "motion": "lift",
+    "path": "/images/articles/history/greek-city-states-coins-agora-bankers-1.svg"
+  },
+  {
+    "article": 9,
+    "frame": 2,
+    "kind": "scale",
+    "style": "outlined-cartoon",
+    "caption": "Changing money means assessing differences, not merely swapping two identical discs.",
+    "motion": "balance",
+    "path": "/images/articles/history/greek-city-states-coins-agora-bankers-2.svg"
+  },
+  {
+    "article": 9,
+    "frame": 3,
+    "kind": "book",
+    "style": "outlined-cartoon",
+    "caption": "A financial specialist’s records belong to a specific institution and its practices.",
+    "motion": "lift",
+    "path": "/images/articles/history/greek-city-states-coins-agora-bankers-3.svg"
+  },
+  {
+    "article": 9,
+    "frame": 4,
+    "kind": "hands",
+    "style": "outlined-cartoon",
+    "caption": "Deposits and loans predate modern banking rules. A reassuring handshake is not deposit insurance.",
+    "motion": "exchange",
+    "path": "/images/articles/history/greek-city-states-coins-agora-bankers-4.svg"
+  },
+  {
+    "article": 9,
+    "frame": 5,
+    "kind": "route",
+    "style": "outlined-cartoon",
+    "caption": "Greek trading worlds contained many monetary identities, not one universal currency.",
+    "motion": "trace",
+    "path": "/images/articles/history/greek-city-states-coins-agora-bankers-5.svg"
+  },
+  {
+    "article": 9,
+    "frame": 6,
+    "kind": "letter",
+    "style": "outlined-cartoon",
+    "caption": "The story now widens toward empires and the messages needed to connect them.",
+    "motion": "exchange",
+    "path": "/images/articles/history/greek-city-states-coins-agora-bankers-6.svg"
+  },
+  {
+    "article": 10,
+    "frame": 0,
+    "kind": "route",
+    "style": "bold-pop",
+    "caption": "A wide network does not imply identical money at every stop.",
+    "motion": "trace",
+    "path": "/images/articles/history/persia-alexander-empire-wide-currency-0.svg"
+  },
+  {
+    "article": 10,
+    "frame": 1,
+    "kind": "coin",
+    "style": "bold-pop",
+    "caption": "Imperial coins could coexist with local currencies and other payment practices.",
+    "motion": "coin",
+    "path": "/images/articles/history/persia-alexander-empire-wide-currency-1.svg"
+  },
+  {
+    "article": 10,
+    "frame": 2,
+    "kind": "seal",
+    "style": "bold-pop",
+    "caption": "Authority travels through administration as well as through metal.",
+    "motion": "stamp",
+    "path": "/images/articles/history/persia-alexander-empire-wide-currency-2.svg"
+  },
+  {
+    "article": 10,
+    "frame": 3,
+    "kind": "boat",
+    "style": "bold-pop",
+    "caption": "A fictional vessel carries the idea of connections, not a claimed route of Alexander’s fleet.",
+    "motion": "sail",
+    "path": "/images/articles/history/persia-alexander-empire-wide-currency-3.svg"
+  },
+  {
+    "article": 10,
+    "frame": 4,
+    "kind": "gold",
+    "style": "bold-pop",
+    "caption": "Treasury metal, circulating coins and units of account are different things.",
+    "motion": "lift",
+    "path": "/images/articles/history/persia-alexander-empire-wide-currency-4.svg"
+  },
+  {
+    "article": 10,
+    "frame": 5,
+    "kind": "book",
+    "style": "bold-pop",
+    "caption": "A record of a payment does not tell us that every subject used the same coin.",
+    "motion": "lift",
+    "path": "/images/articles/history/persia-alexander-empire-wide-currency-5.svg"
+  },
+  {
+    "article": 10,
+    "frame": 6,
+    "kind": "scale",
+    "style": "bold-pop",
+    "caption": "The comparison continues eastward, where tool-shaped bronze money followed a different tradition.",
+    "motion": "balance",
+    "path": "/images/articles/history/persia-alexander-empire-wide-currency-6.svg"
+  },
+  {
+    "article": 11,
+    "frame": 0,
+    "kind": "shell",
+    "style": "flat-with-black",
+    "caption": "Chinese shell valuables begin a parallel strand, rather than a detour toward Lydia.",
+    "motion": "lift",
+    "path": "/images/articles/history/ancient-china-knife-spade-round-coins-0.svg"
+  },
+  {
+    "article": 11,
+    "frame": 1,
+    "kind": "knife",
+    "style": "flat-with-black",
+    "caption": "A knife-shaped monetary object need not be an ordinary knife put to work.",
+    "motion": "lift",
+    "path": "/images/articles/history/ancient-china-knife-spade-round-coins-1.svg"
+  },
+  {
+    "article": 11,
+    "frame": 2,
+    "kind": "spade",
+    "style": "flat-with-black",
+    "caption": "The monetary spade has left farming to its practical cousin. This is a schematic shape.",
+    "motion": "lift",
+    "path": "/images/articles/history/ancient-china-knife-spade-round-coins-2.svg"
+  },
+  {
+    "article": 11,
+    "frame": 3,
+    "kind": "coin-hole",
+    "style": "flat-with-black",
+    "caption": "A central hole can assist stringing, while actual counts and conventions still need evidence.",
+    "motion": "coin",
+    "path": "/images/articles/history/ancient-china-knife-spade-round-coins-3.svg"
+  },
+  {
+    "article": 11,
+    "frame": 4,
+    "kind": "beads",
+    "style": "flat-with-black",
+    "caption": "Not every string had the same contents. The beads refuse to endorse a universal conversion rate.",
+    "motion": "exchange",
+    "path": "/images/articles/history/ancient-china-knife-spade-round-coins-4.svg"
+  },
+  {
+    "article": 11,
+    "frame": 5,
+    "kind": "stamp",
+    "style": "flat-with-black",
+    "caption": "Casting and striking are different production traditions, not a league table of civilizations.",
+    "motion": "stamp",
+    "path": "/images/articles/history/ancient-china-knife-spade-round-coins-5.svg"
+  },
+  {
+    "article": 11,
+    "frame": 6,
+    "kind": "store",
+    "style": "flat-with-black",
+    "caption": "Qin standardization is an institutional story as well as a story about round objects.",
+    "motion": "lift",
+    "path": "/images/articles/history/ancient-china-knife-spade-round-coins-6.svg"
+  },
+  {
+    "article": 12,
+    "frame": 0,
+    "kind": "coin",
+    "style": "two-colour-brush",
+    "caption": "The denarius name covers a changing history; this generic disc supplies no measured fineness.",
+    "motion": "coin",
+    "path": "/images/articles/history/rome-denarius-debasement-inflation-0.svg"
+  },
+  {
+    "article": 12,
+    "frame": 1,
+    "kind": "scale",
+    "style": "two-colour-brush",
+    "caption": "Comparisons need specified issues. A balance alone cannot explain an empire’s price movements.",
+    "motion": "balance",
+    "path": "/images/articles/history/rome-denarius-debasement-inflation-1.svg"
+  },
+  {
+    "article": 12,
+    "frame": 2,
+    "kind": "silver",
+    "style": "two-colour-brush",
+    "caption": "Changing metal content and rising prices are related questions, not synonyms.",
+    "motion": "lift",
+    "path": "/images/articles/history/rome-denarius-debasement-inflation-2.svg"
+  },
+  {
+    "article": 12,
+    "frame": 3,
+    "kind": "coin-layers",
+    "style": "two-colour-brush",
+    "caption": "Two drawn layers explain composition conceptually. They are not laboratory results for Roman coins.",
+    "motion": "exchange",
+    "path": "/images/articles/history/rome-denarius-debasement-inflation-3.svg"
+  },
+  {
+    "article": 12,
+    "frame": 4,
+    "kind": "book",
+    "style": "two-colour-brush",
+    "caption": "A modern reader separates the object, the evidence and the broader argument.",
+    "motion": "lift",
+    "path": "/images/articles/history/rome-denarius-debasement-inflation-4.svg"
+  },
+  {
+    "article": 12,
+    "frame": 5,
+    "kind": "store",
+    "style": "two-colour-brush",
+    "caption": "Several monetary and fiscal pressures can act together. One storehouse is not a complete economy.",
+    "motion": "lift",
+    "path": "/images/articles/history/rome-denarius-debasement-inflation-5.svg"
+  },
+  {
+    "article": 12,
+    "frame": 6,
+    "kind": "gold",
+    "style": "two-colour-brush",
+    "caption": "The next chapter rewinds to credit: obligations were already there before the coin.",
+    "motion": "lift",
+    "path": "/images/articles/history/rome-denarius-debasement-inflation-6.svg"
+  },
+  {
+    "article": 13,
+    "frame": 0,
+    "kind": "tablet",
+    "style": "ink-sketch",
+    "caption": "Our fictional living tablet worries about its workload. Ancient writing did not actually grow eyes.",
+    "motion": "lift",
+    "path": "/images/articles/history/ancient-credit-contracts-loans-interest-banking-0.svg"
+  },
+  {
+    "article": 13,
+    "frame": 1,
+    "kind": "grain",
+    "style": "ink-sketch",
+    "caption": "A grain loan joins present need with uncertain future repayment. No historical interest rate is implied.",
+    "motion": "lift",
+    "path": "/images/articles/history/ancient-credit-contracts-loans-interest-banking-1.svg"
+  },
+  {
+    "article": 13,
+    "frame": 2,
+    "kind": "book",
+    "style": "ink-sketch",
+    "caption": "The record can specify an obligation without guaranteeing its performance.",
+    "motion": "lift",
+    "path": "/images/articles/history/ancient-credit-contracts-loans-interest-banking-2.svg"
+  },
+  {
+    "article": 13,
+    "frame": 3,
+    "kind": "seal",
+    "style": "ink-sketch",
+    "caption": "A seal can help authorize a document; it is not modern identity verification.",
+    "motion": "stamp",
+    "path": "/images/articles/history/ancient-credit-contracts-loans-interest-banking-3.svg"
+  },
+  {
+    "article": 13,
+    "frame": 4,
+    "kind": "store",
+    "style": "ink-sketch",
+    "caption": "A temple store and a retail bank can share functions without becoming the same institution.",
+    "motion": "lift",
+    "path": "/images/articles/history/ancient-credit-contracts-loans-interest-banking-4.svg"
+  },
+  {
+    "article": 13,
+    "frame": 5,
+    "kind": "hands",
+    "style": "ink-sketch",
+    "caption": "A contract joins people, resources and enforceability. The handshake is an illustration, not a source.",
+    "motion": "exchange",
+    "path": "/images/articles/history/ancient-credit-contracts-loans-interest-banking-5.svg"
+  },
+  {
+    "article": 13,
+    "frame": 6,
+    "kind": "letter",
+    "style": "ink-sketch",
+    "caption": "The obligation can travel farther than its original parties. Long-distance networks come next.",
+    "motion": "exchange",
+    "path": "/images/articles/history/ancient-credit-contracts-loans-interest-banking-6.svg"
+  },
+  {
+    "article": 14,
+    "frame": 0,
+    "kind": "route",
+    "style": "grainy-gouache",
+    "caption": "A fictional owl is our museum visitor, not a Silk Road witness. The route is a network metaphor.",
+    "motion": "trace",
+    "path": "/images/articles/history/silk-road-indian-ocean-trade-0.svg"
+  },
+  {
+    "article": 14,
+    "frame": 1,
+    "kind": "boat",
+    "style": "grainy-gouache",
+    "caption": "A missed sailing season is a coordination problem. Our owl has packed enthusiasm instead of a timetable.",
+    "motion": "sail",
+    "path": "/images/articles/history/silk-road-indian-ocean-trade-1.svg"
+  },
+  {
+    "article": 14,
+    "frame": 2,
+    "kind": "silk",
+    "style": "grainy-gouache",
+    "caption": "Textiles moved through many hands; one drawn bundle cannot reveal the whole itinerary.",
+    "motion": "lift",
+    "path": "/images/articles/history/silk-road-indian-ocean-trade-2.svg"
+  },
+  {
+    "article": 14,
+    "frame": 3,
+    "kind": "shell",
+    "style": "grainy-gouache",
+    "caption": "Objects can cross regions while retaining meanings beyond monetary value.",
+    "motion": "lift",
+    "path": "/images/articles/history/silk-road-indian-ocean-trade-3.svg"
+  },
+  {
+    "article": 14,
+    "frame": 4,
+    "kind": "letter",
+    "style": "grainy-gouache",
+    "caption": "A message or claim can move separately from the goods. The owl checks the paperwork twice.",
+    "motion": "exchange",
+    "path": "/images/articles/history/silk-road-indian-ocean-trade-4.svg"
+  },
+  {
+    "article": 14,
+    "frame": 5,
+    "kind": "store",
+    "style": "grainy-gouache",
+    "caption": "Ports and stores are supported by people, rules and contacts as well as geography.",
+    "motion": "lift",
+    "path": "/images/articles/history/silk-road-indian-ocean-trade-5.svg"
+  },
+  {
+    "article": 14,
+    "frame": 6,
+    "kind": "scale",
+    "style": "grainy-gouache",
+    "caption": "Different monetary systems meet across a network. A shared ocean does not supply a shared price list.",
+    "motion": "balance",
+    "path": "/images/articles/history/silk-road-indian-ocean-trade-6.svg"
+  },
+  {
+    "article": 15,
+    "frame": 0,
+    "kind": "coin",
+    "style": "flat",
+    "caption": "Islamic coinage changed over time. This generic coin is not a museum reproduction.",
+    "motion": "coin",
+    "path": "/images/articles/history/medieval-money-islamic-coins-hawala-bills-0.svg"
+  },
+  {
+    "article": 15,
+    "frame": 1,
+    "kind": "seal",
+    "style": "flat",
+    "caption": "Transitional designs and later reforms should not be collapsed into one instant change.",
+    "motion": "stamp",
+    "path": "/images/articles/history/medieval-money-islamic-coins-hawala-bills-1.svg"
+  },
+  {
+    "article": 15,
+    "frame": 2,
+    "kind": "letter",
+    "style": "flat",
+    "caption": "A transfer instruction can reduce the need to carry cash the entire distance.",
+    "motion": "exchange",
+    "path": "/images/articles/history/medieval-money-islamic-coins-hawala-bills-2.svg"
+  },
+  {
+    "article": 15,
+    "frame": 3,
+    "kind": "route",
+    "style": "flat",
+    "caption": "Related transfer functions do not prove one unchanged institution stretched across all regions.",
+    "motion": "trace",
+    "path": "/images/articles/history/medieval-money-islamic-coins-hawala-bills-3.svg"
+  },
+  {
+    "article": 15,
+    "frame": 4,
+    "kind": "book",
+    "style": "flat",
+    "caption": "A bill of exchange is more than a sheet of paper: parties, places and terms give it meaning.",
+    "motion": "lift",
+    "path": "/images/articles/history/medieval-money-islamic-coins-hawala-bills-4.svg"
+  },
+  {
+    "article": 15,
+    "frame": 5,
+    "kind": "hands",
+    "style": "flat",
+    "caption": "Trust helps, but disputes and power still matter. The handshake has no supernatural legal powers.",
+    "motion": "exchange",
+    "path": "/images/articles/history/medieval-money-islamic-coins-hawala-bills-5.svg"
+  },
+  {
+    "article": 15,
+    "frame": 6,
+    "kind": "paper",
+    "style": "flat",
+    "caption": "Paper mechanisms lead us back east to distinguish transfers from circulating notes.",
+    "motion": "exchange",
+    "path": "/images/articles/history/medieval-money-islamic-coins-hawala-bills-6.svg"
+  },
+  {
+    "article": 16,
+    "frame": 0,
+    "kind": "letter",
+    "style": "one-line",
+    "caption": "A paper instruction is not automatically paper currency. The sheet would like a clearer job description.",
+    "motion": "exchange",
+    "path": "/images/articles/history/paper-money-tang-song-china-flying-money-0.svg"
+  },
+  {
+    "article": 16,
+    "frame": 1,
+    "kind": "coin-hole",
+    "style": "one-line",
+    "caption": "Coins did not disappear simply because some obligations traveled on paper.",
+    "motion": "coin",
+    "path": "/images/articles/history/paper-money-tang-song-china-flying-money-1.svg"
+  },
+  {
+    "article": 16,
+    "frame": 2,
+    "kind": "boat",
+    "style": "one-line",
+    "caption": "A remittance moves settlement across distance; the cargo can follow a different path.",
+    "motion": "sail",
+    "path": "/images/articles/history/paper-money-tang-song-china-flying-money-2.svg"
+  },
+  {
+    "article": 16,
+    "frame": 3,
+    "kind": "paper",
+    "style": "one-line",
+    "caption": "Song jiaozi belong to a later circulating-note history, distinct from Tang flying money.",
+    "motion": "exchange",
+    "path": "/images/articles/history/paper-money-tang-song-china-flying-money-3.svg"
+  },
+  {
+    "article": 16,
+    "frame": 4,
+    "kind": "stamp",
+    "style": "one-line",
+    "caption": "Issuer, recognition and redemption rules matter more than the decorative stamp in this schematic.",
+    "motion": "stamp",
+    "path": "/images/articles/history/paper-money-tang-song-china-flying-money-4.svg"
+  },
+  {
+    "article": 16,
+    "frame": 5,
+    "kind": "book",
+    "style": "one-line",
+    "caption": "Our modern reader separates paper’s material from its monetary function.",
+    "motion": "lift",
+    "path": "/images/articles/history/paper-money-tang-song-china-flying-money-5.svg"
+  },
+  {
+    "article": 16,
+    "frame": 6,
+    "kind": "scale",
+    "style": "one-line",
+    "caption": "Claims need credible arrangements. A balance is only one metaphor for that institutional work.",
+    "motion": "balance",
+    "path": "/images/articles/history/paper-money-tang-song-china-flying-money-6.svg"
+  },
+  {
+    "article": 17,
+    "frame": 0,
+    "kind": "book",
+    "style": "halftone-line",
+    "caption": "A record of a claim opens the securities story. Debt and company shares are different assets.",
+    "motion": "lift",
+    "path": "/images/articles/history/first-stock-markets-venice-voc-amsterdam-0.svg"
+  },
+  {
+    "article": 17,
+    "frame": 1,
+    "kind": "boat",
+    "style": "halftone-line",
+    "caption": "An interest in an enterprise is not ownership of this particular imaginary ship.",
+    "motion": "sail",
+    "path": "/images/articles/history/first-stock-markets-venice-voc-amsterdam-1.svg"
+  },
+  {
+    "article": 17,
+    "frame": 2,
+    "kind": "paper",
+    "style": "halftone-line",
+    "caption": "A transferable claim can be sold onward; the paper here is not a copied VOC certificate.",
+    "motion": "exchange",
+    "path": "/images/articles/history/first-stock-markets-venice-voc-amsterdam-2.svg"
+  },
+  {
+    "article": 17,
+    "frame": 3,
+    "kind": "hands",
+    "style": "halftone-line",
+    "caption": "A secondary buyer deals with a previous holder rather than funding the company directly each time.",
+    "motion": "exchange",
+    "path": "/images/articles/history/first-stock-markets-venice-voc-amsterdam-3.svg"
+  },
+  {
+    "article": 17,
+    "frame": 4,
+    "kind": "store",
+    "style": "halftone-line",
+    "caption": "Markets grow around institutions and rules, not just around an impressive building.",
+    "motion": "lift",
+    "path": "/images/articles/history/first-stock-markets-venice-voc-amsterdam-4.svg"
+  },
+  {
+    "article": 17,
+    "frame": 5,
+    "kind": "route",
+    "style": "halftone-line",
+    "caption": "A financial innovation can mobilize capital without making its colonial uses benign.",
+    "motion": "trace",
+    "path": "/images/articles/history/first-stock-markets-venice-voc-amsterdam-5.svg"
+  },
+  {
+    "article": 17,
+    "frame": 6,
+    "kind": "letter",
+    "style": "halftone-line",
+    "caption": "Next, banknotes connect circulating claims with issuers whose institutions also changed over time.",
+    "motion": "exchange",
+    "path": "/images/articles/history/first-stock-markets-venice-voc-amsterdam-6.svg"
+  },
+  {
+    "article": 18,
+    "frame": 0,
+    "kind": "vault",
+    "style": "teal-spot",
+    "caption": "A vault is an object. The claims against an issuer require a balance sheet and legal context.",
+    "motion": "balance",
+    "path": "/images/articles/history/banknotes-central-banks-stockholm-bank-england-0.svg"
+  },
+  {
+    "article": 18,
+    "frame": 1,
+    "kind": "paper",
+    "style": "teal-spot",
+    "caption": "A note can circulate beyond its original holder without becoming a second bag of metal.",
+    "motion": "exchange",
+    "path": "/images/articles/history/banknotes-central-banks-stockholm-bank-england-1.svg"
+  },
+  {
+    "article": 18,
+    "frame": 2,
+    "kind": "gold",
+    "style": "teal-spot",
+    "caption": "An asset held in reserve is not a promise that every issuer can redeem every claim at once.",
+    "motion": "lift",
+    "path": "/images/articles/history/banknotes-central-banks-stockholm-bank-england-2.svg"
+  },
+  {
+    "article": 18,
+    "frame": 3,
+    "kind": "book",
+    "style": "teal-spot",
+    "caption": "The book records liabilities as well as assets. A reassuring cover is not the same as solvency.",
+    "motion": "lift",
+    "path": "/images/articles/history/banknotes-central-banks-stockholm-bank-england-3.svg"
+  },
+  {
+    "article": 18,
+    "frame": 4,
+    "kind": "store",
+    "style": "teal-spot",
+    "caption": "A foundation date does not mean every modern central-bank function already existed.",
+    "motion": "lift",
+    "path": "/images/articles/history/banknotes-central-banks-stockholm-bank-england-4.svg"
+  },
+  {
+    "article": 18,
+    "frame": 5,
+    "kind": "letter",
+    "style": "teal-spot",
+    "caption": "Our fictional instruction connects a holder and an issuer; it is not a reproduced historical banknote.",
+    "motion": "exchange",
+    "path": "/images/articles/history/banknotes-central-banks-stockholm-bank-england-5.svg"
+  },
+  {
+    "article": 18,
+    "frame": 6,
+    "kind": "scale",
+    "style": "teal-spot",
+    "caption": "Credibility and redemption lead next to gold standards and changing international rules.",
+    "motion": "balance",
+    "path": "/images/articles/history/banknotes-central-banks-stockholm-bank-england-6.svg"
+  },
+  {
+    "article": 19,
+    "frame": 0,
+    "kind": "gold",
+    "style": "framed-panel",
+    "caption": "Gold backing was an institutional arrangement, not a natural property of a paper currency.",
+    "motion": "lift",
+    "path": "/images/articles/history/gold-standard-bretton-woods-1971-0.svg"
+  },
+  {
+    "article": 19,
+    "frame": 1,
+    "kind": "vault",
+    "style": "framed-panel",
+    "caption": "Different gold-standard systems had different rules. One vault cannot explain them all.",
+    "motion": "balance",
+    "path": "/images/articles/history/gold-standard-bretton-woods-1971-1.svg"
+  },
+  {
+    "article": 19,
+    "frame": 2,
+    "kind": "letter",
+    "style": "framed-panel",
+    "caption": "Bretton Woods linked currencies through a particular international arrangement.",
+    "motion": "exchange",
+    "path": "/images/articles/history/gold-standard-bretton-woods-1971-2.svg"
+  },
+  {
+    "article": 19,
+    "frame": 3,
+    "kind": "window",
+    "style": "framed-panel",
+    "caption": "The 1971 change closed official dollar-gold convertibility. This window is a visual metaphor.",
+    "motion": "door",
+    "path": "/images/articles/history/gold-standard-bretton-woods-1971-3.svg"
+  },
+  {
+    "article": 19,
+    "frame": 4,
+    "kind": "route",
+    "style": "framed-panel",
+    "caption": "Exchange-rate arrangements continued to change after the gold decision; history did not stop that weekend.",
+    "motion": "trace",
+    "path": "/images/articles/history/gold-standard-bretton-woods-1971-4.svg"
+  },
+  {
+    "article": 19,
+    "frame": 5,
+    "kind": "book",
+    "style": "framed-panel",
+    "caption": "A monetary unit is a convention supported by institutions, not a promise that its purchasing power never changes.",
+    "motion": "lift",
+    "path": "/images/articles/history/gold-standard-bretton-woods-1971-5.svg"
+  },
+  {
+    "article": 19,
+    "frame": 6,
+    "kind": "scale",
+    "style": "framed-panel",
+    "caption": "The final chapter moves from monetary systems to the venues and mechanisms of trading.",
+    "motion": "balance",
+    "path": "/images/articles/history/gold-standard-bretton-woods-1971-6.svg"
+  },
+  {
+    "article": 20,
+    "frame": 0,
+    "kind": "store",
+    "style": "line-interior",
+    "caption": "An exchange is an institution with rules, not merely a grand place where people gather.",
+    "motion": "lift",
+    "path": "/images/articles/history/trading-floors-order-books-electronic-markets-0.svg"
+  },
+  {
+    "article": 20,
+    "frame": 1,
+    "kind": "grain",
+    "style": "line-interior",
+    "caption": "Grain commerce helps explain the development of organized futures contracts.",
+    "motion": "lift",
+    "path": "/images/articles/history/trading-floors-order-books-electronic-markets-1.svg"
+  },
+  {
+    "article": 20,
+    "frame": 2,
+    "kind": "screen",
+    "style": "line-interior",
+    "caption": "The screen shows an invented price sequence, not a forecast or live market prices.",
+    "motion": "orders",
+    "path": "/images/articles/history/trading-floors-order-books-electronic-markets-2.svg"
+  },
+  {
+    "article": 20,
+    "frame": 3,
+    "kind": "orderbook",
+    "style": "line-interior",
+    "caption": "A bid or offer is an instruction; it is not necessarily a completed transaction.",
+    "motion": "orders",
+    "path": "/images/articles/history/trading-floors-order-books-electronic-markets-3.svg"
+  },
+  {
+    "article": 20,
+    "frame": 4,
+    "kind": "paper",
+    "style": "line-interior",
+    "caption": "Digital money includes different claims and liabilities. A digital format does not make them equivalent.",
+    "motion": "exchange",
+    "path": "/images/articles/history/trading-floors-order-books-electronic-markets-4.svg"
+  },
+  {
+    "article": 20,
+    "frame": 5,
+    "kind": "book",
+    "style": "line-interior",
+    "caption": "Our modern reader has questions about settlement, reserves and who owes what to whom.",
+    "motion": "lift",
+    "path": "/images/articles/history/trading-floors-order-books-electronic-markets-5.svg"
+  },
+  {
+    "article": 20,
+    "frame": 6,
+    "kind": "hands",
+    "style": "line-interior",
+    "caption": "The story returns to Market Foundations: understand orders and evidence before interpreting chart patterns.",
+    "motion": "exchange",
+    "path": "/images/articles/history/trading-floors-order-books-electronic-markets-6.svg"
+  }
+]

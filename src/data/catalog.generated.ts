@@ -31,6 +31,126 @@ export const articleCatalog = [
     "topic": "Trading frameworks"
   },
   {
+    "slug": "before-money-gifts-sharing-and-trust",
+    "title": "Before Money: Gifts, Sharing and Trust in Early Human Societies",
+    "description": "How sharing, gift obligations and trust shaped exchange before coins, and why the barter-to-money story is too simple.",
+    "topic": "History"
+  },
+  {
+    "slug": "barter-direct-exchange-and-its-limits",
+    "title": "Barter: How Direct Exchange Worked and Why It Was Hard",
+    "description": "Direct exchange, matching wants and credit: understand barter without assuming every society began with a pure barter economy.",
+    "topic": "History"
+  },
+  {
+    "slug": "stone-age-long-distance-trade-networks",
+    "title": "The First Long-Distance Trade: Obsidian, Flint, Shells and Stone Age Networks",
+    "description": "How archaeologists trace distant obsidian, flint and shells—and why movement does not prove a sale or a currency.",
+    "topic": "History"
+  },
+  {
+    "slug": "commodity-money-cattle-grain-salt-shells-beads",
+    "title": "Commodity Money: Cattle, Grain, Salt, Cowrie Shells and Beads",
+    "description": "When useful goods serve monetary roles: cattle, grain, salt, cowries and beads, with context rather than universal origin claims.",
+    "topic": "History"
+  },
+  {
+    "slug": "mesopotamia-tokens-temples-first-accounting",
+    "title": "Mesopotamia: Clay Tokens, Temples and the First Accounting Records",
+    "description": "Clay tokens, seals and early tablets reveal accounting practices. Learn what the evidence can—and cannot—tell us.",
+    "topic": "History"
+  },
+  {
+    "slug": "egypt-indus-grain-weights-seals",
+    "title": "Ancient Egypt and the Indus Valley: Grain Storage, Weights and Seals",
+    "description": "Compare Egyptian granaries and Indus weights and seals, separating archaeological evidence from uncertain interpretations.",
+    "topic": "History"
+  },
+  {
+    "slug": "silver-gold-by-weight-before-coins",
+    "title": "Silver and Gold by Weight: Money Before Coins",
+    "description": "Before coins, metal could be assessed by weight and quality. Explore silver, gold and parallel Chinese monetary traditions.",
+    "topic": "History"
+  },
+  {
+    "slug": "lydia-first-coins-electrum-croesus",
+    "title": "Lydia and the First Coins: Electrum, Standard Stamps and King Croesus",
+    "description": "Early electrum coinage, recognizable stamps and Croesus’s later reform, with approximate dates and the limits of first-coin claims.",
+    "topic": "History"
+  },
+  {
+    "slug": "greek-city-states-coins-agora-bankers",
+    "title": "Greek City-States: Coinage, the Agora and the First Bankers",
+    "description": "Explore civic coinages, public market spaces and Greek financial specialists without erasing older credit traditions.",
+    "topic": "History"
+  },
+  {
+    "slug": "persia-alexander-empire-wide-currency",
+    "title": "Persia and Alexander the Great: Empire-Wide Currency",
+    "description": "Persian and Alexandrian coinages connected regions without creating one uniform monetary system everywhere.",
+    "topic": "History"
+  },
+  {
+    "slug": "ancient-china-knife-spade-round-coins",
+    "title": "Ancient China: From Knife and Spade Money to the Round Coin",
+    "description": "Follow regional bronze tool monies into round Chinese coinage, with careful distinctions between casting, shapes and standards.",
+    "topic": "History"
+  },
+  {
+    "slug": "rome-denarius-debasement-inflation",
+    "title": "Rome: The Denarius, Debasement and Inflation",
+    "description": "Separate changing coin composition from rising prices. Roman denarius research does not support a one-cause collapse story.",
+    "topic": "History"
+  },
+  {
+    "slug": "ancient-credit-contracts-loans-interest-banking",
+    "title": "Ancient Credit and Contracts: Loans, Interest and Early Banking",
+    "description": "Loans and obligations predate coins. Explore Hammurabi, temple-associated lending and Roman bankers with careful source boundaries.",
+    "topic": "History"
+  },
+  {
+    "slug": "silk-road-indian-ocean-trade",
+    "title": "The Silk Road and Indian Ocean Trade",
+    "description": "Connected land and sea routes moved goods, ideas and obligations. The Silk Road was a changing network, not a single highway.",
+    "topic": "History"
+  },
+  {
+    "slug": "medieval-money-islamic-coins-hawala-bills",
+    "title": "Medieval Money: Islamic Dinars and Dirhams, Hawala, Italian Banking and Bills of Exchange",
+    "description": "Islamic dinars and dirhams, transfer arrangements and Italian bills solved related problems through different institutions.",
+    "topic": "History"
+  },
+  {
+    "slug": "paper-money-tang-song-china-flying-money",
+    "title": "The Birth of Paper Money: Tang and Song China, “Flying Money”",
+    "description": "Distinguish Tang flying-money transfers from Song jiaozi notes, and learn why paper becomes currency through institutions.",
+    "topic": "History"
+  },
+  {
+    "slug": "first-stock-markets-venice-voc-amsterdam",
+    "title": "The First Stock Markets: Venice, the Dutch East India Company and Amsterdam",
+    "description": "Venetian debt markets and Amsterdam’s VOC shares: how financial claims became tradable without one simple global first.",
+    "topic": "History"
+  },
+  {
+    "slug": "banknotes-central-banks-stockholm-bank-england",
+    "title": "Banknotes and Central Banks: Stockholms Banco, the Bank of England and Goldsmith Bankers",
+    "description": "Stockholms Banco, goldsmith bankers and the Bank of England: European notes and central banking developed over time.",
+    "topic": "History"
+  },
+  {
+    "slug": "gold-standard-bretton-woods-1971",
+    "title": "The Gold Standard, Bretton Woods and the End of Gold Backing in 1971",
+    "description": "Distinguish gold standards, Bretton Woods and the 1971 suspension of official dollar-gold convertibility.",
+    "topic": "History"
+  },
+  {
+    "slug": "trading-floors-order-books-electronic-markets",
+    "title": "From Trading Floors to Order Books: Futures, Stock Exchanges and Electronic Markets",
+    "description": "From exchanges and futures to bids, offers and digital money: finish the history and begin Market Foundations.",
+    "topic": "History"
+  },
+  {
     "slug": "a-good-trade-can-lose",
     "title": "A good trade can lose. Your brain would like a word.",
     "description": "Separate trading decisions from their outcomes with an illustrated story, a two-column journal and a practical review routine.",

@@ -10,17 +10,49 @@
       "fingerprint": "43b5575564e3ebec2cd567b2725c30f771f5b5a95bb9022de4fdc95277513bb5"
     },
     "/articles/": {
-      "fingerprint": "676019903000a22e91dd7a2a52b44d7897843fa79f54b486003afbda9ca47e68"
+      "fingerprint": "e3530ee72daf1ca3b31abfbffd3f779f22de8d08b802fbfb3a04ed366311e2b6",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/articles/a-good-trade-can-lose/": {
       "fingerprint": "e76304030114afd950c033b671d65548e7686f126406daad04a3606dca1eb3e3",
       "lastmod": "2026-10-17",
       "evidence": "Existing article publication/update metadata; historical English edition."
     },
+    "/articles/ancient-china-knife-spade-round-coins/": {
+      "fingerprint": "15d27541457b8c8e6932d6575d5ccb1f8f039f5cebbd05f8a3d468aa97e80df4",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/articles/ancient-credit-contracts-loans-interest-banking/": {
+      "fingerprint": "47a31f3b441276958b0363ebaa3e7eebdc02b0822d320413558d6a2be3d22d73",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/articles/banknotes-central-banks-stockholm-bank-england/": {
+      "fingerprint": "e4c779422a8dc489b9883191217fd2dde2746e3a6e756812a3e648f16474482f",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/articles/barter-direct-exchange-and-its-limits/": {
+      "fingerprint": "ac38b4f3f7170d64bf623dcdd44e9c55f352f0f01d8cc0754a988a2f669e4ab3",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/articles/before-money-gifts-sharing-and-trust/": {
+      "fingerprint": "38ee1ecfa0453c1cd099990af3f2fd089457f84f815dcb424187204355680e86",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
     "/articles/bitcoin-dashboard-is-not-a-crystal-ball/": {
       "fingerprint": "2f8a3b1550a3f48e3018240edbd045073e76a36c439126c4b420bcc5edcbcf78",
       "lastmod": "2026-10-17",
       "evidence": "Existing article publication/update metadata; historical English edition."
+    },
+    "/articles/commodity-money-cattle-grain-salt-shells-beads/": {
+      "fingerprint": "4016a721ed3e0e25437a96840f054e4c99df8936cfd5e2397536fee28d47fdcb",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/articles/compare-ict-entry-models-without-hindsight/": {
       "fingerprint": "331567776f7c04b97b4a8d4365dc3fb253110ed0dcfe76fc4c4d40aae2f5d13a",
@@ -32,10 +64,35 @@
       "lastmod": "2026-10-17",
       "evidence": "Existing article publication/update metadata; historical English edition."
     },
+    "/articles/egypt-indus-grain-weights-seals/": {
+      "fingerprint": "ba7a1c63d6f5469cde3c17395045da6f80b9bd13b117cf8d1187be437b09fda9",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/articles/first-stock-markets-venice-voc-amsterdam/": {
+      "fingerprint": "f52d08821f86290435881bcd94fac74e38cd12ffa0d61e03305baadd485f0a9a",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/articles/gold-standard-bretton-woods-1971/": {
+      "fingerprint": "5374c405245b08318aafe2547009768d02b6bbf819308eb760ff797c1a5ad47b",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/articles/greek-city-states-coins-agora-bankers/": {
+      "fingerprint": "4c42de7c1d2f17b4c119eda574e537298ca61f0ffa9cd3e805ed0e5dbc1d5a48",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
     "/articles/higher-timeframe-bias-to-lower-timeframe-execution/": {
       "fingerprint": "939092fe618c5aa3522c8b1b2bafabc2183ca514234f7dbf06db6bba3d24dd69",
       "lastmod": "2026-10-17",
       "evidence": "Existing article publication/update metadata; historical English edition."
+    },
+    "/articles/history/": {
+      "fingerprint": "a731bd05b6ff12ce710aef18a3bc07549afc5e31379851564090b5d1f3fc4135",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/articles/how-to-study-ict-without-collecting-setups/": {
       "fingerprint": "e44d24459efb5fd8d04481504beca921ebe6973ca74fe27d590f4b0d5475e738",
@@ -47,14 +104,64 @@
       "lastmod": "2026-10-21",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
+    "/articles/lydia-first-coins-electrum-croesus/": {
+      "fingerprint": "10966e5b68f772ea3fd6398974821554d27ebb2221959e2dda1e82ded350e647",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/articles/medieval-money-islamic-coins-hawala-bills/": {
+      "fingerprint": "22aed99ab93b9583eb360a3d41cb8c9bb2ddc089f9959088e8cc703c12326da6",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/articles/mesopotamia-tokens-temples-first-accounting/": {
+      "fingerprint": "6d7f65c5b67d8e038e31b653dd0ee9b35cb5de7feb1d0ec86caff543996c6577",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
     "/articles/opening-range-vs-opening-gap-new-york/": {
       "fingerprint": "5422145076f5a7f27cdd2ea921c6a69d6002deab91e82975137dc2353e327e35",
       "lastmod": "2026-10-17",
       "evidence": "Existing article publication/update metadata; historical English edition."
     },
+    "/articles/paper-money-tang-song-china-flying-money/": {
+      "fingerprint": "6ef392f1ee3dcd8c6744a67a865f17bad2a91a68609bab7f881aaf30226cd9ee",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
     "/articles/pd-arrays-fvg-order-blocks-and-inversions/": {
       "fingerprint": "e7591e56bb23707a0ba010656fc0901eb52032ace1fe717649ab19967815d868",
       "lastmod": "2026-10-21",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/articles/persia-alexander-empire-wide-currency/": {
+      "fingerprint": "f1d0616d19422518b2f337f2b421ed38db8cefa8de0824faf860e59a7024fa3b",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/articles/rome-denarius-debasement-inflation/": {
+      "fingerprint": "d9e9af9156e51d153e3dd1f7b9f633a2bc1078889f67ebb7577e746dd5762ad2",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/articles/silk-road-indian-ocean-trade/": {
+      "fingerprint": "901db96c284a842f7a610443ba21a2b087ebb55f0ea76c30125ac88ec6e935d4",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/articles/silver-gold-by-weight-before-coins/": {
+      "fingerprint": "e1d197a545ddbffacedf469e270940a7310c4ca794f869d45e163e8ac471f89b",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/articles/stone-age-long-distance-trade-networks/": {
+      "fingerprint": "1965cef8c31f1bf7c0a8962a36216d1493ccbb299c27fbc62ca2ab3b522ffefa",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/articles/trading-floors-order-books-electronic-markets/": {
+      "fingerprint": "ebcfabed2542ad563fcfda2cef52cf7a3e78054f327e904d4233da1541a39b68",
+      "lastmod": "2026-10-22",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/contact/": {
@@ -1331,7 +1438,9 @@
       "fingerprint": "ad9c27b63d1db2391c80d4973f0500ee322dcf078fb378cfd44a5371bb89a966"
     },
     "/ur/articles/": {
-      "fingerprint": "7125a2208d2cd99004688aef3a88791b7bae0d15dcb197b10641008032c2bd24"
+      "fingerprint": "ccb7631e4cf5d41b1133b03f92a1917427e01caec530e854e40775a5794ec043",
+      "lastmod": "2026-10-22",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/articles/a-good-trade-can-lose/": {
       "fingerprint": "d4fc3b323264052ef7005cf0148e03f2f68c7e0877c3b596dc603a4fc8fab7a4"

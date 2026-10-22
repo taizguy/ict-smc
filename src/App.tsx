@@ -191,7 +191,7 @@ export const App: React.FC = () => {
         }
       }
 
-      if (path === '/articles' || articleCatalog.some(a => path === `/articles/${a.slug}`)) {
+      if (path === '/articles' || path === '/articles/history' || articleCatalog.some(a => path === `/articles/${a.slug}`)) {
         setActiveTab('articles');
         return;
       }
@@ -470,7 +470,7 @@ export const App: React.FC = () => {
           <PageReady /></Suspense>
         )}
 
-        {activeTab === 'articles' && <Suspense fallback={<ViewLoadingFallback />}><ArticlesView slug={withoutLocale(window.location.pathname).split('/').filter(Boolean)[1]} /><PageReady /></Suspense>}
+        {activeTab === 'articles' && <Suspense fallback={<ViewLoadingFallback />}><ArticlesView key={window.location.pathname} slug={withoutLocale(window.location.pathname).split('/').filter(Boolean)[1]} /><PageReady /></Suspense>}
         {activeTab === 'resources' && <Suspense fallback={<ViewLoadingFallback />}><CheatSheetPage/><PageReady/></Suspense>}
 
         {/* PILLAR 1: OPEN SYLLABUS & CURRICULUM VIEW (All 57 Chapters Unlocked) */}

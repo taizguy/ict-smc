@@ -1,3 +1,4 @@
+import { isEnglishOnlyHistory, englishOnlyHistoryPaths } from '../src/data/history-paths';
 import fs from 'node:fs';
 import path from 'node:path';
 import React from 'react';
@@ -22,6 +23,7 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
   const manifest = JSON.parse(fs.readFileSync(path.join(dist, 'seo-manifest.json'), 'utf8'));
   for (const route of routes) {
     const englishPath = new URL(route.canonical).pathname;
+    if(isEnglishOnlyHistory(englishPath)) continue;
     const sourcePath = path.join(dist, route.outputPath);
     const source = fs.readFileSync(sourcePath, 'utf8');
     const html = localizeHtml(source, englishPath, urdu, { preview, indexable: !route.isNoindex, availablePaths: available, onMissing(text) {
@@ -39,20 +41,21 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
 
   // Standalone cover SVGs cannot inherit the document font. Embed the local Urdu face.
   const font = fs.readFileSync('public/fonts/noto-naskh-arabic.woff2').toString('base64');
-  for (const article of articles) {
+  for (const article of articles.filter(a=>!a.historyOrder)) {
     const svg = renderToStaticMarkup(<TranslationProvider locale="ur" catalog={urdu}>{article.visualSeries ? <StudySketchSvg series={article.visualSeries} /> : <SketchSvg kind={article.sketch} cover />}</TranslationProvider>);
     fs.writeFileSync(path.join(dist, `images/articles/${articleImageKey(article)}-ur.svg`), svg.replace(/(<svg[^>]*>)/, `$1<style>@font-face{font-family:'Noto Naskh Arabic';src:url(data:font/woff2;base64,${font}) format('woff2')}</style>`));
   }
   const feed = fs.readFileSync(path.join(dist, 'articles/feed.xml'), 'utf8');
   const escape = (value: string) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  let urduFeed = feed.replace(/<language>en<\/language>/, '<language>ur</language>')
+  const translatedFeed = feed.replace(/<item>[\s\S]*?<\/item>/g, item => englishOnlyHistoryPaths.some(p => item.includes(`${SITE_ORIGIN}${p}`)) ? '' : item);
+  const urduFeed = translatedFeed.replace(/<language>en<\/language>/, '<language>ur</language>')
     .replace(/<(title|description|category)>([\s\S]*?)<\/\1>/g, (_all, tag, text) => `<${tag}>${escape(t(text.replace(/&amp;/g, '&').replace(/&apos;/g, "'").replace(/&quot;/g, '"'), 'ur', urdu))}</${tag}>`)
     .replaceAll(`${SITE_ORIGIN}/articles/`, `${SITE_ORIGIN}/ur/articles/`);
   fs.writeFileSync(path.join(dist, 'ur/articles/feed.xml'), urduFeed);
   if (!preview) {
     const languages = '\n## Languages\n\nEnglish: https://learnsmc.xyz/\nUrdu: https://learnsmc.xyz/ur/\nUse the language switcher to open the equivalent page in either language.\n';
     fs.appendFileSync(path.join(dist, 'llms.txt'), languages);
-    fs.appendFileSync(path.join(dist, 'llms-full.txt'), languages + '\n## Urdu page directory\n\n' + routes.filter(route => !route.isNoindex).map(route => `- [${t(route.heading, 'ur', urdu)}](${SITE_ORIGIN + localizedHref(new URL(route.canonical).pathname, 'ur')}): ${t(route.description, 'ur', urdu)}`).join('\n') + '\n');
+    fs.appendFileSync(path.join(dist, 'llms-full.txt'), languages + '\n## Urdu page directory\n\n' + routes.filter(route => !route.isNoindex && !isEnglishOnlyHistory(new URL(route.canonical).pathname)).map(route => `- [${t(route.heading, 'ur', urdu)}](${SITE_ORIGIN + localizedHref(new URL(route.canonical).pathname, 'ur')}): ${t(route.description, 'ur', urdu)}`).join('\n') + '\n');
     const sitemapPath = path.join(dist, 'sitemap.xml');
     let sitemap = fs.readFileSync(sitemapPath, 'utf8').replace('<urlset ', '<urlset xmlns:xhtml="http://www.w3.org/1999/xhtml" ');
     const originals = [...sitemap.matchAll(/  <url>[\s\S]*?<\/url>/g)].map(match => match[0]);
@@ -62,6 +65,7 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
       const pathname = new URL(englishUrl).pathname;
       const alternates = languageAlternates(pathname).map(a => `    <xhtml:link rel="alternate" hreflang="${a.language}" href="${a.href}" />`).join('\n');
       sitemap = sitemap.replace(entry, entry.replace('</url>', `${alternates}\n  </url>`));
+      if(isEnglishOnlyHistory(pathname)) continue;
       localizedEntries.push(entry.replace(englishUrl, SITE_ORIGIN + localizedHref(pathname, 'ur')).replace('</url>', `${alternates}\n  </url>`));
     }
     sitemap = sitemap.replace('</urlset>', `${localizedEntries.join('\n')}\n</urlset>`);
@@ -73,7 +77,7 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
       if (parts.length !== 3 || !parts[0].startsWith('/') || !parts[1].startsWith('/')) return [];
       return [`/ur${parts[0]} ${localizedHref(parts[1], 'ur')} ${parts[2]}`];
     });
-    fs.writeFileSync(redirectsPath, orderRedirectRules(`${redirects}\n# Urdu legacy aliases\n${localizedRedirects.join('\n')}\n`));
+    fs.writeFileSync(redirectsPath, orderRedirectRules(`${redirects}\n# Urdu legacy aliases\n${localizedRedirects.join('\n')}\n# English-first history; no untranslated Urdu duplicates\n${englishOnlyHistoryPaths.map(p => `/ur${p} ${p} 302`).join('\n')}\n`));
   }
   fs.writeFileSync(path.join(dist, 'seo-manifest.json'), JSON.stringify(manifest, null, 2));
   fs.mkdirSync('outputs/urdu-localization', { recursive: true });
@@ -81,5 +85,5 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
   const unchangedReferences = new Set(['LearnSMC', 'MSS', 'FVG', 'BOS', 'OTE', 'BSL', 'SSL', 'IFVG', 'MVRV = 2', 'NUPL = 0.5']);
   const unresolved = [...missing.keys()].filter(text => !unchangedReferences.has(text) && !/^(?:https?:\/\/|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}$)/.test(text));
   if (!preview && unresolved.length) throw new Error(`Urdu publication stopped: ${unresolved.length} untranslated text segments. Review outputs/urdu-localization/rendered-missing.json.`);
-  console.log(`Urdu ${preview ? 'noindex review' : 'public'} documents generated: ${routes.length}. Unmatched text segments require review: ${missing.size}.`);
+  console.log(`Urdu ${preview ? 'noindex review' : 'public'} documents generated: ${routes.filter(route => !isEnglishOnlyHistory(new URL(route.canonical).pathname)).length}. Unmatched text segments require review: ${missing.size}.`);
 }

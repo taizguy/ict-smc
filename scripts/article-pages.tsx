@@ -18,6 +18,7 @@ export function articlePages(projectRoot: string, distDir: string): RouteMeta[] 
   const drawingFont = fs.readFileSync(path.join(projectRoot, 'public/fonts/patrick-hand-latin.woff2')).toString('base64');
   const fontStyle = `<style>@font-face{font-family:'Article Hand';src:url(data:font/woff2;base64,${drawingFont}) format('woff2')}</style>`;
   for (const a of articles) {
+    if(a.historyOrder) continue;
     const svg = renderToStaticMarkup(a.visualSeries ? <StudySketchSvg series={a.visualSeries} /> : <SketchSvg kind={a.sketch} cover />);
     fs.writeFileSync(path.join(imageDir, `${articleImageKey(a)}.svg`), svg.replace(/(<svg[^>]*>)/, `$1${fontStyle}`));
   }
@@ -28,6 +29,8 @@ export function articlePages(projectRoot: string, distDir: string): RouteMeta[] 
     heading: 'Markets are complicated. Let’s draw them out.', subheading: 'Original illustrated trading essays', badge: 'Articles',
     bodyHtml: renderToStaticMarkup(<ArticlesView staticMode />),
     schemaJson: { '@type': 'CollectionPage', name: 'LearnSMC Articles', url: `${base}/articles/`, publisher, mainEntity: { '@type': 'ItemList', itemListElement: articles.map((a, i) => ({ '@type': 'ListItem', position: i + 1, url: base + articlePath(a), name: a.title })) } }
+  }, {
+    url:`${base}/articles/history/`,canonical:`${base}/articles/history/`,outputPath:'articles/history/index.html',title:'History of Money & Trading: 20-Part Series | LearnSMC',description:'Read the history of money and trading: early exchange, coins, credit, paper money and electronic markets in an original illustrated 20-part series.',heading:'The history of money and trading',subheading:'A connected illustrated history',badge:'History',bodyHtml:renderToStaticMarkup(<ArticlesView slug="history" staticMode/>),schemaJson:{'@type':'CollectionPage',name:'History of money and trading',url:`${base}/articles/history/`,publisher,mainEntity:{'@type':'ItemList',itemListElement:articles.filter(a=>a.historyOrder).map(a=>({'@type':'ListItem',position:a.historyOrder,url:base+articlePath(a),name:a.title}))}}
   }, ...articles.map(a => ({
     url: base + articlePath(a), canonical: base + articlePath(a), outputPath: `articles/${a.slug}/index.html`,
     title: a.seoTitle, description: a.description, heading: a.title, subheading: a.description, badge: a.topic,

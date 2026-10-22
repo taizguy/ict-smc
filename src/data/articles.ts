@@ -1,6 +1,7 @@
+import { historyArticles } from './articles-history';
 import { studyArticles } from './articles-study-series';
 
-export type ArticleTopic = 'Psychology' | 'Risk' | 'Market mechanics' | 'On-chain' | 'Learning process' | 'Trading frameworks' | 'Sessions & timing';
+export type ArticleTopic = 'Psychology' | 'Risk' | 'Market mechanics' | 'On-chain' | 'Learning process' | 'Trading frameworks' | 'Sessions & timing' | 'History';
 export type VisualSeries = 'expedition' | 'mission' | 'museum' | 'theatre' | 'laboratory';
 export type SketchKind = 'decision' | 'drawdown' | 'auction' | 'onchain';
 export interface ArticleSection {
@@ -19,6 +20,8 @@ export interface Article {
   topic: ArticleTopic;
   sketch: SketchKind;
   visualSeries?: VisualSeries;
+  historyOrder?: number;
+  historyEra?: string;
   date: string;
   updated?: string;
   intro: string[];
@@ -30,6 +33,7 @@ export interface Article {
 /** Original LearnSMC writing. Stories and numbers are explicitly illustrative. */
 export const articles: Article[] = [
   ...studyArticles,
+  ...historyArticles,
   {
     slug: 'a-good-trade-can-lose', seoTitle: 'Trading Psychology: Good Decisions Can Still Lose | LearnSMC',
     title: 'A good trade can lose. Your brain would like a word.',
@@ -214,7 +218,7 @@ export const articles: Article[] = [
   }
 ];
 
-export const articleImageKey = (article: Article) => article.visualSeries || article.sketch;
+export const articleImageKey = (article: Article) => article.historyOrder ? `history/${article.slug}-0` : article.visualSeries || article.sketch;
 export const articleDateLabel = (date: string) => new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${date}T12:00:00Z`));
 export const articlePath = (article: Article) => `/articles/${article.slug}/`;
 export function articleWordCount(article: Article) {
@@ -224,6 +228,7 @@ export const readingMinutes = (article: Article) => Math.max(1, Math.ceil(articl
 
 /** Cover alternatives describe the original scene, rather than repeating the title. */
 export function articleCoverAlt(article: Article): string {
+  if(article.historyOrder) return `Original illustrative scene for ${article.title}; schematic, not an archaeological reconstruction.`;
   const alternatives: Record<string, string> = {
     expedition: 'A student carries a stack of chart acronyms but has forgotten to choose a study question.',
     mission: 'An astronaut holds a bullish view beside an exit door labeled If I am wrong.',

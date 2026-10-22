@@ -1,3 +1,4 @@
+import { isEnglishOnlyHistory } from '../data/history-paths';
 import { useTranslation } from '../i18n/TranslationProvider';
 import { localizedHref } from '../i18n/locale';
 import { URDU_PUBLISHED } from '../i18n/release';
@@ -21,6 +22,6 @@ export function LanguageSwitcher() {
   return <nav aria-label={locale === 'ur' ? 'زبان منتخب کریں' : 'Choose language'} className="language-switcher language-toggle" data-language={destination} dir="ltr">
     <span className="language-toggle-thumb" aria-hidden="true"/>
     <a onClick={event=>switchLanguage(event,'en')} href={localizedHref(path, 'en')} hrefLang="en" lang="en" translate="no" aria-label="English" aria-current={locale === 'en' ? 'page' : undefined}>EN</a>
-    <a onClick={event=>switchLanguage(event,'ur')} href={localizedHref(path, 'ur')} hrefLang="ur" lang="ur" translate="no" aria-current={locale === 'ur' ? 'page' : undefined}>اردو</a>
+    <a onClick={event=>switchLanguage(event,'ur')} href={localizedHref(isEnglishOnlyHistory(pathname)?'/articles/':path, 'ur')} title={isEnglishOnlyHistory(pathname)?'Urdu articles — this series is currently in English':undefined} hrefLang="ur" lang="ur" translate="no" aria-current={locale === 'ur' ? 'page' : undefined}>اردو</a>
   </nav>;
 }

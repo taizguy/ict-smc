@@ -1,3 +1,4 @@
+import { LearningFAQ } from './LearningFAQ';
 import { useState } from 'react';
 import { ArrowRight, ArrowUpRight, BookOpen, Languages, Pause, Play, ShieldCheck } from 'lucide-react';
 import { useTranslation } from '../i18n/TranslationProvider';
@@ -33,6 +34,6 @@ export function LearningFirstHome(){
    ['Check the evidence','Test a defined rule on candles and compare a separate sample.','/tools/backtest/','Backtest Lab'],
   ]).map(([title,copy,path,label],i)=><a className={`learning-practice-card practice-tone-${i}`} href={href(path)} key={path}><span className="practice-number">0{i+1}</span><h3>{t(title)}</h3><p>{t(copy)}</p><strong>{t(label)}<ArrowUpRight size={18}/></strong></a>)}</div></section>
   <section className="learning-perspective"><div><h2>{t('A little perspective between the candles.')}</h2><a className="learning-essay" href={href('/articles/liquidity-is-not-a-magnet/')}>{t('Liquidity is not a magnet.')}<ArrowUpRight size={19}/></a><a className="learning-essay" href={href('/articles/a-good-trade-can-lose/')}>{t('A good trade can lose.')}<ArrowUpRight size={19}/></a><a className="learning-text-link" href={href('/articles/')}>{t('Explore the illustrated articles')}<ArrowRight size={17}/></a></div><aside className="learning-pocket"><BookOpen size={30} strokeWidth={1.5}/><h3>{t('Keep the essentials beside your chart.')}</h3><p>{t('Free ICT/SMC glossary and cheat sheet, with definitions, diagrams and limitations.')}</p><a href={href('/resources/ict-smc-cheat-sheet/')}>{t('Download the free cheat sheet')}<ArrowRight size={17}/></a><a href={href('/curriculum/mentorships/')}>{t('Explore mentorship learning paths')}<ArrowUpRight size={17}/></a></aside></section>
-  <section className="learning-faq"><h2>{t('Questions people ask first')}</h2>{faq.map(([question,answer])=><details key={question}><summary>{t(question)}</summary><p>{t(answer)}</p>{question==='Where should a beginner start?'&&<a href={href('/curriculum/')}>{t('Start learning')}<ArrowRight size={16}/></a>}</details>)}</section>
+  <LearningFAQ items={faq}/>
  </div>;
 }

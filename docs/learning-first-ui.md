@@ -49,3 +49,22 @@ Full review of the homepage, shared navigation/footer, curriculum surfaces, Maso
 
 ## Be UI refinement follow-up
 Applied paired blue/peach highlight tokens in light/dark, explicit selection foreground/background, deeper accessible light action blue (#006bd6), pale dark action blue with dark ink, inset diagram card surfaces, segmented concept controls, shared pill utility buttons, theme-aware Academy text accents and a localized cyan/violet pocket-guide background. Existing font families and bilingual reading sizes retained. No library added. Build again passed 1,002 SEO checks and the 762-page crawl; TypeScript lint passed. Targeted light/dark desktop and390px Urdu/mobile checks found no document overflow; Academy beginner and OTE nested routes retained384px document width at390px viewport. Physical-device/screen-reader and10%-speed animation limitations above still apply.
+
+## FAQ and footer motion follow-up
+Full scoped review using the existing React, Motion and CSS stack. LearningFAQ replaces abrupt native disclosure with one-open controlled regions, inert closed answers and reduced-motion height transitions. Connected grey rows separate into rounded panels with coordinated margin/corner transitions. FooterMarketScene adds original geometric, illustrative candlesticks and a tracing line below shared footer links, with English/Urdu pause labels and reduced-motion static rendering; no GIF download or new dependency.
+
+| Category | Evidence | Result |
+| --- | --- | --- |
+| Typography | FAQ button and answer at desktop and390px | Readable; original copy retained |
+| Surfaces | Closed stack and detached middle/last rows | Connected corner logic and theme tokens |
+| Animations | Open, close, change question; footer pause | Height/opacity and corner transitions; reduced-motion path |
+| Icons | Chevron, pause/play | Existing Lucide, currentColor,44px controls |
+| Performance | Build, SVG/CSS scene | No remote media/dependency; no blanket transitions |
+
+| Severity | Location | Before | After | Why |
+| --- | --- | --- | --- | --- |
+| MEDIUM | src/components/LearningFAQ.tsx:1; src/components/LearningFirstHome.tsx:1 | Abrupt separate disclosure lines | Animated connected stack; expanded row separates | Preserves context and conveys state |
+| LOW | src/components/FooterMarketScene.tsx:1; src/components/SiteFooter.tsx:1; src/styles/learning-first.css:1; src/i18n/learning-first-urdu.ts:1 | No footer visual finish | Theme-aware original trading geometry with localized pause control | Requested visual identity with motion control |
+
+Rejected: large looping GIF (payload and limited pause/theming); live-price ticker (requires truthful data source); mandatory animation (reduced-motion users need static rendering).
+Verification: lint and production build pass;1,002 SEO checks and762-page crawl pass. Desktop light and390px mobile dark inspected. Confirmed aria-expanded, inert closure and pause state; mobile document384px at390px viewport. No route additions; sitemap inclusion remains unchanged. Physical devices and10%-speed DevTools playback not inspected. Verdict: local implementation complete; not published in this follow-up.

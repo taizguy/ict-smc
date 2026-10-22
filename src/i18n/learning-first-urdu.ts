@@ -56,4 +56,6 @@ export const learningFirstUrdu:Record<string,string>={
  'Privacy':'رازداری', 'Terms':'شرائط', 'Editorial policy':'ادارتی پالیسی',
  'About':'تعارف', 'AdSense transparency':'AdSense کی شفافیت',
  'Published for educational purposes.':'تعلیمی مقاصد کے لیے شائع کیا گیا۔',
+ 'Play footer animation':'فوٹر کی اینیمیشن چلائیں',
+ 'Pause footer animation':'فوٹر کی اینیمیشن روکیں',
 };

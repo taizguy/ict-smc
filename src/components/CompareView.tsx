@@ -49,7 +49,7 @@ export const CompareView: React.FC<CompareViewProps> = ({
   const canonicalPath = `/tools/compare/${comparisonSlug}/`;
 
   return (
-    <div className="space-y-6 text-ink">
+    <div className="compare-pages academy-surface space-y-6 text-ink">
       <SEO
         title={`${comparison.title} — Compare Matrix | LearnSMC`}
         description={`Key Difference: ${comparison.keyDifference} Institutional side-by-side comparison of ${comparison.conceptA.name} and ${comparison.conceptB.name}.`}

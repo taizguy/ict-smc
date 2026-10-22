@@ -356,7 +356,8 @@ console.log('\n[Suite 6] Testing Content Isolation & Preventing Chapter 1 Bleed.
 const homeContent = fs.readFileSync(path.resolve(distDir, 'index.html'), 'utf-8');
 assert(!homeContent.includes('What Actually Moves Price? — The Mechanics of the Electronic Auction'), 'Homepage does not contain Chapter 1 header bleed');
 assert(!homeContent.includes('id="chapter-1"'), 'Homepage does not contain id="chapter-1" article bleed');
-assert(homeContent.includes('Codified Institutional Curriculum'), 'Homepage contains authentic institutional homepage content');
+assert(homeContent.includes('Learn to read the chart.') && homeContent.includes('Then question it.'), 'Homepage contains the approved Learning First introduction');
+assert(homeContent.includes('Concepts you can see move') && homeContent.includes('Questions people ask first'), 'Homepage includes crawlable concept explanations and FAQ');
 
 // 2. Verify non-chapter hub & legal pages do NOT leak Chapter 1
 const standaloneHubsToCheck = ['masood/index.html', 'tools/index.html', 'about/index.html', 'privacy/index.html', 'terms/index.html', 'disclaimer/index.html', 'contact/index.html', 'adsense/index.html'];

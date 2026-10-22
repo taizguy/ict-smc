@@ -202,7 +202,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
   }
 
   return (
-    <div className="space-y-6 text-ink">
+    <div className="glossary-pages academy-surface space-y-6 text-ink">
       {/* Dynamic SEO Engine */}
       <SEO
         title={dynamicTitle}

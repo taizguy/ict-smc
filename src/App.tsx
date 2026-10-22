@@ -1,3 +1,4 @@
+import { SiteFooter } from './components/SiteFooter';
 import { currentDocumentHref } from './i18n/navigation';
 import { useTranslation } from './i18n/TranslationProvider';
 import { withoutLocale } from './i18n/locale';
@@ -5,7 +6,6 @@ import { mentorshipTracks } from './data/mentorshipTracks';
 import './styles/articles.css';
 import { articleCatalog } from './data/catalog.generated';
 import { PageReady } from './components/PageReady';
-import { chapterCount, lectureCount } from './utils/catalogCounts';
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { AdsenseLoader } from './components/AdsenseLoader';
 import { Header, MainTabType } from './components/Header';
@@ -17,23 +17,8 @@ import {
   getStoredProgress,
   saveCompletedChapter
 } from './utils/academyProgress';
-import {
-  Youtube,
-  Sparkles,
-  ArrowRight,
-  BookOpen,
-  Wrench,
-  GraduationCap,
-  ShieldAlert,
-  Lock,
-  FileText,
-  Mail,
-  CheckCircle2,
-  Loader2,
-  Building
-} from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 import { useSmoothScroll } from './hooks/useSmoothScroll';
-import { ScrollReveal } from './components/ScrollReveal';
 import type { LegalModalTab } from './components/LegalModal';
 import { CookieConsentBanner } from './components/CookieConsentBanner';
 import type { LegalTabType } from './components/LegalPageView';
@@ -112,7 +97,7 @@ const toolSlugMap: Record<string, TradingToolId> = {
 };
 
 export const App: React.FC = () => {
-  const { t, href, message, preview } = useTranslation();
+  const { t, href, preview } = useTranslation();
   // Initialize buttery smooth momentum mouse scrolling
   useSmoothScroll();
 
@@ -600,185 +585,7 @@ export const App: React.FC = () => {
         />
       </Suspense>}
 
-      {/* Predikt Editorial Footer */}
-      <footer className="studio-footer border-t border-ink/[0.07] bg-canvas/80 backdrop-blur-md py-10 px-4 sm:px-6 lg:px-8 mt-auto relative z-10">
-        <div className="max-w-[1560px] w-full mx-auto space-y-8">
-
-          {/* Tribute Banner - Sleek Dark Card */}
-          <ScrollReveal y={30} duration={0.6}>
-            <div className="p-6 sm:p-7 bg-surface border border-ink/[0.08] rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 transition-colors hover:border-ink/[0.14]">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-ink/[0.04] border border-ink/[0.08] flex items-center justify-center shrink-0 text-negative">
-                  <Youtube className="w-6 h-6" />
-                </div>
-                <div>
-                  <div className="text-[0.8125rem] font-sans tabular-nums tracking-[0.16em] uppercase text-ink-secondary flex items-center gap-2">
-                    <span className="text-teal">{t("MENTORSHIP TRIBUTE")}</span>
-                    <span className="text-ink">/</span>
-                    <span>{t("TRADER ABDULLAH MASOOD")}</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-ink/90 mt-1 leading-relaxed font-normal">
-                    {message('Master educator of ICT & Smart Money Concepts algorithmic delivery. {lectures} independent study guides with original video source links.', { lectures: lectureCount })}
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-3 shrink-0 w-full md:w-auto justify-start md:justify-end">
-                <button
-                  onClick={() => {
-                    navigateToTab('masood');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
-                  className="btn-predikt-primary text-xs"
-                >
-                  <Youtube className="w-4 h-4 text-current" />
-                  <span>{message('Masood Academy ({lectures})', { lectures: lectureCount })}</span>
-                </button>
-                <button
-                  onClick={() => setIsMentorSpotlightOpen(true)}
-                  className="btn-predikt-secondary text-xs"
-                >{t("View Tribute")}</button>
-                <a
-                  href="https://www.youtube.com/@TraderAbdullahMasood"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-predikt-secondary text-xs"
-                >
-                  <Youtube className="w-4 h-4 text-current" />
-                  <span>{t("YouTube Channel")}</span>
-                </a>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* Regulatory Risk Notice Banner */}
-          <ScrollReveal y={20} delay={0.05}>
-            <div className="p-4 sm:p-5 rounded-xl bg-amber-500/[0.04] border border-amber-500/20 text-ink-secondary text-xs leading-relaxed flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-              <div className="flex items-start gap-3">
-                <ShieldAlert className="w-4 h-4 text-amber shrink-0 mt-0.5" />
-                <p className="text-[0.8125rem] sm:text-xs text-ink-secondary">
-                  <strong className="text-amber font-semibold uppercase tracking-wider">{t("Regulatory Risk Disclosure:")}</strong> {t(" Trading foreign exchange, futures, indices, and financial derivatives carries high risk and may not be suitable for all investors. All materials on ")}<strong className="text-ink">learnsmc.xyz</strong>{t(" are strictly for educational and research purposes. Past performance is not indicative of future results.")}
-                </p>
-              </div>
-              <a
-                href={href("/disclaimer/")}
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigateToTab('disclaimer');
-                }}
-                className="text-[0.8125rem] font-sans tabular-nums text-amber hover:text-amber underline shrink-0 whitespace-nowrap self-end md:self-center"
-              >{t("Read Full Risk Disclosure →")}</a>
-            </div>
-          </ScrollReveal>
-
-          {/* Legal Pages & Policy Navigation Links */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-ink/[0.06] text-xs font-sans tabular-nums text-ink-muted">
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-              <a
-                href={href("/disclaimer/")}
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigateToTab('disclaimer');
-                }}
-                className="hover:text-amber transition-colors flex items-center gap-1.5"
-              >
-                <ShieldAlert className="w-3.5 h-3.5 text-amber" />
-                <span>{t("Risk Disclaimer")}</span>
-              </a>
-
-              <a
-                href={href("/privacy/")}
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigateToTab('privacy');
-                }}
-                className="hover:text-teal transition-colors flex items-center gap-1.5"
-              >
-                <Lock className="w-3.5 h-3.5 text-teal" />
-                <span>{t("Privacy Policy")}</span>
-              </a>
-
-              <a
-                href={href("/terms/")}
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigateToTab('terms');
-                }}
-                className="hover:text-violet transition-colors flex items-center gap-1.5"
-              >
-                <FileText className="w-3.5 h-3.5 text-violet" />
-                <span>{t("Terms of Service")}</span>
-              </a>
-
-              <a
-                href={href("/about/")}
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigateToTab('about');
-                }}
-                className="hover:text-ink transition-colors flex items-center gap-1.5"
-              >
-                <Building className="w-3.5 h-3.5 text-ink" />
-                <span>{t("About & Editorial")}</span>
-              </a>
-
-              <a
-                href={href("/contact/")}
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigateToTab('contact');
-                }}
-                className="hover:text-teal transition-colors flex items-center gap-1.5"
-              >
-                <Mail className="w-3.5 h-3.5 text-teal" />
-                <span>{t("Contact")}</span>
-              </a>
-
-              <a
-                href={href("/adsense/")}
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigateToTab('adsense');
-                }}
-                className="text-teal/90 hover:text-teal transition-colors flex items-center gap-1.5"
-              >
-                <CheckCircle2 className="w-3.5 h-3.5 text-teal" />
-                <span>{t("Advertising information")}</span>
-              </a>
-            </div>
-
-            <div className="text-[0.8125rem] text-ink-muted flex items-center gap-2">
-              <span>{t("Domain:")}</span>
-              <a
-                href="https://learnsmc.xyz/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-ink-secondary hover:text-teal underline"
-              >
-                learnsmc.xyz
-              </a>
-            </div>
-          </div>
-
-          <ScrollReveal y={15} delay={0.1}>
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans tabular-nums text-ink-secondary pt-4 border-t border-ink/[0.06]">
-              <div className="flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-brand" />
-                <span className="font-medium text-ink">{t("ICT & SMC ACADEMY")}</span>
-                <span className="text-ink">|</span>
-                <span>{t("OPEN INSTITUTIONAL CURRICULUM")}</span>
-              </div>
-              <div className="text-ink-muted flex items-center gap-3">
-                <span>{chapterCount} {t("CHAPTERS")}</span>
-                <span>·</span>
-                <span>{lectureCount} {t("LECTURES")}</span>
-                <span>·</span>
-                <span>{t("LABORATORY")}</span>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </footer>
+      <SiteFooter/>
 
       {/* Regulatory & Legal Modal (Quick preview or deep study) */}
       {isLegalModalOpen && <Suspense fallback={null}>

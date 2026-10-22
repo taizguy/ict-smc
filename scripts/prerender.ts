@@ -1,3 +1,6 @@
+import { SiteFooter } from '../src/components/SiteFooter';
+import { createElement } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
 import { articlePages } from './article-pages';
 import { applySitemapDates } from './sitemap-dates';
 import { URDU_PUBLISHED } from '../src/i18n/release';
@@ -172,19 +175,17 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
           <p style="margin: 0.25rem 0 0 0; font-size: 0.8rem; color: #4f5d75;">Free Institutional Smart Money Concepts Curriculum &amp; Research Matrix</p>
         </div>
         <nav style="display: flex; gap: 1.25rem; font-size: 0.85rem; font-family: monospace;" aria-label="Main Navigation">
-          <a href="/" style="color: #4f5d75; text-decoration: none;">Home</a>
-          <a href="/curriculum/" style="color: #4f5d75; text-decoration: none;">57 Chapters</a>
+          <a href="/curriculum/" style="color: #4f5d75; text-decoration: none;">Curriculum</a>
           <a href="/articles/" style="color: #4f5d75; text-decoration: none;">Articles</a>
           <a href="/masood/" style="color: #4f5d75; text-decoration: none;">Masood Academy</a>
-          <a href="/tools/" style="color: #4f5d75; text-decoration: none;">Workbench Lab</a>
-          <a href="/about/" style="color: #4f5d75; text-decoration: none;">About</a>
+          <a href="/tools/" style="color: #4f5d75; text-decoration: none;">Workbench &amp; Lab</a>
         </nav>
       </header>
 
       <!-- Main Article / Route Body -->
       <main id="main-content" tabindex="-1">
         <article>
-          ${new URL(meta.canonical).pathname.startsWith('/articles/') ? '' : `<header style="margin-bottom: 2rem;">
+          ${(new URL(meta.canonical).pathname === '/' || new URL(meta.canonical).pathname.startsWith('/articles/')) ? '' : `<header style="margin-bottom: 2rem;">
             <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 9999px; background: rgba(37,101,82, 0.15); border: 1px solid rgba(37,101,82, 0.3); color: #705692; font-size: 0.75rem; font-family: monospace; margin-bottom: 0.75rem;">
               ${escapeHtml(meta.badge)}
             </div>
@@ -202,40 +203,8 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
         </article>
       </main>
 
-      <!-- Crawlable Static Footer -->
-      <footer style="border-top: 1px solid rgba(34,59,53,0.08); padding-top: 2rem; margin-top: 4rem; font-size: 0.85rem; color: #64748B;">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; margin-bottom: 2rem;">
-          <div>
-            <div style="color: #121c32; font-weight: 600; margin-bottom: 0.5rem;">LearnSMC · ICT &amp; SMC Academy</div>
-            <p style="margin: 0; max-width: 400px; line-height: 1.5;">Free, open-access institutional education. Empowering retail traders with institutional auction literacy.</p>
-          </div>
-          <div style="display: flex; gap: 2rem; font-family: monospace;">
-            <div>
-              <div style="color: #4f5d75; font-weight: 600; margin-bottom: 0.5rem;">Navigation</div>
-              <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
-                <li><a href="/" style="color: #4f5d75; text-decoration: none;">Home</a></li>
-                <li><a href="/curriculum/" style="color: #4f5d75; text-decoration: none;">Curriculum</a></li>
-                <li><a href="/masood/" style="color: #4f5d75; text-decoration: none;">Masood Academy</a></li>
-                <li><a href="/tools/" style="color: #4f5d75; text-decoration: none;">Trading Tools</a></li>
-              </ul>
-            </div>
-            <div>
-              <div style="color: #4f5d75; font-weight: 600; margin-bottom: 0.5rem;">Legal &amp; Policy</div>
-              <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
-                <li><a href="/disclaimer/" style="color: #4f5d75; text-decoration: none;">Financial Disclaimer</a></li>
-                <li><a href="/privacy/" style="color: #4f5d75; text-decoration: none;">Privacy Policy</a></li>
-                <li><a href="/terms/" style="color: #4f5d75; text-decoration: none;">Terms of Service</a></li>
-                <li><a href="/about/" style="color: #4f5d75; text-decoration: none;">About Publisher</a></li><li><a href="/about/#editorial-policy">Editorial policy</a></li>
-                <li><a href="/contact/" style="color: #4f5d75; text-decoration: none;">Contact Us</a></li>
-                <li><a href="/adsense/" style="color: #4f5d75; text-decoration: none;">AdSense Transparency</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div style="text-align: center; font-family: monospace; font-size: 0.75rem; border-top: 1px solid rgba(34,59,53,0.04); padding-top: 1.5rem;">
-          © 2026 LearnSMC. Published strictly for educational purposes. No financial advice.
-        </div>
-      </footer>
+      <!-- Shared crawlable footer -->
+      ${renderToStaticMarkup(createElement(SiteFooter))}
     </div>
   `;
 

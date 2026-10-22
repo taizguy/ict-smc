@@ -133,14 +133,14 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
   if (pageLecture) return <MasoodLecturePage lecture={pageLecture} />;
   const activePlaylist = masoodPlaylistsData.find(p => p.id === activePlaylistId);
   return (
-    <div className="space-y-8 pb-24 text-ink">
+    <div className="masood-pages academy-surface space-y-8 pb-24 text-ink">
       <details className="curriculum-topics"><summary>Browse lecture series</summary><nav aria-label="Abdullah Masood series" className="grid sm:grid-cols-2 gap-2 pt-4">
         <a className="underline" href="/masood/">All lectures</a>
         {masoodPlaylistsData.map(p => <a key={p.id} className="underline text-teal" href={`/masood/playlists/${p.id}/`}>{p.badge}</a>)}
       </nav></details>
       {/* Editorial Hero Header */}
       <ScrollReveal y={30} duration={0.6}>
-        <section className="bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-10 relative overflow-hidden space-y-6">
+        <section className="masood-hero bg-surface border border-ink/[0.08] rounded-2xl p-6 sm:p-10 relative overflow-hidden space-y-6">
           <div className="space-y-4 max-w-4xl">
             {/* Metadata badges */}
             <div className="flex flex-wrap items-center gap-2">
@@ -170,7 +170,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                 href="https://www.youtube.com/@TraderAbdullahMasood"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand hover:bg-[#1d5545] text-on-brand text-xs font-sans tabular-nums uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer shadow-lg shadow-brand/20 on-accent"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand hover:bg-brand-hover text-on-brand text-xs font-sans tabular-nums uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer shadow-lg shadow-brand/20 on-accent"
               >
                 <Youtube className="w-4 h-4" />
                 <span>YouTube Channel</span>
@@ -308,7 +308,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
           {currentPlaylists.map((playlist) => (
             <ScrollReveal key={playlist.id} y={25} delay={0.15}>
               <div className="space-y-6">
-                <div className="p-6 sm:p-8 bg-surface border border-ink/[0.08] rounded-2xl space-y-3">
+                <div data-surface={playlist.id==='beginners'?'ink':'gray'} className="masood-series-intro p-6 sm:p-8 bg-surface border border-ink/[0.08] rounded-2xl space-y-3">
                   <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-ink/[0.07]">
                     <div className="flex items-center gap-3">
                       <span className="px-2.5 py-0.5 rounded-full bg-brand/10 text-brand border border-brand/20 text-[0.8125rem] font-sans tabular-nums uppercase">
@@ -337,7 +337,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                     .map((lecture) => (
                       <div
                         key={lecture.id}
-                        className="bg-surface border border-ink/[0.08] rounded-2xl flex flex-col justify-between overflow-hidden hover:border-ink/20 transition-[color,background-color,border-color,box-shadow,opacity,transform]"
+                        className="masood-lecture-card bg-surface border border-ink/[0.08] rounded-2xl flex flex-col justify-between overflow-hidden hover:border-ink/20 transition-[color,background-color,border-color,box-shadow,opacity,transform]"
                       >
                         {/* Thumbnail Header */}
                         <div className="relative aspect-video bg-surface-muted overflow-hidden border-b border-ink/[0.08]">
@@ -817,7 +817,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                   href={`https://www.youtube.com/watch?v=${selectedLecture.youtubeId}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand hover:bg-[#1d5545] text-on-brand text-xs font-sans tabular-nums uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer shadow-lg shadow-brand/20 on-accent"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand hover:bg-brand-hover text-on-brand text-xs font-sans tabular-nums uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer shadow-lg shadow-brand/20 on-accent"
                 >
                   <Youtube className="w-4 h-4" />
                   <span>Open on YouTube</span>

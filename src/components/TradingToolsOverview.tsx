@@ -195,7 +195,7 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
     : WORKBENCH_TOOL_CATALOG.filter(t => t.category === filterCategory);
 
   return (
-    <div className="studio-tools space-y-10 sm:space-y-12 pb-20 text-ink">
+    <div className="studio-tools academy-surface space-y-10 sm:space-y-12 pb-20 text-ink">
       <SEO 
         title="ICT Trading Workbench & Analytical Laboratories | LearnSMC"
         description="Explore 10 empirical trading facilities: interactive Chart Lab, trade simulator, backtester, multi-tier concepts glossary, and ICT Delivery Suite."
@@ -212,7 +212,7 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
 
       {/* Hero Overview Banner */}
       <ScrollReveal y={20}>
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-surface-raised to-surface border border-ink/[0.08] p-6 sm:p-10 lg:p-12 shadow-2xl">
+        <div className="workbench-hero relative overflow-hidden rounded-3xl bg-gradient-to-b from-surface-raised to-surface border border-ink/[0.08] p-6 sm:p-10 lg:p-12 shadow-2xl">
           <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-brand/10 blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-1/3 -mb-20 w-80 h-80 rounded-full bg-teal/10 blur-3xl pointer-events-none" />
 
@@ -230,7 +230,7 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
             <div className="space-y-3">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-ink leading-tight">
                 <AccentText text="Trading Study Workbench" focus="Study" urduFocus="مشق" tone="violet"/> <br className="hidden sm:inline" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal via-brand to-violet">
+                <span className="workbench-heading-accent">
                   Reference, Practice and Review
                 </span>
               </h1>
@@ -297,6 +297,7 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
           return (
             <div
               key={tool.id}
+              data-category={tool.category} data-surface={tool.category==='reference'?'paper':tool.id==='journal'||tool.id==='simulator'?'ink':'gray'}
               className="tool-surface group flex flex-col justify-between rounded-2xl bg-surface border border-ink/[0.08] hover:border-ink/20 p-6 sm:p-7 transition-colors duration-300"
             >
               <div className="space-y-4">

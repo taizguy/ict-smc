@@ -1,3 +1,4 @@
+import { learningFirstUrdu } from './learning-first-urdu';
 import { publisherUrdu } from './publisher-urdu';
 import { navigationUrdu } from './navigation-urdu';
 import { guidedLabUrdu } from './guided-lab-urdu';
@@ -51,6 +52,7 @@ export const urdu: Record<string, string> = {
   ...topicJourneyUrdu,
   ...navigationUrdu,
   ...guidedLabUrdu,
+  ...learningFirstUrdu,
   'Search concepts, chapters, algorithms (FVG, OB, AMD)...': 'تصورات، ابواب اور ماڈلز تلاش کریں (FVG، OB، AMD)…',
   'Close Search (Esc)': 'تلاش بند کریں (Esc)',
   'ENCYCLOPEDIA CONCEPTS': 'اصطلاحات اور تصورات',

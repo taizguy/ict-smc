@@ -44,3 +44,5 @@ import './styles/playground.css';
 import './styles/search-focus.css';
 
 import './styles/interface-polish.css';
+
+import './styles/learning-first.css';

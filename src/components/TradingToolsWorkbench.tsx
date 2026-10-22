@@ -208,7 +208,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
   const currentToolMeta = tools.find(t => t.id === activeTool) || tools[0];
 
   return (
-    <div className="space-y-8 sm:space-y-12 pb-20 text-ink">
+    <div className="workbench-pages academy-surface space-y-8 sm:space-y-12 pb-20 text-ink">
 
       <header className="workbench-header rounded-2xl border border-ink/10 bg-surface p-4 sm:p-5 space-y-3">
         <div className="flex items-center justify-between gap-4 text-sm">

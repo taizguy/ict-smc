@@ -4,7 +4,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { CurriculumReview } from '../src/components/CurriculumReview';
 import { ChapterDiagram } from '../src/components/ChapterDiagram';
 import { CheatSheetPage } from '../src/components/CheatSheetPage';
-import { PricePlayground } from '../src/components/PricePlayground';
+import { LearningFirstHome } from '../src/components/LearningFirstHome';
 import { SearchFocusGuide } from '../src/components/SearchFocusGuide';
 import { TopicLearningGuide, TopicJourneyLinks, GlossaryTopicLink } from '../src/components/TopicLearningGuide';
 import { topicJourneys, topicJourneyRevision } from '../src/data/topicJourneys';
@@ -181,7 +181,7 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   const counts = (text: string) => text.replace(/\b57(?=[- ](?:chapter|Chapter|CHAPTER))/g, String(chapterCount)).replace(/\b52(?=[- ](?:Abdullah|lecture|Lecture|LECTURE|Masterclass|masterclass))/g, String(lectureCount));
   r.title = counts(r.title); r.description = counts(r.description); r.bodyHtml = counts(r.bodyHtml);
   r.heading = counts(r.heading); r.subheading = counts(r.subheading);
-  if (path === '/') { r.title = 'Learn ICT & Smart Money Concepts | LearnSMC'; r.description = 'Study ICT and Smart Money Concepts with free trading lessons, Abdullah Masood video notes, chart exercises and risk education.'; r.heading='Don’t just read price. Explore it.'; r.bodyHtml=renderToStaticMarkup(createElement(PricePlayground,{staticOnly:true}))+r.bodyHtml; }
+  if (path === '/') { r.title = 'Learn ICT & Smart Money Concepts | LearnSMC'; r.description = 'Study ICT and Smart Money Concepts with free trading lessons, Abdullah Masood video notes, chart exercises and risk education.'; r.heading='Learn to read the chart. Then question it.'; r.bodyHtml=renderToStaticMarkup(createElement(LearningFirstHome)); }
   r.title = searchTitle(r.title, path);
   r.description = searchDescription(r.description, r.title, path);
   if (/^\/(learn|masood\/lectures)\//.test(path)) r.heading = studyTopics[path] || conciseHeading(r.heading);

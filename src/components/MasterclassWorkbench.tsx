@@ -134,7 +134,7 @@ export const MasterclassWorkbench: React.FC<MasterclassWorkbenchProps> = ({
   const canonicalPath = `/tools/masterclass/${currentCatSlug}/${currentItemSlug}/`;
 
   return (
-    <div className="space-y-6 text-ink">
+    <div className="masterclass-pages academy-surface space-y-6 text-ink">
       <SEO
         title={`${activeItem.title} — ICT Masterclass Hub | LearnSMC`}
         description={`${activeItem.subtitle}. Institutional rule: ${activeItem.coreRule.substring(0, 140)}...`}

@@ -2,8 +2,8 @@
   "version": 1,
   "pages": {
     "/": {
-      "fingerprint": "6481da516951e09c50058c6a1d67a459e1f00711fb496125610517fd02c6bb58",
-      "lastmod": "2026-10-21",
+      "fingerprint": "a64d3a73d18ffbebaea15e0d5b951ac787d552a109d97202a654b80c370ec9c6",
+      "lastmod": "2026-10-22",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/about/": {
@@ -1323,8 +1323,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/": {
-      "fingerprint": "386b90ddb4c885c6ef920b009dd2f29668efc6676643e21825534532aae7a194",
-      "lastmod": "2026-10-21",
+      "fingerprint": "08014b73e1cf92be68c8c5c8f9c3030c559d05573c4a15764d486ec862368e70",
+      "lastmod": "2026-10-22",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/about/": {

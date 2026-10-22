@@ -14,7 +14,7 @@ export function MasoodLecturePage({ lecture }: { lecture: MasoodLecture }) {
     ['Practice checklist', lecture.tradingChecklist],
     ['Common mistakes to examine', lecture.commonMistakes],
   ] as const;
-  return <article className="max-w-4xl mx-auto space-y-8 text-ink-secondary">
+  return <article className="masood-lesson academy-surface max-w-4xl mx-auto space-y-8 text-ink-secondary">
     <nav aria-label="Breadcrumb" className="flex flex-wrap gap-2 text-sm underline">
       <a href="/">Home</a><span>/</span><a href="/masood/">Abdullah Masood</a><span>/</span>
       <a href={`/masood/playlists/${playlist.id}/`}>{playlist.badge}</a>

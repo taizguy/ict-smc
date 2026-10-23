@@ -585,7 +585,7 @@ export const App: React.FC = () => {
         />
       </Suspense>}
 
-      <SiteFooter/>
+      <SiteFooter playground={isShowingWelcome}/>
 
       {/* Regulatory & Legal Modal (Quick preview or deep study) */}
       {isLegalModalOpen && <Suspense fallback={null}>

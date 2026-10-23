@@ -183,8 +183,8 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
       </header>
 
       <!-- Main Article / Route Body -->
-      <main id="main-content" tabindex="-1">
-        <article>
+      <main id="main-content" ${new URL(meta.canonical).pathname === "/" ? 'data-home="true"' : ''} tabindex="-1">
+        ${new URL(meta.canonical).pathname === '/' ? meta.bodyHtml : `<article>
           ${(new URL(meta.canonical).pathname === '/' || new URL(meta.canonical).pathname.startsWith('/articles/')) ? '' : `<header style="margin-bottom: 2rem;">
             <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 9999px; background: rgba(37,101,82, 0.15); border: 1px solid rgba(37,101,82, 0.3); color: #705692; font-size: 0.75rem; font-family: monospace; margin-bottom: 0.75rem;">
               ${escapeHtml(meta.badge)}
@@ -200,11 +200,11 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
           <div style="background: #ffffff; border: 1px solid rgba(34,59,53,0.08); border-radius: 14px; padding: 2rem; margin-bottom: 3rem;">
             ${meta.bodyHtml}
           </div>
-        </article>
+        </article>`}
       </main>
 
       <!-- Shared crawlable footer -->
-      ${renderToStaticMarkup(createElement(SiteFooter))}
+      ${renderToStaticMarkup(createElement(SiteFooter, {playground: new URL(meta.canonical).pathname === "/"}))}
     </div>
   `;
 

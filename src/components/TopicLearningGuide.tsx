@@ -50,7 +50,7 @@ export function ArticleTopicLinks({ slug }: { slug: string }) {
   const {t,href} = useTranslation();
   const ids = slug === 'pd-arrays-fvg-order-blocks-and-inversions' ? [13,15] : slug === 'liquidity-is-not-a-magnet' ? [18] : [];
   if (!ids.length) return null;
-  return <section className="topic-journey-index"><h2>{t(copy.practice.en)}</h2><ul>{topicJourneys.filter(journey=>ids.includes(journey.chapterId)).map(journey=><li key={journey.chapterId}><a href={href(journey.path+'#topic-practice')}>{t(journey.title.en)}</a><p>{t(journey.purpose.en)}</p></li>)}</ul></section>;
+  return <section className="topic-journey-index"><h2>{t(ids.includes(18) ? copy.practice.en : copy.onward.en)}</h2><ul>{topicJourneys.filter(journey=>ids.includes(journey.chapterId)).map(journey=><li key={journey.chapterId}><a href={href(journey.path+([13,15].includes(journey.chapterId) ? '' : '#topic-practice'))}>{t(journey.title.en)}</a><p>{t(journey.purpose.en)}</p></li>)}</ul></section>;
 }
 
 export function GlossaryTopicLink({ conceptId }: { conceptId: string }) {
@@ -63,11 +63,13 @@ export function GlossaryTopicLink({ conceptId }: { conceptId: string }) {
     // The full lesson owns worked examples; the glossary remains a concise reference.
     return <section className="topic-journey-index"><h2>{t(cornerstoneCopy.next.en)}</h2><a href={href(target.lesson+'#study-checkpoint')}>{t(guide.title.en)}</a></section>;
   }
-  return <section className="topic-journey-index"><h2>{t(copy.onward.en)}</h2><p>{t(journey.purpose.en)}</p><a href={href(journey.path+'#topic-practice')}>{t(journey.title.en)}</a><p><a href={href(journey.path+'#curriculum-review-heading')}>{t('Sources and interpretation')}</a></p></section>;
+  return <section className="topic-journey-index"><h2>{t(copy.onward.en)}</h2><p>{t(journey.purpose.en)}</p><a href={href(journey.path)}>{t(journey.title.en)}</a><p><a href={href(journey.path+'#curriculum-review-heading')}>{t('Sources and interpretation')}</a></p></section>;
 }
 
 export function TopicLearningGuide({ chapterId, staticOnly = false }: { chapterId: number; staticOnly?: boolean }) {
   const {t,href} = useTranslation();
+  // These lessons use their main textbook, diagram and quiz rather than an extra preface.
+  if ([13, 15].includes(chapterId)) return null;
   const journey = topicJourneys.find(item=>item.chapterId===chapterId);
   if (!journey) return <CornerstoneGuide chapterId={chapterId}/>;
   return <section id="topic-practice" className="topic-learning" aria-labelledby="topic-learning-heading">

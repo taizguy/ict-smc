@@ -2,7 +2,6 @@
 export const searchFocusRevision = { iso: '2026-10-21', label: '21 October 2026' };
 export const focusPaths = {
   curriculum: '/curriculum/', masterclass: '/tools/masterclass/',
-  fvg: '/learn/fair-value-gaps-fvg-and-consequent-encroachment/',
 } as const;
 export type SearchFocusKind = keyof typeof focusPaths;
 

@@ -3,7 +3,6 @@ import { FinancialDisclaimer } from './FinancialDisclaimer';
 import { CurriculumReview } from './CurriculumReview';
 import { ChapterDiagram } from './ChapterDiagram';
 import { chapterDiagrams } from '../data/chapters/diagrams';
-import { SearchFocusGuide } from './SearchFocusGuide';
 import { TopicLearningGuide } from './TopicLearningGuide';
 import { MentorshipLessonNav } from './MentorshipLessonNav';
 import { mentorshipTracks, mentorshipLessonPath } from '../data/mentorshipTracks';
@@ -314,7 +313,6 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
             </div>
           </div>
 
-          {chapter.id === 13 && <SearchFocusGuide kind="fvg" />}
           <TopicLearningGuide key={`topic-${chapter.id}`} chapterId={chapter.id}/>
 
           {/* Scene Tabs Selector */}

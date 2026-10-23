@@ -233,7 +233,7 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
     dateModified: chapterIllustrationRevision.iso,
   };
   if (focusKind) r.schemaJson = {
-    ...(r.schemaJson || { '@type': focusKind === 'fvg' ? 'LearningResource' : 'CollectionPage', name:r.heading, description:r.description, url:r.canonical, publisher }),
+    ...(r.schemaJson || { '@type': 'CollectionPage', name:r.heading, description:r.description, url:r.canonical, publisher }),
     dateModified: searchFocusRevision.iso,
   };
   if (path === '/curriculum/') r.bodyHtml += renderToStaticMarkup(createElement(TopicJourneyLinks));

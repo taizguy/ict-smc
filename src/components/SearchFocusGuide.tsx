@@ -25,18 +25,6 @@ export function SearchFocusGuide({kind}:{kind:SearchFocusKind}) {
         {card('Mentorship frameworks','Compare series-specific explanations after the prerequisites. Separate a definition used in one lesson from a universal market rule.','/tools/masterclass/mentorship-frameworks/')}
       </ul><a href={href('/curriculum/')}>{t('New to these terms? Start with the curriculum')} →</a><p>{t('After a masterclass, practise identifying its component patterns in Chart Laboratory before designing a separate backtest. The lab is illustrative, not proof of performance.')}</p><a href={href('/tools/chartlab/')}>{t('Open Chart Laboratory')} →</a>
     </>}
-    {kind==='fvg'&&<>
-      <h2 id="search-focus-fvg">{t('What is a fair value gap (FVG)?')}</h2><p>{t('An FVG is a three-candle price-range relationship. After candle 3 closes, a bullish FVG exists when candle 1 high is below candle 3 low; a bearish FVG exists when candle 1 low is above candle 3 high. Wicks count when measuring these boundaries.')}</p><p>{t('The middle candle may have traded through the entire zone. “Gap” does not mean no trades occurred there, and the pattern does not guarantee a revisit or reversal.')}</p>
-      <h3>{t('Measure it: three synthetic examples')}</h3><div className="search-focus-table"><table><thead><tr><th scope="col">{t('Example')}</th><th scope="col">{t('Outer-candle measurements')}</th><th scope="col">{t('Conclusion')}</th></tr></thead><tbody>
-        {[
-          ['Bullish FVG','Candle 1 high = 100; candle 3 low = 102.','Zone 100–102. CE = (100 + 102) / 2 = 101.'],
-          ['Bearish FVG','Candle 1 low = 100; candle 3 high = 98.','Zone 98–100. CE = (98 + 100) / 2 = 99.'],
-          ['Not a bullish FVG','Candle 1 high = 100; candle 3 low = 99.5.','The outer ranges overlap. A large middle body does not change that.'],
-        ].map(row=><tr key={row[0]}>{row.map((cell,i)=>i===0?<th scope="row" key={i}>{t(cell)}</th>:<td key={i}>{t(cell)}</td>)}</tr>)}
-      </tbody></table></div><p>{t('If the boundaries merely touch, the gap has zero width. Do not count it as a positive-width FVG under this definition. Prices here are invented teaching values, not a market study.')}</p>
-      <h3>{t('Check your understanding')}</h3><p>{t('Candle 1 high is 100 and candle 3 low is 102. Later, price trades through 100 and continues lower. Did the original gap never exist?')}</p><details><summary>{t('Reveal the explanation')}</summary><p>{t('It existed at formation. Later failure does not erase the original range relationship. Define in advance whether your paper-study invalidation uses a wick, a close or another rule; those choices change the results. CE is arithmetic, not a promised support level.')}</p></details>
-      <h3>{t('Use this lesson, then test recognition')}</h3><p>{t('Read the explanation and source notes below, compare inverse FVGs and order blocks, then try an exercise without viewing future candles first.')}</p><nav className="search-focus-links" aria-label={t('Use this lesson, then test recognition')}><a href={href('/learn/inverse-fair-value-gaps-ifvg-role-reversal-imbalances/')}>{t('Compare inverse FVGs')} →</a><a href={href('/learn/order-blocks-ob-and-mitigation/')}>{t('Compare order blocks')} →</a><a href={href('/tools/chartlab/')}>{t('Open Chart Laboratory')} →</a></nav>
-    </>}
     <p className="search-focus-revision">{t('Editorial learning guide updated')}: <time dateTime={searchFocusRevision.iso}>{searchFocusRevision.iso}</time></p>
   </section>;
 }

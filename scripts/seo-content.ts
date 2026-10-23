@@ -25,7 +25,7 @@ import { textbookChapters } from '../src/data/chaptersData';
 import { masoodPlaylistsData } from '../src/data/masoodData';
 import { contextualFragments, relatedChapters } from '../src/utils/contextualLinks';
 import { topicClusters } from '../src/utils/topicClusters';
-import { publisher, lessonAuthor, financialDisclaimer, authorContact } from '../src/utils/publisher';
+import { publisher, lessonAuthor, financialDisclaimer, authorContact, authorProfileRevision } from '../src/utils/publisher';
 import { conceptComparisons } from '../src/data/comparisonsData';
 import { getComparisonSlug } from '../src/utils/workbenchToolRoutes';
 import type { RouteMeta } from './prerender';
@@ -163,7 +163,7 @@ export function prepareRoutes(routes: RouteMeta[]) {
   const privacy = routes.find(r => r.canonical.endsWith('/privacy/'))!;
   privacy.bodyHtml += section('Advertising choices', '<p>Optional advertising does not load until you allow it in Privacy choices. You can withdraw that choice using the same control. If advertising is enabled, Google and its partners may use cookies and process device information. Regional consent messages, where required, are provided through the configured advertising consent service.</p><p><a href="https://policies.google.com/technologies/ads">How Google uses advertising information</a>. Embedded videos connect to YouTube only when loaded.</p>');
   const about = routes.find(r => r.canonical.endsWith('/about/'))!;
-  about.bodyHtml = `<section id="author"><h2>Author and publisher</h2><p>Muhammad Umer Ijaz writes and maintains the LearnSMC lessons and study notes. LearnSMC is an independent educational project. Linked third-party videos retain their original authorship.</p></section>` +
+  about.bodyHtml = `<section id="author"><h2>Author and publisher</h2><p>Muhammad Umer Ijaz writes and maintains the LearnSMC lessons and study notes. LearnSMC is an independent educational project. Linked third-party videos retain their original authorship.</p><ul>${lessonAuthor.sameAs.map((url, index) => `<li><a href="${escape(url)}" rel="me">${index === 0 ? 'GitHub: taizguy' : 'X: @ChiefAnt_'}</a></li>`).join('')}</ul></section>` +
     `<section id="editorial-policy"><h2>Editorial policy</h2>` + '<p>These pages explain trading frameworks for study. Framework claims and simulated examples are not proof of profitable outcomes. Test assumptions independently and check the original video sources. Named expert or peer review is not claimed.</p>' + '</section>' +
     section('Corrections and contact', `<p>${link('/contact/', 'Send a correction, source reference or copyright inquiry')}.</p>`) + notice;
   about.bodyHtml += section('Publisher contact', contactHtml);
@@ -224,9 +224,9 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
     ...(path === '/' ? [] : [{ name: r.heading, url: r.canonical }])];
   if (path !== '/') r.bodyHtml = `<nav aria-label="Breadcrumb">${crumbs.map(c => link(new URL(c.url).pathname, c.name)).join(' / ')}</nav>` + r.bodyHtml;
   if (['/', '/curriculum/', '/about/', '/contact/'].includes(path) || path.startsWith('/tools/compare/')) {
-    const revision = focusKind ? { iso: searchFocusRevision.iso, label: searchFocusRevision.iso } : path === '/curriculum/' || path === '/' ? chapterIllustrationRevision : publisherPageRevision;
+    const revision = path === '/about/' ? authorProfileRevision : focusKind ? { iso: searchFocusRevision.iso, label: searchFocusRevision.iso } : path === '/curriculum/' || path === '/' ? chapterIllustrationRevision : publisherPageRevision;
     r.bodyHtml += `<p>Page updated: <time datetime="${revision.iso}">${revision.label}</time>. ` + link('/about/#editorial-policy', 'Editorial policy') + '</p>';
-    if (r.schemaJson) r.schemaJson = { ...r.schemaJson, dateModified: publisherPageRevision.iso };
+    if (r.schemaJson) r.schemaJson = { ...r.schemaJson, dateModified: revision.iso };
   }
   if (r.bodyHtml.includes('data-chapter-diagram=')) r.schemaJson = {
     ...(r.schemaJson || { '@type': children.length ? 'CollectionPage' : 'WebPage', name:r.heading, description:r.description, url:r.canonical, publisher }),

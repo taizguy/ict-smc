@@ -1,5 +1,7 @@
 /** Reviewed source snapshots: English changes invalidate exact-match translations. */
 export const publisherUrdu: Record<string, string> = {
+  'GitHub: taizguy': 'GitHub پروفائل: taizguy',
+  'X: @ChiefAnt_': 'X پروفائل: @ChiefAnt_',
   "1. Acceptance of Terms": "1. شرائط کی قبولیت",
   "By accessing or using LearnSMC (https://learnsmc.xyz), you agree to be bound by these Terms of Service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site.": "LearnSMC (https://learnsmc.xyz) تک رسائی یا اس کے استعمال سے آپ ان شرائط، تمام متعلقہ قوانین اور ضوابط کی پابندی قبول کرتے ہیں۔ اپنے مقامی قوانین کی تعمیل کی ذمہ داری آپ پر ہے۔ اگر آپ ان شرائط میں سے کسی سے متفق نہیں تو آپ کو اس ویب سائٹ تک رسائی یا اسے استعمال کرنے کی اجازت نہیں۔",
   "2. Open Educational License": "2. تعلیمی استعمال کی اجازت",

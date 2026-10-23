@@ -13,11 +13,14 @@ export const publisher = {
   url: 'https://learnsmc.xyz/',
 };
 
+export const authorProfileRevision = { iso: '2026-10-24', label: '24 October 2026' };
 export const lessonAuthor = {
   '@type': 'Person',
   '@id': 'https://learnsmc.xyz/about/#author',
   name: 'Muhammad Umer Ijaz',
   url: 'https://learnsmc.xyz/about/',
+  // Personal profiles confirmed by the publisher; these do not identify the organization.
+  sameAs: ['https://github.com/taizguy', 'https://x.com/ChiefAnt_'],
   email: authorContact.email,
   telephone: authorContact.telephone,
   address: { '@type': 'PostalAddress', streetAddress: authorContact.streetAddress, addressLocality: authorContact.addressLocality, addressCountry: authorContact.addressCountry },

@@ -1,5 +1,5 @@
 import { TERMS_SECTIONS, ABOUT_GUIDANCE, CONTACT_GUIDANCE, publisherPageRevision } from '../data/publisherPageCopy';
-import { authorContact } from '../utils/publisher';
+import { authorContact, lessonAuthor, authorProfileRevision } from '../utils/publisher';
 import { chapterCount, lectureCount } from '../utils/catalogCounts';
 import React, { useState, useEffect } from 'react';
 import {
@@ -296,6 +296,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
           <section id="author" className="space-y-6 text-sm leading-relaxed">
             <h2 className="text-2xl font-semibold">About LearnSMC and its author</h2>
             <p>Muhammad Umer Ijaz writes and maintains the written lessons and study notes on LearnSMC. This is an independent educational project for studying ICT and Smart Money Concepts.</p>
+            <ul className="flex flex-wrap gap-x-6 gap-y-2">{lessonAuthor.sameAs.map((url, index) => <li key={url}><a className="underline" href={url} rel="me">{index === 0 ? 'GitHub: taizguy' : 'X: @ChiefAnt_'}</a></li>)}</ul>
             <address className="not-italic break-words">
               <p><a className="underline" href={`mailto:${authorContact.email}`}>{authorContact.email}</a></p>
               <p><a className="underline" href={`tel:${authorContact.telephone}`}>{authorContact.telephone}</a></p>
@@ -493,7 +494,7 @@ export const LegalPageView: React.FC<LegalPageViewProps> = ({
           </section>
         )}
 
-        {(currentTab === 'about' || currentTab === 'contact') && <p className="text-sm">Page updated: <time dateTime={publisherPageRevision.iso}>{publisherPageRevision.label}</time>. <a href="/about/#editorial-policy" className="underline">Editorial policy</a>.</p>}
+        {(currentTab === 'about' || currentTab === 'contact') && <p className="text-sm">Page updated: <time dateTime={currentTab === 'about' ? authorProfileRevision.iso : publisherPageRevision.iso}>{currentTab === 'about' ? authorProfileRevision.label : publisherPageRevision.label}</time>. <a href="/about/#editorial-policy" className="underline">Editorial policy</a>.</p>}
       </article>
     </div>
   );

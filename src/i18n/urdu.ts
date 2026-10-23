@@ -7,6 +7,7 @@ import { guidedLabUrdu } from './guided-lab-urdu';
 import chapterReviewUrdu from './chapter-review-urdu.json';
 import { searchFocusUrdu } from '../data/searchFocus';
 import { topicJourneyUrdu } from '../data/topicJourneys';
+import { cornerstoneUrdu } from '../data/cornerstoneGuides';
 import mentorshipUrdu from './mentorships-urdu.json';
 import diagramUrdu from './diagrams-urdu.json';
 import learningUpdate from './learning-update-urdu.json';
@@ -22,6 +23,7 @@ import chapterHeadings from './chapter-headings-urdu.json';
 import { refineTradingLanguage } from './trading-language';
 /** Original Urdu translations. Keys are exact English source text, never route IDs or calculation values. */
 export const urdu: Record<string, string> = {
+  '24 October 2026': '24 اکتوبر 2026',
   'Study ICT and Smart Money Concepts with free lessons, original diagrams and chart exercises. Start with market foundations, then learn structure, liquidity and price patterns at your own pace.': 'مفت اسباق، اصل خاکوں اور چارٹ مشقوں کے ساتھ ICT اور Smart Money Concepts سیکھیں۔ مارکیٹ کی بنیادوں سے شروع کریں، پھر اپنی رفتار سے اسٹرکچر، لیکویڈیٹی اور قیمت کے پیٹرن سمجھیں۔',
   'Don’t just read price. Explore it.': 'صرف قیمت پڑھیں نہیں۔ اسے سمجھیں۔',
   'The Price Playground': 'پرائس پلے گراؤنڈ',
@@ -53,6 +55,7 @@ export const urdu: Record<string, string> = {
   ...curriculumReviewUrdu,
   ...searchFocusUrdu,
   ...topicJourneyUrdu,
+  ...cornerstoneUrdu,
   ...navigationUrdu,
   ...guidedLabUrdu,
   ...learningFirstUrdu,

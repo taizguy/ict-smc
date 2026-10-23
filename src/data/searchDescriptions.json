@@ -1,4 +1,40 @@
 {
+  "/learn/what-actually-moves-price/": {
+    "en": "Understand price formation with a worked order-book example. Separate trades, quotes and average fills from claims about institutional intent.",
+    "ur": "Order Book کی حل شدہ مثال سے قیمت کی تشکیل سمجھیں۔ ٹریڈ، کوٹ اور اوسط Fill کو اداروں کی نیت کے دعووں سے الگ کریں۔"
+  },
+  "/learn/how-an-exchange-matches-orders/": {
+    "en": "Compare price-time queues with other allocation rules. Work through a fill example and learn why a limit order can remain unfilled.",
+    "ur": "Price-time قطار اور دوسرے Allocation قواعد کا موازنہ کریں۔ Fill کی مثال سمجھیں اور جانیں کہ Limit Order نامکمل کیوں رہ سکتا ہے۔"
+  },
+  "/learn/the-order-book-in-depth/": {
+    "en": "Read bid, ask, spread and displayed depth with a numerical example. Understand why a book snapshot cannot establish intent or guarantee a fill.",
+    "ur": "عددی مثال سے Bid، Ask، Spread اور ظاہر کردہ Depth سمجھیں۔ جانیں کہ Book کی لمحاتی تصویر نیت یا Fill کی ضمانت کیوں نہیں دیتی۔"
+  },
+  "/learn/liquidity-the-most-misunderstood-word-in-trading/": {
+    "en": "Distinguish liquidity in execution from presumed stop pools on a chart. Compare a move beyond prior highs with a continuation counterexample.",
+    "ur": "عمل درآمد کی Liquidity اور چارٹ کے مفروضہ Stop Pools میں فرق کریں۔ پہلے ہائیز سے آگے حرکت اور جاری رہنے والی مخالف مثال کا موازنہ کریں۔"
+  },
+  "/learn/what-is-a-swing-the-atom-of-structure/": {
+    "en": "Identify swing highs and lows using a stated three-candle rule. Compare equal highs and learn when a swing becomes visible without hindsight.",
+    "ur": "واضح تین کینڈل قاعدے سے Swing Highs اور Lows پہچانیں۔ برابر ہائیز کا موازنہ کریں اور جانیں کہ Swing کی تصدیق کب دستیاب ہوتی ہے۔"
+  },
+  "/learn/break-of-structure-bos-trend-continuation/": {
+    "en": "Define BOS using a chosen swing and wick-or-close rule. Compare a qualifying break, a non-example and the risk of failed continuation.",
+    "ur": "منتخب Swing اور وِک یا کلوز کے قاعدے سے BOS کی تعریف کریں۔ اہل بریک، غیر مثال اور ناکام Continuation کے خطرے کا موازنہ کریں۔"
+  },
+  "/learn/change-of-character-choch-the-first-warning/": {
+    "en": "Study CHoCH with a broken higher-low example and a failed reversal. Separate local structure changes from claims of a lasting trend change.",
+    "ur": "ٹوٹے ہوئے Higher Low اور ناکام ریورسل کی مثال سے CHoCH پڑھیں۔ مقامی اسٹرکچر کی تبدیلی کو مستقل رجحان بدلنے کے دعوے سے الگ کریں۔"
+  },
+  "/learn/market-structure-shift-mss-verified-directional-shift/": {
+    "en": "Study MSS with explicit swing, break and displacement conditions. Separate a completed observation from entry rules and a profitable reversal.",
+    "ur": "واضح Swing، بریک اور Displacement کی شرائط سے MSS سمجھیں۔ مکمل مشاہدے کو انٹری کے قواعد اور منافع بخش ریورسل سے الگ کریں۔"
+  },
+  "/learn/time-and-session-liquidity-the-global-clock/": {
+    "en": "Understand trading sessions and killzones with New York-to-UTC examples. Avoid daylight-saving mistakes and distinguish developing session ranges.",
+    "ur": "New York سے UTC کی مثالوں سے Trading Sessions اور Killzones سمجھیں۔ Daylight Saving کی غلطیوں سے بچیں اور بنتی سیشن رینج الگ پہچانیں۔"
+  },
   "/privacy/": {
     "en": "Read how LearnSMC handles browser storage, optional advertising, cookies and privacy choices, and how to contact the publisher.",
     "ur": "LearnSMC میں براؤزر اسٹوریج، اختیاری اشتہارات، کوکیز اور رازداری کے اختیارات کے استعمال اور ناشر سے رابطے کا طریقہ پڑھیں۔"

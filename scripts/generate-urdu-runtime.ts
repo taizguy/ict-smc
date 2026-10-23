@@ -18,7 +18,7 @@ const searchableFields = new Set(['title', 'name', 'subtitle', 'shortTitle', 'ex
 const normalize = (text: string) => text.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&rarr;/g, '→').replace(/&larr;/g, '←').replace(/\s+/g, ' ').trim();
 function groupFor(file: string): Group {
   if (/articles/.test(file)) return 'articles';
-  if (/data\/chapters|Chapters|ChapterRoom/.test(file)) return 'chapters';
+  if (/data\/chapters|Chapters|ChapterRoom|cornerstoneGuides|CornerstoneGuide/.test(file)) return 'chapters';
   if (/masood/i.test(file)) return 'masood';
   if (/Legal|publisherPageCopy/.test(file)) return 'publisher';
   if (/data\/(?:learningCases|labGuides|concepts|masterclass|comparisons|quizzes|chartScenarios|theinnercircletraders)|(?:GuidedMarketDesk|MarketWorkspace|MarketChart|ChartLab|CompareView|ConceptExplorer|Masterclass|MasteryDashboard|InstitutionalTools|KnowledgeGraph|BacktestLab|TradeSimulator|TradingJournal|TradingTools)/.test(file)) return 'tools';

@@ -9,6 +9,7 @@
     "test:seo": "tsx scripts/validate-seo.ts && tsx scripts/verify-crawl.ts && tsx scripts/verify-routing.ts",
     "preview": "vite preview",
     "seo:record": "tsx scripts/sitemap-dates.ts",
+    "seo:intent-map": "tsx scripts/search-intent-map.ts",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit"
   },

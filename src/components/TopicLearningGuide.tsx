@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useTranslation } from '../i18n/TranslationProvider';
 import { journeyCopy as copy, topicJourneys, topicJourneyRevision, type RecognitionCase } from '../data/topicJourneys';
 import { CandleBoard } from './labs/CandleBoard';
+import { CornerstoneGuide } from './CornerstoneGuide';
+import { cornerstoneGuides, cornerstoneCopy, cornerstoneGlossaryRoutes } from '../data/cornerstoneGuides';
 
 function RecognitionChart({ exercise, annotated = false, sweep = false }: { exercise: RecognitionCase; annotated?: boolean; sweep?: boolean }) {
   const { t } = useTranslation();
@@ -54,14 +56,20 @@ export function ArticleTopicLinks({ slug }: { slug: string }) {
 export function GlossaryTopicLink({ conceptId }: { conceptId: string }) {
   const {t,href} = useTranslation();
   const journey = topicJourneys.find(item=>item.chapterId===(conceptId==='fair_value_gap' ? 13 : conceptId==='order_block' ? 15 : 0));
-  if (!journey) return null;
+  if (!journey) {
+    const target = cornerstoneGlossaryRoutes.find(item => item.conceptId === conceptId);
+    const guide = cornerstoneGuides.find(item => item.chapterId === target?.chapterId);
+    if (!guide || !target) return null;
+    // The full lesson owns worked examples; the glossary remains a concise reference.
+    return <section className="topic-journey-index"><h2>{t(cornerstoneCopy.next.en)}</h2><a href={href(target.lesson+'#study-checkpoint')}>{t(guide.title.en)}</a></section>;
+  }
   return <section className="topic-journey-index"><h2>{t(copy.onward.en)}</h2><p>{t(journey.purpose.en)}</p><a href={href(journey.path+'#topic-practice')}>{t(journey.title.en)}</a><p><a href={href(journey.path+'#curriculum-review-heading')}>{t('Sources and interpretation')}</a></p></section>;
 }
 
 export function TopicLearningGuide({ chapterId, staticOnly = false }: { chapterId: number; staticOnly?: boolean }) {
   const {t,href} = useTranslation();
   const journey = topicJourneys.find(item=>item.chapterId===chapterId);
-  if (!journey) return null;
+  if (!journey) return <CornerstoneGuide chapterId={chapterId}/>;
   return <section id="topic-practice" className="topic-learning" aria-labelledby="topic-learning-heading">
     <header><p className="topic-kicker">{t(copy.heading.en)}</p><h2 id="topic-learning-heading">{t(journey.title.en)}</h2><p>{t(journey.purpose.en)}</p></header>
     <h3>{t(copy.method.en)}</h3><p>{t(journey.method.en)}</p>

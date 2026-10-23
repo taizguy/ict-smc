@@ -8,6 +8,7 @@ import { LearningFirstHome } from '../src/components/LearningFirstHome';
 import { SearchFocusGuide } from '../src/components/SearchFocusGuide';
 import { TopicLearningGuide, TopicJourneyLinks, GlossaryTopicLink } from '../src/components/TopicLearningGuide';
 import { topicJourneys, topicJourneyRevision } from '../src/data/topicJourneys';
+import { cornerstoneGlossaryRoutes, cornerstoneRevision } from '../src/data/cornerstoneGuides';
 import { guidedChartRevision } from '../src/utils/guidedChartDrills';
 import { focusPaths, searchFocusRevision, type SearchFocusKind } from '../src/data/searchFocus';
 import { chapterIllustrationRevision } from '../src/data/chapters/diagrams';
@@ -236,16 +237,18 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
     dateModified: searchFocusRevision.iso,
   };
   if (path === '/curriculum/') r.bodyHtml += renderToStaticMarkup(createElement(TopicJourneyLinks));
-  const glossaryTopic = path === '/tools/glossary/imbalances/fair-value-gap/' ? 'fair_value_gap' : path === '/tools/glossary/order-blocks/order-block/' ? 'order_block' : undefined;
+  const cornerstoneGlossary = cornerstoneGlossaryRoutes.find(item => item.path === path);
+  const glossaryTopic = path === '/tools/glossary/imbalances/fair-value-gap/' ? 'fair_value_gap' : path === '/tools/glossary/order-blocks/order-block/' ? 'order_block' : cornerstoneGlossary?.conceptId;
   if (glossaryTopic) {
     r.bodyHtml += renderToStaticMarkup(createElement(GlossaryTopicLink, {conceptId:glossaryTopic}));
-    const sourceChapter = textbookChapters.find(c=>c.id===(glossaryTopic==='fair_value_gap' ? 13 : 15))!;
+    const sourceChapter = textbookChapters.find(c=>c.id===(cornerstoneGlossary?.chapterId ?? (glossaryTopic==='fair_value_gap' ? 13 : 15)))!;
     r.schemaJson = { ...r.schemaJson, citation: curriculumReview(sourceChapter).sources.map(source=>({'@type':'CreativeWork',name:source.title,url:source.url})) };
   }
   if (topicJourneys.some(journey => journey.path === path) || glossaryTopic || ['/resources/ict-smc-cheat-sheet/','/articles/pd-arrays-fvg-order-blocks-and-inversions/','/articles/liquidity-is-not-a-magnet/'].includes(path)) {
     r.schemaJson = { ...r.schemaJson, dateModified: topicJourneyRevision };
   }
   if (path.startsWith('/tools/chartlab/')) r.schemaJson = { ...r.schemaJson, dateModified: guidedChartRevision };
+  if (cornerstoneGlossary) r.schemaJson = { ...r.schemaJson, dateModified: cornerstoneRevision };
   // The chapter review includes its copy, diagrams and quizzes; older shared-widget
   // revisions must not overwrite the chapter's actual editorial revision.
   if (chapter) r.schemaJson = { ...r.schemaJson, dateModified: chapterReviewRevision(chapter.id).iso };

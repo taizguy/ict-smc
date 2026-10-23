@@ -10,6 +10,7 @@ import { topicJourneyUrdu } from '../data/topicJourneys';
 import mentorshipUrdu from './mentorships-urdu.json';
 import diagramUrdu from './diagrams-urdu.json';
 import learningUpdate from './learning-update-urdu.json';
+import searchDescriptions from '../data/searchDescriptions.json';
 import curriculumCorrections from './curriculum-corrections-urdu.json';
 import { curriculumReviewUrdu } from './curriculum-review-urdu';
 import { terminology } from './terminology';
@@ -182,4 +183,6 @@ export const urdu: Record<string, string> = {
   ...marketWorkspaceUrdu,
   ...guidedMarketUrdu,
 };
+// Exact pairs keep static snippets and client-side metadata in the same language.
+for (const { en, ur } of Object.values(searchDescriptions)) urdu[en] = ur;
 for (const source of Object.keys(urdu)) urdu[source] = refineTradingLanguage(source, urdu[source]);

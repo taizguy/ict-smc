@@ -1,4 +1,5 @@
 import { studyTopics } from '../data/searchTopics';
+import searchDescriptions from '../data/searchDescriptions.json';
 export { studyTopics };
 /** Editorial budgets, not Google indexing limits. Keep the topic before the brand. */
 const BRAND = ' | LearnSMC';
@@ -69,6 +70,10 @@ export function searchTitle(value: string, path = '/'): string {
 }
 
 export function searchDescription(value: string, title: string, path: string): string {
+  // Human-reviewed page summaries take precedence over length-based fallbacks.
+  const englishPath = path.replace(/^\/ur(?=\/|$)/, '') || '/';
+  const reviewed = searchDescriptions[englishPath as keyof typeof searchDescriptions];
+  if (reviewed) return path.startsWith('/ur/') ? reviewed.ur : reviewed.en;
   const reviewedDescriptions: Record<string, string> = {
     '/tools/masterclass/pd-arrays/reaper-ifvg/': 'Study the sourced Reaper variant with nested gaps and a breaker. Compare the chart context, invalidation assumptions and limits.',
     '/tools/glossary/imbalances/ict-reaper-ifvg/': 'Define the Reaper FVG label using a June 2026 source example. Distinguish a nested-gap variant from an ordinary failed inversion.',
@@ -87,7 +92,7 @@ export function searchDescription(value: string, title: string, path: string): s
   if (sentence && sentence.length >= 65 && sentence.length <= DESCRIPTION_LIMIT && estimatedSearchWidth(sentence, 14) <= 920) return sentence;
   if (path.startsWith('/learn/')) text = `Study ${topic}. Review definitions, chart examples and the conditions that can invalidate an interpretation.`;
   else if (path.startsWith('/masood/lectures/')) text = `${topic}: independent Abdullah Masood video notes, key takeaways, common mistakes and a demo exercise.`;
-  else if (path.startsWith('/tools/')) text = `Explore ${topic}. Read the definitions, worked examples, study conditions and limits of this educational tool.`;
+  else if (path.startsWith('/tools/')) text = value;
   else text = value;
   const result = fitWords(text, DESCRIPTION_LIMIT - 1, 910, 14).replace(/[.!?…]+$/, '');
   return result + '.';

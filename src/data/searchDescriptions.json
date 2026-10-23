@@ -1,0 +1,486 @@
+{
+  "/privacy/": {
+    "en": "Read how LearnSMC handles browser storage, optional advertising, cookies and privacy choices, and how to contact the publisher.",
+    "ur": "LearnSMC میں براؤزر اسٹوریج، اختیاری اشتہارات، کوکیز اور رازداری کے اختیارات کے استعمال اور ناشر سے رابطے کا طریقہ پڑھیں۔"
+  },
+  "/tools/masterclass/pd-arrays/": {
+    "en": "Compare ICT premium and discount arrays, including prior swings, gaps, breakers and mitigation references, with study conditions and limits.",
+    "ur": "سابقہ سوئنگز، گیپس، Breakers اور Mitigation سمیت ICT کے Premium اور Discount Arrays کی شرائط اور حدود کا موازنہ کریں۔"
+  },
+  "/tools/masterclass/pd-arrays/mitigation-block/": {
+    "en": "Study the ICT mitigation block convention, failed swings and reference retests. Review the diagram, sequence and invalidation checklist.",
+    "ur": "ICT Mitigation Block، ناکام سوئنگز اور حوالہ جاتی سطح کی دوبارہ جانچ سمجھیں۔ خاکہ، ترتیب اور تشریح غلط ہونے کی شرائط دیکھیں۔"
+  },
+  "/tools/chartlab/": {
+    "en": "Learn chart context, liquidity sweeps, confirmation and invalidation through a guided fictional setup, clickable candles and no-trade examples.",
+    "ur": "فرضی چارٹ، قابل انتخاب کینڈلز اور ٹریڈ نہ کرنے کی مثالوں سے پس منظر، Liquidity Sweep، تصدیق اور Invalidation سمجھیں۔"
+  },
+  "/tools/simulator/": {
+    "en": "Practise waiting, entering or skipping a fictional setup. Reveal candles and review paper fills, losses, targets and orders that never fill.",
+    "ur": "فرضی سیٹ اپ میں انتظار، کاغذی انٹری یا ٹریڈ چھوڑنے کی مشق کریں۔ کینڈلز کھول کر Fill، نقصان، ہدف اور نامکمل آرڈر کا جائزہ لیں۔"
+  },
+  "/tools/backtest/": {
+    "en": "Apply one checklist to six fictional cases. Review qualification, skipped trades, costs and unfilled orders; explore the separate CSV sandbox.",
+    "ur": "چھ فرضی مثالوں پر ایک Checklist آزمائیں۔ اہل اور چھوڑی گئی ٹریڈز، لاگت اور نامکمل آرڈر دیکھیں، پھر الگ CSV Sandbox دریافت کریں۔"
+  },
+  "/tools/delivery-suite/": {
+    "en": "Adjust a fictional stop and see how cash risk changes whole-unit sizing. Explore New York study times, retracement math and personal checklists.",
+    "ur": "فرضی Stop بدل کر نقد رسک اور پورے یونٹس کی تعداد کا تعلق دیکھیں۔ نیو یارک اوقات، Retracement حساب اور ذاتی Checklist بھی دستیاب ہیں۔"
+  },
+  "/tools/masterclass/core-masterclasses/org-octant-grid/": {
+    "en": "Explore the opening range gap and its octant divisions. Follow the visual sequence, reference levels and conditions that challenge the model.",
+    "ur": "Opening Range Gap اور اس کی آٹھ تقسیمات سمجھیں۔ تصویری ترتیب، حوالہ جاتی سطحیں اور ماڈل کو چیلنج کرنے والی شرائط دیکھیں۔"
+  },
+  "/tools/masterclass/core-masterclasses/mmxm-stage2/": {
+    "en": "Study MMXM second-stage distribution with the delivery diagram, sequence and invalidation rules. Separate model interpretation from evidence.",
+    "ur": "MMXM کی دوسرے مرحلے کی Distribution، خاکہ، ترتیب اور Invalidation قواعد پڑھیں۔ ماڈل کی تشریح اور شواہد میں فرق رکھیں۔"
+  },
+  "/tools/masterclass/entry-models/venom-model/": {
+    "en": "Review the ICT Venom opening-session study, its source context, example sequence and invalidation. Named setups do not establish an edge.",
+    "ur": "ICT Venom کے افتتاحی سیشن کا مطالعہ، ماخذ کا پس منظر، مثال کی ترتیب اور Invalidation پڑھیں۔ ماڈل کا نام برتری کا ثبوت نہیں۔"
+  },
+  "/tools/masterclass/entry-models/sick-sister-strategy/": {
+    "en": "Examine Sick Sister relative-strength interpretation across related markets, with a visual sequence, invalidation and evidence limits.",
+    "ur": "متعلقہ مارکیٹس میں Sick Sister کی نسبتی قوت کی تشریح، تصویری ترتیب، Invalidation اور شواہد کی حدود کا جائزہ لیں۔"
+  },
+  "/tools/chartlab/btc-2022-bullish-model/": {
+    "en": "Study the BTC liquidity-and-FVG illustration: identify a reference-low sweep, displacement and gap retest without treating it as historical data.",
+    "ur": "BTC کی تعلیمی Liquidity اور FVG مثال میں سابقہ Low کا Sweep، Displacement اور Gap Retest پہچانیں۔ یہ تاریخی مارکیٹ ڈیٹا نہیں۔"
+  },
+  "/tools/chartlab/nq-silver-bullet-short/": {
+    "en": "Explore the authored NQ Silver Bullet short illustration, its sweep and entry references, alongside guided chart practice and explicit limits.",
+    "ur": "NQ Silver Bullet Short کے فرضی خاکے، Sweep اور انٹری حوالوں کو رہنمائی والی چارٹ مشق اور واضح حدود کے ساتھ دیکھیں۔"
+  },
+  "/tools/chartlab/eurusd-failed-ob-breaker/": {
+    "en": "Examine an illustrated EUR/USD failed order block and breaker transition. Use chart references to distinguish an observation from a trade signal.",
+    "ur": "EUR/USD میں ناکام Order Block اور Breaker میں تبدیلی کی تعلیمی مثال دیکھیں۔ چارٹ کے مشاہدے اور ٹریڈنگ سگنل میں فرق سمجھیں۔"
+  },
+  "/tools/chartlab/xauusd-gold-legacy-model/": {
+    "en": "Practise reading the authored gold sweep and FVG reference example. Review context, entry conditions and invalidation rather than a live signal.",
+    "ur": "گولڈ کے فرضی Sweep اور FVG حوالہ جاتی خاکے کو پڑھنے کی مشق کریں۔ پس منظر، انٹری شرائط اور Invalidation دیکھیں، لائیو سگنل نہیں۔"
+  },
+  "/tools/chartlab/eur-mmbm-propulsion-model/": {
+    "en": "Explore the EUR/USD price-curve and propulsion illustration. Inspect the supplied context, annotated reference zones and study assumptions.",
+    "ur": "EUR/USD کے Price Curve اور Propulsion خاکے میں دیا گیا پس منظر، نشان زدہ حوالہ جاتی زونز اور مطالعے کے مفروضے دیکھیں۔"
+  },
+  "/tools/chartlab/nq-ath-alchemy-ndog-macro/": {
+    "en": "Study an NQ opening-gap illustration with annotated macro and expansion references. Candles are authored teaching data, not an exchange replay.",
+    "ur": "NQ کے Opening Gap خاکے میں Macro اور Expansion کے نشان زدہ حوالے پڑھیں۔ کینڈلز تعلیمی مثال ہیں، ایکسچینج کا تاریخی Replay نہیں۔"
+  },
+  "/tools/simulator/ict-2022-model/": {
+    "en": "Use the ICT 2022 study entry point to practise a complete fictional checklist, paper entry, invalidation and candle-by-candle outcome review.",
+    "ur": "ICT 2022 کے مطالعاتی حصے میں مکمل فرضی Checklist، کاغذی انٹری، Invalidation اور ہر کینڈل کے ساتھ نتیجہ دیکھنے کی مشق کریں۔"
+  },
+  "/tools/simulator/silver-bullet-short/": {
+    "en": "Open Silver Bullet decision practice. Wait or skip a fictional plan, then review paper execution; session labels do not supply live signals.",
+    "ur": "Silver Bullet کے فیصلے کی مشق میں فرضی منصوبے پر انتظار کریں یا اسے چھوڑیں، پھر کاغذی نتیجہ دیکھیں۔ سیشن کا نام لائیو سگنل نہیں۔"
+  },
+  "/tools/simulator/london-judas-swing/": {
+    "en": "Explore London Judas Swing decision practice using a fictional setup. Check context and invalidation before revealing the paper outcome.",
+    "ur": "فرضی سیٹ اپ کے ذریعے London Judas Swing کے فیصلے کی مشق کریں۔ کاغذی نتیجہ کھولنے سے پہلے پس منظر اور Invalidation جانچیں۔"
+  },
+  "/tools/simulator/failed-ob-breaker/": {
+    "en": "Start failed-block and breaker decision practice. Use a fictional checklist to consider entry, skip conditions and paper execution risks.",
+    "ur": "ناکام Order Block اور Breaker کے فیصلے کی مشق شروع کریں۔ فرضی Checklist سے انٹری، ٹریڈ چھوڑنے کی شرائط اور کاغذی رسک سمجھیں۔"
+  },
+  "/tools/simulator/ote-expansion-long/": {
+    "en": "Open OTE decision practice with a fictional chart plan. Review the entry area, stop and target before revealing candles and paper results.",
+    "ur": "فرضی چارٹ منصوبے میں OTE کے فیصلے کی مشق کریں۔ کینڈلز اور کاغذی نتائج کھولنے سے پہلے انٹری کا حصہ، Stop اور ہدف دیکھیں۔"
+  },
+  "/tools/simulator/news-driver-reversal/": {
+    "en": "Explore news-reversal decision practice with authored candles. Review the fictional plan and its limits; actual news and spreads are not modeled.",
+    "ur": "تعلیمی کینڈلز سے News Reversal کے فیصلے کی مشق کریں۔ فرضی منصوبہ اور حدود دیکھیں؛ حقیقی خبروں اور Spreads کی نقل نہیں کی جاتی۔"
+  },
+  "/tools/backtest/2022-mentorship-model/": {
+    "en": "Use the 2022 model study route to review six fictional checklist cases. Compare skipped, filled and unfilled plans, not historical returns.",
+    "ur": "2022 ماڈل کے مطالعاتی راستے میں چھ فرضی Checklist مثالیں دیکھیں۔ چھوڑی، Fill اور نامکمل ٹریڈز کا موازنہ کریں، تاریخی منافع کا نہیں۔"
+  },
+  "/tools/backtest/charter-model-1/": {
+    "en": "Explore the Charter Model 1 study route and six authored cases. Inspect checklist qualification and costs; a complete model backtest is not claimed.",
+    "ur": "Charter Model 1 کے مطالعاتی راستے اور چھ تعلیمی مثالوں میں Checklist کی اہلیت اور لاگت جانچیں۔ مکمل ماڈل Backtest کا دعوی نہیں۔"
+  },
+  "/tools/backtest/charter-model-8/": {
+    "en": "Open the Charter Model 8 rule-study route. Review fictional case qualification, risk and unfilled orders without inferring a measured win rate.",
+    "ur": "Charter Model 8 کے قواعد کا مطالعہ کریں۔ فرضی مثالوں کی اہلیت، رسک اور نامکمل آرڈر دیکھیں؛ ناپی گئی Win Rate اخذ نہ کریں۔"
+  },
+  "/tools/backtest/charter-model-9/": {
+    "en": "Use the Charter Model 9 study entry point to inspect fictional checklist results and execution assumptions, separate from historical swing testing.",
+    "ur": "Charter Model 9 کے مطالعاتی حصے میں فرضی Checklist نتائج اور Execution مفروضے دیکھیں۔ یہ تاریخی Swing Testing سے الگ ہے۔"
+  },
+  "/tools/backtest/silver-bullet/": {
+    "en": "Explore the Silver Bullet rule-study route with six teaching cases, explicit costs and skips. The CSV sandbox tests gap geometry separately.",
+    "ur": "Silver Bullet کے قواعد چھ تعلیمی مثالوں، واضح لاگت اور چھوڑی گئی ٹریڈز سے پڑھیں۔ الگ CSV Sandbox میں Gap Geometry آزمائی جاتی ہے۔"
+  },
+  "/tools/backtest/breaker-reversal/": {
+    "en": "Open breaker-reversal rule study. Inspect fictional checklist cases, invalidation and fills; examples do not establish real strategy performance.",
+    "ur": "Breaker Reversal کے قواعد، فرضی Checklist مثالیں، Invalidation اور Fills دیکھیں۔ مثالیں حقیقی حکمت عملی کی کارکردگی کا ثبوت نہیں۔"
+  },
+  "/tools/journal/log-book/": {
+    "en": "Review device-local trade records, edit execution notes and export backups. Entries stay in your browser and are not synchronized across devices.",
+    "ur": "اپنے براؤزر میں محفوظ ٹریڈ ریکارڈ دیکھیں، Execution نوٹس بدلیں اور Backup نکالیں۔ اندراجات مختلف آلات کے درمیان Sync نہیں ہوتے۔"
+  },
+  "/tools/journal/audit-protocol/": {
+    "en": "Review your self-reported trade checklist and execution notes. The journal audit summarizes your entries; its score does not verify a trading edge.",
+    "ur": "اپنی بھری ہوئی ٹریڈ Checklist اور Execution نوٹس دیکھیں۔ جرنل Audit اندراجات کا خلاصہ ہے؛ اس کا اسکور ٹریڈنگ برتری کی تصدیق نہیں۔"
+  },
+  "/tools/journal/analytics/": {
+    "en": "Review recorded win, loss and breakeven counts, mean realized R and P&L from your own journal entries. Demo results are not added to your record.",
+    "ur": "اپنے جرنل سے جیت، نقصان، Breakeven، اوسط Realized R اور P&L دیکھیں۔ ڈیمو نتائج آپ کے ذاتی ریکارڈ میں شامل نہیں کیے جاتے۔"
+  },
+  "/tools/journal/new-entry/": {
+    "en": "Log a trade with symbol, direction, time, realized R and optional P&L. Save notes on this device and export backups before clearing browser data.",
+    "ur": "Symbol، سمت، وقت، Realized R اور اختیاری P&L کے ساتھ ٹریڈ درج کریں۔ نوٹس اسی آلے پر محفوظ کریں اور براؤزر صاف کرنے سے پہلے Backup لیں۔"
+  },
+  "/tools/knowledge-graph/pipeline/step-1/": {
+    "en": "Start the study sequence with resting orders and liquidity references. Follow linked definitions without inferring hidden order inventories.",
+    "ur": "مطالعے کی ترتیب Resting Orders اور Liquidity حوالوں سے شروع کریں۔ متعلقہ تعریفیں پڑھیں، پوشیدہ آرڈرز کی تعداد فرض نہ کریں۔"
+  },
+  "/tools/knowledge-graph/pipeline/step-2/": {
+    "en": "Explore liquidity-pool concentration around reference swings. Use the conceptual map to connect definitions, not to locate actual stop orders.",
+    "ur": "حوالہ جاتی سوئنگز کے گرد Liquidity Pool Concentration کا تصور پڑھیں۔ نقشہ تعریفیں جوڑتا ہے، حقیقی Stop Orders کا مقام نہیں بتاتا۔"
+  },
+  "/tools/knowledge-graph/pipeline/step-3/": {
+    "en": "Study a move beyond a reference high or low in the liquidity sequence. Compare continuation and reversal possibilities after a sweep.",
+    "ur": "Liquidity کی ترتیب میں سابقہ High یا Low سے آگے کی حرکت سمجھیں۔ Sweep کے بعد تسلسل اور واپسی، دونوں امکانات دیکھیں۔"
+  },
+  "/tools/knowledge-graph/pipeline/step-4/": {
+    "en": "Examine absorption as a hypothesis in the study map. Review why candle shapes alone cannot establish institutional participation or absorbed flow.",
+    "ur": "مطالعاتی نقشے میں Absorption کو مفروضے کے طور پر پرکھیں۔ صرف کینڈلز ادارہ جاتی شرکت یا جذب شدہ Order Flow ثابت نہیں کرتیں۔"
+  },
+  "/tools/knowledge-graph/pipeline/step-5/": {
+    "en": "Connect displacement to the conceptual learning sequence. Inspect price expansion and the evidence limits of claims about its participants.",
+    "ur": "Displacement کو تعلیمی ترتیب سے جوڑیں۔ قیمت کے پھیلاؤ اور اس میں شریک فریقوں سے متعلق دعووں کی شواہد والی حدود سمجھیں۔"
+  },
+  "/tools/knowledge-graph/pipeline/step-6/": {
+    "en": "Follow the market-structure-shift stage and its linked glossary definition. Review confirmation conventions before considering an entry array.",
+    "ur": "Market Structure Shift کے مرحلے اور متعلقہ تعریف کو پڑھیں۔ انٹری Array پر غور کرنے سے پہلے تصدیق کے مطالعاتی اصول دیکھیں۔"
+  },
+  "/tools/knowledge-graph/pipeline/step-7/": {
+    "en": "Explore dealing-range equilibrium in the study sequence. Relate the midpoint to premium, discount and the chosen chart references.",
+    "ur": "مطالعاتی ترتیب میں Dealing Range Equilibrium سمجھیں۔ وسط کو Premium، Discount اور منتخب چارٹ حوالوں سے جوڑ کر دیکھیں۔"
+  },
+  "/tools/knowledge-graph/pipeline/step-8/": {
+    "en": "Review a PD-array revisit in the conceptual map. Connect mitigation references to retests, invalidation and cases where the interpretation fails.",
+    "ur": "تصوری نقشے میں PD Array کی دوبارہ آمد دیکھیں۔ Mitigation کو Retest، Invalidation اور تشریح ناکام ہونے کی مثالوں سے جوڑیں۔"
+  },
+  "/tools/knowledge-graph/pipeline/step-9/": {
+    "en": "Review entry execution after the stated context and confirmation stages. Use linked definitions to separate a plan from a guaranteed fill.",
+    "ur": "بیان کردہ پس منظر اور تصدیق کے بعد انٹری Execution سمجھیں۔ متعلقہ تعریفوں سے منصوبے اور یقینی Fill میں فرق رکھیں۔"
+  },
+  "/tools/knowledge-graph/pipeline/step-10/": {
+    "en": "Finish the learning sequence with the draw-on-liquidity reference and target review. A conceptual destination is not a price prediction.",
+    "ur": "تعلیمی ترتیب کو Draw on Liquidity کے حوالے اور ہدف کے جائزے سے مکمل کریں۔ تصوراتی منزل قیمت کی پیش گوئی نہیں۔"
+  },
+  "/tools/compare/fvg-vs-ifvg/": {
+    "en": "Compare a fresh fair value gap with an inversion reference after failure. Review directional roles, retests and invalidation conventions.",
+    "ur": "نئے FVG اور ناکامی کے بعد Inversion کے حوالے کا موازنہ کریں۔ سمتی کردار، Retest اور Invalidation کے مطالعاتی اصول دیکھیں۔"
+  },
+  "/tools/compare/ob-vs-breaker/": {
+    "en": "Compare an order block with a breaker reference after block failure. Study structure, retest conditions and common labeling mistakes.",
+    "ur": "Order Block اور اس کی ناکامی کے بعد Breaker حوالہ کا موازنہ کریں۔ Structure، Retest شرائط اور نام دینے کی عام غلطیاں پڑھیں۔"
+  },
+  "/tools/compare/ob-vs-mitigation/": {
+    "en": "Compare order-block and mitigation-block interpretations, their reference candles, failure sequences and conditions for a retest.",
+    "ur": "Order Block اور Mitigation Block کی تشریح، حوالہ جاتی کینڈلز، ناکامی کی ترتیب اور Retest کی شرائط کا موازنہ کریں۔"
+  },
+  "/tools/compare/bos-vs-mss-vs-choch/": {
+    "en": "Compare BOS, MSS and CHoCH terminology using swing references, continuation and reversal conventions. Similar labels can have different rules.",
+    "ur": "سوئنگ حوالوں، تسلسل اور واپسی کے مطالعاتی اصولوں سے BOS، MSS اور CHoCH کا موازنہ کریں۔ ملتے جلتے ناموں کے قواعد مختلف ہو سکتے ہیں۔"
+  },
+  "/tools/compare/sweep-vs-breakout/": {
+    "en": "Compare a liquidity sweep with a breakout interpretation. Review price acceptance, return into the range and the risk of labeling with hindsight.",
+    "ur": "Liquidity Sweep اور Breakout کی تشریح میں فرق پڑھیں۔ Price Acceptance، Range میں واپسی اور بعد میں نتیجہ دیکھ کر نام دینے کا خطرہ سمجھیں۔"
+  },
+  "/tools/compare/internal-vs-external-liquidity/": {
+    "en": "Compare internal and external range liquidity, swing references and opposing objectives. Keep inferred order pools separate from observed prices.",
+    "ur": "Internal اور External Range Liquidity، سوئنگ حوالوں اور مخالف اہداف کا موازنہ کریں۔ فرض کیے گئے آرڈرز اور مشاہدہ شدہ قیمت الگ رکھیں۔"
+  },
+  "/tools/compare/model-1-scalp-vs-model-9-osok/": {
+    "en": "Compare Charter Model 1 intraday scalping with Model 9 OSOK swing study, including timeframe, preparation and execution assumptions.",
+    "ur": "Charter Model 1 کی Intraday Scalping اور Model 9 OSOK کے Swing مطالعے میں Timeframe، تیاری اور Execution مفروضوں کا موازنہ کریں۔"
+  },
+  "/tools/compare/model-13-2022-vs-silver-bullet/": {
+    "en": "Compare the ICT 2022 model with Silver Bullet study conventions, including timing, liquidity context, confirmation and entry references.",
+    "ur": "ICT 2022 ماڈل اور Silver Bullet کے مطالعاتی اصولوں میں اوقات، Liquidity پس منظر، تصدیق اور انٹری حوالوں کا موازنہ کریں۔"
+  },
+  "/tools/compare/csod-vs-mss/": {
+    "en": "Compare Changing State of Delivery and Market Structure Shift terminology, their reference levels and the confirmation each interpretation uses.",
+    "ur": "Changing State of Delivery اور Market Structure Shift کے ناموں، حوالہ جاتی سطحوں اور ہر تشریح میں استعمال ہونے والی تصدیق کا موازنہ کریں۔"
+  },
+  "/tools/compare/ndog-vs-fvg/": {
+    "en": "Compare a New Day Opening Gap with a three-candle FVG. Review how each interval forms, which boundaries are marked and how revisits are studied.",
+    "ur": "New Day Opening Gap اور تین کینڈلز کے FVG میں تشکیل، نشان زدہ حدود اور دوبارہ آمد کے مطالعے کا موازنہ کریں۔"
+  },
+  "/tools/compare/cisd-vs-mss/": {
+    "en": "Compare CISD delivery-state references with MSS swing breaks. Review their chart conditions, overlap and limits rather than treating them as signals.",
+    "ur": "CISD کے Delivery State حوالوں اور MSS کے Swing Breaks کی شرائط، مماثلت اور حدود پڑھیں؛ انہیں خودکار سگنل نہ سمجھیں۔"
+  },
+  "/tools/compare/suspension-vs-propulsion-vs-ob/": {
+    "en": "Compare suspension, propulsion and ordinary order-block labels using body gaps, prior block interactions and the source context of each example.",
+    "ur": "Body Gaps، سابقہ Blocks کے تعامل اور ماخذ کے پس منظر سے Suspension، Propulsion اور عام Order Block کے ناموں کا موازنہ کریں۔"
+  },
+  "/tools/compare/crt-vs-amd/": {
+    "en": "Compare Candle Range Theory with the accumulation, manipulation and distribution narrative. Review range references, sequence and limitations.",
+    "ur": "Candle Range Theory اور Accumulation، Manipulation، Distribution کی کہانی میں Range حوالوں، ترتیب اور حدود کا موازنہ کریں۔"
+  },
+  "/tools/compare/bpr-vs-rdrb/": {
+    "en": "Compare a balanced price range with a later revisit labeled RDRB. Review zone boundaries, touch definitions and limits of the named rules.",
+    "ur": "Balanced Price Range اور بعد کی RDRB کہلانے والی واپسی میں زون کی حدود، Touch کی تعریف اور نام والے قواعد کی حدود دیکھیں۔"
+  },
+  "/tools/compare/silver-bullet-vs-3am-london/": {
+    "en": "Compare Silver Bullet study windows with the 3 AM London reference. Review New York timing, chart context and differences in the stated setups.",
+    "ur": "Silver Bullet کی مطالعاتی ونڈوز اور 3 AM London کے حوالے میں نیو یارک اوقات، چارٹ پس منظر اور سیٹ اپ کی بیان کردہ شرائط کا فرق دیکھیں۔"
+  },
+  "/tools/profile/roadmap/": {
+    "en": "View curriculum groups and lessons you marked complete on this device. Follow the roadmap to revisit foundations and plan the next study topic.",
+    "ur": "نصاب کے گروپس اور اسی آلے پر مکمل نشان زدہ اسباق دیکھیں۔ بنیادیں دہرانے اور اگلا موضوع منتخب کرنے کے لیے Roadmap استعمال کریں۔"
+  },
+  "/tools/profile/exams/": {
+    "en": "Choose a fixed ICT/SMC practice quiz, answer every question and review explanations. Results are device-local and are not a professional credential.",
+    "ur": "ICT/SMC کی مشقی کوئز منتخب کریں، تمام سوال حل کریں اور وضاحتیں پڑھیں۔ نتائج اسی آلے پر محفوظ ہیں، پیشہ ورانہ سند نہیں۔"
+  },
+  "/tools/profile/exams/foundations-mechanics/": {
+    "en": "Practise market mechanics and liquidity-pool questions. Review your answers and explanations; a quiz pass does not establish trading readiness.",
+    "ur": "مارکیٹ کی میکینکس اور Liquidity Pools کے سوالات کی مشق کریں۔ جوابات اور وضاحتیں دیکھیں؛ کوئز پاس کرنا ٹریڈنگ کی اہلیت ثابت نہیں کرتا۔"
+  },
+  "/tools/profile/exams/imbalances-fvg-ce/": {
+    "en": "Check your understanding of displacement, FVGs and consequent encroachment with fixed practice questions, answer review and explanations.",
+    "ur": "مقررہ مشقی سوالات، جوابات کے جائزے اور وضاحتوں سے Displacement، FVG اور Consequent Encroachment کی اپنی سمجھ جانچیں۔"
+  },
+  "/tools/profile/exams/order-blocks-breakers/": {
+    "en": "Review order blocks, breakers and related reference zones through a fixed practice quiz. Submit answers to inspect the reasoning behind each one.",
+    "ur": "مقررہ مشقی کوئز سے Order Blocks، Breakers اور متعلقہ حوالہ جاتی زونز دہرائیں۔ جواب جمع کرکے ہر جواب کی وجہ دیکھیں۔"
+  },
+  "/tools/profile/exams/2026-advanced-mastery/": {
+    "en": "Practise advanced ICT/SMC study questions and review explanations. The fixed educational assessment does not verify real-market performance.",
+    "ur": "اعلی درجے کے ICT/SMC سوالات کی مشق کریں اور وضاحتیں پڑھیں۔ یہ مقررہ تعلیمی جائزہ حقیقی مارکیٹ کارکردگی کی تصدیق نہیں کرتا۔"
+  },
+  "/tools/profile/exams/final-certification/": {
+    "en": "Take the comprehensive curriculum practice quiz and review your answers. Completion is a study milestone, not accredited trading certification.",
+    "ur": "نصاب کی جامع مشقی کوئز حل کریں اور جوابات کا جائزہ لیں۔ تکمیل تعلیمی پیش رفت ہے، منظور شدہ ٹریڈنگ سند نہیں۔"
+  },
+  "/tools/delivery-suite/macro-clock/": {
+    "en": "View New York study windows with EDT/EST time formatting. Use the clock as a timing reference; holidays, news and market closures are not checked.",
+    "ur": "EDT/EST وقت کے ساتھ نیو یارک کی مطالعاتی ونڈوز دیکھیں۔ گھڑی وقت کا حوالہ ہے؛ تعطیلات، خبریں اور مارکیٹ بندش کی جانچ نہیں کرتی۔"
+  },
+  "/tools/delivery-suite/ote-calculator/": {
+    "en": "Calculate bullish or bearish retracement levels from range anchors. Compare theoretical and tick-rounded prices, stop risk and whole-unit sizing.",
+    "ur": "Range Anchors سے Bullish یا Bearish Retracement سطحیں نکالیں۔ نظری اور Tick کے مطابق قیمتیں، Stop رسک اور پورے یونٹس کی تعداد دیکھیں۔"
+  },
+  "/tools/delivery-suite/judas-planner/": {
+    "en": "Explore Asian-range extension multiples and Judas Swing planning assumptions. Projected levels are arithmetic references, not price forecasts.",
+    "ur": "Asian Range کی Extension Multiples اور Judas Swing منصوبہ بندی کے مفروضے دیکھیں۔ سطحیں حسابی حوالے ہیں، قیمت کی پیش گوئی نہیں۔"
+  },
+  "/tools/delivery-suite/learning-path/": {
+    "en": "Build a device-local study checklist linked to real curriculum lessons. Track your own review tasks separately from lesson completion and exams.",
+    "ur": "حقیقی نصابی اسباق سے منسلک ذاتی Checklist اسی آلے پر بنائیں۔ جائزے کے کام، اسباق کی تکمیل اور کوئز نتائج سے الگ رکھیں۔"
+  },
+  "/tools/glossary/foundations/": {
+    "en": "Explore order books, market liquidity and exchange mechanics before chart-pattern study. Follow definitions into related foundation lessons.",
+    "ur": "چارٹ پیٹرنز سے پہلے Order Book، Market Liquidity اور ایکسچینج کی میکینکس سمجھیں۔ تعریفوں سے متعلقہ بنیادی اسباق تک جائیں۔"
+  },
+  "/tools/glossary/liquidity/": {
+    "en": "Browse buy-side and sell-side liquidity, inducement and stop-run interpretations. Distinguish observed swings from inferred order locations.",
+    "ur": "Buy-side اور Sell-side Liquidity، Inducement اور Stop Run کی تشریحات پڑھیں۔ مشاہدہ شدہ سوئنگز اور فرض کیے گئے آرڈر مقامات میں فرق رکھیں۔"
+  },
+  "/tools/glossary/structure/": {
+    "en": "Explore BOS, MSS, CHoCH and delivery-state terminology. Compare swing references, confirmation conventions and structure-label limitations.",
+    "ur": "BOS، MSS، CHoCH اور Delivery State کی اصطلاحات سمجھیں۔ سوئنگ حوالوں، تصدیق کے اصولوں اور Structure کے ناموں کی حدود کا موازنہ کریں۔"
+  },
+  "/tools/glossary/imbalances/": {
+    "en": "Study FVGs, inversions, displacement and opening gaps. Review how chart intervals are marked, revisited and invalidated in these frameworks.",
+    "ur": "FVG، Inversion، Displacement اور Opening Gaps پڑھیں۔ ان فریم ورکس میں چارٹ کے حصے نشان زد کرنے، دوبارہ جانچنے اور Invalidation کو سمجھیں۔"
+  },
+  "/tools/glossary/order-blocks/": {
+    "en": "Explore order blocks, breakers, mitigation and related candle references. Compare their definitions, retest conditions and interpretation limits.",
+    "ur": "Order Block، Breaker، Mitigation اور متعلقہ کینڈل حوالوں کی تعریفیں، Retest شرائط اور تشریح کی حدود کا موازنہ کریں۔"
+  },
+  "/tools/glossary/time-and-sessions/": {
+    "en": "Study killzones, New York timing, Power of Three and longer lookback conventions. Time windows provide context rather than automatic entries.",
+    "ur": "Killzones، نیو یارک اوقات، Power of Three اور طویل Lookback کے اصول پڑھیں۔ وقت کی ونڈوز پس منظر دیتی ہیں، خودکار انٹری نہیں۔"
+  },
+  "/tools/glossary/trade-models/": {
+    "en": "Explore ICT 2022, Silver Bullet, SMT and other named study models. Review setup context and assumptions before connecting patterns to execution.",
+    "ur": "ICT 2022، Silver Bullet، SMT اور دوسرے نام والے مطالعاتی ماڈلز دیکھیں۔ پیٹرنز کو Execution سے جوڑنے سے پہلے پس منظر اور مفروضے پڑھیں۔"
+  },
+  "/tools/glossary/foundations/order-book-market-liquidity/": {
+    "en": "Understand resting bids and asks, aggressive orders and available liquidity. Connect exchange mechanics to price movement and slippage.",
+    "ur": "Resting Bids اور Asks، Aggressive Orders اور دستیاب Liquidity سمجھیں۔ ایکسچینج کی میکینکس کو قیمت کی حرکت اور Slippage سے جوڑیں۔"
+  },
+  "/tools/glossary/liquidity/buy-side-liquidity/": {
+    "en": "Study buy-side liquidity references above chart highs, including stop-order hypotheses. Candles alone do not reveal the actual resting orders.",
+    "ur": "چارٹ کے Highs کے اوپر Buy-side Liquidity اور Stop Orders کے مفروضے پڑھیں۔ صرف کینڈلز حقیقی Resting Orders ظاہر نہیں کرتیں۔"
+  },
+  "/tools/glossary/liquidity/sell-side-liquidity/": {
+    "en": "Explore sell-side liquidity references below chart lows. Review stop-run interpretations and why crossing a low does not guarantee a reversal.",
+    "ur": "چارٹ کے Lows کے نیچے Sell-side Liquidity کے حوالے دیکھیں۔ Stop Run کی تشریح اور Low ٹوٹنے کے بعد واپسی کی غیر یقینی صورت سمجھیں۔"
+  },
+  "/tools/glossary/structure/market-structure-bos-mss-choch/": {
+    "en": "Define BOS, MSS and CHoCH using selected swings and directional context. Compare continuation and shift conventions without hindsight labels.",
+    "ur": "منتخب سوئنگز اور سمتی پس منظر سے BOS، MSS اور CHoCH کی تعریف سمجھیں۔ تسلسل اور تبدیلی کے اصول بعد کا نتیجہ دیکھے بغیر پرکھیں۔"
+  },
+  "/tools/glossary/imbalances/displacement/": {
+    "en": "Examine displacement as a marked price expansion, its candle features and relationship to structure. Appearance does not identify participants.",
+    "ur": "Displacement کی نمایاں قیمت توسیع، کینڈل خصوصیات اور Structure سے تعلق سمجھیں۔ ظاہری شکل شریک فریقوں کی شناخت نہیں کرتی۔"
+  },
+  "/tools/glossary/order-blocks/breaker-block/": {
+    "en": "Study how a failed order-block reference may be relabeled a breaker. Review the structural sequence, return to the zone and invalidation.",
+    "ur": "ناکام Order Block کو Breaker کہنے کی تشریح پڑھیں۔ ساختی ترتیب، زون کی دوبارہ آمد اور Invalidation کا جائزہ لیں۔"
+  },
+  "/tools/glossary/imbalances/inverse-fair-value-gap/": {
+    "en": "Understand the IFVG label when a prior gap fails and its interpreted role changes. Review close, retest and invalidation conventions.",
+    "ur": "سابقہ Gap ناکام ہونے اور اس کے تشریحی کردار بدلنے پر IFVG کا نام سمجھیں۔ Close، Retest اور Invalidation کے اصول دیکھیں۔"
+  },
+  "/tools/glossary/trade-models/ict-2022-model/": {
+    "en": "Study the ICT 2022 sequence of liquidity context, sweep, displacement, structure shift and FVG reference, including failure conditions.",
+    "ur": "ICT 2022 کی ترتیب میں Liquidity پس منظر، Sweep، Displacement، Structure Shift اور FVG حوالہ، نیز ناکامی کی شرائط سمجھیں۔"
+  },
+  "/tools/glossary/trade-models/silver-bullet-model/": {
+    "en": "Explore Silver Bullet timing and FVG study conventions. Review the required context and why a timed gap alone does not establish a trade.",
+    "ur": "Silver Bullet کے اوقات اور FVG مطالعے کے اصول پڑھیں۔ ضروری پس منظر اور صرف وقت پر بننے والے Gap کی ناکافی حیثیت سمجھیں۔"
+  },
+  "/tools/glossary/time-and-sessions/power-of-three-amd/": {
+    "en": "Understand Power of Three as an accumulation, manipulation and distribution narrative. Mark range phases and compare failed interpretations.",
+    "ur": "Power of Three کو Accumulation، Manipulation اور Distribution کی کہانی کے طور پر سمجھیں۔ Range کے مراحل اور ناکام تشریحات دیکھیں۔"
+  },
+  "/tools/glossary/time-and-sessions/sessions-killzones/": {
+    "en": "Review London and New York killzone references, session context and daylight-saving considerations. A time window is not an entry signal.",
+    "ur": "London اور New York Killzones، سیشن کے پس منظر اور Daylight Saving کا خیال سمجھیں۔ وقت کی ونڈو انٹری سگنل نہیں۔"
+  },
+  "/tools/glossary/trade-models/smt-divergence/": {
+    "en": "Compare selected highs and lows across correlated assets in SMT study. Review alignment, relative-strength interpretation and false signals.",
+    "ur": "SMT مطالعے میں متعلقہ اثاثوں کے منتخب Highs اور Lows کا موازنہ کریں۔ وقت کی مطابقت، نسبتی قوت اور غلط سگنلز سمجھیں۔"
+  },
+  "/tools/glossary/time-and-sessions/daily-bias-engine/": {
+    "en": "Review the daily-bias framework through higher-timeframe context, liquidity objectives and session references. Bias remains an interpretation.",
+    "ur": "Higher Timeframe پس منظر، Liquidity اہداف اور سیشن حوالوں سے Daily Bias کا فریم ورک پڑھیں۔ Bias ایک تشریح رہتا ہے۔"
+  },
+  "/tools/glossary/trade-models/gold-legacy-smc/": {
+    "en": "Study gold-focused SMC conventions for session sweeps, range references and gap revisits. Review their assumptions before interpreting a setup.",
+    "ur": "گولڈ کے SMC مطالعے میں سیشن Sweeps، Range حوالوں اور Gap کی دوبارہ آمد کے اصول اور سیٹ اپ کی تشریح کے مفروضے پڑھیں۔"
+  },
+  "/tools/glossary/liquidity/inducement-vs-external-liquidity/": {
+    "en": "Distinguish an inducement interpretation inside a range from an external swing objective. Review the chosen references and inference limits.",
+    "ur": "Range کے اندر Inducement کی تشریح اور بیرونی Swing ہدف میں فرق کریں۔ منتخب حوالے اور اخذ کردہ نتائج کی حدود دیکھیں۔"
+  },
+  "/tools/glossary/trade-models/nasdaq-session-open/": {
+    "en": "Explore Nasdaq opening-session study around the 09:30 New York reference. Review liquidity context, confirmation and session-model limits.",
+    "ur": "نیو یارک 09:30 کے حوالے سے Nasdaq افتتاحی سیشن کا مطالعہ کریں۔ Liquidity پس منظر، تصدیق اور سیشن ماڈل کی حدود پڑھیں۔"
+  },
+  "/tools/glossary/order-blocks/propulsion-reclaimed-blocks/": {
+    "en": "Define propulsion and reclaimed block interpretations, including interaction with prior zones. Compare chart conditions and invalidation.",
+    "ur": "Propulsion اور Reclaimed Block کی تشریح اور سابقہ زونز سے تعامل سمجھیں۔ چارٹ کی شرائط اور Invalidation کا موازنہ کریں۔"
+  },
+  "/tools/glossary/foundations/interest-rate-triad/": {
+    "en": "Explore the interest-rate-triad study framework and cross-market comparisons. Review the relationship assumptions rather than a trading forecast.",
+    "ur": "Interest Rate Triad کے مطالعاتی فریم ورک اور مختلف مارکیٹس کے موازنے پڑھیں۔ تعلق کے مفروضے سمجھیں، ٹریڈنگ پیش گوئی نہیں۔"
+  },
+  "/tools/glossary/time-and-sessions/quarterly-shifts-ipda/": {
+    "en": "Review quarterly-shift and IPDA lookback conventions, reference periods and chart examples. Calendar patterns do not guarantee future delivery.",
+    "ur": "Quarterly Shift اور IPDA Lookback کے اصول، حوالہ جاتی مدتیں اور چارٹ مثالیں دیکھیں۔ کیلنڈر کے پیٹرنز آئندہ حرکت کی ضمانت نہیں۔"
+  },
+  "/tools/glossary/liquidity/low-resistance-liquidity-runs/": {
+    "en": "Compare low- and high-resistance liquidity-run interpretations using intervening swings, range obstacles and the selected objective.",
+    "ur": "درمیانی سوئنگز، Range رکاوٹوں اور منتخب ہدف سے Low Resistance اور High Resistance Liquidity Run کی تشریحات کا موازنہ کریں۔"
+  },
+  "/tools/glossary/trade-models/institutional-pricing-theory/": {
+    "en": "Study the 00, 20, 50 and 80 pricing-level convention and its chart references. Number patterns alone do not prove institutional order placement.",
+    "ur": "00، 20، 50 اور 80 کی Pricing Level روایت اور چارٹ حوالے پڑھیں۔ صرف عددی پیٹرنز ادارہ جاتی آرڈرز کا ثبوت نہیں۔"
+  },
+  "/tools/glossary/trade-models/mega-trades-framework/": {
+    "en": "Explore the Mega-Trades multi-asset study framework, its preparation sequence and scenario assumptions. Named models do not establish returns.",
+    "ur": "Mega-Trades کے Multi-asset مطالعاتی فریم ورک، تیاری کی ترتیب اور مثال کے مفروضے سمجھیں۔ ماڈلز کے نام منافع ثابت نہیں کرتے۔"
+  },
+  "/tools/glossary/trade-models/from-vision-to-execution/": {
+    "en": "Follow the study path from higher-timeframe interpretation to execution references. Review context, confirmation, invalidation and risk assumptions.",
+    "ur": "Higher Timeframe کی تشریح سے Execution حوالوں تک مطالعہ کریں۔ پس منظر، تصدیق، Invalidation اور رسک کے مفروضے دیکھیں۔"
+  },
+  "/tools/glossary/imbalances/opening-gap-matrix/": {
+    "en": "Define New Day and New Week Opening Gaps, their boundaries and midpoint references. Distinguish opening gaps from three-candle imbalances.",
+    "ur": "New Day اور New Week Opening Gaps کی حدود اور وسط کے حوالے سمجھیں۔ Opening Gaps اور تین کینڈلز کے Imbalance میں فرق کریں۔"
+  },
+  "/tools/glossary/structure/changing-state-of-delivery/": {
+    "en": "Explore Changing State of Delivery terminology and reference levels. Compare delivery interpretation with observable swing and candle evidence.",
+    "ur": "Changing State of Delivery کی اصطلاح اور حوالہ جاتی سطحیں سمجھیں۔ Delivery کی تشریح کو نظر آنے والے سوئنگ اور کینڈل شواہد سے ملائیں۔"
+  },
+  "/tools/glossary/time-and-sessions/intraday-macro-continuum/": {
+    "en": "Review intraday macro-window conventions in New York time. Relate timing to chart context while keeping scheduled windows separate from signals.",
+    "ur": "نیو یارک وقت کے Intraday Macro Window اصول پڑھیں۔ وقت کو چارٹ کے پس منظر سے جوڑیں، مقررہ ونڈوز کو سگنل سے الگ رکھیں۔"
+  },
+  "/tools/glossary/liquidity/event-volatility-hrlr/": {
+    "en": "Study event-volatility and high-resistance liquidity-run interpretations. Review news-context assumptions and why historical patterns can fail.",
+    "ur": "خبروں کی Volatility اور High Resistance Liquidity Run کی تشریح سمجھیں۔ خبروں کے پس منظر کے مفروضے اور تاریخی پیٹرن کی ناکامی دیکھیں۔"
+  },
+  "/tools/glossary/trade-models/ict-venom-model/": {
+    "en": "Explore the Venom opening-session label, its source context and chart sequence. Review prerequisites and limits before applying the model name.",
+    "ur": "Venom کے افتتاحی سیشن کا نام، ماخذ کا پس منظر اور چارٹ کی ترتیب پڑھیں۔ نام استعمال کرنے سے پہلے پیشگی شرائط اور حدود سمجھیں۔"
+  },
+  "/tools/glossary/trade-models/candle-range-theory/": {
+    "en": "Understand Candle Range Theory through selected range highs, lows and subsequent price behavior. Review the narrative and invalidation conditions.",
+    "ur": "منتخب Range Highs، Lows اور بعد کی قیمت سے Candle Range Theory سمجھیں۔ اس کی کہانی اور Invalidation شرائط پڑھیں۔"
+  },
+  "/tools/glossary/trade-models/sick-sister-strategy/": {
+    "en": "Review the Sick Sister relative-strength study across related markets. Compare selected swings, timing and the limits of divergence inference.",
+    "ur": "متعلقہ مارکیٹس میں Sick Sister کی نسبتی قوت کا مطالعہ کریں۔ منتخب سوئنگز، اوقات اور Divergence اخذ کرنے کی حدود کا موازنہ کریں۔"
+  },
+  "/tools/glossary/liquidity/ict-double-purge/": {
+    "en": "Explore the Double Purge label for moves beyond both range sides. Review swing selection and why a two-sided sweep does not ensure a reversal.",
+    "ur": "Range کی دونوں سمتوں سے آگے حرکت کے لیے Double Purge کا نام سمجھیں۔ سوئنگ کا انتخاب اور دو طرفہ Sweep کے غیر یقینی نتائج دیکھیں۔"
+  },
+  "/tools/glossary/order-blocks/hangman-pd-array/": {
+    "en": "Review the Hangman PD-array interpretation through wick rejection and consequent-encroachment references, including its stated chart conditions.",
+    "ur": "Wick Rejection اور Consequent Encroachment حوالوں سے Hangman PD Array کی تشریح اور اس کی بیان کردہ چارٹ شرائط سمجھیں۔"
+  },
+  "/tools/glossary/imbalances/ict-enigma-fvg/": {
+    "en": "Study Enigma FVG measurements and projections. Review the selected gap references and distinguish geometric extensions from price forecasts.",
+    "ur": "Enigma FVG کی پیمائش اور Projections پڑھیں۔ منتخب Gap حوالے اور حسابی توسیع کو قیمت کی پیش گوئی سے الگ سمجھیں۔"
+  },
+  "/tools/glossary/structure/cisd-vs-mss/": {
+    "en": "Define CISD and MSS with delivery-state and swing references. Compare confirmation conventions, overlap and cases where labels disagree.",
+    "ur": "Delivery State اور Swing حوالوں سے CISD اور MSS سمجھیں۔ تصدیق کے اصول، مماثلت اور مختلف نام لگنے والی مثالوں کا موازنہ کریں۔"
+  },
+  "/tools/glossary/order-blocks/mitigation-and-breakers/": {
+    "en": "Compare mitigation blocks and breakers using failed swings, block failure and reference retests. Review their different invalidation assumptions.",
+    "ur": "ناکام سوئنگز، Block Failure اور Retest سے Mitigation Blocks اور Breakers کا موازنہ کریں۔ ان کے مختلف Invalidation مفروضے دیکھیں۔"
+  },
+  "/tools/glossary/order-blocks/propulsion-and-reclaimed/": {
+    "en": "Compare propulsion and reclaimed order blocks, prior-zone interactions and retest roles. Review the conditions attached to each interpretation.",
+    "ur": "Propulsion اور Reclaimed Order Blocks، سابقہ زونز کے تعامل اور Retest کردار کا موازنہ کریں۔ ہر تشریح کے ساتھ دی گئی شرائط پڑھیں۔"
+  },
+  "/tools/glossary/order-blocks/suspension-and-hangman/": {
+    "en": "Contrast suspension and Hangman references through body gaps, wicks and source context. Review their chart definitions rather than assumed signals.",
+    "ur": "Body Gaps، Wicks اور ماخذ کے پس منظر سے Suspension اور Hangman کا فرق سمجھیں۔ فرضی سگنلز کے بجائے چارٹ کی تعریفیں پڑھیں۔"
+  },
+  "/tools/glossary/imbalances/fair-value-gaps-and-inversions/": {
+    "en": "Compare fresh FVGs with inversion references after failure. Study outer-candle boundaries, directional roles and retest assumptions.",
+    "ur": "نئے FVG اور ناکامی کے بعد Inversion کا موازنہ کریں۔ بیرونی کینڈلز کی حدود، سمتی کردار اور Retest مفروضے پڑھیں۔"
+  },
+  "/tools/glossary/imbalances/consequent-encroachment-and-gaps/": {
+    "en": "Define consequent encroachment as a selected gap midpoint. Review 50% measurements, gap boundaries and the limits of a midpoint-only entry idea.",
+    "ur": "Consequent Encroachment کو منتخب Gap کے وسط کے طور پر سمجھیں۔ 50% پیمائش، حدود اور صرف وسط پر انٹری کے خیال کی حدود دیکھیں۔"
+  },
+  "/tools/glossary/liquidity/buy-side-and-sell-side-pools/": {
+    "en": "Compare buy-side and sell-side liquidity references above highs and below lows. Review stop-order assumptions and failed sweep interpretations.",
+    "ur": "Highs کے اوپر Buy-side اور Lows کے نیچے Sell-side Liquidity حوالوں کا موازنہ کریں۔ Stop Order مفروضے اور ناکام Sweep تشریحات دیکھیں۔"
+  },
+  "/tools/glossary/liquidity/inducement-vs-external-range/": {
+    "en": "Contrast internal inducement references with external range objectives. Study swing selection, draw-on-liquidity interpretation and uncertainty.",
+    "ur": "Internal Inducement اور External Range اہداف کا فرق پڑھیں۔ سوئنگ کے انتخاب، Draw on Liquidity کی تشریح اور غیر یقینی صورت سمجھیں۔"
+  },
+  "/tools/glossary/structure/bos-vs-mss-breakdowns/": {
+    "en": "Compare BOS continuation labels with MSS shift interpretations. Review swing breaks, displacement conditions and misleading structural examples.",
+    "ur": "BOS کے تسلسل والے نام اور MSS کی تبدیلی کی تشریح کا موازنہ کریں۔ Swing Breaks، Displacement شرائط اور گمراہ کن ساختی مثالیں پڑھیں۔"
+  },
+  "/tools/glossary/time-and-sessions/power-of-three-amd-phases/": {
+    "en": "Examine accumulation, manipulation and distribution as separate PO3 study phases. Compare range formation, sweeps and expansion assumptions.",
+    "ur": "Accumulation، Manipulation اور Distribution کو PO3 کے الگ مطالعاتی مراحل میں دیکھیں۔ Range، Sweeps اور Expansion کے مفروضے ملائیں۔"
+  },
+  "/tools/glossary/trade-models/ict-2022-and-silver-bullet-mechanics/": {
+    "en": "Compare ICT 2022 and Silver Bullet execution conventions: context, timing, liquidity event, structure confirmation and FVG reference.",
+    "ur": "ICT 2022 اور Silver Bullet کے Execution اصولوں میں پس منظر، اوقات، Liquidity Event، Structure کی تصدیق اور FVG حوالہ کا موازنہ کریں۔"
+  },
+  "/tools/glossary/trade-models/market-alchemy-ath/": {
+    "en": "Study all-time-high price-discovery examples and Fibonacci projections. Distinguish chart extensions from forecasts and review reference assumptions.",
+    "ur": "All-time High کی Price Discovery مثالیں اور Fibonacci Projections پڑھیں۔ چارٹ کی توسیع اور پیش گوئی میں فرق اور حوالہ جاتی مفروضے سمجھیں۔"
+  }
+}

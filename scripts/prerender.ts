@@ -369,7 +369,7 @@ const legalPages: RouteMeta[] = [
     url: 'https://learnsmc.xyz/privacy/',
     outputPath: 'privacy/index.html',
     title: 'Privacy Policy & Google AdSense Cookie Disclosures | LearnSMC',
-    description: 'LearnSMC Privacy Policy: How we collect, safeguard, and process user data in full compliance with GDPR, CCPA, and Google AdSense guidelines.',
+    description: 'Read how LearnSMC handles browser storage, optional advertising, cookies and privacy choices, and how to contact the publisher.',
     canonical: 'https://learnsmc.xyz/privacy/',
     heading: 'Privacy Policy & Cookie Usage',
     subheading: 'Transparent data practices compliant with GDPR, UK Data Protection Act, CCPA, and Google AdSense publisher standards.',

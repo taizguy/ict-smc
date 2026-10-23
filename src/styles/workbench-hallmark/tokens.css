@@ -1,0 +1,32 @@
+/* Hum material, isolated to the tool directory; shared site tokens are untouched. */
+:root {
+  --wb-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.045' filter='url(%23n)'/%3E%3C/svg%3E");
+  --wb-paper: oklch(97% .012 95); --wb-card: oklch(98.8% .007 95);
+  --wb-ink: oklch(20% .014 255); --wb-muted: oklch(43% .014 255);
+  --wb-rule: oklch(83% .022 95); --wb-edge: oklch(77% .04 88);
+  --wb-pear: oklch(87% .175 96); --wb-blue: oklch(90% .047 241);
+  --wb-coral: oklch(88% .067 28); --wb-mint: oklch(90% .059 153);
+  --wb-pear-edge: oklch(74% .12 96); --wb-blue-edge: oklch(75% .07 241);
+  --wb-coral-edge: oklch(75% .09 28); --wb-mint-edge: oklch(76% .08 153);
+  --wb-link: oklch(43% .16 250); --wb-focus: oklch(43% .16 250);
+  --wb-shadow: oklch(20% .014 255 / .1); --wb-glint: oklch(99% .007 95);
+  --wb-positive: oklch(43% .11 157); --wb-negative: oklch(45% .16 25);
+  --wb-marker-blue: #2563eb; --wb-marker-violet: #8758c9; --wb-marker-amber: #a96710; --wb-marker-red: #cf4b59; --wb-marker-green: #178667;
+  --wb-chart-paper: #fcfaf4; --wb-chart-ink: #4d515b; --wb-chart-grid: #ebe7db; --wb-chart-rule: #c7c2b6;
+  --wb-font: var(--font-sans); --wb-radius: 24px; --wb-control: 14px;
+  --wb-gap: 24px; --wb-space: 32px; --wb-fast: 140ms; --wb-ease: cubic-bezier(.22,1,.36,1);
+}
+html[data-theme=dark] {
+  --wb-paper: oklch(18% .012 95); --wb-card: oklch(23% .014 95);
+  --wb-ink: oklch(94% .012 95); --wb-muted: oklch(78% .018 95);
+  --wb-rule: oklch(40% .02 95); --wb-edge: oklch(36% .026 95);
+  --wb-pear: oklch(31% .045 96); --wb-blue: oklch(30% .04 241);
+  --wb-coral: oklch(31% .043 28); --wb-mint: oklch(30% .037 153);
+  --wb-pear-edge: oklch(43% .06 96); --wb-blue-edge: oklch(43% .055 241);
+  --wb-coral-edge: oklch(43% .065 28); --wb-mint-edge: oklch(43% .055 153);
+  --wb-link: oklch(82% .09 250); --wb-focus: oklch(82% .09 250);
+  --wb-positive: oklch(81% .12 157); --wb-negative: oklch(81% .12 25);
+  --wb-marker-blue: #9bcaff; --wb-marker-violet: #d0b5ff; --wb-marker-amber: #e9bd7a; --wb-marker-red: #ffaba3; --wb-marker-green: #89d8ac;
+  --wb-chart-paper: #292821; --wb-chart-ink: #d5d2c3; --wb-chart-grid: #37362d; --wb-chart-rule: #5c594a;
+  --wb-shadow: oklch(18% .012 95 / 0); --wb-glint: oklch(40% .014 95);
+}

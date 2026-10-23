@@ -1,0 +1,10 @@
+html, body { overflow-x: clip; }
+.wb-hub, .wb-hub * { box-sizing: border-box; }
+.wb-hub { font-family: var(--wb-font); font-synthesis: none; color: var(--wb-ink); }
+.wb-hub :is(h1,h2,h3,h4) { min-width: 0; overflow-wrap: break-word; text-wrap: balance; font-family: var(--wb-font); color: var(--wb-ink); }
+.wb-hub p { text-wrap: pretty; }
+.wb-hub :is(a,button):focus-visible { outline: 3px solid var(--wb-focus); outline-offset: 5px; }
+.wb-hub ::selection { background: var(--wb-pear); color: var(--wb-ink); }
+.wb-hub :is(a,button):active { transform: translateY(2px); }
+.wb-hub :is(button:disabled,[aria-disabled=true]) { opacity: .55; cursor: not-allowed; transform: none; }
+@media(prefers-reduced-motion:reduce) { .wb-hub *, .wb-hub *::before, .wb-hub *::after { animation: none !important; transition: none !important; transform: none !important; scroll-behavior: auto !important; } }

@@ -1,0 +1,155 @@
+/* Hallmark v2.0.0 | theme: Hum (continuation) | scope: app | shape: Workbench | signature: numbered concept study map | material: existing educational graph | motion: control transform only */
+/* Critique: preserve the teaching diagram while giving reading, navigation and selected topics distinct paper surfaces. */
+/* Waiver: educational content and link labels remain intact; long labels may wrap. Render sweep deferred to the integrating agent. */
+.wb-suite[data-workbench-tool=graph] {
+  color: var(--wb-ink);
+  font-family: var(--wb-font);
+}
+
+.wb-suite[data-workbench-tool=graph] .study-panel {
+  background: var(--wb-card);
+  border-color: var(--wb-rule);
+  border-radius: var(--wb-radius);
+  box-shadow: 0 4px 0 var(--wb-shadow);
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.wb-suite[data-workbench-tool=graph] :is(h2,h3) {
+  color: var(--wb-ink);
+  font-weight: 650;
+  letter-spacing: -.025em;
+  overflow-wrap: break-word;
+  min-width: 0;
+  line-height: 1.2;
+}
+
+.wb-suite[data-workbench-tool=graph] .study-panel > h2 {
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+}
+
+.wb-suite[data-workbench-tool=graph] :is(p,summary) {
+  color: var(--wb-muted);
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+
+.wb-suite[data-workbench-tool=graph] .study-panel > p,
+.wb-suite[data-workbench-tool=graph] #network-topic > p {
+  max-width: 70ch;
+  font-size: 1rem;
+}
+
+.wb-suite[data-workbench-tool=graph] .study-panel > aside {
+  background: var(--wb-blue);
+  border-color: var(--wb-blue-edge);
+  border-radius: var(--wb-control);
+  padding: 1rem 1.25rem;
+}
+
+.wb-suite[data-workbench-tool=graph] nav[aria-label="Concept map views"] {
+  padding-top: .5rem;
+  gap: .75rem;
+}
+
+.wb-suite[data-workbench-tool=graph] nav[aria-label="Study steps"] {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .625rem;
+  padding: 1rem;
+  background: var(--wb-paper);
+  border: 1px solid var(--wb-rule);
+  border-radius: var(--wb-radius);
+}
+
+.wb-suite[data-workbench-tool=graph] .study-button {
+  color: var(--wb-ink);
+  background: var(--wb-card);
+  border-color: var(--wb-edge);
+  border-radius: var(--wb-control);
+  min-width: 0;
+  min-height: 48px;
+  line-height: 1.45;
+  text-align: left;
+  transition: transform var(--wb-fast) var(--wb-ease), opacity var(--wb-fast) var(--wb-ease);
+}
+
+.wb-suite[data-workbench-tool=graph] :is(nav[aria-label="Study steps"],nav[aria-label="Network topic selection"]) .study-button {
+  justify-content: flex-start;
+}
+
+.wb-suite[data-workbench-tool=graph] .study-button[aria-current] {
+  background: var(--wb-pear);
+  border-color: var(--wb-pear-edge);
+  box-shadow: inset 3px 0 0 var(--wb-ink);
+  font-weight: 650;
+}
+
+.wb-suite[data-workbench-tool=graph] nav[aria-label="Network topic selection"] {
+  gap: .625rem;
+}
+
+.wb-suite[data-workbench-tool=graph] nav[aria-label="Network topic selection"] .study-button[aria-current] {
+  background: var(--wb-mint);
+  border-color: var(--wb-mint-edge);
+}
+
+.wb-suite[data-workbench-tool=graph] #network-topic {
+  border-color: var(--wb-coral-edge);
+  padding: 1.5rem 0 0;
+  scroll-margin-block-start: 6rem;
+}
+
+.wb-suite[data-workbench-tool=graph] .study-panel > svg {
+  display: block;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.wb-suite[data-workbench-tool=graph] a.underline {
+  color: var(--wb-link);
+  display: inline-block;
+  padding-block: .35rem;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .2em;
+}
+
+.wb-suite[data-workbench-tool=graph] :is(a,summary,button):focus-visible {
+  outline: 3px solid var(--wb-focus);
+  outline-offset: 4px;
+}
+
+.wb-suite[data-workbench-tool=graph] .study-button:active {
+  transform: translateY(1px);
+}
+
+@media (hover:hover) {
+  .wb-suite[data-workbench-tool=graph] .study-button:hover {
+    background: var(--wb-blue);
+    border-color: var(--wb-blue-edge);
+    transform: translateY(-2px);
+  }
+  .wb-suite[data-workbench-tool=graph] a.underline:hover {
+    text-decoration-thickness: 2px;
+  }
+}
+
+@media (min-width:1100px) {
+  .wb-suite[data-workbench-tool=graph] nav[aria-label="Study steps"] {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (max-width:420px) {
+  .wb-suite[data-workbench-tool=graph] nav[aria-label="Study steps"] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .wb-suite[data-workbench-tool=graph] .study-button {
+    transition: none;
+  }
+  .wb-suite[data-workbench-tool=graph] .study-button:is(:hover,:active) {
+    transform: none;
+  }
+}

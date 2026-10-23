@@ -1,0 +1,29 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "app",
+  "shape": "app screen",
+  "theme": "hum",
+  "axes": "light/grotesk-sans/chromatic-yellow",
+  "hero": "not applicable, tool directory",
+  "nav": "kept",
+  "footer": "kept",
+  "imagery": "existing StudioSketch diagrams retained",
+  "photos": [],
+  "entry": "src/components/TradingToolsOverview.tsx",
+  "fingerprint": "hum-paper-tool-index",
+  "sections": [
+   "introduction and reference figures",
+   "category filters",
+   "ten-tool directory",
+   "existing method guide"
+  ],
+  "signature": "coloured paper tool index",
+  "waived": [],
+  "prompt": "UI-only Workbench and Lab redesign inspired by Hum; all copy and links verbatim",
+  "review": "subagent: ship; static0FAIL0REFLEX; browser desktop phone Urdu dark inspected",
+  "render": "skill renderer unavailable; screenshots captured via CUA",
+  "date": "2026-10-23"
+ }
+]

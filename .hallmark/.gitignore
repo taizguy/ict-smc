@@ -1,0 +1,12 @@
+*.jpg
+*.tsx
+*.mjs
+*.txt
+before/
+after/
+before.json
+after.json
+browser-*.json
+compare.html
+log-entry.json
+suite-before/

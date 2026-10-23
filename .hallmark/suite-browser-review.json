@@ -1,0 +1,251 @@
+{
+  "desktop": [
+    {
+      "heading": "Chart Lab",
+      "ink": "oklch(0.2 0.014 255)",
+      "path": "/tools/chartlab/",
+      "scrollWidth": 1145,
+      "tool": "chartlab",
+      "width": 1151
+    },
+    {
+      "heading": "Trade Simulator",
+      "ink": "oklch(0.2 0.014 255)",
+      "path": "/tools/simulator/",
+      "scrollWidth": 1145,
+      "tool": "simulator",
+      "width": 1151
+    },
+    {
+      "heading": "Backtest Lab",
+      "ink": "oklch(0.2 0.014 255)",
+      "path": "/tools/backtest/",
+      "scrollWidth": 1145,
+      "tool": "backtest",
+      "width": 1151
+    },
+    {
+      "heading": "Institutional Trading Journal",
+      "ink": "oklch(0.2 0.014 255)",
+      "path": "/tools/journal/",
+      "scrollWidth": 1145,
+      "tool": "journal",
+      "width": 1151
+    },
+    {
+      "heading": "SMC Interactive Knowledge Graph",
+      "ink": "oklch(0.2 0.014 255)",
+      "path": "/tools/knowledge-graph/",
+      "scrollWidth": 1145,
+      "tool": "graph",
+      "width": 1151
+    },
+    {
+      "heading": "Institutional Concepts Encyclopedia & Glossary",
+      "ink": "oklch(0.2 0.014 255)",
+      "path": "/tools/glossary/",
+      "scrollWidth": 1145,
+      "tool": "concepts",
+      "width": 1151
+    },
+    {
+      "heading": "Concept Comparison Matrix",
+      "ink": "oklch(0.2 0.014 255)",
+      "path": "/tools/compare/",
+      "scrollWidth": 1145,
+      "tool": "compare",
+      "width": 1151
+    },
+    {
+      "heading": "Mastery Profile & Operator Diagnostics",
+      "ink": "oklch(0.2 0.014 255)",
+      "path": "/tools/profile/",
+      "scrollWidth": 1145,
+      "tool": "dashboard",
+      "width": 1151
+    },
+    {
+      "heading": "ICT Delivery Suite",
+      "ink": "oklch(0.2 0.014 255)",
+      "path": "/tools/delivery-suite/",
+      "scrollWidth": 1145,
+      "tool": "ict_suite",
+      "width": 1151
+    },
+    {
+      "heading": "Masterclass hub: 29 lessons",
+      "path": "/tools/masterclass/",
+      "scrollWidth": 1145,
+      "tool": "masterclass",
+      "width": 1151
+    },
+    {
+      "heading": "#12: ICT Implied Fair Value Gap Masterclass",
+      "path": "/tools/masterclass/pd-arrays/implied-fvg/",
+      "scrollWidth": 1145,
+      "tool": "masterclass",
+      "width": 1151
+    },
+    {
+      "heading": "90-Day Quarterly Shifts & 6-Month IPDA Lookback",
+      "path": "/tools/glossary/time-and-sessions/quarterly-shifts-ipda/",
+      "scrollWidth": 1145,
+      "tool": "concepts",
+      "width": 1151
+    },
+    {
+      "heading": "ICT 2022 Mentorship vs. Silver Bullet: Study Variants",
+      "path": "/tools/compare/model-13-2022-vs-silver-bullet/",
+      "scrollWidth": 1145,
+      "tool": "compare",
+      "width": 1151
+    },
+    {
+      "heading": "Exam 1: Market Mechanics & Liquidity Pools",
+      "path": "/tools/profile/exams/foundations-mechanics/",
+      "scrollWidth": 1145,
+      "tool": "dashboard",
+      "width": 1151
+    },
+    {
+      "heading": "Trader Log Book & Executions",
+      "path": "/tools/journal/log-book/",
+      "scrollWidth": 1145,
+      "tool": "journal",
+      "width": 1151
+    },
+    {
+      "heading": "ICT Delivery Suite",
+      "path": "/tools/delivery-suite/macro-clock/",
+      "scrollWidth": 1145,
+      "tool": "ict_suite",
+      "width": 1151
+    },
+    {
+      "heading": "10. Terminal Draw on Liquidity (DOL)",
+      "path": "/tools/knowledge-graph/pipeline/step-10/",
+      "scrollWidth": 1145,
+      "tool": "graph",
+      "width": 1151
+    },
+    {
+      "heading": "Chart Lab",
+      "path": "/tools/chartlab/btc-2022-bullish-model/",
+      "scrollWidth": 1145,
+      "tool": "chartlab",
+      "width": 1151
+    },
+    {
+      "heading": "Trade Simulator",
+      "path": "/tools/simulator/ict-2022-model/",
+      "scrollWidth": 1145,
+      "tool": "simulator",
+      "width": 1151
+    },
+    {
+      "heading": "Backtest Lab",
+      "path": "/tools/backtest/2022-mentorship-model/",
+      "scrollWidth": 1145,
+      "tool": "backtest",
+      "width": 1151
+    }
+  ],
+  "mobile": [
+    {
+      "path": "/tools/masterclass/pd-arrays/implied-fvg/",
+      "scrollWidth": 369,
+      "tool": "masterclass",
+      "width": 375
+    },
+    {
+      "path": "/tools/glossary/time-and-sessions/quarterly-shifts-ipda/",
+      "scrollWidth": 369,
+      "tool": "concepts",
+      "width": 375
+    },
+    {
+      "path": "/tools/compare/model-13-2022-vs-silver-bullet/",
+      "scrollWidth": 369,
+      "tool": "compare",
+      "width": 375
+    },
+    {
+      "path": "/tools/profile/exams/foundations-mechanics/",
+      "scrollWidth": 369,
+      "tool": "dashboard",
+      "width": 375
+    },
+    {
+      "path": "/tools/journal/new-entry/",
+      "scrollWidth": 369,
+      "tool": "journal",
+      "width": 375
+    },
+    {
+      "path": "/tools/knowledge-graph/network/",
+      "scrollWidth": 369,
+      "tool": "graph",
+      "width": 375
+    },
+    {
+      "path": "/tools/delivery-suite/macro-clock/",
+      "scrollWidth": 369,
+      "tool": "ict_suite",
+      "width": 375
+    },
+    {
+      "path": "/tools/chartlab/",
+      "scrollWidth": 369,
+      "tool": "chartlab",
+      "width": 375
+    },
+    {
+      "path": "/tools/simulator/",
+      "scrollWidth": 369,
+      "tool": "simulator",
+      "width": 375
+    },
+    {
+      "path": "/tools/backtest/",
+      "scrollWidth": 369,
+      "tool": "backtest",
+      "width": 375
+    }
+  ],
+  "urdu": [
+    {
+      "direction": "rtl",
+      "lang": "ur",
+      "path": "/ur/tools/masterclass/pd-arrays/implied-fvg/",
+      "scrollWidth": 369,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "direction": "rtl",
+      "lang": "ur",
+      "path": "/ur/tools/glossary/time-and-sessions/quarterly-shifts-ipda/",
+      "scrollWidth": 369,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "direction": "rtl",
+      "lang": "ur",
+      "path": "/ur/tools/profile/exams/foundations-mechanics/",
+      "scrollWidth": 369,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "direction": "rtl",
+      "lang": "ur",
+      "path": "/ur/tools/chartlab/",
+      "scrollWidth": 369,
+      "theme": "dark",
+      "width": 375
+    }
+  ],
+  "review": "Fresh finish reviewer requested masterclass search spacing correction; corrected with logical padding and RTL icon alignment.",
+  "limitations": "Representative roots and deep routes checked, not every URL manually. Hallmark render unavailable: puppeteer-core absent; static lint and CUA browser evidence used."
+}

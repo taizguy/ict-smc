@@ -1,0 +1,148 @@
+/* Hallmark v2.0.0 · theme: Hum · scope: app · shape: reference workbench · signature: paper curriculum and paired study sheets · copy: verbatim · posture: full-palette · motion: tactile transform · nav: existing curriculum · footer: inherited */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V4 · weakest: R, long reference lessons need breathing room; increased reading size and separated dense sections with paper rules. Render review not run. */
+/* Kept material: copy and content density preserved by the UI-only redesign requirement; existing diagrams retain their instructional palette. */
+
+.wb-suite.workbench-pages[data-workbench-tool="masterclass"] .masterclass-pages input[aria-label="Search masterclasses"] { padding-inline-start: 40px; padding-inline-end: 12px; }
+.wb-suite[data-workbench-tool="masterclass"] .relative:has(> input[aria-label="Search masterclasses"]) > svg { inset-inline-start: 12px; inset-inline-end: auto; }
+
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) {
+  color: var(--wb-ink);
+  font-family: var(--wb-font);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) :is(h2,h3,h4,h5) {
+  color: var(--wb-ink);
+  font-family: var(--wb-font);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) h2 { font-size: clamp(1.65rem, 2.5vw, 2.35rem); }
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) h3 { font-size: 1.15rem; }
+
+/* Structural sheets only: SVG and the diagram canvas keep their own styling. */
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) div.bg-surface {
+  background-color: var(--wb-card);
+  background-image: var(--wb-grain);
+  border-color: var(--wb-rule);
+  border-radius: var(--wb-radius);
+  box-shadow: 0 3px 0 var(--wb-edge), 3px 7px 12px -8px var(--wb-shadow);
+}
+
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) :is(div,p).bg-surface-muted,
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) div.bg-surface-raised {
+  background-color: var(--wb-paper);
+  background-image: var(--wb-grain);
+  border-color: var(--wb-rule);
+  box-shadow: none;
+}
+
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) :is(div,p,li)[class*="bg-ink/"] {
+  background-color: var(--wb-paper);
+  border-color: var(--wb-rule);
+}
+
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) :is(div,p,li)[class*="bg-rose-"],
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) div[class*="bg-negative/"] {
+  background-color: var(--wb-coral);
+  border-color: var(--wb-coral-edge);
+  color: var(--wb-ink);
+}
+
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) :is(div,p,li)[class*="bg-emerald-"],
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) div[class*="bg-positive/"] {
+  background-color: var(--wb-mint);
+  border-color: var(--wb-mint-edge);
+  color: var(--wb-ink);
+}
+
+/* Labels retain their source wording while shedding tracked capitals. */
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) :is(div,span,a,button,strong,h5).uppercase {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) :is(div,p,li,ul,button,a).text-xs {
+  font-size: .9375rem;
+  line-height: 1.65;
+}
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) :is(p,ul,div).text-sm { font-size: 1rem; line-height: 1.7; }
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) :is(span,div,strong)[class*="text-[0.8125rem]"] { font-size: .8125rem; line-height: 1.55; }
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) p { text-wrap: pretty; }
+
+/* Category tabs and index entries share the same paper stock. */
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) :is(a,button).border {
+  background-color: var(--wb-card);
+  background-image: var(--wb-grain);
+  border: 1px solid var(--wb-rule);
+  color: var(--wb-ink);
+  border-radius: var(--wb-control);
+  min-height: 44px;
+  box-shadow: 0 3px 0 var(--wb-edge), inset 0 1px 0 var(--wb-glint);
+  transition: transform var(--wb-fast) var(--wb-ease), opacity var(--wb-fast) var(--wb-ease);
+}
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) :is(a[aria-current="page"],button[aria-pressed="true"]).border {
+  background-color: var(--wb-pear);
+  border-color: var(--wb-pear-edge);
+  box-shadow: 0 3px 0 var(--wb-pear-edge), inset 0 1px 0 var(--wb-glint);
+}
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) :is(a,button).border:hover { transform: translateY(-1px); }
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages, .glossary-pages, .compare-pages) :is(a,button).border:active { transform: translateY(2px); }
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(a,button,input,select,[tabindex]):focus-visible { outline: 3px solid var(--wb-focus); outline-offset: 4px; }
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(button:disabled,[aria-disabled="true"]) { cursor: not-allowed; opacity: .55; transform: none; }
+
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"]) .modal-scrollable { padding: 0px 8px 8px 0px; scrollbar-color: var(--wb-edge) var(--wb-paper); scrollbar-width: thin; }
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"]) .modal-scrollable > a { margin-bottom: 12px; padding: 16px; }
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"]) .modal-scrollable > a :is(.truncate,.line-clamp-1) { white-space: normal; overflow: visible; display: block; -webkit-line-clamp: unset; }
+.wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"]) .modal-scrollable > a p { margin-top: 8px; }
+.wb-suite[data-workbench-tool="masterclass"] .masterclass-pages input { min-height: 46px; background-color: var(--wb-paper); border-color: var(--wb-edge); border-radius: var(--wb-control); font-size: .9375rem; color: var(--wb-ink); }
+.wb-suite[data-workbench-tool="masterclass"] .masterclass-pages > div.bg-surface:first-of-type { background-color: var(--wb-blue); border-color: var(--wb-blue-edge); }
+.wb-suite[data-workbench-tool="masterclass"] .masterclass-pages button[aria-pressed="true"].w-full { background-color: var(--wb-coral); border-color: var(--wb-coral-edge); box-shadow: 0 3px 0 var(--wb-coral-edge); }
+
+/* Deep concept analysis remains a continuous lesson, with accent paper for rules. */
+.wb-suite[data-workbench-tool="concepts"] .glossary-pages .bg-gradient-to-br {
+  background-image: var(--wb-grain);
+  background-color: var(--wb-blue);
+  border-color: var(--wb-blue-edge);
+  border-width: 1px;
+  box-shadow: 0 3px 0 var(--wb-blue-edge);
+}
+.wb-suite[data-workbench-tool="concepts"] .glossary-pages .grid-cols-5 { gap: 12px; }
+.wb-suite[data-workbench-tool="concepts"] .glossary-pages .grid-cols-5 button { padding: 16px 8px; }
+.wb-suite[data-workbench-tool="concepts"] .glossary-pages .grid-cols-5 .truncate { white-space: normal; overflow: visible; text-overflow: clip; }
+.wb-suite[data-workbench-tool="concepts"] .glossary-pages :is(span,a).truncate { white-space: normal; overflow: visible; overflow-wrap: anywhere; }
+
+/* Paired sheets and the comparison matrix stay readable at every width. */
+.wb-suite[data-workbench-tool="compare"] .compare-pages > div.bg-surface { background-color: var(--wb-blue); border-color: var(--wb-blue-edge); }
+.wb-suite[data-workbench-tool="compare"] .compare-pages .md\:grid-cols-2 > .bg-surface:first-child { border-top: 6px solid var(--wb-pear-edge); }
+.wb-suite[data-workbench-tool="compare"] .compare-pages .md\:grid-cols-2 > .bg-surface:last-child { border-top: 6px solid var(--wb-blue-edge); }
+.wb-suite[data-workbench-tool="compare"] .compare-pages table { color: var(--wb-ink); background-color: var(--wb-card); border-collapse: collapse; font-size: .9375rem; line-height: 1.65; table-layout: fixed; font-variant-numeric: tabular-nums; }
+.wb-suite[data-workbench-tool="compare"] .compare-pages caption { text-align: start; padding: 16px 20px; background-color: var(--wb-paper); font-weight: 600; }
+.wb-suite[data-workbench-tool="compare"] .compare-pages :is(th,td) { padding: 16px 20px; vertical-align: top; border-bottom: 1px solid var(--wb-rule); overflow-wrap: anywhere; }
+.wb-suite[data-workbench-tool="compare"] .compare-pages thead th { font-weight: 600; background-color: var(--wb-paper); }
+.wb-suite[data-workbench-tool="compare"] .compare-pages thead th:nth-child(2) { background-color: var(--wb-pear); }
+.wb-suite[data-workbench-tool="compare"] .compare-pages thead th:nth-child(3) { background-color: var(--wb-blue); }
+.wb-suite[data-workbench-tool="compare"] .compare-pages th:first-child { width: 22%; }
+.wb-suite[data-workbench-tool="compare"] .compare-pages .text-center { text-align: start; }
+
+@media (max-width: 639px) {
+  .wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(.masterclass-pages,.glossary-pages,.compare-pages) div.bg-surface { padding: 20px; }
+  .wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"]) .modal-scrollable { max-height: 360px; }
+  .wb-suite[data-workbench-tool="concepts"] .glossary-pages .grid-cols-5 { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .wb-suite[data-workbench-tool="concepts"] .glossary-pages .grid-cols-5 > :last-child { grid-column: 1 / -1; }
+  .wb-suite[data-workbench-tool="compare"] .compare-pages :is(th,td) { padding: 12px 8px; font-size: .8125rem; }
+  .wb-suite[data-workbench-tool="compare"] .compare-pages caption { padding: 16px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(a,button).border { transition: none; }
+  .wb-suite:is([data-workbench-tool="masterclass"], [data-workbench-tool="concepts"], [data-workbench-tool="compare"]) :is(a,button).border:is(:hover,:active) { transform: none; }
+}
+
+/* Hallmark · answered F7 · the six selectors style existing related reference sheets; content and component boundaries are preserved while active controls and rule wells use distinct tints. */

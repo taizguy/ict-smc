@@ -46,3 +46,4 @@ import './styles/search-focus.css';
 import './styles/interface-polish.css';
 
 import './styles/learning-first.css';
+import './styles/workbench-hallmark/page.css';

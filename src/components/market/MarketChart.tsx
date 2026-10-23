@@ -37,29 +37,36 @@ type Props = {
   onLevel: (label: string, price: number) => void;
   onFocus: (index: number) => void;
 };
+/** Annotation text follows the theme; candle direction colours stay unchanged. */
+function markerColor(color: string) {
+  if (document.documentElement.dataset.theme !== "dark") return color;
+  const role: Record<string, string> = { "#2563eb": "--wb-marker-blue", "#8758c9": "--wb-marker-violet", "#a96710": "--wb-marker-amber", "#cf4b59": "--wb-marker-red", "#178667": "--wb-marker-green" };
+  return role[color] ? getComputedStyle(document.documentElement).getPropertyValue(role[color]).trim() : color;
+}
 function options() {
-  const dark = document.documentElement.dataset.theme === "dark";
+  const styles = getComputedStyle(document.documentElement);
+  const paint = (token: string) => styles.getPropertyValue(token).trim();
   return {
     layout: {
       background: {
         type: ColorType.Solid,
-        color: dark ? "#1c1c1c" : "#ffffff",
+        color: paint("--wb-chart-paper"),
       },
-      textColor: dark ? "#c2c3cb" : "#526071",
-      fontFamily: '"Source Sans 3", sans-serif',
+      textColor: paint("--wb-chart-ink"),
+      fontFamily: styles.getPropertyValue("--font-sans").trim(),
       fontSize: 12,
       attributionLogo: true,
     },
     grid: {
-      vertLines: { color: dark ? "#292929" : "#f0f2f5" },
-      horzLines: { color: dark ? "#292929" : "#f0f2f5" },
+      vertLines: { color: paint("--wb-chart-grid") },
+      horzLines: { color: paint("--wb-chart-grid") },
     },
     rightPriceScale: {
-      borderColor: dark ? "#3e3e3e" : "#e1e5eb",
+      borderColor: paint("--wb-chart-rule"),
       scaleMargins: { top: 0.15, bottom: 0.14 },
     },
     timeScale: {
-      borderColor: dark ? "#3e3e3e" : "#e1e5eb",
+      borderColor: paint("--wb-chart-rule"),
       timeVisible: true,
       secondsVisible: false,
       rightOffset: 4,
@@ -79,6 +86,7 @@ export default function MarketChart(props: Props) {
   const [hover, setHover] = useState<number | null>(null),
     [error, setError] = useState(false),
     [ready, setReady] = useState(0),
+    [markerTheme, setMarkerTheme] = useState(0),
     [boxes, setBoxes] = useState<
       { mark: Mark; x: number; y: number; w: number; h: number }[]
     >([]),
@@ -187,6 +195,7 @@ export default function MarketChart(props: Props) {
       observer.observe(root.current);
       const theme = new MutationObserver(() => {
         chart.applyOptions(options());
+        setMarkerTheme((n) => n + 1);
         layout.current();
       });
       theme.observe(document.documentElement, {
@@ -249,7 +258,7 @@ export default function MarketChart(props: Props) {
           time: (Date.parse(props.bars[m.index].time) / 1000) as UTCTimestamp,
           position: "aboveBar" as const,
           shape: "circle" as const,
-          color: m.color,
+          color: markerColor(m.color),
           text: m.text,
         })),
     );
@@ -280,6 +289,7 @@ export default function MarketChart(props: Props) {
     props.levels,
     props.selected,
     props.events,
+    markerTheme,
     ready,
     t,
   ]);
@@ -370,8 +380,8 @@ export default function MarketChart(props: Props) {
                 style={{
                   top: y - 18,
                   left: `calc(${index} * (100% - 95px) / 3)`,
-                  borderColor: level.color,
-                  color: level.color,
+                  borderColor: markerColor(level.color),
+                  color: markerColor(level.color),
                 }}
                 onPointerDown={(e) => {
                   e.currentTarget.setPointerCapture(e.pointerId);

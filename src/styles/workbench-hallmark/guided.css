@@ -1,0 +1,48 @@
+/* Hallmark · theme: Hum · shape: app screen · scope: guided tools and advanced research · copy: verbatim · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V4 · weakest: charts need quiet surfaces beside distinct task panels */
+.wb-suite .guided-desk { gap: 24px; }
+.wb-suite .guided-intro { padding-block: 12px 20px; border-bottom: 1px solid var(--wb-rule); }
+.wb-suite .guided-intro h2 { font-size: clamp(1.75rem,3.5vw,2.75rem); max-width: 28ch; line-height: 1.12; font-weight: 650; }
+.wb-suite .guided-intro > p { max-width: 72ch; font-size: 1.0625rem; }
+.wb-suite :is(.guided-eyebrow,.guided-coach > small,.market-eyebrow) { font-size: .875rem; text-transform: none; letter-spacing: 0; color: var(--wb-link); }
+.wb-suite .guided-session-bar { padding: 16px 0; }
+.wb-suite .guided-session-bar summary { background: var(--wb-card); box-shadow: 0 3px 0 var(--wb-edge); padding: 12px 16px; }
+.wb-suite .guided-session-bar details[open] { z-index: 100; background: var(--wb-card); }
+.wb-suite .guided-progress { gap: 12px; }
+.wb-suite .guided-progress li { padding: 12px; border: 0; border-radius: var(--wb-control); background: var(--wb-card); border-bottom: 3px solid var(--wb-edge); color: var(--wb-muted); }
+.wb-suite .guided-progress li[aria-current=step] { background: var(--wb-current); color: var(--wb-ink); border-color: var(--wb-current-edge); }
+.wb-suite .guided-progress li > span { color: var(--wb-ink); background: none; border-color: var(--wb-rule); }
+.wb-suite .guided-progress small { font-size: .875rem; line-height: 1.5; }
+.wb-suite .guided-workspace { background: var(--wb-card); border-radius: var(--wb-radius); border-color: var(--wb-rule); overflow: clip; }
+.wb-suite .guided-chart-caption { background: var(--wb-blue); color: var(--wb-ink); padding: 16px 20px; }
+.wb-suite .guided-chart-caption > span { color: var(--wb-ink); }
+.wb-suite .guided-coach { background: var(--wb-current); border-color: var(--wb-current-edge); padding: 24px; }
+.wb-suite .guided-coach > p { color: var(--wb-ink); }
+.wb-suite .guided-coach :is(h3,h4) { color: var(--wb-ink); }
+.wb-suite .guided-premise { background: var(--wb-card); border: 0; border-radius: var(--wb-control); padding: 16px; }
+.wb-suite .guided-coach .guided-answer { background: var(--wb-card); text-align: start; font-size: 1rem; padding: 16px; margin-block-end: 4px; }
+.wb-suite .guided-coach .guided-answer[aria-pressed=true] { background: var(--wb-card); outline: 2px solid var(--wb-focus); outline-offset: 1px; }
+.wb-suite .guided-primary,.wb-suite button.guided-primary,.wb-suite .guided-next-link { background: var(--wb-pear); color: var(--wb-ink); border-color: var(--wb-pear-edge); box-shadow: 0 3px 0 var(--wb-pear-edge); }
+.wb-suite .guided-primary:hover,.wb-suite button.guided-primary:hover { background: var(--wb-pear); color: var(--wb-ink); }
+.wb-suite .guided-chart-key { padding: 16px; }
+.wb-suite .guided-candle-picker { padding: 16px; gap: 12px; }
+.wb-suite .guided-context { padding: 16px 20px; }
+.wb-suite .guided-feedback { background: var(--wb-mint); border: 0; color: var(--wb-ink); border-radius: var(--wb-control); padding: 20px; }
+.wb-suite .guided-feedback.needs-review { background: var(--wb-coral); color: var(--wb-ink); }
+.wb-suite .guided-hint-copy { border-color: var(--wb-blue-edge); color: var(--wb-ink); font-size: 1rem; }
+.wb-suite :is(.guided-plan,.guided-size,.guided-order-state) { border-radius: var(--wb-control); background: var(--wb-card); color: var(--wb-ink); }
+.wb-suite .guided-plan dd { font-size: 1.25rem; font-weight: 650; }
+.wb-suite .guided-recipe { padding: 16px; border-color: var(--wb-rule); }
+.wb-suite .guided-replay { background: var(--wb-paper); padding: 16px; border-radius: var(--wb-control); }
+.wb-suite .guided-case-results > div { gap: 12px; }
+.wb-suite .guided-case-results button { padding: 16px; min-height: 60px; }
+.wb-suite .guided-case-results button[aria-pressed=true] { background: var(--wb-mint); color: var(--wb-ink); }
+.wb-suite .guided-why { padding: 24px 0; border-color: var(--wb-rule); max-width: 80ch; }
+.wb-suite .guided-next-tools { gap: 12px; }
+.wb-suite .guided-next-tools a { padding: 12px 16px; background: var(--wb-card); border-radius: var(--wb-control); box-shadow: 0 3px 0 var(--wb-edge); color: var(--wb-link); }
+.wb-suite .market-workspace:not(.guided-desk) { padding: 24px 0; border-top: 1px solid var(--wb-rule); }
+.wb-suite .market-workspace .market-panel { background: var(--wb-card); border-radius: var(--wb-radius); border-color: var(--wb-rule); }
+.wb-suite .market-workspace :is(input,select,textarea) { color: var(--wb-ink); }
+.wb-suite .market-price-handle { box-shadow: none; min-height: 44px; }
+@media(max-width:800px) { .wb-suite .guided-progress { gap: 8px; } .wb-suite .guided-progress li { padding: 8px; } .wb-suite .guided-progress small { font-size: .8125rem; } .wb-suite .guided-coach { padding: 20px; } .wb-suite .guided-workspace { overflow: visible; } .wb-suite .guided-chart-column { min-width: 0; } }
+@media(prefers-reduced-motion:reduce) { .wb-suite .guided-desk * { animation: none !important; transition: none !important; } }

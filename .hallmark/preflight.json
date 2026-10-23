@@ -1,0 +1,38 @@
+{
+  "scanned": "2026-10-23",
+  "target": "/tools/",
+  "findings": {
+    "fonts": "Source Sans 3 and Lora, local variable fonts (src/index.css:19; src/styles/typography.css:2)",
+    "palette": "White and neutral surfaces, blue action #006bd6; dark theme #151515 with #9bcaff action (src/styles/learning-first.css:43-44)",
+    "motion": "motion 12, Lenis 1 (package.json dependencies)",
+    "framework": "React 19, TypeScript, Vite 6, Tailwind 4 (package.json)",
+    "page": "src/components/TradingToolsOverview.tsx:193; ten-tool catalog and category filters",
+    "git": "Clean at start; main 6fb9049"
+  },
+  "preserve": [
+    "Existing tool URLs and catalog facts",
+    "Category filter behavior",
+    "English/Urdu and dark/light themes",
+    "Shared navigation and footer",
+    "Search-facing guide content and metadata wiring",
+    "All copy verbatim by explicit user instruction"
+  ],
+  "introduce": [
+    "Recomposed tool discovery layout",
+    "Scoped token-based design and control states",
+    "Hallmark before/after evidence"
+  ],
+  "planned_files": {
+    "edit": [
+      "src/components/TradingToolsOverview.tsx",
+      "src/index.css"
+    ],
+    "create": [
+      "src/styles/workbench-hallmark/tokens.css",
+      "src/styles/workbench-hallmark/base.css",
+      "src/styles/workbench-hallmark/page.css"
+    ],
+    "delete": []
+  },
+  "status": "Complete, local preview4193, not pushed"
+}

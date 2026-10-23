@@ -1,0 +1,157 @@
+/* Hallmark v2.0.0 · Hum · records, curriculum and delivery reference workbench. */
+/* Critique: long forms need deliberate grouping; results need a quiet ledger rhythm and persistent selected states. */
+.wb-suite:is([data-workbench-tool="journal"],[data-workbench-tool="dashboard"],[data-workbench-tool="ict_suite"]) :is(p,li,dd,legend):not(.guided-desk *) {
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+.wb-suite:is([data-workbench-tool="journal"],[data-workbench-tool="dashboard"],[data-workbench-tool="ict_suite"]) :is(section,form,article,fieldset):not(.guided-desk *) { min-inline-size: 0; }
+.wb-suite:is([data-workbench-tool="journal"],[data-workbench-tool="dashboard"],[data-workbench-tool="ict_suite"]) :is(h2,h3):not(.guided-desk *) {
+  letter-spacing: -.025em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+.wb-suite:is([data-workbench-tool="journal"],[data-workbench-tool="dashboard"],[data-workbench-tool="ict_suite"]) nav[aria-label]:not(.guided-desk *) {
+  padding-block: 8px;
+  gap: 8px;
+}
+.wb-suite:is([data-workbench-tool="journal"],[data-workbench-tool="dashboard"],[data-workbench-tool="ict_suite"]) nav a[aria-current="page"]:not(.guided-desk *) {
+  background: var(--wb-pear);
+  border-color: var(--wb-pear-edge);
+  color: var(--wb-ink);
+  box-shadow: inset 0 -3px 0 var(--wb-pear-edge);
+  font-weight: 650;
+}
+.wb-suite[data-workbench-tool="journal"] section:first-child > .grid > p {
+  border-block-start: 2px solid var(--wb-edge);
+  padding-block-start: 16px;
+  color: var(--wb-muted);
+}
+.wb-suite[data-workbench-tool="journal"] section:first-child > .grid > p strong {
+  display: inline-block;
+  margin-block-start: 8px;
+  color: var(--wb-ink);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+.wb-suite[data-workbench-tool="journal"] form > .grid {
+  gap: 24px 28px;
+  padding-block: 12px 24px;
+  border-block-end: 1px solid var(--wb-rule);
+}
+.wb-suite[data-workbench-tool="journal"] fieldset {
+  padding-block: 12px;
+  border: 0;
+}
+.wb-suite[data-workbench-tool="journal"] fieldset label {
+  padding: 12px 16px;
+  border-inline-start: 1px solid var(--wb-rule);
+  border-radius: 0 var(--wb-control) var(--wb-control) 0;
+  cursor: pointer;
+}
+.wb-suite[data-workbench-tool="journal"] fieldset label:has(input:checked) {
+  background: var(--wb-mint);
+  border-color: var(--wb-mint-edge);
+}
+.wb-suite[data-workbench-tool="journal"] input[type="file"] { font-size: .8125rem; line-height: 1.6; }
+.wb-suite[data-workbench-tool="journal"] input[type="file"]::file-selector-button {
+  background: var(--wb-paper);
+  color: var(--wb-ink);
+  border: 1px solid var(--wb-edge);
+  border-radius: 8px;
+  padding: 8px 8px;
+  margin-inline-end: 8px;
+  font-family: var(--wb-font);
+  cursor: pointer;
+}
+.wb-suite[data-workbench-tool="journal"] article dl > div {
+  border-block-start: 1px solid var(--wb-rule);
+  padding-block-start: 12px;
+}
+.wb-suite[data-workbench-tool="journal"] article :is(dt,dd) { margin: 0; }
+.wb-suite[data-workbench-tool="journal"] article dt { color: var(--wb-muted); font-size: .8125rem; margin-block-end: 4px; }
+.wb-suite[data-workbench-tool="dashboard"] progress {
+  appearance: none;
+  display: block;
+  block-size: 14px;
+  overflow: clip;
+  border: 1px solid var(--wb-edge);
+  border-radius: 999px;
+  background: var(--wb-paper);
+  accent-color: var(--wb-pear-edge);
+}
+.wb-suite[data-workbench-tool="dashboard"] progress::-webkit-progress-bar { background: var(--wb-paper); }
+.wb-suite[data-workbench-tool="dashboard"] progress::-webkit-progress-value { background: var(--wb-pear-edge); border-radius: 999px; }
+.wb-suite[data-workbench-tool="dashboard"] progress::-moz-progress-bar { background: var(--wb-pear-edge); border-radius: 999px; }
+.wb-suite[data-workbench-tool="dashboard"] fieldset.study-panel { padding-block-start: 20px; }
+.wb-suite[data-workbench-tool="dashboard"] fieldset legend { max-inline-size: 100%; padding-inline: 8px; line-height: 1.5; }
+.wb-suite[data-workbench-tool="dashboard"] fieldset > label {
+  background: var(--wb-paper);
+  color: var(--wb-ink);
+  border: 1px solid var(--wb-rule);
+  border-radius: var(--wb-control);
+  padding: 16px;
+  line-height: 1.6;
+  transition: transform var(--wb-fast) var(--wb-ease);
+}
+.wb-suite[data-workbench-tool="dashboard"] fieldset > label:has(input:checked) {
+  background: var(--wb-blue);
+  border-color: var(--wb-blue-edge);
+  box-shadow: inset 3px 0 0 var(--wb-blue-edge);
+  font-weight: 600;
+}
+.wb-suite[data-workbench-tool="dashboard"] fieldset:disabled > label { cursor: default; }
+.wb-suite[data-workbench-tool="dashboard"] fieldset > .space-y-2 { border-block-start: 1px solid var(--wb-rule); padding-block-start: 16px; }
+.wb-suite[data-workbench-tool="ict_suite"] details:not(.guided-desk *) {
+  border-color: var(--wb-rule);
+  padding-block: 12px;
+}
+.wb-suite[data-workbench-tool="ict_suite"] summary:not(.guided-desk *) {
+  color: var(--wb-ink);
+  font-weight: 600;
+  line-height: 1.5;
+  padding-block: 8px;
+  cursor: pointer;
+  text-underline-offset: 4px;
+}
+.wb-suite[data-workbench-tool="ict_suite"] details[open] > summary:not(.guided-desk *) { margin-block-end: 16px; }
+.wb-suite[data-workbench-tool="ict_suite"] [aria-label="Current New York time"]:not(.guided-desk *) {
+  border-block-start: 1px solid var(--wb-rule);
+  padding-block-start: 16px;
+  font-variant-numeric: tabular-nums;
+}
+.wb-suite[data-workbench-tool="ict_suite"] table:not(.guided-desk *) {
+  inline-size: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+  text-align: start;
+}
+.wb-suite[data-workbench-tool="ict_suite"] :is(th,td):not(.guided-desk *) { padding: 16px 12px; text-align: start; border-block-end: 1px solid var(--wb-rule); vertical-align: top; }
+.wb-suite[data-workbench-tool="ict_suite"] thead:not(.guided-desk *) { background: var(--wb-blue); color: var(--wb-ink); }
+.wb-suite[data-workbench-tool="ict_suite"] caption:not(.guided-desk *) { text-align: start; color: var(--wb-muted); padding-block: 12px; line-height: 1.6; }
+.wb-suite[data-workbench-tool="ict_suite"] tr.text-teal:not(.guided-desk *) { background: var(--wb-mint); }
+.wb-suite[data-workbench-tool="ict_suite"] dl > div:not(.guided-desk *) { padding-block: 16px; border-block-start: 1px solid var(--wb-rule); }
+.wb-suite[data-workbench-tool="ict_suite"] dt:not(.guided-desk *) { color: var(--wb-muted); font-size: .8125rem; line-height: 1.5; }
+.wb-suite[data-workbench-tool="ict_suite"] dd:not(.guided-desk *) { margin: 8px 0 0; font-size: 1.25rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.wb-suite[data-workbench-tool="ict_suite"] li:has(> input[type="checkbox"]):not(.guided-desk *) { padding: 12px; border-block-end: 1px solid var(--wb-rule); }
+.wb-suite[data-workbench-tool="ict_suite"] li:has(> input:checked):not(.guided-desk *) { background: var(--wb-mint); border-radius: 10px; }
+.wb-suite:is([data-workbench-tool="journal"],[data-workbench-tool="dashboard"],[data-workbench-tool="ict_suite"]) :is(input[type="radio"],input[type="checkbox"]):not(.guided-desk *) { flex-shrink: 0; inline-size: 18px; block-size: 18px; accent-color: var(--wb-focus); margin-block-start: 4px; }
+.wb-suite:is([data-workbench-tool="journal"],[data-workbench-tool="dashboard"],[data-workbench-tool="ict_suite"]) :is(summary,input,progress,[tabindex="0"]):focus-visible:not(.guided-desk *) { outline: 3px solid var(--wb-focus); outline-offset: 4px; }
+.wb-suite:is([data-workbench-tool="journal"],[data-workbench-tool="dashboard"],[data-workbench-tool="ict_suite"]) [role="status"]:not(:empty):not(.guided-desk *) { background: var(--wb-mint); padding: 16px 16px; border-inline-start: 1px solid var(--wb-mint-edge); border-radius: var(--wb-control); }
+@media (hover: hover) {
+  .wb-suite[data-workbench-tool="dashboard"] fieldset:not(:disabled) > label:hover { transform: translateY(-1px); border-color: var(--wb-blue-edge); }
+}
+@media (max-width: 639px) {
+  .wb-suite[data-workbench-tool="journal"] :is(form,article) > .flex { flex-wrap: wrap; }
+  .wb-suite[data-workbench-tool="dashboard"] fieldset > label { padding: 12px; }
+  .wb-suite[data-workbench-tool="ict_suite"] :is(th,td):not(.guided-desk *) { padding: 12px 8px; overflow-wrap: anywhere; }
+  .wb-suite[data-workbench-tool="ict_suite"] table:not(.guided-desk *) { font-size: .8125rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wb-suite[data-workbench-tool="dashboard"] fieldset > label { transition: none; transform: none !important; }
+}
+
+.wb-suite[data-workbench-tool="journal"] .study-button { align-self: center; border-radius: var(--wb-control); }
+
+.wb-suite[data-workbench-tool="journal"] input[type="file"] { background: none; border: 0; box-shadow: none; padding: 0; min-height: 44px; max-width: 240px; }

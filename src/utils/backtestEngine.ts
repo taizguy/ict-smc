@@ -1,3 +1,4 @@
+import {advanceOrder,type Order} from './marketExecution';
 export interface LabBar { time: string; open: number; high: number; low: number; close: number }
 export interface TestRule { reward: number; hold: number; cost: number; side: 'both' | 'long' | 'short' }
 export interface TestTrade { signal: number; entryBar: number; exitBar: number; direction: 'long' | 'short'; entry: number; stop: number; target: number; result: number | null; reason: 'target' | 'stop' | 'ambiguous' | 'time' | 'boundary' }
@@ -14,7 +15,7 @@ export function demoBars(): LabBar[] {
 }
 
 /** Local CSV only. Quoted fields and CRLF are supported; no network requests. */
-export function readBars(csv:string):LabBar[] {
+export function readBars(csv:string,minimum=30):LabBar[] {
   const rows:string[][]=[];let row:string[]=[],cell='',quoted=false;
   for(let i=0;i<csv.length;i++){
     const c=csv[i];
@@ -28,7 +29,7 @@ export function readBars(csv:string):LabBar[] {
   const head=(rows.shift()||[]).map(x=>x.replace(/^\uFEFF/,'').toLowerCase());
   const indices=['time','open','high','low','close'].map(k=>head.indexOf(k==='time'&&!head.includes('time')?'timestamp':k));
   if(indices.some(i=>i<0))throw new Error('CSV needs time, open, high, low and close columns.');
-  if(rows.length<30||rows.length>20000)throw new Error('Use between 30 and 20,000 candles.');
+  if(rows.length<minimum||rows.length>20000)throw new Error('Use between 30 and 20,000 candles.');
   let last=-Infinity;
   return rows.map(r=>{
     const values=indices.slice(1).map(i=>r[i]===undefined||r[i]===''?NaN:Number(r[i]));
@@ -54,17 +55,13 @@ export function runFvgTest(bars:LabBar[], rule:TestRule):TestTrade[]{
     if(risk<=0||!Number.isFinite(risk))continue;
     const target=entry+sign*risk*rule.reward;
     if(!Number.isFinite(target)||target<=0)continue;
-    let exitBar=Math.min(i+rule.hold,bars.length-1),reason:TestTrade['reason']=i+rule.hold>=bars.length?'boundary':'time';
-    let result=((bars[exitBar].close-entry)*sign/risk)-rule.cost;
-    for(let j=i+1;j<=exitBar;j++){
-      const b=bars[j];
-      if(j>i+1&&(bullish?b.open<=stop:b.open>=stop)){exitBar=j;reason='stop';result=(b.open-entry)*sign/risk-rule.cost;break;}
-      if(j>i+1&&(bullish?b.open>=target:b.open<=target)){exitBar=j;reason='target';result=rule.reward-rule.cost;break;}
-      const stopped=bullish?b.low<=stop:b.high>=stop,won=bullish?b.high>=target:b.low<=target;
-      if(stopped&&won){exitBar=j;reason='ambiguous';result=NaN;break;}
-      if(stopped||won){exitBar=j;reason=stopped?'stop':'target';result=(stopped?-1:rule.reward)-rule.cost;break;}
-    }
-    trades.push({signal:i,entryBar:i+1,exitBar,direction:bullish?'long':'short',entry,stop,target,result:Number.isFinite(result)?result:null,reason});
+    const horizon=Math.min(i+rule.hold,bars.length-1);
+    let order:Order={id:String(i),created:i,riskDistance:risk,status:'open',fill:entry,filledAt:i+1,plan:{side:bullish?'long':'short',entry,stop,target,cost:rule.cost,account:10000,risk:1,value:1},decisions:[]};
+    for(let j=i+1;j<=horizon;j++){order=advanceOrder(order,bars[j],j,j===horizon);if(!['pending','open'].includes(order.status))break;}
+    const exitBar=order.exitAt??horizon;
+    const reason:TestTrade['reason']=order.status==='target'?'target':order.status==='stop'?'stop':order.status==='ambiguous'?'ambiguous':i+rule.hold>=bars.length?'boundary':'time';
+    const result=order.r??null;
+    trades.push({signal:i,entryBar:i+1,exitBar,direction:bullish?'long':'short',entry,stop,target,result:result!==null&&Number.isFinite(result)?result:null,reason});
     i=exitBar-1;
   }
   return trades;

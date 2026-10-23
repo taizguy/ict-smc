@@ -926,78 +926,78 @@
       "fingerprint": "92c4c56c81a0413bd546737d8d5e54425563df0f580c4d30351bf4d0802098c3"
     },
     "/tools/": {
-      "fingerprint": "991e5e90cca2fb97704df1f7a577bc5adb46aa882f3c2a3937e6146d13d0bb5e",
-      "lastmod": "2026-10-20",
+      "fingerprint": "a7c8aefcb1f548269780efea1a167979b6aed4436845ff06cd717b69d79bdc85",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/backtest/": {
-      "fingerprint": "e0dd224bc1ad95be97f1421ae2e3199b2b25ef2579a3ce773d12f2a79e3c3275",
-      "lastmod": "2026-10-22",
+      "fingerprint": "10e26c687ed419415c0afbf1ff629c353b7bb99874d6e9503bd5058fe7d791e5",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/backtest/2022-mentorship-model/": {
-      "fingerprint": "55eb57eed4c7ff1acb4cbd9ab4a915596b5ac03efef85d9221b65d2eae89cd33",
-      "lastmod": "2026-10-22",
+      "fingerprint": "17ab7f5403c7662d789a3ede6bbe0d3dcb8e149a8d7a691a416a12472766a8e5",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/backtest/breaker-reversal/": {
-      "fingerprint": "86d6968ba601c383a0d5959096918813a7d81aa0574573058f13f77fcb255965",
-      "lastmod": "2026-10-22",
+      "fingerprint": "fa8ea7ad2a6bad61b7e30e29615a3f36c0ffffb6e8560b8ed604895acece0e74",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/backtest/charter-model-1/": {
-      "fingerprint": "a1d92731ca6aa3ef93334cca36da33f9e0ff671ee87f5ea4c66ba6aa2cdfaa85",
-      "lastmod": "2026-10-22",
+      "fingerprint": "3de468179afecdee675cc0861ff67d0e24841020a40e62fbe8534e9ebd75126e",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/backtest/charter-model-8/": {
-      "fingerprint": "79d922632fa01e177f877b036e46eb85dccc467e5c8998ec5d22d79a686f1ce7",
-      "lastmod": "2026-10-22",
+      "fingerprint": "4f509e295b413165efc1c3988479fb899d03a56ac11bca6f919716ccde775272",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/backtest/charter-model-9/": {
-      "fingerprint": "186d0e5ba2e26ae0a51442a6acfed2d13a5307b609e29f4fcefeb1b17b30b820",
-      "lastmod": "2026-10-22",
+      "fingerprint": "74959f7b2a5d1155d28677747816a7fb6a6e0c32779b509c93805a1c9cd3f82b",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/backtest/silver-bullet/": {
-      "fingerprint": "c75bf79b29a9c23ed69d577935d319d0e01372aee4d5083315d1e7f1cfa4cc2f",
-      "lastmod": "2026-10-22",
+      "fingerprint": "ac24da993a6d081ae87f78ee3040d74fae8ea5cf32eafc031b77c7811c6b683f",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/chartlab/": {
-      "fingerprint": "9a06b361aa93fbd880eed200784d001ef0bc949fba94bce84ec1772cfdce1f9e",
-      "lastmod": "2026-10-22",
+      "fingerprint": "012e66d9babd948fdaad8eca68659be24b2f276eff57180b7d05c86c64ac94f1",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/chartlab/btc-2022-bullish-model/": {
-      "fingerprint": "8c6849695392b1264cae212aa1833c0b1013987a5b2c055198b6c59065fc1049",
-      "lastmod": "2026-10-22",
+      "fingerprint": "2c0e2e6b1ea7fc7eb380a25253c5827cd0c03d5d01fcf6ebd31863b9190731fc",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/chartlab/eur-mmbm-propulsion-model/": {
-      "fingerprint": "54030bf11912414427a363ba267988be2ece206c8ef89a5d7afbd82ed5ebc11c",
-      "lastmod": "2026-10-22",
+      "fingerprint": "41f2cbe3c73c780089d83d5ca434c617dab95823faa14ea98f9cde3157834edd",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/chartlab/eurusd-failed-ob-breaker/": {
-      "fingerprint": "ba45a24aafcdf936d0ae48f25581a521830377f73225a18c227f586237d28b8c",
-      "lastmod": "2026-10-22",
+      "fingerprint": "69a4392a5d3c23ca691cac96839a31f61d5b3d1859f781be2e3fb5d7c1c918fc",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/chartlab/nq-ath-alchemy-ndog-macro/": {
-      "fingerprint": "049103350628c12f9b4186c4c60395bdc03779bcdf698a8ca798d1d8272dc3bb",
-      "lastmod": "2026-10-22",
+      "fingerprint": "7f4201322dea9254368e3044b23725e81a098cc1743b18ebeeb376f81f8f6aa1",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/chartlab/nq-silver-bullet-short/": {
-      "fingerprint": "a246b47335f2951f473a878ca9363125ce0f07c457f06db654eaa524fd3ee72b",
-      "lastmod": "2026-10-22",
+      "fingerprint": "263c0927b09977296a7b8bf8a66e9567c4a8625175bfea6efeffc62e638b8249",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/chartlab/xauusd-gold-legacy-model/": {
-      "fingerprint": "71d1b618cf812c55519549726a992a680aacb33ab6db6c52b3d73398bc72f984",
-      "lastmod": "2026-10-22",
+      "fingerprint": "e1db22bad80ebba5342a5870e7c5264711bfeda0ff60889218dc4bb52b165ad9",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/compare/": {
@@ -1052,19 +1052,29 @@
       "fingerprint": "5ff41dd526078d10e26088da7ff030d80d2307d6d95bda8a15b246ef57227211"
     },
     "/tools/delivery-suite/": {
-      "fingerprint": "a944c44179679fdf65dbd690365c4fc50706599676af433a21b8a663337fc537"
+      "fingerprint": "9335450d5561a4dbf6138bac50ea86c2b76d56bb067af900594ba5b1dc6d6b99",
+      "lastmod": "2026-10-23",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/delivery-suite/judas-planner/": {
-      "fingerprint": "c987a21d2489d31a1c56afea439930fcaeba9faa46b65c0069fa9b0258b376ed"
+      "fingerprint": "ea3342d7053a5a2c6e81be568f28d67b9b1dafd03fe1ce3800978a347fc11206",
+      "lastmod": "2026-10-23",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/delivery-suite/learning-path/": {
-      "fingerprint": "10853235ed0c8015a4f8903d2ad18a9fe35e9795bb45bbf5cae3e2d4f7cadb67"
+      "fingerprint": "0cf0f30a77a898954237778c090ab727103d9e32287672dd7f28d8258a5e30c7",
+      "lastmod": "2026-10-23",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/delivery-suite/macro-clock/": {
-      "fingerprint": "71397895806db8e77299ca61f55bf18d1c986e8ed37e4d1972ba43d21a1d39c7"
+      "fingerprint": "f6e525d56d0221625991ca1bd26751848c4a8bdac8a673bf0f9268a716cf1f9b",
+      "lastmod": "2026-10-23",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/delivery-suite/ote-calculator/": {
-      "fingerprint": "97708ccc9ae9b298d16cb4e8b9c3f09d71badbbe732d41d06bb9604746bc1027"
+      "fingerprint": "15b583de93a986f3a9798475eebf23e8c90ce3c75e86069a9cb2bcd5a493e8e8",
+      "lastmod": "2026-10-23",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/glossary/": {
       "fingerprint": "e2e65c48c43f65a765c0e006b67591309dea3eb609427738daccee2faea8b3c0"
@@ -1395,38 +1405,38 @@
       "fingerprint": "4aafaf92242e8d9cfae69ec620d6e3a512242ea317471b00bdaa66c9c5950a87"
     },
     "/tools/simulator/": {
-      "fingerprint": "0db43138e595114d9796d4d2e554278716060d98bc6902f457112bb663299356",
-      "lastmod": "2026-10-22",
+      "fingerprint": "3b20332fc258833d625fae5857a2fd486ad307a83538da16366262f18d81401f",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/simulator/failed-ob-breaker/": {
-      "fingerprint": "6b9164e9e2f63f0a3562211a348c6d80b5ebd8c6ab62877e1f2e06d4d6302a38",
-      "lastmod": "2026-10-22",
+      "fingerprint": "68dc9e1bb7c617a3b79601d7a407090824981f3cd5be429980cd30d935e42041",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/simulator/ict-2022-model/": {
-      "fingerprint": "275fb4d2bf42dd57e6b8dd59668c5b041b3e0fe3e4f3df1d2d13283f7cd0f03a",
-      "lastmod": "2026-10-22",
+      "fingerprint": "93515290745798dae8e8b68609b3d6cf9961344d2e14ca2b17dc7669cd4779f5",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/simulator/london-judas-swing/": {
-      "fingerprint": "4707d47b22f5af1508efdd72fc2a96110bee677196c1e89d56294fd5c5ba93a8",
-      "lastmod": "2026-10-22",
+      "fingerprint": "1e4f4451cd25056c2e66ad4a01830019b24b0f89e718ed03d29cdc3e1866389a",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/simulator/news-driver-reversal/": {
-      "fingerprint": "6024fa96c785444122a53852cfc7826d021a9e9df21631b45b025ce6b7bf9350",
-      "lastmod": "2026-10-22",
+      "fingerprint": "8888ec13a37785109fe24aefc46d91706d674b18621d46f553e6d19eceed119d",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/simulator/ote-expansion-long/": {
-      "fingerprint": "f57df206ad2846dc7a40000f23b02de1ee2e9d7429195e253950a12613588b86",
-      "lastmod": "2026-10-22",
+      "fingerprint": "70a63373b4829d17f0b4f9ed6ebcb730bc9026ab0e987490b82542662e9ed1bd",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/simulator/silver-bullet-short/": {
-      "fingerprint": "aff64c48eefecc023c1dcf6fe0b442b9a8cea1252825ea7af4e05666ba1f78f5",
-      "lastmod": "2026-10-22",
+      "fingerprint": "72e575b2797ea324d444c37f3bc4d6efd91ae3932a276ccbdff503f1c42b4f57",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/": {
@@ -1665,8 +1675,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/fair-value-gaps-fvg-and-consequent-encroachment/": {
-      "fingerprint": "2d1514d4eada209aa408e24dc71bc5f32a7ed3a2ddfe3f4407d8a79f9d160161",
-      "lastmod": "2026-10-22",
+      "fingerprint": "f672c00b2919cdd2268f9376c2d928e2efecc3c9caed38b0c92b90298cb37337",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/how-an-exchange-matches-orders/": {
@@ -1725,8 +1735,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/liquidity-engineering-and-liquidity-runs/": {
-      "fingerprint": "6e6c1cc23d2a488d0a265113c5d47ecf9ab8b9ecf389d0faaee778411fdfea9b",
-      "lastmod": "2026-10-22",
+      "fingerprint": "e807041a6332b17d8aed6238bb1c09edfe92295fe696589f66a745db556690af",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/liquidity-the-most-misunderstood-word-in-trading/": {
@@ -1760,8 +1770,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/order-blocks-ob-and-mitigation/": {
-      "fingerprint": "29f2912af74c7347d2385a541935648d0364d83fa012ca8228125a2573c737d6",
-      "lastmod": "2026-10-22",
+      "fingerprint": "f56bf05e5126282f082b9e6e708cb6840b5985eb436de30e44984513e573866a",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/rdrb-balanced-price-range-and-enigma-fvg/": {
@@ -2239,78 +2249,78 @@
       "fingerprint": "6dce974e8160e66dfc02a430b828879e67b7ae829c8b59995b47d07c9a810ab0"
     },
     "/ur/tools/": {
-      "fingerprint": "7a67ba3de756d965f2e60cd4e164915b6ad108e099de546f21ba09d6e710cc83",
-      "lastmod": "2026-10-20",
+      "fingerprint": "399585ebc43573db9706438bdcc2d9ec6b67102470b453d49d75c71e1ba4bf29",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/backtest/": {
-      "fingerprint": "59bf20bb1f97d161b784c502e7f5eef0a4abda07c98130f315212763c3b66936",
-      "lastmod": "2026-10-22",
+      "fingerprint": "1f4fa47377caff75fba16a02fa340bd27420e5e51e3bbc7f591d9c9463402c8a",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/backtest/2022-mentorship-model/": {
-      "fingerprint": "0ea7fe112312bb5675d27bf98ddec2e590801c2f797b27763dcf5c67f00ae660",
-      "lastmod": "2026-10-22",
+      "fingerprint": "c283ba64b15a18f460c8b5f1ba1d85d01c3d8d658aad8d721b180bce0bbea3f3",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/backtest/breaker-reversal/": {
-      "fingerprint": "17a0ce471413417ac65d1c63acea467a885aa6894c0ec2d73d9c100246f03276",
-      "lastmod": "2026-10-22",
+      "fingerprint": "34c7b35062d1e4ba4cb77b2ad14659b544515d11bff2d6efb7965c514f3b9108",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/backtest/charter-model-1/": {
-      "fingerprint": "1762e68d948f02a343843390645e23d806ceafc3bc93b85e190fe89f790f93eb",
-      "lastmod": "2026-10-22",
+      "fingerprint": "1e857dc22fcfbdc0e545b24b75cc6262711269ff0e6270324872d42d39b9ad35",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/backtest/charter-model-8/": {
-      "fingerprint": "fa37acf8c0f3d416bb0da64b33e72f204c974ae7d5da9cba93f1300636ac6b69",
-      "lastmod": "2026-10-22",
+      "fingerprint": "e8e753316a4a2c2c06bf7b1c0990bc73e4e1cb9a24a65cff5154d893bed620e5",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/backtest/charter-model-9/": {
-      "fingerprint": "92ef7ccc614eeeec2249c59c4ec8d5cb567602fa47a68ca9d0f902cd69a49477",
-      "lastmod": "2026-10-22",
+      "fingerprint": "f873fe86f7d7207d364b6614cc6b99bd595d00a887d95c176711341a2a36ef80",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/backtest/silver-bullet/": {
-      "fingerprint": "691069b633f0aef756be2164557148ea9daf5ac64e5dc5d4dedc7cb6107d719a",
-      "lastmod": "2026-10-22",
+      "fingerprint": "c34cbde35c18114b2d0b8fb00abc94c0921d4c949dd7a3f3e9d76c2e8c640ff3",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/chartlab/": {
-      "fingerprint": "2e7c43c3d0564bd334d308712009dbf345534117d60cd0849e3ec12d8a08cbd2",
-      "lastmod": "2026-10-22",
+      "fingerprint": "3bdcd5c0821984eaa712b5998ddb7a0f7a95f694eb9b4e061480b47ad855fd13",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/chartlab/btc-2022-bullish-model/": {
-      "fingerprint": "c918712257b638798e4cab89f9767d0e92f6a1a5db2a2ec0797f14cce1296d78",
-      "lastmod": "2026-10-22",
+      "fingerprint": "2f4ded45fef325da45bee4a56b6040105fcf13c65cd690695271299b5e507cd9",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/chartlab/eur-mmbm-propulsion-model/": {
-      "fingerprint": "4523a6ecf4b66b2ce16b8a804fa82450aac5db869b8f6409a3192b04895dcc2f",
-      "lastmod": "2026-10-22",
+      "fingerprint": "ab9148b9c6c4d33df0a3d981d3b85d0290226df4607a0e8675c79acc56499a0b",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/chartlab/eurusd-failed-ob-breaker/": {
-      "fingerprint": "d6c504cf92c520baacaef734e62ec32d29909cd79f5e42fced43ab17d9b2227a",
-      "lastmod": "2026-10-22",
+      "fingerprint": "ea632a41d0fd123f67fdbc7c647ea63d31f6198ba8608fa9582db5c77fbe89dc",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/chartlab/nq-ath-alchemy-ndog-macro/": {
-      "fingerprint": "cf9eab46fef4ab1fcfce533df4b9cd6d4b8da93ad4c11cef914e18edd9e049de",
-      "lastmod": "2026-10-22",
+      "fingerprint": "16b6ca50a8f3bb53f5dd69c9ec50c24caf57bc67b0a02b750bd8fee7f7918725",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/chartlab/nq-silver-bullet-short/": {
-      "fingerprint": "4b40e3f816e11bd9c9dfb90f1d8b685184306db56730660138fe85241f4ed1d8",
-      "lastmod": "2026-10-22",
+      "fingerprint": "134850050a309f41cd399cc367bdd9ba47e6ced903514e05d1aac9748abdb059",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/chartlab/xauusd-gold-legacy-model/": {
-      "fingerprint": "186cb49bdd3e4af3a720c69917238923e6adca9027c24adb822a0182bccb61d0",
-      "lastmod": "2026-10-22",
+      "fingerprint": "878609bd99b4e41a972b5d9984823f4ad48414b75364a05700de583284240b96",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/compare/": {
@@ -2371,19 +2381,29 @@
       "fingerprint": "2af8611e718054e45a85574375ad6dfd99ee2bf88d1f24ebdfa94c4b83e9751c"
     },
     "/ur/tools/delivery-suite/": {
-      "fingerprint": "a1f0c9303be83a81ff981107e2486a55cc42c3f6b7eb4d2decffdb165831c12a"
+      "fingerprint": "82c9c55a8e0441379e457b08a5c0e1a68d196cbd64c80a4c30c962cb26148632",
+      "lastmod": "2026-10-23",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/delivery-suite/judas-planner/": {
-      "fingerprint": "ee38b74550e192c7e0d5d7f1a5c1b28d13f7da96d1b050bb6e3162f66378262d"
+      "fingerprint": "992363a85536710ed5f3b5ae9028cc6ada2ec73acccb4794c8fd2ceedc17bfa5",
+      "lastmod": "2026-10-23",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/delivery-suite/learning-path/": {
-      "fingerprint": "e5ba388867f716647d4a5fea0024a23f7e3e218aeb281fd635424f90924f125b"
+      "fingerprint": "7552f0e1a8683a1d3f6ddf308d0955064ffc8fc1153f80aa1c057f9e661db746",
+      "lastmod": "2026-10-23",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/delivery-suite/macro-clock/": {
-      "fingerprint": "409778c2de756e0bf24af0f5ae6e3e6ebaedeef27a0bd6484bfd10f2b848b3e4"
+      "fingerprint": "37c2fe90c06fb8b69b24d25c9c0d573da13dce6f74d362733ce35a01a1a2dc48",
+      "lastmod": "2026-10-23",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/delivery-suite/ote-calculator/": {
-      "fingerprint": "e9ba4187b5e109575b9bb89b93961243692ffaccd4dc7bd9856ad99a2d7a23c7"
+      "fingerprint": "fe370a3b0c9eff86edb1a74e608aa4485715f669fa0ef4b75357e62756ca6cd3",
+      "lastmod": "2026-10-23",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/glossary/": {
       "fingerprint": "1117f5231d3ab28114d79fdef7b86d4e1ca9241f690df9c36c13c49fd152ed97"
@@ -2714,38 +2734,38 @@
       "fingerprint": "a1a0b5bfe19e189eae81eb312437ca094ecc269c3e0805db73792b92ccff78a6"
     },
     "/ur/tools/simulator/": {
-      "fingerprint": "fc4acbe9194fbf1368a7cd239aa8af62963d284c4cceb0455ab3e67dfa280929",
-      "lastmod": "2026-10-22",
+      "fingerprint": "98b3b79ee1a90db7c8a37648c514586492eb034582aa53a3c86cb292140e210f",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/simulator/failed-ob-breaker/": {
-      "fingerprint": "a122a452a670341e9cca1b7ecb1f41fc740fecc562dbf46ee416b4e889205712",
-      "lastmod": "2026-10-22",
+      "fingerprint": "4c00469bc142f91ae6634804d9ba63b4523be3dd13756ab748207c46bdfd7306",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/simulator/ict-2022-model/": {
-      "fingerprint": "49d4aca401379f8ef379912bd91b60710ae60ddabdd013fe5c21ed572ef10417",
-      "lastmod": "2026-10-22",
+      "fingerprint": "23c89c8b80ff411c0089d5af8f2e73f8261c44fa989d6c98eb6cb254173bb5e8",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/simulator/london-judas-swing/": {
-      "fingerprint": "026fc9e0c3c063f65129d50fe0709b148c6428dbc7fdbfd15ffea17b1354e58c",
-      "lastmod": "2026-10-22",
+      "fingerprint": "57c78d2fbc10e1b2e37bcbaced30ecf275fe11ed13d5673a79d7fec313bf1808",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/simulator/news-driver-reversal/": {
-      "fingerprint": "ab45900caa0c095881f533b95aebb20ef7f532d015d2115da0dd109f14331221",
-      "lastmod": "2026-10-22",
+      "fingerprint": "389add1f84b3f96fc1e92b1563907073b398d8220d2c63286a77b94c8a2d46b3",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/simulator/ote-expansion-long/": {
-      "fingerprint": "72c0ce5c337e73597599b05ae88bcd0c5262de74ebc33659b2cf55ab6648be96",
-      "lastmod": "2026-10-22",
+      "fingerprint": "1418e35502269400e5201583c7b6f5118e38b8756621414fd600d5008f09490f",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/simulator/silver-bullet-short/": {
-      "fingerprint": "dcfb369dfcc06ba4ab60eb30a1a554bae2ad5accf819a69db275d4a565b02f23",
-      "lastmod": "2026-10-22",
+      "fingerprint": "50dfa5e21d6ac00d913e0b38a179fb236368dc63592536862db1303aabf84d7e",
+      "lastmod": "2026-10-23",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     }
   }

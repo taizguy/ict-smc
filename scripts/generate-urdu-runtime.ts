@@ -21,7 +21,7 @@ function groupFor(file: string): Group {
   if (/data\/chapters|Chapters|ChapterRoom/.test(file)) return 'chapters';
   if (/masood/i.test(file)) return 'masood';
   if (/Legal|publisherPageCopy/.test(file)) return 'publisher';
-  if (/data\/(?:concepts|masterclass|comparisons|quizzes|chartScenarios|theinnercircletraders)|(?:ChartLab|CompareView|ConceptExplorer|Masterclass|MasteryDashboard|InstitutionalTools|KnowledgeGraph|BacktestLab|TradeSimulator|TradingJournal|TradingTools)/.test(file)) return 'tools';
+  if (/data\/(?:learningCases|labGuides|concepts|masterclass|comparisons|quizzes|chartScenarios|theinnercircletraders)|(?:GuidedMarketDesk|MarketWorkspace|MarketChart|ChartLab|CompareView|ConceptExplorer|Masterclass|MasteryDashboard|InstitutionalTools|KnowledgeGraph|BacktestLab|TradeSimulator|TradingJournal|TradingTools)/.test(file)) return 'tools';
   return 'shared';
 }
 function add(text: string, group: Group) {

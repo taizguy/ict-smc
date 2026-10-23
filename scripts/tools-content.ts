@@ -16,23 +16,23 @@ const section=(title:string,items:string[])=>`<section><h2>${e(title)}</h2>${ite
 export function correctToolDocument(r:RouteMeta,path:string){
  if(!path.startsWith('/tools/'))return;
  const parts=path.split('/').filter(Boolean),tool=parts[1],slug=parts.at(-1);
- if(Object.hasOwn(labGuides,tool)){
+ if(Object.hasOwn(labGuides,tool)&&(tool!=='delivery-suite'||parts.length===2)){
   const guide=labGuides[tool];
   const names:Record<string,string>={btc_2022_bullish_model:'BTC: Liquidity & FVG',nq_silver_bullet_short:'NQ: Silver Bullet',eurusd_failed_ob_breaker:'EUR/USD: Failed Block',xauusd_gold_legacy_model:'Gold: Sweep & Reference',eur_mmbm_propulsion_model:'EUR/USD: Price Curve',nq_2026_ath_alchemy_ndog_macro:'NQ: Opening Gap'};
   const scenario=chartScenarios.find(s=>getChartScenarioSlug(s.id)===slug);
-  const context=tool==='chartlab'?(scenario?names[scenario.id]:'Chart Laboratory'):tool==='simulator'?(SIMULATOR_MODELS.find(m=>m.slug===slug)?.name||'Trade Simulator'):(BACKTEST_STRATEGIES.find(m=>m.slug===slug)?.shortName||'Backtest Lab');
-  r.title=`${context}: ${tool==='backtest'?'Rule Study':tool==='simulator'?'Decision Practice':'Chart Practice'} | LearnSMC`;
+  const context=tool==='chartlab'?(scenario?names[scenario.id]:'Chart Laboratory'):tool==='delivery-suite'?'ICT Delivery Suite':tool==='simulator'?(SIMULATOR_MODELS.find(m=>m.slug===slug)?.name||'Trade Simulator'):(BACKTEST_STRATEGIES.find(m=>m.slug===slug)?.shortName||'Backtest Lab');
+  r.title=`${context}: ${tool==='delivery-suite'?'Session Preparation':tool==='backtest'?'Rule Study':tool==='simulator'?'Decision Practice':'Chart Practice'} | LearnSMC`;
   r.heading=`${context}: ${guide.title}`;
   r.description=`${context}. ${guide.description}`;
-  r.bodyHtml=section(guide.title,guide.paragraphs)+renderToStaticMarkup(createElement(ChapterDiagram,{chapterId:tool==='chartlab'?13:tool==='simulator'?22:38,staticOnly:true}))+`<p><a href="/tools/chartlab/">Chart Laboratory</a> · <a href="/tools/simulator/">Trade Simulator</a> · <a href="/tools/backtest/">Backtest Lab</a> · <a href="/resources/ict-smc-cheat-sheet/">Free glossary and cheat sheet</a></p>`;
-  r.schemaJson={'@type':'WebApplication',name:context,description:guide.description,url:r.canonical,applicationCategory:'EducationalApplication',operatingSystem:'Web browser',isAccessibleForFree:true,author:lessonAuthor,publisher,dateModified:guidedChartRevision};
+  r.bodyHtml=section(guide.title,guide.paragraphs)+renderToStaticMarkup(createElement(ChapterDiagram,{chapterId:tool==='chartlab'?13:tool==='simulator'?22:38,staticOnly:true}))+`<p><a href="/tools/chartlab/">Chart Laboratory</a> · <a href="/tools/simulator/">Trade Simulator</a> · <a href="/tools/backtest/">Backtest Lab</a> · <a href="/tools/delivery-suite/">ICT Delivery Suite</a> · <a href="/resources/ict-smc-cheat-sheet/">Free glossary and cheat sheet</a></p>`;
+  r.schemaJson={'@type':'WebApplication',name:context,description:guide.description,url:r.canonical,applicationCategory:'EducationalApplication',operatingSystem:'Web browser',isAccessibleForFree:true,author:lessonAuthor,publisher,dateModified:'2026-10-23'};
   return;
  }
  const evidence=section('Definitions and evidence conventions',[INTERPRETATION_GUIDANCE,FVG_GUIDANCE,OB_GUIDANCE]);
  if(!tool){r.title='Trading Study Tools, Charts and Reference | LearnSMC';r.heading='Trading study workbench';r.description='Explore chart exercises, trade-plan arithmetic, hypothetical expectancy, a device-local journal and ICT/SMC reference lessons.';r.bodyHtml=section('Choose a study task',[
  `Browse ${masterclassCollection.length} independent masterclass/reference lessons, 41 glossary concepts and sixteen comparison pages. The tools describe their assumptions and do not award professional credentials.`,
- 'Chart Lab contains six authored illustrative sequences with visual recognition drills and selectable candles. It is not a sourced historical or live feed. The Trade Simulator locks a fictional plan before the learner reveals later candles, including losses, gaps and ambiguous outcomes.',
- 'Backtest Lab scans a transparent FVG teaching rule on synthetic demo candles or a local OHLC CSV. Training and hold-out samples are separate. No independently verified strategy win rate is supplied. The journal stores user-entered records and drafts in this browser; export backups. The profile displays actual lesson completion and fixed practice quizzes.',
+ 'Chart Laboratory explains one context-to-execution sequence at a time using separate hourly and five-minute teaching charts. The simulator asks the learner to wait, participate or stand aside before revealing the outcome. These are authored examples, not historical records.',
+ 'Backtest Lab first applies a complete stated checklist to six teaching cases, including skipped and unfilled orders. Its separate advanced CSV sandbox tests isolated gap geometry, not a complete ICT strategy. The journal stores user-entered records and drafts in this browser; export backups.',
  'The delivery suite provides a New York clock, tick-aware retracement arithmetic, whole-contract futures sizing, range-multiple projections and a device-local study checklist. Calculations do not independently validate a setup.'
  ]);}
  else if(tool==='simulator'){
@@ -64,6 +64,7 @@ export function correctToolDocument(r:RouteMeta,path:string){
  const scenario=chartScenarios.find(s=>getChartScenarioSlug(s.id)===slug);r.description='Study authored illustrative candles with validated marking tasks, manual replay and accessible price controls. No historical feed or outcome prediction.';
  if(scenario){r.bodyHtml=section(scenario.title,[scenario.description,`${scenario.asset}: ${scenario.timeframe}. These timestamps describe a compressed teaching illustration, not a sourced historical exchange record.`,scenario.htfContext])+section('Guided marking and replay',['The exercise starts at the first candle. Reveal bars manually or replay them; only revealed bars determine the visible price scale. Review mode deliberately reveals the full example. It is separate from assessed guided practice.','Candle answers are checked against the pre-sweep extreme, annotated sweep range, largest specified post-sweep body, structure/role-reversal area and entry-array range. Entry prices must be inside the marked array; stops must be beyond the sweep extreme and on the loss side; the target must match the opposing annotated reference.'])+section('Accessible controls and limitations',['Use a labeled candle selector or price form for keyboard marking. Pointer coordinates are converted into SVG coordinates and prices are rounded to instrument precision. Overlays wait until their defining candles are revealed.','These criteria assess the authored exercise, not universal market behavior or profitability. Annotated FVGs and blocks are supplied by the author; no real-time detection or order-book reconstruction is performed.']);}
  }
+ if(!tool)r.bodyHtml+=section('One chart. Four ways to learn.',[labGuides.chartlab.paragraphs[1]]);
  r.heading=r.heading.replace(/Certification Levels/g,'Practice Progress').replace(/Certification/g,'Practice').replace(/Certified Institutional Operator/g,'Curriculum Practice Learner');
  if (parts.length > 2) {
    r.description=`${r.heading}: ${r.description}`;

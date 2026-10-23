@@ -12,6 +12,8 @@
 @import "./styles/guided-lab.css";
 @import "./styles/chapter-learning.css";
 @import "./styles/lab-desk.css";
+@import "./styles/market-workspace.css";
+@import "./styles/guided-market.css";
 
 @theme {
   --font-sans: "Source Sans 3", system-ui, sans-serif;

@@ -1,3 +1,5 @@
+import guidedMarketUrdu from './guided-market-urdu.json';
+import marketWorkspaceUrdu from './market-workspace-urdu.json';
 import { learningFirstUrdu } from './learning-first-urdu';
 import { publisherUrdu } from './publisher-urdu';
 import { navigationUrdu } from './navigation-urdu';
@@ -177,5 +179,7 @@ export const urdu: Record<string, string> = {
   '“Price does not move because there are more buyers than sellers. It moves because liquidity is consumed.”': '”قیمت اس لیے نہیں بدلتی کہ خریدار زیادہ ہیں؛ آرڈرز دستیاب لیکویڈیٹی کو استعمال کرتے ہیں، اس لیے قیمت بدلتی ہے۔“',
   '“Patience pays better than any intraday leverage. Wait for the liquidity sweep.”': '”لیوریج بڑھانے سے پہلے صبر سیکھیں۔ اپنی لیکویڈیٹی سویپ (Liquidity Sweep) کی شرط پوری ہونے دیں۔“',
   '“In honor of Trader Abdullah Masood — turning algorithmic complexity into mathematical clarity.”': '”ٹریڈر عبداللہ مسعود کے نام، جو الگورتھم کی پیچیدگی کو حساب کی مدد سے واضح کرتے ہیں۔“',
+  ...marketWorkspaceUrdu,
+  ...guidedMarketUrdu,
 };
 for (const source of Object.keys(urdu)) urdu[source] = refineTradingLanguage(source, urdu[source]);

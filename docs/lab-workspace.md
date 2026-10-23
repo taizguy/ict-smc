@@ -1,3 +1,5 @@
+> Superseded for the four chart tools by [shared-market-engine.md](shared-market-engine.md), 23 October 2026. Retained as an implementation history.
+
 # Lab workspace implementation notes
 
 This document describes the delivered extension to LearnSMC's existing tools. It is scoped to the lab workspace; the site's CSS remains the authority for fonts, colors, themes and shared controls.

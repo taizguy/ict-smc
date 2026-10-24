@@ -89,6 +89,15 @@ html :is(input:not([type=range],[type=checkbox],[type=radio],[type=hidden]),sele
 }
 html :is(input:not([type=range],[type=checkbox],[type=radio],[type=hidden]),select,textarea):hover { border-color: color-mix(in srgb,var(--color-ink-muted) 65%,var(--color-line)); }
 html .modal-scrollable,html [data-lenis-prevent] { scrollbar-color: var(--color-ink-muted) var(--color-surface-muted); }
+/* Search is one control, including its icon. Keep a single visible focus cue. */
+html .search-input-row:focus-within {
+  box-shadow: inset 0 -2px 0 var(--color-brand);
+}
+html .search-input-row input:is(:focus,:focus-visible) {
+  outline: none !important;
+  outline-offset: 0 !important;
+  box-shadow: none;
+}
 html .modal-scrollable::-webkit-scrollbar-track { background: var(--color-surface-muted); }
 html .modal-scrollable::-webkit-scrollbar-thumb { background: color-mix(in srgb,var(--color-ink-muted) 60%,var(--color-surface-muted)); }
 

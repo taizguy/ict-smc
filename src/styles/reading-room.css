@@ -21,3 +21,39 @@ html[data-theme=dark] .rr-book{background:#393326;color:#d5bea0;border-color:#76
 /* Open reading surfaces: no frame running against lesson text. */
 .reading-room .topic-learning .topic-exercise { border-block: 0; }
 .reading-room .topic-learning .topic-insight { border-inline-start: 0; }
+
+/* A retained frame always needs an inset; open prose has no edge rule. */
+.reading-room .mentorship-card {
+  padding: 28px clamp(20px, 2.5vw, 30px);
+}
+.reading-room .mentorship-intro {
+  border: 0;
+  padding: 24px 0;
+}
+.reading-room .rr-takeaway {
+  border: 0;
+  padding: 20px 24px;
+  background: var(--rr-wash);
+}
+.reading-room .mentorship-study-card {
+  padding: 24px;
+}
+.reading-room .mentorship-page :is(.mentorship-card,.mentorship-study-card) {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* The composite search field has one focus ring, around its outer shell. */
+html .reading-room .rr-search input,
+html .reading-room .rr-search input:is(:hover,:focus,:focus-visible) {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  outline: none !important;
+  outline-offset: 0 !important;
+}
+@media (max-width:760px) {
+  .reading-room .mentorship-card { padding: 22px 20px; }
+  .reading-room .rr-takeaway { padding: 18px 20px; }
+}

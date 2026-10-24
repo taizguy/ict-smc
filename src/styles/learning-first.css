@@ -38,6 +38,11 @@ html{background:var(--color-canvas)}body{color:var(--color-ink)}.desktop-navigat
 
 .fieldnotes{--ink:var(--color-ink);--muted-ink:var(--color-ink-secondary);--paper:var(--color-surface);--paper-line:var(--color-line)}
 .fieldnotes .article-risk{background:var(--color-surface-muted)}
+.learning-footer-brand .footer-author { margin-top: 18px; font-size: .85rem; line-height: 1.7; }
+.learning-footer-brand .footer-author a { text-decoration: underline; text-underline-offset: 3px; }
+.footer-author-profiles { display: flex; flex-wrap: wrap; gap: 4px 18px; list-style: none; padding: 0; margin: 8px 0 0; }
+.footer-author-profiles a { display: inline-flex; align-items: center; min-height: 44px; font-size: .85rem; color: var(--color-ink-secondary); }
+.footer-author-profiles a:hover { color: var(--color-brand); text-decoration: underline; }
 
 /* Be UI study: role-based accents, paired highlight colors and quieter controls. */
 :root{--ui-action:#006bd6;--ui-action-hover:#0057b0;--ui-action-ink:#fff;--ui-mark-blue:#d4eaf4;--ui-mark-blue-ink:#0d3a50;--ui-mark-peach:#f8dcc4;--ui-mark-peach-ink:#4a2310;--ui-selection:#bce8eb;--ui-selection-ink:#103b42;--color-brand:var(--ui-action);--color-brand-hover:var(--ui-action-hover);--color-on-brand:var(--ui-action-ink);--color-teal:var(--ui-action)}

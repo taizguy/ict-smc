@@ -8,6 +8,7 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { articlePages } from './article-pages';
 import { applySitemapDates } from './sitemap-dates';
+import { minifyInlineDocuments } from './minify-inline';
 import { URDU_PUBLISHED } from '../src/i18n/release';
 import { generateUrduPages } from './urdu-pages';
 import { orderRedirectRules } from './redirect-rules';
@@ -1903,4 +1904,5 @@ fs.writeFileSync(path.join(distDir, 'llms-full.txt'), llms + '\n## Published pag
 
 // Only completed language editions enter the public sitemap. Review builds remain noindex.
 if (URDU_PUBLISHED || process.env.URDU_FULL_PREVIEW === 'true') generateUrduPages(distDir, allRoutes);
+minifyInlineDocuments(distDir);
 applySitemapDates(distDir);

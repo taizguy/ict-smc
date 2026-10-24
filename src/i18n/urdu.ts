@@ -196,6 +196,8 @@ export const urdu: Record<string, string> = {
   ...readingRoomReviewedUrdu,
   'Definitions and study conditions': 'تعریفیں اور مطالعے کی شرائط',
   'articles': 'مضامین',
+  'Published by': 'ناشر',
+  'Author profiles': 'مصنف کے پروفائلز',
   'Contact & Support': 'رابطہ اور معاونت',
   'Definition and scope': 'تعریف اور دائرۂ کار',
   'Lectures in this series': 'اس سلسلے کے اسباق',

@@ -128,7 +128,12 @@ export function localizeHtml(source: string, pathname: string, catalog: Translat
   return serialize(document);
 }
 
-export function addEnglishAlternates(source: string, pathname: string, indexable = true): string {
+/** Include the current language even when an editorial series has no translation yet. */
+export function addLanguageAlternates(source: string, pathname: string, indexable = true): string {
   const links = indexable ? languageAlternates(pathname).map(item => `<link rel="alternate" hreflang="${item.language}" href="${item.href}" />`).join('') : '';
-  return source.replace(/<link\b[^>]*hreflang="[^"]+"[^>]*>/g, '').replace(/<nav\b[^>]*data-language-switcher[^>]*>[\s\S]*?<\/nav>/g, '').replace('</head>', `${links}</head>`).replace('</header>', `${switcher(pathname, 'en')}</header>`);
+  return source.replace(/<link\b[^>]*hreflang="[^"]+"[^>]*>/g, '').replace('</head>', `${links}</head>`);
+}
+
+export function addEnglishAlternates(source: string, pathname: string, indexable = true): string {
+  return addLanguageAlternates(source, pathname, indexable).replace(/<nav\b[^>]*data-language-switcher[^>]*>[\s\S]*?<\/nav>/g, '').replace('</header>', `${switcher(pathname, 'en')}</header>`);
 }

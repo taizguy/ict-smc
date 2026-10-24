@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { parse } from 'parse5';
+import { languageAlternates, SITE_ORIGIN } from '../src/i18n/locale';
 import { textbookChapters } from '../src/data/chaptersData.ts';
 import { ictConcepts } from '../src/data/conceptsData.ts';
 import { 
@@ -407,6 +409,34 @@ for (const hub of ['index.html', 'curriculum/index.html', ...standaloneHubsToChe
   }
 }
 assert(legacyLinkLeaks === 0, 'ZERO legacy /chapter/1 or ?chapter=1 links found in hub pages');
+
+// Every indexable page must agree with its published language cluster and sitemap.
+// Includes English-only History pages: they still need their English self-reference.
+console.log('\n[Hreflang] Checking self-references, reciprocals and sitemap parity...');
+const seoManifest = JSON.parse(fs.readFileSync(path.join(distDir, 'seo-manifest.json'), 'utf8'));
+const publishedPaths = new Set(seoManifest.filter((r: any) => r.indexable).map((r: any) => r.path));
+const sitemapXml = fs.readFileSync(path.join(distDir, 'sitemap.xml'), 'utf8');
+const sitemapEntries = [...sitemapXml.matchAll(/<url>[\s\S]*?<\/url>/g)].map(m => m[0]);
+for (const route of seoManifest.filter((r: any) => r.indexable)) {
+  const document = parse(fs.readFileSync(path.join(distDir, route.outputPath), 'utf8'));
+  const root = document.childNodes.find((n: any) => n.tagName === 'html') as any;
+  const head = root?.childNodes.find((n: any) => n.tagName === 'head');
+  const links = (head?.childNodes || []).filter((n: any) => n.tagName === 'link').map((n: any) => Object.fromEntries(n.attrs.map((a: any) => [a.name, a.value])));
+  const canonical = links.find((l: any) => l.rel === 'canonical')?.href;
+  const language = root?.attrs.find((a: any) => a.name === 'lang')?.value;
+  const alternates = links.filter((l: any) => l.rel === 'alternate' && l.hreflang);
+  const expected = languageAlternates(route.path);
+  assert(canonical === SITE_ORIGIN + route.path, `${route.path}: self-canonical URL`);
+  assert(alternates.some((l: any) => l.hreflang === language && l.href === canonical), `${route.path}: hreflang self-reference`);
+  assert(alternates.length === expected.length, `${route.path}: no duplicate or unexpected language alternates`);
+  const entry = sitemapEntries.find(entry => entry.includes(`<loc>${canonical}</loc>`));
+  assert(!!entry, `${route.path}: canonical exists in sitemap`);
+  for (const alternate of expected) {
+    assert(alternates.some((l: any) => l.hreflang === alternate.language && l.href === alternate.href), `${route.path}: correct ${alternate.language} alternate`);
+    assert(publishedPaths.has(new URL(alternate.href).pathname), `${route.path}: ${alternate.language} target is published and indexable`);
+    assert(!!entry?.includes(`hreflang="${alternate.language}" href="${alternate.href}"`), `${route.path}: ${alternate.language} sitemap parity`);
+  }
+}
 
 console.log('\n--------------------------------------------------');
 console.log(`Results: ${passedTests} checks passed, ${failedTests} failed.`);

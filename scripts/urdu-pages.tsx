@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { localizeHtml, addEnglishAlternates } from './localized-html';
+import { localizeHtml, addEnglishAlternates, addLanguageAlternates } from './localized-html';
 import { languageAlternates, localizedHref, SITE_ORIGIN } from '../src/i18n/locale';
 import { TranslationProvider } from '../src/i18n/TranslationProvider';
 import { urdu } from '../src/i18n/urdu';
@@ -23,9 +23,12 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
   const manifest = JSON.parse(fs.readFileSync(path.join(dist, 'seo-manifest.json'), 'utf8'));
   for (const route of routes) {
     const englishPath = new URL(route.canonical).pathname;
-    if(isEnglishOnlyHistory(englishPath)) continue;
     const sourcePath = path.join(dist, route.outputPath);
     const source = fs.readFileSync(sourcePath, 'utf8');
+    if (isEnglishOnlyHistory(englishPath)) {
+      if (!preview) fs.writeFileSync(sourcePath, addLanguageAlternates(source, englishPath, !route.isNoindex));
+      continue;
+    }
     const html = localizeHtml(source, englishPath, urdu, { preview, indexable: !route.isNoindex, availablePaths: available, onMissing(text) {
       if (!text) return;
       if (!missing.has(text)) missing.set(text, new Set());

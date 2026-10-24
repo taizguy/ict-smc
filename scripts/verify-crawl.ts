@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
+import { parse } from 'parse5';
 import { textbookChapters } from '../src/data/chaptersData';
 import { masoodPlaylistsData } from '../src/data/masoodData';
 import { chapterCatalog, lectureCatalog } from '../src/data/catalog.generated';
@@ -20,6 +21,27 @@ const edges = new Map<string, string[]>();
 const routePaths = new Set(routes.map(r => r.path));
 const failures: string[] = [];
 function check(condition: unknown, message: string) { if (!condition) failures.push(message); }
+function hasContentDisclaimer(source: string) {
+  function text(node: any): string { return node.value || (node.childNodes || []).map(text).join(''); }
+  function hasDisclosureLink(node: any): boolean {
+    return (node.tagName === 'a' && node.attrs?.some((a: any) => a.name === 'href' && a.value === '/disclaimer/'))
+      || (node.childNodes || []).some(hasDisclosureLink);
+  }
+  function visit(node: any, insideMain = false): boolean {
+    const main = insideMain || node.tagName === 'main';
+    const classes = node.attrs?.find((a: any) => a.name === 'class')?.value.split(/\s+/) || [];
+    if (main && classes.includes('ymyl-disclaimer')) {
+      return text(node).includes('Financial education and risk notice') && hasDisclosureLink(node);
+    }
+    return (node.childNodes || []).some((child: any) => visit(child, main));
+  }
+  return visit(parse(source));
+}
+const disclaimerFixture = '<aside class="ymyl-disclaimer rounded-xl"><h2>Financial education and risk notice</h2><a href="/disclaimer/">Read disclosure</a></aside>';
+assert.ok(hasContentDisclaimer(`<main>${disclaimerFixture}</main>`), 'Styled in-content disclaimers are recognized');
+assert.ok(!hasContentDisclaimer(disclaimerFixture), 'A footer-only disclaimer cannot satisfy the in-content requirement');
+assert.ok(!hasContentDisclaimer(`<main>${disclaimerFixture.replace('href="/disclaimer/"', 'href="/about/"')}</main>`), 'Disclaimer must link to the disclosure');
+assert.ok(!hasContentDisclaimer(`<main>${disclaimerFixture.replace('ymyl-disclaimer', 'not-ymyl-disclaimer')}</main>`), 'Disclaimer class must match a complete token');
 for (const route of routes) {
   const html = fs.readFileSync(path.join(dist, route.outputPath), 'utf8');
   check(!titles.has(route.title), `Duplicate title: ${route.path}`); titles.add(route.title);
@@ -45,7 +67,7 @@ for (const route of routes) {
   if (route.path.startsWith('/learn/') || route.path.startsWith('/masood/lectures/')) {
     const resource = nodes.find(n => n['@type'] === 'LearningResource');
     check(resource?.author?.name === 'Muhammad Umer Ijaz', `Actual author missing: ${route.path}`);
-    check(html.includes('class="ymyl-disclaimer"'), `In-content disclaimer missing: ${route.path}`);
+    check(hasContentDisclaimer(html), `In-content disclaimer missing or incomplete: ${route.path}`);
     if (route.path.startsWith('/learn/')) check((html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] || '').includes('<a href="/learn/'), `Context links missing: ${route.path}`);
     if (route.path.startsWith('/masood/lectures/')) check(html.includes('https://www.youtube.com/watch?v='), `Original source missing: ${route.path}`);
   }

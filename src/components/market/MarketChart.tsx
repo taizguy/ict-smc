@@ -102,6 +102,7 @@ export default function MarketChart(props: Props) {
         autoSize: true,
         height: 420,
       });
+      root.current.querySelector('table')?.setAttribute('role','presentation');
       api.current = chart;
       const candles = chart.addSeries(CandlestickSeries, {
         upColor: "#13866a",
@@ -463,6 +464,7 @@ export function EquityChart({
       height: 170,
       timeScale: { visible: false },
     });
+    root.current.querySelector('table')?.setAttribute('role','presentation');
     const add = (data: number[], color: string, dashed = false) => {
       const s = chart.addSeries(LineSeries, {
         color,

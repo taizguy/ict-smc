@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { useTranslation } from '../i18n/TranslationProvider';
 import { ChapterDiagram } from './ChapterDiagram';
 import { mentorshipTracks, mentorshipPath, mentorshipLessonPath } from '../data/mentorshipTracks';
 import { mentorshipRecordings } from '../data/mentorshipRecordings.generated';
@@ -20,10 +21,13 @@ export function MentorshipsTeaser() {
 }
 
 export function MentorshipsView({ slug, embedded = false }: { slug?: string; embedded?: boolean }) {
+  const {message}=useTranslation();
+  const [visibleCount,setVisibleCount]=useState(24);
   const track = mentorshipTracks.find(t => t.slug === slug);
   const [completed, setCompleted] = useState<number[]>([]);
   const [reviewed, setReviewed] = useState<Record<string, boolean>>({});
   const [query, setQuery] = useState('');
+  useEffect(()=>setVisibleCount(24),[slug,query]);
   const [saveError, setSaveError] = useState(false);
   useEffect(() => {
     setCompleted(getStoredProgress().completedChapterIds);
@@ -104,12 +108,13 @@ export function MentorshipsView({ slug, embedded = false }: { slug?: string; emb
         {!embedded && <label className="mentorship-search">Find an original recording<input type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Search original titles, models or months" /></label>}
         {saveError && <p role="status">Progress could not be saved on this device. Your current checklist remains visible until this page closes.</p>}
         {!filtered.length && <p role="status">No recordings match this search. Try a model number or an English trading term.</p>}
-        <ol className="mentorship-recordings">{filtered.map(r => <li key={r.id}>
+        <ol className="mentorship-recordings">{filtered.slice(0,typeof window==='undefined'?filtered.length:visibleCount).map(r => <li key={r.id}>
           <div className="mentorship-recording-main"><span id={`recording-${r.id}`} className="mentorship-source-title" lang="en" dir="ltr" translate="no">{r.url ? <a href={r.url}>{r.title}</a> : r.title}</span>
             <div className="mentorship-recording-meta"><span>{r.minutes} <span>min</span></span><span>{r.status === 'selected-passages' ? 'Selected passages checked' : r.status === 'visual-only' ? 'Visual-only source' : 'Catalogue reference'}</span></div>
           </div>
           {!embedded && <label className="mentorship-recording-check"><input type="checkbox" aria-describedby={`recording-${r.id}`} checked={!!reviewed[r.id]} onChange={() => toggle(r.id)} /><span>I reviewed this recording</span></label>}
         </li>)}</ol>
+        {typeof window!=='undefined'&&filtered.length>visibleCount&&<div className="mentorship-intro"><p role="status">{message('Showing {shown} of {total} recordings',{shown:Math.min(visibleCount,filtered.length),total:filtered.length})}</p><button className="mentorship-action" type="button" onClick={()=>setVisibleCount(n=>n+24)}>Show more recordings</button></div>}
       </section>
       <section><h2>Explore another mentorship</h2><nav className="mentorship-other-paths" aria-label="Other mentorships">{mentorshipTracks.filter(t => t.slug !== track.slug).map(t => <a key={t.slug} href={mentorshipPath(t.slug)}>{t.title} →</a>)}</nav></section>
     </>}

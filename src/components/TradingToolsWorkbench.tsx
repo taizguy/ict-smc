@@ -222,7 +222,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
             </nav>
           </details>
         </div>
-        <h1 className="text-xl sm:text-2xl font-semibold tracking-tight">{['chartlab','simulator','backtest','ict_suite'].includes(activeTool) ? t(currentToolMeta.name) : (document.querySelector('meta[name="learnsmc-heading"]')?.getAttribute('content') || currentToolMeta.name)}</h1>
+        <h1 className="text-xl sm:text-2xl font-semibold tracking-tight">{document.querySelector('meta[name="learnsmc-heading"]')?.getAttribute('content') || t(currentToolMeta.name)}</h1>
       </header>
 
       {/* Render Active Tool Content */}

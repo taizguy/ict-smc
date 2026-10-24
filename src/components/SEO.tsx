@@ -53,6 +53,8 @@ export const SEO: React.FC<SEOProps> = ({
 
     // 4. Twitter Card Tags
     setMetaTag('name', 'twitter:card', 'summary_large_image');
+    setMetaTag('name', 'twitter:site', '@ChiefAnt_');
+    setMetaTag('name', 'twitter:creator', '@ChiefAnt_');
     setMetaTag('name', 'twitter:title', pageTitle);
     setMetaTag('name', 'twitter:description', pageDescription);
 

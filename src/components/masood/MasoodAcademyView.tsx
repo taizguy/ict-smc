@@ -1,3 +1,4 @@
+import { YouTubeThumbnail } from '../YouTubeThumbnail';
 import { withoutLocale } from '../../i18n/locale';
 import { useTranslation } from '../../i18n/TranslationProvider';
 import { AccentText } from '../AccentText';
@@ -31,9 +32,11 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
   onSubTabChange,
   onLectureSelect
 }) => {
-  const { t: translateSearch } = useTranslation();
+  const { t: translateSearch,message } = useTranslation();
+  const [visibleCount,setVisibleCount]=useState(24);
   const [activePlaylistId, setActivePlaylistId] = useState<'all' | MasoodPlaylistId>(() => masoodPlaylistsData.find(p => withoutLocale(location.pathname) === `/masood/playlists/${p.id}/`)?.id || 'all');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  useEffect(()=>setVisibleCount(24),[activePlaylistId,searchQuery]);
   const [selectedLecture, setSelectedLecture] = useState<MasoodLecture | null>(null);
   const [activeAnimation, setActiveAnimation] = useState<AnimationKind>('po3_expansion');
   const [activeTab, setActiveTab] = useState<'lectures' | 'animations' | 'bias_calc' | 'rules'>(initialSubTab);
@@ -305,7 +308,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
           </ScrollReveal>
 
           {/* Active Playlist Header Card */}
-          {currentPlaylists.map((playlist) => (
+          {currentPlaylists.filter(p=>p.lectures.some(l=>filteredLectures.slice(0,visibleCount).some(f=>f.id===l.id))).map((playlist) => (
             <ScrollReveal key={playlist.id} y={25} delay={0.15}>
               <div className="space-y-6">
                 <div data-surface={playlist.id==='beginners'?'ink':'gray'} className="masood-series-intro p-6 sm:p-8 bg-surface border border-ink/[0.08] rounded-2xl space-y-3">
@@ -315,7 +318,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                         {playlist.badge}
                       </span>
                       <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-ink">
-                        {playlist.title}
+                        {activePlaylist ? 'Lectures in this series' : playlist.title}
                       </h2>
                     </div>
                     <span className="text-xs font-sans tabular-nums uppercase text-ink-secondary bg-ink/[0.04] px-3 py-1 rounded-lg border border-ink/[0.08]">
@@ -333,7 +336,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                 {/* Lecture Cards Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                   {playlist.lectures
-                    .filter((lec) => filteredLectures.some((fl) => fl.id === lec.id))
+                    .filter((lec) => filteredLectures.slice(0,visibleCount).some((fl) => fl.id === lec.id))
                     .map((lecture) => (
                       <div
                         key={lecture.id}
@@ -341,12 +344,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
                       >
                         {/* Thumbnail Header */}
                         <div className="relative aspect-video bg-surface-muted overflow-hidden border-b border-ink/[0.08]">
-                          <img
-                            src={`https://i.ytimg.com/vi/${lecture.youtubeId}/hqdefault.jpg`}
-                            alt={lecture.title}
-                            className="w-full h-full object-cover"
-                            loading="lazy" width="480" height="360" decoding="async"
-                          />
+                          <YouTubeThumbnail videoId={lecture.youtubeId} alt={lecture.title} className="w-full h-full object-cover"/>
                           
                           {/* Lecture Badge */}
                           <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md text-[0.8125rem] font-sans tabular-nums font-medium bg-black/70 backdrop-blur-sm text-on-brand border border-ink/10">
@@ -428,6 +426,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
               </div>
             </ScrollReveal>
           ))}
+          {filteredLectures.length>visibleCount&&<div className="masood-series-intro p-6 space-y-4"><p role="status">{message('Showing {shown} of {total} lessons',{shown:Math.min(visibleCount,filteredLectures.length),total:filteredLectures.length})}</p><button type="button" className="btn-predikt-primary" onClick={()=>setVisibleCount(n=>n+24)}>Show more lessons</button></div>}
         </div>
       )}
 

@@ -386,7 +386,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
 
               <div className="space-y-2">
                 <h2 className="text-2xl sm:text-3xl font-bold text-ink tracking-tight">
-                  {activeSubConcept.name}
+                  Definition and scope
                 </h2>
                 <div className="text-xs sm:text-sm font-sans tabular-nums text-teal">
                   {activeSubConcept.subtitle}
@@ -472,7 +472,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
             </div>
 
             <h2 className="text-2xl sm:text-3xl font-semibold text-ink tracking-tight">
-              {concept.name}
+              Definition and scope
             </h2>
 
             <div className="text-ink-secondary text-sm leading-relaxed font-normal">

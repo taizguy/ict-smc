@@ -196,6 +196,13 @@ export const urdu: Record<string, string> = {
   ...readingRoomReviewedUrdu,
   'Definitions and study conditions': 'تعریفیں اور مطالعے کی شرائط',
   'articles': 'مضامین',
+  'Contact & Support': 'رابطہ اور معاونت',
+  'Definition and scope': 'تعریف اور دائرۂ کار',
+  'Lectures in this series': 'اس سلسلے کے اسباق',
+  'Show more lessons': 'مزید اسباق دکھائیں',
+  'Show more recordings': 'مزید ریکارڈنگز دکھائیں',
+  'Showing {shown} of {total} lessons': '{total} میں سے {shown} اسباق دکھائے جا رہے ہیں',
+  'Showing {shown} of {total} recordings': '{total} میں سے {shown} ریکارڈنگز دکھائی جا رہی ہیں',
   'article': 'مضمون',
 };
 // Exact pairs keep static snippets and client-side metadata in the same language.

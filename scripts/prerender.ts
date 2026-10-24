@@ -1,4 +1,6 @@
 import { SiteFooter } from '../src/components/SiteFooter';
+import { FvgIllustration } from '../src/components/FvgLessonDiagram';
+import { fvgScenes } from '../src/data/fvgLesson';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { articlePages } from './article-pages';
@@ -52,6 +54,11 @@ const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
 const distDir = path.resolve(projectRoot, process.env.PRERENDER_OUT_DIR || 'dist');
 const templatePath = path.resolve(distDir, 'index.html');
+
+// These files share the exact geometry used in the lesson's interactive scenes.
+const fvgImageDir = path.join(distDir, 'images/lessons');
+fs.mkdirSync(fvgImageDir, { recursive: true });
+for (const scene of fvgScenes) fs.writeFileSync(path.join(fvgImageDir, `fvg-${scene.id}.svg`), renderToStaticMarkup(createElement(FvgIllustration, { scene })));
 
 if (!fs.existsSync(templatePath)) {
   console.error('Error: dist/index.html does not exist. Run "vite build" first.');

@@ -191,7 +191,8 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   const chapter = textbookChapters.find(c => path === `/learn/${c.slug}/`);
   if (chapter) {
     r.bodyHtml = renderToStaticMarkup(createElement(TopicLearningGuide, { chapterId: chapter.id, staticOnly: true })) + r.bodyHtml;
-    r.bodyHtml = renderToStaticMarkup(createElement(ChapterDiagram, { chapterId:chapter.id, staticOnly:true })) + r.bodyHtml;
+    const diagramHtml = renderToStaticMarkup(createElement(ChapterDiagram, { chapterId:chapter.id, staticOnly:true }));
+    r.bodyHtml = chapter.id === 13 ? r.bodyHtml + diagramHtml : diagramHtml + r.bodyHtml;
     r.bodyHtml += renderToStaticMarkup(createElement(ChapterQuiz, { chapter, staticOnly:true }));
     r.bodyHtml += renderToStaticMarkup(createElement(CurriculumReview, { chapter }));
     r.bodyHtml += byline + section('Continue learning', list(relatedChapters(chapter.id).map(c => link(`/learn/${c.slug}/`, c.title)))) +

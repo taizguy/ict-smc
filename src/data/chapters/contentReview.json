@@ -995,7 +995,24 @@
     "title": "Event Volatility: Calendars, HRLR & Futures vs. CFDs"
   },
   "13": {
-    "title": "Fair Value Gaps (FVG) & Consequent Encroachment"
+    "title": "Fair Value Gaps (FVG) & Consequent Encroachment",
+    "sections": {
+      "0": {
+        "title": "13.1 What is a fair value gap (FVG)?"
+      },
+      "1": {
+        "title": "13.2 How do you draw FVG boundaries and calculate CE?"
+      },
+      "2": {
+        "title": "13.3 What happens after an FVG forms?"
+      },
+      "3": {
+        "title": "13.4 How do you read FVG context without hindsight?"
+      },
+      "4": {
+        "title": "13.5 When is there no qualifying FVG setup?"
+      }
+    }
   },
   "55": {
     "keyTerms": [

@@ -8,6 +8,9 @@ import chapterReviewUrdu from './chapter-review-urdu.json';
 import { searchFocusUrdu } from '../data/searchFocus';
 import { topicJourneyUrdu } from '../data/topicJourneys';
 import { cornerstoneUrdu } from '../data/cornerstoneGuides';
+import { chapterStoryUrdu } from '../data/chapterStories';
+import { fvgStoryUrdu } from '../data/fvgStory';
+import { fvgUrdu } from '../data/fvgLesson';
 import mentorshipUrdu from './mentorships-urdu.json';
 import diagramUrdu from './diagrams-urdu.json';
 import learningUpdate from './learning-update-urdu.json';
@@ -56,6 +59,9 @@ export const urdu: Record<string, string> = {
   ...searchFocusUrdu,
   ...topicJourneyUrdu,
   ...cornerstoneUrdu,
+  ...fvgUrdu,
+  ...fvgStoryUrdu,
+  ...chapterStoryUrdu,
   ...navigationUrdu,
   ...guidedLabUrdu,
   ...learningFirstUrdu,

@@ -253,7 +253,7 @@ export const CONCEPT_SLUG_MAP: Record<string, ConceptSlugMapping> = {
     categorySlug: 'imbalances',
     name: 'Fair Value Gap (FVG)',
     shortName: 'Fair Value Gap',
-    metaTitle: 'Fair Value Gap (FVG) Institutional Mechanics & Rules | LearnSMC',
+    metaTitle: 'Fair Value Gap (FVG): Definition | LearnSMC',
     metaDescription: 'Study FVG wick boundaries, midpoint arithmetic, overlapping non-examples and uncertainty. Follow the full lesson for sources and visual practice.'
   },
   'consequent_encroachment': {

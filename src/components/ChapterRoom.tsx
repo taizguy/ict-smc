@@ -530,8 +530,8 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
               </p>
 
               {/* Embedded Diagram */}
-              <div className="rounded-xl overflow-hidden border border-ink/[0.08] bg-surface-muted p-2">
-                <ChapterDiagram key={chapter.id} chapterId={chapter.id} />
+              <div className="min-w-0">
+                <ChapterDiagram key={chapter.id} chapterId={chapter.id} onPractice={()=>setActiveScene('checkpoint')} />
               </div>
 
               <div className="pt-4 flex flex-wrap items-center justify-between gap-3 border-t border-ink/[0.07]">

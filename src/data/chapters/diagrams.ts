@@ -1,7 +1,7 @@
 export type DiagramTone = 'ink' | 'teal' | 'coral' | 'violet';
 export type DiagramMark = { kind: 'line' | 'path' | 'zone' | 'candle' | 'label' | 'dot'; stage: number; tone?: DiagramTone; dashed?: boolean; x?: number; y?: number; x2?: number; y2?: number; w?: number; h?: number; d?: string; text?: string; open?: number; close?: number; high?: number; low?: number };
 export interface ChapterDiagramSpec { title: string; steps: [string, string, string]; marks: DiagramMark[] }
-export const chapterIllustrationRevision = { iso: '2026-10-20', label: '20 October 2026' };
+export const chapterIllustrationRevision = { iso: '2026-10-24', label: '24 October 2026' };
 /** Original chapter-specific schematics, not performance evidence or trading signals.
  * The suspension scene has separated bodies and overlapping wicks, intentionally.
  */

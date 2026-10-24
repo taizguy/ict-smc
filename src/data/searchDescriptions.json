@@ -1,4 +1,8 @@
 {
+  "/learn/fair-value-gaps-fvg-and-consequent-encroachment/": {
+    "en": "Learn to identify bullish and bearish fair value gaps, draw wick boundaries, calculate CE and compare overlapping, failed and unfilled examples.",
+    "ur": "Bullish اور Bearish Fair Value Gaps پہچانیں، وِک حدود ناپیں، CE نکالیں اور اوورلیپ، ناکامی اور Fill نہ ہونے والی مثالیں دیکھیں۔"
+  },
   "/learn/what-actually-moves-price/": {
     "en": "Understand price formation with a worked order-book example. Separate trades, quotes and average fills from claims about institutional intent.",
     "ur": "Order Book کی حل شدہ مثال سے قیمت کی تشکیل سمجھیں۔ ٹریڈ، کوٹ اور اوسط Fill کو اداروں کی نیت کے دعووں سے الگ کریں۔"

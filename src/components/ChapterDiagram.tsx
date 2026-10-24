@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { chapterDiagrams, type DiagramMark } from '../data/chapters/diagrams';
 import { useTranslation } from '../i18n/TranslationProvider';
+import { FvgLessonDiagram } from './FvgLessonDiagram';
+import { ChapterStory } from './ChapterStory';
+import { chapterStoryHeadings } from '../data/chapterStories';
 
 function Mark({ mark, translate }: { mark: DiagramMark; translate: (text: string) => string }) {
   const m = mark;
@@ -17,8 +20,8 @@ function Mark({ mark, translate }: { mark: DiagramMark; translate: (text: string
   }
 }
 
-/** No external images, duplicate IDs, animation libraries or network requests. */
-export function ChapterDiagram({ chapterId, thumbnail = false, staticOnly = false }: { chapterId: number; thumbnail?: boolean; staticOnly?: boolean }) {
+/** Static schematics serve thumbnails and prerendered HTML; full lessons use the story players. */
+export function ChapterDiagram({ chapterId, thumbnail = false, staticOnly = false, onPractice }: { chapterId: number; thumbnail?: boolean; staticOnly?: boolean; onPractice?:()=>void }) {
   const { t, locale } = useTranslation();
   const spec = chapterDiagrams[chapterId];
   const [step, setStep] = useState<number | null>(null);
@@ -47,6 +50,8 @@ export function ChapterDiagram({ chapterId, thumbnail = false, staticOnly = fals
     return () => document.removeEventListener('visibilitychange', stopWhenHidden);
   }, [playing]);
   if (!spec) return null;
+  if (chapterId === 13 && !thumbnail) return <FvgLessonDiagram staticOnly={staticOnly} onPractice={onPractice}/>;
+  if (!thumbnail && !staticOnly) return <ChapterStory chapterId={chapterId} onPractice={onPractice}/>;
   const choose = (value: number) => { setPlaying(false); setStep(value); };
   return <figure className={`chapter-diagram ${thumbnail ? 'chapter-diagram--thumbnail' : 'chapter-diagram--lesson'} ${playing ? 'chapter-diagram--playing' : ''}`} data-chapter-diagram={chapterId}>
     <div className="chapter-diagram-heading"><span>{t('Chapter illustration')}</span><strong>{t(spec.title)}</strong></div>
@@ -66,7 +71,7 @@ export function ChapterDiagram({ chapterId, thumbnail = false, staticOnly = fals
       </div>}
       <ol className="diagram-steps" aria-label={t('Illustrated steps')}>
         {spec.steps.map((copy, index) => <li key={index} className={step === index ? 'diagram-step--active' : ''}>
-          {staticOnly ? <span><b dir="ltr">{index + 1}</b>{t(copy)}</span> : <button type="button" aria-pressed={step === index} onClick={() => choose(index)}><b dir="ltr">{index + 1}</b><span>{t(copy)}</span></button>}
+          {staticOnly ? <span><b dir="ltr">{index + 1}</b><span>{chapterStoryHeadings[chapterId]&&<strong className="static-story-heading">{t(chapterStoryHeadings[chapterId][index].en)}</strong>}{t(copy)}</span></span> : <button type="button" aria-pressed={step === index} onClick={() => choose(index)}><b dir="ltr">{index + 1}</b><span>{t(copy)}</span></button>}
         </li>)}
       </ol>
       <p className="diagram-note">{t('Schematic example, not a trading signal.')}</p>

@@ -9,7 +9,7 @@ export const studyTopics: Record<string, string> = {
   "/learn/break-of-structure-bos-trend-continuation/": "Break of Structure (BOS)",
   "/learn/change-of-character-choch-the-first-warning/": "Change of Character (CHoCH)",
   "/learn/market-structure-shift-mss-verified-directional-shift/": "Market Structure Shift (MSS)",
-  "/learn/fair-value-gaps-fvg-and-consequent-encroachment/": "Fair Value Gaps & Consequent Encroachment",
+  "/learn/fair-value-gaps-fvg-and-consequent-encroachment/": "Fair Value Gap (FVG): Examples & Rules",
   "/learn/inverse-fair-value-gaps-ifvg-role-reversal-imbalances/": "Inverse Fair Value Gaps (IFVG)",
   "/learn/order-blocks-ob-and-mitigation/": "Order Blocks, Mitigation & Mean Threshold",
   "/learn/breaker-blocks-trading-failed-order-blocks/": "Breaker Blocks & Failed Order Blocks",

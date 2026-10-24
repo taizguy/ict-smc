@@ -201,6 +201,51 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
     }
   }
 
+  const isLeaf = Boolean(initialConceptId || initialSubConceptId);
+  const conceptDirectory = (
+        <div data-nosnippet={isLeaf ? "" : undefined} className={`lg:col-span-4 xl:col-span-3 space-y-3 ${isLeaf ? "lg:col-start-1 lg:row-start-1" : ""}`}>
+          <div className="bg-surface border border-ink/[0.08] rounded-2xl p-5 space-y-3">
+            <div className="flex items-center justify-between pb-3 border-b border-ink/[0.07] text-xs font-sans tabular-nums">
+              <span className="text-ink-secondary uppercase tracking-wider text-[0.8125rem]">Concept Index</span>
+              <span className="text-brand font-medium bg-brand/10 px-2.5 py-0.5 rounded-full border border-brand/20 text-[0.8125rem] uppercase">
+                {filteredConcepts.length} Topics
+              </span>
+            </div>
+
+            <div
+              className="space-y-2 max-h-[calc(100vh-260px)] modal-scrollable pr-1"
+              data-lenis-prevent="true"
+            >
+              {filteredConcepts.map((c) => {
+                const isSelected = c.id === selectedConceptId && !activeSubConcept;
+                return (
+                  <a
+                    key={c.id} aria-current={isSelected ? 'page' : undefined}
+
+                    href={(() => { const mapping = getConceptBySlugOrId(c.id); return mapping ? getGlossaryConceptPath(mapping.slug, mapping.categorySlug) : '/tools/glossary/'; })()}
+                    className={`block w-full text-left p-3 text-xs font-sans tabular-nums transition-[color,background-color,border-color,box-shadow,opacity,transform] space-y-1.5 rounded-xl border cursor-pointer ${
+                      isSelected
+                        ? 'bg-ink/[0.10] border-ink/20 text-ink'
+                        : 'bg-ink/[0.02] border-ink/[0.06] text-ink-secondary hover:text-ink hover:bg-ink/[0.05]'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between gap-1">
+                      <span className="font-semibold uppercase tracking-tight truncate text-ink">{c.name}</span>
+                      <span className="text-[0.8125rem] px-1.5 py-0.5 rounded bg-ink/[0.04] text-ink-muted uppercase shrink-0">
+                        {c.category}
+                      </span>
+                    </div>
+                    <p className="text-[0.8125rem] text-ink-secondary line-clamp-1 font-normal">
+                      {c.shortDefinition}
+                    </p>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+  );
+
   return (
     <div className="glossary-pages academy-surface space-y-6 text-ink">
       {/* Dynamic SEO Engine */}
@@ -314,51 +359,10 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
       )}
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Left Side: Concepts Directory */}
-        <div className="lg:col-span-4 xl:col-span-3 space-y-3">
-          <div className="bg-surface border border-ink/[0.08] rounded-2xl p-5 space-y-3">
-            <div className="flex items-center justify-between pb-3 border-b border-ink/[0.07] text-xs font-sans tabular-nums">
-              <span className="text-ink-secondary uppercase tracking-wider text-[0.8125rem]">Concept Index</span>
-              <span className="text-brand font-medium bg-brand/10 px-2.5 py-0.5 rounded-full border border-brand/20 text-[0.8125rem] uppercase">
-                {filteredConcepts.length} Topics
-              </span>
-            </div>
-
-            <div 
-              className="space-y-2 max-h-[calc(100vh-260px)] modal-scrollable pr-1"
-              data-lenis-prevent="true"
-            >
-              {filteredConcepts.map((c) => {
-                const isSelected = c.id === selectedConceptId && !activeSubConcept;
-                return (
-                  <a
-                    key={c.id} aria-current={isSelected ? 'page' : undefined}
-
-                    href={(() => { const mapping = getConceptBySlugOrId(c.id); return mapping ? getGlossaryConceptPath(mapping.slug, mapping.categorySlug) : '/tools/glossary/'; })()}
-                    className={`block w-full text-left p-3 text-xs font-sans tabular-nums transition-[color,background-color,border-color,box-shadow,opacity,transform] space-y-1.5 rounded-xl border cursor-pointer ${
-                      isSelected
-                        ? 'bg-ink/[0.10] border-ink/20 text-ink'
-                        : 'bg-ink/[0.02] border-ink/[0.06] text-ink-secondary hover:text-ink hover:bg-ink/[0.05]'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between gap-1">
-                      <span className="font-semibold uppercase tracking-tight truncate text-ink">{c.name}</span>
-                      <span className="text-[0.8125rem] px-1.5 py-0.5 rounded bg-ink/[0.04] text-ink-muted uppercase shrink-0">
-                        {c.category}
-                      </span>
-                    </div>
-                    <p className="text-[0.8125rem] text-ink-secondary line-clamp-1 font-normal">
-                      {c.shortDefinition}
-                    </p>
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-        </div>
+        {!isLeaf && conceptDirectory}
 
         {/* Right Side: Deep Encyclopedic Breakdown */}
-        <div className="lg:col-span-8 xl:col-span-9 space-y-6">
+        <div className={`lg:col-span-8 xl:col-span-9 space-y-6 ${isLeaf ? "lg:col-start-5 xl:col-start-4 lg:row-start-1" : ""}`}>
           
           {/* SPECIALIZED DEEP SUB-CONCEPT CARD IF ACTIVE */}
           {activeSubConcept && (
@@ -919,6 +923,7 @@ export const ConceptExplorer: React.FC<ConceptExplorerProps> = ({
             </div>
           )}
         </div>
+        {isLeaf && conceptDirectory}
       </div>
 
 

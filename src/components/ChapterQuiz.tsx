@@ -12,7 +12,7 @@ export function ChapterQuiz({ chapter, staticOnly = false, attempt, onAttemptCha
   const setAnswers = onAttemptChange ?? setLocalAnswers;
   const answered = questions.filter(q => answers[q.id] !== undefined).length;
   const correct = questions.filter(q => answers[q.id] === q.correctIndex).length;
-  if (staticOnly) return <section className="chapter-quiz" data-chapter-quiz={chapter.id}>
+  if (staticOnly) return <section className="chapter-quiz" id={`chapter-quiz-${chapter.id}`} data-chapter-quiz={chapter.id}>
     <h2>{t('Practice & Quiz')}</h2>
     {questions.map(q => <div key={q.id} className="chapter-quiz-question">
       <h3>{t(q.question)}</h3>{q.context && <p>{t(q.context)}</p>}
@@ -20,7 +20,7 @@ export function ChapterQuiz({ chapter, staticOnly = false, attempt, onAttemptCha
       <details><summary>{t('Show answer and explanation')}</summary><p><strong>{t(q.options[q.correctIndex])}</strong></p><p>{t(q.explanation)}</p></details>
     </div>)}
   </section>;
-  return <div className="chapter-quiz" data-chapter-quiz={chapter.id}>
+  return <div className="chapter-quiz" id={`chapter-quiz-${chapter.id}`} data-chapter-quiz={chapter.id}>
     <div className="chapter-quiz-status">
       <p aria-live="polite">{message('Answered {answered} of {total} · Correct: {correct}', { answered, total: questions.length, correct })}</p>
       <button type="button" className="btn-predikt-secondary" disabled={!answered} onClick={() => setAnswers({})}>{t('Start a new attempt')}</button>

@@ -33,6 +33,7 @@ export type MainTabType =
   | 'not_found';
 
 interface HeaderProps {
+  documentPath?: string;
   activeTab: MainTabType;
   setActiveTab: (tab: any) => void;
   onOpenSearch: () => void;
@@ -41,7 +42,7 @@ interface HeaderProps {
   progressPercent?: number;
 }
 
-export const Header: React.FC<HeaderProps> = ({activeTab, onOpenSearch}) => {
+export const Header: React.FC<HeaderProps> = ({activeTab, onOpenSearch, documentPath}) => {
   const {t,href,locale}=useTranslation();
   const header=useRef<HTMLElement>(null);
   useEffect(()=>{const close=(event:PointerEvent|KeyboardEvent)=>{if(event instanceof KeyboardEvent&&event.key!=='Escape')return;if(event instanceof PointerEvent&&header.current?.contains(event.target as Node))return;header.current?.querySelectorAll<HTMLDetailsElement>('.playground-library[open]').forEach(menu=>{menu.open=false;});};document.addEventListener('pointerdown',close);document.addEventListener('keydown',close);return()=>{document.removeEventListener('pointerdown',close);document.removeEventListener('keydown',close);};},[]);
@@ -72,7 +73,7 @@ export const Header: React.FC<HeaderProps> = ({activeTab, onOpenSearch}) => {
         </nav>
       </details>
       <div className="site-nav-utilities">
-        <LanguageSwitcher/>
+        <LanguageSwitcher path={documentPath}/>
         <span className="nav-utility-divider" aria-hidden="true"/>
         <ThemePicker/>
         <button type="button" className="nav-icon-button" onClick={onOpenSearch} aria-label={t('Search')} title={t('Search (⌘K)')}><Search size={19} strokeWidth={1.6}/></button>

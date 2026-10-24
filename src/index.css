@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @source not "../outputs";
+@source not "../design";
 @import "./styles/light-theme.css";
 @import "./styles/typography.css";
 @import "./styles/curriculum-review.css";

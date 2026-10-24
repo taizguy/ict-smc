@@ -1,3 +1,6 @@
+import {CurriculumView} from '../src/components/CurriculumView';
+import {ChapterRoom} from '../src/components/ChapterRoom';
+import {Header} from '../src/components/Header';
 import { SiteFooter } from '../src/components/SiteFooter';
 import { FvgIllustration } from '../src/components/FvgLessonDiagram';
 import { fvgScenes } from '../src/data/fvgLesson';
@@ -168,8 +171,16 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
     );
   }
 
+  const readingPath=new URL(meta.canonical).pathname;
+  const readingChapter=textbookChapters.find(chapter=>readingPath===`/learn/${chapter.slug}/`);
+  const isReading=!!readingChapter||readingPath.startsWith('/curriculum/');
+  const readingBody=isReading?renderToStaticMarkup(readingChapter
+    ?createElement(ChapterRoom,{chapterId:readingChapter.id,onSelectChapter:()=>{},onReturnToMap:()=>{},staticOnly:true})
+    :createElement(CurriculumView,{path:readingPath,onSelectChapter:()=>{},onOpenSearch:()=>{}})):'';
+  const readingHeader=isReading?renderToStaticMarkup(createElement(Header,{documentPath:readingPath,activeTab:readingChapter?'chapter_room':'curriculum',setActiveTab:()=>{},onOpenSearch:()=>{},onOpenMentorSpotlight:()=>{},onOpenWelcomeIntro:()=>{},progressPercent:0})):'';
+  const readingDocument=isReading?`<div id="static-content" class="reading-site"><a class="skip-link" href="#main-content">Skip to main content</a>${readingHeader}<main id="main-content" class="reading-main" tabindex="-1">${readingBody}</main>${renderToStaticMarkup(createElement(SiteFooter,{playground:false}))}</div>`:'';
   // Generate Crawlable Structural Layout
-  const renderedContent = `
+  const renderedContent = readingDocument || `
     <div id="static-content" style="font-family: var(--font-sans, system-ui); background-color: #ffffff; color: #121c32; min-height: 100vh; padding: 2rem 1.5rem; max-width: 1200px; margin: 0 auto; box-sizing: border-box;">
       <style>#static-content a{color:#23796d;text-underline-offset:3px}#static-content p,#static-content li{line-height:1.75;font-size:1rem!important;max-inline-size:68ch}#static-content h1{font-size:clamp(2rem,1.5rem + 2vw,3.5rem)!important;line-height:1.15}#static-content nav{flex-wrap:wrap}#static-content section{margin-block:1.5rem}#static-content li{margin-block:.5rem}#static-content ul{padding-left:1.25rem}</style>
       <a href="#main-content" style="color:#23796d">Skip to main content</a>

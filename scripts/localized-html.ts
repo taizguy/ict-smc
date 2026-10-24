@@ -69,6 +69,12 @@ export function localizeHtml(source: string, pathname: string, catalog: Translat
         for (const child of [...replacement.childNodes]) defaultTreeAdapter.appendChild(node, child);
         set(node, 'translate', 'no');
       }
+      if (attribute(node, 'data-reading-source')) {
+        const translated=translate(attribute(node, 'data-reading-source')!).replace(/^\d+\.\d+\s*/,'');
+        node.childNodes=[];
+        defaultTreeAdapter.appendChild(node,defaultTreeAdapter.createTextNode(translated));
+        set(node,'translate','no');
+      }
       if (node.tagName === 'p' && attribute(node, 'data-lesson-content') !== undefined) {
         const translated = translate(textContent(node));
         const fragments = contextualFragments(translated, pathname).map(fragment => fragment.href ? `<a href="${escaped(fragment.href)}">${escaped(fragment.text)}</a>` : escaped(fragment.text)).join('');

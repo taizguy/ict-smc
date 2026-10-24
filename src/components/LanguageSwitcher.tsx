@@ -5,12 +5,12 @@ import { URDU_PUBLISHED } from '../i18n/release';
 import { useState, type MouseEvent } from 'react';
 
 /** Switch the current document while retaining its query and section anchor. */
-export function LanguageSwitcher() {
+export function LanguageSwitcher({path:providedPath}:{path?:string}={}) {
   const { locale, preview } = useTranslation();
   const [destination,setDestination] = useState(locale);
   if (!preview && !URDU_PUBLISHED) return null;
-  const pathname = typeof window === 'undefined' ? '/' : window.location.pathname;
-  const path = typeof window === 'undefined' ? '/' : `${pathname}${window.location.search}${window.location.hash}`;
+  const pathname = providedPath?.split(/[?#]/)[0] || (typeof window === 'undefined' ? '/' : window.location.pathname);
+  const path = providedPath || (typeof window === 'undefined' ? '/' : `${pathname}${window.location.search}${window.location.hash}`);
   const switchLanguage=(event:MouseEvent<HTMLAnchorElement>,next:'en'|'ur')=>{
     if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey||event.button!==0)return;
     event.preventDefault();

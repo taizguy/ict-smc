@@ -194,6 +194,9 @@ export const urdu: Record<string, string> = {
   ...marketWorkspaceUrdu,
   ...guidedMarketUrdu,
   ...readingRoomReviewedUrdu,
+  'Definitions and study conditions': 'تعریفیں اور مطالعے کی شرائط',
+  'articles': 'مضامین',
+  'article': 'مضمون',
 };
 // Exact pairs keep static snippets and client-side metadata in the same language.
 for (const { en, ur } of Object.values(searchDescriptions)) urdu[en] = ur;

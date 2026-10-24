@@ -110,9 +110,9 @@ export const CompareView: React.FC<CompareViewProps> = ({
       {/* Main Side-by-Side Comparison Container */}
       <div className="space-y-6">
         <div className="text-center space-y-2 py-1">
-          <h3 className="text-xl sm:text-2xl font-semibold text-ink tracking-tight">
-            {comparison.title}
-          </h3>
+          <h2 className="text-xl sm:text-2xl font-semibold text-ink tracking-tight">
+            Definitions and study conditions
+          </h2>
           <p className="text-xs font-sans tabular-nums text-teal uppercase bg-teal/10 px-3 py-1 rounded-full border border-teal/20 inline-block">
             {comparison.keyDifference}
           </p>

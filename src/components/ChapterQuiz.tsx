@@ -4,7 +4,7 @@ import { chapterQuiz } from '../data/chapters/chapterQuizzes';
 import { useTranslation } from '../i18n/TranslationProvider';
 
 /** A fresh attempt belongs to one chapter. Answers never mark a chapter completed. */
-export function ChapterQuiz({ chapter, staticOnly = false, attempt, onAttemptChange }: { chapter: TextbookChapter; staticOnly?: boolean; attempt?: Record<string, number>; onAttemptChange?: Dispatch<SetStateAction<Record<string, number>>> }) {
+export function ChapterQuiz({ chapter, staticOnly = false, heading = true, attempt, onAttemptChange }: { chapter: TextbookChapter; staticOnly?: boolean; heading?: boolean; attempt?: Record<string, number>; onAttemptChange?: Dispatch<SetStateAction<Record<string, number>>> }) {
   const { t, message } = useTranslation();
   const questions = chapterQuiz(chapter);
   const [localAnswers, setLocalAnswers] = useState<Record<string, number>>({});
@@ -13,12 +13,12 @@ export function ChapterQuiz({ chapter, staticOnly = false, attempt, onAttemptCha
   const answered = questions.filter(q => answers[q.id] !== undefined).length;
   const correct = questions.filter(q => answers[q.id] === q.correctIndex).length;
   if (staticOnly) return <section className="chapter-quiz" id={`chapter-quiz-${chapter.id}`} data-chapter-quiz={chapter.id}>
-    <h2>{t('Practice & Quiz')}</h2>
-    {questions.map(q => <div key={q.id} className="chapter-quiz-question">
-      <h3>{t(q.question)}</h3>{q.context && <p>{t(q.context)}</p>}
+    {heading && <h2>{t('Practice & Quiz')}</h2>}
+    {questions.map((q,index) => <fieldset key={q.id} className="chapter-quiz-question">
+      <legend><span dir="ltr">{index + 1}. </span>{t(q.question)}</legend>{q.context && <p>{t(q.context)}</p>}
       <ol>{q.options.map(option => <li key={option}>{t(option)}</li>)}</ol>
       <details><summary>{t('Show answer and explanation')}</summary><p><strong>{t(q.options[q.correctIndex])}</strong></p><p>{t(q.explanation)}</p></details>
-    </div>)}
+    </fieldset>)}
   </section>;
   return <div className="chapter-quiz" id={`chapter-quiz-${chapter.id}`} data-chapter-quiz={chapter.id}>
     <div className="chapter-quiz-status">

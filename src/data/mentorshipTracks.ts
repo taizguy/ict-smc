@@ -146,4 +146,9 @@ export const mentorshipTracks: MentorshipTrack[] = [
   }
 ];
 export const mentorshipPath = (slug:string) => '/curriculum/mentorships/' + slug + '/';
-export const mentorshipLessonPath = (slug:string, track:string) => '/learn/' + slug + '/?mentorship=' + encodeURIComponent(track);
+/** Study-path selection is UI state, not a separate indexable lesson document. */
+export const mentorshipLessonPath = (slug:string, track:string) => '/learn/' + slug + '/#mentorship=' + encodeURIComponent(track);
+export function selectedMentorship(location: Pick<Location, 'hash' | 'search'>): string | null {
+  return new URLSearchParams(location.hash.replace(/^#/, '')).get('mentorship')
+    || new URLSearchParams(location.search).get('mentorship');
+}

@@ -21,6 +21,21 @@ const edges = new Map<string, string[]>();
 const routePaths = new Set(routes.map(r => r.path));
 const failures: string[] = [];
 function check(condition: unknown, message: string) { if (!condition) failures.push(message); }
+function repeatedHeadings(source: string) {
+  const seen = new Set<string>(), duplicates: string[] = [];
+  function text(node: any): string { return node.value || (node.childNodes || []).map(text).join(''); }
+  function visit(node: any) {
+    if (/^h[1-6]$/.test(node.tagName || '')) {
+      const label = text(node).replace(/\s+/g, ' ').trim();
+      const key = label.normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
+      if (key && seen.has(key)) duplicates.push(label);
+      if (key) seen.add(key);
+    }
+    for (const child of node.childNodes || []) visit(child);
+  }
+  visit(parse(source));
+  return duplicates;
+}
 function hasContentDisclaimer(source: string) {
   function text(node: any): string { return node.value || (node.childNodes || []).map(text).join(''); }
   function hasDisclosureLink(node: any): boolean {
@@ -47,6 +62,10 @@ for (const route of routes) {
   check(!titles.has(route.title), `Duplicate title: ${route.path}`); titles.add(route.title);
   check(!descriptions.has(route.description), `Duplicate description: ${route.path}`); descriptions.add(route.description);
   check((html.match(/<h1\b/g) || []).length === 1, `Expected one h1: ${route.path}`);
+  if (route.indexable) {
+    const duplicates = repeatedHeadings(html);
+    check(duplicates.length === 0, `Repeated heading text: ${route.path}: ${duplicates.join('; ')}`);
+  }
   // Project snippet budgets, not indexing requirements imposed by Google.
   const isUrdu = route.path.startsWith('/ur/');
   // Urdu uses different word lengths and shaping; these remain editorial budgets, not Google rules.

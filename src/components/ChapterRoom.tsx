@@ -9,7 +9,7 @@ import { ChapterDiagram } from './ChapterDiagram';
 import { chapterDiagrams } from '../data/chapters/diagrams';
 import { TopicLearningGuide } from './TopicLearningGuide';
 import { MentorshipLessonNav } from './MentorshipLessonNav';
-import { mentorshipTracks, mentorshipLessonPath } from '../data/mentorshipTracks';
+import { mentorshipTracks, mentorshipLessonPath, selectedMentorship } from '../data/mentorshipTracks';
 import { currentDocumentHref } from '../i18n/navigation';
 import { LessonRelatedLinks } from './LessonRelatedLinks';
 import React, { useState, useMemo, useEffect } from 'react';
@@ -62,7 +62,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
   staticOnly = false
 }) => {
   const {t,href}=useTranslation();
-  const pathSlug = typeof window === 'undefined' ? null : new URLSearchParams(window.location.search).get('mentorship');
+  const pathSlug = typeof window === 'undefined' ? null : selectedMentorship(window.location);
   const studyTrack = mentorshipTracks.find(t => t.slug === pathSlug && t.chapterIds.includes(chapterId));
   const orderedChapters = useMemo(() => studyTrack ? studyTrack.chapterIds.map(id => textbookChapters.find(c => c.id === id)).filter(Boolean) : textbookChapters, [studyTrack]);
   const onSelectChapter = (id:number, slug?:string) => {
@@ -178,7 +178,7 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
       </div>}
       {(staticOnly||activeScene==='visual')&&<section className="rr-visual-section"><h2>{t('Chapter-specific interactive diagram')}</h2><p>{t('Use the numbered steps to explore this chapter’s example. Solid marks show the illustration; dashed paths show references or possible outcomes, not predictions.')}</p><ChapterDiagram key={chapter.id} chapterId={chapter.id} staticOnly={staticOnly} onPractice={()=>chooseScene('checkpoint')}/></section>}
       {(staticOnly||activeScene==='terms')&&<section className="rr-terms"><h2>{t('Key Terms')}</h2><dl>{chapter.keyTerms.map(term=><div key={term.term}><dt>{term.term}</dt><dd>{term.definition}</dd></div>)}</dl></section>}
-      {(staticOnly||activeScene==='checkpoint')&&<section className="rr-quiz"><h2>{t('Practice & Quiz')}</h2><ChapterQuiz key={chapter.id} chapter={chapter} staticOnly={staticOnly} attempt={quizAttempt} onAttemptChange={setQuizAttempt}/></section>}
+      {(staticOnly||activeScene==='checkpoint')&&<section className="rr-quiz"><h2>{t('Practice & Quiz')}</h2><ChapterQuiz key={chapter.id} chapter={chapter} staticOnly={staticOnly} heading={false} attempt={quizAttempt} onAttemptChange={setQuizAttempt}/></section>}
       {(staticOnly||activeScene==='briefing')&&<section className="rr-summary"><h2>{t('Executive Chapter Summary')}</h2><ol>{chapter.summary.map((point,i)=><li key={i}><span>{String(i+1).padStart(2,'0')}</span><p>{point}</p></li>)}</ol><button className="rr-primary" onClick={()=>chooseScene('text')}>{t('Read Full Chapter')}<ArrowRight size={17}/></button></section>}
       <div className="rr-chapter-navigation">{prevChapter?<a href={href(`/learn/${prevChapter.slug}/`)} onClick={e=>{if(!e.ctrlKey&&!e.metaKey&&!e.shiftKey){e.preventDefault();onSelectChapter(prevChapter.id,prevChapter.slug);}}}><ArrowLeft size={17}/><span>{t('Previous')}<strong><ReadingTitle text={prevChapter.title}/></strong></span></a>:<a href={href('/curriculum/')}>{t('All Chapters')}</a>}{nextChapter&&<a href={href(`/learn/${nextChapter.slug}/`)} onClick={e=>{if(!e.ctrlKey&&!e.metaKey&&!e.shiftKey){e.preventDefault();onSelectChapter(nextChapter.id,nextChapter.slug);}}}><span>{t('Next')}<strong><ReadingTitle text={nextChapter.title}/></strong></span><ArrowRight size={17}/></a>}</div>
       {onCompleteChapter&&<div className="mentorship-read-action"><button className="rr-primary" disabled={isCompleted} onClick={()=>onCompleteChapter(chapter.id)}>{isCompleted?'Note marked as read':'Mark this note as read'}</button><p>Reading progress is a personal checklist, not a trading qualification.</p></div>}

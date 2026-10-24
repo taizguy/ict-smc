@@ -1,6 +1,7 @@
 import { chapterCatalog } from './data/catalog.generated';
 import { localeFromPath, localizedHref, withoutLocale } from './i18n/locale';
 import { URDU_PUBLISHED } from './i18n/release';
+import { mentorshipTracks } from './data/mentorshipTracks';
 
 interface Env { ASSETS: { fetch: (request: Request) => Promise<Response> } }
 
@@ -28,6 +29,17 @@ export default {
       const page = await env.ASSETS.fetch(new Request(new URL(locale === 'ur' ? '/ur/404.html' : '/404.html', url), request));
       const headers = new Headers(page.headers); headers.set('X-Robots-Tag', 'noindex');
       return new Response(request.method === 'HEAD' ? null : page.body, { status: 404, headers });
+    }
+    // Mentorship is a reading preference. Redirect old query links to fragment
+    // state so language alternates refer only to canonical lesson documents.
+    const mentorship = url.searchParams.get('mentorship');
+    const lessonSlug = routePath.match(/^\/learn\/([^/]+)\/?$/)?.[1];
+    const lesson = lessonSlug && chapterCatalog.find(c => c.slug === lessonSlug);
+    if (mentorship && lesson && mentorshipTracks.some(t => t.slug === mentorship && t.chapterIds.includes(lesson.id))) {
+      url.pathname = localizedHref(`/learn/${lesson.slug}/`, locale);
+      url.searchParams.delete('mentorship');
+      url.hash = `mentorship=${encodeURIComponent(mentorship)}`;
+      return Response.redirect(url.href, 301);
     }
     if (url.pathname !== original) return Response.redirect(url.href, 301);
     const response = await env.ASSETS.fetch(request);

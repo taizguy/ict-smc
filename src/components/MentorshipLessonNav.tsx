@@ -1,9 +1,9 @@
-import { mentorshipTracks, mentorshipLessonPath, mentorshipPath } from '../data/mentorshipTracks';
+import { mentorshipTracks, mentorshipLessonPath, mentorshipPath, selectedMentorship } from '../data/mentorshipTracks';
 import { textbookChapters } from '../data/chaptersData';
 
-/** Course context uses a query parameter; the lesson retains its existing canonical URL. */
+/** Fragment-based course context keeps the lesson's existing canonical URL. */
 export function MentorshipLessonNav({ chapterId }: { chapterId:number }) {
-  const slug = typeof window === 'undefined' ? null : new URLSearchParams(window.location.search).get('mentorship');
+  const slug = typeof window === 'undefined' ? null : selectedMentorship(window.location);
   const track = mentorshipTracks.find(t => t.slug === slug && t.chapterIds.includes(chapterId));
   if (!track) return null;
   const index = track.chapterIds.indexOf(chapterId);

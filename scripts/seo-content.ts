@@ -153,7 +153,7 @@ export function prepareRoutes(routes: RouteMeta[]) {
   for (const r of routes.filter(r => r.canonical.includes('/tools/compare/'))) {
     const selected = conceptComparisons.find(c => r.canonical.endsWith('/' + getComparisonSlug(c.id) + '/'));
     const entries = selected ? [selected] : conceptComparisons;
-    r.bodyHtml += entries.map(c => section(c.title, `<div style="overflow-x:auto"><table><caption>${escape(c.title)}: definitions and study conditions</caption><thead><tr><th scope="col">Feature</th><th scope="col">${escape(c.conceptA.name)}</th><th scope="col">${escape(c.conceptB.name)}</th></tr></thead><tbody><tr><th scope="row">Definition</th><td>${escape(c.conceptA.summary)}</td><td>${escape(c.conceptB.summary)}</td></tr><tr><th scope="row">Study condition</th><td>${escape(c.conceptA.idealCondition)}</td><td>${escape(c.conceptB.idealCondition)}</td></tr></tbody></table></div><p>${escape(c.commonConfusion)}</p>`)).join('');
+    r.bodyHtml += entries.map(c => section(selected ? 'Definitions and study conditions' : c.title, `<div style="overflow-x:auto"><table><caption>${escape(c.title)}: definitions and study conditions</caption><thead><tr><th scope="col">Feature</th><th scope="col">${escape(c.conceptA.name)}</th><th scope="col">${escape(c.conceptB.name)}</th></tr></thead><tbody><tr><th scope="row">Definition</th><td>${escape(c.conceptA.summary)}</td><td>${escape(c.conceptB.summary)}</td></tr><tr><th scope="row">Study condition</th><td>${escape(c.conceptA.idealCondition)}</td><td>${escape(c.conceptB.idealCondition)}</td></tr></tbody></table></div><p>${escape(c.commonConfusion)}</p>`)).join('');
   }
   const contact = routes.find(r => r.canonical.endsWith('/contact/'))!;
   const contactHtml = `<address><p>${escape(lessonAuthor.name)}</p><p><a href="mailto:${escape(authorContact.email)}">${escape(authorContact.email)}</a></p><p><a href="tel:${escape(authorContact.telephone)}">${escape(authorContact.telephone)}</a></p><p>${escape(authorContact.streetAddress)}, Daska, Pakistan</p></address>`;
@@ -205,7 +205,7 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
     !routes.some(mid => mid !== r && mid !== c && new URL(mid.canonical).pathname.startsWith(path) && new URL(c.canonical).pathname.startsWith(new URL(mid.canonical).pathname)));
   if (children.length && path !== '/') r.bodyHtml += section('Explore this topic', list(children.map(c => link(new URL(c.canonical).pathname, c.heading))));
   const guide = toolStudyGuide(path);
-  if (guide) r.bodyHtml += section(guide.title, guide.paragraphs.map(p => `<p>${escape(p)}</p>`).join(''));
+  if (guide && !r.bodyHtml.includes(`<h2>${escape(guide.title)}</h2>`)) r.bodyHtml += section(guide.title, guide.paragraphs.map(p => `<p>${escape(p)}</p>`).join(''));
   if (path.startsWith('/tools/')) {
     r.bodyHtml += renderToStaticMarkup(createElement(ReviewedModelSource, { modelId: path }));
     const review = reviewedModelSources(path);

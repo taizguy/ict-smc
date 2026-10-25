@@ -1672,63 +1672,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/knowledge-graph/": {
-      "fingerprint": "2f959a8deb433fd2139e4d48fab57f395d12fea9601a88399df2971c69c9bf99",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/tools/knowledge-graph/network/fair_value_gap/": {
-      "fingerprint": "d6a9a7180370774e41e96f3595da37b1100f70576140e2e810a2761fbb51beef",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/tools/knowledge-graph/pipeline/step-1/": {
-      "fingerprint": "199bb37a9fc8f5f2771f315b782832198a79a1e5d2d260198f126b3e8575dfbd",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/tools/knowledge-graph/pipeline/step-10/": {
-      "fingerprint": "287fb055e28f1fbbd797f461d77e7d545b033a12da3c508652b8457728599663",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/tools/knowledge-graph/pipeline/step-2/": {
-      "fingerprint": "f25842d8a2deacd879069032f1307d5a7ee8e78698c071ff0daa1a8888e0c850",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/tools/knowledge-graph/pipeline/step-3/": {
-      "fingerprint": "c4a01cbc714ab910908a6a081e680fd9bb1c0f3667561e443256a18668992aac",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/tools/knowledge-graph/pipeline/step-4/": {
-      "fingerprint": "a40110315771c0c61ed8e5a5e2401c9130241b7318b31543fd3f7d3597617d79",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/tools/knowledge-graph/pipeline/step-5/": {
-      "fingerprint": "4d6b4a273806e79b3d7f235f1524db0116b0ffb60e314e70abbf3b32d0663d72",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/tools/knowledge-graph/pipeline/step-6/": {
-      "fingerprint": "d044f860a3adce80fbb7e547bb9f7ff8d2828d21570dd9f66a5d7b56917861a6",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/tools/knowledge-graph/pipeline/step-7/": {
-      "fingerprint": "06a706d7e3f085551bbc942ea75f10c2a2493900bdd5ac4492b756d8a24173c9",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/tools/knowledge-graph/pipeline/step-8/": {
-      "fingerprint": "e307e91d3789f05556610fa04d99097a1fe8e772efc5ed758f8b4d56f2551161",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/tools/knowledge-graph/pipeline/step-9/": {
-      "fingerprint": "fde775efeddf94997a6fa775f4313cce610b770ff25cf1cbfcf16552181e9fa4",
-      "lastmod": "2026-10-24",
+      "fingerprint": "b59f580fd4cedeba59788b94de3e3b8341d546990a0c80def7590af0d73ab1ab",
+      "lastmod": "2026-10-25",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/masterclass/": {
@@ -3507,63 +3452,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/knowledge-graph/": {
-      "fingerprint": "84f50cc35a75d627f000cda9920af2de53bb657f3fd2a78bc463f25cf534d9f5",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/ur/tools/knowledge-graph/network/fair_value_gap/": {
-      "fingerprint": "c7495a75b723c30ae373aad52c79e2cdc20c35383a3295d9f88fd77abac315f3",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/ur/tools/knowledge-graph/pipeline/step-1/": {
-      "fingerprint": "aa0f632fd7eb37f990b205b8179753cfa90e9ebdd82c49430ad792c218608abc",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/ur/tools/knowledge-graph/pipeline/step-10/": {
-      "fingerprint": "1338ce0341ba5cea9662f0099d778dd62e7e700c8645472f37c63ac85d54831b",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/ur/tools/knowledge-graph/pipeline/step-2/": {
-      "fingerprint": "8c142733a1a15f54d13cb5df2c653d1f6af1963eed5345eb164feabe1bb53be5",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/ur/tools/knowledge-graph/pipeline/step-3/": {
-      "fingerprint": "61e9c04adc0769309ca5674ca0655d3fa50c23879d84a036d0e7b5be780415b1",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/ur/tools/knowledge-graph/pipeline/step-4/": {
-      "fingerprint": "1264de5cf8cc91653e8bf81bb02e8f779ab4e1b136b27466edf81a7604c46fd8",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/ur/tools/knowledge-graph/pipeline/step-5/": {
-      "fingerprint": "28fa85f0cf3432e65ff27cc249e759e605fe1361730dea11140ec040c3b14419",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/ur/tools/knowledge-graph/pipeline/step-6/": {
-      "fingerprint": "fa3f44d527cfc048c557b3c761117da79bca4af8300103f20f7cd07559ac8e03",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/ur/tools/knowledge-graph/pipeline/step-7/": {
-      "fingerprint": "f8bb861f8a605a3e1f99c455b0b64036ff4ae6f347777ba70137e9c69cc48c61",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/ur/tools/knowledge-graph/pipeline/step-8/": {
-      "fingerprint": "c6cde4c3ca8b4bd8cfed16069c06dd448739f91667850c56a089afc878bdab97",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
-    },
-    "/ur/tools/knowledge-graph/pipeline/step-9/": {
-      "fingerprint": "71985f5c993a53f3680eb2bac1dac648d1b72ad3508f1ac7da4ee7b51301350f",
-      "lastmod": "2026-10-24",
+      "fingerprint": "55cef1a70c4c8fc27e8bb29cc2b5ee41553bb506e3b87da6ab383ff92b037a0a",
+      "lastmod": "2026-10-25",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/masterclass/": {

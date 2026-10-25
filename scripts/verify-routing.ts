@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import worker from '../src/worker';
 import { mentorshipLessonPath, selectedMentorship } from '../src/data/mentorshipTracks';
+import { retiredGraphPaths } from '../src/utils/knowledgeGraphRoutes';
 
 let calls = 0;
 const env = { ASSETS: { fetch: async (request: Request) => {
@@ -9,6 +10,7 @@ const env = { ASSETS: { fetch: async (request: Request) => {
   return new Response(p === '/404.html' ? 'Not found' : p, { status: p === '/missing/' ? 404 : 200 });
 } } };
 for (const [input, destination] of [
+  ...retiredGraphPaths.flatMap(path => ['', '/ur'].flatMap(locale => [path, path.slice(0,-1)].map(old => [`https://learnsmc.xyz${locale}${old}`, `https://learnsmc.xyz${locale}/tools/knowledge-graph/`]))),
   ['http://learnsmc.xyz/curriculum/', 'https://learnsmc.xyz/curriculum/'],
   ['https://www.learnsmc.xyz/masood/', 'https://learnsmc.xyz/masood/'],
   ['https://learnsmc.xyz/Masood//Lectures/masood-beg-1/', 'https://learnsmc.xyz/masood/lectures/masood-beg-1/'],

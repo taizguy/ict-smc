@@ -1,3 +1,4 @@
+import { retiredGraphAliases } from '../src/utils/knowledgeGraphRoutes';
 import { TERMS_SECTIONS, ABOUT_GUIDANCE, CONTACT_GUIDANCE, publisherPageRevision } from '../src/data/publisherPageCopy';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
@@ -50,6 +51,7 @@ function route(path: string, title: string, description: string, bodyHtml: strin
 }
 
 export const canonicalAliases: Record<string, string> = {
+  ...retiredGraphAliases,
   '/tools/graph/': '/tools/knowledge-graph/',
   '/tools/dashboard/': '/tools/profile/',
   '/tools/ict-suite/': '/tools/delivery-suite/',

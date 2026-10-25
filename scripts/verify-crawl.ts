@@ -1,3 +1,4 @@
+import { retiredGraphPaths } from '../src/utils/knowledgeGraphRoutes';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
@@ -16,6 +17,12 @@ const redirectSources = fs.readFileSync(path.join(dist, '_redirects'), 'utf8').s
 assert.equal(new Set(redirectSources).size, redirectSources.length, 'Cloudflare rejects duplicate redirect source paths, even with different whitespace');
 const aliases = new Map(fs.readFileSync(path.join(dist, '_redirects'), 'utf8').split('\n')
   .map(line => line.trim().split(/\s+/)).filter(parts => parts.length === 3 && parts[0].startsWith('/')).map(parts => [parts[0], parts[1]]));
+for (const old of retiredGraphPaths) for (const locale of ['', '/ur']) {
+  const source = locale + old, target = locale + '/tools/knowledge-graph/';
+  assert.equal(aliases.get(source), target, `Retired graph redirect: ${source}`);
+  assert.ok(!sitemap.includes(`<loc>https://learnsmc.xyz${source}</loc>`), `Retired graph URL in sitemap: ${source}`);
+  assert.ok(!routes.some(r => r.path === source), `Retired graph URL in canonical manifest: ${source}`);
+}
 const titles = new Set<string>(), descriptions = new Set<string>(), visited = new Set<string>();
 const edges = new Map<string, string[]>();
 const routePaths = new Set(routes.map(r => r.path));

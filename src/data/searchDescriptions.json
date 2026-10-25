@@ -171,46 +171,6 @@
     "en": "Log a trade with symbol, direction, time, realized R and optional P&L. Save notes on this device and export backups before clearing browser data.",
     "ur": "Symbol، سمت، وقت، Realized R اور اختیاری P&L کے ساتھ ٹریڈ درج کریں۔ نوٹس اسی آلے پر محفوظ کریں اور براؤزر صاف کرنے سے پہلے Backup لیں۔"
   },
-  "/tools/knowledge-graph/pipeline/step-1/": {
-    "en": "Start the study sequence with resting orders and liquidity references. Follow linked definitions without inferring hidden order inventories.",
-    "ur": "مطالعے کی ترتیب Resting Orders اور Liquidity حوالوں سے شروع کریں۔ متعلقہ تعریفیں پڑھیں، پوشیدہ آرڈرز کی تعداد فرض نہ کریں۔"
-  },
-  "/tools/knowledge-graph/pipeline/step-2/": {
-    "en": "Explore liquidity-pool concentration around reference swings. Use the conceptual map to connect definitions, not to locate actual stop orders.",
-    "ur": "حوالہ جاتی سوئنگز کے گرد Liquidity Pool Concentration کا تصور پڑھیں۔ نقشہ تعریفیں جوڑتا ہے، حقیقی Stop Orders کا مقام نہیں بتاتا۔"
-  },
-  "/tools/knowledge-graph/pipeline/step-3/": {
-    "en": "Study a move beyond a reference high or low in the liquidity sequence. Compare continuation and reversal possibilities after a sweep.",
-    "ur": "Liquidity کی ترتیب میں سابقہ High یا Low سے آگے کی حرکت سمجھیں۔ Sweep کے بعد تسلسل اور واپسی، دونوں امکانات دیکھیں۔"
-  },
-  "/tools/knowledge-graph/pipeline/step-4/": {
-    "en": "Examine absorption as a hypothesis in the study map. Review why candle shapes alone cannot establish institutional participation or absorbed flow.",
-    "ur": "مطالعاتی نقشے میں Absorption کو مفروضے کے طور پر پرکھیں۔ صرف کینڈلز ادارہ جاتی شرکت یا جذب شدہ Order Flow ثابت نہیں کرتیں۔"
-  },
-  "/tools/knowledge-graph/pipeline/step-5/": {
-    "en": "Connect displacement to the conceptual learning sequence. Inspect price expansion and the evidence limits of claims about its participants.",
-    "ur": "Displacement کو تعلیمی ترتیب سے جوڑیں۔ قیمت کے پھیلاؤ اور اس میں شریک فریقوں سے متعلق دعووں کی شواہد والی حدود سمجھیں۔"
-  },
-  "/tools/knowledge-graph/pipeline/step-6/": {
-    "en": "Follow the market-structure-shift stage and its linked glossary definition. Review confirmation conventions before considering an entry array.",
-    "ur": "Market Structure Shift کے مرحلے اور متعلقہ تعریف کو پڑھیں۔ انٹری Array پر غور کرنے سے پہلے تصدیق کے مطالعاتی اصول دیکھیں۔"
-  },
-  "/tools/knowledge-graph/pipeline/step-7/": {
-    "en": "Explore dealing-range equilibrium in the study sequence. Relate the midpoint to premium, discount and the chosen chart references.",
-    "ur": "مطالعاتی ترتیب میں Dealing Range Equilibrium سمجھیں۔ وسط کو Premium، Discount اور منتخب چارٹ حوالوں سے جوڑ کر دیکھیں۔"
-  },
-  "/tools/knowledge-graph/pipeline/step-8/": {
-    "en": "Review a PD-array revisit in the conceptual map. Connect mitigation references to retests, invalidation and cases where the interpretation fails.",
-    "ur": "تصوری نقشے میں PD Array کی دوبارہ آمد دیکھیں۔ Mitigation کو Retest، Invalidation اور تشریح ناکام ہونے کی مثالوں سے جوڑیں۔"
-  },
-  "/tools/knowledge-graph/pipeline/step-9/": {
-    "en": "Review entry execution after the stated context and confirmation stages. Use linked definitions to separate a plan from a guaranteed fill.",
-    "ur": "بیان کردہ پس منظر اور تصدیق کے بعد انٹری Execution سمجھیں۔ متعلقہ تعریفوں سے منصوبے اور یقینی Fill میں فرق رکھیں۔"
-  },
-  "/tools/knowledge-graph/pipeline/step-10/": {
-    "en": "Finish the learning sequence with the draw-on-liquidity reference and target review. A conceptual destination is not a price prediction.",
-    "ur": "تعلیمی ترتیب کو Draw on Liquidity کے حوالے اور ہدف کے جائزے سے مکمل کریں۔ تصوراتی منزل قیمت کی پیش گوئی نہیں۔"
-  },
   "/tools/compare/fvg-vs-ifvg/": {
     "en": "Compare a fresh fair value gap with an inversion reference after failure. Review directional roles, retests and invalidation conventions.",
     "ur": "نئے FVG اور ناکامی کے بعد Inversion کے حوالے کا موازنہ کریں۔ سمتی کردار، Retest اور Invalidation کے مطالعاتی اصول دیکھیں۔"

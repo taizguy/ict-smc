@@ -1,3 +1,4 @@
+import { retiredGraphAliases } from '../src/utils/knowledgeGraphRoutes';
 import {CurriculumView} from '../src/components/CurriculumView';
 import {ChapterRoom} from '../src/components/ChapterRoom';
 import {Header} from '../src/components/Header';
@@ -47,7 +48,6 @@ import {
   SIMULATOR_MODELS,
   BACKTEST_STRATEGIES,
   JOURNAL_SECTIONS,
-  KNOWLEDGE_GRAPH_STEPS,
   getComparisonSlug,
   MASTERY_EXAMS,
   DELIVERY_SUITE_MODULES
@@ -716,13 +716,13 @@ const workbenchTools: RouteMeta[] = [
   {
     url: 'https://learnsmc.xyz/tools/knowledge-graph/',
     outputPath: 'tools/knowledge-graph/index.html',
-    title: 'Interactive Knowledge Graph — 10-Step Pipeline | LearnSMC',
-    description: 'Visual node map connecting foundational market mechanics to advanced execution models.',
+    title: '3D ICT & SMC Knowledge Graph | LearnSMC',
+    description: 'Explore an interactive 3D tree of ICT and smart money concepts. Expand topic branches, find related concepts, and open their explanations.',
     canonical: 'https://learnsmc.xyz/tools/knowledge-graph/',
     heading: 'SMC Interactive Knowledge Graph',
-    subheading: 'Connect liquidity concepts, market structure, and algorithmic timing models.',
+    subheading: 'See how smart money concepts fit together.',
     badge: 'Concept Matrix',
-    bodyHtml: '<p style="line-height: 1.7; color: #435b50;">Explore the conceptual dependency tree connecting liquidity pools, displacement, market structure shifts, and optimal trade entries.</p>'
+    bodyHtml: '<p style="line-height: 1.7; color: #435b50;">Explore topic branches for market foundations, liquidity, structure, gaps, order blocks, sessions and models. Expand nodes, search for a concept, and follow its explanation. Lines show topic grouping, not a guaranteed trading sequence.</p>'
   },
   {
     url: 'https://learnsmc.xyz/tools/glossary/',
@@ -1080,68 +1080,6 @@ const journalSectionRoutes: RouteMeta[] = JOURNAL_SECTIONS.map(s => {
   };
 });
 
-// 5g. Knowledge Graph Steps & Network Sub-Routes (/tools/knowledge-graph/pipeline/step-:step/)
-const knowledgeGraphStepRoutes: RouteMeta[] = KNOWLEDGE_GRAPH_STEPS.map(s => {
-  const targetUrl = `https://learnsmc.xyz/tools/knowledge-graph/pipeline/step-${s.step}/`;
-
-  return {
-    url: targetUrl,
-    outputPath: `tools/knowledge-graph/pipeline/step-${s.step}/index.html`,
-    title: `${s.title} — Knowledge Graph | LearnSMC`,
-    description: `${s.shortDesc} Non-random causal pipeline connecting liquidity to execution.`,
-    canonical: targetUrl,
-    heading: s.title,
-    subheading: `Step ${s.step} of 10 in Algorithmic Institutional Price Delivery`,
-    badge: `Step ${s.step} of 10 • Pipeline`,
-    schemaJson: {
-      '@context': 'https://schema.org',
-      '@type': 'ItemPage',
-      'name': s.title,
-      'description': s.shortDesc
-    },
-    bodyHtml: `
-      <article style="line-height: 1.7; color: #435b50;">
-        <p style="font-size: 1.05rem; color: #121c32; margin-bottom: 1.25rem;">${escapeHtml(s.shortDesc)}</p>
-
-        <div style="background: rgba(85,230,209,0.08); border-left: 3px solid #23796d; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
-          <h3 style="color: #121c32; margin: 0 0 0.5rem 0; font-size: 1.1rem;">Algorithmic Causality</h3>
-          <p style="color: #121c32; font-size: 0.95rem; margin: 0;">Step ${s.step} represents a deterministic link in institutional auction mechanics. Smart money relies on resting liquidity pools to fill large position blocks before triggering displacement.</p>
-        </div>
-
-        <p style="font-size: 0.85rem; color: #4f5d75;">
-          Interact with this causal node and view interconnected concept prerequisites in the <a href="/tools/knowledge-graph/" style="color: #23796d;">Interactive Knowledge Graph</a>.
-        </p>
-      </article>
-    `
-  };
-});
-
-const knowledgeGraphNetworkRoute: RouteMeta = {
-  url: 'https://learnsmc.xyz/tools/knowledge-graph/network/fair_value_gap/',
-  outputPath: 'tools/knowledge-graph/network/fair_value_gap/index.html',
-  title: 'Knowledge Graph Network: Fair Value Gap Node | LearnSMC',
-  description: 'Interactive concept dependency network connecting Fair Value Gaps with displacement, liquidity sweeps, and trade models.',
-  canonical: 'https://learnsmc.xyz/tools/knowledge-graph/network/fair_value_gap/',
-  heading: 'Smart Money Interconnected Node Network',
-  subheading: 'Visual Dependency Tree for Institutional Trading Concepts',
-  badge: 'Network Matrix',
-  schemaJson: {
-    '@context': 'https://schema.org',
-    '@type': 'ItemPage',
-    'name': 'Knowledge Graph Network'
-  },
-  bodyHtml: `
-    <article style="line-height: 1.7; color: #435b50;">
-      <p style="font-size: 1rem; color: #121c32; margin-bottom: 1.25rem;">
-        The Smart Money Concepts knowledge graph links core concepts into a cohesive causal web: Liquidity Sweeps ➔ Displacement ➔ Fair Value Gaps ➔ Market Structure Shifts ➔ Institutional Order Blocks ➔ Killzone Execution Models.
-      </p>
-      <p style="font-size: 0.85rem; color: #4f5d75;">
-        Explore the 2D visual layout in the <a href="/tools/knowledge-graph/" style="color: #23796d;">Knowledge Graph</a>.
-      </p>
-    </article>
-  `
-};
-
 // 5h. Compare Matrix Sub-Routes (/tools/compare/:slug/)
 const compareSubRoutes: RouteMeta[] = conceptComparisons.map(c => {
   const slug = getComparisonSlug(c.id);
@@ -1467,8 +1405,6 @@ allRoutes.push(...chartLabScenarioRoutes);
 allRoutes.push(...simulatorModelRoutes);
 allRoutes.push(...backtestStrategyRoutes);
 allRoutes.push(...journalSectionRoutes);
-allRoutes.push(...knowledgeGraphStepRoutes);
-allRoutes.push(knowledgeGraphNetworkRoute);
 allRoutes.push(...compareSubRoutes);
 allRoutes.push(profileRoadmapRoute);
 allRoutes.push(profileExamsRootRoute);
@@ -1767,6 +1703,7 @@ fs.writeFileSync(path.resolve(legacyWorkbenchDir, 'index.html'), legacyWorkbench
 // /tools/dashboard/ -> /tools/profile/
 // /tools/ict-suite/ & /tools/ict_suite/ -> /tools/delivery-suite/
 const aliasMappings = [
+  ...Object.entries(retiredGraphAliases).map(([from, toUrl]) => ({ fromDir: from.slice(1,-1), toUrl, title: 'Knowledge Graph' })),
   { fromDir: 'tools/graph', toUrl: '/tools/knowledge-graph/', title: 'Knowledge Graph' },
   { fromDir: 'tools/dashboard', toUrl: '/tools/profile/', title: 'Mastery Profile' },
   { fromDir: 'tools/ict-suite', toUrl: '/tools/delivery-suite/', title: 'ICT Delivery Suite' },

@@ -2,6 +2,236 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/tools/knowledge-graph/pipeline/step-1",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/pipeline/step-2",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/pipeline/step-3",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/pipeline/step-4",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/pipeline/step-5",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/pipeline/step-6",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/pipeline/step-7",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/pipeline/step-8",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/pipeline/step-9",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/pipeline/step-10",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/step-1",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/step-2",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/step-3",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/step-4",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/step-5",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/step-6",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/step-7",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/step-8",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/step-9",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/step-10",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/pipeline",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/network",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/knowledge-graph/network/fair_value_gap",
+      "destination": "/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/pipeline/step-1",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/pipeline/step-2",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/pipeline/step-3",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/pipeline/step-4",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/pipeline/step-5",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/pipeline/step-6",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/pipeline/step-7",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/pipeline/step-8",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/pipeline/step-9",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/pipeline/step-10",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/step-1",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/step-2",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/step-3",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/step-4",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/step-5",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/step-6",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/step-7",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/step-8",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/step-9",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/step-10",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/pipeline",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/network",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
+      "source": "/ur/tools/knowledge-graph/network/fair_value_gap",
+      "destination": "/ur/tools/knowledge-graph/",
+      "permanent": true
+    },
+    {
       "source": "/",
       "has": [
         {

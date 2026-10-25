@@ -179,7 +179,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
       slug: 'knowledge-graph',
       name: 'Knowledge Graph',
       badge: 'Concept Matrix',
-      desc: '10-step institutional pipeline and connected concept nodes',
+      desc: 'Interactive 3D tree connecting ICT and smart money concepts',
       icon: GitFork
     },
     {

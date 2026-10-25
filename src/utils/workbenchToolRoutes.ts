@@ -784,70 +784,14 @@ export function resolveWorkbenchRoute(pathname: string): ResolvedWorkbenchRoute 
         tool: 'graph',
         canonicalUrl: '/tools/knowledge-graph/',
         cleanPath: `/${segments.join('/')}/`,
-        metaTitle: 'Interactive Knowledge Graph — 10-Step Execution Pipeline | LearnSMC',
-        metaDescription: 'Visual node map connecting foundational market mechanics: Resting Liquidity, Liquidity Sweeps, Displacement, MSS, PD Arrays, and Terminal DOL.',
+        metaTitle: '3D ICT & SMC Knowledge Graph | LearnSMC',
+        metaDescription: 'Explore an interactive 3D tree of ICT and smart money concepts. Expand topic branches, find related concepts, and open their explanations.',
         badge: 'Concept Matrix',
         isCanonical: isCanonicalToolSlug,
-        graphViewMode: 'pipeline',
-        graphStep: 1
+        graphViewMode: 'network'
       };
     }
 
-    const viewModeOrStep = segments[2];
-    const subParam = segments[3];
-
-    if (viewModeOrStep === 'pipeline') {
-      let stepNum = 1;
-      if (subParam) {
-        const stepMatch = subParam.match(/step-(\d+)/i) || subParam.match(/^(\d+)$/);
-        if (stepMatch) stepNum = Math.min(Math.max(parseInt(stepMatch[1], 10), 1), 10);
-      }
-      const matchedStepMeta = KNOWLEDGE_GRAPH_STEPS.find(s => s.step === stepNum) || KNOWLEDGE_GRAPH_STEPS[0];
-      return {
-        tool: 'graph',
-        canonicalUrl: `/tools/knowledge-graph/pipeline/step-${stepNum}/`,
-        cleanPath: `/${segments.join('/')}/`,
-        metaTitle: `${matchedStepMeta.title} — Knowledge Graph | LearnSMC`,
-        metaDescription: matchedStepMeta.shortDesc,
-        badge: `Step ${stepNum} of 10`,
-        isCanonical: isCanonicalToolSlug && segments[2] === 'pipeline' && segments[3] === `step-${stepNum}`,
-        graphViewMode: 'pipeline',
-        graphStep: stepNum
-      };
-    }
-
-    if (viewModeOrStep === 'network') {
-      const nodeId = subParam || 'fair_value_gap';
-      return {
-        tool: 'graph',
-        canonicalUrl: `/tools/knowledge-graph/network/${nodeId}/`,
-        cleanPath: `/${segments.join('/')}/`,
-        metaTitle: `Knowledge Graph Network (${nodeId}) | LearnSMC`,
-        metaDescription: 'Visual interconnected concept network of Smart Money and ICT trading mechanics.',
-        badge: 'Network Matrix',
-        isCanonical: isCanonicalToolSlug && segments[2] === 'network',
-        graphViewMode: 'network',
-        graphNodeId: nodeId
-      };
-    }
-
-    // Direct step shorthand e.g. /tools/knowledge-graph/step-3/
-    const directStepMatch = viewModeOrStep.match(/step-(\d+)/i);
-    if (directStepMatch) {
-      const stepNum = parseInt(directStepMatch[1], 10);
-      const matchedStepMeta = KNOWLEDGE_GRAPH_STEPS.find(s => s.step === stepNum) || KNOWLEDGE_GRAPH_STEPS[0];
-      return {
-        tool: 'graph',
-        canonicalUrl: `/tools/knowledge-graph/pipeline/step-${stepNum}/`,
-        cleanPath: `/${segments.join('/')}/`,
-        metaTitle: `${matchedStepMeta.title} — Knowledge Graph | LearnSMC`,
-        metaDescription: matchedStepMeta.shortDesc,
-        badge: `Step ${stepNum} of 10`,
-        isCanonical: false,
-        graphViewMode: 'pipeline',
-        graphStep: stepNum
-      };
-    }
 
     return {
       tool: 'graph',

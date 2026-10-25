@@ -1,3 +1,4 @@
+import { retiredGraphTarget } from './utils/knowledgeGraphRoutes';
 import { chapterCatalog } from './data/catalog.generated';
 import { localeFromPath, localizedHref, withoutLocale } from './i18n/locale';
 import { URDU_PUBLISHED } from './i18n/release';
@@ -19,6 +20,11 @@ export default {
     if (documentPath) url.pathname = original.replace(/\/{2,}/g, '/').toLowerCase();
     const locale = URDU_PUBLISHED ? localeFromPath(url.pathname) : 'en';
     const routePath = locale === 'ur' ? withoutLocale(url.pathname) : url.pathname;
+    const graphTarget = retiredGraphTarget(routePath);
+    if (graphTarget) {
+      url.pathname = localizedHref(graphTarget, locale); url.search = '';
+      return Response.redirect(url.href, 301);
+    }
     const legacy = url.searchParams.get('chapter') || routePath.match(/^\/chapter[-/]([^/]+)\/?$/)?.[1] || routePath.match(/^\/learn\/(\d+)\/?$/)?.[1];
     if (legacy) {
       const chapter = chapterCatalog.find(c => String(c.id) === legacy || c.slug === legacy.toLowerCase());

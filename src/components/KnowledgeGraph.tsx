@@ -1,25 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { getConceptBySlugOrId, getGlossaryConceptPath } from '../utils/glossaryRoutes';
-import { panel,button,Notice } from './ToolUI';
-export interface KnowledgeGraphProps { initialViewMode?:'pipeline'|'network'; initialStep?:number; initialNodeId?:string; onSelectConcept:(id:string)=>void; onNavigateUrl?:(url:string)=>void }
-const steps=[
- ['Resting liquidity','market_mechanics_liquidity','On an exchange, resting limit orders provide visible or hidden quoted liquidity. Spot FX has multiple fragmented venues; a candle is not a complete order book.'],
- ['Liquidity reference','buy_side_liquidity','Mark an old swing high or low as a possible reference. Candles alone cannot show the exact size or location of stops.'],
- ['Sweep observation','sell_side_liquidity','Record a move beyond the chosen reference. It can reverse or continue; a sweep alone does not determine the next move.'],
- ['Absorption hypothesis','market_mechanics_liquidity','Limited price progress despite aggressive volume can be studied as absorption when suitable trade data is available. Do not infer participant identity from candles alone.'],
- ['Displacement','displacement_engine','Identify a comparatively large directional move and record the timeframe and measurement used. Displacement is a price observation, not proof of a particular trader’s intention.'],
- ['Structure confirmation','market_structure_bos_mss_choch','State which swing a candle must close beyond. BOS, CHoCH and MSS have different conventions; define the pivot and confirmation before evaluating.'],
- ['Entry array','fair_value_gap','Mark the three-candle nonoverlap or other defined reference zone after its defining candles have completed. A pattern does not establish an executable fill.'],
- ['Retest','order_block','Observe whether price revisits the reference area. Queue priority, spread, costs and slippage can affect a real execution.'],
- ['Invalidation','consequent_encroachment','Specify an entry, stop and positive initial risk. A midpoint reference is not automatically the failure boundary of every model.'],
- ['Target and review','ict_2022_model','Choose a target as a plan assumption, record its reward relative to initial risk, and study failures as well as successful examples.'],
-] as const;
-const nodes=[['liquidity_pools','Liquidity references','buy_side_liquidity'],['liquidity_sweeps','Sweep observations','sell_side_liquidity'],['displacement','Displacement','displacement_engine'],['fair_value_gap','Fair value gap','fair_value_gap'],['order_blocks','Order blocks','order_block'],['market_structure','Market structure','market_structure_bos_mss_choch'],['killzones','Session timing','sessions_killzones_timing'],['silver_bullet','Silver Bullet','silver_bullet_model'],['ict_2022_model','2022 model','ict_2022_model'],['turtle_soup','Sweep and reversal study','sell_side_liquidity']] as const;
-function hashNode(fallback:string){try{const value=decodeURIComponent(location.hash.slice(1));return nodes.some(n=>n[0]===value)?value:fallback;}catch{return fallback;}}
-export const KnowledgeGraph:React.FC<KnowledgeGraphProps>=({initialViewMode='pipeline',initialStep=1,initialNodeId='fair_value_gap'})=>{
- const [node,setNode]=useState(()=>hashNode(initialNodeId));useEffect(()=>{const sync=()=>setNode(hashNode('fair_value_gap'));window.addEventListener('hashchange',sync);window.addEventListener('popstate',sync);return()=>{window.removeEventListener('hashchange',sync);window.removeEventListener('popstate',sync);};},[]);
- const step=Math.min(10,Math.max(1,initialStep)),active=steps[step-1],activeNode=nodes.find(n=>n[0]===node)||nodes[3];
- const conceptLink=(id:string)=>{const c=getConceptBySlugOrId(id);return c?getGlossaryConceptPath(c.slug,c.categorySlug):'/tools/glossary/';};
- return <div className="space-y-6"><section className={panel}><h2 className="text-2xl font-semibold">Concept study map</h2><Notice>This map organizes a learning sequence. Edges represent teaching relationships, not measured causation, required market behavior or an entry signal. Compare definitions, look for missing conditions and retain counterexamples.</Notice><nav className="flex flex-wrap gap-3" aria-label="Concept map views"><a className={button} aria-current={initialViewMode==='pipeline'?'page':undefined} href="/tools/knowledge-graph/pipeline/step-1/">10-step study sequence</a><a className={button} aria-current={initialViewMode==='network'?'page':undefined} href="/tools/knowledge-graph/network/fair_value_gap/">Dependency map</a></nav></section>
- {initialViewMode==='pipeline'?<><nav className="flex flex-wrap gap-2" aria-label="Study steps">{steps.map((s,i)=><a key={i} href={`/tools/knowledge-graph/pipeline/step-${i+1}/`} aria-current={step===i+1?'step':undefined} className={button}>{i+1}. {s[0]}</a>)}</nav><section className={panel}><h2 className="text-xl font-semibold">{step}. {active[0]}</h2><p>{active[2]}</p><a className="underline" href={conceptLink(active[1])}>Read the related definition</a><div className="flex justify-between flex-wrap gap-3">{step>1&&<a className={button} href={`/tools/knowledge-graph/pipeline/step-${step-1}/`}>Previous step</a>}{step<10&&<a className={button} href={`/tools/knowledge-graph/pipeline/step-${step+1}/`}>Advance to step {step+1}</a>}</div></section></>:<section className={panel}><h2 className="text-xl font-semibold">Connected study topics</h2><svg viewBox="0 0 680 300" className="w-full" role="img" aria-label="Study concepts connected in a schematic network; use the full topic links below"><title>Concept study network</title>{nodes.slice(1).map((n,i)=><line key={n[0]} x1={60+(i%5)*130} y1={70+Math.floor(i/5)*140} x2={60+((i+1)%5)*130} y2={70+Math.floor((i+1)/5)*140} stroke="#555F73"/>)}{nodes.map((n,i)=><g key={n[0]}><circle cx={60+i%5*130} cy={70+Math.floor(i/5)*140} r="22" fill={node===n[0]?'#23796d':'#256552'}/><text x={60+i%5*130} y={110+Math.floor(i/5)*140} fill="#223b35" textAnchor="middle" fontSize="12">{i+1}</text></g>)}</svg><nav className="grid sm:grid-cols-2 gap-2" aria-label="Network topic selection">{nodes.map((n,i)=><button type="button" className={button} key={n[0]} aria-pressed={node===n[0]} onClick={()=>{setNode(n[0]);window.history.replaceState(null,'',`#${n[0]}`);}}>{i+1}. {n[1]}</button>)}</nav><article id="network-topic" className="space-y-3 border-t border-ink/10 pt-4" aria-live="polite"><h3 className="text-xl font-semibold">{activeNode[1]}</h3><p>Use the definition to distinguish observed price behavior from the framework’s interpretation. This connection does not establish a probability of success.</p><a className="underline" href={conceptLink(activeNode[2])}>Open concept definition</a></article></section>}</div>;
-};
+import React from 'react';
+import { SpatialConceptGraph } from './SpatialConceptGraph';
+import { ConceptTree } from './ConceptTree';
+export interface KnowledgeGraphProps {
+  initialViewMode?: 'pipeline' | 'network';
+  initialStep?: number;
+  initialNodeId?: string;
+  onSelectConcept: (id: string) => void;
+  onNavigateUrl?: (url: string) => void;
+}
+export const KnowledgeGraph: React.FC<KnowledgeGraphProps> = () => (
+  <div className="space-y-6">
+    <SpatialConceptGraph />
+    <details className="ct-legacy">
+      <summary>Accessible text tree and concept links</summary>
+      <ConceptTree />
+    </details>
+  </div>
+);

@@ -1,5 +1,15 @@
 /** Editorial overrides for tool instructions; underlying models and values stay unchanged. */
 export const toolsUrdu: Record<string, string> = {
+  "3D ICT & SMC Knowledge Graph | LearnSMC": "ICT اور SMC کا سہ جہتی علمی گراف | LearnSMC",
+  "Explore an interactive 3D tree of ICT and smart money concepts. Expand topic branches, find related concepts, and open their explanations.": "ICT اور Smart Money Concepts کے انٹرایکٹو سہ جہتی شجرے کو دریافت کریں۔ موضوع کی شاخیں کھولیں، متعلقہ تصورات تلاش کریں اور ان کی وضاحت پڑھیں۔",
+  "See how smart money concepts fit together.": "دیکھیں Smart Money Concepts آپس میں کیسے جڑتے ہیں۔",
+  "See how smart money concepts fit together": "دیکھیں Smart Money Concepts آپس میں کیسے جڑتے ہیں",
+  "Expand a topic branch, rotate the 3D graph, or search for a concept to focus its connections. The accessible text tree provides the same concept links without requiring WebGL.": "کسی موضوع کی شاخ کھولیں، سہ جہتی گراف گھمائیں، یا کسی تصور کے روابط دیکھنے کے لیے اسے تلاش کریں۔ قابل رسائی متنی شجرہ WebGL کے بغیر بھی انہی تصورات کے لنکس فراہم کرتا ہے۔",
+  "Lines show topic grouping, not causation, a guaranteed trading sequence or evidence of profitability.": "لکیریں موضوعات کی گروہ بندی دکھاتی ہیں؛ یہ سبب، یقینی تجارتی ترتیب یا منافع کا ثبوت نہیں ہیں۔",
+  "How to explore the 3D concept tree": "تصورات کا سہ جہتی شجرہ کیسے دیکھیں",
+  "Click a branch to expand or collapse its topics. Drag empty space to rotate the graph, use the zoom buttons to change scale, and choose Recenter to fit the visible nodes. Search for a concept to reveal its branch and move the camera to it.": "موضوعات دکھانے یا چھپانے کے لیے شاخ پر کلک کریں۔ گراف گھمانے کے لیے خالی جگہ ڈریگ کریں، زوم بٹنوں سے منظر کا حجم بدلیں اور دکھائی دینے والے تمام نوڈز دیکھنے کے لیے Recenter منتخب کریں۔ کسی تصور کو تلاش کرکے اس کی شاخ کھولیں اور کیمرہ اس کی طرف لے جائیں۔",
+  "Select a concept and use Read the explanation to open its reference page. Solid lines show topic grouping, not causation or a required market sequence. The accessible text tree provides the concept links without requiring a 3D view.": "کسی تصور کو منتخب کریں اور اس کا حوالہ جاتی صفحہ کھولنے کے لیے Read the explanation استعمال کریں۔ مسلسل لکیریں موضوعات کی گروہ بندی دکھاتی ہیں، سبب یا مارکیٹ کی لازمی ترتیب نہیں۔ قابل رسائی متنی شجرہ سہ جہتی منظر کے بغیر بھی تصورات کے لنکس فراہم کرتا ہے۔",
+
   'Swing high': 'سوئنگ ہائی (Swing High)',
   'Swing low': 'سوئنگ لو (Swing Low)',
   'Stop': 'اسٹاپ لاس (Stop Loss)',

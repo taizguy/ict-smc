@@ -18,6 +18,12 @@ main:has(.wb-suite) { background: var(--wb-grain), var(--wb-paper); }
 .wb-suite :is(h1,h2) { letter-spacing: -.035em; }
 .wb-suite .workbench-header { background: var(--wb-card) !important; border: 0; border-radius: var(--wb-radius); border-top: 8px solid var(--wb-current); box-shadow: 0 4px 0 var(--wb-current-edge); padding: 20px 24px; }
 .wb-suite .workbench-header h1 { font-size: clamp(1.5rem,2.7vw,2.25rem); line-height: 1.2; }
+/* Keep the shared navigation above every animated workspace stacking context. */
+.wb-suite .workbench-header { position: relative; z-index: 20; }
+.wb-suite .workbench-content { position: relative; z-index: 0; min-width: 0; }
+.wb-suite .workbench-switcher > nav { z-index: 1; padding: 10px; box-shadow: 0 12px 32px var(--wb-shadow); }
+.wb-suite .workbench-switcher > nav a { display: flex; align-items: center; min-height: 44px; padding: 10px 14px; border: 0; box-shadow: none; }
+.wb-suite .workbench-switcher > nav a[aria-current=page] { box-shadow: inset 3px 0 0 var(--wb-link); }
 .wb-suite .workbench-header nav { background: var(--wb-card); color: var(--wb-ink); border-color: var(--wb-rule); z-index: 100; }
 .wb-suite .workbench-header nav a[aria-current=page] { background: var(--wb-current); color: var(--wb-ink); }
 .wb-suite :is(button,summary,input,select,textarea) { font-family: var(--wb-font); }
@@ -26,7 +32,7 @@ main:has(.wb-suite) { background: var(--wb-grain), var(--wb-paper); }
  letter-spacing: 0; text-transform: none; font-size: .9375rem; line-height: 1.5;
  transition: transform var(--wb-fast) var(--wb-ease),background-color var(--wb-fast) var(--wb-ease),color var(--wb-fast) var(--wb-ease),border-color var(--wb-fast) var(--wb-ease);
 }
-.wb-suite button:not(.market-price-handle),.wb-suite .study-button { background: var(--wb-card); box-shadow: 0 3px 0 var(--wb-edge); }
+.wb-suite button:not(.market-price-handle),.wb-suite .study-button { background: var(--wb-card); box-shadow: 0 1px 2px var(--wb-shadow); }
 .wb-suite :is(button,.study-button):hover:not(:disabled):not(.market-price-handle) { transform: translateY(-1px); }
 .wb-suite :is(button,.study-button):active:not(:disabled):not(.market-price-handle) { transform: translateY(2px); box-shadow: none; }
 .wb-suite :is(button:disabled,[aria-disabled=true]) { opacity: .5; cursor: not-allowed; transform: none; }
@@ -40,6 +46,9 @@ main:has(.wb-suite) { background: var(--wb-grain), var(--wb-paper); }
 .wb-suite .predikt-workbench-body :is(p,li) { font-size: 1rem; line-height: 1.75; text-wrap: pretty; }
 .wb-suite .predikt-workbench-body :is(article,section) > p { max-width: 72ch; }
 .wb-suite .predikt-workbench-body :is(h2,h3,h4) + p { color: var(--wb-muted); }
+.wb-suite .predikt-workbench-body details > summary { display: list-item; list-style: disclosure-closed inside; padding: 12px 16px; min-height: 44px; line-height: 1.6; cursor: pointer; overflow-wrap: anywhere; }
+.wb-suite .predikt-workbench-body details[open] > summary { list-style-type: disclosure-open; }
+.wb-suite .predikt-workbench-body summary::marker { color: var(--wb-link); }
 .wb-suite [class*="tracking-"]:not(svg *) { letter-spacing: 0; text-transform: none; }
 .wb-suite .predikt-workbench-body [class~="text-xs"] { font-size: .875rem; line-height: 1.6; }
 .wb-suite .predikt-workbench-body :is(.line-clamp-2,.line-clamp-3) { -webkit-line-clamp: unset; line-clamp: unset; }

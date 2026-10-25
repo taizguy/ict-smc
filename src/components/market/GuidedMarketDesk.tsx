@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowRight,
   Check,
+  ChevronDown,
   ChevronLeft,
   Lightbulb,
   Pause,
@@ -968,6 +969,8 @@ export function GuidedMarketDesk({
                   </button>
                   <button
                     className="guided-hint"
+                    aria-expanded={editing}
+                    aria-controls="guided-paper-plan"
                     onClick={() => setEditing((v) => !v)}
                   >
                     {t(
@@ -975,8 +978,11 @@ export function GuidedMarketDesk({
                         ? "Finish adjusting"
                         : "Adjust the paper entry and stop",
                     )}
+                    <ChevronDown size={16} aria-hidden="true" />
                   </button>
-                  {editing && <PlanFields plan={p} onChange={moveLevel} />}
+                  <div id="guided-paper-plan" hidden={!editing}>
+                    {editing && <PlanFields plan={p} onChange={moveLevel} />}
+                  </div>
                   <p className="guided-small">
                     {t(
                       "For this exercise: entry inside the shaded gap, stop beyond the sweep, target at the supplied reference, and at least 1.5R before costs.",

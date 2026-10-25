@@ -3,7 +3,7 @@ import { currentDocumentHref } from '../i18n/navigation';
 import { masterclassCollection } from '../data/masterclassData';
 import { toolStudyGuide } from '../utils/toolStudyGuides';
 import { FinancialDisclaimer } from './FinancialDisclaimer';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   BarChart2,
   PlayCircle,
@@ -103,6 +103,24 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
 }) => {
   const { t } = useTranslation();
   const [activeTool, setActiveTool] = useState<TradingToolId | 'overview'>(initialTool);
+  const toolSwitcher = useRef<HTMLDetailsElement>(null);
+
+  useEffect(() => {
+    const dismiss = (event: PointerEvent) => {
+      if (toolSwitcher.current?.open && !toolSwitcher.current.contains(event.target as Node)) toolSwitcher.current.open = false;
+    };
+    const escape = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape' || !toolSwitcher.current?.open) return;
+      toolSwitcher.current.open = false;
+      toolSwitcher.current.querySelector('summary')?.focus();
+    };
+    document.addEventListener('pointerdown', dismiss);
+    document.addEventListener('keydown', escape);
+    return () => {
+      document.removeEventListener('pointerdown', dismiss);
+      document.removeEventListener('keydown', escape);
+    };
+  }, []);
 
   useEffect(() => {
     if (initialTool !== undefined && initialTool !== activeTool) {
@@ -215,7 +233,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
       <header className="workbench-header rounded-2xl border border-ink/10 bg-surface p-4 sm:p-5 space-y-3">
         <div className="flex items-center justify-between gap-4 text-sm">
           <a href="/tools/" className="underline text-teal">All tools</a>
-          <details className="relative">
+          <details ref={toolSwitcher} className="workbench-switcher relative">
             <summary className="cursor-pointer rounded-lg border border-ink/20 px-3 py-2">{t("Switch tool")}<ChevronDown size={16} strokeWidth={1.5} aria-hidden="true" /></summary>
             <nav aria-label={t("Switch tool")} className="absolute end-0 top-full mt-2 z-30 flex flex-col gap-2 w-64 max-w-[80vw] max-h-[65vh] overflow-y-auto rounded-xl border border-ink/20 bg-surface p-3 shadow-2xl">
               {tools.map(tool => <a key={tool.id} href={`/tools/${tool.slug}/`} aria-current={activeTool === tool.id ? 'page' : undefined} className="rounded-lg border border-ink/15 px-3 py-2 text-sm hover:bg-ink/10">{tool.name}</a>)}
@@ -226,7 +244,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
       </header>
 
       {/* Render Active Tool Content */}
-      <div>
+      <div className="workbench-content">
         <div className="predikt-workbench-body">
           {activeTool === 'masterclass' && (
             <MasterclassWorkbench

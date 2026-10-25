@@ -7,7 +7,9 @@
 .wb-suite :is(.guided-eyebrow,.guided-coach > small,.market-eyebrow) { font-size: .875rem; text-transform: none; letter-spacing: 0; color: var(--wb-link); }
 .wb-suite .guided-session-bar { padding: 16px 0; }
 .wb-suite .guided-session-bar summary { background: var(--wb-card); box-shadow: 0 3px 0 var(--wb-edge); padding: 12px 16px; }
-.wb-suite .guided-session-bar details[open] { z-index: 100; background: var(--wb-card); }
+.wb-suite .guided-session-bar details[open] { z-index: auto; flex-basis: 100%; order: 3; max-width: none; margin-inline-start: 0; padding: 16px 20px; border: 1px solid var(--wb-rule); border-radius: var(--wb-control); background: var(--wb-card); }
+.wb-suite .guided-session-bar details[open] > summary { padding: 0 0 12px; box-shadow: none; }
+.wb-suite .guided-session-bar details > p { margin-block: 8px 16px; }
 .wb-suite .guided-progress { gap: 12px; }
 .wb-suite .guided-progress li { padding: 12px; border: 0; border-radius: var(--wb-control); background: var(--wb-card); border-bottom: 3px solid var(--wb-edge); color: var(--wb-muted); }
 .wb-suite .guided-progress li[aria-current=step] { background: var(--wb-current); color: var(--wb-ink); border-color: var(--wb-current-edge); }
@@ -16,7 +18,7 @@
 .wb-suite .guided-workspace { background: var(--wb-card); border-radius: var(--wb-radius); border-color: var(--wb-rule); overflow: clip; }
 .wb-suite .guided-chart-caption { background: var(--wb-blue); color: var(--wb-ink); padding: 16px 20px; }
 .wb-suite .guided-chart-caption > span { color: var(--wb-ink); }
-.wb-suite .guided-coach { background: var(--wb-current); border-color: var(--wb-current-edge); padding: 24px; }
+.wb-suite .guided-coach { background: var(--wb-card); border-color: var(--wb-rule); border-top: 4px solid var(--wb-current); padding: 24px; }
 .wb-suite .guided-coach > p { color: var(--wb-ink); }
 .wb-suite .guided-coach :is(h3,h4) { color: var(--wb-ink); }
 .wb-suite .guided-premise { background: var(--wb-card); border: 0; border-radius: var(--wb-control); padding: 16px; }
@@ -32,6 +34,14 @@
 .wb-suite .guided-hint-copy { border-color: var(--wb-blue-edge); color: var(--wb-ink); font-size: 1rem; }
 .wb-suite :is(.guided-plan,.guided-size,.guided-order-state) { border-radius: var(--wb-control); background: var(--wb-card); color: var(--wb-ink); }
 .wb-suite .guided-plan dd { font-size: 1.25rem; font-weight: 650; }
+.wb-suite .guided-plan { padding: 16px; gap: 16px; border: 1px solid var(--wb-rule); background: var(--wb-paper); }
+.wb-suite .guided-plan > div { padding: 0; border: 0; min-width: 0; }
+.wb-suite .guided-plan dd { overflow-wrap: anywhere; }
+.wb-suite .guided-desk button.guided-hint { padding: 12px 16px; min-height: 48px; border: 1px solid var(--wb-rule); background: var(--wb-paper); color: var(--wb-link); text-decoration: none; box-shadow: none; white-space: normal; }
+.wb-suite .guided-desk button.guided-hint:hover { background: var(--wb-blue); border-color: var(--wb-blue-edge); }
+.wb-suite .guided-desk button.guided-hint[aria-expanded=true] { background: var(--wb-blue); border-color: var(--wb-blue-edge); }
+.wb-suite .guided-desk button.guided-hint[aria-expanded] > svg { margin-inline-start: auto; flex-shrink: 0; }
+.wb-suite .guided-desk button.guided-hint[aria-expanded=true] > svg { transform: rotate(180deg); }
 .wb-suite .guided-recipe { padding: 16px; border-color: var(--wb-rule); }
 .wb-suite .guided-replay { background: var(--wb-paper); padding: 16px; border-radius: var(--wb-control); }
 .wb-suite .guided-case-results > div { gap: 12px; }

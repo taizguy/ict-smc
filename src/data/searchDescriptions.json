@@ -494,5 +494,9 @@
   "/learn/breaker-blocks-trading-failed-order-blocks/": {
     "en": "Follow bullish and bearish breaker structures. Compare mitigation blocks, measure Unicorn overlaps and practise retest timing with animated examples.",
     "ur": "Bullish اور Bearish Breaker ترتیبیں دیکھیں۔ Mitigation Block، Unicorn اشتراک اور ری ٹیسٹ کے وقت کو متحرک مثالوں سے سمجھیں۔"
+  },
+  "/": {
+    "en": "Free ICT & Smart Money Concepts course: 53 chapters, interactive chart labs, FVG, order blocks and liquidity. English & Urdu.",
+    "ur": "مفت ICT اور Smart Money Concepts کورس: 53 ابواب، انٹرایکٹو چارٹ لیبز، FVG، آرڈر بلاکس اور لیکویڈیٹی۔ انگریزی اور اردو میں۔"
   }
 }

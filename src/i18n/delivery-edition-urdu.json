@@ -1122,5 +1122,7 @@
   "How do you draw order block boundaries?": "آرڈر بلاک کی حدود کیسے بناتے ہیں؟",
   "What is order block mitigation?": "آرڈر بلاک مٹیگیشن کیا ہے؟",
   "Breaker block vs. mitigation block: what is the difference?": "بریکر بلاک اور مٹیگیشن بلاک میں کیا فرق ہے؟",
-  "What is a Unicorn setup, and how do you measure the overlap?": "Unicorn سیٹ اپ کیا ہے اور اوورلیپ کیسے ماپتے ہیں؟"
+  "What is a Unicorn setup, and how do you measure the overlap?": "Unicorn سیٹ اپ کیا ہے اور اوورلیپ کیسے ماپتے ہیں؟",
+  "A market structure shift and an order block are different references from an FVG. A model may combine them with liquidity context, but it must define the sequence rather than treating several labels as independent proof of an entry.": "مارکیٹ اسٹرکچر شفٹ اور آرڈر بلاک FVG سے مختلف حوالے ہیں۔ ماڈل انہیں لیکویڈیٹی کے تناظر کے ساتھ جوڑ سکتا ہے، مگر کئی ناموں کو انٹری کا الگ ثبوت سمجھنے کے بجائے واقعات کی ترتیب طے کرنا ضروری ہے۔",
+  "In the second path, price returns through 101 and a later candle closes at 99, below the lower boundary. Under the close-through convention used here, the original bullish use has failed. Keep the original record instead of deleting the box. A possible opposite-role use belongs to the inverse fair value gap (IFVG) chapter and needs its own conditions.": "دوسرے راستے میں قیمت 101 پار کرتی ہے اور بعد کی کینڈل 99 پر، نچلی حد سے نیچے کلوز ہوتی ہے۔ یہاں استعمال کردہ Close-through اصول کے تحت اصل Bullish استعمال ناکام ہے۔ باکس مٹانے کے بجائے ریکارڈ محفوظ کریں۔ ممکنہ مخالف کردار IFVG باب کا الگ سوال ہے۔"
 }

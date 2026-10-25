@@ -66,3 +66,8 @@ html[data-theme=dark] .reading-room .delivery-figure{--delivery-accent:#bca5ef;-
 .reading-room .delivery-market figure { margin:1.3rem 0; }
 .reading-room .delivery-market img { display:block; width:100%; height:auto; border-radius:12px; }
 .reading-room .delivery-market figcaption { font-size:.8rem; line-height:1.65; padding-block:.75rem; }
+.reading-room .rr-toolbar > nav { flex-wrap:wrap; min-width:0; line-height:1.7; }
+.reading-room .rr-crumb { display:contents; }
+.reading-room .rr-toolbar [aria-current="page"] { overflow-wrap:anywhere; color:var(--rr-ink); }
+.reading-room .rr-toolbar { align-items:flex-start; }
+.reading-room .rr-controls { flex-shrink:0; }

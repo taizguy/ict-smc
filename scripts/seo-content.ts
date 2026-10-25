@@ -1,3 +1,4 @@
+import { lessonBreadcrumbs } from '../src/utils/lessonBreadcrumbs';
 import { deliverySupport } from '../src/data/chapters/deliverySupport';
 import { retiredGraphAliases } from '../src/utils/knowledgeGraphRoutes';
 import { TERMS_SECTIONS, ABOUT_GUIDANCE, CONTACT_GUIDANCE, publisherPageRevision } from '../src/data/publisherPageCopy';
@@ -223,7 +224,7 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   }
   const parentRoutes = routes.filter(c => c !== r && c.canonical !== 'https://learnsmc.xyz/' &&
     path.startsWith(new URL(c.canonical).pathname)).sort((a, b) => a.canonical.length - b.canonical.length);
-  const crumbs = [{ name: 'Home', url: 'https://learnsmc.xyz/' },
+  const crumbs = chapter ? lessonBreadcrumbs(chapter).map(crumb => ({ name: crumb.name, url: `https://learnsmc.xyz${crumb.path}` })) : [{ name: 'Home', url: 'https://learnsmc.xyz/' },
     ...parentRoutes.map(p => ({ name: p.heading, url: p.canonical })),
     ...(path === '/' ? [] : [{ name: r.heading, url: r.canonical }])];
   if (path !== '/') r.bodyHtml = `<nav aria-label="Breadcrumb">${crumbs.map(c => link(new URL(c.url).pathname, c.name)).join(' / ')}</nav>` + r.bodyHtml;

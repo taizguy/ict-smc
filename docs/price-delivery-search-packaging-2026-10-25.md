@@ -25,3 +25,12 @@ TradingView snapshot publication/attribution guidance consulted during the prece
 - All eight generated lesson documents checked for one FAQPage node, five questions, static comparison and hub link; Urdu schema uses Urdu language and localized identities.
 - Desktop dark comparison and mobile Urdu dark FAQ inspected; mobile document did not overflow the viewport.
 - Sitemap remains 733 URLs with evidence-based modification dates.
+
+
+## Follow-up: breadcrumbs and contextual references
+
+- FAQ section heading changed to “Frequently Asked Questions” (with Urdu equivalent).
+- Curriculum lesson breadcrumbs now use a shared source for Home → Curriculum → topic → lesson, ensuring the visible trail and JSON-LD names/destinations agree.
+- Chapters 13–16 render contextual body links in initial HTML and after JavaScript loads. Each destination is linked once per body, with translated names supported.
+- Verified that the FVG glossary already links back to the full lesson. Its quick-definition intent remains separate from the lesson's examples, diagrams and quizzes.
+- Added Charter Models 6 & 7 to the curated next-reading block without removing the three related Price Delivery lessons.

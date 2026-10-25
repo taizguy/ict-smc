@@ -84,7 +84,7 @@ export const deliverySupport: Record<number, DeliverySupport> = {
 };
 
 export const deliverySupportLabels = {
-  faq: copy('Questions about this lesson', 'اس سبق سے متعلق سوالات'),
+  faq: copy('Frequently Asked Questions', 'اکثر پوچھے جانے والے سوالات'),
   path: copy('Connect this lesson to the wider picture', 'اس سبق کو وسیع تناظر سے جوڑیں'),
   hub: copy('Explore the Price Delivery learning hub', 'پرائس ڈیلیوری کے تعلیمی مرکز کو دیکھیں'),
   practice: copy('Test the sequence in Chart Laboratory', 'چارٹ لیبارٹری میں سلسلہ آزمائیں'),
@@ -94,5 +94,6 @@ export const deliveryLinkReasons: Record<number, string> = {
   13: copy('Start with the three-candle geometry and separate formation from later outcomes.', 'تین کینڈلز کی ساخت سے شروع کریں اور تشکیل کو بعد کے نتائج سے الگ رکھیں۔'),
   14: copy('Keep the FVG boundaries fixed and examine what a qualifying breach changes.', 'FVG کی حدود برقرار رکھیں اور دیکھیں مقررہ بریک کیا بدلتا ہے۔'),
   15: copy('Compare a selected candle reference with an interval measured between three candles.', 'منتخب کینڈل کے حوالے کا تین کینڈلز کے درمیان ماپے فاصلے سے موازنہ کریں۔'),
+  33: copy('See how the references fit into the broader Charter Models 6 & 7 framework.', 'دیکھیں یہ حوالے Charter Models 6 اور 7 کے وسیع فریم ورک میں کیسے جڑتے ہیں۔'),
   16: copy('Connect sweeps, structural change and overlapping references in their proper sequence.', 'سویپس، اسٹرکچرل تبدیلی اور اوورلیپ کرتے حوالوں کو درست ترتیب میں جوڑیں۔'),
 };

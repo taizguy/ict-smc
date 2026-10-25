@@ -22,16 +22,27 @@ const keywords = [
 ].sort((a, b) => b.term.length - a.term.length);
 
 /** Shared by React and static HTML: escape output in the HTML renderer, never scan markup. */
-export function contextualFragments(text: string | string[], currentPath = '', maxLinks = 4): TextFragment[] {
+export function contextualFragments(text: string | string[], currentPath = '', maxLinks = 4, excludedUrls?: ReadonlySet<string>): TextFragment[] {
   currentPath = withoutLocale(currentPath);
   const value = Array.isArray(text) ? text.join('\n\n') : text;
   const ranges: Array<{ start: number; end: number; href: string }> = [];
   const linkedUrls = new Set<string>();
-  for (const { term, url } of keywords) {
+  const lesson = (id: number) => `/learn/${textbookChapters.find(chapter => chapter.id === id)!.slug}/`;
+  // Delivery lessons keep one link per destination across the whole body. Include
+  // Urdu names so the published translation has the same useful connections.
+  const deliveryKeywords = excludedUrls ? [
+    ...['market structure shift', 'MSS', 'مارکیٹ اسٹرکچر شفٹ'].map(term => ({ term, url: lesson(11) })),
+    ...['order blocks', 'order block', 'آرڈر بلاک'].map(term => ({ term, url: lesson(15) })),
+    ...['inverse fair value gap', 'IFVG'].map(term => ({ term, url: lesson(14) })),
+    ...['displacement', 'ڈسپلیسمنٹ'].map(term => ({ term, url: '/tools/glossary/imbalances/displacement/' })),
+    ...['liquidity', 'لیکویڈیٹی'].map(term => ({ term, url: lesson(4) })),
+    ...['premium', 'discount', 'پریمیم', 'ڈسکاؤنٹ'].map(term => ({ term, url: lesson(13) + '#rr-section-6' })),
+  ] : [];
+  for (const { term, url } of [...deliveryKeywords, ...keywords].sort((a,b) => b.term.length-a.term.length)) {
     if (ranges.length >= maxLinks) break;
-    if (url === currentPath || linkedUrls.has(url)) continue;
+    if (url.split('#')[0] === currentPath || linkedUrls.has(url) || excludedUrls?.has(url)) continue;
     const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const regex = new RegExp(`\\b${escaped}\\b`, 'gi');
+    const regex = new RegExp(`(?<![\\p{L}\\p{N}_])${escaped}(?![\\p{L}\\p{N}_])`, 'giu');
     let match: RegExpExecArray | null;
     while ((match = regex.exec(value))) {
       const start = match.index, end = start + match[0].length;

@@ -24,6 +24,7 @@ export function localizeHtml(source: string, pathname: string, catalog: Translat
     return result;
   };
   const localizedPath = localizedHref(pathname, 'ur');
+  const deliveryLinkedUrls = new Set<string>();
   const localLink = (href: string) => {
     if (href === '/articles/feed.xml') return '/ur/articles/feed.xml';
     let url: URL;
@@ -77,7 +78,10 @@ export function localizeHtml(source: string, pathname: string, catalog: Translat
       }
       if (node.tagName === 'p' && attribute(node, 'data-lesson-content') !== undefined) {
         const translated = translate(textContent(node));
-        const fragments = contextualFragments(translated, pathname).map(fragment => fragment.href ? `<a href="${escaped(fragment.href)}">${escaped(fragment.text)}</a>` : escaped(fragment.text)).join('');
+        const isDelivery = attribute(node, 'data-delivery-content') !== undefined;
+        const parts = contextualFragments(translated, pathname, isDelivery ? 3 : 4, isDelivery ? deliveryLinkedUrls : undefined);
+        if (isDelivery) parts.forEach(part => { if (part.href) deliveryLinkedUrls.add(part.href); });
+        const fragments = parts.map(fragment => fragment.href ? `<a href="${escaped(fragment.href)}">${escaped(fragment.text)}</a>` : escaped(fragment.text)).join('');
         const replacement = parseFragment(fragments);
         node.childNodes = [];
         for (const child of [...replacement.childNodes]) defaultTreeAdapter.appendChild(node, child);
@@ -95,7 +99,7 @@ export function localizeHtml(source: string, pathname: string, catalog: Translat
       if (node.tagName === 'meta') {
         const key = attribute(node, 'name') || attribute(node, 'property') || '';
         const content = attribute(node, 'content') || '';
-        if (['description', 'og:title', 'og:description', 'og:image:alt', 'twitter:title', 'twitter:description', 'learnsmc-heading'].includes(key)) set(node, 'content', translate(content));
+        if (['description', 'og:title', 'og:description', 'og:image:alt', 'twitter:image:alt', 'twitter:title', 'twitter:description', 'learnsmc-heading'].includes(key)) set(node, 'content', translate(content));
         if (key === 'og:url') set(node, 'content', SITE_ORIGIN + localizedPath);
         if (key === 'og:locale') set(node, 'content', 'ur_PK');
         if (key === 'robots' && options.preview) set(node, 'content', 'noindex, follow');

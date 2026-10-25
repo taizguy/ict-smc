@@ -1,3 +1,4 @@
+import { generateSocialCards } from './social-cards';
 import { retiredGraphAliases } from '../src/utils/knowledgeGraphRoutes';
 import {CurriculumView} from '../src/components/CurriculumView';
 import {ChapterRoom} from '../src/components/ChapterRoom';
@@ -1841,5 +1842,6 @@ fs.writeFileSync(path.join(distDir, 'llms-full.txt'), llms + '\n## Published pag
 
 // Only completed language editions enter the public sitemap. Review builds remain noindex.
 if (URDU_PUBLISHED || process.env.URDU_FULL_PREVIEW === 'true') generateUrduPages(distDir, allRoutes);
+generateSocialCards(distDir);
 minifyInlineDocuments(distDir);
 applySitemapDates(distDir);

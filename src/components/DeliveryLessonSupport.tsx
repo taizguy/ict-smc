@@ -22,7 +22,7 @@ export function DeliveryLessonSupport({ chapterId, section }: { chapterId: numbe
   return <nav className="delivery-reference delivery-learning-path" aria-label={t(deliverySupportLabels.path)}>
     <h2>{t(deliverySupportLabels.path)}</h2>
     <a href={currentDocumentHref('/curriculum/price-delivery/')}>{t(deliverySupportLabels.hub)}</a>
-    <ol>{[13, 14, 15, 16].filter(id => id !== chapterId).map(id => {
+    <ol>{[13, 14, 15, 16, 33].filter(id => id !== chapterId).map(id => {
       const chapter = textbookChapters.find(c => c.id === id)!;
       return <li key={id}><a href={currentDocumentHref(`/learn/${chapter.slug}/`)}>{t(chapter.title)}</a><small>{t(deliveryLinkReasons[id])}</small></li>;
     })}</ol>

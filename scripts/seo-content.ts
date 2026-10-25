@@ -1,3 +1,4 @@
+import { deliverySupport } from '../src/data/chapters/deliverySupport';
 import { retiredGraphAliases } from '../src/utils/knowledgeGraphRoutes';
 import { TERMS_SECTIONS, ABOUT_GUIDANCE, CONTACT_GUIDANCE, publisherPageRevision } from '../src/data/publisherPageCopy';
 import { createElement } from 'react';
@@ -255,7 +256,10 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   // The chapter review includes its copy, diagrams and quizzes; older shared-widget
   // revisions must not overwrite the chapter's actual editorial revision.
   if (chapter) r.schemaJson = { ...r.schemaJson, dateModified: chapterReviewRevision(chapter.id).iso };
+  const faqs = chapter ? deliverySupport[chapter.id]?.faqs : undefined;
+  if (faqs) r.schemaJson = { ...r.schemaJson, '@id': r.canonical, hasPart: { '@id': `${r.canonical}#faq` } };
   r.schemaJson = { '@context': 'https://schema.org', '@graph': [publisher, lessonAuthor,
+    ...(faqs ? [{ '@type': 'FAQPage', '@id': `${r.canonical}#faq`, url: `${r.canonical}#delivery-faq`, inLanguage: 'en', isPartOf: { '@id': r.canonical }, mainEntity: faqs.map((item, i) => ({ '@type': 'Question', '@id': `${r.canonical}#question-${i + 1}`, name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) }] : []),
     { '@type': 'WebSite', '@id': 'https://learnsmc.xyz/#website', name: 'LearnSMC', url: 'https://learnsmc.xyz/' },
     { '@type': 'BreadcrumbList', itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })) },
     r.schemaJson || { '@type': children.length ? 'CollectionPage' : 'WebPage', name: r.heading, description: r.description, url: r.canonical, publisher, ...(['/', '/curriculum/', '/about/', '/contact/'].includes(path) || path.startsWith('/tools/compare/') ? { dateModified: publisherPageRevision.iso } : {}) },

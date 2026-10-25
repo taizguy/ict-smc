@@ -21,13 +21,13 @@
       },
       {
         "id": "13.3",
-        "title": "Valid gap, overlapping candles, or unfinished formation?",
+        "title": "How to Draw an FVG: Valid Gaps vs. Overlapping Candles",
         "content": "A large middle candle is visually striking, but it cannot create the outer-range relationship on its own. If candle 1 high is 100 and candle 3 low is 99.5, the outer ranges overlap. There is no bullish FVG under this definition, even if candle 2 is unusually large. If candle 3 low is exactly 100, the boundaries touch and the interval has zero width.\n\nA provisional gap can also disappear before candle 3 closes. If that candle initially trades above 102 but later falls to 99.5, the completed formation no longer meets the bullish test. In replay, freeze the chart at the close of the third candle. Ask what was genuinely known at that moment rather than drawing a box from the eventual high and low of an unfinished bar.\n\nAn FVG is also different from a session-opening gap, which compares prices across a market closure, and from a body-only volume-imbalance illustration, whose wicks may overlap. A liquidity void is a broader description of rapid travel across a region; it is not simply another name for every three-candle FVG.",
         "keyTakeaway": "Check the outer ranges and the closing time before being impressed by the size of the move."
       },
       {
         "id": "13.4",
-        "title": "Consequent encroachment: the midpoint you can calculate",
+        "title": "What is consequent encroachment (CE) in an FVG?",
         "content": "Consequent encroachment, shortened to CE, is the arithmetic midpoint of the FVG: CE = (lower edge + upper edge) ÷ 2. For our 100–102 gap, CE is 101. Gap width is upper minus lower, so a return from 102 down to 101 travels halfway through this bullish interval.\n\nSeparate three different observations. An edge test reaches 102. A CE test reaches 101. A full traversal reaches 100. These events should not all be labelled “filled” without stating what the word means in your study. A candle can wick through CE and close back above it; that is different from a completed close below the lower edge.\n\nCE is useful because it makes depth comparable across gaps of different sizes. It is not a measured fundamental fair value for the asset. If you compare an edge-entry idea with a CE-entry idea, keep the other assumptions unchanged. A deeper hypothetical entry changes the distance to the same stop and target, but fewer returns may reach it.",
         "keyTakeaway": "For 100–102: edge 102, CE 101, far boundary 100. These are three different reference levels."
       },
@@ -107,7 +107,7 @@
     "sections": [
       {
         "id": "14.1",
-        "title": "The idea: the box stays, the question changes",
+        "title": "What is an inverse fair value gap (IFVG)?",
         "content": "An inverse fair value gap, or IFVG, starts with a normal FVG that has already formed. Instead of reacting in the original direction, price passes through the zone under a stated breach rule. Traders then study whether a later approach from the other side treats the same interval as an opposite-role reference.\n\nA bullish FVG at 100–104 is initially watched from above. If a completed candle later closes below 100, the example used in this chapter treats the original bullish use as broken. On a rally back toward 100–104, the question becomes whether that old interval now offers resistance. The coordinates have not changed; the direction of approach has.\n\nThis is a specific version of the broader support/resistance role-change idea. The starting zone is defined by three-candle geometry rather than an arbitrary horizontal line. Learn the original FVG first: if the starting box was measured incorrectly, a later crossing cannot turn it into a correctly identified IFVG.",
         "keyTakeaway": "An IFVG retains the original FVG boundaries and studies a possible opposite role after a defined breach."
       },
@@ -119,7 +119,7 @@
       },
       {
         "id": "14.3",
-        "title": "A wick, a close and a displaced close are not the same",
+        "title": "How do you confirm an IFVG: wick or completed close?",
         "content": "For the worked examples here, a qualifying breach is a completed candle close beyond the far boundary of the original gap, on the same timeframe that defines it. For a bullish gap at 100–104, that means a close below 100. A candle with low 99 and close 102 does not satisfy this rule; it traded beyond the edge but finished back inside.\n\nAlso distinguish a close beyond the edge from the entire candle body being outside. A candle opening at 102 and closing at 99 has its close below 100 even though part of its body crosses the zone. Requiring both open and close below 100 is a stricter, different condition. Do not use these phrases interchangeably.\n\nSome study methods additionally demand comparatively strong displacement or a structure change. Those are extra filters, not numbers implied by the word inverse. If you require displacement, specify a measurement rather than calling every successful example strong afterward. Wick-based and close-based variants should be labelled separately; this lesson uses the close-based convention consistently.",
         "keyTakeaway": "Name the breached edge, the timeframe and whether your rule concerns the wick, the close, or the whole body."
       },
@@ -211,7 +211,7 @@
       },
       {
         "id": "15.3",
-        "title": "Draw the opening, body range and full range separately",
+        "title": "How do you draw order block boundaries?",
         "content": "For this three-candle run, the full wick range is 99–107. The union of the candle bodies spans 101–106. The first opening is 106. These are three different references, not interchangeable names for the same line.\n\nThe midpoint often called mean threshold depends on the selected boundaries. For the full range it is (99 + 107) ÷ 2 = 103. For the body range it is (101 + 106) ÷ 2 = 103.5. A return to 106 reaches the opening and the body-range edge; it does not reach either midpoint.\n\nDraw the full range as the outer frame and the body range as an inner band. Label the opening and the midpoint you actually intend to study. If your chosen source or model uses a narrower boundary, keep that convention throughout the example. A midpoint is arithmetic; which range deserves attention is a model choice.",
         "keyTakeaway": "Write the boundaries beside “mean threshold”; otherwise the midpoint is ambiguous."
       },
@@ -223,7 +223,7 @@
       },
       {
         "id": "15.5",
-        "title": "Mitigation: what you can actually observe on the return",
+        "title": "What is order block mitigation?",
         "content": "In this lesson, mitigation describes price returning to a previously selected order-block reference. Traders sometimes explain that return as participants reducing or offsetting earlier exposure. That is an interpretation; ordinary OHLC candles do not reveal whose position changed.\n\nObserve the event in smaller pieces. Did price reach the opening, the body band, the midpoint or the far wick? Did it close within the range, leave it, or cross its far side? A shallow touch at 106 and a full traversal to 99 are both returns, but they are very different outcomes.\n\nChoose a response window before replaying: for example, the next three completed candles after the first touch. Record the highest and lowest prices reached in that window. This turns “it respected the block” into something another person could check. The three-candle window here is a study choice, not a universal ICT requirement.",
         "keyTakeaway": "Describe the depth and timing of a return instead of assuming hidden order activity."
       },
@@ -315,13 +315,13 @@
       },
       {
         "id": "16.4",
-        "title": "Breaker versus mitigation block: compare the missing sweep",
+        "title": "Breaker block vs. mitigation block: what is the difference?",
         "content": "A useful teaching distinction compares two nearly identical bearish sequences. In the breaker illustration, A is 110, B is 100 and C reaches 112 before the break below B. C takes the earlier high. In the comparison, C reaches only 108 before price breaks below B; it fails to exceed A.\n\nThe second path is often described as a mitigation-block structure: a failed swing followed by a break, without the same external-high sweep in this comparison. This terminology is not used consistently by every educator. State the actual highs, lows and selection rule rather than relying on a label to carry the whole explanation.\n\nAlso distinguish “mitigation block” from the verb “mitigate.” The previous chapter used mitigation for a return to a saved order-block reference. That return alone does not create the failed-swing structure shown here. Similar vocabulary can describe different parts of a chart.",
         "keyTakeaway": "Describe whether the earlier swing was exceeded; that observation is clearer than the label alone."
       },
       {
         "id": "16.5",
-        "title": "Unicorn overlap: calculate the shared interval",
+        "title": "What is a Unicorn setup, and how do you measure the overlap?",
         "content": "A Unicorn setup is commonly taught as a breaker reference overlapping a same-direction FVG in an appropriate sequence. It is not any order block beside any gap. Both references must qualify under the chosen model before the decision that uses them.\n\nTake the bearish breaker range 100–104 and a separately completed bearish FVG at 102–106. The shared interval begins at the larger lower boundary, 102, and ends at the smaller upper boundary, 104. Their overlap is 102–104. The FVG’s midpoint is 104; that happens to sit on the overlap’s upper edge, not at its centre.\n\nNow move the FVG to 104–106. The intervals touch at 104 but share no positive-width area. Move it to 105–107 and there is no intersection at all. Proximity and overlap are different. For the bullish mirror, a breaker at 106–110 and FVG at 104–108 overlap at 106–108.\n\nOverlapping drawings are not independent votes from separate markets. They can arise from the same candles. Whether the combination improves a particular strategy requires a defined sample and comparison; the name supplies no verified win rate.",
         "keyTakeaway": "Overlap = the larger lower boundary through the smaller upper boundary, with positive width."
       },

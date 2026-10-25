@@ -43,3 +43,26 @@ html[data-theme=dark] .reading-room .delivery-figure{--delivery-accent:#bca5ef;-
 @media(prefers-reduced-motion:reduce){.delivery-candle,.delivery-shared rect{animation:none!important}.reading-room .delivery-figure button{transition:none;transform:none!important}}
 
 .reading-room .delivery-candle rect.delivery-reference-frame{fill:none;stroke:var(--delivery-accent);stroke-width:1.5;stroke-dasharray:3 3}
+.reading-room .delivery-reference { margin-block:3rem; min-width:0; scroll-margin-top:7rem; }
+.reading-room .delivery-reference h2 { margin-block:0 1.3rem; font:400 clamp(25px,3vw,30px)/1.4 Lora,Georgia,serif; color:var(--rr-ink); text-wrap:pretty; }
+.reading-room .delivery-reference h3 { margin-block:1.5rem 1rem; font:500 clamp(21px,2.5vw,25px)/1.5 Lora,Georgia,serif; }
+.reading-room .delivery-reference p { margin-block:1rem; font:400 var(--rr-size,21px)/1.85 Lora,Georgia,serif; }
+.reading-room .delivery-reference a { color:var(--rr-accent); text-decoration:underline; text-underline-offset:.2em; }
+.reading-room .delivery-reference figcaption a { color:var(--rr-muted); }
+.reading-room .delivery-table-scroll { max-width:100%; overflow-x:auto; border:1px solid var(--rr-line); border-radius:12px; }
+.reading-room .delivery-reference table { width:100%; border-collapse:collapse; font-size:.92rem; }
+.reading-room .delivery-reference caption { text-align:start; padding:1rem 1.25rem; color:var(--rr-muted); }
+.reading-room .delivery-reference th,.reading-room .delivery-reference td { padding:1.1rem 1.25rem; text-align:start; vertical-align:top; border-block-start:1px solid var(--rr-line); min-width:9rem; line-height:1.75; }
+.reading-room .delivery-reference thead,.reading-room .delivery-reference tbody th { background:var(--rr-wash); }
+.reading-room .delivery-faq details { margin-block:.65rem; padding:0; border:1px solid var(--rr-line); border-radius:12px; overflow:hidden; }
+.reading-room .delivery-faq summary { padding:1.2rem 1.4rem; cursor:pointer; color:var(--rr-ink); font:500 1rem/1.65 var(--font-sans); }
+.reading-room .delivery-faq details[open] { background:var(--rr-wash); }
+.reading-room .delivery-faq details > div { padding:0 1.4rem 1rem; }
+.reading-room .delivery-learning-path { padding:1.5rem; background:var(--rr-wash); border-radius:12px; }
+.reading-room .delivery-learning-path ol { padding-inline-start:1.4rem; margin-block:1rem; }
+.reading-room .delivery-learning-path li { padding-block:.5rem; }
+.reading-room .delivery-learning-path small { display:block; margin-block-start:.4rem; font:400 .9rem/1.7 var(--font-sans); color:var(--rr-muted); }
+.reading-room .delivery-market article { margin-block:2rem 3rem; }
+.reading-room .delivery-market figure { margin:1.3rem 0; }
+.reading-room .delivery-market img { display:block; width:100%; height:auto; border-radius:12px; }
+.reading-room .delivery-market figcaption { font-size:.8rem; line-height:1.65; padding-block:.75rem; }

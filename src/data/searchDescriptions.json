@@ -1,7 +1,7 @@
 {
   "/learn/fair-value-gaps-fvg-and-consequent-encroachment/": {
-    "en": "Learn to identify bullish and bearish fair value gaps, draw wick boundaries, calculate CE and compare overlapping, failed and unfilled examples.",
-    "ur": "Bullish اور Bearish Fair Value Gaps پہچانیں، وِک حدود ناپیں، CE نکالیں اور اوورلیپ، ناکامی اور Fill نہ ہونے والی مثالیں دیکھیں۔"
+    "en": "Learn bullish and bearish FVGs with animated candle examples. Draw wick boundaries, calculate CE and compare reactions, failures and unfilled entries.",
+    "ur": "متحرک کینڈل مثالوں سے Bullish اور Bearish FVG سیکھیں۔ وِک حدیں، CE، ردعمل، ناکامی اور نامکمل انٹری کا موازنہ کریں۔"
   },
   "/learn/what-actually-moves-price/": {
     "en": "Understand price formation with a worked order-book example. Separate trades, quotes and average fills from claims about institutional intent.",
@@ -482,5 +482,17 @@
   "/tools/glossary/trade-models/market-alchemy-ath/": {
     "en": "Study all-time-high price-discovery examples and Fibonacci projections. Distinguish chart extensions from forecasts and review reference assumptions.",
     "ur": "All-time High کی Price Discovery مثالیں اور Fibonacci Projections پڑھیں۔ چارٹ کی توسیع اور پیش گوئی میں فرق اور حوالہ جاتی مفروضے سمجھیں۔"
+  },
+  "/learn/inverse-fair-value-gaps-ifvg-role-reversal-imbalances/": {
+    "en": "Understand IFVG role reversal with bullish and bearish examples. Compare wick and close breaches, retests, failure rules and paper-trade outcomes.",
+    "ur": "Bullish اور Bearish مثالوں سے IFVG کا کردار بدلنا سمجھیں۔ وِک، کلوز، ری ٹیسٹ، ناکامی اور فرضی ٹریڈ کے نتائج ملائیں۔"
+  },
+  "/learn/order-blocks-ob-and-mitigation/": {
+    "en": "Learn to select order-block candles and runs, draw opening and midpoint references, and study mitigation with animated examples and practical quizzes.",
+    "ur": "Order Block کی کینڈل اور سلسلہ منتخب کریں، اوپن اور وسط ناپیں، متحرک مثالوں اور کوئز سے Mitigation سمجھیں۔"
+  },
+  "/learn/breaker-blocks-trading-failed-order-blocks/": {
+    "en": "Follow bullish and bearish breaker structures. Compare mitigation blocks, measure Unicorn overlaps and practise retest timing with animated examples.",
+    "ur": "Bullish اور Bearish Breaker ترتیبیں دیکھیں۔ Mitigation Block، Unicorn اشتراک اور ری ٹیسٹ کے وقت کو متحرک مثالوں سے سمجھیں۔"
   }
 }

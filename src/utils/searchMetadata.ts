@@ -29,6 +29,10 @@ function fitWords(value: string, chars: number, pixels: number, size: number): s
 }
 
 const routeTitles: Record<string, string> = {
+  '/learn/fair-value-gaps-fvg-and-consequent-encroachment/': 'Fair Value Gaps (FVG): Examples, CE & Rules',
+  '/learn/inverse-fair-value-gaps-ifvg-role-reversal-imbalances/': 'Inverse Fair Value Gaps (IFVG): Examples',
+  '/learn/order-blocks-ob-and-mitigation/': 'Order Blocks: Examples & Mitigation',
+  '/learn/breaker-blocks-trading-failed-order-blocks/': 'Breaker Blocks, Mitigation & Unicorn',
   '/': 'Learn ICT & Smart Money Concepts',
   '/about/': 'About LearnSMC & Muhammad Umer Ijaz',
   '/contact/': 'Contact LearnSMC: Corrections & Support',

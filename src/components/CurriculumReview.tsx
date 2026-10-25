@@ -7,7 +7,7 @@ export function CurriculumReview({ chapter }: { chapter: TextbookChapter }) {
   return <aside className="curriculum-review" aria-labelledby="curriculum-review-heading">
     <h2 id="curriculum-review-heading">{copy.heading}</h2>
     <p className="curriculum-review-date"><span>{copy.date}</span>: <time dateTime={revision.iso}>{revision.label}</time></p>
-    <p>{copy.scope}</p>
+    <p>{chapter.id>=13&&chapter.id<=16?'These standalone lessons use original explanations, invented worked prices and LearnSMC illustrations. References below document the source context; the examples are not transcripts or verified executions.':copy.scope}</p>
     <h3>{copy.subjectivity}</h3>
     <p>{review.interpretation}</p>
     <p>{copy.exercise}</p>

@@ -233,25 +233,25 @@ export const chapterCatalog = [
   {
     "id": 13,
     "slug": "fair-value-gaps-fvg-and-consequent-encroachment",
-    "title": "Fair Value Gaps (FVG) & Consequent Encroachment",
+    "title": "Fair Value Gaps (FVG): Formation, CE & Chart Examples",
     "part": "Part III - Price Delivery"
   },
   {
     "id": 14,
     "slug": "inverse-fair-value-gaps-ifvg-role-reversal-imbalances",
-    "title": "Inverse Fair Value Gaps (IFVG): Role Reversal Imbalances — Exploiting Failed Market Inefficiencies",
+    "title": "Inverse Fair Value Gaps (IFVG): Role Reversal & Examples",
     "part": "Part III - Price Delivery"
   },
   {
     "id": 15,
     "slug": "order-blocks-ob-and-mitigation",
-    "title": "Order Blocks & Mitigation — Reference Candles and Mean Threshold",
+    "title": "Order Blocks: Selection, Boundaries & Mitigation",
     "part": "Part III - Price Delivery"
   },
   {
     "id": 16,
     "slug": "breaker-blocks-trading-failed-order-blocks",
-    "title": "Breaker Blocks: Swing Sequence, Mitigation & Unicorn",
+    "title": "Breaker Blocks, Mitigation & Unicorn: Structure Explained",
     "part": "Part III - Price Delivery"
   },
   {

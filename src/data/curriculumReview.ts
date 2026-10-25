@@ -7,7 +7,8 @@ import { cornerstoneGuides, cornerstoneRevision } from './cornerstoneGuides';
 export const curriculumReviewDate = '2026-10-19';
 export const curriculumReviewLabel = '19 October 2026';
 // Chapter-wide editorial/diagram/quiz consistency review; not a new full-recording review.
-export const chapterReviewRevision = (id: number) => [13, 15].includes(id) || cornerstoneGuides.some(guide => guide.chapterId === id)
+export const chapterReviewRevision = (id: number) => [13,14,15,16].includes(id)
+  ? { iso: '2026-10-25', label: '25 October 2026' } : [13, 15].includes(id) || cornerstoneGuides.some(guide => guide.chapterId === id)
   ? { iso: cornerstoneRevision, label: '24 October 2026' }
   : { iso: '2026-10-21', label: '21 October 2026' };
 export const ictOfficialAccounts = {
@@ -21,6 +22,7 @@ export interface CurriculumSource {
   passages?: { label: string; url: string; note: string }[];
 }
 export const curriculumSources = {
+  breaker2022: {title:'ICT 2022 Mentorship — Episode 39',url:'https://www.youtube.com/watch?v=yFpHbBnsK_c&t=1220s',scope:'Selected automatic-caption passages at approximately 20:20–22:30 and 70:37–70:56 were consulted for the sweep, reversal, return and wider-target context. The invented prices and boundary conventions in this lesson are LearnSMC teaching examples, not transcribed executions.',passages:[{label:'20:20 — Breaker sequence and context',url:'https://www.youtube.com/watch?v=yFpHbBnsK_c&t=1220s',note:'The source relates a buy-side excursion, reversal and swing-low reference to a wider target. The pattern alone is not presented as a complete trading model.'}]},
   swingElementsCore: {"title": "ICT Core Month 6 — Elements To Successful Swing Trading", "url": "https://www.youtube.com/watch?v=Xs1i0aIeTME&t=24s", "scope": "Selected original-caption passages at 00:24–06:20 were reviewed. At approximately 01:17–01:45, COT and seasonal confirmation are optional in this framework; accuracy claims are not independently verified."},
   swingClassicCore: {"title": "ICT Core Month 6 — Classic Swing Trading Approach", "url": "https://www.youtube.com/watch?v=g--tikwaupk&t=39s", "scope": "Selected original-caption passages at 00:39–06:10 were reviewed. Higher-timeframe PD-array mapping is described; no universal holding period or pip target is established by this selected passage."},
   cotCore: {"title": "ICT Core Month 10 — Commitment Of Traders", "url": "https://www.youtube.com/watch?v=9H4iaaQXV5Y&t=48s", "scope": "Selected original-caption passages at 00:48–06:40 were reviewed. Futures-only net positioning is explained, and a net figure alone is insufficient. This is a Month 10 source, included as related reading for the swing chapter."},
@@ -104,6 +106,7 @@ export function curriculumReview(chapter: TextbookChapter) {
     7: [curriculumSources.structure, r[12]],
     13: [curriculumSources.gaps, r[4], r[24], curriculumSources.stops],
     15: [curriculumSources.orderBlocks2022, r[18], curriculumSources.stops],
+    16: [curriculumSources.breaker2022, curriculumSources.blocks, curriculumSources.gaps, curriculumSources.stops],
     18: [curriculumSources.structure, curriculumSources.stops, r[41]],
     19: [r[17], r[20], curriculumSources.hours, curriculumSources.clock],
     21: [r[7], r[9], r[21]],
@@ -138,7 +141,13 @@ export function curriculumReview(chapter: TextbookChapter) {
     : chapter.id === 36 ? [curriculumSources.structure, curriculumSources.gaps]
     : kind === 'time' || [24, 25, 27, 47, 48].includes(chapter.id) ? [curriculumSources.hours, curriculumSources.clock]
     : []);
-  return { interpretation: interpretation[kind], sources };
+  const deliveryInterpretations:Record<number,string>={
+    13:'Wick boundaries and CE can be calculated. Range anchors, displacement filters, observation windows and the definition of a successful reaction require stated choices. Geometry alone does not establish a trading edge.',
+    14:'This lesson uses explicit closing conditions for role reversal. A wick-only test and a whole-body test are different conventions. Retest timing, expiry and trade execution remain separate from that classification.',
+    15:'Selecting one candle or a consecutive run changes the reference. Opening, body and full-wick boundaries must be labelled before calculating mean threshold. OHLC does not identify institutional inventory.',
+    16:'The examples state a swing sequence and candle-selection convention. Mitigation-block terminology varies, and a Unicorn overlap is a geometric relationship rather than a verified probability advantage.',
+  };
+  return { interpretation: deliveryInterpretations[chapter.id]||interpretation[kind], sources };
 }
 
 export const curriculumReviewCopy = {

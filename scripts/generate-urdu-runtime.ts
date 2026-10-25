@@ -18,7 +18,7 @@ const searchableFields = new Set(['title', 'name', 'subtitle', 'shortTitle', 'ex
 const normalize = (text: string) => text.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&rarr;/g, '→').replace(/&larr;/g, '←').replace(/\s+/g, ' ').trim();
 function groupFor(file: string): Group {
   if (/articles/.test(file)) return 'articles';
-  if (/data\/chapters|Chapters|ChapterRoom|cornerstoneGuides|CornerstoneGuide|fvgLesson|FvgLessonDiagram|fvgStory|FvgStory|chapterStories|ChapterStory/.test(file)) return 'chapters';
+  if (/data\/chapters|DeliveryLesson|Chapters|ChapterRoom|cornerstoneGuides|CornerstoneGuide|fvgLesson|FvgLessonDiagram|fvgStory|FvgStory|chapterStories|ChapterStory/.test(file)) return 'chapters';
   if (/masood/i.test(file)) return 'masood';
   if (/Legal|publisherPageCopy/.test(file)) return 'publisher';
   if (/data\/(?:learningCases|labGuides|concepts|masterclass|comparisons|quizzes|chartScenarios|theinnercircletraders)|(?:GuidedMarketDesk|MarketWorkspace|MarketChart|ChartLab|CompareView|ConceptExplorer|Masterclass|MasteryDashboard|InstitutionalTools|KnowledgeGraph|BacktestLab|TradeSimulator|TradingJournal|TradingTools)/.test(file)) return 'tools';
@@ -34,7 +34,7 @@ function walk(folder: string) {
   for (const entry of fs.readdirSync(folder, { withFileTypes: true })) {
     const file = path.join(folder, entry.name).replace(/\\/g, '/');
     if (entry.isDirectory()) { if (entry.name !== 'i18n') walk(file); continue; }
-    if (/data\/chapters\/(?:contentReview|checkpoints)\.json$/.test(file)) {
+    if (/data\/chapters\/(?:contentReview|checkpoints|deliveryEdition|deliveryQuizzes|deliveryFigures)\.json$/.test(file)) {
       const collect = (value: unknown) => {
         if (typeof value === 'string') add(value, 'chapters');
         else if (Array.isArray(value)) value.forEach(collect);

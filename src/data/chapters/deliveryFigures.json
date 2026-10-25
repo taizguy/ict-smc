@@ -1,0 +1,1626 @@
+[
+  {
+    "id": "fvg-anatomy",
+    "chapter": 13,
+    "section": 0,
+    "title": "Three candles. Two boundaries. One measurable gap.",
+    "description": "Reveal the candles in order, then compare a mirror and a near miss. All prices are invented.",
+    "variants": [
+      {
+        "label": "Bullish gap",
+        "candles": [
+          [
+            98,
+            100,
+            97,
+            99
+          ],
+          [
+            99,
+            105,
+            98,
+            104
+          ],
+          [
+            104,
+            107,
+            102,
+            106
+          ]
+        ],
+        "steps": [
+          {
+            "count": 1,
+            "title": "1 · Save the first wick",
+            "note": "Candle 1 high is 100. The formation does not exist yet."
+          },
+          {
+            "count": 2,
+            "title": "2 · Follow the departure",
+            "note": "The large middle body is not the FVG. Candle 3 is still required."
+          },
+          {
+            "count": 3,
+            "title": "3 · Measure the outer ranges",
+            "note": "100 < 102: a two-point bullish interval. CE = 101."
+          }
+        ],
+        "zone": [
+          100,
+          102,
+          3
+        ],
+        "levels": [
+          [
+            100,
+            "H1"
+          ],
+          [
+            102,
+            "L3"
+          ],
+          [
+            101,
+            "CE"
+          ]
+        ],
+        "labels": []
+      },
+      {
+        "label": "Bearish mirror",
+        "candles": [
+          [
+            106,
+            107,
+            104,
+            105
+          ],
+          [
+            105,
+            106,
+            99,
+            100
+          ],
+          [
+            100,
+            102,
+            97,
+            98
+          ]
+        ],
+        "steps": [
+          {
+            "count": 1,
+            "title": "1 · First low",
+            "note": "Save candle 1 low at 104."
+          },
+          {
+            "count": 2,
+            "title": "2 · Downward departure",
+            "note": "Wait for the third candle to finish."
+          },
+          {
+            "count": 3,
+            "title": "3 · Bearish interval",
+            "note": "H3 102 < L1 104. Zone 102–104; CE 103."
+          }
+        ],
+        "zone": [
+          102,
+          104,
+          3
+        ],
+        "levels": [
+          [
+            102,
+            "H3"
+          ],
+          [
+            104,
+            "L1"
+          ],
+          [
+            103,
+            "CE"
+          ]
+        ],
+        "labels": []
+      },
+      {
+        "label": "Overlapping ranges",
+        "candles": [
+          [
+            98,
+            100,
+            97,
+            99
+          ],
+          [
+            99,
+            105,
+            98,
+            104
+          ],
+          [
+            104,
+            107,
+            99.5,
+            106
+          ]
+        ],
+        "steps": [
+          {
+            "count": 1,
+            "title": "1 · Save the first wick",
+            "note": "Candle 1 high is 100. The formation does not exist yet."
+          },
+          {
+            "count": 2,
+            "title": "2 · Follow the departure",
+            "note": "The large middle body is not the FVG. Candle 3 is still required."
+          },
+          {
+            "count": 3,
+            "title": "3 · No bullish FVG",
+            "note": "L3 99.5 is below H1 100. The outer ranges overlap despite the large body."
+          }
+        ],
+        "zone": null,
+        "levels": [
+          [
+            100,
+            "H1"
+          ],
+          [
+            99.5,
+            "L3"
+          ]
+        ],
+        "labels": []
+      }
+    ]
+  },
+  {
+    "id": "fvg-outcomes",
+    "chapter": 13,
+    "section": 5,
+    "title": "Same formation. Three honest endings.",
+    "description": "Keep 100–102 fixed. Compare a CE reaction, a close through the zone and a return that never happens.",
+    "variants": [
+      {
+        "label": "CE reaction",
+        "candles": [
+          [
+            98,
+            100,
+            97,
+            99
+          ],
+          [
+            99,
+            105,
+            98,
+            104
+          ],
+          [
+            104,
+            107,
+            102,
+            106
+          ],
+          [
+            106,
+            108,
+            104,
+            105
+          ],
+          [
+            105,
+            106,
+            101,
+            102
+          ],
+          [
+            102,
+            108,
+            101.5,
+            107
+          ]
+        ],
+        "steps": [
+          {
+            "count": 3,
+            "title": "1 · Completed formation",
+            "note": "The saved zone is 100–102. Its midpoint is 101."
+          },
+          {
+            "count": 5,
+            "title": "2 · Midpoint reached",
+            "note": "The fifth candle reaches CE at 101. A touch is not a trade outcome."
+          },
+          {
+            "count": 6,
+            "title": "3 · Upward response",
+            "note": "The next candle rises. This is one invented path, not a promised reaction."
+          }
+        ],
+        "zone": [
+          100,
+          102,
+          3
+        ],
+        "levels": [
+          [
+            101,
+            "CE"
+          ]
+        ],
+        "labels": []
+      },
+      {
+        "label": "Close-through failure",
+        "candles": [
+          [
+            98,
+            100,
+            97,
+            99
+          ],
+          [
+            99,
+            105,
+            98,
+            104
+          ],
+          [
+            104,
+            107,
+            102,
+            106
+          ],
+          [
+            106,
+            108,
+            104,
+            105
+          ],
+          [
+            105,
+            106,
+            100.5,
+            101
+          ],
+          [
+            101,
+            102,
+            98,
+            99
+          ]
+        ],
+        "steps": [
+          {
+            "count": 3,
+            "title": "1 · Same saved gap",
+            "note": "Do not redraw the original boundaries."
+          },
+          {
+            "count": 5,
+            "title": "2 · Into the interval",
+            "note": "The return has entered the gap. Its ending is still unknown."
+          },
+          {
+            "count": 6,
+            "title": "3 · Bullish use fails",
+            "note": "A close at 99 is below 100 under this closing rule."
+          }
+        ],
+        "zone": [
+          100,
+          102,
+          3
+        ],
+        "levels": [
+          [
+            100,
+            "Lower edge"
+          ]
+        ],
+        "labels": []
+      },
+      {
+        "label": "No return",
+        "candles": [
+          [
+            98,
+            100,
+            97,
+            99
+          ],
+          [
+            99,
+            105,
+            98,
+            104
+          ],
+          [
+            104,
+            107,
+            102,
+            106
+          ],
+          [
+            106,
+            110,
+            105,
+            109
+          ],
+          [
+            109,
+            113,
+            108,
+            112
+          ],
+          [
+            112,
+            116,
+            111,
+            115
+          ]
+        ],
+        "steps": [
+          {
+            "count": 3,
+            "title": "1 · Same saved gap",
+            "note": "A CE limit would be at 101."
+          },
+          {
+            "count": 5,
+            "title": "2 · Price moves away",
+            "note": "No later candle has reached the zone."
+          },
+          {
+            "count": 6,
+            "title": "3 · Window ends unfilled",
+            "note": "Direction was upward, but the hypothetical 101 entry never filled."
+          }
+        ],
+        "zone": [
+          100,
+          102,
+          3
+        ],
+        "levels": [
+          [
+            101,
+            "Unfilled limit"
+          ]
+        ],
+        "labels": []
+      }
+    ]
+  },
+  {
+    "id": "ifvg-role",
+    "chapter": 14,
+    "section": 1,
+    "title": "The box stays. The approach changes.",
+    "description": "The shaded interval belongs to the original completed FVG. Reveal the breach before the opposite-side retest.",
+    "variants": [
+      {
+        "label": "Bearish inversion",
+        "candles": [
+          [
+            98,
+            100,
+            97,
+            99
+          ],
+          [
+            99,
+            108,
+            98,
+            107
+          ],
+          [
+            107,
+            110,
+            104,
+            109
+          ],
+          [
+            109,
+            110,
+            98,
+            99
+          ],
+          [
+            99,
+            102,
+            98,
+            101
+          ],
+          [
+            101,
+            102,
+            95,
+            96
+          ]
+        ],
+        "steps": [
+          {
+            "count": 3,
+            "title": "1 · Original bullish FVG",
+            "note": "H1 100 < L3 104: preserve 100–104."
+          },
+          {
+            "count": 4,
+            "title": "2 · Close below 100",
+            "note": "The close at 99 meets this bearish inversion condition."
+          },
+          {
+            "count": 6,
+            "title": "3 · Opposite-side return",
+            "note": "Price approaches 101 from below and then falls in this path."
+          }
+        ],
+        "zone": [
+          100,
+          104,
+          3
+        ],
+        "levels": [
+          [
+            100,
+            "Lower edge"
+          ],
+          [
+            104,
+            "Upper edge"
+          ]
+        ],
+        "labels": []
+      },
+      {
+        "label": "Bullish inversion",
+        "candles": [
+          [
+            112,
+            113,
+            110,
+            111
+          ],
+          [
+            111,
+            112,
+            102,
+            103
+          ],
+          [
+            103,
+            106,
+            100,
+            101
+          ],
+          [
+            101,
+            112,
+            100,
+            111
+          ],
+          [
+            111,
+            112,
+            108,
+            109
+          ],
+          [
+            109,
+            116,
+            108,
+            115
+          ]
+        ],
+        "steps": [
+          {
+            "count": 3,
+            "title": "1 · Original bearish FVG",
+            "note": "H3 106 < L1 110: preserve 106–110."
+          },
+          {
+            "count": 4,
+            "title": "2 · Close above 110",
+            "note": "The close at 111 meets this bullish inversion condition."
+          },
+          {
+            "count": 6,
+            "title": "3 · Return from above",
+            "note": "The return to 108 comes from above the original zone."
+          }
+        ],
+        "zone": [
+          106,
+          110,
+          3
+        ],
+        "levels": [
+          [
+            106,
+            "Lower edge"
+          ],
+          [
+            110,
+            "Upper edge"
+          ]
+        ],
+        "labels": []
+      }
+    ]
+  },
+  {
+    "id": "ifvg-breach",
+    "chapter": 14,
+    "section": 2,
+    "title": "A wick is not a closing price.",
+    "description": "Compare the fourth candle. The saved bullish FVG is 100–104 in all three versions.",
+    "variants": [
+      {
+        "label": "Wick only",
+        "candles": [
+          [
+            98,
+            100,
+            97,
+            99
+          ],
+          [
+            99,
+            108,
+            98,
+            107
+          ],
+          [
+            107,
+            110,
+            104,
+            109
+          ],
+          [
+            109,
+            110,
+            99,
+            102
+          ]
+        ],
+        "steps": [
+          {
+            "count": 3,
+            "title": "1 · Before the test",
+            "note": "The original bullish interval is complete."
+          },
+          {
+            "count": 4,
+            "title": "2 · Wick below, close inside",
+            "note": "Low 99, close 102: no close below 100."
+          }
+        ],
+        "zone": [
+          100,
+          104,
+          3
+        ],
+        "levels": [
+          [
+            100,
+            "Close threshold"
+          ]
+        ],
+        "labels": []
+      },
+      {
+        "label": "Close below",
+        "candles": [
+          [
+            98,
+            100,
+            97,
+            99
+          ],
+          [
+            99,
+            108,
+            98,
+            107
+          ],
+          [
+            107,
+            110,
+            104,
+            109
+          ],
+          [
+            102,
+            103,
+            98,
+            99
+          ]
+        ],
+        "steps": [
+          {
+            "count": 3,
+            "title": "1 · Before the test",
+            "note": "Use the same saved boundaries."
+          },
+          {
+            "count": 4,
+            "title": "2 · Closing rule met",
+            "note": "Open 102, close 99: the close is below 100; the entire body is not."
+          }
+        ],
+        "zone": [
+          100,
+          104,
+          3
+        ],
+        "levels": [
+          [
+            100,
+            "Close threshold"
+          ]
+        ],
+        "labels": []
+      },
+      {
+        "label": "Entire body below",
+        "candles": [
+          [
+            98,
+            100,
+            97,
+            99
+          ],
+          [
+            99,
+            108,
+            98,
+            107
+          ],
+          [
+            107,
+            110,
+            104,
+            109
+          ],
+          [
+            99.5,
+            101,
+            98,
+            99
+          ]
+        ],
+        "steps": [
+          {
+            "count": 3,
+            "title": "1 · Before the test",
+            "note": "A stricter whole-body rule must be stated separately."
+          },
+          {
+            "count": 4,
+            "title": "2 · Both body endpoints below",
+            "note": "Open 99.5 and close 99 are below 100. The high can still wick above it."
+          }
+        ],
+        "zone": [
+          100,
+          104,
+          3
+        ],
+        "levels": [
+          [
+            100,
+            "Body threshold"
+          ]
+        ],
+        "labels": []
+      }
+    ]
+  },
+  {
+    "id": "ifvg-risk",
+    "chapter": 14,
+    "section": 5,
+    "title": "Pattern rule and protective stop can disagree.",
+    "description": "Inspect the last candle: an intrabar high can stop a short even when its closing price remains below the pattern boundary.",
+    "variants": [
+      {
+        "label": "Stopped, close still below",
+        "candles": [
+          [
+            98,
+            100,
+            97,
+            99
+          ],
+          [
+            99,
+            108,
+            98,
+            107
+          ],
+          [
+            107,
+            110,
+            104,
+            109
+          ],
+          [
+            109,
+            110,
+            98,
+            99
+          ],
+          [
+            99,
+            102,
+            98,
+            101
+          ],
+          [
+            101,
+            105,
+            100,
+            103
+          ]
+        ],
+        "steps": [
+          {
+            "count": 4,
+            "title": "1 · Qualified inversion",
+            "note": "The original 100–104 gap has a close below its lower boundary."
+          },
+          {
+            "count": 5,
+            "title": "2 · Paper entry at 101",
+            "note": "Short 101, stop 105, target 93. Planned risk 4; reward 8."
+          },
+          {
+            "count": 6,
+            "title": "3 · High 105, close 103",
+            "note": "The stop is reached; there is no close above 104. Different rules answer different questions."
+          }
+        ],
+        "zone": [
+          100,
+          104,
+          3
+        ],
+        "levels": [
+          [
+            101,
+            "Entry"
+          ],
+          [
+            105,
+            "Stop"
+          ],
+          [
+            104,
+            "Pattern boundary"
+          ]
+        ],
+        "labels": []
+      }
+    ]
+  },
+  {
+    "id": "ob-run",
+    "chapter": 15,
+    "section": 1,
+    "title": "Save the run before you see the return.",
+    "description": "The first opening, the departure and the swing break are separate references.",
+    "variants": [
+      {
+        "label": "Full bullish sequence",
+        "candles": [
+          [
+            106,
+            107,
+            103,
+            104
+          ],
+          [
+            104,
+            105,
+            101,
+            102
+          ],
+          [
+            102,
+            103,
+            99,
+            101
+          ],
+          [
+            101,
+            109,
+            100,
+            108
+          ],
+          [
+            108,
+            112,
+            107,
+            111
+          ],
+          [
+            111,
+            112,
+            106,
+            107
+          ],
+          [
+            107,
+            114,
+            106.5,
+            113
+          ]
+        ],
+        "steps": [
+          {
+            "count": 3,
+            "title": "1 · Three down-close candles",
+            "note": "The selected run opens at 106 and spans 99–107."
+          },
+          {
+            "count": 4,
+            "title": "2 · Through the opening",
+            "note": "The departure closes at 108, above the first opening at 106."
+          },
+          {
+            "count": 5,
+            "title": "3 · Separate swing break",
+            "note": "The next close at 111 clears the chosen swing reference at 109."
+          },
+          {
+            "count": 7,
+            "title": "4 · Later return",
+            "note": "The sixth candle reaches 106; the following candle rises. This is one invented ending."
+          }
+        ],
+        "zone": [
+          99,
+          107,
+          3
+        ],
+        "levels": [
+          [
+            106,
+            "First open"
+          ],
+          [
+            109,
+            "Swing reference"
+          ]
+        ],
+        "labels": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      {
+        "label": "Bearish mirror",
+        "candles": [
+          [
+            104,
+            107,
+            103,
+            106
+          ],
+          [
+            106,
+            109,
+            105,
+            108
+          ],
+          [
+            108,
+            111,
+            107,
+            109
+          ],
+          [
+            109,
+            110,
+            101,
+            102
+          ],
+          [
+            102,
+            103,
+            98,
+            99
+          ],
+          [
+            99,
+            104,
+            98,
+            103
+          ],
+          [
+            103,
+            103.5,
+            96,
+            97
+          ]
+        ],
+        "steps": [
+          {
+            "count": 3,
+            "title": "1 · Three up-close candles",
+            "note": "The mirrored run opens at 104 and spans 103–111."
+          },
+          {
+            "count": 4,
+            "title": "2 · Downward departure",
+            "note": "The close at 102 is below the opening at 104."
+          },
+          {
+            "count": 5,
+            "title": "3 · Lower reference broken",
+            "note": "The close at 99 passes the mirrored reference at 101."
+          },
+          {
+            "count": 7,
+            "title": "4 · Return from below",
+            "note": "The sixth candle reaches 104 from below."
+          }
+        ],
+        "zone": [
+          103,
+          111,
+          3
+        ],
+        "levels": [
+          [
+            104,
+            "First open"
+          ],
+          [
+            101,
+            "Swing reference"
+          ]
+        ],
+        "labels": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ob-boundaries",
+    "chapter": 15,
+    "section": 2,
+    "title": "One run, three different measurements.",
+    "description": "Change the boundary convention. The candles stay exactly the same.",
+    "variants": [
+      {
+        "label": "Full wick range",
+        "candles": [
+          [
+            106,
+            107,
+            103,
+            104
+          ],
+          [
+            104,
+            105,
+            101,
+            102
+          ],
+          [
+            102,
+            103,
+            99,
+            101
+          ]
+        ],
+        "steps": [
+          {
+            "count": 3,
+            "title": "99–107 · midpoint 103",
+            "note": "The outer frame includes every selected wick."
+          }
+        ],
+        "zone": [
+          99,
+          107,
+          3
+        ],
+        "levels": [
+          [
+            103,
+            "Full-range midpoint"
+          ],
+          [
+            106,
+            "First open"
+          ]
+        ],
+        "labels": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      {
+        "label": "Body range",
+        "candles": [
+          [
+            106,
+            107,
+            103,
+            104
+          ],
+          [
+            104,
+            105,
+            101,
+            102
+          ],
+          [
+            102,
+            103,
+            99,
+            101
+          ]
+        ],
+        "steps": [
+          {
+            "count": 3,
+            "title": "101–106 · midpoint 103.5",
+            "note": "Body extremes differ from the wick extremes. This changes the midpoint."
+          }
+        ],
+        "zone": [
+          101,
+          106,
+          3
+        ],
+        "levels": [
+          [
+            103.5,
+            "Body midpoint"
+          ],
+          [
+            106,
+            "First open"
+          ]
+        ],
+        "labels": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      {
+        "label": "Last candle only",
+        "candles": [
+          [
+            102,
+            103,
+            99,
+            101
+          ]
+        ],
+        "steps": [
+          {
+            "count": 1,
+            "title": "C only · a different selection",
+            "note": "C spans 99–103 and opens at 102. Do not substitute it for the three-candle run without changing the rule."
+          }
+        ],
+        "zone": [
+          99,
+          103,
+          1
+        ],
+        "levels": [
+          [
+            102,
+            "C opening"
+          ]
+        ],
+        "labels": [
+          "C"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "breaker-sequence",
+    "chapter": 16,
+    "section": 1,
+    "title": "Read the structure before the box.",
+    "description": "Reveal the sweep, the break and the retest in time. The selected reference is the outlined candle at B.",
+    "variants": [
+      {
+        "label": "Bearish structure",
+        "candles": [
+          [
+            108,
+            110,
+            107,
+            109
+          ],
+          [
+            109,
+            110,
+            103,
+            104
+          ],
+          [
+            104,
+            105,
+            100,
+            101
+          ],
+          [
+            101,
+            104,
+            100,
+            103
+          ],
+          [
+            103,
+            112,
+            102,
+            111
+          ],
+          [
+            111,
+            112,
+            101,
+            102
+          ],
+          [
+            102,
+            103,
+            97,
+            98
+          ],
+          [
+            98,
+            103,
+            97,
+            102
+          ],
+          [
+            102,
+            103.5,
+            95,
+            96
+          ]
+        ],
+        "steps": [
+          {
+            "count": 4,
+            "title": "1 · Save A and B",
+            "note": "A high 110; B low 100. The up-close reference at B spans 100–104."
+          },
+          {
+            "count": 5,
+            "title": "2 · C trades above A",
+            "note": "C reaches 112. The sweep alone does not complete the bearish sequence."
+          },
+          {
+            "count": 7,
+            "title": "3 · D closes below B",
+            "note": "D closes at 98. Only now is this structural condition complete."
+          },
+          {
+            "count": 9,
+            "title": "4 · Opposite-side retest",
+            "note": "Price returns to 103 from below, then falls in this invented path."
+          }
+        ],
+        "zone": [
+          100,
+          104,
+          4
+        ],
+        "levels": [
+          [
+            110,
+            "A"
+          ],
+          [
+            100,
+            "B"
+          ]
+        ],
+        "labels": [
+          "A",
+          "",
+          "B",
+          "Reference",
+          "C",
+          "",
+          "D",
+          "",
+          ""
+        ]
+      },
+      {
+        "label": "Bullish structure",
+        "candles": [
+          [
+            102,
+            103,
+            100,
+            101
+          ],
+          [
+            101,
+            107,
+            100,
+            106
+          ],
+          [
+            106,
+            110,
+            105,
+            109
+          ],
+          [
+            109,
+            110,
+            106,
+            107
+          ],
+          [
+            107,
+            108,
+            98,
+            99
+          ],
+          [
+            99,
+            109,
+            98,
+            108
+          ],
+          [
+            108,
+            113,
+            107,
+            112
+          ],
+          [
+            112,
+            113,
+            107,
+            108
+          ],
+          [
+            108,
+            115,
+            106.5,
+            114
+          ]
+        ],
+        "steps": [
+          {
+            "count": 4,
+            "title": "1 · A low and B high",
+            "note": "A 100; B 110. The down-close reference spans 106–110."
+          },
+          {
+            "count": 5,
+            "title": "2 · Lower low at C",
+            "note": "C reaches 98, below A."
+          },
+          {
+            "count": 7,
+            "title": "3 · Close above B",
+            "note": "D closes at 112, above B at 110."
+          },
+          {
+            "count": 9,
+            "title": "4 · Return from above",
+            "note": "Price reaches 107 in this illustrated return; 108 lies inside the saved 106–110 interval."
+          }
+        ],
+        "zone": [
+          106,
+          110,
+          4
+        ],
+        "levels": [
+          [
+            100,
+            "A"
+          ],
+          [
+            110,
+            "B"
+          ]
+        ],
+        "labels": [
+          "A",
+          "",
+          "B",
+          "Reference",
+          "C",
+          "",
+          "D",
+          "",
+          ""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "breaker-comparison",
+    "chapter": 16,
+    "section": 3,
+    "title": "One difference changes the structural story.",
+    "description": "Compare C with the original A high. The two paths share a later break below B.",
+    "variants": [
+      {
+        "label": "Prior high swept",
+        "candles": [
+          [
+            108,
+            110,
+            107,
+            109
+          ],
+          [
+            109,
+            110,
+            103,
+            104
+          ],
+          [
+            104,
+            105,
+            100,
+            101
+          ],
+          [
+            101,
+            104,
+            100,
+            103
+          ],
+          [
+            103,
+            112,
+            102,
+            111
+          ],
+          [
+            111,
+            112,
+            101,
+            102
+          ],
+          [
+            102,
+            103,
+            97,
+            98
+          ]
+        ],
+        "steps": [
+          {
+            "count": 4,
+            "title": "1 · Original references",
+            "note": "A is 110; B is 100."
+          },
+          {
+            "count": 5,
+            "title": "2 · C exceeds A",
+            "note": "C high 112 > A high 110."
+          },
+          {
+            "count": 7,
+            "title": "3 · Breaker comparison",
+            "note": "The sweep precedes the close below B."
+          }
+        ],
+        "zone": [
+          100,
+          104,
+          4
+        ],
+        "levels": [
+          [
+            110,
+            "A high"
+          ]
+        ],
+        "labels": [
+          "A",
+          "",
+          "B",
+          "",
+          "C",
+          "",
+          "D"
+        ]
+      },
+      {
+        "label": "Failed swing below A",
+        "candles": [
+          [
+            108,
+            110,
+            107,
+            109
+          ],
+          [
+            109,
+            110,
+            103,
+            104
+          ],
+          [
+            104,
+            105,
+            100,
+            101
+          ],
+          [
+            101,
+            104,
+            100,
+            103
+          ],
+          [
+            103,
+            108,
+            102,
+            107
+          ],
+          [
+            107,
+            108,
+            101,
+            102
+          ],
+          [
+            102,
+            103,
+            97,
+            98
+          ]
+        ],
+        "steps": [
+          {
+            "count": 4,
+            "title": "1 · Same original references",
+            "note": "Keep A at 110 and B at 100."
+          },
+          {
+            "count": 5,
+            "title": "2 · C falls short",
+            "note": "C high 108 < A high 110. No sweep of A occurred."
+          },
+          {
+            "count": 7,
+            "title": "3 · Mitigation-block comparison",
+            "note": "A failed swing precedes the break in this teaching convention."
+          }
+        ],
+        "zone": [
+          100,
+          104,
+          4
+        ],
+        "levels": [
+          [
+            110,
+            "A high"
+          ]
+        ],
+        "labels": [
+          "A",
+          "",
+          "B",
+          "",
+          "C",
+          "",
+          "D"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unicorn-intersection",
+    "chapter": 16,
+    "section": 4,
+    "title": "Overlap is geometry, not proximity.",
+    "description": "The dark shared band is the only area inside both intervals. Compare a real overlap, a touch and a near miss.",
+    "variants": [
+      {
+        "label": "Positive overlap",
+        "intervals": [
+          [
+            100,
+            104,
+            "Breaker"
+          ],
+          [
+            102,
+            106,
+            "FVG"
+          ]
+        ],
+        "steps": [
+          {
+            "count": 0,
+            "title": "Shared interval · 102–104",
+            "note": "max(100,102) = 102; min(104,106) = 104. Width = 2. FVG CE = 104."
+          }
+        ],
+        "candles": [],
+        "levels": [],
+        "labels": []
+      },
+      {
+        "label": "Touching only",
+        "intervals": [
+          [
+            100,
+            104,
+            "Breaker"
+          ],
+          [
+            104,
+            106,
+            "FVG"
+          ]
+        ],
+        "steps": [
+          {
+            "count": 0,
+            "title": "A point is not an area",
+            "note": "Both boundaries meet at 104. Width = 0; no positive-width overlap."
+          }
+        ],
+        "candles": [],
+        "levels": [],
+        "labels": []
+      },
+      {
+        "label": "Near miss",
+        "intervals": [
+          [
+            100,
+            104,
+            "Breaker"
+          ],
+          [
+            105,
+            107,
+            "FVG"
+          ]
+        ],
+        "steps": [
+          {
+            "count": 0,
+            "title": "No intersection",
+            "note": "The FVG begins above the breaker. Do not stretch either box to create confluence."
+          }
+        ],
+        "candles": [],
+        "levels": [],
+        "labels": []
+      }
+    ]
+  }
+]

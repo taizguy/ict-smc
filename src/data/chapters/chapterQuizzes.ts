@@ -1,5 +1,6 @@
 import type { TextbookChapter } from '../../types';
 import checkpoints from './checkpoints.json';
+import deliveryQuizzes from './deliveryQuizzes.json';
 
 export interface ChapterQuizQuestion {
   id: string;
@@ -19,6 +20,8 @@ function rotate(question: ChapterQuizQuestion, seed: number): ChapterQuizQuestio
 
 /** Exact chapter IDs, never title matching or a generic fallback. */
 export function chapterQuiz(chapter: TextbookChapter): ChapterQuizQuestion[] {
+  const delivery = (deliveryQuizzes as Record<string, Omit<ChapterQuizQuestion,'id'>[]>)[chapter.id];
+  if (delivery) return delivery.map((question,index)=>rotate({...question,id:`delivery-${chapter.id}-edition-1-${index}`},chapter.id+index));
   const applied = chapterCheckpoints[chapter.id];
   if (!applied || chapter.keyTerms.length < 2) throw new Error(`Missing reviewed quiz for chapter ${chapter.id}`);
   const vocabulary = chapter.keyTerms.slice(0, 2).map((term, index) => {

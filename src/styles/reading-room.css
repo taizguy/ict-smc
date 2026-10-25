@@ -18,6 +18,17 @@ html[data-theme=dark] .rr-book{background:#393326;color:#d5bea0;border-color:#76
 .reading-room .rr-hub-hero .ink-accent{color:var(--rr-accent);font-style:italic;background:none}.reading-room .ymyl-disclaimer{border-radius:0;background:var(--rr-wash);border-color:var(--rr-line);padding:23px;color:var(--rr-muted)}.reading-room .ymyl-disclaimer :is(h2,a){color:var(--rr-accent)}.reading-site .learning-footer{background:var(--rr-paper);border-color:var(--rr-line)}.reading-site .learning-footer-risk{background:var(--rr-wash);border-color:var(--rr-line)}.rr-prose>p{font:inherit;margin:0 0 22px;line-height:inherit}.rr-prose>p:last-child{margin-bottom:0}
 @media(prefers-reduced-motion:reduce){.reading-room *{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reading-room button:active{transform:none}}
 
+/* Keep the shared progress button's label above the outlined mentorship-button rule. */
+.reading-room .mentorship-read-action .rr-primary {
+  color: var(--rr-on-accent);
+  background: var(--rr-accent);
+  border-color: var(--rr-accent);
+}
+.reading-room .mentorship-read-action .rr-primary:disabled {
+  opacity: 1;
+  color: var(--rr-on-accent);
+}
+
 /* Open reading surfaces: no frame running against lesson text. */
 .reading-room .topic-learning .topic-exercise { border-block: 0; }
 .reading-room .topic-learning .topic-insight { border-inline-start: 0; }

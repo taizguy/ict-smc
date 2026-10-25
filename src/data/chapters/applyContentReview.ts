@@ -1,6 +1,6 @@
 import type { TextbookChapter, ChapterSection } from '../../types';
 import corrections from './contentReview.json';
-import { chapterCheckpoints } from './chapterQuizzes';
+import { chapterCheckpoints, chapterQuiz } from './chapterQuizzes';
 
 type ChapterCorrection = Partial<Omit<TextbookChapter, 'sections'>> & { sections?: Record<string, Partial<ChapterSection>> };
 const reviewed = corrections as Record<string, ChapterCorrection>;
@@ -12,6 +12,6 @@ export function applyContentReview(chapter: TextbookChapter): TextbookChapter {
   return {
     ...chapter, ...fields,
     sections: chapter.sections.map((section, index) => ({ ...section, ...sections?.[index] })),
-    practiceQuestions: [chapterCheckpoints[chapter.id].question],
+    practiceQuestions: chapter.id >= 13 && chapter.id <= 16 ? chapterQuiz(chapter).map(q=>q.question) : [chapterCheckpoints[chapter.id].question],
   };
 }

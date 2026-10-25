@@ -1,0 +1,376 @@
+[
+  {
+    "id": 13,
+    "slug": "fair-value-gaps-fvg-and-consequent-encroachment",
+    "part": "Part III - Price Delivery",
+    "title": "Fair Value Gaps (FVG): Formation, CE & Chart Examples",
+    "quote": "Learn to find the exact interval between three candles, measure its midpoint, and follow what happens next without confusing a pattern with a complete trade.",
+    "level": 2,
+    "sections": [
+      {
+        "id": "13.1",
+        "title": "What is a fair value gap?",
+        "content": "A fair value gap, or FVG, is a particular relationship between three neighbouring candles. During an upward move, the first candle’s high and the third candle’s low can leave a positive interval between them. During a downward move, the first candle’s low and the third candle’s high can do the same. That interval is the zone traders mark and extend forward.\n\nImagine drawing a horizontal line from the first candle’s outer wick. Does the third candle reach that line? If it stops short, there is space between the two outer ranges. The middle candle connects the movement; the gap is not its entire body. This distinction is easier to see than to memorise, so begin with the numbered candles in the illustration below.\n\nWhy study this shape? It gives traders a consistently measurable reference within a directional move. They can ask whether price later revisits it, where a reaction begins, and how those observations relate to wider structure. Identifying the zone comes first; deciding whether a particular model makes use of it is a separate task.",
+        "keyTakeaway": "An FVG is the interval between the outer wicks of three candles—not the whole middle candle."
+      },
+      {
+        "id": "13.2",
+        "title": "Bullish and bearish FVGs: draw the correct boundaries",
+        "content": "Use one instrument, one price feed and one timeframe. Number three consecutive completed candles from left to right. For a bullish FVG, candle 1 high must be strictly below candle 3 low. Draw the lower edge at candle 1 high and the upper edge at candle 3 low. For a bearish FVG, candle 3 high must be strictly below candle 1 low. The lower edge is candle 3 high; the upper edge is candle 1 low.\n\nIn our bullish example, candle 1 has O 98, H 100, L 97, C 99. Candle 2 has O 99, H 105, L 98, C 104. Candle 3 has O 104, H 107, L 102, C 106. The first high is 100; the third low is 102. Therefore the bullish interval is 100–102, two price points wide. The middle candle’s 99–104 body is not the marked interval.\n\nNow reverse the comparison. Suppose the first low is 104 and the third high is 102. The bearish interval is 102–104. Its boundaries still run from lower price to higher price even though the move points downward. ICT labels the bullish version BISI (buy-side imbalance, sell-side inefficiency) and the bearish version SIBI (sell-side imbalance, buy-side inefficiency). Learn the names, but practise marking either direction without relying on candle colour alone. These labels do not identify the buyers or sellers behind the candles.",
+        "keyTakeaway": "Bullish: H1 < L3. Bearish: H3 < L1. Mark the wick boundaries after candle 3 completes."
+      },
+      {
+        "id": "13.3",
+        "title": "Valid gap, overlapping candles, or unfinished formation?",
+        "content": "A large middle candle is visually striking, but it cannot create the outer-range relationship on its own. If candle 1 high is 100 and candle 3 low is 99.5, the outer ranges overlap. There is no bullish FVG under this definition, even if candle 2 is unusually large. If candle 3 low is exactly 100, the boundaries touch and the interval has zero width.\n\nA provisional gap can also disappear before candle 3 closes. If that candle initially trades above 102 but later falls to 99.5, the completed formation no longer meets the bullish test. In replay, freeze the chart at the close of the third candle. Ask what was genuinely known at that moment rather than drawing a box from the eventual high and low of an unfinished bar.\n\nAn FVG is also different from a session-opening gap, which compares prices across a market closure, and from a body-only volume-imbalance illustration, whose wicks may overlap. A liquidity void is a broader description of rapid travel across a region; it is not simply another name for every three-candle FVG.",
+        "keyTakeaway": "Check the outer ranges and the closing time before being impressed by the size of the move."
+      },
+      {
+        "id": "13.4",
+        "title": "Consequent encroachment: the midpoint you can calculate",
+        "content": "Consequent encroachment, shortened to CE, is the arithmetic midpoint of the FVG: CE = (lower edge + upper edge) ÷ 2. For our 100–102 gap, CE is 101. Gap width is upper minus lower, so a return from 102 down to 101 travels halfway through this bullish interval.\n\nSeparate three different observations. An edge test reaches 102. A CE test reaches 101. A full traversal reaches 100. These events should not all be labelled “filled” without stating what the word means in your study. A candle can wick through CE and close back above it; that is different from a completed close below the lower edge.\n\nCE is useful because it makes depth comparable across gaps of different sizes. It is not a measured fundamental fair value for the asset. If you compare an edge-entry idea with a CE-entry idea, keep the other assumptions unchanged. A deeper hypothetical entry changes the distance to the same stop and target, but fewer returns may reach it.",
+        "keyTakeaway": "For 100–102: edge 102, CE 101, far boundary 100. These are three different reference levels."
+      },
+      {
+        "id": "13.5",
+        "title": "Why traders connect FVGs with displacement",
+        "content": "Displacement describes a comparatively forceful directional move. A series of expanding bodies, progress beyond a selected swing and limited overlap can help describe that movement. An FVG is one measurable range relationship that may appear within it. The two concepts are related, but they are not interchangeable: a strong move can leave no qualifying gap, and a small gap can appear in untidy price action.\n\nA candle is a compressed record of prices over a time interval. The middle candle’s recorded range spans the marked region; the outer candles simply did not both revisit it. Consequently the box alone does not establish that no transactions happened there, which participants were active, or whether unfilled institutional orders remain.\n\nThe practical question is location and sequence. Did the move follow an observable break of a prior high or low? Did it cross a swing selected beforehand? Was the gap completed before the proposed entry? Those questions build context without asking the three-candle shape to explain the entire market.",
+        "keyTakeaway": "Displacement describes the move; an FVG measures one relationship inside it. Context explains why that relationship is being studied."
+      },
+      {
+        "id": "13.6",
+        "title": "Follow the same gap through three different outcomes",
+        "content": "Keep the original 100–102 bullish box fixed. In the first path, price returns to 101 and later trades higher. You have observed a midpoint revisit followed by an upward response. The formation existed before either event; the later reaction does not improve its original geometry.\n\nIn the second path, price returns through 101 and a later candle closes at 99, below the lower boundary. Under the close-through convention used here, the original bullish use has failed. Keep the original record instead of deleting the box. A possible opposite-role use belongs to the IFVG chapter and needs its own conditions.\n\nIn the third path, price moves away and never returns before the observation window ends. A hypothetical limit at 101 is unfilled, even if the later direction matched the idea. These three records—reaction, failed use and no return—are all necessary to understand what a gap study actually captures. They are alternative invented paths, not frequencies or forecasts.",
+        "keyTakeaway": "Formation, revisit, reaction and trade outcome are separate events. An unfilled idea is not a winning trade."
+      },
+      {
+        "id": "13.7",
+        "title": "Higher-timeframe context, premium and discount",
+        "content": "Start with a dealing range whose endpoints you can identify without future candles. If a selected range is 90–110, its midpoint is 100. Prices below 100 are in the lower half, conventionally called discount; prices above 100 are in the upper half, called premium. These labels are relative to that chosen range, not an objective statement that the asset is cheap or expensive.\n\nOur 100–102 gap lies above the midpoint of that range. Select a different range, 96–116, and its midpoint becomes 106; the same gap now lies in its lower half. This is why a screenshot labelled “discount FVG” is incomplete unless the range anchors are visible.\n\nA higher-timeframe chart can provide a broader reference, while a lower-timeframe chart shows more local detail. Keep the two sets of boundaries separate. A lower-timeframe gap inside a larger zone is not automatically the same formation, and changing timeframe after seeing the result changes the study you are conducting.",
+        "keyTakeaway": "Premium and discount require visible range anchors; an FVG does not carry those labels by itself."
+      },
+      {
+        "id": "13.8",
+        "title": "A complete paper example: context to a recorded result",
+        "content": "Consider a fictional five-minute chart. Before the gap appears, mark an earlier low at 96 and a local high at 104. Price trades below 96, returns above it, and later closes above 104. A subsequent three-candle formation leaves a bullish interval at 100–102. The earlier excursion, the local crossing and the completed gap are three separate observations; none should be added retroactively.\n\nOne paper-study variant places a hypothetical entry at CE 101, a stop at 98 and a target at 107. Initial price risk is 101 − 98 = 3 points. Planned reward is 107 − 101 = 6 points, giving 2R before costs. A different model may use different invalidation; these numbers explain arithmetic, not an instruction to use a three-point stop.\n\nNow reveal later candles. If price only reaches 101.5, the 101 limit is not filled in this simplified exercise. If it reaches 101 and then 98, record the loss under the assumed fill rules. If it reaches both stop and target inside one OHLC candle, their order is unknown from that candle alone. Use finer data or mark the result ambiguous instead of automatically awarding a winner.",
+        "keyTakeaway": "A useful case records what was known, whether an order could fill, and whether the available data can resolve the outcome."
+      },
+      {
+        "id": "13.9",
+        "title": "Common mistakes and a repeatable study routine",
+        "content": "The most common drawing errors are measuring the middle body, counting touching boundaries as a positive gap, and marking a formation before candle 3 completes. The most common interpretation errors are treating every return as an entry, assuming the midpoint must hold, and choosing a new range after a setup fails.\n\nUse a short routine. Save the instrument, feed and timeframe; number the three completed candles; record both wick boundaries and CE; state the observation window and the rule for a full traversal or directional failure. Only then add the context required by the particular model you are studying. Keep a screenshot before the future is revealed.\n\nReview a sequence of examples rather than a collection of attractive reactions. Count no-gap, no-return and failed cases as well as reactions. Compare identical rules across the sample, include trading costs where relevant, and separate a descriptive pattern from evidence that a strategy has positive expectancy. In the next chapter, the original box stays fixed while the question changes: what happens when price crosses through it?",
+        "keyTakeaway": "Learn the geometry, then test a clearly specified use of it. Keep the losing and unfilled cases in the record."
+      }
+    ],
+    "keyTerms": [
+      {
+        "term": "Fair value gap (FVG)",
+        "definition": "The positive price interval between the outer wick ranges of three completed candles."
+      },
+      {
+        "term": "BISI / bullish FVG",
+        "definition": "An upward formation where candle 1 high is below candle 3 low."
+      },
+      {
+        "term": "SIBI / bearish FVG",
+        "definition": "A downward formation where candle 3 high is below candle 1 low."
+      },
+      {
+        "term": "Consequent encroachment (CE)",
+        "definition": "The FVG midpoint: (lower edge + upper edge) ÷ 2."
+      },
+      {
+        "term": "Full traversal",
+        "definition": "Price reaches the far edge of the saved interval; whether a wick or close is counted must be stated."
+      },
+      {
+        "term": "Unfilled order",
+        "definition": "A proposed order that does not execute under the stated price and fill assumptions."
+      }
+    ],
+    "summary": [
+      "Number three completed candles and measure the outer wicks in either direction.",
+      "Distinguish a positive gap from overlap, touching boundaries and an unfinished bar.",
+      "Calculate CE, then distinguish an edge test, midpoint test and full traversal.",
+      "Relate the gap to a preselected range and earlier observations without inventing hidden orders.",
+      "Record reactions, directional failures, no returns, costs and ambiguous same-bar outcomes."
+    ],
+    "practiceQuestions": []
+  },
+  {
+    "id": 14,
+    "slug": "inverse-fair-value-gaps-ifvg-role-reversal-imbalances",
+    "part": "Part III - Price Delivery",
+    "title": "Inverse Fair Value Gaps (IFVG): Role Reversal & Examples",
+    "quote": "Keep the original FVG on the chart, follow a defined break through it, and learn how the same price interval can be studied from the opposite side.",
+    "level": 2,
+    "sections": [
+      {
+        "id": "14.1",
+        "title": "The idea: the box stays, the question changes",
+        "content": "An inverse fair value gap, or IFVG, starts with a normal FVG that has already formed. Instead of reacting in the original direction, price passes through the zone under a stated breach rule. Traders then study whether a later approach from the other side treats the same interval as an opposite-role reference.\n\nA bullish FVG at 100–104 is initially watched from above. If a completed candle later closes below 100, the example used in this chapter treats the original bullish use as broken. On a rally back toward 100–104, the question becomes whether that old interval now offers resistance. The coordinates have not changed; the direction of approach has.\n\nThis is a specific version of the broader support/resistance role-change idea. The starting zone is defined by three-candle geometry rather than an arbitrary horizontal line. Learn the original FVG first: if the starting box was measured incorrectly, a later crossing cannot turn it into a correctly identified IFVG.",
+        "keyTakeaway": "An IFVG retains the original FVG boundaries and studies a possible opposite role after a defined breach."
+      },
+      {
+        "id": "14.2",
+        "title": "Bullish inversion and bearish inversion, side by side",
+        "content": "A bearish inversion begins with a bullish FVG. The sequence is: original bullish gap, qualifying break below its lower boundary, then a possible rally into the saved zone from below. In the 100–104 example, a close at 99 is below the lower edge. A later visit to 101 is inside the old box, but now approaches it from underneath.\n\nA bullish inversion is the mirror image. Start with a bearish FVG at 106–110. A completed close at 111 is above its upper edge. If price later falls to 108, it is revisiting the saved interval from above. The study asks whether the former bearish reference now behaves as support.\n\nThe label follows the proposed new direction, not the colour of the original gap. A bullish FVG can produce a bearish inversion; a bearish FVG can produce a bullish inversion. Use the directional switch in the illustration to watch the sequence reverse while the logic stays the same.",
+        "keyTakeaway": "Original bullish gap → bearish inversion. Original bearish gap → bullish inversion."
+      },
+      {
+        "id": "14.3",
+        "title": "A wick, a close and a displaced close are not the same",
+        "content": "For the worked examples here, a qualifying breach is a completed candle close beyond the far boundary of the original gap, on the same timeframe that defines it. For a bullish gap at 100–104, that means a close below 100. A candle with low 99 and close 102 does not satisfy this rule; it traded beyond the edge but finished back inside.\n\nAlso distinguish a close beyond the edge from the entire candle body being outside. A candle opening at 102 and closing at 99 has its close below 100 even though part of its body crosses the zone. Requiring both open and close below 100 is a stricter, different condition. Do not use these phrases interchangeably.\n\nSome study methods additionally demand comparatively strong displacement or a structure change. Those are extra filters, not numbers implied by the word inverse. If you require displacement, specify a measurement rather than calling every successful example strong afterward. Wick-based and close-based variants should be labelled separately; this lesson uses the close-based convention consistently.",
+        "keyTakeaway": "Name the breached edge, the timeframe and whether your rule concerns the wick, the close, or the whole body."
+      },
+      {
+        "id": "14.4",
+        "title": "Follow formation, breach, retest and response in order",
+        "content": "Treat the sequence as four records. First save a completed FVG. Second record the first qualifying breach. Third observe whether price returns to the interval from the other side. Fourth describe what happens after that return. Each becomes knowable at a different moment.\n\nA close below a bullish gap can qualify the bearish inversion reference without producing an immediate entry. If the chosen variant waits for a retest, a straight decline with no return is a no-entry case. Conversely, an anticipated retest does not count as one that occurred. The animation keeps later candles hidden until the relevant stage.\n\nAt the retest, decide what reaction your study requires: a touch of the near edge, a visit to CE, or an actual rejection close are distinct observations. A blind limit at the edge and a confirmed entry after a rejection use different timing and prices. Record the one you intended rather than switching between them to rescue the finished chart.",
+        "keyTakeaway": "A qualifying inversion, a retest and a trade trigger are three different conditions."
+      },
+      {
+        "id": "14.5",
+        "title": "Use context to distinguish a role change from repeated crossings",
+        "content": "A zone crossed repeatedly in a narrow consolidation presents a different question from a gap breached during a clear directional response at an earlier reference. Begin with the wider range and nearby swings. Then place the original FVG, breach and retest inside that picture.\n\nFor example, a run above a prior high followed by a decline through a bullish FVG creates a bearish study sequence: excursion, opposite movement, gap breach. A local structure break may add another condition if it belongs to the chosen model. It does not retroactively prove that stops were located at a particular price or that an institution changed its inventory.\n\nDifferent models combine these observations differently. An intermarket-divergence filter, a session window or a specific displacement threshold can narrow a study, but none is a universal requirement for naming every inversion. State what defines the reference and what qualifies the particular application. This keeps a general concept from becoming confused with one trader’s complete setup.",
+        "keyTakeaway": "Distinguish the definition of an IFVG from the additional filters of a model that uses it."
+      },
+      {
+        "id": "14.6",
+        "title": "A bearish paper example with an explicit failure rule",
+        "content": "Save a bullish FVG at 100–104 on a fictional five-minute chart. Price later closes at 99. That completes the chosen close-through condition. A later rally reaches 101 and produces a rejection close back below 100. The box is still 100–104; its midpoint remains 102. Neither boundary is moved to fit the retest.\n\nA simplified retest-limit variant uses a hypothetical short at 101, stop at 105 and target at 93. Initial price risk is 105 − 101 = 4 points; planned reward is 101 − 93 = 8, or 2R before costs. A rejection-confirmation variant might enter at a different price after the close. Its distances must be recalculated; it cannot borrow the limit entry’s 2R label.\n\nSeparate the pattern rule from the order protecting the trade. In this illustration, a completed close above 104 ends the bearish role-change study. A protective stop at 105 is an intrabar execution condition. A candle can trade to 105, trigger that stop, then close below 104. The trade can lose even when the closing-rule reference has not failed.",
+        "keyTakeaway": "Pattern invalidation and a protective stop are not the same event. Recalculate risk for the actual assumed entry."
+      },
+      {
+        "id": "14.7",
+        "title": "Failed retests, no retests and repeated inversions",
+        "content": "After a bearish inversion, a retest can reject, pass through the interval or remain unresolved. With a saved 100–104 box, a later close at 105 breaks the bearish closing-rule use adopted here. That losing observation belongs in the record even if price eventually falls again.\n\nPrice can also decline without ever revisiting the zone. Under a retest-entry study that is no trade, not a missed winner that can be inserted at the best available price. If the interval is crossed back and forth, do not invent a new named model for every flip. Repeated crosses may simply make the reference unhelpful under the selected rules.\n\nA fair evaluation includes every qualifying breach in a predefined window. Record the direction, breach time, retest depth, assumed entry, failure condition and expiry. Keep ambiguous same-bar stop/target outcomes separate. The aim is to understand a repeatable observation and its application, not to collect screenshots where an opposite-role rectangle happened to hold.",
+        "keyTakeaway": "A failed IFVG does not disappear from the study, and a no-retest case does not acquire an imaginary entry."
+      },
+      {
+        "id": "14.8",
+        "title": "Connect IFVGs to FVGs, order blocks and breakers",
+        "content": "An ordinary FVG is defined by the three-candle formation. An IFVG adds a later breach and a possible opposite-role use. An order block is selected from a candle or run of candles using its own reference convention. A breaker is studied through a larger swing-and-breach sequence. They can occur near one another without being interchangeable names for the same box.\n\nIf an IFVG overlaps a separately selected block, calculate the actual shared price interval. Preserve which condition formed first and which existed at the moment of the proposed decision. Adding two labels does not create two independent pieces of evidence when both come from the same price movement.\n\nBefore moving on, explain one bullish and one bearish inversion in your own words without saying “price must return”. Then identify an unfinished breach, an unfilled retest idea and a failed reaction. The next chapter changes the starting reference: instead of the interval between three outer wicks, it examines a selected candle or candle run.",
+        "keyTakeaway": "Use the correct reference for each concept, and preserve the order in which conditions become known."
+      }
+    ],
+    "keyTerms": [
+      {
+        "term": "Inverse fair value gap (IFVG)",
+        "definition": "A completed FVG studied for a possible opposite role after a defined breach."
+      },
+      {
+        "term": "Bearish inversion",
+        "definition": "A bullish gap breached downward and then studied from below."
+      },
+      {
+        "term": "Bullish inversion",
+        "definition": "A bearish gap breached upward and then studied from above."
+      },
+      {
+        "term": "Close-through condition",
+        "definition": "A completed close beyond a named far boundary on a specified timeframe."
+      },
+      {
+        "term": "Retest",
+        "definition": "A later approach back into the saved interval from the opposite side."
+      },
+      {
+        "term": "Expiry",
+        "definition": "The predefined time or condition after which an unfilled idea is no longer considered."
+      }
+    ],
+    "summary": [
+      "Preserve a completed FVG before studying an opposite-role use.",
+      "Mirror the bearish and bullish sequences without redrawing the original zone.",
+      "Distinguish a wick, a closing price and a whole-body breach.",
+      "Keep qualification, retest, trigger, stop and pattern failure separate.",
+      "Include failed reactions, no returns and ambiguous outcomes in the study."
+    ],
+    "practiceQuestions": []
+  },
+  {
+    "id": 15,
+    "slug": "order-blocks-ob-and-mitigation",
+    "part": "Part III - Price Delivery",
+    "title": "Order Blocks: Selection, Boundaries & Mitigation",
+    "quote": "Follow a candle or candle run from its departure to its return. Learn what an order-block drawing tells you, what it cannot tell you, and why the selection rule matters.",
+    "level": 2,
+    "sections": [
+      {
+        "id": "15.1",
+        "title": "What is an order block? Start with the departure",
+        "content": "An order block is a candle-based reference selected before a directional departure. In a common bullish illustration, price falls through one or more down-close candles and then moves upward through a chosen reference. The earlier candles become an area to study on a later return. A bearish illustration reverses that sequence.\n\nThink of the drawing as a saved location: “This is where the move began under my selection rule.” It is not a photograph of institutional orders. A candle records opening, high, low and closing prices; it does not identify who traded, what inventory remains, or whether anyone must defend that price.\n\nThe useful question is therefore specific: which candles are selected, what price action qualifies them, and what would count as a successful or failed revisit? A coloured box without those answers is only a coloured box.",
+        "keyTakeaway": "Define the selection and qualification before studying a return."
+      },
+      {
+        "id": "15.2",
+        "title": "One candle or a consecutive run? Save the rule first",
+        "content": "A familiar shortcut is “the last down candle before an up move.” It is a useful starting picture, but it does not describe every order-block convention. Some examples use a single candle; others treat consecutive same-direction closes as one run. Those choices produce different openings, boundaries and midpoints.\n\nOur bullish worked example selects three consecutive down-close candles: A opens at 106 and closes at 104; B opens at 104 and closes at 102; C opens at 102 and closes at 101. The run begins at 106. Its lowest wick is 99 and highest wick is 107. Selecting only C would produce a much smaller reference. Neither drawing can silently stand in for the other.\n\nAn upward candle later closes at 108, beyond the run’s first opening at 106. A subsequent close at 111 clears the separately marked swing reference at 109. In this example those are two different observations: trading through the opening and breaking a chosen swing. Save the run before examining the later retest; do not choose whichever candle would make the outcome look best.",
+        "keyTakeaway": "A single candle and a candle run are different conventions; label which one you use."
+      },
+      {
+        "id": "15.3",
+        "title": "Draw the opening, body range and full range separately",
+        "content": "For this three-candle run, the full wick range is 99–107. The union of the candle bodies spans 101–106. The first opening is 106. These are three different references, not interchangeable names for the same line.\n\nThe midpoint often called mean threshold depends on the selected boundaries. For the full range it is (99 + 107) ÷ 2 = 103. For the body range it is (101 + 106) ÷ 2 = 103.5. A return to 106 reaches the opening and the body-range edge; it does not reach either midpoint.\n\nDraw the full range as the outer frame and the body range as an inner band. Label the opening and the midpoint you actually intend to study. If your chosen source or model uses a narrower boundary, keep that convention throughout the example. A midpoint is arithmetic; which range deserves attention is a model choice.",
+        "keyTakeaway": "Write the boundaries beside “mean threshold”; otherwise the midpoint is ambiguous."
+      },
+      {
+        "id": "15.4",
+        "title": "Why some candles deserve attention and others do not",
+        "content": "Every chart contains down-close candles before upward movement. Marking all of them makes selection meaningless. Begin with a wider question: what swing, range edge or liquidity reference was price approaching, and what changed after the selected candles?\n\nIn the worked example, the run trades below a previously marked low at 100 and then closes back above it. Price subsequently moves through 106 and closes above the swing reference at 109. These observations create a narrative: an excursion through a reference, a reclaim, and an upward departure. They do not prove that stops caused the move, but they are observable conditions you can record.\n\nDisplacement, a completed FVG and alignment with a higher-timeframe range can be additional filters in a particular trading model. They are not permission to redraw the block after seeing a successful bounce. A chart with an impressive departure but no later return is also part of the sample.",
+        "keyTakeaway": "Context explains why you selected a reference; it does not guarantee its next reaction."
+      },
+      {
+        "id": "15.5",
+        "title": "Mitigation: what you can actually observe on the return",
+        "content": "In this lesson, mitigation describes price returning to a previously selected order-block reference. Traders sometimes explain that return as participants reducing or offsetting earlier exposure. That is an interpretation; ordinary OHLC candles do not reveal whose position changed.\n\nObserve the event in smaller pieces. Did price reach the opening, the body band, the midpoint or the far wick? Did it close within the range, leave it, or cross its far side? A shallow touch at 106 and a full traversal to 99 are both returns, but they are very different outcomes.\n\nChoose a response window before replaying: for example, the next three completed candles after the first touch. Record the highest and lowest prices reached in that window. This turns “it respected the block” into something another person could check. The three-candle window here is a study choice, not a universal ICT requirement.",
+        "keyTakeaway": "Describe the depth and timing of a return instead of assuming hidden order activity."
+      },
+      {
+        "id": "15.6",
+        "title": "Bullish and bearish examples: mirror the whole sequence",
+        "content": "The bullish example starts with a down-close run, an upward departure and a later approach from above. If price returns to 106 and then rises, that is an upward reaction at the saved opening. If it closes below the full-range low at 99, it fails the full-range closing rule used in this example.\n\nFor the bearish mirror, the selected candles close upward. Their full range is 103–111, body range 104–109 and first opening 104. Price departs downward through 104, then returns from below. The body midpoint is 106.5 and the full-range midpoint is 107. Do not reuse the bullish numbers or put the bearish stop underneath the zone.\n\nThere are at least three honest endings: a reaction in the departure direction, a crossing through the reference, and no revisit during the observation window. A block can also be touched repeatedly. Whether only the first return is eligible is a separate model rule; repeated touches do not supply a measurable universal “remaining order” count.",
+        "keyTakeaway": "Mirror candle direction, approach direction, boundaries and failure together."
+      },
+      {
+        "id": "15.7",
+        "title": "Order block versus FVG: related references, different geometry",
+        "content": "An order block is selected from a candle or candle run. An FVG is measured between the outer wicks of three neighbouring candles. They may appear in the same departure, but they answer different questions: where did the selected movement begin, and where did the outer ranges leave a positive interval?\n\nIf an order-block interval is 99–107 and a separate FVG is 108–110, the drawings do not overlap. They may still belong to the same price sequence. If a different completed FVG spans 105–108, their intersection is 105–107. Only that intersection belongs to both drawings.\n\nHigher and lower timeframes also change the picture. Three separate candles on a small timeframe may become one candle on a larger timeframe. Keep the chart timeframe, session and selection convention with every saved example. More boxes do not automatically mean stronger evidence: several drawings can describe the same underlying move.",
+        "keyTakeaway": "Compare exact intervals before calling two references confluence."
+      },
+      {
+        "id": "15.8",
+        "title": "A paper-trade plan: separate the drawing from the order",
+        "content": "Suppose a paper exercise plans a long entry at 106, a stop at 98.5 and a target at 121. Planned risk is 7.5 points and planned reward is 15 points, giving 2R before costs. These invented prices illustrate arithmetic; they are not a recommended entry or stop formula.\n\nThe plan still needs an order type, an expiry and a rule for whether confirmation is required after the touch. A limit order at 106 and an entry after a later confirmation close are different strategies. If the market only falls to 106.5, the limit entry has not been reached. If one recorded candle spans both stop and target after entry, OHLC alone may not resolve the order of events.\n\nPattern failure and account risk are also different. Your protective stop can trigger intrabar while a close-based pattern condition remains intact. Do not widen a stop simply to preserve a chart label. Include spread, fees, slippage and instrument-specific contract values before translating points into position size.",
+        "keyTakeaway": "A valid drawing does not supply an order type, an expiry or an expectancy estimate."
+      },
+      {
+        "id": "15.9",
+        "title": "Study routine: keep the misses, not just the beautiful returns",
+        "content": "For each example, save the chart before the return. Record the selected candle IDs, the opening, body and wick boundaries, the qualification time and the contextual reference. Then replay one completed candle at a time without moving the box.\n\nClassify the ending with your original rules. Keep failed returns, expired ideas and unclear intrabar sequences alongside the clean reactions. Compare a single-candle version and a run version as separate rule sets rather than choosing whichever worked on each chart.\n\nThe next chapter asks a new question: what happens when a saved reference fails and price approaches it from the other side? That takes us from order-block selection to breaker structure, mitigation distinctions and the overlap sometimes called a Unicorn.",
+        "keyTakeaway": "Freeze the selection before replay; moving the box changes the experiment."
+      }
+    ],
+    "keyTerms": [
+      {
+        "term": "Order block",
+        "definition": "A selected candle or candle run used as a reference before a qualifying departure."
+      },
+      {
+        "term": "Candle run",
+        "definition": "Consecutive candles grouped under an explicit selection convention."
+      },
+      {
+        "term": "Opening reference",
+        "definition": "The first opening of the selected candle or run."
+      },
+      {
+        "term": "Mean threshold",
+        "definition": "The midpoint of the explicitly stated order-block boundaries."
+      },
+      {
+        "term": "Mitigation visit",
+        "definition": "A return to a saved reference; it does not reveal participant inventory."
+      },
+      {
+        "term": "Qualification",
+        "definition": "The observable conditions required before the selected reference becomes eligible for study."
+      }
+    ],
+    "summary": [
+      "Select the candle or run and freeze it before the retest.",
+      "Separate the opening, full range, body range and their midpoints.",
+      "Explain the context and departure without claiming to see institutional inventory.",
+      "Record the depth, timing and outcome of mitigation visits.",
+      "Keep pattern failure, protective stops and realized trade outcomes separate."
+    ],
+    "practiceQuestions": []
+  },
+  {
+    "id": 16,
+    "slug": "breaker-blocks-trading-failed-order-blocks",
+    "part": "Part III - Price Delivery",
+    "title": "Breaker Blocks, Mitigation & Unicorn: Structure Explained",
+    "quote": "Read the swing sequence behind a role reversal, distinguish a sweep from a failed swing, and measure an actual breaker–FVG overlap.",
+    "level": 2,
+    "sections": [
+      {
+        "id": "16.1",
+        "title": "What changes when an old reference fails?",
+        "content": "The previous lesson saved a candle-based reference before price returned to it. A breaker study follows what happens when price travels through a saved reference and later approaches it from the opposite side. The important feature is the surrounding swing sequence, not simply a box changing colour.\n\nIn a bearish example, price trades above an earlier high, reverses, and then breaks the intervening low. A saved candle area near that low can become a reference on a later rally. In a bullish example, price trades below an earlier low, reverses, and breaks the intervening high; a later decline approaches the saved area from above.\n\n“Trapped buyers” and “trapped sellers” are common explanations for such reversals. They are hypotheses about participants. The observable lesson is narrower: a reference was crossed, a swing sequence changed, and price may or may not return. We can teach and test that sequence without pretending to see every trader’s position.",
+        "keyTakeaway": "A breaker explanation needs a swing sequence and a saved reference, not only a failed box."
+      },
+      {
+        "id": "16.2",
+        "title": "Bearish breaker: follow A, B, C and D in time",
+        "content": "Start with four labelled events. A is a high at 110. Price falls to B, a low at 100. It rallies to C, a higher high at 112, trading beyond A. It then reverses and produces D, a completed close at 98 below B. The sweep of A and the later break of B are separate events; C alone is not the completed bearish sequence.\n\nFor this illustration, save the up-close candle at B that launched the rally: open 101, high 104, low 100, close 103. Its full range is 100–104. After the close below B, extend that saved range forward. A rally to 103 is now an approach from below into the reference.\n\nThis is an explicitly stated drawing convention for the example. Candle/run selection and body-versus-wick boundaries vary across models and chart timeframes. Do not turn a candle-colour shortcut into a universal definition, and do not select a different candle after seeing the retest. The diagram makes the chosen candle and qualification time visible.",
+        "keyTakeaway": "Wait for the break after the sweep; preserve the candle chosen before the retest."
+      },
+      {
+        "id": "16.3",
+        "title": "Bullish breaker: reverse the structure, not just the arrows",
+        "content": "The bullish mirror begins with A, a low at 100, then B, a high at 110. Price falls to C at 98, below A, and subsequently closes at D at 112, above B. The lower low comes first; the upward structural break follows.\n\nIn this illustration, the selected down-close candle at B opens at 109, reaches a high of 110 and low of 106, and closes at 107. Save its full range of 106–110. After the upward break, a decline to 108 approaches that area from above. The expected role in the study has reversed, but a reaction is still uncertain.\n\nCheck the mirror carefully. A bearish reference is approached on a rally from below; a bullish reference is approached on a decline from above. Their adverse sides and hypothetical stop locations are opposite. Merely recolouring the same chart can conceal a direction error.",
+        "keyTakeaway": "The sweep, structural break and later approach must all agree with the stated direction."
+      },
+      {
+        "id": "16.4",
+        "title": "Breaker versus mitigation block: compare the missing sweep",
+        "content": "A useful teaching distinction compares two nearly identical bearish sequences. In the breaker illustration, A is 110, B is 100 and C reaches 112 before the break below B. C takes the earlier high. In the comparison, C reaches only 108 before price breaks below B; it fails to exceed A.\n\nThe second path is often described as a mitigation-block structure: a failed swing followed by a break, without the same external-high sweep in this comparison. This terminology is not used consistently by every educator. State the actual highs, lows and selection rule rather than relying on a label to carry the whole explanation.\n\nAlso distinguish “mitigation block” from the verb “mitigate.” The previous chapter used mitigation for a return to a saved order-block reference. That return alone does not create the failed-swing structure shown here. Similar vocabulary can describe different parts of a chart.",
+        "keyTakeaway": "Describe whether the earlier swing was exceeded; that observation is clearer than the label alone."
+      },
+      {
+        "id": "16.5",
+        "title": "Unicorn overlap: calculate the shared interval",
+        "content": "A Unicorn setup is commonly taught as a breaker reference overlapping a same-direction FVG in an appropriate sequence. It is not any order block beside any gap. Both references must qualify under the chosen model before the decision that uses them.\n\nTake the bearish breaker range 100–104 and a separately completed bearish FVG at 102–106. The shared interval begins at the larger lower boundary, 102, and ends at the smaller upper boundary, 104. Their overlap is 102–104. The FVG’s midpoint is 104; that happens to sit on the overlap’s upper edge, not at its centre.\n\nNow move the FVG to 104–106. The intervals touch at 104 but share no positive-width area. Move it to 105–107 and there is no intersection at all. Proximity and overlap are different. For the bullish mirror, a breaker at 106–110 and FVG at 104–108 overlap at 106–108.\n\nOverlapping drawings are not independent votes from separate markets. They can arise from the same candles. Whether the combination improves a particular strategy requires a defined sample and comparison; the name supplies no verified win rate.",
+        "keyTakeaway": "Overlap = the larger lower boundary through the smaller upper boundary, with positive width."
+      },
+      {
+        "id": "16.6",
+        "title": "Retest, response and failure: three different endings",
+        "content": "After the bearish structural break, price may rally into 100–104 and turn downward. It may instead close above 104, failing a rule that requires the full range to hold on a closing basis. Or it may continue downward without ever returning before the idea expires. Those are three distinct endings, not three ways to describe the same successful setup.\n\nChoose when the observation starts and ends. A touch before the structural break is not a qualified retest of the completed sequence. A retest after an arbitrary expiry should not be counted as an eligible entry just because the reaction later looks attractive.\n\nFor this illustration, a short paper entry at 103, stop at 105 and target at 99 has 2 points of planned risk and 4 of reward: 2R before costs. A high of 105 can trigger the protective stop even if the candle later closes below 104. The trade can lose while the closing-based pattern rule remains intact. Neither rule may be rewritten after the result.",
+        "keyTakeaway": "Qualification time, entry eligibility and protective risk are separate decisions."
+      },
+      {
+        "id": "16.7",
+        "title": "How FVG, IFVG, order blocks and breakers fit together",
+        "content": "Use the four lessons as different lenses. FVG describes a three-candle interval. IFVG studies an opposite-role use after that completed interval is crossed under a stated rule. An order block selects a candle or run associated with a departure. A breaker adds a role reversal within a specified swing sequence; a Unicorn studies its intersection with a qualifying FVG.\n\nThe same price movement can produce more than one of these references. That does not make them synonyms or prove a trade is strong. Ask what each drawing adds: a measurable interval, a timing condition, a swing reference, or a different boundary. If two labels add no new information, avoid counting them twice.\n\nFor practice, pause a chart before the retest, label A–D, save the selected candle and calculate any overlap. Predict nothing. Advance one candle, record what became known, and keep the failed and absent returns. This habit turns a memorable pattern into a study you can explain to another learner.",
+        "keyTakeaway": "Connect the concepts through observable geometry and timing, not a pile of labels."
+      }
+    ],
+    "keyTerms": [
+      {
+        "term": "Breaker reference",
+        "definition": "A saved candle area studied from the opposite side after a qualifying swing sequence and breach."
+      },
+      {
+        "term": "Sweep",
+        "definition": "Trading beyond a preselected high or low; participant motives remain an interpretation."
+      },
+      {
+        "term": "Mitigation-block comparison",
+        "definition": "The failed-swing comparison in this lesson, without the same prior external swing sweep."
+      },
+      {
+        "term": "Unicorn overlap",
+        "definition": "A qualifying breaker and same-direction FVG sharing a positive-width interval."
+      },
+      {
+        "term": "Structural qualification",
+        "definition": "The completed break required by the stated swing-sequence rule."
+      },
+      {
+        "term": "Positive-width intersection",
+        "definition": "An overlap whose upper boundary is strictly greater than its lower boundary."
+      }
+    ],
+    "summary": [
+      "Follow the sweep and subsequent structural break in chronological order.",
+      "Save the chosen candle and boundaries before examining a retest.",
+      "Distinguish an external-swing sweep from a failed-swing comparison.",
+      "Calculate the actual breaker–FVG intersection; touching is not positive-width overlap.",
+      "Keep the failed, expired and ambiguous examples alongside successful reactions."
+    ],
+    "practiceQuestions": []
+  }
+]

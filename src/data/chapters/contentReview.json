@@ -219,70 +219,6 @@
       }
     ]
   },
-  "14": {
-    "sections": {
-      "0": {
-        "content": "An inversion FVG study begins with an already completed FVG and its saved boundaries. Under a selected close-through rule, a breach invalidates its original directional use. A later return from the other side can be studied as a role-change hypothesis.\n\nThe zone is not an emptied order book or unbreakable support/resistance. Specify the exact breach boundary and candle-completion rule. An intrabar excursion and a close beyond the far boundary are different conditions.",
-        "keyTakeaway": "An inversion FVG study begins with an already completed FVG and its saved boundaries."
-      },
-      "1": {
-        "content": "For a bearish example, preserve a bullish FVG, wait for the chosen close below its lower boundary, and observe any later retest from below. Record no retest as no entry under that variant. A return can fail rather than reject.\n\nChoose invalidation separately, such as a specified close beyond the upper boundary; do not silently switch to a midpoint rule after entry. Compare filled, unfilled and failed examples. This chapter supplies no independently verified superior win rate or drawdown.",
-        "keyTakeaway": "For a bearish example, preserve a bullish FVG, wait for the chosen close below its lower boundary, and observe any later retest from below."
-      }
-    },
-    "summary": [
-      "An inversion FVG study begins with an already completed FVG and its saved boundaries.",
-      "For a bearish example, preserve a bullish FVG, wait for the chosen close below its lower boundary, and observe any later retest from below."
-    ],
-    "quote": "An inversion FVG study begins with an already completed FVG and its saved boundaries.",
-    "keyTerms": [
-      {
-        "term": "Inversion FVG",
-        "definition": "A saved completed FVG studied for a possible opposite role after the selected breach criterion is met; a retest can fail."
-      },
-      {
-        "term": "Close-through rule",
-        "definition": "A qualification rule requiring a completed candle close beyond an explicitly named boundary; a wick alone does not satisfy it."
-      }
-    ]
-  },
-  "16": {
-    "sections": {
-      "0": {
-        "content": "A bearish breaker illustration uses a high, low, higher high beyond the first high, and a later break below the intervening low. The selected up-close reference region is then watched on a possible return from below. A bullish illustration reverses the direction.\n\nSave the swing-selection rule, reference candle or run, and breach criterion. The pattern describes prices; trapped institutional positions are an interpretation. No lowest-drawdown or highest-expectancy claim is established by the shape.",
-        "keyTakeaway": "A bearish breaker illustration uses a high, low, higher high beyond the first high, and a later break below the intervening low."
-      },
-      "1": {
-        "content": "In this teaching distinction, a breaker includes a sweep of the selected preceding extreme; a mitigation-block illustration uses a failure to exceed that extreme before the structural break. Terminology and boundary conventions must remain tied to the chosen source.\n\nNeither geometry proves that orders unwind at breakeven. Identify the swing sequence before selecting an entry region, and retain examples that never return or continue through the region.",
-        "keyTakeaway": "In this teaching distinction, a breaker includes a sweep of the selected preceding extreme; a mitigation-block illustration uses a failure to exceed that extreme before the structural break."
-      },
-      "2": {
-        "content": "A Unicorn study combines a selected breaker reference with an overlapping completed FVG. Check the actual price intervals: two labels on nearby rectangles do not establish overlap. Preserve when each condition first became visible.\n\nAn overlap is confluence within a framework, not a requirement for price to rebalance or evidence of a superior win rate. Specify the entry, stop, expiry and costs for your variation. A tightly placed stop can be reached before any later move.",
-        "keyTakeaway": "A Unicorn study combines a selected breaker reference with an overlapping completed FVG."
-      }
-    },
-    "summary": [
-      "A bearish breaker illustration uses a high, low, higher high beyond the first high, and a later break below the intervening low.",
-      "In this teaching distinction, a breaker includes a sweep of the selected preceding extreme; a mitigation-block illustration uses a failure to exceed that extreme before the structural break.",
-      "A Unicorn study combines a selected breaker reference with an overlapping completed FVG."
-    ],
-    "quote": "A bearish breaker illustration uses a high, low, higher high beyond the first high, and a later break below the intervening low.",
-    "keyTerms": [
-      {
-        "term": "Bearish breaker sequence",
-        "definition": "In this illustration: high, intervening low, higher high beyond the first high, then a break below that intervening low."
-      },
-      {
-        "term": "Mitigation-block distinction",
-        "definition": "In the chosen teaching distinction, price fails to exceed the prior extreme before the structural break, rather than sweeping it as in the breaker example."
-      },
-      {
-        "term": "Unicorn confluence",
-        "definition": "An overlap between a selected breaker reference and an independently completed FVG; the overlap alone does not establish a trading advantage."
-      }
-    ],
-    "title": "Breaker Blocks: Swing Sequence, Mitigation & Unicorn"
-  },
   "23": {
     "sections": {
       "0": {
@@ -993,26 +929,6 @@
       }
     },
     "title": "Event Volatility: Calendars, HRLR & Futures vs. CFDs"
-  },
-  "13": {
-    "title": "Fair Value Gaps (FVG) & Consequent Encroachment",
-    "sections": {
-      "0": {
-        "title": "13.1 What is a fair value gap (FVG)?"
-      },
-      "1": {
-        "title": "13.2 How do you draw FVG boundaries and calculate CE?"
-      },
-      "2": {
-        "title": "13.3 What happens after an FVG forms?"
-      },
-      "3": {
-        "title": "13.4 How do you read FVG context without hindsight?"
-      },
-      "4": {
-        "title": "13.5 When is there no qualifying FVG setup?"
-      }
-    }
   },
   "55": {
     "keyTerms": [

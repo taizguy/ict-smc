@@ -172,9 +172,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/": {
-      "fingerprint": "dd3e355cce7d038342184102c2934f0f061dbacfc8edc649077517c05f9da197",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed. Reading Room layout baseline, 2026-10-24; lesson source data and editorial date unchanged."
+      "fingerprint": "130eca0490b8e281311c588d8bbac19442c562d0623abd897dd2b8773ddc472b",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/advanced-2025-2026-institutional-delivery-systems-tape-reading/": {
       "fingerprint": "247aacfde92cf3369f8517275432b51f41cb6a33d17656716996256f67eea9b3",
@@ -212,19 +212,19 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed. Reading Room layout baseline, 2026-10-24; lesson source data and editorial date unchanged."
     },
     "/curriculum/mentorships/2022/": {
-      "fingerprint": "fa4afbc89d3184f637559ae8e6d48a622ed048db06048debda68b20f95097874",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed. Reading Room layout baseline, 2026-10-24; lesson source data and editorial date unchanged. Mentorship navigation moved from query to fragment, 2026-10-24; lesson text and editorial dates unchanged."
+      "fingerprint": "2b1c82feb76c3f38089d2987384ecf9bfe12b2f87912497ce94348806e335719",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/mentorships/2023/": {
-      "fingerprint": "be28d1f6b87b4efcd492e9e76a82581eaeda3fcdc1b41fe51677a003aa91c9b2",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed. Reading Room layout baseline, 2026-10-24; lesson source data and editorial date unchanged. Mentorship navigation moved from query to fragment, 2026-10-24; lesson text and editorial dates unchanged."
+      "fingerprint": "ec827a6b11c362918f872852fcad73a718a18af34ded16210022a9e834871fbc",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/mentorships/2025/": {
-      "fingerprint": "c4078d0b9ac9f9e90956e238d92b779c72c931e974f68c41e7f92adcaae0b33b",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed. Reading Room layout baseline, 2026-10-24; lesson source data and editorial date unchanged. Mentorship navigation moved from query to fragment, 2026-10-24; lesson text and editorial dates unchanged."
+      "fingerprint": "b38575c9cc7f477cb06b4fbb32ec34fa50c759d6f4a511524229ad3df4a0a6ca",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/mentorships/2026/": {
       "fingerprint": "fb63bb30c26f34c58d6ecfc4552b666c75d6d098c0f0d60ef8b27c74c81492fd",
@@ -242,9 +242,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed. Reading Room layout baseline, 2026-10-24; lesson source data and editorial date unchanged. Mentorship navigation moved from query to fragment, 2026-10-24; lesson text and editorial dates unchanged."
     },
     "/curriculum/price-delivery/": {
-      "fingerprint": "aeeabc9516a2a917c2a576dbce3ea547dab15eb7b8694848ff3ea53f34049f39",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "df8b833270d5440632ef0e198aebb5442fa194415064cb9e2cce5130f6ee731c",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/price-structure/": {
       "fingerprint": "124a5b09e5ca67bd82ac397312ffd2b5076683bf95a03d2ca8defdc138ecea52",
@@ -287,9 +287,9 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/learn/breaker-blocks-trading-failed-order-blocks/": {
-      "fingerprint": "e3d216f45da5b05162c1386188b9b7787328cd37520677f8547d8d7900ac73ab",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "4f974334031c96b7091e6312249966065ea105ec1311f3472e2c7d4022aa39a2",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/candle-range-theory-crt-strategy/": {
       "fingerprint": "03f6f718f3a5a132c477b5d790c4e85d424e6965a7f4d93c3ebec521c023d781",
@@ -362,9 +362,9 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/learn/fair-value-gaps-fvg-and-consequent-encroachment/": {
-      "fingerprint": "89251f6e13ff09f15fafadd3f16b2c663db2cfbc713e7c5443bddd010a043ea0",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "301b548fd03c0b8723e2763d344bbeb39e193b0958620ea05fac74e27c91a5b3",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/how-an-exchange-matches-orders/": {
       "fingerprint": "29c062bb855263a6c5f21469b446c5651d7ca5fa5bf817697cd7c44b7bd110b9",
@@ -417,14 +417,14 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/learn/inverse-fair-value-gaps-ifvg-role-reversal-imbalances/": {
-      "fingerprint": "e5c77e7b30844635298c48c2e132f448349d5dc75e19ccf2aeef2c3c79a1baea",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "60fbdc3d09e34940f0af8a7af768a5b0c3b3fa1f20449bf0f2317e031a7e462b",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/liquidity-engineering-and-liquidity-runs/": {
-      "fingerprint": "e965c38b2c035e46d2b65f3fa57fbfeb6555740dd7635198032c669951567d59",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "1d9a946108be72334f9038b299efdc83f89d4282c1d9bfffeef00c50bccaa069",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/liquidity-the-most-misunderstood-word-in-trading/": {
       "fingerprint": "9972e03411f3d23033c09b0fabb98421afcf21e60c08e01dbdd821637b82c637",
@@ -437,9 +437,9 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/learn/market-structure-shift-mss-verified-directional-shift/": {
-      "fingerprint": "d5603bcd4c2b0e5ddc8d05980641ca8d81e8d44108c0d97641e668a2adf95b32",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "bd31234e0465d67f6a18d8d48bbda5ed3783a4a28252b4e153171caee48a0510",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/midday-afternoon-tape-reading-macros-final-hour/": {
       "fingerprint": "a2e060bab38023b6ba330f3840fc38d7728ae5b28fb032f537986aa5661e2c4a",
@@ -457,9 +457,9 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/learn/order-blocks-ob-and-mitigation/": {
-      "fingerprint": "938e2e1403097cf5182b670d4f8a97aa2edf0118e1896d13958b3408595ffaff",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "fc544d856c5dedf419a4ccec9a35a132cc41107eda8e485f5848f10828b88fb8",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/rdrb-balanced-price-range-and-enigma-fvg/": {
       "fingerprint": "cb2ffaf51f7814dd386a042cf15ecb111eb66bcf453a179c1344d1541dff382e",
@@ -1952,9 +1952,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/": {
-      "fingerprint": "b4654a9d297a7905b580dde648d7c5531d35e8daba23f3b00a9d9d961b880fb2",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed. Reading Room layout baseline, 2026-10-24; lesson source data and editorial date unchanged. Reading Room layout baseline, 2026-10-24; lesson source data and editorial date unchanged."
+      "fingerprint": "05ba1ac099f8c845cefdad390d972b6e4b1756689eae1d49c88c68bcd2ccdebc",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/advanced-2025-2026-institutional-delivery-systems-tape-reading/": {
       "fingerprint": "4a13f88555d801cbabc4e8eaaa2ea7aa9dc4203443c8813d469d2a88b56dec17",
@@ -1992,19 +1992,19 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed. Reading Room layout baseline, 2026-10-24; lesson source data and editorial date unchanged."
     },
     "/ur/curriculum/mentorships/2022/": {
-      "fingerprint": "63f0bebfff5995f4c967f58dc8650c2f0cb5e55f9c3e07ba0a60faf7a5190cd7",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed. Reading Room layout baseline, 2026-10-24; lesson source data and editorial date unchanged. Reading Room layout baseline, 2026-10-24; lesson source data and editorial date unchanged. Mentorship navigation moved from query to fragment, 2026-10-24; lesson text and editorial dates unchanged."
+      "fingerprint": "36592d9afcac76878079865b9ba574f929e7ba97a11d02349592b72e9c5b0040",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/mentorships/2023/": {
-      "fingerprint": "9e6ad4cbc2d72fd096dbfd70a1e6829531b02e8471afc385439131c9255b5de3",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed. Reading Room layout baseline, 2026-10-24; lesson source data and editorial date unchanged. Reading Room layout baseline, 2026-10-24; lesson source data and editorial date unchanged. Mentorship navigation moved from query to fragment, 2026-10-24; lesson text and editorial dates unchanged."
+      "fingerprint": "5571cdb51a98de93e70a7dd932842d3c91547cfe9a0e237105a63286c88b0994",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/mentorships/2025/": {
-      "fingerprint": "e02e27705b6d7c7408f4e7bed4c4c0f828bee90e1d91d3074bb8bad759fe8f71",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed. Reading Room layout baseline, 2026-10-24; lesson source data and editorial date unchanged. Reading Room layout baseline, 2026-10-24; lesson source data and editorial date unchanged. Mentorship navigation moved from query to fragment, 2026-10-24; lesson text and editorial dates unchanged."
+      "fingerprint": "706a65439e73502e8e98c79bb7c321170b2e67b6701694629cbf349f29cec03a",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/mentorships/2026/": {
       "fingerprint": "70397b44add259ea9247b1b0d509f9b597e541cee7689df3c2c3787e5997205b",
@@ -2022,9 +2022,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed. Reading Room layout baseline, 2026-10-24; lesson source data and editorial date unchanged. Mentorship navigation moved from query to fragment, 2026-10-24; lesson text and editorial dates unchanged."
     },
     "/ur/curriculum/price-delivery/": {
-      "fingerprint": "543bf90144395a42ba9bcfdb2995405be1f6e2871400a20174dc4137b206ca38",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "1f6636b8f19164a991ac0dfa9c92fe0ffc117c50ecaa418b51dfaaba688a23ad",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/price-structure/": {
       "fingerprint": "8a4cfabc1c204b3931ab4a2c1280f5b5b033233af1a866449a1a7bba411068c2",
@@ -2067,9 +2067,9 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/learn/breaker-blocks-trading-failed-order-blocks/": {
-      "fingerprint": "31d99dc981a4ce1dca3f4613838d026a8ea4a9961dd47ed318946d5566881398",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "aeb0b41b374dc4f4dc5fe2a9521d0fb9832300d13fd3e5e7b528c4955222ad67",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/candle-range-theory-crt-strategy/": {
       "fingerprint": "3d01ba8fc9953c1f88eb0711ed62b2669eb7f9a54083812c5dbd2354255a3444",
@@ -2142,9 +2142,9 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/learn/fair-value-gaps-fvg-and-consequent-encroachment/": {
-      "fingerprint": "45085674a738d1069c236ea48206d43350395b162a549e1944cbadbf5e57ad68",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "bda3bd0056502e05ccecb3e8f7d59d0ede52e0a3f57e970cd5254f7199748432",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/how-an-exchange-matches-orders/": {
       "fingerprint": "72088f97694ca6d19398d38ac143304b296523f18c6013ab4488b86442e32b53",
@@ -2197,14 +2197,14 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/learn/inverse-fair-value-gaps-ifvg-role-reversal-imbalances/": {
-      "fingerprint": "0eb35d42b802134557f6f20129670aad95c7e4a7f80ab81c4615db119fa5b507",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "ead7c70206c3786365866ca2d951cdf60df721ac13a56ce165d1f6f4334b47ca",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/liquidity-engineering-and-liquidity-runs/": {
-      "fingerprint": "552d00f66df948e4e307c2f0dedb1385c39b53921d608e6b7bd45f2110da7243",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "ff41d47b3bff068ab5360694e3c9106746496466709af8fad8972d541b979109",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/liquidity-the-most-misunderstood-word-in-trading/": {
       "fingerprint": "085c02ae676f9d7fe8589ae230afd0c5a767c0b93c991c8ca77fc94774159ff7",
@@ -2217,9 +2217,9 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/learn/market-structure-shift-mss-verified-directional-shift/": {
-      "fingerprint": "53437e9ef5d6c3601721361ad047e3d31f68620cf867678f829ce6da5ed622e5",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "32c207dd2d52cfd34cf7159ba093b03cb2ea20c6795b38467bb968f8f40cd3e9",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/midday-afternoon-tape-reading-macros-final-hour/": {
       "fingerprint": "473e005ebb60155d05b39cf2513763e26b11dd42b81ce7d21d7bc122fd44c397",
@@ -2237,9 +2237,9 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/learn/order-blocks-ob-and-mitigation/": {
-      "fingerprint": "d7d06445119d15f2b1a6d9c0860fdc504313934e495c86cd444bbe4e7b69d2a4",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "70ef95c78d81cef4293c34063c0f6857af0bf98c8cd0bd88468edffa836a6e04",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/rdrb-balanced-price-range-and-enigma-fvg/": {
       "fingerprint": "a08d89d11d5bdd87d05eb71de0650eca0721cb0b1048cf5fed05b6eda01db545",
@@ -2727,8 +2727,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/masood/lectures/masood-syn-13/": {
-      "fingerprint": "9eb71527c68c3973de6f923ffdc1c973b12b239a3dd48a6c9796528e2cdfc6cb",
-      "lastmod": "2026-10-24",
+      "fingerprint": "f8922c7375f7fe7114c1666a7a151d0e16798598dca8bbe67a48106ceae2211e",
+      "lastmod": "2026-10-25",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/masood/lectures/masood-syn-14/": {
@@ -2962,8 +2962,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/resources/ict-smc-cheat-sheet/": {
-      "fingerprint": "9fa4328ac188fb8b62d5d4f564d6fb92707e7454f66b5695708644f47f79c402",
-      "lastmod": "2026-10-24",
+      "fingerprint": "e33ff230064ceb99c3489f0f228ac12d44503bcf33fe1e1484451a2f1dc8c27f",
+      "lastmod": "2026-10-25",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/terms/": {
@@ -3012,39 +3012,39 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/tools/chartlab/": {
-      "fingerprint": "d37cc6b16034bc1157451644796d2e7723701b35a8eb1adc367fc297629cd0cc",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "57f229723dcf5bd8fed1e1be2bca74662c5aba4601c812a9d66f623b92f9bfb6",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/chartlab/btc-2022-bullish-model/": {
-      "fingerprint": "a438f2706369bc016d4c21161a940648d3f75901e42e4f598b64042a129afcdb",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "4e0f64951731a45682d3957e9da61985e58019ee74530b55713dd5c962cd1b80",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/chartlab/eur-mmbm-propulsion-model/": {
-      "fingerprint": "db7e5e13795069698f06c6c8455c08202664b729720dcebf5f6f9bc1f0ba79de",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "7dcd80535940da3e1f6c13a53d141aabc719df2ca84b207692b8d9243317ce86",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/chartlab/eurusd-failed-ob-breaker/": {
-      "fingerprint": "fece8b8d07e005956c2a969b056e70062bfae8373f0e5388fb0c7ea4bdd659b3",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "eb904fa036f3012ee83e2a75da87c24bfef5db226273da70e1f6a91a912521ed",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/chartlab/nq-ath-alchemy-ndog-macro/": {
-      "fingerprint": "6329b97d1ddda501267c80d9f06c9af15272be8aa18c58e5c59d4f33eff5310a",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "f9b408108301c539793534e161ce43a9ecb13de62f176b6e396a907f3034d9af",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/chartlab/nq-silver-bullet-short/": {
-      "fingerprint": "75301f5be96e49d101e3e8b0a35a2f033416f3d9dd7974a29466ba4bbae83c0a",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "a7222bdb59dea8f584ce2dce17967a15abe8bdfb910d2c1e66e4b0dcc3f748fc",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/chartlab/xauusd-gold-legacy-model/": {
-      "fingerprint": "6dd3451306a5b7f44efa252f539e8c83ada48b88aeeac03735dd81bfbb6a1a95",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "1829354f188d4a218d1c3a87d420c01a76ade35923668bbdc11430f8596079f0",
+      "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/compare/": {
       "fingerprint": "66acdfab206cf97fbfb7c964beb5bd1ec9be12072bbbefc36a117a4f31933943",

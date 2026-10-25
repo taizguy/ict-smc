@@ -1,0 +1,298 @@
+{
+  "13": [
+    {
+      "question": "Which interval is the bullish FVG?",
+      "context": "Candle 1: O98 H100 L97 C99. Candle 2: O99 H105 L98 C104. Candle 3: O104 H107 L102 C106.",
+      "options": [
+        "100–102",
+        "99–104",
+        "98–105",
+        "102–107"
+      ],
+      "correctIndex": 0,
+      "explanation": "H1 is 100 and L3 is 102. The middle body is not the interval."
+    },
+    {
+      "question": "What is CE, and how deep is this return?",
+      "context": "Saved bullish FVG 100–102; a later candle reaches 101 but not 100.",
+      "options": [
+        "CE is 101; a midpoint test, not a full traversal",
+        "CE is 102; the whole gap is filled",
+        "CE is 100; there is no return",
+        "CE changes to the return candle’s close"
+      ],
+      "correctIndex": 0,
+      "explanation": "(100 + 102) ÷ 2 = 101. Reaching the midpoint differs from reaching the far edge at 100."
+    },
+    {
+      "question": "Does the completed chart contain a bullish FVG?",
+      "context": "Candle 1 high = 100; candle 3 low = 99.5. Candle 2 has a very large bullish body.",
+      "options": [
+        "No; the outer ranges overlap",
+        "Yes; the middle body is large",
+        "Yes; every bullish departure is an FVG",
+        "Only if the next candle rises"
+      ],
+      "correctIndex": 0,
+      "explanation": "The strict H1 < L3 test fails. Candle size and later outcomes cannot change that geometry."
+    },
+    {
+      "question": "What should the paper record say?",
+      "context": "A limit entry is 101. Every later low stays at or above 101.5 until expiry; price then rises.",
+      "options": [
+        "Unfilled idea under the stated rules",
+        "Winning trade because direction was right",
+        "Entry at 101.5 without changing the plan",
+        "A guaranteed later fill"
+      ],
+      "correctIndex": 0,
+      "explanation": "The market did not reach 101. A correct directional idea is not an executed trade."
+    },
+    {
+      "question": "Is this gap objectively in discount?",
+      "context": "FVG 100–102. One selected range is 90–110; another is 96–116.",
+      "options": [
+        "Its label depends on the stated range anchors",
+        "Yes, because bullish gaps are always in discount",
+        "No, because 102 is always expensive",
+        "The gap width determines discount"
+      ],
+      "correctIndex": 0,
+      "explanation": "The midpoints are 100 and 106. The same prices occupy different halves of the two chosen ranges."
+    },
+    {
+      "question": "Can this OHLC candle prove which order executed first?",
+      "context": "After entry at 101, a later candle has H108 and L97. Stop 98; target 107. No finer data is available.",
+      "options": [
+        "No; record an ambiguous sequence or use a stated conservative rule",
+        "Yes; always award the target",
+        "Yes; the closing price reveals the entire path",
+        "Yes; ignore the low after entry"
+      ],
+      "correctIndex": 0,
+      "explanation": "Both prices lie inside the bar. OHLC does not reveal their order; fills also require explicit assumptions."
+    }
+  ],
+  "14": [
+    {
+      "question": "Has the bearish closing condition been met?",
+      "context": "Original bullish FVG 100–104. Next candle: O103 H105 L99 C102.",
+      "options": [
+        "No; the low crossed 100 but the close did not",
+        "Yes; any wick qualifies a closing rule",
+        "Yes; the close must be below 104 only",
+        "The box should be redrawn to 99–102"
+      ],
+      "correctIndex": 0,
+      "explanation": "A close-through rule requires C < 100. The wick alone does not satisfy it."
+    },
+    {
+      "question": "Which direction is this possible inversion?",
+      "context": "Original bearish FVG 106–110; a completed candle closes at 111. Price later declines to 108.",
+      "options": [
+        "Bullish inversion, approached from above",
+        "Bearish inversion, approached from below",
+        "A newly drawn gap at 108–111",
+        "A guaranteed long entry"
+      ],
+      "correctIndex": 0,
+      "explanation": "The close exceeds the original upper edge. The later return comes from above into the saved zone."
+    },
+    {
+      "question": "Which statement keeps the two rules distinct?",
+      "context": "Bullish FVG 100–104. Test candle O102 C99.",
+      "options": [
+        "It closes below 100, but its entire body is not below 100",
+        "Its entire body is below 100",
+        "It fails the close-below test",
+        "The original boundaries change to 99–102"
+      ],
+      "correctIndex": 0,
+      "explanation": "The body spans 99–102. A whole-body-below condition is stricter than a close-below condition."
+    },
+    {
+      "question": "When did the qualified retest occur?",
+      "context": "A bullish FVG is touched before any close below it. Later it closes through the lower edge but never returns.",
+      "options": [
+        "There was no post-qualification retest",
+        "The earlier touch becomes a retest retroactively",
+        "The breach candle is always a profitable retest",
+        "Any touch on the chart qualifies"
+      ],
+      "correctIndex": 0,
+      "explanation": "Qualification must precede the retest used by the model. Future events cannot change the earlier information set."
+    },
+    {
+      "question": "What happened to the trade and the closing rule?",
+      "context": "Short 101; stop 105. Original zone 100–104. Later candle H105 C103. Failure rule: close above 104.",
+      "options": [
+        "Stop reached; closing-based pattern failure not met",
+        "Both the stop and closing failure were avoided",
+        "The stop can be ignored because the close is 103",
+        "The zone must be moved upward"
+      ],
+      "correctIndex": 0,
+      "explanation": "Intrabar protection and closing-based chart classification are separate. Costs and fill assumptions still apply."
+    },
+    {
+      "question": "Does an IFVG label establish positive expectancy?",
+      "context": "A set of screenshots shows only successful opposite-side reactions.",
+      "options": [
+        "No; define rules and include failures, no returns and costs",
+        "Yes; the screenshots prove it",
+        "Yes; inversion is always stronger than the original gap",
+        "Only candle colour matters"
+      ],
+      "correctIndex": 0,
+      "explanation": "Selected winners cannot estimate performance. The formation is descriptive; a strategy needs a complete sample."
+    }
+  ],
+  "15": [
+    {
+      "question": "Which reference is the run’s first opening?",
+      "context": "A: O106 C104. B: O104 C102. C: O102 C101. The rule selects all three candles.",
+      "options": [
+        "106",
+        "102",
+        "101",
+        "The next departure close"
+      ],
+      "correctIndex": 0,
+      "explanation": "A begins the selected run. Using C opening at 102 would change the selection."
+    },
+    {
+      "question": "Which midpoint pair is correct?",
+      "context": "Full range 99–107; body range 101–106.",
+      "options": [
+        "Full 103; body 103.5",
+        "Full 103.5; body 103",
+        "Both 106",
+        "Both 101"
+      ],
+      "correctIndex": 0,
+      "explanation": "Each midpoint is the mean of its own boundaries. “Mean threshold” without a stated range is ambiguous."
+    },
+    {
+      "question": "Which observation can ordinary OHLC support?",
+      "context": "Price returns to a saved order-block opening and closes above it.",
+      "options": [
+        "The reference was revisited and the candle closed above it",
+        "A named bank bought there",
+        "All original orders are now filled",
+        "The next return must fail"
+      ],
+      "correctIndex": 0,
+      "explanation": "The candle reports prices, not participant identities or remaining inventory."
+    },
+    {
+      "question": "Did this return reach mean threshold?",
+      "context": "Full range 99–107, midpoint 103. Price returns from above to 106 and rises.",
+      "options": [
+        "No; it reached the opening reference, not 103",
+        "Yes; any touch is a midpoint test",
+        "Yes; the midpoint moves to 106",
+        "No; the block never existed"
+      ],
+      "correctIndex": 0,
+      "explanation": "Return depth matters. The saved midpoint remains 103 when price turns at 106."
+    },
+    {
+      "question": "What is the actual overlap?",
+      "context": "Order block 99–107; completed FVG 105–108.",
+      "options": [
+        "105–107",
+        "99–108",
+        "107–108",
+        "There is no overlap"
+      ],
+      "correctIndex": 0,
+      "explanation": "The larger lower boundary is 105 and the smaller upper boundary is 107."
+    },
+    {
+      "question": "What is the planned reward-to-risk before costs?",
+      "context": "Paper long 106; stop 98.5; target 121.",
+      "options": [
+        "2R; risk 7.5 and reward 15",
+        "3R; risk 5 and reward 15",
+        "Guaranteed profit of 15",
+        "7.5R"
+      ],
+      "correctIndex": 0,
+      "explanation": "106 − 98.5 = 7.5; 121 − 106 = 15. A planned ratio is not a realized return or expectancy."
+    }
+  ],
+  "16": [
+    {
+      "question": "When is the illustrated bearish sequence complete?",
+      "context": "A high110 → B low100 → C high112 → D close98.",
+      "options": [
+        "At D, after the sweep and close below B",
+        "At C solely because it exceeds A",
+        "At A before any later swings",
+        "Only after a profitable trade"
+      ],
+      "correctIndex": 0,
+      "explanation": "C supplies the sweep; D supplies the later structural break required by this example."
+    },
+    {
+      "question": "What changed in the failed-swing comparison?",
+      "context": "A high110; B low100; C high108; then D close98.",
+      "options": [
+        "C did not exceed A before the break below B",
+        "There was a sweep above 110",
+        "B was never broken",
+        "The same external-high sweep occurred"
+      ],
+      "correctIndex": 0,
+      "explanation": "108 is below 110. This is the mitigation-block comparison used in the lesson, not the same swept-high path."
+    },
+    {
+      "question": "Which band belongs to both references?",
+      "context": "Bearish breaker 100–104; bearish FVG 102–106.",
+      "options": [
+        "102–104",
+        "100–106",
+        "104–106",
+        "100–102"
+      ],
+      "correctIndex": 0,
+      "explanation": "Use max(lower edges) and min(upper edges). The positive-width intersection is 102–104."
+    },
+    {
+      "question": "Does this pair have positive-width overlap?",
+      "context": "Breaker 100–104; FVG 104–106.",
+      "options": [
+        "No; they only touch at 104",
+        "Yes; 104–106 is shared",
+        "Yes; 100–106 is shared",
+        "Only if the next candle falls"
+      ],
+      "correctIndex": 0,
+      "explanation": "The intersection has zero width. Later direction cannot change the earlier interval geometry."
+    },
+    {
+      "question": "Which approach matches the bullish mirror?",
+      "context": "A low100 → B high110 → C low98 → D close112. Saved reference 106–110.",
+      "options": [
+        "A later decline from above into 106–110",
+        "A rally from below after a bearish break",
+        "A touch before D counted retrospectively",
+        "Any candle regardless of time"
+      ],
+      "correctIndex": 0,
+      "explanation": "The upward break qualifies the example before the later return from above."
+    },
+    {
+      "question": "Which is the defensible study conclusion?",
+      "context": "Two overlapping labels arise from the same move; the sample contains only attractive retests.",
+      "options": [
+        "The drawings may be related; performance still needs a complete rule-based sample",
+        "Two labels prove twice the probability",
+        "The Unicorn name guarantees a high win rate",
+        "Failures can be removed because they are invalid afterward"
+      ],
+      "correctIndex": 0,
+      "explanation": "Overlapping references need not be independent evidence. Include failed, expired and ambiguous cases."
+    }
+  ]
+}

@@ -172,3 +172,16 @@ export const studyTopics: Record<string, string> = {
   "/masood/lectures/masood-syn-43/": "Study Doubts, Evidence & Trading Intuition",
   "/masood/lectures/masood-syn-44/": "US100 Execution Blueprint: Final Review"
 };
+
+studyTopics["/learn/0930-am-opening-range-theory/"] = "ICT Opening Ranges: Time, Boundaries and Context";
+studyTopics["/learn/ict-midnight-opening-range-rth-gaps-nwog/"] = "ICT Midnight Range, RTH Gaps and NWOG";
+studyTopics["/learn/the-1st-presented-fvg-the-0931-rule/"] = "First Presented FVG: Timing and Qualification";
+studyTopics["/learn/ict-pd-array-selection-price-delivery-continuum/"] = "ICT PD Arrays: Range Selection and Price Delivery";
+studyTopics["/learn/smt-divergence-mechanics/"] = "SMT Divergence: Compare Markets Without Guesswork";
+studyTopics["/learn/ict-liquidity-turtle-soup-rejection-blocks/"] = "ICT Liquidity: Turtle Soup and Rejection Blocks";
+studyTopics["/learn/the-ict-venom-model-five-stage-delivery/"] = "ICT Venom Model: Range, Sweep and Two Fangs";
+studyTopics["/learn/ict-lunch-afternoon-session-models/"] = "ICT Lunch and Afternoon Session Models";
+studyTopics["/learn/ict-news-volatility-no-trade-framework/"] = "ICT News Days: Volatility and No-Trade Decisions";
+studyTopics["/learn/the-12-weekly-profiles/"] = "ICT Weekly Profiles: Context Without Prediction";
+studyTopics["/learn/ict-weekly-options-payoffs-and-risk/"] = "ICT Weekly Options: Payoffs and Risk Boundaries";
+studyTopics["/learn/ict-replay-journaling-one-model-study/"] = "ICT Replay and Journaling: Study One Model Honestly";

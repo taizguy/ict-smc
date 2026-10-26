@@ -107,15 +107,7 @@ export const mentorshipTracks: MentorshipTrack[] = [
     "difference": "The supplied lecture titles include the first presented FVG, disqualification examples, algorithmic timing and journaling, Forex reviews and Venom examples. Study the rejection conditions alongside attractive entries.",
     "prerequisite": "Be comfortable distinguishing pattern geometry, context, entry conditions and execution assumptions.",
     "caution": "Being first does not establish an FVG’s superiority. Use the exact lecture when attributing a timing or disqualification rule.",
-    "chapterIds": [
-      24,
-      25,
-      53,
-      26,
-      27,
-      13,
-      22
-    ],
+    "chapterIds": [24, 58, 25, 59, 26, 60, 53, 61, 62, 27, 63, 64],
     "inventoryKey": "2025",
     "color": "amber"
   },

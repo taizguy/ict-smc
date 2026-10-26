@@ -1,0 +1,386 @@
+{
+  "24": [
+    {
+      "question": "At 09:40 the range is 98–103; a 106 high arrives at 09:52. What can your 09:40 note show?",
+      "options": [
+        "98–103, marked as developing",
+        "98–106, already final",
+        "A guaranteed reversal at 106"
+      ],
+      "correctIndex": 0,
+      "explanation": "Suppose the 09:30 opening price is 100. By 09:40, observed prices span 98–103. At 09:52 a new high reaches 106. The completed range at 10:00 is therefore 98–106, with midpoint 102. An excursion to 107 is above that completed range. A return below 106 is a different observation from sustained trading above it. Neither outcome, by itself, identifies a profitable entry. The first presented FVG adds a selection question; liquidity context adds a possible objective."
+    },
+    {
+      "question": "Is an opening range the opening price?",
+      "options": [
+        "No. The opening price is one observation; the range is the high–low interval over a declared window.",
+        "Yes; both are just the first traded price.",
+        "The range is always the first candle body."
+      ],
+      "correctIndex": 0,
+      "explanation": "No. The opening price is one observation; the range is the high–low interval over a declared window."
+    },
+    {
+      "question": "Does a range break guarantee continuation?",
+      "options": [
+        "No. Compare acceptance outside, rejection back inside and unresolved outcomes.",
+        "Yes; the first close outside must continue.",
+        "Only upward breaks guarantee continuation."
+      ],
+      "correctIndex": 0,
+      "explanation": "No. Compare acceptance outside, rejection back inside and unresolved outcomes."
+    }
+  ],
+  "58": [
+    {
+      "question": "Prior RTH close is 100, next open 108, first range 106–112. What is the gap midpoint?",
+      "options": [
+        "104",
+        "109",
+        "106"
+      ],
+      "correctIndex": 0,
+      "explanation": "NWOG compares the last quoted price before the weekend closure with the first quoted price after reopening, using one instrument and feed. FX broker quotes and futures exchange sessions differ; do not apply one Sunday opening time to every product. A Friday close of 108 and Sunday open of 104 create a 104–108 reference with midpoint 106. Weekday overnight gaps, an RTH gap and a three-candle fair value gap answer different questions. Keep their names and anchors visible on your chart."
+    },
+    {
+      "question": "Is an RTH gap the first half-hour range?",
+      "options": [
+        "No. It compares the prior selected regular-session close with the next regular-session open.",
+        "Yes; use the first window’s high and low.",
+        "It is the same as a three-candle FVG."
+      ],
+      "correctIndex": 0,
+      "explanation": "No. It compares the prior selected regular-session close with the next regular-session open."
+    },
+    {
+      "question": "Is a chart close the official settlement?",
+      "options": [
+        "Not necessarily. A last bar, a session close and an exchange settlement can differ.",
+        "Yes; the last displayed bar is always settlement.",
+        "Settlement is always the midnight opening price."
+      ],
+      "correctIndex": 0,
+      "explanation": "Not necessarily. A last bar, a session close and an exchange settlement can differ."
+    }
+  ],
+  "25": [
+    {
+      "question": "CE is 105. After recognition, the lowest return is 105.5. How is the midpoint order classified?",
+      "options": [
+        "Unfilled",
+        "Filled because the edge was touched",
+        "A completed winner"
+      ],
+      "correctIndex": 0,
+      "explanation": "Assume the preceding balanced area is 99–104. Candidate A has outer-candle boundaries 101–102: a genuine bullish FVG, but entirely inside that area. Candidate B later has boundaries 104–106 following an upward departure; it is a different contextual candidate. Its consequent encroachment is 105. A subsequent low of 105.5 enters B without reaching a 105 midpoint order. A low of 104.5 passes the midpoint, but actual execution still depends on order type and available liquidity. Neither case earns a fictional fill."
+    },
+    {
+      "question": "Can a real FVG be rejected by the first-presented model?",
+      "options": [
+        "Yes. A gap can satisfy outer-wick geometry yet remain inside the preceding balanced area.",
+        "No; every valid FVG is automatically eligible.",
+        "Rejecting it means its historical geometry disappears."
+      ],
+      "correctIndex": 0,
+      "explanation": "Yes. A gap can satisfy outer-wick geometry yet remain inside the preceding balanced area."
+    },
+    {
+      "question": "Does touching the near edge fill a CE order?",
+      "options": [
+        "No. A 104–106 gap has CE 105; a low of 105.5 has not reached that midpoint.",
+        "Yes; entry anywhere inside is a midpoint fill.",
+        "Only a full traversal can ever fill CE."
+      ],
+      "correctIndex": 0,
+      "explanation": "No. A 104–106 gap has CE 105; a low of 105.5 has not reached that midpoint."
+    }
+  ],
+  "59": [
+    {
+      "question": "A completed range is 100–140. Where is 132?",
+      "options": [
+        "Upper quarter of this range",
+        "Discount in every possible range",
+        "Proof of fundamental overvaluation"
+      ],
+      "correctIndex": 0,
+      "explanation": "A classic FVG compares outer wicks. A suspension reference instead examines body-price imbalances around a central candle; overlapping wicks do not automatically remove that body-based configuration. For example, a previous close of 100, central open/close of 102/106 and next open of 108 leave separate body gaps at 100–102 and 106–108. That is not proof of a classic 100–108 FVG. An inverse FVG changes directional use after a stated failure; a reclaimed reference returns to an earlier role after another change. These labels describe different histories."
+    },
+    {
+      "question": "Are twenty trading days twenty calendar days?",
+      "options": [
+        "No. Count completed trading sessions; weekends and market closures are not additional trading days.",
+        "Yes; weekends count exactly like trading sessions.",
+        "Use twenty future sessions to complete the range."
+      ],
+      "correctIndex": 0,
+      "explanation": "No. Count completed trading sessions; weekends and market closures are not additional trading days."
+    },
+    {
+      "question": "Can I switch lookbacks whenever a setup fails?",
+      "options": [
+        "Not in a consistent test. Declare extensions and their conditions before seeing the outcome.",
+        "Yes; any new lookback preserves the original test.",
+        "Use whichever range makes the last trade work."
+      ],
+      "correctIndex": 0,
+      "explanation": "Not in a consistent test. Declare extensions and their conditions before seeing the outcome."
+    }
+  ],
+  "26": [
+    {
+      "question": "NQ exceeds 100 while ES remains below 200, then ES reaches 201 in the same window. What changes?",
+      "options": [
+        "The high-based divergence is removed",
+        "The divergence becomes permanent",
+        "A short entry is guaranteed"
+      ],
+      "correctIndex": 0,
+      "explanation": "At the first reference, NQ high is 100 and ES high is 200. At the next completed observation, NQ reaches 102 while ES reaches 199. There is a high-based non-confirmation relative to those anchors, despite the different price scales. If ES later trades 201 inside your still-open observation window, both earlier highs have now been exceeded. The earlier snapshot remains real, but the continuing divergence claim no longer holds. Save the time of recognition, the end of the comparison window and the later change."
+    },
+    {
+      "question": "Should SMT compare a high with a closing price?",
+      "options": [
+        "Not for a high-based test. Compare corresponding highs; define a close-based test separately.",
+        "Yes; highs and closes are interchangeable.",
+        "Use whichever field creates the clearest divergence."
+      ],
+      "correctIndex": 0,
+      "explanation": "Not for a high-based test. Compare corresponding highs; define a close-based test separately."
+    },
+    {
+      "question": "Is DXY always the inverse of EUR/USD?",
+      "options": [
+        "No. An inverse relationship is conditional, and the comparison convention must be stated.",
+        "Yes; the relationship is fixed on every timeframe.",
+        "They must always move in the same direction."
+      ],
+      "correctIndex": 0,
+      "explanation": "No. An inverse relationship is conditional, and the comparison convention must be stated."
+    }
+  ],
+  "60": [
+    {
+      "question": "An old high is 110. Price trades 112 and holds above 110. What is supported?",
+      "options": [
+        "Acceptance, not a confirmed rejection sequence",
+        "An automatic Turtle Soup short",
+        "Proof that no orders traded above 110"
+      ],
+      "correctIndex": 0,
+      "explanation": "A rejection block studies the opening/closing body reference associated with a rejection wick. Its body boundary and the full wick are different measurements. In a bearish teaching example, the excursion prints a body at 110–111 with high 112, then price departs to 107 and leaves a selected imbalance. A later return to the declared body reference is a deferred candidate; selling blindly at 110 before the rejection exists is another strategy. Entry, protective stop and objective still need separate rules, including what happens if no return occurs."
+    },
+    {
+      "question": "Is every old-high break a liquidity sweep reversal?",
+      "options": [
+        "No. Price can continue and accept above it; study the response rather than the break alone.",
+        "Yes; every break of an old high is a short.",
+        "Only the size of the wick matters."
+      ],
+      "correctIndex": 0,
+      "explanation": "No. Price can continue and accept above it; study the response rather than the break alone."
+    },
+    {
+      "question": "What if the deferred return never arrives?",
+      "options": [
+        "Record an unfilled idea. Do not move the entry retrospectively to claim participation.",
+        "Move the deferred entry to the final close.",
+        "Count the correct direction as a filled winner."
+      ],
+      "correctIndex": 0,
+      "explanation": "Record an unfilled idea. Do not move the entry retrospectively to claim participation."
+    }
+  ],
+  "53": [
+    {
+      "question": "The bearish reference is known, but price moves to the objective without retesting the deferred entry. What is recorded?",
+      "options": [
+        "An unfilled deferred idea",
+        "A filled winning order",
+        "An entry moved after the outcome"
+      ],
+      "correctIndex": 0,
+      "explanation": "Use an invented 100–110 reference range. A candle reaches 113 and closes 112; a later opposing move trades back below 110 and leaves a declared reference. An aggressive response-based idea and a deferred return to a selected Venom candle opening price have different recognition times and risk distances. Do not award the deferred entry at 111 unless a later price actually returns there after the reference is known. A move straight to 104 can support the directional reading while leaving the deferred order unfilled."
+    },
+    {
+      "question": "Is Venom simply a ninety-minute cycle?",
+      "options": [
+        "No. This variant uses a particular 08:00–09:30 pre-open range and a defined subsequent response.",
+        "Yes; every ninety-minute interval qualifies.",
+        "It is only a midpoint calculation, without timing."
+      ],
+      "correctIndex": 0,
+      "explanation": "No. This variant uses a particular 08:00–09:30 pre-open range and a defined subsequent response."
+    },
+    {
+      "question": "Is a deferred entry guaranteed?",
+      "options": [
+        "No. Price can move toward the objective without returning to the chosen entry boundary.",
+        "Yes; a later objective proves the earlier fill.",
+        "It fills when the reference is first identified."
+      ],
+      "correctIndex": 0,
+      "explanation": "No. Price can move toward the objective without returning to the chosen entry boundary."
+    }
+  ],
+  "61": [
+    {
+      "question": "After a morning decline, price makes a fresh low through 100. Is the described failed-low lunch variant complete?",
+      "options": [
+        "No; the required failed-low condition is absent",
+        "Yes, because lunchtime forces a reversal",
+        "Yes, every afternoon targets 104"
+      ],
+      "correctIndex": 0,
+      "explanation": "Treat 13:30–14:00 as a new observation window in this framework. Carry forward the morning’s completed references, then assess the afternoon location and objective. A morning bearish array can be reconsidered in an opposing afternoon scenario only after the relevant change is observed. It does not automatically flip roles at 13:30. The first presented afternoon FVG is a selection study with its own window; it is not permission to trade every imbalance left anywhere during the morning."
+    },
+    {
+      "question": "Which post-10:00 swing matters after a morning decline?",
+      "options": [
+        "The first confirmed prominent swing high after 10:00 is a reference in the studied retracement variant.",
+        "The highest swing formed before 10:00.",
+        "The prettiest swing selected after seeing lunch."
+      ],
+      "correctIndex": 0,
+      "explanation": "The first confirmed prominent swing high after 10:00 is a reference in the studied retracement variant."
+    },
+    {
+      "question": "What is the afternoon opening study window?",
+      "options": [
+        "The convention used here is 13:30–14:00 New York local time.",
+        "09:30–10:00 New York local time.",
+        "13:30–14:00 fixed UTC throughout the year."
+      ],
+      "correctIndex": 0,
+      "explanation": "The convention used here is 13:30–14:00 New York local time."
+    }
+  ],
+  "62": [
+    {
+      "question": "After a 100 entry, one candle has high 105 and low 97; stop 98, target 104. What do OHLC alone prove?",
+      "options": [
+        "Both levels were in range, but their order is unresolved",
+        "The target necessarily came first",
+        "The stop necessarily filled exactly at 98"
+      ],
+      "correctIndex": 0,
+      "explanation": "A hypothetical long entry is 100, stop 98 and target 104. One later candle has high 105 and low 97. Those four OHLC values do not establish whether the target or stop traded first after entry. Mark the case ambiguous unless finer data resolves the sequence. A stop-market order can fill below 98 during a fast move; a stop-limit can remain unfilled. A backtest that assumes the target first and the stop exactly at 98 has added favourable facts the candle did not provide."
+    },
+    {
+      "question": "Does an FOMC statement settle the whole afternoon?",
+      "options": [
+        "No. A later press conference is a separate event and can extend or reverse the first move.",
+        "Yes; later remarks cannot affect the initial move.",
+        "The press conference must always reverse it."
+      ],
+      "correctIndex": 0,
+      "explanation": "No. A later press conference is a separate event and can extend or reverse the first move."
+    },
+    {
+      "question": "Is there a universally safe post-news waiting time?",
+      "options": [
+        "No. Define the study rule and execution conditions for the instrument and event.",
+        "Exactly one candle is safe for every event.",
+        "A larger FVG removes the need to wait."
+      ],
+      "correctIndex": 0,
+      "explanation": "No. Define the study rule and execution conditions for the instrument and event."
+    }
+  ],
+  "27": [
+    {
+      "question": "It is Friday and the market is making new highs. Must the weekly expansion retrace?",
+      "options": [
+        "No; continuation remains possible",
+        "Yes, the weekday guarantees it",
+        "Yes, all-time highs are ceilings"
+      ],
+      "correctIndex": 0,
+      "explanation": "At an all-time high, there may be no previously traded high above price on that chart history. That absence does not create a ceiling or eliminate the possibility of continuation. A TGIF-style Friday retracement is conditional; do not force it because the calendar says Friday. Define the completed expansion you are measuring and the selected retracement reference. A strong directional week can extend into its close, while another can reverse before Friday. Neither outcome should be erased from the study."
+    },
+    {
+      "question": "Are there twelve guaranteed weekly scripts?",
+      "options": [
+        "No. Profiles organise conditional scenarios; they do not dictate the day of the final extreme.",
+        "Yes; a weekday fixes the weekly high.",
+        "All weeks must retrace on Friday."
+      ],
+      "correctIndex": 0,
+      "explanation": "No. Profiles organise conditional scenarios; they do not dictate the day of the final extreme."
+    },
+    {
+      "question": "Is a new all-time high a ceiling?",
+      "options": [
+        "No. Missing old highs above price does not prevent further expansion.",
+        "Yes; no old high means price cannot rise.",
+        "A new all-time high automatically confirms a short."
+      ],
+      "correctIndex": 0,
+      "explanation": "No. Missing old highs above price does not prevent further expansion."
+    }
+  ],
+  "63": [
+    {
+      "question": "An invented 100/105 credit spread collects 1.2 with multiplier 100. What is maximum terminal loss before costs?",
+      "options": [
+        "380 under the stated assumptions",
+        "120",
+        "Zero because premium was collected"
+      ],
+      "correctIndex": 0,
+      "explanation": "Use an invented index scale: strike 100, premium 2.5 and multiplier 100. At expiry, the short-call payoff before costs is [2.5 − max(settlement − 100, 0)] × 100. Settlement 99 gives 250; 102 gives 50; 110 gives −750. The break-even is 102.5 before costs. The maximum gain is the 250 premium, while losses have no fixed upper bound as the settlement rises. These are hypothetical arithmetic examples, not quoted SPX prices or a trade proposal."
+    },
+    {
+      "question": "Are SPX options settled by delivering shares?",
+      "options": [
+        "No. SPX options are cash-settled and European-style; check the particular series and settlement timing.",
+        "Yes; SPX and SPY share-delivery rules are identical.",
+        "SPX always settles by delivering futures contracts."
+      ],
+      "correctIndex": 0,
+      "explanation": "No. SPX options are cash-settled and European-style; check the particular series and settlement timing."
+    },
+    {
+      "question": "Is a spread’s expiry payoff the full risk picture?",
+      "options": [
+        "No. Interim margin, liquidity, execution and product-specific exercise mechanics also matter.",
+        "Yes; the expiry line includes every interim risk.",
+        "A defined terminal loss guarantees every possible fill."
+      ],
+      "correctIndex": 0,
+      "explanation": "No. Interim margin, liquidity, execution and product-specific exercise mechanics also matter."
+    }
+  ],
+  "64": [
+    {
+      "question": "Ten ideas include four unfilled, three +2R, two −1R and one ambiguous. How many resolved filled trades are there?",
+      "options": [
+        "Five",
+        "Nine wins",
+        "Ten completed trades"
+      ],
+      "correctIndex": 0,
+      "explanation": "Separate no qualifying setup, qualifying but unfilled, completed win, completed loss and unresolved sequence. Suppose ten directional ideas include four that never return to entry, three completed +2R outcomes, two −1R outcomes and one ambiguous candle. The resolved filled subset has five trades and net +4R before costs; the four unfilled ideas are not four extra wins. The ambiguous case stays unresolved or follows a conservative predeclared assumption. This tiny invented sample demonstrates accounting, not evidence of a profitable method."
+    },
+    {
+      "question": "Is a correct directional idea automatically a win?",
+      "options": [
+        "No. A declared entry must be reached after recognition, and the later sequence must be resolved.",
+        "Yes; direction alone proves a trade existed.",
+        "An untouched entry counts as a zero-cost winner."
+      ],
+      "correctIndex": 0,
+      "explanation": "No. A declared entry must be reached after recognition, and the later sequence must be resolved."
+    },
+    {
+      "question": "How should an unresolved candle be counted?",
+      "options": [
+        "Keep it unresolved or apply a predeclared conservative assumption, never a convenient target-first guess.",
+        "Assume the target was first whenever the bias was right.",
+        "Delete the case because it complicates the sample."
+      ],
+      "correctIndex": 0,
+      "explanation": "Keep it unresolved or apply a predeclared conservative assumption, never a convenient target-first guess."
+    }
+  ]
+}

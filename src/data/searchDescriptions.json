@@ -496,7 +496,55 @@
     "ur": "Bullish اور Bearish Breaker ترتیبیں دیکھیں۔ Mitigation Block، Unicorn اشتراک اور ری ٹیسٹ کے وقت کو متحرک مثالوں سے سمجھیں۔"
   },
   "/": {
-    "en": "Free ICT & Smart Money Concepts course: 53 chapters, interactive chart labs, FVG, order blocks and liquidity. English & Urdu.",
-    "ur": "مفت ICT اور Smart Money Concepts کورس: 53 ابواب، انٹرایکٹو چارٹ لیبز، FVG، آرڈر بلاکس اور لیکویڈیٹی۔ انگریزی اور اردو میں۔"
+    "en": "Free ICT & Smart Money Concepts course: 60 chapters, interactive chart labs, FVG, order blocks and liquidity. English & Urdu.",
+    "ur": "مفت ICT اور Smart Money Concepts کورس: 60 ابواب، انٹرایکٹو چارٹ لیبز، FVG، آرڈر بلاکس اور لیکویڈیٹی۔ انگریزی اور اردو میں۔"
+  },
+  "/learn/0930-am-opening-range-theory/": {
+    "en": "Build a time-and-price reference before choosing a pattern. A scheduled open is certain; its direction is not.",
+    "ur": "پیٹرن چننے سے پہلے وقت اور قیمت کا حوالہ بنائیں۔ مقررہ آغاز معلوم ہے؛ سمت معلوم نہیں۔"
+  },
+  "/learn/ict-midnight-opening-range-rth-gaps-nwog/": {
+    "en": "Three references, three measurements: a timed range, a daily reopening gap and a weekly reopening gap.",
+    "ur": "تین حوالے، تین پیمائشیں: وقت کی رینج، روزانہ دوبارہ آغاز کا گیپ اور ہفتہ وار آغاز کا گیپ۔"
+  },
+  "/learn/the-1st-presented-fvg-the-0931-rule/": {
+    "en": "Find the first qualifying imbalance, not simply the first attractive three-candle shape.",
+    "ur": "پہلا اہل عدم توازن تلاش کریں، محض پہلی خوبصورت تین کینڈل شکل نہیں۔"
+  },
+  "/learn/ict-pd-array-selection-price-delivery-continuum/": {
+    "en": "A chart full of rectangles is not a framework. Choose the range, then explain why a particular reference matters.",
+    "ur": "مستطیلوں سے بھرا چارٹ فریم ورک نہیں۔ پہلے رینج چنیں، پھر خاص حوالے کی اہمیت سمجھائیں۔"
+  },
+  "/learn/smt-divergence-mechanics/": {
+    "en": "Compare corresponding extremes in related markets. A disagreement is evidence to investigate, not an entry button.",
+    "ur": "متعلقہ مارکیٹس کی ہم وقت انتہاؤں کا موازنہ کریں۔ اختلاف جانچنے کا مشاہدہ ہے، انٹری بٹن نہیں۔"
+  },
+  "/learn/ict-liquidity-turtle-soup-rejection-blocks/": {
+    "en": "Separate a visible price reference from the orders you infer around it. Then examine the response after the break.",
+    "ur": "نمایاں قیمت حوالہ اور اس کے گرد فرض کردہ آرڈر الگ کریں، پھر بریک کے بعد ردعمل دیکھیں۔"
+  },
+  "/learn/the-ict-venom-model-five-stage-delivery/": {
+    "en": "Study the opening-session Venom variant as a sequence, including the versions that never provide a deferred entry.",
+    "ur": "Opening-Session Venom کو سلسلے کے طور پر پڑھیں، ان صورتوں سمیت جو Deferred Entry نہیں دیتیں۔"
+  },
+  "/learn/ict-lunch-afternoon-session-models/": {
+    "en": "Read the morning first. Lunch and afternoon references make sense only in relation to what has already happened.",
+    "ur": "پہلے صبح سمجھیں۔ Lunch اور دوپہر کے حوالے گزرے ہوئے تناظر سے معنی لیتے ہیں۔"
+  },
+  "/learn/ict-news-volatility-no-trade-framework/": {
+    "en": "A release changes the conditions of execution. A neat candle pattern does not remove event risk.",
+    "ur": "خبر عمل درآمد کے حالات بدلتی ہے۔ صاف کینڈل پیٹرن خبر کا خطرہ ختم نہیں کرتا۔"
+  },
+  "/learn/the-12-weekly-profiles/": {
+    "en": "Use the developing week to organise scenarios, not to label Monday with knowledge of Friday.",
+    "ur": "ہفتے کی بنتی صورت سے منظرنامے بنائیں؛ جمعہ جان کر پیر کو لیبل نہ دیں۔"
+  },
+  "/learn/ict-weekly-options-payoffs-and-risk/": {
+    "en": "Understand the contract before interpreting the directional chart. This is a mechanics lesson, not an options recommendation.",
+    "ur": "سمتی چارٹ سے پہلے کنٹریکٹ سمجھیں۔ یہ اصولوں کا سبق ہے، Options کی سفارش نہیں۔"
+  },
+  "/learn/ict-replay-journaling-one-model-study/": {
+    "en": "A useful journal preserves decisions made before the outcome, including the days when the best decision was no trade.",
+    "ur": "مفید جرنل نتیجے سے پہلے کیے فیصلے رکھتا ہے، ان دنوں سمیت جب بہتر فیصلہ No Trade تھا۔"
   }
 }

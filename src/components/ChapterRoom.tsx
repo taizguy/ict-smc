@@ -1,3 +1,4 @@
+import {hasMentorship2025Edition} from '../data/chapters/mentorship2025Visuals';
 import { contextualFragments } from '../utils/contextualLinks';
 import { DeliveryLessonSupport } from './DeliveryLessonSupport';
 import { DeliveryMarketWalkthrough } from './DeliveryMarketWalkthrough';
@@ -170,13 +171,13 @@ export const ChapterRoom: React.FC<ChapterRoomProps> = ({
   const revision=chapterReviewRevision(chapter.id);
   const deliveryLinkedUrls = new Set<string>();
   const deliveryParagraphLinks = hasDeliveryEdition(chapter.id) ? chapter.sections.map(section => lessonParagraphs(section.content).map(paragraph => {
-    const fragments = contextualFragments(t(paragraph), `/learn/${chapter.slug}/`, 3, deliveryLinkedUrls);
+    const fragments = contextualFragments(t(paragraph), `/learn/${chapter.slug}/`, hasMentorship2025Edition(chapter.id)?4:3, deliveryLinkedUrls);
     fragments.forEach(fragment => { if (fragment.href) deliveryLinkedUrls.add(fragment.href); });
     return fragments;
   })) : [];
   return <ReadingRoomLayout path={`/learn/${chapter.slug}/`}><div className="rr-chapter-layout">
     <aside className="rr-local-contents"><p className="rr-eyebrow">{t('On this page')}</p><nav aria-label={t('Chapter sections')}>{chapter.sections.map((sec,i)=><a href={`#rr-section-${i}`} key={sec.id} onClick={e=>{e.preventDefault();jump(`rr-section-${i}`);}}><ReadingTitle text={sec.title} display={sec.title.replace(/^\d+\.\d+\s*/,'')}/></a>)}{hasDeliveryEdition(chapter.id)&&<><a href="#delivery-comparison" onClick={e=>{e.preventDefault();jump('delivery-comparison');}}>{t('Comparison')}</a>{chapter.id===13&&<a href="#delivery-market-cases" onClick={e=>{e.preventDefault();jump('delivery-market-cases');}}>{t(deliverySupportLabels.market)}</a>}<a href="#delivery-faq" onClick={e=>{e.preventDefault();jump('delivery-faq');}}>{t(deliverySupportLabels.faq)}</a></>}<a href="#curriculum-review-heading" onClick={e=>{e.preventDefault();jump('curriculum-review-heading');}}>{t('Sources and interpretation')}</a></nav></aside>
-    <div className="rr-chapter-body chapter-room">
+    <div className="rr-chapter-body chapter-room" data-mentorship-2025={hasMentorship2025Edition(chapter.id)?'':undefined}>
       <MentorshipLessonNav chapterId={chapter.id}/>
       <nav className="rr-scenes" id="rr-scenes" aria-label={t('Chapter sections')}>{scenes.map(scene=><button key={scene.id} aria-current={activeScene===scene.id?'page':undefined} onClick={()=>chooseScene(scene.id)}>{t(scene.label)}</button>)}</nav>
       <header className="rr-chapter-header"><p className="rr-eyebrow"><span>{t(readingPartTitle(chapter.part))}</span> / <bdi>{String(chapter.id).padStart(2,'0')}</bdi></p><h1><ReadingTitle text={chapter.title} display={studyTopics[`/learn/${chapter.slug}/`]||conciseHeading(chapter.title)}/></h1><p className="rr-chapter-deck">{t(chapter.quote)}</p><div className="rr-byline"><span className="rr-author-mark" aria-hidden="true">UI</span><div><a href={href('/about/#author')}>Muhammad Umer Ijaz</a><small><span>{t('Editorial review')}</span>: <time dateTime={revision.iso}>{t(revision.label)}</time></small></div><button onClick={handleToggleBookmark} aria-pressed={isBookmarked} aria-label={t(isBookmarked?'Remove chapter from bookmarks':'Bookmark this chapter for quick study')}>{isBookmarked?<BookmarkCheck size={18}/>:<Bookmark size={18}/>}</button><button onClick={handleCopyChapterLink} aria-label={t('Copy direct permanent URL for this chapter')}>{hasCopiedLink?<Check size={18}/>:<Share2 size={18}/>}</button></div></header>

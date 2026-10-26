@@ -1,5 +1,6 @@
 import type { TextbookChapter } from '../../types';
 import checkpoints from './checkpoints.json';
+import mentorshipQuizzes from './mentorship2025Quizzes.json';
 import deliveryQuizzes from './deliveryQuizzes.json';
 
 export interface ChapterQuizQuestion {
@@ -20,6 +21,8 @@ function rotate(question: ChapterQuizQuestion, seed: number): ChapterQuizQuestio
 
 /** Exact chapter IDs, never title matching or a generic fallback. */
 export function chapterQuiz(chapter: TextbookChapter): ChapterQuizQuestion[] {
+  const reviewed2025 = (mentorshipQuizzes as Record<string, Omit<ChapterQuizQuestion,'id'>[]>)[chapter.id];
+  if (reviewed2025) return reviewed2025.map((question,index)=>rotate({...question,id:`mentorship2025-${chapter.id}-v1-${index}`},chapter.id+index));
   const delivery = (deliveryQuizzes as Record<string, Omit<ChapterQuizQuestion,'id'>[]>)[chapter.id];
   if (delivery) return delivery.map((question,index)=>rotate({...question,id:`delivery-${chapter.id}-edition-1-${index}`},chapter.id+index));
   const applied = chapterCheckpoints[chapter.id];

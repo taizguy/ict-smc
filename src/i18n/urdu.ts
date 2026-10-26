@@ -1,3 +1,5 @@
+import {mentorshipVisualUrdu} from '../data/chapters/mentorship2025Visuals';
+import mentorship2025Urdu from './mentorship2025-urdu.json';
 import { deliverySupportUrdu } from '../data/chapters/deliverySupport';
 import { deliveryMarketUrdu } from '../data/chapters/deliveryMarketCases';
 import deliveryEditionUrdu from './delivery-edition-urdu.json';
@@ -210,6 +212,8 @@ export const urdu: Record<string, string> = {
   'Showing {shown} of {total} recordings': '{total} میں سے {shown} ریکارڈنگز دکھائی جا رہی ہیں',
   'article': 'مضمون',
   ...deliveryEditionUrdu,
+  ...mentorship2025Urdu,
+  ...mentorshipVisualUrdu,
   ...deliverySupportUrdu,
   ...deliveryMarketUrdu,
 };

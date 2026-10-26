@@ -1,3 +1,5 @@
+import {hasMentorship2025Edition} from './chapters/mentorship2025Visuals';
+import mentorship2025Sources from './chapters/mentorship2025Sources.json';
 import type { TextbookChapter } from '../types';
 import { reviewed2022Sources as r } from './ict2022Sources';
 import { charterReviewSources } from './mentorshipReviewSources';
@@ -7,7 +9,7 @@ import { cornerstoneGuides, cornerstoneRevision } from './cornerstoneGuides';
 export const curriculumReviewDate = '2026-10-19';
 export const curriculumReviewLabel = '19 October 2026';
 // Chapter-wide editorial/diagram/quiz consistency review; not a new full-recording review.
-export const chapterReviewRevision = (id: number) => [13,14,15,16].includes(id)
+export const chapterReviewRevision = (id: number) => hasMentorship2025Edition(id) ? {iso:'2026-10-26',label:'26 October 2026'} : [13,14,15,16].includes(id)
   ? { iso: '2026-10-25', label: '25 October 2026' } : [13, 15].includes(id) || cornerstoneGuides.some(guide => guide.chapterId === id)
   ? { iso: cornerstoneRevision, label: '24 October 2026' }
   : { iso: '2026-10-21', label: '21 October 2026' };
@@ -100,6 +102,8 @@ const interpretation = {
 };
 
 export function curriculumReview(chapter: TextbookChapter) {
+  const sources2025 = (mentorship2025Sources as Record<string, CurriculumSource[]>)[chapter.id];
+  if(sources2025) return {sources:sources2025,interpretation:'These lessons distinguish measured prices and times from discretionary range selection, model interpretation and unverified performance claims. State the reference, recognition time, failure rule and execution assumptions before replay.'};
   const kind = chapter.id === 23 ? 'masood' : chapter.id <= 6 ? 'foundations' : chapter.id <= 11 ? 'structure' : chapter.id <= 17 ? 'delivery' : chapter.id <= 22 ? 'time' : 'advanced';
   const checked: Record<number, CurriculumSource[]> = {
     ...charterReviewSources,

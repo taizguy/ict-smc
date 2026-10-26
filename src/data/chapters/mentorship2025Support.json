@@ -1,0 +1,578 @@
+{
+  "24": {
+    "heading": "Developing versus completed opening range",
+    "columns": [
+      "Comparison",
+      "Case A",
+      "Case B"
+    ],
+    "rows": [
+      [
+        "At 09:40",
+        "98–103 so far",
+        "Final 98–106 is not yet known"
+      ],
+      [
+        "At 10:00",
+        "Use observed final extremes",
+        "Freeze 98–106; midpoint 102"
+      ],
+      [
+        "After a break",
+        "Acceptance outside can continue",
+        "Rejection inside can fail to continue"
+      ]
+    ],
+    "note": "Invented teaching values. Compare the stated conventions; this table does not establish a trading edge.",
+    "faqs": [
+      {
+        "question": "Is an opening range the opening price?",
+        "answer": "No. The opening price is one observation; the range is the high–low interval over a declared window."
+      },
+      {
+        "question": "When is the morning range complete?",
+        "answer": "For the 09:30–10:00 convention, after the final candle covering that interval completes."
+      },
+      {
+        "question": "Should I use fixed EST all year?",
+        "answer": "Use America/New_York so the date determines daylight saving."
+      },
+      {
+        "question": "Does a range break guarantee continuation?",
+        "answer": "No. Compare acceptance outside, rejection back inside and unresolved outcomes."
+      },
+      {
+        "question": "Does the stock-market calendar apply to every futures session?",
+        "answer": "No. Check the actual instrument, session template, holiday and early-close rules."
+      }
+    ]
+  },
+  "58": {
+    "heading": "Opening gap versus timed range",
+    "columns": [
+      "Comparison",
+      "Case A",
+      "Case B"
+    ],
+    "rows": [
+      [
+        "Anchors",
+        "Prior close 100; next open 108",
+        "Window low 106; high 112"
+      ],
+      [
+        "Midpoint",
+        "104",
+        "109"
+      ],
+      [
+        "Meaning",
+        "Reopening price difference",
+        "Observed trading interval"
+      ]
+    ],
+    "note": "Invented teaching values. Compare the stated conventions; this table does not establish a trading edge.",
+    "faqs": [
+      {
+        "question": "Is an RTH gap the first half-hour range?",
+        "answer": "No. It compares the prior selected regular-session close with the next regular-session open."
+      },
+      {
+        "question": "How is a gap midpoint calculated?",
+        "answer": "Add its lower and upper boundaries and divide by two. For 100–108, the midpoint is 104."
+      },
+      {
+        "question": "Must NWOG fill during the week?",
+        "answer": "No. A weekly gap can be partly tested, crossed or left unvisited."
+      },
+      {
+        "question": "Is a chart close the official settlement?",
+        "answer": "Not necessarily. A last bar, a session close and an exchange settlement can differ."
+      },
+      {
+        "question": "Can different FX feeds show different gaps?",
+        "answer": "Yes. Broker quotes and session boundaries differ; use one documented feed consistently."
+      }
+    ]
+  },
+  "25": {
+    "heading": "Candidate inside balance versus departure candidate",
+    "columns": [
+      "Comparison",
+      "Case A",
+      "Case B"
+    ],
+    "rows": [
+      [
+        "Prior balance",
+        "99–104",
+        "99–104"
+      ],
+      [
+        "Candidate boundaries",
+        "A: 101–102 inside",
+        "B: 104–106 after departure"
+      ],
+      [
+        "Study decision",
+        "Reject under this filter",
+        "Evaluate entry and failure separately"
+      ]
+    ],
+    "note": "Invented teaching values. Compare the stated conventions; this table does not establish a trading edge.",
+    "faqs": [
+      {
+        "question": "Can a real FVG be rejected by the first-presented model?",
+        "answer": "Yes. A gap can satisfy outer-wick geometry yet remain inside the preceding balanced area."
+      },
+      {
+        "question": "Is every 09:30 FVG eligible?",
+        "answer": "No. The advanced treatment adds opening and liquidity context; it is not the basic 09:31 selection rule."
+      },
+      {
+        "question": "When can I confirm the third candle?",
+        "answer": "After it closes. Its timestamp is not the time its final high and low became available."
+      },
+      {
+        "question": "Does touching the near edge fill a CE order?",
+        "answer": "No. A 104–106 gap has CE 105; a low of 105.5 has not reached that midpoint."
+      },
+      {
+        "question": "Does first mean highest probability?",
+        "answer": "Not by itself. Qualification, execution and results need a defined sample rather than a label."
+      }
+    ]
+  },
+  "59": {
+    "heading": "Classic FVG versus body-based suspension",
+    "columns": [
+      "Comparison",
+      "Case A",
+      "Case B"
+    ],
+    "rows": [
+      [
+        "Measurement",
+        "Outer candle wicks",
+        "Selected adjacent body gaps"
+      ],
+      [
+        "Wick overlap",
+        "Can remove strict FVG geometry",
+        "Can coexist with body gaps"
+      ],
+      [
+        "Interpretation",
+        "A measurable interval",
+        "A different reference convention"
+      ]
+    ],
+    "note": "Invented teaching values. Compare the stated conventions; this table does not establish a trading edge.",
+    "faqs": [
+      {
+        "question": "Are twenty trading days twenty calendar days?",
+        "answer": "No. Count completed trading sessions; weekends and market closures are not additional trading days."
+      },
+      {
+        "question": "Does premium mean fundamentally overvalued?",
+        "answer": "No. Here it means above the midpoint of a declared range."
+      },
+      {
+        "question": "Is suspension identical to a classic FVG?",
+        "answer": "No. The body-gap configuration can include wick overlap that would fail the classic outer-wick test."
+      },
+      {
+        "question": "Can I switch lookbacks whenever a setup fails?",
+        "answer": "Not in a consistent test. Declare extensions and their conditions before seeing the outcome."
+      },
+      {
+        "question": "Does an overlapping BPR guarantee a reaction?",
+        "answer": "No. Overlap is geometry; relevance, failure rules and execution remain separate."
+      }
+    ]
+  },
+  "26": {
+    "heading": "Divergence present versus later removed",
+    "columns": [
+      "Comparison",
+      "Case A",
+      "Case B"
+    ],
+    "rows": [
+      [
+        "Anchor highs",
+        "NQ 100; ES 200",
+        "Same anchors"
+      ],
+      [
+        "New highs",
+        "NQ 102; ES 199",
+        "NQ 102; ES 201"
+      ],
+      [
+        "Classification",
+        "High-based non-confirmation",
+        "Both anchors exceeded"
+      ]
+    ],
+    "note": "Invented teaching values. Compare the stated conventions; this table does not establish a trading edge.",
+    "faqs": [
+      {
+        "question": "Should SMT compare a high with a closing price?",
+        "answer": "Not for a high-based test. Compare corresponding highs; define a close-based test separately."
+      },
+      {
+        "question": "Can SMT disappear?",
+        "answer": "Yes. The lagging market can later exceed its own anchor within the comparison window."
+      },
+      {
+        "question": "Do NQ and ES need the same numerical price?",
+        "answer": "No. Compare each instrument with its own corresponding anchor, not with the other instrument’s price."
+      },
+      {
+        "question": "Is DXY always the inverse of EUR/USD?",
+        "answer": "No. An inverse relationship is conditional, and the comparison convention must be stated."
+      },
+      {
+        "question": "Is SMT enough to execute a trade?",
+        "answer": "No. It supplies context; entry, failure, objective and execution assumptions are separate."
+      }
+    ]
+  },
+  "60": {
+    "heading": "Rejection versus acceptance beyond an old high",
+    "columns": [
+      "Comparison",
+      "Case A",
+      "Case B"
+    ],
+    "rows": [
+      [
+        "Reference",
+        "Old high 110",
+        "Old high 110"
+      ],
+      [
+        "Response",
+        "Trade 112, then return below 110",
+        "Trade 112, then hold above 110"
+      ],
+      [
+        "Conclusion",
+        "Evaluate a rejection sequence",
+        "Do not force a reversal label"
+      ]
+    ],
+    "note": "Invented teaching values. Compare the stated conventions; this table does not establish a trading edge.",
+    "faqs": [
+      {
+        "question": "Is every old-high break a liquidity sweep reversal?",
+        "answer": "No. Price can continue and accept above it; study the response rather than the break alone."
+      },
+      {
+        "question": "Can candles prove the stops were there?",
+        "answer": "No. A visible extreme is observable; hidden resting stops are an inference."
+      },
+      {
+        "question": "Is a rejection-block body the full wick?",
+        "answer": "No. Label the chosen opening/closing boundary separately from the wick extreme."
+      },
+      {
+        "question": "What if the deferred return never arrives?",
+        "answer": "Record an unfilled idea. Do not move the entry retrospectively to claim participation."
+      },
+      {
+        "question": "Is every FVG overlap the Gauntlet?",
+        "answer": "No. The reviewed example selects a particular SIBI and body-gap reference within a breaker-related leg."
+      }
+    ]
+  },
+  "53": {
+    "heading": "Venom response versus unconfirmed excursion",
+    "columns": [
+      "Comparison",
+      "Case A",
+      "Case B"
+    ],
+    "rows": [
+      [
+        "Range",
+        "08:00–09:30: 100–110",
+        "Same declared range"
+      ],
+      [
+        "Above the high",
+        "Close above, then opposing departure",
+        "Wick only or continued acceptance"
+      ],
+      [
+        "Deferred return",
+        "Must actually reach the selected entry",
+        "No return means no deferred fill"
+      ]
+    ],
+    "note": "Invented teaching values. Compare the stated conventions; this table does not establish a trading edge.",
+    "faqs": [
+      {
+        "question": "Is Venom simply a ninety-minute cycle?",
+        "answer": "No. This variant uses a particular 08:00–09:30 pre-open range and a defined subsequent response."
+      },
+      {
+        "question": "Does a wick above the high meet the reviewed bearish close condition?",
+        "answer": "No. The reviewed version includes a candle close above the selected buy-side reference."
+      },
+      {
+        "question": "What are the two fangs?",
+        "answer": "Opposing inefficient departures assessed after the selected excursion, not two arbitrary candles."
+      },
+      {
+        "question": "Is a deferred entry guaranteed?",
+        "answer": "No. Price can move toward the objective without returning to the chosen entry boundary."
+      },
+      {
+        "question": "Must every Venom include SMT and a breaker?",
+        "answer": "Do not impose an unsupported universal chain. State the exact variant and any additional study filters."
+      }
+    ]
+  },
+  "61": {
+    "heading": "Lunch retracement versus continued morning expansion",
+    "columns": [
+      "Comparison",
+      "Case A",
+      "Case B"
+    ],
+    "rows": [
+      [
+        "Morning",
+        "Decline from 110 to 100",
+        "Same decline"
+      ],
+      [
+        "Later evidence",
+        "Fails to make a new low",
+        "Breaks 100 and continues lower"
+      ],
+      [
+        "Post-10:00 high",
+        "104 is a conditional objective",
+        "104 is not a promised destination"
+      ]
+    ],
+    "note": "Invented teaching values. Compare the stated conventions; this table does not establish a trading edge.",
+    "faqs": [
+      {
+        "question": "Which post-10:00 swing matters after a morning decline?",
+        "answer": "The first confirmed prominent swing high after 10:00 is a reference in the studied retracement variant."
+      },
+      {
+        "question": "Must lunch reverse the morning?",
+        "answer": "No. Continued expansion and failure to develop the required response are valid contrasting cases."
+      },
+      {
+        "question": "Do morning arrays flip at 13:30 automatically?",
+        "answer": "No. A changed role needs the declared contextual evidence, not just a clock time."
+      },
+      {
+        "question": "What is the afternoon opening study window?",
+        "answer": "The convention used here is 13:30–14:00 New York local time."
+      },
+      {
+        "question": "Is the MOC study window an exchange rule?",
+        "answer": "No. Verify the product’s actual closing process and calendar separately."
+      }
+    ]
+  },
+  "62": {
+    "heading": "Resolved execution versus ambiguous OHLC",
+    "columns": [
+      "Comparison",
+      "Case A",
+      "Case B"
+    ],
+    "rows": [
+      [
+        "Plan",
+        "Entry 100; stop 98; target 104",
+        "Same declared plan"
+      ],
+      [
+        "Available evidence",
+        "Finer data establishes sequence",
+        "One candle: high 105, low 97"
+      ],
+      [
+        "Accounting",
+        "Apply the actual sequence and costs",
+        "Do not guess target first"
+      ]
+    ],
+    "note": "Invented teaching values. Compare the stated conventions; this table does not establish a trading edge.",
+    "faqs": [
+      {
+        "question": "Does an FOMC statement settle the whole afternoon?",
+        "answer": "No. A later press conference is a separate event and can extend or reverse the first move."
+      },
+      {
+        "question": "Can one candle tell which of stop and target came first?",
+        "answer": "Not when both levels lie within its range. Finer sequence data or a declared ambiguity rule is required."
+      },
+      {
+        "question": "Does a stop-market guarantee the stop price?",
+        "answer": "No. It can slip; a stop-limit has a different risk of remaining unfilled."
+      },
+      {
+        "question": "Is there a universally safe post-news waiting time?",
+        "answer": "No. Define the study rule and execution conditions for the instrument and event."
+      },
+      {
+        "question": "Should excluded winners be kept in the journal?",
+        "answer": "Yes. A filter removes opportunities as well as losses; preserve both to evaluate it fairly."
+      }
+    ]
+  },
+  "27": {
+    "heading": "Provisional weekly scenario versus hindsight label",
+    "columns": [
+      "Comparison",
+      "Case A",
+      "Case B"
+    ],
+    "rows": [
+      [
+        "Monday",
+        "Only completed prior references",
+        "Friday extremes are unavailable"
+      ],
+      [
+        "Above 120",
+        "Acceptance supports continuation study",
+        "Return below supports another scenario"
+      ],
+      [
+        "Friday",
+        "Continuation remains possible",
+        "Retracement is conditional"
+      ]
+    ],
+    "note": "Invented teaching values. Compare the stated conventions; this table does not establish a trading edge.",
+    "faqs": [
+      {
+        "question": "Are there twelve guaranteed weekly scripts?",
+        "answer": "No. Profiles organise conditional scenarios; they do not dictate the day of the final extreme."
+      },
+      {
+        "question": "Can Monday’s plan use the final weekly high?",
+        "answer": "No. That high is only known later; use completed references and provisional scenarios."
+      },
+      {
+        "question": "Must Friday retrace the week?",
+        "answer": "No. A strong trend can continue into the close, including at all-time highs."
+      },
+      {
+        "question": "Is a new all-time high a ceiling?",
+        "answer": "No. Missing old highs above price does not prevent further expansion."
+      },
+      {
+        "question": "Does weekly premium justify an immediate short?",
+        "answer": "No. Range-relative location is context; a separate intraday setup is still required."
+      }
+    ]
+  },
+  "63": {
+    "heading": "Uncovered call versus defined-width credit spread",
+    "columns": [
+      "Comparison",
+      "Case A",
+      "Case B"
+    ],
+    "rows": [
+      [
+        "Invented terms",
+        "Strike 100; premium 2.5",
+        "100/105 strikes; credit 1.2"
+      ],
+      [
+        "Maximum terminal gain",
+        "250 before costs",
+        "120 before costs"
+      ],
+      [
+        "Terminal loss boundary",
+        "No fixed upper bound",
+        "380 under matched-contract assumptions"
+      ]
+    ],
+    "note": "Invented teaching values. Compare the stated conventions; this table does not establish a trading edge.",
+    "faqs": [
+      {
+        "question": "Are SPX options settled by delivering shares?",
+        "answer": "No. SPX options are cash-settled and European-style; check the particular series and settlement timing."
+      },
+      {
+        "question": "Is premium received the maximum loss on an uncovered call?",
+        "answer": "No. The gain is capped at the premium; rising-price losses have no fixed upper bound."
+      },
+      {
+        "question": "Can the direction be right and the option still lose?",
+        "answer": "Yes. Strike, premium, timing and contract terms matter in addition to direction."
+      },
+      {
+        "question": "Is a spread’s expiry payoff the full risk picture?",
+        "answer": "No. Interim margin, liquidity, execution and product-specific exercise mechanics also matter."
+      },
+      {
+        "question": "Are the 100/105 examples actual SPX quotes?",
+        "answer": "No. They use invented prices to make the arithmetic transparent and are not recommendations."
+      }
+    ]
+  },
+  "64": {
+    "heading": "Directional idea versus resolved filled trade",
+    "columns": [
+      "Comparison",
+      "Case A",
+      "Case B"
+    ],
+    "rows": [
+      [
+        "Entry never reached",
+        "Unfilled idea",
+        "Not a win or loss"
+      ],
+      [
+        "Both levels in one bar",
+        "Ambiguous sequence",
+        "Requires finer data or declared rule"
+      ],
+      [
+        "Five resolved trades",
+        "3 × 2R and 2 × −1R",
+        "Net +4R before costs"
+      ]
+    ],
+    "note": "Invented teaching values. Compare the stated conventions; this table does not establish a trading edge.",
+    "faqs": [
+      {
+        "question": "Is a correct directional idea automatically a win?",
+        "answer": "No. A declared entry must be reached after recognition, and the later sequence must be resolved."
+      },
+      {
+        "question": "Should I edit a prediction after replay?",
+        "answer": "Keep the original decision and add a separate review note. Otherwise the journal loses its evidence."
+      },
+      {
+        "question": "Can all 2025 examples be forced into one model?",
+        "answer": "No. The collection includes different approaches; identify the precise model and variant you study."
+      },
+      {
+        "question": "How should an unresolved candle be counted?",
+        "answer": "Keep it unresolved or apply a predeclared conservative assumption, never a convenient target-first guess."
+      },
+      {
+        "question": "Was every minute of the supplied library verified?",
+        "answer": "No. The review uses selected passages from 75 captioned sources and visual review of eight other recordings."
+      }
+    ]
+  }
+}

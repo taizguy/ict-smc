@@ -79,7 +79,8 @@ export function localizeHtml(source: string, pathname: string, catalog: Translat
       if (node.tagName === 'p' && attribute(node, 'data-lesson-content') !== undefined) {
         const translated = translate(textContent(node));
         const isDelivery = attribute(node, 'data-delivery-content') !== undefined;
-        const parts = contextualFragments(translated, pathname, isDelivery ? 3 : 4, isDelivery ? deliveryLinkedUrls : undefined);
+        const is2025 = /data-mentorship-2025/.test(source);
+        const parts = contextualFragments(translated, pathname, is2025 ? 4 : isDelivery ? 3 : 4, isDelivery ? deliveryLinkedUrls : undefined);
         if (isDelivery) parts.forEach(part => { if (part.href) deliveryLinkedUrls.add(part.href); });
         const fragments = parts.map(fragment => fragment.href ? `<a href="${escaped(fragment.href)}">${escaped(fragment.text)}</a>` : escaped(fragment.text)).join('');
         const replacement = parseFragment(fragments);

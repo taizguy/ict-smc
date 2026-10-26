@@ -29,6 +29,19 @@ function fitWords(value: string, chars: number, pixels: number, size: number): s
 }
 
 const routeTitles: Record<string, string> = {
+  "/learn/0930-am-opening-range-theory/": "ICT Opening Ranges: Sessions & Examples",
+  "/learn/ict-midnight-opening-range-rth-gaps-nwog/": "ICT Opening Gaps: Midnight, RTH & NWOG",
+  "/learn/the-1st-presented-fvg-the-0931-rule/": "First Presented FVG: Rules & Examples",
+  "/learn/ict-pd-array-selection-price-delivery-continuum/": "ICT PD Arrays: Range & Selection",
+  "/learn/smt-divergence-mechanics/": "SMT Divergence: Examples & Pitfalls",
+  "/learn/ict-liquidity-turtle-soup-rejection-blocks/": "ICT Turtle Soup & Rejection Blocks",
+  "/learn/the-ict-venom-model-five-stage-delivery/": "ICT Venom Model: Sequence & Examples",
+  "/learn/ict-lunch-afternoon-session-models/": "ICT Lunch & Afternoon Session Models",
+  "/learn/ict-news-volatility-no-trade-framework/": "ICT News Days: Risk & No-Trade Rules",
+  "/learn/the-12-weekly-profiles/": "ICT Weekly Profiles: Scenarios & Examples",
+  "/learn/ict-weekly-options-payoffs-and-risk/": "ICT Weekly Options: Payoffs & Risks",
+  "/learn/ict-replay-journaling-one-model-study/": "ICT Journaling: Replay & Honest Results",
+
   '/learn/fair-value-gaps-fvg-and-consequent-encroachment/': 'Fair Value Gaps (FVG): Examples, CE & Rules',
   '/learn/inverse-fair-value-gaps-ifvg-role-reversal-imbalances/': 'Inverse Fair Value Gaps (IFVG): Examples',
   '/learn/order-blocks-ob-and-mitigation/': 'Order Blocks: Examples & Mitigation',

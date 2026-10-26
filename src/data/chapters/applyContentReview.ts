@@ -1,3 +1,4 @@
+import {hasMentorship2025Edition} from './mentorship2025Visuals';
 import type { TextbookChapter, ChapterSection } from '../../types';
 import corrections from './contentReview.json';
 import { chapterCheckpoints, chapterQuiz } from './chapterQuizzes';
@@ -12,6 +13,6 @@ export function applyContentReview(chapter: TextbookChapter): TextbookChapter {
   return {
     ...chapter, ...fields,
     sections: chapter.sections.map((section, index) => ({ ...section, ...sections?.[index] })),
-    practiceQuestions: chapter.id >= 13 && chapter.id <= 16 ? chapterQuiz(chapter).map(q=>q.question) : [chapterCheckpoints[chapter.id].question],
+    practiceQuestions: (chapter.id >= 13 && chapter.id <= 16) || hasMentorship2025Edition(chapter.id) ? chapterQuiz(chapter).map(q=>q.question) : [chapterCheckpoints[chapter.id].question],
   };
 }

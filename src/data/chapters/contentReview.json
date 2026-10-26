@@ -856,33 +856,6 @@
       "Weekday profiles are conditional study scenarios, not scheduled weekly extremes."
     ]
   },
-  "27": {
-    "keyTerms": [
-      {
-        "term": "Weekly profile",
-        "definition": "A proposed weekly path used to organize a study, not a verified twelve-template calendar program."
-      },
-      {
-        "term": "Midweek reversal",
-        "definition": "A possible change of direction during the week; no specific weekday or frequency is established here."
-      },
-      {
-        "term": "Seek and Destroy",
-        "definition": "A descriptive label for a selected two-sided or choppy example, not a forecast of every news session."
-      }
-    ],
-    "summary": [
-      "Compare competing weekly scenarios without assuming a known schedule.",
-      "Define invalidation and preserve weeks that do not fit the proposed profile."
-    ],
-    "quote": "A weekly profile organizes uncertainty; it does not remove it.",
-    "sections": {
-      "1": {
-        "keyTakeaway": "Prepare competing scenarios and invalidation before the week develops."
-      }
-    },
-    "title": "Weekly Profiles: Conditional Scenarios & Invalidation"
-  },
   "11": {
     "keyTerms": [
       {

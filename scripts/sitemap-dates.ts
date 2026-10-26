@@ -16,7 +16,7 @@ export function contentFingerprint(html: string): string {
   function visit(node: any, insideMain = false, insideDiagram = false) {
     const attrs = Object.fromEntries((node.attrs || []).map((a: any) => [a.name, a.value]));
     const main = insideMain || node.tagName === 'main';
-    const diagram = insideDiagram || (node.tagName === 'svg' && attrs.class?.split(' ').includes('chapter-diagram-canvas'));
+    const diagram = insideDiagram || (node.tagName === 'svg' && attrs.class?.split(' ').some((name:string)=>['chapter-diagram-canvas','m25-replay-preview'].includes(name)));
     if (['style', 'nav', 'footer'].includes(node.tagName)) return;
     if (node.tagName === 'script') {
       if (attrs.type === 'application/ld+json') {
@@ -26,7 +26,7 @@ export function contentFingerprint(html: string): string {
       return;
     }
     if (main && node.nodeName === '#text' && normalize(node.value)) values.push(normalize(node.value));
-    if (main) for (const key of ['href', 'src', 'alt', 'datetime']) if (attrs[key]) values.push(`${key}:${attrs[key]}`);
+    if (main) for (const key of ['href', 'src', 'alt', 'datetime', 'data-market-data-hash']) if (attrs[key]) values.push(`${key}:${attrs[key]}`);
     if (main && diagram) {
       values.push(node.tagName || node.nodeName);
       for (const key of ['viewBox', 'd', 'x', 'y', 'x1', 'y1', 'x2', 'y2', 'width', 'height', 'cx', 'cy', 'r', 'stroke-dasharray']) {

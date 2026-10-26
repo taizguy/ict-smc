@@ -293,25 +293,73 @@ export const chapterCatalog = [
   {
     "id": 24,
     "slug": "0930-am-opening-range-theory",
-    "title": "24.1 The 09:30 AM Opening Range Theory — Cash Open Volatility & Initial Balance",
+    "title": "ICT Opening Ranges: Time, Boundaries and Context",
+    "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
+  },
+  {
+    "id": 58,
+    "slug": "ict-midnight-opening-range-rth-gaps-nwog",
+    "title": "ICT Midnight Range, RTH Gaps and NWOG",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
   },
   {
     "id": 25,
     "slug": "the-1st-presented-fvg-the-0931-rule",
-    "title": "First Presented FVG: Qualification & Balanced-Range Context",
+    "title": "First Presented FVG: Timing and Qualification",
+    "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
+  },
+  {
+    "id": 59,
+    "slug": "ict-pd-array-selection-price-delivery-continuum",
+    "title": "ICT PD Arrays: Range Selection and Price Delivery",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
   },
   {
     "id": 26,
     "slug": "smt-divergence-mechanics",
-    "title": "26.1 SMT Divergence Mechanics — The Intermarket Crack in the Armor",
+    "title": "SMT Divergence: Compare Markets Without Guesswork",
+    "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
+  },
+  {
+    "id": 60,
+    "slug": "ict-liquidity-turtle-soup-rejection-blocks",
+    "title": "ICT Liquidity: Turtle Soup and Rejection Blocks",
+    "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
+  },
+  {
+    "id": 53,
+    "slug": "the-ict-venom-model-five-stage-delivery",
+    "title": "ICT Venom Model: Range, Sweep and Two Fangs",
+    "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
+  },
+  {
+    "id": 61,
+    "slug": "ict-lunch-afternoon-session-models",
+    "title": "ICT Lunch and Afternoon Session Models",
+    "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
+  },
+  {
+    "id": 62,
+    "slug": "ict-news-volatility-no-trade-framework",
+    "title": "ICT News Days: Volatility and No-Trade Decisions",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
   },
   {
     "id": 27,
     "slug": "the-12-weekly-profiles",
-    "title": "Weekly Profiles: Conditional Scenarios & Invalidation",
+    "title": "ICT Weekly Profiles: Context Without Prediction",
+    "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
+  },
+  {
+    "id": 63,
+    "slug": "ict-weekly-options-payoffs-and-risk",
+    "title": "ICT Weekly Options: Payoffs and Risk Boundaries",
+    "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
+  },
+  {
+    "id": 64,
+    "slug": "ict-replay-journaling-one-model-study",
+    "title": "ICT Replay and Journaling: Study One Model Honestly",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
   },
   {
@@ -463,12 +511,6 @@ export const chapterCatalog = [
     "slug": "event-volatility-hrlr-futures-vs-cfds",
     "title": "Event Volatility: Calendars, HRLR & Futures vs. CFDs",
     "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
-  },
-  {
-    "id": 53,
-    "slug": "the-ict-venom-model-five-stage-delivery",
-    "title": "ICT Venom Model: The 2025 Opening-Session Example",
-    "part": "Part XIII - Advanced 2025/2026 Institutional Delivery Systems & Tape Reading"
   },
   {
     "id": 54,

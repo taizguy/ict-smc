@@ -1,52 +1,6 @@
 import { TextbookChapter } from '../types';
 
 export const theinnercircletradersNewChapters: TextbookChapter[] = [
-  // CHAPTER 53: The ICT Venom Model
-  {
-  "id": 53,
-  "slug": "the-ict-venom-model-five-stage-delivery",
-  "title": "ICT Venom Model: The 2025 Opening-Session Example",
-  "part": "Part XIII - Advanced 2025/2026 Institutional Delivery Systems & Tape Reading",
-  "level": 3,
-  "quote": "This is a selected-passage study of the official 3 April 2025 tutorial. Candle patterns do not prove institutional intent, and no win rate, zero-drawdown claim or fixed profit-taking percentage is verified here.",
-  "summary": [
-    "At 09:30 New York local time, mark the high and low of the preceding 08:00–09:30 window. Use the correct date and daylight-saving offset.",
-    "Establish the directional premise and selected liquidity reference before looking for an entry. A range by itself supplies no direction.",
-    "In the bearish example, price raids the selected highs with an inefficient candle closing above them, followed by inefficient delivery in the opposite direction."
-  ],
-  "keyTerms": [
-    {
-      "term": "Venom Model",
-      "definition": "At 09:30 New York local time, mark the high and low of the preceding 08:00–09:30 window. Use the correct date and daylight-saving offset."
-    },
-    {
-      "term": "First Presented FVG",
-      "definition": "The tutorial also illustrates a deferred First Presented FVG entry. This does not make an FVG, CRT or a five-stage confluence chain a mandatory definition of Venom."
-    }
-  ],
-  "practiceQuestions": [
-    "Which source window is being marked, and what would disprove the directional premise?",
-    "How does a deferred entry differ from an aggressive entry during the raid?"
-  ],
-  "sections": [
-    {
-      "id": "sec-53-1",
-      "title": "Start with the source window",
-      "content": "At 09:30 New York local time, mark the high and low of the preceding 08:00–09:30 window. Use the correct date and daylight-saving offset.\n\nEstablish the directional premise and selected liquidity reference before looking for an entry. A range by itself supplies no direction.\n\nThe source discusses the first 30 minutes after the 09:30 opening. Other ICT lessons use different opening-range conventions; identify the source-specific window instead of treating every year as identical."
-    },
-    {
-      "id": "sec-53-2",
-      "title": "Separate the raid from the entry variation",
-      "content": "In the bearish example, price raids the selected highs with an inefficient candle closing above them, followed by inefficient delivery in the opposite direction.\n\nStudy the subsequent shift and return to the selected order-block opening reference. Distinguish the aggressive raid entry from a deferred entry.\n\nThe tutorial also illustrates a deferred First Presented FVG entry. This does not make an FVG, CRT or a five-stage confluence chain a mandatory definition of Venom."
-    },
-    {
-      "id": "sec-53-3",
-      "title": "Replay without adding unverified rules",
-      "content": "Record the entry variation, invalidation, expiry, costs and missed fills before replay. A target is a hypothesis, not a promised return.\n\nDo not relabel an arbitrary Asian or London candle as the tutorial’s 08:00–09:30 reference window.\n\nA raid can continue rather than reverse. Random mid-range movement or an entry after several large candles is not equivalent to the illustrated setup.\n\nThis is a selected-passage study of the official 3 April 2025 tutorial. Candle patterns do not prove institutional intent, and no win rate, zero-drawdown claim or fixed profit-taking percentage is verified here."
-    }
-  ]
-},
-
   // CHAPTER 54: Candle Range Theory (CRT)
   {
     id: 54,

@@ -3,7 +3,7 @@
     "id": 24,
     "slug": "0930-am-opening-range-theory",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum",
-    "title": "ICT Opening Ranges: Time, Boundaries and Context",
+    "title": "ICT Opening Range Theory: 9:30–10:00 AM Explained",
     "quote": "Build a time-and-price reference before choosing a pattern. A scheduled open is certain; its direction is not.",
     "level": 3,
     "sections": [
@@ -67,7 +67,7 @@
     "id": 58,
     "slug": "ict-midnight-opening-range-rth-gaps-nwog",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum",
-    "title": "ICT Midnight Range, RTH Gaps and NWOG",
+    "title": "ICT Midnight Opening Range, RTH Opening Gaps and NWOG",
     "quote": "Three references, three measurements: a timed range, a daily reopening gap and a weekly reopening gap.",
     "level": 3,
     "sections": [
@@ -131,14 +131,14 @@
     "id": 25,
     "slug": "the-1st-presented-fvg-the-0931-rule",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum",
-    "title": "First Presented FVG: Timing and Qualification",
+    "title": "ICT 1st Presented FVG: Timing, Rules and Examples",
     "quote": "Find the first qualifying imbalance, not simply the first attractive three-candle shape.",
     "level": 3,
     "sections": [
       {
         "id": "25.1",
         "title": "What makes the first presented FVG qualify?",
-        "content": "A bullish fair value gap exists when candle 1 high is below candle 3 low after candle 3 completes; reverse the inequality for a bearish gap. That geometry is only the first check. First-presented selection also asks whether the candidate departs from the preceding balanced area in the chosen session and direction. A geometrically valid gap can therefore be rejected for this particular model without ceasing to be an FVG. Mark the preceding range before choosing the candidate, rather than redrawing it around the winner."
+        "content": "The ICT 1st presented FVG (first presented fair value gap) is a session-based selection of a qualifying three-candle imbalance, not simply the earliest gap you notice. A bullish fair value gap exists when candle 1 high is below candle 3 low after candle 3 completes; reverse the inequality for a bearish gap. That geometry is only the first check. First-presented selection also asks whether the candidate departs from the preceding balanced area in the chosen session and direction. A geometrically valid gap can therefore be rejected for this particular model without ceasing to be an FVG. Mark the preceding range before choosing the candidate, rather than redrawing it around the winner."
       },
       {
         "id": "25.2",
@@ -195,7 +195,7 @@
     "id": 59,
     "slug": "ict-pd-array-selection-price-delivery-continuum",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum",
-    "title": "ICT PD Arrays: Range Selection and Price Delivery",
+    "title": "ICT PD Array Matrix: Range Selection, Premium and Discount",
     "quote": "A chart full of rectangles is not a framework. Choose the range, then explain why a particular reference matters.",
     "level": 3,
     "sections": [
@@ -263,7 +263,7 @@
     "id": 26,
     "slug": "smt-divergence-mechanics",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum",
-    "title": "SMT Divergence: Compare Markets Without Guesswork",
+    "title": "ICT SMT Divergence: Bullish, Bearish and NQ–ES Examples",
     "quote": "Compare corresponding extremes in related markets. A disagreement is evidence to investigate, not an entry button.",
     "level": 3,
     "sections": [
@@ -327,7 +327,7 @@
     "id": 60,
     "slug": "ict-liquidity-turtle-soup-rejection-blocks",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum",
-    "title": "ICT Liquidity: Turtle Soup and Rejection Blocks",
+    "title": "ICT Turtle Soup: Liquidity Sweeps and Rejection Blocks",
     "quote": "Separate a visible price reference from the orders you infer around it. Then examine the response after the break.",
     "level": 3,
     "sections": [
@@ -386,7 +386,7 @@
     "id": 53,
     "slug": "the-ict-venom-model-five-stage-delivery",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum",
-    "title": "ICT Venom Model: Range, Sweep and Two Fangs",
+    "title": "ICT Venom Model: Opening Range, Liquidity Sweep and Two Fangs",
     "quote": "Study the opening-session Venom variant as a sequence, including the versions that never provide a deferred entry.",
     "level": 3,
     "sections": [
@@ -445,7 +445,7 @@
     "id": 61,
     "slug": "ict-lunch-afternoon-session-models",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum",
-    "title": "ICT Lunch and Afternoon Session Models",
+    "title": "ICT New York Lunch and Afternoon Session Models",
     "quote": "Read the morning first. Lunch and afternoon references make sense only in relation to what has already happened.",
     "level": 3,
     "sections": [
@@ -504,7 +504,7 @@
     "id": 62,
     "slug": "ict-news-volatility-no-trade-framework",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum",
-    "title": "ICT News Days: Volatility and No-Trade Decisions",
+    "title": "ICT News Trading: CPI, NFP, FOMC and No-Trade Decisions",
     "quote": "A release changes the conditions of execution. A neat candle pattern does not remove event risk.",
     "level": 3,
     "sections": [
@@ -563,7 +563,7 @@
     "id": 27,
     "slug": "the-12-weekly-profiles",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum",
-    "title": "ICT Weekly Profiles: Context Without Prediction",
+    "title": "ICT Weekly Profiles: Weekly Highs, Lows and Scenario Examples",
     "quote": "Use the developing week to organise scenarios, not to label Monday with knowledge of Friday.",
     "level": 3,
     "sections": [
@@ -622,7 +622,7 @@
     "id": 63,
     "slug": "ict-weekly-options-payoffs-and-risk",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum",
-    "title": "ICT Weekly Options: Payoffs and Risk Boundaries",
+    "title": "ICT Weekly Options: SPX Premium, Payoffs and Risk",
     "quote": "Understand the contract before interpreting the directional chart. This is a mechanics lesson, not an options recommendation.",
     "level": 3,
     "sections": [
@@ -685,7 +685,7 @@
     "id": 64,
     "slug": "ict-replay-journaling-one-model-study",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum",
-    "title": "ICT Replay and Journaling: Study One Model Honestly",
+    "title": "ICT Trading Journal: Chart Replay and One-Model Review",
     "quote": "A useful journal preserves decisions made before the outcome, including the days when the best decision was no trade.",
     "level": 3,
     "sections": [

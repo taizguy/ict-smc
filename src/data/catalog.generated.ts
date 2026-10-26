@@ -293,73 +293,73 @@ export const chapterCatalog = [
   {
     "id": 24,
     "slug": "0930-am-opening-range-theory",
-    "title": "ICT Opening Ranges: Time, Boundaries and Context",
+    "title": "ICT Opening Range Theory: 9:30–10:00 AM Explained",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
   },
   {
     "id": 58,
     "slug": "ict-midnight-opening-range-rth-gaps-nwog",
-    "title": "ICT Midnight Range, RTH Gaps and NWOG",
+    "title": "ICT Midnight Opening Range, RTH Opening Gaps and NWOG",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
   },
   {
     "id": 25,
     "slug": "the-1st-presented-fvg-the-0931-rule",
-    "title": "First Presented FVG: Timing and Qualification",
+    "title": "ICT 1st Presented FVG: Timing, Rules and Examples",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
   },
   {
     "id": 59,
     "slug": "ict-pd-array-selection-price-delivery-continuum",
-    "title": "ICT PD Arrays: Range Selection and Price Delivery",
+    "title": "ICT PD Array Matrix: Range Selection, Premium and Discount",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
   },
   {
     "id": 26,
     "slug": "smt-divergence-mechanics",
-    "title": "SMT Divergence: Compare Markets Without Guesswork",
+    "title": "ICT SMT Divergence: Bullish, Bearish and NQ–ES Examples",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
   },
   {
     "id": 60,
     "slug": "ict-liquidity-turtle-soup-rejection-blocks",
-    "title": "ICT Liquidity: Turtle Soup and Rejection Blocks",
+    "title": "ICT Turtle Soup: Liquidity Sweeps and Rejection Blocks",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
   },
   {
     "id": 53,
     "slug": "the-ict-venom-model-five-stage-delivery",
-    "title": "ICT Venom Model: Range, Sweep and Two Fangs",
+    "title": "ICT Venom Model: Opening Range, Liquidity Sweep and Two Fangs",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
   },
   {
     "id": 61,
     "slug": "ict-lunch-afternoon-session-models",
-    "title": "ICT Lunch and Afternoon Session Models",
+    "title": "ICT New York Lunch and Afternoon Session Models",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
   },
   {
     "id": 62,
     "slug": "ict-news-volatility-no-trade-framework",
-    "title": "ICT News Days: Volatility and No-Trade Decisions",
+    "title": "ICT News Trading: CPI, NFP, FOMC and No-Trade Decisions",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
   },
   {
     "id": 27,
     "slug": "the-12-weekly-profiles",
-    "title": "ICT Weekly Profiles: Context Without Prediction",
+    "title": "ICT Weekly Profiles: Weekly Highs, Lows and Scenario Examples",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
   },
   {
     "id": 63,
     "slug": "ict-weekly-options-payoffs-and-risk",
-    "title": "ICT Weekly Options: Payoffs and Risk Boundaries",
+    "title": "ICT Weekly Options: SPX Premium, Payoffs and Risk",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
   },
   {
     "id": 64,
     "slug": "ict-replay-journaling-one-model-study",
-    "title": "ICT Replay and Journaling: Study One Model Honestly",
+    "title": "ICT Trading Journal: Chart Replay and One-Model Review",
     "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
   },
   {

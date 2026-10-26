@@ -500,51 +500,59 @@
     "ur": "مفت ICT اور Smart Money Concepts کورس: 60 ابواب، انٹرایکٹو چارٹ لیبز، FVG، آرڈر بلاکس اور لیکویڈیٹی۔ انگریزی اور اردو میں۔"
   },
   "/learn/0930-am-opening-range-theory/": {
-    "en": "Build a time-and-price reference before choosing a pattern. A scheduled open is certain; its direction is not.",
-    "ur": "پیٹرن چننے سے پہلے وقت اور قیمت کا حوالہ بنائیں۔ مقررہ آغاز معلوم ہے؛ سمت معلوم نہیں۔"
+    "en": "Learn ICT opening range theory with 9:30–10:00 AM New York examples. Measure highs, lows and midpoints, then compare breakouts and failed breaks.",
+    "ur": "ICT Opening Range کو نیویارک 9:30–10:00 AM مثالوں سے سیکھیں۔ ہائی، لو اور وسط ناپیں؛ بریک آؤٹ اور ناکام بریک کا موازنہ کریں۔"
   },
   "/learn/ict-midnight-opening-range-rth-gaps-nwog/": {
-    "en": "Three references, three measurements: a timed range, a daily reopening gap and a weekly reopening gap.",
-    "ur": "تین حوالے، تین پیمائشیں: وقت کی رینج، روزانہ دوبارہ آغاز کا گیپ اور ہفتہ وار آغاز کا گیپ۔"
+    "en": "Compare the ICT midnight opening range, RTH opening gap and NWOG. Measure boundaries and midpoints with historical charts and gap-revisit examples.",
+    "ur": "ICT Midnight Opening Range، RTH Opening Gap اور NWOG کا فرق سمجھیں۔ تاریخی چارٹس سے حدیں، وسط اور گیپ کی واپسی ناپیں۔"
   },
   "/learn/the-1st-presented-fvg-the-0931-rule/": {
-    "en": "Find the first qualifying imbalance, not simply the first attractive three-candle shape.",
-    "ur": "پہلا اہل عدم توازن تلاش کریں، محض پہلی خوبصورت تین کینڈل شکل نہیں۔"
+    "en": "Learn the ICT 1st presented FVG with 9:30 opening-range examples. Compare qualifying fair value gaps, CE entries, invalidation and unfilled setups.",
+    "ur": "ICT 1st Presented FVG کو 9:30 اوپننگ رینج مثالوں سے سیکھیں۔ اہل Fair Value Gap، CE انٹری، منسوخی اور نامکمل سیٹ اپ کا فرق سمجھیں۔"
   },
   "/learn/ict-pd-array-selection-price-delivery-continuum/": {
-    "en": "A chart full of rectangles is not a framework. Choose the range, then explain why a particular reference matters.",
-    "ur": "مستطیلوں سے بھرا چارٹ فریم ورک نہیں۔ پہلے رینج چنیں، پھر خاص حوالے کی اہمیت سمجھائیں۔"
+    "en": "Understand the ICT PD array matrix through premium, discount and dealing-range examples. Compare FVGs, order blocks and competing price references.",
+    "ur": "ICT PD Array Matrix میں Premium، Discount اور Dealing Range سمجھیں۔ FVG، Order Block اور مختلف قیمت حوالوں کا مثالوں سے موازنہ کریں۔"
   },
   "/learn/smt-divergence-mechanics/": {
-    "en": "Compare corresponding extremes in related markets. A disagreement is evidence to investigate, not an entry button.",
-    "ur": "متعلقہ مارکیٹس کی ہم وقت انتہاؤں کا موازنہ کریں۔ اختلاف جانچنے کا مشاہدہ ہے، انٹری بٹن نہیں۔"
+    "en": "Learn ICT SMT divergence with aligned NQ and ES charts. Compare bullish and bearish non-confirmation, swing selection, timing and misleading signals.",
+    "ur": "ICT SMT Divergence کو ہم وقت NQ اور ES چارٹس سے سیکھیں۔ Bullish اور Bearish عدم تصدیق، سوئنگ، وقت اور گمراہ کن اشاروں کا موازنہ کریں۔"
   },
   "/learn/ict-liquidity-turtle-soup-rejection-blocks/": {
-    "en": "Separate a visible price reference from the orders you infer around it. Then examine the response after the break.",
-    "ur": "نمایاں قیمت حوالہ اور اس کے گرد فرض کردہ آرڈر الگ کریں، پھر بریک کے بعد ردعمل دیکھیں۔"
+    "en": "Study ICT Turtle Soup and rejection blocks with old-high and old-low examples. Distinguish liquidity sweeps, failed breakouts and continuation.",
+    "ur": "ICT Turtle Soup اور Rejection Block کو پرانے ہائی اور لو کی مثالوں سے سمجھیں۔ Liquidity Sweep، ناکام بریک آؤٹ اور تسلسل میں فرق کریں۔"
   },
   "/learn/the-ict-venom-model-five-stage-delivery/": {
-    "en": "Study the opening-session Venom variant as a sequence, including the versions that never provide a deferred entry.",
-    "ur": "Opening-Session Venom کو سلسلے کے طور پر پڑھیں، ان صورتوں سمیت جو Deferred Entry نہیں دیتیں۔"
+    "en": "Learn the ICT Venom model with the 08:00–09:30 New York range, liquidity sweeps and two-fang sequence. Compare failed setups and no-entry outcomes.",
+    "ur": "ICT Venom Model میں نیویارک 08:00–09:30 رینج، Liquidity Sweep اور دو Fang کی ترتیب سیکھیں۔ ناکام سیٹ اپ اور انٹری نہ ملنے کی صورتیں ملائیں۔"
   },
   "/learn/ict-lunch-afternoon-session-models/": {
-    "en": "Read the morning first. Lunch and afternoon references make sense only in relation to what has already happened.",
-    "ur": "پہلے صبح سمجھیں۔ Lunch اور دوپہر کے حوالے گزرے ہوئے تناظر سے معنی لیتے ہیں۔"
+    "en": "Understand ICT New York lunch and afternoon sessions. Compare post-10:00 swing confirmation, the 13:30–14:00 opening range and changing context.",
+    "ur": "ICT New York Lunch اور Afternoon Session سمجھیں۔ 10:00 کے بعد سوئنگ کی تصدیق، 13:30–14:00 اوپننگ رینج اور بدلتا تناظر ملائیں۔"
   },
   "/learn/ict-news-volatility-no-trade-framework/": {
-    "en": "A release changes the conditions of execution. A neat candle pattern does not remove event risk.",
-    "ur": "خبر عمل درآمد کے حالات بدلتی ہے۔ صاف کینڈل پیٹرن خبر کا خطرہ ختم نہیں کرتا۔"
+    "en": "Study ICT news trading risks around CPI, NFP and FOMC. Compare release timing, slippage, volatility and no-trade decisions with a historical replay.",
+    "ur": "ICT News Trading میں CPI، NFP اور FOMC کے خطرات سمجھیں۔ تاریخی ری پلے سے خبر کا وقت، Slippage، اتار چڑھاؤ اور No-Trade فیصلے ملائیں۔"
   },
   "/learn/the-12-weekly-profiles/": {
-    "en": "Use the developing week to organise scenarios, not to label Monday with knowledge of Friday.",
-    "ur": "ہفتے کی بنتی صورت سے منظرنامے بنائیں؛ جمعہ جان کر پیر کو لیبل نہ دیں۔"
+    "en": "Explore ICT weekly profiles with developing-week examples. Compare weekly highs, lows, reversal scenarios and the limits of hindsight-based labels.",
+    "ur": "ICT Weekly Profiles کو بنتے ہفتے کی مثالوں سے سمجھیں۔ ہفتہ وار ہائی، لو، ریورسل اور نتیجہ جان کر لگائے لیبل کی حدود کا موازنہ کریں۔"
   },
   "/learn/ict-weekly-options-payoffs-and-risk/": {
-    "en": "Understand the contract before interpreting the directional chart. This is a mechanics lesson, not an options recommendation.",
-    "ur": "سمتی چارٹ سے پہلے کنٹریکٹ سمجھیں۔ یہ اصولوں کا سبق ہے، Options کی سفارش نہیں۔"
+    "en": "Understand ICT weekly options and SPX payoff mechanics. Compare short calls, puts, credit spreads, settlement and risk with hypothetical examples.",
+    "ur": "ICT Weekly Options اور SPX کے Payoff اصول سمجھیں۔ فرضی مثالوں سے Short Call، Put، Credit Spread، Settlement اور خطرے کا موازنہ کریں۔"
   },
   "/learn/ict-replay-journaling-one-model-study/": {
-    "en": "A useful journal preserves decisions made before the outcome, including the days when the best decision was no trade.",
-    "ur": "مفید جرنل نتیجے سے پہلے کیے فیصلے رکھتا ہے، ان دنوں سمیت جب بہتر فیصلہ No Trade تھا۔"
+    "en": "Build an ICT trading journal with chart replay and one-model review. Record rules, screenshots, costs and no-trade decisions before seeing results.",
+    "ur": "ICT Trading Journal میں Chart Replay اور ایک ماڈل کا جائزہ سیکھیں۔ نتیجہ دیکھنے سے پہلے اصول، اسکرین شاٹس، اخراجات اور No-Trade فیصلے لکھیں۔"
+  },
+  "/curriculum/ict-2025-official-mentorship-curriculum/": {
+    "en": "Study 12 free ICT 2025 mentorship lessons covering opening ranges, first presented FVGs, SMT and Venom, with chart replays, quizzes and Urdu versions.",
+    "ur": "ICT 2025 Mentorship کے 12 مفت اسباق میں Opening Range، First Presented FVG، SMT اور Venom سیکھیں؛ چارٹ ری پلے، کوئز اور اردو نسخوں کے ساتھ۔"
+  },
+  "/curriculum/mentorships/2025/": {
+    "en": "Plan your ICT 2025 mentorship study with the official source playlist, lesson links and prerequisites. Review FVG selection, opening ranges and Venom.",
+    "ur": "ICT 2025 Mentorship کے مطالعے کا راستہ، اصل پلے لسٹ، سبق کے روابط اور ضروری تیاری دیکھیں۔ FVG کے انتخاب، Opening Range اور Venom کا جائزہ لیں۔"
   }
 }

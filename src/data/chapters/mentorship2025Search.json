@@ -1,0 +1,165 @@
+[
+  {
+    "id": 24,
+    "path": "/learn/0930-am-opening-range-theory/",
+    "primaryQuery": "ICT opening range",
+    "requiredTerms": [
+      "ICT",
+      "opening",
+      "range"
+    ],
+    "title": "ICT Opening Range: 9:30–10:00 AM | LearnSMC",
+    "heading": "ICT Opening Range Theory: 9:30–10:00 AM Explained",
+    "reviewed": "2026-10-26"
+  },
+  {
+    "id": 58,
+    "path": "/learn/ict-midnight-opening-range-rth-gaps-nwog/",
+    "primaryQuery": "ICT midnight opening range",
+    "requiredTerms": [
+      "ICT",
+      "midnight",
+      "range",
+      "RTH",
+      "NWOG"
+    ],
+    "title": "ICT Midnight Opening Range, RTH & NWOG | LearnSMC",
+    "heading": "ICT Midnight Opening Range, RTH Opening Gaps and NWOG",
+    "reviewed": "2026-10-26"
+  },
+  {
+    "id": 25,
+    "path": "/learn/the-1st-presented-fvg-the-0931-rule/",
+    "primaryQuery": "ICT 1st presented FVG",
+    "requiredTerms": [
+      "ICT",
+      "1st",
+      "presented",
+      "FVG"
+    ],
+    "title": "ICT 1st Presented FVG: Rules & Examples | LearnSMC",
+    "heading": "ICT 1st Presented FVG: Timing, Rules and Examples",
+    "reviewed": "2026-10-26"
+  },
+  {
+    "id": 59,
+    "path": "/learn/ict-pd-array-selection-price-delivery-continuum/",
+    "primaryQuery": "ICT PD array matrix",
+    "requiredTerms": [
+      "ICT",
+      "PD",
+      "array"
+    ],
+    "title": "ICT PD Array Matrix: Premium & Discount | LearnSMC",
+    "heading": "ICT PD Array Matrix: Range Selection, Premium and Discount",
+    "reviewed": "2026-10-26"
+  },
+  {
+    "id": 26,
+    "path": "/learn/smt-divergence-mechanics/",
+    "primaryQuery": "ICT SMT divergence",
+    "requiredTerms": [
+      "ICT",
+      "SMT",
+      "divergence"
+    ],
+    "title": "ICT SMT Divergence: NQ & ES Examples | LearnSMC",
+    "heading": "ICT SMT Divergence: Bullish, Bearish and NQ–ES Examples",
+    "reviewed": "2026-10-26"
+  },
+  {
+    "id": 60,
+    "path": "/learn/ict-liquidity-turtle-soup-rejection-blocks/",
+    "primaryQuery": "ICT Turtle Soup",
+    "requiredTerms": [
+      "ICT",
+      "Turtle",
+      "Soup",
+      "rejection"
+    ],
+    "title": "ICT Turtle Soup: Sweeps & Rejection Blocks | LearnSMC",
+    "heading": "ICT Turtle Soup: Liquidity Sweeps and Rejection Blocks",
+    "reviewed": "2026-10-26"
+  },
+  {
+    "id": 53,
+    "path": "/learn/the-ict-venom-model-five-stage-delivery/",
+    "primaryQuery": "ICT Venom model",
+    "requiredTerms": [
+      "ICT",
+      "Venom",
+      "model"
+    ],
+    "title": "ICT Venom Model: Sequence & Examples | LearnSMC",
+    "heading": "ICT Venom Model: Opening Range, Liquidity Sweep and Two Fangs",
+    "reviewed": "2026-10-26"
+  },
+  {
+    "id": 61,
+    "path": "/learn/ict-lunch-afternoon-session-models/",
+    "primaryQuery": "ICT New York lunch afternoon session",
+    "requiredTerms": [
+      "ICT",
+      "lunch",
+      "afternoon"
+    ],
+    "title": "ICT New York Lunch & Afternoon Sessions | LearnSMC",
+    "heading": "ICT New York Lunch and Afternoon Session Models",
+    "reviewed": "2026-10-26"
+  },
+  {
+    "id": 62,
+    "path": "/learn/ict-news-volatility-no-trade-framework/",
+    "primaryQuery": "ICT news trading FOMC CPI NFP",
+    "requiredTerms": [
+      "ICT",
+      "news",
+      "CPI",
+      "NFP",
+      "FOMC"
+    ],
+    "title": "ICT News Trading: CPI, NFP & FOMC Risks | LearnSMC",
+    "heading": "ICT News Trading: CPI, NFP, FOMC and No-Trade Decisions",
+    "reviewed": "2026-10-26"
+  },
+  {
+    "id": 27,
+    "path": "/learn/the-12-weekly-profiles/",
+    "primaryQuery": "ICT weekly profiles",
+    "requiredTerms": [
+      "ICT",
+      "weekly",
+      "profiles"
+    ],
+    "title": "ICT Weekly Profiles: Patterns & Examples | LearnSMC",
+    "heading": "ICT Weekly Profiles: Weekly Highs, Lows and Scenario Examples",
+    "reviewed": "2026-10-26"
+  },
+  {
+    "id": 63,
+    "path": "/learn/ict-weekly-options-payoffs-and-risk/",
+    "primaryQuery": "ICT weekly options SPX",
+    "requiredTerms": [
+      "ICT",
+      "weekly",
+      "options",
+      "SPX"
+    ],
+    "title": "ICT Weekly Options: SPX Payoffs & Risks | LearnSMC",
+    "heading": "ICT Weekly Options: SPX Premium, Payoffs and Risk",
+    "reviewed": "2026-10-26"
+  },
+  {
+    "id": 64,
+    "path": "/learn/ict-replay-journaling-one-model-study/",
+    "primaryQuery": "ICT trading journal replay",
+    "requiredTerms": [
+      "ICT",
+      "journal",
+      "replay"
+    ],
+    "title": "ICT Trading Journal: Replay & Model Review | LearnSMC",
+    "heading": "ICT Trading Journal: Chart Replay and One-Model Review",
+    "reviewed": "2026-10-26"
+  }
+]

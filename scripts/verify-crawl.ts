@@ -1,5 +1,6 @@
 import { retiredGraphPaths } from '../src/utils/knowledgeGraphRoutes';
 import fs from 'node:fs';
+import { verify2025Search } from './verify-2025-search';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import { parse } from 'parse5';
@@ -149,3 +150,4 @@ for (const name of ['llms.txt', 'llms-full.txt']) {
   assert.ok(text.includes('https://learnsmc.xyz/curriculum/'));
 }
 console.log('Report regression checks passed: author contacts, reading guides, comparison tables and snippet eligibility.');
+verify2025Search(dist);

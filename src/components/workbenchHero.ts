@@ -1,0 +1,13 @@
+export function startHero(root: HTMLElement, translate: (text:string)=>string = text=>text){
+
+const path=root.querySelector<SVGPathElement>('.po3-path')!,dot=root.querySelector<SVGCircleElement>('.po3-dot')!,body=root.querySelector<SVGRectElement>('.po3-body')!,wick=root.querySelector<SVGLineElement>('.po3-wick')!,phase=root.querySelector<HTMLElement>('.po3-phase')!,button=root.querySelector<HTMLButtonElement>('button')!;
+const length=path.getTotalLength(),reduce=matchMedia('(prefers-reduced-motion: reduce)');
+const points=[[18,108],[30,102],[43,112],[55,104],[67,109],[80,105],[95,124],[108,147],[120,138],[135,114],[150,90],[165,96],[182,64],[196,72],[211,37],[228,49]];
+let paused=reduce.matches,elapsed=paused?11000:0,last=null as number|null,frame=0,visible=true;
+path.style.strokeDasharray=String(length);
+function render(ms:number){const t=Math.min(ms/11000,1),scaled=t*(points.length-1),i=Math.min(Math.floor(scaled),points.length-2),f=scaled-i;let x=points[i][0]+(points[i+1][0]-points[i][0])*f,y=points[i][1]+(points[i+1][1]-points[i][1])*f;
+const ys=points.slice(0,i+1).map(p=>p[1]).concat(y,108);let drawn=0;for(let j=0;j<i;j++)drawn+=Math.hypot(points[j+1][0]-points[j][0],points[j+1][1]-points[j][1]);drawn+=Math.hypot(x-points[i][0],y-points[i][1]);path.style.strokeDashoffset=String(length-drawn);dot.setAttribute('cx',String(x));dot.setAttribute('cy',String(y));wick.setAttribute('y1',String(Math.min(...ys)));wick.setAttribute('y2',String(Math.max(...ys)));body.setAttribute('y',String(Math.min(108,y)));body.setAttribute('height',String(Math.max(2,Math.abs(108-y))));const color=y>108?'var(--down)':'var(--up)';body.setAttribute('fill',color);wick.setAttribute('stroke',color);phase.textContent=translate(t<.34?'01 · Accumulation':t<.59?'02 · Manipulation':t<1?'03 · Distribution':'04 · Candle close');}
+function tick(now:number){if(last!==null&&!paused&&visible&&!document.hidden)elapsed=(elapsed+Math.min(now-last,80))%14000;last=now;render(elapsed);frame=requestAnimationFrame(tick)}
+function controls(){button.textContent=translate(paused?'Play':'Pause');button.setAttribute('aria-label',translate(paused?'Play hero animation':'Pause hero animation'))}
+const toggle=()=>{paused=!paused;controls()}; const preference=(e:MediaQueryListEvent)=>{paused=e.matches;if(paused)elapsed=11000;controls()};button.addEventListener('click',toggle);reduce.addEventListener('change',preference);const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting});observer.observe(root);controls();render(elapsed);frame=requestAnimationFrame(tick);return ()=>{cancelAnimationFrame(frame);observer.disconnect();button.removeEventListener('click',toggle);reduce.removeEventListener('change',preference)};
+}

@@ -1,30 +1,12 @@
+import { useTranslation } from '../i18n/TranslationProvider';
+import React, { useState, useEffect, useRef } from 'react';
+import { Flame, BarChart2, PlayCircle, Cpu, BookMarked, GitFork, Layers, GitCompare, Award, Compass, Search, ArrowUpRight } from 'lucide-react';
 import { masterclassCollection } from '../data/masterclassData';
-import { StudioSketch } from './StudioSketch';
-import { AccentText } from './AccentText';
 import { textbookChapters } from '../data/chaptersData';
-import React, { useState } from 'react';
-import { 
-  BarChart2, 
-  PlayCircle, 
-  Cpu, 
-  BookMarked, 
-  GitFork, 
-  Layers, 
-  GitCompare, 
-  Award, 
-  Flame, 
-  Compass, 
-  ArrowRight, 
-  ShieldCheck, 
-  Terminal, 
-  Zap, 
-  BookOpen, 
-  Activity 
-} from 'lucide-react';
 import { SEO } from './SEO';
-import { ScrollReveal } from './ScrollReveal';
 import { TradingToolId } from './TradingToolsWorkbench';
-
+import { startHero } from './workbenchHero';
+import '../styles/study-workbench.css';
 interface ToolCardData {
   id: TradingToolId;
   slug: string;
@@ -183,19 +165,18 @@ export const WORKBENCH_TOOL_CATALOG: ToolCardData[] = [
   }
 ];
 
-interface TradingToolsOverviewProps {
-  onSelectTool: (toolId: TradingToolId, customUrl?: string) => void;
-}
 
-export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSelectTool }) => {
-  const [filterCategory, setFilterCategory] = useState<'all' | 'execution' | 'reference' | 'performance'>('all');
 
-  const filteredTools = filterCategory === 'all'
-    ? WORKBENCH_TOOL_CATALOG
-    : WORKBENCH_TOOL_CATALOG.filter(t => t.category === filterCategory);
-
-  return (
-    <div className="wb-hub">
+interface TradingToolsOverviewProps { onSelectTool: (toolId: TradingToolId, customUrl?: string) => void }
+export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({onSelectTool}) => {
+ const {t,href,message}=useTranslation();
+ const [category,setCategory]=useState('all'); const [query,setQuery]=useState(''); const [selected,setSelected]=useState<TradingToolId>('chartlab');
+ const root=useRef<HTMLDivElement>(null);
+ useEffect(()=>{const hero=root.current?.querySelector<HTMLElement>('.po3-visual');if(hero)return startHero(hero,t)},[]);
+ const tools=WORKBENCH_TOOL_CATALOG.filter(tool=>(category==='all'||tool.category===category)&&[tool.name,tool.desc,...tool.features,...[tool.name,tool.desc,...tool.features].map(t)].join(' ').toLowerCase().includes(query.toLowerCase().trim()));
+ const active=tools.find(t=>t.id===selected)||tools[0];
+ function open(e:React.MouseEvent<HTMLAnchorElement>,id:TradingToolId,url:string){if(!e.metaKey&&!e.ctrlKey&&!e.shiftKey&&!e.altKey&&e.button===0){e.preventDefault();onSelectTool(id,url)}}
+ return <div className="study-workbench" ref={root}>
       <SEO 
         title="ICT Trading Workbench & Analytical Laboratories | LearnSMC"
         description="Explore 10 empirical trading facilities: interactive Chart Lab, trade simulator, backtester, multi-tier concepts glossary, and ICT Delivery Suite."
@@ -210,184 +191,15 @@ export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({ onSe
         }}
       />
 
-      {/* Hero Overview Banner */}
-      <ScrollReveal y={0}>
-        <div className="wb-hero">
-          <div className="wb-decoration" />
-          <div className="wb-decoration" />
-
-          <div className="wb-hero-layout">
-            <div className="wb-ribbon">
-              <span className="wb-ribbon-name">
-                Workbench &amp; Laboratory
-              </span>
-              <span className="wb-ribbon-divider">/</span>
-              <span className="wb-ribbon-count">
-                10 Free Institutional Software Modules
-              </span>
-            </div>
-
-            <div className="wb-hero-copy">
-              <h1 className="wb-heading">
-                <AccentText text="Trading Study Workbench" focus="Study" urduFocus="مشق" tone="violet"/> <br className="wb-heading-break" />
-                <span className="wb-heading-sub">
-                  Reference, Practice and Review
-                </span>
-              </h1>
-              <p className="wb-intro">
-                Study definitions, work through illustrative chart exercises, and inspect hypothetical risk calculations. Each tool states its assumptions and limitations.
-              </p>
-            </div>
-
-            {/* Quick Metrics */}
-            <div className="wb-facts">
-              <div className="wb-fact">
-                <div className="wb-fact-label">Observation Drills</div>
-                <div className="wb-fact-value">3 Drills</div>
-              </div>
-              <div className="wb-fact">
-                <div className="wb-fact-label">Glossary Concepts</div>
-                <div className="wb-fact-value">41 Topics</div>
-              </div>
-              <div className="wb-fact">
-                <div className="wb-fact-label">PD Arrays</div>
-                <div className="wb-fact-value">Reference studies</div>
-              </div>
-              <div className="wb-fact">
-                <div className="wb-fact-label">Macro Windows</div>
-                <div className="wb-fact-value">8 Daily</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </ScrollReveal>
-
-      {/* Filter Tabs */}
-      <div className="wb-filter-bar">
-        <div className="wb-filters">
-          {[
-            { id: 'all', label: 'All Modules (10)' },
-            { id: 'execution', label: 'Execution & Replay (3)' },
-            { id: 'reference', label: 'Reference & Structure (4)' },
-            { id: 'performance', label: 'Timing & Performance (3)' }
-          ].map((tab) => (
-            <button
-              key={tab.id}
-              aria-pressed={filterCategory === tab.id}
-              onClick={() => setFilterCategory(tab.id as any)}
-              className="wb-filter"
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-        <div className="wb-result-count">
-          Showing {filteredTools.length} of {WORKBENCH_TOOL_CATALOG.length} facilities
-        </div>
-      </div>
-
-      {/* Grid of Tool Cards */}
-      <div className="wb-directory">
-        {filteredTools.map((tool) => {
-          const Icon = tool.icon;
-          return (
-            <div
-              key={tool.id}
-              data-tool={tool.id} data-category={tool.category} data-surface={tool.category==='reference'?'paper':tool.id==='journal'||tool.id==='simulator'?'ink':'gray'}
-              className="wb-tool"
-            >
-              <div className="wb-tool-content">
-                {/* Header */}
-                <div className="wb-tool-top">
-                  <div 
-                    className="wb-tool-icon"
-                    style={{ backgroundColor: "var(--wb-tint)", color: tool.accentColor }}
-                  >
-                    <Icon className="wb-icon" />
-                  </div>
-                  <div className="wb-tool-meta">
-                    <span className="wb-badge">
-                      {tool.badge}
-                    </span>
-                    <span className="wb-number">{tool.number}</span>
-                  </div>
-                </div>
-
-                {(['chartlab','simulator','backtest'].includes(tool.id)) && <StudioSketch kind={tool.id === 'chartlab' ? 'recognize' : tool.id === 'simulator' ? 'decide' : 'evaluate'}/>}
-                {/* Title & Desc */}
-                <div className="wb-tool-copy">
-                  <h3 className="wb-tool-name">
-                    <span>{tool.name}</span>
-                  </h3>
-                  <div className="wb-category">
-                    {tool.categoryLabel}
-                  </div>
-                  <p className="wb-description">
-                    {tool.desc}
-                  </p>
-                </div>
-
-                {/* Feature Chips */}
-                <ul className="wb-features">
-                  {tool.features.map((feat, fIdx) => (
-                    <li key={fIdx} className="wb-feature">
-                      <span className="wb-feature-mark" />
-                      <span className="wb-feature-copy">{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Action Button */}
-              <div className="wb-tool-action">
-                <a
-
-                  href={tool.url}
-                  className="wb-launch"
-                >
-                  <span>Launch Module</span>
-                  <ArrowRight className="wb-launch-icon" />
-                </a>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Static Semantic HTML for Search Engines & Technical Documentation */}
-      <article className="wb-method">
-        <h2 className="wb-method-heading">
-          Deliberate Practice Architecture: Why Simulation Precedes Live Capital Risk
-        </h2>
-        <div className="wb-method-label">
-          <Terminal className="wb-icon" />
-          <span>Institutional Infrastructure Specification</span>
-        </div>
-        <p>
-          Exchange-traded products and fragmented OTC markets use different execution structures. The LearnSMC Workbench and Laboratory Suite provides independent educational tools so traders can isolate and test individual components of the delivery cycle without financial friction.
-        </p>
-
-        <div className="wb-method-grid">
-          <div className="wb-method-section">
-            <h4 className="wb-method-title">1. Execution &amp; Replay</h4>
-            <p className="wb-method-copy">
-              Identify chart features in Chart Laboratory, lock a fictional decision in Trade Simulator, and scan a defined rule on synthetic or local CSV candles in Backtest Lab.
-            </p>
-          </div>
-          <div className="wb-method-section">
-            <h4 className="wb-method-title">2. Reference &amp; Structure</h4>
-            <p className="wb-method-copy">
-              Query 41+ concepts in the multi-tier Glossary, cross-examine definitions in the Compare Matrix, and traverse the 10-step institutional pipeline in the Knowledge Graph.
-            </p>
-          </div>
-          <div className="wb-method-section">
-            <h4 className="wb-method-title">3. Timing &amp; Mastery</h4>
-            <p className="wb-method-copy">
-              Track session killzones and macro execution windows in the ICT Delivery Suite, audit your execution psychology in the Trading Journal, and benchmark diagnostics in the Mastery Profile.
-            </p>
-          </div>
-        </div>
-      </article>
-    </div>
-  );
+<section className="hybrid-welcome" aria-labelledby="welcome-heading"><div className="welcome-title"><h1 id="welcome-heading">{t("Workbench & Lab")}</h1></div><div className="welcome-story"><span>{t("Learn it. Observe it. Test it.")}</span><h2>{t("Understand the idea.")}<br/>{t("Put it to work.")}</h2><p>{t("Ten tools for chart practice, concept reference and honest review. New here? Start by observing a chart.")}</p><div className="welcome-actions"><a className="welcome-primary" href={href("/tools/chartlab/")}>{t("Open Chart Laboratory ")}<span aria-hidden="true">↗</span></a><a className="welcome-browse" href="#study-desk">{t("Browse all 10 tools ")}<span aria-hidden="true">↓</span></a></div></div><figure className="welcome-visual po3-visual"><div className="po3-caption"><span>{t("POWER OF THREE")}</span><button type="button" className="po3-pause" aria-label="Pause hero animation">{t("Pause")}</button></div><svg viewBox="0 0 340 192" role="img" aria-labelledby="po3-title po3-desc"><title id="po3-title">{t("Illustrative bullish Power of Three daily candle")}</title><desc id="po3-desc">{t("Price consolidates near the open, dips below it, then expands higher. The candle on the right summarizes the same price path. This is one possible scenario, not a prediction.")}</desc><path className="welcome-grid" d="M12 40H245M12 80H245M12 120H245M12 160H245"/><rect x="16" y="96" width="72" height="22" fill="#55b7ff12"/><path d="M12 108H324" stroke="#aeb5c1" strokeDasharray="3 5"/><text x="15" y="101" className="po3-svg-label">{t("Open")}</text><path className="po3-path" d="M18 108L30 102L43 112L55 104L67 109L80 105L95 124L108 147L120 138L135 114L150 90L165 96L182 64L196 72L211 37L228 49" fill="none" stroke="#55b7ff" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round"/><circle className="po3-dot" r="4" fill="#55b7ff"/><path d="M262 26V166" stroke="#303238"/><line className="po3-wick" x1="292" x2="292" y1="108" y2="108" stroke="#70bfa6" strokeWidth="2"/><rect className="po3-body" x="281" y="107" width="22" height="2" fill="#70bfa6"/><text x="292" y="184" textAnchor="middle" className="po3-svg-label">{t("Daily candle")}</text></svg><figcaption><span className="po3-phase">{t("01 \u00b7 Accumulation")}</span><span className="po3-note">{t("Illustrative bullish scenario")}</span></figcaption></figure></section>
+<section className="terminal-shell" id="study-desk" aria-label="Study desk">
+<aside className="terminal-sidebar"><h2>{t("Browse tools")}</h2><p>{t("Filter by purpose")}</p><nav className="category-controls" aria-label="Filter tools">{[['all','All tools'],['execution','Practice'],['reference','Reference'],['performance','Review']].map(([id,label])=><button key={id} onClick={()=>setCategory(id)} aria-pressed={category===id}>{t(label)}</button>)}</nav><div className="side-note"><span>{t("Working with a lesson?")}</span><a href={href("/curriculum/")}>{t("Return to curriculum")}</a></div></aside>
+<section className="terminal-directory"><div className="directory-heading"><div><h2>{t("Study desk")}</h2><p>{t("Select a tool to inspect its features.")}</p></div><label className="tool-search"><Search aria-hidden="true"/><input type="search" aria-label="Find a tool" placeholder="Find a tool" value={query} onChange={e=>setQuery(e.target.value)}/></label></div><div className="directory-columns"><span>{t("Tool")}</span><span>{t("Use it for")}</span></div>
+{tools.map(tool=><button key={tool.id} className="tool-row directory-item" aria-pressed={active?.id===tool.id} onClick={()=>setSelected(tool.id)}><span className="row-number">{tool.number}</span><span className="row-name"><tool.icon className="tool-icon"/>{t(tool.name)}</span><span className="row-purpose">{t(tool.categoryLabel)}</span><ArrowUpRight className="row-arrow" size={16}/></button>)}
+{!tools.length&&<p className="empty">{t("No tools match that search. Try a concept such as FVG or replay.")}</p>}<p className="result-count" role="status">{message("{count} of 10 tools",{count:tools.length})}</p>
+</section>
+<aside className="terminal-inspector" aria-label="Selected tool">{active&&<><span className="inspector-label">{t("Selected tool")}</span><div className="inspector-symbol"><active.icon className="tool-icon"/></div><h2 aria-live="polite">{t(active.name)}</h2><p className="selected-category">{t(active.categoryLabel)}</p>{active.category==='execution'&&(<div className="preview-art" aria-hidden="true"><svg className="candles" viewBox="0 0 500 200" role="img" aria-label="Illustrative candle shapes, not market data"><path className="grid-line" d="M20 30H480M20 80H480M20 130H480M20 180H480"/><path className="down wick" d="M60 96v70M115 62v80M225 54v78"/><path className="up wick" d="M170 20v95M280 32v63M335 8v70M390 15v70M445 35v90"/><path className="down body" d="M60 112v32M115 80v40M225 72v42"/><path className="up body" d="M170 48v43M280 48v29M335 20v34M390 31v32M445 57v42"/><path className="chart-zone" d="M170 103H390v26H170Z"/><path className="chart-boundary" d="M20 102H470"/></svg></div>)}<p className="selected-description">{t(active.desc)}</p><ul>{active.features.map(f=><li key={t(f)}>{t(f)}</li>)}</ul><a className="inspector-open" href={href(active.url)} onClick={e=>open(e,active.id,active.url)}>{t("Open tool ")}<ArrowUpRight size={16}/></a><small>{t("Open the existing tool to use its exercises and controls.")}</small></>}</aside>
+</section>
+<nav className="study-all-links" aria-label="All workbench tools">{WORKBENCH_TOOL_CATALOG.map(tool=><a key={tool.id} href={href(tool.url)} onClick={e=>open(e,tool.id,tool.url)}>{t(tool.name)}</a>)}</nav>
+</div>
 };

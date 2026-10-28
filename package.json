@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 3000",
-    "build": "tsx scripts/generate-catalog.ts && tsx scripts/generate-urdu-runtime.ts && vite build && tsx scripts/prerender.ts && tsx scripts/validate-seo.ts && tsx scripts/verify-crawl.ts && tsx scripts/verify-routing.ts && tsx scripts/verify-2026-edition.ts",
-    "test:seo": "tsx scripts/validate-seo.ts && tsx scripts/verify-crawl.ts && tsx scripts/verify-routing.ts && tsx scripts/verify-2026-edition.ts",
+    "build": "tsx scripts/generate-catalog.ts && tsx scripts/generate-urdu-runtime.ts && vite build && tsx scripts/prerender.ts && tsx scripts/validate-seo.ts && tsx scripts/verify-crawl.ts && tsx scripts/verify-routing.ts && tsx scripts/verify-2026-edition.ts && tsx scripts/verify-masterclass-hub.ts",
+    "test:seo": "tsx scripts/validate-seo.ts && tsx scripts/verify-crawl.ts && tsx scripts/verify-routing.ts && tsx scripts/verify-2026-edition.ts && tsx scripts/verify-masterclass-hub.ts",
     "preview": "vite preview",
     "seo:record": "tsx scripts/sitemap-dates.ts",
     "seo:intent-map": "tsx scripts/search-intent-map.ts",

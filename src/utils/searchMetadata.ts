@@ -1,3 +1,4 @@
+import {masterclassHubPath,masterclassHubTitle,masterclassHubDescription} from '../data/masterclassHubMeta';
 import {chapterCatalog} from '../data/catalog.generated';
 import { studyTopics } from '../data/searchTopics';
 import searchDescriptions from '../data/searchDescriptions.json';
@@ -83,7 +84,8 @@ const routeTitles: Record<string, string> = {
 };
 
 export function searchTitle(value: string, path = '/'): string {
-  let topic = reviewed2026.find(entry=>entry.path===path)?.title || routeTitles[path] || studyTopics[path] || primaryTopic(value);
+  if(path===masterclassHubPath)return masterclassHubTitle+BRAND; // Human-reviewed 54-character hub title; preserve Concepts.
+  let topic = path===masterclassHubPath?masterclassHubTitle:reviewed2026.find(entry=>entry.path===path)?.title || routeTitles[path] || studyTopics[path] || primaryTopic(value);
   // Long subtitles describe the page in the deck; the title needs its main topic.
   if (topic.length > TITLE_LIMIT - BRAND.length) {
     const first = topic.split(/\s+[—–]\s+|:\s+|\?\s+/)[0];
@@ -93,6 +95,7 @@ export function searchTitle(value: string, path = '/'): string {
 }
 
 export function searchDescription(value: string, title: string, path: string): string {
+  if(path===masterclassHubPath)return masterclassHubDescription;
   // Human-reviewed page summaries take precedence over length-based fallbacks.
   const englishPath = path.replace(/^\/ur(?=\/|$)/, '') || '/';
   const reviewed = searchDescriptions[englishPath as keyof typeof searchDescriptions];

@@ -36,7 +36,7 @@
  --zone:#086ac415;--hybrid-secondary:#4d5c70;--hybrid-quiet:#5c6878;--hybrid-zone:#086ac418;
  color-scheme:light;
 }
-[data-theme="dark"] .study-workbench{color-scheme:dark}
+[data-theme="dark"] .study-workbench{--bg:var(--color-canvas);color-scheme:dark}
 .study-workbench .po3-path{stroke:var(--accent)}
 .study-workbench .po3-dot{fill:var(--accent)}
 .study-workbench .po3-visual svg>rect[fill="#55b7ff12"]{fill:var(--zone)}

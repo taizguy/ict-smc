@@ -1,3 +1,6 @@
+import {MasterclassHub} from '../src/components/MasterclassHub';
+import {masterclassHubPath,masterclassHubTitle,masterclassHubDescription,masterclassHubH1,masterclassHubLessons,masterclassHubFaqs} from '../src/data/masterclassHub';
+import {getMasterclassUrl} from '../src/utils/workbenchToolRoutes';
 import {alchemyDates} from '../src/data/chapters/marketAlchemyPilot';
 import { lessonBreadcrumbs } from '../src/utils/lessonBreadcrumbs';
 import { deliverySupport } from '../src/data/chapters/deliverySupport';
@@ -181,6 +184,19 @@ export function prepareRoutes(routes: RouteMeta[]) {
 
 export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   const path = new URL(r.canonical).pathname;
+  if(path===masterclassHubPath){
+    r.title=searchTitle(masterclassHubTitle,path);r.description=masterclassHubDescription;r.heading=masterclassHubH1;r.subheading='Less memorising. More understanding.';
+    r.bodyHtml=renderToStaticMarkup(createElement(MasterclassHub));
+    const listId=r.canonical+'#lessons';
+    r.schemaJson={'@context':'https://schema.org','@graph':[
+      publisher,lessonAuthor,{'@type':'WebSite','@id':'https://learnsmc.xyz/#website',name:'LearnSMC',url:'https://learnsmc.xyz/'},
+      {'@type':'CollectionPage','@id':r.canonical,name:masterclassHubH1,description:masterclassHubDescription,url:r.canonical,inLanguage:'en',isAccessibleForFree:true,publisher,mainEntity:{'@id':listId}},
+      {'@type':'BreadcrumbList',itemListElement:[['Home','/'],['Workbench & Lab','/tools/'],['Masterclass collection',masterclassHubPath]].map(([name,p],i)=>({'@type':'ListItem',position:i+1,name,item:'https://learnsmc.xyz'+p}))},
+      {'@type':'ItemList','@id':listId,name:'Masterclass lesson collection',numberOfItems:masterclassHubLessons.length,itemListElement:masterclassHubLessons.map((lesson,i)=>({'@type':'ListItem',position:i+1,name:lesson.title,url:'https://learnsmc.xyz'+getMasterclassUrl(lesson)}))},
+      {'@type':'FAQPage','@id':r.canonical+'#faq',mainEntity:masterclassHubFaqs.map(f=>({'@type':'Question',name:f.question,acceptedAnswer:{'@type':'Answer',text:f.answer}}))},
+    ]};
+    return;
+  }
   correctToolDocument(r, path);
   const chapterCount = textbookChapters.length;
   const lectureCount = masoodPlaylistsData.reduce((sum, p) => sum + p.lectures.length, 0);
@@ -226,7 +242,7 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   const parentRoutes = routes.filter(c => c !== r && c.canonical !== 'https://learnsmc.xyz/' &&
     path.startsWith(new URL(c.canonical).pathname)).sort((a, b) => a.canonical.length - b.canonical.length);
   const crumbs = chapter ? lessonBreadcrumbs(chapter).map(crumb => ({ name: crumb.name, url: `https://learnsmc.xyz${crumb.path}` })) : [{ name: 'Home', url: 'https://learnsmc.xyz/' },
-    ...parentRoutes.map(p => ({ name: p.heading, url: p.canonical })),
+    ...parentRoutes.map(p => ({ name: new URL(p.canonical).pathname===masterclassHubPath?`Masterclass hub: ${masterclassHubLessons.length} lessons`:p.heading, url: p.canonical })),
     ...(path === '/' ? [] : [{ name: r.heading, url: r.canonical }])];
   if (path !== '/') r.bodyHtml = `<nav aria-label="Breadcrumb">${crumbs.map(c => link(new URL(c.url).pathname, c.name)).join(' / ')}</nav>` + r.bodyHtml;
   if (['/', '/curriculum/', '/about/', '/contact/'].includes(path) || path.startsWith('/tools/compare/')) {

@@ -1,3 +1,4 @@
+import masterclassHubUrdu from './masterclass-hub-urdu.json';
 import {mentorshipVisualUrdu} from '../data/chapters/mentorship2025Visuals';
 import mentorship2025Urdu from './mentorship2025-urdu.json';
 import mentorship2026Urdu from './mentorship2026-urdu.json';
@@ -33,6 +34,7 @@ import chapterHeadings from './chapter-headings-urdu.json';
 import { refineTradingLanguage } from './trading-language';
 /** Original Urdu translations. Keys are exact English source text, never route IDs or calculation values. */
 export const urdu: Record<string, string> = {
+  ...masterclassHubUrdu,
   ...readingRoomUrdu,
   '24 October 2026': '24 اکتوبر 2026',
   'Study ICT and Smart Money Concepts with free lessons, original diagrams and chart exercises. Start with market foundations, then learn structure, liquidity and price patterns at your own pace.': 'مفت اسباق، اصل خاکوں اور چارٹ مشقوں کے ساتھ ICT اور Smart Money Concepts سیکھیں۔ مارکیٹ کی بنیادوں سے شروع کریں، پھر اپنی رفتار سے اسٹرکچر، لیکویڈیٹی اور قیمت کے پیٹرن سمجھیں۔',

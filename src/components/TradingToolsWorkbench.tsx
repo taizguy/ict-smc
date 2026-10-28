@@ -1,3 +1,4 @@
+import {MasterclassHub} from './MasterclassHub';
 import { useTranslation } from "../i18n/TranslationProvider";
 import { currentDocumentHref } from '../i18n/navigation';
 import { masterclassCollection } from '../data/masterclassData';
@@ -224,6 +225,8 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
       />
     );
   }
+
+  if(activeTool==='masterclass'&&!masterclassModuleSlug&&(!masterclassCategory||masterclassCategory==='all')) return <MasterclassHub/>;
 
   const currentToolMeta = tools.find(t => t.id === activeTool) || tools[0];
 

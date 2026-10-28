@@ -4,9 +4,10 @@ import {
   marketReducer,
   restoreMarket,
   SESSION_KEY,
+  type MarketState,
 } from "../../utils/marketEngine";
-export function useMarketSession(storageKey = SESSION_KEY) {
-  const [state, dispatch] = useReducer(marketReducer, undefined, initialMarket),
+export function useMarketSession(storageKey = SESSION_KEY, initialState: () => MarketState = initialMarket) {
+  const [state, dispatch] = useReducer(marketReducer, undefined, initialState),
     [ready, setReady] = useState(false),
     [storageError, setStorageError] = useState(false);
   useEffect(() => {

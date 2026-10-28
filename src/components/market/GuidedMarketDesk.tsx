@@ -22,9 +22,14 @@ import {
 } from "../../data/learningCases";
 import { initialMarket, validPlan, type Mark } from "../../utils/marketEngine";
 import { useMarketSession } from "./useMarketSession";
+import { ReadingChart } from './ReadingChart';
 import { downloadLabFile } from "../labs/LabDesk";
 import type { MarketMode } from "./MarketWorkspace";
 const Chart = lazy(() => import("./MarketChart"));
+const initialGuidedMarket = () => ({
+  ...initialMarket(), source: caseSource(learningCases[0]), bars: learningCases[0].bars,
+  cursor: 14, seen: 14, draft: casePlan(learningCases[0]),
+});
 const Sandbox = lazy(() =>
   import("./MarketWorkspace").then((m) => ({ default: m.MarketWorkspace })),
 );
@@ -76,7 +81,7 @@ export function GuidedMarketDesk({
       ready,
       flush,
       storageError,
-    } = useMarketSession(GUIDED_KEY);
+    } = useMarketSession(GUIDED_KEY, initialGuidedMarket);
   const [stage, setStage] = useState(0),
     [answered, setAnswered] = useState(false),
     [hint, setHint] = useState(false),
@@ -444,7 +449,7 @@ export function GuidedMarketDesk({
           )}
           <Suspense
             fallback={
-              <div className="market-chart-loading">{t("Opening chart…")}</div>
+              <ReadingChart bars={bars}/>
             }
           >
             <Chart

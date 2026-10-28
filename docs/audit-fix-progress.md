@@ -1,14 +1,22 @@
 # Audit fix progress
 
-Branch: `fix/audit-batch-1`. One commit per batch. PR review required. No merge, main push or production deployment authorized.
+Branch: `fix/audit-batch-2`, based on the merged Batch 1 PR. One commit per batch. PR review required. No merge, main push or production deployment authorized.
+
+## Batch 2 — Rendering and parity
+
+- **Done:** shared actual route views for Chart Lab, FVG glossary, OTE calculator and Masood lectures; native Urdu document rendering; preserved reading HTML during staged enhancement with createRoot. Removed the irrelevant Chart Lab lesson diagram and its 28 dead fragment links. Shared assumptions/guides and deterministic initial case state prevent content drift.
+- **In progress:** review handoff only; no merge or deployment. Urdu author review remains pending.
+- **Files touched:** complete grouped inventory in `docs/audit-batch-2-review.md`. Changes cover the four route views, shared reading models, scoped startup, EN/UR generators and targeted parity checks.
+- **Verification passed:** TypeScript; 254 targeted EN/UR documents; normalized essential headings/paragraphs in 42 browser snapshots covering normal, delayed, failed-entry and script-free documents, mobile, dark mode and Urdu. Four delayed before/after main-content geometry pairs had zero measured changes; four interactive smoke checks passed. Script-free fixtures are not a browser-level JavaScript-disable test. Full production build, suite and crawl remain Batch 6.
+- **Next:** one Batch 2 commit and draft review PR, then stop. Batch 3 is not started. No URLs, redirects, canonicals, sitemap dates or metadata were changed.
 
 ## Batch 1 — Quick fixes
 
 - **Done:** genuine Urdu Rejection Block/Hangman descriptions with static/client and description/OG/Twitter parity; shared Workbench catalog facts (66 chapters and current graph); visible representative Market Alchemy Article image for EN/UR.
-- **In progress:** review handoff only. Author review of Urdu drafts is pending; see `docs/audit-batch-1-review.md`. No Batch 2 work started.
+- **Status:** merged by the user as `87df40d`. Author review of Urdu drafts remains pending; see `docs/audit-batch-1-review.md`.
 - **Files touched:** `src/data/workbenchCatalog.ts`; `src/components/TradingToolsOverview.tsx`; `scripts/tools-content.ts`; `src/data/searchDescriptions.json`; `src/i18n/tools-urdu.ts`; `scripts/generate-urdu-runtime.ts`; `src/i18n/runtime/shared.json`; `src/i18n/runtime/tools.json`; `scripts/seo-content.ts`; `scripts/verify-audit-batch-1.ts`; `docs/audit-batch-1-review.md`; this log.
 - **Verification passed:** `npm run lint` and `npx tsx scripts/verify-audit-batch-1.ts`. Checks cover unchanged English snippets, static/client Urdu parity, all 10 shared tool links/features, current count/graph and visible EN/UR Article image. No full build, suite or crawl run; those remain Batch 6. No sitemap dates stamped, startup gates changed, URLs deleted or redirects added.
-- **Next:** one Batch 1 commit and review PR; stop for review. Batch 2 begins only in the next authorized work session. Existing untracked GSC report/design prototypes are excluded. Main and production stay untouched.
+- **Handoff:** Batch 2 separately authorized. Existing untracked GSC report/design prototypes remain excluded. Main and production stay untouched by this batch.
 
 ## Remaining batches
 

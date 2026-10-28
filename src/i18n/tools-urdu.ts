@@ -73,4 +73,6 @@ export const toolsUrdu: Record<string, string> = {
   "Expand topic branches": "موضوعات کی شاخیں کھولیں",
   "Accessible text tree and concept links": "قابلِ رسائی متنی شجرہ اور تصورات کے روابط",
   "{0}-lesson completion overview": "{0} اسباق کی تکمیل کا جائزہ",
+  'Reading preview of the revealed illustrative candles': 'اب تک دکھائی گئی فرضی کینڈلز کا مطالعے کے لیے خاکہ',
+  'Reading preview. Interactive chart controls load separately.': 'یہ مطالعے کا خاکہ ہے۔ چارٹ کے انٹرایکٹو بٹن الگ سے لوڈ ہوتے ہیں۔',
 };

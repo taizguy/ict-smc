@@ -1,3 +1,6 @@
+import { AuditedRouteBody } from '../src/components/AuditedRouteDocument';
+import { MasoodLecturePage } from '../src/components/MasoodLecturePage';
+import { auditedReadingRoute } from '../src/utils/auditedReadingRoutes';
 import {MasterclassHub} from '../src/components/MasterclassHub';
 import {masterclassHubPath,masterclassHubTitle,masterclassHubDescription,masterclassHubH1,masterclassHubLessons,masterclassHubFaqs} from '../src/data/masterclassHub';
 import {getMasterclassUrl} from '../src/utils/workbenchToolRoutes';
@@ -123,14 +126,7 @@ export function prepareRoutes(routes: RouteMeta[]) {
     const path = `/masood/lectures/${lec.id}/`;
     const r = routes.find(r => r.canonical === `https://learnsmc.xyz${path}`)!;
     r.description = `${lec.shortSummary} Study notes, practice exercise and the original Abdullah Masood video.`;
-    r.bodyHtml = byline + source + `<p>${renderContextualText(lec.shortSummary, path)}</p>` +
-      [['Key takeaways', lec.keyTakeaways], ['Rules discussed in this lecture', lec.coreRules],
-        ['Practice checklist', lec.tradingChecklist], ['Common mistakes to examine', lec.commonMistakes]]
-      .map(([title, points]) => section(title as string, list((points as string[] || []).map(t => renderContextualText(t, path))))).join('') +
-      section('Demo account exercise', `<p>${renderContextualText(lec.practicalExercise, path)}</p>`) +
-      (lec.bilingualNotes ? section('Additional study notes', `<p>${escape(lec.bilingualNotes)}</p>`) : '') +
-      `<p><a href="https://www.youtube.com/watch?v=${escape(lec.youtubeId)}" rel="noopener noreferrer">Watch the original lecture on YouTube</a></p>` +
-      section('Continue this series', list(p.lectures.filter(l => l.id !== lec.id).slice(0, 5).map(l => link(`/masood/lectures/${l.id}/`, l.title))) + link(`/masood/playlists/${p.id}/`, `Complete ${p.badge} series`));
+    r.bodyHtml = renderToStaticMarkup(createElement(MasoodLecturePage,{lecture:lec}));
     r.schemaJson = {
       '@type': 'LearningResource', name: lec.title, description: lec.shortSummary,
       url: r.canonical, learningResourceType: 'Study notes', author: lessonAuthor, publisher,
@@ -283,4 +279,6 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
     { '@type': 'BreadcrumbList', itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })) },
     r.schemaJson || { '@type': children.length ? 'CollectionPage' : 'WebPage', name: r.heading, description: r.description, url: r.canonical, publisher, ...(['/', '/curriculum/', '/about/', '/contact/'].includes(path) || path.startsWith('/tools/compare/') ? { dateModified: publisherPageRevision.iso } : {}) },
   ] };
+  if (auditedReadingRoute(path)) r.bodyHtml = renderToStaticMarkup(createElement(AuditedRouteBody,{pathname:path,heading:r.heading}));
+
 }

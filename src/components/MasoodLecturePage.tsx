@@ -10,7 +10,7 @@ export function MasoodLecturePage({ lecture }: { lecture: MasoodLecture }) {
   const playlist = masoodPlaylistsData.find(p => p.id === lecture.playlistType)!;
   const sections = [
     ['Key takeaways', lecture.keyTakeaways],
-    ['Rules discussed in the lecture', lecture.coreRules],
+    ['Rules discussed in this lecture', lecture.coreRules],
     ['Practice checklist', lecture.tradingChecklist],
     ['Common mistakes to examine', lecture.commonMistakes],
   ] as const;
@@ -23,6 +23,7 @@ export function MasoodLecturePage({ lecture }: { lecture: MasoodLecture }) {
       <h1 className="text-3xl font-semibold text-ink">{studyTopics[`/masood/lectures/${lecture.id}/`] || conciseHeading(lecture.title)}</h1>
       <p>{lecture.shortSummary}</p>
       <p className="text-sm">Written study notes by <a className="underline" href="/about/#author">Muhammad Umer Ijaz</a>. Video source: Trader Abdullah Masood. These notes are independently published by LearnSMC.</p>
+      <p className="text-sm">Video source: Trader Abdullah Masood on YouTube. Notes are independently written; the source educator is not the author or reviewer of these notes.</p>
     </header>
     <div className="aspect-video bg-surface rounded-xl overflow-hidden">
       {play ? <iframe className="w-full h-full" src={`https://www.youtube-nocookie.com/embed/${lecture.youtubeId}`} title={lecture.title} width="1280" height="720" allow="encrypted-media; picture-in-picture" allowFullScreen />

@@ -23,7 +23,7 @@ function groupFor(file: string): Group {
   if (/data\/chapters|DeliveryLesson|Mentorship2025|Mentorship2026|Chapters|ChapterRoom|cornerstoneGuides|CornerstoneGuide|fvgLesson|FvgLessonDiagram|fvgStory|FvgStory|chapterStories|ChapterStory/.test(file)) return 'chapters';
   if (/masood/i.test(file)) return 'masood';
   if (/Legal|publisherPageCopy/.test(file)) return 'publisher';
-  if (/data\/(?:workbenchCatalog|learningCases|labGuides|concepts|masterclass|comparisons|quizzes|chartScenarios|theinnercircletraders)|(?:GuidedMarketDesk|MarketWorkspace|MarketChart|ChartLab|CompareView|ConceptExplorer|Masterclass|MasteryDashboard|InstitutionalTools|KnowledgeGraph|BacktestLab|TradeSimulator|TradingJournal|TradingTools)/.test(file)) return 'tools';
+  if (/data\/(?:deliverySuiteReading|workbenchCatalog|learningCases|labGuides|concepts|masterclass|comparisons|quizzes|chartScenarios|theinnercircletraders)|(?:StudyReadingNotes|DeliveryReferenceNotes|GuidedMarketDesk|MarketWorkspace|MarketChart|ChartLab|CompareView|ConceptExplorer|Masterclass|MasteryDashboard|InstitutionalTools|KnowledgeGraph|BacktestLab|TradeSimulator|TradingJournal|TradingTools)/.test(file)) return 'tools';
   return 'shared';
 }
 function add(text: string, group: Group) {

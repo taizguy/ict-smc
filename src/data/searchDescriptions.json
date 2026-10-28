@@ -610,5 +610,13 @@
   "/tools/masterclass/": {
     "en": "Explore ICT and Smart Money Concepts lessons on PD arrays, entry models and opening ranges. Compare visual study notes, sequences and invalidation rules.",
     "ur": "ICT اور Smart Money Concepts کے PD Arrays، Entry Models اور Opening Ranges کے اسباق دیکھیں۔ بصری نوٹس، Sequences اور Invalidation Rules کا تقابل کریں۔"
+  },
+  "/tools/masterclass/pd-arrays/rejection-block/": {
+    "en": "#13: ICT Rejection Block Masterclass: Algorithmic Price Delimiter: The Space Between Wick Extremity & Highest Body Close.",
+    "ur": "ICT ریجیکشن بلاک میں وِک کی آخری حد اور کینڈل باڈی کے درمیان زون پہچانیں؛ چارٹ کی مثالوں سے حدود، واپسی اور ناکامی سمجھیں۔"
+  },
+  "/tools/masterclass/pd-arrays/hangman-pd-array/": {
+    "en": "#28: The ICT Hangman PD Array Masterclass: Wick Rejection Confirmation & Consequent Encroachment Defense.",
+    "ur": "ICT ہینگ مین PD اَرے میں وِک سے قیمت کا ردِعمل اور درمیانی سطح (CE) دیکھیں؛ تصدیق، حدود اور ناکام صورتوں کا موازنہ کریں۔"
   }
 }

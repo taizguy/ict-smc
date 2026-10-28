@@ -68,4 +68,9 @@ export const toolsUrdu: Record<string, string> = {
   'Institutional Infrastructure Details': 'مشق گاہ کی تفصیل',
   'Deliberate Practice Architecture: Why Simulation Precedes Live Capital Risk': 'حقیقی سرمایہ خطرے میں ڈالنے سے پہلے مشق کیوں ضروری ہے؟',
   'Exchange-traded products and fragmented OTC markets use different execution structures. The LearnSMC Workbench & Laboratory suite provides independent educational tools so traders can isolate and test individual components of delivery cycles without a financial barrier.': 'ایکسچینج پر ٹریڈ ہونے والی مصنوعات اور مختلف ڈیلرز پر مشتمل OTC مارکیٹس میں آرڈرز کی تکمیل کے طریقے مختلف ہوتے ہیں۔ LearnSMC کے آزاد تعلیمی ٹولز سے آپ حقیقی رقم استعمال کیے بغیر قیمت کی حرکت کے الگ الگ پہلو سمجھنے اور جانچنے کی مشق کر سکتے ہیں۔',
+  "3D Concept Tree": "تصورات کا سہ جہتی شجرہ",
+  "Interactive 3D concept tree": "تصورات کا انٹرایکٹو سہ جہتی شجرہ",
+  "Expand topic branches": "موضوعات کی شاخیں کھولیں",
+  "Accessible text tree and concept links": "قابلِ رسائی متنی شجرہ اور تصورات کے روابط",
+  "{0}-lesson completion overview": "{0} اسباق کی تکمیل کا جائزہ",
 };

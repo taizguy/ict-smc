@@ -277,7 +277,7 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   const faqs = chapter ? deliverySupport[chapter.id]?.faqs : undefined;
   if (faqs) r.schemaJson = { ...r.schemaJson, '@id': r.canonical, hasPart: { '@id': `${r.canonical}#faq` } };
   r.schemaJson = { '@context': 'https://schema.org', '@graph': [publisher, lessonAuthor,
-    ...(chapter?.id===49?[{'@type':'Article','@id':`${r.canonical}#article`,headline:chapter.title,url:r.canonical,inLanguage:'en',author:lessonAuthor,publisher,datePublished:alchemyDates.published.iso,dateModified:alchemyDates.updated.iso,mainEntityOfPage:{'@id':r.canonical}}]:[]),
+    ...(chapter?.id===49?[{'@type':'Article','@id':`${r.canonical}#article`,headline:chapter.title,url:r.canonical,inLanguage:'en',image:'https://learnsmc.xyz/images/lessons/market-alchemy/ict-may14-overshoot-source.jpg',author:lessonAuthor,publisher,datePublished:alchemyDates.published.iso,dateModified:alchemyDates.updated.iso,mainEntityOfPage:{'@id':r.canonical}}]:[]),
     ...(faqs ? [{ '@type': 'FAQPage', '@id': `${r.canonical}#faq`, url: `${r.canonical}#delivery-faq`, inLanguage: 'en', isPartOf: { '@id': r.canonical }, mainEntity: faqs.map((item, i) => ({ '@type': 'Question', '@id': `${r.canonical}#question-${i + 1}`, name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) }] : []),
     { '@type': 'WebSite', '@id': 'https://learnsmc.xyz/#website', name: 'LearnSMC', url: 'https://learnsmc.xyz/' },
     { '@type': 'BreadcrumbList', itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })) },

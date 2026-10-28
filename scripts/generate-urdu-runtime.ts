@@ -1,3 +1,4 @@
+import searchDescriptions from '../src/data/searchDescriptions.json';
 import mentorship2026Urdu from '../src/i18n/mentorship2026-urdu.json';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -22,7 +23,7 @@ function groupFor(file: string): Group {
   if (/data\/chapters|DeliveryLesson|Mentorship2025|Mentorship2026|Chapters|ChapterRoom|cornerstoneGuides|CornerstoneGuide|fvgLesson|FvgLessonDiagram|fvgStory|FvgStory|chapterStories|ChapterStory/.test(file)) return 'chapters';
   if (/masood/i.test(file)) return 'masood';
   if (/Legal|publisherPageCopy/.test(file)) return 'publisher';
-  if (/data\/(?:learningCases|labGuides|concepts|masterclass|comparisons|quizzes|chartScenarios|theinnercircletraders)|(?:GuidedMarketDesk|MarketWorkspace|MarketChart|ChartLab|CompareView|ConceptExplorer|Masterclass|MasteryDashboard|InstitutionalTools|KnowledgeGraph|BacktestLab|TradeSimulator|TradingJournal|TradingTools)/.test(file)) return 'tools';
+  if (/data\/(?:workbenchCatalog|learningCases|labGuides|concepts|masterclass|comparisons|quizzes|chartScenarios|theinnercircletraders)|(?:GuidedMarketDesk|MarketWorkspace|MarketChart|ChartLab|CompareView|ConceptExplorer|Masterclass|MasteryDashboard|InstitutionalTools|KnowledgeGraph|BacktestLab|TradeSimulator|TradingJournal|TradingTools)/.test(file)) return 'tools';
   return 'shared';
 }
 function add(text: string, group: Group) {
@@ -60,6 +61,8 @@ function walk(folder: string) {
   }
 }
 walk('src');
+// These derived descriptions must resolve identically in static and client metadata.
+for (const path of ['/tools/masterclass/pd-arrays/rejection-block/', '/tools/masterclass/pd-arrays/hangman-pd-array/'] as const) add(searchDescriptions[path].en, 'tools');
 // Search spans the whole library; titles and result descriptions must be available everywhere.
 const sourceKeys = new Set(groups.flatMap(group => [...keys[group]]));
 for (const key of sourceKeys) if (key.length <= 35 || searchKeys.has(key)) keys.shared.add(key);

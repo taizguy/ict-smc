@@ -16,7 +16,7 @@ export function contentFingerprint(html: string): string {
   function visit(node: any, insideMain = false, insideDiagram = false) {
     const attrs = Object.fromEntries((node.attrs || []).map((a: any) => [a.name, a.value]));
     const main = insideMain || node.tagName === 'main';
-    const diagram = insideDiagram || (node.tagName === 'svg' && attrs.class?.split(' ').some((name:string)=>['chapter-diagram-canvas','m25-replay-preview'].includes(name)));
+    const diagram = insideDiagram || (node.tagName === 'svg' && attrs.class?.split(' ').some((name:string)=>['chapter-diagram-canvas','m25-replay-preview','m26-alchemy-art'].includes(name)));
     if (['style', 'nav', 'footer'].includes(node.tagName)) return;
     if (node.tagName === 'script') {
       if (attrs.type === 'application/ld+json') {

@@ -1,4 +1,5 @@
 import mentorshipSupport from './mentorship2025Support.json';
+import support2026 from './mentorship2026Support.json';
 // One source for visible answers and the corresponding FAQPage graph node.
 export const deliverySupportUrdu: Record<string, string> = {};
 const copy = (en: string, ur: string) => { deliverySupportUrdu[en] = ur; return en; };
@@ -99,4 +100,4 @@ export const deliveryLinkReasons: Record<number, string> = {
   16: copy('Connect sweeps, structural change and overlapping references in their proper sequence.', 'سویپس، اسٹرکچرل تبدیلی اور اوورلیپ کرتے حوالوں کو درست ترتیب میں جوڑیں۔'),
 };
 
-Object.assign(deliverySupport, mentorshipSupport);
+Object.assign(deliverySupport, mentorshipSupport, support2026);

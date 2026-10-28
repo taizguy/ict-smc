@@ -1,13 +1,13 @@
 import { useTranslation } from '../i18n/TranslationProvider';
 import { matchesSearch as matchesLocalizedSearch } from '../i18n/search';
 import React, { useState } from 'react';
-import { 
-  AlertTriangle, 
-  BookOpen, 
-  Home, 
-  Youtube, 
-  Wrench, 
-  ArrowRight, 
+import {
+  AlertTriangle,
+  BookOpen,
+  Home,
+  Youtube,
+  Wrench,
+  ArrowRight,
   Search,
   Compass
 } from 'lucide-react';
@@ -25,11 +25,11 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({
   onNavigate,
   onSelectChapter
 }) => {
-  const { t: translateSearch } = useTranslation();
+  const { t: translateSearch, message } = useTranslation();
   const [query, setQuery] = useState('');
 
   const matchingChapters = query.trim()
-    ? textbookChapters.filter(ch => 
+    ? textbookChapters.filter(ch =>
         matchesLocalizedSearch(query, [ch.title], translateSearch) ||
         matchesLocalizedSearch(query, [ch.slug], translateSearch) ||
         ch.summary.some(s => matchesLocalizedSearch(query, [s], translateSearch))
@@ -38,11 +38,11 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({
 
   return (
     <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 space-y-8 animate-fade-in text-ink">
-      
+
       {/* 404 Status Header */}
       <div className="bg-surface border border-amber-500/20 rounded-2xl p-6 sm:p-8 space-y-4 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
-        
+
         <div className="flex items-center gap-2 text-xs font-sans tabular-nums uppercase tracking-widest text-amber-700">
           <AlertTriangle className="w-4 h-4 text-amber-700" />
           <span>HTTP 404 // MODULE NOT FOUND</span>
@@ -59,12 +59,12 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({
         {/* Search Input */}
         <div className="pt-2 max-w-md">
           <label className="block text-xs font-sans tabular-nums uppercase text-ink-muted mb-1.5">
-            Search 57 Institutional Chapters
+            {message('Search {count} curriculum chapters',{count:textbookChapters.length})}
           </label>
           <div className="relative">
             <Search className="w-4 h-4 text-ink-muted absolute left-3 top-1/2 -translate-y-1/2" />
-            <input 
-              type="text" 
+            <input
+              type="text"
               placeholder="Search by topic (e.g. Fair Value Gap, Liquidity, PO3)..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
@@ -100,7 +100,7 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({
 
       {/* Suggested Primary Navigation Destinations */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        
+
         <button
           onClick={() => onNavigate('curriculum')}
           className="p-5 rounded-xl bg-ink/[0.02] hover:bg-ink/[0.05] border border-ink/[0.08] hover:border-brand/40 text-left space-y-2 group transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer"
@@ -112,7 +112,7 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({
             Curriculum Directory
           </div>
           <p className="text-xs text-ink-secondary leading-relaxed">
-            Browse all 57 codified chapters organized from Foundations to Execution.
+            {message('Browse all {count} curriculum chapters, from foundations to execution.',{count:textbookChapters.length})}
           </p>
         </button>
 

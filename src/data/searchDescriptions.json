@@ -496,8 +496,8 @@
     "ur": "Bullish اور Bearish Breaker ترتیبیں دیکھیں۔ Mitigation Block، Unicorn اشتراک اور ری ٹیسٹ کے وقت کو متحرک مثالوں سے سمجھیں۔"
   },
   "/": {
-    "en": "Free ICT & Smart Money Concepts course: 60 chapters, interactive chart labs, FVG, order blocks and liquidity. English & Urdu.",
-    "ur": "مفت ICT اور Smart Money Concepts کورس: 60 ابواب، انٹرایکٹو چارٹ لیبز، FVG، آرڈر بلاکس اور لیکویڈیٹی۔ انگریزی اور اردو میں۔"
+    "en": "Free ICT & Smart Money Concepts course: 66 chapters, interactive chart labs, FVG, order blocks and liquidity. English & Urdu.",
+    "ur": "مفت ICT اور Smart Money Concepts کورس: 66 ابواب، انٹرایکٹو چارٹ لیبز، FVG، آرڈر بلاکس اور لیکویڈیٹی۔ انگریزی اور اردو میں۔"
   },
   "/learn/0930-am-opening-range-theory/": {
     "en": "Learn ICT opening range theory with 9:30–10:00 AM New York examples. Measure highs, lows and midpoints, then compare breakouts and failed breaks.",
@@ -554,5 +554,57 @@
   "/curriculum/mentorships/2025/": {
     "en": "Plan your ICT 2025 mentorship study with the official source playlist, lesson links and prerequisites. Review FVG selection, opening ranges and Venom.",
     "ur": "ICT 2025 Mentorship کے مطالعے کا راستہ، اصل پلے لسٹ، سبق کے روابط اور ضروری تیاری دیکھیں۔ FVG کے انتخاب، Opening Range اور Venom کا جائزہ لیں۔"
+  },
+  "/learn/2026-onboarding-from-vision-to-execution/": {
+    "en": "Start ICT 2026 with a clear study plan: daily context, session preparation, chart notes and replay exercises that include failed ideas.",
+    "ur": "ICT 2026 کا آغاز واضح منصوبے سے کریں: روزانہ تناظر، سیشن تیاری، چارٹ نوٹس اور ناکام خیالات سمیت Replay مشق۔"
+  },
+  "/learn/nq-es-premarket-session-rules-morning-engine/": {
+    "en": "Learn the ICT 2026 7–9 AM pre-market range, midpoint and octants. Compare trending and balanced mornings, event cutoffs and failed setups.",
+    "ur": "ICT 2026 کی 7–9 AM پری مارکیٹ رینج، وسط اور Octants سیکھیں۔ Trending، Balanced صبح، خبر کی حد اور ناکامی کا موازنہ کریں۔"
+  },
+  "/learn/market-alchemy-trading-all-time-highs-ath/": {
+    "en": "Learn the ICT Market Alchemy method for all-time highs: measure the RTH opening gap, project levels in TradingView, and study the lunch-window response.",
+    "ur": "ICT Market Alchemy سے All-Time Highs کا مطالعہ کریں: RTH Opening Gap ناپیں، TradingView میں Levels Project کریں اور Lunch Window کا ردعمل سمجھیں۔"
+  },
+  "/learn/opening-gap-matrices-ndog-nwog-csod/": {
+    "en": "Understand ICT NDOG, NWOG and RTH opening gaps, CE and CISD. Learn exact anchors, partial versus full gap fills and contrasting chart outcomes.",
+    "ur": "ICT NDOG، NWOG، RTH Opening Gaps، CE اور CISD سمجھیں؛ اینکر، جزوی و مکمل Fill اور مختلف چارٹ نتائج پڑھیں۔"
+  },
+  "/learn/midday-afternoon-tape-reading-macros-final-hour/": {
+    "en": "Study ICT New York lunch, afternoon macros and final-hour delivery. Compare continuation and reversal using fixed morning ranges and clear timing.",
+    "ur": "ICT نیویارک لنچ، دوپہر Macros اور آخری گھنٹے کو مقررہ Morning Ranges سے پڑھیں؛ تسلسل اور ریورسل کا موازنہ کریں۔"
+  },
+  "/learn/event-volatility-hrlr-futures-vs-cfds/": {
+    "en": "Understand ICT HRLR and news-day context for NFP and FOMC. Compare conflicting references, missed fills and no-trade choices without news predictions.",
+    "ur": "ICT HRLR اور NFP و FOMC خبر کا تناظر سمجھیں؛ متضاد حوالے، Missed Fills اور No-trade فیصلوں کا موازنہ کریں۔"
+  },
+  "/learn/ict-2026-first-hour-dealing-range/": {
+    "en": "Learn the ICT first hour dealing range from 9:30–10:30 New York. Calculate midpoint and range projections, then compare breakouts and failed breaks.",
+    "ur": "نیویارک 9:30–10:30 کی ICT First Hour Dealing Range، وسط اور Range Projections سیکھیں؛ Breakout اور Failed Break کا موازنہ کریں۔"
+  },
+  "/learn/ict-chain-of-custody-of-price/": {
+    "en": "Learn ICT chain of custody of price with daily PD arrays, wick midpoints and lower-timeframe confirmation. Follow a worked sequence and its failure.",
+    "ur": "Daily PD Arrays، Wick Midpoints اور چھوٹے ٹائم فریم تصدیق سے ICT Chain of Custody پڑھیں؛ مکمل ترتیب اور ناکامی دیکھیں۔"
+  },
+  "/learn/ict-time-price-grids-quadrants-octants/": {
+    "en": "Calculate ICT quadrants, octants and wick midpoints on a fixed range. See how time references and changing anchors affect the same price.",
+    "ur": "مقررہ رینج پر ICT Quarters، Octants اور Wick Midpoints نکالیں؛ دیکھیں وقت اور اینکر بدلنے سے ایک قیمت کا تناظر کیسے بدلتا ہے۔"
+  },
+  "/learn/ict-2026-enigma-reaper-reflection-fvg/": {
+    "en": "Compare ICT Enigma, Reaper and Reflection FVG examples, body gaps and wick boundaries. Learn the source-specific sequence and what remains subjective.",
+    "ur": "ICT Enigma، Reaper، Reflection FVG، Body Gaps اور Wick حدود کا موازنہ کریں؛ ماخذ کی ترتیب اور انتخاب واضح سمجھیں۔"
+  },
+  "/learn/ict-2026-obsidian-model/": {
+    "en": "Study the ICT Obsidian model with higher-timeframe context, the pre-market range and evolving projections. Compare a qualified return with a failed setup.",
+    "ur": "ICT Obsidian Model کو بڑے تناظر، پری مارکیٹ رینج اور بدلتے Projections سے پڑھیں؛ اہل واپسی اور ناکام Setup کا موازنہ کریں۔"
+  },
+  "/learn/ict-2026-backtesting-journaling-trade-management/": {
+    "en": "Build an ICT 2026 replay journal with known-at-the-time decisions, missed fills, costs and trade management. Compare process quality with profit.",
+    "ur": "ICT 2026 Replay جرنل میں وقت پر معلوم فیصلے، Missed Fills، لاگت اور Trade Management لکھیں؛ اچھے عمل اور منافع کا فرق سمجھیں۔"
+  },
+  "/curriculum/the-2026-ict-smart-money-concepts-master-lectures-tape-reading-series/": {
+    "en": "Study the ICT 2026 mentorship through 12 lessons: pre-market ranges, first-hour delivery, PD arrays, Obsidian and replay. English and Urdu.",
+    "ur": "ICT 2026 کے 12 اسباق پڑھیں: پری مارکیٹ، First-hour Range، PD Arrays، Obsidian اور Replay۔ انگریزی اور اردو میں۔"
   }
 }

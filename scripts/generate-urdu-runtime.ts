@@ -1,3 +1,4 @@
+import mentorship2026Urdu from '../src/i18n/mentorship2026-urdu.json';
 import fs from 'node:fs';
 import path from 'node:path';
 import ts from 'typescript';
@@ -18,7 +19,7 @@ const searchableFields = new Set(['title', 'name', 'subtitle', 'shortTitle', 'ex
 const normalize = (text: string) => text.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&rarr;/g, '→').replace(/&larr;/g, '←').replace(/\s+/g, ' ').trim();
 function groupFor(file: string): Group {
   if (/articles/.test(file)) return 'articles';
-  if (/data\/chapters|DeliveryLesson|Mentorship2025|Chapters|ChapterRoom|cornerstoneGuides|CornerstoneGuide|fvgLesson|FvgLessonDiagram|fvgStory|FvgStory|chapterStories|ChapterStory/.test(file)) return 'chapters';
+  if (/data\/chapters|DeliveryLesson|Mentorship2025|Mentorship2026|Chapters|ChapterRoom|cornerstoneGuides|CornerstoneGuide|fvgLesson|FvgLessonDiagram|fvgStory|FvgStory|chapterStories|ChapterStory/.test(file)) return 'chapters';
   if (/masood/i.test(file)) return 'masood';
   if (/Legal|publisherPageCopy/.test(file)) return 'publisher';
   if (/data\/(?:learningCases|labGuides|concepts|masterclass|comparisons|quizzes|chartScenarios|theinnercircletraders)|(?:GuidedMarketDesk|MarketWorkspace|MarketChart|ChartLab|CompareView|ConceptExplorer|Masterclass|MasteryDashboard|InstitutionalTools|KnowledgeGraph|BacktestLab|TradeSimulator|TradingJournal|TradingTools)/.test(file)) return 'tools';
@@ -34,7 +35,7 @@ function walk(folder: string) {
   for (const entry of fs.readdirSync(folder, { withFileTypes: true })) {
     const file = path.join(folder, entry.name).replace(/\\/g, '/');
     if (entry.isDirectory()) { if (entry.name !== 'i18n') walk(file); continue; }
-    if (/data\/chapters\/(?:contentReview|checkpoints|deliveryEdition|deliveryQuizzes|deliveryFigures|mentorship2025Edition|mentorship2025Support|mentorship2025Quizzes|mentorship2025Sources|mentorship2025Replays)\.json$/.test(file)) {
+    if (/data\/chapters\/(?:contentReview|checkpoints|deliveryEdition|deliveryQuizzes|deliveryFigures|mentorship2025Edition|mentorship2025Support|mentorship2025Quizzes|mentorship2025Sources|mentorship2025Replays|mentorship2026Edition|mentorship2026Support|mentorship2026Quizzes|mentorship2026Sources|mentorship2026Visuals)\.json$/.test(file)) {
       const collect = (value: unknown) => {
         if (typeof value === 'string') add(value, 'chapters');
         else if (Array.isArray(value)) value.forEach(collect);
@@ -64,6 +65,7 @@ const sourceKeys = new Set(groups.flatMap(group => [...keys[group]]));
 for (const key of sourceKeys) if (key.length <= 35 || searchKeys.has(key)) keys.shared.add(key);
 // Handwritten overrides also include derived labels assembled at runtime.
 for (const key of Object.keys({ ...editorialUrdu, ...toolsUrdu, ...terminology, ...learningUpdate })) if (!sourceKeys.has(key)) keys.shared.add(key);
+for (const key of Object.keys(mentorship2026Urdu)) if (!sourceKeys.has(key) && (/^Chapter \d+:|\| LearnSMC$/.test(key) || key.includes('66-'))) keys.shared.add(key);
 const output = 'src/i18n/runtime';
 fs.mkdirSync(output, { recursive: true });
 for (const group of groups) {

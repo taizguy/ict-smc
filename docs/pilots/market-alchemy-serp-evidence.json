@@ -1,0 +1,72 @@
+{
+  "checked": "2026-10-27",
+  "method": "Live Google search followed by DOM inspection of the opened pages; Pakistan/English session; no ranking or volume generalisation.",
+  "pages": [
+    {
+      "url": "https://www.investopedia.com/articles/active-trading/051315/how-trade-stocks-hit-alltime-highs.asp",
+      "document_title": "Mastering Stock Highs: Essential Risk and Trading Strategies",
+      "meta_description": "Unlock expert strategies for trading stocks at peak highs. Discover risk management rules designed to enhance profitability and safeguard your financial investments.",
+      "actual_h2_text": [
+        "What Happens When a Stock Reaches an All-Time High",
+        "Understanding Phases of Stock Breakouts at New Highs",
+        "Analyzing Pre-Breakout Patterns for Strategic Insights",
+        "Identifying Hidden Resistance Levels in Stocks at All-Time Highs",
+        "Setting Profit Protection Prices for Stocks at Highs",
+        "Evaluating Timing for Adding to Winning Stock Positions",
+        "The Bottom Line",
+        "Related Articles"
+      ]
+    },
+    {
+      "url": "https://tradeproacademy.com/guide-to-all-time-day-trading-highs/",
+      "document_title": "Your Guide to Trading All-Time Highs (Day Trading Highs) - TRADEPRO Academy TM",
+      "meta_description": "Learn effective day trading strategies for handling all-time highs in the futures market. Understand market psychology, manage risk, and find your edge.",
+      "actual_h2_text": [
+        "Trade Less. See More. Execute Better.",
+        "Continue Reading"
+      ]
+    },
+    {
+      "url": "https://www.tradingsim.com/blog/all-time-highs",
+      "document_title": "All-Time Highs – Trading Strategies | TradingSim",
+      "meta_description": "All-time highs in stocks are a phenomenon when the price of the stock touches a new 52-week high.",
+      "actual_h2_text": [
+        "The psychology behind all-time high stocks",
+        "What happens when stocks hit all-time highs?",
+        "Examples of stock behavior at all-time highs",
+        "Strategies for trading all-time highs",
+        "Example on how to trade stocks near all-time highs",
+        "Related Blogs"
+      ]
+    },
+    {
+      "url": "https://ictarchivist.com/2026/05/14/market-alchemy-trading-ath-may-14-2026/",
+      "document_title": "Market Alchemy - Trading ATH \\ May 14, 2026 - ICT Archivist",
+      "meta_description": "https://www.youtube.com/watch?v=wprXVW1pW9Y - Time comes before price. Anchor your charts to New York local time and use vertical time lines—time windows strongly govern predictable market behavior. - Key times to watch: - Market open / opening price at 9:30 ET (opening range gap). - New York “lunch macro” 11:30–13:30 ET (optimal…",
+      "actual_h2_text": [
+        "Comments",
+        "More posts",
+        "ICT Archivist"
+      ]
+    },
+    {
+      "url": "https://bestprops.com/ict/2025-lecture-series/ict-trading-all-time-highs/",
+      "document_title": "ICT Trading All Time Market Highs: Liquidity, Bias and Entries",
+      "meta_description": "Grounded review of ICT's September 16, 2025 lesson on trading all time market highs: prior-day closes, gap overshoots, bear traps, graded wicks and leverage discipline, with timestamped links to the recording.",
+      "actual_h2_text": [
+        "Key takeaways",
+        "Why ICT Traders Should Stop Picking Market Highs",
+        "What ICT Trading at All Time Highs Teaches",
+        "ICT Market High Reference Points",
+        "Risk Control for ICT Market High Trades",
+        "ICT Daily Chart Walkthrough at Market Highs",
+        "ICT Market High Liquidity and Rebalance Mechanics",
+        "ICT Market High Trade Preparation Checklist",
+        "What ICT Market High Trading Cannot Establish",
+        "Watch ICT Trading All Time Market Highs",
+        "ICT Market High Trading Sources and Further Reading",
+        "BestProps Research Team"
+      ]
+    }
+  ]
+}

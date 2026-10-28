@@ -1,0 +1,276 @@
+{
+  "47": [
+    {
+      "question": "At 09:35 price reclaims 100. Which journal entry is valid now?",
+      "options": [
+        "The low was breached and reclaimed; the later outcome is unknown.",
+        "The final daily high is confirmed.",
+        "The trade is guaranteed to win."
+      ],
+      "correctIndex": 0,
+      "explanation": "Record the event visible now, not a future outcome."
+    },
+    {
+      "question": "A session has no eligible entry. How should the study record it?",
+      "options": [
+        "Keep the no-trade day with its reason.",
+        "Remove the day from the sample.",
+        "Invent a later entry."
+      ],
+      "correctIndex": 0,
+      "explanation": "Rejected days help explain the actual selection process."
+    }
+  ],
+  "48": [
+    {
+      "question": "For 100–116, what is the 0.875 level?",
+      "options": [
+        "114",
+        "108",
+        "118"
+      ],
+      "correctIndex": 0,
+      "explanation": "100 + 0.875 × 16 = 114."
+    },
+    {
+      "question": "A trending 7–9 AM range keeps trending after 09:30. Is the chart impossible?",
+      "options": [
+        "No; the reversal expectation was conditional.",
+        "Yes; pre-market always reverses.",
+        "Move the range until it reverses."
+      ],
+      "correctIndex": 0,
+      "explanation": "A tendency must allow counterexamples."
+    }
+  ],
+  "49": [
+    {
+      "question": "0 is 29,510 and 1 is 29,476.25. Which price is the displayed −8 projection?",
+      "options": [
+        "29,780.00",
+        "29,746.25",
+        "29,493.125"
+      ],
+      "correctIndex": 0,
+      "explanation": "The gap is 33.75. Using the zero anchor: 29,510 − (−8 × 33.75) = 29,780. Starting from the opening price would shift the label by one gap."
+    },
+    {
+      "question": "The −7 line was crossed at 11:10; at lunch price continues higher without a bearish response. What can this study conclude?",
+      "options": [
+        "No qualified lunch short has been demonstrated.",
+        "The earlier touch guarantees a short.",
+        "Move the window backward to count a winner."
+      ],
+      "correctIndex": 0,
+      "explanation": "An early touch and a later bearish response are different conditions. Retain the original timing rule rather than fitting it to the ending."
+    },
+    {
+      "question": "The later low is 29,595.25. What does that establish about a buy limit at 29,595.00?",
+      "options": [
+        "That price was not reached in that candle.",
+        "The order must have filled.",
+        "All lower targets were achieved."
+      ],
+      "correctIndex": 0,
+      "explanation": "A price below the candle low was not traded in that candle. Chart contact at any price would still not independently verify an actual queue fill."
+    }
+  ],
+  "50": [
+    {
+      "question": "For a 108–120 gap, price reaches 114. What happened?",
+      "options": [
+        "The midpoint was reached; a full traversal has not occurred.",
+        "The entire gap is filled.",
+        "The next direction is certain."
+      ],
+      "correctIndex": 0,
+      "explanation": "114 is (108 + 120)/2."
+    },
+    {
+      "question": "Two charts use different prior closing references. Can their gaps be compared directly?",
+      "options": [
+        "Only after reconciling contract and session conventions.",
+        "Yes, all closing prices are identical.",
+        "Use whichever gap worked."
+      ],
+      "correctIndex": 0,
+      "explanation": "Different anchors create different measured intervals."
+    }
+  ],
+  "51": [
+    {
+      "question": "Lunch holds 116–119. What is known before a breakout?",
+      "options": [
+        "Only the observed balance; either direction remains possible.",
+        "The afternoon must reverse.",
+        "The final high is known."
+      ],
+      "correctIndex": 0,
+      "explanation": "A time label does not resolve the next price event."
+    },
+    {
+      "question": "The planned 118 entry is never touched before 124. What belongs in the journal?",
+      "options": [
+        "No fill at 118.",
+        "A 6-point realised profit.",
+        "A new 118 fill after the fact."
+      ],
+      "correctIndex": 0,
+      "explanation": "Outcome distance is not execution evidence."
+    }
+  ],
+  "52": [
+    {
+      "question": "A stop reference is 106 but the exit fills at 104. What should the journal use?",
+      "options": [
+        "The actual 104 fill and the resulting realised risk.",
+        "106 because that was the plan.",
+        "Delete the trade as an exception."
+      ],
+      "correctIndex": 0,
+      "explanation": "Execution differences are part of the result."
+    },
+    {
+      "question": "A report time is known. Which conclusion is justified?",
+      "options": [
+        "The event is scheduled; its direction is unknown.",
+        "The market must rally.",
+        "Stops cannot slip."
+      ],
+      "correctIndex": 0,
+      "explanation": "A calendar supplies timing, not the future response."
+    }
+  ],
+  "65": [
+    {
+      "question": "For H = 116 and L = 100, what is H + 0.5(H − L)?",
+      "options": [
+        "124",
+        "108",
+        "132"
+      ],
+      "correctIndex": 0,
+      "explanation": "The range is 16; half is 8; 116 + 8 = 124."
+    },
+    {
+      "question": "At 09:50 the high is 110; 116 forms at 10:20. Which high was available at 09:50?",
+      "options": [
+        "110, the running high then.",
+        "116, the later final high.",
+        "Both were known."
+      ],
+      "correctIndex": 0,
+      "explanation": "Use only information available at the decision time."
+    }
+  ],
+  "66": [
+    {
+      "question": "The rule requires a close below 116; the candle touches 115 and closes 118. Is it met?",
+      "options": [
+        "No; the completed close is above 116.",
+        "Yes, any wick is enough.",
+        "Yes, because the daily wick exists."
+      ],
+      "correctIndex": 0,
+      "explanation": "Touch and body close answer different questions."
+    },
+    {
+      "question": "A daily reference is selected after the winning one-minute move. What is the main problem?",
+      "options": [
+        "The context was selected with hindsight.",
+        "The reference is automatically stronger.",
+        "The move proves institutional identity."
+      ],
+      "correctIndex": 0,
+      "explanation": "Save the higher-timeframe selection before testing its later use."
+    }
+  ],
+  "67": [
+    {
+      "question": "What is the midpoint of a wick from 128 to 140?",
+      "options": [
+        "134",
+        "120",
+        "132"
+      ],
+      "correctIndex": 0,
+      "explanation": "(128 + 140)/2 = 134."
+    },
+    {
+      "question": "132 is above the midpoint of 100–140 but below that of 100–180. Is this a contradiction?",
+      "options": [
+        "No; the selected range changed.",
+        "Yes; premium is absolute.",
+        "One price must be wrong."
+      ],
+      "correctIndex": 0,
+      "explanation": "Location is relative to declared anchors."
+    }
+  ],
+  "68": [
+    {
+      "question": "Two candles have overlapping wicks but different adjacent close/open prices. What is established?",
+      "options": [
+        "A body-price separation; a three-candle FVG needs a separate check.",
+        "A guaranteed Reaper entry.",
+        "A three-candle FVG automatically."
+      ],
+      "correctIndex": 0,
+      "explanation": "Different boundary definitions must not be merged."
+    },
+    {
+      "question": "A projection only matches after you repeatedly change its endpoint. What should you conclude?",
+      "options": [
+        "The measurement is hindsight-fitted and needs a fixed rule.",
+        "The model is proven.",
+        "Every endpoint was known earlier."
+      ],
+      "correctIndex": 0,
+      "explanation": "Declare anchors before evaluating the later outcome."
+    }
+  ],
+  "69": [
+    {
+      "question": "A high at 124 forms at 09:50. Can it justify a 09:40 projection?",
+      "options": [
+        "No; it was not yet available.",
+        "Yes, because it is on the finished chart.",
+        "Only if the trade won."
+      ],
+      "correctIndex": 0,
+      "explanation": "Timestamp every changing anchor to avoid look-ahead bias."
+    },
+    {
+      "question": "The bearish thesis meets continued closes above 124. How should the example be classified?",
+      "options": [
+        "As a contrasting outcome against the stated thesis.",
+        "A guaranteed successful short.",
+        "An entry that must be hidden."
+      ],
+      "correctIndex": 0,
+      "explanation": "A useful model explanation includes its failed interpretation."
+    }
+  ],
+  "70": [
+    {
+      "question": "Entry 102, stop 98; half exits 106 and half 110. What is gross reward in R?",
+      "options": [
+        "1.5R before costs.",
+        "2R for the entire position.",
+        "3R."
+      ],
+      "correctIndex": 0,
+      "explanation": "Average exit 108 gives 6 points reward divided by 4 points initial risk."
+    },
+    {
+      "question": "A rule-breaking chase wins while a rule-following trade loses. Which statement is sound?",
+      "options": [
+        "Judge adherence separately from the monetary result.",
+        "The winning chase proves the rule unnecessary.",
+        "Delete the losing trade."
+      ],
+      "correctIndex": 0,
+      "explanation": "A single outcome does not validate or invalidate the whole process."
+    }
+  ]
+}

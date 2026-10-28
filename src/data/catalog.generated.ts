@@ -479,37 +479,73 @@ export const chapterCatalog = [
   {
     "id": 47,
     "slug": "2026-onboarding-from-vision-to-execution",
-    "title": "2026 ICT Onboarding: Preparation, Timing & a Written Study Plan",
+    "title": "ICT 2026 Mentorship: Beginner Study Plan",
     "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
   },
   {
     "id": 48,
     "slug": "nq-es-premarket-session-rules-morning-engine",
-    "title": "NQ & ES Pre-Market: Source Windows, Cash Open & Uncertainty",
+    "title": "ICT 2026 Pre-Market Range: 7–9 AM Rules",
     "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
   },
   {
-    "id": 49,
-    "slug": "market-alchemy-trading-all-time-highs-ath",
-    "title": "Market Alchemy — Trading All-Time Highs (ATH) & Blue Sky Delivery",
+    "id": 65,
+    "slug": "ict-2026-first-hour-dealing-range",
+    "title": "ICT First Hour Dealing Range: 9:30–10:30",
     "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
   },
   {
     "id": 50,
     "slug": "opening-gap-matrices-ndog-nwog-csod",
-    "title": "Opening Gap Matrices (NDOG, NWOG, NSOG) & Changing State of Delivery (CSoD)",
+    "title": "ICT Opening Gaps: NDOG, NWOG, RTH & CISD",
     "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
   },
   {
-    "id": 51,
-    "slug": "midday-afternoon-tape-reading-macros-final-hour",
-    "title": "Midday & Afternoon Tape Reading: Lunch Macro, Afternoon Macros & The Final Hour ES",
+    "id": 66,
+    "slug": "ict-chain-of-custody-of-price",
+    "title": "ICT Chain of Custody of Price: Daily to Intraday",
+    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
+  },
+  {
+    "id": 67,
+    "slug": "ict-time-price-grids-quadrants-octants",
+    "title": "ICT Time & Price Grids: Quadrants and Octants",
+    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
+  },
+  {
+    "id": 68,
+    "slug": "ict-2026-enigma-reaper-reflection-fvg",
+    "title": "ICT Enigma, Reaper & Reflection FVG Studies",
+    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
+  },
+  {
+    "id": 69,
+    "slug": "ict-2026-obsidian-model",
+    "title": "ICT Obsidian Model: Context, Anchors & Examples",
+    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
+  },
+  {
+    "id": 49,
+    "slug": "market-alchemy-trading-all-time-highs-ath",
+    "title": "ICT Market Alchemy: How to Study All-Time Highs",
     "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
   },
   {
     "id": 52,
     "slug": "event-volatility-hrlr-futures-vs-cfds",
-    "title": "Event Volatility: Calendars, HRLR & Futures vs. CFDs",
+    "title": "ICT News Volatility & High Resistance Liquidity Runs",
+    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
+  },
+  {
+    "id": 51,
+    "slug": "midday-afternoon-tape-reading-macros-final-hour",
+    "title": "ICT Lunch & Afternoon Tape Reading",
+    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
+  },
+  {
+    "id": 70,
+    "slug": "ict-2026-backtesting-journaling-trade-management",
+    "title": "ICT 2026 Backtesting, Journaling & Trade Management",
     "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
   },
   {

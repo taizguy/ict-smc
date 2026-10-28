@@ -1,3 +1,5 @@
+import {Mentorship2026Diagram} from './Mentorship2026Diagram';
+import {hasMentorship2026Edition} from '../data/chapters/mentorship2026';
 import { useEffect, useState } from 'react';
 import { chapterDiagrams, type DiagramMark } from '../data/chapters/diagrams';
 import { useTranslation } from '../i18n/TranslationProvider';
@@ -49,6 +51,7 @@ export function ChapterDiagram({ chapterId, thumbnail = false, staticOnly = fals
     document.addEventListener('visibilitychange', stopWhenHidden);
     return () => document.removeEventListener('visibilitychange', stopWhenHidden);
   }, [playing]);
+  if(hasMentorship2026Edition(chapterId)) return <Mentorship2026Diagram chapterId={chapterId} thumbnail={thumbnail} staticOnly={staticOnly}/>;
   if (!spec) return null;
   if (chapterId === 13 && !thumbnail) return <FvgLessonDiagram staticOnly={staticOnly} onPractice={onPractice}/>;
   if (!thumbnail && !staticOnly) return <ChapterStory chapterId={chapterId} onPractice={onPractice}/>;

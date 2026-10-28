@@ -1,0 +1,588 @@
+{
+  "47": {
+    "heading": "ICT 2026 preparation: references and contrasting outcomes",
+    "columns": [
+      "Reference",
+      "What is observable",
+      "What remains conditional"
+    ],
+    "rows": [
+      [
+        "Observation",
+        "Price trades below 100 and returns above it.",
+        "A rally has not yet been demonstrated."
+      ],
+      [
+        "Interpretation",
+        "You hypothesise rejection of the low.",
+        "Define what would contradict that view."
+      ],
+      [
+        "Result",
+        "Later candles resolve or leave the idea unresolved.",
+        "Keep losses and no-trade cases."
+      ]
+    ],
+    "note": "Worked prices are invented teaching values. They do not reproduce a historical trade or establish a profitable strategy.",
+    "faqs": [
+      {
+        "question": "Where should a beginner start ICT 2026?",
+        "answer": "Start with candle reading, market foundations and one repeatable daily observation routine before advanced named arrays."
+      },
+      {
+        "question": "Does a macro give a trading direction?",
+        "answer": "No. A timing window does not supply a bullish or bearish thesis."
+      },
+      {
+        "question": "Must I trade every study day?",
+        "answer": "No. Observation-only days and rejected ideas belong in the journal."
+      },
+      {
+        "question": "Which timezone should I use?",
+        "answer": "Use America/New_York for these examples and allow its daylight-saving changes."
+      },
+      {
+        "question": "Does completing the course prove an edge?",
+        "answer": "No. Understanding, rule adherence and measured outcomes are different questions."
+      }
+    ]
+  },
+  "48": {
+    "heading": "The ICT 7–9 AM pre-market range: references and contrasting outcomes",
+    "columns": [
+      "Reference",
+      "What is observable",
+      "What remains conditional"
+    ],
+    "rows": [
+      [
+        "07:00–09:00",
+        "2026 pre-market reference.",
+        "Use a declared event-day cutoff."
+      ],
+      [
+        "08:00–09:30",
+        "2025 Venom example window.",
+        "Do not merge its rules into the other range."
+      ],
+      [
+        "09:30–10:30",
+        "First-hour dealing range.",
+        "Its final boundaries are not known at 09:30."
+      ]
+    ],
+    "note": "Worked prices are invented teaching values. They do not reproduce a historical trade or establish a profitable strategy.",
+    "faqs": [
+      {
+        "question": "What is the ICT 2026 pre-market range?",
+        "answer": "The selected lessons study 07:00–09:00 New York highs and lows, with explicitly declared event-day adjustments."
+      },
+      {
+        "question": "How do I calculate its octants?",
+        "answer": "Divide H − L by eight and add each increment to L."
+      },
+      {
+        "question": "Is 7–9 AM the Venom range?",
+        "answer": "No. The referenced 2025 Venom example uses 08:00–09:30."
+      },
+      {
+        "question": "Does a trending pre-market guarantee a reversal?",
+        "answer": "No. Continued expansion is a necessary contrasting case."
+      },
+      {
+        "question": "Can the range be changed after an entry?",
+        "answer": "Retain the original study anchors; document any new analysis as a separate version."
+      }
+    ]
+  },
+  "49": {
+    "heading": "Projection level, timing and response: what each tells you",
+    "columns": [
+      "Reference in the May 14 study",
+      "Measured or observed",
+      "Interpretation boundary"
+    ],
+    "rows": [
+      [
+        "0 / 1 anchors",
+        "29,510.00 / 29,476.25; width 33.75",
+        "A statistical probability or an entry"
+      ],
+      [
+        "−7 / −8",
+        "29,746.25 / 29,780.00",
+        "A guaranteed ceiling"
+      ],
+      [
+        "11:30–12:30 New York",
+        "First hour of the source’s 11:30–13:30 lunch interval",
+        "A required reversal every day"
+      ],
+      [
+        "29,782.00 high",
+        "Two points beyond the −8 line",
+        "A tick-perfect reaction"
+      ],
+      [
+        "29,678.375 midpoint",
+        "Arithmetic midpoint of the nearer lows",
+        "The opening gap CE or an executable half-tick order"
+      ]
+    ],
+    "note": "Source-chart values and unrounded arithmetic are distinguished in the measurements above.",
+    "faqs": [
+      {
+        "question": "How do you trade at all-time highs without picking the top?",
+        "answer": "Separate a record high from an entry signal. In this ICT historical study, draw the RTH gap projections, check the specified lunch window and observe the response. The lecture does not provide every entry, stop and sizing rule needed for a complete system."
+      },
+      {
+        "question": "Which range is used for ICT Market Alchemy projections?",
+        "answer": "This May 14 example uses the gap between the prior day’s 16:14 one-minute close, 29,510.00, and the 09:30 open, 29,476.25. It is not the first-hour high–low range."
+      },
+      {
+        "question": "Are ICT standard deviation projections statistical standard deviations?",
+        "answer": "Not in this drawing. They replicate a selected 33.75-point gap; they do not calculate a sample standard deviation or assign a probability to the projected line."
+      },
+      {
+        "question": "Why is the −8 line 29,780 rather than 29,746.25?",
+        "answer": "The displayed zero is at the prior-close reference of 29,510.00. Adding eight gaps to the lower opening price instead lands at the source’s −7 line, one gap below −8."
+      },
+      {
+        "question": "Does touching a projection confirm a short or guarantee an exit?",
+        "answer": "No. Timing and the subsequent bearish response are separate conditions, and the source’s complete stop algorithm remains unspecified. A later target touch also cannot prove that a particular limit order filled."
+      }
+    ]
+  },
+  "50": {
+    "heading": "ICT opening gaps and CISD: references and contrasting outcomes",
+    "columns": [
+      "Reference",
+      "What is observable",
+      "What remains conditional"
+    ],
+    "rows": [
+      [
+        "NDOG / NWOG",
+        "Selected daily / weekly closing and opening prices.",
+        "Session convention and contract must be declared."
+      ],
+      [
+        "RTH gap 108–120",
+        "CE 114; far edge 120.",
+        "Half-gap is not a full fill."
+      ],
+      [
+        "CISD",
+        "Completed crossing of a selected candle-run open.",
+        "The run and failure convention remain discretionary."
+      ]
+    ],
+    "note": "Worked prices are invented teaching values. They do not reproduce a historical trade or establish a profitable strategy.",
+    "faqs": [
+      {
+        "question": "What is an ICT opening gap?",
+        "answer": "The interval between two declared session prices, rather than a three-candle imbalance."
+      },
+      {
+        "question": "What does CE mean for an opening gap?",
+        "answer": "Consequent encroachment is the midpoint of the selected gap."
+      },
+      {
+        "question": "Is a half-gap touch a full fill?",
+        "answer": "No. A full traversal requires reaching the opposite edge."
+      },
+      {
+        "question": "Is settlement always the chart close?",
+        "answer": "No. Record the actual reference used by the data and study."
+      },
+      {
+        "question": "Does CISD guarantee a reversal?",
+        "answer": "No. It is a specified change in price delivery that can fail."
+      }
+    ]
+  },
+  "51": {
+    "heading": "ICT lunch and afternoon delivery: references and contrasting outcomes",
+    "columns": [
+      "Reference",
+      "What is observable",
+      "What remains conditional"
+    ],
+    "rows": [
+      [
+        "Lunch balance",
+        "116–119 in the worked example.",
+        "No direction is implied by balance alone."
+      ],
+      [
+        "Continuation",
+        "Completed break above the declared upper edge.",
+        "The breakout can still fail."
+      ],
+      [
+        "Final hour",
+        "15:00–16:00 New York cash-equity window.",
+        "Check the actual exchange holiday schedule."
+      ]
+    ],
+    "note": "Worked prices are invented teaching values. They do not reproduce a historical trade or establish a profitable strategy.",
+    "faqs": [
+      {
+        "question": "What is the ICT lunch study?",
+        "answer": "It relates the midday interval to the completed morning move and remaining daily references."
+      },
+      {
+        "question": "Is a macro an entry signal?",
+        "answer": "No. It specifies an observation interval, not a complete entry model."
+      },
+      {
+        "question": "Must lunch reverse the morning move?",
+        "answer": "No. Continuation and persistent balance must remain possible."
+      },
+      {
+        "question": "Which range should I carry into the afternoon?",
+        "answer": "Carry the explicitly selected morning or first-hour range with its original timestamps."
+      },
+      {
+        "question": "What if the later session never reaches my entry?",
+        "answer": "Record no fill rather than changing the entry after the move."
+      }
+    ]
+  },
+  "52": {
+    "heading": "ICT news volatility and HRLR: references and contrasting outcomes",
+    "columns": [
+      "Reference",
+      "What is observable",
+      "What remains conditional"
+    ],
+    "rows": [
+      [
+        "HRLR hypothesis",
+        "Several opposing references lie on the planned path.",
+        "Their presence does not prove actual order resistance."
+      ],
+      [
+        "Release calendar",
+        "An official event time is known in advance.",
+        "The market response is not known."
+      ],
+      [
+        "Planned stop",
+        "A risk reference before execution.",
+        "The realised exit can differ."
+      ]
+    ],
+    "note": "Worked prices are invented teaching values. They do not reproduce a historical trade or establish a profitable strategy.",
+    "faqs": [
+      {
+        "question": "What does HRLR mean in ICT?",
+        "answer": "High resistance liquidity run: a contextual description of a path with intervening opposing references."
+      },
+      {
+        "question": "Can I predict NFP direction from an FVG?",
+        "answer": "No. A pattern does not reveal the future news response."
+      },
+      {
+        "question": "Are all news days high resistance?",
+        "answer": "No. Actual delivery can be direct, overlapping or mixed."
+      },
+      {
+        "question": "Is a stop price a guaranteed exit?",
+        "answer": "No. Execution depends on order type and market conditions."
+      },
+      {
+        "question": "Can a beginner skip the event?",
+        "answer": "Yes. A predefined observation-only rule is legitimate."
+      }
+    ]
+  },
+  "65": {
+    "heading": "The ICT first hour dealing range: references and contrasting outcomes",
+    "columns": [
+      "Reference",
+      "What is observable",
+      "What remains conditional"
+    ],
+    "rows": [
+      [
+        "09:50",
+        "Running range 100–110.",
+        "The 10:20 high is not yet known."
+      ],
+      [
+        "10:30",
+        "Completed range 100–116; midpoint 108.",
+        "Later delivery is still unknown."
+      ],
+      [
+        "Projection",
+        "116 + 0.5 × 16 = 124.",
+        "A measured scenario, not a guaranteed target."
+      ]
+    ],
+    "note": "Worked prices are invented teaching values. They do not reproduce a historical trade or establish a profitable strategy.",
+    "faqs": [
+      {
+        "question": "What is the ICT first hour dealing range?",
+        "answer": "The high and low formed from 09:30 to 10:30 New York in this study."
+      },
+      {
+        "question": "How is its midpoint calculated?",
+        "answer": "Add the high and low, then divide by two."
+      },
+      {
+        "question": "Is it the same as the RTH opening gap?",
+        "answer": "No. The opening gap joins two session prices; the first-hour range measures an interval’s extremes."
+      },
+      {
+        "question": "Can I use the final high before 10:30?",
+        "answer": "Only the running high is known. Using a later high earlier introduces look-ahead bias."
+      },
+      {
+        "question": "Must a range projection be reached?",
+        "answer": "No. Failure and balance are necessary contrasting outcomes."
+      }
+    ]
+  },
+  "66": {
+    "heading": "ICT chain of custody of price: references and contrasting outcomes",
+    "columns": [
+      "Reference",
+      "What is observable",
+      "What remains conditional"
+    ],
+    "rows": [
+      [
+        "Daily wick",
+        "112–120; midpoint 116.",
+        "It is selected before the intraday reaction."
+      ],
+      [
+        "Touch",
+        "Price reaches 116.",
+        "A required close below 116 is not implied."
+      ],
+      [
+        "Body close",
+        "A completed candle closes at 115.",
+        "It supports this rule, not certainty about the next move."
+      ]
+    ],
+    "note": "Worked prices are invented teaching values. They do not reproduce a historical trade or establish a profitable strategy.",
+    "faqs": [
+      {
+        "question": "What is ICT chain of custody of price?",
+        "answer": "A sequence linking dated higher-timeframe arrays to later price observations and lower-timeframe structures."
+      },
+      {
+        "question": "What is a wick midpoint?",
+        "answer": "The halfway price between the chosen body edge and wick extreme."
+      },
+      {
+        "question": "Does a CE touch confirm the thesis?",
+        "answer": "Only if that was the stated rule. A rule requiring a completed close needs that close."
+      },
+      {
+        "question": "Can I choose the best daily wick afterward?",
+        "answer": "That creates hindsight. Preserve the reference selected before the reaction."
+      },
+      {
+        "question": "Does this prove algorithmic control?",
+        "answer": "No. A descriptive relationship between chart levels is not proof of a hidden cause."
+      }
+    ]
+  },
+  "67": {
+    "heading": "ICT time and price grids: references and contrasting outcomes",
+    "columns": [
+      "Reference",
+      "What is observable",
+      "What remains conditional"
+    ],
+    "rows": [
+      [
+        "Full range 100–140",
+        "Midpoint 120; octant size 5.",
+        "132 is in its upper quarter."
+      ],
+      [
+        "Full range 100–180",
+        "Midpoint 140; octant size 10.",
+        "132 is below its midpoint."
+      ],
+      [
+        "Wick 128–140",
+        "Midpoint 134.",
+        "Do not substitute the full-range midpoint."
+      ]
+    ],
+    "note": "Worked prices are invented teaching values. They do not reproduce a historical trade or establish a profitable strategy.",
+    "faqs": [
+      {
+        "question": "What is an ICT price octant?",
+        "answer": "One eighth of the explicitly selected price interval."
+      },
+      {
+        "question": "How is a grid level calculated?",
+        "answer": "Use L + f(H − L), with f expressing the chosen fraction."
+      },
+      {
+        "question": "Is premium an absolute price label?",
+        "answer": "No. It depends on the range whose midpoint is being used."
+      },
+      {
+        "question": "Should every chart have eight lines?",
+        "answer": "No. Add subdivisions only when they answer a defined study question."
+      },
+      {
+        "question": "Does touching a grid line predict reversal?",
+        "answer": "No. Location and the later response must be evaluated separately."
+      }
+    ]
+  },
+  "68": {
+    "heading": "ICT advanced FVG variants: references and contrasting outcomes",
+    "columns": [
+      "Reference",
+      "What is observable",
+      "What remains conditional"
+    ],
+    "rows": [
+      [
+        "Ordinary FVG",
+        "Outer-candle wick boundaries.",
+        "A valid shape alone is not a model."
+      ],
+      [
+        "Volume imbalance",
+        "Adjacent close/open separation.",
+        "Wick overlap can remain."
+      ],
+      [
+        "Named variant",
+        "A dated source sequence and declared measurement.",
+        "Do not generalise the nickname into a universal rule."
+      ]
+    ],
+    "note": "Worked prices are invented teaching values. They do not reproduce a historical trade or establish a profitable strategy.",
+    "faqs": [
+      {
+        "question": "What is an Enigma FVG study?",
+        "answer": "A source-specific study of imbalance anchors and measured projections; its endpoints must be made explicit."
+      },
+      {
+        "question": "What is a Reflection FVG example?",
+        "answer": "The consulted example compares the first presented imbalance with its first opposite-direction imbalance and distinguishes displacement."
+      },
+      {
+        "question": "Is every failed IFVG a Reaper?",
+        "answer": "No. The reviewed variant includes nested references and breaker context."
+      },
+      {
+        "question": "Is a volume imbalance the same as an FVG?",
+        "answer": "No. Close/open separation and three-candle wick separation use different boundaries."
+      },
+      {
+        "question": "Does Hangman mean a doji candle?",
+        "answer": "Not in the consulted example. The sequence around a midpoint matters, not the candle silhouette alone."
+      }
+    ]
+  },
+  "69": {
+    "heading": "The ICT Obsidian model: references and contrasting outcomes",
+    "columns": [
+      "Reference",
+      "What is observable",
+      "What remains conditional"
+    ],
+    "rows": [
+      [
+        "Daily reference",
+        "120–128 with CE 124.",
+        "It frames the idea before the intraday trigger."
+      ],
+      [
+        "Version A",
+        "100→120 known at 09:40.",
+        "A later 124 high is unavailable."
+      ],
+      [
+        "Version B",
+        "100→124 available at 09:50.",
+        "It cannot rewrite an earlier decision."
+      ]
+    ],
+    "note": "Worked prices are invented teaching values. They do not reproduce a historical trade or establish a profitable strategy.",
+    "faqs": [
+      {
+        "question": "What is the ICT Obsidian model?",
+        "answer": "The consulted teaching case combines higher-timeframe location, morning protraction and a conditional intraday return."
+      },
+      {
+        "question": "What is protraction in this study?",
+        "answer": "An extension or excursion interpreted relative to a named range and the wider directional idea."
+      },
+      {
+        "question": "Can projection anchors develop after the open?",
+        "answer": "Yes in the consulted case; keep their versions and availability times explicit."
+      },
+      {
+        "question": "Does the name guarantee a reversal?",
+        "answer": "No. Continued expansion against the thesis is an essential contrasting outcome."
+      },
+      {
+        "question": "What if the return misses my limit?",
+        "answer": "Record no fill. Do not award a paper profit at an untouched price."
+      }
+    ]
+  },
+  "70": {
+    "heading": "ICT backtesting and journaling: references and contrasting outcomes",
+    "columns": [
+      "Reference",
+      "What is observable",
+      "What remains conditional"
+    ],
+    "rows": [
+      [
+        "Missed fill",
+        "Price never reaches the selected limit.",
+        "Do not count a theoretical winner."
+      ],
+      [
+        "Process result",
+        "The written rules were followed or broken.",
+        "Profit and adherence are separate."
+      ],
+      [
+        "Performance result",
+        "Realised outcome after declared costs.",
+        "Sample uncertainty and future risk remain."
+      ]
+    ],
+    "note": "Worked prices are invented teaching values. They do not reproduce a historical trade or establish a profitable strategy.",
+    "faqs": [
+      {
+        "question": "What should an ICT replay journal contain?",
+        "answer": "Context, dated references, predeclared rules, decision-time screenshots, actual fills, costs and rejected cases."
+      },
+      {
+        "question": "What is R in a backtest?",
+        "answer": "The initial declared risk unit; realised outcomes may differ because of execution and management."
+      },
+      {
+        "question": "Can I count an almost-filled entry?",
+        "answer": "No. Use the stated fill rule consistently and record no fill when it is not met."
+      },
+      {
+        "question": "Must all ICT backtesting be manual?",
+        "answer": "No. Explicit observable rules can be automated; discretionary choices need a reproducible annotation process."
+      },
+      {
+        "question": "Does a high win rate prove a strategy?",
+        "answer": "No. Payoffs, costs, sample selection, uncertainty and later evaluation also matter."
+      }
+    ]
+  }
+}

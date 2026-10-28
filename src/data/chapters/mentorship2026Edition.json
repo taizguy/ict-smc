@@ -1,0 +1,822 @@
+[
+  {
+    "id": 47,
+    "slug": "2026-onboarding-from-vision-to-execution",
+    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series",
+    "title": "ICT 2026 Mentorship: Beginner Study Plan",
+    "level": 1,
+    "quote": "Mark 100 and 120 before the new session.",
+    "summary": [
+      "Mark 100 and 120 before the new session.",
+      "A return above 100 is observable; 120 is only a possible destination.",
+      "Compare a rally with a renewed decline."
+    ],
+    "keyTerms": [
+      {
+        "term": "Study specification",
+        "definition": "The instrument, clock, references and decision rules fixed before replay."
+      },
+      {
+        "term": "Look-ahead bias",
+        "definition": "Using a later outcome as though it was known at the decision time."
+      }
+    ],
+    "practiceQuestions": [],
+    "sections": [
+      {
+        "id": "47.1",
+        "title": "How should a beginner start the ICT 2026 mentorship?",
+        "content": "The ICT 2026 mentorship combines beginner preparation with advanced index-futures chart studies. A useful starting point is not memorising every named PD array. It is learning to describe one day without borrowing information from its ending. Begin with open, high, low and close, then market structure and liquidity. A fair value gap is a price relationship; a trading plan additionally needs context, timing, an entry rule, risk and a reason to stop."
+      },
+      {
+        "id": "47.2",
+        "title": "How to study ICT 2026 preparation step by step",
+        "content": "Choose one instrument, contract and chart session. Set the clock to America/New_York, check the actual event calendar and mark previous daily and weekly highs and lows. Use a separate clean execution chart rather than covering it with every reference. Before revealing the next candles, write the level you are observing, the event you expect, the observation window and the condition that would contradict your idea. A macro specifies when to observe, not which direction to choose."
+      },
+      {
+        "id": "47.3",
+        "title": "ICT 2026 preparation: a worked example",
+        "content": "Suppose yesterday’s high is 120 and low is 100. Today opens at 108. At 09:35 it reaches 99 and returns to 103. You can record a break below yesterday’s low and a return above it. You cannot yet record a successful reversal to 120: that price is still in the future. Save the chart at 09:35. Later compare continuation toward 120 with a return below 99, and record which expectation was actually stated before either happened."
+      },
+      {
+        "id": "47.4",
+        "title": "When the ICT 2026 preparation interpretation fails",
+        "content": "The same sweep can be followed by a rally, another decline or hours of balance. Record no-trade observations too. A readable journal separates the observation, your interpretation and the actual result. Choosing a swing, deciding that displacement is sufficient and selecting a daily bias involve judgment. Name those choices so another learner can follow them; a long viewing history or a winning replay does not establish readiness for live leverage."
+      },
+      {
+        "id": "47.5",
+        "title": "Build a weekly preparation routine without predicting every day",
+        "content": "Before the week begins, record the prior week’s high, low and midpoint, the relevant daily arrays and the scheduled releases. A weekly profile is a scenario, not a weekday promise: a Monday low need not become the week’s low. Revisit the plan as new completed information arrives and retain its earlier version. Mark holidays and shortened sessions separately, because an ordinary-session study is not automatically comparable with a reduced-hours day. Review the existing weekly profiles lesson for the wider framework rather than forcing every week into a perfect template."
+      },
+      {
+        "id": "47.6",
+        "title": "A clean workspace: three charts, three jobs",
+        "content": "Keep a context chart for dated daily and weekly references, a session chart for the chosen morning interval and a replay chart for the decision itself. The same price level should keep its origin when copied between them. For instance, label 120 as previous-day high rather than simply resistance. Hide references that do not answer the current question. This makes it easier to explain why a level was selected instead of searching a crowded chart for whichever rectangle happens to fit the latest move."
+      },
+      {
+        "id": "47.7",
+        "title": "Turn an observation into a useful daily log",
+        "content": "Use a small record with five fields: date and instrument; the reference known before the session; the event observed; the interpretation written at that moment; and the later result. An example is: reference 100, break to 99, reclaim to 103, possible rejection of the low, then outcome pending. Add the screenshot before filling the last field. This separates a correct description of a sweep from a successful directional forecast. Review repeated mistakes in identification separately from mistakes in order handling."
+      },
+      {
+        "id": "47.8",
+        "title": "A practice session with a clear finish",
+        "content": "Choose one date and stop the replay at the beginning of your selected window. Mark only information already available. Advance until the first relevant event, write one sentence about it, then save that state. Continue to the end of the window even if the first idea fails. Finish by answering three questions: did I use future information, did I change the reference and could another learner reproduce my description? The exercise succeeds when those answers are clear, even on a day with no simulated order."
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "slug": "nq-es-premarket-session-rules-morning-engine",
+    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series",
+    "title": "ICT 2026 Pre-Market Range: 7–9 AM Rules",
+    "level": 2,
+    "quote": "The high and low are still developing.",
+    "summary": [
+      "The high and low are still developing.",
+      "Midpoint 108; upper octant 114.",
+      "Overlap identifies location, not a guaranteed reversal."
+    ],
+    "keyTerms": [
+      {
+        "term": "Pre-market range",
+        "definition": "The measured high and low inside the declared morning window."
+      },
+      {
+        "term": "Octant",
+        "definition": "One eighth of the selected price range."
+      }
+    ],
+    "practiceQuestions": [],
+    "sections": [
+      {
+        "id": "48.1",
+        "title": "What is the ICT 7–9 AM pre-market range?",
+        "content": "The 2026 pre-market study measures the high and low within 07:00–09:00 New York time, then carries those boundaries forward. Its purpose is to put later PD arrays in a defined location. It is not the 2025 Venom 08:00–09:30 range, the midnight opening range or the first hour after the cash open. On a scheduled 08:30 report day, the selected Friday lesson uses an earlier 08:30 cutoff; label that changed sample explicitly."
+      },
+      {
+        "id": "48.2",
+        "title": "How to study the ICT 7–9 AM pre-market range step by step",
+        "content": "Confirm the calendar before starting. During the window, the range is developing: each new high or low can change its midpoint. After the declared cutoff, freeze L and H. Calculate midpoint L + 0.5(H − L), quarters at 0.25 and 0.75, and octants in steps of 0.125. Next watch whether the later fair value gap or inversion fair value gap is actually near one of those references. Location is a filter, not permission to trade."
+      },
+      {
+        "id": "48.3",
+        "title": "The ICT 7–9 AM pre-market range: a worked example",
+        "content": "Use an invented completed range of 100–116. Its midpoint is 108, each octant is 2 points, and the upper eighth is 114. A later 113–115 FVG overlaps 114; a 109–110 FVG does not. Both may be valid three-candle gaps, but they answer different location questions. If your hypothesis is a rejection after a sweep of 116, first require the stated sweep and response. A gap printed earlier cannot be relabelled as post-sweep confirmation."
+      },
+      {
+        "id": "48.4",
+        "title": "When the ICT 7–9 AM pre-market range interpretation fails",
+        "content": "A trending pre-market can be followed by balance, but it can also keep trending after 09:30. Treat that tendency as a research hypothesis, not a fixed reversal rule. Decide before replay whether an overlap means wick contact, body contact or an exact price tolerance. Record every eligible case, including a gap that fails and a reference that is never revisited. Keep the range fixed instead of moving its low to improve a later result."
+      },
+      {
+        "id": "48.5",
+        "title": "Draw the range without mixing sessions",
+        "content": "Place a vertical boundary at 07:00 and another at the declared cutoff. Use only bars belonging to that interval when finding the extremes. On a one-minute study, state whether timestamps identify bar opens; a bar opening at 09:00 belongs to the next interval when the study ends at 09:00. Record the final values only when the selected bars have closed. The chart timezone, not the clock on your desk, determines which candles enter this measurement."
+      },
+      {
+        "id": "48.6",
+        "title": "A trending morning versus a balanced morning",
+        "content": "Two sessions can finish with the same 100–116 high and low yet take different paths. One may climb steadily from 100 to 116; another may cross 108 several times before finishing near it. The boundary arithmetic is identical, but the delivery record differs. Describe that difference before assigning a label. For a reproducible study, state how you recognise trend or balance, such as the sequence of swings and the closing location, rather than deciding from whether the later trade won."
+      },
+      {
+        "id": "48.7",
+        "title": "Combine location, event and execution",
+        "content": "Suppose price first sweeps 116, closes back at 113 and then forms a bearish FVG at 113–115. Its overlap with the 114 octant explains location; the sweep and completed return explain sequence. A proposed short at 114 with invalidation above 117 is a separate execution specification. If price falls directly from 113, a 114 sell limit may remain unfilled. If it returns and later exceeds the invalidation, keep that failure. This is why identifying an octant or drawing a gap alone is not a complete trade study."
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "slug": "ict-2026-first-hour-dealing-range",
+    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series",
+    "title": "ICT First Hour Dealing Range: 9:30–10:30",
+    "level": 2,
+    "quote": "The final high is not available at the open.",
+    "summary": [
+      "The final high is not available at the open.",
+      "The completed 100–116 range gives midpoint 108.",
+      "124 is a range projection, not an observed future price."
+    ],
+    "keyTerms": [
+      {
+        "term": "First hour dealing range",
+        "definition": "The high and low formed from 09:30 to 10:30 New York in this study."
+      },
+      {
+        "term": "Range midpoint",
+        "definition": "Add the high and low, then divide by two."
+      }
+    ],
+    "practiceQuestions": [],
+    "sections": [
+      {
+        "id": "65.1",
+        "title": "What is the ICT first hour dealing range?",
+        "content": "The first hour dealing range is the high–low interval formed between 09:30 and 10:30 New York time in this 2026 study. It measures what the first cash-session hour actually traded. It is different from the RTH opening gap, which joins a prior closing reference to today’s opening price, and from a 09:30–10:00 opening range. A daily chart cannot reveal the exact intrahour order of its high and low."
+      },
+      {
+        "id": "65.2",
+        "title": "How to study the ICT first hour dealing range step by step",
+        "content": "During the hour, display only the running high and low. At the declared 10:30 cutoff, freeze the completed values. Let D = H − L. Midpoint is L + 0.5D; a half-range projection above the high is H + 0.5D and below the low is L − 0.5D. Those arithmetic levels describe distance. They are neither observed future liquidity nor statistical confidence bounds. Use the same range definition across all reviewed days."
+      },
+      {
+        "id": "65.3",
+        "title": "The ICT first hour dealing range: a worked example",
+        "content": "At 09:50 the visible range is 100–110. At 10:20 a new high of 116 forms. At 10:30 the completed range is 100–116, so midpoint is 108, D is 16 and the half-range upper projection is 124. The 124 level cannot be credited to a plan written at 09:50 using the later 116 high. After 10:30, a move above 116 that holds can be studied separately from a break to 118 that closes back at 114."
+      },
+      {
+        "id": "65.4",
+        "title": "When the ICT first hour dealing range interpretation fails",
+        "content": "Compare expansion toward 124 with a failed break back into the range and with continued balance around 108. All use the same frozen anchors. Choosing whether a wick, close or retest counts as a breakout changes the experiment; write that choice before the next candle. A late-arriving high should update a developing range, but it must not rewrite a completed range or an earlier entry decision."
+      },
+      {
+        "id": "65.5",
+        "title": "What if there is no clear initial daily bias?",
+        "content": "An uncertain initial view does not require guessing at the opening bell. Let the declared first-hour references develop, then compare conditional scenarios against them. In a 100–116 completed range, a close above 108 and sustained upper-half delivery is different from a failure below 108 into the lower quarter. Define which completed event would change the view and when the idea expires. Those are observation scenarios, not an instruction to buy the first break. If neither path becomes clear under the written rule, keep a no-trade result."
+      },
+      {
+        "id": "65.6",
+        "title": "Keep the running range separate from the completed range",
+        "content": "At 09:50 the 100–110 running range has midpoint 105. If a new high of 116 forms at 10:20, the running midpoint becomes 108. Both calculations are correct at their respective times. Keep a record of the change rather than replacing the earlier screenshot. In this lesson’s one-minute convention, the completed first hour contains bars opening from 09:30 through 10:29, available after the last bar closes at 10:30. A different bar convention must be named explicitly."
+      },
+      {
+        "id": "65.7",
+        "title": "Measure projections in both directions",
+        "content": "For the frozen 100–116 range, a half-range above the high is 124 and a half-range below the low is 92. A full range above the high would be 132; a full range below the low would be 84. These labels tell you which distance was measured. Keep the anchor range visible when extending the lines. Then record whether a level is untouched, touched or passed. A chart that reaches 123.75 has not reached a 124 target, even if the difference looks tiny when zoomed out."
+      },
+      {
+        "id": "65.8",
+        "title": "Three later-session outcomes to compare",
+        "content": "After the range closes, compare three paths using the same 116 upper boundary. Price may close above it and hold a retest; it may reach 118 and close back at 114; or it may remain inside the range. The first supports a declared breakout hypothesis, the second shows a failed excursion and the third supplies no breakout. If a practice order requires a retest at 116, even the first path can produce no fill when price never returns. Recognition and participation are different results."
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "slug": "opening-gap-matrices-ndog-nwog-csod",
+    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series",
+    "title": "ICT Opening Gaps: NDOG, NWOG, RTH & CISD",
+    "level": 2,
+    "quote": "Use the selected previous close of 120.",
+    "summary": [
+      "Use the selected previous close of 120.",
+      "The midpoint has traded; the far edge has not.",
+      "Compare full traversal with rejection at CE."
+    ],
+    "keyTerms": [
+      {
+        "term": "Opening gap",
+        "definition": "The interval between two declared session prices, rather than a three-candle imbalance."
+      },
+      {
+        "term": "Consequent encroachment",
+        "definition": "Consequent encroachment is the midpoint of the selected gap."
+      }
+    ],
+    "practiceQuestions": [],
+    "sections": [
+      {
+        "id": "50.1",
+        "title": "What are ICT opening gaps and CISD?",
+        "content": "An opening gap joins two specified session prices. NDOG means new day opening gap; NWOG means new week opening gap. An RTH opening gap uses a regular-hours reference and the next cash-session opening price. These are not three-candle fair value gaps and are not the high–low range of the first half hour. NSOG is used for a new session opening gap; a session label alone is incomplete without its actual open and close conventions."
+      },
+      {
+        "id": "50.2",
+        "title": "How to study ICT opening gaps and CISD step by step",
+        "content": "Write the contract, timezone and two timestamps next to each gap. Distinguish an official settlement from a final plotted bar or a chosen close: those are not automatically the same price. Take lower edge L and upper edge H; CE is (L + H)/2. Carry only still-relevant gaps, retaining their dates. For a change in state of delivery, identify the preceding directional candle run and the opening-price reference whose completed crossing matters under your stated CISD rule."
+      },
+      {
+        "id": "50.3",
+        "title": "ICT opening gaps and CISD: a worked example",
+        "content": "Suppose the selected prior close is 120 and today opens at 108. The RTH gap is 108–120; CE is 114. A rally to 114 reaches half of the gap, not a full fill. Reaching 120 traverses the entire selected interval. Now suppose the opening price of the chosen bearish candle run is 112. A later completed close above 112 satisfies this example’s bullish CISD condition, but does not establish that 120 will be reached."
+      },
+      {
+        "id": "50.4",
+        "title": "When the ICT opening gaps and CISD interpretation fails",
+        "content": "Price may reject at 114, continue to 120 or move lower without touching either. Do not delete the untouched gap because the day did something else. The anchor price, gap expiry and CISD candle-run selection are model choices that must stay visible in the journal. A displayed midpoint is arithmetic; the claim that it attracts price with a particular frequency requires a defined dataset and independent testing."
+      },
+      {
+        "id": "50.5",
+        "title": "A first opposite FVG does not replace the wider gap context",
+        "content": "The first imbalance after the open may point against the wider directional hypothesis. Keep its geometry, later utilisation and the opening-gap location separate. For example, a bearish first gap at 112–114 can later be crossed and revisited from above in an inverse fair value gap study, while the original opening gap remains a different reference. That later use requires a declared crossing and return rule; it cannot be assumed when the bearish gap first forms. A weekly-range reference may add context, but it does not impose a compulsory retracement percentage on every day."
+      },
+      {
+        "id": "50.6",
+        "title": "Build a gap register rather than an undated wall of boxes",
+        "content": "For each gap, save its type, creation date, instrument, contract, two source timestamps and two prices. Add the midpoint and a status such as untouched, midpoint reached or fully traversed. A 108–120 RTH gap and a 112–116 NWOG can overlap while retaining different origins. Keep their labels separate. If one historical reference is removed from the active chart, keep the original journal entry so its relevance can be assessed without reconstructing it from memory."
+      },
+      {
+        "id": "50.7",
+        "title": "Opening above or below the selected prior close",
+        "content": "If the selected prior close is 120 and the new open is 108, this example has a discount opening gap. Reversing the prices, with prior close 108 and new open 120, gives a premium opening gap. Both have midpoint 114, but the session begins at a different edge. Mark the opening-side edge and far edge before discussing a fill. A move from 120 down to 114 is halfway through the premium gap; it is not the same directional path as a rise from 108 to 114."
+      },
+      {
+        "id": "50.8",
+        "title": "A CISD reference needs a defined candle run",
+        "content": "For a simple bullish change-in-delivery exercise, select a preceding run of bearish closes and mark the opening price of the run specified by your rule. Suppose that reference is 112. A candle wicking to 113 but closing at 111 does not satisfy a completed-close-above-112 rule; a later close at 113 does. The choice of run and whether the condition uses a close belong in the specification. Keep this separate from a break of structure, which compares price with a selected swing, rather than automatically calling every crossing both events."
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "slug": "ict-chain-of-custody-of-price",
+    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series",
+    "title": "ICT Chain of Custody of Price: Daily to Intraday",
+    "level": 2,
+    "quote": "Keep the dated daily reference unchanged.",
+    "summary": [
+      "Keep the dated daily reference unchanged.",
+      "115 is below the selected midpoint of 116.",
+      "Compare a confirming close with a wick-only touch."
+    ],
+    "keyTerms": [
+      {
+        "term": "Chain of custody",
+        "definition": "A sequence linking dated higher-timeframe arrays to later price observations and lower-timeframe structures."
+      },
+      {
+        "term": "Wick midpoint",
+        "definition": "The halfway price between the chosen body edge and wick extreme."
+      }
+    ],
+    "practiceQuestions": [],
+    "sections": [
+      {
+        "id": "66.1",
+        "title": "What is ICT chain of custody of price?",
+        "content": "Chain of custody of price is ICT’s way of following a sequence from one dated PD array to another. The useful learner question is: which earlier reference is this new candle reacting to, and what would make that interpretation fail? It is a contextual chart framework. Candles alone do not reveal a hidden master algorithm, trader identities or the quantity of orders waiting beyond a high."
+      },
+      {
+        "id": "66.2",
+        "title": "How to study ICT chain of custody of price step by step",
+        "content": "Start on the daily chart. Name the array, its date, its lower and upper edges and its midpoint. Carry that same price interval to the intraday chart before looking for a trigger. Add the relevant opening-gap and session references, but distinguish overlapping price levels from independent evidence. Then record the sequence of touches, body closes and newly formed fair value gaps. A lower-timeframe gap cannot retroactively create higher-timeframe context that was not selected beforehand."
+      },
+      {
+        "id": "66.3",
+        "title": "ICT chain of custody of price: a worked example",
+        "content": "Take a daily upper wick with body edge 112 and extreme 120. Its midpoint is 116. On the one-minute chart, price reaches 118 and then completes a close at 115. Under an explicitly bearish study rule, that is a close below the selected wick midpoint. A later bearish FVG at 113–114 is a second observation. The order matters: wick reference first, intraday response second, potential entry study third. A move to 112 is a possible next reference, not a promised payoff."
+      },
+      {
+        "id": "66.4",
+        "title": "When the ICT chain of custody of price interpretation fails",
+        "content": "Now compare a touch at 116 followed by a close at 118. The required close below CE is absent. Do not call that the same bearish confirmation. Range selection, wick selection and the close-versus-touch rule contain discretion; record them explicitly. A chain is useful when it explains both why an idea qualified and why another did not. Adding more rectangles until the completed chart looks convincing defeats that purpose."
+      },
+      {
+        "id": "66.5",
+        "title": "Make the reference traceable across timeframes",
+        "content": "Give the daily reference a short identity: date, array type, body or wick boundaries and the reason it matters to this session. On the lower timeframe, use the same two prices instead of finding a nearby rectangle that fits better. For the 112–120 wick, label 116 as daily-wick midpoint. A one-minute candle touching 116 can now be described precisely: it reached a previously selected daily reference. Whether the reaction supports a trade remains a separate question."
+      },
+      {
+        "id": "66.6",
+        "title": "Separate a destination from the route toward it",
+        "content": "Suppose the wider bearish idea proposes 108 while price is near the daily-wick midpoint at 116. The chart still has to travel through any intervening swings and arrays. Mark a nearer reference at 112 and ask what the next completed event shows there. Reaching 112 does not establish that 108 must follow. Conversely, a failed bounce at 112 does not prove who sold. This staged approach makes the explanation testable one observation at a time instead of treating the final destination as known."
+      },
+      {
+        "id": "66.7",
+        "title": "A three-line chain-of-custody note",
+        "content": "Write the study as a chain of explicit statements. First: the daily upper wick is 112–120, selected before the session. Second: the lower-timeframe candle closes at 115, below its 116 midpoint. Third: a later bearish gap at 113–114 is observed and its return will be studied. If the close is 118 instead, the second statement changes and the later idea must be reconsidered. This is more useful than recording only a screenshot with arrows pointing from the eventual high to the eventual low."
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "slug": "ict-time-price-grids-quadrants-octants",
+    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series",
+    "title": "ICT Time & Price Grids: Quadrants and Octants",
+    "level": 2,
+    "quote": "Full-range midpoint is 120.",
+    "summary": [
+      "Full-range midpoint is 120.",
+      "Wick 128–140 has midpoint 134.",
+      "The same price has different locations in different ranges."
+    ],
+    "keyTerms": [
+      {
+        "term": "Octant",
+        "definition": "One eighth of the explicitly selected price interval."
+      },
+      {
+        "term": "Grid calculation",
+        "definition": "Use L + f(H − L), with f expressing the chosen fraction."
+      }
+    ],
+    "practiceQuestions": [],
+    "sections": [
+      {
+        "id": "67.1",
+        "title": "What are ICT time and price grids?",
+        "content": "A price grid divides a selected interval into reproducible fractions; a time grid marks declared observation windows. Together they help answer where and when an event occurs. They do not reveal why it occurs. A quadrant is one quarter and an octant one eighth of the chosen range. The word algorithmic in this framework is an interpretation, not independent evidence that a specific program must turn at every line."
+      },
+      {
+        "id": "67.2",
+        "title": "How to study ICT time and price grids step by step",
+        "content": "Choose the reference before subdividing it: a full dealing range, an opening gap, a daily body or a particular wick are different intervals. For low L and high H, level f is L + f(H − L). Mark f = 0.25, 0.5 and 0.75, then add eighths only if they answer a specific question. Place the actual session clock beside the grid. Never use the final daily high and low to justify a morning decision before those extremes existed."
+      },
+      {
+        "id": "67.3",
+        "title": "ICT time and price grids: a worked example",
+        "content": "For 100–140, each octant is 5: the upper-quarter boundary is 130 and midpoint is 120. Price 132 sits in the upper quarter. Change the selected interval to 100–180 and the same 132 lies below its 140 midpoint. Price did not change; the reference did. Separately, an upper wick from body edge 128 to high 140 has midpoint 134, not the full-candle midpoint of 120. Those are two different CE questions."
+      },
+      {
+        "id": "67.4",
+        "title": "When the ICT time and price grids interpretation fails",
+        "content": "Compare a body close that respects a selected wick midpoint with a wick that crosses it but closes back. Keep the same anchors while making the comparison. More grid lines create more opportunities for accidental alignment; they are not automatically stronger confluence. Choosing which range deserves attention and how much proximity counts as overlap remains discretionary. A useful diagram names those choices and allows the opposite outcome."
+      },
+      {
+        "id": "67.5",
+        "title": "Work the quarter and eighth calculations",
+        "content": "For 100–140, range width is 40. The quarter levels are 110, 120 and 130. The intermediate eighths are 105, 115, 125 and 135. Writing the numbers once makes the grid easy to audit. If a selected FVG spans 124–126, it overlaps the 125 octant. That is a geometric overlap, not an independent confirmation of a trade. Record the gap’s actual formation and wider context next, using the same boundaries whether the later reaction succeeds or fails."
+      },
+      {
+        "id": "67.6",
+        "title": "A body, a wick and a full candle are different intervals",
+        "content": "Take a candle with open 112, close 128, low 100 and high 140. The body interval is 112–128 with midpoint 120. The upper wick is 128–140 with midpoint 134. The lower wick is 100–112 with midpoint 106. The full high–low interval is 100–140 with midpoint 120. Two midpoints happen to coincide here, but their definitions differ. Label the interval whenever using CE so another reader knows whether the observation concerns a body, a wick or the whole range."
+      },
+      {
+        "id": "67.7",
+        "title": "Add time only after the price reference is clear",
+        "content": "A price touch at 09:45 and the same price touch at 15:45 occur at different points in the session. A time grid helps keep those observations separate. Before replay, state which window is being examined and whether the price level was available beforehand. Then log all qualifying touches in that window. Counting only the touch nearest a profitable reversal makes an apparently precise time-and-price combination from hindsight. Start with one range and one window; add complexity only when the extra distinction can be explained."
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "slug": "ict-2026-enigma-reaper-reflection-fvg",
+    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series",
+    "title": "ICT Enigma, Reaper & Reflection FVG Studies",
+    "level": 2,
+    "quote": "A body-price gap and a wick FVG are different measurements.",
+    "summary": [
+      "A body-price gap and a wick FVG are different measurements.",
+      "A midpoint excursion needs its actual completed close.",
+      "A variant name does not remove the failure case."
+    ],
+    "keyTerms": [
+      {
+        "term": "Enigma study",
+        "definition": "A source-specific study of imbalance anchors and measured projections; its endpoints must be made explicit."
+      },
+      {
+        "term": "Reflection study",
+        "definition": "The consulted example compares the first presented imbalance with its first opposite-direction imbalance and distinguishes displacement."
+      }
+    ],
+    "practiceQuestions": [],
+    "sections": [
+      {
+        "id": "68.1",
+        "title": "How do the advanced ICT FVG variants differ?",
+        "content": "Advanced FVG names describe source-specific studies; they do not replace the ordinary three-candle definition. A bullish FVG needs candle 1 high below candle 3 low after candle 3 closes. A volume imbalance instead compares adjacent close and open prices; wicks may overlap. Begin by separating those geometries before studying Enigma projections, a Reaper variant or the first opposite-direction gap used in a Reflection study."
+      },
+      {
+        "id": "68.2",
+        "title": "How to study ICT advanced FVG variants step by step",
+        "content": "For Enigma, record the exact displacement candle, body-open anchor and outer-candle or body-adjusted endpoint before measuring a projection. The selected lesson changes its measurement when an adjacent volume imbalance matters; that is not permission to adjust every endpoint until a target fits. In the Reflection example, distinguish the first presented FVG from the first one with displacement, then identify the first opposite-direction imbalance. In the sourced Reaper variant, keep the surrounding breaker and nested gap references visible rather than defining it as any failed inversion."
+      },
+      {
+        "id": "68.3",
+        "title": "ICT advanced FVG variants: a worked example",
+        "content": "Consider a bullish FVG from 104 to 108, CE 106, with a displacement candle body opening at 100. A measurement from 100 to 108 has length 8; using 107.75 because of a declared body-price reference gives 7.75. A 1.25 range multiple would therefore give different prices: 110 and 109.6875 before valid-tick rounding. This arithmetic shows sensitivity to anchors; it does not authenticate either as a universal Enigma target. Freeze the chosen rule before testing it."
+      },
+      {
+        "id": "68.4",
+        "title": "When the ICT advanced FVG variants interpretation fails",
+        "content": "Contrast a wick beyond CE followed by a close back with a body close that remains beyond it. The Hangman example discusses a small wick excursion and rejection after bodies suggested continuation; it is not a mechanical doji rule or a way to identify trapped people from a candle. Keep these advanced labels attached to their specific source examples. If the anchor, sequence or confirmation cannot be stated clearly, classify the case as unresolved instead of inventing a recipe."
+      },
+      {
+        "id": "68.5",
+        "title": "What the advanced names do not establish",
+        "content": "Do not combine separate examples into one invented universal entry checklist. Enigma measurement changes, the first opposite imbalance in Reflection, nested Reaper references and the Hangman rejection sequence answer different questions. A visual-only recording may show an annotated outcome without explaining every condition. When an explanation cannot be recovered from the source, keep that limit visible instead of supplying missing rules. Learn the ordinary FVG, inverse fair value gap and breaker block first; use the linked masterclass for a focused comparison of the sourced Reaper variant."
+      },
+      {
+        "id": "68.6",
+        "title": "Start with ordinary FVG geometry before a variant name",
+        "content": "Use three completed candles with these relevant extremes: candle 1 high 104, candle 2 moving through the area, candle 3 low 108. The bullish wick-defined FVG is 104–108 and CE is 106. If candle 3 low is instead 103, the outer ranges overlap and that bullish FVG is absent. A large candle 2 does not change the outer-boundary test. Establish this basic fact before adding a named variant, a projection or a claim about first presentation."
+      },
+      {
+        "id": "68.7",
+        "title": "Reflection: chronological first versus contextual significance",
+        "content": "Write the time and direction of the first qualifying gap after the chosen opening reference. Then separately identify whether a later gap accompanies displacement beyond a selected high or low. In the consulted Reflection explanation, the first opposite-direction imbalance is another reference worth inspecting. Keep all three identities rather than renaming whichever later worked as the first gap. The nickname describes a relationship between observations; the study still needs the higher-timeframe view, recognition time, failure convention and an actual fill rule."
+      },
+      {
+        "id": "68.8",
+        "title": "Compare body-price separation with wick separation",
+        "content": "An adjacent close of 108 and next open of 108.25 create a 0.25 body-price separation even when both candles’ wicks overlap. That observation alone does not create the ordinary three-candle FVG. In a projection study, using 108 instead of 108.25 changes every measured multiple, so the selection needs a reason visible before the outcome. For Reaper comparisons, retain the breaker and nested reference structure shown by the source. A single inversion failing somewhere else supplies too little information to claim the same variant."
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "slug": "ict-2026-obsidian-model",
+    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series",
+    "title": "ICT Obsidian Model: Context, Anchors & Examples",
+    "level": 2,
+    "quote": "Daily CE 124 is selected before the intraday move.",
+    "summary": [
+      "Daily CE 124 is selected before the intraday move.",
+      "A new high changes the projection only from this moment onward.",
+      "Compare rejection with continued closes above 124."
+    ],
+    "keyTerms": [
+      {
+        "term": "Obsidian study",
+        "definition": "The consulted teaching case combines higher-timeframe location, morning protraction and a conditional intraday return."
+      },
+      {
+        "term": "Protraction",
+        "definition": "An extension or excursion interpreted relative to a named range and the wider directional idea."
+      }
+    ],
+    "practiceQuestions": [],
+    "sections": [
+      {
+        "id": "69.1",
+        "title": "What is the ICT Obsidian model?",
+        "content": "The Obsidian teaching example combines a bearish higher-timeframe view with a morning protraction and an intraday return study. It is not simply any order block, any FVG or a fixed Fibonacci ratio. The first question is which daily reference gives the proposed move its context. The second is whether the session has actually produced the sequence being studied. A model name cannot supply either answer."
+      },
+      {
+        "id": "69.2",
+        "title": "How to study the ICT Obsidian model step by step",
+        "content": "Carry the selected daily gap or wick and its CE forward. Mark the completed 7–9 AM range, then observe the post-09:30 high and the excursion relative to the wider dealing range. In the reviewed bearish case, a Judas-style rise above a range midpoint is interpreted against that daily context. Declare the rejection condition and intended destination before a lower-timeframe entry. If a projection uses a developing post-open high, keep each version timestamped rather than treating its final location as known from the start."
+      },
+      {
+        "id": "69.3",
+        "title": "The ICT Obsidian model: a worked example",
+        "content": "Suppose the daily bearish reference is 120–128, CE 124. The completed pre-market range is 100–116. The first post-open high is 120, later revised to 124. A projection anchored at 100→120 differs from one at 100→124. At 09:40, only the 120 version is available; at 09:50, the 124 version becomes available. A later close below 120 can qualify this example’s rejection study, but an entry at 121 is still unfilled if the retracement only reaches 120.75."
+      },
+      {
+        "id": "69.4",
+        "title": "When the ICT Obsidian model interpretation fails",
+        "content": "Compare rejection with continued closes above 124. The latter conflicts with the bearish expectation and must not be relabelled as a perfect short. A clean retracement may never occur. Daily bias, the relevant protraction and projection anchors require discretion; preserve the declared choices in the journal. These lessons explain an original teaching case, not a verified universal Obsidian entry recipe or an independently established win rate."
+      },
+      {
+        "id": "69.5",
+        "title": "Write the bearish scenario before the protraction",
+        "content": "A useful scenario names three references: the daily bearish area, the completed pre-market interval and the nearer intraday destination. In the worked example these are 120–128, 100–116 and a possible return toward 116. The rise into the daily area is the event being observed, not proof that short sellers have taken control. Write the response that would qualify next, such as a completed close below a declared reference. This keeps the model attached to a sequence rather than to the appearance of a single candle."
+      },
+      {
+        "id": "69.6",
+        "title": "Version the range when a new high forms",
+        "content": "With a fixed low of 100, a provisional high of 120 gives width 20 and midpoint 110. Revising the high to 124 gives width 24 and midpoint 112. Those two grids answer different time-stamped questions. Keep the earlier one in the journal and state when the replacement becomes available. A final chart with only the 100–124 grid hides what the learner actually knew before 124 traded. Use the animation to notice the new extreme before changing the measurement."
+      },
+      {
+        "id": "69.7",
+        "title": "Keep a missing return separate from a failed return",
+        "content": "After a bearish response, a practice rule may require a return to 121. If price falls from 120 to 116 without reaching 121, that is no fill. If it reaches 121 and then trades through the predefined invalidation above 124, it is a filled failure under that rule. Both differ from a filled return followed by the selected objective. Keeping these categories separate prevents a model review from quietly counting every correct directional forecast as a tradable winning entry."
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "slug": "market-alchemy-trading-all-time-highs-ath",
+    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series",
+    "title": "ICT Market Alchemy: How to Study All-Time Highs",
+    "level": 2,
+    "quote": "The gap gives you a ruler. The clock and the response tell you what to examine.",
+    "summary": [
+      "Fix the two RTH gap anchors before projecting; 0 is the prior-close reference.",
+      "A projection touch is a location, not a complete short setup.",
+      "Keep the lunch-window response, nearer exits and actual fill evidence separate."
+    ],
+    "keyTerms": [
+      {
+        "term": "ICT — Inner Circle Trader",
+        "definition": "The name used by Michael J. Huddleston, creator of the original recordings."
+      },
+      {
+        "term": "RTH — Regular Trading Hours",
+        "definition": "The regular-session convention used for the stated opening-gap references."
+      },
+      {
+        "term": "NQ — E-mini Nasdaq-100 futures",
+        "definition": "CME’s E-mini Nasdaq-100 futures; the original expiry symbol remains unconfirmed here."
+      },
+      {
+        "term": "MNQ — Micro E-mini Nasdaq-100",
+        "definition": "The Micro futures instrument shown in the separate May 13 example."
+      },
+      {
+        "term": "OTE — Optimal Trade Entry",
+        "definition": "A separate ICT entry concept; its Fib template should be kept distinct from this projection drawing."
+      },
+      {
+        "term": "CE — Consequent Encroachment",
+        "definition": "The midpoint of a stated gap; this opening-gap CE is 29,493.125 before rounding."
+      },
+      {
+        "term": "OHLC — open, high, low, close",
+        "definition": "The four prices describing a candle over its specified interval."
+      },
+      {
+        "term": "ATH — All-Time High",
+        "definition": "The highest price in the complete history being examined, distinct from a 52-week high."
+      },
+      {
+        "term": "RTH opening gap",
+        "definition": "The interval between the selected prior 16:14 close and current 09:30 open in this source."
+      },
+      {
+        "term": "Range replication",
+        "definition": "A multiple of the chosen gap width; not statistical standard deviation."
+      },
+      {
+        "term": "Inverse fair value gap",
+        "definition": "An imbalance studied after its prior use changes; the crossing and response require a stated convention."
+      },
+      {
+        "term": "Liquidity sweep",
+        "definition": "Price crossing a selected high or low; it does not identify the ownership of hidden stops."
+      },
+      {
+        "term": "Event horizon",
+        "definition": "In this example, the midpoint between the two selected nearer lows."
+      },
+      {
+        "term": "Overshoot",
+        "definition": "Trading beyond a reference before the subsequent response is known."
+      }
+    ],
+    "practiceQuestions": [],
+    "sections": [
+      {
+        "id": "49.1",
+        "title": "How to study all-time highs without guessing the top",
+        "content": "An all-time high (ATH) is the highest price in the history being examined, not merely the highest price of the last 52 weeks. At a record high there is no earlier traded high above price on that same series. Previous closes, opening gaps and intraday lows still provide references. “It has gone up too far” is not a short-entry rule.\n\nICT (Inner Circle Trader) Market Alchemy combines those references with time and the response at a projected price. This chapter reconstructs the 14 May 2026 NQ futures study: measure the RTH opening gap, project its width, then inspect the specified New York lunch window. A bullish higher-timeframe context can coexist with a temporary intraday pullback.\n\nBy the end, you should be able to draw the exact level set, reject an encounter that occurs too early, distinguish an overshoot from a reversal, and evaluate whether an exit price was reached. Start with candle reading and fair value gaps if those are new to you."
+      },
+      {
+        "id": "49.2",
+        "title": "Which range does Market Alchemy measure?",
+        "content": "Use the RTH opening gap: two session prices, not the high and low of the first trading hour. In this example the upper reference is the close of the prior day’s 16:14 one-minute bar, 29,510.00. The lower reference is the current day’s 09:30 opening price, 29,476.25. Both times are New York local time. Their difference is 33.75 points.\n\nOn a one-minute chart, identify the instrument and contract, choose America/New_York, and inspect the actual OHLC (open, high, low, close) values at both references. Write the date and time beside each horizontal line. Do not substitute a settlement price, the last overnight candle, or the 09:30–10:30 range. Those choices create a different measurement. If your feed lacks the selected bar, record the mismatch rather than silently choosing another close.\n\nThe opening is below the prior close, placing this gap above the open. In the source’s bullish context, price overcomes that gap and its first return is studied as potential support. Neither a gap fill nor a new record high is, by itself, a bearish signal. The opening gaps chapter explains the different session conventions; keep each gap’s origin attached to its label."
+      },
+      {
+        "id": "49.3",
+        "title": "How to draw ICT standard deviation projections in TradingView",
+        "content": "Here ICT’s “standard deviation” means replications of a selected price range. The base is the 33.75-point RTH gap. These are measured price distances, rather than a standard deviation estimated from returns or an eight-sigma probability statement. A projection locates a price to inspect.\n\nChoose the two-point Fib Retracement drawing, rather than the three-point trend-based extension. Place its endpoints at the two gap references. Open its settings and use Coordinates to enter the exact prices. Check the displayed labels: 0 must sit at 29,510.00 and 1 at 29,476.25. If they are inverted, use Reverse or exchange the endpoints, then check again. The label positions, not the order of your clicks, are the final test.\n\nIn Style, enable custom levels 0, 0.5, 1, −6.5, −7, −7.5 and −8. Show both Levels and Prices, and extend the lines right. Use linear price arithmetic for this reconstruction; leave log-based Fib calculation off. Save a separate template from any Optimal Trade Entry (OTE) drawing. The annotated interface screenshots below show the controls.\n\nWith this orientation, price at ratio r equals 29,510 − r × 33.75. Therefore −7 is 29,746.25 and −8 is 29,780.00. The intermediate −6.5 and −7.5 arithmetic values are 29,729.375 and 29,763.125. Those half-tick results are calculations, not executable NQ prices. The recording does not supply a universal rounding policy; distinguish your chart’s display rounding from an order price.\n\nA quick error check: 29,476.25 + 8 × 33.75 = 29,746.25. That is the source’s −7 line, not its −8 line. Starting eight gaps above the opening silently loses one gap compared with the displayed zero at the prior close. Check both anchors before interpreting any extension."
+      },
+      {
+        "id": "49.4",
+        "title": "When does an opening-gap projection become relevant?",
+        "content": "Mark 11:30 and 13:30 New York time as the lunch interval used in this source. Within it, the study concentrates on setup formation in the first hour, 11:30–12:30, after an extended morning advance.\n\nThis window is source-specific; other New York lunch conventions exist, such as 12:00–13:00.\n\nThe displayed morning has already exceeded the 6.5 and 7 replications before 11:30. Those earlier encounters fall outside the lunch event being studied. The analysis moves to 7.5 and 8 as the next references. Select the levels from the sequence actually visible, and retain their original anchors.\n\nFor a replay, draw the full level set before revealing the lunch candles. Keep a note of when each level was first reached. If the required response never appears during the declared window, record no setup under that study rule. Moving the time boundary or multiplier afterward would answer a different question."
+      },
+      {
+        "id": "49.5",
+        "title": "Worked NQ example: the −8 overshoot and bearish response",
+        "content": "The 14 May source chart shows a high of 29,782.00 against the −8 projection at 29,780.00: a two-point overshoot. Price exceeded the line before the response developed. Keep the drawing fixed and inspect the subsequent sequence.\n\nThe source examines failure to extend above a preceding high, a bearish response and a bullish imbalance changing use. An inverse fair value gap describes that change of role. The displayed short annotation is 29,773.25. A touch is not a signal.\n\nTo study the sequence, first freeze the chart at the projection encounter. Next identify the preceding high and the imbalance being watched. Reveal the response separately. Ask whether the proposed bearish evidence actually arrived, rather than drawing an entry arrow on the eventual highest candle. Keep location, response and execution in separate journal fields."
+      },
+      {
+        "id": "49.6",
+        "title": "Where are the exits? Nearer lows versus the deeper objective",
+        "content": "Looking left from the lunch window, the source distinguishes nearer lows at 29,692.25 and 29,664.50 from an earlier, deeper low marked 29,595.50. These exit references have different distances and fill risks. Map the nearer objectives before assigning the deepest low as a destination.\n\nThe midpoint between the two nearer lows is (29,692.25 + 29,664.50) ÷ 2 = 29,678.375; the source chart displays 29,678.50. It calls this midpoint an “event horizon.” The opening gap’s consequent encroachment (CE) is a separate midpoint: 29,493.125 before chart rounding. Write the two anchors beside each midpoint.\n\nThe deeper marked low is later traversed by only one NQ tick: the inspected 13:26 candle shows 29,595.25 against 29,595.50. A hypothetical buy limit below 29,595.25 would not be reached there. Even reaching an order’s price is not proof of a fill without order and queue information. This is why the source discusses nearer exits and partials rather than treating the deepest low as a guaranteed outcome.\n\nChoosing which lows matter, which portion to exit and whether a retracement is sufficient involves judgment. Record those choices before the move. Liquidity sweeps describe price crossing a visible reference; hidden stop size or ownership remains an interpretation. The order matching lesson explains why chart contact and execution are separate."
+      },
+      {
+        "id": "49.7",
+        "title": "Three outcomes: early touch, reaction or continued expansion",
+        "content": "Compare three possibilities without changing the gap anchors. First, price touches a projection before 11:30: the location may be real, but it does not meet this lunch-window study. Second, price overshoots a projected line and then develops the bearish evidence: location and response can now be examined together. Third, price continues higher without that response: the short hypothesis has not been confirmed.\n\nThe early-touch and continued-rise strips below are hypothetical contrasts. The middle strip simplifies the source’s overshoot and later bearish response. Keep the original level set fixed across all three. A touch alone is not a signal.\n\nAn unqualified touch, an unfilled order and a filled losing trade are different records. Keep all three categories in backtesting and journaling, and score each using the rule stated before the outcome."
+      },
+      {
+        "id": "49.8",
+        "title": "A real losing example: when expected expansion does not arrive",
+        "content": "A separate Market Alchemy recording, published 13 May 2026, shows an earlier morning MNQ (Micro E-mini Nasdaq-100) long. Its narrower lesson is that expected expansion can fail while the original invalidation reference remains meaningful. It is a separate example from the May 14 lunch projection.\n\nThe source places the long’s stop below a selected candle low and then discusses the lack of upward expansion. Several candles spend time in the area instead of delivering the expected move. The chart labels show a planned stop reference of 29,139.25 and later a closing execution annotation at 29,136.75, a 2.50-point difference.\n\nKeep the failed expectation beside the original invalidation and observed exit. The source subsequently takes another attempt; finish reviewing this record before considering a new one."
+      },
+      {
+        "id": "49.9",
+        "title": "Try it yourself: reproduce the drawing before replaying price",
+        "content": "On a clean chart or paper, place 0 at 29,510.00 and 1 at 29,476.25. Calculate the gap and the −7 and −8 prices. Mark the two lunch boundaries. Before looking at the historical outcome, write why an earlier −7 touch would not count as the lunch event. Then reveal the overshoot and response in separate steps.\n\nFinish with two records: the first states only what was known at the encounter; the second adds the later outcome. Name the gap anchors, time window, response sought, exit references and anything still unspecified.\n\nReproducibility means another learner can draw the same references, identify the same sequence and locate the decisions that depended on judgment. Use the limits and verification notes below when assessing what this example can support."
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "slug": "event-volatility-hrlr-futures-vs-cfds",
+    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series",
+    "title": "ICT News Volatility & High Resistance Liquidity Runs",
+    "level": 2,
+    "quote": "A release time does not predict its direction.",
+    "summary": [
+      "A release time does not predict its direction.",
+      "The path overlaps several references.",
+      "Contrast congestion with direct expansion."
+    ],
+    "keyTerms": [
+      {
+        "term": "High resistance liquidity run",
+        "definition": "High resistance liquidity run: a contextual description of a path with intervening opposing references."
+      },
+      {
+        "term": "News response",
+        "definition": "No. A pattern does not reveal the future news response."
+      }
+    ],
+    "practiceQuestions": [],
+    "sections": [
+      {
+        "id": "52.1",
+        "title": "What is a high resistance liquidity run in ICT?",
+        "content": "High resistance liquidity run, or HRLR, describes a proposed path with intervening opposing references and potentially overlapping delivery. It is not a direct measurement of resting orders, and a calendar event alone cannot classify every subsequent move as HRLR. News volatility can produce rapid expansion, reversals or an uneventful response. A compelling pattern does not remove spread, slippage, order rejection or gap-through risk."
+      },
+      {
+        "id": "52.2",
+        "title": "How to study ICT news volatility and HRLR step by step",
+        "content": "Check the actual release authority and exchange calendar for the date: NFP refers to the US employment report, while an FOMC statement and a later press conference are distinct events. Write the observation restriction before the event. Map nearby daily and intraday arrays, then decide whether the proposed destination has a clear path or several conflicting references. A beginner may choose observation-only. That is a valid study outcome, not a failed trade."
+      },
+      {
+        "id": "52.3",
+        "title": "ICT news volatility and HRLR: a worked example",
+        "content": "Imagine an upside objective at 120 with opposing references at 110, 113 and 116. Price advances from 108 to 114, falls to 109, then reaches 117. Those overlapping swings are different from a direct move from 108 to 120. If your stop reference was 106, that still says nothing about the actual fill during a fast release. A planned five-point stop and a seven-point realised exit are different records and must not be treated as equal risk."
+      },
+      {
+        "id": "52.4",
+        "title": "When the ICT news volatility and HRLR interpretation fails",
+        "content": "Contrast congestion with a clean expansion that crosses the same references without a meaningful pause. Label the observed path after it develops; do not pretend its label predicted the event. The number of opposing arrays, the tolerance for overlap and a post-news waiting interval are research choices. Preserve the original rule and include the days on which no eligible entry appears. Futures and CFD feeds can differ, so transfer neither exact levels nor tick values blindly."
+      },
+      {
+        "id": "52.5",
+        "title": "NQ, MNQ and CFD risk: a point is not a dollar",
+        "content": "CME specifies NQ as $20 per index point and MNQ as $2 per point, each with a 0.25-point minimum tick. Therefore one tick is $5 for NQ and $0.50 for MNQ. An invented 10-point adverse move is $200 per NQ or $20 per MNQ before fees and execution differences. These are exposure calculations, not a recommendation to use either size. A CFD’s point value, spread, hours and financing depend on its provider; do not copy futures arithmetic into it. Record the exact dated futures contract and whether the chart is continuous or adjusted, because different series can change the levels you measure."
+      },
+      {
+        "id": "52.6",
+        "title": "Low-probability opening ranges: observe before probing",
+        "content": "A low-probability label is an assessment of conditions unless a probability has actually been estimated from a defined sample. A crowded opening range, several scheduled releases or conflicting higher-timeframe references may justify stricter participation filters. They do not supply a measured win rate. For a learner, replaying the opening sequence without an order is a useful way to study why an apparent change in delivery may fail. A loss can occur even when a probabilistic rule is followed; review execution and adherence without assuming that every loss proves operator error."
+      },
+      {
+        "id": "52.7",
+        "title": "Map the route before naming its resistance",
+        "content": "Start with a current price and a proposed destination, then list the references between them in price order. In the 108→120 example, 110, 113 and 116 are intervening levels. Ask what happens at each: immediate passage, temporary balance, a close back or a sustained rejection. The resulting route is more informative than the HRLR label alone. A nearer objective may be reached while the wider destination remains untouched, so record those two outcomes separately rather than marking the whole idea successful."
+      },
+      {
+        "id": "52.8",
+        "title": "Write a news-day participation rule in advance",
+        "content": "A study plan can specify observation only around the release, a later start time or an event that must complete before considering a paper entry. State the actual date and event rather than a permanent weekday ban. For FOMC examples, distinguish the statement from the press conference and any later price response. Keep the excluded interval in the record. Otherwise a backtest can appear cleaner simply because difficult minutes were removed after seeing them. The rule is a choice about the study sample, not a prediction that waiting makes every later pattern safe."
+      },
+      {
+        "id": "52.9",
+        "title": "Read risk in points, ticks and dollars",
+        "content": "A 10-point move on a 0.25-point tick instrument contains 40 ticks. Using the CME multipliers cited below, that equals $200 for one NQ contract or $20 for one MNQ contract before costs. If the realised adverse move becomes 12 points, the arithmetic becomes $240 and $24 respectively. A smaller contract changes dollar exposure, not the number of index points the market travels. Keep contract quantity, entry-to-exit distance and fees in separate journal fields so the calculation can be checked."
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "slug": "midday-afternoon-tape-reading-macros-final-hour",
+    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series",
+    "title": "ICT Lunch & Afternoon Tape Reading",
+    "level": 2,
+    "quote": "Keep the completed morning on screen.",
+    "summary": [
+      "Keep the completed morning on screen.",
+      "Balance does not tell you which edge breaks next.",
+      "Compare continuation with a failed breakout."
+    ],
+    "keyTerms": [
+      {
+        "term": "Lunch study",
+        "definition": "It relates the midday interval to the completed morning move and remaining daily references."
+      },
+      {
+        "term": "Macro window",
+        "definition": "No. It specifies an observation interval, not a complete entry model."
+      }
+    ],
+    "practiceQuestions": [],
+    "sections": [
+      {
+        "id": "51.1",
+        "title": "How does ICT study lunch and afternoon delivery?",
+        "content": "A later session inherits what the morning has already done. Lunch is not automatically a reversal, and an afternoon macro is not a direction signal. In this framework, New York lunch is studied around 12:00–13:00, alongside the preceding morning range and the broader daily objective. Distinguish the quiet interval itself from a possible later expansion. The final cash-equity hour is a separate 15:00–16:00 New York observation, not the closing time of every futures session."
+      },
+      {
+        "id": "51.2",
+        "title": "How to study ICT lunch and afternoon delivery step by step",
+        "content": "First freeze the morning high, low and the objective stated before the open. Ask whether that objective has been reached, whether price is balanced or extended, and which opening gaps remain relevant. Then define the later interval being tested. Keep the 09:30–10:30 first-hour range separate from a 09:30–12:00 morning range. For a lunch retracement, state which earlier swing you select and why; choosing the lowest convenient point afterward creates hindsight."
+      },
+      {
+        "id": "51.3",
+        "title": "ICT lunch and afternoon delivery: a worked example",
+        "content": "Suppose the morning climbs from 100 to a previously marked objective at 120. Lunch balances between 116 and 119. A later close above 119, followed by a hold above that reference, is a continuation observation under this example. A move below 116 and failed reclaim is a different observation. Neither can be inferred from the lunch label alone. If a planned entry is 118 and price goes straight to 124, record a missed entry rather than an imaginary winner."
+      },
+      {
+        "id": "51.4",
+        "title": "When the ICT lunch and afternoon delivery interpretation fails",
+        "content": "Contrast a trending afternoon with continued balance into the close. Use the same boundaries for both, including failed breakouts. The choice of morning swing, macro interval and acceptable retracement is discretionary. A late session also leaves less time for an intraday idea to develop. Define its expiry before replay and do not replace a time-based exit with an overnight hold after seeing an unfavourable close."
+      },
+      {
+        "id": "51.5",
+        "title": "Check whether the morning objective has already been reached",
+        "content": "The afternoon question changes when the morning has already reached the daily reference selected before the open. A 100→120 move into that reference gives a different context from a morning that remains at 108 with 120 still distant. Write that difference before looking for an afternoon FVG. The same small gap at 117–118 may be a continuation candidate in one written scenario and irrelevant in another. Its geometry has not changed; the question and the available destination have."
+      },
+      {
+        "id": "51.6",
+        "title": "Compare an afternoon break with its failed version",
+        "content": "Keep the lunch high at 119 and low at 116. In one path, a completed close at 120 is followed by a return that stays above 119. In another, price wicks to 120, closes at 118 and later breaks 116. A third stays between the same edges until the study expires. Write the close and retest conditions before choosing a path. If the entry requires a return to 119, a move from 120 straight to 124 produces no fill at 119 despite a correct continuation idea."
+      },
+      {
+        "id": "51.7",
+        "title": "A later-session idea needs an expiry",
+        "content": "A session-specific plan should say when its observation ends and how an unresolved paper position is treated. A condition appearing at 15:55 has a different remaining cash-session horizon from one appearing at 13:35. Keep the exit convention consistent instead of extending the horizon until a target eventually trades. The chart can still be reviewed afterward for learning, but that later information belongs in the review field. It should not silently change the original intraday experiment into an overnight position."
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "slug": "ict-2026-backtesting-journaling-trade-management",
+    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series",
+    "title": "ICT 2026 Backtesting, Journaling & Trade Management",
+    "level": 2,
+    "quote": "Entry 102, stop 98, target 110: initial risk 4 points.",
+    "summary": [
+      "Entry 102, stop 98, target 110: initial risk 4 points.",
+      "A partial exit changes the position’s average payoff.",
+      "Compare a managed winner with a stopped-out trade."
+    ],
+    "keyTerms": [
+      {
+        "term": "Replay journal",
+        "definition": "Context, dated references, predeclared rules, decision-time screenshots, actual fills, costs and rejected cases."
+      },
+      {
+        "term": "Risk unit R",
+        "definition": "The initial declared risk unit; realised outcomes may differ because of execution and management."
+      }
+    ],
+    "practiceQuestions": [],
+    "sections": [
+      {
+        "id": "70.1",
+        "title": "What does an ICT backtest actually measure?",
+        "content": "Backtesting asks how a fully specified idea behaved across a defined sample, including its failures. Replay is also a learning exercise: it can improve observation without establishing an edge. A journal should preserve the original plan, what the chart showed at each decision and what actually happened. Trade management covers changes after entry, such as a partial exit, an invalidation or a time expiry; it must not be reconstructed only after the final chart is visible."
+      },
+      {
+        "id": "70.2",
+        "title": "How to study ICT backtesting and journaling step by step",
+        "content": "Choose a single test question, date range and instrument. Write the context filter, entry, invalidation, target, order type and expiry before replay. Log rejected days and no fills, not only completed trades. Separate training examples from a later untouched evaluation sample. Include commissions, spread assumptions and slippage. Discretionary selections need saved screenshots and explicit reasoning; observable rules can be coded, but a script does not automatically capture unstated judgment."
+      },
+      {
+        "id": "70.3",
+        "title": "ICT backtesting and journaling: a worked example",
+        "content": "A paper long plans entry 102, stop 98 and target 110: initial risk is 4 points and potential reward is 8, or 2R before costs. If price only reaches 102.25, a 102 limit has not been touched. If filled at 102 and stopped at 97.75, the loss is 4.25 points before costs, not exactly 1R. If half exits at 106 and half at 110, gross average reward is 6 points, or 1.5R. Save the management rule before the outcome."
+      },
+      {
+        "id": "70.4",
+        "title": "When the ICT backtesting and journaling interpretation fails",
+        "content": "Compare a rule-following loss with a profitable chase that broke the plan. Profit alone does not distinguish good process from luck. Keep a missed entry missed; a different entry has different risk. Report sample size, unresolved cases, changing rules and costs alongside any win rate. No universal number of trades certifies an edge, and an attractive backtest does not guarantee future results. Link the journal to Backtest Lab for measurement and Trade Simulator for decisions, without treating either as live execution evidence."
+      },
+      {
+        "id": "70.5",
+        "title": "A journal row another learner can audit",
+        "content": "Record the setup date, contract, chart interval, reference-selection time, trigger time, planned entry, actual fill, initial stop, exit and costs. Add a process field for whether the written conditions were followed. Keep screenshots from before and after the decision. A no-fill row can still contain all the reference and trigger information while leaving execution fields empty. This makes it possible to inspect selection quality without quietly removing missed opportunities or treating every visually attractive setup as an executed position."
+      },
+      {
+        "id": "70.6",
+        "title": "Calculate a partial exit rather than awarding the full target",
+        "content": "For the 102 entry with 98 initial stop, one risk unit is 4 points. Half the position exiting at 106 earns 4 points on that half; the other half exiting at 110 earns 8 points on its half. Weighted reward is 0.5 × 4 + 0.5 × 8 = 6 points, or 1.5R before costs. If the remaining half instead exits at 102, weighted reward is 2 points, or 0.5R. The label breakeven on the remainder is not the same as breakeven for the entire managed position."
+      },
+      {
+        "id": "70.7",
+        "title": "Win rate is one part of the result",
+        "content": "An invented sample with 40% winners averaging +2R and 60% losers averaging −1R has arithmetic expectancy of 0.4 × 2 − 0.6 × 1 = +0.2R before costs. Costs averaging 0.1R would reduce that figure to +0.1R. This illustrates why payoff and costs matter alongside win rate; it does not establish that the same distribution will persist. Report the actual sample, the rules used to select it and the uncertainty. Evaluate later untouched data separately from the examples used to invent or tune the rules."
+      }
+    ]
+  }
+]

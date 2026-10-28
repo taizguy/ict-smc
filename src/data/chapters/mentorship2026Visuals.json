@@ -1,0 +1,346 @@
+{
+  "47": {
+    "prices": [
+      108,
+      112,
+      105,
+      100,
+      99,
+      103,
+      107,
+      113,
+      120
+    ],
+    "levels": [
+      100,
+      120
+    ],
+    "labels": [
+      "Previous day",
+      "Sweep and reclaim",
+      "Outcome still unknown"
+    ],
+    "notes": [
+      "Mark 100 and 120 before the new session.",
+      "A return above 100 is observable; 120 is only a possible destination.",
+      "Compare a rally with a renewed decline."
+    ]
+  },
+  "48": {
+    "prices": [
+      102,
+      106,
+      100,
+      108,
+      112,
+      116,
+      114,
+      115,
+      110
+    ],
+    "levels": [
+      100,
+      108,
+      114,
+      116
+    ],
+    "labels": [
+      "07:00 → 09:00",
+      "Freeze 100–116",
+      "Observe after 09:00"
+    ],
+    "notes": [
+      "The high and low are still developing.",
+      "Midpoint 108; upper octant 114.",
+      "Overlap identifies location, not a guaranteed reversal."
+    ]
+  },
+  "49": {
+    "prices": [
+      118,
+      120,
+      123,
+      119,
+      115,
+      111,
+      112,
+      116,
+      124
+    ],
+    "levels": [
+      108,
+      110,
+      112,
+      120
+    ],
+    "labels": [
+      "Record 120",
+      "Return to 111",
+      "Continuation or failure"
+    ],
+    "notes": [
+      "A record high removes old overhead highs, not all context.",
+      "110 has not traded; a 110 order is unfilled.",
+      "Compare a recovery with a close below 108."
+    ]
+  },
+  "50": {
+    "prices": [
+      108,
+      110,
+      113,
+      114,
+      112,
+      115,
+      118,
+      120,
+      118
+    ],
+    "levels": [
+      108,
+      114,
+      120
+    ],
+    "labels": [
+      "Open 108",
+      "CE 114",
+      "Far edge 120"
+    ],
+    "notes": [
+      "Use the selected previous close of 120.",
+      "The midpoint has traded; the far edge has not.",
+      "Compare full traversal with rejection at CE."
+    ]
+  },
+  "51": {
+    "prices": [
+      100,
+      108,
+      116,
+      120,
+      117,
+      119,
+      116,
+      119,
+      124
+    ],
+    "levels": [
+      116,
+      119,
+      120
+    ],
+    "labels": [
+      "Morning objective",
+      "Lunch 116–119",
+      "Later delivery"
+    ],
+    "notes": [
+      "Keep the completed morning on screen.",
+      "Balance does not tell you which edge breaks next.",
+      "Compare continuation with a failed breakout."
+    ]
+  },
+  "52": {
+    "prices": [
+      108,
+      110,
+      109,
+      113,
+      110,
+      114,
+      109,
+      116,
+      117
+    ],
+    "levels": [
+      110,
+      113,
+      116,
+      120
+    ],
+    "labels": [
+      "Known event",
+      "Opposing references",
+      "Record actual delivery"
+    ],
+    "notes": [
+      "A release time does not predict its direction.",
+      "The path overlaps several references.",
+      "Contrast congestion with direct expansion."
+    ]
+  },
+  "65": {
+    "prices": [
+      104,
+      100,
+      106,
+      110,
+      108,
+      116,
+      112,
+      118,
+      124
+    ],
+    "levels": [
+      100,
+      108,
+      116,
+      124
+    ],
+    "labels": [
+      "09:30",
+      "10:30: freeze range",
+      "After 10:30"
+    ],
+    "notes": [
+      "The final high is not available at the open.",
+      "The completed 100–116 range gives midpoint 108.",
+      "124 is a range projection, not an observed future price."
+    ]
+  },
+  "66": {
+    "prices": [
+      110,
+      113,
+      116,
+      118,
+      115,
+      114,
+      113,
+      111,
+      108
+    ],
+    "levels": [
+      112,
+      116,
+      120
+    ],
+    "labels": [
+      "Daily wick 112–120",
+      "Close below 116",
+      "Next reference"
+    ],
+    "notes": [
+      "Keep the dated daily reference unchanged.",
+      "115 is below the selected midpoint of 116.",
+      "Compare a confirming close with a wick-only touch."
+    ]
+  },
+  "67": {
+    "prices": [
+      110,
+      120,
+      128,
+      140,
+      134,
+      132,
+      136,
+      138,
+      130
+    ],
+    "levels": [
+      100,
+      120,
+      130,
+      134,
+      140
+    ],
+    "labels": [
+      "Choose 100–140",
+      "Grade the wick separately",
+      "Compare the close"
+    ],
+    "notes": [
+      "Full-range midpoint is 120.",
+      "Wick 128–140 has midpoint 134.",
+      "The same price has different locations in different ranges."
+    ]
+  },
+  "68": {
+    "prices": [
+      100,
+      104,
+      108,
+      106,
+      109,
+      110,
+      107,
+      105,
+      102
+    ],
+    "levels": [
+      100,
+      104,
+      106,
+      108
+    ],
+    "labels": [
+      "Declare boundaries",
+      "Test the midpoint",
+      "Continuation or rejection"
+    ],
+    "notes": [
+      "A body-price gap and a wick FVG are different measurements.",
+      "A midpoint excursion needs its actual completed close.",
+      "A variant name does not remove the failure case."
+    ]
+  },
+  "69": {
+    "prices": [
+      112,
+      116,
+      120,
+      118,
+      124,
+      121,
+      119,
+      115,
+      110
+    ],
+    "levels": [
+      100,
+      116,
+      120,
+      124
+    ],
+    "labels": [
+      "Higher-timeframe context",
+      "Post-open high develops",
+      "Rejection or continuation"
+    ],
+    "notes": [
+      "Daily CE 124 is selected before the intraday move.",
+      "A new high changes the projection only from this moment onward.",
+      "Compare rejection with continued closes above 124."
+    ]
+  },
+  "70": {
+    "prices": [
+      104,
+      103,
+      102,
+      104,
+      106,
+      105,
+      108,
+      110,
+      108
+    ],
+    "levels": [
+      98,
+      102,
+      106,
+      110
+    ],
+    "labels": [
+      "Write the plan",
+      "Fill and management",
+      "Measure after costs"
+    ],
+    "notes": [
+      "Entry 102, stop 98, target 110: initial risk 4 points.",
+      "A partial exit changes the position’s average payoff.",
+      "Compare a managed winner with a stopped-out trade."
+    ]
+  }
+}

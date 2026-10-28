@@ -1,3 +1,7 @@
+import {AlchemySetupScreenshots,AlchemySourceSnapshot} from './Mentorship2026AlchemyScreenshots';
+import {Mentorship2026Diagram} from './Mentorship2026Diagram';
+import {Mentorship2026AlchemyFigure} from './Mentorship2026AlchemyFigure';
+import {hasMentorship2026Edition} from '../data/chapters/mentorship2026';
 import {useEffect, useId, useState} from 'react';
 import {ArrowLeft, ArrowRight, Pause, Play, RotateCcw} from 'lucide-react';
 import figures from '../data/chapters/deliveryFigures.json';
@@ -9,7 +13,7 @@ interface Stage {count:number; title:string; note:string}
 interface Variant {label:string; candles:Candle[]; steps:Stage[]; zone?:number[]|null; levels:(number|string)[][]; labels:string[]; intervals?:(number|string)[][]}
 interface Figure {id:string;chapter:number;section:number;title:string;description:string;variants:Variant[]}
 const examples=figures as Figure[];
-export const hasDeliveryEdition=(id:number)=>(id>=13&&id<=16)||hasMentorship2025Edition(id);
+export const hasDeliveryEdition=(id:number)=>(id>=13&&id<=16)||hasMentorship2025Edition(id)||hasMentorship2026Edition(id);
 
 /** One source of OHLC truth drives the picture, inspection readout and accessible table. */
 function Example({example,staticOnly=false}:{example:Figure;staticOnly?:boolean}){
@@ -91,6 +95,8 @@ function IntervalDiagram({intervals,title}:{intervals:(number|string)[][];title:
 }
 
 export function DeliveryLessonFigure({chapterId,section,staticOnly=false}:{chapterId:number;section:number;staticOnly?:boolean}){
+ if(chapterId===49)return <>{section<8&&<Mentorship2026AlchemyFigure index={section} staticOnly={staticOnly}/>} {section===2&&<AlchemySetupScreenshots staticOnly={staticOnly}/>} {section===4&&<AlchemySourceSnapshot/>}</>;
+ if(hasMentorship2026Edition(chapterId)) return section===2?<Mentorship2026Diagram chapterId={chapterId} staticOnly={staticOnly}/>:null;
  if(hasMentorship2025Edition(chapterId)){
   const placements:Record<number,Record<number,string>>={24:{2:'morning-range'},58:{0:'midnight-range',1:'rth-gap',2:'weekly-gap'},25:{2:'fvg-candidate'},59:{0:'pd-matrix'},26:{2:'smt-comparison'},60:{1:'liquidity-response'},53:{2:'venom-context'},61:{0:'post-ten-swing',2:'afternoon-range'},62:{1:'fomc-stages'},27:{1:'weekly-development'},63:{0:'options-underlying'},64:{1:'journal-replay'}};
   const caseId=placements[chapterId]?.[section];
@@ -103,6 +109,7 @@ export function DeliveryLessonFigure({chapterId,section,staticOnly=false}:{chapt
 
 export function DeliveryLessonWorkshop({chapterId,staticOnly=false}:{chapterId:number;staticOnly?:boolean}){
  const {t}=useTranslation();
+ if(hasMentorship2026Edition(chapterId))return <Mentorship2026Diagram chapterId={chapterId} staticOnly={staticOnly}/>;
  if(hasMentorship2025Edition(chapterId))return <Mentorship2025Diagram key={chapterId} chapterId={chapterId} staticOnly={staticOnly}/>;
  return <div className="delivery-workshop"><p>{t('Return to the lesson explanations for the full context.')}</p>{examples.filter(e=>e.chapter===chapterId).map(example=><Example key={example.id} example={example} staticOnly={staticOnly}/>)}</div>;
 }

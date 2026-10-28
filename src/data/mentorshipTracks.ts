@@ -120,19 +120,7 @@ export const mentorshipTracks: MentorshipTrack[] = [
     "difference": "This supplied collection combines new-student guidance with detailed NQ/ES reviews, daily inefficiencies, opening-range context and event case studies. Select a question before watching a long recording.",
     "prerequisite": "Review the foundations and the relevant earlier model. A later year is not a shortcut around practice.",
     "caution": "Some supplied recordings are visual-only. Review coverage distinguishes chart inspection from checked spoken passages.",
-    "chapterIds": [
-      47,
-      48,
-      49,
-      50,
-      51,
-      52,
-      53,
-      54,
-      55,
-      56,
-      57
-    ],
+    "chapterIds": [47,48,65,50,66,67,68,69,49,52,51,70],
     "inventoryKey": "2026",
     "color": "forest"
   }

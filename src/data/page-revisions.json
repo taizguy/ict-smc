@@ -2,8 +2,8 @@
   "version": 1,
   "pages": {
     "/": {
-      "fingerprint": "3e790c039779b402cf5394c03f03ca4643708d1fccc5ff1f29e8570ff868109f",
-      "lastmod": "2026-10-26",
+      "fingerprint": "52e0f37660c7b7c7e36c899221fdc23bd7eb2c2c2f503cdfcbc5c0dbc65a35e9",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/about/": {
@@ -172,98 +172,98 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/": {
-      "fingerprint": "77adf20af4fe015c8fa4479cdb2608a01acfee9f4cc08e3822bb1fc6bd12a608",
-      "lastmod": "2026-10-26",
+      "fingerprint": "8faf79396bb4aea9edba518381bb97599dd77d95eaadf9db61db8eb57ebd9c45",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/advanced-2025-2026-institutional-delivery-systems-tape-reading/": {
-      "fingerprint": "5e27d8c5a3f7be96060cd4da9dec289cd34c9dcc524bf5bc28c23c02354d04c5",
-      "lastmod": "2026-10-26",
+      "fingerprint": "85663a603776f480e8e04e948b2d85bd3879ac331e0cd63da7d4ab043dc50dcd",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/ict-2025-official-mentorship-curriculum/": {
-      "fingerprint": "72750fbc37802295317903dca95739a57af3050f37b97f8058926c88738ecd40",
-      "lastmod": "2026-10-26",
+      "fingerprint": "164712783bfa98f3d5ca4dc65ce09f73778bf37b1124db2ebed657343f61ca8c",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/ict-charter-price-action-models-curriculum/": {
-      "fingerprint": "ee5885ab1956124bc17f2d2c4789454b3d45bc47558474e2469b9f98d3ddb7fb",
-      "lastmod": "2026-10-26",
+      "fingerprint": "86e8e5d4838b500cb398fa400871b49f2634ac5b4023b4d0dfc713089225d45d",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/ict-mentorship-core-content-master-curriculum/": {
-      "fingerprint": "7f18d6665bfd81a4bf06722542f3f7d9aad89c9e5153b33a0db47e0a6d5a7f58",
-      "lastmod": "2026-10-26",
+      "fingerprint": "4ba4b0685c26d8c713d092add4fcdd572b7268a8cc9dd0867b9631e2316a2a58",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/liquidity-and-time/": {
-      "fingerprint": "503806ab63fe4b9d6cd282a7f37d84cc7f43f3bb8c8d81e36a837373db9f4bef",
-      "lastmod": "2026-10-26",
+      "fingerprint": "0198e44f3c37968ed7345f54b1d0adbce286074b3dcca0b3dd547a409d72c8f6",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/market-foundations/": {
-      "fingerprint": "1258d88beb3f33de6bb58639a73d34ad45dca834bcf935aa15a2a3892be61c0b",
-      "lastmod": "2026-10-26",
+      "fingerprint": "545e44fc7d60953620d1b82ed049f9fe33616682c3f0963be0a6895128a0bc43",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/mentorships/": {
-      "fingerprint": "4999064b911153f11db7f7b93fd48ab9e94ab5abf5883a44b0f77a7d70904f4a",
-      "lastmod": "2026-10-26",
+      "fingerprint": "ac70d6fdd1539d3661aa29d507086dc6748bdd3187cdd7259e97b8b10364e2a8",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/mentorships/2022/": {
-      "fingerprint": "07a707c53533f92a353b7af03e85cdf4be19248ae2d6e9ea22629db6419da735",
-      "lastmod": "2026-10-26",
+      "fingerprint": "dfc642bf7576a912c801db4fbeba26d08a3b48f7af1faa053762acf134b3da66",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/mentorships/2023/": {
-      "fingerprint": "e44fd20b437661fe56592cba72efc73167e6a2159a8ecbc775a2474456e476cd",
-      "lastmod": "2026-10-26",
+      "fingerprint": "14f35f7596f041aab20833cf44227a4d3e3a4ae9f65721c9cba081cdfadad56f",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/mentorships/2025/": {
-      "fingerprint": "e9e3059c2317535cdac2cf4c3c4e07e0660bd28caa2e5677ac2ee94ce1e9a29e",
-      "lastmod": "2026-10-26",
+      "fingerprint": "7068ae82b08abaed8ee884e69a8780a94759933b1cbe14b41a6b7897af1f9771",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/mentorships/2026/": {
-      "fingerprint": "74cdf150f47946dfdadb7b5938745d20dbd5d19c8e7d0dea3e2f2d3d79572e1e",
-      "lastmod": "2026-10-26",
+      "fingerprint": "2372c58e432424e682a0f4a4102a2a121951ecce8589cf0bff9418e81b9a77cb",
+      "lastmod": "2026-10-28",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/mentorships/charter/": {
-      "fingerprint": "c2d0a4c3cfcc5895da2548ec87c9076ab3c29754d4195dd4bc5d83fcdf0a2609",
-      "lastmod": "2026-10-26",
+      "fingerprint": "232727c34c265b3867f3df0fb015c24ea66b8527537ade04ff8de1cf7b7da1fc",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/mentorships/core-2016-2017/": {
-      "fingerprint": "a84fc89e412664cf8d4b19de034fdad50a6f2f58a7559589546fbd96fe098d39",
-      "lastmod": "2026-10-26",
+      "fingerprint": "7a04e1d060051ee14ba8ea21e812342cf06cdbc9c186fd1fd1bd6c0f5a8ca6f7",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/price-delivery/": {
-      "fingerprint": "c4d3b48d1cb83e78ca038cc371dec98417b4bb31d93510330b5108bc10c3cd4c",
-      "lastmod": "2026-10-26",
+      "fingerprint": "1f821099693ad63d470c1aff4aecaf7f3acfc53fd11cec64551a92959c3e37f6",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/price-structure/": {
-      "fingerprint": "de756c4cf45966e7a9b81505d604cae02f5ac452cdf11ec0f4646fb9f637eaf2",
-      "lastmod": "2026-10-26",
+      "fingerprint": "98c0b603b77571a2d1f9c11e41af5653219a42578ea7b7825690941f6116b8f5",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/special-mentorship-track-practical-field-guide/": {
-      "fingerprint": "22f6f17802d06d4165b66d4b00723babd995e7a657fab26c1b33a1e3ac01b790",
-      "lastmod": "2026-10-26",
+      "fingerprint": "8725f1bbe4aa6479d3b944592cae15213550760937d811b2052399bcdfdcbc0d",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/the-2026-ict-smart-money-concepts-master-lectures-tape-reading-series/": {
-      "fingerprint": "8f20bcbcb6e9ee78e97dba77f3b34abaf6b1b4eace58cdfd37ccefb2b6f4e850",
-      "lastmod": "2026-10-26",
+      "fingerprint": "f6cf578ccf611ac46deb616502e68bbe26ce17499c50faac65b8deecd8dd53f4",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/time-based-delivery/": {
-      "fingerprint": "e2c12db2ac2dc8cc64d0be85fa33386bb0f3eff27f85afa0d72d75ebb9f5b2a7",
-      "lastmod": "2026-10-26",
+      "fingerprint": "4240dc5d477a0ab746755416d6f236ad19b6c7b85764c78393313b5ea64e319d",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/disclaimer/": {
@@ -277,8 +277,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/2026-onboarding-from-vision-to-execution/": {
-      "fingerprint": "e7b58ca92f9baa4cc28baad5243f79b2b37917bfb0b249ad9894b32dc0ada26d",
-      "lastmod": "2026-10-25",
+      "fingerprint": "d8653988b332d4a18b55d6a1b4f2c1ec7b23bbdfd2f1d514ad0a166f1262e7e3",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/break-of-structure-bos-trend-continuation/": {
@@ -292,8 +292,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/candle-range-theory-crt-strategy/": {
-      "fingerprint": "8ab1fd8bfe0ba7178b21b86c47e0ed563d6d4280e979121e6af67069c712d12d",
-      "lastmod": "2026-10-26",
+      "fingerprint": "f06c2628bd1f1d54fe6f6efc6b324cf23ba499f8d308d4d921a464e13380c4cd",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/change-of-character-choch-the-first-warning/": {
@@ -347,8 +347,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/core-content-months-10-11-12-multi-asset-mega-trades-top-down/": {
-      "fingerprint": "d7830df78f60ecc10633f45429aac914c024e6ec2ef743ecafaa9167ac9bbed5",
-      "lastmod": "2026-10-25",
+      "fingerprint": "e93a6d508f24585642b62501406af851d73cea3fae2ba98f2962c4aa8e2dfd4c",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/daily-profiles-and-intraday-power-of-three-po3/": {
@@ -357,8 +357,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/event-volatility-hrlr-futures-vs-cfds/": {
-      "fingerprint": "4b9de3194c34ae9ec522a0a384321d2b8c633abfa585d0836cbf7384ff201957",
-      "lastmod": "2026-10-26",
+      "fingerprint": "3f93d27fd4c292999cc87228b29fde43b41ca39d5247db513b62770070d68124",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/fair-value-gaps-fvg-and-consequent-encroachment/": {
@@ -369,6 +369,31 @@
     "/learn/how-an-exchange-matches-orders/": {
       "fingerprint": "f040f0e1b34a572957ecfd2177f375cd47a674901de3265ba00a7ac6443b0b76",
       "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/ict-2026-backtesting-journaling-trade-management/": {
+      "fingerprint": "9e5193cb16fbd13dc9deaafa3339e13eedc5ed52a56b6e0c9fbf2533e2833dab",
+      "lastmod": "2026-10-27",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/ict-2026-enigma-reaper-reflection-fvg/": {
+      "fingerprint": "7b83621f81dd590c5118cae18ce0e8e7c8e42e90d885fad1a83c40033230f7e3",
+      "lastmod": "2026-10-27",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/ict-2026-first-hour-dealing-range/": {
+      "fingerprint": "97eebc8b76ece825dae9bc5a982039d8170fb90e78a3c43cd58d180dfb0c2b33",
+      "lastmod": "2026-10-27",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/ict-2026-obsidian-model/": {
+      "fingerprint": "92dcf3893477b3513c574c676a980e8ac213d5f2d7a38524ecb926940be39ffa",
+      "lastmod": "2026-10-27",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/learn/ict-chain-of-custody-of-price/": {
+      "fingerprint": "cd3dcd57800248e980361313f75efa8d9f4b3a7e5259df3fb893cfc3adafdd04",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/ict-charter-model-1-intraday-scalping/": {
@@ -446,6 +471,11 @@
       "lastmod": "2026-10-26",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
+    "/learn/ict-time-price-grids-quadrants-octants/": {
+      "fingerprint": "01ad0076a0bf3fb35b66abdd772e83eda062f670e9614c87698a5d52ff2ac27c",
+      "lastmod": "2026-10-27",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
     "/learn/ict-weekly-options-payoffs-and-risk/": {
       "fingerprint": "f8ec73f133a1a810306b263af8bb5cd972552e0a26a453abc74c300dc3e1c0fd",
       "lastmod": "2026-10-26",
@@ -467,8 +497,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/market-alchemy-trading-all-time-highs-ath/": {
-      "fingerprint": "a8fedd32ddd4f403642e39001ec182488e7e46eb8dcd019c303d2ca0d61e5084",
-      "lastmod": "2026-10-25",
+      "fingerprint": "d631de6b3d6bb3bf9b2a3af400122f2d24732341a01c9bb51df5fe1f01f98587",
+      "lastmod": "2026-10-28",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/market-structure-shift-mss-verified-directional-shift/": {
@@ -477,18 +507,18 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/midday-afternoon-tape-reading-macros-final-hour/": {
-      "fingerprint": "d1c98a0c9f0ead50e1414d3c909af97dcd317cd465d18bc9b951a96618e0789c",
-      "lastmod": "2026-10-25",
+      "fingerprint": "ae99d4ab68948cb5cdc38bb2d00cd77ddb8585ea40275c6b41013060d89bae35",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/nq-es-premarket-session-rules-morning-engine/": {
-      "fingerprint": "711c50c577814ac82c4032ab9bea5fb6070723612a4e4ccc34e03465cbd7c92f",
-      "lastmod": "2026-10-25",
+      "fingerprint": "2e67941bca2ec801d8c0593ea036a79726d3e00999263463f34702615c3fb4d2",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/opening-gap-matrices-ndog-nwog-csod/": {
-      "fingerprint": "5ef7c5bb3125651306c19f280095482af64e0986d6831372a43279497260bc01",
-      "lastmod": "2026-10-25",
+      "fingerprint": "aac8d76620745fb9803f21c3b7803eef0ab2c15c3af76a2f7934f67dd3a683db",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/order-blocks-ob-and-mitigation/": {
@@ -1922,8 +1952,8 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/": {
-      "fingerprint": "e2974455da4061f05cd5fcdcdc73b2d8bf9a4b8f4f1235d2b3c5e2bc3b1834ab",
-      "lastmod": "2026-10-26",
+      "fingerprint": "d5123995b742875547aca543ba2c2c6f1ba0a32fa9d5281547ca373e24fd97bd",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/about/": {
@@ -1987,98 +2017,98 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/": {
-      "fingerprint": "a6a3757cfb2e1bcf0fd5d3492155f4628341165bdc231f245d38e8edcc5c3266",
-      "lastmod": "2026-10-26",
+      "fingerprint": "8bac9cec715f7e64521482e1eb087c54c0be22d1c18cfd53f3eebc3a7dbce128",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/advanced-2025-2026-institutional-delivery-systems-tape-reading/": {
-      "fingerprint": "131d0d6aa2064264cc7e0a3e808706f06e69157ed3f158b9029b8faae98d6b26",
-      "lastmod": "2026-10-26",
+      "fingerprint": "c3ffce40b230b2df7f9e078253195ad7a70820ef8e9e1e15137a5b04b9a65976",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/ict-2025-official-mentorship-curriculum/": {
-      "fingerprint": "24142eea59fb7e3d83aff3ebce7402acda0d2a0323a2bab06c6d337cb9a83bf8",
-      "lastmod": "2026-10-26",
+      "fingerprint": "0a6e550e5662b70de3a82b47070631e778b72c854b03a4202e74918074d8cf52",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/ict-charter-price-action-models-curriculum/": {
-      "fingerprint": "10e8b74229d974a23b1de6068fe0c7f53f868626f3dd2b8feef8d2e2091546d2",
-      "lastmod": "2026-10-26",
+      "fingerprint": "6ded34276f5e998e2a04451235fd4d5b5360d8408f44fb824151eaf3d68f8420",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/ict-mentorship-core-content-master-curriculum/": {
-      "fingerprint": "6f68c8f7bbf8aac50f616e11db65a872c058785ce87f8db0e724b8ed96fe2e27",
-      "lastmod": "2026-10-26",
+      "fingerprint": "ad5806052f28ed70347c3c5700655e921231dcc93bfadde18e45eba86fd29d65",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/liquidity-and-time/": {
-      "fingerprint": "7e87e178a499379acd2b5f8a0b923252f33928200c5c11ad6315759beacd1246",
-      "lastmod": "2026-10-26",
+      "fingerprint": "bb0bcafd4076a42de3e65b86cbb1a99c44b8487c96600d3b0d09811575d0fa8a",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/market-foundations/": {
-      "fingerprint": "581c571b224ffa2de0611b78f4dac54d39b7f6d3a51997b0860ef0f8191a1d66",
-      "lastmod": "2026-10-26",
+      "fingerprint": "6216418a33d4f39ca3bd41accf0b759b192fda5d7c50d36990823dea011c54e3",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/mentorships/": {
-      "fingerprint": "7ebac3605b523ebcb412d3aabf4ce3886b8140b31978727c7805e7b77244ee07",
-      "lastmod": "2026-10-26",
+      "fingerprint": "1fb6e598057d7258b0a78c33cbd0fa04f77eecd668922d8c5fb8da7bdec7ada9",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/mentorships/2022/": {
-      "fingerprint": "104df98dceea5be67e18b49dd5129e46ac406f04bb9c4f0a5f67810599b2ac06",
-      "lastmod": "2026-10-26",
+      "fingerprint": "800117cb3f53beec61de719b8f572775618458b69e123a8879e6bcc2b1ed9614",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/mentorships/2023/": {
-      "fingerprint": "415f304e46ebb4c0d2b886b8de3a4ac9ca57f4be48dc67b0d3fd767c3f94299e",
-      "lastmod": "2026-10-26",
+      "fingerprint": "de69df1a9ca14bbc661351de8b1e5c26b2f82fa5a14b641d2c55e55b7ec1696f",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/mentorships/2025/": {
-      "fingerprint": "c8ce92d1cb87c9447b19edfa1b82c5cdae4aad7a12db01a0ba17e8d963e282aa",
-      "lastmod": "2026-10-26",
+      "fingerprint": "7645afe926ba6090b7fb500ebe889a449b42ed0722494ee290c3ff15ead9b27d",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/mentorships/2026/": {
-      "fingerprint": "a4a14fca18bf3c47fd58c9c49ae8a136b4118723e036064b0ccdd54c7a7f9b4d",
-      "lastmod": "2026-10-26",
+      "fingerprint": "be60730fc5d511c74d2cedba7ebf43a4093a5c9668afc68f03701a4d3581824b",
+      "lastmod": "2026-10-28",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/mentorships/charter/": {
-      "fingerprint": "c0d40f77f39a825ac7d4480c798ebb6909e7146da10bc045a1b47a77ff2c0b8f",
-      "lastmod": "2026-10-26",
+      "fingerprint": "09ececfd4f8820f759537dbf59fb5add4f9c49256028b87ff9cce2b8ad7a3606",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/mentorships/core-2016-2017/": {
-      "fingerprint": "60451a512063687f891832bac2af5a0f240abfe676f7fc83bdae50fd7b0a3e6f",
-      "lastmod": "2026-10-26",
+      "fingerprint": "705843ba52f8b87acd7be6382eca0eb2a77c1b2ebf8a314991e669a1bb963f29",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/price-delivery/": {
-      "fingerprint": "f8cc621a177c35c73d8ace69b9be4a110ba3053ffa82ef76da3f4459c7a0585e",
-      "lastmod": "2026-10-26",
+      "fingerprint": "05c88d741b096b6b99c528e57c991748d34c627e7daab7508603cede20daaa71",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/price-structure/": {
-      "fingerprint": "749ea64a1ff55d62a544dce386d0363ebbf0aaaea8709f3146aaeaf94aa13e18",
-      "lastmod": "2026-10-26",
+      "fingerprint": "6b88cd57934b6e7c0dfb081943b3f77a56a025d0c71ec67b80d4cb3d27e11302",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/special-mentorship-track-practical-field-guide/": {
-      "fingerprint": "9aa56dbd8171f7ed0d29b9b1d9a3dcaa3cf2ab8b42d4e3ce236358225e6a7f8e",
-      "lastmod": "2026-10-26",
+      "fingerprint": "dc78f1085fd8606bf02bfadcde7a9e0fb021e85649688f44cf990633597cff6a",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/the-2026-ict-smart-money-concepts-master-lectures-tape-reading-series/": {
-      "fingerprint": "4a3b015e717985496706f046ffc34f468e684f36bef6b13c5647bff75307ec4b",
-      "lastmod": "2026-10-26",
+      "fingerprint": "af8537d873a5ce1d803ea4284e4d6f7382273d2f3ecbcd7776413a8eb5a9afa6",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/time-based-delivery/": {
-      "fingerprint": "3404f9223602f9c84c8862e3f518d390ce1f6dcd67107ba07f4d737b907181dc",
-      "lastmod": "2026-10-26",
+      "fingerprint": "2024d3bc5b5e8ce93de7dec350a5ef532941bcc54bc527d9646aa7e2469d7056",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/disclaimer/": {
@@ -2087,13 +2117,13 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/0930-am-opening-range-theory/": {
-      "fingerprint": "92afa568f7c3c5df6b2777fed555ae407be4d0b303ba5decffe88e40f3040752",
-      "lastmod": "2026-10-26",
+      "fingerprint": "ccf18cf1c6e9c2700587a6eeaa97e43645b17d88c46fef967a44d0fa600e9093",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/2026-onboarding-from-vision-to-execution/": {
-      "fingerprint": "1e1f3af089aabe7f0cfe15518f5c7155181141e692651ce56272b11097508b92",
-      "lastmod": "2026-10-26",
+      "fingerprint": "2a93a9f7d35563400c0669d1a47d10b11dc91068e0bb3c002276074ffd6d942d",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/break-of-structure-bos-trend-continuation/": {
@@ -2107,8 +2137,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/candle-range-theory-crt-strategy/": {
-      "fingerprint": "94e760ea76feb854b1ac44eb9cc310b37cbc49c8aa22d62bb00fcd26485713ed",
-      "lastmod": "2026-10-26",
+      "fingerprint": "cf2f178b2570fd2daed9109f23b4100feac464ec6314306bba3387c69dd1e808",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/change-of-character-choch-the-first-warning/": {
@@ -2117,8 +2147,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/core-content-month-1-elements-of-trade-setup/": {
-      "fingerprint": "c62688673dca8a8e92230cf46446d3ab92c650c8558ca651f3a884eb9bf6ab24",
-      "lastmod": "2026-10-26",
+      "fingerprint": "d7b0d680ba502b093bbea143562b87312f04bcc5cdc4953ae7641234c170c15d",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/core-content-month-2-growing-small-accounts/": {
@@ -2162,8 +2192,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/core-content-months-10-11-12-multi-asset-mega-trades-top-down/": {
-      "fingerprint": "2f28afc02c633ebbab83e01d99c2ea9602a9bf91668b65a2628d352b069c7741",
-      "lastmod": "2026-10-26",
+      "fingerprint": "64b872321c90beb9f6c92928d26649fe38b223a2c551e61d7a31bc7ed2863a43",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/daily-profiles-and-intraday-power-of-three-po3/": {
@@ -2172,8 +2202,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/event-volatility-hrlr-futures-vs-cfds/": {
-      "fingerprint": "cccf418b5695649f9b405d580b2af094bff539ef01a1c70518eb8e37acda54a5",
-      "lastmod": "2026-10-26",
+      "fingerprint": "2c9bff6a701d78e188932e3fb1df91428b188e10ce17243b150285bb20d81ba6",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/fair-value-gaps-fvg-and-consequent-encroachment/": {
@@ -2184,6 +2214,31 @@
     "/ur/learn/how-an-exchange-matches-orders/": {
       "fingerprint": "5923d86602a002f8e634f8c0124388bb2ef4388a1d6cd9089984fde3a1d0fc1d",
       "lastmod": "2026-10-25",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/ict-2026-backtesting-journaling-trade-management/": {
+      "fingerprint": "1695b5262811dca9a7d8c5024d5cb0ca007b78c9c526de8e2ee8909b04ae0ef3",
+      "lastmod": "2026-10-27",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/ict-2026-enigma-reaper-reflection-fvg/": {
+      "fingerprint": "2d97d4cfb6a9709203803f15be7e158f83b49bff2072c9453f0e54927140a005",
+      "lastmod": "2026-10-27",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/ict-2026-first-hour-dealing-range/": {
+      "fingerprint": "e4f335eb623a77e856d326af45c43e70b3308ffdb7e3b238469aec1412219783",
+      "lastmod": "2026-10-27",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/ict-2026-obsidian-model/": {
+      "fingerprint": "0a4ffd3e47d24447409198e07f63563a8b57cc0572cdbf6d52e17db4ffdacc44",
+      "lastmod": "2026-10-27",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/ict-chain-of-custody-of-price/": {
+      "fingerprint": "1b5f59a0780405375221a640b571d955cc2e14ea2112c09441e4090b9a407a64",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/ict-charter-model-1-intraday-scalping/": {
@@ -2242,13 +2297,13 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/ict-midnight-opening-range-rth-gaps-nwog/": {
-      "fingerprint": "db0d1d3a8ee3a782a6dc381ec40a2b20d2fcb0d7e34c09e09a40479f59a3bb55",
-      "lastmod": "2026-10-26",
+      "fingerprint": "a3fd2667ebf64a670435e3535f0fe6ffcb071e7c00a987c11ef42dca75dae5f4",
+      "lastmod": "2026-10-28",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/ict-news-volatility-no-trade-framework/": {
-      "fingerprint": "1da6aefc5abe5daae67a8c75bac809543c13dee6116d2c79db9135397a001445",
-      "lastmod": "2026-10-26",
+      "fingerprint": "10c3dc12b6f506484bae29dfc487b844f8b5484cb5aa9c414ee05c449a20a419",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/ict-pd-array-selection-price-delivery-continuum/": {
@@ -2257,8 +2312,13 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/ict-replay-journaling-one-model-study/": {
-      "fingerprint": "ff56172296e66b12acf05a9586cefd27308d36bfc3d897e1fcb9dd3eb3ad50a5",
-      "lastmod": "2026-10-26",
+      "fingerprint": "632e429da27a5c70f01f0ec46af8ac28a09c888140817dab20fa1f761758514e",
+      "lastmod": "2026-10-27",
+      "evidence": "Editorial content revision; rendered content fingerprint changed."
+    },
+    "/ur/learn/ict-time-price-grids-quadrants-octants/": {
+      "fingerprint": "7ceab8db263b409623037b66331311f1f49c869cb9d492d461ea9ed36d27a204",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/ict-weekly-options-payoffs-and-risk/": {
@@ -2282,8 +2342,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/market-alchemy-trading-all-time-highs-ath/": {
-      "fingerprint": "97d5c30d44c5fcef08b043e4abd5ca8f994bf1c9ae042794d38c97bd65f98800",
-      "lastmod": "2026-10-26",
+      "fingerprint": "18a0deef4834bc98663debb8f16ad8e20735fe0bbe6806ab0c0e93e8bdaca32d",
+      "lastmod": "2026-10-28",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/market-structure-shift-mss-verified-directional-shift/": {
@@ -2292,18 +2352,18 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/midday-afternoon-tape-reading-macros-final-hour/": {
-      "fingerprint": "abd80bad1f818b1fbc149d65d9c93b1a032080a7c4a9c156773b3abd767c46e6",
-      "lastmod": "2026-10-26",
+      "fingerprint": "1628302d9f010b50ef1d980e0cbde1df0771d79f27304ecaa99846172baf4be8",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/nq-es-premarket-session-rules-morning-engine/": {
-      "fingerprint": "edb22bee36df45b277d07ed44e988de253cc946d6a46a24d0c92928d732e1e58",
-      "lastmod": "2026-10-26",
+      "fingerprint": "f609b9fc3d78367248b8462fbbf8348b3602152b9a54df22377047055a001f43",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/opening-gap-matrices-ndog-nwog-csod/": {
-      "fingerprint": "b9fda85d20c07e04549f4c798774fd9fe5f8c2a7c3be7d0dad1583b159adb190",
-      "lastmod": "2026-10-26",
+      "fingerprint": "10623ee4c8f6f10b58506a3a08970859a00a499ff3c104f1d0e6dde77d2f4d63",
+      "lastmod": "2026-10-27",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/order-blocks-ob-and-mitigation/": {
@@ -2717,8 +2777,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/masood/lectures/masood-psy-16/": {
-      "fingerprint": "9ca9d74f08c77405edd932dbe86966b12f41da5ded8c873bb853d01c746da226",
-      "lastmod": "2026-10-24",
+      "fingerprint": "469689a0e3b47ca51ae355c33e8c943fcb9edff581f58d5b7fbb107985934843",
+      "lastmod": "2026-10-28",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/masood/lectures/masood-psy-17/": {
@@ -3032,8 +3092,8 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/resources/ict-smc-cheat-sheet/": {
-      "fingerprint": "e33ff230064ceb99c3489f0f228ac12d44503bcf33fe1e1484451a2f1dc8c27f",
-      "lastmod": "2026-10-25",
+      "fingerprint": "9bf24c67625cb42dd9731a5bc746cbfaced6c1f29a8a5e78a630c77cf786023e",
+      "lastmod": "2026-10-28",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/terms/": {

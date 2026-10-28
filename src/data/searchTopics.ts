@@ -1,3 +1,4 @@
+import edition2026 from './chapters/mentorship2026Edition.json';
 /** Reviewed short study topics; original lesson and video titles remain in their source records. */
 export const studyTopics: Record<string, string> = {
   "/learn/what-actually-moves-price/": "What Moves Price? The Electronic Auction",
@@ -185,3 +186,6 @@ studyTopics["/learn/ict-news-volatility-no-trade-framework/"] = "ICT News Tradin
 studyTopics["/learn/the-12-weekly-profiles/"] = "ICT Weekly Profiles: Weekly Highs, Lows and Scenario Examples";
 studyTopics["/learn/ict-weekly-options-payoffs-and-risk/"] = "ICT Weekly Options: SPX Premium, Payoffs and Risk";
 studyTopics["/learn/ict-replay-journaling-one-model-study/"] = "ICT Trading Journal: Chart Replay and One-Model Review";
+
+// Keep the displayed H1 and static SEO heading aligned with the reviewed 2026 lesson.
+Object.assign(studyTopics,Object.fromEntries(edition2026.map(chapter=>[`/learn/${chapter.slug}/`,chapter.title])));

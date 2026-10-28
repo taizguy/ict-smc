@@ -1,3 +1,4 @@
+import {alchemyRisk} from '../src/data/chapters/marketAlchemyPilot';
 import { retiredGraphPaths } from '../src/utils/knowledgeGraphRoutes';
 import fs from 'node:fs';
 import { verify2025Search } from './verify-2025-search';
@@ -54,7 +55,7 @@ function hasContentDisclaimer(source: string) {
     const main = insideMain || node.tagName === 'main';
     const classes = node.attrs?.find((a: any) => a.name === 'class')?.value.split(/\s+/) || [];
     if (main && classes.includes('ymyl-disclaimer')) {
-      return text(node).includes('Financial education and risk notice') && hasDisclosureLink(node);
+      return (text(node).includes('Financial education and risk notice') || text(node).includes(alchemyRisk)) && hasDisclosureLink(node);
     }
     return (node.childNodes || []).some((child: any) => visit(child, main));
   }
@@ -65,6 +66,10 @@ assert.ok(hasContentDisclaimer(`<main>${disclaimerFixture}</main>`), 'Styled in-
 assert.ok(!hasContentDisclaimer(disclaimerFixture), 'A footer-only disclaimer cannot satisfy the in-content requirement');
 assert.ok(!hasContentDisclaimer(`<main>${disclaimerFixture.replace('href="/disclaimer/"', 'href="/about/"')}</main>`), 'Disclaimer must link to the disclosure');
 assert.ok(!hasContentDisclaimer(`<main>${disclaimerFixture.replace('ymyl-disclaimer', 'not-ymyl-disclaimer')}</main>`), 'Disclaimer class must match a complete token');
+const futuresDisclaimerFixture = `<aside class="ymyl-disclaimer alchemy-risk"><strong>${alchemyRisk}</strong><a href="/disclaimer/">Read disclosure</a></aside>`;
+assert.ok(hasContentDisclaimer(`<main>${futuresDisclaimerFixture}</main>`), 'Specific futures disclosure is recognized');
+assert.ok(!hasContentDisclaimer(futuresDisclaimerFixture), 'Specific disclosure must be inside main');
+assert.ok(!hasContentDisclaimer(`<main>${futuresDisclaimerFixture.replace('href="/disclaimer/"','href="/about/"')}</main>`), 'Specific disclosure must link to full policy');
 for (const route of routes) {
   const html = fs.readFileSync(path.join(dist, route.outputPath), 'utf8');
   check(!titles.has(route.title), `Duplicate title: ${route.path}`); titles.add(route.title);

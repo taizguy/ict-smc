@@ -1,5 +1,6 @@
 import {mentorshipVisualUrdu} from '../data/chapters/mentorship2025Visuals';
 import mentorship2025Urdu from './mentorship2025-urdu.json';
+import mentorship2026Urdu from './mentorship2026-urdu.json';
 import { deliverySupportUrdu } from '../data/chapters/deliverySupport';
 import { deliveryMarketUrdu } from '../data/chapters/deliveryMarketCases';
 import deliveryEditionUrdu from './delivery-edition-urdu.json';
@@ -213,6 +214,7 @@ export const urdu: Record<string, string> = {
   'article': 'مضمون',
   ...deliveryEditionUrdu,
   ...mentorship2025Urdu,
+  ...mentorship2026Urdu,
   ...mentorshipVisualUrdu,
   ...deliverySupportUrdu,
   ...deliveryMarketUrdu,

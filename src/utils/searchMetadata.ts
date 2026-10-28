@@ -1,5 +1,7 @@
+import {chapterCatalog} from '../data/catalog.generated';
 import { studyTopics } from '../data/searchTopics';
 import searchDescriptions from '../data/searchDescriptions.json';
+import reviewed2026 from '../data/chapters/mentorship2026Search.json';
 export { studyTopics };
 /** Editorial budgets, not Google indexing limits. Keep the topic before the brand. */
 const BRAND = ' | LearnSMC';
@@ -29,6 +31,8 @@ function fitWords(value: string, chars: number, pixels: number, size: number): s
 }
 
 const routeTitles: Record<string, string> = {
+  '/curriculum/the-2026-ict-smart-money-concepts-master-lectures-tape-reading-series/':'ICT 2026 Mentorship: Lessons & Examples',
+  '/curriculum/mentorships/2026/':'ICT 2026 Mentorship: Study Guide & Sources',
   "/curriculum/ict-2025-official-mentorship-curriculum/": "ICT 2025 Mentorship: Free Lessons & Charts",
   "/curriculum/mentorships/2025/": "ICT 2025 Mentorship: Study Guide & Sources",
   "/learn/0930-am-opening-range-theory/": "ICT Opening Range: 9:30–10:00 AM",
@@ -79,7 +83,7 @@ const routeTitles: Record<string, string> = {
 };
 
 export function searchTitle(value: string, path = '/'): string {
-  let topic = routeTitles[path] || studyTopics[path] || primaryTopic(value);
+  let topic = reviewed2026.find(entry=>entry.path===path)?.title || routeTitles[path] || studyTopics[path] || primaryTopic(value);
   // Long subtitles describe the page in the deck; the title needs its main topic.
   if (topic.length > TITLE_LIMIT - BRAND.length) {
     const first = topic.split(/\s+[—–]\s+|:\s+|\?\s+/)[0];
@@ -92,7 +96,10 @@ export function searchDescription(value: string, title: string, path: string): s
   // Human-reviewed page summaries take precedence over length-based fallbacks.
   const englishPath = path.replace(/^\/ur(?=\/|$)/, '') || '/';
   const reviewed = searchDescriptions[englishPath as keyof typeof searchDescriptions];
-  if (reviewed) return path.startsWith('/ur/') ? reviewed.ur : reviewed.en;
+  if (reviewed) {
+    const description=path.startsWith('/ur/') ? reviewed.ur : reviewed.en;
+    return englishPath==='/' ? description.replace(/\d+(?=\s+(?:chapters|ابواب))/,String(chapterCatalog.length)) : description;
+  }
   const reviewedDescriptions: Record<string, string> = {
     '/tools/masterclass/pd-arrays/reaper-ifvg/': 'Study the sourced Reaper variant with nested gaps and a breaker. Compare the chart context, invalidation assumptions and limits.',
     '/tools/glossary/imbalances/ict-reaper-ifvg/': 'Define the Reaper FVG label using a June 2026 source example. Distinguish a nested-gap variant from an ordinary failed inversion.',

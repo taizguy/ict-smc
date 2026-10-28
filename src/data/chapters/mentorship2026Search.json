@@ -1,0 +1,151 @@
+[
+  {
+    "id": 47,
+    "path": "/learn/2026-onboarding-from-vision-to-execution/",
+    "title": "ICT 2026 Mentorship: Beginner Study Plan",
+    "description": "Start ICT 2026 with a clear study plan: daily context, session preparation, chart notes and replay exercises that include failed ideas.",
+    "reviewed": "2026-10-27",
+    "requiredTerms": [
+      "ICT",
+      "2026",
+      "Study"
+    ]
+  },
+  {
+    "id": 48,
+    "path": "/learn/nq-es-premarket-session-rules-morning-engine/",
+    "title": "ICT 2026 Pre-Market Range: 7–9 AM Rules",
+    "description": "Learn the ICT 2026 7–9 AM pre-market range, midpoint and octants. Compare trending and balanced mornings, event cutoffs and failed setups.",
+    "reviewed": "2026-10-27",
+    "requiredTerms": [
+      "ICT",
+      "Pre-Market",
+      "7–9"
+    ]
+  },
+  {
+    "id": 49,
+    "path": "/learn/market-alchemy-trading-all-time-highs-ath/",
+    "title": "ICT Market Alchemy: Trading All-Time Highs",
+    "description": "Learn the ICT Market Alchemy method for all-time highs: measure the RTH opening gap, project levels in TradingView, and study the lunch-window response.",
+    "reviewed": "2026-10-28",
+    "requiredTerms": [
+      "ICT",
+      "Market Alchemy",
+      "All-Time Highs"
+    ]
+  },
+  {
+    "id": 50,
+    "path": "/learn/opening-gap-matrices-ndog-nwog-csod/",
+    "title": "ICT Opening Gaps: NDOG, NWOG, RTH & CISD",
+    "description": "Understand ICT NDOG, NWOG and RTH opening gaps, CE and CISD. Learn exact anchors, partial versus full gap fills and contrasting chart outcomes.",
+    "reviewed": "2026-10-27",
+    "requiredTerms": [
+      "ICT",
+      "Opening Gaps",
+      "NDOG",
+      "NWOG",
+      "CISD"
+    ]
+  },
+  {
+    "id": 51,
+    "path": "/learn/midday-afternoon-tape-reading-macros-final-hour/",
+    "title": "ICT Lunch & Afternoon Tape Reading",
+    "description": "Study ICT New York lunch, afternoon macros and final-hour delivery. Compare continuation and reversal using fixed morning ranges and clear timing.",
+    "reviewed": "2026-10-27",
+    "requiredTerms": [
+      "ICT",
+      "Lunch",
+      "Afternoon"
+    ]
+  },
+  {
+    "id": 52,
+    "path": "/learn/event-volatility-hrlr-futures-vs-cfds/",
+    "title": "ICT HRLR: High Resistance Liquidity Runs",
+    "description": "Understand ICT HRLR and news-day context for NFP and FOMC. Compare conflicting references, missed fills and no-trade choices without news predictions.",
+    "reviewed": "2026-10-27",
+    "requiredTerms": [
+      "ICT",
+      "HRLR",
+      "High Resistance",
+      "Liquidity Runs"
+    ]
+  },
+  {
+    "id": 65,
+    "path": "/learn/ict-2026-first-hour-dealing-range/",
+    "title": "ICT First Hour Dealing Range: 9:30–10:30",
+    "description": "Learn the ICT first hour dealing range from 9:30–10:30 New York. Calculate midpoint and range projections, then compare breakouts and failed breaks.",
+    "reviewed": "2026-10-27",
+    "requiredTerms": [
+      "ICT",
+      "First Hour",
+      "Range"
+    ]
+  },
+  {
+    "id": 66,
+    "path": "/learn/ict-chain-of-custody-of-price/",
+    "title": "ICT Chain of Custody of Price: Examples",
+    "description": "Learn ICT chain of custody of price with daily PD arrays, wick midpoints and lower-timeframe confirmation. Follow a worked sequence and its failure.",
+    "reviewed": "2026-10-27",
+    "requiredTerms": [
+      "ICT",
+      "Chain of Custody",
+      "Price"
+    ]
+  },
+  {
+    "id": 67,
+    "path": "/learn/ict-time-price-grids-quadrants-octants/",
+    "title": "ICT Price Grids: Quadrants & Octants",
+    "description": "Calculate ICT quadrants, octants and wick midpoints on a fixed range. See how time references and changing anchors affect the same price.",
+    "reviewed": "2026-10-27",
+    "requiredTerms": [
+      "ICT",
+      "Price Grids",
+      "Octants"
+    ]
+  },
+  {
+    "id": 68,
+    "path": "/learn/ict-2026-enigma-reaper-reflection-fvg/",
+    "title": "ICT Enigma, Reaper & Reflection FVG",
+    "description": "Compare ICT Enigma, Reaper and Reflection FVG examples, body gaps and wick boundaries. Learn the source-specific sequence and what remains subjective.",
+    "reviewed": "2026-10-27",
+    "requiredTerms": [
+      "ICT",
+      "Enigma",
+      "Reaper",
+      "Reflection",
+      "FVG"
+    ]
+  },
+  {
+    "id": 69,
+    "path": "/learn/ict-2026-obsidian-model/",
+    "title": "ICT Obsidian Model: Context & Examples",
+    "description": "Study the ICT Obsidian model with higher-timeframe context, the pre-market range and evolving projections. Compare a qualified return with a failed setup.",
+    "reviewed": "2026-10-27",
+    "requiredTerms": [
+      "ICT",
+      "Obsidian",
+      "Examples"
+    ]
+  },
+  {
+    "id": 70,
+    "path": "/learn/ict-2026-backtesting-journaling-trade-management/",
+    "title": "ICT Backtesting & Journaling: Examples",
+    "description": "Build an ICT 2026 replay journal with known-at-the-time decisions, missed fills, costs and trade management. Compare process quality with profit.",
+    "reviewed": "2026-10-27",
+    "requiredTerms": [
+      "ICT",
+      "Backtesting",
+      "Journaling"
+    ]
+  }
+]

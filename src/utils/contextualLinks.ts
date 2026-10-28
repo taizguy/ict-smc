@@ -1,3 +1,4 @@
+import {hasMentorship2026Edition} from '../data/chapters/mentorship2026';
 import { textbookChapters } from '../data/chaptersData';
 import { withoutLocale } from '../i18n/locale';
 import { KEYWORD_CROSS_LINKS } from './glossaryRoutes';
@@ -25,12 +26,61 @@ const keywords = [
 export function contextualFragments(text: string | string[], currentPath = '', maxLinks = 4, excludedUrls?: ReadonlySet<string>): TextFragment[] {
   currentPath = withoutLocale(currentPath);
   const value = Array.isArray(text) ? text.join('\n\n') : text;
+
+  if(currentPath==='/learn/market-alchemy-trading-all-time-highs-ath/'){
+    const routes:[string[],string][]=[
+      [['candle reading'],'/learn/why-candles-form-and-how-displacement-arises/'],
+      [['fair value gaps','fair value gap','FVG'],'/learn/fair-value-gaps-fvg-and-consequent-encroachment/'],
+      [['opening gaps','opening gap','RTH opening gap'],'/learn/opening-gap-matrices-ndog-nwog-csod/'],
+      [['order matching','order-matching lesson'],'/learn/how-an-exchange-matches-orders/'],
+      [['liquidity sweeps','liquidity sweep'],'/learn/liquidity-engineering-and-liquidity-runs/'],
+      [['Optimal Trade Entry','OTE'],'/tools/masterclass/entry-models/ote-model/'],
+      [['consequent encroachment','CE'],'/tools/glossary/imbalances/consequent-encroachment/'],
+      [['inverse fair value gap','IFVG'],'/learn/inverse-fair-value-gaps-ifvg-role-reversal-imbalances/'],
+      [['backtesting','journaling'],'/learn/ict-2026-backtesting-journaling-trade-management/'],
+    ];
+    const candidates=routes.flatMap(([terms,href])=>terms.flatMap(term=>{
+      const escaped=term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+      const match=new RegExp(`(?<![\\p{L}\\p{N}])${escaped}(?![\\p{L}\\p{N}])`,'iu').exec(value);
+      return match?[{start:match.index,end:match.index+match[0].length,href}]:[];
+    })).sort((a,b)=>a.start-b.start||b.end-a.end);
+    const selected:typeof candidates=[];const destinations=new Set(excludedUrls);
+    for(const item of candidates){if(selected.length>=maxLinks)break;if(destinations.has(item.href)||selected.some(r=>r.end>item.start))continue;selected.push(item);destinations.add(item.href);}
+    const fragments:TextFragment[]=[];let cursor=0;
+    for(const item of selected){if(item.start>cursor)fragments.push({text:value.slice(cursor,item.start)});fragments.push({text:value.slice(item.start,item.end),href:item.href});cursor=item.end;}
+    if(cursor<value.length)fragments.push({text:value.slice(cursor)});
+    return fragments;
+  }
+
   const ranges: Array<{ start: number; end: number; href: string }> = [];
   const linkedUrls = new Set<string>();
   const lesson = (id: number) => `/learn/${textbookChapters.find(chapter => chapter.id === id)!.slug}/`;
   // Delivery lessons keep one link per destination across the whole body. Include
   // Urdu names so the published translation has the same useful connections.
   const is2025 = textbookChapters.some(c => c.part.includes('2025 Official Mentorship') && `/learn/${c.slug}/` === currentPath);
+  const is2026 = textbookChapters.some(c=>hasMentorship2026Edition(c.id)&&`/learn/${c.slug}/`===currentPath);
+  const edition2026Keywords = is2026 ? [
+    ...(currentPath.includes("market-alchemy-trading-all-time-highs-ath")?[{term:"order-matching lesson",url:lesson(2)},{term:"candle reading",url:lesson(5)}]:[]),
+    ...['first hour dealing range','first-hour range','First-hour Range'].map(term=>({term,url:lesson(65)})),
+    ...['chain of custody','Chain of Custody'].map(term=>({term,url:lesson(66)})),
+    ...['Obsidian','Obsidian model'].map(term=>({term,url:lesson(69)})),
+    ...['price grid','price grids','octants','Octants'].map(term=>({term,url:lesson(67)})),
+    ...['Enigma','Reflection','Hangman','Reaper variant'].map(term=>({term,url:lesson(68)})),
+    ...['7–9 AM range','7–9 AM','pre-market range'].map(term=>({term,url:lesson(48)})),
+    ...['daily bias','premium and discount','Premium اور Discount'].map(term=>({term,url:lesson(59)})),
+    ...['RTH opening gap','opening gaps','NWOG','CISD'].map(term=>({term,url:lesson(50)})),
+    ...['weekly profiles','Weekly Profiles','weekly profile'].map(term=>({term,url:lesson(27)})),
+    ...['market structure','Market Structure'].map(term=>({term,url:lesson(7)})),
+    ...['market foundations','Market Foundations'].map(term=>({term,url:lesson(1)})),
+    ...['liquidity','Liquidity'].map(term=>({term,url:lesson(4)})),
+    ...['backtesting','replay journal','Trade management'].map(term=>({term,url:lesson(70)})),
+    ...['Backtest Lab'].map(term=>({term,url:'/tools/backtest/'})),
+    ...['Trade Simulator'].map(term=>({term,url:'/tools/simulator/'})),
+    ...['masterclass','Masterclass'].map(term=>({term,url:'/tools/masterclass/pd-arrays/reaper-ifvg/'})),
+    ...['consequent encroachment','CE'].map(term=>({term,url:'/tools/glossary/imbalances/consequent-encroachment/'})),
+    ...['volume imbalance','Volume Imbalance'].map(term=>({term,url:'/tools/glossary/order-blocks/suspension-block/'})),
+    ...['inverse fair value gap','inversion fair value gap','Inverse Fair Value Gap','Inversion Fair Value Gap'].map(term=>({term,url:lesson(14)})),
+  ] : [];
   const mentorshipKeywords = is2025 ? [
     ...['old highs', 'old high'].map(term=>({term,url:'/tools/glossary/liquidity/buy-side-liquidity/'})),
     ...['old lows', 'old low'].map(term=>({term,url:'/tools/glossary/liquidity/sell-side-liquidity/'})),
@@ -78,7 +128,7 @@ export function contextualFragments(text: string | string[], currentPath = '', m
     ...['liquidity', 'لیکویڈیٹی'].map(term => ({ term, url: lesson(4) })),
     ...['premium', 'discount', 'پریمیم', 'ڈسکاؤنٹ'].map(term => ({ term, url: lesson(13) + '#rr-section-6' })),
   ] : [];
-  for (const { term, url } of [...mentorshipKeywords, ...deliveryKeywords, ...keywords].sort((a,b) => b.term.length-a.term.length)) {
+  for (const { term, url } of [...edition2026Keywords,...mentorshipKeywords, ...deliveryKeywords, ...keywords].sort((a,b) => b.term.length-a.term.length)) {
     if (ranges.length >= maxLinks) break;
     if(currentPath.includes('ict-weekly-options')&&['premium','discount','پریمیم','ڈسکاؤنٹ'].includes(term.toLowerCase()))continue;
     if (url.split('#')[0] === currentPath || linkedUrls.has(url) || excludedUrls?.has(url)) continue;

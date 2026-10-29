@@ -5,7 +5,7 @@
   },
   "/masood/lectures/masood-beg-2/": {
     "en": "Study Long, Short, Market, Limit & Stop Orders. Distinguish a long position from a short sale and order types.",
-    "ur": "مطالعہ: طویل، مختصر، بازار، حد اور سٹاپ آرڈرز۔ لانگ پوزیشن، شارٹ سیل اور آرڈر کی قسموں کا فرق سمجھیں۔"
+    "ur": "مطالعہ: لانگ، شارٹ، مارکیٹ، لِمٹ اور اسٹاپ آرڈرز۔ لانگ پوزیشن، شارٹ سیل اور آرڈر کی قسموں کا فرق سمجھیں۔"
   },
   "/masood/lectures/masood-beg-3/": {
     "en": "Study Candlesticks: OHLC, Bodies & Wicks. Read a candle's open, high, low, close, body and wicks.",
@@ -25,7 +25,7 @@
   },
   "/masood/lectures/masood-beg-7/": {
     "en": "Study Swing Highs & Swing Lows. Distinguish a wick beyond a swing from a closing-price break.",
-    "ur": "مطالعہ: اونچائی پر جھولنا اور نیچے کی طرف جھولنا۔ سوئنگ سے باہر وِک اور بند قیمت کے بریک کا فرق سمجھیں۔"
+    "ur": "مطالعہ: سوئنگ ہائی اور سوئنگ لو۔ سوئنگ سے باہر وِک اور بند قیمت کے بریک کا فرق سمجھیں۔"
   },
   "/masood/lectures/masood-beg-8/": {
     "en": "Study Forex Pips vs. Futures Points. Compare forex pips with index points when measuring distance.",
@@ -61,7 +61,7 @@
   },
   "/masood/lectures/masood-adv-8/": {
     "en": "Study FOMC Event Risk & Trading Scenarios. Follow the lecture's three-part FOMC-session framework.",
-    "ur": "مطالعہ: FOMC ایونٹ کا خطرہ اور تجارتی منظرنامے۔۔ لیکچر کے تین حصوں والے FOMC سیشن فریم ورک کی ترتیب پڑھیں۔"
+    "ur": "مطالعہ: FOMC ایونٹ کا خطرہ اور تجارتی منظرنامے۔ لیکچر کے تین حصوں والے FOMC سیشن فریم ورک کی ترتیب پڑھیں۔"
   },
   "/masood/lectures/masood-adv-10/": {
     "en": "Study One-Minute Candle Analysis: A Case Study. Relate one-minute chart observations to the selected macro window.",
@@ -73,7 +73,7 @@
   },
   "/masood/lectures/masood-adv-12/": {
     "en": "Study Seek-and-Destroy Session Profiles. Trace successive moves beyond both sides of a range.",
-    "ur": "مطالعہ: سیشن پروفائلز تلاش کریں اور تباہ کریں۔ رینج کے دونوں طرف یکے بعد دیگرے حد پار کرنے والی حرکتیں دیکھیں۔"
+    "ur": "مطالعہ: سیک اینڈ ڈسٹرائے سیشن پروفائلز۔ رینج کے دونوں طرف یکے بعد دیگرے حد پار کرنے والی حرکتیں دیکھیں۔"
   },
   "/masood/lectures/masood-adv-13/": {
     "en": "Study US100 Execution: Reviewing Accuracy Claims. Identify the displacement candle and its associated FVG reference.",
@@ -81,7 +81,7 @@
   },
   "/masood/lectures/masood-adv-14/": {
     "en": "Study ICT Daily Bias: Chart Study. Compare the daily liquidity objective with the chosen directional bias.",
-    "ur": "مطالعہ: ICT ڈیلی بائس (Bias): چارٹ اسٹڈی۔ روزانہ لیکویڈیٹی کے مقصد اور منتخب سمت کے رجحان کا تقابل کریں۔"
+    "ur": "مطالعہ: ICT ڈیلی بائس (Bias): چارٹ اسٹڈی۔ روزانہ لیکویڈیٹی کے مقصد اور منتخب بائس کا تقابل کریں۔"
   },
   "/masood/lectures/masood-adv-15/": {
     "en": "Study High-Resistance Liquidity Run Study. Compare opposing PD arrays along high- and low-resistance paths.",
@@ -97,7 +97,7 @@
   },
   "/masood/lectures/masood-adv-19/": {
     "en": "Study ICT & SMC Daily Bias: Full Study Guide. Check whether lower-timeframe candle bodies support the daily narrative.",
-    "ur": "مطالعہ: ICT اور SMC روزانہ بائس (Bias): مکمل مطالعہ گائیڈ۔ جانچیں کہ چھوٹے ٹائم فریم کی کینڈل باڈیز روزانہ تشریح کی تائید کرتی ہیں یا نہیں۔"
+    "ur": "مطالعہ: ICT اور SMC ڈیلی بائس (Bias): مکمل مطالعہ گائیڈ۔ جانچیں کہ چھوٹے ٹائم فریم کی کینڈل باڈیز روزانہ تشریح کی تائید کرتی ہیں یا نہیں۔"
   },
   "/masood/lectures/masood-adv-20/": {
     "en": "Study ICT PD Array Matrix: Video Study Notes. Compare the lecture's ordering of highs, blocks and imbalances.",
@@ -109,23 +109,23 @@
   },
   "/masood/lectures/masood-db-1/": {
     "en": "Study Weekly & Daily Bias: ICT Study Notes. Connect a weekly low reference with the higher-timeframe FVG.",
-    "ur": "مطالعہ: ہفتہ وار اور روزانہ بائس (Bias): ICT مطالعہ کے نوٹس۔ ہفتہ وار لو کے حوالے کو بڑے ٹائم فریم کے FVG سے ملائیں۔"
+    "ur": "مطالعہ: ہفتہ وار اور ڈیلی بائس (Bias): ICT مطالعہ کے نوٹس۔ ہفتہ وار لو کے حوالے کو بڑے ٹائم فریم کے FVG سے ملائیں۔"
   },
   "/masood/lectures/masood-db-3/": {
     "en": "Study Finding Daily Bias with ICT & SMC. Compare directional agreement across the selected US indices.",
-    "ur": "مطالعہ: ICT اور SMC کے ساتھ روزانہ بائس (Bias) تلاش کرنا۔ منتخب امریکی انڈیکسوں میں سمت کی مطابقت کا تقابل کریں۔"
+    "ur": "مطالعہ: ICT اور SMC کے ساتھ ڈیلی بائس (Bias) تلاش کرنا۔ منتخب امریکی انڈیکسوں میں سمت کی مطابقت کا تقابل کریں۔"
   },
   "/masood/lectures/masood-db-4/": {
     "en": "Study FOMC-Day 2025: Daily Bias Study. Separate the FOMC announcement from the later press-conference window.",
-    "ur": "مطالعہ: FOMC-Day 2025: Daily بائس (Bias) مطالعہ۔ FOMC اعلان اور بعد کی پریس کانفرنس کے وقفے کو الگ دیکھیں۔"
+    "ur": "مطالعہ: FOMC-Day 2025: ڈیلی بائس (Bias) مطالعہ۔ FOMC اعلان اور بعد کی پریس کانفرنس کے وقفے کو الگ دیکھیں۔"
   },
   "/masood/lectures/masood-db-5/": {
     "en": "Study Daily Bias & Optimal Trade Entry (OTE). Locate OTE retracement references within a daily-bias study.",
-    "ur": "مطالعہ: روزانہ بائس (Bias) اور بہترین تجارت انٹری (Entry) (OTE)۔ روزانہ سمت کے مطالعے میں OTE ریٹریسمنٹ کے حوالے پہچانیں۔"
+    "ur": "مطالعہ: ڈیلی بائس (Bias) اور بہترین تجارت انٹری (Entry) (OTE)۔ ڈیلی بائس کے مطالعے میں OTE ریٹریسمنٹ کے حوالے پہچانیں۔"
   },
   "/masood/lectures/masood-db-6/": {
     "en": "Study Volume Imbalance & Seasonal Context. Review a volume-imbalance retest alongside the stated bias.",
-    "ur": "مطالعہ: حجم کا عدم توازن اور موسمی سیاق و سباق۔ والیوم اِمبیلنس کی دوبارہ جانچ کو دی گئی سمت کے ساتھ دیکھیں۔"
+    "ur": "مطالعہ: والیوم اِمبیلنس اور موسمی سیاق۔ والیوم اِمبیلنس کی دوبارہ جانچ کو متعین بائس کے ساتھ دیکھیں۔"
   },
   "/masood/lectures/masood-db-7/": {
     "en": "Study IPDA Data Ranges: 20, 40 & 60 Days. Mark the highs and lows of 20-, 40- and 60-day lookbacks.",
@@ -133,7 +133,7 @@
   },
   "/masood/lectures/masood-db-8/": {
     "en": "Study Trading Bias: Building a Conditional View. Translate a discretionary bias into an explicit rule-based plan.",
-    "ur": "مطالعہ: ٹریڈنگ بائس (Bias): ایک مشروط منظر بنانا۔ صوابدیدی سمت کی تشریح کو واضح شرطوں والے منصوبے میں بدلیں۔"
+    "ur": "مطالعہ: ٹریڈنگ بائس (Bias): ایک مشروط منظر بنانا۔ صوابدیدی بائس کو واضح شرطوں والے منصوبے میں بدلیں۔"
   },
   "/masood/lectures/masood-db-9/": {
     "en": "Study Trade Accuracy Claims: A Critical Review. Review rule execution separately from the day's dollar result.",
@@ -153,7 +153,7 @@
   },
   "/masood/lectures/masood-db-14/": {
     "en": "Study Lower-Timeframe Entry Conditions. Relate a lower-timeframe entry to its daily-bias context.",
-    "ur": "مطالعہ: لوئر ٹائم فریم انٹری (Entry) شرائط۔ چھوٹے ٹائم فریم کی انٹری کو روزانہ سمت کے سیاق سے ملائیں۔"
+    "ur": "مطالعہ: لوئر ٹائم فریم انٹری (Entry) شرائط۔ چھوٹے ٹائم فریم کی انٹری کو ڈیلی بائس کے سیاق سے ملائیں۔"
   },
   "/masood/lectures/masood-db-15/": {
     "en": "Study SMT Divergence: Smart Money Technique. Identify corresponding highs and lows used in SMT comparisons.",
@@ -205,7 +205,7 @@
   },
   "/masood/lectures/masood-gf-6/": {
     "en": "Study Solitude, Emotions & Patient Execution. Explore solitude, emotional balance and patient execution.",
-    "ur": "مطالعہ: تنہائی، جذبات اور مریض ایگزیکیوشن (Execution)۔ تنہائی، جذباتی توازن اور صبر سے ایگزیکیوشن کو سمجھیں۔"
+    "ur": "مطالعہ: تنہائی، جذبات اور صبر سے ایگزیکیوشن۔ تنہائی، جذباتی توازن اور صبر سے ایگزیکیوشن کو سمجھیں۔"
   },
   "/masood/lectures/masood-gf-7/": {
     "en": "Study Liquidity: Observations vs. Explanations. Review liquidity pools and imbalances as proposed price references.",
@@ -301,7 +301,7 @@
   },
   "/masood/lectures/masood-syn-2/": {
     "en": "Study US100 Judas Swing vs. Expansion. Distinguish a Judas-swing excursion from the later expansion.",
-    "ur": "مطالعہ: US100 Judas Swing بمقابلہ توسیع۔ جوڈاس سوئنگ کی حد سے باہر حرکت اور بعد کی توسیع میں فرق کریں۔"
+    "ur": "مطالعہ: US100 جوڈاس سوئنگ بمقابلہ توسیع۔ جوڈاس سوئنگ کی حد سے باہر حرکت اور بعد کی توسیع میں فرق کریں۔"
   },
   "/masood/lectures/masood-syn-3/": {
     "en": "Study New York 9:30 AM Opening Momentum. Compare opening-bell momentum with higher-timeframe context.",
@@ -321,7 +321,7 @@
   },
   "/masood/lectures/masood-syn-7/": {
     "en": "Study Volume Imbalance vs. Fair Value Gaps. Distinguish volume-imbalance references from fair value gaps.",
-    "ur": "مطالعہ: حجم کا عدم توازن بمقابلہ فیئر ویلیو گیپس (Fair Value Gaps)۔ والیوم اِمبیلنس کے حوالے اور فیئر ویلیو گیپ میں فرق کریں۔"
+    "ur": "مطالعہ: والیوم اِمبیلنس اور فیئر ویلیو گیپس کا تقابل۔ والیوم اِمبیلنس کے حوالے اور فیئر ویلیو گیپ میں فرق کریں۔"
   },
   "/masood/lectures/masood-syn-8/": {
     "en": "Study Silver Bullet: The 10–11 AM Window. Review FVG examples within the stated 10:00–11:00 window.",
@@ -353,7 +353,7 @@
   },
   "/masood/lectures/masood-syn-15/": {
     "en": "Study US100 Structure Shift After a Sweep. Compare the sweep wick with the subsequent candle-body response.",
-    "ur": "مطالعہ: ایک جھاڑو کے بعد US100 ساخت کی تبدیلی۔ سویپ کی وِک اور بعد کی کینڈل باڈی کے ردعمل کا تقابل کریں۔"
+    "ur": "مطالعہ: سویپ کے بعد US100 میں ساختی تبدیلی۔ سویپ کی وِک اور بعد کی کینڈل باڈی کے ردعمل کا تقابل کریں۔"
   },
   "/masood/lectures/masood-syn-16/": {
     "en": "Study ES & NQ: Correlation and Lead-Lag. Observe ES and NQ together rather than assuming a fixed lead.",
@@ -365,7 +365,7 @@
   },
   "/masood/lectures/masood-syn-18/": {
     "en": "Study Dual Sweeps & Seek-and-Destroy Sessions. Recognize the example's successive sweeps of both range edges.",
-    "ur": "مطالعہ: دوہری جھاڑو اور سیک اینڈ ڈسٹرو سیشن۔ مثال میں رینج کے دونوں کناروں کے یکے بعد دیگرے سویپ پہچانیں۔"
+    "ur": "مطالعہ: دو طرفہ سویپس اور سیک اینڈ ڈسٹرائے سیشن۔ مثال میں رینج کے دونوں کناروں کے یکے بعد دیگرے سویپ پہچانیں۔"
   },
   "/masood/lectures/masood-syn-19/": {
     "en": "Study 8:30 AM News Reversal Case Study. Look for the stated MSS before interpreting a news-spike reversal.",
@@ -409,7 +409,7 @@
   },
   "/masood/lectures/masood-syn-29/": {
     "en": "Study Daily Bias & the Previous Day High. Check the response after price reaches the previous day's high.",
-    "ur": "مطالعہ: روزانہ بائس (Bias) اور پچھلا دن ہائی۔ قیمت کے پچھلے دن کے ہائی پر پہنچنے کے بعد ردعمل دیکھیں۔"
+    "ur": "مطالعہ: ڈیلی بائس (Bias) اور پچھلا دن ہائی۔ قیمت کے پچھلے دن کے ہائی پر پہنچنے کے بعد ردعمل دیکھیں۔"
   },
   "/masood/lectures/masood-syn-30/": {
     "en": "Study Market Maker Buy Model (MMBM) Study. Trace the MMBM origin, sell-side curve and later buy-side targets.",
@@ -464,11 +464,11 @@
     "ur": "مطالعہ: ایک طے شدہ سیٹ اپ اور ایک سیشن اسٹاپ کا اصول۔ ایک متعین کوشش اور اس کے بعد سیشن روکنے کا جائزہ لیں۔"
   },
   "/masood/lectures/masood-syn-43/": {
-    "en": "Study Study Doubts, Evidence & Trading Intuition. Relate developing intuition to repeated observation and recorded study.",
-    "ur": "مطالعہ: شکوک و شبہات کا مطالعہ کریں، ثبوت اور تجارتی وجدان۔ بنتی ہوئی بصیرت کو بار بار مشاہدے اور تحریری مطالعے سے ملائیں۔"
+    "en": "Study Doubts, Evidence & Trading Intuition. Relate developing intuition to repeated observation and recorded study.",
+    "ur": "مطالعہ: سیکھنے کے دوران شکوک، شواہد اور ٹریڈنگ کی بصیرت۔ بار بار مشاہدے اور تحریری جائزے سے ٹریڈنگ کی بصیرت پیدا ہونے کا تعلق سمجھیں۔"
   },
   "/masood/lectures/masood-syn-44/": {
     "en": "Study US100 Execution Blueprint: Final Review. Review the stated daily-bias gates before the execution sequence.",
-    "ur": "مطالعہ: US100 ایگزیکیوشن (Execution) بلیو پرنٹ: حتمی جائزہ۔ ایگزیکیوشن کی ترتیب سے پہلے روزانہ سمت کی مقررہ شرطیں دیکھیں۔"
+    "ur": "مطالعہ: US100 ایگزیکیوشن (Execution) بلیو پرنٹ: حتمی جائزہ۔ ایگزیکیوشن کی ترتیب سے پہلے ڈیلی بائس کی مقررہ شرطیں دیکھیں۔"
   }
 }

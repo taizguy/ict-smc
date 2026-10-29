@@ -12,7 +12,7 @@ import { masoodPlaylistsData } from '../src/data/masoodData';
 import { MasoodLecturePage } from '../src/components/MasoodLecturePage';
 import { normalizeReading } from './audit-parity-content';
 import { parse } from 'parse5';
-import { audit4Headings } from '../src/data/audit4Headings';
+import { audit4Headings, audit4Tagline } from '../src/data/audit4Headings';
 import { urdu } from '../src/i18n/urdu';
 import { TranslationProvider } from '../src/i18n/TranslationProvider';
 import { LearningFirstHome } from '../src/components/LearningFirstHome';
@@ -51,6 +51,7 @@ for(const [path,pair] of Object.entries(audit4Headings)) for(const locale of ['e
   assert.ok(html.includes(`<h1>${pair[locale]}</h1>`));
   assert.equal((html.match(/<h1\b/g)||[]).length,1);
   assert.ok(html.includes(path==='/'?'home-tagline':'rr-tagline'));
+  if(path==='/')assert.ok(html.includes(audit4Tagline[locale]),'Same correctly quoted tagline in native runtime and static rendering');
 }
 fs.mkdirSync('outputs/audit-batch-4',{recursive:true});
 console.log(`Batch 4 source checks: ${Object.keys(descriptions).length} EN/UR descriptions and two paired H1s.`);

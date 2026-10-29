@@ -270,7 +270,7 @@
       "If the higher timeframe is trapped in the middle of a consolidation range without a clear draw, your bias is NEUTRAL—stand aside."
     ],
     "takeaway": "Compare the daily liquidity objective with the chosen directional bias.",
-    "urduTakeaway": "روزانہ لیکویڈیٹی کے مقصد اور منتخب سمت کے رجحان کا تقابل کریں۔"
+    "urduTakeaway": "روزانہ لیکویڈیٹی کے مقصد اور منتخب بائس کا تقابل کریں۔"
   },
   "/masood/lectures/masood-adv-15/": {
     "id": "masood-adv-15",
@@ -400,7 +400,7 @@
       "Targets: Take profit 1 at 0.0 (old high), Take profit 2 at -0.272 extension, Take profit 3 at -0.618 extension."
     ],
     "takeaway": "Locate OTE retracement references within a daily-bias study.",
-    "urduTakeaway": "روزانہ سمت کے مطالعے میں OTE ریٹریسمنٹ کے حوالے پہچانیں۔"
+    "urduTakeaway": "ڈیلی بائس کے مطالعے میں OTE ریٹریسمنٹ کے حوالے پہچانیں۔"
   },
   "/masood/lectures/masood-db-6/": {
     "id": "masood-db-6",
@@ -413,7 +413,7 @@
       "Do not anticipate a bias shift until the candle body officially closes through the swing extreme."
     ],
     "takeaway": "Review a volume-imbalance retest alongside the stated bias.",
-    "urduTakeaway": "والیوم اِمبیلنس کی دوبارہ جانچ کو دی گئی سمت کے ساتھ دیکھیں۔"
+    "urduTakeaway": "والیوم اِمبیلنس کی دوبارہ جانچ کو متعین بائس کے ساتھ دیکھیں۔"
   },
   "/masood/lectures/masood-db-7/": {
     "id": "masood-db-7",
@@ -439,7 +439,7 @@
       "Never trade on gut feeling, social media chatter, or hope."
     ],
     "takeaway": "Translate a discretionary bias into an explicit rule-based plan.",
-    "urduTakeaway": "صوابدیدی سمت کی تشریح کو واضح شرطوں والے منصوبے میں بدلیں۔"
+    "urduTakeaway": "صوابدیدی بائس کو واضح شرطوں والے منصوبے میں بدلیں۔"
   },
   "/masood/lectures/masood-db-9/": {
     "id": "masood-db-9",
@@ -504,7 +504,7 @@
       "Time of entry must align with an active New York AM Macro window."
     ],
     "takeaway": "Relate a lower-timeframe entry to its daily-bias context.",
-    "urduTakeaway": "چھوٹے ٹائم فریم کی انٹری کو روزانہ سمت کے سیاق سے ملائیں۔"
+    "urduTakeaway": "چھوٹے ٹائم فریم کی انٹری کو ڈیلی بائس کے سیاق سے ملائیں۔"
   },
   "/masood/lectures/masood-db-15/": {
     "id": "masood-db-15",
@@ -1434,14 +1434,16 @@
   },
   "/masood/lectures/masood-syn-43/": {
     "id": "masood-syn-43",
-    "preservedPrefix": "Study Study Doubts, Evidence & Trading Intuition.",
+    "preservedPrefix": "Study Doubts, Evidence & Trading Intuition.",
     "sourceTitle": "SESSION 43: Live Mentorship Syndicate: Overcoming Technical Doubts & Building Intuition",
     "sourceSummary": "Interactive mentorship Q&A: resolving student doubts on daily bias confusion, conflicting timeframes, and building chart intuition.",
     "coreRules": [
       "Trust your predetermined rules over live emotional impulses."
     ],
     "takeaway": "Relate developing intuition to repeated observation and recorded study.",
-    "urduTakeaway": "بنتی ہوئی بصیرت کو بار بار مشاہدے اور تحریری مطالعے سے ملائیں۔"
+    "urduTakeaway": "بار بار مشاہدے اور تحریری جائزے سے ٹریڈنگ کی بصیرت پیدا ہونے کا تعلق سمجھیں۔",
+    "originalPrefix": "Study Study Doubts, Evidence & Trading Intuition.",
+    "prefixCorrection": "User-approved removal of duplicated Study."
   },
   "/masood/lectures/masood-syn-44/": {
     "id": "masood-syn-44",
@@ -1456,6 +1458,6 @@
       "Log every trade with brutal honesty."
     ],
     "takeaway": "Review the stated daily-bias gates before the execution sequence.",
-    "urduTakeaway": "ایگزیکیوشن کی ترتیب سے پہلے روزانہ سمت کی مقررہ شرطیں دیکھیں۔"
+    "urduTakeaway": "ایگزیکیوشن کی ترتیب سے پہلے ڈیلی بائس کی مقررہ شرطیں دیکھیں۔"
   }
 }

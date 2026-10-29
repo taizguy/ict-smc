@@ -20,6 +20,11 @@ export default {
     if (documentPath) url.pathname = original.replace(/\/{2,}/g, '/').toLowerCase();
     const locale = URDU_PUBLISHED ? localeFromPath(url.pathname) : 'en';
     const routePath = locale === 'ur' ? withoutLocale(url.pathname) : url.pathname;
+    // The configured asset handler otherwise emits a temporary 307 for this path.
+    if (routePath === '/curriculum') {
+      url.pathname = localizedHref('/curriculum/', locale);
+      return Response.redirect(url.href, 301);
+    }
     const graphTarget = retiredGraphTarget(routePath);
     if (graphTarget) {
       url.pathname = localizedHref(graphTarget, locale); url.search = '';

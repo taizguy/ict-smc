@@ -12,6 +12,7 @@ import { editorialUrdu } from '../src/i18n/editorial-urdu';
 import { toolsUrdu } from '../src/i18n/tools-urdu';
 import { terminology } from '../src/i18n/terminology';
 import learningUpdate from '../src/i18n/learning-update-urdu.json';
+import { splitUrduLessons } from './split-urdu-lessons';
 
 // Keep the complete editorial catalog for HTML generation, but send visitors only
 // interface/search labels and the long copy belonging to their current section.
@@ -19,6 +20,7 @@ type Group = 'shared' | 'chapters' | 'masood' | 'articles' | 'tools' | 'publishe
 const groups: Group[] = ['shared', 'chapters', 'masood', 'articles', 'tools', 'publisher'];
 const keys = Object.fromEntries(groups.map(group => [group, new Set<string>()])) as Record<Group, Set<string>>;
 const searchKeys = new Set<string>();
+const chapterUiKeys = new Set<string>();
 const searchableFields = new Set(['title', 'name', 'subtitle', 'shortTitle', 'excerpt', 'description', 'shortDefinition', 'summary', 'quote', 'term', 'categoryLabel']);
 const normalize = (text: string) => text.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&rarr;/g, '→').replace(/&larr;/g, '←').replace(/\s+/g, ' ').trim();
 function groupFor(file: string): Group {
@@ -55,6 +57,9 @@ function walk(folder: string) {
     function visit(node: ts.Node) {
       if (ts.isJsxText(node) || ts.isStringLiteralLike(node)) {
         add(node.text, group);
+        if(file.startsWith('src/components/')) {
+          for(const candidate of [node.text,...lessonParagraphs(node.text)]) chapterUiKeys.add(normalize(candidate));
+        }
         const parent = ts.isArrayLiteralExpression(node.parent) ? node.parent.parent : node.parent;
         if (ts.isStringLiteralLike(node) && ts.isPropertyAssignment(parent) && searchableFields.has(parent.name.getText(source).replace(/^['"]|['"]$/g, ''))) searchKeys.add(normalize(node.text));
       }
@@ -83,3 +88,4 @@ for (const group of groups) {
   fs.writeFileSync(path.join(output, `${group}.json`), JSON.stringify(catalog) + '\n');
   console.log(`Urdu ${group}: ${Object.keys(catalog).length} entries / ${Math.round(Buffer.byteLength(JSON.stringify(catalog)) / 1024)} KB`);
 }
+splitUrduLessons(output,chapterUiKeys);

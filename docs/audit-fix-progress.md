@@ -10,7 +10,10 @@ Branch: `fix/audit-batch-4`, based on the reviewed Batches 1–3 feature branch.
 - **4c done:** all 118 lecture descriptions preserve their exact existing English prefix and end with a unique, lecture-specific takeaway. Paired Urdu uses existing topic translations and the established terminology normalizer. Each takeaway was written from that lecture's title/summary/rules without repeating performance claims. `docs/audit-batch-4-lecture-evidence.json` records the source data and preserved prefix; targeted checks confirm 118 unique endings in both languages, source-data agreement and visible summaries/rules. Files: `audit4LectureDescriptions.json`, `audit4LectureTakeaways.json`, evidence, metadata/Urdu resolution, scanner and log. Total changed description paths: 154.
 - **4d done:** genuine Urdu authored alongside every changed snippet/H1; runtime catalogs regenerated with route-family placement for derived metadata. Complete author-review inventory: `docs/audit-batch-4-urdu-review.md` (154 descriptions and two H1s). Metadata source resolution and exact dictionary checks pass; generated description/OG/Twitter parity will be scanned in the final 4e build. Files: catalog generator, review exporter/inventory, generated shared/chapters/Masood/tools catalogs and log. Human Urdu review remains the user's review step, not a missing implementation.
 - **Files touched:** `src/data/audit4Descriptions.json`, `audit4Headings.ts`, `src/utils/searchMetadata.ts`, `src/i18n/urdu.ts`, `LearningFirstHome.tsx`, `CurriculumView.tsx`, `scripts/seo-content.ts`, `scripts/verify-audit-batch-4.ts`, this log.
-- **In progress / next:** 4e routing, documentation, measured payloads and final verification. No items intentionally deferred from the current request.
+- **4e done:** Worker handles the curriculum slash with 301 in EN/UR; source and built links have no mentorship queries (only legacy tests retain them); 14 graph-step aliases retain relevant existing destinations; docs explicitly record FAQ rich-result retirement while retaining markup. Actual production requests measured for five routes. Urdu lesson loading reduced from 4,642,298 to 3,920,627 JS bytes; all 66 complete Urdu lessons retain byte-identical rendered output. Crawl-discovered Chart Lab orphans fixed with shared study links; six descriptions shortened to the existing editorial budget. Lecture schema summaries aligned. Full details and file/evidence inventory: `docs/audit-batch-4-report.md`.
+- **Final checks passed:** TypeScript; production build/prerender; full 10,936-check suite; 787-page crawl; metadata scan of all 787 documents with no missing or duplicate indexable titles/descriptions, unchanged titles and social parity; 254 shared reading documents; 18 fresh browser parity samples; 759 canonical/hreflang/sitemap URLs; all 66 Urdu lesson catalog comparisons. No URL removals, unrelated redirects, keyword stuffing or lastmod stamping.
+- **Commits:** 4a `fb550f6`; 4b `cb67982`; 4c `4475f07`; 4d `e1f76ed`; 4e is the completion commit containing this log. One commit per sub-batch.
+- **Status / next:** all enumerated items completed; feature-branch review and author Urdu review. No main push, merge, production deployment or consolidation. Live verification of the new slash status awaits an approved deployment, not more implementation.
 
 ## Batch 3 — Route specificity
 
@@ -19,7 +22,7 @@ Branch: `fix/audit-batch-4`, based on the reviewed Batches 1–3 feature branch.
 - **Production follow-up:** subsequently authorized production compilation and prerender completed for the current Batch 3 source. The 19 routes generate in EN and UR (38 pages): all shared-study sections, HTML language, canonical and en/ur/x-default annotations passed targeted output checks. Production-page Jaccard maxima: Chart Lab 0.572, Delivery 0.654, Backtest 0.432, Simulator 0.416; all 342 pairs below 0.90. These include production wrapper text and are separate from the earlier component-fixture measurements. Generated shared/tools Urdu catalogs are retained with this follow-up. Bundle-size warnings remain for Batch 5. Full suite/crawl not run.
 - **Files touched:** exact family inventory in the review. No shared startup/gate expansion, dates or metadata changes.
 - **Status:** accepted by the user; production follow-up verified locally. Feature-branch publication and a combined review PR are now authorized. No merge or production deployment.
-- **Next:** review PR and author review of Urdu; Batch 4 waits for the user's GSC priorities. Full suite/crawl remain Batch 6. Batch 1 is already merged (PR #29), so its work is referenced in the combined handoff rather than duplicated in the diff. PR text: `docs/audit-batches-1-3-pr.md`.
+- **Handoff:** review PR and author Urdu review; the user subsequently supplied GSC priorities and the complete remaining audit scope, implemented in Batch 4 above. Full suite/crawl were completed there. Batch 1 is already merged (PR #29); PR text: `docs/audit-batches-1-3-pr.md`.
 
 ## Product decisions pending
 
@@ -74,8 +77,6 @@ Evidence: route props in `ChartLab.tsx`, `BacktestLab.tsx`, `TradeSimulator.tsx`
 - **Verification passed:** `npm run lint` and `npx tsx scripts/verify-audit-batch-1.ts`. Checks cover unchanged English snippets, static/client Urdu parity, all 10 shared tool links/features, current count/graph and visible EN/UR Article image. No full build, suite or crawl run; those remain Batch 6. No sitemap dates stamped, startup gates changed, URLs deleted or redirects added.
 - **Handoff:** Batch 2 separately authorized. Existing untracked GSC report/design prototypes remain excluded. Main and production stay untouched by this batch.
 
-## Remaining batches
+## Remaining work
 
-4. Scoped metadata work; Masood pages require supplied GSC priorities.
-5. Measured performance/routing; no redirect changes without explicit approval.
-6. Full suite/crawl, canonical/hreflang/sitemap and final diff review. Stop for approval.
+No remaining enumerated audit implementation is deferred. The user combined the former remaining metadata, performance/routing and final verification batches into 4a–4e. Review/merge/deployment are separate user decisions; no production action is authorized.

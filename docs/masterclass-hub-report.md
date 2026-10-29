@@ -86,3 +86,6 @@ Browser checks include 1280px desktop and 390px mobile widths, light/dark search
 Additional new files: scripts/generate-masterclass-stage-art.ts, src/data/masterclassStageArt.ts and src/components/MasterclassStage.tsx. Regenerate stage geometry with npx tsx scripts/generate-masterclass-stage-art.ts when source illustrations change. No external assets or new dependencies were added.
 
 Workbench root follow-up: the dark-theme .study-workbench background now uses the existing --color-canvas token instead of a separate #111214 fill. This makes its container match the surrounding page; the light-theme rule is unchanged. No content or URL changes were needed.
+
+
+FAQ status correction: Google retired FAQ rich results on 7 May 2026 ([official changelog](https://developers.google.com/search/updates?hl=en)). Existing visible FAQs and their markup remain; they do not provide eligibility for the retired Search feature.

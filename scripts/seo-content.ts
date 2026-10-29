@@ -203,6 +203,7 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   if (path === '/curriculum/') r.heading = 'ICT and Smart Money Concepts Curriculum';
   r.title = searchTitle(r.title, path);
   r.description = searchDescription(r.description, r.title, path);
+  if (path.startsWith('/masood/lectures/') && r.schemaJson?.['@type'] === 'LearningResource') r.schemaJson = {...r.schemaJson, description:r.description};
   if (/^\/(learn|masood\/lectures)\//.test(path)) r.heading = studyTopics[path] || conciseHeading(r.heading);
   if (path === '/tools/glossary/order-blocks/propulsion-and-reclaimed/') r.heading = 'Propulsion & Reclaimed Blocks: Comparison and Rules';
   if (/^\/tools\/(journal|profile)\//.test(path) || path === '/adsense/') r.isNoindex = true;

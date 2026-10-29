@@ -1,3 +1,4 @@
+import { toolRouteStudyUrdu } from '../data/toolRouteStudies';
 import masterclassHubUrdu from './masterclass-hub-urdu.json';
 import {mentorshipVisualUrdu} from '../data/chapters/mentorship2025Visuals';
 import mentorship2025Urdu from './mentorship2025-urdu.json';
@@ -34,6 +35,7 @@ import chapterHeadings from './chapter-headings-urdu.json';
 import { refineTradingLanguage } from './trading-language';
 /** Original Urdu translations. Keys are exact English source text, never route IDs or calculation values. */
 export const urdu: Record<string, string> = {
+  ...toolRouteStudyUrdu,
   ...masterclassHubUrdu,
   ...readingRoomUrdu,
   '24 October 2026': '24 اکتوبر 2026',

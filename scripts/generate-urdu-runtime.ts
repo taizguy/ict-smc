@@ -19,6 +19,7 @@ const searchKeys = new Set<string>();
 const searchableFields = new Set(['title', 'name', 'subtitle', 'shortTitle', 'excerpt', 'description', 'shortDefinition', 'summary', 'quote', 'term', 'categoryLabel']);
 const normalize = (text: string) => text.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&rarr;/g, '→').replace(/&larr;/g, '←').replace(/\s+/g, ' ').trim();
 function groupFor(file: string): Group {
+  if (/RouteStud(?:y|ies)/.test(file)) return 'tools';
   if (/articles/.test(file)) return 'articles';
   if (/data\/chapters|DeliveryLesson|Mentorship2025|Mentorship2026|Chapters|ChapterRoom|cornerstoneGuides|CornerstoneGuide|fvgLesson|FvgLessonDiagram|fvgStory|FvgStory|chapterStories|ChapterStory/.test(file)) return 'chapters';
   if (/masood/i.test(file)) return 'masood';

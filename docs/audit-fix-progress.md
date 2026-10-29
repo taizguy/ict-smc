@@ -1,6 +1,13 @@
 # Audit fix progress
 
-Branch: `fix/audit-batch-2`, based on the merged Batch 1 PR. One commit per batch. PR review required. No merge, main push or production deployment authorized.
+Branch: `fix/audit-batch-3`, based on the Batch 2 review branch and its local production follow-up. One local commit per Batch 3 family, as subsequently requested. No push, merge or deployment authorized.
+
+## Batch 3 — Route specificity
+
+- **Done:** Chart Lab: six routes individually reviewed; distinct instructions, invented worked example, assumptions and limitations in EN/UR. Shared exercise behavior is explicitly disclosed. All URLs preserved.
+- **Verification:** targeted static/runtime note checks pass; maximum complete-document word-trigram Jaccard 0.574 across Chart Lab pairs, both languages. TypeScript checked per family. Evidence and individual decisions: `docs/audit-batch-3-review.md`.
+- **Files touched:** exact family inventory in the review. No shared startup/gate expansion, dates or metadata changes.
+- **In progress / next:** commit Chart Lab locally, then Delivery Suite, Backtest and Simulator in that order. Full suite/crawl remain Batch 6; Urdu author review pending.
 
 ## Batch 2 — Rendering and parity
 

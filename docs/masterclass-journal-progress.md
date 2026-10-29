@@ -23,7 +23,7 @@ First-publication date for all 29 lessons: **2026-10-24**, confirmed by the publ
 | 05 | IFVG | Not rebuilt; source/variant verification required |
 | 06 | Silver Bullet | Not rebuilt; exact windows/source/example verification required |
 | 07 | Unicorn | Not rebuilt; breaker/FVG relationship and source verification required |
-| 08 | Opening range/octant grid | Not rebuilt; range convention, eight numerical levels and tool procedure required |
+| 08 | Opening range/octant grid | English authored draft: exact anchors, full boundary table, six original figures, two contrasting paths and metadata/source research; native Urdu and activated production checks pending |
 | 09 | MMXM stage two | Not rebuilt; named variation/source verification required |
 | 10 | Five opening ranges | Not rebuilt; session/window conventions and examples required |
 | 11 | Propulsion block | Not rebuilt; source/definition verification required |
@@ -52,7 +52,7 @@ New: `src/data/masterclassJournal.ts`, `src/components/MasterclassJournal.tsx`, 
 
 Connections: `TradingToolsWorkbench.tsx`, `SEO.tsx`, `src/index.css`, `scripts/seo-content.ts`, `scripts/prerender.ts`, `scripts/social-cards.ts`. Existing style/helper behaviour remains the default outside approved editions or the local draft query.
 
-Next: Unit 08 using independent research and drawings; finish native Urdu and activated production release checks for all authored editions. Maintain per-lesson reports. No tool-URL consolidation, legacy-route deletion or date stamping.
+Next: Unit 18 OTE using independent research and drawings; finish native Urdu and activated production release checks for all authored editions. Maintain per-lesson reports. No tool-URL consolidation, legacy-route deletion or date stamping.
 
 ## 29 October continuation checkpoint
 
@@ -61,3 +61,14 @@ Next: Unit 08 using independent research and drawings; finish native Urdu and ac
 - Fixed local journal contents navigation through Lenis; native fragment anchors remain for no-JS use. Replaced projection-specific shared risk prose with a required per-lesson risk note and corrected the Unit 03 risk chart to a proportional scale.
 - Targeted verification passed for 12 distinct label-free figure compositions across Units 03 and 15. No activation, push, merge or deployment.
 
+
+## Unit 08 continuation checkpoint
+
+- Complete authored English ORG/octant draft, source and SERP/PAA report: docs/masterclass-journal-08-release-review.md.
+- Static/runtime text parity: 64 normalized heading/paragraph nodes, hash 428611568. Local desktop light and mobile dark rendering checked; mobile viewport 390 / document 384. Mobile light app also checked: all six figure/SVG containers measure 352px within the viewport.
+- Exact custom Fib ratios, nine boundaries/eight bands, explicit chart-close-versus-settlement distinction, and a midpoint deadline with both met/unmet invented outcomes.
+- All authored drafts pass targeted checks: three one-H1 documents, 18 distinct labelled/captioned SVG compositions, 15 visible FAQ answers, valid local fragments and production draft guards.
+- Added estimated reading time computed from authored prose and moved the sticky contents below the main navigation. No production activation or URL change.
+- Remaining: 26 English editions, genuine Urdu counterparts and the complete activated production release gate. No push, merge or deployment.
+
+Production compiler passed after Unit 08; existing 800kB chunk advisory remains. TypeScript passed. Draft activation/Urdu/full production crawl remain explicit pending work.

@@ -29,3 +29,18 @@ Files: `src/data/chartRouteStudies.ts`, `toolRouteStudies.ts`; `src/components/T
 | learning-path | Device-local personal selections, independent from lesson completion and quizzes; export/storage limitations | Preserve |
 
 All four receive EN/UR instructions, examples, assumptions and limitations from the shared model. Targeted checks pass with maximum complete-document word-trigram Jaccard 0.571. No clock schedules, calculator formulas, stored-data keys or checklist behavior changed. TypeScript runs per family. Files: `src/data/deliveryRouteStudies.ts`, registry `toolRouteStudies.ts`, `src/components/InstitutionalToolsSuite.tsx`, `scripts/tools-content.ts`, review/progress docs.
+
+## Backtest — completed locally
+
+The six names select a study focus, not six different strategy engines. Each now discloses that limitation and teaches a distinct protocol around the existing synthetic six-case checklist. No new profitability claims or fabricated historical measurements.
+
+| Route suffix | Distinct study protocol | Decision |
+| --- | --- | --- |
+| 2022-mentorship-model | Qualification before outcome, frozen confirmation rules, filled versus unfilled denominator; invented net-R ledger | Preserve |
+| charter-model-1 | Intraday cutoff, per-session sampling and higher-timeframe/lookback data requirements | Preserve |
+| charter-model-8 | Pip objective versus actual net outcome, fixed weekly attempts and cash-risk distinction | Preserve |
+| charter-model-9 | Weekly hypothesis without hindsight, holding-period/gap exposure and planned versus realized R | Preserve |
+| silver-bullet | Formation/placement/fill cutoffs distinguished; date-aware timezone and boundary treatment | Preserve |
+| breaker-reversal | Original block, defined failure, subsequent retest and all missing/invalid outcomes retained | Preserve |
+
+Targeted EN/UR shared-note checks pass; maximum complete-document word-trigram Jaccard 0.335. TypeScript runs per family. The interactive engine, ledger rules and data storage are unchanged. Files: `src/data/backtestRouteStudies.ts`, registry `toolRouteStudies.ts`, `src/components/BacktestLab.tsx`, `scripts/tools-content.ts`, review/progress docs.

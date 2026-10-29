@@ -1,9 +1,10 @@
 import { chartRouteStudies } from './chartRouteStudies';
 import { deliveryRouteStudies } from './deliveryRouteStudies';
+import { backtestRouteStudies } from './backtestRouteStudies';
 
 export type StudyPair = [string, string];
 export type RouteStudy = { heading: StudyPair; instructions: StudyPair; example: StudyPair; assumptions: StudyPair; limitations: StudyPair };
-export const toolRouteStudies: Record<string, Record<string, RouteStudy>> = { chartlab: chartRouteStudies, 'delivery-suite': deliveryRouteStudies };
+export const toolRouteStudies: Record<string, Record<string, RouteStudy>> = { chartlab: chartRouteStudies, 'delivery-suite': deliveryRouteStudies, backtest: backtestRouteStudies };
 export const routeStudyLabels = [
   ['How to use this study brief', 'اس مطالعے کی رہنمائی کیسے استعمال کریں'],
   ['Worked example and contrasting outcome', 'حل شدہ مثال اور مختلف نتیجہ'],

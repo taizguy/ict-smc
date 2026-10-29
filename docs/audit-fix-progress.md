@@ -1,6 +1,13 @@
 # Audit fix progress
 
-Branch: `fix/audit-batch-3`, based on the Batch 2 review branch and its production follow-up. One commit per Batch 3 family, as subsequently requested. The user clarified that feature-branch pushes and a review PR are authorized; pushing to main, merging and production deployment remain prohibited.
+Branch: `fix/audit-batch-4`, based on the reviewed Batches 1–3 feature branch. One commit per sub-batch 4a–4e. Feature-branch pushes and a review PR are authorized; pushing to main, merging and production deployment remain prohibited.
+
+## Batch 4 — All remaining audit items
+
+- **4a done:** topic-bearing home/curriculum H1s, retained visible taglines, unchanged title logic; light brand-aligned Masood hub/rules/six-series descriptions and eight priority concept descriptions (16 pairs). Genuine Urdu is authored with English, then catalog/report verification completes in 4d. Mitigation's actual canonical route is `/tools/glossary/order-blocks/mitigation-and-breakers/`.
+- **Checks:** targeted description resolution/Urdu dictionary and EN/UR server-rendered single-H1/tagline checks pass. Production parity and title invariance are checked at the end.
+- **Files touched:** `src/data/audit4Descriptions.json`, `audit4Headings.ts`, `src/utils/searchMetadata.ts`, `src/i18n/urdu.ts`, `LearningFirstHome.tsx`, `CurriculumView.tsx`, `scripts/seo-content.ts`, `scripts/verify-audit-batch-4.ts`, this log.
+- **In progress / next:** 4b numbered descriptions; 4c all lecture descriptions; 4d Urdu inventory/catalogs; 4e routing, documentation, measured payloads and final verification. No items intentionally deferred from the current request.
 
 ## Batch 3 — Route specificity
 

@@ -1,4 +1,6 @@
 import { toolRouteStudyUrdu } from '../data/toolRouteStudies';
+import audit4Descriptions from '../data/audit4Descriptions.json';
+import { audit4Headings } from '../data/audit4Headings';
 import masterclassHubUrdu from './masterclass-hub-urdu.json';
 import {mentorshipVisualUrdu} from '../data/chapters/mentorship2025Visuals';
 import mentorship2025Urdu from './mentorship2025-urdu.json';
@@ -35,6 +37,7 @@ import chapterHeadings from './chapter-headings-urdu.json';
 import { refineTradingLanguage } from './trading-language';
 /** Original Urdu translations. Keys are exact English source text, never route IDs or calculation values. */
 export const urdu: Record<string, string> = {
+  ...Object.fromEntries([...Object.values(audit4Descriptions),...Object.values(audit4Headings)].map(pair=>[pair.en,pair.ur])),
   ...toolRouteStudyUrdu,
   ...masterclassHubUrdu,
   ...readingRoomUrdu,

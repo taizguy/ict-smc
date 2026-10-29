@@ -199,7 +199,8 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   const counts = (text: string) => text.replace(/\b57(?=[- ](?:chapter|Chapter|CHAPTER))/g, String(chapterCount)).replace(/\b52(?=[- ](?:Abdullah|lecture|Lecture|LECTURE|Masterclass|masterclass))/g, String(lectureCount));
   r.title = counts(r.title); r.description = counts(r.description); r.bodyHtml = counts(r.bodyHtml);
   r.heading = counts(r.heading); r.subheading = counts(r.subheading);
-  if (path === '/') { r.title = 'Learn ICT & Smart Money Concepts | LearnSMC'; r.description = 'Study ICT and Smart Money Concepts with free trading lessons, Abdullah Masood video notes, chart exercises and risk education.'; r.heading='Learn to read the chart. Then question it.'; r.bodyHtml=renderToStaticMarkup(createElement(LearningFirstHome)); }
+  if (path === '/') { r.title = 'Learn ICT & Smart Money Concepts | LearnSMC'; r.description = 'Study ICT and Smart Money Concepts with free trading lessons, Abdullah Masood video notes, chart exercises and risk education.'; r.heading='Learn ICT and Smart Money Concepts'; r.bodyHtml=renderToStaticMarkup(createElement(LearningFirstHome)); }
+  if (path === '/curriculum/') r.heading = 'ICT and Smart Money Concepts Curriculum';
   r.title = searchTitle(r.title, path);
   r.description = searchDescription(r.description, r.title, path);
   if (/^\/(learn|masood\/lectures)\//.test(path)) r.heading = studyTopics[path] || conciseHeading(r.heading);

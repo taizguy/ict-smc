@@ -1,4 +1,6 @@
 import { AuditedRouteBody } from '../src/components/AuditedRouteDocument';
+import {MasterclassJournal,journalSchema} from '../src/components/MasterclassJournal';
+import {masterclassJournalForPath} from '../src/utils/masterclassJournalRoutes';
 import { MasoodLecturePage } from '../src/components/MasoodLecturePage';
 import { auditedReadingRoute } from '../src/utils/auditedReadingRoutes';
 import {MasterclassHub} from '../src/components/MasterclassHub';
@@ -180,6 +182,13 @@ export function prepareRoutes(routes: RouteMeta[]) {
 
 export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   const path = new URL(r.canonical).pathname;
+  const journal=masterclassJournalForPath(path);
+  if(journal){
+    r.title=journal.title;r.heading=journal.h1;r.description=journal.description;r.subheading=journal.subtitle;
+    r.bodyHtml=renderToStaticMarkup(createElement(MasterclassJournal,{lesson:journal}));
+    r.schemaJson=journalSchema(journal,path);
+    return;
+  }
   if(path===masterclassHubPath){
     r.title=searchTitle(masterclassHubTitle,path);r.description=masterclassHubDescription;r.heading=masterclassHubH1;r.subheading='Less memorising. More understanding.';
     r.bodyHtml=renderToStaticMarkup(createElement(MasterclassHub));

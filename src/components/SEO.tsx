@@ -9,6 +9,8 @@ export interface SEOProps {
   path?: string;
   type?: 'website' | 'article';
   schema?: Record<string, any>;
+  exactMetadata?: boolean;
+  image?: {url:string;alt:string};
   breadcrumbs?: Array<{ name: string; path: string }>;
 }
 
@@ -20,6 +22,8 @@ export const SEO: React.FC<SEOProps> = ({
   type = 'website',
   schema,
   breadcrumbs,
+  exactMetadata = false,
+  image,
 }) => {
   useEffect(() => {
     if (document.querySelector('meta[name="learnsmc-prerendered"]')) return;
@@ -28,8 +32,8 @@ export const SEO: React.FC<SEOProps> = ({
     const canonicalUrl = normalizeCanonicalUrl(targetPath);
 
     // 2. Document Title
-    const pageTitle = searchTitle(title, new URL(canonicalUrl).pathname);
-    const pageDescription = searchDescription(description, pageTitle, new URL(canonicalUrl).pathname);
+    const pageTitle = exactMetadata ? title : searchTitle(title, new URL(canonicalUrl).pathname);
+    const pageDescription = exactMetadata ? description : searchDescription(description, pageTitle, new URL(canonicalUrl).pathname);
     document.title = pageTitle;
 
     // Helper to set or update meta tag by name or property
@@ -57,6 +61,12 @@ export const SEO: React.FC<SEOProps> = ({
     setMetaTag('name', 'twitter:creator', '@ChiefAnt_');
     setMetaTag('name', 'twitter:title', pageTitle);
     setMetaTag('name', 'twitter:description', pageDescription);
+    if(image){
+      setMetaTag('property','og:image',image.url);
+      setMetaTag('property','og:image:alt',image.alt);
+      setMetaTag('name','twitter:image',image.url);
+      setMetaTag('name','twitter:image:alt',image.alt);
+    }
 
     // 5. Canonical Link
     let canonicalTag = document.querySelector('link[rel="canonical"]');
@@ -86,7 +96,7 @@ export const SEO: React.FC<SEOProps> = ({
     return () => {
       // Optional cleanup on component unmount
     };
-  }, [title, description, canonicalPath, explicitPath, type, schema, breadcrumbs]);
+  }, [title, description, canonicalPath, explicitPath, type, schema, breadcrumbs, exactMetadata, image]);
 
   return null;
 };

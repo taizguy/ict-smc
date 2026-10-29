@@ -1,0 +1,8 @@
+import fs from 'node:fs';
+import {Resvg} from '@resvg/resvg-js';
+const dir='public/images/masterclass-journal';fs.mkdirSync(dir,{recursive:true});
+const levels=[{r:'1',p:110},{r:'0',p:100},{r:'−1',p:90},{r:'−2',p:80},{r:'−2.5',p:75},{r:'−4',p:60}];
+const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"><rect width="1200" height="630" fill="#ffffff"/><g font-family="Source Sans 3" fill="#202a32"><text x="65" y="80" font-size="32" font-weight="600">LearnSMC.</text><text x="65" y="210" font-size="51">ICT standard deviation</text><text x="65" y="273" font-size="51">projections</text><text x="65" y="347" font-size="25" fill="#526173">Anchors, Fib settings and exact prices</text><text x="65" y="395" font-size="25" fill="#526173">Worked example + failed example</text><path d="M65 480H1135" stroke="#d8e0e8"/><text x="65" y="545" font-size="22">Illustrative arithmetic. Not a statistical probability model.</text>${levels.map((l,i)=>`<g><line x1="815" x2="1050" y1="${135+i*51}" y2="${135+i*51}" stroke="#285caa" stroke-width="${l.p===80?4:2}"/><text x="790" y="${141+i*51}" font-size="22" text-anchor="end">${l.r}</text><text x="1070" y="${141+i*51}" font-size="22">${l.p}</text></g>`).join('')}</g></svg>`;
+fs.writeFileSync(dir+'/15-standard-deviations.svg',svg);
+fs.writeFileSync(dir+'/15-standard-deviations.png',new Resvg(svg,{font:{fontFiles:['scripts/assets/social-fonts/source-sans-3.ttf','scripts/assets/social-fonts/source-sans-3-semibold.ttf'],loadSystemFonts:false,defaultFontFamily:'Source Sans 3'}}).render().asPng());
+console.log('Wrote Standard Deviations 1200×630 social card.');

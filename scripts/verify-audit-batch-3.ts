@@ -53,3 +53,21 @@ for(const locale of ['en','ur'] as const) {
 }
 fs.writeFileSync(`outputs/audit-batch-3/${family}-similarity.json`,JSON.stringify(reports,null,2));
 console.log(`${family}: ${affected.length} routes × EN/UR, shared static/runtime notes; max word-trigram Jaccard ${Math.max(...reports.map(r=>r.jaccard_3gram)).toFixed(3)} < .90.`);
+
+if(process.argv.includes('--all-pairs')) {
+  const allReports:any[]=[];
+  for(const locale of ['en','ur']) {
+    const documents=Object.entries(toolRouteStudies).flatMap(([name,entries])=>Object.keys(entries).map(slug=>({
+      path:`${locale==='ur'?'/ur':''}/tools/${name}/${slug}/`,
+      grams:trigrams(text(parse(fs.readFileSync(`outputs/audit-batch-3/${name}-${slug}-${locale}.html`,'utf8')))),
+    })));
+    assert.equal(documents.length,19);
+    for(let i=0;i<documents.length;i++) for(let j=i+1;j<documents.length;j++) {
+      const a=documents[i],b=documents[j],score=similarity(a.grams,b.grams);
+      allReports.push({locale,a:a.path,b:b.path,jaccard_3gram:score});
+      assert.ok(score<.90,`Cross-family similarity: ${a.path} / ${b.path}: ${score}`);
+    }
+  }
+  fs.writeFileSync('outputs/audit-batch-3/all-pairs.json',JSON.stringify(allReports,null,2));
+  console.log(`All 19 routes, EN/UR: ${allReports.length} pairs; maximum ${Math.max(...allReports.map(r=>r.jaccard_3gram)).toFixed(3)} < .90.`);
+}

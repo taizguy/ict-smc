@@ -44,3 +44,19 @@ The six names select a study focus, not six different strategy engines. Each now
 | breaker-reversal | Original block, defined failure, subsequent retest and all missing/invalid outcomes retained | Preserve |
 
 Targeted EN/UR shared-note checks pass; maximum complete-document word-trigram Jaccard 0.335. TypeScript runs per family. The interactive engine, ledger rules and data storage are unchanged. Files: `src/data/backtestRouteStudies.ts`, registry `toolRouteStudies.ts`, `src/components/BacktestLab.tsx`, `scripts/tools-content.ts`, review/progress docs.
+
+## Simulator — completed locally
+
+| Route suffix | Distinct decision study | Decision |
+| --- | --- | --- |
+| ict-2022-model | Waiting versus chasing, no-fill versus a paper win, prior knowledge on replay | Preserve |
+| failed-ob-breaker | Define failure before retest; invented short-risk arithmetic; explicitly disclose that the desk still uses gap-based conditions | Preserve |
+| ote-expansion-long | Freeze swing anchors before the retracement; distinguish theoretical ratio from setup qualification and tick rounding | Preserve |
+
+Targeted EN/UR checks pass; maximum complete-document word-trigram Jaccard 0.344. The execution engine, order rules and stored attempts are unchanged. Files: `src/data/simulatorRouteStudies.ts`, registry `toolRouteStudies.ts`, `src/components/TradeSimulator.tsx`, targeted scanner cross-family mode, review/progress docs.
+
+## Family completion and limits
+
+All 19 paths have instructions, a labeled invented worked example, assumptions and limitations in both languages. Shared notes are present in runtime components and generated reading content. The final targeted run checks 342 within- and cross-family EN/UR pairs; none reaches 0.90 (maximum 0.574). The scanner documents word-trigram Jaccard explicitly. TypeScript passed for every family. No full build/suite/crawl was run during Batch 3. Its generated production integration will be verified in Batch 6, not implied by targeted component rendering.
+
+No consolidation is performed or proposed as necessary in this pass: the URLs now have distinct study purposes. The shared interactive cases remain a product limitation, prominently disclosed in the notes. Genuinely different named replays would require a separate product task. All Urdu pairs are directly reviewable beside English in the four `src/data/*RouteStudies.ts` files. No keyword/meta-keyword edits, FAQ schema work, date stamping, URL deletion, redirects, push, merge or deployment.

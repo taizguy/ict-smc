@@ -1,4 +1,7 @@
 import searchDescriptions from '../src/data/searchDescriptions.json';
+import audit4Priority from '../src/data/audit4Descriptions.json';
+import audit4Numbered from '../src/data/audit4NumberedDescriptions.json';
+import audit4Lectures from '../src/data/audit4LectureDescriptions.json';
 import mentorship2026Urdu from '../src/i18n/mentorship2026-urdu.json';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -9,6 +12,7 @@ import { editorialUrdu } from '../src/i18n/editorial-urdu';
 import { toolsUrdu } from '../src/i18n/tools-urdu';
 import { terminology } from '../src/i18n/terminology';
 import learningUpdate from '../src/i18n/learning-update-urdu.json';
+import { splitUrduLessons } from './split-urdu-lessons';
 
 // Keep the complete editorial catalog for HTML generation, but send visitors only
 // interface/search labels and the long copy belonging to their current section.
@@ -16,14 +20,16 @@ type Group = 'shared' | 'chapters' | 'masood' | 'articles' | 'tools' | 'publishe
 const groups: Group[] = ['shared', 'chapters', 'masood', 'articles', 'tools', 'publisher'];
 const keys = Object.fromEntries(groups.map(group => [group, new Set<string>()])) as Record<Group, Set<string>>;
 const searchKeys = new Set<string>();
+const chapterUiKeys = new Set<string>();
 const searchableFields = new Set(['title', 'name', 'subtitle', 'shortTitle', 'excerpt', 'description', 'shortDefinition', 'summary', 'quote', 'term', 'categoryLabel']);
 const normalize = (text: string) => text.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&rarr;/g, '→').replace(/&larr;/g, '←').replace(/\s+/g, ' ').trim();
 function groupFor(file: string): Group {
+  if (/RouteStud(?:y|ies)/.test(file)) return 'tools';
   if (/articles/.test(file)) return 'articles';
   if (/data\/chapters|DeliveryLesson|Mentorship2025|Mentorship2026|Chapters|ChapterRoom|cornerstoneGuides|CornerstoneGuide|fvgLesson|FvgLessonDiagram|fvgStory|FvgStory|chapterStories|ChapterStory/.test(file)) return 'chapters';
   if (/masood/i.test(file)) return 'masood';
   if (/Legal|publisherPageCopy/.test(file)) return 'publisher';
-  if (/data\/(?:workbenchCatalog|learningCases|labGuides|concepts|masterclass|comparisons|quizzes|chartScenarios|theinnercircletraders)|(?:GuidedMarketDesk|MarketWorkspace|MarketChart|ChartLab|CompareView|ConceptExplorer|Masterclass|MasteryDashboard|InstitutionalTools|KnowledgeGraph|BacktestLab|TradeSimulator|TradingJournal|TradingTools)/.test(file)) return 'tools';
+  if (/data\/(?:deliverySuiteReading|workbenchCatalog|learningCases|labGuides|concepts|masterclass|comparisons|quizzes|chartScenarios|theinnercircletraders)|(?:StudyReadingNotes|DeliveryReferenceNotes|GuidedMarketDesk|MarketWorkspace|MarketChart|ChartLab|CompareView|ConceptExplorer|Masterclass|MasteryDashboard|InstitutionalTools|KnowledgeGraph|BacktestLab|TradeSimulator|TradingJournal|TradingTools)/.test(file)) return 'tools';
   return 'shared';
 }
 function add(text: string, group: Group) {
@@ -51,6 +57,9 @@ function walk(folder: string) {
     function visit(node: ts.Node) {
       if (ts.isJsxText(node) || ts.isStringLiteralLike(node)) {
         add(node.text, group);
+        if(file.startsWith('src/components/')) {
+          for(const candidate of [node.text,...lessonParagraphs(node.text)]) chapterUiKeys.add(normalize(candidate));
+        }
         const parent = ts.isArrayLiteralExpression(node.parent) ? node.parent.parent : node.parent;
         if (ts.isStringLiteralLike(node) && ts.isPropertyAssignment(parent) && searchableFields.has(parent.name.getText(source).replace(/^['"]|['"]$/g, ''))) searchKeys.add(normalize(node.text));
       }
@@ -61,6 +70,9 @@ function walk(folder: string) {
   }
 }
 walk('src');
+for (const [pathname,pair] of Object.entries({...audit4Priority,...audit4Numbered,...audit4Lectures})) {
+  add(pair.en,pathname.startsWith('/masood/')?'masood':pathname.startsWith('/tools/')?'tools':'chapters');
+}
 // These derived descriptions must resolve identically in static and client metadata.
 for (const path of ['/tools/masterclass/pd-arrays/rejection-block/', '/tools/masterclass/pd-arrays/hangman-pd-array/'] as const) add(searchDescriptions[path].en, 'tools');
 // Search spans the whole library; titles and result descriptions must be available everywhere.
@@ -76,3 +88,4 @@ for (const group of groups) {
   fs.writeFileSync(path.join(output, `${group}.json`), JSON.stringify(catalog) + '\n');
   console.log(`Urdu ${group}: ${Object.keys(catalog).length} entries / ${Math.round(Buffer.byteLength(JSON.stringify(catalog)) / 1024)} KB`);
 }
+splitUrduLessons(output,chapterUiKeys);

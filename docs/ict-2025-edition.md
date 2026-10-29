@@ -118,3 +118,6 @@ The map is an editorial destination, not a claim that every rule in that recordi
 
 
 The subsequent historical replay revision is documented in [ict-2025-replays.md](ict-2025-replays.md). It supersedes the original abstract illustration widgets.
+
+
+FAQ status correction: Google retired FAQ rich results on 7 May 2026 ([official changelog](https://developers.google.com/search/updates?hl=en)). Existing visible FAQs and their markup remain; they do not provide eligibility for the retired Search feature.

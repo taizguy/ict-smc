@@ -1,0 +1,1463 @@
+{
+  "/masood/lectures/masood-beg-1/": {
+    "id": "masood-beg-1",
+    "preservedPrefix": "Study TradingView Setup for ICT & SMC Study.",
+    "sourceTitle": "LEC 1: What is TradingView? How to Use it for Free for SMC & ICT Trading",
+    "sourceSummary": "Comprehensive tutorial on setting up TradingView for Smart Money Concepts and ICT analysis without needing expensive subscriptions.",
+    "coreRules": [
+      "Chart Background must be clean and distraction-free (neutral dark or warm off-white).",
+      "Always set timezone to New York (EDT/EST) because institutional algorithms operate on New York exchange time.",
+      "Save layout templates for Daily, 15-Minute, and 1-Minute charts."
+    ],
+    "takeaway": "Set up chart layouts and a New York timezone reference.",
+    "urduTakeaway": "چارٹ کی ترتیب اور نیویارک ٹائم زون کا حوالہ مقرر کریں۔"
+  },
+  "/masood/lectures/masood-beg-2/": {
+    "id": "masood-beg-2",
+    "preservedPrefix": "Study Long, Short, Market, Limit & Stop Orders.",
+    "sourceTitle": "LEC 2: What is Buy/Long & Sell Short in Trading? Complete Order Execution Guide",
+    "sourceSummary": "Mastering the operational mechanics of going Long (buying low to sell high) vs. Short (selling high to buy low), and when to use Market vs. Limit vs. Stop orders.",
+    "coreRules": [
+      "Never use Market Orders to chase fast-moving green or red candles.",
+      "Every single trade MUST have a predetermined Stop Loss placed before order execution.",
+      "Stop Loss must be anchored to institutional market structure invalidation points, never to an arbitrary dollar amount."
+    ],
+    "takeaway": "Distinguish a long position from a short sale and order types.",
+    "urduTakeaway": "لانگ پوزیشن، شارٹ سیل اور آرڈر کی قسموں کا فرق سمجھیں۔"
+  },
+  "/masood/lectures/masood-beg-3/": {
+    "id": "masood-beg-3",
+    "preservedPrefix": "Study Candlesticks: OHLC, Bodies & Wicks.",
+    "sourceTitle": "LEC 3: What are Trading Candlesticks? Anatomy, OHLC & Buying/Selling Pressure",
+    "sourceSummary": "Deconstructing the candlestick: Open, High, Low, Close (OHLC), the institutional truth behind candle bodies vs. wicks, and how to read displacement.",
+    "coreRules": [
+      "A Market Structure Shift (MSS) or Break of Structure (BOS) is ONLY confirmed if the candle BODY closes beyond the swing level—a wick is just a liquidity sweep.",
+      "Observe where the candle body closes relative to its total range (top 20% = extreme bullishness; bottom 20% = extreme bearishness).",
+      "Small, alternating red/green candles signal consolidation; long directional candle bodies signal algorithmic delivery."
+    ],
+    "takeaway": "Read a candle's open, high, low, close, body and wicks.",
+    "urduTakeaway": "کینڈل کا اوپن، ہائی، لو، کلوز، باڈی اور وِکس پڑھیں۔"
+  },
+  "/masood/lectures/masood-beg-4/": {
+    "id": "masood-beg-4",
+    "preservedPrefix": "Study Using an Economic Calendar.",
+    "sourceTitle": "LEC 4: What is an Economic Calendar in Trading? Navigating Red Folders & High-Impact Events",
+    "sourceSummary": "Mastering the economic calendar (ForexFactory / Investing.com), decoding high-impact news releases, and protecting your capital from news volatility traps.",
+    "coreRules": [
+      "Check the economic calendar every single morning at 07:00 AM NY time before opening any charts.",
+      "Abdullah Golden Rule: Never be in an active position 5 minutes before or 5 minutes after a Red Folder release.",
+      "Let the news candle sweep liquidity, create displacement, leave a clean Fair Value Gap, and trade the subsequent retest."
+    ],
+    "takeaway": "Locate high-impact economic releases on the calendar.",
+    "urduTakeaway": "کیلنڈر میں اہم معاشی اعلانات کے اوقات پہچانیں۔"
+  },
+  "/masood/lectures/masood-beg-5/": {
+    "id": "masood-beg-5",
+    "preservedPrefix": "Study Choosing a Trading Timeframe.",
+    "sourceTitle": "LEC 5: What is Trading Timeframe? Top-Down Multi-Timeframe Alignment & Fractality",
+    "sourceSummary": "Understanding the fractal nature of markets and building a systematic top-down routine from Monthly and Daily bias down to 5-minute and 1-minute entries.",
+    "coreRules": [
+      "Always mark your key liquidity levels (Previous Day High/Low, Weekly High/Low) on the Daily chart before dropping to lower timeframes.",
+      "Only take 1-minute or 5-minute buy setups when the higher timeframe is seeking Buy-Side Liquidity (and vice versa for sells).",
+      "When higher timeframe and lower timeframe disagree, Higher Timeframe ALWAYS wins."
+    ],
+    "takeaway": "Separate higher-timeframe context from lower-timeframe execution.",
+    "urduTakeaway": "بڑے ٹائم فریم کے سیاق کو چھوٹے ٹائم فریم کی ایگزیکیوشن سے الگ کریں۔"
+  },
+  "/masood/lectures/masood-beg-6/": {
+    "id": "masood-beg-6",
+    "preservedPrefix": "Study Trading Sessions: London & New York.",
+    "sourceTitle": "LEC 6: Master Trading Sessions: Forex, Stock Market, Crypto & ICT Killzones",
+    "sourceSummary": "The 24-hour algorithmic cycle: Asian Accumulation, London Manipulation (Judas Swing), New York AM Trend Expansion, Midday Graveyard, and New York PM Run.",
+    "coreRules": [
+      "Trade only during established Killzone hours; shut down your terminal outside of institutional sessions.",
+      "Mark the Asian High and Asian Low at 00:00 NY time every single trading day.",
+      "In a bullish day, London or New York AM will sweep the Asian Low (Judas Swing) before launching the true expansion."
+    ],
+    "takeaway": "Compare trading-session hours with ICT killzone references.",
+    "urduTakeaway": "ٹریڈنگ سیشن کے اوقات اور ICT کِل زون حوالوں کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-beg-7/": {
+    "id": "masood-beg-7",
+    "preservedPrefix": "Study Swing Highs & Swing Lows.",
+    "sourceTitle": "LEC 7: What is Swing High & Swing Low? Fractal Structure, BOS & Market Structure Shifts",
+    "sourceSummary": "The exact mechanical definition of institutional swing highs and lows, identifying genuine structural breaks vs. liquidity sweeps, and avoiding fakeouts.",
+    "coreRules": [
+      "Never eyeball random highs and lows; enforce the strict 3-candle rule.",
+      "An MSS requires aggressive candle displacement with an associated Fair Value Gap.",
+      "If price breaks a swing high with a wick only and instantly closes back below, it is a Liquidity Sweep, NOT a structure break!"
+    ],
+    "takeaway": "Distinguish a wick beyond a swing from a closing-price break.",
+    "urduTakeaway": "سوئنگ سے باہر وِک اور بند قیمت کے بریک کا فرق سمجھیں۔"
+  },
+  "/masood/lectures/masood-beg-8/": {
+    "id": "masood-beg-8",
+    "preservedPrefix": "Study Forex Pips vs. Futures Points.",
+    "sourceTitle": "LEC 8: What are Pips in Forex vs. Handles/Points in the Stock Market? Quantifying Risk & Rewards",
+    "sourceSummary": "Demystifying pip calculations in currency markets and point/handle measurements in index futures (US100 / NQ, US500 / ES, US30 / Dow).",
+    "coreRules": [
+      "Always calculate your position size based on point distance to stop loss, not arbitrary contract counts.",
+      "Risk strictly 0.5% to 1.0% of your account equity per trade.",
+      "If your stop loss on NQ is 20 points, on 1 Micro contract (MNQ) your risk is exactly $40. Size your contracts accordingly."
+    ],
+    "takeaway": "Compare forex pips with index points when measuring distance.",
+    "urduTakeaway": "فاصلہ ناپتے وقت فاریکس پِپس اور انڈیکس پوائنٹس کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-adv-1/": {
+    "id": "masood-adv-1",
+    "preservedPrefix": "Study US Stock Market: Structure & Sessions.",
+    "sourceTitle": "LEC 1: Why I Trade US Stock Market (US100/NQ/ES) Instead of Forex or Crypto",
+    "sourceSummary": "The institutional reasons why US Stock Indices offer cleaner algorithmic quotation, regulated exchange transparency (CME), and superior technical respect compared to decentralized Forex and unregulated Crypto.",
+    "coreRules": [
+      "Focus your study on 1 or 2 key index assets (e.g. US100 and US500) rather than scanning 30 random forex pairs.",
+      "Use official futures data feeds (NQ1! or ES1!) on TradingView for accurate volume and gap analysis.",
+      "Respect the opening cash bell at 09:30 AM EST as the start of genuine institutional quotation."
+    ],
+    "takeaway": "Compare US index markets with forex and cryptocurrency venues.",
+    "urduTakeaway": "امریکی انڈیکس مارکیٹوں کا فاریکس اور کرپٹو کے پلیٹ فارمز سے تقابل کریں۔"
+  },
+  "/masood/lectures/masood-adv-2/": {
+    "id": "masood-adv-2",
+    "preservedPrefix": "Study Daily Candle Bias: Reviewing Accuracy Claims.",
+    "sourceTitle": "LEC 2: How I Predicted the Daily Candle with 100% Accuracy: The 4 Daily Phases",
+    "sourceSummary": "Decoding the institutional Daily Candle profile: Open, Judas Swing Low/High, Expansion Run, and Cash Close using the ICT Power of 3 (PO3) algorithm.",
+    "coreRules": [
+      "If your daily bias is Bullish, NEVER buy above the Midnight or 08:30 open—wait for the Judas swing dip into Discount.",
+      "If your daily bias is Bearish, NEVER sell below the open—wait for the Judas swing rally into Premium.",
+      "Look for the Low of the Day to form between 02:00 AM (London) and 09:45 AM (New York Cash Open)."
+    ],
+    "takeaway": "Review the proposed bearish daily candle's open, high and close.",
+    "urduTakeaway": "مجوزہ مندی کی روزانہ کینڈل کے اوپن، ہائی اور کلوز کا جائزہ لیں۔"
+  },
+  "/masood/lectures/masood-adv-3/": {
+    "id": "masood-adv-3",
+    "preservedPrefix": "Study A Trading Study Roadmap.",
+    "sourceTitle": "LEC 3: Full Trading Roadmap: Moving from Confused Beginner to Consistent Trader",
+    "sourceSummary": "The three progressive pillars of trader mastery: Technical Literacy -> Risk Capital Preservation -> Psychological Detachment & Mechanical Execution.",
+    "coreRules": [
+      "Max 2 losses per day: if you lose 2 trades, shut down your platform until tomorrow.",
+      "Risk strictly 1% per setup; never increase position size after a loss.",
+      "Backtest any model on at least 100 historical setups before putting real capital at risk."
+    ],
+    "takeaway": "Examine over-leveraging, strategy switching and revenge trading.",
+    "urduTakeaway": "زیادہ لیوریج، بار بار حکمت عملی بدلنے اور انتقامی ٹریڈنگ کو سمجھیں۔"
+  },
+  "/masood/lectures/masood-adv-4/": {
+    "id": "masood-adv-4",
+    "preservedPrefix": "Study Consolidation After Large Price Moves.",
+    "sourceTitle": "LEC 4: Never Trade After Big Moves! What is Consolidation in Trading? The Expansion-Consolidation Cycle",
+    "sourceSummary": "Why huge 200+ point trend days are almost always followed by choppy, non-directional consolidation, and how to protect your profits from the inevitable post-expansion trap.",
+    "coreRules": [
+      "If yesterday was a massive 200+ point expansion day, expect today to be a consolidation day.",
+      "On expected consolidation days, either take the day completely off or cut your normal position size by 75% and target small 10-15 point scalps.",
+      "Wait for price to break out of the consolidation range and displace before seeking trend continuations."
+    ],
+    "takeaway": "Contrast a large expansion day with later consolidation.",
+    "urduTakeaway": "بڑی توسیع والے دن اور بعد کی کنسولیڈیشن کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-adv-5/": {
+    "id": "masood-adv-5",
+    "preservedPrefix": "Study Market Bias & Conditional Scenarios.",
+    "sourceTitle": "LEC 5: How I Predict the Market? Average Daily Range (ADR) & Inside Day Profiling",
+    "sourceSummary": "Calculating 5-day and 20-day Average Daily Range (ADR) to identify market exhaustion points and predicting explosive expansion from Inside Day setups.",
+    "coreRules": [
+      "Always know today’s 5-day ADR before trading.",
+      "When current daily range reaches 90%–110% of ADR, cease entering new trend-continuation trades and look to take profit.",
+      "When an Inside Day prints, mark its high and low as prime breakout liquidity targets for the subsequent session."
+    ],
+    "takeaway": "Measure average daily range using high-to-low distances.",
+    "urduTakeaway": "ہائی سے لو تک فاصلے سے اوسط روزانہ رینج ناپیں۔"
+  },
+  "/masood/lectures/masood-adv-6/": {
+    "id": "masood-adv-6",
+    "preservedPrefix": "Study Support, Resistance & Liquidity.",
+    "sourceTitle": "LEC 6: Why Retail Support and Resistance Fails: Algorithmic Market Makers Explained",
+    "sourceSummary": "Exposing the retail myth of support and resistance lines, how institutional algorithms engineer double tops and bottoms, and why liquidity resting above resistance is the real target.",
+    "coreRules": [
+      "Never place your stop loss right below an obvious retail support level or double bottom.",
+      "When you see a clean \"triple top\" or \"double bottom,\" do not trade the bounce—anticipate the SWEEP of that level.",
+      "Wait for price to aggressively puncture the support/resistance level, absorb the stops, and show displacement in the opposite direction before entering."
+    ],
+    "takeaway": "Compare a level excursion with opposite-direction displacement.",
+    "urduTakeaway": "کسی سطح سے باہر حرکت کا مخالف سمت کی ڈسپلیسمنٹ سے تقابل کریں۔"
+  },
+  "/masood/lectures/masood-adv-7/": {
+    "id": "masood-adv-7",
+    "preservedPrefix": "Study Supply, Demand & Order Block Definitions.",
+    "sourceTitle": "LEC 7: Why Supply/Demand & Retail Order Blocks Don’t Work? Algorithmic Truths",
+    "sourceSummary": "The critical distinctions between retail supply/demand boxes and true institutional Order Blocks validated by displacement and Fair Value Gaps.",
+    "coreRules": [
+      "An Order Block without an associated Fair Value Gap is INVALID.",
+      "Order Blocks are only valid for ONE clean retest (first mitigation); subsequent touches have exponentially lower win rates.",
+      "Candle bodies must respect the Mean Threshold (50%) of the Order Block—if a candle body closes through the 50% line, the Order Block is invalidated."
+    ],
+    "takeaway": "Question how supply-demand boxes and order-block references are chosen.",
+    "urduTakeaway": "سپلائی ڈیمانڈ باکس اور آرڈر بلاک کے حوالے منتخب کرنے کا طریقہ پرکھیں۔"
+  },
+  "/masood/lectures/masood-adv-8/": {
+    "id": "masood-adv-8",
+    "preservedPrefix": "Study FOMC Event Risk & Trading Scenarios.",
+    "sourceTitle": "LEC 8: FOMC News Trading Strategy: How to Predict the FOMC with 100% Accuracy (Parts 1, 2, 3)",
+    "sourceSummary": "The definitive 3-phase institutional roadmap for trading Federal Reserve FOMC interest rate announcements and Chairman Jerome Powell press conferences.",
+    "coreRules": [
+      "Remain 100% flat at 13:55 EST before the 14:00 rate release.",
+      "Do not touch your mouse between 14:00 and 14:15 EST; let the algorithm sweep both sides.",
+      "At 14:30 EST, identify the 5-minute Market Structure Shift and enter on the first clean FVG retest in alignment with the Daily Bias."
+    ],
+    "takeaway": "Follow the lecture's three-part FOMC-session framework.",
+    "urduTakeaway": "لیکچر کے تین حصوں والے FOMC سیشن فریم ورک کی ترتیب پڑھیں۔"
+  },
+  "/masood/lectures/masood-adv-10/": {
+    "id": "masood-adv-10",
+    "preservedPrefix": "Study One-Minute Candle Analysis: A Case Study.",
+    "sourceTitle": "LEC 10: I Predicted Every 1-Minute Candle Live! Learn How to Use Algorithm in Trading",
+    "sourceSummary": "Reading the 1-minute tape in real time: tracking candle body closures, observing liquidity delivery from fair value gaps, and executing with surgical precision.",
+    "coreRules": [
+      "Only trade 1-minute candles during high-volume macro windows (09:50-10:10 AM, 10:50-11:10 AM EST).",
+      "Enter on the 1-minute FVG retest immediately after a 1-minute displacement candle closes.",
+      "If a 1-minute candle body closes through your entry FVG, exit immediately—do not wait for full stop loss."
+    ],
+    "takeaway": "Relate one-minute chart observations to the selected macro window.",
+    "urduTakeaway": "ایک منٹ کے چارٹ کے مشاہدات کو منتخب میکرو ونڈو سے ملائیں۔"
+  },
+  "/masood/lectures/masood-adv-11/": {
+    "id": "masood-adv-11",
+    "preservedPrefix": "Study Algorithmic Trading: ICT Study Notes.",
+    "sourceTitle": "LEC 11: Algorithmic Trading Course: Everything You Need to Know About IPDA",
+    "sourceSummary": "Comprehensive deep dive into the Interbank Price Delivery Algorithm (IPDA): the deterministic mathematics of modern institutional price quotation.",
+    "coreRules": [
+      "Always identify whether the market is currently in a state of Seeking Liquidity or Seeking Rebalancing.",
+      "Price moves from Discount to Premium, and from Premium to Discount.",
+      "Never fight the algorithmic delivery cycle: trade only in the direction of the dominant Draw on Liquidity."
+    ],
+    "takeaway": "Review IPDA terminology and the proposed draw on liquidity.",
+    "urduTakeaway": "IPDA کی اصطلاحات اور مجوزہ ڈرا آن لیکویڈیٹی کا جائزہ لیں۔"
+  },
+  "/masood/lectures/masood-adv-12/": {
+    "id": "masood-adv-12",
+    "preservedPrefix": "Study Seek-and-Destroy Session Profiles.",
+    "sourceTitle": "LEC 12: ICT “Seek and Destroy Profile” Live Prediction and Explanation",
+    "sourceSummary": "Recognizing and avoiding the most lethal retail market maker profile: the Seek & Destroy condition where both highs and lows are ruthlessly swept without directional follow-through.",
+    "coreRules": [
+      "If the market sweeps the Asian High, then sweeps the Asian Low, and immediately reverses back into the middle of the range, declare SEEK AND DESTROY.",
+      "In Seek and Destroy conditions, close your charts immediately—do not attempt to scalp.",
+      "Wait for the following trading day when normal directional delivery resumes."
+    ],
+    "takeaway": "Trace successive moves beyond both sides of a range.",
+    "urduTakeaway": "رینج کے دونوں طرف یکے بعد دیگرے حد پار کرنے والی حرکتیں دیکھیں۔"
+  },
+  "/masood/lectures/masood-adv-13/": {
+    "id": "masood-adv-13",
+    "preservedPrefix": "Study US100 Execution: Reviewing Accuracy Claims.",
+    "sourceTitle": "LEC 13: Live Trading US100 with 100% Accuracy: Complete Execution Breakdown",
+    "sourceSummary": "Real-time live execution breakdown on NASDAQ (US100): pre-market level marking, waiting for the 09:30 cash open sweep, entering at the 1M FVG, and executing partial profits.",
+    "coreRules": [
+      "Never enter during the first 2 minutes of the 09:30 open (the 09:30:00 to 09:32:00 candle is pure whip).",
+      "First take-profit target is 50% of the position at 1:2 Risk-to-Reward, move stop to breakeven.",
+      "Let the remaining 50% runner ride to the Higher Timeframe Draw on Liquidity."
+    ],
+    "takeaway": "Identify the displacement candle and its associated FVG reference.",
+    "urduTakeaway": "ڈسپلیسمنٹ کینڈل اور اس سے متعلق FVG کا حوالہ پہچانیں۔"
+  },
+  "/masood/lectures/masood-adv-14/": {
+    "id": "masood-adv-14",
+    "preservedPrefix": "Study ICT Daily Bias: Chart Study.",
+    "sourceTitle": "LEC 14: ICT Daily Bias Trading Strategy: Complete Course (Part 1)",
+    "sourceSummary": "The systematic, objective framework for determining the correct Daily Bias before the market opens: the 3-step filter of HTF Draw, Liquidity Sweeps, and Session Alignment.",
+    "coreRules": [
+      "If the Daily chart is expanding toward Buy-Side Liquidity, your bias is strictly BULLISH—prohibit all short trades.",
+      "If the Daily chart is expanding toward Sell-Side Liquidity, your bias is strictly BEARISH—prohibit all long trades.",
+      "If the higher timeframe is trapped in the middle of a consolidation range without a clear draw, your bias is NEUTRAL—stand aside."
+    ],
+    "takeaway": "Compare the daily liquidity objective with the chosen directional bias.",
+    "urduTakeaway": "روزانہ لیکویڈیٹی کے مقصد اور منتخب بائس کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-adv-15/": {
+    "id": "masood-adv-15",
+    "preservedPrefix": "Study High-Resistance Liquidity Run Study.",
+    "sourceTitle": "LEC 15: How to Trade ICT High Resistance Liquidity Run (HRLR) vs Low Resistance Liquidity Run (LRLR)",
+    "sourceSummary": "Differentiating between Low Resistance Liquidity Runs (explosive, one-way trending days) and High Resistance Liquidity Runs (choppy, difficult grinding days) to protect capital.",
+    "coreRules": [
+      "LRLR = Full position size (1% risk), wide targets, hold runners.",
+      "HRLR = 0.25% risk, take quick 10-15 point scalps, or do not trade at all.",
+      "Look for LRLR conditions immediately following a major HTF liquidity sweep and displacement."
+    ],
+    "takeaway": "Compare opposing PD arrays along high- and low-resistance paths.",
+    "urduTakeaway": "زیادہ اور کم مزاحمت والے راستوں میں مخالف PD اَریز کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-adv-16/": {
+    "id": "masood-adv-16",
+    "preservedPrefix": "Study Trading Losses & Process Review.",
+    "sourceTitle": "LEC 16: How to Avoid LOSSES in Trading? ICT Seek and Destroy Profile & Smart Money Traps",
+    "sourceSummary": "Tactical survival manual: identifying the early-warning signatures of a chop day within the first 20 minutes of the session and executing capital protection protocols.",
+    "coreRules": [
+      "Never trade more than 2 setups in a single session.",
+      "If your first trade gets stopped out in chop, step back and re-evaluate whether the market is in Seek & Destroy.",
+      "A zero-trade day is a WINNING day when the market is distributing losses to retail."
+    ],
+    "takeaway": "Reassess a stopped trade when the session becomes two-sided.",
+    "urduTakeaway": "دو طرفہ سیشن میں اسٹاپ لگنے کے بعد ٹریڈ کے مفروضے پر دوبارہ غور کریں۔"
+  },
+  "/masood/lectures/masood-adv-17/": {
+    "id": "masood-adv-17",
+    "preservedPrefix": "Study Prediction Claims & Chart Evidence.",
+    "sourceTitle": "LEC 17: Learn How I Predicted the Seek-and-Destroy Day Live with 100% Accuracy",
+    "sourceSummary": "Live case study dissecting how Abdullah Masood warned his community ahead of time about an impending Seek & Destroy day, saving students thousands in capital.",
+    "coreRules": [
+      "Examine the Daily chart for multi-day compression inside an old range.",
+      "Check if tomorrow has a Tier-1 economic release (NFP, CPI, FOMC).",
+      "If compression + imminent news align, expect Seek & Destroy and preserve capital."
+    ],
+    "takeaway": "Review compression and imminent news as session-context observations.",
+    "urduTakeaway": "کم ہوتی رینج اور قریب آنے والی خبر کو سیشن کے سیاق میں دیکھیں۔"
+  },
+  "/masood/lectures/masood-adv-19/": {
+    "id": "masood-adv-19",
+    "preservedPrefix": "Study ICT & SMC Daily Bias: Full Study Guide.",
+    "sourceTitle": "LEC 19: ICT SMC Daily Bias Trading Strategy Full Course (Part 2)",
+    "sourceSummary": "Advanced daily bias mechanics: timing the session transitions, validating candle body closures, and identifying bias invalidation levels.",
+    "coreRules": [
+      "A Daily Bias is a working hypothesis that requires lower timeframe validation.",
+      "If key structural support closes with a full candle body, immediately abandon the bullish bias—do NOT hold and hope.",
+      "Re-assess bias at the 13:30 PM New York afternoon session open."
+    ],
+    "takeaway": "Check whether lower-timeframe candle bodies support the daily narrative.",
+    "urduTakeaway": "جانچیں کہ چھوٹے ٹائم فریم کی کینڈل باڈیز روزانہ تشریح کی تائید کرتی ہیں یا نہیں۔"
+  },
+  "/masood/lectures/masood-adv-20/": {
+    "id": "masood-adv-20",
+    "preservedPrefix": "Study ICT PD Array Matrix: Video Study Notes.",
+    "sourceTitle": "LEC 20: ICT P/D Array Matrix Live Teaching / Trading in Hindi / Urdu",
+    "sourceSummary": "Mastering the institutional Premium / Discount (P/D) Array hierarchy: Order Blocks, Fair Value Gaps, Breakers, and Mitigation Blocks mapped to the 50% Equilibrium rule.",
+    "coreRules": [
+      "Anchor your Fibonacci tool from the lowest swing low to the highest swing high of the current dealing range to find the 50% Equilibrium line.",
+      "Look for Long setups ONLY in Discount (below 50%) at a Bullish FVG or Bullish Order Block.",
+      "Look for Short setups ONLY in Premium (above 50%) at a Bearish FVG or Bearish Order Block."
+    ],
+    "takeaway": "Compare the lecture's ordering of highs, blocks and imbalances.",
+    "urduTakeaway": "لیکچر میں ہائی، بلاک اور عدم توازن کی دی گئی ترتیب کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-adv-21/": {
+    "id": "masood-adv-21",
+    "preservedPrefix": "Study ICT & SMC Strategy: Conditions & Limits.",
+    "sourceTitle": "LEC 21: ICT SMC Trading Strategy Full Course: The Complete Institutional Blueprint",
+    "sourceSummary": "Synthesizing the entire advanced curriculum into a unified, step-by-step mechanical trading strategy from pre-market analysis to trade execution and exit.",
+    "coreRules": [
+      "Checklist compliance must be 100% before order placement.",
+      "Risk strictly 1% per trade; maximum 2 trades per day.",
+      "Target the objective Draw on Liquidity; take partial profits at 1:2 R:R."
+    ],
+    "takeaway": "Review the same stated setup rules across repeated executions.",
+    "urduTakeaway": "بار بار ایگزیکیوشن میں اسی سیٹ اپ کی مقررہ شرطوں کا جائزہ لیں۔"
+  },
+  "/masood/lectures/masood-db-1/": {
+    "id": "masood-db-1",
+    "preservedPrefix": "Study Weekly & Daily Bias: ICT Study Notes.",
+    "sourceTitle": "LEC 1: Deep Dive Into ICT SMC Weekly / Daily Bias Part 3",
+    "sourceSummary": "Mastering the Weekly Candle Profile: how the weekly candle’s Open, Low, High, and Close shape individual daily bias from Monday through Friday.",
+    "coreRules": [
+      "On Monday, observe the initial weekly range establishment; do not force aggressive trades.",
+      "Look for the classic Tuesday Low of the Week sweep into a Weekly/Daily Bullish FVG.",
+      "Ride the Wednesday and Thursday expansion wave in the direction of the weekly trend."
+    ],
+    "takeaway": "Connect a weekly low reference with the higher-timeframe FVG.",
+    "urduTakeaway": "ہفتہ وار لو کے حوالے کو بڑے ٹائم فریم کے FVG سے ملائیں۔"
+  },
+  "/masood/lectures/masood-db-3/": {
+    "id": "masood-db-3",
+    "preservedPrefix": "Study Finding Daily Bias with ICT & SMC.",
+    "sourceTitle": "LEC 3: How to Find Daily Bias ICT/SMC: Live Analysis of US Stock Indices",
+    "sourceSummary": "Real-time multi-index bias synchronization: cross-examining US100 (NQ), US500 (ES), and US30 (Dow Jones) to identify leading vs. lagging market signatures.",
+    "coreRules": [
+      "Always have charts of US100, US500, and US30 open side-by-side during your pre-market routine.",
+      "Identify which index is leading (clearing levels first) and which is lagging.",
+      "Trade the strongest index for Long setups and the weakest index for Short setups."
+    ],
+    "takeaway": "Compare directional agreement across the selected US indices.",
+    "urduTakeaway": "منتخب امریکی انڈیکسوں میں سمت کی مطابقت کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-db-4/": {
+    "id": "masood-db-4",
+    "preservedPrefix": "Study FOMC-Day 2025: Daily Bias Study.",
+    "sourceTitle": "LEC 4: FOMC-Day 2025 ICT Daily Bias Mentorship",
+    "sourceSummary": "The updated 2025 institutional playbook for navigating FOMC rate decision days: pre-market freeze, 14:00 algorithmic trap, and 14:30 press conference execution.",
+    "coreRules": [
+      "Do not hold morning positions into the 12:00 PM session on FOMC days.",
+      "Zero execution between 13:50 and 14:15 EST.",
+      "Execute only at 14:30 EST following a verified 5-minute Market Structure Shift."
+    ],
+    "takeaway": "Separate the FOMC announcement from the later press-conference window.",
+    "urduTakeaway": "FOMC اعلان اور بعد کی پریس کانفرنس کے وقفے کو الگ دیکھیں۔"
+  },
+  "/masood/lectures/masood-db-5/": {
+    "id": "masood-db-5",
+    "preservedPrefix": "Study Daily Bias & Optimal Trade Entry (OTE).",
+    "sourceTitle": "LEC 5: ICT Optimal Trade Entry (OTE) for Daily Bias",
+    "sourceSummary": "Anchoring the Fibonacci Optimal Trade Entry (OTE) ratios (0.62, 0.705, 0.79) to frame sniper entries aligned with the Daily Bias.",
+    "coreRules": [
+      "OTE is ONLY valid if anchored across a true displacement swing that created a Market Structure Shift.",
+      "Place your limit order at 0.62 or 0.705; stop loss rests safely beyond the 1.0 anchor point.",
+      "Targets: Take profit 1 at 0.0 (old high), Take profit 2 at -0.272 extension, Take profit 3 at -0.618 extension."
+    ],
+    "takeaway": "Locate OTE retracement references within a daily-bias study.",
+    "urduTakeaway": "ڈیلی بائس کے مطالعے میں OTE ریٹریسمنٹ کے حوالے پہچانیں۔"
+  },
+  "/masood/lectures/masood-db-6/": {
+    "id": "masood-db-6",
+    "preservedPrefix": "Study Volume Imbalance & Seasonal Context.",
+    "sourceTitle": "LEC 6: ICT Volume Imbalance, Seasonal Tendencies & Daily Bias Shift",
+    "sourceSummary": "The subtle but powerful mechanics of Volume Imbalances (body-to-body gaps), seasonal institutional tendencies, and identifying when the daily bias formally shifts.",
+    "coreRules": [
+      "Mark every Volume Imbalance on your chart with a shaded box; treat it with the same respect as a Fair Value Gap.",
+      "When price retests a Volume Imbalance in the direction of bias, expect rapid, energetic rejection.",
+      "Do not anticipate a bias shift until the candle body officially closes through the swing extreme."
+    ],
+    "takeaway": "Review a volume-imbalance retest alongside the stated bias.",
+    "urduTakeaway": "والیوم اِمبیلنس کی دوبارہ جانچ کو متعین بائس کے ساتھ دیکھیں۔"
+  },
+  "/masood/lectures/masood-db-7/": {
+    "id": "masood-db-7",
+    "preservedPrefix": "Study IPDA Data Ranges: 20, 40 & 60 Days.",
+    "sourceTitle": "LEC 7: ICT IPDA Data Ranges (20, 40, 60 Day Lookback) & Liquidity Voids",
+    "sourceSummary": "How the Interbank Price Delivery Algorithm references historical 20, 40, and 60-day institutional lookback windows to find liquidity voids and key price targets.",
+    "coreRules": [
+      "Count back 20, 40, and 60 daily candles from the current day and mark the highest high and lowest low.",
+      "When price approaches a 20-day or 40-day high/low, anticipate major institutional profit-taking or reversal.",
+      "Liquidity voids must be filled before the market can establish sustainable new trends."
+    ],
+    "takeaway": "Mark the highs and lows of 20-, 40- and 60-day lookbacks.",
+    "urduTakeaway": "20، 40 اور 60 دن کے سابقہ ریکارڈ کے ہائی اور لو نشان زد کریں۔"
+  },
+  "/masood/lectures/masood-db-8/": {
+    "id": "masood-db-8",
+    "preservedPrefix": "Study Trading Bias: Building a Conditional View.",
+    "sourceTitle": "LEC 8: Algorithmic Trading Bias Complete Course: The Rule-Based Blueprint",
+    "sourceSummary": "Transforming subjective guesswork into a deterministic, algorithmic decision tree for daily bias determination before the morning cash open.",
+    "coreRules": [
+      "Execute trades ONLY when all 4 gates of the algorithmic filter are green.",
+      "If any gate is red or ambiguous, reduce risk or stay in cash.",
+      "Never trade on gut feeling, social media chatter, or hope."
+    ],
+    "takeaway": "Translate a discretionary bias into an explicit rule-based plan.",
+    "urduTakeaway": "صوابدیدی بائس کو واضح شرطوں والے منصوبے میں بدلیں۔"
+  },
+  "/masood/lectures/masood-db-9/": {
+    "id": "masood-db-9",
+    "preservedPrefix": "Study Trade Accuracy Claims: A Critical Review.",
+    "sourceTitle": "LEC 9: How to Trade with 100% Accuracy? ICT SMC Master Risk & Execution Guidelines",
+    "sourceSummary": "The institutional definition of \"100% Accuracy\": zero deviation from trading rules, complete emotional detachment, and disciplined risk execution.",
+    "coreRules": [
+      "Judge your performance by Rule Execution, NOT by dollar PnL at the end of the day.",
+      "Never risk more than 1% of account equity on any single trade setup.",
+      "Never take a trade without a mechanical entry trigger, defined stop, and objective target."
+    ],
+    "takeaway": "Review rule execution separately from the day's dollar result.",
+    "urduTakeaway": "شرطوں پر عمل کا جائزہ دن کے ڈالر نتیجے سے الگ لیں۔"
+  },
+  "/masood/lectures/masood-db-11/": {
+    "id": "masood-db-11",
+    "preservedPrefix": "Study Intermarket Relationships & Bias.",
+    "sourceTitle": "LEC 11: Intermarket Relationship: DXY vs US Indices vs EUR/USD",
+    "sourceSummary": "Using the US Dollar Index (DXY) as the ultimate macro compass: the inverse correlation between the Dollar, Equity Indices, and Foreign Currencies.",
+    "coreRules": [
+      "Always check the DXY 1H and Daily chart before taking any trade on US100 or EURUSD.",
+      "Do NOT buy US100 if DXY is bouncing off a Daily Bullish Order Block with aggressive upward displacement.",
+      "Align your trade: Long Equities / Long EURUSD when DXY is targeting Sell-Side Liquidity."
+    ],
+    "takeaway": "Compare DXY, US indices and EUR/USD in the same market context.",
+    "urduTakeaway": "ایک ہی مارکیٹ سیاق میں DXY، امریکی انڈیکس اور EUR/USD کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-db-12/": {
+    "id": "masood-db-12",
+    "preservedPrefix": "Study Algorithmic Price Delivery Continuum.",
+    "sourceTitle": "LEC 12: ICT Algorithmic Price Delivery Continuum: The Perpetual Market Loop",
+    "sourceSummary": "Understanding the perpetual 4-stage algorithmic cycle: Consolidation -> Expansion -> Retracement -> Reversal, and positioning yourself on the right stage of delivery.",
+    "coreRules": [
+      "Never buy during an Expansion—wait for the Retracement phase.",
+      "Enter on the Retracement into the 50% equilibrium discount of the expansion leg.",
+      "Exit your trade during the subsequent Expansion into resting Buy-Side Liquidity."
+    ],
+    "takeaway": "Distinguish consolidation, expansion, retracement and reversal phases.",
+    "urduTakeaway": "کنسولیڈیشن، توسیع، واپسی اور پلٹاؤ کے مراحل میں فرق کریں۔"
+  },
+  "/masood/lectures/masood-db-13/": {
+    "id": "masood-db-13",
+    "preservedPrefix": "Study Liquidity & Inefficiency: Bias Study.",
+    "sourceTitle": "LEC 13: Deep Dive Into ICT Liquidity & Inefficiency: BSL, SSL & Imbalances",
+    "sourceSummary": "Comprehensive forensic study of Buy-Side Liquidity (BSL), Sell-Side Liquidity (SSL), and market inefficiencies (FVGs): the dual engines of institutional order flow.",
+    "coreRules": [
+      "Always identify whether the nearest resting liquidity pool is BSL or SSL before looking for entries.",
+      "When BSL is swept, watch for displacement downward (reversal) or continuation into higher BSL pools.",
+      "Combine liquidity sweeps with Fair Value Gap inefficiencies for highest-probability setups."
+    ],
+    "takeaway": "Connect a liquidity sweep with the subsequent imbalance reference.",
+    "urduTakeaway": "لیکویڈیٹی سویپ کو بعد کے عدم توازن کے حوالے سے ملائیں۔"
+  },
+  "/masood/lectures/masood-db-14/": {
+    "id": "masood-db-14",
+    "preservedPrefix": "Study Lower-Timeframe Entry Conditions.",
+    "sourceTitle": "LEC 14: ICT Lower Timeframe Entry Technique With Daily Bias",
+    "sourceSummary": "The exact multi-timeframe stepping stone: transitioning from Daily Bias to 15-minute structural framing down to 5-minute/1-minute execution within New York macro windows.",
+    "coreRules": [
+      "Never execute a 1-minute trade without 15-minute displacement confirmation.",
+      "Entry must be inside an unmitigated FVG or at its 50% Consequent Encroachment.",
+      "Time of entry must align with an active New York AM Macro window."
+    ],
+    "takeaway": "Relate a lower-timeframe entry to its daily-bias context.",
+    "urduTakeaway": "چھوٹے ٹائم فریم کی انٹری کو ڈیلی بائس کے سیاق سے ملائیں۔"
+  },
+  "/masood/lectures/masood-db-15/": {
+    "id": "masood-db-15",
+    "preservedPrefix": "Study SMT Divergence: Smart Money Technique.",
+    "sourceTitle": "LEC 15: SMT Divergence: Smart Money Technique Masterclass",
+    "sourceSummary": "Unmasking institutional accumulation and distribution via intermarket correlation cracks between US100 (NASDAQ) and US500 (ES) or EURUSD and DXY.",
+    "coreRules": [
+      "Always compare US100 and US500 at key session liquidity sweeps (Asian High/Low, Previous Day High/Low).",
+      "When SMT Divergence appears at a key PD Array, trade in the direction of the non-sweeping asset (the stronger asset).",
+      "SMT Divergence on a 15-minute chart carries higher institutional validity than a 1-minute divergence."
+    ],
+    "takeaway": "Identify corresponding highs and lows used in SMT comparisons.",
+    "urduTakeaway": "SMT تقابل میں استعمال ہونے والے متعلقہ ہائی اور لو پہچانیں۔"
+  },
+  "/masood/lectures/masood-db-16/": {
+    "id": "masood-db-16",
+    "preservedPrefix": "Study Market Traps & Inducement.",
+    "sourceTitle": "LEC 16: Mastering Market Traps: Engineered Liquidity & Fake MSS",
+    "sourceSummary": "Exposing institutional trap mechanics: engineered retail inducement, fake market structure shifts, and turtle soups designed to liquidate early breakout traders.",
+    "coreRules": [
+      "Always wait for the candle to officially CLOSE before confirming an MSS.",
+      "If a swing level is broken by a wick only, treat it as a Liquidity Sweep (Turtle Soup) and look for a reversal.",
+      "Never enter on the first breakout of a tight consolidation range; wait for the fakeout sweep, then trade the real move."
+    ],
+    "takeaway": "Contrast a wick-only swing breach with a confirmed MSS reading.",
+    "urduTakeaway": "صرف وِک سے سوئنگ پار ہونے اور تصدیق شدہ MSS کی تشریح کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-db-17/": {
+    "id": "masood-db-17",
+    "preservedPrefix": "Study Tape Reading: Observations & Limits.",
+    "sourceTitle": "LEC 17: Master Tape Reading: Learn How to Read Order Flow (ICT MMXM)",
+    "sourceSummary": "Decoding Market Maker Models: the Market Maker Buy Model (MMBM) and Market Maker Sell Model (MMSM), tracking the curve from original consolidation to smart money reversal and distribution.",
+    "coreRules": [
+      "Identify the Original Consolidation level—this is the final profit target of the entire model.",
+      "Enter on the first re-accumulation/redistribution FVG after the Smart Money Reversal has formed.",
+      "Do not fight the curve: if the market is on the Buy-Side curve, only take long positions."
+    ],
+    "takeaway": "Follow the MMXM price path from origin through its reversal area.",
+    "urduTakeaway": "MMXM میں آغاز سے پلٹاؤ کے علاقے تک قیمت کا راستہ سمجھیں۔"
+  },
+  "/masood/lectures/masood-db-18/": {
+    "id": "masood-db-18",
+    "preservedPrefix": "Study Market Prediction Claims: Study Notes.",
+    "sourceTitle": "LEC 18: Learn How to Predict the Market with 100% Accuracy: Advanced Order Flow Confluence",
+    "sourceSummary": "Synthesizing time, price, and institutional order book imbalances into a predictive confluence engine that anticipates upcoming 15-minute and 1-hour candles.",
+    "coreRules": [
+      "Never execute based on Price alone (e.g. just because price hit an FVG) if Time is incorrect.",
+      "Never execute based on Time alone if Price has not reached a valid PD Array.",
+      "Only trade when Time, Price, and Narrative align simultaneously."
+    ],
+    "takeaway": "Observe quotation speed and displacement without treating them as certainty.",
+    "urduTakeaway": "قیمت بدلنے کی رفتار اور ڈسپلیسمنٹ دیکھیں؛ انہیں یقین کا ثبوت نہ سمجھیں۔"
+  },
+  "/masood/lectures/masood-db-19/": {
+    "id": "masood-db-19",
+    "preservedPrefix": "Study Tape Reading & Price Delivery.",
+    "sourceTitle": "LEC 19: Read the Tape Like Wall Street Traders: Real-Time Order Flow & Tape Reading Discipline",
+    "sourceSummary": "Wall Street institutional tape reading: decoding candlestick speed, displacement signatures, volume absorption, and recognizing when smart money steps on the gas.",
+    "coreRules": [
+      "In a healthy bullish tape, up-close candles have large bodies and small wicks; down-close candles are small, hesitant, and immediately bought up.",
+      "If price hits an FVG and prints 3 consecutive indecision candles, the tape is weakening—tighten stop or exit.",
+      "Follow the closing prices of candles rather than the high/low wicks."
+    ],
+    "takeaway": "Separate real-time tape observations from indicator-led interpretation.",
+    "urduTakeaway": "لائیو ٹیپ کے مشاہدات اور انڈیکیٹر پر مبنی تشریح میں فرق کریں۔"
+  },
+  "/masood/lectures/masood-db-20/": {
+    "id": "masood-db-20",
+    "preservedPrefix": "Study ICT Scout Sniper: Entry Conditions.",
+    "sourceTitle": "LEC 20: Learn ICT Scout Sniper Precision Trading: 100% Accuracy & Asymmetric Risk:Reward",
+    "sourceSummary": "The Scout Sniper protocol: executing with pinpoint accuracy, tight sub-10 point drawdowns, and scaling out at 1:3 to 1:10 asymmetric risk-to-reward ratios.",
+    "coreRules": [
+      "Max 1 or 2 high-conviction trades per day—no over-trading.",
+      "Stop loss must be placed right behind the invalidation candle (tight, defined risk).",
+      "Target must be an objective Higher Timeframe Draw on Liquidity."
+    ],
+    "takeaway": "Review the scout-sniper emphasis on waiting and a defined attempt.",
+    "urduTakeaway": "اسکاؤٹ اسنائپر انداز میں انتظار اور متعین کوشش کی اہمیت پڑھیں۔"
+  },
+  "/masood/lectures/masood-db-fomc-special/": {
+    "id": "masood-db-fomc-special",
+    "preservedPrefix": "Study FOMC Risk & Daily Bias: Bonus Study.",
+    "sourceTitle": "Bonus Masterclass: How I Predicted the FOMC Crash? ICT SMC Live Case Study",
+    "sourceSummary": "Forensic case study breakdown: how Trader Abdullah Masood predicted the historic FOMC market collapse live on stream using pure Smart Money Concepts without indicators.",
+    "coreRules": [
+      "Never fight a Higher Timeframe Bearish FVG on an FOMC day.",
+      "The 14:00 pump was an institutional Judas Swing engineering discount sell-side inventory for institutions.",
+      "The real move occurred at 14:30 PM with the press conference."
+    ],
+    "takeaway": "Review the FOMC example's four-hour bearish block and weekly FVG.",
+    "urduTakeaway": "FOMC مثال میں چار گھنٹے کا بیئرش بلاک اور ہفتہ وار FVG دیکھیں۔"
+  },
+  "/masood/lectures/masood-gf-1/": {
+    "id": "masood-gf-1",
+    "preservedPrefix": "Study Trading Mindset: The Operator Perspective.",
+    "sourceTitle": "EP 1: Inner Musings of The Godfather's Sanctum – The Mind of an Operator",
+    "sourceSummary": "Introduction to the philosophy of The Godfather’s Sanctum. Why 90% of technical analysts fail because they lack institutional detachment and an operator identity.",
+    "coreRules": [
+      "Treat trading as a high-stakes business, not a casino scratch ticket.",
+      "Never discuss open positions or daily PnL with friends or social media before market close.",
+      "Your worth as a human is completely detached from today’s green or red day."
+    ],
+    "takeaway": "Frame trading decisions around probabilities and defined risk.",
+    "urduTakeaway": "ٹریڈنگ کے فیصلوں کو امکانات اور متعین رسک کے لحاظ سے سمجھیں۔"
+  },
+  "/masood/lectures/masood-gf-2/": {
+    "id": "masood-gf-2",
+    "preservedPrefix": "Study Discipline & Capital Preservation.",
+    "sourceTitle": "EP 2: The Discipline of Silence & Capital Defense",
+    "sourceSummary": "Why talking about your trades creates cognitive bias, ego attachment, and disastrous hesitation when stops need to be honored.",
+    "coreRules": [
+      "Operate in complete silence during Killzone hours (09:00 - 11:30 AM NY).",
+      "Cut losses instantly at your predetermined invalidation level with zero debate.",
+      "Never add to a losing position under any circumstances."
+    ],
+    "takeaway": "Examine how outside commentary can disrupt a written plan.",
+    "urduTakeaway": "دیکھیں کہ باہر کے تبصرے تحریری منصوبے سے توجہ کیسے ہٹاتے ہیں۔"
+  },
+  "/masood/lectures/masood-gf-3/": {
+    "id": "masood-gf-3",
+    "preservedPrefix": "Study Trading Longevity & Account Security.",
+    "sourceTitle": "EP 3: The Architecture of Longevity & Account Security",
+    "sourceSummary": "How institutional prop accounts are structured, avoiding drawdown traps, and building a financial runway that prevents desperate trading.",
+    "coreRules": [
+      "Never risk more than 0.5% per trade on a prop firm evaluation or funded account.",
+      "Establish a mandatory daily circuit breaker: 2 losses = shut down for the day.",
+      "Maintain a minimum of 6 months of living expenses outside of trading capital."
+    ],
+    "takeaway": "Review the lecture's daily loss-limit and shutdown convention.",
+    "urduTakeaway": "لیکچر میں روزانہ نقصان کی حد اور کام روکنے کی روایت پڑھیں۔"
+  },
+  "/masood/lectures/masood-gf-4/": {
+    "id": "masood-gf-4",
+    "preservedPrefix": "Study Life Beyond Charts: Lifestyle & Mindset.",
+    "sourceTitle": "EP 4: Tales Beyond the Charts – Lifestyle & Mindset Calibration",
+    "sourceSummary": "Exploring the Mediterranean lifestyle, mental clarity walks, and why physical health directly correlates with sharp chart pattern recognition.",
+    "coreRules": [
+      "Step away from screens completely between 12:00 PM and 1:30 PM NY lunch hour.",
+      "Engage in daily physical training or cardiovascular walking before market sessions.",
+      "Get 7–8 hours of quality sleep to maintain fast cognitive processing speed."
+    ],
+    "takeaway": "Consider breaks and physical routines alongside chart study.",
+    "urduTakeaway": "چارٹ کے مطالعے کے ساتھ وقفوں اور جسمانی معمولات پر غور کریں۔"
+  },
+  "/masood/lectures/masood-gf-5/": {
+    "id": "masood-gf-5",
+    "preservedPrefix": "Study Building a Morning Trading Routine.",
+    "sourceTitle": "EP 5: The Morning Routine of a Professional Market Operator",
+    "sourceSummary": "Step-by-step breakdown of how Abdullah Masood prepares his workstation, charts economic calendars, marks midnight open, and sets alerts.",
+    "coreRules": [
+      "Never enter a trade within the first 5 minutes of 09:30 AM cash open.",
+      "Wait for the first 15-minute candle to print its initial dealing range.",
+      "Do not chase runaway candles; let price come back to your Fair Value Gap."
+    ],
+    "takeaway": "Follow the pre-market routine around scheduled news observations.",
+    "urduTakeaway": "مقررہ خبروں کے مشاہدے کے گرد پری مارکیٹ معمول کی ترتیب پڑھیں۔"
+  },
+  "/masood/lectures/masood-gf-6/": {
+    "id": "masood-gf-6",
+    "preservedPrefix": "Study Solitude, Emotions & Patient Execution.",
+    "sourceTitle": "EP 6: Dealing with Solitude, Emotional Equilibrium & Patient Execution",
+    "sourceSummary": "Mastering the psychological isolation of full-time trading, handling drawdown periods with equanimity, and resisting the urge to force trades.",
+    "coreRules": [
+      "Accept that 80% of market time is noise, consolidation, or low-probability chop.",
+      "Celebrate discipline over monetary outcomes.",
+      "Do not seek revenge when stopped out; the market owes you nothing."
+    ],
+    "takeaway": "Explore solitude, emotional balance and patient execution.",
+    "urduTakeaway": "تنہائی، جذباتی توازن اور صبر سے ایگزیکیوشن کو سمجھیں۔"
+  },
+  "/masood/lectures/masood-gf-7/": {
+    "id": "masood-gf-7",
+    "preservedPrefix": "Study Liquidity: Observations vs. Explanations.",
+    "sourceTitle": "EP 7: The True Nature of Market Liquidity & Algorithm Purpose",
+    "sourceSummary": "Deep conceptual dive into why the Interbank Price Delivery Algorithm (IPDA) exists: not to trade, but to facilitate interbank settlement and harvest retail stop liquidity.",
+    "coreRules": [
+      "Always identify WHO is trapped before you enter the market.",
+      "Enter when retail is getting stopped out, not when retail is getting excited.",
+      "The algorithm moves price from one liquidity pool or imbalance to another."
+    ],
+    "takeaway": "Review liquidity pools and imbalances as proposed price references.",
+    "urduTakeaway": "لیکویڈیٹی پول اور عدم توازن کو قیمت کے مجوزہ حوالے سمجھ کر دیکھیں۔"
+  },
+  "/masood/lectures/masood-gf-8/": {
+    "id": "masood-gf-8",
+    "preservedPrefix": "Study From Gambling Habits to a Trading Process.",
+    "sourceTitle": "EP 8: The Psychological Shift from Gambler to Business Operator",
+    "sourceSummary": "The cognitive transformation required to transcend retail amateurism. Shifting from hope and fear to statistical expectancy and risk engineering.",
+    "coreRules": [
+      "Every trade must have an identical risk fraction (e.g. 1% or 0.5%).",
+      "Maintain a minimum 1:2 or 1:3 risk-to-reward ratio on all setups.",
+      "Review trading metrics every weekend: Win rate, Profit Factor, Average R."
+    ],
+    "takeaway": "Ask what the defined loss would be before a trade is placed.",
+    "urduTakeaway": "ٹریڈ سے پہلے پوچھیں کہ مقررہ نقصان کتنا ہوگا۔"
+  },
+  "/masood/lectures/masood-gf-9/": {
+    "id": "masood-gf-9",
+    "preservedPrefix": "Study Long-Term Trading Rules & Discipline.",
+    "sourceTitle": "EP 9: The Godfather’s Charter – Lifetime Rules of the Sanctum",
+    "sourceSummary": "The grand capstone manifesto of the Sanctum. The 10 non-negotiable rules for lifelong longevity, wealth accumulation, and emotional mastery in financial markets.",
+    "coreRules": [
+      "Rule 1: Preserve capital at all costs.",
+      "Rule 2: Never trade without an HTF Draw on Liquidity.",
+      "Rule 3: Respect the 00:00 NY Midnight Open.",
+      "Rule 4: Execute only within defined Killzone windows.",
+      "Rule 5: Maximum 2 trades per day.",
+      "Rule 6: Never average down a losing position.",
+      "Rule 7: Pay yourself weekly; withdraw profits from prop firms.",
+      "Rule 8: Log every mistake with honesty.",
+      "Rule 9: Physical fitness and sleep come before charts.",
+      "Rule 10: The market will be here tomorrow. Never rush."
+    ],
+    "takeaway": "Examine revenge trading as a threat to capital preservation.",
+    "urduTakeaway": "انتقامی ٹریڈنگ کو سرمائے کے تحفظ کے لیے خطرہ سمجھ کر جانچیں۔"
+  },
+  "/masood/lectures/masood-psy-1/": {
+    "id": "masood-psy-1",
+    "preservedPrefix": "Study Trading Psychology & Execution.",
+    "sourceTitle": "LEC 1: The Psychology of Professional Execution vs Retail FOMO",
+    "sourceSummary": "Analyzing the neurological difference between an institutional executioner and a retail FOMO trader chasing candles.",
+    "coreRules": [
+      "Never enter on a market order when price has already expanded away from the PD array.",
+      "If you miss a move, celebrate that your analysis was right and wait for the next setup.",
+      "The market presents 250 trading days a year; no single move matters."
+    ],
+    "takeaway": "Distinguish fear of missing out from waiting for a defined setup.",
+    "urduTakeaway": "موقع چھوٹنے کے خوف اور متعین سیٹ اپ کے انتظار کا فرق سمجھیں۔"
+  },
+  "/masood/lectures/masood-psy-2/": {
+    "id": "masood-psy-2",
+    "preservedPrefix": "Study Capital Preservation & Risk Models.",
+    "sourceTitle": "LEC 2: Capital Preservation & Risk Modeling for Prop Firm Accounts",
+    "sourceSummary": "Mathematical risk modeling tailored specifically to pass and retain funded prop firm accounts ($50K - $300K).",
+    "coreRules": [
+      "Max risk per trade on prop firms: strictly 0.5% - 0.75%.",
+      "Calculate contract size based on exact point stop: Risk $ / (Stop Points  $2 per micro).",
+      "Lock daily loss limit at 2% in your trader dashboard."
+    ],
+    "takeaway": "Compare risk per attempt with a prop account's drawdown limit.",
+    "urduTakeaway": "فی کوشش رسک اور پراپ اکاؤنٹ کی ڈرا ڈاؤن حد کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-psy-3/": {
+    "id": "masood-psy-3",
+    "preservedPrefix": "Study Recognizing Revenge Trading.",
+    "sourceTitle": "LEC 3: How to Overcome Revenge Trading & Managing Losing Streaks",
+    "sourceSummary": "Why losing streaks are a normal statistical reality in trading, and how to stop revenge trading from turning a normal 1% loss into a 10% catastrophe.",
+    "coreRules": [
+      "Mandatory 30-minute walk away from the desk immediately following any loss.",
+      "Maximum 2 losses in a single day: after 2 losses, the trading platform MUST be shut down.",
+      "Never increase lot size after a loss."
+    ],
+    "takeaway": "Recognize the urge to recover a loss through an immediate new trade.",
+    "urduTakeaway": "فوراً نئی ٹریڈ سے نقصان واپس لینے کی خواہش پہچانیں۔"
+  },
+  "/masood/lectures/masood-psy-4/": {
+    "id": "masood-psy-4",
+    "preservedPrefix": "Study The 1% Rule & Asymmetric Risk-Reward.",
+    "sourceTitle": "LEC 4: The 1% Rule & Asymmetric Risk-to-Reward Geometry",
+    "sourceSummary": "Understanding asymmetric payout geometry: how a 40% win rate with 1:3 R:R makes you consistently wealthy.",
+    "coreRules": [
+      "Minimum acceptable setup R:R is 1:2; preferred target is 1:3 or liquidity draw.",
+      "Never move take-profit closer just to lock in small wins.",
+      "Always move stop to breakeven only AFTER price reaches 50% of the target range."
+    ],
+    "takeaway": "Calculate planned reward relative to the chosen stop distance.",
+    "urduTakeaway": "منتخب اسٹاپ فاصلے کے مقابلے میں منصوبہ شدہ ریوارڈ ناپیں۔"
+  },
+  "/masood/lectures/masood-psy-5/": {
+    "id": "masood-psy-5",
+    "preservedPrefix": "Study Prop Firm Challenges: Rules & Risk.",
+    "sourceTitle": "LEC 5: Prop Firm Challenge Mechanics: Passing & Keeping Funded Accounts",
+    "sourceSummary": "The step-by-step roadmap to passing Phase 1, Phase 2, and successfully reaching the first payout without violating drawdown rules.",
+    "coreRules": [
+      "Do not trade during news releases that prop firms restrict.",
+      "Close all open positions before the weekend to prevent gap risk.",
+      "Keep your account balance buffer above the static trailing drawdown threshold."
+    ],
+    "takeaway": "Check the account provider's news-trading restrictions.",
+    "urduTakeaway": "اکاؤنٹ فراہم کنندہ کی خبروں کے وقت ٹریڈنگ کی پابندیاں دیکھیں۔"
+  },
+  "/masood/lectures/masood-psy-6/": {
+    "id": "masood-psy-6",
+    "preservedPrefix": "Study Managing Trading Anxiety.",
+    "sourceTitle": "LEC 6: Dealing with Trading Anxiety, Over-leveraging & Heart Rate Spikes",
+    "sourceSummary": "Physical and mental diagnostics of trading with too much size. How to eliminate anxiety by sizing down to your emotional comfort zone.",
+    "coreRules": [
+      "If feeling nervous, cut contract size in half immediately.",
+      "Trade Micro contracts (MNQ) instead of Mini (NQ) until you have 3 consecutive profitable months.",
+      "Use set-and-forget bracket orders: stop loss and take profit attached upon entry."
+    ],
+    "takeaway": "Relate trading anxiety to the size of the potential loss.",
+    "urduTakeaway": "ٹریڈنگ کی بے چینی کو ممکنہ نقصان کے حجم سے ملا کر دیکھیں۔"
+  },
+  "/masood/lectures/masood-psy-7/": {
+    "id": "masood-psy-7",
+    "preservedPrefix": "Study Trade Journals & Post-Session Review.",
+    "sourceTitle": "LEC 7: Trade Logging & The Daily Post-Mortem Journaling System",
+    "sourceSummary": "How to conduct an institutional trade post-mortem. Why an unreviewed trade provides zero educational compounding.",
+    "coreRules": [
+      "Log every trade before 5:00 PM on the day it occurred.",
+      "Include both entry screenshot (before outcome) and exit screenshot (after outcome).",
+      "Grade yourself on execution quality, NOT whether it was a green or red trade."
+    ],
+    "takeaway": "Use a weekly screenshot review to identify recurring setup patterns.",
+    "urduTakeaway": "ہفتہ وار اسکرین شاٹ جائزے سے بار بار آنے والے سیٹ اپ پیٹرن پہچانیں۔"
+  },
+  "/masood/lectures/masood-psy-8/": {
+    "id": "masood-psy-8",
+    "preservedPrefix": "Study Patience & Selective Trading.",
+    "sourceTitle": "LEC 8: Developing the Patient Hunter Mentality – Waiting for the Setup",
+    "sourceSummary": "Trading like a sniper vs spraying machine-gun bullets. Learning the art of stalking the market without pressing buttons.",
+    "coreRules": [
+      "Wait for price to sweep external liquidity before looking for internal structure shifts.",
+      "If no FVG is created during displacement, let the move go without entering.",
+      "Average 3–5 high-probability trades per week; reject over-trading."
+    ],
+    "takeaway": "Review patient observation rather than chasing every price move.",
+    "urduTakeaway": "ہر حرکت کا پیچھا کرنے کے بجائے صبر سے مشاہدہ کرنا سمجھیں۔"
+  },
+  "/masood/lectures/masood-psy-9/": {
+    "id": "masood-psy-9",
+    "preservedPrefix": "Study Trading Psychology: Hindi/Urdu Study Notes.",
+    "sourceTitle": "LEC 9: Trading Psychology Full Course (Hindi/Urdu Masterclass)",
+    "sourceSummary": "Comprehensive 2-hour masterclass by Abdullah Masood in Urdu/Hindi covering the full spectrum of psychological barriers and how to overcome them.",
+    "coreRules": [
+      "Jald-bazi mein trading na karein; har trade se pehle checklist verify karein.",
+      "Nuqsan (loss) ko trading business ka normal expense tasleem karein.",
+      "Rozana 2 se zyada trades mat lein."
+    ],
+    "takeaway": "Examine fear and greed in the trader's decision process.",
+    "urduTakeaway": "ٹریڈر کے فیصلہ کرنے کے عمل میں خوف اور لالچ کو پرکھیں۔"
+  },
+  "/masood/lectures/masood-psy-10/": {
+    "id": "masood-psy-10",
+    "preservedPrefix": "Study The Illusion of Easy Trading Money.",
+    "sourceTitle": "LEC 10: The Illusion of Easy Money – Demolishing Retail Get-Rich-Quick Traps",
+    "sourceSummary": "Exposing the fake lifestyle marketing of retail gurus and establishing a realistic 3-5 year trajectory to institutional wealth.",
+    "coreRules": [
+      "Unfollow all signal channels, luxury lifestyle influencers, and get-rich schemes.",
+      "Focus on developing skills that will generate income for the next 40 years.",
+      "Measure your progress in disciplined habits, not short-term dollar balances."
+    ],
+    "takeaway": "Question signal channels and get-rich-quick influences.",
+    "urduTakeaway": "سگنل چینلز اور جلد امیر ہونے کے اثرات پر سوال اٹھائیں۔"
+  },
+  "/masood/lectures/masood-psy-11/": {
+    "id": "masood-psy-11",
+    "preservedPrefix": "Study Position Scaling & Trading Psychology.",
+    "sourceTitle": "LEC 11: The Psychology of Scaling: Moving from 1 Micro to 10 Mini Contracts",
+    "sourceSummary": "How to scale position size incrementally without triggering emotional panic or cognitive dissonance.",
+    "coreRules": [
+      "Only scale up when your account reaches a predefined profit milestone (e.g. +10% equity).",
+      "If you experience a 3-loss drawdown, immediately scale back down by 1 unit.",
+      "Hide the floating dollar PnL in your trading platform; display only points or R."
+    ],
+    "takeaway": "Compare the emotional effect of small and larger contract sizes.",
+    "urduTakeaway": "چھوٹے اور بڑے کنٹریکٹ سائز کے جذباتی اثرات کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-psy-12/": {
+    "id": "masood-psy-12",
+    "preservedPrefix": "Study Cognitive Biases in Trading.",
+    "sourceTitle": "LEC 12: Cognitive Biases: Anchoring, Recency Bias & Confirmation Delusion",
+    "sourceSummary": "Dissecting the psychological biases that blind traders: anchoring to yesterday’s bias, recency bias after a big win, and confirmation bias.",
+    "coreRules": [
+      "Start every trading day with a blank chart and objective HTF analysis.",
+      "Treat today as a unique statistical event independent of yesterday.",
+      "Actively search for what would INVALIDATE your trade idea before entering."
+    ],
+    "takeaway": "Identify confirmation bias when gathering market commentary.",
+    "urduTakeaway": "مارکیٹ تبصرے جمع کرتے وقت تصدیقی تعصب پہچانیں۔"
+  },
+  "/masood/lectures/masood-psy-13/": {
+    "id": "masood-psy-13",
+    "preservedPrefix": "Study A Daily Trading Study Routine.",
+    "sourceTitle": "LEC 13: The Daily Routine: Pre-Market Preparation, Execution & Hard Stop Shutdown",
+    "sourceSummary": "The operational blueprint of a trading day: precise timelines for prep, execution window, and hard shutdown.",
+    "coreRules": [
+      "Never trade past 11:30 AM if you are already green for the morning.",
+      "Do not open charts at night to \"check where price went\" if you are not trading Asian session.",
+      "Maintain clean boundaries between chart time and living your life."
+    ],
+    "takeaway": "Define preparation, execution and platform-shutdown times.",
+    "urduTakeaway": "تیاری، ایگزیکیوشن اور پلیٹ فارم بند کرنے کے اوقات مقرر کریں۔"
+  },
+  "/masood/lectures/masood-psy-14/": {
+    "id": "masood-psy-14",
+    "preservedPrefix": "Study Reviewing Profitable Trading Days.",
+    "sourceTitle": "LEC 14: How to Handle Green Days: Preventing Ego Expansion & Profit Gifting",
+    "sourceSummary": "Why green days are more dangerous than red days. Overcoming the euphoria that leads to oversized bets and gifting profits back.",
+    "coreRules": [
+      "One good trade = Day Over. Walk away and enjoy your life.",
+      "Never use \"house money\" as an excuse to take lower quality setups.",
+      "Every dollar in your account is YOUR money; protect it with equal rigor."
+    ],
+    "takeaway": "Review the risk of impulsive decisions after a green day.",
+    "urduTakeaway": "منافع والے دن کے بعد بے سوچے فیصلوں کے خطرے کا جائزہ لیں۔"
+  },
+  "/masood/lectures/masood-psy-15/": {
+    "id": "masood-psy-15",
+    "preservedPrefix": "Study Overtrading: Recognizing the Pattern.",
+    "sourceTitle": "LEC 15: Over-Trading Detox: Rules to Take Only 3–5 High-Quality Setups Per Week",
+    "sourceSummary": "The mathematical and mental benefits of extreme selectivity. Why trading less leads directly to earning more.",
+    "coreRules": [
+      "Maximum 1 trade per session, maximum 2 trades per day.",
+      "Maximum 5 trades per calendar week.",
+      "If a setup has any missing confluence, skip it without regret."
+    ],
+    "takeaway": "Compare selective participation with repeated unnecessary entries.",
+    "urduTakeaway": "انتخابی شرکت اور بار بار غیر ضروری انٹری کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-psy-16/": {
+    "id": "masood-psy-16",
+    "preservedPrefix": "Study ICT 2022 Model: Psychology & Execution.",
+    "sourceTitle": "LEC 16: ICT Model 2022: Everything You Need to Know (The Mechanical Execution Model)",
+    "sourceSummary": "Complete mechanical breakdown of ICT Model 2022: Liquidity sweep, Market Structure Shift with energetic displacement, and Fair Value Gap limit entry.",
+    "coreRules": [
+      "Never enter without energetic displacement body candles.",
+      "The FVG must be formed within the Market Structure Shift impulse leg.",
+      "Trade only during London (02:00-05:00 NY) or New York AM (08:30-11:00 NY) Killzones."
+    ],
+    "takeaway": "Follow the model's FVG limit-entry reference and CE convention.",
+    "urduTakeaway": "ماڈل میں FVG کی لِمٹ انٹری اور CE کی روایت سمجھیں۔"
+  },
+  "/masood/lectures/masood-psy-17/": {
+    "id": "masood-psy-17",
+    "preservedPrefix": "Study Execution Timing & Patience.",
+    "sourceTitle": "LEC 17: Mastering Execution Timing: London Open vs New York AM Killzone",
+    "sourceSummary": "Deciding whether London Open or New York AM fits your lifestyle, personality, and asset focus (Forex vs Indices).",
+    "coreRules": [
+      "Pick ONE session and align your sleep and life schedule to master it.",
+      "If trading New York AM, mark London High and London Low as primary liquidity targets.",
+      "Never trade the Asian session for US Stock Indices."
+    ],
+    "takeaway": "Compare a chosen London session with New York morning practice.",
+    "urduTakeaway": "منتخب لندن سیشن اور نیویارک صبح کی مشق کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-psy-18/": {
+    "id": "masood-psy-18",
+    "preservedPrefix": "Study Risk Rules for Volatile Sessions.",
+    "sourceTitle": "LEC 18: Risk Management Rules for Volatile Geopolitical Markets",
+    "sourceSummary": "Navigating unexpected headlines, wars, emergency rate hikes, and flash crashes without blowing your account.",
+    "coreRules": [
+      "Cut position sizing to 0.25% - 0.5% during major geopolitical uncertainty.",
+      "Do not hold overnight positions when unpredictable news can break over the weekend.",
+      "Always honor your initial stop loss; never widen stops expecting a quick recovery."
+    ],
+    "takeaway": "Account for widening spreads and gaps during geopolitical disruption.",
+    "urduTakeaway": "جغرافیائی سیاسی ہلچل میں بڑھتے اسپریڈ اور گیپ کو مدنظر رکھیں۔"
+  },
+  "/masood/lectures/masood-psy-19/": {
+    "id": "masood-psy-19",
+    "preservedPrefix": "Study Gold (XAUUSD): ICT Study Notes.",
+    "sourceTitle": "LEC 19: How to Trade Gold (XAUUSD) with ICT Smart Money Concepts",
+    "sourceSummary": "Mastering the unique algorithmic characteristics of Gold: explosive liquidity sweeps, Asian range traps, and London/NY overlap setups.",
+    "coreRules": [
+      "Never trade Gold without checking DXY directional bias.",
+      "Always wait for an Asian Range liquidity sweep before considering Gold entries.",
+      "Position size on Gold must be calculated carefully: 1 standard lot = $10 per pip / 10 cents per dollar move."
+    ],
+    "takeaway": "Compare a gold setup with the accompanying DXY context.",
+    "urduTakeaway": "گولڈ سیٹ اپ کا ساتھ موجود DXY کے سیاق سے تقابل کریں۔"
+  },
+  "/masood/lectures/masood-syn-1/": {
+    "id": "masood-syn-1",
+    "preservedPrefix": "Study US100 Cash Open: Chart Study.",
+    "sourceTitle": "SESSION 1: Live Trading US100 / NASDAQ SMC ICT Concepts (Cash Open Precision)",
+    "sourceSummary": "Opening session of The SMC Syndicate: live tape reading through the 09:30 AM New York opening bell on NASDAQ futures.",
+    "coreRules": [
+      "Wait for the first 5-minute candle to close before confirming direction.",
+      "Identify whether the 00:00 Midnight Open is above or below current price.",
+      "Target the opposing session liquidity pool."
+    ],
+    "takeaway": "Observe the first cash-open candles before selecting an entry.",
+    "urduTakeaway": "انٹری منتخب کرنے سے پہلے کیش اوپن کی ابتدائی کینڈلز دیکھیں۔"
+  },
+  "/masood/lectures/masood-syn-2/": {
+    "id": "masood-syn-2",
+    "preservedPrefix": "Study US100 Judas Swing vs. Expansion.",
+    "sourceTitle": "SESSION 2: Live US100 Tape Reading – Identifying the True Judas Swing vs Expansion",
+    "sourceSummary": "Real-time demonstration of how algorithms stage fakeouts to trick retail breakout traders into traps before expanding in the true direction.",
+    "coreRules": [
+      "If bias is bullish, sell-offs below Midnight Open are buying opportunities, not shorts."
+    ],
+    "takeaway": "Distinguish a Judas-swing excursion from the later expansion.",
+    "urduTakeaway": "جوڈاس سوئنگ کی حد سے باہر حرکت اور بعد کی توسیع میں فرق کریں۔"
+  },
+  "/masood/lectures/masood-syn-3/": {
+    "id": "masood-syn-3",
+    "preservedPrefix": "Study New York 9:30 AM Opening Momentum.",
+    "sourceTitle": "SESSION 3: New York AM Open Execution – 09:30 AM Opening Bell Momentum",
+    "sourceSummary": "Executing precision entries during the 09:30 - 10:00 AM momentum window following structural displacement.",
+    "coreRules": [
+      "Risk strictly capped at 1% of equity."
+    ],
+    "takeaway": "Compare opening-bell momentum with higher-timeframe context.",
+    "urduTakeaway": "اوپننگ بیل کی رفتار اور بڑے ٹائم فریم کے سیاق کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-syn-4/": {
+    "id": "masood-syn-4",
+    "preservedPrefix": "Study One-Minute Displacement & Order Flow.",
+    "sourceTitle": "SESSION 4: Live Order Flow & Reading Displacement Gaps on the 1-Minute Chart",
+    "sourceSummary": "Zooming into the 1-minute chart for surgical entry timing while maintaining 15-minute structural alignment.",
+    "coreRules": [
+      "Never trade the 1-minute chart without 15-minute structural bias."
+    ],
+    "takeaway": "Inspect one-minute gap rebalancing inside the fifteen-minute narrative.",
+    "urduTakeaway": "پندرہ منٹ کی تشریح کے اندر ایک منٹ کے گیپ کی ری بیلنسنگ دیکھیں۔"
+  },
+  "/masood/lectures/masood-syn-5/": {
+    "id": "masood-syn-5",
+    "preservedPrefix": "Study Pre-Market High & Low Sweeps.",
+    "sourceTitle": "SESSION 5: Navigating Pre-Market High & Low Sweeps with the 15-Minute Narrative",
+    "sourceSummary": "Using pre-market high (PMH) and pre-market low (PML) as prime liquidity magnets during New York morning session.",
+    "coreRules": [
+      "Mark PMH and PML at 09:25 AM NY time every day."
+    ],
+    "takeaway": "Map pre-market highs and lows before examining their sweep.",
+    "urduTakeaway": "سویپ دیکھنے سے پہلے پری مارکیٹ کے ہائی اور لو نشان زد کریں۔"
+  },
+  "/masood/lectures/masood-syn-6/": {
+    "id": "masood-syn-6",
+    "preservedPrefix": "Study Liquidity Runs: Execution Case Study.",
+    "sourceTitle": "SESSION 6: Live Trade Execution: Catching the Institutional Liquidity Run",
+    "sourceSummary": "Executing live trade with limit orders as price accelerates toward previous day high.",
+    "coreRules": [
+      "Take partial profits at key intermediate highs/lows."
+    ],
+    "takeaway": "Plan intermediate exits before price reaches the stated objective.",
+    "urduTakeaway": "قیمت کے مقررہ مقصد تک پہنچنے سے پہلے درمیانی اخراج کی منصوبہ بندی کریں۔"
+  },
+  "/masood/lectures/masood-syn-7/": {
+    "id": "masood-syn-7",
+    "preservedPrefix": "Study Volume Imbalance vs. Fair Value Gaps.",
+    "sourceTitle": "SESSION 7: Reading Volume Imbalances vs Fair Value Gaps in Real-Time",
+    "sourceSummary": "Live visual identification of Volume Imbalances (wicks overlap but candle bodies do not) vs 3-candle Fair Value Gaps.",
+    "coreRules": [
+      "Treat volume imbalances as sensitive institutional magnets."
+    ],
+    "takeaway": "Distinguish volume-imbalance references from fair value gaps.",
+    "urduTakeaway": "والیوم اِمبیلنس کے حوالے اور فیئر ویلیو گیپ میں فرق کریں۔"
+  },
+  "/masood/lectures/masood-syn-8/": {
+    "id": "masood-syn-8",
+    "preservedPrefix": "Study Silver Bullet: The 10–11 AM Window.",
+    "sourceTitle": "SESSION 8: High-Probability Silver Bullet Trades between 10:00 AM - 11:00 AM",
+    "sourceSummary": "Mastering the ICT Silver Bullet window (10:00 - 11:00 AM NY) for quick 20–40 point algorithmic runs on US100.",
+    "coreRules": [
+      "Look for trade execution strictly between 10:00 AM and 10:45 AM NY."
+    ],
+    "takeaway": "Review FVG examples within the stated 10:00–11:00 window.",
+    "urduTakeaway": "مقررہ 10:00–11:00 ونڈو کے اندر FVG کی مثالیں دیکھیں۔"
+  },
+  "/masood/lectures/masood-syn-9/": {
+    "id": "masood-syn-9",
+    "preservedPrefix": "Study NQ & ES SMT Divergence Case Study.",
+    "sourceTitle": "SESSION 9: Live Analysis of SMT Divergence between NQ and ES at Key Inflection Levels",
+    "sourceSummary": "Synchronized dual-chart tape reading: watching NQ fail to make a lower low while ES sweeps its low, confirming smart money accumulation.",
+    "coreRules": [
+      "Never enter on SMT alone; wait for Market Structure Shift."
+    ],
+    "takeaway": "Compare NQ and ES highs or lows at a selected inflection area.",
+    "urduTakeaway": "منتخب موڑ کے علاقے میں NQ اور ES کے ہائی یا لو کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-syn-10/": {
+    "id": "masood-syn-10",
+    "preservedPrefix": "Study Partial Profits vs. Breakeven Stops.",
+    "sourceTitle": "SESSION 10: Managing Running Positions: Partial Take Profits vs Trail to Breakeven",
+    "sourceSummary": "Professional position management: taking 50% off at +2R, moving stop to breakeven, and letting the runner hit the macro target.",
+    "coreRules": [
+      "Move stop to breakeven only after the first structural high/low is cleared."
+    ],
+    "takeaway": "Compare partial exits with a structure-based breakeven adjustment.",
+    "urduTakeaway": "جزوی اخراج اور ساخت کے مطابق بریک ایون تبدیلی کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-syn-11/": {
+    "id": "masood-syn-11",
+    "preservedPrefix": "Study Low-Volume Consolidation & Staying Flat.",
+    "sourceTitle": "SESSION 11: Live Tape Reading in Low-Volume Consolidations – Why Staying Flat is Winning",
+    "sourceSummary": "Recognizing when algorithms are in accumulation mode and avoiding death by a thousand cuts in tight ranges.",
+    "coreRules": [
+      "If the 15M range is less than 30 points on US100, stay flat."
+    ],
+    "takeaway": "Consider standing aside when the observed session range is narrow.",
+    "urduTakeaway": "مشاہدہ شدہ سیشن رینج چھوٹی ہو تو الگ رہنے پر غور کریں۔"
+  },
+  "/masood/lectures/masood-syn-12/": {
+    "id": "masood-syn-12",
+    "preservedPrefix": "Study New York Midnight Open & Range Context.",
+    "sourceTitle": "SESSION 12: Dissecting the 00:00 NY Midnight Open as the Equilibrium Dividing Line",
+    "sourceSummary": "The institutional mathematical significance of the 00:00 Midnight Open price as the benchmark for premium vs discount.",
+    "coreRules": [
+      "Never buy when price is deep in Premium on a bullish day; wait for a retracement below Midnight Open."
+    ],
+    "takeaway": "Use the New York midnight open as a stated reference price.",
+    "urduTakeaway": "نیویارک مڈنائٹ اوپن کو مقررہ حوالہ جاتی قیمت سمجھ کر استعمال کریں۔"
+  },
+  "/masood/lectures/masood-syn-13/": {
+    "id": "masood-syn-13",
+    "preservedPrefix": "Study US100 Bearish Order Block Mitigation.",
+    "sourceTitle": "SESSION 13: Live US100 Bearish Order Block Mitigation & Sell-Off Continuation",
+    "sourceSummary": "Live short execution on NASDAQ following bearish order block mitigation after a buy-side liquidity sweep.",
+    "coreRules": [
+      "Place limit order at the open of the up-close candle (order block)."
+    ],
+    "takeaway": "Relate a bearish block retest to downward structure confirmation.",
+    "urduTakeaway": "بیئرش بلاک کی دوبارہ جانچ کو نیچے ساختی تصدیق سے ملائیں۔"
+  },
+  "/masood/lectures/masood-syn-14/": {
+    "id": "masood-syn-14",
+    "preservedPrefix": "Study CPI & PPI Release Volatility.",
+    "sourceTitle": "SESSION 14: Reading Algorithmic Repricing During Red Folder CPI & PPI Release",
+    "sourceSummary": "Watching 08:30 AM CPI release live: observing the 3-phase news cycle (Liquidity Purge -> Structure Shift -> True Trend).",
+    "coreRules": [
+      "Never enter during the first 60 seconds of a high-impact news release."
+    ],
+    "takeaway": "Separate the initial news excursion from later structural clarity.",
+    "urduTakeaway": "خبر کی ابتدائی حرکت اور بعد کی ساختی وضاحت کو الگ کریں۔"
+  },
+  "/masood/lectures/masood-syn-15/": {
+    "id": "masood-syn-15",
+    "preservedPrefix": "Study US100 Structure Shift After a Sweep.",
+    "sourceTitle": "SESSION 15: Live Trading & Teaching US100 – Structural Shift After Liquidity Purge",
+    "sourceSummary": "Comprehensive live trading lecture on US100: tracking price from pre-market purge to energetic 1-minute market structure shift.",
+    "coreRules": [
+      "Wicks do the damage (sweep), bodies tell the story (trend)."
+    ],
+    "takeaway": "Compare the sweep wick with the subsequent candle-body response.",
+    "urduTakeaway": "سویپ کی وِک اور بعد کی کینڈل باڈی کے ردعمل کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-syn-16/": {
+    "id": "masood-syn-16",
+    "preservedPrefix": "Study ES & NQ: Correlation and Lead-Lag.",
+    "sourceTitle": "SESSION 16: Live US500 & US100 Correlation: When ES Leads and NQ Follows",
+    "sourceSummary": "Intermarket dynamics: understanding how S&P 500 (ES) institutional volume leads NASDAQ (NQ) during major market inflections.",
+    "coreRules": [
+      "Always confirm that ES and NQ are not diverging negatively before scaling in."
+    ],
+    "takeaway": "Observe ES and NQ together rather than assuming a fixed lead.",
+    "urduTakeaway": "ہمیشہ ایک کے آگے ہونے کا مفروضہ بنانے کے بجائے ES اور NQ ساتھ دیکھیں۔"
+  },
+  "/masood/lectures/masood-syn-17/": {
+    "id": "masood-syn-17",
+    "preservedPrefix": "Study Limit vs. Stop-Limit Order Assumptions.",
+    "sourceTitle": "SESSION 17: Live Institutional Entry Drills: Limit Orders vs Stop Limit Precision",
+    "sourceSummary": "Mastering execution order types to eliminate slippage and ensure maximum reward-to-risk geometry.",
+    "coreRules": [
+      "Never use market orders during active expansions."
+    ],
+    "takeaway": "Compare limit and stop-limit order mechanics during expansion.",
+    "urduTakeaway": "توسیع کے دوران لِمٹ اور اسٹاپ لِمٹ آرڈر کے طریقے کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-syn-18/": {
+    "id": "masood-syn-18",
+    "preservedPrefix": "Study Dual Sweeps & Seek-and-Destroy Sessions.",
+    "sourceTitle": "SESSION 18: Recognizing Seek & Destroy Days Live – Protecting Capital in Dual Sweeps",
+    "sourceSummary": "Real-time diagnostic of a Seek & Destroy profile: algorithm sweeps the high, sweeps the low, and returns to center.",
+    "coreRules": [
+      "If price sweeps both Asian High and Asian Low without follow-through, STOP TRADING."
+    ],
+    "takeaway": "Recognize the example's successive sweeps of both range edges.",
+    "urduTakeaway": "مثال میں رینج کے دونوں کناروں کے یکے بعد دیگرے سویپ پہچانیں۔"
+  },
+  "/masood/lectures/masood-syn-19/": {
+    "id": "masood-syn-19",
+    "preservedPrefix": "Study 8:30 AM News Reversal Case Study.",
+    "sourceTitle": "SESSION 19: The 08:30 AM News Reversal Setup: Fading Initial Knee-Jerk Algorithmic Moves",
+    "sourceSummary": "How algorithms run retail stops on medium-tier news at 08:30 AM, creating the optimal Judas swing for 09:30 AM cash open.",
+    "coreRules": [
+      "Fade the news spike ONLY after an MSS confirms the reversal."
+    ],
+    "takeaway": "Look for the stated MSS before interpreting a news-spike reversal.",
+    "urduTakeaway": "خبر کے اسپائک کو پلٹاؤ سمجھنے سے پہلے مقررہ MSS دیکھیں۔"
+  },
+  "/masood/lectures/masood-syn-20/": {
+    "id": "masood-syn-20",
+    "preservedPrefix": "Study NASDAQ Futures: 62–79% OTE Study.",
+    "sourceTitle": "SESSION 20: Optimal Trade Entry (OTE 62%-79%) Applied Live on NASDAQ Futures",
+    "sourceSummary": "Anchoring Fibonacci retracement from swing low to swing high to pinpoint the 62%, 70.5%, and 79% institutional sweet spot.",
+    "coreRules": [
+      "Look for confluence between the 70.5% level and an unmitigated FVG."
+    ],
+    "takeaway": "Compare a Fibonacci retracement band with the nearby FVG reference.",
+    "urduTakeaway": "فبوناکی ریٹریسمنٹ بینڈ اور قریب موجود FVG کے حوالے کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-syn-21/": {
+    "id": "masood-syn-21",
+    "preservedPrefix": "Study High- vs. Low-Resistance Liquidity Runs.",
+    "sourceTitle": "SESSION 21: High-Resistance Liquidity Runs (HRLR) vs Low-Resistance Liquidity Runs (LRLR)",
+    "sourceSummary": "Identifying when price will glide effortlessly through clean swing points (LRLR) vs chopping painfully through layered structures (HRLR).",
+    "coreRules": [
+      "Only trade setups that target Low-Resistance Liquidity Pools."
+    ],
+    "takeaway": "Compare liquidity-path resistance around equal highs or lows.",
+    "urduTakeaway": "برابر ہائی یا لو کے گرد لیکویڈیٹی راستے کی مزاحمت کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-syn-22/": {
+    "id": "masood-syn-22",
+    "preservedPrefix": "Study One-Hour Liquidity Reference Levels.",
+    "sourceTitle": "SESSION 22: Identifying the Institutional Draw on Liquidity on the 1-Hour Chart",
+    "sourceSummary": "The anchor of all daily bias: mapping the 1-hour and 4-hour draw on liquidity before executing on 1-minute and 5-minute charts.",
+    "coreRules": [
+      "Never take a lower-timeframe trade that opposes the 1-Hour Draw on Liquidity."
+    ],
+    "takeaway": "Map one-hour and four-hour objectives before lower-timeframe execution.",
+    "urduTakeaway": "چھوٹے ٹائم فریم کی ایگزیکیوشن سے پہلے ایک اور چار گھنٹے کے مقاصد نشان زد کریں۔"
+  },
+  "/masood/lectures/masood-syn-23/": {
+    "id": "masood-syn-23",
+    "preservedPrefix": "Study Failed Breakouts & Trapped-Order Claims.",
+    "sourceTitle": "SESSION 23: Live Trading Tape Reading: Spotting Failed Breakouts & Trapped Retail",
+    "sourceSummary": "Watching breakout traders get trapped at resistance and profiting from the swift reversal liquidation cascade.",
+    "coreRules": [
+      "Wait for the breakout candle to wick out and close back inside the range."
+    ],
+    "takeaway": "Compare a breakout's initial breach with its later failure.",
+    "urduTakeaway": "بریک آؤٹ کی ابتدائی حد پار کرنے اور بعد کی ناکامی کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-syn-24/": {
+    "id": "masood-syn-24",
+    "preservedPrefix": "Study Afternoon Session: 1:30–3 PM New York.",
+    "sourceTitle": "SESSION 24: Afternoon Session Tactics: Trading the 13:30 - 15:00 PM PM Killzone",
+    "sourceSummary": "How to trade the afternoon New York PM session after the lunch consolidation concludes.",
+    "coreRules": [
+      "Do not trade until 13:30 PM NY time; allow lunch algorithms to finish rebalancing."
+    ],
+    "takeaway": "Contrast afternoon continuation with a closing-session reversal.",
+    "urduTakeaway": "دوپہر کے تسلسل اور اختتامی سیشن کے پلٹاؤ کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-syn-25/": {
+    "id": "masood-syn-25",
+    "preservedPrefix": "Study Weekly Context to One-Minute Execution.",
+    "sourceTitle": "SESSION 25: Live Multi-Timeframe Alignment: Weekly Profile to 1-Minute Execution",
+    "sourceSummary": "Seamlessly aligning weekly candle expectation, daily candle PO3, 15-minute structural range, and 1-minute precision entry.",
+    "coreRules": [
+      "If the weekly candle is expanding, daily candles will print standard PO3 Judas swings."
+    ],
+    "takeaway": "Connect a weekly profile with the one-minute execution view.",
+    "urduTakeaway": "ہفتہ وار پروفائل کو ایک منٹ کی ایگزیکیوشن کے منظر سے ملائیں۔"
+  },
+  "/masood/lectures/masood-syn-26/": {
+    "id": "masood-syn-26",
+    "preservedPrefix": "Study Low-News Morning Session Study.",
+    "sourceTitle": "SESSION 26: Live Trading Low-News AM Session & Interactive Q/A Masterclass",
+    "sourceSummary": "Navigating trading days with zero economic news releases. How algorithms respect technical PD arrays with textbook perfection.",
+    "coreRules": [
+      "Rely heavily on 15M FVGs and Midnight Open on low-news days."
+    ],
+    "takeaway": "Review a lower-news session without assuming news risk disappears.",
+    "urduTakeaway": "کم خبروں والے سیشن کا جائزہ لیں؛ خبر کا خطرہ ختم نہ سمجھیں۔"
+  },
+  "/masood/lectures/masood-syn-27/": {
+    "id": "masood-syn-27",
+    "preservedPrefix": "Study Lunch-Hour Tape Reading & Inactivity.",
+    "sourceTitle": "SESSION 27: Tape Reading the Lunch Hour Dead Zone: Why Smart Money Steps Away",
+    "sourceSummary": "Observing the 12:00 - 13:15 PM lunch hour chop and proving mathematically why trading this window destroys win rate.",
+    "coreRules": [
+      "STRICT RULE: Zero trades between 12:00 PM and 13:15 PM New York time."
+    ],
+    "takeaway": "Compare lunch-hour conditions with the active session windows.",
+    "urduTakeaway": "لنچ کے وقت کی حالت اور فعال سیشن ونڈوز کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-syn-28/": {
+    "id": "masood-syn-28",
+    "preservedPrefix": "Study US100 Reversal: SMT & Inversion FVG.",
+    "sourceTitle": "SESSION 28: Live US100 Reversal: Combining SMT Divergence with Inversion FVG",
+    "sourceSummary": "Advanced execution: using a failed Fair Value Gap (Inversion FVG) coupled with SMT divergence to catch a swift trend reversal.",
+    "coreRules": [
+      "Enter on the retest of the underside of the failed FVG."
+    ],
+    "takeaway": "Follow an FVG failure into an opposite-role inversion reference.",
+    "urduTakeaway": "FVG کی ناکامی سے مخالف کردار کے اِنورژن حوالے تک ترتیب دیکھیں۔"
+  },
+  "/masood/lectures/masood-syn-29/": {
+    "id": "masood-syn-29",
+    "preservedPrefix": "Study Daily Bias & the Previous Day High.",
+    "sourceTitle": "SESSION 29: Daily Bias Validation: Checking Whether Previous Day High Was Target",
+    "sourceSummary": "How to determine whether Previous Day High (PDH) or Previous Day Low (PDL) has been exhausted as a liquidity draw.",
+    "coreRules": [
+      "Do not enter fresh longs after PDH has already been swept by 20+ handles unless HTF expansion is active."
+    ],
+    "takeaway": "Check the response after price reaches the previous day's high.",
+    "urduTakeaway": "قیمت کے پچھلے دن کے ہائی پر پہنچنے کے بعد ردعمل دیکھیں۔"
+  },
+  "/masood/lectures/masood-syn-30/": {
+    "id": "masood-syn-30",
+    "preservedPrefix": "Study Market Maker Buy Model (MMBM) Study.",
+    "sourceTitle": "SESSION 30: Live Market Maker Buy Model (MMBM) Identification from Origin to Curve",
+    "sourceSummary": "Real-time identification of a complete Market Maker Buy Model: original consolidation, sell-side delivery curve, smart money reversal, and buy-side curve.",
+    "coreRules": [
+      "Enter on the Smart Money Reversal (SMR) or the first Buy-Side Re-accumulation FVG."
+    ],
+    "takeaway": "Trace the MMBM origin, sell-side curve and later buy-side targets.",
+    "urduTakeaway": "MMBM کا آغاز، سیل سائیڈ راستہ اور بعد کے بائے سائیڈ مقاصد سمجھیں۔"
+  },
+  "/masood/lectures/masood-syn-31/": {
+    "id": "masood-syn-31",
+    "preservedPrefix": "Study Liquidity References in Old Ranges.",
+    "sourceTitle": "SESSION 31: Spotting Hidden Liquidity Pools Inside Old Consolidation Ranges",
+    "sourceSummary": "How algorithms target internal range liquidity (IRL) resting inside old weekly and daily consolidations.",
+    "coreRules": [
+      "Mark the 50% equilibrium level (Consequent Encroachment) of old multi-day consolidations."
+    ],
+    "takeaway": "Mark an old consolidation range as a proposed liquidity reference.",
+    "urduTakeaway": "پرانی کنسولیڈیشن رینج کو لیکویڈیٹی کا مجوزہ حوالہ نشان زد کریں۔"
+  },
+  "/masood/lectures/masood-syn-32/": {
+    "id": "masood-syn-32",
+    "preservedPrefix": "Study Winner & Breakeven Trade Review.",
+    "sourceTitle": "SESSION 32: Live Execution Review: Analyzing Winner & Breakeven Trades with Precision",
+    "sourceSummary": "In-depth review of live executions: dissecting why certain setups ran directly to target while others required breakeven exits.",
+    "coreRules": [
+      "Never regret exiting at breakeven when market conditions deteriorate."
+    ],
+    "takeaway": "Review a breakeven exit when the original delivery thesis changes.",
+    "urduTakeaway": "اصل حرکت کا مفروضہ بدلنے پر بریک ایون اخراج کا جائزہ لیں۔"
+  },
+  "/masood/lectures/masood-syn-33/": {
+    "id": "masood-syn-33",
+    "preservedPrefix": "Study Friday Sessions & Weekly Range Review.",
+    "sourceTitle": "SESSION 33: Trading Friday Sessions: Weekly Range Completion & Profit Taking Traps",
+    "sourceSummary": "The anatomy of Friday trading: weekly range expansion completion, afternoon short-covering rallies, and avoiding profit gift-backs.",
+    "coreRules": [
+      "Close all trades by 12:00 PM on Friday; do not trade Friday afternoon."
+    ],
+    "takeaway": "Examine Friday timing and weekly-range completion before participation.",
+    "urduTakeaway": "شرکت سے پہلے جمعے کے اوقات اور ہفتہ وار رینج کی تکمیل دیکھیں۔"
+  },
+  "/masood/lectures/masood-syn-34/": {
+    "id": "masood-syn-34",
+    "preservedPrefix": "Study Deep Discount: Tape-Reading Case Study.",
+    "sourceTitle": "SESSION 34: Live Tape Reading: When the Algorithm Reprices into Deep Discount",
+    "sourceSummary": "Recognizing when price dips below the 79% OTE level into deep discount order blocks before launching aggressive rallies.",
+    "coreRules": [
+      "Ensure higher timeframe narrative is ultra-bullish before buying deep discount wicks."
+    ],
+    "takeaway": "Place the deep-discount retracement within its wider dealing range.",
+    "urduTakeaway": "گہری ڈسکاؤنٹ واپسی کو بڑی ڈیلنگ رینج کے اندر دیکھیں۔"
+  },
+  "/masood/lectures/masood-syn-35/": {
+    "id": "masood-syn-35",
+    "preservedPrefix": "Study Dealing Ranges: Premium & Discount.",
+    "sourceTitle": "SESSION 35: The Institutional Dealing Range: Premium/Discount Equilibrium Live Rules",
+    "sourceSummary": "Dividing any swing into upper 50% (Premium) and lower 50% (Discount) to ensure you always buy low and sell high.",
+    "coreRules": [
+      "Never initiate a long position in the Premium half of the dealing range."
+    ],
+    "takeaway": "Locate premium, discount and equilibrium within chosen range anchors.",
+    "urduTakeaway": "منتخب رینج اینکر میں پریمیئم، ڈسکاؤنٹ اور ایکویلیبریئم پہچانیں۔"
+  },
+  "/masood/lectures/masood-syn-36/": {
+    "id": "masood-syn-36",
+    "preservedPrefix": "Study US100 Scalping & Five-Minute FVGs.",
+    "sourceTitle": "SESSION 36: Live US100 Scalping: Exploiting 5-Minute Fair Value Gaps within Killzone",
+    "sourceSummary": "Fast-paced execution: capturing 15–25 handle quick scalps during peak New York Killzone algorithmic volatility.",
+    "coreRules": [
+      "Take full profit at the first opposing swing high/low."
+    ],
+    "takeaway": "Review a five-minute FVG in its stated killzone context.",
+    "urduTakeaway": "پانچ منٹ کے FVG کو اس کے مقررہ کِل زون سیاق میں دیکھیں۔"
+  },
+  "/masood/lectures/masood-syn-37/": {
+    "id": "masood-syn-37",
+    "preservedPrefix": "Study SMT Across NQ, ES & YM Futures.",
+    "sourceTitle": "SESSION 37: Real-Time SMT Identification Across NQ, ES, and YM (Dow Futures)",
+    "sourceSummary": "Triple-asset correlation: tracking NQ, ES, and Dow Futures (YM) simultaneously to catch the definitive institutional turn.",
+    "coreRules": [
+      "Trade the index with the cleanest structural displacement."
+    ],
+    "takeaway": "Compare the corresponding NQ, ES and YM swing references.",
+    "urduTakeaway": "NQ، ES اور YM کے متعلقہ سوئنگ حوالوں کا تقابل کریں۔"
+  },
+  "/masood/lectures/masood-syn-38/": {
+    "id": "masood-syn-38",
+    "preservedPrefix": "Study NFP & FOMC: Three-Phase Case Study.",
+    "sourceTitle": "SESSION 38: Live Trading NFP & FOMC Days: The 3-Phase Algorithmic Trap Dissection",
+    "sourceSummary": "Mastering Non-Farm Payrolls (NFP) and FOMC Rate Decision sessions: staying safe during the announcement and executing the Phase 3 trend.",
+    "coreRules": [
+      "Stay completely flat from 1:55 PM to 2:25 PM on FOMC days."
+    ],
+    "takeaway": "Review the lecture's pause around the scheduled FOMC release.",
+    "urduTakeaway": "مقررہ FOMC اعلان کے گرد لیکچر میں بیان کردہ وقفہ دیکھیں۔"
+  },
+  "/masood/lectures/masood-syn-39/": {
+    "id": "masood-syn-39",
+    "preservedPrefix": "Study Turtle Soup & Failed Sweep Follow-Through.",
+    "sourceTitle": "SESSION 39: Executing the Turtle Soup Pattern Live: Liquidity Sweep Without Follow-Through",
+    "sourceSummary": "The classic ICT Turtle Soup setup: price pierces a 20-day high/low by a few handles, fails to displace, and snaps back aggressively.",
+    "coreRules": [
+      "Enter on the close back inside the old high/low."
+    ],
+    "takeaway": "Distinguish an old-high sweep from sustained breakout follow-through.",
+    "urduTakeaway": "پرانے ہائی کے سویپ اور برقرار بریک آؤٹ کے تسلسل کا فرق سمجھیں۔"
+  },
+  "/masood/lectures/masood-syn-40/": {
+    "id": "masood-syn-40",
+    "preservedPrefix": "Study Opening Gap Days: NWOG & NDOG.",
+    "sourceTitle": "SESSION 40: Navigating Gap Days: New Week Opening Gap (NWOG) & New Day Opening Gap (NDOG)",
+    "sourceSummary": "How algorithms treat Sunday open gaps (NWOG) and 18:00 PM daily gaps (NDOG) as high-gravity magnets throughout the week.",
+    "coreRules": [
+      "Mark the high, low, and 50% midpoint of the New Week Opening Gap on Sunday evening."
+    ],
+    "takeaway": "Mark opening-gap endpoints and midpoint before interpreting revisits.",
+    "urduTakeaway": "واپسی کی تشریح سے پہلے اوپننگ گیپ کی حدیں اور وسط نشان زد کریں۔"
+  },
+  "/masood/lectures/masood-syn-41/": {
+    "id": "masood-syn-41",
+    "preservedPrefix": "Study Balanced Price Range (BPR) Case Study.",
+    "sourceTitle": "SESSION 41: Live Tape Reading: How Algorithms Rebalance BPR (Balanced Price Ranges)",
+    "sourceSummary": "Understanding Balanced Price Ranges (BPR): where a bullish FVG and a bearish FVG overlap, creating a vacuum that price rapidly traverses.",
+    "coreRules": [
+      "Price will not respect minor internal levels inside a BPR; it will slice cleanly to the other side."
+    ],
+    "takeaway": "Locate the overlap between opposite-direction fair value gaps.",
+    "urduTakeaway": "مخالف سمت کے فیئر ویلیو گیپس کے درمیان اوورلیپ پہچانیں۔"
+  },
+  "/masood/lectures/masood-syn-42/": {
+    "id": "masood-syn-42",
+    "preservedPrefix": "Study One Defined Setup & a Session Stop Rule.",
+    "sourceTitle": "SESSION 42: Execution Drill: Taking 1 Clean Setup and Shutting Down the Trading Desk",
+    "sourceSummary": "The supreme discipline drill: waiting 90 minutes for 1 perfect A+ setup, executing cleanly, banking profit, and closing the computer.",
+    "coreRules": [
+      "Take 1 trade. Win or lose, close the terminal for the day."
+    ],
+    "takeaway": "Review a single defined attempt followed by stopping the session.",
+    "urduTakeaway": "ایک متعین کوشش اور اس کے بعد سیشن روکنے کا جائزہ لیں۔"
+  },
+  "/masood/lectures/masood-syn-43/": {
+    "id": "masood-syn-43",
+    "preservedPrefix": "Study Doubts, Evidence & Trading Intuition.",
+    "sourceTitle": "SESSION 43: Live Mentorship Syndicate: Overcoming Technical Doubts & Building Intuition",
+    "sourceSummary": "Interactive mentorship Q&A: resolving student doubts on daily bias confusion, conflicting timeframes, and building chart intuition.",
+    "coreRules": [
+      "Trust your predetermined rules over live emotional impulses."
+    ],
+    "takeaway": "Relate developing intuition to repeated observation and recorded study.",
+    "urduTakeaway": "بار بار مشاہدے اور تحریری جائزے سے ٹریڈنگ کی بصیرت پیدا ہونے کا تعلق سمجھیں۔",
+    "originalPrefix": "Study Study Doubts, Evidence & Trading Intuition.",
+    "prefixCorrection": "User-approved removal of duplicated Study."
+  },
+  "/masood/lectures/masood-syn-44/": {
+    "id": "masood-syn-44",
+    "preservedPrefix": "Study US100 Execution Blueprint: Final Review.",
+    "sourceTitle": "SESSION 44: The Grand Capstone: Full Algorithmic Execution Blueprint on US100",
+    "sourceSummary": "The grand finale of The SMC Syndicate: full live synthesis of HTF Draw on Liquidity, Midnight Open, SMT Divergence, and Model 2022 execution.",
+    "coreRules": [
+      "Enforce the 4 gates of daily bias before every session.",
+      "Risk strictly 0.5% - 1% per trade.",
+      "Trade only during established Killzone hours.",
+      "Shut down after 2 trades or 2 losses.",
+      "Log every trade with brutal honesty."
+    ],
+    "takeaway": "Review the stated daily-bias gates before the execution sequence.",
+    "urduTakeaway": "ایگزیکیوشن کی ترتیب سے پہلے ڈیلی بائس کی مقررہ شرطیں دیکھیں۔"
+  }
+}

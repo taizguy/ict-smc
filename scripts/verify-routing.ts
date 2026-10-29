@@ -12,6 +12,8 @@ const env = { ASSETS: { fetch: async (request: Request) => {
 for (const [input, destination] of [
   ...retiredGraphPaths.flatMap(path => ['', '/ur'].flatMap(locale => [path, path.slice(0,-1)].map(old => [`https://learnsmc.xyz${locale}${old}`, `https://learnsmc.xyz${locale}/tools/knowledge-graph/`]))),
   ['http://learnsmc.xyz/curriculum/', 'https://learnsmc.xyz/curriculum/'],
+  ['https://learnsmc.xyz/curriculum', 'https://learnsmc.xyz/curriculum/'],
+  ['https://learnsmc.xyz/ur/curriculum', 'https://learnsmc.xyz/ur/curriculum/'],
   ['https://www.learnsmc.xyz/masood/', 'https://learnsmc.xyz/masood/'],
   ['https://learnsmc.xyz/Masood//Lectures/masood-beg-1/', 'https://learnsmc.xyz/masood/lectures/masood-beg-1/'],
   ['https://learnsmc.xyz/?chapter=13', 'https://learnsmc.xyz/learn/fair-value-gaps-fvg-and-consequent-encroachment/'],

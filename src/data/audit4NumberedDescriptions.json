@@ -1,0 +1,86 @@
+{
+  "/tools/masterclass/core-masterclasses/weekly-move/": {
+    "en": "Study a weekly price-move framework using the opening price, accumulation, expansion and retracement. Compare context and invalidation conditions.",
+    "ur": "اوپننگ قیمت، جمع ہونے، توسیع اور واپسی سے ہفتہ وار حرکت کا فریم ورک پڑھیں۔ سیاق اور ابطال کی شرطوں کا تقابل کریں۔"
+  },
+  "/tools/masterclass/core-masterclasses/draw-on-liquidity/": {
+    "en": "Learn to frame a draw on liquidity using prior highs, lows and imbalances. Distinguish a proposed objective from a destination price must reach.",
+    "ur": "سابقہ ہائی، لو اور عدم توازن سے ڈرا آن لیکویڈیٹی سمجھیں۔ مجوزہ مقصد کو لازماً پہنچنے والی منزل سے الگ کریں۔"
+  },
+  "/tools/masterclass/core-masterclasses/2022-model/": {
+    "en": "Walk through the ICT 2022 model: liquidity sweep, displacement, structure shift and FVG retracement. Compare worked examples and failed setups.",
+    "ur": "لیکویڈیٹی سویپ، ڈسپلیسمنٹ، ساختی تبدیلی اور FVG کی واپسی سے ICT 2022 ماڈل کی قدم بہ قدم مثالیں دیکھیں۔ موزوں اور ناکام صورتوں کا تقابل کریں۔"
+  },
+  "/tools/masterclass/core-masterclasses/cisd-masterclass/": {
+    "en": "Understand change in state of delivery (CISD) through candle opening-price references and closes. Compare confirmation, context and failed interpretations.",
+    "ur": "کینڈل کی اوپننگ قیمت اور بند سے چینج اِن اسٹیٹ آف ڈیلیوری (CISD) سمجھیں۔ تصدیق، سیاق اور ناکام تشریحات کا تقابل کریں۔"
+  },
+  "/tools/masterclass/core-masterclasses/ifvg-masterclass/": {
+    "en": "Study how a failed FVG becomes an inverse fair value gap reference. Follow the close-through, role reversal and retest without assuming it must hold.",
+    "ur": "ناکام FVG کا اِنورس فیئر ویلیو گیپ حوالہ بننا سمجھیں۔ حد کے پار بند، کردار کی تبدیلی اور دوبارہ جانچ دیکھیں؛ برقرار رہنا لازم نہ سمجھیں۔"
+  },
+  "/tools/masterclass/core-masterclasses/silver-bullet/": {
+    "en": "Study the ICT Silver Bullet sequence: time window, liquidity event, displacement and FVG entry reference. Separate timing from setup confirmation.",
+    "ur": "ICT سلور بُلٹ کی ترتیب پڑھیں: وقت کی ونڈو، لیکویڈیٹی واقعہ، ڈسپلیسمنٹ اور FVG کا حوالہ۔ وقت کو سیٹ اپ کی تصدیق سے الگ کریں۔"
+  },
+  "/tools/masterclass/core-masterclasses/unicorn-model/": {
+    "en": "Compare a breaker block and FVG overlap in the ICT Unicorn model. Learn the sequence, entry boundaries and conditions that invalidate the combination.",
+    "ur": "ICT یونیکورن ماڈل میں بریکر بلاک اور FVG کے اوورلیپ کا تقابل کریں۔ ترتیب، انٹری کی حدیں اور امتزاج باطل کرنے والی شرطیں سمجھیں۔"
+  },
+  "/tools/masterclass/opening-ranges/five-opening-ranges/": {
+    "en": "Compare five ICT opening-range references and their session context. Learn which price and time boundaries define each before applying a directional bias.",
+    "ur": "ICT کے پانچ اوپننگ رینج حوالوں اور سیشن کے سیاق کا تقابل کریں۔ سمت کا رجحان لگانے سے پہلے ہر ایک کی قیمت اور وقت کی حدیں سمجھیں۔"
+  },
+  "/tools/masterclass/pd-arrays/propulsion-block/": {
+    "en": "Study propulsion blocks through an earlier order-block reference, a later pullback and renewed displacement. Compare continuation with reference failure.",
+    "ur": "پہلے آرڈر بلاک، بعد کی واپسی اور نئی ڈسپلیسمنٹ سے پروپلشن بلاک پڑھیں۔ تسلسل کا حوالہ ناکام ہونے سے تقابل کریں۔"
+  },
+  "/tools/masterclass/pd-arrays/implied-fvg/": {
+    "en": "Learn the implied FVG convention through candle-body and wick relationships. Distinguish an inferred reference from a literal three-candle range gap.",
+    "ur": "کینڈل باڈی اور وِک کے تعلق سے اِمپلائیڈ FVG کی روایت سمجھیں۔ اخذ کردہ حوالے کو حقیقی تین کینڈل رینج گیپ سے الگ کریں۔"
+  },
+  "/tools/masterclass/pd-arrays/rejection-block/": {
+    "en": "Identify an ICT rejection block between a wick extreme and candle-body reference. Compare boundaries, revisits and situations where rejection fails.",
+    "ur": "ICT ریجیکشن بلاک میں وِک کی آخری حد اور کینڈل باڈی کے درمیان زون پہچانیں؛ چارٹ کی مثالوں سے حدود، واپسی اور ناکامی سمجھیں۔"
+  },
+  "/tools/masterclass/core-masterclasses/standard-deviations/": {
+    "en": "Measure ICT range-multiple projections from chosen anchors. Distinguish these chart extensions from statistical standard deviation and probability targets.",
+    "ur": "منتخب اینکر سے ICT رینج کے گنا فاصلے ناپیں۔ چارٹ ایکسٹینشن کو شماریاتی اسٹینڈرڈ ڈیوی ایشن اور امکانی اہداف سے الگ سمجھیں۔"
+  },
+  "/tools/masterclass/core-masterclasses/ny-continuation-reversal/": {
+    "en": "Compare New York continuation and reversal using earlier session price action, liquidity and confirmation. Review situations where context stays unclear.",
+    "ur": "پہلے سیشن کی حرکت، لیکویڈیٹی حوالوں اور تصدیق سے نیویارک تسلسل اور پلٹاؤ کا تقابل کریں۔ غیر واضح سیاق کی صورتیں دیکھیں۔"
+  },
+  "/tools/masterclass/entry-models/first-presentation-fvg/": {
+    "en": "Learn to identify the first qualifying presented FVG after the required context and confirmation. Compare it with an earlier gap that does not qualify.",
+    "ur": "ضروری سیاق اور تصدیق کے بعد پہلا موزوں پیش کردہ FVG پہچانیں۔ اس کا پہلے بننے والے مگر غیر موزوں گیپ سے تقابل کریں۔"
+  },
+  "/tools/masterclass/entry-models/ote-model/": {
+    "en": "Measure ICT OTE retracements at 61.8%, 70.5% and 79%. Compare swing anchors, context, risk and invalidation; a ratio alone is not an entry.",
+    "ur": "ICT OTE میں سوئنگ کی 61.8%، 70.5% اور 79% ریٹریسمنٹ ناپیں۔ ریشو کو انٹری سمجھنے کے بجائے اینکر، سیاق، رسک اور ابطال کا تقابل کریں۔"
+  },
+  "/tools/masterclass/mentorship-frameworks/three-day-rule/": {
+    "en": "Study the ICT three-day framework through successive daily references and delivery sequences. Examine the conditions that challenge the pattern.",
+    "ur": "مسلسل روزانہ حوالوں اور مجوزہ حرکت کی ترتیب سے ICT کا تین دن کا فریم ورک پڑھیں۔ پیٹرن کو چیلنج کرنے والی شرطیں دیکھیں۔"
+  },
+  "/tools/masterclass/core-masterclasses/smt-masterclass/": {
+    "en": "Compare related markets for SMT divergence using corresponding highs and lows. Learn why timing matters and divergence alone is not an entry.",
+    "ur": "متعلقہ مارکیٹوں کے ایک جیسے ہائی اور لو سے SMT ڈائیورجنس کا تقابل کریں۔ وقت کی مطابقت اور ڈائیورجنس اکیلے انٹری نہ بننے کی وجہ سمجھیں۔"
+  },
+  "/tools/masterclass/core-masterclasses/crt-candle-range-theory/": {
+    "en": "Explore Candle Range Theory through a reference candle, a move beyond its range and the subsequent response. Compare reclaim, continuation and failure.",
+    "ur": "حوالہ جاتی کینڈل، اس کی رینج سے باہر حرکت اور بعد کے ردعمل سے کینڈل رینج تھیوری پڑھیں۔ واپسی، تسلسل اور ناکامی کا تقابل کریں۔"
+  },
+  "/tools/masterclass/entry-models/double-purge/": {
+    "en": "Study a double-purge sequence in which both sides of a range are crossed. Compare the later confirmation with an unresolved two-sided sweep.",
+    "ur": "ڈبل پرج میں رینج کے دونوں طرف حد پار ہونے کی ترتیب پڑھیں۔ بعد کی تصدیق کا غیر واضح دو طرفہ سویپ سے تقابل کریں۔"
+  },
+  "/tools/masterclass/pd-arrays/hangman-pd-array/": {
+    "en": "Study the ICT Hangman PD array using wick rejection and the midpoint reference. Compare confirmation, boundary choices and failed responses.",
+    "ur": "ICT ہینگ مین PD اَرے میں وِک سے قیمت کا ردِعمل اور درمیانی سطح (CE) دیکھیں؛ تصدیق، حدود اور ناکام صورتوں کا موازنہ کریں۔"
+  },
+  "/tools/masterclass/mentorship-frameworks/algorithmic-macros-schedule/": {
+    "en": "Read the ICT macro-window schedule in New York time and connect timing with price context. Distinguish a reference window from a directional signal.",
+    "ur": "نیویارک وقت میں ICT میکرو ونڈو شیڈول پڑھیں اور وقت کو قیمت کے سیاق سے ملائیں۔ حوالہ جاتی وقفے کو سمت کے سگنل سے الگ سمجھیں۔"
+  }
+}

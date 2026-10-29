@@ -14,6 +14,8 @@ import { StudySketchSvg } from '../src/components/articles/StudySketch';
 import { SketchSvg } from '../src/components/articles/ArticleSketch';
 import type { RouteMeta } from './prerender';
 import { orderRedirectRules } from './redirect-rules';
+import { replaceAuditedReadingRoot } from './audited-reading-document';
+import { auditedReadingRoute } from '../src/utils/auditedReadingRoutes';
 
 export function generateUrduPages(dist: string, routes: RouteMeta[]) {
   const preview = !URDU_PUBLISHED;
@@ -29,11 +31,12 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
       if (!preview) fs.writeFileSync(sourcePath, addLanguageAlternates(source, englishPath, !route.isNoindex));
       continue;
     }
-    const html = localizeHtml(source, englishPath, urdu, { preview, indexable: !route.isNoindex, availablePaths: available, onMissing(text) {
+    let html = localizeHtml(source, englishPath, urdu, { preview, indexable: !route.isNoindex, availablePaths: available, nativeReadingRoot: !!auditedReadingRoute(englishPath), onMissing(text) {
       if (!text) return;
       if (!missing.has(text)) missing.set(text, new Set());
       missing.get(text)!.add(englishPath);
     } });
+    html = replaceAuditedReadingRoot(html, localizedHref(englishPath, 'ur'), route.heading);
     const outputPath = path.posix.join('ur', route.outputPath);
     fs.mkdirSync(path.dirname(path.join(dist, outputPath)), { recursive: true });
     fs.writeFileSync(path.join(dist, outputPath), html);

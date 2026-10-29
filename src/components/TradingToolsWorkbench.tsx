@@ -48,6 +48,8 @@ export type TradingToolId =
   | 'ict_suite';
 
 export interface TradingToolsWorkbenchProps {
+  documentPath?: string;
+  documentHeading?: string;
   initialTool?: TradingToolId | 'overview';
   onToolChange?: (tool: TradingToolId | 'overview', customUrl?: string) => void;
   onSelectConcept?: (conceptId: string, slug?: string) => void;
@@ -81,6 +83,8 @@ export interface TradingToolsWorkbenchProps {
 }
 
 export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
+  documentPath,
+  documentHeading,
   initialTool = 'overview',
   onToolChange,
   onSelectConcept,
@@ -243,7 +247,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
             </nav>
           </details>
         </div>
-        <h1 className="text-xl sm:text-2xl font-semibold tracking-tight">{document.querySelector('meta[name="learnsmc-heading"]')?.getAttribute('content') || t(currentToolMeta.name)}</h1>
+        <h1 className="text-xl sm:text-2xl font-semibold tracking-tight">{documentHeading || (typeof document === 'undefined' ? undefined : document.querySelector('meta[name="learnsmc-heading"]')?.getAttribute('content')) || t(currentToolMeta.name)}</h1>
       </header>
 
       {/* Render Active Tool Content */}
@@ -322,7 +326,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
         </div>
       </div>
 
-      {(() => { const guide = toolStudyGuide(window.location.pathname); return guide ? <details className="space-y-3 text-sm leading-relaxed"><summary className="cursor-pointer py-3">{t(guide.title)}</summary>{guide.paragraphs.map(p => <p key={p}>{t(p)}</p>)}<p><a href="/curriculum/" className="underline">Study the curriculum</a> and <a href="/about/#editorial-policy" className="underline">editorial policy</a>.</p><FinancialDisclaimer /></details> : null; })()}
+      {(() => { const guide = toolStudyGuide(documentPath || (typeof window === 'undefined' ? '' : window.location.pathname)); return guide ? <details className="space-y-3 text-sm leading-relaxed"><summary className="cursor-pointer py-3">{t(guide.title)}</summary>{guide.paragraphs.map(p => <p key={p}>{t(p)}</p>)}<p><a href="/curriculum/" className="underline">Study the curriculum</a> and <a href="/about/#editorial-policy" className="underline">editorial policy</a>.</p><FinancialDisclaimer /></details> : null; })()}
     </div>
   );
 };

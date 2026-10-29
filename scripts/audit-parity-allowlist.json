@@ -1,0 +1,4 @@
+{
+  "tabOnly": [],
+  "notes": "Any future exception must name one route, an exact normalized paragraph/heading, its owning tab and a reason. No route-wide exemptions. Live clock and chart-preview UI are excluded by explicit selectors in the scanner, not by this tab allowlist."
+}

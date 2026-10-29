@@ -1,5 +1,6 @@
 /** Editorial overrides for tool instructions; underlying models and values stay unchanged. */
 export const toolsUrdu: Record<string, string> = {
+  'Chart Lab study briefs': 'چارٹ لیب کے مخصوص مطالعاتی نوٹس',
   "3D ICT & SMC Knowledge Graph | LearnSMC": "ICT اور SMC کا سہ جہتی علمی گراف | LearnSMC",
   "Explore an interactive 3D tree of ICT and smart money concepts. Expand topic branches, find related concepts, and open their explanations.": "ICT اور Smart Money Concepts کے انٹرایکٹو سہ جہتی شجرے کو دریافت کریں۔ موضوع کی شاخیں کھولیں، متعلقہ تصورات تلاش کریں اور ان کی وضاحت پڑھیں۔",
   "See how smart money concepts fit together.": "دیکھیں Smart Money Concepts آپس میں کیسے جڑتے ہیں۔",
@@ -73,4 +74,6 @@ export const toolsUrdu: Record<string, string> = {
   "Expand topic branches": "موضوعات کی شاخیں کھولیں",
   "Accessible text tree and concept links": "قابلِ رسائی متنی شجرہ اور تصورات کے روابط",
   "{0}-lesson completion overview": "{0} اسباق کی تکمیل کا جائزہ",
+  'Reading preview of the revealed illustrative candles': 'اب تک دکھائی گئی فرضی کینڈلز کا مطالعے کے لیے خاکہ',
+  'Reading preview. Interactive chart controls load separately.': 'یہ مطالعے کا خاکہ ہے۔ چارٹ کے انٹرایکٹو بٹن الگ سے لوڈ ہوتے ہیں۔',
 };

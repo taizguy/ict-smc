@@ -1,3 +1,6 @@
+import { deliverySuiteReading } from '../src/data/deliverySuiteReading';
+import { ToolRouteStudy } from '../src/components/ToolRouteStudy';
+import { AuditedRouteBody } from '../src/components/AuditedRouteDocument';
 import { workbenchToolCatalog } from '../src/data/workbenchCatalog';
 import { GLOSSARY_CATEGORIES, CONCEPT_SLUG_MAP, getGlossaryConceptPath } from '../src/utils/glossaryRoutes';
 import { lessonAuthor, publisher } from '../src/utils/publisher';
@@ -26,7 +29,7 @@ export function correctToolDocument(r:RouteMeta,path:string){
   r.title=`${context}: ${tool==='delivery-suite'?'Session Preparation':tool==='backtest'?'Rule Study':tool==='simulator'?'Decision Practice':'Chart Practice'} | LearnSMC`;
   r.heading=`${context}: ${guide.title}`;
   r.description=`${context}. ${guide.description}`;
-  r.bodyHtml=section(guide.title,guide.paragraphs)+renderToStaticMarkup(createElement(ChapterDiagram,{chapterId:tool==='chartlab'?13:tool==='simulator'?22:38,staticOnly:true}))+`<p><a href="/tools/chartlab/">Chart Laboratory</a> · <a href="/tools/simulator/">Trade Simulator</a> · <a href="/tools/backtest/">Backtest Lab</a> · <a href="/tools/delivery-suite/">ICT Delivery Suite</a> · <a href="/resources/ict-smc-cheat-sheet/">Free glossary and cheat sheet</a></p>`;
+  r.bodyHtml=renderToStaticMarkup(createElement(ToolRouteStudy,{family:tool,slug}))+section(guide.title,guide.paragraphs)+(tool==='chartlab'?renderToStaticMarkup(createElement(AuditedRouteBody,{pathname:path,heading:r.heading})):renderToStaticMarkup(createElement(ChapterDiagram,{chapterId:tool==='simulator'?22:38,staticOnly:true})))+`<p><a href="/tools/chartlab/">Chart Laboratory</a> · <a href="/tools/simulator/">Trade Simulator</a> · <a href="/tools/backtest/">Backtest Lab</a> · <a href="/tools/delivery-suite/">ICT Delivery Suite</a> · <a href="/resources/ict-smc-cheat-sheet/">Free glossary and cheat sheet</a></p>`;
   r.schemaJson={'@type':'WebApplication',name:context,description:guide.description,url:r.canonical,applicationCategory:'EducationalApplication',operatingSystem:'Web browser',isAccessibleForFree:true,author:lessonAuthor,publisher,dateModified:'2026-10-23'};
   return;
  }
@@ -55,7 +58,7 @@ export function correctToolDocument(r:RouteMeta,path:string){
  }
  else if(tool==='delivery-suite'){
  const module=DELIVERY_SUITE_MODULES.find(m=>m.slug===slug);r.title=`${module?.name||'Delivery Study Suite'} | LearnSMC`;r.description='Independent New York study clock, instrument-aware retracement calculator, range extensions and a saved personal lesson checklist.';
- r.bodyHtml=section('Scope and method',['These are independently developed LearnSMC educational tools, not official exchange or ICT products. Select a module for timing, price-range arithmetic or personal study review. Levels and windows are references, not signals or probabilities.','The New York clock keeps the current instant intact and formats America/New_York once. It displays the appropriate EDT/EST abbreviation. Eight recurring study windows are shown in New York local time. Holidays, market closures and economic releases are not checked.'])+section('Price and size assumptions',['Bullish retracement = high − (high − low) × ratio; bearish retracement = low + (high − low) × ratio. Ratios include 0.50, 0.618, 0.705 and 0.790. Invalid, zero-range or inverted anchors are rejected. Theoretical levels are distinguished from tick-rounded prices.','The illustrative stop lies 5% of the anchor range beyond the extreme, rounded outward; entry and targets round to the nearest instrument tick. Position size rounds down using recomputed stop risk, point value and size increment. Futures require whole contracts; micro contracts are listed separately. A budget too small for one increment produces zero size, not a fractional futures contract. FX/gold/crypto examples state their assumed units; verify broker specifications and costs.'])+section('Projections and personal checklist',['Asian-range projections are 1.5, 2 and 2.5 range multiples beyond the selected extremes. They are not statistical standard deviations or probabilistic forecasts.','The study checklist starts empty, links to actual curriculum lessons and persists on this device. It is a personal review list, separate from lesson completion and practice quiz results. Export a copy before clearing browser data.']);
+ r.bodyHtml=renderToStaticMarkup(createElement(ToolRouteStudy,{family:'delivery-suite',slug}))+deliverySuiteReading.map(item=>section(item.title,item.paragraphs)).join('');
  }
  else if(tool==='knowledge-graph'){
  r.description='Explore an interactive 3D tree of ICT and smart money concepts. Expand topic branches, find related concepts, and open their explanations.';

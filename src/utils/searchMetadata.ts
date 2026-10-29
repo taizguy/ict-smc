@@ -2,6 +2,9 @@ import {masterclassHubPath,masterclassHubTitle,masterclassHubDescription} from '
 import {chapterCatalog} from '../data/catalog.generated';
 import { studyTopics } from '../data/searchTopics';
 import searchDescriptions from '../data/searchDescriptions.json';
+import audit4Descriptions from '../data/audit4Descriptions.json';
+import audit4NumberedDescriptions from '../data/audit4NumberedDescriptions.json';
+import audit4LectureDescriptions from '../data/audit4LectureDescriptions.json';
 import reviewed2026 from '../data/chapters/mentorship2026Search.json';
 export { studyTopics };
 /** Editorial budgets, not Google indexing limits. Keep the topic before the brand. */
@@ -98,7 +101,7 @@ export function searchDescription(value: string, title: string, path: string): s
   if(path===masterclassHubPath)return masterclassHubDescription;
   // Human-reviewed page summaries take precedence over length-based fallbacks.
   const englishPath = path.replace(/^\/ur(?=\/|$)/, '') || '/';
-  const reviewed = searchDescriptions[englishPath as keyof typeof searchDescriptions];
+  const reviewed = audit4LectureDescriptions[englishPath as keyof typeof audit4LectureDescriptions] || audit4NumberedDescriptions[englishPath as keyof typeof audit4NumberedDescriptions] || audit4Descriptions[englishPath as keyof typeof audit4Descriptions] || searchDescriptions[englishPath as keyof typeof searchDescriptions];
   if (reviewed) {
     const description=path.startsWith('/ur/') ? reviewed.ur : reviewed.en;
     return englishPath==='/' ? description.replace(/\d+(?=\s+(?:chapters|ابواب))/,String(chapterCatalog.length)) : description;

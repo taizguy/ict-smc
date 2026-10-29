@@ -106,4 +106,6 @@ export const editorialUrdu: Record<string, string> = {
   'Past performance does not guarantee future results.': 'ماضی کی کارکردگی آئندہ نتائج کی ضمانت نہیں۔',
   'Trading can result in losses beyond your deposit.': 'ٹریڈنگ کے نتیجے میں نقصان آپ کی جمع کرائی ہوئی رقم سے بھی بڑھ سکتا ہے۔',
   'Do not assume that price will reverse after a liquidity sweep.': 'یہ فرض نہ کریں کہ لیکویڈیٹی سویپ (Liquidity Sweep) کے بعد قیمت لازماً پلٹ جائے گی۔',
+  'Rules discussed in this lecture': 'اس لیکچر میں بیان کیے گئے اصول',
+  'Video source: Trader Abdullah Masood on YouTube. Notes are independently written; the source educator is not the author or reviewer of these notes.': 'ویڈیو کا ماخذ: یوٹیوب پر ٹریڈر عبداللہ مسعود۔ یہ نوٹس آزادانہ طور پر لکھے گئے ہیں؛ ویڈیو کے استاد ان نوٹس کے مصنف یا جائزہ لینے والے نہیں ہیں۔',
 };

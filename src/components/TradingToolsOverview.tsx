@@ -5,7 +5,6 @@ import { workbenchToolCatalog } from '../data/workbenchCatalog';
 import { SEO } from './SEO';
 import { TradingToolId } from './TradingToolsWorkbench';
 import { startHero } from './workbenchHero';
-import '../styles/study-workbench.css';
 const toolIcons = { Flame, BarChart2, PlayCircle, Cpu, BookMarked, GitFork, Layers, GitCompare, Award, Compass };
 export const WORKBENCH_TOOL_CATALOG = workbenchToolCatalog.map(tool => ({
   ...tool, icon: toolIcons[tool.icon],

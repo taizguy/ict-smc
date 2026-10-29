@@ -11,9 +11,10 @@
           html.dataset.theme = theme === 'dark' || theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
           html.style.colorScheme = html.dataset.theme;
         } catch (_) {}
-        html.dataset.appStartup = 'loading';
+        // Only parity-verified generated routes may keep their reading view visible.
+        html.dataset.appStartup = html.dataset.readingEnhancement === 'true' ? 'enhancing' : 'loading';
         window.setTimeout(function () {
-          if (html.dataset.appStartup === 'loading') {
+          if (html.dataset.appStartup === 'loading' || html.dataset.appStartup === 'enhancing') {
             html.dataset.appStartup = 'fallback';
             window.dispatchEvent(new Event('learnsmc:startup-timeout'));
           }

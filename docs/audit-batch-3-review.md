@@ -18,3 +18,14 @@ All six named URLs currently use the same six-case guided desk. The scenario lab
 Targeted check: six routes in both languages, all four note sections present in shared runtime and initial HTML; maximum complete-document word-trigram Jaccard 0.574. TypeScript check recorded separately in ignored `outputs/audit-batch-3/`. No consolidation performed. A later product decision could replace shared exercises with genuinely distinct replays; that is outside this content batch.
 
 Files: `src/data/chartRouteStudies.ts`, `toolRouteStudies.ts`; `src/components/ToolRouteStudy.tsx`, `ChartLab.tsx`; `src/i18n/urdu.ts`; `scripts/generate-urdu-runtime.ts`; `scripts/verify-audit-batch-3.ts`; this review and progress log.
+
+## Delivery Suite — completed locally
+
+| Route suffix | Actual module and distinct explanation | Decision |
+| --- | --- | --- |
+| macro-clock | Recurring New York reference windows; EDT/EST conversion example; no holiday/news feed or direction signal | Preserve |
+| ote-calculator | Instrument-aware retracement and whole-unit sizing; default NQ example explains why a $250 budget produces zero contracts | Preserve |
+| judas-planner | Actual control is range-multiple arithmetic, not a detected Judas setup; 100–110 range gives 125/85 at 1.5× beyond extremes | Preserve; misleading legacy name disclosed, no rename/redirect |
+| learning-path | Device-local personal selections, independent from lesson completion and quizzes; export/storage limitations | Preserve |
+
+All four receive EN/UR instructions, examples, assumptions and limitations from the shared model. Targeted checks pass with maximum complete-document word-trigram Jaccard 0.571. No clock schedules, calculator formulas, stored-data keys or checklist behavior changed. TypeScript runs per family. Files: `src/data/deliveryRouteStudies.ts`, registry `toolRouteStudies.ts`, `src/components/InstitutionalToolsSuite.tsx`, `scripts/tools-content.ts`, review/progress docs.

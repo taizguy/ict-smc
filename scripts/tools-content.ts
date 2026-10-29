@@ -1,4 +1,5 @@
 import { deliverySuiteReading } from '../src/data/deliverySuiteReading';
+import { ToolRouteStudy } from '../src/components/ToolRouteStudy';
 import { AuditedRouteBody } from '../src/components/AuditedRouteDocument';
 import { workbenchToolCatalog } from '../src/data/workbenchCatalog';
 import { GLOSSARY_CATEGORIES, CONCEPT_SLUG_MAP, getGlossaryConceptPath } from '../src/utils/glossaryRoutes';
@@ -57,7 +58,7 @@ export function correctToolDocument(r:RouteMeta,path:string){
  }
  else if(tool==='delivery-suite'){
  const module=DELIVERY_SUITE_MODULES.find(m=>m.slug===slug);r.title=`${module?.name||'Delivery Study Suite'} | LearnSMC`;r.description='Independent New York study clock, instrument-aware retracement calculator, range extensions and a saved personal lesson checklist.';
- r.bodyHtml=deliverySuiteReading.map(item=>section(item.title,item.paragraphs)).join('');
+ r.bodyHtml=renderToStaticMarkup(createElement(ToolRouteStudy,{family:'delivery-suite',slug}))+deliverySuiteReading.map(item=>section(item.title,item.paragraphs)).join('');
  }
  else if(tool==='knowledge-graph'){
  r.description='Explore an interactive 3D tree of ICT and smart money concepts. Expand topic branches, find related concepts, and open their explanations.';

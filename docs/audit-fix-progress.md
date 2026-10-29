@@ -4,10 +4,10 @@ Branch: `fix/audit-batch-3`, based on the Batch 2 review branch and its local pr
 
 ## Batch 3 — Route specificity
 
-- **Done:** Chart Lab: six routes individually reviewed; distinct instructions, invented worked example, assumptions and limitations in EN/UR. Shared exercise behavior is explicitly disclosed. All URLs preserved.
-- **Verification:** targeted static/runtime note checks pass; maximum complete-document word-trigram Jaccard 0.574 across Chart Lab pairs, both languages. TypeScript checked per family. Evidence and individual decisions: `docs/audit-batch-3-review.md`.
+- **Done:** Chart Lab (`c36ef0f`): six routes; Delivery Suite: four routes. Each individually reviewed with distinct EN/UR instructions, worked example, assumptions and limitations. Shared exercise behavior and actual module capabilities are explicitly disclosed. All URLs preserved.
+- **Verification:** targeted static/runtime note checks pass; maximum complete-document word-trigram Jaccard 0.574 (Chart Lab), 0.571 (Delivery Suite), both languages. TypeScript checked per family. Evidence and individual decisions: `docs/audit-batch-3-review.md`.
 - **Files touched:** exact family inventory in the review. No shared startup/gate expansion, dates or metadata changes.
-- **In progress / next:** commit Chart Lab locally, then Delivery Suite, Backtest and Simulator in that order. Full suite/crawl remain Batch 6; Urdu author review pending.
+- **In progress / next:** finish Delivery Suite local commit, then Backtest and Simulator. Full suite/crawl remain Batch 6; Urdu author review pending.
 
 ## Batch 2 — Rendering and parity
 

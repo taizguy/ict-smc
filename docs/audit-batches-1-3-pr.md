@@ -1,6 +1,6 @@
 # Prepared PR: Audit batches 1–3 — metadata, reading parity and distinct tool-route guidance
 
-Publication status: local preparation only. The user prohibits push/deploy. GitHub has no `fix/audit-batch-3` branch, so a PR containing its commits cannot yet be opened. Do not substitute an incomplete PR or upload commits through another API.
+Publication status: the user clarified that publishing the feature branch and opening this review PR are authorized. Pushing to main, merging and deploying to production remain prohibited.
 
 Proposed base: `main`. Proposed head: `fix/audit-batch-3`. Draft; never merge automatically.
 

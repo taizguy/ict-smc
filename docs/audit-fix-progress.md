@@ -1,6 +1,6 @@
 # Audit fix progress
 
-Branch: `fix/audit-batch-3`, based on the Batch 2 review branch and its local production follow-up. One local commit per Batch 3 family, as subsequently requested. No push, merge or deployment authorized.
+Branch: `fix/audit-batch-3`, based on the Batch 2 review branch and its production follow-up. One commit per Batch 3 family, as subsequently requested. The user clarified that feature-branch pushes and a review PR are authorized; pushing to main, merging and production deployment remain prohibited.
 
 ## Batch 3 — Route specificity
 
@@ -8,8 +8,8 @@ Branch: `fix/audit-batch-3`, based on the Batch 2 review branch and its local pr
 - **Verification:** targeted static/runtime note checks pass; maximum complete-document word-trigram Jaccard 0.574 (Chart Lab), 0.571 (Delivery Suite), 0.335 (Backtest), 0.344 (Simulator), both languages. All 342 within-/cross-family pairs are below 0.90, maximum 0.574. TypeScript passed per family. Evidence and individual decisions: `docs/audit-batch-3-review.md`.
 - **Production follow-up:** subsequently authorized production compilation and prerender completed for the current Batch 3 source. The 19 routes generate in EN and UR (38 pages): all shared-study sections, HTML language, canonical and en/ur/x-default annotations passed targeted output checks. Production-page Jaccard maxima: Chart Lab 0.572, Delivery 0.654, Backtest 0.432, Simulator 0.416; all 342 pairs below 0.90. These include production wrapper text and are separate from the earlier component-fixture measurements. Generated shared/tools Urdu catalogs are retained with this follow-up. Bundle-size warnings remain for Batch 5. Full suite/crawl not run.
 - **Files touched:** exact family inventory in the review. No shared startup/gate expansion, dates or metadata changes.
-- **Status:** accepted by the user; production follow-up verified locally. Combined PR publication is blocked by the explicit no-push instruction. No merge or deployment.
-- **Next:** author review of Urdu; Batch 4 waits for the user's GSC priorities. Full suite/crawl remain Batch 6. A combined PR cannot include local commits until branch publication is authorized; no push is authorized. Batch 1 is already merged (PR #29), so its work will be referenced in the combined handoff rather than duplicated in the diff. Prepared PR text: `docs/audit-batches-1-3-pr.md`.
+- **Status:** accepted by the user; production follow-up verified locally. Feature-branch publication and a combined review PR are now authorized. No merge or production deployment.
+- **Next:** review PR and author review of Urdu; Batch 4 waits for the user's GSC priorities. Full suite/crawl remain Batch 6. Batch 1 is already merged (PR #29), so its work is referenced in the combined handoff rather than duplicated in the diff. PR text: `docs/audit-batches-1-3-pr.md`.
 
 ## Product decisions pending
 
@@ -52,7 +52,7 @@ Evidence: route props in `ChartLab.tsx`, `BacktestLab.tsx`, `TradeSimulator.tsx`
 - **Status:** accepted by the user; no merge or deployment by the agent. Urdu author review remains pending.
 - **Files touched:** complete grouped inventory in `docs/audit-batch-2-review.md`. Changes cover the four route views, shared reading models, scoped startup, EN/UR generators and targeted parity checks.
 - **Verification passed:** TypeScript; 254 targeted EN/UR documents; normalized essential headings/paragraphs in 42 browser snapshots covering normal, delayed, failed-entry and script-free documents, mobile, dark mode and Urdu. Four delayed before/after main-content geometry pairs had zero measured changes; four interactive smoke checks passed. Script-free fixtures are not a browser-level JavaScript-disable test. Full production build, suite and crawl remain Batch 6.
-- **Committed:** `b3de1e7` on review PR #30; local production follow-up `08e3d65`. No push/deploy authorized for that follow-up.
+- **Committed:** `b3de1e7` on review PR #30; production follow-up `08e3d65` is included on the combined feature branch. Feature-branch push now authorized; no production deployment.
 - **Production follow-up:** Vite production compilation and prerender completed. The Urdu gate initially checked discarded English body fragments; it now validates the head while the verified reading bodies use native Urdu rendering. Targeted production checks confirm 7 Chart Lab documents, one FVG entry, one OTE calculator and 118 lectures in each language. Home, the FVG curriculum lesson and `/tools/` screenshots match the live baseline (apart from theme preference icon/animation timing). Urdu strings are listed in `docs/audit-batch-2-urdu-review.md`. Full suite/crawl remain Batch 6.
 - **Next:** Batch 3 authorized in order Chart Lab, Delivery Suite, Backtest, Simulator, with one local commit per family. No push/deploy; no URL/redirect changes.
 

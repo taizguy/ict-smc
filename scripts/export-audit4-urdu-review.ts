@@ -1,0 +1,15 @@
+import fs from 'node:fs';
+import priority from '../src/data/audit4Descriptions.json';
+import numbered from '../src/data/audit4NumberedDescriptions.json';
+import lectures from '../src/data/audit4LectureDescriptions.json';
+import { audit4Headings } from '../src/data/audit4Headings';
+const descriptions={...priority,...numbered,...lectures};
+const escape=(s:string)=>s.replace(/\|/g,'\\|').replace(/\n/g,' ');
+let report='# Batch 4 Urdu review — complete string inventory\n\n';
+report+='154 reviewed description pairs and two H1 pairs. English and Urdu descriptions are shared by description, Open Graph and Twitter. Previously reviewed Rejection Block/Hangman Urdu wording is retained alongside the new English summaries. The author should review every Urdu row; automated language/parity checks do not replace that review.\n\n';
+report+='## H1s\n\n| Route | English | Urdu |\n| --- | --- | --- |\n';
+for(const [path,pair] of Object.entries(audit4Headings)) report+=`| ${path} | ${escape(pair.en)} | ${escape(pair.ur)} |\n`;
+report+='\n## Descriptions\n\n| Route | English | Urdu |\n| --- | --- | --- |\n';
+for(const [path,pair] of Object.entries(descriptions).sort(([a],[b])=>a.localeCompare(b))) report+=`| ${path} | ${escape(pair.en)} | ${escape(pair.ur)} |\n`;
+fs.writeFileSync('docs/audit-batch-4-urdu-review.md',report);
+console.log(`${Object.keys(descriptions).length} description pairs + ${Object.keys(audit4Headings).length} H1 pairs exported.`);

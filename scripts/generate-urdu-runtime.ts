@@ -1,4 +1,7 @@
 import searchDescriptions from '../src/data/searchDescriptions.json';
+import audit4Priority from '../src/data/audit4Descriptions.json';
+import audit4Numbered from '../src/data/audit4NumberedDescriptions.json';
+import audit4Lectures from '../src/data/audit4LectureDescriptions.json';
 import mentorship2026Urdu from '../src/i18n/mentorship2026-urdu.json';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -62,6 +65,9 @@ function walk(folder: string) {
   }
 }
 walk('src');
+for (const [pathname,pair] of Object.entries({...audit4Priority,...audit4Numbered,...audit4Lectures})) {
+  add(pair.en,pathname.startsWith('/masood/')?'masood':pathname.startsWith('/tools/')?'tools':'chapters');
+}
 // These derived descriptions must resolve identically in static and client metadata.
 for (const path of ['/tools/masterclass/pd-arrays/rejection-block/', '/tools/masterclass/pd-arrays/hangman-pd-array/'] as const) add(searchDescriptions[path].en, 'tools');
 // Search spans the whole library; titles and result descriptions must be available everywhere.

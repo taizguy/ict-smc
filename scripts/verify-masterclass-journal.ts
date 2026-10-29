@@ -19,11 +19,17 @@ for(const lesson of Object.values(journalEditions)){
  const html=renderToStaticMarkup(createElement(MasterclassJournal,{lesson}));
  const nodes=walk(parse(html));
  assert.equal(nodes.filter(n=>n.tagName==='h1').length,1);
- const figures=nodes.filter(n=>n.tagName==='figure');assert.equal(figures.length,lesson.steps.length+2);
+ const figures=nodes.filter(n=>n.tagName==='figure');
+ if(lesson.number===3){
+  assert.ok(html.includes(item.coreRule));
+  for(const text of [...item.orderOfOperations,...item.keyMistakes,...item.invalidationChecklist,...item.riskRules,...item.stepByStepBreakdown.map(s=>s.detail)])assert.ok(html.includes(text));
+  assert.ok(!html.includes('id="worked-example"'));
+  assert.ok(!html.includes('id="failed-example"'));
+ }else assert.equal(figures.length,lesson.steps.length+2);
  for(const figure of figures){const children=walk(figure);assert.ok(children.some(n=>n.tagName==='figcaption'));const svg=children.find(n=>n.tagName==='svg'&&attr(n,'aria-label'));assert.ok(svg);const composition=serialize(svg).replace(/<title>[\s\S]*?<\/title>|<text\b[^>]*>[\s\S]*?<\/text>/g,'').replace(/\s+/g,' ').trim();assert.ok(!compositions.has(composition),`Repeated label-free composition: ${lesson.number} and ${compositions.get(composition)}`);compositions.set(composition,lesson.number);}
  const targets=new Set(nodes.map(n=>attr(n,'id')).filter(Boolean));
  for(const link of nodes.filter(n=>n.tagName==='a'&&attr(n,'href')?.startsWith('#')))assert.ok(targets.has(attr(link,'href').slice(1)));
- assert.ok(html.includes(lesson.worked.prices.map(p=>p.price).at(-1)!.toString()));
+ if(lesson.number!==3)assert.ok(html.includes(lesson.worked.prices.map(p=>p.price).at(-1)!.toString()));
  for(const f of lesson.faq){assert.ok(html.includes(f.question));assert.ok(html.includes(f.answer));}
  assert.ok(!/Source verification pending|Last reviewed: not recorded|shown for layout review|astonishing precision|lock in 75%/i.test(html));
  for(const step of lesson.steps)assert.ok(step.paragraphs.some(p=>/\d/.test(p)));
@@ -31,6 +37,6 @@ for(const lesson of Object.values(journalEditions)){
  if(lesson.release==='draft')assert.equal(masterclassJournalForPath(path),undefined,'Draft must not silently publish');
  fs.writeFileSync(`outputs/masterclass-journal/${lesson.number}-body.html`,html);
  fs.writeFileSync(`outputs/masterclass-journal/${lesson.number}-schema.json`,JSON.stringify(schema,null,2));
- console.log(`Unit ${lesson.number}: one H1, ${figures.length} captioned SVGs, ${lesson.faq.length} visible FAQs, exact prices, fragment targets and draft release guard passed.`);
+ console.log(`Unit ${lesson.number}: one H1, ${figures.length} captioned SVGs, ${lesson.faq.length} visible FAQs, content, fragment targets and draft release guard passed.`);
 }
 console.log(`${compositions.size} distinct label-free figure compositions across authored editions.`);

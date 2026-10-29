@@ -72,3 +72,7 @@ Next: Unit 18 OTE using independent research and drawings; finish native Urdu an
 - Remaining: 26 English editions, genuine Urdu counterparts and the complete activated production release gate. No push, merge or deployment.
 
 Production compiler passed after Unit 08; existing 800kB chunk advisory remains. TypeScript passed. Draft activation/Urdu/full production crawl remain explicit pending work.
+
+## Latest user direction — 29 October 2026
+
+The expanded journal content feels too much like the curriculum. For Unit 03, retain the Field Journal UI, everything above the core-idea heading, and the FAQ, but use the original Masterclass catalogue content for the body. Implemented via MasterclassCatalogueBody using the shared original catalogue directly, without changing legacy catalogue data or the other lessons. Original core rule, diagram, breakdown, sequence, mistakes, invalidation, risk rules and related PD arrays restored. Expanded numeric worked/failed sections removed from the rendered Unit 03 draft. FAQ retained with minimal wording changes so it no longer points at removed examples. Metadata no longer promises worked/failed examples. Navigation targets and estimated reading time follow the actual body. Earlier Unit 03 six-figure evidence describes the superseded draft, not this revision. Draft-only; no push or deployment.

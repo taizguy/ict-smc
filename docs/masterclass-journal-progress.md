@@ -18,7 +18,7 @@ First-publication date for all 29 lessons: **2026-10-24**, confirmed by the publ
 | --- | --- | --- |
 | 01 | Weekly move | Not rebuilt; topic/source research and individual numerical figures required |
 | 02 | Draw on liquidity | Not rebuilt; topic/source research and individual numerical figures required |
-| 03 | ICT 2022 model | Not rebuilt; recorded Episode 2/4 passages available, full gate still required |
+| 03 | ICT 2022 model | English authored draft complete; six original figures, source passages, metadata and browser/static parity checked; native Urdu and activated production gate pending |
 | 04 | CISD | Not rebuilt; source/variant verification required |
 | 05 | IFVG | Not rebuilt; source/variant verification required |
 | 06 | Silver Bullet | Not rebuilt; exact windows/source/example verification required |
@@ -52,4 +52,12 @@ New: `src/data/masterclassJournal.ts`, `src/components/MasterclassJournal.tsx`, 
 
 Connections: `TradingToolsWorkbench.tsx`, `SEO.tsx`, `src/index.css`, `scripts/seo-content.ts`, `scripts/prerender.ts`, `scripts/social-cards.ts`. Existing style/helper behaviour remains the default outside approved editions or the local draft query.
 
-Next: finish Unit 15 native Urdu and full document/browser release checks; then Unit 03 and Unit 08 using their own independent research and drawings. Maintain per-lesson reports. No tool-URL consolidation, legacy-route deletion or date stamping.
+Next: Unit 08 using independent research and drawings; finish native Urdu and activated production release checks for all authored editions. Maintain per-lesson reports. No tool-URL consolidation, legacy-route deletion or date stamping.
+
+## 29 October continuation checkpoint
+
+- Unit 03 English draft completed: recorded primary-source passages, exact OHLC/chronology, worked and losing cases, specific related links, five visible FAQs and original social image.
+- Browser parity: 66 normalized heading/paragraph nodes, hash 1291617545, identical static and runtime. Mobile 390px viewport / 384px page in both app themes; neutral sections retained.
+- Fixed local journal contents navigation through Lenis; native fragment anchors remain for no-JS use. Replaced projection-specific shared risk prose with a required per-lesson risk note and corrected the Unit 03 risk chart to a proportional scale.
+- Targeted verification passed for 12 distinct label-free figure compositions across Units 03 and 15. No activation, push, merge or deployment.
+

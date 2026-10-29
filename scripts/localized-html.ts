@@ -16,7 +16,7 @@ const set = (node: HTML.Element, name: string, value: string) => {
 };
 
 /** Parse real HTML rather than replacing strings inside scripts, JSON, IDs or attributes. */
-export function localizeHtml(source: string, pathname: string, catalog: TranslationCatalog, options: { preview?: boolean; indexable?: boolean; availablePaths?: ReadonlySet<string>; onMissing?: (text: string) => void } = {}): string {
+export function localizeHtml(source: string, pathname: string, catalog: TranslationCatalog, options: { preview?: boolean; indexable?: boolean; availablePaths?: ReadonlySet<string>; nativeReadingRoot?: boolean; onMissing?: (text: string) => void } = {}): string {
   const document = parse(source.replace(/<nav\b[^>]*data-language-switcher[^>]*>[\s\S]*?<\/nav>/g, '').replace('</header>', `${switcher(pathname, 'ur')}</header>`));
   const translate = (text: string) => {
     const result = t(text, 'ur', catalog);
@@ -51,6 +51,9 @@ export function localizeHtml(source: string, pathname: string, catalog: Translat
   }
   let head: HTML.Element | undefined;
   function visit(node: HTML.Node, skip = false) {
+    // These bodies are replaced by native locale rendering, not translated text nodes.
+    // Continue validating the head; discarded English fragments are not missing Urdu.
+    if (options.nativeReadingRoot && 'tagName' in node && attribute(node, 'id') === 'root') return;
     if ('tagName' in node) {
       if (node.tagName === 'html') { set(node, 'lang', 'ur'); set(node, 'dir', 'rtl'); }
       if (node.tagName === 'svg' && attribute(node, 'class')?.split(' ').includes('chapter-diagram-canvas')) set(node, 'lang', 'ur');

@@ -21,6 +21,8 @@ Scope: Chart Lab and its six scenarios, the FVG glossary entry, OTE calculator, 
 
 ## Limits and review
 
+Production follow-up: the user subsequently authorized one production build. Vite compilation and complete prerender succeeded after correcting the localization validator to avoid checking English body fragments discarded by native Urdu rendering. `verify-audit-batch-2-production.ts` confirms all 254 affected production documents match the shared essential content. Screenshot pairs for home, the FVG curriculum lesson and `/tools/` show no stylesheet-layout regression against live. The existing bundle-size warning remains for the measured performance batch. Full suite/crawl were not invoked. New wording is listed in `audit-batch-2-urdu-review.md`.
+
 The script-free fixtures remove scripts; browser JavaScript was not disabled at the browser-engine setting. The preview serves targeted generated reading documents with current source modules, not a new production bundle. Full build, 10,936-check suite, 787-page crawl and canonical/hreflang/sitemap verification remain Batch 6. Preview HMR websocket warnings were development-only. Urdu needs the author's review. No production deployment or merge is authorized.
 
 ## Files touched

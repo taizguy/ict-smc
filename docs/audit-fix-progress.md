@@ -8,7 +8,9 @@ Branch: `fix/audit-batch-2`, based on the merged Batch 1 PR. One commit per batc
 - **In progress:** review handoff only; no merge or deployment. Urdu author review remains pending.
 - **Files touched:** complete grouped inventory in `docs/audit-batch-2-review.md`. Changes cover the four route views, shared reading models, scoped startup, EN/UR generators and targeted parity checks.
 - **Verification passed:** TypeScript; 254 targeted EN/UR documents; normalized essential headings/paragraphs in 42 browser snapshots covering normal, delayed, failed-entry and script-free documents, mobile, dark mode and Urdu. Four delayed before/after main-content geometry pairs had zero measured changes; four interactive smoke checks passed. Script-free fixtures are not a browser-level JavaScript-disable test. Full production build, suite and crawl remain Batch 6.
-- **Next:** one Batch 2 commit and draft review PR, then stop. Batch 3 is not started. No URLs, redirects, canonicals, sitemap dates or metadata were changed.
+- **Committed:** `b3de1e7` on review PR #30. Follow-up production verification is committed separately; no push/deploy authorized for that follow-up.
+- **Production follow-up:** Vite production compilation and prerender completed. The Urdu gate initially checked discarded English body fragments; it now validates the head while the verified reading bodies use native Urdu rendering. Targeted production checks confirm 7 Chart Lab documents, one FVG entry, one OTE calculator and 118 lectures in each language. Home, the FVG curriculum lesson and `/tools/` screenshots match the live baseline (apart from theme preference icon/animation timing). Urdu strings are listed in `docs/audit-batch-2-urdu-review.md`. Full suite/crawl remain Batch 6.
+- **Next:** Batch 3 authorized in order Chart Lab, Delivery Suite, Backtest, Simulator, with one local commit per family. No push/deploy; no URL/redirect changes.
 
 ## Batch 1 — Quick fixes
 

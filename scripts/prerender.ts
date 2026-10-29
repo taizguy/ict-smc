@@ -1,4 +1,5 @@
 import { renderAuditedReading } from './audited-reading-document';
+import {masterclassJournalForPath} from '../src/utils/masterclassJournalRoutes';
 import { auditedReadingRoute } from '../src/utils/auditedReadingRoutes';
 import { generateSocialCards } from './social-cards';
 import { retiredGraphAliases } from '../src/utils/knowledgeGraphRoutes';
@@ -114,7 +115,7 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
   html = html.replace('</head>', '<meta name="learnsmc-prerendered" content="true" /></head>');
   const verification = process.env.GOOGLE_SITE_VERIFICATION;
   if (verification) html = html.replace('</head>', `<meta name="google-site-verification" content="${escapeHtml(verification)}" /></head>`);
-  if (/\/(learn|masood\/lectures|articles\/[^/]+)\//.test(meta.canonical)) html = html.replace('property="og:type" content="website"', 'property="og:type" content="article"');
+  if (masterclassJournalForPath(new URL(meta.canonical).pathname) || /\/(learn|masood\/lectures|articles\/[^/]+)\//.test(meta.canonical)) html = html.replace('property="og:type" content="website"', 'property="og:type" content="article"');
   html = html.replace('</head>', `<meta name="learnsmc-heading" content="${escapeHtml(meta.heading)}" /></head>`);
   if (meta.outputPath === '404.html') html = html.replace('</head>', '<meta name="learnsmc-status" content="404" /></head>');
   // Replace Title
@@ -183,7 +184,7 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
     :createElement(CurriculumView,{path:readingPath,onSelectChapter:()=>{},onOpenSearch:()=>{}})):'';
   const readingHeader=isReading?renderToStaticMarkup(createElement(Header,{documentPath:readingPath,activeTab:readingChapter?'chapter_room':'curriculum',setActiveTab:()=>{},onOpenSearch:()=>{},onOpenMentorSpotlight:()=>{},onOpenWelcomeIntro:()=>{},progressPercent:0})):'';
   const readingDocument=isReading?`<div id="static-content" class="reading-site"><a class="skip-link" href="#main-content">Skip to main content</a>${readingHeader}<main id="main-content" class="reading-main" tabindex="-1">${readingBody}</main>${renderToStaticMarkup(createElement(SiteFooter,{playground:false}))}</div>`:'';
-  const masterclassDocument=readingPath==='/tools/masterclass/'?`<div id="static-content" class="mc-collection-document"><a class="skip-link" href="#main-content">Skip to main content</a>${renderToStaticMarkup(createElement(Header,{documentPath:readingPath,activeTab:'masterclass',setActiveTab:()=>{},onOpenSearch:()=>{},onOpenMentorSpotlight:()=>{},onOpenWelcomeIntro:()=>{},progressPercent:0}))}<main id="main-content" tabindex="-1">${meta.bodyHtml}</main>${renderToStaticMarkup(createElement(SiteFooter,{playground:false}))}</div>`:'';
+  const masterclassDocument=(readingPath==='/tools/masterclass/'||!!masterclassJournalForPath(readingPath))?`<div id="static-content" class="mc-collection-document"><a class="skip-link" href="#main-content">Skip to main content</a>${renderToStaticMarkup(createElement(Header,{documentPath:readingPath,activeTab:'masterclass',setActiveTab:()=>{},onOpenSearch:()=>{},onOpenMentorSpotlight:()=>{},onOpenWelcomeIntro:()=>{},progressPercent:0}))}<main id="main-content" tabindex="-1">${meta.bodyHtml}</main>${renderToStaticMarkup(createElement(SiteFooter,{playground:false}))}</div>`:'';
   const auditedDocument=auditedReadingRoute(readingPath)?renderAuditedReading(readingPath,meta.heading):'';
   if(auditedDocument) html=html.replace('<html ', '<html data-reading-enhancement="true" ');
   // Generate Crawlable Structural Layout

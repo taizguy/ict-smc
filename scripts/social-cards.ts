@@ -6,6 +6,7 @@ import { parse } from 'parse5';
 import { textbookChapters } from '../src/data/chaptersData';
 import { chapterDiagrams, type DiagramMark } from '../src/data/chapters/diagrams';
 import { withoutLocale } from '../src/i18n/locale';
+import {masterclassJournalForPath} from '../src/utils/masterclassJournalRoutes';
 
 const escape = (value: unknown) => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
 const tones = { ink:'#192c47', teal:'#128066', coral:'#ce5347', violet:'#7356b4' };
@@ -66,7 +67,8 @@ export function generateSocialCards(dist: string) {
     const hash = createHash('sha256').update(page.path+'\n'+fontVersion+'\n'+svg).digest('hex').slice(0,20);
     const name = `${chapter?'lesson-'+chapter.id:'page'}-${urdu?'ur':'en'}-${hash}.png`;
     fs.writeFileSync(path.join(out,name),new Resvg(svg,{font:{fontFiles,loadSystemFonts:false,defaultFontFamily:'Source Sans 3'}}).render().asPng());
-    const image = `https://learnsmc.xyz/images/social/${name}`;
+    const journal=masterclassJournalForPath(page.path);
+    const image = journal ? `https://learnsmc.xyz${journal.socialImage}` : `https://learnsmc.xyz/images/social/${name}`;
     const alt = `LearnSMC — ${title}`;
     const tags = new Map<string,string>();
     for (const [attribute,key,value] of [

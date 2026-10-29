@@ -1,4 +1,6 @@
 import {MasterclassHub} from './MasterclassHub';
+import {MasterclassJournal} from './MasterclassJournal';
+import {masterclassJournalForPath} from '../utils/masterclassJournalRoutes';
 import { useTranslation } from "../i18n/TranslationProvider";
 import { currentDocumentHref } from '../i18n/navigation';
 import { masterclassCollection } from '../data/masterclassData';
@@ -231,6 +233,13 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
   }
 
   if(activeTool==='masterclass'&&!masterclassModuleSlug&&(!masterclassCategory||masterclassCategory==='all')) return <MasterclassHub/>;
+
+  // Drafts are available only in the local editorial preview. Production waits
+  // for each edition's source/content/language release checks.
+  const journalPath=typeof window==='undefined'?'':window.location.pathname;
+  const draftPreview=typeof window!=='undefined'&&!!import.meta.env?.DEV;
+  const journal=activeTool==='masterclass'?masterclassJournalForPath(journalPath,draftPreview):undefined;
+  if(journal)return <MasterclassJournal lesson={journal}/>;
 
   const currentToolMeta = tools.find(t => t.id === activeTool) || tools[0];
 

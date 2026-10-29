@@ -13,6 +13,8 @@ import { correctToolDocument } from './tools-content';
 import type { RouteMeta } from './prerender';
 
 const family=process.argv[2]||'chartlab';
+const production=process.argv.includes('--production');
+const manifest=production?JSON.parse(fs.readFileSync('dist/seo-manifest.json','utf8')):[];
 const studies=toolRouteStudies[family];
 assert.ok(studies,`Unknown family: ${family}`);
 const affected=fs.readFileSync('docs/technical-seo-audit-2026-10-28-affected-urls.csv','utf8').split(/\r?\n/).filter(line=>line.startsWith('P1 review,Near-identical static content,')&&line.includes(`/tools/${family}/`)).map(line=>new URL(line.split(',')[2]).pathname);
@@ -32,7 +34,18 @@ for(const locale of ['en','ur'] as const) {
     const routePath=locale==='ur'?'/ur'+pathname:pathname;
     const note=renderToStaticMarkup(createElement(TranslationProvider,{locale,catalog:urdu,children:createElement(ToolRouteStudy,{family,slug})}));
     let html:string;
-    if(family==='chartlab'||(family==='delivery-suite'&&slug==='ote-calculator')) html=renderAuditedReading(routePath,study.heading[locale==='ur'?1:0]);
+    if(production) {
+      const route=manifest.find((entry:any)=>entry.path===routePath);
+      assert.ok(route,`Production manifest missing ${routePath}`);
+      html=fs.readFileSync('dist/'+route.outputPath,'utf8');
+      const nodes=(n:any):any[]=>[n,...(n.childNodes||[]).flatMap(nodes)];
+      const tree=nodes(parse(html));
+      const attr=(n:any,k:string)=>n.attrs?.find((a:any)=>a.name===k)?.value;
+      assert.equal(attr(tree.find(n=>n.tagName==='html'),'lang'),locale);
+      assert.ok(tree.some(n=>n.tagName==='link'&&attr(n,'rel')==='canonical'&&attr(n,'href')==='https://learnsmc.xyz'+routePath));
+      for(const language of ['en','ur','x-default']) assert.ok(tree.some(n=>n.tagName==='link'&&attr(n,'rel')==='alternate'&&attr(n,'hreflang')===language),`${routePath}: ${language}`);
+    }
+    else if(family==='chartlab'||(family==='delivery-suite'&&slug==='ote-calculator')) html=renderAuditedReading(routePath,study.heading[locale==='ur'?1:0]);
     else {
       const meta={canonical:'https://learnsmc.xyz'+pathname,heading:study.heading[0],bodyHtml:'',title:'',description:''} as RouteMeta;
       correctToolDocument(meta,pathname);
@@ -52,7 +65,7 @@ for(const locale of ['en','ur'] as const) {
   }
 }
 fs.writeFileSync(`outputs/audit-batch-3/${family}-similarity.json`,JSON.stringify(reports,null,2));
-console.log(`${family}: ${affected.length} routes × EN/UR, shared static/runtime notes; max word-trigram Jaccard ${Math.max(...reports.map(r=>r.jaccard_3gram)).toFixed(3)} < .90.`);
+console.log(`${production?'Production output: ':''}${family}: ${affected.length} routes × EN/UR, shared static/runtime notes; max word-trigram Jaccard ${Math.max(...reports.map(r=>r.jaccard_3gram)).toFixed(3)} < .90.`);
 
 if(process.argv.includes('--all-pairs')) {
   const allReports:any[]=[];

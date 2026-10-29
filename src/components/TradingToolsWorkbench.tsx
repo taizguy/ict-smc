@@ -237,7 +237,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
   // Drafts are available only in the local editorial preview. Production waits
   // for each edition's source/content/language release checks.
   const journalPath=typeof window==='undefined'?'':window.location.pathname;
-  const draftPreview=import.meta.env.DEV&&typeof window!=='undefined'&&new URLSearchParams(window.location.search).get('journal')==='1';
+  const draftPreview=typeof window!=='undefined'&&!!import.meta.env?.DEV;
   const journal=activeTool==='masterclass'?masterclassJournalForPath(journalPath,draftPreview):undefined;
   if(journal)return <MasterclassJournal lesson={journal}/>;
 

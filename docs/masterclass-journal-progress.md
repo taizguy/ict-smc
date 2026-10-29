@@ -76,3 +76,17 @@ Production compiler passed after Unit 08; existing 800kB chunk advisory remains.
 ## Latest user direction — 29 October 2026
 
 The expanded journal content feels too much like the curriculum. For Unit 03, retain the Field Journal UI, everything above the core-idea heading, and the FAQ, but use the original Masterclass catalogue content for the body. Implemented via MasterclassCatalogueBody using the shared original catalogue directly, without changing legacy catalogue data or the other lessons. Original core rule, diagram, breakdown, sequence, mistakes, invalidation, risk rules and related PD arrays restored. Expanded numeric worked/failed sections removed from the rendered Unit 03 draft. FAQ retained with minimal wording changes so it no longer points at removed examples. Metadata no longer promises worked/failed examples. Navigation targets and estimated reading time follow the actual body. Earlier Unit 03 six-figure evidence describes the superseded draft, not this revision. Draft-only; no push or deployment.
+
+## Superseding all-29 local migration — 29 October 2026
+
+All 29 English Masterclass lesson bodies preserve the original catalogue content inside the Field Journal shell. Earlier remaining-26 rewrite plans are superseded by the instruction to retain original content. Existing top sections and FAQ topics on Units 3/8/15 remain. The catalogue file is unchanged. No expanded worked/failed body is rendered.
+
+16 lessons use topic-specific animated hub art: 2,3,6,9,16,19,20,21,22,23,24,25,26,27,28,29. The other 13 retain their specialized diagrams. Units 16 and 19 had verified duplicate geometry with Unit 10; both replaced. All 29 figures have captions/accessibility descriptions and distinct label-free chart compositions. Hub-derived motion has pause, reduced-motion and offscreen handling.
+
+Normal local URLs open the new layout automatically. Public activation remains draft-gated pending genuine Urdu and activated bilingual checks. This prevents the observed 276 untranslated segments from entering public Urdu pages. Existing production EN/UR content remains the fallback; no deployment, push or merge.
+
+Checks: TypeScript; all-29 static content/FAQ/fragment/figure/draft guard scanner; production fallback build and prerender, SEO/routing tests and 787-page crawl passed. Full log outputs/masterclass-catalogue-build.log. New layout checks outputs/masterclass-catalogue-checks.log. Desktop MMXM animation pause changes data-paused to true; mobile 2022 light/dark viewport390/document384/art352, no overflow. Activated redesign has not passed the bilingual production gate.
+
+Report: docs/masterclass-catalogue-layout-review.md. Sources reuse existing records; archive-only attribution is background. Legacy claim wording remains under the content-preservation scope; Unit19 warning is documented, not newly validated. 29 distinct PNG social images generated. No URL, redirect or sitemap URL-set change.
+
+Next: owner preview, then genuine Urdu for new shell/FAQ strings and activated bilingual verification before publication. Unrelated prototype/GSC files untouched.

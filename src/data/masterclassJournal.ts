@@ -1,3 +1,4 @@
+import {catalogueEditions} from './masterclassCatalogueEditions';
 import {octantJournal} from './masterclassJournalOctants';
 import {ict2022Journal} from './masterclassJournal2022';
 /** Authored Field Journal editions; never derive lesson bodies from marketing summaries. */
@@ -6,7 +7,7 @@ export interface JournalFigure { id:string; title:string; caption:string; alt:st
 export interface JournalStep { title:string; paragraphs:string[]; figure:JournalFigure; table?:{caption:string;headers:string[];rows:string[][]} }
 export interface JournalExample { title:string; instrument:string; timeframe:string; timezone:string; date:string; paragraphs:string[]; prices:Array<{time:string;price:number}>; figure:JournalFigure }
 export interface JournalLesson {
- number:number; title:string; description:string; h1:string; subtitle:string; socialImage:string; coreHeading:string; procedureHeading:string; bodyReading:Array<{before:string; title:string; href:string; after:string}>;
+ catalogueBody?:boolean; number:number; title:string; description:string; h1:string; subtitle:string; socialImage:string; coreHeading:string; procedureHeading:string; bodyReading:Array<{before:string; title:string; href:string; after:string}>;
  published:string; modified:string; reviewed:string; reviewScope:string;
  outcomes:string[]; introduction:string[]; steps:JournalStep[];
  worked:JournalExample; failed:JournalExample; limitations:string[]; riskNote:string;
@@ -16,7 +17,7 @@ export interface JournalLesson {
  release:'draft'|'approved';
 }
 const synthetic={instrument:'SYNTH-USD — fictional study series',timeframe:'5-minute observations',timezone:'America/New_York (UTC−04:00 on the illustrative date)',date:'14 October 2026 — illustrative calendar date; not historical market data'};
-export const journalEditions:Record<number,JournalLesson>={8:octantJournal,
+const authoredEditions:Record<number,JournalLesson>={8:octantJournal,
  3:ict2022Journal,
  15:{number:15,release:'draft',socialImage:'/images/masterclass-journal/15-standard-deviations.png',coreHeading:'What are ICT standard deviation projections?',procedureHeading:'How to set the anchors and Fib levels',bodyReading:[{before:'Keep the measurement tasks separate: the ',title:'optimal trade entry model',href:'/tools/masterclass/entry-models/ote-model/',after:' studies a retracement, while these multiples extend beyond a selected endpoint.'},{before:'Revisit ',title:'fair value gap geometry',href:'/tools/glossary/imbalances/fair-value-gap/',after:' before combining a gap reference with a projected target.'},{before:'For a separate retracement check, use the ',title:'OTE calculator',href:'/tools/delivery-suite/ote-calculator/',after:' with an explicitly selected high and low. Its output does not validate a setup.'}],title:'ICT Standard Deviation Projections: Fib Settings & Examples | LearnSMC',description:'Learn ICT standard deviation projections with exact Fib levels, anchor orientation, TradingView settings and worked versus failed price examples.',h1:'ICT standard deviation projections: settings, anchors and examples',subtitle:'Turn a stated price range into checkable reference levels, without confusing it with statistical volatility.',published:'2026-10-24',modified:'2026-10-29',reviewed:'2026-10-29',reviewScope:'Arithmetic, illustrative examples and TradingView tool settings checked against the references below. No historical performance study is claimed.',
  outcomes:['Calculate negative Fib extension prices from two explicit anchors.','Check that 1 and 0 sit at the intended prices before saving a template.','Distinguish a projected price from an entry, a statistical standard deviation or a guaranteed reversal.'],
@@ -41,3 +42,5 @@ export const journalEditions:Record<number,JournalLesson>={8:octantJournal,
  related:[{title:'Optimal trade entry model',href:'/tools/masterclass/entry-models/ote-model/',kind:'lesson',reason:'Compare a retracement entry reference with an extension target; they solve different measurement questions.'},{title:'Opening range gap and octant grid',href:'/tools/masterclass/core-masterclasses/org-octant-grid/',kind:'lesson',reason:'Compare equal divisions inside a range with multiples projected beyond it.'},{title:'OTE calculator',href:'/tools/delivery-suite/ote-calculator/',kind:'tool',reason:'Check a separate retracement calculation using explicit high and low inputs.'}]
  }
 };
+
+export const journalEditions=catalogueEditions(authoredEditions);

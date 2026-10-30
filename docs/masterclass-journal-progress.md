@@ -90,3 +90,12 @@ Checks: TypeScript; all-29 static content/FAQ/fragment/figure/draft guard scanne
 Report: docs/masterclass-catalogue-layout-review.md. Sources reuse existing records; archive-only attribution is background. Legacy claim wording remains under the content-preservation scope; Unit19 warning is documented, not newly validated. 29 distinct PNG social images generated. No URL, redirect or sitemap URL-set change.
 
 Next: owner preview, then genuine Urdu for new shell/FAQ strings and activated bilingual verification before publication. Unrelated prototype/GSC files untouched.
+
+## Bilingual release — 30 October 2026 (supersedes draft checkpoints above)
+
+- All 29 original catalogue bodies now use the approved Field Journal layout in EN and UR. No curriculum-style expanded body is rendered. Local preview flags are no longer necessary.
+- Added genuine Urdu shell/FAQ/source/diagram translations, locale-aware internal links and schema, and logical RTL border spacing. Fixed runtime catalog omissions for source notes and embedded SVG labels. Corrected observed legacy Urdu mistranslations without rewriting the English catalogue.
+- Replaced repeated procedure headings in Units 21/22/23/24/26 with accurate step-specific labels; added visible collection breadcrumbs matching the five-item schema and keeping collection routes reachable.
+- Complete activated build/prerender passed, with 10,936 checks and 787-page crawl. All 58 lesson documents passed bilingual metadata/canonical/hreflang/image/schema checks; all 29 Urdu static/native reading sequences match exactly. Missing Masterclass translations: zero. TypeScript and original-body/FAQ/fragment/figure checks passed.
+- Browser: EN/UR switch, desktop and mobile 390px light/dark, no horizontal overflow (384px document), working animated-art pause control. Final evidence and reviewable Urdu strings listed in docs/masterclass-catalogue-layout-review.md.
+- Sitemap URL set and revision ledger unchanged; no redirects introduced. No new blanket accuracy claims; pre-existing Unit 19 wording remains under the requested content-preservation scope. Deployment authorized by the owner, pending feature-branch CI and merge at this checkpoint.

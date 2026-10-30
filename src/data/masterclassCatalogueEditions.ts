@@ -12,16 +12,16 @@ export function catalogueEditions(previous:Record<number,JournalLesson>):Record<
   const reviewed=reviewedModelSources(item.id);
   const sources=reviewed?.sources.length?reviewed.sources.map(s=>({title:s.title,url:s.url,scope:s.scope})):[{title:'ICT: original teaching archive',url:'https://www.youtube.com/innercircletrader',scope:'Original educator’s archive. LearnSMC is an independent study collection; this archive link is background attribution, not verification of every model rule or evidence of trading performance.'}];
   const related=masterclassCollection.filter(m=>m.number!==item.number&&m.category===item.category).sort((a,b)=>Math.abs(a.number-item.number)-Math.abs(b.number-item.number)).slice(0,3).map(m=>({title:m.title,href:getMasterclassUrl(m),kind:'lesson' as const,reason:masterclassThumbnailSpecs[m.number].description}));
-  const edition:JournalLesson={...previous[3],...retained,number:item.number,catalogueBody:true,release:'draft',
+  const edition:JournalLesson={...previous[3],...retained,number:item.number,catalogueBody:true,release:'approved',modified:'2026-10-30',reviewed:'2026-10-30',
    title:retained?.title||searchTitle(item.title,path),description:retained?.description||searchDescription(thumb.description,item.title,path),h1:retained?.h1||item.title,subtitle:retained?.subtitle||item.subtitle,
    socialImage:`/images/masterclass-journal/catalogue-${String(item.number).padStart(2,'0')}.png`,
    coreHeading:retained?.coreHeading||item.title,reviewScope:retained?.reviewScope||'Presentation and catalogue consistency reviewed. These are independent model-study notes, not a claim of verified market performance.',
    outcomes:retained?.outcomes||item.stepByStepBreakdown.slice(0,3).map(s=>s.detail),
    faq:retained?.faq||[
-    {question:`What does ${item.title.replace(/ Masterclass$/i,'')} study?`,answer:thumb.description},
-    {question:'What sequence does this model use?',answer:item.stepByStepBreakdown.map(s=>s.title).join(' → ')+'. '+item.orderOfOperations[0]},
-    {question:'What invalidates the idea?',answer:item.invalidationChecklist.join(' ')},
-    {question:'Which mistakes should I watch for?',answer:item.keyMistakes.join(' ')}
+    {question:`What does ${item.title} study?`,answer:thumb.description},
+    {question:'Where does the sequence start?',answer:item.orderOfOperations[0]},
+    {question:'What invalidates the idea?',answer:item.invalidationChecklist[0]},
+    {question:'Which mistakes should I watch for?',answer:item.keyMistakes[0]}
    ],sources:retained?.sources||sources,related:retained?.related||related,
   };
   // Restored catalogue bodies do not contain the expanded journal examples.

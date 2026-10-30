@@ -1,3 +1,6 @@
+import masterclassJournalUrdu from '../src/i18n/masterclass-journal-urdu.json';
+import {journalEditions} from '../src/data/masterclassJournal';
+import {masterclassStageArt} from '../src/data/masterclassStageArt';
 import searchDescriptions from '../src/data/searchDescriptions.json';
 import audit4Priority from '../src/data/audit4Descriptions.json';
 import audit4Numbered from '../src/data/audit4NumberedDescriptions.json';
@@ -81,6 +84,16 @@ for (const key of sourceKeys) if (key.length <= 35 || searchKeys.has(key)) keys.
 // Handwritten overrides also include derived labels assembled at runtime.
 for (const key of Object.keys({ ...editorialUrdu, ...toolsUrdu, ...terminology, ...learningUpdate })) if (!sourceKeys.has(key)) keys.shared.add(key);
 for (const key of Object.keys(mentorship2026Urdu)) if (!sourceKeys.has(key) && (/^Chapter \d+:|\| LearnSMC$/.test(key) || key.includes('66-'))) keys.shared.add(key);
+for(const key of Object.keys(masterclassJournalUrdu)) add(key,'tools');
+// Source records are shared with curriculum data; their strings are also needed
+// by the Masterclass view. SVG text lives inside markup, beyond the TS literal scan.
+const collectMasterclassSource=(value:unknown):void=>{
+  if(typeof value==='string') add(value,'tools');
+  else if(Array.isArray(value)) value.forEach(collectMasterclassSource);
+  else if(value&&typeof value==='object') Object.values(value).forEach(collectMasterclassSource);
+};
+for(const edition of Object.values(journalEditions)) collectMasterclassSource(edition.sources);
+for(const svg of Object.values(masterclassStageArt)) for(const match of svg.matchAll(/<(?:text|title|desc)\b[^>]*>([^<]*)<\/(?:text|title|desc)>/g)) add(match[1].replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>'),'tools');
 const output = 'src/i18n/runtime';
 fs.mkdirSync(output, { recursive: true });
 for (const group of groups) {

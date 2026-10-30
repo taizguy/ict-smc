@@ -54,6 +54,12 @@ Reasons: Unit 2's matrix is less direct than its liquidity-destination map; Unit
 - Static review files: outputs/masterclass-journal/1.html through 29.html. These independent review documents contain full content without JavaScript.
 - Pre-existing claim wording on Unit 19 is flagged by the scanner and retained under the requested content-preservation scope; the layout work does not substantiate it. No blanket accuracy claim is made.
 
-## Pending publication gate
+## Bilingual publication gate — completed 30 October 2026
 
-Native Urdu for the redesigned shell and newly composed FAQ strings, matching runtime/prerender translations, and an activated bilingual production metadata/canonical/hreflang/crawl review. Full current production build evidence is recorded separately in outputs/masterclass-catalogue-build.log. Do not publish this draft merely because the fallback site builds.
+The previous draft gate is superseded by the approved bilingual release. Native Urdu now covers the journal shell, FAQ strings, source notes, diagram labels and metadata. Runtime catalogs include the shared source records and embedded SVG labels. Static Urdu and native runtime reading content match for every lesson using the actual split runtime catalogs.
+
+Verification: TypeScript; activated production build/prerender; 10,936 SEO checks; 787-page crawl; all 29 EN/UR lesson pairs checked for self-canonicals, reciprocal language annotations, metadata/OG/Twitter parity, lesson-specific image availability, Article language/dates and five-level breadcrumbs. Targeted original-body/FAQ/fragment/unique-figure checks also pass. Five lessons now have specific procedure headings instead of repeated lesson titles; original body paragraphs remain unchanged. Collection breadcrumbs preserve reachability of all five collection routes.
+
+Evidence: outputs/masterclass-bilingual-release-build.log, scripts/verify-masterclass-bilingual.ts, scripts/check-masterclass-urdu.ts, outputs/masterclass-journal/bilingual-parity-differences.json (empty), outputs/masterclass-journal/missing-urdu.json (empty). Urdu review strings are in src/i18n/masterclass-journal-urdu.json. Desktop/mobile 390px light/dark browser checks, Urdu/English switching and pause control passed; document width 384px at 390px viewport. Screenshot: outputs/masterclass-journal/bilingual-release-desktop.jpg.
+
+No URL-set or redirect change. Sitemap revision ledger is unchanged under the owner's no-stamping rule; changed fingerprints omit unsupported lastmod values. Article modification/review dates record the actual 30 October presentation/localization review, not a new full source-recording review. Existing chunk-size advisories and nine baseline non-Masterclass untranslated brand/acronym segments remain; this release has zero missing Masterclass translation segments.

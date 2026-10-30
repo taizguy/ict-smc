@@ -1,3 +1,4 @@
+import masterclassJournalUrdu from './masterclass-journal-urdu.json';
 import { toolRouteStudyUrdu } from '../data/toolRouteStudies';
 import audit4Descriptions from '../data/audit4Descriptions.json';
 import audit4NumberedDescriptions from '../data/audit4NumberedDescriptions.json';
@@ -228,6 +229,7 @@ export const urdu: Record<string, string> = {
   ...mentorshipVisualUrdu,
   ...deliverySupportUrdu,
   ...deliveryMarketUrdu,
+  ...masterclassJournalUrdu,
 };
 // Exact pairs keep static snippets and client-side metadata in the same language.
 for (const { en, ur } of Object.values(searchDescriptions)) urdu[en] = ur;

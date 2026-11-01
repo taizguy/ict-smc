@@ -13,7 +13,7 @@ export const WORKBENCH_TOOL_CATALOG = workbenchToolCatalog.map(tool => ({
 interface TradingToolsOverviewProps { onSelectTool: (toolId: TradingToolId, customUrl?: string) => void }
 export const TradingToolsOverview: React.FC<TradingToolsOverviewProps> = ({onSelectTool}) => {
  const {t,href,message}=useTranslation();
- const [category,setCategory]=useState('all'); const [query,setQuery]=useState(''); const [view,setView]=useState<'list'|'grid'>('list');
+ const [category,setCategory]=useState('all'); const [query,setQuery]=useState(''); const [view,setView]=useState<'list'|'grid'>('grid');
  const root=useRef<HTMLDivElement>(null);
  useEffect(()=>{const hero=root.current?.querySelector<HTMLElement>('.po3-visual');if(hero)return startHero(hero,t)},[]);
  const tools=WORKBENCH_TOOL_CATALOG.filter(tool=>(category==='all'||tool.category===category)&&[tool.name,tool.desc,...tool.features,...[tool.name,tool.desc,...tool.features].map(t)].join(' ').toLowerCase().includes(query.toLowerCase().trim()));

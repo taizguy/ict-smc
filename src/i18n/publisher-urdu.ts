@@ -1,5 +1,6 @@
 /** Reviewed source snapshots: English changes invalidate exact-match translations. */
 export const publisherUrdu: Record<string, string> = {
+  "A tribute to Abdullah Masood": "عبداللہ مسعود کو خراجِ تحسین",
   'GitHub: taizguy': 'GitHub پروفائل: taizguy',
   'X: @ChiefAnt_': 'X پروفائل: @ChiefAnt_',
   "1. Acceptance of Terms": "1. شرائط کی قبولیت",

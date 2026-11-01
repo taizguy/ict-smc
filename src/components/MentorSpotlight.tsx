@@ -1,479 +1,93 @@
-import { chapterCount, lectureCount } from '../utils/catalogCounts';
-import React, { useState, useEffect } from 'react';
-import { 
-  Youtube, 
-  ExternalLink, 
-  Heart, 
-  Sparkles, 
-  BookOpen, 
-  Target, 
-  Star, 
-  TrendingUp, 
-  BarChart2, 
-  Check, 
-  Flame, 
-  CheckCircle2, 
-  X
-} from 'lucide-react';
-import { BauhausNavScroller } from './BauhausNavScroller';
-import { useModalScrollLock } from '../hooks/useSmoothScroll';
+import {useEffect,useRef,useState} from 'react';
+import {createPortal} from 'react-dom';
+import {Heart,X,ExternalLink} from 'lucide-react';
+import {useTranslation} from '../i18n/TranslationProvider';
+import {useModalScrollLock} from '../hooks/useSmoothScroll';
+import {masoodPlaylistsData} from '../data/masoodData';
 
 interface MentorSpotlightProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onSelectConcept?: (conceptId: string) => void;
-  onSelectChapter?: (chapterId: number) => void;
-  onOpenMasoodAcademy?: () => void;
+ isOpen:boolean;
+ onClose:()=>void;
+ onSelectConcept?:(conceptId:string)=>void;
+ onSelectChapter?:(chapterId:number)=>void;
+ onOpenMasoodAcademy?:()=>void;
 }
+type Tab='tribute'|'curriculum'|'daily_bias_checklist';
 
-export const MentorSpotlight: React.FC<MentorSpotlightProps> = ({
-  isOpen,
-  onClose,
-  onSelectConcept,
-  onOpenMasoodAcademy
-}) => {
-  const [activeTab, setActiveTab] = useState<'tribute' | 'curriculum' | 'daily_bias_checklist'>('tribute');
-  const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
-
-  useModalScrollLock(isOpen);
-
-  useEffect(() => {
-    if (!isOpen) return;
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, onClose]);
-
-  if (!isOpen) return null;
-
-  const toggleCheck = (id: string) => {
-    setCheckedItems(prev => ({ ...prev, [id]: !prev[id] }));
+export function MentorSpotlight({isOpen,onClose}:MentorSpotlightProps){
+ const {locale,href,t}=useTranslation();
+ const copy=(en:string,ur:string)=>locale==='ur'?ur:en;
+ const [active,setActive]=useState<Tab>('tribute');
+ const [checked,setChecked]=useState<Record<number,boolean>>({});
+ const panel=useRef<HTMLDivElement>(null),body=useRef<HTMLDivElement>(null),close=useRef<HTMLButtonElement>(null);
+ const onCloseRef=useRef(onClose);
+ useEffect(()=>{onCloseRef.current=onClose;},[onClose]);
+ useModalScrollLock(isOpen);
+ useEffect(()=>{
+  if(!isOpen)return;
+  const previous=document.activeElement as HTMLElement|null;
+  setActive('tribute');close.current?.focus();
+  const key=(e:KeyboardEvent)=>{
+   if(e.key==='Escape'){e.preventDefault();onCloseRef.current();}
+   if(e.key!=='Tab')return;
+   const elements=Array.from(panel.current?.querySelectorAll<HTMLElement>('button:not([disabled]),a[href],input:not([disabled]),[tabindex="0"]')||[]).filter(el=>el.getClientRects().length);
+   const first=elements[0],last=elements[elements.length-1];
+   if(e.shiftKey&&(document.activeElement===first||!panel.current?.contains(document.activeElement))){e.preventDefault();last?.focus();}
+   else if(!e.shiftKey&&(document.activeElement===last||!panel.current?.contains(document.activeElement))){e.preventDefault();first?.focus();}
   };
-
-  const channelUrl = "https://www.youtube.com/@TraderAbdullahMasood";
-
-  const keyCurriculumTracks = [
-    {
-      title: "2025 / 2026 ICT Daily Bias Mentorship",
-      tag: "FLAGSHIP SERIES",
-      icon: TrendingUp,
-      accent: "text-brand",
-      description: "Mastering mechanical 4-pillar daily bias determination using Previous Day High/Low (PDH/PDL), Midnight Open (00:00 NY), and IPDA 20/40/60-day macro draw on liquidity.",
-      coreTeachings: [
-        "How to determine if today is an Expansion Day vs Consolidation/Retracement Day",
-        "Using 00:00 NY Midnight Open as the true institutional benchmark for fair price",
-        "Preventing direction flipping by grounding your bias on the 4H/Daily Liquidity Draw"
-      ],
-      conceptLink: "daily_bias_masood"
-    },
-    {
-      title: "The Gold Legacy - SMC Mentorship (XAUUSD)",
-      tag: "PRECISION EXECUTION",
-      icon: Flame,
-      accent: "text-negative",
-      description: "In-depth specialization in Gold's unique algorithmic personality: aggressive Asian range manipulation, deep Judas Swings, and explosive Fair Value Gap expansions.",
-      coreTeachings: [
-        "Why Gold sweeps Asian Highs/Lows deeper than major FX pairs",
-        "The 15M/5M London & New York Open entry models for XAUUSD",
-        "Identifying fake volume spikes vs genuine institutional algorithmic repricing"
-      ],
-      conceptLink: "gold_legacy_smc"
-    },
-    {
-      title: "Inducement (IDM) vs True Structural Liquidity",
-      tag: "SMC CLARITY",
-      icon: Target,
-      accent: "text-teal",
-      description: "Unmasking internal liquidity engineering that tricks retail traders into marking premature Order Blocks and taking stopouts before the real move.",
-      coreTeachings: [
-        "Distinguishing internal structural pullbacks (Inducements) from true swing points",
-        "The reason 80% of retail SMC order blocks fail: buying before inducement is taken",
-        "Waiting for external liquidity runs before triggering lower timeframe execution"
-      ],
-      conceptLink: "inducement_vs_external_liquidity"
-    },
-    {
-      title: "NASDAQ (NQ) & Cross-Asset SMT Divergence",
-      tag: "INDEX MASTERY",
-      icon: BarChart2,
-      accent: "text-amber",
-      description: "Algorithmic index execution combining 09:30 AM New York Equities Open with SMT divergence across NQ, ES (S&P 500), and the US Dollar Index (DXY).",
-      coreTeachings: [
-        "The 09:30 AM Opening Bell Judas swing protocol",
-        "SMT Divergence: When NQ breaks highs but ES fails to make a higher high",
-        "The 10:00 - 11:00 AM NY Silver Bullet high-probability window"
-      ],
-      conceptLink: "nasdaq_session_open"
-    }
-  ];
-
-  const dailyBiasChecklist = [
-    {
-      id: 'dol',
-      category: '1. HIGHER TIMEFRAME CONTEXT',
-      question: 'Is the Weekly / Daily Draw on Liquidity (DOL) clearly identified?',
-      detail: 'Identify whether price is reaching for an old HTF High/Low, Weekly FVG, or Daily Imbalance.'
-    },
-    {
-      id: 'pdh_pdl',
-      category: '2. PREVIOUS DAY BOUNDARIES',
-      question: 'Have you marked the Previous Day High (PDH) and Previous Day Low (PDL)?',
-      detail: 'Price frequently sweeps the PDH/PDL in London/NY before reversing or using it as a springboard.'
-    },
-    {
-      id: 'midnight',
-      category: '3. MIDNIGHT OPEN BENCHMARK',
-      question: 'Where is price trading relative to 00:00 NY Midnight Open?',
-      detail: 'For bullish days, the best buy opportunities occur BELOW Midnight Open (Discount). For bearish days, look for sells ABOVE Midnight Open (Premium).'
-    },
-    {
-      id: 'asian_range',
-      category: '4. ASIAN SESSION RANGE (20:00 - 00:00 NY)',
-      question: 'Has the Asian Session High or Low been swept by a Judas Swing?',
-      detail: 'London session often manipulates price past the Asian range extremes before expanding in the true daily direction.'
-    },
-    {
-      id: 'inducement',
-      category: '5. INDUCEMENT & POI CHECK',
-      question: 'Has internal inducement (IDM) been purged before entering the POI?',
-      detail: 'Ensure you are not taking the first internal Order Block; wait for the liquidity sweep of internal stops.'
-    },
-    {
-      id: 'time_window',
-      category: '6. TIME & PRICE (KILLZONE RULE)',
-      question: 'Are you trading strictly inside a designated Killzone?',
-      detail: 'London Killzone (02:00 - 05:00 NY), NY AM Killzone (07:00 - 10:00 NY), or NY PM Silver Bullet (14:00 - 15:00 NY).'
-    }
-  ];
-
-  return (
-    <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-ink/35 backdrop-blur-md overflow-y-auto text-ink"
-      data-lenis-prevent="true"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Mentor Tribute Spotlight"
-      onClick={(e) => {
-        if (e.target === e.currentTarget) onClose();
-      }}
-    >
-      <div 
-        className="relative w-full max-w-4xl bg-surface border border-ink/[0.1] rounded-2xl overflow-hidden flex flex-col max-h-[90vh] shadow-2xl my-auto"
-        data-lenis-prevent="true"
-        onClick={(e) => e.stopPropagation()}
-      >
-        
-        {/* Header */}
-        <div className="bg-surface-muted p-6 sm:p-8 border-b border-ink/[0.08] relative overflow-hidden">
-          <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-ink/[0.04] border border-ink/[0.08] text-negative shrink-0 flex items-center justify-center">
-                <Youtube className="w-6 h-6" />
-              </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="text-[0.8125rem] font-sans tabular-nums uppercase tracking-[0.18em] text-teal">
-                    MENTOR SPOTLIGHT
-                  </span>
-                </div>
-                <h1 className="text-xl sm:text-2xl font-semibold uppercase text-ink tracking-tight mt-0.5">
-                  Trader Abdullah Masood
-                </h1>
-                <p className="text-xs text-ink-secondary font-sans tabular-nums mt-0.5">
-                  @TraderAbdullahMasood · ICT &amp; SMC Master Educator
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-2.5 w-full sm:w-auto">
-              {onOpenMasoodAcademy && (
-                <button
-                  onClick={() => {
-                    onClose();
-                    onOpenMasoodAcademy();
-                  }}
-                  className="btn-predikt-primary text-xs"
-                >
-                  <span>Open Academy ({lectureCount})</span>
-                </button>
-              )}
-
-              <button
-                onClick={onClose}
-                className="p-2 rounded-lg bg-ink/[0.04] hover:bg-ink/[0.1] text-ink-secondary hover:text-ink transition-colors cursor-pointer"
-                title="Close"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-
-          {/* Nav Tabs */}
-          <div className="mt-6 pt-4 border-t border-ink/[0.06]">
-            <BauhausNavScroller innerClassName="gap-2" showArrowsAlways={false}>
-              <button
-                onClick={() => setActiveTab('tribute')}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-sans tabular-nums uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,opacity,transform] border cursor-pointer shrink-0 ${
-                  activeTab === 'tribute'
-                    ? 'bg-ink/[0.12] text-ink border-ink/20'
-                    : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06]'
-                }`}
-              >
-                Tribute &amp; Dedication
-              </button>
-              <button
-                onClick={() => setActiveTab('curriculum')}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-sans tabular-nums uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,opacity,transform] border cursor-pointer shrink-0 ${
-                  activeTab === 'curriculum'
-                    ? 'bg-ink/[0.12] text-ink border-ink/20'
-                    : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06]'
-                }`}
-              >
-                Key Mentorship Tracks
-              </button>
-              <button
-                onClick={() => setActiveTab('daily_bias_checklist')}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-sans tabular-nums uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,opacity,transform] border cursor-pointer shrink-0 ${
-                  activeTab === 'daily_bias_checklist'
-                    ? 'bg-ink/[0.12] text-ink border-ink/20'
-                    : 'bg-ink/[0.02] text-ink-secondary hover:text-ink border-ink/[0.06]'
-                }`}
-              >
-                Pre-Market Checklist
-              </button>
-            </BauhausNavScroller>
-          </div>
-        </div>
-
-        {/* Modal Body */}
-        <div 
-          className="flex-1 min-h-0 modal-scrollable p-6 sm:p-8 space-y-6 bg-surface"
-          data-lenis-prevent="true"
-        >
-          
-          {/* TAB 1: TRIBUTE & ACKNOWLEDGEMENT */}
-          {activeTab === 'tribute' && (
-            <div className="space-y-6">
-              
-              <div className="bg-ink/[0.02] border border-ink/[0.08] rounded-xl p-6 sm:p-7 space-y-4">
-                <div className="flex items-center gap-2 text-teal font-sans tabular-nums text-xs uppercase tracking-wider">
-                  <Heart className="w-4 h-4 fill-current" />
-                  DEDICATED WITH SINCERE GRATITUDE &amp; RESPECT
-                </div>
-
-                <blockquote className="text-sm sm:text-base text-ink font-medium leading-relaxed border-l-2 border-brand pl-4 py-1 italic">
-                  &ldquo;Everything codified in this platform regarding Smart Money Concepts, institutional algorithmic delivery, and execution is owed to the dedication, free mentorship, and masterclasses of Trader Abdullah Masood.&rdquo;
-                </blockquote>
-
-                <p className="text-xs sm:text-sm text-ink-secondary font-normal leading-relaxed">
-                  His ability to distill Michael Huddleston&apos;s ICT concepts into crystal-clear, actionable, and repeatable frameworks—especially for Gold (XAUUSD), NASDAQ, and Daily Bias—has transformed how thousands understand price delivery.
-                </p>
-
-                <div className="pt-2 flex flex-wrap items-center gap-3">
-                  <a
-                    href={channelUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-predikt-primary text-xs"
-                  >
-                    <Youtube className="w-4 h-4 text-red-700" />
-                    <span>Subscribe on YouTube</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                  <button
-                    onClick={() => setActiveTab('curriculum')}
-                    className="btn-predikt-secondary text-xs"
-                  >
-                    <BookOpen className="w-4 h-4" />
-                    <span>Explore Curriculum</span>
-                  </button>
-                </div>
-              </div>
-
-              {/* 4 Pillars Learned */}
-              <div className="space-y-3">
-                <h3 className="text-xs font-sans tabular-nums uppercase tracking-[0.16em] text-ink-muted flex items-center gap-2">
-                  <Star className="w-3.5 h-3.5 text-amber" />
-                  CORE BREAKTHROUGH LESSONS LEARNED FROM HIS CHANNEL
-                </h3>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-surface-raised border border-ink/[0.07] rounded-xl p-5 space-y-2">
-                    <div className="flex items-center gap-2 font-sans tabular-nums text-xs uppercase text-ink">
-                      <div className="w-5 h-5 rounded bg-brand/15 text-brand flex items-center justify-center text-xs font-semibold">
-                        1
-                      </div>
-                      4-PILLAR DAILY BIAS ENGINE
-                    </div>
-                    <p className="text-xs text-ink-secondary font-normal leading-relaxed">
-                      Daily Bias is rooted mechanically in Previous Day High/Low (PDH/PDL), the 00:00 NY Midnight Open, and the 20/40/60-day IPDA macro draw on liquidity.
-                    </p>
-                  </div>
-
-                  <div className="bg-surface-raised border border-ink/[0.07] rounded-xl p-5 space-y-2">
-                    <div className="flex items-center gap-2 font-sans tabular-nums text-xs uppercase text-ink">
-                      <div className="w-5 h-5 rounded bg-negative/15 text-negative flex items-center justify-center text-xs font-semibold">
-                        2
-                      </div>
-                      THE GOLD LEGACY (XAUUSD)
-                    </div>
-                    <p className="text-xs text-ink-secondary font-normal leading-relaxed">
-                      Gold has extreme volatility and intentionally sweeps the Asian Range high/low before initiating true London and New York expansion runs.
-                    </p>
-                  </div>
-
-                  <div className="bg-surface-raised border border-ink/[0.07] rounded-xl p-5 space-y-2">
-                    <div className="flex items-center gap-2 font-sans tabular-nums text-xs uppercase text-ink">
-                      <div className="w-5 h-5 rounded bg-teal/15 text-teal flex items-center justify-center text-xs font-semibold">
-                        3
-                      </div>
-                      INDUCEMENT (IDM) CLARITY
-                    </div>
-                    <p className="text-xs text-ink-secondary font-normal leading-relaxed">
-                      Never enter on the first internal Order Block. Wait for price to take out internal inducement (minor pullback lows/highs) before reacting to the valid POI.
-                    </p>
-                  </div>
-
-                  <div className="bg-surface-raised border border-ink/[0.07] rounded-xl p-5 space-y-2">
-                    <div className="flex items-center gap-2 font-sans tabular-nums text-xs uppercase text-ink">
-                      <div className="w-5 h-5 rounded bg-amber/15 text-amber flex items-center justify-center text-xs font-semibold">
-                        4
-                      </div>
-                      TIME &amp; NEWS KILLZONES
-                    </div>
-                    <p className="text-xs text-ink-secondary font-normal leading-relaxed">
-                      Timing is king. High-probability institutional setups only deliver inside designated session Killzones and around macroeconomic news release catalysts.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          )}
-
-          {/* TAB 2: KEY MENTORSHIP TRACKS */}
-          {activeTab === 'curriculum' && (
-            <div className="space-y-4">
-              <p className="text-xs text-ink-secondary">
-                Core lecture series codified from Trader Abdullah Masood&apos;s channel:
-              </p>
-
-              <div className="space-y-4">
-                {keyCurriculumTracks.map((track, idx) => {
-                  const Icon = track.icon;
-                  return (
-                    <div 
-                      key={idx}
-                      className="p-5 sm:p-6 rounded-xl bg-ink/[0.02] border border-ink/[0.07] space-y-3"
-                    >
-                      <div className="flex items-center justify-between flex-wrap gap-2">
-                        <div className="flex items-center gap-2.5">
-                          <Icon className={`w-4 h-4 ${track.accent}`} />
-                          <h4 className="text-sm sm:text-base font-semibold text-ink">
-                            {track.title}
-                          </h4>
-                        </div>
-                        <span className="text-[0.8125rem] font-sans tabular-nums uppercase bg-ink/[0.04] text-ink-secondary px-2.5 py-0.5 rounded border border-ink/[0.06]">
-                          {track.tag}
-                        </span>
-                      </div>
-
-                      <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed">
-                        {track.description}
-                      </p>
-
-                      <div className="space-y-1.5 pt-1">
-                        <span className="text-[0.8125rem] font-sans tabular-nums uppercase text-ink-muted block">
-                          Core Principles:
-                        </span>
-                        <ul className="space-y-1 text-xs text-ink/90">
-                          {track.coreTeachings.map((t, tIdx) => (
-                            <li key={tIdx} className="flex items-start gap-2">
-                              <span className="text-brand font-sans tabular-nums">•</span>
-                              <span>{t}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {onSelectConcept && (
-                        <div className="pt-2">
-                          <button
-                            onClick={() => {
-                              onClose();
-                              onSelectConcept(track.conceptLink);
-                            }}
-                            className="text-xs font-sans tabular-nums text-teal hover:underline flex items-center gap-1 cursor-pointer"
-                          >
-                            <span>Study {track.title.split('-')[0]}</span>
-                            <CheckCircle2 className="w-3.5 h-3.5" />
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-
-          {/* TAB 3: DAILY BIAS CHECKLIST */}
-          {activeTab === 'daily_bias_checklist' && (
-            <div className="space-y-4">
-              <div className="p-4 rounded-xl bg-ink/[0.02] border border-ink/[0.07] space-y-1">
-                <div className="text-xs font-sans tabular-nums text-brand uppercase font-semibold">
-                  TRADER ABDULLAH MASOOD PRE-MARKET BIAS CHECKLIST
-                </div>
-                <p className="text-xs text-ink-secondary">
-                  Verify each institutional checkpoint before entering the session.
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                {dailyBiasChecklist.map((item) => {
-                  const isChecked = !!checkedItems[item.id];
-                  return (
-                    <div 
-                      key={item.id}
-                      onClick={() => toggleCheck(item.id)}
-                      className={`p-4 rounded-xl border transition-[color,background-color,border-color,box-shadow,opacity,transform] cursor-pointer flex items-start gap-3.5 select-none ${
-                        isChecked 
-                          ? 'bg-emerald-500/5 border-emerald-500/30' 
-                          : 'bg-ink/[0.02] border-ink/[0.07] hover:border-ink/[0.14]'
-                      }`}
-                    >
-                      <div className={`w-5 h-5 rounded flex items-center justify-center shrink-0 mt-0.5 border ${
-                        isChecked 
-                          ? 'bg-emerald-500 border-emerald-500 text-on-brand on-accent'
-                          : 'border-ink/20 bg-ink/[0.04]'
-                      }`}>
-                        {isChecked && <Check className="w-3.5 h-3.5" />}
-                      </div>
-
-                      <div className="space-y-1">
-                        <div className="text-[0.8125rem] font-sans tabular-nums uppercase text-ink-muted">
-                          {item.category}
-                        </div>
-                        <div className={`text-xs sm:text-sm font-medium ${isChecked ? 'text-emerald-700' : 'text-ink'}`}>
-                          {item.question}
-                        </div>
-                        <p className="text-xs text-ink-secondary leading-relaxed font-normal">
-                          {item.detail}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-
-        </div>
-      </div>
+  document.addEventListener('keydown',key);
+  return()=>{document.removeEventListener('keydown',key);previous?.focus();};
+ },[isOpen]);
+ useEffect(()=>{if(body.current)body.current.scrollTop=0;},[active]);
+ if(!isOpen)return null;
+ const tabs:{id:Tab;label:string}[]=[
+  {id:'tribute',label:copy('Tribute','خراجِ تحسین')},
+  {id:'curriculum',label:copy('Study series','مطالعے کی سیریز')},
+  {id:'daily_bias_checklist',label:copy('Study checklist','مطالعے کی فہرست')}
+ ];
+ const checklist=[
+  copy('Choose the instrument, date and chart feed before marking levels.','سطحیں نشان زد کرنے سے پہلے انسٹرومنٹ، تاریخ اور چارٹ فیڈ منتخب کریں۔'),
+  copy('Check the session clock in New York local time, including daylight saving changes.','نیویارک کے مقامی وقت کے مطابق سیشن دیکھیں، بشمول ڈے لائٹ سیونگ کی تبدیلیوں کے۔'),
+  copy('Mark the previous day’s high and low and the references relevant to the lesson.','گزشتہ دن کی ہائی اور لو اور سبق سے متعلق دوسرے حوالے نشان زد کریں۔'),
+  copy('Write the directional idea and the evidence that would invalidate it.','سمت کا تصور اور اسے غلط ثابت کرنے والی شرائط پہلے لکھیں۔'),
+  copy('Separate what the chart shows from assumptions about orders or institutional intent.','چارٹ پر نظر آنے والی بات کو آرڈرز یا ادارہ جاتی ارادے کے مفروضوں سے الگ رکھیں۔'),
+  copy('Record the outcome, including no-entry and failed cases, without treating a pattern as a guarantee.','نتیجہ درج کریں، بشمول انٹری نہ بننے اور ناکام مثالوں کے؛ پیٹرن کو ضمانت نہ سمجھیں۔')
+ ];
+ return createPortal(<div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/55 p-3 sm:p-6" onClick={e=>{if(e.target===e.currentTarget)onClose();}} data-lenis-prevent="true">
+  <div ref={panel} role="dialog" aria-modal="true" aria-labelledby="mentor-tribute-title" dir={locale==='ur'?'rtl':'ltr'} className="isolate w-full max-w-3xl overflow-hidden rounded-2xl border border-ink/15 bg-surface text-ink shadow-2xl" style={{display:'grid',gridTemplateRows:'auto auto minmax(0,1fr)',maxHeight:'calc(100dvh - 2rem)'}}>
+   <header className="relative z-20 bg-surface border-b border-ink/10 p-4 sm:p-6">
+    <div className="flex items-start justify-between gap-4">
+     <div><p className="flex items-center gap-2 text-sm text-teal mb-2"><Heart size={17} aria-hidden="true"/>{copy('With gratitude','تشکر کے ساتھ')}</p><h2 id="mentor-tribute-title" className="text-xl sm:text-2xl font-semibold">{copy('Trader Abdullah Masood','ٹریڈر عبداللہ مسعود')}</h2><p className="text-sm text-ink-secondary mt-2">{copy('An independent acknowledgement from LearnSMC','LearnSMC کی جانب سے آزادانہ اعترافِ خدمات')}</p></div>
+     <button ref={close} type="button" onClick={onClose} aria-label={copy('Close tribute','خراجِ تحسین بند کریں')} className="shrink-0 inline-flex items-center justify-center min-h-11 min-w-11 rounded-lg border border-ink/15 hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal"><X size={20} aria-hidden="true"/></button>
     </div>
-  );
-};
-
+   </header>
+   <div role="tablist" aria-label={copy('Tribute sections','خراجِ تحسین کے حصے')} className="relative z-20 grid grid-cols-3 gap-1 border-b border-ink/10 bg-surface p-2 sm:px-5">
+    {tabs.map((tab,i)=><button key={tab.id} type="button" role="tab" id={'mentor-tab-'+tab.id} aria-selected={active===tab.id} aria-controls={'mentor-panel-'+tab.id} tabIndex={active===tab.id?0:-1} onClick={()=>setActive(tab.id)} onKeyDown={e=>{
+     if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;
+     e.preventDefault();const delta=(e.key==='ArrowRight'?1:-1)*(locale==='ur'?-1:1);const index=e.key==='Home'?0:e.key==='End'?tabs.length-1:(i+delta+tabs.length)%tabs.length;setActive(tabs[index].id);document.getElementById('mentor-tab-'+tabs[index].id)?.focus();
+    }} className={'min-h-11 px-2 py-2 text-sm rounded-lg border transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal '+(active===tab.id?'bg-teal/10 border-teal/30 text-ink font-semibold':'border-transparent text-ink-secondary hover:bg-ink/5')}>{tab.label}</button>)}
+   </div>
+   <div ref={body} role="tabpanel" id={'mentor-panel-'+active} aria-labelledby={'mentor-tab-'+active} tabIndex={0} className="relative z-0 min-h-0 overflow-y-auto overscroll-contain p-5 sm:p-7 space-y-5 text-sm sm:text-base leading-relaxed" data-lenis-prevent="true">
+    {active==='tribute'&&<>
+     <h3 className="text-lg font-semibold">{copy('Thank you for sharing your teaching.','اپنی تعلیم بانٹنے کے لیے شکریہ۔')}</h3>
+     <p>{copy('LearnSMC acknowledges Trader Abdullah Masood’s freely available teaching and its contribution to this project’s study of ICT and Smart Money Concepts. This tribute expresses gratitude for the time and effort involved in making those lessons accessible.','LearnSMC ٹریڈر عبداللہ مسعود کی مفت دستیاب تعلیم اور اس منصوبے میں ICT اور اسمارٹ منی کانسیپٹس کے مطالعے میں اس کی اہمیت کا اعتراف کرتا ہے۔ یہ خراجِ تحسین ان اسباق کو قابلِ رسائی بنانے میں صرف کیے گئے وقت اور محنت کے لیے تشکر ہے۔')}</p>
+     <p>{copy('Our academy brings together independently written study notes, practice prompts and links to his original videos. Readers can follow the source lessons and use the notes as a companion, rather than a replacement for the educator’s own explanations.','ہماری اکیڈمی میں آزادانہ لکھے گئے مطالعاتی نوٹس، مشق کے سوالات اور ان کی اصل ویڈیوز کے روابط جمع کیے گئے ہیں۔ قارئین اصل اسباق کے ساتھ یہ نوٹس معاون مواد کے طور پر استعمال کر سکتے ہیں، استاد کی اپنی وضاحتوں کے متبادل کے طور پر نہیں۔')}</p>
+     <p className="border-s-2 border-teal/40 ps-4 text-ink-secondary">{copy('LearnSMC is independent and does not claim affiliation with or endorsement by Abdullah Masood or Michael J. Huddleston (ICT). Each creator retains ownership of their original material. Teaching frameworks and examples do not establish trading performance.','LearnSMC آزاد ہے اور عبداللہ مسعود یا مائیکل جے ہڈلسٹن (ICT) سے وابستگی یا ان کی توثیق کا دعویٰ نہیں کرتا۔ اصل مواد کی ملکیت متعلقہ تخلیق کار کی ہے۔ تدریسی ماڈلز اور مثالیں ٹریڈنگ کی کارکردگی کا ثبوت نہیں ہیں۔')}</p>
+     <a href="https://www.youtube.com/@TraderAbdullahMasood" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 min-h-11 text-teal underline underline-offset-4">{copy('Visit Abdullah Masood’s YouTube channel','عبداللہ مسعود کا یوٹیوب چینل دیکھیں')}<ExternalLink size={16} aria-hidden="true"/></a>
+    </>}
+    {active==='curriculum'&&<>
+     <h3 className="text-lg font-semibold">{copy('Continue with a study series','مطالعے کی ایک سیریز منتخب کریں')}</h3>
+     <p className="text-ink-secondary">{copy('These links lead to the existing LearnSMC series, with notes and original video references. Choose a topic that fits your current understanding.','یہ روابط LearnSMC کی موجودہ سیریز پر لے جاتے ہیں، جہاں نوٹس اور اصل ویڈیوز کے حوالے موجود ہیں۔ اپنی موجودہ سمجھ کے مطابق موضوع منتخب کریں۔')}</p>
+     <div className="grid gap-3">{masoodPlaylistsData.map(p=><a key={p.id} href={href('/masood/playlists/'+p.id+'/')} className="block rounded-lg border border-ink/15 p-4 text-teal underline underline-offset-4 hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-teal">{t(p.title)}</a>)}</div>
+    </>}
+    {active==='daily_bias_checklist'&&<>
+     <h3 className="text-lg font-semibold">{copy('Prepare a chart study','چارٹ کے مطالعے کی تیاری')}</h3>
+     <p className="text-ink-secondary">{copy('A study aid, not an entry signal or a validated trading strategy. Checks reset when you close this tribute.','یہ مطالعے کی معاون فہرست ہے، انٹری سگنل یا ثابت شدہ ٹریڈنگ حکمتِ عملی نہیں۔ یہ خراجِ تحسین بند کرنے پر منتخب خانے صاف ہو جاتے ہیں۔')}</p>
+     <div className="space-y-3">{checklist.map((item,i)=><label key={i} className="flex items-start gap-3 rounded-lg border border-ink/15 p-4 cursor-pointer"><input type="checkbox" checked={!!checked[i]} onChange={()=>setChecked(c=>({...c,[i]:!c[i]}))} className="mt-1 size-5 shrink-0 accent-teal"/><span>{item}</span></label>)}</div>
+     <a href={href('/disclaimer/')} className="inline-flex min-h-11 items-center text-teal underline underline-offset-4">{copy('Read the financial-education risk disclosure','مالی تعلیم اور رسک کی وضاحت پڑھیں')}</a>
+    </>}
+   </div>
+  </div>
+ </div>,document.body);
+}
 export default MentorSpotlight;

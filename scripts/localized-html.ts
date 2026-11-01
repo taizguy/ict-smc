@@ -53,6 +53,7 @@ export function localizeHtml(source: string, pathname: string, catalog: Translat
   function visit(node: HTML.Node, skip = false) {
     // These bodies are replaced by native locale rendering, not translated text nodes.
     // Continue validating the head; discarded English fragments are not missing Urdu.
+    if ('tagName' in node && attribute(node, 'data-native-locale') === 'ur') return;
     if (options.nativeReadingRoot && 'tagName' in node && attribute(node, 'id') === 'root') return;
     if ('tagName' in node) {
       if (node.tagName === 'html') { set(node, 'lang', 'ur'); set(node, 'dir', 'rtl'); }

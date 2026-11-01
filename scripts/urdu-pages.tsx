@@ -1,3 +1,4 @@
+import {localizeMasterclassDocument} from './masterclass-localized-document';
 import { isEnglishOnlyHistory, englishOnlyHistoryPaths } from '../src/data/history-paths';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -31,7 +32,7 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
       if (!preview) fs.writeFileSync(sourcePath, addLanguageAlternates(source, englishPath, !route.isNoindex));
       continue;
     }
-    let html = localizeHtml(source, englishPath, urdu, { preview, indexable: !route.isNoindex, availablePaths: available, nativeReadingRoot: !!auditedReadingRoute(englishPath), onMissing(text) {
+    let html = localizeHtml(localizeMasterclassDocument(source,englishPath), englishPath, urdu, { preview, indexable: !route.isNoindex, availablePaths: available, nativeReadingRoot: !!auditedReadingRoute(englishPath), onMissing(text) {
       if (!text) return;
       if (!missing.has(text)) missing.set(text, new Set());
       missing.get(text)!.add(englishPath);

@@ -1,3 +1,4 @@
+import learnerQuestions from './masterclassLearnerQuestions.json';
 import {catalogueEditions} from './masterclassCatalogueEditions';
 import {octantJournal} from './masterclassJournalOctants';
 import {ict2022Journal} from './masterclassJournal2022';
@@ -11,7 +12,7 @@ export interface JournalLesson {
  published:string; modified:string; reviewed:string; reviewScope:string;
  outcomes:string[]; introduction:string[]; steps:JournalStep[];
  worked:JournalExample; failed:JournalExample; limitations:string[]; riskNote:string;
- comparison:{caption:string; headers:string[]; rows:string[][]}; faq:Array<{question:string;answer:string}>;
+ comparison:{caption:string; headers:string[]; rows:string[][]}; faq:Array<{question:string;answer:string;questionSource?:{url:string;label:string}}>;
  sources:Array<{title:string;url:string;scope:string;passages?:Array<{label:string;url:string;note:string}>}>; related:JournalLink[];
  /** Drafts are reviewable locally but may not silently replace live documents. */
  release:'draft'|'approved';
@@ -44,3 +45,8 @@ const authoredEditions:Record<number,JournalLesson>={8:octantJournal,
 };
 
 export const journalEditions=catalogueEditions(authoredEditions);
+for(const [number,question] of Object.entries(learnerQuestions)){
+ const edition=journalEditions[Number(number)];
+ const evidence=question as typeof question & {url?:string;label?:string};
+ edition.faq=[{question:question.question,answer:question.answer,...(evidence.url&&evidence.label?{questionSource:{url:evidence.url,label:evidence.label}}:{})},...edition.faq];
+}

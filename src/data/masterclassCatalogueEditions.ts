@@ -4,6 +4,7 @@ import {masterclassThumbnailSpecs} from './masterclassHub';
 import {reviewedModelSources} from './reviewedModelSources';
 import {getMasterclassUrl} from '../utils/workbenchToolRoutes';
 import {searchTitle,searchDescription} from '../utils/searchMetadata';
+import reviewedSearchMetadata from './masterclassSearchMetadata.json';
 
 /** Keep published catalogue wording; this migration changes presentation, not the syllabus. */
 export function catalogueEditions(previous:Record<number,JournalLesson>):Record<number,JournalLesson>{
@@ -26,6 +27,9 @@ export function catalogueEditions(previous:Record<number,JournalLesson>):Record<
   };
   // Restored catalogue bodies do not contain the expanded journal examples.
   if(item.number===8||item.number===15){edition.title=searchTitle(item.title,path);edition.description=searchDescription(thumb.description,item.title,path);}
+  // Human-reviewed against search intent and the restored catalogue body (November 2026).
+  const metadata=reviewedSearchMetadata[String(item.number) as keyof typeof reviewedSearchMetadata];
+  if(metadata){edition.title=metadata.title;edition.h1=metadata.h1;edition.description=metadata.description;}
   edition.faq=edition.faq.map(f=>({...f,answer:f.answer.replace('The failed example visits only 170 after opening at 180, then rises to 200 without reaching midpoint 140.','For example, an invented path may open at 180, visit 170 and rise to 200 without reaching midpoint 140.').replace('In the failed example, price crosses 80 and continues to 76.','An invented path can cross 80 and continue to 76.')}));
   return [item.number,edition];
  }));

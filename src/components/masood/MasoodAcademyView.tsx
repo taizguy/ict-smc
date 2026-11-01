@@ -13,7 +13,7 @@ import { MasoodAnimatedExplainer, AnimationKind } from './MasoodAnimatedExplaine
 import { 
   Youtube, BookOpen, Sparkles, CheckCircle2, AlertTriangle, 
   ExternalLink, Search, Play, Award, Zap, Compass, 
-  Clock, Shield, ArrowRight, X, Layers, CheckSquare
+  Clock, Shield, ArrowRight, X, Layers, CheckSquare, Heart
 } from 'lucide-react';
 import { BauhausNavScroller } from '../BauhausNavScroller';
 import { ScrollReveal } from '../ScrollReveal';
@@ -24,13 +24,15 @@ export interface MasoodAcademyViewProps {
   initialLectureId?: string;
   onSubTabChange?: (subTab: 'lectures' | 'animations' | 'bias_calc' | 'rules') => void;
   onLectureSelect?: (lectureId: string | null) => void;
+  onOpenTribute?: () => void;
 }
 
 export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
   initialSubTab = 'lectures',
   initialLectureId,
   onSubTabChange,
-  onLectureSelect
+  onLectureSelect,
+  onOpenTribute
 }) => {
   const { t: translateSearch,message } = useTranslation();
   const [visibleCount,setVisibleCount]=useState(24);
@@ -169,6 +171,7 @@ export const MasoodAcademyView: React.FC<MasoodAcademyViewProps> = ({
 
             {/* Quick action buttons */}
             <div className="pt-2 flex flex-wrap items-center gap-2.5">
+              {onOpenTribute&&<button type="button" onClick={onOpenTribute} aria-haspopup="dialog" className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-ink/[0.04] hover:bg-ink/[0.08] text-ink text-sm border border-ink/[0.08] cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal"><Heart className="w-4 h-4 text-teal" aria-hidden="true"/>{translateSearch('A tribute to Abdullah Masood')}</button>}
               <a
                 href="https://www.youtube.com/@TraderAbdullahMasood"
                 target="_blank"

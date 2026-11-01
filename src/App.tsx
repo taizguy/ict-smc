@@ -505,6 +505,7 @@ export const App: React.FC = () => {
               initialLectureId={masoodLectureId || undefined}
               onSubTabChange={handleMasoodSubTabChange}
               onLectureSelect={handleMasoodLectureSelect}
+              onOpenTribute={() => setIsMentorSpotlightOpen(true)}
             />
           <PageReady /></Suspense>
         )}

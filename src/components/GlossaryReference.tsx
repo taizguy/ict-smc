@@ -1,3 +1,4 @@
+import {GlossaryCatalogue} from './GlossaryCatalogue';
 import React,{useState,useEffect,useRef} from 'react';
 import {Search,X,BookOpen,ChevronDown} from 'lucide-react';
 import {ictConcepts} from '../data/conceptsData';
@@ -32,6 +33,7 @@ export function GlossaryReference({pathname}:{pathname:string}){
  const pageHeading=isTerm?t(current.name):t(meta.h1),TermHeading=isTerm?'h2':'h2';
  const sequences=text(review.formation).split(/(?<=[.!؟۔])\s+/).filter(Boolean);
  const related=relatedGlossary(selected);const deepReferences=DEEP_SUB_CONCEPTS.filter(s=>s.parentConceptId===selected);
+ if(!isTerm)return <GlossaryCatalogue path={path} category={category} heading={t(meta.h1)} query={query} setQuery={setQuery} visible={visible.map(c=>c.id)} input={input} navigate={navigate}/>;
  return <div className="glossary-reference open refined-reference">
  <nav aria-label="Breadcrumb" className="gr-breadcrumb"><a href={href('/')}>{n?'ابتدا':'Home'}</a><span>/</span><a href={href('/tools/')}>{n?'ورک بینچ اور لیب':'Workbench & Lab'}</a><span>/</span><a href={href(GLOSSARY_PATH)} onClick={navigate}>{t('ICT glossary')}</a>{state.categoryInfo&&<><span>/</span><a href={href(getGlossaryCategoryPath(state.categoryInfo.slug))} onClick={navigate}>{t(state.categoryInfo.name)}</a></>}</nav>
  <header className="gr-heading"><h1>{pageHeading}</h1>{!isTerm&&<p>{t('Definitions, anatomy and boundaries for ICT and Smart Money Concepts.')}</p>}</header>

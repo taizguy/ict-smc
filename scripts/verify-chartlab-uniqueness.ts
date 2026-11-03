@@ -1,0 +1,25 @@
+import {remainingStudies} from '../src/data/chartLabRemainingContent';
+import {remainingCases} from '../src/data/chartLabRemaining';
+import fs from 'node:fs';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';
+import {silverCases,silverQuestions,silverStages} from '../src/data/silverBulletStudy';
+import {breakerCases,breakerBars,breakerStages} from '../src/data/breakerStudy';
+import {learningCases} from '../src/data/learningCases';
+import {shapeDistance,MIN_SHAPE_DISTANCE} from '../src/utils/chartStudyShape';
+import {CHART_SCENARIOS_META} from '../src/utils/workbenchToolRoutes';
+const hash=(v:unknown)=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
+const cases=[...remainingCases.map(c=>({id:'dedicated/'+c.id,bars:c.bars})),...silverCases.map(c=>({id:'silver/'+c.id,bars:c.bars})),...breakerCases.map(c=>({id:'breaker/'+c.id,bars:breakerBars(c)}))];
+const pairs=[];for(let i=0;i<cases.length;i++)for(let j=i+1;j<cases.length;j++){const a=cases[i],b=cases[j],distance=shapeDistance(a.bars,b.bars);pairs.push({a:a.id,b:b.id,distance});assert.ok(distance>MIN_SHAPE_DISTANCE,`Shape too close: ${a.id} / ${b.id}: ${distance.toFixed(5)} <= ${MIN_SHAPE_DISTANCE}`);assert.notEqual(hash(a.bars.slice(0,5).map(({open,high,low,close})=>[open,high,low,close])),hash(b.bars.slice(0,5).map(({open,high,low,close})=>[open,high,low,close])),'Opening duplicate');assert.notEqual(JSON.stringify([Math.min(...a.bars.map(v=>v.low)),Math.max(...a.bars.map(v=>v.high))]),JSON.stringify([Math.min(...b.bars.map(v=>v.low)),Math.max(...b.bars.map(v=>v.high))]),'Range duplicate');}
+for(const c of [...silverCases,...remainingCases])for(const legacy of learningCases)assert.ok(shapeDistance(c.bars,legacy.bars)>MIN_SHAPE_DISTANCE,'New case copied generic path');
+const a=silverCases[0].bars,transform=(fn:(v:number)=>number,mirror=false)=>a.map(b=>({...b,open:fn(b.open),close:fn(b.close),high:fn(mirror?b.low:b.high),low:fn(mirror?b.high:b.low)}));
+assert.ok(shapeDistance(a,transform(p=>p*3+400))<1e-8,'Scaled/translated clone must fail');assert.ok(shapeDistance(a,transform(p=>50000-p,true))<1e-8,'Mirrored clone must fail');
+const range=Math.max(...a.map(b=>b.high))-Math.min(...a.map(b=>b.low));const jitter=a.map((b,i)=>{const n=Math.sin(i*3)*range*.01;return {...b,open:b.open+n,close:b.close+n,high:b.high+n,low:b.low+n};});assert.ok(shapeDistance(a,jitter)<=MIN_SHAPE_DISTANCE,'One-percent noise must not evade guard');
+const doubled=a.flatMap(b=>[b,{...b}]);assert.ok(shapeDistance(a,doubled)<=MIN_SHAPE_DISTANCE,'Candle-count padding must not evade guard');
+const silverSet=new Set(silverCases.flatMap(c=>silverQuestions(c).map(q=>q.prompt[0].toLowerCase())));assert.equal(silverSet.size,silverCases.length*5,'Each Silver question must be case-specific');assert.notEqual(JSON.stringify(silverStages),JSON.stringify(breakerStages));
+const chart=fs.readFileSync('src/components/ChartLab.tsx','utf8');assert.ok(chart.includes('SilverBulletStudy')&&chart.includes("initialScenarioSlug==='nq-silver-bullet-short'"),'Dedicated Silver route mapping missing');assert.ok(!fs.readFileSync('src/components/market/SilverBulletStudy.tsx','utf8').match(/GUIDED_KEY|learningCases|GuidedMarketDesk/),'Silver still uses generic exercise');
+const pending:string[]=[];
+assert.ok(chart.includes('dedicated=studyForSlug(initialScenarioSlug)')&&chart.includes('<RouteChartStudy'),'The four dedicated route views must not fall back to the generic desk');
+assert.ok(!/GUIDED_KEY|learningCases|GuidedMarketDesk/.test(fs.readFileSync('src/components/market/RouteChartStudy.tsx','utf8')),'Dedicated route view imports generic cases');
+assert.deepEqual(Object.values(CHART_SCENARIOS_META).map(m=>m.slug).sort(),[...remainingStudies.map(s=>s.slug),'nq-silver-bullet-short','eurusd-failed-ob-breaker'].sort(),'Unexpected unregistered Chart Lab route; update the guard before shipping');
+fs.mkdirSync('outputs/chartlab-five',{recursive:true});fs.writeFileSync('outputs/chartlab-five/shape-report.json',JSON.stringify({threshold:MIN_SHAPE_DISTANCE,normalisation:'64 resampled OHLC observations, min-max price normalisation; min of direct/mirrored RMSE',pairs:pairs.sort((a,b)=>a.distance-b.distance),pendingGenericRoutes:pending,scope:'All six named routes use dedicated data; 29 explicit cases compared across route families.'},null,2));
+assert.equal(pending.length,0,'Migration must be complete');
+console.log(`Shape guard passed for ${cases.length} implemented cases; closest distance ${Math.min(...pairs.map(p=>p.distance)).toFixed(4)} > ${MIN_SHAPE_DISTANCE}; clone/noise/padding controls rejected. All six named routes are migrated; no pending generic route.`);

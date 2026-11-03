@@ -453,6 +453,8 @@ export function GuidedMarketDesk({
             }
           >
             <Chart
+              snapCrosshair={mode!=='chartlab'}
+              containWheel={mode==='chartlab'}
               showHandles={
                 (mode === "delivery" || (mode === "simulator" && editing)) &&
                 !s.order
@@ -1385,7 +1387,7 @@ export function GuidedMarketDesk({
         </p>
       )}
       {studyFocus && (
-        <details>
+        <details open={mode==='chartlab'} className={mode==='chartlab' ? 'chartlab-study-context' : undefined}>
           <summary>{t("About this study link")}</summary>
           <p>{t(studyFocus)}</p>
           <p>
@@ -1395,7 +1397,7 @@ export function GuidedMarketDesk({
           </p>
         </details>
       )}
-      <details className="guided-context">
+      <details className="guided-context" open={mode==='chartlab'}>
         <summary>{t("Read the concepts and execution assumptions")}</summary>
         <nav className="guided-next-tools">
           <a

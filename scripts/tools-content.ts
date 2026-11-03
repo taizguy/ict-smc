@@ -1,4 +1,11 @@
+import {chartLabHubMeta,chartLabHubSchema,CHARTLAB_HUB_PATH} from '../src/data/chartLabHub';
+import {studyForPath} from '../src/data/chartLabRemainingContent';
+import {remainingSchema} from '../src/data/chartLabRemainingSchema';
 import { deliverySuiteReading } from '../src/data/deliverySuiteReading';
+import {breakerMeta,BREAKER_PATH} from '../src/data/breakerStudy';
+import {breakerSchema} from '../src/data/breakerSchema';
+import {silverMeta,SILVER_PATH} from '../src/data/silverBulletStudy';
+import {silverSchema} from '../src/data/silverBulletSchema';
 import { ToolRouteStudy } from '../src/components/ToolRouteStudy';
 import { AuditedRouteBody } from '../src/components/AuditedRouteDocument';
 import { workbenchToolCatalog } from '../src/data/workbenchCatalog';
@@ -20,6 +27,21 @@ const p=(s:string)=>`<p>${e(s)}</p>`;
 const section=(title:string,items:string[])=>`<section><h2>${e(title)}</h2>${items.map(p).join('')}</section>`;
 export function correctToolDocument(r:RouteMeta,path:string){
  if(!path.startsWith('/tools/'))return;
+ if(path===CHARTLAB_HUB_PATH){r.title=chartLabHubMeta.title[0];r.heading=chartLabHubMeta.h1[0];r.description=chartLabHubMeta.description[0];r.subheading='Read the chart. Explain the decision.';r.bodyHtml=renderToStaticMarkup(createElement(AuditedRouteBody,{pathname:path,heading:r.heading}));r.schemaJson=chartLabHubSchema();return;}
+ const dedicated=studyForPath(path);
+ if(dedicated){r.title=dedicated.title[0];r.heading=dedicated.h1[0];r.description=dedicated.description[0];r.subheading=dedicated.intro[0];r.bodyHtml=renderToStaticMarkup(createElement(AuditedRouteBody,{pathname:path,heading:r.heading}));r.schemaJson=remainingSchema(dedicated);return;}
+ if(path===SILVER_PATH){
+  r.title=silverMeta.title[0];r.heading=silverMeta.h1[0];r.description=silverMeta.description[0];
+  r.subheading='Five original synthetic NQ sessions: timing, high sweeps, FVGs and contrasting outcomes.';
+  r.bodyHtml=renderToStaticMarkup(createElement(AuditedRouteBody,{pathname:path,heading:r.heading}));
+  r.schemaJson=silverSchema();return;
+ }
+ if(path===BREAKER_PATH){
+  r.title=breakerMeta.title[0];r.heading=breakerMeta.h1[0];r.description=breakerMeta.description[0];
+  r.subheading='Four original EUR/USD price paths: rejection, reclaim, no retest and wick-only failure.';
+  r.bodyHtml=renderToStaticMarkup(createElement(AuditedRouteBody,{pathname:path,heading:r.heading}));
+  r.schemaJson=breakerSchema();return;
+ }
  const parts=path.split('/').filter(Boolean),tool=parts[1],slug=parts.at(-1);
  if(Object.hasOwn(labGuides,tool)&&(tool!=='delivery-suite'||parts.length===2)){
   const guide=labGuides[tool];

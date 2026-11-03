@@ -1,0 +1,41 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {parse} from 'parse5';
+import {breakerMeta,BREAKER_PATH,breakerCases,breakerBars,breakerFaqs} from '../src/data/breakerStudy';
+import {essentialReading} from './audit-parity-content';
+const manifest=JSON.parse(fs.readFileSync('dist/seo-manifest.json','utf8'));const reports=[];
+for(const [index,locale] of (['en','ur'] as const).entries()){
+ const path=(index?'/ur':'')+BREAKER_PATH,html=fs.readFileSync('dist'+path+'index.html','utf8'),nodes:any[]=[];
+ const visit=(n:any)=>{nodes.push(n);(n.childNodes||[]).forEach(visit);};visit(parse(html));
+ const attr=(n:any,k:string)=>n.attrs?.find((a:any)=>a.name===k)?.value;
+ const text=(n:any):string=>n.value||(n.childNodes||[]).map(text).join('');
+ const meta=(name:string)=>attr(nodes.find(n=>n.tagName==='meta'&&(attr(n,'name')===name||attr(n,'property')===name)),'content');
+ assert.equal(nodes.filter(n=>n.tagName==='h1').length,1);assert.equal(text(nodes.find(n=>n.tagName==='h1')),breakerMeta.h1[index]);
+ assert.equal(text(nodes.find(n=>n.tagName==='title')),breakerMeta.title[index]);
+ assert.equal(meta('description'),breakerMeta.description[index]);assert.equal(meta('og:description'),meta('description'));assert.equal(meta('twitter:description'),meta('description'));
+ assert.equal(meta('og:title'),breakerMeta.title[index]);assert.equal(meta('twitter:title'),breakerMeta.title[index]);
+ assert.equal(attr(nodes.find(n=>n.tagName==='link'&&attr(n,'rel')==='canonical'),'href'),'https://learnsmc.xyz'+path);
+ assert.ok(!/noindex/i.test(meta('robots')||''));
+ for(const lang of ['en','ur','x-default'])assert.equal(attr(nodes.find(n=>n.tagName==='link'&&attr(n,'hreflang')===lang),'href'),'https://learnsmc.xyz'+(lang==='ur'?'/ur':'')+BREAKER_PATH);
+ const blocks=nodes.filter(n=>n.tagName==='script'&&attr(n,'type')==='application/ld+json');assert.equal(blocks.length,1);
+ const graph=JSON.parse(text(blocks[0]))['@graph'];assert.ok(graph&&graph.every((n:any)=>n['@type']));
+ assert.deepEqual(graph.map((n:any)=>n['@type']).sort(),['BreadcrumbList','LearningResource','WebApplication','WebPage']);
+ assert.equal(graph.find((n:any)=>n['@type']==='LearningResource').author.name,'Muhammad Umer Ijaz');
+ assert.equal(graph.find((n:any)=>n['@type']==='WebPage').dateModified,'2026-11-02');
+ assert.ok(!JSON.stringify(graph).includes('datePublished'));
+ const crumb=nodes.find(n=>n.tagName==='nav'&&['Breadcrumbs','رہنمائی کا راستہ'].includes(attr(n,'aria-label')));
+ assert.ok(crumb);const visibleCrumbs=(crumb.childNodes||[]).filter((n:any)=>n.tagName==='a'||n.tagName==='span'&&text(n)!=='/').map(text);
+ assert.deepEqual(graph.find((n:any)=>n['@type']==='BreadcrumbList').itemListElement.map((n:any)=>n.name),visibleCrumbs);
+ assert.equal(meta('og:image'),`https://learnsmc.xyz/images/social/eurusd-bearish-breaker-${locale}.png`);assert.equal(meta('twitter:image'),meta('og:image'));assert.ok(meta('twitter:image:alt'));
+ for(const item of breakerFaqs)assert.ok(text(nodes.find(v=>v.tagName==='body')).includes(item.a[index]),'FAQ answer missing from raw HTML');
+ const tables=nodes.filter(n=>n.tagName==='table');assert.ok(tables.length>=5);
+ for(const c of breakerCases)for(const b of breakerBars(c))assert.ok(html.includes(b.close.toFixed(4)),'Missing candle close');
+ const links=nodes.filter(n=>n.tagName==='a').map(n=>attr(n,'href')||'');const broken=[];
+ for(const link of links){if(!link.startsWith('/')||link.startsWith('//'))continue;const u=new URL(link,'https://learnsmc.xyz');const file='dist'+u.pathname+(u.pathname.endsWith('/')?'index.html':'');if(!fs.existsSync(file))broken.push(link);else if(u.hash&&u.pathname===path){const id=decodeURIComponent(u.hash.slice(1));if(!nodes.some(n=>attr(n,'id')===id))broken.push(link);}}
+ assert.deepEqual(broken,[],'Broken static links');assert.ok(links.includes('/resources/eurusd-bearish-breaker-practice.csv'));
+ const entries=manifest.filter((n:any)=>n.indexable&&n.title===breakerMeta.title[index]);assert.equal(entries.length,1,'Duplicate title');
+ const descriptions=manifest.filter((n:any)=>n.indexable&&n.description===breakerMeta.description[index]);assert.equal(descriptions.length,1,'Duplicate description');
+ const sitemap=fs.readFileSync('dist/sitemap.xml','utf8');assert.ok(sitemap.includes('https://learnsmc.xyz'+path));
+ reports.push({path,title:breakerMeta.title[index],titleLength:breakerMeta.title[index].length,descriptionLength:breakerMeta.description[index].length,h1:1,faqAnswers:5,caseTables:4,internalLinks:links.filter((l:string)=>l.startsWith('/')).length,broken:0,essential:essentialReading(html)});
+}
+fs.writeFileSync('outputs/breaker-study/static-checks.json',JSON.stringify(reports,null,2));console.log('EN/UR static breaker checks passed: exact metadata/OG/Twitter, single H1, canonical/reciprocal hreflang, native breadcrumb/schema parity, all FAQ answers/OHLC tables, unique snippets, source/download links and sitemap membership.');

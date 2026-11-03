@@ -1,5 +1,6 @@
 import { routeStudyLabels, toolRouteStudies } from '../data/toolRouteStudies';
 import { useTranslation } from '../i18n/TranslationProvider';
+import { ContextualInternalLinker } from './ContextualInternalLinker';
 
 /** Route-specific explanations use the same bilingual model in reading HTML and runtime. */
 export function ToolRouteStudy({family,slug}:{family:string;slug?:string}) {
@@ -11,7 +12,7 @@ export function ToolRouteStudy({family,slug}:{family:string;slug?:string}) {
     <h2 className="text-xl font-semibold text-ink">{study.heading[language]}</h2>
     {(['instructions','example','assumptions','limitations'] as const).map((key,i)=><div key={key} className="space-y-2">
       <h3 className="text-base font-semibold text-ink">{routeStudyLabels[i][language]}</h3>
-      <p className="text-sm leading-relaxed text-ink-secondary">{study[key][language]}</p>
+      <p className="text-sm leading-relaxed text-ink-secondary">{family==='chartlab' ? <ContextualInternalLinker text={study[key][language]} maxLinks={3}/> : study[key][language]}</p>
     </div>)}
   </section>;
 }

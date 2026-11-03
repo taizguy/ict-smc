@@ -1,3 +1,4 @@
+import {studyForSlug} from '../data/chartLabRemainingContent';
 import { masterclassCollection, MasterclassItem } from '../data/masterclassData';
 import { chartScenarios } from '../data/chartScenarios';
 import { ChartScenario } from '../types';
@@ -83,13 +84,13 @@ export const CHART_SCENARIOS_META: { [key: string]: { slug: string; metaTitle: s
   },
   nq_silver_bullet_short: {
     slug: 'nq-silver-bullet-short',
-    metaTitle: 'NQ Futures 10:00 AM Silver Bullet Short — Chart Lab | LearnSMC',
-    metaDescription: 'Mark and execute the ICT Silver Bullet short on NASDAQ futures between 10:00 AM and 11:00 AM NY macro delivery window.'
+    metaTitle: 'ICT Silver Bullet: NQ 10 AM Chart Practice | LearnSMC',
+    metaDescription: 'Practise the ICT Silver Bullet short on synthetic NQ charts: check New York timing, sweeps, FVGs, stops and no-entry cases.'
   },
   eurusd_failed_ob_breaker: {
     slug: 'eurusd-failed-ob-breaker',
-    metaTitle: 'EUR/USD Failed Bullish OB to Bearish Breaker — Chart Lab | LearnSMC',
-    metaDescription: 'Train your eye to spot trapped buyers in failed order blocks converted into model-based institutional breaker blocks on EUR/USD.'
+    metaTitle: 'ICT Bearish Breaker Block: EUR/USD Chart Lab | LearnSMC',
+    metaDescription: 'Study an ICT bearish breaker block on EUR/USD: mark the failed order block, compare close-through and wick-only cases, and test retests and invalidation.'
   },
   xauusd_gold_legacy_model: {
     slug: 'xauusd-gold-legacy-model',
@@ -107,6 +108,8 @@ export const CHART_SCENARIOS_META: { [key: string]: { slug: string; metaTitle: s
     metaDescription: 'Master the 2026 NDOG opening gap matrix, 09:50 macro inversion FVG, and Fibonacci ATH price expansion extensions.'
   }
 };
+
+for(const meta of Object.values(CHART_SCENARIOS_META)){const study=studyForSlug(meta.slug);if(study){meta.metaTitle=study.title[0];meta.metaDescription=study.description[0];}}
 
 export function getChartScenarioSlug(scenarioId: string): string {
   return CHART_SCENARIOS_META[scenarioId]?.slug || scenarioId.replace(/_/g, '-');
@@ -972,4 +975,6 @@ export function resolveWorkbenchRoute(pathname: string): ResolvedWorkbenchRoute 
     badge: 'Analytical Suite',
     isCanonical: false
   };
+
+
 }

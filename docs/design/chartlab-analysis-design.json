@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-02T00:00:00Z",
+  "title": "Design System: LearnSMC Chart Lab analysis workspace",
+  "scope": {
+    "surface": "Chart Lab root and six scenario routes, EN/UR only",
+    "selector": ".wb-suite[data-workbench-tool=chartlab]",
+    "frontmatter": "chartlab-analysis-DESIGN.md",
+    "source": ["src/styles/chartlab-analysis.css", "src/components/ChartLab.tsx"],
+    "globalIdentity": false,
+    "engineStatus": "Engine 0.1.5 and launcher unavailable; no successful seed, comp or detector run claimed."
+  },
+  "extensions": {
+    "colorMeta": {
+      "accent": { "role": "primary", "displayName": "Analysis Blue" },
+      "selected": { "role": "primary", "displayName": "Selected Study Surface" },
+      "soft": { "role": "neutral", "displayName": "Quiet Task Surface" },
+      "ink": { "role": "neutral", "displayName": "Analysis Ink" },
+      "muted": { "role": "neutral", "displayName": "Supporting Slate" },
+      "rule": { "role": "neutral", "displayName": "Workspace Rule" }
+    },
+    "typographyMeta": {
+      "headline": { "displayName": "Page H1", "purpose": "Compact Chart Lab identity." },
+      "title": { "displayName": "Task Heading", "purpose": "Current exercise instruction." },
+      "body": { "displayName": "Supporting Reading", "purpose": "Reading below the working surface; not every paragraph role." }
+    },
+    "shadows": [{ "name": "flat-controls", "value": "none", "purpose": "Chart Lab header, controls and answer surfaces." }],
+    "motion": [{ "name": "study-step-state", "value": "background-color 180ms ease-out,color 180ms ease-out", "purpose": "Study rail state changes; disabled under prefers-reduced-motion." }],
+    "focus": { "outline": "2px solid var(--lab-accent)", "outlineOffset": "3px" },
+    "breakpoints": [
+      { "name": "compact-desktop", "value": "1150px" },
+      { "name": "stacked-desk", "value": "900px" },
+      { "name": "phone", "value": "680px" }
+    ],
+    "themeMapping": { "attribute": "html[data-theme=dark]", "pairs": { "accent": "dark-accent", "ink": "dark-ink", "muted": "dark-muted", "rule": "dark-rule", "soft": "dark-soft", "selected": "dark-selected" }, "darkPrimaryActionText": "#10243e", "canvas": "Inherited neutral page canvas; not a new Chart Lab token." }
+  },
+  "components": [
+    {
+      "name": "Primary Action", "kind": "button", "refersTo": "primary-action",
+      "description": "Existing exercise action; dark-theme text follows the scoped theme rule.",
+      "html": "<button class=\"ds-lab-primary\">Check answer</button>",
+      "css": ".ds-lab-primary{font-family:var(--font-sans,system-ui,sans-serif);font-size:.9375rem;font-weight:500;min-height:44px;padding:11px 16px;border:1px solid transparent;border-radius:5px;background:var(--lab-accent,#155fd4);color:#fff;box-shadow:none}.ds-lab-primary:hover{background:var(--lab-soft,#f5f7fa);color:var(--lab-ink,#202a36)}.ds-lab-primary:focus-visible{outline:2px solid var(--lab-accent,#155fd4);outline-offset:3px}"
+    },
+    {
+      "name": "Replay Control", "kind": "button",
+      "description": "Compact transparent control with a visible pressed state.",
+      "html": "<button class=\"ds-lab-replay\" aria-pressed=\"true\">Replay</button>",
+      "css": ".ds-lab-replay{font-family:var(--font-sans,system-ui,sans-serif);min-height:44px;padding:8px 10px;font-size:.8125rem;font-weight:500;border:1px solid var(--lab-rule,#dce2e8);border-radius:5px;background:transparent;color:var(--lab-ink,#202a36)}.ds-lab-replay:hover{background:var(--lab-soft,#f5f7fa)}.ds-lab-replay[aria-pressed=true]{background:var(--lab-selected,#eaf1fc);border-color:var(--lab-accent,#155fd4)}.ds-lab-replay:focus-visible{outline:2px solid var(--lab-accent,#155fd4);outline-offset:3px}"
+    },
+    {
+      "name": "Current Study Step", "kind": "custom", "refersTo": "study-step-current",
+      "description": "Non-button progress row; exercise controls change the current stage.",
+      "html": "<ol class=\"ds-lab-steps\"><li aria-current=\"step\"><span>1</span><small>Observe the evidence</small></li></ol>",
+      "css": ".ds-lab-steps{list-style:none;margin:0;padding:0;font-family:var(--font-sans,system-ui,sans-serif)}.ds-lab-steps li{display:flex;gap:10px;padding:16px 8px;min-height:72px;border-bottom:1px solid var(--lab-rule,#dce2e8);background:var(--lab-selected,#eaf1fc);color:var(--lab-ink,#202a36);transition:background-color 180ms ease-out,color 180ms ease-out}.ds-lab-steps span{width:20px;color:var(--lab-accent,#155fd4);font-size:.875rem;font-weight:650}.ds-lab-steps small{font-size:.875rem;line-height:1.45}@media(prefers-reduced-motion:reduce){.ds-lab-steps li{transition:none}}"
+    },
+    {
+      "name": "Task Panel", "kind": "card", "refersTo": "task-panel",
+      "description": "Quiet adjacent instruction area; illustrative wording in this standalone snippet.",
+      "html": "<section class=\"ds-lab-task\"><small>Current task</small><h3>Read the chart evidence</h3><p>Observe the current stage before selecting an answer.</p></section>",
+      "css": ".ds-lab-task{font-family:var(--font-sans,system-ui,sans-serif);padding:22px;background:var(--lab-soft,#f5f7fa);color:var(--lab-ink,#202a36);border-inline-start:1px solid var(--lab-rule,#dce2e8)}.ds-lab-task small{font-size:.8125rem;color:var(--lab-muted,#536170)}.ds-lab-task h3{font-size:1.375rem;line-height:1.25;letter-spacing:-.02em;margin:12px 0 18px}.ds-lab-task p{font-size:.9375rem;line-height:1.65}"
+    },
+    {
+      "name": "Scenario Navigation Row", "kind": "nav",
+      "description": "Ruled numbered library link retaining the actual scenario route.",
+      "html": "<nav class=\"ds-lab-library\" aria-label=\"Chart Lab\"><span>01</span><a href=\"/tools/chartlab/\" aria-current=\"page\">Chart Lab</a></nav>",
+      "css": ".ds-lab-library{display:flex;gap:18px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--lab-rule,#dce2e8);font-family:var(--font-sans,system-ui,sans-serif)}.ds-lab-library span{font-size:.8125rem;font-variant-numeric:tabular-nums;color:var(--lab-muted,#536170)}.ds-lab-library a{font-size:1rem;color:var(--lab-accent,#155fd4);text-decoration:underline;text-underline-offset:4px}.ds-lab-library a[aria-current=page]{font-weight:650}.ds-lab-library a:focus-visible{outline:2px solid var(--lab-accent,#155fd4);outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Chart-led analysis workspace",
+    "overview": "Chart Lab only: the chart is the largest working region, with a six-stage rail and adjacent task panel. Supporting reading follows the exercise. Existing exercise logic, free crosshair and neutral canvas remain intact.",
+    "keyCharacteristics": ["Neutral inherited canvas", "Flat ruled workspace", "Compact accessible controls", "Existing exercise interaction"],
+    "rules": [{ "name": "Surface Scope", "body": "Apply only within the Chart Lab suite; these tokens do not establish global LearnSMC identity.", "section": "colors" }],
+    "dos": ["Preserve six stages, routes, themes, Urdu and keyboard access.", "Keep chart dominant and instruction before chart on phones."],
+    "donts": ["Do not adopt the historical rejected Masterclass prototype.", "Do not invent data or claim engine gates.", "Do not publish, push or deploy."]
+  }
+}

@@ -9,6 +9,7 @@ export type Mark = {
   end?: number;
   start?: number;
   user?: boolean;
+  label?: string;
 };
 import {
   advanceOrder,

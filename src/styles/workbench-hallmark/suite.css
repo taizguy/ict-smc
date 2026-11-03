@@ -1,6 +1,17 @@
 /* Hallmark · theme: Hum · shape: app screen · scope: all Workbench subpages · copy: verbatim · modes: light+dark · v2.0.0 */
 /* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V4 · weakest: dense nested pages, use readable measures and tactile controls */
 main:has(.wb-suite) { background: var(--wb-grain), var(--wb-paper); }
+/* Chart Lab shares the surrounding site canvas instead of the warm paper tint. */
+main:has(.wb-suite[data-workbench-tool=chartlab]) {
+  --chartlab-canvas: var(--color-canvas);
+  background: none;
+}
+.wb-suite[data-workbench-tool=chartlab] {
+  --wb-paper: var(--chartlab-canvas);
+  --wb-card: var(--chartlab-canvas);
+  --wb-chart-paper: var(--chartlab-canvas);
+  --wb-grain: none;
+}
 .wb-suite {
   --color-canvas: var(--wb-paper); --color-surface: var(--wb-card); --color-surface-muted: var(--wb-paper);
   --color-surface-raised: var(--wb-blue); --color-surface-hover: var(--wb-blue);

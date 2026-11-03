@@ -5,6 +5,7 @@ import {
   LineSeries,
   createSeriesMarkers,
   ColorType,
+  CrosshairMode,
   LineStyle,
   type IChartApi,
   type ISeriesApi,
@@ -33,6 +34,10 @@ type Props = {
   drawing: boolean;
   adjustable: boolean;
   showHandles?: boolean;
+  snapCrosshair?: boolean;
+  containWheel?: boolean;
+  displayTimezone?: string;
+  priceStep?: number;
   onPoint: (index: number, price: number) => void;
   onLevel: (label: string, price: number) => void;
   onFocus: (index: number) => void;
@@ -43,8 +48,8 @@ function markerColor(color: string) {
   const role: Record<string, string> = { "#2563eb": "--wb-marker-blue", "#8758c9": "--wb-marker-violet", "#a96710": "--wb-marker-amber", "#cf4b59": "--wb-marker-red", "#178667": "--wb-marker-green" };
   return role[color] ? getComputedStyle(document.documentElement).getPropertyValue(role[color]).trim() : color;
 }
-function options() {
-  const styles = getComputedStyle(document.documentElement);
+function options(container:HTMLElement=document.documentElement) {
+  const styles = getComputedStyle(container);
   const paint = (token: string) => styles.getPropertyValue(token).trim();
   return {
     layout: {
@@ -94,11 +99,25 @@ export default function MarketChart(props: Props) {
   const layout = useRef<() => void>(() => {}),
     drag = useRef<string | null>(null);
   useEffect(() => {
+    const element = root.current;
+    if (!element || !props.containWheel) return;
+    // Let Lightweight Charts handle its wheel zoom first, then prevent page
+    // scrolling (including Lenis). Keep browser Ctrl+wheel zoom available.
+    const contain = (event: WheelEvent) => {
+      if (event.ctrlKey) return;
+      event.preventDefault();
+      event.stopPropagation();
+    };
+    element.addEventListener('wheel', contain, { passive: false });
+    return () => element.removeEventListener('wheel', contain);
+  }, [props.containWheel, ready]);
+  useEffect(() => {
     if (!root.current) return;
     let frame = 0;
     try {
       const chart = createChart(root.current, {
-        ...options(),
+        ...options(root.current),
+        crosshair: {mode:latest.current.snapCrosshair===false?CrosshairMode.Normal:CrosshairMode.Magnet},
         autoSize: true,
         height: 420,
       });
@@ -195,7 +214,7 @@ export default function MarketChart(props: Props) {
       const observer = new ResizeObserver(() => layout.current());
       observer.observe(root.current);
       const theme = new MutationObserver(() => {
-        chart.applyOptions(options());
+        chart.applyOptions(options(root.current||document.documentElement));
         setMarkerTheme((n) => n + 1);
         layout.current();
       });
@@ -216,13 +235,22 @@ export default function MarketChart(props: Props) {
       setError(true);
     }
   }, []);
+  useEffect(()=>{
+    api.current?.applyOptions({crosshair:{mode:props.snapCrosshair===false?CrosshairMode.Normal:CrosshairMode.Magnet}});
+  },[props.snapCrosshair,ready]);
+  useEffect(()=>{
+    if(!props.displayTimezone)return;
+    const formatter=new Intl.DateTimeFormat('en-GB',{timeZone:props.displayTimezone,hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
+    const label=(time:Time)=>typeof time==='number'?formatter.format(new Date(time*1000)):'';
+    api.current?.applyOptions({localization:{timeFormatter:label},timeScale:{tickMarkFormatter:(time:Time)=>label(time)||null}});
+  },[props.displayTimezone,ready]);
   useEffect(() => {
     const precision = Math.min(
       12,
       Math.max(2, Math.ceil(-Math.log10(props.bars.at(-1)?.close ?? 1)) + 4),
     );
     series.current?.applyOptions({
-      priceFormat: { type: "price", precision, minMove: 10 ** -precision },
+      priceFormat: { type: "price", precision:props.priceStep?Math.max(0,(String(props.priceStep).split('.')[1]||'').length):precision, minMove: props.priceStep??10 ** -precision },
     });
     series.current?.setData(
       props.bars.map((b) => ({
@@ -231,7 +259,7 @@ export default function MarketChart(props: Props) {
       })),
     );
     layout.current();
-  }, [props.bars, ready]);
+  }, [props.bars, props.priceStep, ready]);
   useEffect(() => {
     const s = series.current,
       c = api.current;
@@ -273,7 +301,7 @@ export default function MarketChart(props: Props) {
         title: t(l.label),
       }),
     );
-    if (props.selected !== null && props.bars[props.selected])
+    if (props.snapCrosshair!==false && props.selected !== null && props.bars[props.selected])
       c.setCrosshairPosition(
         props.bars[props.selected].close,
         (Date.parse(props.bars[props.selected].time) / 1000) as UTCTimestamp,
@@ -289,6 +317,7 @@ export default function MarketChart(props: Props) {
     props.marks,
     props.levels,
     props.selected,
+    props.snapCrosshair,
     props.events,
     markerTheme,
     ready,
@@ -321,7 +350,7 @@ export default function MarketChart(props: Props) {
         {current && (
           <>
             <span>
-              {new Date(current.time).toISOString().slice(11, 16)} UTC
+              {props.displayTimezone ? `${new Intl.DateTimeFormat('en-GB',{timeZone:props.displayTimezone,hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(current.time))} ${props.displayTimezone}` : `${new Date(current.time).toISOString().slice(11,16)} UTC`}
             </span>
             {(["open", "high", "low", "close"] as const).map((k, i) => (
               <span key={k}>
@@ -344,6 +373,8 @@ export default function MarketChart(props: Props) {
         <div
           ref={root}
           className="market-canvas"
+          data-crosshair-mode={props.snapCrosshair===false?'normal':'magnet'}
+            data-lenis-prevent-wheel={props.containWheel ? '' : undefined}
           role="img"
           aria-label={t("Interactive candlestick chart")}
         />
@@ -353,8 +384,8 @@ export default function MarketChart(props: Props) {
               type="button"
               key={mark.id}
               className="market-zone"
-              title={t(mark.kind)}
-              aria-label={`${t(mark.kind)} ${mark.index + 1}`}
+              title={t(mark.label || mark.kind)}
+              aria-label={`${t(mark.label || mark.kind)} ${mark.index + 1}`}
               tabIndex={mark.user ? 0 : -1}
               style={{
                 left: x,
@@ -367,7 +398,7 @@ export default function MarketChart(props: Props) {
               }}
               onClick={() => props.onFocus(mark.index)}
             >
-              {mark.kind}
+              {t(mark.label || mark.kind)}
             </button>
           ))}
           {props.showHandles !== false &&

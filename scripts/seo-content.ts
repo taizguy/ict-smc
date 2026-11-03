@@ -1,3 +1,5 @@
+import {CHARTLAB_HUB_PATH} from '../src/data/chartLabHub';
+import {studyForPath} from '../src/data/chartLabRemainingContent';
 import { AuditedRouteBody } from '../src/components/AuditedRouteDocument';
 import {MasterclassJournal,journalSchema} from '../src/components/MasterclassJournal';
 import {masterclassJournalForPath} from '../src/utils/masterclassJournalRoutes';
@@ -33,6 +35,8 @@ import { curriculumReview, curriculumReviewDate, chapterReviewRevision } from '.
 import { searchTitle, searchDescription, conciseHeading, studyTopics } from '../src/utils/searchMetadata';
 import { toolStudyGuide } from '../src/utils/toolStudyGuides';
 import { correctToolDocument } from './tools-content';
+import { BREAKER_PATH } from '../src/data/breakerStudy';
+import { SILVER_PATH } from '../src/data/silverBulletStudy';
 import { textbookChapters } from '../src/data/chaptersData';
 import { masoodPlaylistsData } from '../src/data/masoodData';
 import { contextualFragments, relatedChapters } from '../src/utils/contextualLinks';
@@ -203,6 +207,9 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
     return;
   }
   correctToolDocument(r, path);
+  // This route owns a complete, visible-content-matched graph. Do not wrap its
+  // @graph inside a generic node or replace its actual review date.
+  if (path===CHARTLAB_HUB_PATH||path===BREAKER_PATH||path===SILVER_PATH||studyForPath(path)) return;
   const chapterCount = textbookChapters.length;
   const lectureCount = masoodPlaylistsData.reduce((sum, p) => sum + p.lectures.length, 0);
   const counts = (text: string) => text.replace(/\b57(?=[- ](?:chapter|Chapter|CHAPTER))/g, String(chapterCount)).replace(/\b52(?=[- ](?:Abdullah|lecture|Lecture|LECTURE|Masterclass|masterclass))/g, String(lectureCount));

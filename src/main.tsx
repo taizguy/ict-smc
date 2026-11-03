@@ -78,3 +78,4 @@ import './styles/mentorship2026.css';
 import './styles/mentorship2026-alchemy.css';
 
 import './styles/masterclass-hub.css';
+import './styles/chartlab-analysis.css';

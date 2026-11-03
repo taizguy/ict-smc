@@ -1,3 +1,5 @@
+import {GlossaryReference} from './GlossaryReference';
+import {primaryGlossaryRoute} from '../utils/glossaryReference';
 import {chartLabHubMeta} from '../data/chartLabHub';
 import {studyForSlug} from '../data/chartLabRemainingContent';
 import {MasterclassHub} from './MasterclassHub';
@@ -245,6 +247,9 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
   const draftPreview=typeof window!=='undefined'&&!!import.meta.env?.DEV;
   const journal=activeTool==='masterclass'?masterclassJournalForPath(journalPath,draftPreview):undefined;
   if(journal)return <MasterclassJournal lesson={journal}/>;
+
+  const glossaryPath=documentPath || (typeof window!=='undefined'?window.location.pathname:'/tools/glossary/');
+  if(activeTool==='concepts'&&primaryGlossaryRoute(glossaryPath))return <GlossaryReference pathname={glossaryPath}/>;
 
   const currentToolMeta = tools.find(t => t.id === activeTool) || tools[0];
 

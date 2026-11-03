@@ -1442,29 +1442,29 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/tools/glossary/": {
-      "fingerprint": "daf859d29331fc4b20f90954b7d1c77b25f871d11a8ea6398a0cd524c4ad2e1e",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "ffea73bcefda3cacc255d72d3d80db2a7e434e793f1adc297f3d41ab57a84c37",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/foundations/": {
-      "fingerprint": "c3cde2964571c760b5ef234c1db4b96411d0859c8cbcb4e71ad775451720ece7",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "010324e0288ddacafac575990b89d3e88a63d748da55bdc6fd06c687cab925ab",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/foundations/interest-rate-triad/": {
-      "fingerprint": "18e65d3f028ad80718d60d2b61076677ba9ddfaed4472b87934a28e5d7cd6330",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "575385b34ace840a071bdc04c2a3d2aeb0f518f4b2dc9443a6751d72f6c8737e",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/foundations/order-book-market-liquidity/": {
-      "fingerprint": "923a36d3887b953918bedef181f11fdaade38f7ff5d316942a35710bc3d0e56d",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "7dbc6dd008671d30317495320e51da17ed8d336ab4724a4e363a5fd32e8830cf",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/imbalances/": {
-      "fingerprint": "e3c7bbf7d918f802532eff54e07d29ad19e270e2d65b58647e01c4fa557c75cb",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "8b01b9d976ca3b31403dce9c5d6a43fb6ac8b52f1dfefcce3f0890ecb4c64bfc",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/imbalances/consequent-encroachment-and-gaps/": {
       "fingerprint": "6c4c5b804cfdd4de37e8be67d24012b6c366c7a123d364ba8a266c16da2fdceb",
@@ -1472,19 +1472,19 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/glossary/imbalances/consequent-encroachment/": {
-      "fingerprint": "903c69bb97e5f04faa59bb0e0f98ed7cd90a3ab50863a8d822f8923854837847",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "af2df4c8cae4b640d8036cafa12e6e59d5224d88496a265b4f4088a3807e402a",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/imbalances/displacement/": {
-      "fingerprint": "7c816ac2e42a6ec93528e78225f175d5593da9224e480729a2451ba0997d08e3",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "acc6ec83335066bf75115e778f960a6cd2f7fa01502826a0012c4cff2b9fa0d7",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/imbalances/fair-value-gap/": {
-      "fingerprint": "b490d7d9efc8728d5d79f6920b3015e6698e0d782280cfa8d63b25a038c4004e",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "aa3971fc990712e21b9e808021f1e93f7dc1826199bbd34f7975922f6fa6c61c",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/imbalances/fair-value-gaps-and-inversions/": {
       "fingerprint": "7e71a5148ddfca8ac4b9dcd8d5aa3a8745ecb96b8c0be9157846d240afa750e4",
@@ -1492,34 +1492,34 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/glossary/imbalances/ict-enigma-fvg/": {
-      "fingerprint": "c2dfc30acece90c5658000fb84eebf1ddd7b4b7e3bea5fbed412f81cfce0a103",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "27fe006c56d5aecc010c0aa1e268906bbf4b783d6b9b7afb4f06e0116bdbb9fe",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/imbalances/ict-reaper-ifvg/": {
-      "fingerprint": "5456378a39c510a8ae0f5bea573292ac5731a88318de48abb664c3d8f837c2fa",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "d73d2a48a38b8bbdd8f490e2db7621d0b15891dd1e318439b45085ebc3d5f1fd",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/imbalances/inverse-fair-value-gap/": {
-      "fingerprint": "84652d77ba27962fd6f167355cd2278c0a9e522dd4b4a6f7b67a3df8dc53b877",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "eafe128a1e6ce2cbf264ab316a6581886308373357088fd14889edee5e7f01d2",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/imbalances/opening-gap-matrix/": {
-      "fingerprint": "06a27eecc7f6cc1f02344190ba7ff739536208df518f9073b9891dde9f53e2c4",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "d92a19c1f30099a1a1141b63bcec10140b2e6ec2b780ec93610bc4af2cd58572",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/imbalances/redelivered-balanced-price-range/": {
-      "fingerprint": "6f89102371f994ffdf9dc9904d471e7df34200059a73edd71348b214d0ee8384",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "e836e1071ca387cac7dff39759f4b9e4d2e38f0c48b07ac5e40b8af688e5b04b",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/liquidity/": {
-      "fingerprint": "823f058b8b758ec25eb7cc9d2ba960e202698bd4e1e6414ff6937cbf8398aba6",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "f351098b28656873b8a5f3476ac0572c4c9c32a6d5966aee0baaf1cb67fab305",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/liquidity/buy-side-and-sell-side-pools/": {
       "fingerprint": "cda9b63788bbeb8f5bc43487522e63085c326490d4d3ed8733796c691c6f872a",
@@ -1527,24 +1527,24 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/glossary/liquidity/buy-side-liquidity/": {
-      "fingerprint": "bc603a6c810dd29f5320ef4f5543d6e57179c4dd769771d04a5ac661adaed622",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "dc07d2594bc1d0f5830398530cdb22e01539ab50e8342b264ff00528a2361f81",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/liquidity/event-volatility-hrlr/": {
-      "fingerprint": "9990e078848e107a7b24212ce016e8c58a99f8b0f94b8d048db09d3154b4ec74",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "55780d1cb0998a7d07bee812eeed5461539a21bbf66298ed15e2ec519e023b83",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/liquidity/ict-double-purge/": {
-      "fingerprint": "0ea7143c8a96b8d86c2570bf29caa24e23ed087d11c82d5433f6a828fc0d2d0f",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "79402a4eda61aae7b167cff7cc48431600d01ff053a7d0695660851179a34e4c",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/liquidity/inducement-vs-external-liquidity/": {
-      "fingerprint": "3e030fe276924e36b6f79d20519dbfd30faef905dab009aeae8f1f5473765c3a",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "e44fa2daa671038d0dc7f67840da0f35591c3518dd0f55945d5bec3ef48c313c",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/liquidity/inducement-vs-external-range/": {
       "fingerprint": "feac7ae71b33dde4a25648f849824da421b08acce0b68796d30c8014799c2b67",
@@ -1552,29 +1552,29 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/glossary/liquidity/low-resistance-liquidity-runs/": {
-      "fingerprint": "8810ee0bad86039a65ac8a4fa66b40037129b99e4593e0e21bac638d0183060a",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "ff904b6bfb0e89151f42d065e8e7090a8431a2cbda82ab6ebabfe37f53b0159f",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/liquidity/sell-side-liquidity/": {
-      "fingerprint": "d6c28433ff385a2d38c7c48e548b5a803566e694e2c4d2053ec9cc9730e13b7a",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "486b96a5201814600a26d72e0bebfc901238e783ecac93157f57a6a118243fb3",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/order-blocks/": {
-      "fingerprint": "33db873080195c0b153c0b4d322279da8eaa625fdd437bacb2a3376e06a3b500",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "273de43c68c3794a7877718d3671fd7b993a9218d4fde035cf997f960e459096",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/order-blocks/breaker-block/": {
-      "fingerprint": "3194a5859d8c63fc0591e609f3307727103a698fc589666fece0bc3d4961df21",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "55f2bf3512b14935131301c8838a130a5814c5b4cf5fbc27face9242f14d1021",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/order-blocks/hangman-pd-array/": {
-      "fingerprint": "32c497c3f63f224187900b4f541095913d610e0883cf81a3c39045dab3e71eee",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "5e0853e24232e3237b6fb41081258136172144e020d703021f77c7075fb30619",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/order-blocks/mitigation-and-breakers/": {
       "fingerprint": "35885b98b885a2f7e389fd0ed28bf26948cff3b7b661dcd82bf4ba339a96a7e5",
@@ -1582,9 +1582,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/glossary/order-blocks/order-block/": {
-      "fingerprint": "e2581e9f46cc56b98b169f2e63732870cf88b5a847809f3dc4025a21f8e7b022",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "8ea6b8ce7536d9f6d374d30ef525b92e490c7eb92aae562e314d2f35b242724e",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/order-blocks/propulsion-and-reclaimed/": {
       "fingerprint": "8cf0f999d358581e45ecc07358ad9cf03cdf189eec72ef6d19088a09cdde1b31",
@@ -1592,9 +1592,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/glossary/order-blocks/propulsion-reclaimed-blocks/": {
-      "fingerprint": "0b3e7918b4b93f1c7e496348dc899fe983b81ff1a3bebbca1c9cb1326bf20ca6",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "bd4ea362b4e9547095a106e4b2b0e4938f4f58991655cd8d84431fd95c48c3dc",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/order-blocks/suspension-and-hangman/": {
       "fingerprint": "dd945d5891b727022c32ad8c8e88de4dfae060f62994761e3873214fcbd85bb8",
@@ -1602,14 +1602,14 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/glossary/order-blocks/suspension-block/": {
-      "fingerprint": "3d36cc2689eb728424d60b13d727d6a54d6126d418a0bc02bbaed1f8aeb337e9",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "a2ba233974c37f0ad32a29b144d73b50d03ad67568b377879ae753e3cb1b2e61",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/structure/": {
-      "fingerprint": "de4d033d7a82ef39c08bff6c02467a17622bb8d40c232cefe3c573d2eaefcff8",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "d5fa69e38e2dc013fe7723b3f064122de8399767efd4a44e519195a4e103ff05",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/structure/bos-vs-mss-breakdowns/": {
       "fingerprint": "fa62c7bef6be3f3cf94d3e7630436b404c25f23ae2af644bd78f854cf661eb69",
@@ -1617,34 +1617,34 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/glossary/structure/changing-state-of-delivery/": {
-      "fingerprint": "3732a953264ff8981873fe0649e5c869fcfbcbd5aadf6d5aa0aaf6649fab6e19",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "869279e3a97b0705e72a54d94c5e40ee3ccab5b84d179b219311eab78121d8da",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/structure/cisd-vs-mss/": {
-      "fingerprint": "f2897d30610b8670d2e07153d982b07d91d119c8be5b30143e07d712e1b5ace2",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "70e1c8ac7fb397357a8fced2f00795327446247efd72d223490a9b5678f1702a",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/structure/market-structure-bos-mss-choch/": {
-      "fingerprint": "75b6755254b9ac88286f70aa499995d3904d650a7aec0be76db8fbed39f976b5",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "6c739c42cd4485b1d6a77c5a7679c6745e8defade864834aafe05e61b5c43c5a",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/time-and-sessions/": {
-      "fingerprint": "630dbb142577498f0104e343b6eeca5fb9b4b6d9921d08530b933a81348901a2",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "c2e40c467c933489b6784059b8742f72befee5202e68b82c6329cca3a4d004f0",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/time-and-sessions/daily-bias-engine/": {
-      "fingerprint": "885aa935d24b2b4b11bf558209d045de2448baa2890e1a4b0d518966f5fc67cc",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "9be7b4052506168df95cdfcb1948f846b6d95b1c6f7c6cd6db996c9e47d4e7d0",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/time-and-sessions/intraday-macro-continuum/": {
-      "fingerprint": "57bf5ae4fdf0c284429e8481ce1d84c2b3238a5de1a78c1981f751750663fedf",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "a9d467542f465ef6b4adeccda9cf5b393475d293614acc092531b850382b4e9e",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/time-and-sessions/power-of-three-amd-phases/": {
       "fingerprint": "b15153daca2fd053576d6f104cee19af1b3ca989769bdab2b08e363bf506b469",
@@ -1652,39 +1652,39 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/glossary/time-and-sessions/power-of-three-amd/": {
-      "fingerprint": "688c4deebb66d26228d0afcb9409c413a9d4262f16d22ba8716b8ab1db5092f3",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "b45fc770cb19182c89e01cab2b7b7139b9b5ae5d6f8fa5745000fc00c1a58dc9",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/time-and-sessions/quarterly-shifts-ipda/": {
-      "fingerprint": "0eecba5b12bfa0aaa890684de5e029b2e0d89cf5d295d65e93ce1137f769b91e",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "ef325028f9b77b828383c58df47d4956e54654308f703d8ba5b300001f237de3",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/time-and-sessions/sessions-killzones/": {
-      "fingerprint": "9c92369ecf445cf78b5cb92bbb7d69a0e4d8cfee9db22077974712955f6a3369",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "7de905f34b32c279cffc5cfa0321698be8fe1c718b53e20a064f22eec93b2d10",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/trade-models/": {
-      "fingerprint": "41ca98ec591e15c933ece087b964305d659da157b17fae9c9a88585aae189a6a",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "30381945e65f38999f9ac626ad6c4cd0a3447ff30f5cee13cdecd43ad5fc332f",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/trade-models/candle-range-theory/": {
-      "fingerprint": "743cd49e1f3e219fcfbaaf99cce0f958595e99c7a5d39d7d14cc61fa40ff1f85",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "ed0dd144c5373687edb5666457bc6d253e4fa9d79bc3f9c4f288607a53665a2f",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/trade-models/from-vision-to-execution/": {
-      "fingerprint": "d6ed7e6cd635622fc2e5c62e2e7aaa0fc03ccad179bf19c12bbb9dcb3f04b7ce",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "01e29f28c43aa20c105ee1dccf7ceaf7363c87061132a1df170efb2ec0cb1051",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/trade-models/gold-legacy-smc/": {
-      "fingerprint": "8478068fc83c710b8bde7068005b29e28ca5c5f869357e7a3c12cb468c28e69d",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "0dd6e98d1e943b923f4c2a3697e6d683637c5dfc4ce00bb3cc03231c0744ea06",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/trade-models/ict-2022-and-silver-bullet-mechanics/": {
       "fingerprint": "1c33daf9268196131fc05a6069610a8f8a20ada2fce4fcb6295722672da6855d",
@@ -1692,49 +1692,49 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/glossary/trade-models/ict-2022-model/": {
-      "fingerprint": "be79256417b3e82b89f600d7e175bcbca901cdc81a47414df11a73c829f8be6a",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "051011180d47755ad23570f9c93b16a1bc802fef783838620d22e242de5fcabf",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/trade-models/ict-venom-model/": {
-      "fingerprint": "800cee9820b718a64010761245bd4568d0f85ea7ef864b2cd5b2d668dc2ef71b",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "825d299ad3d376f879647241e91bdff232678a351f2144fbfa20e316ff8c537e",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/trade-models/institutional-pricing-theory/": {
-      "fingerprint": "2a66dc218c708921d94d1fcc2f144012de234498aae295150a94981d5a77b479",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "42552b0271bd526b216f11789da0815fe25b18023bbc90465db32ea13ff7ab98",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/trade-models/market-alchemy-ath/": {
-      "fingerprint": "63529e0e7fce68bdea39bce47afeda48c4bffaa39373b32c846cc0d1ee4559d5",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "7e85b5a936fe744d2d958191a435a6aa673598c50ee173c317d27ffec83f6be6",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/trade-models/mega-trades-framework/": {
-      "fingerprint": "841b227140e397423f00ed738a14e73c2469d0f428fccac3a761a203e6eb401d",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "3cc57d804c3bf6f4ec6d2fe8d64306026c0c2a623b478569fa6fbb4664cf0533",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/trade-models/nasdaq-session-open/": {
-      "fingerprint": "beedd7fe71489dfae1112210481e0e4765f73da39a0b7c6f0316ea6e7b39d218",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "fb022ab44a93e2e4fd59e9d0be00bf00cafd0a82483ca2cad22639897a0ddbe4",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/trade-models/sick-sister-strategy/": {
-      "fingerprint": "bdc197792a4a31e44bc2faead17ab2f39c34416836636d258fdc45dc7bed58a7",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "52bae62ad82a454845d87bd4a38d9935f542b10a0caba36d838d652afbbaa9d5",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/trade-models/silver-bullet-model/": {
-      "fingerprint": "3a9ddba18d5958d741282922dae35a303a23ea08353d6fef172de67b8fe64e8e",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "ed6dc63e0a3048fd03602e9108e9b2862db264177ce81f4bb6e624c799e4eb97",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/trade-models/smt-divergence/": {
-      "fingerprint": "8ff8b0b432d24623fe4321a214d8ef877c8a7a60796f8fabd322396b4cc21f5f",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "800fed330f499b858bdb4477d01a808d68c5b87ca612d22371b99ac5eb6cf159",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/knowledge-graph/": {
       "fingerprint": "c2162df18a14c13eb0f273359e8f566d731abe97dd4a182004861f2722c9a84d",
@@ -3287,29 +3287,29 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/tools/glossary/": {
-      "fingerprint": "4bb0d7d148c8471765f95e0ddffee7d7fd010bd91817a1905cbaec26ee18411a",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "ae3d0104e8369b3eec88be59df6340dfa662da01a165e2237289622eca20c88a",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/foundations/": {
-      "fingerprint": "636662b62632e77d3edc59446e8215cbbaecd9b0f6db78855e3801f65ff11792",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "c814404e0fac1e778e5fd16d6dca3ead669d7cf0691d6ead9b785d5560276a67",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/foundations/interest-rate-triad/": {
-      "fingerprint": "b80645c3e18fdf76469f3d3bc86fdad1744fdd07bdb9f6ba9a36d460dd079b07",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "e513c0259a25a4e58e2cc7d8516d88c2f1f8bfdfa58024fffdb0d4e097f5c54a",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/foundations/order-book-market-liquidity/": {
-      "fingerprint": "bd118151405e8bcce4bb6d1aa92f63a8e124ba670f07112e7586f64920f9e40a",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "a63ab4b20524bb98aca22e5e29076747d44562b94c22304a42f0d036e7fbdf93",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/imbalances/": {
-      "fingerprint": "29f3b4fd5cdf426b989b6ec105c70bd63547d390ba5e6efbd310a59a3d61dcb8",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "b3a198c6c609170a18f880f764c8e9c52df28bcead33b8b4fef71f22c4f66b10",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/imbalances/consequent-encroachment-and-gaps/": {
       "fingerprint": "aad484812cc567b91fb92ded0e0367288412aa55f778834cc8bb727de049b5a4",
@@ -3317,19 +3317,19 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/glossary/imbalances/consequent-encroachment/": {
-      "fingerprint": "12af246b80b6ac5810c2e322083c40475565b0f088ac07fbe0fd8c928eead068",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "07ba7001c08a4ec9f22f5e09b9faf8d8f7ed087edda1f5fed1ce94b47e5d4691",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/imbalances/displacement/": {
-      "fingerprint": "2075286a4dc5b36471d3de498ae0cc515458db4a0395e45a16cd332b14b5da27",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "36e4be9af5db6cd7f31fac0b85acb4b6cfe3c50f98f717166c195c9e2ebd6797",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/imbalances/fair-value-gap/": {
-      "fingerprint": "e9b5657ef4aa004e1308e80614ad615495af4746d96efb734bed79e63a9c30d1",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "2371c4441b17deb8feacb81eef69fcab58abf4731e368cb622a016d50b086903",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/imbalances/fair-value-gaps-and-inversions/": {
       "fingerprint": "5483d8dddb120444174ec527eaa4d9d87b08d2e5cb6fa8c901c7a014968cc956",
@@ -3337,34 +3337,34 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/glossary/imbalances/ict-enigma-fvg/": {
-      "fingerprint": "acbbc9c4353078dccf7490d20541575c6c8004c875f7c9dc94eceb0e685d4054",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "233360387ba258f54b2e2fe9f4b720d86313ec7fbf96878f14ee3b07887822a0",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/imbalances/ict-reaper-ifvg/": {
-      "fingerprint": "8685e47d406c273a82ef7101719d772d2f61b004ef3f40e9b26dc550e155029f",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "04e041e918e2f04e83adbde4c5ab3206507c76c45fe417362c4b8ec7236d75be",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/imbalances/inverse-fair-value-gap/": {
-      "fingerprint": "68bf088b85e3b548596bb1233e98f96ae5ff0fafa51f8378e88453068647a01c",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "1ddd148c6204f9360afcb04a64d49273d92e5afe452dac77815554f9887be702",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/imbalances/opening-gap-matrix/": {
-      "fingerprint": "2ee2f208b6367afa601f7594f7d468d776ff3c68be635782d68854ed47d5daa1",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "49b06624875c4937c01d6899a04eaed9e1ad9cddfaf573cafacef51adfc7550f",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/imbalances/redelivered-balanced-price-range/": {
-      "fingerprint": "efd979043ba060a91e024ab0675444a630c58135625481a49d7c58fac5d1eba1",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "cf96aca732b9b0894bb15b42708277ebe5b8df682247de6d388a0556310c24fc",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/liquidity/": {
-      "fingerprint": "e5ccc6505442b8c5480d4fefa7d9beb7ce480f699d8f04290b4615874788a674",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "674967a16dfbaee68fe3ae5a30477e13bdce3160f365dc062237e4ffaf10282a",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/liquidity/buy-side-and-sell-side-pools/": {
       "fingerprint": "7a308b222e162c00e20d089d853a9b39cddeb2a04799f6628707bd5330cff045",
@@ -3372,24 +3372,24 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/glossary/liquidity/buy-side-liquidity/": {
-      "fingerprint": "0be4c0aa6d10272f43fe6a71baf4ebaccf9adaf766868eccfcfb1b703e98c959",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "2828f008ba914da59ae40e1d65e61131c648c6ad581c6fd0530fe1f7861418d9",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/liquidity/event-volatility-hrlr/": {
-      "fingerprint": "696ecd55d440a51560584b6396ecd0c81e82d557e78598e29467e965c55b2c24",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "8e28be88d02c43cb74e93a4747745c460c8aca65e173f26999d7ecfa55c7e7e7",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/liquidity/ict-double-purge/": {
-      "fingerprint": "b1e59584cb560f9ec3fa898b1c88175c9e589a107965539cb12e155354b75374",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "12410ab4ad1e9253590fd39bb0635e46001dd35779ec5191c6a4c1d4185ddf19",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/liquidity/inducement-vs-external-liquidity/": {
-      "fingerprint": "a052b7bf7bcc8f9c9bdeb645bccedc1e9be14f52c930e611380af1e364fa13c6",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "105f39aa1e7ec97ac8a8880db1509b38d4cda1976d21fe89c102de379c63d1f2",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/liquidity/inducement-vs-external-range/": {
       "fingerprint": "f8a67e2850ffbcec04b4029ad3c95be5b9f647f8da10cf53d0da4118cfbfbd4c",
@@ -3397,29 +3397,29 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/glossary/liquidity/low-resistance-liquidity-runs/": {
-      "fingerprint": "3a7d403b736746e85e0a54c96e177b969b596c54417b4be9462feab34aad3854",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "dcfe1aa5bced4cdb421fc404c89f8f01bfbcf9a5857bdf2367d009e0898d455d",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/liquidity/sell-side-liquidity/": {
-      "fingerprint": "7b21ba1c89454ed1b1d11a6c5f1f060af7654db692f3a36ae8d2fc97afe5d646",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "e2262cb229990a171ead053bc80ed2f7999fb59afb5239e9aa30a67b99fdee58",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/order-blocks/": {
-      "fingerprint": "58020c1bfe073e9773d15a3fed11dfe5c5ee839444374f1accc22037cc74dc5d",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "9f140ff74960f460aacfa03d6c09f363cd1dbf8a48cacda90476651af57455e4",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/order-blocks/breaker-block/": {
-      "fingerprint": "61ef4e55b5e34a2c5c790a239f4a5a65f81187a421e638f3b56c6801eae16c30",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "74888544de3220c5c21e0ec780f9a8d5e29b842dafac5df06b43a579f626c943",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/order-blocks/hangman-pd-array/": {
-      "fingerprint": "f0cb48f3f9fdd4f3f83ecc21a762fa2c397fed7e14275c8d7d2386b4e350b97d",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "2f45537d3964ef82e68d2f3e0ca0339ecdc2e144c0571ecccfe10c53e5d85457",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/order-blocks/mitigation-and-breakers/": {
       "fingerprint": "45faa999f31b38db0401a44cf555b65bb7b47b679ce1b8fb062623499a35ecab",
@@ -3427,9 +3427,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/glossary/order-blocks/order-block/": {
-      "fingerprint": "aac8f8dc95d1b0b81ee1a29519fba030be2279d7f1f78a4155bdea08e86e5fc1",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "49328944023513001647ae3f7bfa53b915c196ad1de5da375d03f97f9b9d3226",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/order-blocks/propulsion-and-reclaimed/": {
       "fingerprint": "fb7567a03aaff282ab47b8b00c3d9e24a0230f6fc7f3efd178006e592f21800e",
@@ -3437,9 +3437,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/glossary/order-blocks/propulsion-reclaimed-blocks/": {
-      "fingerprint": "df38ad3c3d67003ec8a567b1064a07e6daed04e731be6c3be8c6064454fae5f7",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "2d4f6589a91d01da0d3a3715b46bd3fd34f64a3a31d9e997cc762982edbf473d",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/order-blocks/suspension-and-hangman/": {
       "fingerprint": "fdfef48a9a2301597e8c34f1e0371c1bea98b6d4a3f7c8ac9a0c8652e2de8a06",
@@ -3447,14 +3447,14 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/glossary/order-blocks/suspension-block/": {
-      "fingerprint": "7fb2941e662661c7f340dd7e2e26e16a6c88f7b06d5ce81007e90bc8ba5fb797",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "27451a417d60d98683a208df21ac45a5f8d7a4baae54b07cdfefd9f756287d38",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/structure/": {
-      "fingerprint": "f88fdebfce5e971abe56ec81bb426171d86563c9b81c67fe7f6f4c91278d0f9c",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "4417878047103a29c5fe5f0763592525b8e4bfb0d040b3f8a03d31791dcd2bcf",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/structure/bos-vs-mss-breakdowns/": {
       "fingerprint": "e6ba8b21b7bc93d7685c3a29cb472a13584db5431e97ebd79ed772fc506d3bb6",
@@ -3462,34 +3462,34 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/glossary/structure/changing-state-of-delivery/": {
-      "fingerprint": "dfbd22536e19b24d0450c1d4f41370b12bc6e4e74b9838bfad943b1e38100ec5",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "9ef9f2f0f09b737a5beb1ada718a33f8394498747fde64356274bd5a69c25d50",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/structure/cisd-vs-mss/": {
-      "fingerprint": "07271316f02947b3951278de46f5055376dfab46843037279fcc68962ac21739",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "65a6fd0a6414d72819badeee078e8d443fb1ce7f7d8956fa21cf1d535e1fbc91",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/structure/market-structure-bos-mss-choch/": {
-      "fingerprint": "4b0a1f92deed468742ff3eb3665ad1ebfb3275fc7d2ec0be505db458ab2b9c0c",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "6c1afff76d36fc898754bc4e4f2b7e492c3f380fa187f5b8acbbfcc5bf643ec0",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/time-and-sessions/": {
-      "fingerprint": "b831592a8b7201f496c23f476a9441ad33b3d41fdaab53d7602de9d94fa5c55e",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "cff3aca466eb870c92df0f7b7142b9998dcb930eef7ffbc890ffc385da48b89c",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/time-and-sessions/daily-bias-engine/": {
-      "fingerprint": "bc4fed302e0c4f79d5e3e16d90dead5df1b168b63fbeb9ee5225e20f3dbc0e06",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "df441bd60154dddc1faf04e944587e3899f9c5f18090da47be042a9363cd34f6",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/time-and-sessions/intraday-macro-continuum/": {
-      "fingerprint": "df0abfc4f9641becb27f49a940203e448606dba045f3a8d43cb8d23dab6871d7",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "b635b06119b2e46197d26850146456661c96e99ebaeb5fc1ff772c3226d85c2e",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/time-and-sessions/power-of-three-amd-phases/": {
       "fingerprint": "c5cd197a44b7101c3ead0dec2381ffd673b8499af845d242e322f0d55882eb85",
@@ -3497,39 +3497,39 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/glossary/time-and-sessions/power-of-three-amd/": {
-      "fingerprint": "aa55c11be5f0e0f295092733986b6ba22cf80885400b5bedf9daef22d21f341e",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "b34b90fe1207412281e6dd8328e79d1dece225a996eb3f5325411ea12737aa9a",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/time-and-sessions/quarterly-shifts-ipda/": {
-      "fingerprint": "fc9f5bb1ed239978cccbbdf4ab738d1e87d58ed123700780e4cb9829be7f3ae3",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "25eb3cd1da5ba87247190e00d736b3df0874a64c2fb10067a9265dad2401e234",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/time-and-sessions/sessions-killzones/": {
-      "fingerprint": "7ba22e22dabd1621cd3560c2e03d540742e325ec1d27050a2593488cbad0e1ba",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "662b61b2b09d50ccd41fad2b891509ce80ff785510dc10efe4ce563e4704f77e",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/trade-models/": {
-      "fingerprint": "081fd12596ac3b0a2d5a7e9f436c9619dd75e8d191b80872431fd0dbd7bd477e",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "aaf19d7366e5251e64abbd4b58cb48e168061be7fae3e3411b7e05fe5ff35ad2",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/trade-models/candle-range-theory/": {
-      "fingerprint": "8092cf28bb290bd2d8db95d6e4297847ab78e642d1aafd8ba456fd31cd3de595",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "15bb6ee7b439197af7ba8d8ec1143bdab35c7565d336ffcd0b0dec69653403c5",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/trade-models/from-vision-to-execution/": {
-      "fingerprint": "fab51975e08d04c86a5b414c99aecb4647f8c1c95c518477bbadb332c0d2f600",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "c6d4285cf25ac76e4f83d1f370fbef8df53b06d319c85137f86768398cb88d50",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/trade-models/gold-legacy-smc/": {
-      "fingerprint": "007e9bbe3889f141619d2b0081f3bd7006a9b94eea9697a38186b4df29ffb9f3",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "f67ea5735d7f1a100c1f6f3677615b9be599544ed72951ea8dae8eb184cc2706",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/trade-models/ict-2022-and-silver-bullet-mechanics/": {
       "fingerprint": "2b40c2b01a4a73077044fe14b11f8ce2fd2a91abc463aa8cf0a9c58268c21b91",
@@ -3537,49 +3537,49 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/glossary/trade-models/ict-2022-model/": {
-      "fingerprint": "cc40e340a38e8599a0a2612af205e29a72e4717ede2380d31804820652b22fff",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "d86c96ab43f356e32c6c3562e51ce5299532448a240b401f53be1fd7991df290",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/trade-models/ict-venom-model/": {
-      "fingerprint": "268358615304adbdd449fbedb5409c4829c7ade1c1624bc7a3482338164f74e3",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "5107a40258e069d3ebba591dfa79a30b19485f6e494d56462a097520c023b431",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/trade-models/institutional-pricing-theory/": {
-      "fingerprint": "c47befd8f3ac18d7c4d272c4d268ebc65bca422b84fbac42d4d4315901409042",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "aaa1a791c56ac525741ac8abc91b89cf6d7edab2510af50f847f4a07ae89ba8b",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/trade-models/market-alchemy-ath/": {
-      "fingerprint": "11131c4a92b2da2f150c33c4471602df3b31d3e67360122f7dc3b5d34a226953",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "8c13eec4d3c00e04a53f4458f8093a6288b80b0d7ecea58f307ed5fd62a7820c",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/trade-models/mega-trades-framework/": {
-      "fingerprint": "55715c76b2e9e78e49a5e9769ab7acc2041cdd8b125fa5affca0ea8c8d2da472",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "dde02c5d74a2c03247f172484e67970f72155df3b412b553a73d91382df0435f",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/trade-models/nasdaq-session-open/": {
-      "fingerprint": "97ac3c073ec4da24de940f66680fa130de4b408fe78d665f1c326ab99251ac27",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "e086c3536e88388e8b24136fb6b0541fc220a83852bd98c6a726f6714bf54b66",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/trade-models/sick-sister-strategy/": {
-      "fingerprint": "6c7b5401579e86ebd081038c4584e17c42cdfa0313b81fa32b92b617b6d7c971",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "a314d36d264efcfc20a42ba9653434f7acf5328a6e8883468c735d4e250e50af",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/trade-models/silver-bullet-model/": {
-      "fingerprint": "ce24d74e78de7863c2310fdaba30b936c3513320f2c275088507699d3e1f2a63",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "c0b8d7459c15835b87f67a512070ce459c2a6a4344893b53b9bf1fa8f48d6eb9",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/trade-models/smt-divergence/": {
-      "fingerprint": "b1786f97289b0ad6d21ceee7a83b33855651946e0ce1f6a520ea941fa9ccbdbe",
-      "lastmod": "2026-10-24",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "90515093774672fdfb26bab7d803c4b7c89227152785556a7bfe86d4932dc44d",
+      "lastmod": "2026-11-03",
+      "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/knowledge-graph/": {
       "fingerprint": "13b937a0767771c966b20b98ec02ab2f231e464d4d0c53576cf4ea7f64341fa2",

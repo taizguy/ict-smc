@@ -79,3 +79,5 @@ import './styles/mentorship2026-alchemy.css';
 
 import './styles/masterclass-hub.css';
 import './styles/chartlab-analysis.css';
+
+import './styles/glossary-reference.css';

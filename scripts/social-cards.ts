@@ -1,3 +1,5 @@
+import {chartLabHubMeta,CHARTLAB_HUB_PATH} from '../src/data/chartLabHub';
+import {studyForPath} from '../src/data/chartLabRemainingContent';
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
@@ -68,8 +70,9 @@ export function generateSocialCards(dist: string) {
     const name = `${chapter?'lesson-'+chapter.id:'page'}-${urdu?'ur':'en'}-${hash}.png`;
     fs.writeFileSync(path.join(out,name),new Resvg(svg,{font:{fontFiles,loadSystemFonts:false,defaultFontFamily:'Source Sans 3'}}).render().asPng());
     const journal=masterclassJournalForPath(page.path);
-    const image = journal ? `https://learnsmc.xyz${journal.socialImage}` : `https://learnsmc.xyz/images/social/${name}`;
-    const alt = `LearnSMC — ${title}`;
+    const dedicated=studyForPath(englishPath);
+    const image = englishPath===CHARTLAB_HUB_PATH?`https://learnsmc.xyz/images/social/chartlab-hub-${urdu?'ur':'en'}.png`:dedicated?`https://learnsmc.xyz/images/social/${dedicated.slug}-${urdu?'ur':'en'}.png`:englishPath==='/tools/chartlab/nq-silver-bullet-short/' ? `https://learnsmc.xyz/images/social/nq-silver-bullet-${urdu?'ur':'en'}.png` : journal ? `https://learnsmc.xyz${journal.socialImage}` : englishPath==='/tools/chartlab/eurusd-failed-ob-breaker/' ? `https://learnsmc.xyz/images/social/eurusd-bearish-breaker-${urdu?'ur':'en'}.png` : `https://learnsmc.xyz/images/social/${name}`;
+    const alt = englishPath===CHARTLAB_HUB_PATH?chartLabHubMeta.h1[urdu?1:0]:dedicated?dedicated.h1[urdu?1:0]:englishPath==='/tools/chartlab/nq-silver-bullet-short/' ? (urdu?'فرضی NQ سلور بُلٹ: صبح کا وقت، ہائی سویپ اور بیئرش FVG':'Synthetic NQ Silver Bullet: morning clock, high sweep and bearish FVG') : englishPath==='/tools/chartlab/eurusd-failed-ob-breaker/' ? (urdu?'EUR/USD بیئرش بریکر: اصل زون، سویپ، نیچے بندش اور دوبارہ جانچ':'EUR/USD bearish breaker: original zone, sweep, close-through and retest') : `LearnSMC — ${title}`;
     const tags = new Map<string,string>();
     for (const [attribute,key,value] of [
       ['property','og:site_name','LearnSMC'],['property','og:image',image],['property','og:image:alt',alt],

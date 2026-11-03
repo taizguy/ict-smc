@@ -37,6 +37,6 @@ export function DeliveryLessonSupport({ chapterId, section }: { chapterId: numbe
     })}</ol>
     {is2025&&<p>{workshops[chapterId]&&<><a href={currentDocumentHref(workshops[chapterId])}>{t('Related model workshop')}</a> · </>}{glossary[chapterId]&&<a href={currentDocumentHref('/tools/glossary/'+glossary[chapterId]+'/')}>{t('Quick topic definition')}</a>}</p>}
     {(is2025||is2026)&&<p><a href={currentDocumentHref('/tools/masterclass/')}>{t('Masterclass Hub')}</a> · <a href={currentDocumentHref('/tools/glossary/')}>{t('Glossary')}</a> · <a href={currentDocumentHref('/tools/journal/')}>{t('Trading Journal')}</a></p>}
-    <a href={currentDocumentHref('/tools/chartlab/')}>{t(deliverySupportLabels.practice)}</a>
+    <a href={currentDocumentHref(chapterId===16?'/tools/chartlab/eurusd-failed-ob-breaker/':'/tools/chartlab/')}>{t(chapterId===16?'Practise bearish breakers on four EUR/USD chart cases':deliverySupportLabels.practice)}</a>
   </nav>;
 }

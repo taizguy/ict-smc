@@ -28,6 +28,10 @@
   Content-Type: text/csv; charset=utf-8
   X-Robots-Tag: noindex
 
+/resources/eurusd-bearish-breaker-practice.csv
+  Content-Type: text/csv; charset=utf-8
+  Cache-Control: public, max-age=3600
+
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
@@ -38,3 +42,22 @@
 
 /articles/feed.xml
   Content-Type: application/rss+xml; charset=utf-8
+/resources/nq-silver-bullet-practice.csv
+  Content-Type: text/csv; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/resources/xauusd-gold-legacy-model-practice.csv
+  Content-Type: text/csv; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/resources/btc-2022-bullish-model-practice.csv
+  Content-Type: text/csv; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/resources/eur-mmbm-propulsion-model-practice.csv
+  Content-Type: text/csv; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/resources/nq-ath-alchemy-ndog-macro-practice.csv
+  Content-Type: text/csv; charset=utf-8
+  Cache-Control: public, max-age=3600

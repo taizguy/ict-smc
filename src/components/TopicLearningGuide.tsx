@@ -55,6 +55,8 @@ export function ArticleTopicLinks({ slug }: { slug: string }) {
 
 export function GlossaryTopicLink({ conceptId }: { conceptId: string }) {
   const {t,href} = useTranslation();
+  if(conceptId==='silver_bullet_model') return <section className="topic-journey-index"><h2>{t('Practise the time and price conditions')}</h2><p><a href={href('/tools/chartlab/nq-silver-bullet-short/')}>{t('Compare five synthetic NQ Silver Bullet cases')}</a></p></section>;
+  if(conceptId==='breaker_block') return <section className="topic-journey-index"><h2>{t('Study the definition, then test the chart')}</h2><p><a href={href('/learn/breaker-blocks-trading-failed-order-blocks/')}>{t('Breaker blocks: the full lesson')}</a></p><p><a href={href('/tools/chartlab/eurusd-failed-ob-breaker/')}>{t('Practise bearish breakers on four EUR/USD chart cases')}</a></p></section>;
   const journey = topicJourneys.find(item=>item.chapterId===(conceptId==='fair_value_gap' ? 13 : conceptId==='order_block' ? 15 : 0));
   if (!journey) {
     const target = cornerstoneGlossaryRoutes.find(item => item.conceptId === conceptId);

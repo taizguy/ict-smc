@@ -1,3 +1,6 @@
+import {chartLabHubSchema,CHARTLAB_HUB_PATH} from '../src/data/chartLabHub';
+import {studyForPath} from '../src/data/chartLabRemainingContent';
+import {remainingSchema} from '../src/data/chartLabRemainingSchema';
 import {localizeMasterclassDocument} from './masterclass-localized-document';
 import { isEnglishOnlyHistory, englishOnlyHistoryPaths } from '../src/data/history-paths';
 import fs from 'node:fs';
@@ -17,6 +20,10 @@ import type { RouteMeta } from './prerender';
 import { orderRedirectRules } from './redirect-rules';
 import { replaceAuditedReadingRoot } from './audited-reading-document';
 import { auditedReadingRoute } from '../src/utils/auditedReadingRoutes';
+import { BREAKER_PATH } from '../src/data/breakerStudy';
+import { breakerSchema } from '../src/data/breakerSchema';
+import { SILVER_PATH } from '../src/data/silverBulletStudy';
+import { silverSchema } from '../src/data/silverBulletSchema';
 
 export function generateUrduPages(dist: string, routes: RouteMeta[]) {
   const preview = !URDU_PUBLISHED;
@@ -38,7 +45,12 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
       missing.get(text)!.add(englishPath);
     } });
     html = replaceAuditedReadingRoot(html, localizedHref(englishPath, 'ur'), route.heading);
+    if(englishPath===BREAKER_PATH) html=html.replace(/<script\b[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/i,`<script type="application/ld+json">${JSON.stringify(breakerSchema('ur')).replace(/</g,'\\u003c')}</script>`);
+    if(englishPath===CHARTLAB_HUB_PATH)html=html.replace(/<script\b[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/i,`<script type="application/ld+json">${JSON.stringify(chartLabHubSchema('ur')).replace(/</g,'\\u003c')}</script>`);
+    const dedicated=studyForPath(englishPath);
+    if(dedicated)html=html.replace(/<script\b[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/i,`<script type="application/ld+json">${JSON.stringify(remainingSchema(dedicated,'ur')).replace(/</g,'\\u003c')}</script>`);
     const outputPath = path.posix.join('ur', route.outputPath);
+    if(englishPath===SILVER_PATH) html=html.replace(/<script\b[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/i,`<script type="application/ld+json">${JSON.stringify(silverSchema('ur')).replace(/</g,'\\u003c')}</script>`);
     fs.mkdirSync(path.dirname(path.join(dist, outputPath)), { recursive: true });
     fs.writeFileSync(path.join(dist, outputPath), html);
     if (!preview) fs.writeFileSync(sourcePath, addEnglishAlternates(source, englishPath, !route.isNoindex));

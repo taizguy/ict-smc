@@ -1,0 +1,16 @@
+name: Chart Lab data and originality guards
+on: [push, pull_request]
+jobs:
+  chartlab:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/verify-silver-study.ts
+      - run: npx tsx scripts/verify-remaining-studies.ts
+      - run: npx tsx scripts/verify-chartlab-uniqueness.ts
+      - run: npm run lint

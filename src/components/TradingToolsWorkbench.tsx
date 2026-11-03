@@ -1,3 +1,5 @@
+import {chartLabHubMeta} from '../data/chartLabHub';
+import {studyForSlug} from '../data/chartLabRemainingContent';
 import {MasterclassHub} from './MasterclassHub';
 import {MasterclassJournal} from './MasterclassJournal';
 import {masterclassJournalForPath} from '../utils/masterclassJournalRoutes';
@@ -6,6 +8,9 @@ import { currentDocumentHref } from '../i18n/navigation';
 import { masterclassCollection } from '../data/masterclassData';
 import { toolStudyGuide } from '../utils/toolStudyGuides';
 import { FinancialDisclaimer } from './FinancialDisclaimer';
+import { ContextualInternalLinker } from './ContextualInternalLinker';
+import {breakerMeta} from '../data/breakerStudy';
+import {silverMeta} from '../data/silverBulletStudy';
 import React, { useState, useEffect, useRef } from 'react';
 import {
   BarChart2,
@@ -108,7 +113,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
   profileExamSlug,
   deliveryModuleSlug
 }) => {
-  const { t } = useTranslation();
+  const { t,locale,href } = useTranslation();
   const [activeTool, setActiveTool] = useState<TradingToolId | 'overview'>(initialTool);
   const toolSwitcher = useRef<HTMLDetailsElement>(null);
 
@@ -248,7 +253,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
 
       <header className="workbench-header rounded-2xl border border-ink/10 bg-surface p-4 sm:p-5 space-y-3">
         <div className="flex items-center justify-between gap-4 text-sm">
-          <a href="/tools/" className="underline text-teal">All tools</a>
+          <a href={activeTool==='chartlab'?href('/tools/'):'/tools/'} className="underline text-teal">{activeTool==='chartlab'?t('All tools'):'All tools'}</a>
           <details ref={toolSwitcher} className="workbench-switcher relative">
             <summary className="cursor-pointer rounded-lg border border-ink/20 px-3 py-2">{t("Switch tool")}<ChevronDown size={16} strokeWidth={1.5} aria-hidden="true" /></summary>
             <nav aria-label={t("Switch tool")} className="absolute end-0 top-full mt-2 z-30 flex flex-col gap-2 w-64 max-w-[80vw] max-h-[65vh] overflow-y-auto rounded-xl border border-ink/20 bg-surface p-3 shadow-2xl">
@@ -256,7 +261,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
             </nav>
           </details>
         </div>
-        <h1 className="text-xl sm:text-2xl font-semibold tracking-tight">{documentHeading || (typeof document === 'undefined' ? undefined : document.querySelector('meta[name="learnsmc-heading"]')?.getAttribute('content')) || t(currentToolMeta.name)}</h1>
+        <h1 className="text-xl sm:text-2xl font-semibold tracking-tight">{activeTool==='chartlab'&&!chartScenarioSlug?chartLabHubMeta.h1[locale==='ur'?1:0]:activeTool==='chartlab'&&studyForSlug(chartScenarioSlug) ? studyForSlug(chartScenarioSlug)!.h1[locale==='ur'?1:0] : activeTool==='chartlab'&&chartScenarioSlug==='nq-silver-bullet-short' ? silverMeta.h1[locale==='ur'?1:0] : activeTool==='chartlab'&&chartScenarioSlug==='eurusd-failed-ob-breaker' ? breakerMeta.h1[locale==='ur'?1:0] : documentHeading || (typeof document === 'undefined' ? undefined : document.querySelector('meta[name="learnsmc-heading"]')?.getAttribute('content')) || t(currentToolMeta.name)}</h1>
       </header>
 
       {/* Render Active Tool Content */}
@@ -335,7 +340,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
         </div>
       </div>
 
-      {(() => { const guide = toolStudyGuide(documentPath || (typeof window === 'undefined' ? '' : window.location.pathname)); return guide ? <details className="space-y-3 text-sm leading-relaxed"><summary className="cursor-pointer py-3">{t(guide.title)}</summary>{guide.paragraphs.map(p => <p key={p}>{t(p)}</p>)}<p><a href="/curriculum/" className="underline">Study the curriculum</a> and <a href="/about/#editorial-policy" className="underline">editorial policy</a>.</p><FinancialDisclaimer /></details> : null; })()}
+      {(() => { if(activeTool==='chartlab')return null; const guide = toolStudyGuide(documentPath || (typeof window === 'undefined' ? '' : window.location.pathname)); return guide ? <details className="workbench-reading-guide space-y-3 text-sm leading-relaxed"><summary className="cursor-pointer py-3">{t(guide.title)}</summary>{guide.paragraphs.map(p => <p key={p}>{t(p)}</p>)}<p><a href="/curriculum/" className="underline">Study the curriculum</a> and <a href="/about/#editorial-policy" className="underline">editorial policy</a>.</p><FinancialDisclaimer /></details> : null; })()}
     </div>
   );
 };

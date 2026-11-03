@@ -1,0 +1,7 @@
+import {instrumentLabel} from './chartLabRemainingContent';
+import type {StudyDefinition} from './chartLabRemaining';
+import {lessonAuthor,publisher} from '../utils/publisher';
+export function remainingSchema(s:StudyDefinition,locale:'en'|'ur'='en'){const n=locale==='ur'?1:0,root='https://learnsmc.xyz'+(n?'/ur':''),url=root+'/tools/chartlab/'+s.slug+'/',image='https://learnsmc.xyz/images/social/'+s.slug+'-'+locale+'.png';return {'@context':'https://schema.org','@graph':[
+ {'@type':'WebPage','@id':url+'#webpage',url,name:s.h1[n],description:s.description[n],inLanguage:locale,dateModified:'2026-11-03',author:lessonAuthor,publisher,image,breadcrumb:{'@id':url+'#breadcrumb'},mainEntity:{'@id':url+'#study'}},
+ {'@type':'LearningResource','@id':url+'#study',url,name:s.h1[n],description:s.description[n],inLanguage:locale,dateModified:'2026-11-03',author:lessonAuthor,publisher,image,isAccessibleForFree:true,learningResourceType:n?'فرضی قیمتوں کی انٹرایکٹو مشق':'Interactive synthetic-price exercise',citation:s.sources.map(v=>v.url),isPartOf:{'@type':'CollectionPage',url:root+'/tools/chartlab/',name:n?'چارٹ لیب':'Chart Lab'}},
+ {'@type':'BreadcrumbList','@id':url+'#breadcrumb',itemListElement:['/','/tools/','/tools/chartlab/','/tools/chartlab/'+s.slug+'/'].map((path,i)=>({'@type':'ListItem',position:i+1,name:(n?['ابتدا','ورک بینچ اور لیب','چارٹ لیب',instrumentLabel(s,true)]:['Home','Workbench & Lab','Chart Lab',s.instrument])[i],item:root+path}))}]};}

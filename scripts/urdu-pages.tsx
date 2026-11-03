@@ -1,3 +1,4 @@
+import {primaryGlossaryRoute,glossaryMetadata,glossarySchema} from '../src/utils/glossaryReference';
 import {chartLabHubSchema,CHARTLAB_HUB_PATH} from '../src/data/chartLabHub';
 import {studyForPath} from '../src/data/chartLabRemainingContent';
 import {remainingSchema} from '../src/data/chartLabRemainingSchema';
@@ -49,12 +50,13 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
     if(englishPath===CHARTLAB_HUB_PATH)html=html.replace(/<script\b[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/i,`<script type="application/ld+json">${JSON.stringify(chartLabHubSchema('ur')).replace(/</g,'\\u003c')}</script>`);
     const dedicated=studyForPath(englishPath);
     if(dedicated)html=html.replace(/<script\b[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/i,`<script type="application/ld+json">${JSON.stringify(remainingSchema(dedicated,'ur')).replace(/</g,'\\u003c')}</script>`);
+    if(primaryGlossaryRoute(englishPath)){const meta=glossaryMetadata(englishPath,'ur');const tr=(value:string)=>t(value,'ur',urdu);html=html.replace(/<title>[\s\S]*?<\/title>/,'<title>'+tr(meta.title)+'</title>').replace(/(<meta (?:name|property)="(?:description|og:description|twitter:description)" content=")[^"]*(")/g,(_all,a,b)=>a+tr(meta.description).replaceAll('&','&amp;').replaceAll('"','&quot;')+b).replace(/(<meta (?:name|property)="(?:og:title|twitter:title)" content=")[^"]*(")/g,(_all,a,b)=>a+tr(meta.title).replaceAll('&','&amp;').replaceAll('"','&quot;')+b).replace(/<script\b[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/i,'<script type="application/ld+json">'+JSON.stringify(glossarySchema(englishPath,'ur',tr)).replace(/</g,'\\u003c')+'</script>');}
     const outputPath = path.posix.join('ur', route.outputPath);
     if(englishPath===SILVER_PATH) html=html.replace(/<script\b[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/i,`<script type="application/ld+json">${JSON.stringify(silverSchema('ur')).replace(/</g,'\\u003c')}</script>`);
     fs.mkdirSync(path.dirname(path.join(dist, outputPath)), { recursive: true });
     fs.writeFileSync(path.join(dist, outputPath), html);
     if (!preview) fs.writeFileSync(sourcePath, addEnglishAlternates(source, englishPath, !route.isNoindex));
-    manifest.push({ path: localizedHref(englishPath, 'ur'), outputPath, title: t(route.title, 'ur', urdu), description: t(route.description, 'ur', urdu), indexable: !preview && !route.isNoindex, locale: 'ur' });
+    manifest.push({ path: localizedHref(englishPath, 'ur'), outputPath, title: primaryGlossaryRoute(englishPath)?t(glossaryMetadata(englishPath,'ur').title,'ur',urdu):t(route.title, 'ur', urdu), description: primaryGlossaryRoute(englishPath)?t(glossaryMetadata(englishPath,'ur').description,'ur',urdu):t(route.description, 'ur', urdu), indexable: !preview && !route.isNoindex, locale: 'ur' });
   }
   if (fs.existsSync(path.join(dist, '404.html'))) fs.writeFileSync(path.join(dist, 'ur/404.html'), localizeHtml(fs.readFileSync(path.join(dist, '404.html'), 'utf8'), '/404.html', urdu, { preview: true, availablePaths: available }));
 
@@ -101,7 +103,7 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
   fs.writeFileSync(path.join(dist, 'seo-manifest.json'), JSON.stringify(manifest, null, 2));
   fs.mkdirSync('outputs/urdu-localization', { recursive: true });
   fs.writeFileSync('outputs/urdu-localization/rendered-missing.json', JSON.stringify([...missing].map(([english, pages]) => ({ english, pages: [...pages] })), null, 2));
-  const unchangedReferences = new Set(['LearnSMC', 'MSS', 'FVG', 'BOS', 'OTE', 'BSL', 'SSL', 'IFVG', 'MVRV = 2', 'NUPL = 0.5']);
+  const unchangedReferences = new Set(['LearnSMC', 'RDRB', 'MSS', 'FVG', 'BOS', 'OTE', 'BSL', 'SSL', 'IFVG', 'MVRV = 2', 'NUPL = 0.5']);
   const unresolved = [...missing.keys()].filter(text => !unchangedReferences.has(text) && !/^(?:https?:\/\/|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}$)/.test(text));
   if (!preview && unresolved.length) throw new Error(`Urdu publication stopped: ${unresolved.length} untranslated text segments. Review outputs/urdu-localization/rendered-missing.json.`);
   console.log(`Urdu ${preview ? 'noindex review' : 'public'} documents generated: ${routes.filter(route => !isEnglishOnlyHistory(new URL(route.canonical).pathname)).length}. Unmatched text segments require review: ${missing.size}.`);

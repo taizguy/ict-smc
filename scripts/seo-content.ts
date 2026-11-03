@@ -1,3 +1,4 @@
+import {primaryGlossaryRoute,glossaryMetadata,glossarySchema} from '../src/utils/glossaryReference';
 import {CHARTLAB_HUB_PATH} from '../src/data/chartLabHub';
 import {studyForPath} from '../src/data/chartLabRemainingContent';
 import { AuditedRouteBody } from '../src/components/AuditedRouteDocument';
@@ -297,6 +298,7 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
     { '@type': 'BreadcrumbList', itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })) },
     r.schemaJson || { '@type': children.length ? 'CollectionPage' : 'WebPage', name: r.heading, description: r.description, url: r.canonical, publisher, ...(['/', '/curriculum/', '/about/', '/contact/'].includes(path) || path.startsWith('/tools/compare/') ? { dateModified: publisherPageRevision.iso } : {}) },
   ] };
+  if(primaryGlossaryRoute(path)){const meta=glossaryMetadata(path);r.title=meta.title;r.description=meta.description;r.heading=meta.h1;r.schemaJson=glossarySchema(path);}
   if (auditedReadingRoute(path)) r.bodyHtml = renderToStaticMarkup(createElement(AuditedRouteBody,{pathname:path,heading:r.heading}));
 
 }

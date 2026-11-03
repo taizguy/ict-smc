@@ -1,3 +1,6 @@
+import {glossaryMetadataTranslations} from '../utils/glossaryReference';
+import {glossaryReviewTranslations} from '../data/glossaryReview';
+import {glossaryUi} from './glossary-ui-urdu';
 import {chartLabHubTranslations} from '../data/chartLabHub';
 import {remainingTranslations} from '../data/chartLabRemainingContent';
 import masterclassJournalUrdu from './masterclass-journal-urdu.json';
@@ -238,6 +241,11 @@ export const urdu: Record<string, string> = {
   ...silverTranslations,
   ...remainingTranslations,
   ...chartLabHubTranslations,
+  ...glossaryReviewTranslations,
+  ...glossaryUi,
+  ...glossaryMetadataTranslations,
+  'ICT Glossary':'ICT لغت',
+  'Definitions, anatomy and boundaries for ICT and Smart Money Concepts.':'ICT اور اسمارٹ منی تصورات کی تعریفیں، ساخت اور حدود۔',
 };
 // Exact pairs keep static snippets and client-side metadata in the same language.
 for (const { en, ur } of Object.values(searchDescriptions)) urdu[en] = ur;

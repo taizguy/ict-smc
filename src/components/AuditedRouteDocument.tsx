@@ -1,3 +1,4 @@
+import {resolveGlossaryUrl} from '../utils/glossaryRoutes';
 import { Header } from './Header';
 import { SiteFooter } from './SiteFooter';
 import { TradingToolsWorkbench } from './TradingToolsWorkbench';
@@ -10,7 +11,7 @@ import { withoutLocale } from '../i18n/locale';
 export function AuditedRouteBody({ pathname, heading }: { pathname: string; heading?: string }) {
   const path = withoutLocale(pathname), kind = auditedReadingRoute(path);
   if (kind === 'chartlab') return <TradingToolsWorkbench documentPath={path} documentHeading={heading} initialTool="chartlab" chartScenarioSlug={path.split('/')[3]} />;
-  if (kind === 'fvg-glossary') return <TradingToolsWorkbench documentPath={path} documentHeading={heading} initialTool="concepts" glossaryCategory="imbalances" glossaryConceptId="fair_value_gap" />;
+  if(kind==='glossary'){const state=resolveGlossaryUrl(path);return <TradingToolsWorkbench documentPath={path} documentHeading={heading} initialTool="concepts" glossaryCategory={state.categorySlug} glossaryConceptId={state.conceptId}/>;}
   if (kind === 'ote') return <TradingToolsWorkbench documentPath={path} documentHeading={heading} initialTool="ict_suite" deliveryModuleSlug="ote-calculator" />;
   if (kind === 'masood') {
     const id = path.split('/')[3];

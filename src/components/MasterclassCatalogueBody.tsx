@@ -16,7 +16,7 @@ export function MasterclassCatalogueBody({number}:{number:number}){
  });
  return <>
   <section id="core-idea" className="mj-section"><h2>{t(number===3?'What is the ICT 2022 model?':'The core idea')}</h2><p>{t(item.coreRule)}</p></section>
-  <section id="visual-blueprint" className="mj-section"><h2>{t('Visual blueprint')}</h2>{[2,3,6,9,16,19,20,21,22,23,24,25,26,27,28,29].includes(number)?<MasterclassLessonArt number={number}/>:<figure className="mj-lesson-art" aria-label={t(item.visualAnatomy)}><InteractiveDiagram type={item.diagramType} title={t(item.title)} isInteractive/><figcaption>{t(item.visualAnatomy)}</figcaption></figure>}</section>
+  <section id="visual-blueprint" className="mj-section"><h2>{t('Visual blueprint')}</h2>{[1,2,3,6,9,16,19,20,21,22,23,24,25,26,27,28,29].includes(number)?<MasterclassLessonArt number={number}/>:<figure className="mj-lesson-art" aria-label={t(item.visualAnatomy)}><InteractiveDiagram type={item.diagramType} title={t(item.title)} isInteractive/><figcaption>{t(item.visualAnatomy)}</figcaption></figure>}</section>
   <section id="procedure" className="mj-section"><h2>{t('Step-by-step breakdown')}</h2>{item.stepByStepBreakdown.map(s=><section className="mj-step" key={s.step}><p className="mj-label">{t('Step')} {s.step}</p><h3>{t(masterclassStepHeadings[number]?.[s.step-1]||s.title)}</h3><p>{stepText(t(s.detail))}</p></section>)}</section>
   <MasterclassScrollSequence steps={item.orderOfOperations}/>
   <div className="mj-review-cards">

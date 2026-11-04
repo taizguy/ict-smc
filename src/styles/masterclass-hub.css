@@ -96,3 +96,18 @@ html[dir=rtl] .mc-stage-title{font-family:inherit;line-height:1.7}
 .mc-stage-art .highlight{fill:none;stroke:#975c48;stroke-width:8;stroke-linecap:round}
 .mc-stage-art .diamond{fill:#e6ede8;stroke:#486f7d;stroke-width:1.5}
 .mc-stage-art :is(.zone,.zone2,.overlap){animation:mc-stage-candle 8s ease-in-out infinite}
+/* Category landing pages reuse the collection grammar with a shorter introduction. */
+.mc-collection .mc-filters a{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:10px 3px;border-bottom:2px solid transparent;color:var(--mc-muted);font-size:.875rem;line-height:1.5}
+.mc-collection .mc-filters a span{font-size:.8125rem;font-variant-numeric:tabular-nums}
+.mc-collection .mc-filters a[aria-current=page]{border-bottom-color:var(--mc-accent);color:var(--mc-accent);font-weight:600}
+.mc-collection .mc-filters a:hover{color:var(--mc-ink)}
+.mc-category-collection .mc-editorial-hero{padding:28px 0 32px;gap:48px;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr)}
+.mc-category-collection .mc-hero-copy h1{font-size:clamp(2rem,2.7vw,2.7rem);max-width:26ch}
+.mc-category-collection .mc-hero-intro{max-width:62ch;font-size:1rem;line-height:1.8}
+.mc-category-collection .mc-motion-stage{max-width:420px;width:100%;justify-self:end}
+.mc-category-orientation{display:flex;gap:32px;align-items:center;justify-content:space-between;padding:22px 0;border-block:1px solid var(--mc-line)}
+.mc-category-orientation p{font-size:.9375rem;line-height:1.8;color:var(--mc-muted);max-width:78ch}
+.mc-category-orientation>a{display:inline-flex;gap:14px;align-items:center;min-height:44px;color:var(--mc-accent);font-size:.875rem;flex-shrink:0;text-decoration:underline;text-underline-offset:4px}
+.mc-stage-controls button:disabled{opacity:.45;cursor:default}
+@media(max-width:900px){.mc-category-collection .mc-editorial-hero{gap:28px}.mc-category-orientation{align-items:start;gap:20px}.mc-category-orientation>a{flex-shrink:1}}
+@media(max-width:640px){.mc-category-collection .mc-editorial-hero{grid-template-columns:1fr}.mc-category-collection .mc-motion-stage{justify-self:center;max-width:370px}.mc-category-collection .mc-hero-copy h1{font-size:2rem}.mc-category-orientation{flex-direction:column;gap:12px}.mc-collection .mc-filters a{white-space:normal;justify-content:space-between;font-size:.9375rem;min-height:48px;padding:11px 3px}}

@@ -28,36 +28,36 @@ export const masterclassCollection: MasterclassItem[] = [
     subtitle: 'Interbank Orderflow, Weekly Opening Price Filter & TGIF Profiles',
     category: 'masterclass_34',
     diagramType: 'po3_amd',
-    coreRule: 'The weekly candle follows classic Power of Three (PO3): Sunday/Monday accumulation, Tuesday/Wednesday London/NY Judas swing establishing the High or Low of the Week, Thursday expansion to the Draw on Liquidity, and Friday TGIF retracement.',
+    coreRule: "In this ICT-style weekly-profile framework, the weekly opening reference helps organise an early range, a possible excursion, later expansion and a potential Friday retracement. The sequence and the day of the weekly high or low are hypotheses to test, not required market behaviour.",
     orderOfOperations: [
-      'Sunday 18:00 ET: Mark the Sunday/Weekly Opening Price.',
-      'Monday: Range-bound consolidation or false expansion. Mark the Monday High and Low.',
-      'Tuesday or Wednesday (London 02:00-05:00 ET / NY 08:30-10:00 ET): Watch for the Judas Swing above/below the Weekly Open to form the High/Low of the Week (HOW/LOW).',
-      'Wednesday PM & Thursday: Aggressive directional expansion leg delivering directly into the weekly Draw on Liquidity (DOL).',
-      'Friday (10:00-11:00 AM ET): TGIF profit-taking profile. Institutions square books; 20-30% retracement of the weekly expansion leg.'
-    ],
+      "Use the instrument’s actual weekly session calendar. If the selected week opens on Sunday at 18:00 New York time, mark that opening price; other markets may use a different opening reference.",
+      "Mark Monday’s high and low after the relevant candles close. Record whether price forms a range or continues directionally.",
+      "Study a possible Tuesday/Wednesday excursion around the weekly opening reference. The move can continue instead of reversing.",
+      "Compare later price action with a higher-timeframe reference selected beforehand. Wednesday or Thursday expansion is not required.",
+      "Observe Friday’s response separately. Neither a fixed reversal time nor a fixed retracement percentage follows from this profile alone."
+],
     keyMistakes: [
-      'Buying above the Weekly Open on Monday or Tuesday before the Judas Swing has occurred.',
-      'Holding full position size through Friday afternoon expecting continuation when institutional books are being squared (TGIF).',
-      'Treating Monday moves as true directional commitment rather than liquidity engineering.'
-    ],
+      "Treating a Monday range as proof that the rest of the week must follow this profile.",
+      "Using a weekday or clock time by itself as an entry or exit signal.",
+      "Ignoring a week that continues without the anticipated return to the weekly open."
+],
     invalidationChecklist: [
-      'If price expands on Monday without manipulating the Weekly Open, expect mid-week reversal or protracted consolidation.',
-      'If the High of the Week is violated on Thursday, the weekly profile has failed or inverted.'
-    ],
+      "If the expected excursion and return do not occur, record a contrasting outcome rather than forcing the weekly profile onto price.",
+      "Reassess if price crosses the reference that your written hypothesis required to hold; the weekday does not override that condition."
+],
     riskRules: [
-      'Risk max 1% per setup during Wednesday/Thursday expansion legs.',
-      'Cut risk to 0.25% or completely flat on Friday after 11:00 AM ET.'
-    ],
+      "Write any practice risk cap, invalidation and cost assumptions before entry. The weekly profile does not determine a suitable personal account-risk percentage.",
+      "Record transaction costs and gap or weekend exposure; a Friday timing rule does not make a trade safe."
+],
     stepByStepBreakdown: [
-      { step: 1, title: 'Weekly Open Anchor', detail: 'Mark Sunday 18:00 ET opening price. Bullish weeks seek price below open (Discount); bearish weeks seek price above open (Premium).' },
+      { step: 1, title: 'Weekly Open Anchor', detail: "Compare each day with the recorded weekly open. The opening-price line alone does not define a dealing range’s premium and discount halves." },
       { step: 2, title: 'Judas Swing Window', detail: 'This weekly-profile framework studies Tuesday/Wednesday extremes and London/New York windows. Their frequency is not established by a dataset here.' },
-      { step: 3, title: 'True Expansion Leg', detail: 'Price accelerates violently away from the weekly open toward the HTF PD Array or major liquidity pool.' },
-      { step: 4, title: 'TGIF Profiling', detail: 'Friday 10:00 AM macro triggers reversal/retracement as market makers hedge weekend risk.' }
+      { step: 3, title: 'True Expansion Leg', detail: "Look for a later move toward the selected higher-timeframe reference; record continuation, hesitation and failure as different outcomes." },
+      { step: 4, title: 'TGIF Profiling', detail: "Friday can retrace or continue. Observe the response rather than assuming a 10:00 reversal or inferring who is hedging." }
     ],
     visualAnatomy: 'A standard OHLC weekly bar divided into its 5 component days, showing the Judas swing low formed on Tuesday London session below the open line.',
     relatedPdArrays: ['Weekly Fair Value Gap', 'Weekly Order Block', 'Previous Weekly High/Low'],
-    quote: 'The weekly opening price is the filter through which all true institutional delivery must pass.'
+    quote: "Use the weekly opening price as a comparison reference, not as proof of institutional intent or a guaranteed weekly sequence."
   },
 
   // 2. Draw on Liquidity

@@ -1,3 +1,5 @@
+import masterclassWeeklyReviewUrdu from './masterclass-weekly-review-urdu.json';
+import {masterclassCategoryTranslations} from '../data/masterclassCategoryPages';
 import {glossaryMetadataTranslations} from '../utils/glossaryReference';
 import {glossaryReviewTranslations} from '../data/glossaryReview';
 import {glossaryUi} from './glossary-ui-urdu';
@@ -51,6 +53,8 @@ export const urdu: Record<string, string> = {
   [audit4Tagline.en]: audit4Tagline.ur,
   ...toolRouteStudyUrdu,
   ...masterclassHubUrdu,
+  ...masterclassCategoryTranslations,
+  ...masterclassWeeklyReviewUrdu,
   ...readingRoomUrdu,
   '24 October 2026': '24 اکتوبر 2026',
   'Study ICT and Smart Money Concepts with free lessons, original diagrams and chart exercises. Start with market foundations, then learn structure, liquidity and price patterns at your own pace.': 'مفت اسباق، اصل خاکوں اور چارٹ مشقوں کے ساتھ ICT اور Smart Money Concepts سیکھیں۔ مارکیٹ کی بنیادوں سے شروع کریں، پھر اپنی رفتار سے اسٹرکچر، لیکویڈیٹی اور قیمت کے پیٹرن سمجھیں۔',

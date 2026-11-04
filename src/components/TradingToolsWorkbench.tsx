@@ -2,6 +2,7 @@ import {GlossaryReference} from './GlossaryReference';
 import {primaryGlossaryRoute} from '../utils/glossaryReference';
 import {chartLabHubMeta} from '../data/chartLabHub';
 import {studyForSlug} from '../data/chartLabRemainingContent';
+import {masterclassCollectionPage} from '../data/masterclassCategoryPages';
 import {MasterclassHub} from './MasterclassHub';
 import {MasterclassJournal} from './MasterclassJournal';
 import {masterclassJournalForPath} from '../utils/masterclassJournalRoutes';
@@ -239,7 +240,8 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
     );
   }
 
-  if(activeTool==='masterclass'&&!masterclassModuleSlug&&(!masterclassCategory||masterclassCategory==='all')) return <MasterclassHub/>;
+  const collectionPath=documentPath||(typeof window!=='undefined'?window.location.pathname:'/tools/masterclass/');
+  if(activeTool==='masterclass'&&!masterclassModuleSlug){const collection=masterclassCollectionPage(collectionPath);if(collection)return <MasterclassHub key={collection.path} path={collection.path}/>;}
 
   // Drafts are available only in the local editorial preview. Production waits
   // for each edition's source/content/language release checks.

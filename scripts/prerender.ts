@@ -1,3 +1,4 @@
+import {masterclassCollectionPage} from '../src/data/masterclassCategoryPages';
 import { renderAuditedReading } from './audited-reading-document';
 import {masterclassJournalForPath} from '../src/utils/masterclassJournalRoutes';
 import { auditedReadingRoute } from '../src/utils/auditedReadingRoutes';
@@ -184,7 +185,7 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
     :createElement(CurriculumView,{path:readingPath,onSelectChapter:()=>{},onOpenSearch:()=>{}})):'';
   const readingHeader=isReading?renderToStaticMarkup(createElement(Header,{documentPath:readingPath,activeTab:readingChapter?'chapter_room':'curriculum',setActiveTab:()=>{},onOpenSearch:()=>{},onOpenMentorSpotlight:()=>{},onOpenWelcomeIntro:()=>{},progressPercent:0})):'';
   const readingDocument=isReading?`<div id="static-content" class="reading-site"><a class="skip-link" href="#main-content">Skip to main content</a>${readingHeader}<main id="main-content" class="reading-main" tabindex="-1">${readingBody}</main>${renderToStaticMarkup(createElement(SiteFooter,{playground:false}))}</div>`:'';
-  const masterclassDocument=(readingPath==='/tools/masterclass/'||!!masterclassJournalForPath(readingPath))?`<div id="static-content" class="mc-collection-document"><a class="skip-link" href="#main-content">Skip to main content</a>${renderToStaticMarkup(createElement(Header,{documentPath:readingPath,activeTab:'masterclass',setActiveTab:()=>{},onOpenSearch:()=>{},onOpenMentorSpotlight:()=>{},onOpenWelcomeIntro:()=>{},progressPercent:0}))}<main id="main-content" tabindex="-1">${meta.bodyHtml}</main>${renderToStaticMarkup(createElement(SiteFooter,{playground:false}))}</div>`:'';
+  const masterclassDocument=(!!masterclassCollectionPage(readingPath)||!!masterclassJournalForPath(readingPath))?`<div id="static-content" class="mc-collection-document"><a class="skip-link" href="#main-content">Skip to main content</a>${renderToStaticMarkup(createElement(Header,{documentPath:readingPath,activeTab:'masterclass',setActiveTab:()=>{},onOpenSearch:()=>{},onOpenMentorSpotlight:()=>{},onOpenWelcomeIntro:()=>{},progressPercent:0}))}<main id="main-content" tabindex="-1">${meta.bodyHtml}</main>${renderToStaticMarkup(createElement(SiteFooter,{playground:false}))}</div>`:'';
   const auditedDocument=auditedReadingRoute(readingPath)?renderAuditedReading(readingPath,meta.heading):'';
   if(auditedDocument){html=html.replace('<html ', '<html data-reading-enhancement="true" ');if(readingPath.startsWith('/tools/glossary/'))html=html.replace(/<div id="app-startup"[^>]*>[\s\S]*?<\/div>/,'');}
   // Generate Crawlable Structural Layout

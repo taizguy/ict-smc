@@ -1,3 +1,4 @@
+import {PracticeLoopPage} from './practice/PracticeLoopPage';
 import {resolveGlossaryUrl} from '../utils/glossaryRoutes';
 import { Header } from './Header';
 import { SiteFooter } from './SiteFooter';
@@ -10,6 +11,7 @@ import { withoutLocale } from '../i18n/locale';
 /** Same route views, initial props and document geometry as App; no hand-written substitute. */
 export function AuditedRouteBody({ pathname, heading }: { pathname: string; heading?: string }) {
   const path = withoutLocale(pathname), kind = auditedReadingRoute(path);
+  if(kind==='practice')return <PracticeLoopPage tool={path.includes('delivery-suite')?'delivery':path.includes('simulator')?'simulator':'backtest'}/>;
   if (kind === 'chartlab') return <TradingToolsWorkbench documentPath={path} documentHeading={heading} initialTool="chartlab" chartScenarioSlug={path.split('/')[3]} />;
   if(kind==='glossary'){const state=resolveGlossaryUrl(path);return <TradingToolsWorkbench documentPath={path} documentHeading={heading} initialTool="concepts" glossaryCategory={state.categorySlug} glossaryConceptId={state.conceptId}/>;}
   if (kind === 'ote') return <TradingToolsWorkbench documentPath={path} documentHeading={heading} initialTool="ict_suite" deliveryModuleSlug="ote-calculator" />;

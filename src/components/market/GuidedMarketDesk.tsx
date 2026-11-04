@@ -34,7 +34,7 @@ const Sandbox = lazy(() =>
   import("./MarketWorkspace").then((m) => ({ default: m.MarketWorkspace })),
 );
 const names = {
-  chartlab: "Chart Laboratory",
+  chartlab: "Chart Lab",
   simulator: "Trade Simulator",
   backtest: "Backtest Lab",
   delivery: "ICT Delivery Suite",
@@ -70,9 +70,15 @@ type Result = ReturnType<typeof evaluateCase>;
 export function GuidedMarketDesk({
   mode,
   studyFocus,
+  requestedCaseId,
+  hideNextTools=false,
+  storageKey=GUIDED_KEY,
 }: {
   mode: MarketMode;
   studyFocus?: string;
+  requestedCaseId?: string;
+  hideNextTools?: boolean;
+  storageKey?: string;
 }) {
   const { t, href, message } = useTranslation(),
     {
@@ -81,7 +87,7 @@ export function GuidedMarketDesk({
       ready,
       flush,
       storageError,
-    } = useMarketSession(GUIDED_KEY, initialGuidedMarket);
+    } = useMarketSession(storageKey, initialGuidedMarket);
   const [stage, setStage] = useState(0),
     [answered, setAnswered] = useState(false),
     [hint, setHint] = useState(false),
@@ -147,6 +153,9 @@ export function GuidedMarketDesk({
     });
     resetLesson();
   };
+  useEffect(() => {
+    if(ready && requestedCaseId){const next=learningCases.find(v=>v.id===requestedCaseId);if(next)loadCase(next);}
+  },[ready,requestedCaseId]);
   useEffect(() => {
     if (ready && !learningCases.some((v) => caseSource(v) === s.source))
       loadCase(learningCases[0]);
@@ -1433,7 +1442,7 @@ export function GuidedMarketDesk({
           </a>
         </nav>
       </details>
-      <nav className="guided-next-tools" aria-label={t("Continue learning")}>
+      {!hideNextTools&&<nav className="guided-next-tools" aria-label={t("Continue learning")}>
         {(Object.keys(names) as MarketMode[])
           .filter((v) => v !== mode)
           .map((v) => (
@@ -1442,7 +1451,7 @@ export function GuidedMarketDesk({
               <ArrowRight size={15} />
             </a>
           ))}
-      </nav>
+      </nav>}
       {mode === "backtest" && (
         <details className="guided-advanced">
           <summary onClick={() => setSandbox(true)}>

@@ -1,3 +1,6 @@
+import {withoutLocale} from '../i18n/locale';
+import {PracticeLoopPage} from './practice/PracticeLoopPage';
+import {RoleLine,LoopStrip} from './practice/PracticeLoop';
 import {GlossaryReference} from './GlossaryReference';
 import {primaryGlossaryRoute} from '../utils/glossaryReference';
 import {chartLabHubMeta} from '../data/chartLabHub';
@@ -231,6 +234,8 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
     }
   ];
 
+  const toolOrder=['masterclass','chartlab','ict_suite','simulator','backtest','journal','graph','concepts','compare','dashboard'];
+  tools.sort((a,b)=>toolOrder.indexOf(a.id)-toolOrder.indexOf(b.id));
   // If in Overview mode, render the full Hub Overview
   if (activeTool === 'overview') {
     return (
@@ -253,6 +258,9 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
   const glossaryPath=documentPath || (typeof window!=='undefined'?window.location.pathname:'/tools/glossary/');
   if(activeTool==='concepts'&&primaryGlossaryRoute(glossaryPath))return <GlossaryReference pathname={glossaryPath}/>;
 
+  if(activeTool==='simulator'&&!simulatorModelSlug)return <PracticeLoopPage tool="simulator"/>;
+  if(activeTool==='backtest'&&!backtestStrategySlug)return <PracticeLoopPage tool="backtest"/>;
+  if(activeTool==='ict_suite'&&withoutLocale(collectionPath)==='/tools/delivery-suite/')return <PracticeLoopPage tool="delivery"/>;
   const currentToolMeta = tools.find(t => t.id === activeTool) || tools[0];
 
   return (
@@ -264,11 +272,12 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
           <details ref={toolSwitcher} className="workbench-switcher relative">
             <summary className="cursor-pointer rounded-lg border border-ink/20 px-3 py-2">{t("Switch tool")}<ChevronDown size={16} strokeWidth={1.5} aria-hidden="true" /></summary>
             <nav aria-label={t("Switch tool")} className="absolute end-0 top-full mt-2 z-30 flex flex-col gap-2 w-64 max-w-[80vw] max-h-[65vh] overflow-y-auto rounded-xl border border-ink/20 bg-surface p-3 shadow-2xl">
-              {tools.map(tool => <a key={tool.id} href={`/tools/${tool.slug}/`} aria-current={activeTool === tool.id ? 'page' : undefined} className="rounded-lg border border-ink/15 px-3 py-2 text-sm hover:bg-ink/10">{tool.name}</a>)}
+              {tools.map(tool => <a key={tool.id} href={href(`/tools/${tool.slug}/`)} aria-current={activeTool === tool.id ? 'page' : undefined} className="rounded-lg border border-ink/15 px-3 py-2 text-sm hover:bg-ink/10">{tool.name}</a>)}
             </nav>
           </details>
         </div>
         <h1 className="text-xl sm:text-2xl font-semibold tracking-tight">{activeTool==='chartlab'&&!chartScenarioSlug?chartLabHubMeta.h1[locale==='ur'?1:0]:activeTool==='chartlab'&&studyForSlug(chartScenarioSlug) ? studyForSlug(chartScenarioSlug)!.h1[locale==='ur'?1:0] : activeTool==='chartlab'&&chartScenarioSlug==='nq-silver-bullet-short' ? silverMeta.h1[locale==='ur'?1:0] : activeTool==='chartlab'&&chartScenarioSlug==='eurusd-failed-ob-breaker' ? breakerMeta.h1[locale==='ur'?1:0] : documentHeading || (typeof document === 'undefined' ? undefined : document.querySelector('meta[name="learnsmc-heading"]')?.getAttribute('content')) || t(currentToolMeta.name)}</h1>
+      {activeTool==='chartlab'&&<><RoleLine tool="chartlab"/><LoopStrip tool="chartlab"/></>}
       </header>
 
       {/* Render Active Tool Content */}

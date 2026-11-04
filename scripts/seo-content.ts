@@ -1,3 +1,5 @@
+import {practicePages} from '../src/data/practiceLoopContent';
+import {practiceSchema} from '../src/utils/practiceSchema';
 import {masterclassCollectionPage} from '../src/data/masterclassCategoryPages';
 import {masterclassCollectionSchema} from '../src/utils/masterclassCollectionSchema';
 import {primaryGlossaryRoute,glossaryMetadata,glossarySchema} from '../src/utils/glossaryReference';
@@ -291,6 +293,8 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
     r.schemaJson || { '@type': children.length ? 'CollectionPage' : 'WebPage', name: r.heading, description: r.description, url: r.canonical, publisher, ...(['/', '/curriculum/', '/about/', '/contact/'].includes(path) || path.startsWith('/tools/compare/') ? { dateModified: publisherPageRevision.iso } : {}) },
   ] };
   if(primaryGlossaryRoute(path)){const meta=glossaryMetadata(path);r.title=meta.title;r.description=meta.description;r.heading=meta.h1;r.schemaJson=glossarySchema(path);}
+  const practiceTool=path==='/tools/delivery-suite/'?'delivery':path==='/tools/simulator/'?'simulator':path==='/tools/backtest/'?'backtest':null;
+  if(practiceTool){const page=practicePages[practiceTool];r.title=page.title[0];r.description=page.description[0];r.heading=page.h1[0];r.subheading=page.tagline[0];r.schemaJson=practiceSchema(practiceTool);}
   if (auditedReadingRoute(path)) r.bodyHtml = renderToStaticMarkup(createElement(AuditedRouteBody,{pathname:path,heading:r.heading}));
 
 }

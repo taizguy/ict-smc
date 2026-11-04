@@ -81,3 +81,5 @@ import './styles/masterclass-hub.css';
 import './styles/chartlab-analysis.css';
 
 import './styles/glossary-reference.css';
+
+import './styles/practice-loop.css';

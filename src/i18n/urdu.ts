@@ -1,3 +1,5 @@
+import practiceLoopUrdu from './practice-loop-urdu.json';
+import {practiceContentTranslations} from '../data/practiceLoopContent';
 import masterclassWeeklyReviewUrdu from './masterclass-weekly-review-urdu.json';
 import {masterclassCategoryTranslations} from '../data/masterclassCategoryPages';
 import {glossaryMetadataTranslations} from '../utils/glossaryReference';
@@ -54,6 +56,8 @@ export const urdu: Record<string, string> = {
   ...toolRouteStudyUrdu,
   ...masterclassHubUrdu,
   ...masterclassCategoryTranslations,
+ ...practiceContentTranslations,
+ ...practiceLoopUrdu,
   ...masterclassWeeklyReviewUrdu,
   ...readingRoomUrdu,
   '24 October 2026': '24 اکتوبر 2026',

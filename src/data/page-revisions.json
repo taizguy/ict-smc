@@ -2,9 +2,9 @@
   "version": 1,
   "pages": {
     "/": {
-      "fingerprint": "52e0f37660c7b7c7e36c899221fdc23bd7eb2c2c2f503cdfcbc5c0dbc65a35e9",
-      "lastmod": "2026-10-27",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "0ac922f54823ee8a2bc48196353166f487633a4622dc4215fc1863007d617af9",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/about/": {
       "fingerprint": "5425da3cc859a50e1e227e9b53c1befe8d8776207452ce968257a66a438d99c4",
@@ -1257,14 +1257,14 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/": {
-      "fingerprint": "1aac0ad6dc78ba1365e4e67e57552ac34aba6e4b45488b8a20453ce4edc6c971",
-      "lastmod": "2026-10-27",
-      "evidence": "Approved hybrid workbench redesign; visible and static directories aligned; bilingual content and native tool links verified."
+      "fingerprint": "01f3777461658d3ed04a7c725454dccb14ca1ecfe749f38bec1558e440e41254",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/backtest/": {
-      "fingerprint": "2360141b5526117f3d04c5b9f9ae3793bb4fd5e7cc2f3b7824f8a0c155dc725f",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "2bfd374fd4424cc4f8d53a0b88fd44733f6c42d002ffb7585b617d94fe847c81",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/backtest/2022-mentorship-model/": {
       "fingerprint": "4bd475b46813f4699dc557641eb61ccd77cc3b4888d2f7cfb6e07f6179f57f23",
@@ -1297,39 +1297,39 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/tools/chartlab/": {
-      "fingerprint": "a6f8aee4ad31ac6f29898da592ae9fe6ac0c5b5fc986bebe07596649c11decea",
-      "lastmod": "2026-11-03",
-      "evidence": "Chart Lab directory, contextual links and bilingual UI/SEO review; docs/design/chartlab-hub-and-study-polish-2026-11-03.md"
+      "fingerprint": "6af3c7269632a9aaaf14a5fdd4ebae7194ebe8f48f3430a44f56bd10abe4692c",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/chartlab/btc-2022-bullish-model/": {
-      "fingerprint": "39f0cd1be4729ddb792dae0ef5d0bb35cfddc5245948e1e8432a56d9b1543f58",
-      "lastmod": "2026-11-03",
-      "evidence": "Chart Lab directory, contextual links and bilingual UI/SEO review; docs/design/chartlab-hub-and-study-polish-2026-11-03.md"
+      "fingerprint": "9a7084a350c3bc5f754cb23eb2a8f5cc8a64e2b68efd1cadc6234754a3d720e3",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/chartlab/eur-mmbm-propulsion-model/": {
-      "fingerprint": "d961120b3dee27942d1c050de2ec706e3a3f85bf23b73a723766d47dcfb356a6",
-      "lastmod": "2026-11-03",
-      "evidence": "Chart Lab directory, contextual links and bilingual UI/SEO review; docs/design/chartlab-hub-and-study-polish-2026-11-03.md"
+      "fingerprint": "2efba6cf49e73e08213be67094b20178a2519b9ad1e385ecec38728bae9f2c2e",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/chartlab/eurusd-failed-ob-breaker/": {
-      "fingerprint": "71912237d22a03d5b95119fcd91a7930133a7ea7c4cdcaca4397f9bae7a2641a",
-      "lastmod": "2026-11-03",
-      "evidence": "Chart Lab directory, contextual links and bilingual UI/SEO review; docs/design/chartlab-hub-and-study-polish-2026-11-03.md"
+      "fingerprint": "c1cde1d2f3a27764640dcab614b5473c07aadf15798d5096eea7ce4d227726dc",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/chartlab/nq-ath-alchemy-ndog-macro/": {
-      "fingerprint": "a4479e376e6c17de4dba5bf13f52f07c395fff45e9b1c3c2f1720f8c813779f0",
-      "lastmod": "2026-11-03",
-      "evidence": "Chart Lab directory, contextual links and bilingual UI/SEO review; docs/design/chartlab-hub-and-study-polish-2026-11-03.md"
+      "fingerprint": "37cfe84d6d22d78d219f0de04e70e6d433cee9048375fae90388d5a59747aadb",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/chartlab/nq-silver-bullet-short/": {
-      "fingerprint": "c2f929e25770f878f5f6d0d0d962fbd72389badf3462474b98de73b262518ce1",
-      "lastmod": "2026-11-03",
-      "evidence": "Chart Lab directory, contextual links and bilingual UI/SEO review; docs/design/chartlab-hub-and-study-polish-2026-11-03.md"
+      "fingerprint": "ce01c5cb39743952af971dfafb694960641bbacf7c466a8bd2bf3ad9233fe120",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/chartlab/xauusd-gold-legacy-model/": {
-      "fingerprint": "6c47ce26dbecdca61c62987a8f6762cf52a64b52d4c08f1c47a6edbd78f45faf",
-      "lastmod": "2026-11-03",
-      "evidence": "Chart Lab directory, contextual links and bilingual UI/SEO review; docs/design/chartlab-hub-and-study-polish-2026-11-03.md"
+      "fingerprint": "78fa606fc74aea0bca1ceb0779bab24040b30a72ac2ed3bc0be5329ea8d7c1be",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/compare/": {
       "fingerprint": "885621ccc86b8fa7cf4c1625cd2bf86a462493d8410e2d203c43ddcd27a3df73",
@@ -1417,9 +1417,9 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/tools/delivery-suite/": {
-      "fingerprint": "d1b1424bc769a8dbb3b906c6d62da4f95adf92eb2eaf6d0f72c653a4095046b1",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "88fe47bd4a4183f7d89afaff45b25601e66d08d0d8ac0b68298a143156173de4",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/delivery-suite/judas-planner/": {
       "fingerprint": "2225dc77215de5dd95ee7909ace86d50033704765fdc490df71f3d8cf23a583b",
@@ -1917,9 +1917,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/simulator/": {
-      "fingerprint": "335fd6a4bf3a6dca144ef4abad2e2d2f377e54f576c80341ce32bba19d22e334",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "05e74751b95d6312abb86ff4a4b0282fafa54c698eca6d41e394b04d44003a86",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/simulator/failed-ob-breaker/": {
       "fingerprint": "c0977a71185fa671bdc7c3344602f6da46ad600be9dff15e68034b622f1749c2",
@@ -1952,9 +1952,9 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/": {
-      "fingerprint": "d5123995b742875547aca543ba2c2c6f1ba0a32fa9d5281547ca373e24fd97bd",
-      "lastmod": "2026-10-27",
-      "evidence": "Editorial content revision; rendered content fingerprint changed."
+      "fingerprint": "889bdcf73cae7cacfaf016df3008e5e16ac74afd5659440a41065951665d5c4b",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/about/": {
       "fingerprint": "8403c4aa2e9dfe3386273f5f8198dfc4f7024337e1d6c35241a26f00ce7e8150",
@@ -3102,14 +3102,14 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/": {
-      "fingerprint": "6329bd37c104bdfb7b4b8c5bddf1ca47b2a42cdb7fb6b92371aaa82f06e710a8",
-      "lastmod": "2026-10-27",
-      "evidence": "Approved hybrid workbench redesign; visible and static directories aligned; bilingual content and native tool links verified."
+      "fingerprint": "aaf035c564532d5f3b7b80525eac310276fa33eea6eca5d9dc2ab046efcd948f",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/tools/backtest/": {
-      "fingerprint": "2f2bb74d758b02761a15d8775b58f0effac216a9ada6e5252fad2be026c04e99",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "eeac593e5cccf6b78f527b8c7c761c44472b078868deb87895e6f5a53699e029",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/tools/backtest/2022-mentorship-model/": {
       "fingerprint": "8991bdede3cd96c0fdfa1057486aea92599d9ab28b66b57b574cf4d8ce8dfd0b",
@@ -3142,39 +3142,39 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/tools/chartlab/": {
-      "fingerprint": "68040d6066906697c67f895ed6b4cfbd90d1e4c2e039616f33f7421391325110",
-      "lastmod": "2026-11-03",
-      "evidence": "Chart Lab directory, contextual links and bilingual UI/SEO review; docs/design/chartlab-hub-and-study-polish-2026-11-03.md"
+      "fingerprint": "c7fc93f8069e0a57c9dd0ea3f001e1a3e57dbe201e170e98cfb1e6878e61fa23",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/tools/chartlab/btc-2022-bullish-model/": {
-      "fingerprint": "77fc2fee1df30910b955fec9d8dac2cc840ccff432ef70e7b5c5b3111d64fa08",
-      "lastmod": "2026-11-03",
-      "evidence": "Chart Lab directory, contextual links and bilingual UI/SEO review; docs/design/chartlab-hub-and-study-polish-2026-11-03.md"
+      "fingerprint": "bc6f533f20f0a3bff258f393b6ad8da5971488d43e30773cf0974a07a8e20ec5",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/tools/chartlab/eur-mmbm-propulsion-model/": {
-      "fingerprint": "340bb5c08ee228c3937d71914017541f23561664889402f5776e647d026e9565",
-      "lastmod": "2026-11-03",
-      "evidence": "Chart Lab directory, contextual links and bilingual UI/SEO review; docs/design/chartlab-hub-and-study-polish-2026-11-03.md"
+      "fingerprint": "f2312a6844bd24840b289a3f08a95690a15af36b68ba9290abc9a0aa992e123f",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/tools/chartlab/eurusd-failed-ob-breaker/": {
-      "fingerprint": "e458a99e1db134da6adf07b9b77faba17d41987060cfb045268565d1fdb3e61a",
-      "lastmod": "2026-11-03",
-      "evidence": "Chart Lab directory, contextual links and bilingual UI/SEO review; docs/design/chartlab-hub-and-study-polish-2026-11-03.md"
+      "fingerprint": "c0d3305da93714104aa63cc9d934deb0ba134171f89ca2135e8912f30e1f27e2",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/tools/chartlab/nq-ath-alchemy-ndog-macro/": {
-      "fingerprint": "f66379dbe7de08436bafe0da7abbdc5d9c6f1ede8c9bdf946d668d4f84237ca6",
-      "lastmod": "2026-11-03",
-      "evidence": "Chart Lab directory, contextual links and bilingual UI/SEO review; docs/design/chartlab-hub-and-study-polish-2026-11-03.md"
+      "fingerprint": "208456713a26220dadfbb23763d556c9045c28b4f96c1516f46cbaffb600a65d",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/tools/chartlab/nq-silver-bullet-short/": {
-      "fingerprint": "9b997a34e45988ddf0565dfc4196844f132b0d1b4359f99b57c1ac587e5b350c",
-      "lastmod": "2026-11-03",
-      "evidence": "Chart Lab directory, contextual links and bilingual UI/SEO review; docs/design/chartlab-hub-and-study-polish-2026-11-03.md"
+      "fingerprint": "5efd667fb7080b383a4e0770fcf7c28b72ac00d5187801280514b379eb9db9e1",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/tools/chartlab/xauusd-gold-legacy-model/": {
-      "fingerprint": "b402356375a3026faf747f24d053a763583d8406e25a6fb051725b58f704d847",
-      "lastmod": "2026-11-03",
-      "evidence": "Chart Lab directory, contextual links and bilingual UI/SEO review; docs/design/chartlab-hub-and-study-polish-2026-11-03.md"
+      "fingerprint": "d8f1ccbe1421550fdb489629be70bab0d0dc4ecc00e2c31b39ee2b3c8754fbc6",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/tools/compare/": {
       "fingerprint": "31363c81655d1156f12204e91ec149ee8a51ec006b9a06ab62fb905bade3cc18",
@@ -3262,9 +3262,9 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/tools/delivery-suite/": {
-      "fingerprint": "214c79b9f18270daed3047ca5dc2b5afe5f666be80af2bbf8c78e08c690d4d63",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "2c3df01c8da726b9c2ae55c1867f241225f40b8cfd3f0db951626d1707acda02",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/tools/delivery-suite/judas-planner/": {
       "fingerprint": "d49cc83364f882171ad075b6f98366eac6a2a57f193ba93e7477074c62069f81",
@@ -3762,9 +3762,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/simulator/": {
-      "fingerprint": "22bde18d55a413bcbca50f4e0dc5596c8488d3ff583aad17405e7114ff199600",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "a6b944b7b202077b236abc2273c2acaf1bbd94b2cc2cd560659d6b4e51140815",
+      "lastmod": "2026-11-04",
+      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/tools/simulator/failed-ob-breaker/": {
       "fingerprint": "bbd83cd5e5607bbe483a0c39bf7ecc5988fb0ddb3f387ef28a95628b72a11ed3",

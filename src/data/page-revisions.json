@@ -1267,34 +1267,34 @@
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/backtest/2022-mentorship-model/": {
-      "fingerprint": "4bd475b46813f4699dc557641eb61ccd77cc3b4888d2f7cfb6e07f6179f57f23",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "b738e2f2f9f59c094922a7e45c16ddaf38a40cf36a367f1000bce4c4f171fa19",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/tools/backtest/breaker-reversal/": {
-      "fingerprint": "6d25f134a00923fe747ab214e6be6203b053d9e371e267104f6635da60d8765a",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "47f0d3f99844c66522592e0f24b6580e23a022c2a1164704bd6b64a605dd2abc",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/tools/backtest/charter-model-1/": {
-      "fingerprint": "a863e02b509587f8861542be15a54db6dfc856b338452b3af62f3b0ae4131038",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "32758dd155fa6f41afe1d2e1889cd7ab94f6b49318788fc5eca210ffa91de6b8",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/tools/backtest/charter-model-8/": {
-      "fingerprint": "ee05c839c7a3332e4e6211cacb8bd8cf4248c3ac77c3866d1cd19b2f0fe52f3e",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "d4645bdd7882b56cf721a978876ddd146885edcd82bbfd24da00b9280c37b414",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/tools/backtest/charter-model-9/": {
-      "fingerprint": "26674ad3188bc78fc0f7c3d52e043fb8104827ad51dac24b7bafb88f9955d7a8",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "c728d6af850575f68e2905376c17073d3b03665c58215792f51f646caed41134",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/tools/backtest/silver-bullet/": {
-      "fingerprint": "0a048aa47cbf85ea191d49020bfd351beabbe70c39df93880ef7a736373dcc2d",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "b3f86300f443f4b8abb276780e58964a794a6a06cbf56d70cb79971a9bb64e23",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/tools/chartlab/": {
       "fingerprint": "6af3c7269632a9aaaf14a5fdd4ebae7194ebe8f48f3430a44f56bd10abe4692c",
@@ -1417,9 +1417,9 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/tools/delivery-suite/": {
-      "fingerprint": "88fe47bd4a4183f7d89afaff45b25601e66d08d0d8ac0b68298a143156173de4",
-      "lastmod": "2026-11-04",
-      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
+      "fingerprint": "a0e721cc26254955f4a9ddb164060a9742d69dcbe2633053ebd66419330bf5b3",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/tools/delivery-suite/judas-planner/": {
       "fingerprint": "2225dc77215de5dd95ee7909ace86d50033704765fdc490df71f3d8cf23a583b",
@@ -1922,34 +1922,34 @@
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/simulator/failed-ob-breaker/": {
-      "fingerprint": "c0977a71185fa671bdc7c3344602f6da46ad600be9dff15e68034b622f1749c2",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "8c2d2b2f2046459a4e01177c3717f8bac1d70fc687b1fb1a2318bc002248021b",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/tools/simulator/ict-2022-model/": {
-      "fingerprint": "c2defc149d45581619cfd830100664d2124c7805aeb07d481925f7f3d3c296eb",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "36702836c2760cd8fd7e3ecb80dcf595fc736052dae01f25de3b44c1053b10eb",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/tools/simulator/london-judas-swing/": {
-      "fingerprint": "0bd363bfe072f3b79f658d00950585fc9d3162d9eba3179b54f357a080c6abf9",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "01303638404b464317ced0da5237d2ca87e871d11a19223b7c569b888a21ce3d",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/tools/simulator/news-driver-reversal/": {
-      "fingerprint": "3846353d39f03072eb676020db2e987edbf6e4bd459a3ed6d3e9574dbd82fe28",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "cfb5c08af84109ba03119f124d1cee89b9e724f58dca320c217ef07f644827f8",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/tools/simulator/ote-expansion-long/": {
-      "fingerprint": "53d1d2ca914cc48cf4609283d6832d7acc352ae7c8a6b334df8992040cc21d51",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "8d48e0f27c76bd485eedb15f42df0727759a44a5bd52e494d113057293663369",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/tools/simulator/silver-bullet-short/": {
-      "fingerprint": "871dde75a348447b84e00c751ab35bdcf9813a950b89c80a71c6a5ae32de0262",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "62effbce0f2ebbb5ba1b76ab65130b4a56a9b3b288caed2c584c112bf21272ad",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/ur/": {
       "fingerprint": "889bdcf73cae7cacfaf016df3008e5e16ac74afd5659440a41065951665d5c4b",
@@ -3112,34 +3112,34 @@
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/tools/backtest/2022-mentorship-model/": {
-      "fingerprint": "8991bdede3cd96c0fdfa1057486aea92599d9ab28b66b57b574cf4d8ce8dfd0b",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "71a83bdddf03b55c887ca19346d2dc8369277bd7e171043805de3c54c0898d76",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/ur/tools/backtest/breaker-reversal/": {
-      "fingerprint": "5839abad98108651a8afee0056339c31a6cc940fb11c72c4118854b5a5fdbbc9",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "a58facca19666d7b2f1f71f0dc96a0edaf2f23b608e862882278594747328208",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/ur/tools/backtest/charter-model-1/": {
-      "fingerprint": "95c901705486e4e51ebd7d3cba9a2232552673c4eebc2aece86d4a2879bd2204",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "33f26c17c1ce40a230ee1ff30be7f4cee1c9f5e0be166ad8f9b0f44ecf85f879",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/ur/tools/backtest/charter-model-8/": {
-      "fingerprint": "42660ea105570abb30fb8ce299db27c2d5aa55df4218eae2af8521eb3e932990",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "2a61cb3d3b553f0c5995d2b836e450e88d0e58f59cf5c82346ed398d24d96317",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/ur/tools/backtest/charter-model-9/": {
-      "fingerprint": "98112a22e26535af87fd40282cb3a849b611f7f7f7ad0767f271cf195db90d41",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "e8d42f078796488df9d41c7fc1c93fb88023a968c131c1abe0adf9c3ed31a4ab",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/ur/tools/backtest/silver-bullet/": {
-      "fingerprint": "e7f791f5da47e7478d6107fe53b897ca6ab8342405140efe1088e5b9480d6456",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "1450c32b5b37a8f0cf2e7dbfbcd426a1844b15766d7a2a3009ff7b9be81dd02b",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/ur/tools/chartlab/": {
       "fingerprint": "c7fc93f8069e0a57c9dd0ea3f001e1a3e57dbe201e170e98cfb1e6878e61fa23",
@@ -3262,9 +3262,9 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/tools/delivery-suite/": {
-      "fingerprint": "2c3df01c8da726b9c2ae55c1867f241225f40b8cfd3f0db951626d1707acda02",
-      "lastmod": "2026-11-04",
-      "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
+      "fingerprint": "a50784f30d729074c435346d592c3dd5409fe10156fd9e5e4453bf1b847a0c02",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/ur/tools/delivery-suite/judas-planner/": {
       "fingerprint": "d49cc83364f882171ad075b6f98366eac6a2a57f193ba93e7477074c62069f81",
@@ -3767,34 +3767,34 @@
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/tools/simulator/failed-ob-breaker/": {
-      "fingerprint": "bbd83cd5e5607bbe483a0c39bf7ecc5988fb0ddb3f387ef28a95628b72a11ed3",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "112561e6f9dcf4e91e2a2eb518a830640f6ee92c184db4c1ec8f7b4ba0decec4",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/ur/tools/simulator/ict-2022-model/": {
-      "fingerprint": "3c7387ed506a9f57496822df7db908f3362685e8d0a5bd44b5ead4844e7a0167",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "44ddc0820037895036998688e051881c7f7a4f6a99a30c410b4703bb63329d79",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/ur/tools/simulator/london-judas-swing/": {
-      "fingerprint": "add7fce8f3ba84eb7da6533b3533bfbc7493888a40cfa4109bb0704b98546c7c",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "151579a39e7444856328fd2587a78e860e79dddbfcde6e7e150c660f0417610d",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/ur/tools/simulator/news-driver-reversal/": {
-      "fingerprint": "21e8074a3792a66b8a6be686c85a8a1814bb488577c4069958f99281fac0f237",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "300c1afb99a3a7bbce68d397e5f2c7ae51225e98f8ebc685643bf17bf65aefaf",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/ur/tools/simulator/ote-expansion-long/": {
-      "fingerprint": "f9cec32fe495520b065c5cebc5189dfec127aca4edd097556074959299d4a0fe",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "060ff30d3c1d84da8581251b6695cf7214a2c9756c0dc48bb6754724909daf83",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/ur/tools/simulator/silver-bullet-short/": {
-      "fingerprint": "149ec3ad34890aee077f200a77a420946d079544a8cb50ebb6794b4aa4d28cdb",
-      "lastmod": "2026-10-24",
-      "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
+      "fingerprint": "781db9af9b1f0dd0cb2618ff5f0e8327172c04d87941aab64103f857a75f70ea",
+      "lastmod": "2026-11-05",
+      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     }
   }
 }

@@ -1,3 +1,4 @@
+import {legacyPracticeUrdu,legacyPracticeTopicsUrdu} from '../data/legacyPracticeMetadata';
 import practiceLoopUrdu from './practice-loop-urdu.json';
 import {practiceContentTranslations} from '../data/practiceLoopContent';
 import masterclassWeeklyReviewUrdu from './masterclass-weekly-review-urdu.json';
@@ -257,4 +258,6 @@ export const urdu: Record<string, string> = {
 };
 // Exact pairs keep static snippets and client-side metadata in the same language.
 for (const { en, ur } of Object.values(searchDescriptions)) urdu[en] = ur;
+Object.assign(urdu,legacyPracticeUrdu);
+for(const [key,value]of Object.entries(legacyPracticeTopicsUrdu))if(!urdu[key])urdu[key]=value;
 for (const source of Object.keys(urdu)) urdu[source] = refineTradingLanguage(source, urdu[source]);

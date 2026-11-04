@@ -82,7 +82,7 @@ for (const route of routes) {
   // Project snippet budgets, not indexing requirements imposed by Google.
   const isUrdu = route.path.startsWith('/ur/');
   // Urdu uses different word lengths and shaping; these remain editorial budgets, not Google rules.
-  check(route.title.length <= (isUrdu ? 90 : route.path==='/tools/delivery-suite/'?62:60), `Title exceeds editorial budget: ${route.path}`);
+  check(route.title.length <= (isUrdu ? 90 : 60), `Title exceeds editorial budget: ${route.path}`);
   check(route.description.length >= 40 && route.description.length <= (isUrdu ? 220 : ['/tools/backtest/','/tools/delivery-suite/','/tools/simulator/'].includes(route.path)?160:155), `Description length: ${route.path}`);
   const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] || '';
   const levels = [...main.matchAll(/<h([1-6])\b/g)].map(m => Number(m[1]));

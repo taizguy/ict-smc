@@ -1,6 +1,6 @@
 ﻿English,Urdu
-"ICT Delivery Suite: Risk Plan, Killzone Times & OTE | LearnSMC","ICT ڈیلیوری سوئٹ: رسک منصوبہ، کل زون اوقات اور OTE | LearnSMC"
-"ICT Delivery Suite: Risk Plan, Killzone Times & OTE","ICT ڈیلیوری سوئٹ: رسک منصوبہ، کل زون اوقات اور OTE"
+"ICT Delivery Suite: Risk Plan, Killzones & OTE | LearnSMC","ICT ڈیلیوری سوئٹ: رسک منصوبہ، کل زون اور OTE | LearnSMC"
+"ICT Delivery Suite: Risk Plan, Killzones & OTE","ICT ڈیلیوری سوئٹ: رسک منصوبہ، کل زون اور OTE"
 "Build an illustrative ICT risk plan: calculate stop distance and units, compare OTE anchors, and convert New York study windows to UTC and Pakistan time.","فرضی ICT رسک منصوبہ بنائیں: اسٹاپ کا فاصلہ اور یونٹس نکالیں، OTE کے اینکرز ملائیں اور نیویارک کی مشقی ونڈوز کو UTC اور پاکستان کے وقت میں بدلیں۔"
 "Turn a fictional setup into a risk plan: stop distance, units and session time.","فرضی سیٹ اپ سے رسک منصوبہ بنائیں: اسٹاپ کا فاصلہ، یونٹس اور سیشن کا وقت۔"
 "Use the six authored practice cases to check sizing before a paper decision. Keep price geometry separate from risk and timing: a retracement level or an active study window is not permission to trade.","پیپر فیصلے سے پہلے سائز جانچنے کے لیے چھ بنائے گئے مشقی کیسز استعمال کریں۔ قیمت کی ساخت، رسک اور وقت الگ رکھیں: ریٹریسمنٹ کی سطح یا فعال مشقی ونڈو ٹریڈ کی اجازت نہیں۔"
@@ -188,6 +188,7 @@
 "Positive realised R divided by absolute negative realised R. No losses makes the ratio undefined, not proof of unlimited profitability.","مثبت حاصل شدہ R کو منفی حاصل شدہ R کی مطلق مقدار سے تقسیم کریں۔ نقصان نہ ہو تو نسبت غیر متعین ہے، لامحدود منافع کا ثبوت نہیں۔"
 "Drawdown","ڈرا ڈاؤن"
 "Decline from a previous equity peak in the ordered record. It depends on ordering, sizing and costs; a short sample can miss larger future declines.","ترتیب وار ریکارڈ میں سابقہ ایکویٹی چوٹی سے کمی۔ یہ ترتیب، سائز اور اخراجات پر منحصر ہے؛ چھوٹا نمونہ مستقبل کی بڑی کمی نہ دکھا سکے۔"
+"Focus a price-level button. Use Up/Down arrows for one tick; hold Shift for ten ticks.","قیمت کی سطح کے بٹن پر فوکس کریں۔ اوپر یا نیچے تیر سے ایک ٹک، اور Shift کے ساتھ دس ٹک بدلیں۔"
 "Four steps. One practice loop.","چار مرحلے۔ مشق کا ایک سلسلہ۔"
 "See it. Plan it. Decide it. Test it.","دیکھیں۔ منصوبہ بنائیں۔ فیصلہ کریں۔ جانچیں۔"
 "Plan the risk","رسک کا منصوبہ بنائیں"

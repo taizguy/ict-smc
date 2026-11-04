@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useId } from "react";
 import {
   createChart,
   CandlestickSeries,
@@ -82,7 +82,9 @@ function options(container:HTMLElement=document.documentElement) {
   };
 }
 export default function MarketChart(props: Props) {
-  const { t } = useTranslation();
+  const { t,locale } = useTranslation();
+  const instructionsId=useId();
+  const [priceAnnouncement,setPriceAnnouncement]=useState('');
   const root = useRef<HTMLDivElement>(null),
     api = useRef<IChartApi | null>(null),
     series = useRef<ISeriesApi<"Candlestick"> | null>(null),
@@ -408,7 +410,8 @@ export default function MarketChart(props: Props) {
                 className="market-price-handle"
                 disabled={!props.adjustable || level.locked}
                 key={level.label}
-                aria-label={t("Drag price level") + " " + t(level.label)}
+                aria-label={t(level.label)}
+                aria-describedby={instructionsId}
                 style={{
                   top: y - 18,
                   left: `calc(${index} * (100% - 95px) / 3)`,
@@ -441,20 +444,20 @@ export default function MarketChart(props: Props) {
                 onKeyDown={(e) => {
                   if (["ArrowUp", "ArrowDown"].includes(e.key)) {
                     e.preventDefault();
-                    props.onLevel(
-                      level.label,
-                      level.price +
-                        (e.key === "ArrowUp" ? 1 : -1) *
-                          Math.max(Math.abs(level.price) * 0.0001, 0.00001),
-                    );
+                    const step=props.priceStep||0.01;
+                    const current=latest.current.levels.find(v=>v.label===level.label)?.price??level.price;
+                    const value=Math.max(step,Math.round((current+(e.key==='ArrowUp'?1:-1)*step*(e.shiftKey?10:1))/step)*step);
+                    props.onLevel(level.label,value);
+                    setPriceAnnouncement(t(level.label)+': '+Number(value.toFixed(8)));
                   }
                 }}
               >
-                {t(level.label)} <span>↕</span>
+                {t(level.label)} <span aria-hidden="true">↕</span>
               </button>
             ))}
         </div>
       </div>
+      {props.adjustable&&props.showHandles!==false&&<><p id={instructionsId} className="market-credit">{locale==='ur'?'قیمت کی سطح کے بٹن پر فوکس کریں۔ اوپر یا نیچے تیر سے ایک ٹک، اور Shift کے ساتھ دس ٹک بدلیں۔':'Focus a price-level button. Use Up/Down arrows for one tick; hold Shift for ten ticks.'}</p><p className="sr-only" aria-live="polite" aria-atomic="true">{priceAnnouncement}</p></>}
       {error && (
         <p role="alert">
           {t("Chart unavailable. Exact values remain available below.")}

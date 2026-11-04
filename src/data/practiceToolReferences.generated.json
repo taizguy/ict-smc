@@ -1,0 +1,120 @@
+{
+  "simulator": [
+    {
+      "slug": "ict-2022-model",
+      "label": [
+        "ICT 2022 Model",
+        "ICT 2022 ماڈل"
+      ]
+    },
+    {
+      "slug": "silver-bullet-short",
+      "label": [
+        "Silver Bullet Short",
+        "سلور بُلٹ شارٹ"
+      ]
+    },
+    {
+      "slug": "london-judas-swing",
+      "label": [
+        "London Judas Swing",
+        "لندن جوڈاس سوئنگ"
+      ]
+    },
+    {
+      "slug": "failed-ob-breaker",
+      "label": [
+        "Failed Order Block & Breaker",
+        "ناکام آرڈر بلاک اور بریکر"
+      ]
+    },
+    {
+      "slug": "ote-expansion-long",
+      "label": [
+        "Optimal Trade Entry (OTE)",
+        "آپٹمل ٹریڈ انٹری (OTE)"
+      ]
+    },
+    {
+      "slug": "news-driver-reversal",
+      "label": [
+        "Macro News Reversal",
+        "میکرو نیوز ریورسل"
+      ]
+    }
+  ],
+  "backtest": [
+    {
+      "slug": "2022-mentorship-model",
+      "label": [
+        "2022 Mentorship Model",
+        "2022 مینٹرشپ ماڈل"
+      ]
+    },
+    {
+      "slug": "charter-model-1",
+      "label": [
+        "Charter Model 1",
+        "چارٹر ماڈل 1"
+      ]
+    },
+    {
+      "slug": "charter-model-8",
+      "label": [
+        "Charter Model 8",
+        "چارٹر ماڈل 8"
+      ]
+    },
+    {
+      "slug": "charter-model-9",
+      "label": [
+        "Charter Model 9",
+        "چارٹر ماڈل 9"
+      ]
+    },
+    {
+      "slug": "silver-bullet",
+      "label": [
+        "Silver Bullet",
+        "سلور بُلٹ"
+      ]
+    },
+    {
+      "slug": "breaker-reversal",
+      "label": [
+        "Breaker Block",
+        "بریکر بلاک"
+      ]
+    }
+  ],
+  "delivery": [
+    {
+      "slug": "macro-clock",
+      "label": [
+        "Macro clock",
+        "میکرو گھڑی"
+      ]
+    },
+    {
+      "slug": "ote-calculator",
+      "label": [
+        "OTE calculator",
+        "OTE کیلکولیٹر"
+      ]
+    },
+    {
+      "slug": "judas-planner",
+      "label": [
+        "Judas planner",
+        "جوڈاس پلانر"
+      ]
+    },
+    {
+      "slug": "learning-path",
+      "label": [
+        "Study checklist",
+        "مطالعے کی چیک لسٹ"
+      ]
+    }
+  ]
+}

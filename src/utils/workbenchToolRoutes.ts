@@ -1,3 +1,4 @@
+import {legacyPracticeMetadata} from '../data/legacyPracticeMetadata';
 import {studyForSlug} from '../data/chartLabRemainingContent';
 import { masterclassCollection, MasterclassItem } from '../data/masterclassData';
 import { chartScenarios } from '../data/chartScenarios';
@@ -141,9 +142,9 @@ export const SIMULATOR_MODELS: SimulatorModelMeta[] = [
   {
     id: 'ict-2022-model',
     slug: 'ict-2022-model',
-    name: 'ICT 2022 Mentorship Model',
-    subtitle: 'Classic SSL/BSL Sweep + 5m Displacement + FVG Retest',
-    description: 'The flagship retail-to-institutional transition model: price sweeps key session liquidity, creates clear displacement and MSS, and retraces into a 50% CE Fair Value Gap.',
+    name: "ICT 2022 Model",
+    subtitle: "ICT 2022 Model — convention and evidence study",
+    description: "Study a stated 2022-sequence convention: context, sweep, displacement and gap. The shared fictional cases do not establish hidden orders or a market edge.",
     direction: 'LONG',
     htfBias: 'Bullish',
     location: 'Discount',
@@ -156,9 +157,9 @@ export const SIMULATOR_MODELS: SimulatorModelMeta[] = [
   {
     id: 'silver-bullet-short',
     slug: 'silver-bullet-short',
-    name: '10:00 AM NY Silver Bullet Short',
-    subtitle: 'High-Frequency 60-Minute Macro Execution Engine',
-    description: 'Executes strictly inside the 10:00 - 11:00 AM NY equities macro window following a raid of the 09:30 AM opening session highs.',
+    name: "Silver Bullet Short",
+    subtitle: "Silver Bullet Short — convention and evidence study",
+    description: "Study the New York time-window convention alongside confirmation, entry and invalidation. These shared cases are not a dedicated Silver Bullet market sample.",
     direction: 'SHORT',
     htfBias: 'Bearish',
     location: 'Premium',
@@ -171,9 +172,9 @@ export const SIMULATOR_MODELS: SimulatorModelMeta[] = [
   {
     id: 'london-judas-swing',
     slug: 'london-judas-swing',
-    name: 'London Judas Swing Reversal',
-    subtitle: '02:00 - 05:00 AM European Session False Expansion',
-    description: 'Exploits the classic Tuesday/Wednesday European manipulation run below Asian range lows to engineer the Low of the Day (LOD).',
+    name: "London Judas Swing",
+    subtitle: "London Judas Swing — convention and evidence study",
+    description: "Compare an Asian-range reference and a London-session excursion as a teaching convention. A sweep does not establish the low of the day.",
     direction: 'LONG',
     htfBias: 'Bullish',
     location: 'Discount',
@@ -186,9 +187,9 @@ export const SIMULATOR_MODELS: SimulatorModelMeta[] = [
   {
     id: 'failed-ob-breaker',
     slug: 'failed-ob-breaker',
-    name: 'Failed Order Block Breaker Model',
-    subtitle: 'The Unicorn Reversal: Trapped Retail Volume Exploitation',
-    description: 'When an order block fails after sweeping opposite liquidity, it inverts into an institutional breaker block for asymmetric payoff.',
+    name: "Failed Order Block & Breaker",
+    subtitle: "Failed Order Block & Breaker — convention and evidence study",
+    description: "Study a failed order-block reference and a possible role change. A breaker label does not establish an executable fill or a profitable outcome.",
     direction: 'SHORT',
     htfBias: 'Bearish',
     location: 'Premium',
@@ -201,9 +202,9 @@ export const SIMULATOR_MODELS: SimulatorModelMeta[] = [
   {
     id: 'ote-expansion-long',
     slug: 'ote-expansion-long',
-    name: 'Optimal Trade Entry (OTE 70.5%)',
-    subtitle: 'Fibonacci Mathematical Equilibrium Expansion Model',
-    description: 'Deep discount retracement into the 62% - 79% institutional Fibonacci sweet spot nested inside an unmitigated order block.',
+    name: "Optimal Trade Entry (OTE)",
+    subtitle: "Optimal Trade Entry (OTE) — convention and evidence study",
+    description: "Compare fixed retracement anchors and the OTE ratios used in ICT teaching. A mathematical level does not confirm a buyer or a suitable entry.",
     direction: 'LONG',
     htfBias: 'Bullish',
     location: 'Discount',
@@ -216,9 +217,9 @@ export const SIMULATOR_MODELS: SimulatorModelMeta[] = [
   {
     id: 'news-driver-reversal',
     slug: 'news-driver-reversal',
-    name: 'Macro News Catalyst Reversal',
-    subtitle: 'CPI / NFP Release Volatility Raid and Immediate Absorption',
-    description: 'High-impact macroeconomic news spike that raids resting external liquidity and is absorbed by algorithmic institutional limit orders.',
+    name: "Macro News Reversal",
+    subtitle: "Macro News Reversal — convention and evidence study",
+    description: "Use a fictional news-study lens to discuss context and invalidation. The exercise has no news feed, release-time sample or observable institutional inventory.",
     direction: 'SHORT',
     htfBias: 'Bearish',
     location: 'Premium',
@@ -246,9 +247,9 @@ export const BACKTEST_STRATEGIES: BacktestStrategyMeta[] = [
   {
     id: '2022_model',
     slug: '2022-mentorship-model',
-    title: 'ICT 2022 Mentorship Model (Displacement + FVG)',
-    shortName: '2022 Mentorship Model',
-    description: 'Executes strictly when session liquidity is swept, followed by aggressive displacement and MSS creating a clean 50% CE FVG.',
+    title: "2022 Mentorship Model",
+    shortName: "2022 Mentorship Model",
+    description: "Apply the same written context, sweep, confirmation and gap checklist to authored cases. This is a convention study, not a historical strategy test.",
     expectedWinRate: 'User-selected hypothetical assumption',
     avgRR: 'User-selected hypothetical reward',
     profitFactor: 'Calculated from generated trade ledger'
@@ -256,9 +257,9 @@ export const BACKTEST_STRATEGIES: BacktestStrategyMeta[] = [
   {
     id: 'charter_model_1',
     slug: 'charter-model-1',
-    title: 'ICT Charter Model 1 (Intraday Scalping & 20-Day IPDA)',
-    shortName: 'Charter Model 1 (Scalping)',
-    description: 'Focuses on 15m structural order flow aligned with the 20-day institutional lookback high/low draw on liquidity.',
+    title: "Charter Model 1",
+    shortName: "Charter Model 1",
+    description: "Study an intraday checklist associated with Charter Model 1. The shared cases do not supply a separate 20-day lookback dataset.",
     expectedWinRate: 'User-selected hypothetical assumption',
     avgRR: 'User-selected hypothetical reward',
     profitFactor: 'Calculated from generated trade ledger'
@@ -266,9 +267,9 @@ export const BACKTEST_STRATEGIES: BacktestStrategyMeta[] = [
   {
     id: 'charter_model_8',
     slug: 'charter-model-8',
-    title: 'ICT Charter Model 8 (25 Pips / Week Framework)',
-    shortName: 'Charter Model 8 (25 Pips)',
-    description: 'model-based single weekly setup design for busy professionals seeking exactly 25-30 pips compounding per week.',
+    title: "Charter Model 8",
+    shortName: "Charter Model 8",
+    description: "Study the weekly objective named in Charter Model 8 without treating a pip quota or compounding illustration as an attainable return.",
     expectedWinRate: 'User-selected hypothetical assumption',
     avgRR: 'User-selected hypothetical reward',
     profitFactor: 'Calculated from generated trade ledger'
@@ -276,9 +277,9 @@ export const BACKTEST_STRATEGIES: BacktestStrategyMeta[] = [
   {
     id: 'charter_model_9',
     slug: 'charter-model-9',
-    title: 'ICT Charter Model 9 (One Shot One Kill - OSOK)',
-    shortName: 'Charter Model 9 (OSOK Swing)',
-    description: 'Captures the massive weekly range expansion from low of the week to high of the week using Daily & 4-Hour institutional order blocks.',
+    title: "Charter Model 9",
+    shortName: "Charter Model 9",
+    description: "Study the longer-horizon convention named OSOK in Charter Model 9. The shared intraday cases are not a multi-day swing performance sample.",
     expectedWinRate: 'User-selected hypothetical assumption',
     avgRR: 'User-selected hypothetical reward',
     profitFactor: 'Calculated from generated trade ledger'
@@ -286,9 +287,9 @@ export const BACKTEST_STRATEGIES: BacktestStrategyMeta[] = [
   {
     id: 'silver_bullet',
     slug: 'silver-bullet',
-    title: 'ICT Silver Bullet (10:00 - 11:00 AM NY Macro Engine)',
-    shortName: 'Silver Bullet Engine',
-    description: 'Executes strictly inside the 60-minute algorithmic window (10:00 - 11:00 AM NY) targeting 15-20 index handles with surgical precision.',
+    title: "Silver Bullet",
+    shortName: "Silver Bullet",
+    description: "Compare timing and qualification assumptions associated with Silver Bullet teaching. Six authored cases cannot estimate the performance of the time window.",
     expectedWinRate: 'User-selected hypothetical assumption',
     avgRR: 'User-selected hypothetical reward',
     profitFactor: 'Calculated from generated trade ledger'
@@ -296,9 +297,9 @@ export const BACKTEST_STRATEGIES: BacktestStrategyMeta[] = [
   {
     id: 'breaker_reversal',
     slug: 'breaker-reversal',
-    title: 'Institutional Breaker Block Reversal Protocol',
-    shortName: 'Breaker Reversal Model',
-    description: 'Capitalizes on trapped liquidity by trading the retest of failed order blocks that generated a stop run before structural breach.',
+    title: "Breaker Block",
+    shortName: "Breaker Block",
+    description: "Apply an explicit checklist to a failed-block hypothesis. Record qualification, fills and invalidation separately; a role-change label does not predict the result.",
     expectedWinRate: 'User-selected hypothetical assumption',
     avgRR: 'User-selected hypothetical reward',
     profitFactor: 'Calculated from generated trade ledger'
@@ -662,7 +663,7 @@ export function resolveWorkbenchRoute(pathname: string): ResolvedWorkbenchRoute 
         tool: 'simulator',
         canonicalUrl: '/tools/simulator/',
         cleanPath: `/${segments.join('/')}/`,
-        metaTitle: 'Trade Simulator & Algorithmic Market Replay | LearnSMC',
+        metaTitle: 'Trade Simulator: Candle-by-Candle Practice | LearnSMC',
         metaDescription: 'Test your ICT execution protocols: simulate 2022 model, Silver Bullet, and Breaker trades with mathematical confluence grading.',
         badge: 'Execution Room',
         isCanonical: true
@@ -677,7 +678,7 @@ export function resolveWorkbenchRoute(pathname: string): ResolvedWorkbenchRoute 
         tool: 'simulator',
         canonicalUrl: `/tools/simulator/${matchedModel.slug}/`,
         cleanPath: `/${segments.join('/')}/`,
-        metaTitle: `${matchedModel.name} Execution Simulator | LearnSMC`,
+        metaTitle: legacyPracticeMetadata[`/tools/simulator/${matchedModel.slug}/`].title[0],
         metaDescription: `${matchedModel.subtitle}. ${matchedModel.description}`,
         badge: `${matchedModel.direction} • ${matchedModel.location}`,
         isCanonical: segments[2] === matchedModel.slug,
@@ -703,7 +704,7 @@ export function resolveWorkbenchRoute(pathname: string): ResolvedWorkbenchRoute 
         tool: 'backtest',
         canonicalUrl: '/tools/backtest/',
         cleanPath: `/${segments.join('/')}/`,
-        metaTitle: 'Backtest Lab & Strategy Expectancy Matrix | LearnSMC',
+        metaTitle: 'Backtest Lab: Test One ICT Checklist Across Cases | LearnSMC',
         metaDescription: 'Statistical expectancy, win-rates, profit factor, and drawdown curves for ICT 2022 Model, Silver Bullet, and Charter setups.',
         badge: 'Research Lab',
         isCanonical: true
@@ -718,7 +719,7 @@ export function resolveWorkbenchRoute(pathname: string): ResolvedWorkbenchRoute 
         tool: 'backtest',
         canonicalUrl: `/tools/backtest/${matchedStrat.slug}/`,
         cleanPath: `/${segments.join('/')}/`,
-        metaTitle: `${matchedStrat.shortName} Backtest Strategy & Expectancy | LearnSMC`,
+        metaTitle: legacyPracticeMetadata[`/tools/backtest/${matchedStrat.slug}/`].title[0],
         metaDescription: `${matchedStrat.description} Explore user-selected hypothetical assumptions; no historical performance is claimed.`,
         badge: `${matchedStrat.avgRR} • Expectancy`,
         isCanonical: segments[2] === matchedStrat.slug,

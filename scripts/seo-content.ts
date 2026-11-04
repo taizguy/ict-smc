@@ -1,3 +1,5 @@
+import {masterclassCollectionPage} from '../src/data/masterclassCategoryPages';
+import {masterclassCollectionSchema} from '../src/utils/masterclassCollectionSchema';
 import {primaryGlossaryRoute,glossaryMetadata,glossarySchema} from '../src/utils/glossaryReference';
 import {CHARTLAB_HUB_PATH} from '../src/data/chartLabHub';
 import {studyForPath} from '../src/data/chartLabRemainingContent';
@@ -194,19 +196,9 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
     r.schemaJson=journalSchema(journal,path);
     return;
   }
-  if(path===masterclassHubPath){
-    r.title=searchTitle(masterclassHubTitle,path);r.description=masterclassHubDescription;r.heading=masterclassHubH1;r.subheading='Less memorising. More understanding.';
-    r.bodyHtml=renderToStaticMarkup(createElement(MasterclassHub));
-    const listId=r.canonical+'#lessons';
-    r.schemaJson={'@context':'https://schema.org','@graph':[
-      publisher,lessonAuthor,{'@type':'WebSite','@id':'https://learnsmc.xyz/#website',name:'LearnSMC',url:'https://learnsmc.xyz/'},
-      {'@type':'CollectionPage','@id':r.canonical,name:masterclassHubH1,description:masterclassHubDescription,url:r.canonical,inLanguage:'en',isAccessibleForFree:true,publisher,mainEntity:{'@id':listId}},
-      {'@type':'BreadcrumbList',itemListElement:[['Home','/'],['Workbench & Lab','/tools/'],['Masterclass collection',masterclassHubPath]].map(([name,p],i)=>({'@type':'ListItem',position:i+1,name,item:'https://learnsmc.xyz'+p}))},
-      {'@type':'ItemList','@id':listId,name:'Masterclass lesson collection',numberOfItems:masterclassHubLessons.length,itemListElement:masterclassHubLessons.map((lesson,i)=>({'@type':'ListItem',position:i+1,name:lesson.title,url:'https://learnsmc.xyz'+getMasterclassUrl(lesson)}))},
-      {'@type':'FAQPage','@id':r.canonical+'#faq',mainEntity:masterclassHubFaqs.map(f=>({'@type':'Question',name:f.question,acceptedAnswer:{'@type':'Answer',text:f.answer}}))},
-    ]};
-    return;
-  }
+  const collection=masterclassCollectionPage(path);
+  if(collection){r.title=searchTitle(collection.title,path);r.description=collection.description;r.heading=collection.h1;r.subheading=collection.tagline;r.bodyHtml=renderToStaticMarkup(createElement(MasterclassHub,{path}));r.schemaJson=masterclassCollectionSchema(path);return;}
+
   correctToolDocument(r, path);
   // This route owns a complete, visible-content-matched graph. Do not wrap its
   // @graph inside a generic node or replace its actual review date.

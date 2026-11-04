@@ -1,3 +1,5 @@
+import {masterclassCollectionPage} from '../src/data/masterclassCategoryPages';
+import {masterclassCollectionSchema} from '../src/utils/masterclassCollectionSchema';
 import {primaryGlossaryRoute,glossaryMetadata,glossarySchema} from '../src/utils/glossaryReference';
 import {chartLabHubSchema,CHARTLAB_HUB_PATH} from '../src/data/chartLabHub';
 import {studyForPath} from '../src/data/chartLabRemainingContent';
@@ -51,6 +53,7 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
     const dedicated=studyForPath(englishPath);
     if(dedicated)html=html.replace(/<script\b[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/i,`<script type="application/ld+json">${JSON.stringify(remainingSchema(dedicated,'ur')).replace(/</g,'\\u003c')}</script>`);
     if(primaryGlossaryRoute(englishPath)){const meta=glossaryMetadata(englishPath,'ur');const tr=(value:string)=>t(value,'ur',urdu);html=html.replace(/<title>[\s\S]*?<\/title>/,'<title>'+tr(meta.title)+'</title>').replace(/(<meta (?:name|property)="(?:description|og:description|twitter:description)" content=")[^"]*(")/g,(_all,a,b)=>a+tr(meta.description).replaceAll('&','&amp;').replaceAll('"','&quot;')+b).replace(/(<meta (?:name|property)="(?:og:title|twitter:title)" content=")[^"]*(")/g,(_all,a,b)=>a+tr(meta.title).replaceAll('&','&amp;').replaceAll('"','&quot;')+b).replace(/<script\b[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/i,'<script type="application/ld+json">'+JSON.stringify(glossarySchema(englishPath,'ur',tr)).replace(/</g,'\\u003c')+'</script>');}
+    if(masterclassCollectionPage(englishPath)){const tr=(v:string)=>t(v,'ur',urdu);html=html.replace(/<script\b[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/i,'<script type="application/ld+json">'+JSON.stringify(masterclassCollectionSchema(englishPath,'ur',tr)).replace(/</g,'\\u003c')+'</script>');}
     const outputPath = path.posix.join('ur', route.outputPath);
     if(englishPath===SILVER_PATH) html=html.replace(/<script\b[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/i,`<script type="application/ld+json">${JSON.stringify(silverSchema('ur')).replace(/</g,'\\u003c')}</script>`);
     fs.mkdirSync(path.dirname(path.join(dist, outputPath)), { recursive: true });

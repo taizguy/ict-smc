@@ -1,18 +1,19 @@
 import {useEffect,useRef,useState} from 'react';
 import {ChevronLeft,ChevronRight,Pause,Play} from 'lucide-react';
-import {masterclassHubLessons as lessons,masterclassHubCategories as categories} from '../data/masterclassHub';
+import {masterclassHubLessons as allLessons,masterclassHubCategories as categories} from '../data/masterclassHub';
 import {masterclassStageArt} from '../data/masterclassStageArt';
 import {useTranslation} from '../i18n/TranslationProvider';
 
 /** Decorative motion preview; the complete crawlable library remains below it. */
-export function MasterclassStage(){
+export function MasterclassStage({items=allLessons,initialNumber=7}:{items?:typeof allLessons;initialNumber?:number}){
+ const lessons=items;
  const {t,message,locale}=useTranslation();
- const [index,setIndex]=useState(Math.max(0,lessons.findIndex(l=>l.number===7)));
+ const [index,setIndex]=useState(Math.max(0,lessons.findIndex(l=>l.number===initialNumber)));
  const [paused,setPaused]=useState(false),[reduced,setReduced]=useState(false),[visible,setVisible]=useState(true);
  const stage=useRef<HTMLDivElement>(null);
  useEffect(()=>{const preference=window.matchMedia('(prefers-reduced-motion: reduce)');const update=()=>setReduced(preference.matches);update();preference.addEventListener('change',update);const observer=new IntersectionObserver(entries=>setVisible(entries[0].isIntersecting));if(stage.current)observer.observe(stage.current);return()=>{preference.removeEventListener('change',update);observer.disconnect();};},[]);
  const move=(direction:number)=>setIndex(i=>(i+direction+lessons.length)%lessons.length);
- const current=lessons[index];const back=[lessons[(index+2)%lessons.length],lessons[(index+1)%lessons.length]];
+ const current=lessons[index];const back=Array.from({length:Math.min(2,lessons.length-1)},(_,i)=>lessons[(index+i+1)%lessons.length]);
  return <div ref={stage} className="mc-motion-stage" data-paused={paused||reduced||!visible} role="group" aria-label={t('Lesson animation stage')} tabIndex={0} onKeyDown={event=>{if(event.target!==event.currentTarget||!['ArrowLeft','ArrowRight'].includes(event.key))return;event.preventDefault();move((event.key==='ArrowRight'?1:-1)*(locale==='ur'?-1:1));}}>
   <div className="mc-stage-floor" aria-hidden="true"/>
   <div className="mc-stage-stack">
@@ -23,6 +24,6 @@ export function MasterclassStage(){
     <figcaption><p className="mc-stage-title">{t(current.title)}</p><div className="mc-stage-caption"><span>{t('Illustrative concept animation')}</span><button type="button" onClick={()=>setPaused(p=>!p)} disabled={reduced} aria-label={t(reduced?'Reduced motion enabled':paused?'Play scene animation':'Pause scene animation')} aria-pressed={paused||reduced}>{paused||reduced?<Play size={17} aria-hidden="true"/>:<Pause size={17} aria-hidden="true"/>}</button></div></figcaption>
    </figure>
   </div>
-  <div className="mc-stage-controls"><button type="button" onClick={()=>move(-1)} aria-label={t('Previous lesson')}><ChevronLeft size={19} aria-hidden="true"/></button><span><bdi>{String(index+1).padStart(2,'0')}</bdi><i aria-hidden="true">/</i><bdi>{lessons.length}</bdi></span><button type="button" onClick={()=>move(1)} aria-label={t('Next lesson')}><ChevronRight size={19} aria-hidden="true"/></button></div>
+  <div className="mc-stage-controls"><button type="button" onClick={()=>move(-1)} disabled={lessons.length<=1} aria-label={t('Previous lesson')}><ChevronLeft size={19} aria-hidden="true"/></button><span><bdi>{String(index+1).padStart(2,'0')}</bdi><i aria-hidden="true">/</i><bdi>{lessons.length}</bdi></span><button type="button" onClick={()=>move(1)} disabled={lessons.length<=1} aria-label={t('Next lesson')}><ChevronRight size={19} aria-hidden="true"/></button></div>
  </div>;
 }

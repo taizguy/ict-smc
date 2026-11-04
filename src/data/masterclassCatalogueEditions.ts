@@ -31,6 +31,7 @@ export function catalogueEditions(previous:Record<number,JournalLesson>):Record<
   const metadata=reviewedSearchMetadata[String(item.number) as keyof typeof reviewedSearchMetadata];
   if(metadata){edition.title=metadata.title;edition.h1=metadata.h1;edition.description=metadata.description;}
   edition.faq=edition.faq.map(f=>({...f,answer:f.answer.replace('The failed example visits only 170 after opening at 180, then rises to 200 without reaching midpoint 140.','For example, an invented path may open at 180, visit 170 and rise to 200 without reaching midpoint 140.').replace('In the failed example, price crosses 80 and continues to 76.','An invented path can cross 80 and continue to 76.')}));
+  if(item.number===1){edition.modified='2026-11-04';edition.reviewed='2026-11-04';edition.reviewScope="Weekly-profile wording and illustration alignment reviewed. No statistical frequency or performance study is claimed.";}
   return [item.number,edition];
  }));
 }

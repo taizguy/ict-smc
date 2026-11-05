@@ -4,7 +4,7 @@ Branch: feat/practice-loop. Base: b03670f. Local only; no push, merge or deploym
 
 ## Current
 
-Implementation and verification complete. Report/evidence packaging is the final local step. No unfinished source refactor.
+Implementation, verification and report/evidence packaging complete. Implementation commits: bd1bd8b and 36e58be. No unfinished source refactor.
 
 ## Done
 
@@ -37,4 +37,3 @@ Full file list: docs/practice-performance-files.csv. Evidence: outputs/practice-
 ## Search-intent review (2026-11-04)
 
 Queries: ICT Silver Bullet London Judas Swing trading model risk; ICT Charter Model 1 8 9 explanation; ICT breaker block OTE model explanation; ICT news trading 2022 mentorship model. Search snippets consulted: FX Replay Judas Swing (`https://fxreplay.com/strategies/judas-swing-model`), ICT Flow entry models (`https://ictflow.com/lesson/8`), Hadal 2022 glossary (`https://hadalinstruments.com/glossary/ict-2022-model/`), ICT Traders Judas Swing (`https://icttraders.net/the-ict-judas-swing/`). These establish naming/learner intent only, not rule evidence or search volume. Editorial decision: retain the user's explicit decision-practice/rule-study titles and existing honest descriptions. No new trading claims imported from competitors.
-

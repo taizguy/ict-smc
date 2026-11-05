@@ -45,6 +45,8 @@ const CheatSheetPage = lazy(() => import('./components/CheatSheetPage').then(m =
 const CurriculumView = lazy(() => import('./components/CurriculumView').then(m => ({ default: m.CurriculumView })));
 const WelcomeScreen = lazy(() => import('./components/WelcomeScreen').then(m => ({ default: m.WelcomeScreen })));
 const ChapterRoom = lazy(() => import('./components/ChapterRoom').then(m => ({ default: m.ChapterRoom })));
+const ChartLabHubPage = lazy(() => import('./components/market/ChartLabHubPage').then(m => ({ default: m.ChartLabHubPage })));
+const PracticeLoopPage = lazy(() => import('./components/practice/PracticeLoopPage').then(m => ({ default: m.PracticeLoopPage })));
 const TradingToolsWorkbench = lazy(() => import('./components/TradingToolsWorkbench').then(m => ({ default: m.TradingToolsWorkbench })));
 const MasoodAcademyView = lazy(() => import('./components/masood/MasoodAcademyView').then(m => ({ default: m.MasoodAcademyView })));
 const SearchModal = lazy(() => import('./components/SearchModal').then(m => ({ default: m.SearchModal })));
@@ -515,7 +517,7 @@ export const App: React.FC = () => {
           'chartlab', 'simulator', 'backtest', 'journal', 'graph', 'concepts', 'compare', 'dashboard', 'masterclass', 'ict_suite'
         ].includes(activeTab)) && (
           <Suspense fallback={<ViewLoadingFallback />}>
-            <TradingToolsWorkbench
+            {(() => {const path=withoutLocale(typeof window==='undefined'?'':window.location.pathname);const tool=path==='/tools/delivery-suite/'?'delivery':path==='/tools/simulator/'?'simulator':path==='/tools/backtest/'?'backtest':null;return tool?<PracticeLoopPage key={tool} tool={tool}/>:path==='/tools/chartlab/'?<ChartLabHubPage/>:<TradingToolsWorkbench
               initialTool={initialTool}
               onToolChange={handleWorkbenchToolChange}
               onSelectConcept={handleSelectConcept}
@@ -536,7 +538,7 @@ export const App: React.FC = () => {
               profileSubTab={profileSubTab}
               profileExamSlug={profileExamSlug}
               deliveryModuleSlug={deliveryModuleSlug}
-            />
+            />;})()}
           <PageReady /></Suspense>
         )}
 

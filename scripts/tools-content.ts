@@ -1,3 +1,4 @@
+import {legacyPracticeMetadata} from '../src/data/legacyPracticeMetadata';
 import {chartLabHubMeta,chartLabHubSchema,CHARTLAB_HUB_PATH} from '../src/data/chartLabHub';
 import {studyForPath} from '../src/data/chartLabRemainingContent';
 import {remainingSchema} from '../src/data/chartLabRemainingSchema';
@@ -50,6 +51,12 @@ export function correctToolDocument(r:RouteMeta,path:string){
   const context=tool==='chartlab'?(scenario?names[scenario.id]:'Chart Laboratory'):tool==='delivery-suite'?'ICT Delivery Suite':tool==='simulator'?(SIMULATOR_MODELS.find(m=>m.slug===slug)?.name||'Trade Simulator'):(BACKTEST_STRATEGIES.find(m=>m.slug===slug)?.shortName||'Backtest Lab');
   r.title=`${context}: ${tool==='delivery-suite'?'Session Preparation':tool==='backtest'?'Rule Study':tool==='simulator'?'Decision Practice':'Chart Practice'} | LearnSMC`;
   r.heading=`${context}: ${guide.title}`;
+  if(legacyPracticeMetadata[path]){
+   r.title=legacyPracticeMetadata[path].title[0];r.heading=legacyPracticeMetadata[path].h1[0];
+   r.bodyHtml=renderToStaticMarkup(createElement(AuditedRouteBody,{pathname:path,heading:r.heading}));
+   r.schemaJson={'@type':'WebPage',name:context,description:guide.description,url:r.canonical,author:lessonAuthor,publisher,dateModified:'2026-11-04'};
+   return;
+  }
   r.description=`${context}. ${guide.description}`;
   r.bodyHtml=renderToStaticMarkup(createElement(ToolRouteStudy,{family:tool,slug}))+section(guide.title,guide.paragraphs)+(tool==='chartlab'?renderToStaticMarkup(createElement(AuditedRouteBody,{pathname:path,heading:r.heading})):renderToStaticMarkup(createElement(ChapterDiagram,{chapterId:tool==='simulator'?22:38,staticOnly:true})))+`<p><a href="/tools/chartlab/">Chart Laboratory</a> · <a href="/tools/simulator/">Trade Simulator</a> · <a href="/tools/backtest/">Backtest Lab</a> · <a href="/tools/delivery-suite/">ICT Delivery Suite</a> · <a href="/resources/ict-smc-cheat-sheet/">Free glossary and cheat sheet</a></p>`;
   r.schemaJson={'@type':'WebApplication',name:context,description:guide.description,url:r.canonical,applicationCategory:'EducationalApplication',operatingSystem:'Web browser',isAccessibleForFree:true,author:lessonAuthor,publisher,dateModified:'2026-10-23'};

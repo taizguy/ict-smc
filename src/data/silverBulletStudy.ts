@@ -1,4 +1,3 @@
-import rows from './silverBulletCases.json';
 import type {LabBar} from '../utils/backtestEngine';
 import {amFormationWindow,beforeAmExpiry,closeTime,nyTime,nyClock} from '../utils/chartStudyTime';
 export type StudyText=readonly[string,string];
@@ -6,7 +5,7 @@ export const SILVER_PATH='/tools/chartlab/nq-silver-bullet-short/';
 export const silverReview='2026-11-03';
 export const silverMeta={title:['ICT Silver Bullet: NQ 10 AM Chart Practice | LearnSMC','ICT سلور بُلٹ: NQ صبح 10 بجے کی چارٹ مشق | LearnSMC'] as StudyText,h1:['ICT Silver Bullet short: NQ 10–11 AM practice','ICT سلور بُلٹ شارٹ: NQ پر صبح 10 سے 11 بجے کی مشق'] as StudyText,description:['Practise the ICT Silver Bullet short on synthetic NQ charts: check New York timing, sweeps, FVGs, stops and no-entry cases.','فرضی NQ چارٹس پر ICT سلور بُلٹ شارٹ کی مشق کریں: نیویارک کا وقت، سویپ، FVG، اسٹاپ اور انٹری نہ بننے کے کیسز جانچیں۔'] as StudyText};
 export type SilverCase={id:string;base:number;start:string;swing:number;sweep:number;gapStart:number;counts:number[];expected:string;name:string[];purpose:string[];bars:LabBar[];context:LabBar[]};
-export const silverCases:SilverCase[]=rows;
+export const silverCases:SilverCase[]=(import.meta.env?.SSR ?? typeof window==='undefined')?(await import('./silverBulletCases.json')).default as SilverCase[]:[];
 export const nqPrice=(v:number)=>v.toFixed(2);
 export const silverStages:StudyText[]=[['Set the AM clock','صبح کی گھڑی سمجھیں'],['Audit the high raid','ہائی کے سویپ کو جانچیں'],['Confirm the in-hour gap','گھنٹے کے اندر گیپ کی تصدیق کریں'],['Price the short plan','شارٹ منصوبے کی قیمتیں ناپیں'],['Classify the session outcome','سیشن کا نتیجہ پہچانیں']];
 export const silverRules:StudyText[]=[

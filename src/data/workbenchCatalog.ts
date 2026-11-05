@@ -37,7 +37,7 @@ export const workbenchToolCatalog: WorkbenchToolData[] = [
     id: 'chartlab',
     slug: 'chartlab',
     url: '/tools/chartlab/',
-    name: 'Chart Laboratory',
+    name: 'Chart Lab',
     category: 'execution',
     categoryLabel: 'Chart Recognition',
     badge: 'Visual Practice',
@@ -48,13 +48,27 @@ export const workbenchToolCatalog: WorkbenchToolData[] = [
     accentColor: 'var(--wb-ink)'
   },
   {
+    id: 'ict_suite',
+    slug: 'delivery-suite',
+    url: '/tools/delivery-suite/',
+    name: 'ICT Delivery Suite',
+    category: 'performance',
+    categoryLabel: 'Calculators & Clock',
+    badge: 'Macro Suite',
+    number: '10',
+    desc: 'Independent retracement calculator with instrument-aware sizing, range-multiple projections, New York study clock and saved checklist.',
+    features: ['Optimal Trade Entry (OTE) levels', 'Asian Judas swing projection tool', '8 intraday macro execution windows'],
+    icon: 'Compass',
+    accentColor: 'var(--wb-ink)'
+  },
+  {
     id: 'simulator',
     slug: 'simulator',
     url: '/tools/simulator/',
     name: 'Trade Simulator',
     category: 'execution',
     categoryLabel: 'Execution Engine',
-    badge: 'Blind Testing',
+    badge: 'Decision Practice',
     number: '03',
     desc: 'Lock a plan before revealing future candles. Explore stops, targets, gaps and the choice not to trade.',
     features: ['Authored illustrative scenarios', 'Transparent price and R arithmetic', 'No historical fills or outcome prediction'],
@@ -145,18 +159,5 @@ export const workbenchToolCatalog: WorkbenchToolData[] = [
     icon: 'Award',
     accentColor: 'var(--wb-ink)'
   },
-  {
-    id: 'ict_suite',
-    slug: 'delivery-suite',
-    url: '/tools/delivery-suite/',
-    name: 'ICT Delivery Suite',
-    category: 'performance',
-    categoryLabel: 'Calculators & Clock',
-    badge: 'Macro Suite',
-    number: '10',
-    desc: 'Independent retracement calculator with instrument-aware sizing, range-multiple projections, New York study clock and saved checklist.',
-    features: ['Optimal Trade Entry (OTE) levels', 'Asian Judas swing projection tool', '8 intraday macro execution windows'],
-    icon: 'Compass',
-    accentColor: 'var(--wb-ink)'
-  }
+
 ];

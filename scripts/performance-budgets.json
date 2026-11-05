@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "measuredAt": "2026-11-04",
+  "evidence": "outputs/practice-performance/deferred-entry/bundle.json; baseline and deferred-entry Lighthouse reports",
+  "note": "Static entry graph covers reading-first practice routes. Interaction payload is reported separately; totals include lazy features. Limits are reviewed, never rewritten by a normal build.",
+  "limits": {
+    "initialJsRaw": 13000,
+    "initialJsGzip": 5500,
+    "initialJsBrotli": 5200,
+    "allJsRaw": 10621000,
+    "largestJsRaw": 1313000,
+    "initialCssRaw": 650000,
+    "initialCssGzip": 115000
+  }
+}

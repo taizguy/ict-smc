@@ -1,10 +1,9 @@
-import rows from './chartLabRemainingCases.json';
 import type {LabBar} from '../utils/backtestEngine';
 import {nyClock,closeTime} from '../utils/chartStudyTime';
 export type Pair=readonly[string,string];
 export type Family='gold'|'btc'|'mmbm'|'ndog';
 export type StudyCase={id:string;name:string[];tf:number;tick:number;bars:LabBar[];groups:{label:string[];tf:number;bars:LabBar[]}[];refs:Record<string,number>;expected:string;notes:string[]};
-export const remainingCases=rows as StudyCase[];
+export const remainingCases:StudyCase[]=(import.meta.env?.SSR ?? typeof window==='undefined')?(await import('./chartLabRemainingCases.json')).default as StudyCase[]:[];
 export type StudyDefinition={family:Family;prefix:string;slug:string;instrument:string;title:Pair;h1:Pair;description:Pair;intro:Pair;stages:Pair[];rules:Pair[];faqs:{q:Pair;a:Pair}[];links:{path:string;label:Pair}[];sources:{title:string;url:string}[]};
 export const p=(en:string,ur:string):Pair=>[en,ur];
 export const casesFor=(s:StudyDefinition)=>remainingCases.filter(c=>c.id.startsWith(s.prefix));

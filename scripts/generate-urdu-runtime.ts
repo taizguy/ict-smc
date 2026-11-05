@@ -1,3 +1,7 @@
+import {legacyPracticeUrdu} from '../src/data/legacyPracticeMetadata';
+import practiceLoopUrdu from '../src/i18n/practice-loop-urdu.json';
+import retiredPracticeStrings from '../src/i18n/retired-practice-strings.json';
+import {practiceContentTranslations} from '../src/data/practiceLoopContent';
 import masterclassWeeklyReviewUrdu from '../src/i18n/masterclass-weekly-review-urdu.json';
 import {masterclassCategoryTranslations} from '../src/data/masterclassCategoryPages';
 import masterclassJournalUrdu from '../src/i18n/masterclass-journal-urdu.json';
@@ -84,10 +88,10 @@ for (const path of ['/tools/masterclass/pd-arrays/rejection-block/', '/tools/mas
 const sourceKeys = new Set(groups.flatMap(group => [...keys[group]]));
 for (const key of sourceKeys) if (key.length <= 35 || searchKeys.has(key)) keys.shared.add(key);
 // Handwritten overrides also include derived labels assembled at runtime.
-for (const key of Object.keys({ ...editorialUrdu, ...toolsUrdu, ...terminology, ...learningUpdate })) if (!sourceKeys.has(key)) keys.shared.add(key);
+for (const key of Object.keys({ ...editorialUrdu, ...toolsUrdu, ...terminology, ...learningUpdate })) if (!sourceKeys.has(key)&&!retiredPracticeStrings.includes(key)) keys.shared.add(key);
 for (const key of Object.keys(mentorship2026Urdu)) if (!sourceKeys.has(key) && (/^Chapter \d+:|\| LearnSMC$/.test(key) || key.includes('66-'))) keys.shared.add(key);
 for(const key of Object.keys(masterclassJournalUrdu)) add(key,'tools');
-for(const key of Object.keys(masterclassCategoryTranslations)) add(key,'tools');
+for(const key of [...Object.keys(masterclassCategoryTranslations),...Object.keys(practiceContentTranslations),...Object.keys(practiceLoopUrdu),...Object.keys(legacyPracticeUrdu)]) add(key,'tools');
 for(const key of Object.keys(masterclassWeeklyReviewUrdu)) add(key,'tools');
 // Source records are shared with curriculum data; their strings are also needed
 // by the Masterclass view. SVG text lives inside markup, beyond the TS literal scan.

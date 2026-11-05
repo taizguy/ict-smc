@@ -1,3 +1,6 @@
+import {withoutLocale} from '../i18n/locale';
+import {PracticeLoopPage} from './practice/PracticeLoopPage';
+import {WorkbenchHeader} from './WorkbenchHeader';
 import {GlossaryReference} from './GlossaryReference';
 import {primaryGlossaryRoute} from '../utils/glossaryReference';
 import {chartLabHubMeta} from '../data/chartLabHub';
@@ -14,7 +17,7 @@ import { FinancialDisclaimer } from './FinancialDisclaimer';
 import { ContextualInternalLinker } from './ContextualInternalLinker';
 import {breakerMeta} from '../data/breakerStudy';
 import {silverMeta} from '../data/silverBulletStudy';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   BarChart2,
   PlayCircle,
@@ -118,25 +121,6 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
 }) => {
   const { t,locale,href } = useTranslation();
   const [activeTool, setActiveTool] = useState<TradingToolId | 'overview'>(initialTool);
-  const toolSwitcher = useRef<HTMLDetailsElement>(null);
-
-  useEffect(() => {
-    const dismiss = (event: PointerEvent) => {
-      if (toolSwitcher.current?.open && !toolSwitcher.current.contains(event.target as Node)) toolSwitcher.current.open = false;
-    };
-    const escape = (event: KeyboardEvent) => {
-      if (event.key !== 'Escape' || !toolSwitcher.current?.open) return;
-      toolSwitcher.current.open = false;
-      toolSwitcher.current.querySelector('summary')?.focus();
-    };
-    document.addEventListener('pointerdown', dismiss);
-    document.addEventListener('keydown', escape);
-    return () => {
-      document.removeEventListener('pointerdown', dismiss);
-      document.removeEventListener('keydown', escape);
-    };
-  }, []);
-
   useEffect(() => {
     if (initialTool !== undefined && initialTool !== activeTool) {
       setActiveTool(initialTool);
@@ -231,6 +215,8 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
     }
   ];
 
+  const toolOrder=['masterclass','chartlab','ict_suite','simulator','backtest','journal','graph','concepts','compare','dashboard'];
+  tools.sort((a,b)=>toolOrder.indexOf(a.id)-toolOrder.indexOf(b.id));
   // If in Overview mode, render the full Hub Overview
   if (activeTool === 'overview') {
     return (
@@ -253,23 +239,17 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
   const glossaryPath=documentPath || (typeof window!=='undefined'?window.location.pathname:'/tools/glossary/');
   if(activeTool==='concepts'&&primaryGlossaryRoute(glossaryPath))return <GlossaryReference pathname={glossaryPath}/>;
 
+  if(activeTool==='simulator'&&simulatorModelSlug)return <TradeSimulator key={simulatorModelSlug} initialModelSlug={simulatorModelSlug}/>;
+  if(activeTool==='simulator'&&!simulatorModelSlug)return <PracticeLoopPage tool="simulator"/>;
+  if(activeTool==='backtest'&&!backtestStrategySlug)return <PracticeLoopPage tool="backtest"/>;
+  if(activeTool==='ict_suite'&&withoutLocale(collectionPath)==='/tools/delivery-suite/')return <PracticeLoopPage tool="delivery"/>;
+  if(activeTool==='ict_suite'&&deliveryModuleSlug)return <InstitutionalToolsSuite initialModuleSlug={deliveryModuleSlug} heading={documentHeading || (typeof document!=='undefined'?document.querySelector('meta[name="learnsmc-heading"]')?.getAttribute('content')||undefined:undefined)}/>;
   const currentToolMeta = tools.find(t => t.id === activeTool) || tools[0];
 
   return (
     <div data-workbench-tool={activeTool} className="wb-suite workbench-pages academy-surface space-y-8 sm:space-y-12 pb-20 text-ink">
 
-      <header className="workbench-header rounded-2xl border border-ink/10 bg-surface p-4 sm:p-5 space-y-3">
-        <div className="flex items-center justify-between gap-4 text-sm">
-          <a href={activeTool==='chartlab'?href('/tools/'):'/tools/'} className="underline text-teal">{activeTool==='chartlab'?t('All tools'):'All tools'}</a>
-          <details ref={toolSwitcher} className="workbench-switcher relative">
-            <summary className="cursor-pointer rounded-lg border border-ink/20 px-3 py-2">{t("Switch tool")}<ChevronDown size={16} strokeWidth={1.5} aria-hidden="true" /></summary>
-            <nav aria-label={t("Switch tool")} className="absolute end-0 top-full mt-2 z-30 flex flex-col gap-2 w-64 max-w-[80vw] max-h-[65vh] overflow-y-auto rounded-xl border border-ink/20 bg-surface p-3 shadow-2xl">
-              {tools.map(tool => <a key={tool.id} href={`/tools/${tool.slug}/`} aria-current={activeTool === tool.id ? 'page' : undefined} className="rounded-lg border border-ink/15 px-3 py-2 text-sm hover:bg-ink/10">{tool.name}</a>)}
-            </nav>
-          </details>
-        </div>
-        <h1 className="text-xl sm:text-2xl font-semibold tracking-tight">{activeTool==='chartlab'&&!chartScenarioSlug?chartLabHubMeta.h1[locale==='ur'?1:0]:activeTool==='chartlab'&&studyForSlug(chartScenarioSlug) ? studyForSlug(chartScenarioSlug)!.h1[locale==='ur'?1:0] : activeTool==='chartlab'&&chartScenarioSlug==='nq-silver-bullet-short' ? silverMeta.h1[locale==='ur'?1:0] : activeTool==='chartlab'&&chartScenarioSlug==='eurusd-failed-ob-breaker' ? breakerMeta.h1[locale==='ur'?1:0] : documentHeading || (typeof document === 'undefined' ? undefined : document.querySelector('meta[name="learnsmc-heading"]')?.getAttribute('content')) || t(currentToolMeta.name)}</h1>
-      </header>
+      <WorkbenchHeader activeTool={activeTool} heading={activeTool==='chartlab'&&!chartScenarioSlug?chartLabHubMeta.h1[locale==='ur'?1:0]:activeTool==='chartlab'&&studyForSlug(chartScenarioSlug) ? studyForSlug(chartScenarioSlug)!.h1[locale==='ur'?1:0] : activeTool==='chartlab'&&chartScenarioSlug==='nq-silver-bullet-short' ? silverMeta.h1[locale==='ur'?1:0] : activeTool==='chartlab'&&chartScenarioSlug==='eurusd-failed-ob-breaker' ? breakerMeta.h1[locale==='ur'?1:0] : documentHeading || (typeof document === 'undefined' ? undefined : document.querySelector('meta[name="learnsmc-heading"]')?.getAttribute('content')) || t(currentToolMeta.name)}/>
 
       {/* Render Active Tool Content */}
       <div className="workbench-content">

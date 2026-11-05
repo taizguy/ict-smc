@@ -1,0 +1,578 @@
+[
+  {
+    "id": "gold",
+    "slug": "xauusd-gold-legacy-model",
+    "title": [
+      "Gold: FVG midpoint tests",
+      "گولڈ: FVG کے وسط کی جانچ"
+    ],
+    "instrument": [
+      "XAUUSD-style",
+      "XAUUSD-style"
+    ],
+    "session": [
+      "New York study clock; see the stated window",
+      "نیویارک کی مشقی گھڑی؛ مقررہ وقفہ پڑھیں"
+    ],
+    "timeframe": [
+      "M5",
+      "M5"
+    ],
+    "glossaryTermIds": [
+      "fair_value_gap",
+      "consequent_encroachment"
+    ],
+    "curriculumChapterSlug": "fair-value-gaps-fvg-and-consequent-encroachment",
+    "difficulty": "foundation",
+    "estimatedMinutes": 12,
+    "learningGoal": [
+      "Separate a wick through CE from a completed closing failure. Compare a hold, a failure and no entry.",
+      "CE سے نیچے وِک اور مکمل بندش الگ کریں۔ قائم رہنا، ناکامی اور انٹری نہ ملنا ملائیں۔"
+    ],
+    "scope": "spine",
+    "toolStatus": {
+      "chartlab": {
+        "available": true,
+        "href": "/tools/chartlab/xauusd-gold-legacy-model/"
+      },
+      "delivery": {
+        "available": false
+      },
+      "simulator": {
+        "available": false
+      },
+      "backtest": {
+        "available": false
+      }
+    }
+  },
+  {
+    "id": "breaker",
+    "slug": "eurusd-failed-ob-breaker",
+    "title": [
+      "EUR/USD: failed block to breaker",
+      "EUR/USD: ناکام بلاک سے بریکر"
+    ],
+    "instrument": [
+      "Synthetic EUR/USD prices",
+      "فرضی EUR/USD قیمتیں"
+    ],
+    "session": [
+      "Illustrative UTC chart labels",
+      "چارٹ کے فرضی UTC اوقات"
+    ],
+    "timeframe": [
+      "M15",
+      "M15"
+    ],
+    "glossaryTermIds": [
+      "breaker_block",
+      "order_block"
+    ],
+    "curriculumChapterSlug": "breaker-blocks-trading-failed-order-blocks",
+    "difficulty": "intermediate",
+    "estimatedMinutes": 15,
+    "learningGoal": [
+      "Keep the original zone fixed. Check close-through, retest, reclaim and wick-only contrasts.",
+      "اصل زون مقرر رکھیں۔ نیچے بندش، واپسی، زون کی بحالی اور صرف وِک کا فرق جانچیں۔"
+    ],
+    "scope": "spine",
+    "toolStatus": {
+      "chartlab": {
+        "available": true,
+        "href": "/tools/chartlab/eurusd-failed-ob-breaker/"
+      },
+      "delivery": {
+        "available": false
+      },
+      "simulator": {
+        "available": false
+      },
+      "backtest": {
+        "available": false
+      }
+    }
+  },
+  {
+    "id": "btc",
+    "slug": "btc-2022-bullish-model",
+    "title": [
+      "Bitcoin: the 2022-model sequence",
+      "Bitcoin: 2022 ماڈل کی ترتیب"
+    ],
+    "instrument": [
+      "BTC/USDT-style",
+      "BTC/USDT-style"
+    ],
+    "session": [
+      "New York study clock; see the stated window",
+      "نیویارک کی مشقی گھڑی؛ مقررہ وقفہ پڑھیں"
+    ],
+    "timeframe": [
+      "M5",
+      "M5"
+    ],
+    "glossaryTermIds": [
+      "ict_2022_model",
+      "fair_value_gap"
+    ],
+    "curriculumChapterSlug": "fair-value-gaps-fvg-and-consequent-encroachment",
+    "difficulty": "intermediate",
+    "estimatedMinutes": 18,
+    "learningGoal": [
+      "Follow the Asian-study low sweep, swing close and FVG return without confusing a target with a fill.",
+      "ایشیائی مشقی لو کے سویپ، سوئنگ بندش اور FVG واپسی کو دیکھیں؛ ہدف کو فل نہ سمجھیں۔"
+    ],
+    "scope": "spine",
+    "toolStatus": {
+      "chartlab": {
+        "available": true,
+        "href": "/tools/chartlab/btc-2022-bullish-model/"
+      },
+      "delivery": {
+        "available": false
+      },
+      "simulator": {
+        "available": false
+      },
+      "backtest": {
+        "available": false
+      }
+    }
+  },
+  {
+    "id": "silver",
+    "slug": "nq-silver-bullet-short",
+    "title": [
+      "NQ: the AM Silver Bullet",
+      "NQ: صبح کا سلور بُلٹ"
+    ],
+    "instrument": [
+      "Synthetic NQ-style prices",
+      "فرضی NQ طرز کی قیمتیں"
+    ],
+    "session": [
+      "10:00–11:00 America/New_York",
+      "10:00–11:00 America/New_York"
+    ],
+    "timeframe": [
+      "M1",
+      "M1"
+    ],
+    "glossaryTermIds": [
+      "silver_bullet_model",
+      "fair_value_gap"
+    ],
+    "curriculumChapterSlug": "the-1st-presented-fvg-the-0931-rule",
+    "difficulty": "intermediate",
+    "estimatedMinutes": 18,
+    "learningGoal": [
+      "Check the New York clock, high sweep, completed gap and return deadline across five different paths.",
+      "پانچ مختلف راستوں میں نیویارک کا وقت، ہائی سویپ، مکمل گیپ اور واپسی کی حد جانچیں۔"
+    ],
+    "scope": "spine",
+    "toolStatus": {
+      "chartlab": {
+        "available": true,
+        "href": "/tools/chartlab/nq-silver-bullet-short/"
+      },
+      "delivery": {
+        "available": false
+      },
+      "simulator": {
+        "available": false
+      },
+      "backtest": {
+        "available": false
+      }
+    }
+  },
+  {
+    "id": "mmbm",
+    "slug": "eur-mmbm-propulsion-model",
+    "title": [
+      "EUR/USD: MMBM and propulsion",
+      "EUR/USD: MMBM اور پروپلشن"
+    ],
+    "instrument": [
+      "EUR/USD-style",
+      "EUR/USD-style"
+    ],
+    "session": [
+      "New York study clock; see the stated window",
+      "نیویارک کی مشقی گھڑی؛ مقررہ وقفہ پڑھیں"
+    ],
+    "timeframe": [
+      "M5",
+      "M5"
+    ],
+    "glossaryTermIds": [
+      "propulsion_and_reclaimed_blocks",
+      "order_block"
+    ],
+    "curriculumChapterSlug": "order-blocks-ob-and-mitigation",
+    "difficulty": "intermediate",
+    "estimatedMinutes": 20,
+    "learningGoal": [
+      "Read the whole curve, then compare the parent block, returning candle and its own body midpoint.",
+      "پورا راستہ پڑھیں، پھر اصل بلاک، واپسی کی کینڈل اور اس کی اپنی باڈی کا وسط ملائیں۔"
+    ],
+    "scope": "spine",
+    "toolStatus": {
+      "chartlab": {
+        "available": true,
+        "href": "/tools/chartlab/eur-mmbm-propulsion-model/"
+      },
+      "delivery": {
+        "available": false
+      },
+      "simulator": {
+        "available": false
+      },
+      "backtest": {
+        "available": false
+      }
+    }
+  },
+  {
+    "id": "ndog",
+    "slug": "nq-ath-alchemy-ndog-macro",
+    "title": [
+      "NQ: NDOG, macro IFVG and ATH",
+      "NQ: NDOG، میکرو IFVG اور ATH"
+    ],
+    "instrument": [
+      "NQ-style",
+      "NQ-style"
+    ],
+    "session": [
+      "New York study clock; see the stated window",
+      "نیویارک کی مشقی گھڑی؛ مقررہ وقفہ پڑھیں"
+    ],
+    "timeframe": [
+      "M1",
+      "M1"
+    ],
+    "glossaryTermIds": [
+      "opening_gap_matrix_ndog_nwog",
+      "inverse_fair_value_gap"
+    ],
+    "curriculumChapterSlug": "ict-midnight-opening-range-rth-gaps-nwog",
+    "difficulty": "intermediate",
+    "estimatedMinutes": 20,
+    "learningGoal": [
+      "Keep opening-gap arithmetic, timed inversion and independent RTH projections separate.",
+      "اوپننگ گیپ کا حساب، وقت کے ساتھ انورژن اور الگ RTH تخمینے جدا رکھیں۔"
+    ],
+    "scope": "spine",
+    "toolStatus": {
+      "chartlab": {
+        "available": true,
+        "href": "/tools/chartlab/nq-ath-alchemy-ndog-macro/"
+      },
+      "delivery": {
+        "available": false
+      },
+      "simulator": {
+        "available": false
+      },
+      "backtest": {
+        "available": false
+      }
+    }
+  },
+  {
+    "id": "guided-a",
+    "slug": "practice-case-a",
+    "title": [
+      "Case A",
+      "کیس A"
+    ],
+    "instrument": [
+      "Fictional $1-per-point instrument",
+      "فرضی انسٹرومنٹ: فی پوائنٹ ایک ڈالر"
+    ],
+    "session": [
+      "Illustrative UTC labels, not an exchange session",
+      "فرضی UTC اوقات، ایکسچینج سیشن نہیں"
+    ],
+    "timeframe": [
+      "M5",
+      "M5"
+    ],
+    "glossaryTermIds": [
+      "fair_value_gap",
+      "sell_side_liquidity"
+    ],
+    "curriculumChapterSlug": "fair-value-gaps-fvg-and-consequent-encroachment",
+    "difficulty": "foundation",
+    "estimatedMinutes": 10,
+    "learningGoal": [
+      "Separate qualification from a limit-entry decision.",
+      "موزونیت اور لمٹ انٹری کا فیصلہ الگ کریں۔"
+    ],
+    "scope": "tool-specific",
+    "toolStatus": {
+      "chartlab": {
+        "available": false
+      },
+      "delivery": {
+        "available": true,
+        "href": "/tools/delivery-suite/#practice-case-a"
+      },
+      "simulator": {
+        "available": true,
+        "href": "/tools/simulator/#practice-case-a"
+      },
+      "backtest": {
+        "available": true,
+        "href": "/tools/backtest/#practice-case-a"
+      }
+    }
+  },
+  {
+    "id": "guided-b",
+    "slug": "practice-case-b",
+    "title": [
+      "Case B",
+      "کیس B"
+    ],
+    "instrument": [
+      "Fictional $1-per-point instrument",
+      "فرضی انسٹرومنٹ: فی پوائنٹ ایک ڈالر"
+    ],
+    "session": [
+      "Illustrative UTC labels, not an exchange session",
+      "فرضی UTC اوقات، ایکسچینج سیشن نہیں"
+    ],
+    "timeframe": [
+      "M5",
+      "M5"
+    ],
+    "glossaryTermIds": [
+      "fair_value_gap",
+      "sell_side_liquidity"
+    ],
+    "curriculumChapterSlug": "fair-value-gaps-fvg-and-consequent-encroachment",
+    "difficulty": "foundation",
+    "estimatedMinutes": 10,
+    "learningGoal": [
+      "Keep the same written plan as later candles arrive.",
+      "بعد کی کینڈلز آنے پر تحریری منصوبہ یکساں رکھیں۔"
+    ],
+    "scope": "tool-specific",
+    "toolStatus": {
+      "chartlab": {
+        "available": false
+      },
+      "delivery": {
+        "available": true,
+        "href": "/tools/delivery-suite/#practice-case-b"
+      },
+      "simulator": {
+        "available": true,
+        "href": "/tools/simulator/#practice-case-b"
+      },
+      "backtest": {
+        "available": true,
+        "href": "/tools/backtest/#practice-case-b"
+      }
+    }
+  },
+  {
+    "id": "guided-c",
+    "slug": "practice-case-c",
+    "title": [
+      "Case C",
+      "کیس C"
+    ],
+    "instrument": [
+      "Fictional $1-per-point instrument",
+      "فرضی انسٹرومنٹ: فی پوائنٹ ایک ڈالر"
+    ],
+    "session": [
+      "Illustrative UTC labels, not an exchange session",
+      "فرضی UTC اوقات، ایکسچینج سیشن نہیں"
+    ],
+    "timeframe": [
+      "M5",
+      "M5"
+    ],
+    "glossaryTermIds": [
+      "fair_value_gap",
+      "sell_side_liquidity"
+    ],
+    "curriculumChapterSlug": "fair-value-gaps-fvg-and-consequent-encroachment",
+    "difficulty": "foundation",
+    "estimatedMinutes": 10,
+    "learningGoal": [
+      "Check the confirmation before considering an entry.",
+      "انٹری سے پہلے تصدیق جانچیں۔"
+    ],
+    "scope": "tool-specific",
+    "toolStatus": {
+      "chartlab": {
+        "available": false
+      },
+      "delivery": {
+        "available": true,
+        "href": "/tools/delivery-suite/#practice-case-c"
+      },
+      "simulator": {
+        "available": true,
+        "href": "/tools/simulator/#practice-case-c"
+      },
+      "backtest": {
+        "available": true,
+        "href": "/tools/backtest/#practice-case-c"
+      }
+    }
+  },
+  {
+    "id": "guided-d",
+    "slug": "practice-case-d",
+    "title": [
+      "Case D",
+      "کیس D"
+    ],
+    "instrument": [
+      "Fictional $1-per-point instrument",
+      "فرضی انسٹرومنٹ: فی پوائنٹ ایک ڈالر"
+    ],
+    "session": [
+      "Illustrative UTC labels, not an exchange session",
+      "فرضی UTC اوقات، ایکسچینج سیشن نہیں"
+    ],
+    "timeframe": [
+      "M5",
+      "M5"
+    ],
+    "glossaryTermIds": [
+      "fair_value_gap",
+      "sell_side_liquidity"
+    ],
+    "curriculumChapterSlug": "fair-value-gaps-fvg-and-consequent-encroachment",
+    "difficulty": "foundation",
+    "estimatedMinutes": 10,
+    "learningGoal": [
+      "Apply the evidence checks to a short-side study.",
+      "شارٹ مثال پر شواہد کی شرطیں لگائیں۔"
+    ],
+    "scope": "tool-specific",
+    "toolStatus": {
+      "chartlab": {
+        "available": false
+      },
+      "delivery": {
+        "available": true,
+        "href": "/tools/delivery-suite/#practice-case-d"
+      },
+      "simulator": {
+        "available": true,
+        "href": "/tools/simulator/#practice-case-d"
+      },
+      "backtest": {
+        "available": true,
+        "href": "/tools/backtest/#practice-case-d"
+      }
+    }
+  },
+  {
+    "id": "guided-e",
+    "slug": "practice-case-e",
+    "title": [
+      "Case E",
+      "کیس E"
+    ],
+    "instrument": [
+      "Fictional $1-per-point instrument",
+      "فرضی انسٹرومنٹ: فی پوائنٹ ایک ڈالر"
+    ],
+    "session": [
+      "Illustrative UTC labels, not an exchange session",
+      "فرضی UTC اوقات، ایکسچینج سیشن نہیں"
+    ],
+    "timeframe": [
+      "M5",
+      "M5"
+    ],
+    "glossaryTermIds": [
+      "fair_value_gap",
+      "sell_side_liquidity"
+    ],
+    "curriculumChapterSlug": "fair-value-gaps-fvg-and-consequent-encroachment",
+    "difficulty": "foundation",
+    "estimatedMinutes": 10,
+    "learningGoal": [
+      "Distinguish an entry price from a later destination.",
+      "انٹری کی قیمت اور بعد کی منزل الگ رکھیں۔"
+    ],
+    "scope": "tool-specific",
+    "toolStatus": {
+      "chartlab": {
+        "available": false
+      },
+      "delivery": {
+        "available": true,
+        "href": "/tools/delivery-suite/#practice-case-e"
+      },
+      "simulator": {
+        "available": true,
+        "href": "/tools/simulator/#practice-case-e"
+      },
+      "backtest": {
+        "available": true,
+        "href": "/tools/backtest/#practice-case-e"
+      }
+    }
+  },
+  {
+    "id": "guided-f",
+    "slug": "practice-case-f",
+    "title": [
+      "Case F",
+      "کیس F"
+    ],
+    "instrument": [
+      "Fictional $1-per-point instrument",
+      "فرضی انسٹرومنٹ: فی پوائنٹ ایک ڈالر"
+    ],
+    "session": [
+      "Illustrative UTC labels, not an exchange session",
+      "فرضی UTC اوقات، ایکسچینج سیشن نہیں"
+    ],
+    "timeframe": [
+      "M5",
+      "M5"
+    ],
+    "glossaryTermIds": [
+      "fair_value_gap",
+      "sell_side_liquidity"
+    ],
+    "curriculumChapterSlug": "fair-value-gaps-fvg-and-consequent-encroachment",
+    "difficulty": "foundation",
+    "estimatedMinutes": 10,
+    "learningGoal": [
+      "Compare the supplied context with the proposed direction.",
+      "دیے گئے سیاق اور مجوزہ سمت کا موازنہ کریں۔"
+    ],
+    "scope": "tool-specific",
+    "toolStatus": {
+      "chartlab": {
+        "available": false
+      },
+      "delivery": {
+        "available": true,
+        "href": "/tools/delivery-suite/#practice-case-f"
+      },
+      "simulator": {
+        "available": true,
+        "href": "/tools/simulator/#practice-case-f"
+      },
+      "backtest": {
+        "available": true,
+        "href": "/tools/backtest/#practice-case-f"
+      }
+    }
+  }
+]

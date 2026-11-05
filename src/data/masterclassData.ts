@@ -256,7 +256,7 @@ export const masterclassCollection: MasterclassItem[] = [
     subtitle: 'The Powerful Convergence of a Breaker Block Overlapping a Fair Value Gap',
     category: 'masterclass_34',
     diagramType: 'unicorn_model',
-    coreRule: 'The Unicorn Model is formed when a Breaker Block and a Fair Value Gap inhabit the exact same horizontal price zone following a liquidity raid. This confluence provides the highest statistical win-rate in the entire ICT methodology.',
+    coreRule: 'In ICT teaching, the Unicorn Model combines a breaker block and a fair value gap in an overlapping price area after a liquidity excursion. This confluence is a study convention, not evidence of the highest win rate or a profitable outcome; context, invalidation and execution assumptions still matter.',
     orderOfOperations: [
       'Step 1: Identify a Swing Low that preceded a higher high that swept Buy-side Liquidity (creating the future Breaker Block).',
       'Step 2: Price violently displaces down through that Swing Low, violating market structure.',

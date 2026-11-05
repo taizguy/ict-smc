@@ -1,3 +1,4 @@
+import {legacyPracticeMetadata} from '../data/legacyPracticeMetadata';
 import {masterclassHubPath,masterclassHubTitle,masterclassHubDescription} from '../data/masterclassHubMeta';
 import {chapterCatalog} from '../data/catalog.generated';
 import { studyTopics } from '../data/searchTopics';
@@ -87,6 +88,7 @@ const routeTitles: Record<string, string> = {
 };
 
 export function searchTitle(value: string, path = '/'): string {
+  if(legacyPracticeMetadata[path])return legacyPracticeMetadata[path].title[0];
   if(path===masterclassHubPath)return masterclassHubTitle+BRAND; // Human-reviewed 54-character hub title; preserve Concepts.
   let topic = path===masterclassHubPath?masterclassHubTitle:reviewed2026.find(entry=>entry.path===path)?.title || routeTitles[path] || studyTopics[path] || primaryTopic(value);
   // Long subtitles describe the page in the deck; the title needs its main topic.

@@ -1,0 +1,94 @@
+{
+  "studies": {
+    "gold": {
+      "slug": "xauusd-gold-legacy-model",
+      "instrument": "XAUUSD",
+      "cases": 5,
+      "stages": 4
+    },
+    "breaker": {
+      "slug": "eurusd-failed-ob-breaker",
+      "instrument": "EUR/USD",
+      "cases": 4,
+      "stages": 6
+    },
+    "btc": {
+      "slug": "btc-2022-bullish-model",
+      "instrument": "BTC/USDT",
+      "cases": 4,
+      "stages": 7
+    },
+    "silver": {
+      "slug": "nq-silver-bullet-short",
+      "instrument": "NQ",
+      "cases": 5,
+      "stages": 5
+    },
+    "mmbm": {
+      "slug": "eur-mmbm-propulsion-model",
+      "instrument": "EUR/USD",
+      "cases": 5,
+      "stages": 8
+    },
+    "ndog": {
+      "slug": "nq-ath-alchemy-ndog-macro",
+      "instrument": "NQ",
+      "cases": 6,
+      "stages": 9
+    }
+  },
+  "sources": [
+    {
+      "title": "The Inner Circle Trader · 2022 Mentorship Episode 6",
+      "url": "https://www.youtube.com/watch?v=Bkt8B3kLATQ"
+    },
+    {
+      "title": "NIST · Daylight Saving Time Rules",
+      "url": "https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst"
+    },
+    {
+      "title": "The Inner Circle Trader · Month 04 Propulsion Block · 00:27–02:03, 05:14–05:28",
+      "url": "https://www.youtube.com/watch?v=glu98jAH8vE&t=27s"
+    },
+    {
+      "title": "The Inner Circle Trader · NDOG Part 1 (concept source, not price data)",
+      "url": "https://www.youtube.com/watch?v=Sh-bDHWNpsk"
+    },
+    {
+      "title": "The Inner Circle Trader · Market Alchemy · repository-reviewed 27:00–36:45",
+      "url": "https://www.youtube.com/watch?v=wprXVW1pW9Y&t=1620s"
+    },
+    {
+      "title": "CME Group · E-mini Nasdaq-100 contract specifications",
+      "url": "https://www.cmegroup.com/markets/equities/nasdaq/e-mini-nasdaq-100.contractSpecs.html"
+    },
+    {
+      "title": "The Inner Circle Trader · 2023 ICT Mentorship — ICT Silver Bullet Time Based Trading Model",
+      "url": "https://www.youtube.com/watch?v=tRq1hyGGtl4"
+    },
+    {
+      "title": "The Inner Circle Trader · Month 04: ICT Breaker Block",
+      "url": "https://www.youtube.com/watch?v=UrS-mtGHtAA",
+      "note": [
+        "Official lesson for further study; the original concept source. Our candles and questions are independently authored.",
+        "مزید مطالعے کے لیے اصل استاد کا سبق؛ ہماری کینڈلز اور سوالات الگ تحریر کیے گئے ہیں۔"
+      ]
+    },
+    {
+      "title": "Flux Charts · Breaker Blocks (BB) Explained",
+      "url": "https://www.fluxcharts.com/articles/breaker-blocks-bb-explained",
+      "note": [
+        "Independent comparison of block failure and role reversal; discusses wick and close conventions.",
+        "بلاک کی ناکامی اور رول ریورسل کا آزاد موازنہ؛ وِک اور بند قیمت کی روایات کی وضاحت۔"
+      ]
+    },
+    {
+      "title": "Road_2_Funded · ICT Breaker & Mitigation Blocks Explained",
+      "url": "https://fr.tradingview.com/chart/GBPCAD/3M3OxgVu-ICT-Breaker-Mitigation-Blocks-EXPLAINED/",
+      "note": [
+        "Community explanation on TradingView; useful for comparing sweep and mitigation interpretations, not performance evidence.",
+        "TradingView پر کمیونٹی کی وضاحت؛ سویپ اور مٹیگیشن کی تشریحات کے موازنے کے لیے، کارکردگی کے ثبوت کے طور پر نہیں۔"
+      ]
+    }
+  ]
+}

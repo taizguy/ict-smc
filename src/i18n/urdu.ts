@@ -1,3 +1,7 @@
+import claimsReviewUrdu from './claims-review-urdu.json';
+import {legacyPracticeUrdu,legacyPracticeTopicsUrdu} from '../data/legacyPracticeMetadata';
+import practiceLoopUrdu from './practice-loop-urdu.json';
+import {practiceContentTranslations} from '../data/practiceLoopContent';
 import masterclassWeeklyReviewUrdu from './masterclass-weekly-review-urdu.json';
 import {masterclassCategoryTranslations} from '../data/masterclassCategoryPages';
 import {glossaryMetadataTranslations} from '../utils/glossaryReference';
@@ -54,6 +58,8 @@ export const urdu: Record<string, string> = {
   ...toolRouteStudyUrdu,
   ...masterclassHubUrdu,
   ...masterclassCategoryTranslations,
+ ...practiceContentTranslations,
+ ...practiceLoopUrdu,
   ...masterclassWeeklyReviewUrdu,
   ...readingRoomUrdu,
   '24 October 2026': '24 اکتوبر 2026',
@@ -250,7 +256,10 @@ export const urdu: Record<string, string> = {
   ...glossaryMetadataTranslations,
   'ICT Glossary':'ICT لغت',
   'Definitions, anatomy and boundaries for ICT and Smart Money Concepts.':'ICT اور اسمارٹ منی تصورات کی تعریفیں، ساخت اور حدود۔',
+  ...claimsReviewUrdu,
 };
 // Exact pairs keep static snippets and client-side metadata in the same language.
 for (const { en, ur } of Object.values(searchDescriptions)) urdu[en] = ur;
+Object.assign(urdu,legacyPracticeUrdu);
+for(const [key,value]of Object.entries(legacyPracticeTopicsUrdu))if(!urdu[key])urdu[key]=value;
 for (const source of Object.keys(urdu)) urdu[source] = refineTradingLanguage(source, urdu[source]);

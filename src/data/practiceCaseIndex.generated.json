@@ -1,0 +1,237 @@
+{
+  "remaining": [
+    {
+      "id": "g-a",
+      "name": [
+        "A · wick crosses, close holds",
+        "A · وِک نیچے، بندش اوپر"
+      ]
+    },
+    {
+      "id": "g-b",
+      "name": [
+        "B · midpoint close fails first",
+        "B · وسط سے نیچے بندش پہلے ناکام"
+      ]
+    },
+    {
+      "id": "g-c",
+      "name": [
+        "C · a deeper wick recovers",
+        "C · گہری وِک کے بعد بحالی"
+      ]
+    },
+    {
+      "id": "g-d",
+      "name": [
+        "D · overlapping outer wicks",
+        "D · بیرونی وِکس کا اوورلیپ"
+      ]
+    },
+    {
+      "id": "g-e",
+      "name": [
+        "E · launch without a return",
+        "E · واپسی کے بغیر پیش قدمی"
+      ]
+    },
+    {
+      "id": "b-a",
+      "name": [
+        "A · sequence reaches prior-day high",
+        "A · ترتیب کے بعد گزشتہ روز کی ہائی"
+      ]
+    },
+    {
+      "id": "b-b",
+      "name": [
+        "B · qualified, then stopped",
+        "B · موزوں ترتیب کے بعد اسٹاپ"
+      ]
+    },
+    {
+      "id": "b-c",
+      "name": [
+        "C · gap without a swing break",
+        "C · سوئنگ بریک کے بغیر گیپ"
+      ]
+    },
+    {
+      "id": "b-d",
+      "name": [
+        "D · target seen, entry missed",
+        "D · ہدف آیا، انٹری نہیں ملی"
+      ]
+    },
+    {
+      "id": "m-a",
+      "name": [
+        "A · V reversal and shallow return",
+        "A · V نما بحالی اور ہلکی واپسی"
+      ]
+    },
+    {
+      "id": "m-b",
+      "name": [
+        "B · two false starts, midpoint failure",
+        "B · دو ناکام کوششیں، وسط کی ناکامی"
+      ]
+    },
+    {
+      "id": "m-c",
+      "name": [
+        "C · returning candle misses parent",
+        "C · واپسی کی کینڈل اصل زون سے دور"
+      ]
+    },
+    {
+      "id": "m-d",
+      "name": [
+        "D · rounded turn, three missed returns",
+        "D · گول موڑ، تین نامکمل واپسیاں"
+      ]
+    },
+    {
+      "id": "m-e",
+      "name": [
+        "E · deep wick, closing rule holds",
+        "E · گہری وِک، بندش کی شرط قائم"
+      ]
+    },
+    {
+      "id": "n-a",
+      "name": [
+        "A · inversion retest, separate projection",
+        "A · انورژن کی واپسی، الگ تخمینہ"
+      ]
+    },
+    {
+      "id": "n-b",
+      "name": [
+        "B · repeated probes, failed long",
+        "B · بار بار جانچ، لانگ کی ناکامی"
+      ]
+    },
+    {
+      "id": "n-c",
+      "name": [
+        "C · complete crossing arrives late",
+        "C · مکمل کراسنگ وقت کے بعد"
+      ]
+    },
+    {
+      "id": "n-d",
+      "name": [
+        "D · neither CE touch nor swing break",
+        "D · نہ CE چھوا، نہ سوئنگ ٹوٹی"
+      ]
+    },
+    {
+      "id": "n-e",
+      "name": [
+        "E · whole NDOG closes through",
+        "E · پوری NDOG کے پار بندش"
+      ]
+    },
+    {
+      "id": "n-f",
+      "name": [
+        "F · valid inversion, return too late",
+        "F · موزوں انورژن، واپسی دیر سے"
+      ]
+    }
+  ],
+  "silver": [
+    {
+      "id": "s-a",
+      "name": [
+        "A · a shallow return holds",
+        "A · ہلکی واپسی کے بعد ہدف"
+      ]
+    },
+    {
+      "id": "s-b",
+      "name": [
+        "B · repeated highs, then failure",
+        "B · ہائی کی بار بار جانچ، پھر ناکامی"
+      ]
+    },
+    {
+      "id": "s-c",
+      "name": [
+        "C · a gap formed too early",
+        "C · گیپ مقررہ وقت سے پہلے بنا"
+      ]
+    },
+    {
+      "id": "s-d",
+      "name": [
+        "D · half a point short of entry",
+        "D · انٹری سے آدھا پوائنٹ دور"
+      ]
+    },
+    {
+      "id": "s-e",
+      "name": [
+        "E · the swing never breaks",
+        "E · سوئنگ نہیں ٹوٹتا"
+      ]
+    }
+  ],
+  "breaker": [
+    {
+      "id": "rejection",
+      "name": [
+        "Case A · retest rejects",
+        "کیس A · دوبارہ جانچ پر ردِعمل"
+      ]
+    },
+    {
+      "id": "reclaim",
+      "name": [
+        "Case B · breaker is reclaimed",
+        "کیس B · قیمت بریکر کے اوپر واپس"
+      ]
+    },
+    {
+      "id": "no-retest",
+      "name": [
+        "Case C · price never retests",
+        "کیس C · قیمت واپس نہیں آتی"
+      ]
+    },
+    {
+      "id": "wick-only",
+      "name": [
+        "Case D · wick is not a close",
+        "کیس D · وِک بند قیمت نہیں"
+      ]
+    }
+  ],
+  "guided": [
+    {
+      "id": "a",
+      "name": "Case A"
+    },
+    {
+      "id": "b",
+      "name": "Case B"
+    },
+    {
+      "id": "c",
+      "name": "Case C"
+    },
+    {
+      "id": "d",
+      "name": "Case D"
+    },
+    {
+      "id": "e",
+      "name": "Case E"
+    },
+    {
+      "id": "f",
+      "name": "Case F"
+    }
+  ]
+}

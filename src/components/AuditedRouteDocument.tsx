@@ -1,3 +1,5 @@
+import {ChartLabHubPage} from './market/ChartLabHubPage';
+import {PracticeLoopPage} from './practice/PracticeLoopPage';
 import {resolveGlossaryUrl} from '../utils/glossaryRoutes';
 import { Header } from './Header';
 import { SiteFooter } from './SiteFooter';
@@ -10,9 +12,12 @@ import { withoutLocale } from '../i18n/locale';
 /** Same route views, initial props and document geometry as App; no hand-written substitute. */
 export function AuditedRouteBody({ pathname, heading }: { pathname: string; heading?: string }) {
   const path = withoutLocale(pathname), kind = auditedReadingRoute(path);
+  if(kind==='legacy-practice')return <TradingToolsWorkbench documentPath={path} documentHeading={heading} initialTool={path.includes('/simulator/')?'simulator':'backtest'} simulatorModelSlug={path.includes('/simulator/')?path.split('/')[3]:undefined} backtestStrategySlug={path.includes('/backtest/')?path.split('/')[3]:undefined}/>;
+  if(kind==='practice')return <PracticeLoopPage tool={path.includes('delivery-suite')?'delivery':path.includes('simulator')?'simulator':'backtest'}/>;
+  if(path==='/tools/chartlab/')return <ChartLabHubPage/>;
   if (kind === 'chartlab') return <TradingToolsWorkbench documentPath={path} documentHeading={heading} initialTool="chartlab" chartScenarioSlug={path.split('/')[3]} />;
   if(kind==='glossary'){const state=resolveGlossaryUrl(path);return <TradingToolsWorkbench documentPath={path} documentHeading={heading} initialTool="concepts" glossaryCategory={state.categorySlug} glossaryConceptId={state.conceptId}/>;}
-  if (kind === 'ote') return <TradingToolsWorkbench documentPath={path} documentHeading={heading} initialTool="ict_suite" deliveryModuleSlug="ote-calculator" />;
+  if (kind === 'ote' || kind === 'delivery-module') return <TradingToolsWorkbench documentPath={path} documentHeading={heading} initialTool="ict_suite" deliveryModuleSlug={path.split('/')[3]} />;
   if (kind === 'masood') {
     const id = path.split('/')[3];
     const lecture = masoodPlaylistsData.flatMap(series => series.lectures).find(item => item.id === id);

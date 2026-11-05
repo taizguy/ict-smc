@@ -2,6 +2,7 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
+import {performanceBundlePlugin} from './scripts/performance-bundle-plugin';
 
 function legacyRedirectsPlugin() {
   return {
@@ -83,7 +84,7 @@ function legacyRedirectsPlugin() {
 
 export default defineConfig(() => {
   return {
-    plugins: [react({ jsxImportSource: '@learnsmc/i18n' }), tailwindcss(), legacyRedirectsPlugin()],
+    plugins: [react({ jsxImportSource: '@learnsmc/i18n' }), tailwindcss(), legacyRedirectsPlugin(),performanceBundlePlugin()],
     resolve: {
       alias: {
         '@learnsmc/i18n': path.resolve(__dirname, 'src/i18n'),
@@ -99,9 +100,9 @@ export default defineConfig(() => {
         output: {
           manualChunks(id) {
             if (/node_modules[\\/](?:lightweight-charts|fancy-canvas)[\\/]/.test(id)) return 'chart-vendor';
-            if (id.includes('node_modules')) {
-              return 'vendor';
-            }
+            if (/node_modules[\\/]three[\\/]/.test(id)) return 'three-vendor';
+            if (/node_modules[\\/](?:motion|motion-dom|motion-utils|framer-motion)[\\/]/.test(id)) return 'motion-vendor';
+            if (/node_modules[\\/](?:react|react-dom|scheduler)[\\/]/.test(id)) return 'react-vendor';
             if (id.includes('src/data/chapters/')) {
               return 'data-chapters';
             }

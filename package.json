@@ -5,13 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 3000",
-    "build": "tsx scripts/generate-catalog.ts && tsx scripts/generate-urdu-runtime.ts && tsx scripts/generate-silver-assets.ts && tsx scripts/verify-silver-study.ts && tsx scripts/generate-remaining-study-assets.ts && tsx scripts/verify-remaining-studies.ts && tsx scripts/verify-chartlab-uniqueness.ts && vite build && tsx scripts/prerender.ts && tsx scripts/validate-seo.ts && tsx scripts/verify-crawl.ts && tsx scripts/verify-glossary-reference.ts && tsx scripts/verify-routing.ts && tsx scripts/verify-2026-edition.ts && tsx scripts/verify-masterclass-hub.ts && tsx scripts/verify-masterclass-collections.ts",
-    "test:seo": "tsx scripts/validate-seo.ts && tsx scripts/verify-crawl.ts && tsx scripts/verify-glossary-reference.ts && tsx scripts/verify-routing.ts && tsx scripts/verify-2026-edition.ts && tsx scripts/verify-masterclass-hub.ts && tsx scripts/verify-masterclass-collections.ts",
+    "build": "npm run build:content && tsx scripts/verify-emitted-claims.ts",
+    "test:seo": "tsx scripts/validate-seo.ts && tsx scripts/verify-crawl.ts && tsx scripts/verify-glossary-reference.ts && tsx scripts/verify-routing.ts && tsx scripts/verify-2026-edition.ts && tsx scripts/verify-masterclass-hub.ts && tsx scripts/verify-masterclass-collections.ts && tsx scripts/verify-chartlab-hub.ts && tsx scripts/verify-practice-loop.ts",
     "preview": "vite preview",
     "seo:record": "tsx scripts/sitemap-dates.ts",
     "seo:intent-map": "tsx scripts/search-intent-map.ts",
     "clean": "rm -rf dist server.js",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "build:content": "tsx scripts/generate-catalog.ts && tsx scripts/practice-loop-evidence.ts && tsx scripts/generate-practice-case-chunks.ts && tsx scripts/generate-urdu-runtime.ts && tsx scripts/generate-silver-assets.ts && tsx scripts/verify-silver-study.ts && tsx scripts/generate-remaining-study-assets.ts && tsx scripts/verify-remaining-studies.ts && tsx scripts/verify-chartlab-uniqueness.ts && vite build && tsx scripts/prerender.ts && tsx scripts/validate-seo.ts && tsx scripts/verify-crawl.ts && tsx scripts/verify-glossary-reference.ts && tsx scripts/verify-routing.ts && tsx scripts/verify-2026-edition.ts && tsx scripts/verify-masterclass-hub.ts && tsx scripts/verify-masterclass-collections.ts && tsx scripts/verify-chartlab-hub.ts && tsx scripts/verify-practice-loop.ts && tsx scripts/practice-loop-legacy-report.ts && tsx scripts/verify-practice-cleanup.ts && node scripts/verify-retired-taxonomy.mjs && tsx scripts/verify-claims-gate.ts && node scripts/verify-bundle-budget.mjs",
+    "verify:claims": "tsx scripts/verify-emitted-claims.ts",
+    "verify:bundle": "node scripts/verify-bundle-budget.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

@@ -319,7 +319,7 @@ const basePlaylists: MasoodPlaylist[] = [
         shortSummary: 'Decoding the institutional Daily Candle profile: Open, Judas Swing Low/High, Expansion Run, and Cash Close using the ICT Power of 3 (PO3) algorithm.',
         keyTakeaways: [
           'Every daily candle goes through 4 distinct chronological phases: 1) Open, 2) Manipulation (Judas Swing), 3) Distribution (Expansion), 4) Rebalancing/Close.',
-          'In a Bullish Daily Bias, price opens near Midnight NY, dips down below the open between 02:00 and 09:30 AM to engineer the Low of the Day (Judas Swing), then launches into a multi-hour expansion, closing near the High of the Day.',
+          'In the bullish daily-profile teaching model, a move below the New York midnight open between 02:00 and 09:30 may be studied as a Judas swing before an upward expansion. This is a conditional template: the excursion need not become the daily low, and price need not close near the daily high.',
           'In a Bearish Daily Bias, price opens, pumps up above the open to trap breakout buyers and establish the High of the Day, then dumps to close near the Low.',
           'The Midnight New York (00:00 EST) Open and 08:30 AM Open act as institutional dividing lines: in a bullish day, only look to buy BELOW the open.'
         ],
@@ -524,7 +524,7 @@ const basePlaylists: MasoodPlaylist[] = [
         title: 'LEC 10: I Predicted Every 1-Minute Candle Live! Learn How to Use Algorithm in Trading',
         youtubeId: 'hmr3zLK-inw',
         playlistType: 'advanced',
-        shortSummary: 'Reading the 1-minute tape in real time: tracking candle body closures, observing liquidity delivery from fair value gaps, and executing with surgical precision.',
+        shortSummary: 'Study 1-minute candle closes and responses around fair value gaps; these observations do not establish execution precision or predict the next move.',
         keyTakeaways: [
           'The 1-minute chart is not random noise; it is the micro-delivery of the exact same IPDA rules governing the Daily chart.',
           'Predicting 1-minute candles requires monitoring whether the previous candle closed above or below its midpoint, whether it respected the nearest FVG, and where the immediate next 1-minute swing high/low sits.',
@@ -737,7 +737,7 @@ const basePlaylists: MasoodPlaylist[] = [
         shortSummary: 'Live case study dissecting how Abdullah Masood warned his community ahead of time about an impending Seek & Destroy day, saving students thousands in capital.',
         keyTakeaways: [
           'Forecasting a Seek & Destroy day is done before the market opens by examining calendar context, HTF range compression, and lack of clear Draw on Liquidity.',
-          'When both US100 and US500 are compressed inside tight multi-day ranges ahead of a Friday NFP release, Thursday is guaranteed to be a liquidity-harvesting Seek & Destroy session.',
+          'Before a Friday NFP release, tight multi-day ranges in US100 and US500 may motivate a Seek & Destroy study hypothesis. Thursday can also trend or remain quiet; the calendar and range alone do not determine its behavior.',
           'Real trader edge: knowing when NOT to click buy or sell.'
         ],
         coreRules: [
@@ -1377,7 +1377,7 @@ const basePlaylists: MasoodPlaylist[] = [
           'A "Scout Sniper" trader does not spray and pray; they wait patiently in the bushes for hours, identify the one single high-conviction target, and fire one shot with maximum precision.',
           'The Scout Sniper entry: waiting for a 15M sweep, 5M displacement, and placing a limit order at the exact tick of the 1M FVG boundary or 50% Consequent Encroachment.',
           'Risk is kept extremely tight (e.g. 10 to 15 points on US100), while targets are set at the Higher Timeframe Draw on Liquidity (60 to 120 points), delivering 1:5+ R:R.',
-          'With a 1:5 R:R model, you only need a 25% win rate to be highly profitable.'
+          'At an assumed 25% win rate, fixed +5R wins and −1R losses give hypothetical expectancy of +0.5R per trade before costs. Actual payouts, losses and costs can differ; this arithmetic does not establish a profitable strategy.'
         ],
         coreRules: [
           'Max 1 or 2 high-conviction trades per day—no over-trading.',
@@ -1391,7 +1391,7 @@ const basePlaylists: MasoodPlaylist[] = [
         ],
         commonMistakes: [
           'Taking 10 mediocre "B" and "C" setups instead of waiting for the 1 "A+" setup.',
-          'Accepting 1:1 risk-to-reward trades that require an unsustainable 70%+ win rate.',
+          'Assuming a 1:1 planned risk-to-reward ratio is enough without checking realized outcomes and costs. Under fixed +1R/−1R outcomes, the hypothetical break-even win rate is 50% before costs, and higher after costs.',
           'Moving stops further away when the sniper entry thesis has failed.'
         ],
         practicalExercise: 'Review your last 20 trades. Calculate your average Risk-to-Reward ratio. Identify what your profitability would be if you only took setups with a minimum 1:3 R:R.'

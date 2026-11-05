@@ -43,3 +43,6 @@ Done: duplicate static language control removed; one main header switch retained
 
 ## Simulator brief follow-up — 2026-11-05
 Done: practice-loop layout across six briefs and UR mirrors; three missing bilingual briefs added; six distinct real application links; misleading default generic charts replaced by explicit optional shared practice; hub/previous/next/trust navigation restored. Original data, rules and URLs preserved. TypeScript, content build, 10,936 SEO checks, 787-page crawl, budgets and twelve-page native/runtime/keyboard checks passed. Evidence: docs/simulator-interface-followup.md and outputs/practice-performance/simulator-ui-*. No push/deploy.
+
+## Protected claims — authorized correction and release verification, 2026-11-05
+The owner authorized narrow corrections after the prior release block. Done: 26 emitted warnings resolved through 14 source-statement corrections plus genuine Urdu translations; no gate weakening. Full default build including strict claims scan now passes with zero findings. TypeScript, 10,936 SEO checks, 787-page crawl, fixtures, budgets and native bilingual checks passed. 34 changed page fingerprints recorded. Review: docs/claims-release-resolution.md and docs/claims-wording-review.csv.

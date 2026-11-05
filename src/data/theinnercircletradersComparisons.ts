@@ -7,7 +7,7 @@ export const theinnercircletradersNewComparisons: ConceptComparison[] = [
     title: 'CISD (Change in State of Delivery) vs. MSS (Market Structure Shift)',
     conceptA: {
       name: 'Change in State of Delivery (CISD)',
-      summary: 'The earliest algorithmic indication that price delivery has shifted from buy-program to sell-program, defined by candle bodies closing through the opening price of the delivery sequence.',
+      summary: 'In the ICT framework, CISD uses a candle close through a selected delivery-sequence opening price as a possible change-of-state reference. It does not reveal an algorithm or prove that buying has switched to selling.',
       keyPoints: [
         'Confirmed by candle bodies closing through the opposing sequence open, not swing points',
         'Occurs immediately at or near the liquidity sweep extreme',

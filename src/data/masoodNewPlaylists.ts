@@ -241,7 +241,7 @@ export const masoodAdditionalPlaylists: MasoodPlaylist[] = [
           'Risking variable amounts (e.g. 1% on one trade, 5% on the next).',
           'Closing winning trades prematurely while letting losing trades run.'
         ],
-        practicalExercise: 'Run a 30-trade simulation using our built-in Backtest Lab with fixed 1:2.5 R:R and a 45% win-rate to witness positive expectancy compounding.'
+        practicalExercise: 'Use a spreadsheet to compare hypothetical fixed +2.5R wins and −1R losses at an assumed 45% win rate: expectancy is +0.575R before costs. Then compare that assumption with a recorded sample; a small simulation does not establish future compounding or profitability.'
       },
       {
         id: 'masood-gf-9',
@@ -343,7 +343,7 @@ export const masoodAdditionalPlaylists: MasoodPlaylist[] = [
         playlistType: 'psychology',
         shortSummary: 'Why losing streaks are a normal statistical reality in trading, and how to stop revenge trading from turning a normal 1% loss into a 10% catastrophe.',
         keyTakeaways: [
-          'Even a 60% win rate strategy will experience 4–6 consecutive losses in a 100-trade sample.',
+          'An assumed 60% win rate does not prevent consecutive losses. Their number and length vary across hypothetical samples; a 100-trade sample does not guarantee a particular losing streak.',
           'Revenge trading happens when the ego rejects the loss and seeks immediate retribution.',
           'The market has no memory of your previous trade; entering angrily destroys objective chart reading.'
         ],
@@ -362,10 +362,10 @@ export const masoodAdditionalPlaylists: MasoodPlaylist[] = [
         title: 'LEC 4: The 1% Rule & Asymmetric Risk-to-Reward Geometry',
         youtubeId: 'VTU-MPH8xqk',
         playlistType: 'psychology',
-        shortSummary: 'Understanding asymmetric payout geometry: how a 40% win rate with 1:3 R:R makes you consistently wealthy.',
+        shortSummary: 'Explore hypothetical win rate and payout arithmetic: a 40% assumption with fixed +3R/−1R outcomes gives +0.6R expectancy before costs, not a promise of wealth or repeatable results.',
         keyTakeaways: [
-          'Win rate is secondary; risk-to-reward ratio and risk management are primary.',
-          '10 trades at 1:3 R:R: 4 wins (+12R), 6 losses (-6R) = Net +6R profit with a losing win rate!',
+          'Evaluate win rate, realized payout size and costs together; no one metric establishes profitability or controls the risk of a losing sequence.',
+          'Illustrative ten-trade arithmetic: four +3R wins and six −1R losses total +6R before costs. This hypothetical 40% win rate example assumes fixed outcomes and is not a forecast or a verified trading record.',
           'Retail traders obsess over 90% win rates, which usually hide catastrophic -10R blowups.'
         ],
         coreRules: [
@@ -1086,7 +1086,7 @@ export const masoodAdditionalPlaylists: MasoodPlaylist[] = [
         title: 'SESSION 27: Tape Reading the Lunch Hour Dead Zone: Why Smart Money Steps Away',
         youtubeId: 'FBsFtk8ZVyg',
         playlistType: 'syndicate',
-        shortSummary: 'Observing the 12:00 - 13:15 PM lunch hour chop and proving mathematically why trading this window destroys win rate.',
+        shortSummary: 'Study the 12:00–13:15 lunch-window convention and compare recorded conditions with your written rules. This timing label does not establish a lower win rate or prove that every session is choppy.',
         keyTakeaways: ['Institutional traders take lunch; algorithmic liquidity drops by 70%, creating random erratic wicks.'],
         coreRules: ['STRICT RULE: Zero trades between 12:00 PM and 13:15 PM New York time.'],
         tradingChecklist: ['Is it lunch hour? If yes, close charts.'],

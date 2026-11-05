@@ -1,3 +1,4 @@
+import claimsReviewUrdu from './claims-review-urdu.json';
 import {legacyPracticeUrdu,legacyPracticeTopicsUrdu} from '../data/legacyPracticeMetadata';
 import practiceLoopUrdu from './practice-loop-urdu.json';
 import {practiceContentTranslations} from '../data/practiceLoopContent';
@@ -255,6 +256,7 @@ export const urdu: Record<string, string> = {
   ...glossaryMetadataTranslations,
   'ICT Glossary':'ICT لغت',
   'Definitions, anatomy and boundaries for ICT and Smart Money Concepts.':'ICT اور اسمارٹ منی تصورات کی تعریفیں، ساخت اور حدود۔',
+  ...claimsReviewUrdu,
 };
 // Exact pairs keep static snippets and client-side metadata in the same language.
 for (const { en, ur } of Object.values(searchDescriptions)) urdu[en] = ur;

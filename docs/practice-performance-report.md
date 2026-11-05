@@ -120,3 +120,6 @@ Changes are concentrated in scoped metadata/catalogues, shared startup/vendor sp
 Reproduce with TypeScript, `npm run build:content`, `npm run verify:claims` (expected protected-content failure), `npm run verify:bundle`, and the browser collector/parity verification. Compressed preview: `node scripts/serve-compressed-production.mjs`; size override: `node scripts/verify-bundle-budget.mjs --override` (failure remains recorded). Raw evidence is local under `outputs/practice-performance/`, excluded from Git; this report/CSVs and reproducible checks are committed.
 
 ![Final Chart Lab desktop preview](../outputs/practice-performance/after/chartlab-en-1440-light.png)
+
+## Release-blocker resolution — 2026-11-05
+The earlier protected-copy blocker is resolved with owner authorization. Fourteen source statements were corrected in EN/UR; the full default build now passes the unmodified strict claims scanner with zero findings. Details and review CSV: docs/claims-release-resolution.md and docs/claims-wording-review.csv. Earlier blocker counts above describe the historical pre-correction snapshot.

@@ -517,7 +517,7 @@ export const App: React.FC = () => {
           'chartlab', 'simulator', 'backtest', 'journal', 'graph', 'concepts', 'compare', 'dashboard', 'masterclass', 'ict_suite'
         ].includes(activeTab)) && (
           <Suspense fallback={<ViewLoadingFallback />}>
-            {(() => {const path=withoutLocale(typeof window==='undefined'?'':window.location.pathname);const tool=path==='/tools/delivery-suite/'?'delivery':path==='/tools/simulator/'?'simulator':path==='/tools/backtest/'?'backtest':null;return tool?<PracticeLoopPage tool={tool}/>:path==='/tools/chartlab/'?<ChartLabHubPage/>:<TradingToolsWorkbench
+            {(() => {const path=withoutLocale(typeof window==='undefined'?'':window.location.pathname);const tool=path==='/tools/delivery-suite/'?'delivery':path==='/tools/simulator/'?'simulator':path==='/tools/backtest/'?'backtest':null;return tool?<PracticeLoopPage key={tool} tool={tool}/>:path==='/tools/chartlab/'?<ChartLabHubPage/>:<TradingToolsWorkbench
               initialTool={initialTool}
               onToolChange={handleWorkbenchToolChange}
               onSelectConcept={handleSelectConcept}

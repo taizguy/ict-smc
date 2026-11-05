@@ -16,7 +16,7 @@ import {createElement} from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 fs.mkdirSync('outputs/practice-loop',{recursive:true});
 const pairs=new Map<string,string>();
-for(const file of ['src/data/practiceLoopContent.ts','src/data/practiceCases.ts','src/components/practice/PracticeLoop.tsx','src/components/practice/PracticeLoopPage.tsx','src/components/practice/PracticeReading.tsx','src/components/market/MarketChart.tsx']){
+for(const file of ['src/data/practiceLoopContent.ts','src/data/practiceCases.ts','src/components/practice/PracticeLoop.tsx','src/components/practice/PracticeLoopPage.tsx','src/components/practice/PracticeReading.tsx','src/components/market/MarketChart.tsx','src/components/market/CaseStudyResource.tsx','src/components/market/GuidedMarketDesk.tsx']){
  const source=ts.createSourceFile(file,fs.readFileSync(file,'utf8'),ts.ScriptTarget.Latest,true,file.endsWith('tsx')?ts.ScriptKind.TSX:ts.ScriptKind.TS);
  const literal=(n:ts.Node)=>ts.isStringLiteral(n)||ts.isNoSubstitutionTemplateLiteral(n);
  const add=(a:ts.Node,b:ts.Node)=>{if(literal(a)&&literal(b)&&/[\u0600-\u06ff]/.test(b.text))pairs.set(a.text,b.text);};

@@ -57,10 +57,3 @@ if (document.documentElement.dataset.appStartup !== 'fallback' || progressive) {
     </StrictMode>,
   );
 }
-
-
-
-
-
-
-

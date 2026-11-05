@@ -1,4 +1,6 @@
 import fs from 'node:fs';
+import {createHash} from 'node:crypto';
+import caseBaseline from './practice-case-integrity-baseline.json';
 import assert from 'node:assert/strict';
 import {parse} from 'parse5';
 import {legacyPracticeMetadata} from '../src/data/legacyPracticeMetadata';
@@ -11,12 +13,16 @@ import {practiceCaseSummaries} from '../src/data/practiceCaseCatalog';
 import artwork from '../src/data/chartHubArtwork.generated.json';
 import {ChartHubArtwork} from '../src/data/chartHubArtwork';
 import {chartLabStudies} from '../src/data/chartLabHub';
+import {remainingCases} from '../src/data/chartLabRemaining';
+import {silverCases} from '../src/data/silverBulletStudy';
+import {breakerCases} from '../src/data/breakerStudy';
 import {toolRouteStudies} from '../src/data/toolRouteStudies';
 import {createElement} from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 const all=(n:any):any[]=>[n,...(n.childNodes||[]).flatMap(all)],text=(n:any):string=>n?.value||(n?.childNodes||[]).map(text).join(''),attr=(n:any,k:string)=>n?.attrs?.find((a:any)=>a.name===k)?.value;
 for(const [route,meta]of Object.entries(legacyPracticeMetadata))for(const n of [0,1]){
  const path=(n?'/ur':'')+route,html=fs.readFileSync('dist'+path+'index.html','utf8'),nodes=all(parse(html)),head=all(nodes.find(v=>v.tagName==='head'));
+ assert.ok(!html.includes('Opening your page...'),path+' startup loader');
  assert.equal(text(head.find(v=>v.tagName==='title')),meta.title[n],path);
  assert.equal(text(nodes.find(v=>v.tagName==='h1')),meta.h1[n],path);
  for(const property of ['og:title','twitter:title'])assert.equal(attr(head.find(v=>attr(v,'property')===property||attr(v,'name')===property),'content'),meta.title[n]);
@@ -28,6 +34,12 @@ assert.deepEqual(tables.backtest,learningCases.map(c=>{const r=evaluateCase(c,1.
 for(const summary of practiceCaseSummaries){const source=practiceCaseFiles.find(c=>c.id===summary.id)!;assert.ok(source);for(const key of Object.keys(summary))assert.deepEqual(summary[key as keyof typeof summary],JSON.parse(JSON.stringify(source[key as keyof typeof source])));assert.ok(!('candles'in summary)&&!('variants'in summary));}
 for(const study of chartLabStudies)for(const language of ['en','ur']as const)assert.equal(artwork[study.slug as keyof typeof artwork][language],renderToStaticMarkup(createElement(ChartHubArtwork,{study,ur:language==='ur',playing:true})));
 for(const [family,studies]of Object.entries(toolRouteStudies))for(const [slug,study]of Object.entries(studies))assert.deepEqual(JSON.parse(fs.readFileSync('src/data/runtime/tool-briefs/'+family+'/'+slug+'.json','utf8')),study,'Exact per-route brief projection');
+for(const [family,rows]of Object.entries({remaining:remainingCases,silver:silverCases,breaker:breakerCases,guided:learningCases}))for(const row of rows)assert.deepEqual(JSON.parse(fs.readFileSync('src/data/runtime/practice-cases/'+family+'/'+row.id+'.json','utf8')),JSON.parse(JSON.stringify(row)),'Unchanged exact case chunk');
+const canonicalCase=(v:any):any=>Array.isArray(v)?v.map(canonicalCase):v&&typeof v==='object'?Object.fromEntries(Object.keys(v).sort().map(k=>[k,canonicalCase(v[k])])):v;
+for(const [key,expected]of Object.entries(caseBaseline.hashes)){const row=JSON.parse(fs.readFileSync('src/data/runtime/practice-cases/'+key+'.json','utf8'));assert.equal(createHash('sha256').update(JSON.stringify(canonicalCase(row))).digest('hex'),expected,'Pre-split case data changed: '+key);}
+const bundle=JSON.parse(fs.readFileSync('outputs/practice-performance/latest/bundle.json','utf8'));
+assert.equal(bundle.flatMap((c:any)=>c.modules).filter((m:any)=>/chartLabRemainingCases.json|silverBulletCases.json|learningCaseSource.ts|breakerCaseSource.ts/.test(m.id)).length,0,'Full authored case sources must be build-only');
+assert.equal(bundle.flatMap((c:any)=>c.modules).filter((m:any)=>m.id.includes('/runtime/practice-cases/')).length,35);
 const manifest=JSON.parse(fs.readFileSync('dist/seo-manifest.json','utf8'));
 // Existing native Urdu editorial budget is 90 Unicode characters. It is a
 // documented language exception, not an indexing rule or an English exemption.

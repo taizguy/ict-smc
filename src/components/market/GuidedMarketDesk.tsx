@@ -1,4 +1,6 @@
-import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
+import caseIndex from '../../data/practiceCaseIndex.generated.json';
+import {loadPracticeCase} from '../../data/loadPracticeCase';
+import { use, lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowRight,
   Check,
@@ -17,7 +19,7 @@ import {
   caseSource,
   evaluateCase,
   GUIDED_KEY,
-  learningCases,
+  learningCases as sourceLearningCases,
   type LearningCase,
 } from "../../data/learningCases";
 import { initialMarket, validPlan, type Mark } from "../../utils/marketEngine";
@@ -26,9 +28,9 @@ import { ReadingChart } from './ReadingChart';
 import { downloadLabFile } from "../labs/LabDesk";
 import type { MarketMode } from "./MarketWorkspace";
 const Chart = lazy(() => import("./MarketChart"));
-const initialGuidedMarket = () => ({
-  ...initialMarket(), source: caseSource(learningCases[0]), bars: learningCases[0].bars,
-  cursor: 14, seen: 14, draft: casePlan(learningCases[0]),
+const initialGuidedMarket = (c:LearningCase) => ({
+  ...initialMarket(), source: caseSource(c), bars: c.bars,
+  cursor: 14, seen: 14, draft: casePlan(c),
 });
 const Sandbox = lazy(() =>
   import("./MarketWorkspace").then((m) => ({ default: m.MarketWorkspace })),
@@ -80,14 +82,23 @@ export function GuidedMarketDesk({
   hideNextTools?: boolean;
   storageKey?: string;
 }) {
-  const { t, href, message } = useTranslation(),
+  const [initialId]=useState(()=>{
+    if(requestedCaseId&&caseIndex.guided.some(c=>c.id===requestedCaseId))return requestedCaseId;
+    if(typeof window!=='undefined')try{const saved=JSON.parse(localStorage.getItem(storageKey)||'null');const found=caseIndex.guided.find(c=>caseSource(c)===saved?.source);if(found)return found.id;}catch{/* Existing storage error UI remains authoritative. */}
+    return caseIndex.guided[0].id;
+  });
+  const firstCase=typeof window==='undefined'?sourceLearningCases[0]:use(loadPracticeCase<LearningCase>('guided',initialId));
+  const [learningCases,setCaseRows]=useState<LearningCase[]>(()=>typeof window==='undefined'?sourceLearningCases:[firstCase]);
+  const [caseBusy,setCaseBusy]=useState(false),[caseError,setCaseError]=useState(false),caseRequest=useRef(0);
+  useEffect(()=>()=>{caseRequest.current++;},[]);
+  const { t, href, message,locale } = useTranslation(),
     {
       state: s,
       dispatch,
       ready,
       flush,
       storageError,
-    } = useMarketSession(storageKey, initialGuidedMarket);
+    } = useMarketSession(storageKey, ()=>initialGuidedMarket(firstCase));
   const [stage, setStage] = useState(0),
     [answered, setAnswered] = useState(false),
     [hint, setHint] = useState(false),
@@ -139,25 +150,22 @@ export function GuidedMarketDesk({
     setInspected(null);
     setChecks({});
   };
-  const loadCase = (next: LearningCase) => {
-    dispatch({
-      type: "load",
-      state: {
-        ...initialMarket(),
-        source: caseSource(next),
-        bars: next.bars,
-        cursor: 14,
-        seen: 14,
-        draft: casePlan(next),
-      },
-    });
-    resetLesson();
+  const loadCase = async (reference:Pick<LearningCase,'id'>) => {
+    const request=++caseRequest.current;setCaseBusy(true);setCaseError(false);
+    try{
+      const next='bars'in reference?reference as LearningCase:await loadPracticeCase<LearningCase>('guided',reference.id);
+      if(request!==caseRequest.current)return;
+      setCaseRows(rows=>rows.some(c=>c.id===next.id)?rows:[...rows,next]);
+      dispatch({type:'load',state:{...initialMarket(),source:caseSource(next),bars:next.bars,cursor:14,seen:14,draft:casePlan(next)}});
+      resetLesson();
+    }catch{if(request===caseRequest.current)setCaseError(true);}
+    finally{if(request===caseRequest.current)setCaseBusy(false);}
   };
   useEffect(() => {
-    if(ready && requestedCaseId){const next=learningCases.find(v=>v.id===requestedCaseId);if(next)loadCase(next);}
+    if(ready && requestedCaseId){const next=caseIndex.guided.find(v=>v.id===requestedCaseId);if(next)loadCase(next);}
   },[ready,requestedCaseId]);
   useEffect(() => {
-    if (ready && !learningCases.some((v) => caseSource(v) === s.source))
+    if (ready && !caseIndex.guided.some((v) => caseSource(v) === s.source))
       loadCase(learningCases[0]);
   }, [ready, s.source]);
   useEffect(() => {
@@ -381,6 +389,8 @@ export function GuidedMarketDesk({
           )}
         </div>
       </header>
+      {caseBusy&&<p className="sr-only" role="status">{locale==='ur'?'منتخب مشقی کیس لوڈ ہو رہا ہے۔':'Loading the selected teaching case.'}</p>}
+      {caseError&&<p role="alert">{locale==='ur'?'کیس لوڈ نہیں ہو سکا۔ دوبارہ منتخب کریں؛ موجودہ مثال برقرار ہے۔':'The case could not load. Select it again to retry; the current example remains available.'}</p>}
       <div className="guided-session-bar">
         <span>
           <b>{t(c.name)}</b> ·{" "}
@@ -390,10 +400,10 @@ export function GuidedMarketDesk({
           <summary>{t("Try another case")}</summary>
           <p>{t("Changing the case starts a fresh paper attempt.")}</p>
           <div>
-            {learningCases.map((v) => (
+            {caseIndex.guided.map((v) => (
               <button
                 key={v.id}
-                disabled={live(s.order?.status)}
+                disabled={caseBusy||live(s.order?.status)}
                 aria-pressed={v.id === c.id}
                 onClick={() => loadCase(v)}
               >
@@ -1145,17 +1155,15 @@ export function GuidedMarketDesk({
               <button
                 className="guided-primary"
                 disabled={live(s.order?.status)}
-                onClick={() => {
-                  setResults({
-                    minimumR,
-                    cost,
-                    items: learningCases.map((v) =>
-                      evaluateCase(v, minimumR, cost),
-                    ),
-                  });
-                  setInspected(c.id);
-                  setResearchCursor(14);
-                  setRevealed(true);
+                onClick={async () => {
+                  const request=++caseRequest.current;setCaseBusy(true);setCaseError(false);
+                  try{
+                    const rows=typeof window==='undefined'?sourceLearningCases:await Promise.all(caseIndex.guided.map(v=>loadPracticeCase<LearningCase>('guided',v.id)));
+                    if(request!==caseRequest.current)return;
+                    setCaseRows(rows);setResults({minimumR,cost,items:rows.map(v=>evaluateCase(v,minimumR,cost))});
+                    setInspected(c.id);setResearchCursor(14);setRevealed(true);
+                  }catch{if(request===caseRequest.current)setCaseError(true);}
+                  finally{if(request===caseRequest.current)setCaseBusy(false);}
                 }}
               >
                 {t("Apply the checklist to six cases")}

@@ -20,8 +20,9 @@ function check(text:string,context:string,file:string,line:number,structuralReas
  const namedTerm=rule.id==='algorithmic-delivery'&&text.length<350&&!/\b(?:is|are|has|have|makes?|ensures?|guarantees?|guaranteed|confirms?|proves?|drives?|controls?|determines?|indication|reveals?)\b/i.test(text);
  const metricInstruction=rule.id==='win-rate'&&!/\d\s*%|highest|profitable|wealthy|proven|guarantee|statistical/i.test(text)&&/\b(?:record|track|review|calculate|report|journal|metrics?)\b/i.test(text);
  const rejectedEquivalence=/\b(?:separate|distinguish|confusing|mistake)\b.{0,150}\b(?:from|with)\b.{0,150}\bguaranteed\b/i.test(sentence);
- const metricReporting=rule.id==='win-rate'&&/\breport\b.{0,120}\b(?:sample size|unresolved|costs)\b/i.test(context)&&!/%|profitable|wealthy|highest|guarantee/i.test(text);
- const qualified=(rule.id==='guarantee'||rule.id==='precision-promise')?negative||rejectedEquivalence:caveat.test(sentence);
+ const metricReporting=rule.id==='win-rate'&&/\breport\b.{0,120}\b(?:sample size|unresolved|costs)\b/i.test(sentence)&&!/%|profitable|wealthy|highest|guarantee/i.test(sentence);
+ const unqualifiedPerformancePromise=rule.id==='win-rate'&&/highest|consistently wealthy|highly profitable|will experience/i.test(sentence)&&!negative;
+ const qualified=!unqualifiedPerformancePromise&&((rule.id==='guarantee'||rule.id==='precision-promise')?negative||rejectedEquivalence:caveat.test(sentence));
  const item={file,line,rule:rule.id,phrase:m[0],context:(structuralReason?`[${structuralReason}] `:'')+sentence.slice(0,500)};(qualified||metricReporting||metricLabel||answeredQuestion||structuralReason||boundedLabel||namedTerm||metricInstruction?reviewed:findings).push(item);
 }}}
 function walk(dir:string){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const f=path.join(dir,e.name);if(e.isDirectory()){walk(f);continue;}if(!/\.(html|json|txt|svg)$/i.test(f))continue;const source=fs.readFileSync(f,'utf8');
@@ -36,6 +37,7 @@ function walk(dir:string){for(const e of fs.readdirSync(dir,{withFileTypes:true}
    let support:any;
    if(/^h[1-6]$/.test(a.tagName)){const siblings=a.parentNode?.childNodes||[];support=siblings.slice(siblings.indexOf(a)+1).find((v:any)=>v.tagName);}
    if(a.tagName==='a'){const href=a.attrs?.find((v:any)=>v.name==='href')?.value;if(href?.startsWith('#')){const target=descendants(doc).find(v=>v.attrs?.some((x:any)=>x.name==='id'&&x.value===href.slice(1)));support=target&&descendants(target).find(v=>v.tagName==='p');}}
+   if(support&&support.tagName!=='p')support=descendants(support).find(v=>v.tagName==='p');
    if(support?.tagName==='p'&&caveat.test(content(support))&&content(support).length<2500)reason='neutral metric heading/link qualified by its own adjacent or linked explanation';
   }
  }check(n.value,context,f,n.sourceCodeLocation?.startLine||1,reason);

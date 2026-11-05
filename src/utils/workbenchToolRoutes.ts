@@ -1,7 +1,7 @@
 import {legacyPracticeMetadata} from '../data/legacyPracticeMetadata';
 import {studyForSlug} from '../data/chartLabRemainingContent';
 import { masterclassCollection, MasterclassItem } from '../data/masterclassData';
-import { chartScenarios } from '../data/chartScenarios';
+import chartScenarios from '../data/chartScenarioCatalog.generated.json';
 import { ChartScenario } from '../types';
 import { conceptComparisons } from '../data/comparisonsData';
 import { quizzes, QuizModule } from '../data/quizzesData';

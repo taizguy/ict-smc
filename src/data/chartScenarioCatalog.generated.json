@@ -1,0 +1,38 @@
+[
+  {
+    "id": "btc_2022_bullish_model",
+    "title": "ICT 2022 model on BTC/USDT: Asian low sweep practice",
+    "asset": "BTC/USDT-style",
+    "description": "Crypto trades around the clock; our New York day and Asian study range are explicit grouping choices. Follow four paths from an earlier low sweep to a qualified return, failure or no entry."
+  },
+  {
+    "id": "nq_silver_bullet_short",
+    "title": "NQ Silver Bullet: five synthetic AM chart cases",
+    "asset": "Synthetic NQ-style prices",
+    "description": "Practise the ICT Silver Bullet short on synthetic NQ charts: check New York timing, sweeps, FVGs, stops and no-entry cases."
+  },
+  {
+    "id": "eurusd_failed_ob_breaker",
+    "title": "EUR/USD: Bearish breaker block practice",
+    "asset": "EUR/USD",
+    "description": "Study an ICT bearish breaker block on EUR/USD: mark the failed order block, compare close-through and wick-only cases, and test retests and invalidation."
+  },
+  {
+    "id": "xauusd_gold_legacy_model",
+    "title": "XAUUSD session sweep: test the FVG midpoint",
+    "asset": "XAUUSD-style",
+    "description": "A wick below a midpoint is not the same as a close below it. Compare five gold-style paths and decide which event actually ends this selected continuation test."
+  },
+  {
+    "id": "eur_mmbm_propulsion_model",
+    "title": "EUR/USD market maker buy model and propulsion block",
+    "asset": "EUR/USD-style",
+    "description": "Start with the whole price curve, then inspect the returning down-close candle. Its own body midpoint differs from the parent midpoint and FVG CE. Five paths separate overlap, confirmation and later return."
+  },
+  {
+    "id": "nq_2026_ath_alchemy_ndog_macro",
+    "title": "NQ NDOG, 09:50 macro IFVG and ATH measurement",
+    "asset": "NQ-style",
+    "description": "Three observations, not one official system: register a maintenance gap, test a timed inversion, then inspect a separate RTH projection. Six paths include whole-gap failure, late confirmation and a missed entry."
+  }
+]

@@ -40,3 +40,6 @@ Queries: ICT Silver Bullet London Judas Swing trading model risk; ICT Charter Mo
 
 ## Delivery interface follow-up — 2026-11-05
 Done: duplicate static language control removed; one main header switch retained; four existing calculator modules and UR mirrors moved onto the shared practice layout with native reading HTML and real module links. Calculations and exercise rules preserved. Eight changed module fingerprints recorded. TypeScript, build:content, 10,936 SEO checks, 787-page crawl and targeted static/runtime checks passed. Evidence and files: docs/delivery-interface-followup.md; outputs/practice-performance/delivery-ui-*. No push or deployment. Protected unrelated claims remain unchanged.
+
+## Simulator brief follow-up — 2026-11-05
+Done: practice-loop layout across six briefs and UR mirrors; three missing bilingual briefs added; six distinct real application links; misleading default generic charts replaced by explicit optional shared practice; hub/previous/next/trust navigation restored. Original data, rules and URLs preserved. TypeScript, content build, 10,936 SEO checks, 787-page crawl, budgets and twelve-page native/runtime/keyboard checks passed. Evidence: docs/simulator-interface-followup.md and outputs/practice-performance/simulator-ui-*. No push/deploy.

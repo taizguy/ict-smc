@@ -1922,34 +1922,34 @@
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/simulator/failed-ob-breaker/": {
-      "fingerprint": "8c2d2b2f2046459a4e01177c3717f8bac1d70fc687b1fb1a2318bc002248021b",
+      "fingerprint": "e57f30856052a355984bf9bb1b0aabd0bc463e7f4c7fc05bab6d7dc1c5f56c2e",
       "lastmod": "2026-11-05",
-      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
+      "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/tools/simulator/ict-2022-model/": {
-      "fingerprint": "36702836c2760cd8fd7e3ecb80dcf595fc736052dae01f25de3b44c1053b10eb",
+      "fingerprint": "c7cf79a1f6425e9ecbc906ff5d75e70d4a46167be208a6b671981eb834c90562",
       "lastmod": "2026-11-05",
-      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
+      "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/tools/simulator/london-judas-swing/": {
-      "fingerprint": "01303638404b464317ced0da5237d2ca87e871d11a19223b7c569b888a21ce3d",
+      "fingerprint": "3685b444ff219f4d416f94b69c25c3181b3e21ba79645b72ee8040998960194f",
       "lastmod": "2026-11-05",
-      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
+      "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/tools/simulator/news-driver-reversal/": {
-      "fingerprint": "cfb5c08af84109ba03119f124d1cee89b9e724f58dca320c217ef07f644827f8",
+      "fingerprint": "b76b82398558d21a3993d7b8b097a649e55b2353708b510b18fef7761ae268d1",
       "lastmod": "2026-11-05",
-      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
+      "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/tools/simulator/ote-expansion-long/": {
-      "fingerprint": "8d48e0f27c76bd485eedb15f42df0727759a44a5bd52e494d113057293663369",
+      "fingerprint": "c59822ae43e2eea0b224f22bc741e876278969c6ac8ee6ee776069bbcd8d6389",
       "lastmod": "2026-11-05",
-      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
+      "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/tools/simulator/silver-bullet-short/": {
-      "fingerprint": "62effbce0f2ebbb5ba1b76ab65130b4a56a9b3b288caed2c584c112bf21272ad",
+      "fingerprint": "cb02eed5090583b09d1ce40f4206ce920b7bd7f4e6bc539d45ccac6f5cbc561c",
       "lastmod": "2026-11-05",
-      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
+      "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/ur/": {
       "fingerprint": "889bdcf73cae7cacfaf016df3008e5e16ac74afd5659440a41065951665d5c4b",
@@ -3767,34 +3767,34 @@
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/tools/simulator/failed-ob-breaker/": {
-      "fingerprint": "112561e6f9dcf4e91e2a2eb518a830640f6ee92c184db4c1ec8f7b4ba0decec4",
+      "fingerprint": "eeff03a2fea97d471da2a4e64c26a9ef852d4d7786a98b65b612473830667d47",
       "lastmod": "2026-11-05",
-      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
+      "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/ur/tools/simulator/ict-2022-model/": {
-      "fingerprint": "44ddc0820037895036998688e051881c7f7a4f6a99a30c410b4703bb63329d79",
+      "fingerprint": "566baa9824b6f2aa6b15359c1f88658b9c52f1a71fb92045cd7f65a6e26e94be",
       "lastmod": "2026-11-05",
-      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
+      "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/ur/tools/simulator/london-judas-swing/": {
-      "fingerprint": "151579a39e7444856328fd2587a78e860e79dddbfcde6e7e150c660f0417610d",
+      "fingerprint": "4cf3e42ad0e20ab63d1a8f97e346ac0af2d1387fd5cd48c2c954cfc11979b78a",
       "lastmod": "2026-11-05",
-      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
+      "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/ur/tools/simulator/news-driver-reversal/": {
-      "fingerprint": "300c1afb99a3a7bbce68d397e5f2c7ae51225e98f8ebc685643bf17bf65aefaf",
+      "fingerprint": "0eb9dd88b9ec5c9ed9e0656a868a10a148955b23a0bdb0612d0a4614e5cfbfd9",
       "lastmod": "2026-11-05",
-      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
+      "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/ur/tools/simulator/ote-expansion-long/": {
-      "fingerprint": "060ff30d3c1d84da8581251b6695cf7214a2c9756c0dc48bb6754724909daf83",
+      "fingerprint": "9d88163893dd9d7de03838e5bf3f3e29a80d46f05689ce70ee3a6646734b7ba1",
       "lastmod": "2026-11-05",
-      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
+      "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/ur/tools/simulator/silver-bullet-short/": {
-      "fingerprint": "781db9af9b1f0dd0cb2618ff5f0e8327172c04d87941aab64103f857a75f70ea",
+      "fingerprint": "6829e38e707efa5375a97ebf8bb9b54f79c8e8a55cee4c8c06ac47d33c0a58c7",
       "lastmod": "2026-11-05",
-      "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
+      "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     }
   }
 }

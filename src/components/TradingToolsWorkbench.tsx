@@ -239,6 +239,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
   const glossaryPath=documentPath || (typeof window!=='undefined'?window.location.pathname:'/tools/glossary/');
   if(activeTool==='concepts'&&primaryGlossaryRoute(glossaryPath))return <GlossaryReference pathname={glossaryPath}/>;
 
+  if(activeTool==='simulator'&&simulatorModelSlug)return <TradeSimulator key={simulatorModelSlug} initialModelSlug={simulatorModelSlug}/>;
   if(activeTool==='simulator'&&!simulatorModelSlug)return <PracticeLoopPage tool="simulator"/>;
   if(activeTool==='backtest'&&!backtestStrategySlug)return <PracticeLoopPage tool="backtest"/>;
   if(activeTool==='ict_suite'&&withoutLocale(collectionPath)==='/tools/delivery-suite/')return <PracticeLoopPage tool="delivery"/>;

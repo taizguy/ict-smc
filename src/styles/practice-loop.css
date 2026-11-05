@@ -52,3 +52,14 @@ html[data-theme=dark] .practice-page a.guided-next-link{background:#8fc8ff;color
 .wb-suite[data-workbench-tool=chartlab] .practice-loop a{text-decoration:none;color:inherit;min-height:44px;display:flex;align-items:start}
 .practice-page .guided-workspace{min-width:0;width:100%}
 .practice-page button.market-price-handle{color:var(--color-ink)!important;background:var(--wb-chart-paper)}
+
+/* Delivery modules use the practice hub reading layout. */
+.delivery-module-nav{display:flex;flex-wrap:wrap;gap:12px;border-block:1px solid var(--practice-rule);padding-block:16px}
+.delivery-module-nav a{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border:1px solid var(--practice-rule);border-radius:6px}
+.delivery-module-nav a[aria-current=page]{border-color:var(--practice-accent);font-weight:600;text-decoration-thickness:2px}
+.delivery-module .delivery-calculator>section{padding:clamp(18px,3vw,32px);background:transparent;border:1px solid var(--practice-rule);border-radius:8px;display:grid;gap:20px}
+.delivery-module [data-route-study]{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding:clamp(18px,3vw,32px);background:transparent;border-color:var(--practice-rule)}
+.delivery-module [data-route-study]>h2{grid-column:1/-1}
+.delivery-module table{border-collapse:collapse;width:100%}.delivery-module :is(th,td){padding:12px;text-align:start;border-bottom:1px solid var(--practice-rule)}
+.delivery-module .delivery-optional{border:1px solid var(--practice-rule);padding:20px;border-radius:8px}.delivery-module .delivery-optional>summary{cursor:pointer;font-weight:600;margin-bottom:16px}
+@media(max-width:640px){.delivery-module [data-route-study]{grid-template-columns:1fr}.delivery-module table{font-size:.8rem}.delivery-module :is(th,td){padding:8px}}

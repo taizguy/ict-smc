@@ -10,6 +10,7 @@ export function auditedReadingRoute(pathname: string) {
   if (glossaryPrimaryPaths.has(path)) return 'glossary';
   if (['/tools/delivery-suite/','/tools/simulator/','/tools/backtest/'].includes(path)) return 'practice';
   if (path === '/tools/delivery-suite/ote-calculator/') return 'ote';
+  if (/^\/tools\/delivery-suite\/(macro-clock|judas-planner|learning-path)\/$/.test(path)) return 'delivery-module';
   if (/^\/masood\/lectures\/[^/]+\/$/.test(path)) return 'masood';
   return null;
 }

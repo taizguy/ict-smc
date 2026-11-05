@@ -8,7 +8,15 @@ const schemaTextKeys = new Set(['name', 'headline', 'description', 'text', 'arti
 const documentTypes = new Set(['WebPage', 'Article', 'BlogPosting', 'LearningResource', 'CollectionPage', 'DigitalDocument', 'WebApplication', 'ItemPage', 'DefinedTermSet', 'AboutPage', 'ContactPage', 'FAQPage']);
 const escaped = (text: string) => text.replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]!));
 const textContent = (node: HTML.Node): string => node.nodeName === '#text' ? (node as HTML.TextNode).value : 'childNodes' in node ? node.childNodes.map(textContent).join('') : '';
-const switcher = (pathname: string, locale: 'en' | 'ur') => `<nav data-language-switcher class="language-switcher" aria-label="${locale === 'ur' ? 'زبان منتخب کریں' : 'Choose language'}" dir="ltr"><a href="${localizedHref(pathname, 'en')}" hreflang="en" lang="en" translate="no"${locale === 'en' ? ' aria-current="page"' : ''}>English</a><a href="${localizedHref(pathname, 'ur')}" hreflang="ur" lang="ur" translate="no"${locale === 'ur' ? ' aria-current="page"' : ''}>اردو</a></nav>`;
+
+/** Older static headers lack the runtime switcher; never append a second one. */
+const ensureHeaderLanguage = (source:string, pathname:string, locale:'en'|'ur') => {
+  source=source.replace(/<nav\b[^>]*data-static-header-language[^>]*>[\s\S]*?<\/nav>/g,'');
+  if (/class="[^"]*language-toggle/.test(source)) return source;
+  const control=`<nav data-static-header-language class="language-switcher language-toggle" data-language="${locale}" aria-label="${locale==='ur'?'زبان منتخب کریں':'Choose language'}" dir="ltr"><span class="language-toggle-thumb" aria-hidden="true"></span><a href="${localizedHref(pathname,'en')}" hreflang="en" lang="en" translate="no"${locale==='en'?' aria-current="page"':''}>EN</a><a href="${localizedHref(pathname,'ur')}" hreflang="ur" lang="ur" translate="no"${locale==='ur'?' aria-current="page"':''}>اردو</a></nav>`;
+  return source.replace('</header>',control+'</header>');
+};
+
 const attribute = (node: HTML.Element, name: string) => node.attrs.find(a => a.name === name)?.value;
 const set = (node: HTML.Element, name: string, value: string) => {
   const existing = node.attrs.find(a => a.name === name);
@@ -17,7 +25,7 @@ const set = (node: HTML.Element, name: string, value: string) => {
 
 /** Parse real HTML rather than replacing strings inside scripts, JSON, IDs or attributes. */
 export function localizeHtml(source: string, pathname: string, catalog: TranslationCatalog, options: { preview?: boolean; indexable?: boolean; availablePaths?: ReadonlySet<string>; nativeReadingRoot?: boolean; onMissing?: (text: string) => void } = {}): string {
-  const document = parse(source.replace(/<nav\b[^>]*data-language-switcher[^>]*>[\s\S]*?<\/nav>/g, '').replace('</header>', `${switcher(pathname, 'ur')}</header>`));
+  const document = parse(ensureHeaderLanguage(source.replace(/<nav\b[^>]*data-language-switcher[^>]*>[\s\S]*?<\/nav>/g, ''),pathname,'ur'));
   const translate = (text: string) => {
     const result = t(text, 'ur', catalog);
     if (result === text && /[a-z]{3}/i.test(text)) options.onMissing?.(text.replace(/\s+/g, ' ').trim());
@@ -144,5 +152,5 @@ export function addLanguageAlternates(source: string, pathname: string, indexabl
 }
 
 export function addEnglishAlternates(source: string, pathname: string, indexable = true): string {
-  return addLanguageAlternates(source, pathname, indexable).replace(/<nav\b[^>]*data-language-switcher[^>]*>[\s\S]*?<\/nav>/g, '').replace('</header>', `${switcher(pathname, 'en')}</header>`);
+  return ensureHeaderLanguage(addLanguageAlternates(source, pathname, indexable).replace(/<nav\b[^>]*data-language-switcher[^>]*>[\s\S]*?<\/nav>/g, ''),pathname,'en');
 }

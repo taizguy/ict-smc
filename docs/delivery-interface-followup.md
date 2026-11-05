@@ -1,0 +1,15 @@
+# Delivery interface follow-up — 2026-11-05
+
+Scope: duplicate language controls across generated pages, plus the four existing Delivery Suite module URLs and their Urdu mirrors. No URL, calculator formula, candle dataset or exercise rule changed. No push or deployment.
+
+The static localization generator appended a second standalone language control to headers that already rendered the main navigation control. It now preserves the existing control; older static-only headers receive one identically styled header control, with locale-correct active links. No hreflang metadata was removed.
+
+Macro clock, OTE calculator, Judas planner and Study checklist now use the practice-page layout, RoleLine, LoopStrip, one active module navigation, shared takeaway and next-step navigation. Their existing calculations and checklist storage remain. The full risk exercise is available in an optional section below, rather than preceding the requested calculator. Existing bilingual study briefs and OTE assumptions remain visible in static HTML. All four module families now use the same runtime and prerender view. Only these eight pages are eligible for revision-ledger updates.
+
+Shared files: scripts/localized-html.ts, scripts/prerender.ts, src/utils/auditedReadingRoutes.ts, src/components/AuditedRouteDocument.tsx, src/components/TradingToolsWorkbench.tsx, src/styles/practice-loop.css. Generated translation catalogs change only to remove strings no longer referenced by the retired module wrapper.
+
+Verification evidence is in outputs/practice-performance/: delivery-ui-build-verified.log, delivery-ui-typecheck.log, delivery-ui-checks.json, delivery-ui-revisions.json. Regression script: scripts/verify-delivery-interface.mjs checks no duplicate header language controls across 787 manifest pages (one on paired EN/UR pages; English-only history pages may omit it), no duplicate fallback markup, and eight bilingual module documents with one H1, the practice loop, one selected module and four existing module destinations. Production content build runs the existing SEO, crawl and practice-loop checks. The separate strict site-wide claims gate remains blocked by the previously reported protected, unrelated claims; no claim exception was added.
+
+Browser verification: OTE anchor editing recalculates 70.5% correctly (20600–(20600–20400)×0.705 = 20459); native Urdu Judas planner renders its module and localized navigation. Dark mobile layout at 390px has no horizontal overflow. Final browser captures and route observations are stored with the same evidence prefix. Human Urdu and assistive-technology review remain unverified.
+
+Final result: TypeScript, build:content, 10,936 SEO checks, the 787-page crawl, bundle budgets and the targeted eight-route verification passed. Browser-observed headings and study paragraphs match the native HTML on all eight routes; all eight show one switcher and no desktop overflow. EN dark and UR light at 390px also have no overflow. Screenshots: delivery-ui-preview.png and delivery-ui-ur-mobile.png. Revision ledger updated only eight changed module fingerprints.

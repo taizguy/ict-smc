@@ -17,7 +17,7 @@ export function AuditedRouteBody({ pathname, heading }: { pathname: string; head
   if(path==='/tools/chartlab/')return <ChartLabHubPage/>;
   if (kind === 'chartlab') return <TradingToolsWorkbench documentPath={path} documentHeading={heading} initialTool="chartlab" chartScenarioSlug={path.split('/')[3]} />;
   if(kind==='glossary'){const state=resolveGlossaryUrl(path);return <TradingToolsWorkbench documentPath={path} documentHeading={heading} initialTool="concepts" glossaryCategory={state.categorySlug} glossaryConceptId={state.conceptId}/>;}
-  if (kind === 'ote') return <TradingToolsWorkbench documentPath={path} documentHeading={heading} initialTool="ict_suite" deliveryModuleSlug="ote-calculator" />;
+  if (kind === 'ote' || kind === 'delivery-module') return <TradingToolsWorkbench documentPath={path} documentHeading={heading} initialTool="ict_suite" deliveryModuleSlug={path.split('/')[3]} />;
   if (kind === 'masood') {
     const id = path.split('/')[3];
     const lecture = masoodPlaylistsData.flatMap(series => series.lectures).find(item => item.id === id);

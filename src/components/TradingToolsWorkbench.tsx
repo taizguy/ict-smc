@@ -242,6 +242,7 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
   if(activeTool==='simulator'&&!simulatorModelSlug)return <PracticeLoopPage tool="simulator"/>;
   if(activeTool==='backtest'&&!backtestStrategySlug)return <PracticeLoopPage tool="backtest"/>;
   if(activeTool==='ict_suite'&&withoutLocale(collectionPath)==='/tools/delivery-suite/')return <PracticeLoopPage tool="delivery"/>;
+  if(activeTool==='ict_suite'&&deliveryModuleSlug)return <InstitutionalToolsSuite initialModuleSlug={deliveryModuleSlug} heading={documentHeading || (typeof document!=='undefined'?document.querySelector('meta[name="learnsmc-heading"]')?.getAttribute('content')||undefined:undefined)}/>;
   const currentToolMeta = tools.find(t => t.id === activeTool) || tools[0];
 
   return (

@@ -21,8 +21,8 @@ All 12 English routes and their Urdu mirrors remain unchanged. This report disti
 - Rendered title: Silver Bullet Short: Decision Practice | LearnSMC
 - Rendered H1: Silver Bullet Short: Practise waiting, participating or standing aside
 - Rendered description: Open Silver Bullet decision practice. Wait or skip a fictional plan, then review paper execution; session labels do not supply live signals.
-- Visible brief: No dedicated brief
-- Visible limitation: Shared authored exercise only.
+- Visible brief: Silver Bullet short: time is a filter, not an entry
+- Visible limitation: No live scanner, news filter or Silver Bullet-specific execution replay is embedded here. The linked Chart Lab has explicit synthetic cases and its own conditions. Do not treat the optional general case A as evidence for this model or assume every gap inside the hour deserves a trade.
 - Stored taxonomy description: Study the New York time-window convention alongside confirmation, entry and invalidation. These shared cases are not a dedicated Silver Bullet market sample.
 - Is that exact stored description present in the rendered body/head? No; do not mistake an unused configuration string for a live claim.
 - Spine overlap: silver (topic relationship only; different candle data)
@@ -34,8 +34,8 @@ All 12 English routes and their Urdu mirrors remain unchanged. This report disti
 - Rendered title: London Judas Swing: Decision Practice | LearnSMC
 - Rendered H1: London Judas Swing: Practise waiting, participating or standing aside
 - Rendered description: Explore London Judas Swing decision practice using a fictional setup. Check context and invalidation before revealing the paper outcome.
-- Visible brief: No dedicated brief
-- Visible limitation: Shared authored exercise only.
+- Visible brief: London Judas swing: distinguish an excursion from a reversal
+- Visible limitation: This page has no London-specific candle replay, session detector or reversal alert. The linked planner is a range-arithmetic exercise. The optional general simulator retains its common gap-based checklist and must not be presented as a London Judas backtest.
 - Stored taxonomy description: Compare an Asian-range reference and a London-session excursion as a teaching convention. A sweep does not establish the low of the day.
 - Is that exact stored description present in the rendered body/head? No; do not mistake an unused configuration string for a live claim.
 - Spine overlap: None established. Remains tool-specific.
@@ -73,8 +73,8 @@ All 12 English routes and their Urdu mirrors remain unchanged. This report disti
 - Rendered title: Macro News Reversal: Decision Practice | LearnSMC
 - Rendered H1: Macro News Reversal: Practise waiting, participating or standing aside
 - Rendered description: Explore news-reversal decision practice with authored candles. Review the fictional plan and its limits; actual news and spreads are not modeled.
-- Visible brief: No dedicated brief
-- Visible limitation: Shared authored exercise only.
+- Visible brief: News risk: staying aside can be the planned decision
+- Visible limitation: There is no live economic calendar, announcement data, market-order execution model or event-specific historical replay here. The optional six-case exercise teaches waiting and skipping under disclosed assumptions; it does not measure a news-reversal strategy.
 - Stored taxonomy description: Use a fictional news-study lens to discuss context and invalidation. The exercise has no news feed, release-time sample or observable institutional inventory.
 - Is that exact stored description present in the rendered body/head? No; do not mistake an unused configuration string for a live claim.
 - Spine overlap: None established. Remains tool-specific.

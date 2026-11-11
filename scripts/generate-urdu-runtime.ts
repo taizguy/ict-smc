@@ -1,3 +1,4 @@
+import {fvgDocumentTranslations} from '../src/data/chapters/fvgDocumentTranslations';
 import {priceMovementTranslations} from '../src/data/chapters/priceMovementLesson';
 import {phase1Entries,curriculumPhase1Urdu} from '../src/data/curriculumPhase1';
 import {legacyPracticeUrdu} from '../src/data/legacyPracticeMetadata';
@@ -107,7 +108,7 @@ for(const svg of Object.values(masterclassStageArt)) for(const match of svg.matc
 // Directory descriptions and search titles are data-driven, not TS string literals.
 for(const row of phase1Entries)for(const key of [...row.title,...row.description])if(urdu[key])keys.shared.add(key);
 for(const key of Object.keys(curriculumPhase1Urdu))if(/^(Free ICT &|Learn ICT and Smart|The roadmap derives)/.test(key))keys.shared.add(key);
-for(const key of Object.keys(priceMovementTranslations))add(key,'chapters');
+for(const key of [...Object.keys(priceMovementTranslations),...Object.keys(fvgDocumentTranslations)])add(key,'chapters');
 const output = 'src/i18n/runtime';
 fs.mkdirSync(output, { recursive: true });
 for (const group of groups) {

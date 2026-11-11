@@ -1,5 +1,6 @@
 import { withoutLocale } from './locale';
 import type { TranslationCatalog } from './translate';
+import fallbackParts from './runtime/chapter-fallback-parts.json';
 const lessonCatalogs = import.meta.glob<{default:TranslationCatalog}>('./runtime/lessons/*.json');
 
 export async function loadUrduCatalog(pathname: string): Promise<TranslationCatalog> {
@@ -17,5 +18,7 @@ export async function loadUrduCatalog(pathname: string): Promise<TranslationCata
     : path.startsWith('/tools/') ? await import('./runtime/tools.json')
     : /^\/(?:about|privacy|terms|contact|disclaimer|adsense)\//.test(path) ? await import('./runtime/publisher.json')
     : { default: {} };
-  return { ...shared.default, ...section.default };
+  const needsChapterFallback=path.startsWith('/curriculum/')||path.startsWith('/learn/');
+  const reused=needsChapterFallback?await Promise.all(fallbackParts.map(slug=>lessonCatalogs[`./runtime/lessons/${slug}.json`]!())):[];
+  return { ...shared.default, ...section.default,...Object.assign({},...reused.map(part=>part.default)) };
 }

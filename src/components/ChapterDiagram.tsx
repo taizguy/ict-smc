@@ -4,7 +4,7 @@ import {hasMentorship2026Edition} from '../data/chapters/mentorship2026';
 import { useEffect, useState } from 'react';
 import { chapterDiagrams, type DiagramMark } from '../data/chapters/diagrams';
 import { useTranslation } from '../i18n/TranslationProvider';
-import { FvgLessonDiagram } from './FvgLessonDiagram';
+import {FvgBlueprint} from './FvgBlueprint';
 import { ChapterStory } from './ChapterStory';
 import { chapterStoryHeadings } from '../data/chapterStories';
 
@@ -56,7 +56,7 @@ export function ChapterDiagram({ chapterId, thumbnail = false, staticOnly = fals
   if(chapterId===1&&!thumbnail)return <PriceMovementVisual kind="book" staticOnly={staticOnly}/>;
   if(hasMentorship2026Edition(chapterId)) return <Mentorship2026Diagram chapterId={chapterId} thumbnail={thumbnail} staticOnly={staticOnly}/>;
   if (!spec) return null;
-  if (chapterId === 13 && !thumbnail) return <FvgLessonDiagram staticOnly={staticOnly} onPractice={onPractice}/>;
+  if (chapterId === 13 && !thumbnail) return <FvgBlueprint kind="builder" staticOnly={staticOnly}/>;
   if (!thumbnail && !staticOnly) return <ChapterStory chapterId={visualId} onPractice={onPractice}/>;
   const choose = (value: number) => { setPlaying(false); setStep(value); };
   return <figure className={`chapter-diagram ${thumbnail ? 'chapter-diagram--thumbnail' : 'chapter-diagram--lesson'} ${playing ? 'chapter-diagram--playing' : ''}`} data-chapter-diagram={chapterId} data-illustration-source={visualId}>

@@ -1,3 +1,4 @@
+import {localizeFvgDocument} from './fvg-localized-document';
 import {localizePriceMovementDocument} from './price-movement-localized-document';
 import {practicePages} from '../src/data/practiceLoopContent';
 import {practiceSchema} from '../src/utils/practiceSchema';
@@ -45,7 +46,7 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
       if (!preview) fs.writeFileSync(sourcePath, addLanguageAlternates(source, englishPath, !route.isNoindex));
       continue;
     }
-    let html = localizeHtml(localizePriceMovementDocument(localizeMasterclassDocument(source,englishPath),englishPath), englishPath, urdu, { preview, indexable: !route.isNoindex, availablePaths: available, nativeReadingRoot: !!auditedReadingRoute(englishPath), onMissing(text) {
+    let html = localizeHtml(localizeFvgDocument(localizePriceMovementDocument(localizeMasterclassDocument(source,englishPath),englishPath),englishPath), englishPath, urdu, { preview, indexable: !route.isNoindex, availablePaths: available, nativeReadingRoot: !!auditedReadingRoute(englishPath), onMissing(text) {
       if (!text) return;
       if (!missing.has(text)) missing.set(text, new Set());
       missing.get(text)!.add(englishPath);
@@ -111,7 +112,7 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
   fs.writeFileSync(path.join(dist, 'seo-manifest.json'), JSON.stringify(manifest, null, 2));
   fs.mkdirSync('outputs/urdu-localization', { recursive: true });
   fs.writeFileSync('outputs/urdu-localization/rendered-missing.json', JSON.stringify([...missing].map(([english, pages]) => ({ english, pages: [...pages] })), null, 2));
-  const unchangedReferences = new Set(['LearnSMC', 'RDRB', 'MSS', 'FVG', 'BOS', 'OTE', 'BSL', 'SSL', 'IFVG', 'MVRV = 2', 'NUPL = 0.5']);
+  const unchangedReferences = new Set(['LearnSMC', 'RDRB', 'MSS', 'FVG', 'BOS', 'OTE', 'BSL', 'SSL', 'IFVG', 'BISI / SIBI', 'MSS / CHoCH', 'ATR', 'MVRV = 2', 'NUPL = 0.5']);
   const unresolved = [...missing.keys()].filter(text => !unchangedReferences.has(text) && !/^(?:https?:\/\/|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}$)/.test(text));
   if (!preview && unresolved.length) throw new Error(`Urdu publication stopped: ${unresolved.length} untranslated text segments. Review outputs/urdu-localization/rendered-missing.json.`);
   console.log(`Urdu ${preview ? 'noindex review' : 'public'} documents generated: ${routes.filter(route => !isEnglishOnlyHistory(new URL(route.canonical).pathname)).length}. Unmatched text segments require review: ${missing.size}.`);

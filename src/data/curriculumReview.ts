@@ -1,3 +1,4 @@
+import {fvgDocumentDates} from './chapters/fvgDocument';
 import {priceMovementSources,priceMovementDates} from './chapters/priceMovementLesson';
 import {mergedChapterIds,phase1Entry} from './curriculumPhase1';
 import {alchemyDates} from './chapters/marketAlchemyPilot';
@@ -14,7 +15,7 @@ import { cornerstoneGuides, cornerstoneRevision } from './cornerstoneGuides';
 export const curriculumReviewDate = '2026-10-19';
 export const curriculumReviewLabel = '19 October 2026';
 // Chapter-wide editorial/diagram/quiz consistency review; not a new full-recording review.
-export const chapterReviewRevision = (id: number) => id===1?priceMovementDates.updated:phase1Entry(id)?.id===id ? {iso:'2026-11-10',label:'10 November 2026'} : id===49?alchemyDates.updated:hasMentorship2026Edition(id) ? {iso:'2026-10-27',label:'27 October 2026'} : hasMentorship2025Edition(id) ? {iso:'2026-10-26',label:'26 October 2026'} : [13,14,15,16].includes(id)
+export const chapterReviewRevision = (id: number) => id===13?fvgDocumentDates.updated:id===1?priceMovementDates.updated:phase1Entry(id)?.id===id ? {iso:'2026-11-10',label:'10 November 2026'} : id===49?alchemyDates.updated:hasMentorship2026Edition(id) ? {iso:'2026-10-27',label:'27 October 2026'} : hasMentorship2025Edition(id) ? {iso:'2026-10-26',label:'26 October 2026'} : [13,14,15,16].includes(id)
   ? { iso: '2026-10-25', label: '25 October 2026' } : [13, 15].includes(id) || cornerstoneGuides.some(guide => guide.chapterId === id)
   ? { iso: cornerstoneRevision, label: '24 October 2026' }
   : { iso: '2026-10-21', label: '21 October 2026' };

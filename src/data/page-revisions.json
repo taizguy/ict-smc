@@ -2,172 +2,172 @@
   "version": 1,
   "pages": {
     "/": {
-      "fingerprint": "0636c88611b12476f651133ddd3c75c9428012911e940a53c609135db93eba6f",
+      "fingerprint": "b7908b18c11d620b8a471d9ebacb58773166370b2011b76c1d57cd73ac9a06a8",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1 curriculum structure/metadata and approved lossless merges; docs/curriculum-phase1-report.md. Source video review dates are not restamped."
     },
     "/about/": {
-      "fingerprint": "5425da3cc859a50e1e227e9b53c1befe8d8776207452ce968257a66a438d99c4",
+      "fingerprint": "fc9fcecad574c63de2b6703e840d5b9de4adb538f6edd1f5df8c7785c05f11fb",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/articles/": {
-      "fingerprint": "a294d9f25608e6af9cdce872f9f62171e52d6d511952ac4ef6954e5c57d3acd6",
+      "fingerprint": "43b554efeb09d835291a8dabb5e16debcb5de6c386f2f2140f6b71bdb7e48238",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/articles/a-good-trade-can-lose/": {
-      "fingerprint": "25df3804be07796d17f94fa68f5c2db3a424e275d5b86a79dc8136bf2d963ce0",
+      "fingerprint": "30c6d5b93b9195bddc28799092094aa47e1bcd5f512c93814998d5df3442ed10",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/articles/ancient-china-knife-spade-round-coins/": {
-      "fingerprint": "c07f32c875f744c2af3dfc10c675b4f4d485c572fb88ec380900fc6749a7409c",
+      "fingerprint": "5d04c179a8f8ff6ea90604165102de9a7dcd5a5f3451296220401c80b274e0eb",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained."
     },
     "/articles/ancient-credit-contracts-loans-interest-banking/": {
-      "fingerprint": "e64345b93bd621cdf9c6b84dc44b53ce564c3c93743cb385aa1baf3638ff11e0",
+      "fingerprint": "f0c39f8004e15d19882afbac62b7b3d887fa118eb0e416857446d8bc72f86bdc",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained."
     },
     "/articles/banknotes-central-banks-stockholm-bank-england/": {
-      "fingerprint": "52322ddcda4f08746060d7a5ac9f85d2f97884ad9b53859b294a92e0e23878ee",
+      "fingerprint": "fe21aa9869e00a583ee97798587d8937c1bf89398e6a83eb90170d04ec6198a9",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained."
     },
     "/articles/barter-direct-exchange-and-its-limits/": {
-      "fingerprint": "40b7e59292b585300e0dbd9365e934454cee7051541bd7c678c0076f23836d87",
+      "fingerprint": "cb7d808354c793a899cf19e95c04f3bda089a4a4d398cb89ed6208817e7ad929",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained."
     },
     "/articles/before-money-gifts-sharing-and-trust/": {
-      "fingerprint": "42c0cd2aa78bfd41c55765abdf581719f5d3d1dec7e2bea1c74b8cad2d9a9559",
+      "fingerprint": "ff1d147230cfb0cdf977ed7ca7d1f17751c6959cc1e810d9a58609d699c2a8cd",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained."
     },
     "/articles/bitcoin-dashboard-is-not-a-crystal-ball/": {
-      "fingerprint": "5526da05b09c5b6731e05abfb0bd2667fc33d619d7ee2b6db1456b637b57d778",
+      "fingerprint": "d82293563765907e1f638ed167bc64a95a4a1acf2284c43abeda7f653c13d3de",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/articles/commodity-money-cattle-grain-salt-shells-beads/": {
-      "fingerprint": "4331fc71de4f8835aadeb13523f4a1d9821ff6d1115eb8de7dd2b58658047cc5",
+      "fingerprint": "6478ee1e349a52da703e18438df054595e410ddee52b25dc87e79d2b642c36ce",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained."
     },
     "/articles/compare-ict-entry-models-without-hindsight/": {
-      "fingerprint": "0c1817da9d6ded3905ab3e1c85cefefc86cedf2fe3ec2bdf9ba4e8311b987d7a",
+      "fingerprint": "ed004acb0e992feb5d3b2ee06941893cff8be82eb655f3b2bd94781eaf0ea8a0",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/articles/drawdown-math-is-not-symmetric/": {
-      "fingerprint": "0df3d179d66ead9c63f4b22d54db8443ca4b252860d54415e976fcf167d8773e",
+      "fingerprint": "2fcbc0d921ac00def8f187b7ae98eafda87c7bb12f7e18546d5dc5b3a9b422ae",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/articles/egypt-indus-grain-weights-seals/": {
-      "fingerprint": "0196bea29f5f1165ba2f975144f2fa432e5d2876a538f3b589b09e0f49cef51d",
+      "fingerprint": "7abe76894922973df93ce86edb42db38aef5273354554a87460cf8eaa6e29fc1",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained."
     },
     "/articles/first-stock-markets-venice-voc-amsterdam/": {
-      "fingerprint": "0902f0a082383b0930bf77f31b44e6c657a23eae53ce8ab16233849cb0777f17",
+      "fingerprint": "4a65df75672d5667438a5345b89641dcf9ed9d8b0efc5257ba2f73c3573aebd7",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained."
     },
     "/articles/gold-standard-bretton-woods-1971/": {
-      "fingerprint": "fbe0b62dc92b298a65cddecbb384f5d17c528b36882760d38d9e372563ea345e",
+      "fingerprint": "26261e01c6146cc4fdcd02b2b4c261669548aaa75a56c106e2618be73ae550a2",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained."
     },
     "/articles/greek-city-states-coins-agora-bankers/": {
-      "fingerprint": "55b78735751d1bce68916c8f35a949bf139bfcf1638ab69cc26b98e98d14fe95",
+      "fingerprint": "b562fb6c4df82fa9752a578ebdb1b6470161fd13f923d4fd82ec7d8582704aa1",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained."
     },
     "/articles/higher-timeframe-bias-to-lower-timeframe-execution/": {
-      "fingerprint": "1e6ce44b5756fbb928c806751ce13f20f948cddcd4a0d4f2f1a25642292646c4",
+      "fingerprint": "170344feeba970cd2a08d4fb562677fb54c9182c5304be6cde51b88957776517",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/articles/history/": {
-      "fingerprint": "379fed46c3dad0741d6126fc74f32fff59cef5f5d6e5408a82b4d05cd02830d6",
+      "fingerprint": "0031e561eebfca45a862fc9e6141b9d7671268236a0ddcf49e69340901aff567",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained. Article counter split into number and localized label; visible content and editorial date retained, 2026-10-24."
     },
     "/articles/how-to-study-ict-without-collecting-setups/": {
-      "fingerprint": "ec200a81f3d12d539f146a50c5d33da286cf7b6c35fdaa09385c6cf72697919f",
+      "fingerprint": "d9248f2620fe72613b0d059b9cbbde762801b34196d8a275fa67c71c70a84fbc",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/articles/liquidity-is-not-a-magnet/": {
-      "fingerprint": "002043aee1f05a63d5eff8503c4d2daf7cb84c167abfe8107631a0db0b690a4b",
+      "fingerprint": "d404c938c7cefafc43397dc809b74b1b5c7e7f9319a84efa858f8156bf9261f9",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/articles/lydia-first-coins-electrum-croesus/": {
-      "fingerprint": "8b27b4eb2c5775bc18cf74c43ce80bb06d31110a875c37c99a0c302364e46c22",
+      "fingerprint": "01b0f5c90d63152dd7d5dbace890d251bee4defeacf088445c67c0993566421d",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained."
     },
     "/articles/medieval-money-islamic-coins-hawala-bills/": {
-      "fingerprint": "d204906b4dc52b224e9f9ad62b1522a149049647a9ab1f16cf4c20f262ea1c14",
+      "fingerprint": "b3fe5adda30a4c5c4ee14a06875ef314abacc16ddecb9165c7aac6e6b5fb5010",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained."
     },
     "/articles/mesopotamia-tokens-temples-first-accounting/": {
-      "fingerprint": "e6a968467d99e3c2a6261f1680b4e2f32b56f4da7cbdf6a4887fc44318672747",
+      "fingerprint": "6a3958d4d35c15de6710e7b8b8abc26419aceaf43c71ce952e7e21c9d4edcc2f",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained."
     },
     "/articles/opening-range-vs-opening-gap-new-york/": {
-      "fingerprint": "780ec5862f61cfd2e54fe26a41589d25c03a825be67314e492bd4e82628c9e47",
+      "fingerprint": "21c5b892c2b1482d15f3f1267594cadeac6703c9641552ee488f66b96c33fced",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/articles/paper-money-tang-song-china-flying-money/": {
-      "fingerprint": "c39695408d33e9d6a5fde7b325e962815f536be252a7724de8c8be57dce3833d",
+      "fingerprint": "f54d45be7b19e682aba8a0563805b9aa2ad0d2171cb3404f8a6567a54a09b75e",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained."
     },
     "/articles/pd-arrays-fvg-order-blocks-and-inversions/": {
-      "fingerprint": "cde3b2e7c9cfd1a08a0e8a10ec600f5ae36ff87ffd06e58d50ff6b69f4b090da",
+      "fingerprint": "4266121c8c05649a72fa83325d716c532c6e57072996fb8ade0f99e66684c171",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/articles/persia-alexander-empire-wide-currency/": {
-      "fingerprint": "6448c4fa35023f8bbbee3205c854a1093c7d04e4402b0a0a15a27ad177280e2e",
+      "fingerprint": "48242a8cbac8f217fc5aa038e9e5bb4c7310b32a52a57720fdcbe40ed2697045",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained."
     },
     "/articles/rome-denarius-debasement-inflation/": {
-      "fingerprint": "e18e345bee8ed970eadcd8a9de4e99b5f1f2dd5b95ec4276c222c024d6ce35cc",
+      "fingerprint": "bf8df02bbb2dd9a56ff976a49b05a3b590f1af45960cdfd4f15e253301ebd008",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained."
     },
     "/articles/silk-road-indian-ocean-trade/": {
-      "fingerprint": "a9fed3738333da3f0c2558b3aa05f350eafa574cceaa97912867fe231b120946",
+      "fingerprint": "6f0061ea2f1c5ef54d777357f67a7ce6d81671a2a0f7791cb58178a1d13d1834",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained."
     },
     "/articles/silver-gold-by-weight-before-coins/": {
-      "fingerprint": "cf6bb9e3526624ebc9fc30a1291551c8fb0038b3bfbfc7de83ed583d5e09bd92",
+      "fingerprint": "d2fd7b0b121ca618fb434c5dc3da2719fe7d2f7b1efa1dd999547fbbea7b73c7",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained."
     },
     "/articles/stone-age-long-distance-trade-networks/": {
-      "fingerprint": "1cfc571c8f80c4cc20eda275edda56383edc66678553a65383bbf897d1a0d713",
+      "fingerprint": "170db4173003955c96a45adf43ea7f6420a37c03959b9cef46e5b4ceb8f0ec5d",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained."
     },
     "/articles/trading-floors-order-books-electronic-markets/": {
-      "fingerprint": "e5e4da2cf46351b2033c2e73665c8b9eeaf267eed93aace7ef36757fca8bde78",
+      "fingerprint": "73a8d567484562204b267a7d061580b6810ae9bd2f73622d8925c508cef4b1ca",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed. Hreflang self-reference correction, 2026-10-24; article content and editorial date retained."
     },
     "/contact/": {
-      "fingerprint": "b5fc6d4cb32b8079f71116f22f832d5fc1b5dfd06ff573ced60398d6ff373d73",
+      "fingerprint": "b22b87f3c25ca8a09c9a634352f811ad4a80243dec9c51d2e784590956041bb1",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
@@ -202,12 +202,12 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/market-foundations/": {
-      "fingerprint": "c1b2832b9702a4863adf1cb25d6786d8614542715dde36d2180d31a0289bc4b7",
+      "fingerprint": "7bae0394f8968327e352aca6fa9d71699e463267e2b6179f3108d72609aca1de",
       "lastmod": "2026-11-11",
       "evidence": "Chapter 01 supplied-document restoration, confirmed original date, native Urdu and updated directory summary; docs/chapter01-restoration-report.md"
     },
     "/curriculum/mentorships/": {
-      "fingerprint": "cdcb7e7f8a5efae405085174d0a6a7a2458b6dc2833b0a5dea6a96191293f7a4",
+      "fingerprint": "aa2b1ac77d9ae478c0889c43d18e0d5afbf3bfacd4c38500166bafce55bff175",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1 curriculum structure/metadata and approved lossless merges; docs/curriculum-phase1-report.md. Source video review dates are not restamped."
     },
@@ -222,22 +222,22 @@
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/curriculum/mentorships/2025/": {
-      "fingerprint": "c6693f5b1d73aadd29028d9ba4ae3dee780c2ab59926ad71f479c479b98e581e",
+      "fingerprint": "36516159cbcdb188d2f5d507dde724d42a76afec6ea7659be74540bbe36b529d",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/curriculum/mentorships/2026/": {
-      "fingerprint": "759ec2d3fa919a902fbe1f909f8ed34c6293965a75dc4b08533cd09ac1950073",
+      "fingerprint": "171d0076d3c4d00f97c4d424dcda63a1c8cfca6c5de2e730797dcfa07b0c5bc4",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/curriculum/mentorships/charter/": {
-      "fingerprint": "399961b36b4aaacddde34ce9f4041827bb696ceba8a125315ed290a3a15d3f88",
+      "fingerprint": "fa90ecdcb56a377e75af7752ce5813d1623d0878a12baca03b958503841432a0",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/curriculum/mentorships/core-2016-2017/": {
-      "fingerprint": "fa0adb24b2e88ed0361df73d5132fc37e5627188cb2e67b7e280b520612f575e",
+      "fingerprint": "effe09f5c19ca472ea6bc0dfcbc20e003b1c85a7cd0c12868d16868cf1da3408",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
@@ -247,7 +247,7 @@
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/curriculum/price-structure/": {
-      "fingerprint": "847f7e64f536820d1e0c599b2d53998be7eeb73afa7d58560fc0d4eaa44650e6",
+      "fingerprint": "0d9da760c8b2f5244405af2f4097445d5335b4868a3381fa6bba2f15d02cf0f6",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
@@ -267,67 +267,67 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/disclaimer/": {
-      "fingerprint": "dc274be2d93f025450794e4f24c9ca022640759d05cb31c463e752ce06916bec",
+      "fingerprint": "dbcb78f87cc65fc4c0350e07ba17c34f810fe02915bebd5ef2aeeb42507e61b9",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/0930-am-opening-range-theory/": {
-      "fingerprint": "61da0cfeae096ef31785272bc950cef1846381dc22fc61239af0a8d162dce1e6",
+      "fingerprint": "68659ab2949af9534092fa26739885a7fbf0caada2a67f48a47505d6b9cf3e17",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/2026-onboarding-from-vision-to-execution/": {
-      "fingerprint": "4687a4e45854b9b498422f291800743a5ff37778fe4a4ef7b5094c97d5a47c7a",
+      "fingerprint": "78d1d67ebf4cdd2980d16855c11e1c46a204433e78a4a3c1ec596f45bf106a72",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/break-of-structure-bos-trend-continuation/": {
-      "fingerprint": "88e4fb74a538949f8b255caddf84db0c4e88bf2e986896aeb878aabeb5993578",
+      "fingerprint": "aaef4db984f440133824e20bb24a742e7ac7a86f4b61678d46272dc4f7f35e62",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/breaker-blocks-trading-failed-order-blocks/": {
-      "fingerprint": "17f3cdb5a9781e74c87caa4040ebe0b8a753415735642032a4e2b1758e80da7b",
+      "fingerprint": "61d61aeb9f12fa579bd4ae29db39d01e99cc2dc7b2c1557d652ed17bcd893b0c",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/candle-range-theory-crt-strategy/": {
-      "fingerprint": "90745bfa59fbc9aa3af4bb09d15d49a0d1241bc594b5e19d7f606c6b2e657af5",
+      "fingerprint": "304047ff8f8de07a8617a88b3f3483e722a4061e100690df0a44a82695751d24",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/change-of-character-choch-the-first-warning/": {
-      "fingerprint": "ffebbc6f6c261b7ab69a2b2c69f22d10a15a4726884dd3bb20e3030e47f12930",
+      "fingerprint": "86e253d001245965c01e55b57458107d28c292e53532909cbea51573ed2456c0",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/core-content-month-1-elements-of-trade-setup/": {
-      "fingerprint": "c64deef4634afbf48ee5da6fd55f9d9b338324e946c224bf72fbe4fd453416b2",
+      "fingerprint": "c359e1cd845f881ca74a261b4ea1948d84a118fb28fa9fbd3dcabda6208690cc",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/core-content-month-2-growing-small-accounts/": {
-      "fingerprint": "54f58c85bf097edaa21c3851dcc7123ceacba53bec5e5b7216bb25aecdaa1837",
+      "fingerprint": "381df15dbcd480411875661612ca1091e3b5af48efb2c0dbbe1fef2f1b4f39bd",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/core-content-month-3-institutional-sponsorship-and-traps/": {
-      "fingerprint": "28f184649a54443ed88a757731044a7f660dc8e3f297002c4a00533634d0ce48",
+      "fingerprint": "86005bbf9384d227951cdb6b7b7c1f4a952b2fb3baeb975b42310f28463392cd",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/core-content-month-4-advanced-pd-arrays-and-yields/": {
-      "fingerprint": "c8cf63279e1c017896cae4c1dac12e2609d36fec088976f2924b03dc45952b9f",
+      "fingerprint": "154da2f8716d0ad98720ff7a623ea0799c95e469cddc064510c98fb606fecc61",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/core-content-month-5-quarterly-shifts-and-position-trading/": {
-      "fingerprint": "9f6be6feb7fe7575bc262ed3f83d6dfd03f1624edd84178c2593200ff20ca8b7",
+      "fingerprint": "f128e60f2c46a99f10fc47543a94ba502c557eeaac2866a036989dc81615f30e",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/core-content-month-6-swing-trading-mastery/": {
-      "fingerprint": "202227c3d4d2163b97a1a9494badddaccfbc641744745802f419d69f5c93ff67",
+      "fingerprint": "0e7c3964b2daaac4692c26a3394444b2615b75123b30f5552e986886310e01c0",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
@@ -342,17 +342,17 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/core-content-month-9-consolidations-and-bread-and-butter/": {
-      "fingerprint": "b093a50f17a3deeec2f202cd558c36b8da60d5dc0627d31b6c35093ef68d7a89",
+      "fingerprint": "92c5a100c8236c0de5458e211d01fa978cce688b37c8afe16a8cb10dae39e582",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/core-content-months-10-11-12-multi-asset-mega-trades-top-down/": {
-      "fingerprint": "bcad6427192dad775829b9d64bf5476cf0c0245aa097b542d60e228245a3f6b7",
+      "fingerprint": "9f3195613a197dc880fd40df21f0793a1c3b2af36237ce7b076345cc60707a42",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/daily-profiles-and-intraday-power-of-three-po3/": {
-      "fingerprint": "1fd84f7dd78da56a987808db4afe1ae0fedaa6099a91d2b094ff427a4632d864",
+      "fingerprint": "1a1407dca7f33c7f1ed3c8f7ad6c1e79307cfeba0264b84d2ab609f99aa71e92",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
@@ -362,22 +362,22 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/fair-value-gaps-fvg-and-consequent-encroachment/": {
-      "fingerprint": "97fa78a92f350f55abbc6c3379d10eeecb9fcf672451a10caa8c986ec481b22b",
+      "fingerprint": "f7021ffdb83015c97972a317d1fc230b5df0b5505df57224d196917b23878e13",
       "lastmod": "2026-11-11",
-      "evidence": "Chapter 26 supplied-PDF implementation; docs/chapter26-fvg-report.md and outputs/fvg-document-review/static-verification.json"
+      "evidence": "User-approved source order, native FAQs, semantic extraction and research-label cleanup; docs/two-lesson-semantic-html-report.md."
     },
     "/learn/how-an-exchange-matches-orders/": {
-      "fingerprint": "32cf12989fca2145145f96bc82ec8aba0fb224c19965b3aa5551b2cf6ea677b6",
+      "fingerprint": "4568cc45f6bf0be094f66e9037566189577da0d48a781e1389c86c06569b0513",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1 curriculum structure/metadata and approved lossless merges; docs/curriculum-phase1-report.md. Source video review dates are not restamped."
     },
     "/learn/ict-2026-backtesting-journaling-trade-management/": {
-      "fingerprint": "73145902c2540ff845784048c2828c7586c51e60d2bb35e1a8e30528578ea270",
+      "fingerprint": "0867b77b1fdc2eb070027025050346620b9488d71cc8c0eeb1d5faeaf7c8680c",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/ict-2026-enigma-reaper-reflection-fvg/": {
-      "fingerprint": "3f2839e48b6e75bcc524a75910c421dcd1d8be65d7c2d7ed33b20bd40e1b11ca",
+      "fingerprint": "808ea961faa3f3eee49e59b6eee086b4847fef0385826e4fd2d13d73ed51af21",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
@@ -387,32 +387,32 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/ict-2026-obsidian-model/": {
-      "fingerprint": "25dd5c65b99fd2d896624a71ee8d9b884e09dc5945ed1cf43783b77cb3b109b9",
+      "fingerprint": "5c550f0e54002c30e19677fa8d06d6b5bd91ba9a8f59cfb8c43afaaeb9a6b5d0",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/ict-chain-of-custody-of-price/": {
-      "fingerprint": "ef2810cfc01d6dc52e5b3290242acc60e4faed034aea921c0998661be63c9d01",
+      "fingerprint": "46a41b94565d7245af2482aae0dcf8ed716b1f99067c4c34e31d667f1ff8a069",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/ict-charter-model-1-intraday-scalping/": {
-      "fingerprint": "fa883538e7819f697e461bfa676f91c65015a2e55c780997561047afc5719a19",
+      "fingerprint": "207439619581bf064fdacdf2071f03a594c89552f7814b6307b86d3487e0184d",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/ict-charter-model-13-2022-youtube-model/": {
-      "fingerprint": "b4d848cb65abdfbbf72737424a00599454e974eef97107c71b88861a5e3416cf",
+      "fingerprint": "a77200d011d3e3dea2600d038a25ef98179d9deab60bdd96791b22699806be4c",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/learn/ict-charter-model-2-weekly-range-expansion/": {
-      "fingerprint": "0084196705bd19bee60b90e211d5ef7d1e34f354444ec828dd77f292613e6eee",
+      "fingerprint": "3679a2c4dab7e853827cfba58aacecc29a63748650eee08b5c27aea841c9795e",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/ict-charter-model-3-swing-trading-cot/": {
-      "fingerprint": "ca8bc970e66dfab26d3f4c9da8429539d1c1a618e983e20d1b74250a07d99058",
+      "fingerprint": "da239df88b1cbc816346c4847c1728c04df462da1f08823530df7ec97f71d3b0",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
@@ -432,22 +432,22 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/ict-charter-models-6-and-7-universal-models/": {
-      "fingerprint": "21cd42a60355c7fedff5b6c1d3f2bb325b90ba1c263f436f25fd0371b7d4d76a",
+      "fingerprint": "98216988efe0bce2ebb9916be2c6cd75e991fdaba3b14fc4adc5ca41ad066ae4",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/ict-charter-models-8-and-9-precision-and-osok/": {
-      "fingerprint": "6ead6c0379b5dbf6a728efdbc7b2b03236de26b0572bffb36918e93562efbe03",
+      "fingerprint": "3a49af3c80df68099918a9fab44149f813548de7ef268dc3ec1156d7e083b0e8",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/ict-liquidity-turtle-soup-rejection-blocks/": {
-      "fingerprint": "53d9b0e902d6678fa86d15384a5dd92b374fc0887349429a78f13593a4c6e518",
+      "fingerprint": "e2e02dd7dae5f1d768eb41dd4c276b5d47dcc83dbc5aa751bbe92eb19090a254",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/ict-lunch-afternoon-session-models/": {
-      "fingerprint": "431dc428f43ee499c2b8350f9f1350c3de6c0a036bf275d9f30208704dbc7668",
+      "fingerprint": "d8663d6a47708d5c363819b098a0291341714d334625cca0df4627f49c3fc248",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
@@ -457,52 +457,52 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/ict-news-volatility-no-trade-framework/": {
-      "fingerprint": "270eb355e764d37916619fabf168e6e9567f8bd6f61f6e8cf8761a9d578750f2",
+      "fingerprint": "9d52f4945c210c5c455aa3f3a41285ed5cab400ef11c5cbd21e99a35f0867bc7",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/ict-pd-array-selection-price-delivery-continuum/": {
-      "fingerprint": "00053cf44249ca8f1eb95f6225c9d345c7c1139acce58402bef4bee54f681588",
+      "fingerprint": "098cc808eeaa1197ef82231bd9c919fef76d4aaf644b0d291890bc6115aa9a4b",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/ict-replay-journaling-one-model-study/": {
-      "fingerprint": "b0884078c11150baf23c951d18d3b42c0159b0e35b099e3dcba3e6658e44fea8",
+      "fingerprint": "aa9ef52e1b22e1934df8ec1438601cac98c637134965b9d0c134b48805e1f215",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/ict-time-price-grids-quadrants-octants/": {
-      "fingerprint": "71f04fc5e3d45144647499b334aa5cd8be31bf335fddfc2a91357ab9e4433af8",
+      "fingerprint": "e4b5b4178548a17cc4137212a985ed9b6e8d75e1242978143b858e4660096ebe",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/ict-weekly-options-payoffs-and-risk/": {
-      "fingerprint": "722c7e9869a17d5eb3a75e982275a739eec3dbe0f5fb59dbdd6b1bfe41e23993",
+      "fingerprint": "e903687e424c4daa7b817fd247573b14332a6a86adf3607293599e7747e8e781",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/inverse-fair-value-gaps-ifvg-role-reversal-imbalances/": {
-      "fingerprint": "2c49d58abbc75fd8906902740b804b6b8aa896908e2cc5b1e4ba673641aedb3b",
+      "fingerprint": "a5fe40fb455099a53fd21ef55e7af43a6cd9c5b2b7f5bbed321b0f996ef04f0e",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/liquidity-engineering-and-liquidity-runs/": {
-      "fingerprint": "c417550ade258288b4406c20e9fe969f559dfe81a26c0ba67365fcb22a585f1e",
+      "fingerprint": "493d263e12a70644b3e9df2181820d12222aa0293b14f71be26d390dd795814f",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/liquidity-the-most-misunderstood-word-in-trading/": {
-      "fingerprint": "a9dddeea76e67c66f563cf6fa0addfb21c558c7cbbff6f9de1dd1010f76aa56d",
+      "fingerprint": "ec4acf9c4b76fb4b7045fa06c3efc912c6328532584472858bde16459d4c754f",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1 curriculum structure/metadata and approved lossless merges; docs/curriculum-phase1-report.md. Source video review dates are not restamped."
     },
     "/learn/market-alchemy-trading-all-time-highs-ath/": {
-      "fingerprint": "a58aaefcb99fe1b00793b48edbb9897c5e9bd4d142e7436dcc23361628f3ba03",
+      "fingerprint": "54fb7f43741cca24aa5b1d6db52d4630efb100db0e4e6e02a21ec88a1240497a",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/learn/market-structure-shift-mss-verified-directional-shift/": {
-      "fingerprint": "4fe3e5c3cc63585cd17ce29db8d74005d8048791eab00f3c295dfd2036b789d5",
+      "fingerprint": "5172e0517835f7e670640b353220108bb70ff717f118a7598860428f1cea52ff",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
@@ -512,92 +512,92 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/nq-es-premarket-session-rules-morning-engine/": {
-      "fingerprint": "702937ce3ff09b6cce7256e03f1b4174f87c39d85d4607188dcddf8a8876bc6d",
+      "fingerprint": "8d0011fc5cf2952db977dea2c3a79d341ef994b18713c730271e060d1f9362ce",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/opening-gap-matrices-ndog-nwog-csod/": {
-      "fingerprint": "4d755001f23d4c8e8bb179e2549c7b30a1a13fa1de68384fdd809a5a39efc4b0",
+      "fingerprint": "3776295a0c5494dcda2834f9e5970ae6638edcec65d862afe8cd7f68f2405978",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/order-blocks-ob-and-mitigation/": {
-      "fingerprint": "f1a18ef16f578f68b2f8d9f5d03ebc00bdd24070f2936cbb82af3065dac552b3",
+      "fingerprint": "14b8e6daf0444f6a394e967e1e642e0746bed4a49472842af8754e8608674d17",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/learn/rdrb-balanced-price-range-and-enigma-fvg/": {
-      "fingerprint": "abfa48f4e80fa7e5f1c918188adb2c3a3194fad8d0f5a458c37a046a7a8c349d",
+      "fingerprint": "572eb7101d1d5dca5f2554f0bd1bdb7f77efca4e8f224825129280b3a65a28e6",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/reaper-ifvg-and-suspension-block-advancements/": {
-      "fingerprint": "0a3697f8be6026b8bd5120efdedcacfc9c3be52823f154bfe39b58df306da3b5",
+      "fingerprint": "3b578b0f783ff454d1deacf5c715f6312eaccad915302cb077c4c5d92eb50e2e",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/sick-sister-strategy-and-double-purge-framework/": {
-      "fingerprint": "3ea76be41e452418f68d66fb0f38bd25d42e1be7a46fb53e4c88100577c6fdad",
+      "fingerprint": "3633076c41774c9c98116dfa14a5f6e20cb3cb35140b589141acf622ddb05412",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/smt-divergence-mechanics/": {
-      "fingerprint": "96b22a2f8fdba6518f56890e7b167d93dbd70c4dfbc03ade0415f82462dd0e7d",
+      "fingerprint": "5c037bb4a18eddff7156be2acda79a8a9637bbaecd0eec4e32780783bd8d2706",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/the-12-weekly-profiles/": {
-      "fingerprint": "aab54bc3c42b2f5715838585c733265499c213afb3baaed9a46784fdd4bf6647",
+      "fingerprint": "abc97327c9d5e832355f896f2645b0de26429374148303cf10d5cc96b82319c0",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/the-1st-presented-fvg-the-0931-rule/": {
-      "fingerprint": "86abc5dcb5728e9d7d8ef5d1fffd0ecf1250eac94f43baa872ccbcbd2a70fb9c",
+      "fingerprint": "a66b24851c4ad23d38bc848c2b4c5580f1417869d60e7b9f5938905d75662e7c",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/the-complete-ict-top-down-model-and-execution-blueprint/": {
-      "fingerprint": "a7a89fedf7e456ad2128db8be50a9fca6a1918351eea17f6621908100b80d8fd",
+      "fingerprint": "5eb4d6080e1426fcb50016f4d3e284140d8723ec92f8a71358a5a739aa41fbce",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/learn/the-ict-venom-model-five-stage-delivery/": {
-      "fingerprint": "757167c57a25b062f2b33cbc0c330f9ced38a00d0aa6529ba590c9f8be1dcd78",
+      "fingerprint": "a5739b9e5e6a049f755e97add240d7ffd2a54536f22f8d7c1afac4e94ce4ad34",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/the-order-book-in-depth/": {
-      "fingerprint": "53ce1df3e89a1833871f6a3c18720a2dcb51f332045c2321952d21d17bd3f004",
+      "fingerprint": "00df1f1c58edc95dbe929f76f2218951de37816ef474a8af88d70d6806fce102",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1 curriculum structure/metadata and approved lossless merges; docs/curriculum-phase1-report.md. Source video review dates are not restamped."
     },
     "/learn/the-weekly-profile-and-five-day-delivery-model/": {
-      "fingerprint": "af6d03c089047175494c15d649028de18b3d70dc950dbc074862fbffbeae5399",
+      "fingerprint": "3b74b6d4f307369ad1b87e1b8d4b37cd393ae91fd7cb536735397f0d6c459c04",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/time-and-session-liquidity-the-global-clock/": {
-      "fingerprint": "b5d44140e32fef7a3f9d17ec2bca1a2ec3bcc72d543c5ae354bfc8d4df980b2f",
+      "fingerprint": "9b5d0d8303646a968c7e25ba991f4546fbcd0539f11178b3d6a99a802b642226",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/learn/trader-abdullah-masood-masterclass/": {
-      "fingerprint": "edfcb7c2083692b5a1f351401a6d642fb0ba96ba8c0e391a87b5309d0069b46c",
+      "fingerprint": "3ce37132112be951c6f070825d2852a94dde052dc30070cb5896339c28e65c80",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/what-actually-moves-price/": {
-      "fingerprint": "d08873e68c3d2dc56102e56fc3d7ecb68d9501dd30e7088980b13d2ee12df26b",
+      "fingerprint": "0fbaa1917525b136cde7f02982a662c454dde59d576059354b6cf792c4d8f39b",
       "lastmod": "2026-11-11",
-      "evidence": "Chapter 01 supplied-document restoration, confirmed original date, native Urdu and updated directory summary; docs/chapter01-restoration-report.md"
+      "evidence": "User-approved source order, native FAQs, semantic extraction and research-label cleanup; docs/two-lesson-semantic-html-report.md."
     },
     "/learn/what-is-a-swing-the-atom-of-structure/": {
-      "fingerprint": "845739f0a6cf7ddb960bb61ad87d641e249a6cecfd1f47d60c67dce8ba029584",
+      "fingerprint": "0062bd248a1eebe4e32beef26c3c4fa3bce6feee02a368d3776ad2ffd1d09752",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/learn/why-candles-form-and-how-displacement-arises/": {
-      "fingerprint": "c66dab38e7fdad63421ba848d2c5d14f21f7e71a4e5031c4c54fb9c22a629bd1",
+      "fingerprint": "5845c8d7d124fbde0dd878203a3bdaf8db290cd553c3ecb802c3add9d1aa25fd",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
@@ -607,17 +607,17 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/masood/animations/": {
-      "fingerprint": "a7798f0e89e6a93f674aa154042a1405b94c6ba5ec2e2ba41fc93d73c144d26c",
+      "fingerprint": "056dc3de632c467c6f5535a0ff8cefb2028ac965bf15e7a51090bf20b79434fb",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/masood/bias-calculator/": {
-      "fingerprint": "03801d2dfb5a3c54628b3da26e920b00776821850a138208ced543550caeb1f9",
+      "fingerprint": "37557ed0c4af1786b2c4d2b2c3823f3f46328485ad872c275f23e3b921d46394",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/masood/golden-rules/": {
-      "fingerprint": "f943c1296553d38da1a07e94bc115a7fb202f217c77913a2249c2209ad10b3b9",
+      "fingerprint": "eccc8159750df9cc4f3645c3cb8dcb5ffb7d6a029ada608b49fedb886b7fdfae",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
@@ -627,7 +627,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/masood/lectures/masood-adv-10/": {
-      "fingerprint": "aaeb706fd780229f7b2ccc52059e19c7de6661954eaa93b40b7f57a4a67599f2",
+      "fingerprint": "755b70a8b400841b574513468e7ca93e849977a7f429dd788c195bbbc67283f7",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
@@ -662,7 +662,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/masood/lectures/masood-adv-17/": {
-      "fingerprint": "65123f829c532053fb2ce5d2694e5bf3f66b7f46547ee53b53495b30fa4595de",
+      "fingerprint": "eb81b8f9edefcdf9a3e951bd7aeef1a9f8958dbb13a11e61dd002f810ccd7a3f",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
@@ -672,7 +672,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/masood/lectures/masood-adv-2/": {
-      "fingerprint": "7cf7b1dd59a258bcc0d48f5c93ab98af1f9b7c35a296b32fdbc349ae6ab563d2",
+      "fingerprint": "372b55d91745925e4df04ae2a4b7e70faade16ef67ce7bcf9f1ff831953baadf",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
@@ -807,7 +807,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/masood/lectures/masood-db-20/": {
-      "fingerprint": "c620e0238473a8fff6a10700551f8860b5e9f45d9ad67825a55980d8bf4f1513",
+      "fingerprint": "048219bfc95a5595630c867826df91f571628887790dae83897c71178228bf58",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
@@ -887,7 +887,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/masood/lectures/masood-gf-8/": {
-      "fingerprint": "364694339b5dd620b3af03e4ce00e91d04d59527d35022bbacafe1367ff8c97f",
+      "fingerprint": "bb848c012a9058abdbad59fd283a0b809b58974e2495122ad8ddbe332b27cea0",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
@@ -957,12 +957,12 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/masood/lectures/masood-psy-3/": {
-      "fingerprint": "0aa2ac30649e384644a835d4de6d53f9d6cdba47ac3152947018616cfd6641d7",
+      "fingerprint": "97066205586410b2a6c346ba637ca0d93cfcf499bb7dee532e1007795206c632",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
     "/masood/lectures/masood-psy-4/": {
-      "fingerprint": "f79d62260fd70655d9074e593189a0ee6a5cd4c20097ba2b8a3ede3d10393dff",
+      "fingerprint": "b571e0d74727098478a8c5984eed726f72c24b64ccae213846b5b9a3a839936f",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
@@ -1087,7 +1087,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/masood/lectures/masood-syn-27/": {
-      "fingerprint": "ef155e91f737e1f76fd104cb283d3a37405ad09312bbbb17d53932cde4d43d14",
+      "fingerprint": "a2f28df462905928a28acd5a3c1e4a5805ca73274102439a901d7ef181c8572e",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
@@ -1212,7 +1212,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/masood/playlists/advanced/": {
-      "fingerprint": "53a28bbc7c4754446dbb858afd1d65d4d7caeb934b3dab45a8ee152f9baa00bf",
+      "fingerprint": "53261fe62ee2354d0884a06b142703b3fe23bee0454c8ddae595f20ecc56bc35",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
@@ -1222,7 +1222,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/masood/playlists/daily_bias/": {
-      "fingerprint": "65aa3b7da08d959d1a4acd804aa0e963944979c6f92e3456d5660a73eb147fd4",
+      "fingerprint": "ea4b999f8a3e128f49db1db2b65fea3c1d4bd5c6853566738d2d3840663ff468",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
@@ -1232,27 +1232,27 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/masood/playlists/psychology/": {
-      "fingerprint": "31069a498f765dacb94cf3950bd3edc5c52c7a9451c69518dd289e9a0f92f241",
+      "fingerprint": "6484993aa120b27c9a23df04612bb4a9ed44a898ab696d62c1d25e9a1b2f0f54",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
     "/masood/playlists/syndicate/": {
-      "fingerprint": "465c2f4beb0e44c7139b7503d2f2720ade5c81fe4416811fcebe09c5b6baef44",
+      "fingerprint": "b2dc87e0123fdd5806bff1324d30c62c88528a111e6f8189239a987e11cb227c",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
     "/privacy/": {
-      "fingerprint": "9d809d43ba8553fe656d2921ab01971e603a85c4938c7cbdf1602b7c73b1180b",
+      "fingerprint": "326d4d1e63cf5bca2af8caba5be874d74e3cefa282ca03095ac8770791c7127e",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/resources/ict-smc-cheat-sheet/": {
-      "fingerprint": "98271356286e274266d372c688319311afdf52d2fd45666cb805f3f8256ba264",
+      "fingerprint": "bf8c632cc2ed5df1ff7e75e19c0da07c052a86af5a884a9394b98aac0f59ef5f",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/terms/": {
-      "fingerprint": "bde2936ff1bdde7c07de8d338885047ab93a02f40d6ce789ad10161bd62b6b52",
+      "fingerprint": "942bc813cdf6d6b98a59408b00f1c5d3032aefe802dc3fda45a93a0bc5d07792",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
@@ -1262,47 +1262,47 @@
       "evidence": "Phase 1 curriculum structure/metadata and approved lossless merges; docs/curriculum-phase1-report.md. Source video review dates are not restamped."
     },
     "/tools/backtest/": {
-      "fingerprint": "2bfd374fd4424cc4f8d53a0b88fd44733f6c42d002ffb7585b617d94fe847c81",
+      "fingerprint": "6c0e753e1ee5f16303588af34d06c194632d4766a7eb144a51dc214504e4d8de",
       "lastmod": "2026-11-04",
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/backtest/2022-mentorship-model/": {
-      "fingerprint": "b738e2f2f9f59c094922a7e45c16ddaf38a40cf36a367f1000bce4c4f171fa19",
+      "fingerprint": "019bd2a640c76775b818eb57648a4fc08db3012104acd6f7935595555596ed41",
       "lastmod": "2026-11-05",
       "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/tools/backtest/breaker-reversal/": {
-      "fingerprint": "47f0d3f99844c66522592e0f24b6580e23a022c2a1164704bd6b64a605dd2abc",
+      "fingerprint": "5522dc34ec1a5456f6ef5514b764d71a401c60946da4017fbf8bf72d36080ab8",
       "lastmod": "2026-11-05",
       "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/tools/backtest/charter-model-1/": {
-      "fingerprint": "32758dd155fa6f41afe1d2e1889cd7ab94f6b49318788fc5eca210ffa91de6b8",
+      "fingerprint": "f9d5c2f55770cf9010481b9de378ed715e0a45c6a8a0cdf02d0b2cbd050e3cb8",
       "lastmod": "2026-11-05",
       "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/tools/backtest/charter-model-8/": {
-      "fingerprint": "d4645bdd7882b56cf721a978876ddd146885edcd82bbfd24da00b9280c37b414",
+      "fingerprint": "5624e5249294cf6c3e7cab813ea74a424cbd57b6c4b8e0eaaa32acba398f4628",
       "lastmod": "2026-11-05",
       "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/tools/backtest/charter-model-9/": {
-      "fingerprint": "c728d6af850575f68e2905376c17073d3b03665c58215792f51f646caed41134",
+      "fingerprint": "614c816f88b7cd1ae63eaeac7fe3ab14e75fbf3b3fa0f8fca8e9221f9e53ed05",
       "lastmod": "2026-11-05",
       "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/tools/backtest/silver-bullet/": {
-      "fingerprint": "b3f86300f443f4b8abb276780e58964a794a6a06cbf56d70cb79971a9bb64e23",
+      "fingerprint": "a79ec2c00b4587e0daf8f1ff93e533139d29563aed0226fd99eb2c2cd7f3ad01",
       "lastmod": "2026-11-05",
       "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/tools/chartlab/": {
-      "fingerprint": "6af3c7269632a9aaaf14a5fdd4ebae7194ebe8f48f3430a44f56bd10abe4692c",
+      "fingerprint": "b2a4a6567193c31eeda820b9f50c77fd196a686b3dd5602f7c5a38e71c461c13",
       "lastmod": "2026-11-04",
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/chartlab/btc-2022-bullish-model/": {
-      "fingerprint": "9a7084a350c3bc5f754cb23eb2a8f5cc8a64e2b68efd1cadc6234754a3d720e3",
+      "fingerprint": "31fc99f889f1a6ce5a6dc6d900bcc86f3108fe6df7d1b8177e64a15b1d42f3d6",
       "lastmod": "2026-11-04",
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
@@ -1312,7 +1312,7 @@
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/chartlab/eurusd-failed-ob-breaker/": {
-      "fingerprint": "c1cde1d2f3a27764640dcab614b5473c07aadf15798d5096eea7ce4d227726dc",
+      "fingerprint": "2748a2b1e66f21a4c320992904d0c97c3bd1bf8cb43dd23810052cb6cea6a1e9",
       "lastmod": "2026-11-04",
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
@@ -1322,42 +1322,42 @@
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/chartlab/nq-silver-bullet-short/": {
-      "fingerprint": "ce01c5cb39743952af971dfafb694960641bbacf7c466a8bd2bf3ad9233fe120",
+      "fingerprint": "bf1e2d4fcfe89b12b37972c87346fc070edf9619a9223f4e198fd7460bad65f0",
       "lastmod": "2026-11-04",
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/chartlab/xauusd-gold-legacy-model/": {
-      "fingerprint": "78fa606fc74aea0bca1ceb0779bab24040b30a72ac2ed3bc0be5329ea8d7c1be",
+      "fingerprint": "195203e16c36ef7faeae1a87bb3a58e01fd9e9a59e026255ec4416db32ce90cb",
       "lastmod": "2026-11-04",
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/compare/": {
-      "fingerprint": "7fa5921d7d590db073883524c8f74bfed7341604b22d0800b3b9bd5829f6af10",
+      "fingerprint": "40ab939d32bc532360935f24e3ac78e40aa6bbcfd5580030dc127b5d7d9be751",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
     "/tools/compare/bos-vs-mss-vs-choch/": {
-      "fingerprint": "c8f16b60b966d21c5604518761e1c567d889a7884a7aadd4fe938b32387893ac",
+      "fingerprint": "2a8d95873cd40a8bea047d6807436ae6a075668232afd57a811a4edcf55c382d",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/tools/compare/bpr-vs-rdrb/": {
-      "fingerprint": "5ae8d09c862080764079359dae1ba82adaf05203dcc3448ced6f4ad9151fe7b5",
+      "fingerprint": "26f83617312653b580408026e60aeec69f6a72757e0acf972639f5e4627db569",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/tools/compare/cisd-vs-mss/": {
-      "fingerprint": "81c78222f0299d32b2ccb28dd571f02908419244eca1c29c43bc250c2ee2747c",
+      "fingerprint": "eb21c75c354301618dd8dff9319543128be7a262274b39e44e05a11579a1c16b",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
     "/tools/compare/crt-vs-amd/": {
-      "fingerprint": "ed11c809cec7e32c8a742a3da0bbc35fcbe2b285200ce8e281f41631145723af",
+      "fingerprint": "3a9e09dc853da81e1f0886b0cf23dccda3743a6c3c3381fc92e10b8ca43ac5e4",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/tools/compare/csod-vs-mss/": {
-      "fingerprint": "6cb6cf94f5161eaabd87c51fffccdbf35c99dc6aec466855bdbb3d486e9329f8",
+      "fingerprint": "7839aab165eb9f5c7fb1da0040d7673ad11c4c6ab843ebfeb7dc71967ae882c8",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
@@ -1367,62 +1367,62 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/tools/compare/internal-vs-external-liquidity/": {
-      "fingerprint": "11b02855d4eb384a06c2727786d9dc65b33edf248c2e38b726a7dd7bc02c00f7",
+      "fingerprint": "067e4d3bd9aa68fab4d7b4d876d8027d7f963f8c405ae8b287db0213d487828b",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/tools/compare/model-1-scalp-vs-model-9-osok/": {
-      "fingerprint": "6478e821ba3d180fe32f40ce6e1538024480dd781a2fbec7d1a98ed70437fa98",
+      "fingerprint": "16779d8019c968587e0dc4c29e22f0e88eb885dec60c2c82ed2083258d3f2229",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/tools/compare/model-13-2022-vs-silver-bullet/": {
-      "fingerprint": "ebe1c13c2376ec6f68bb72929eb2ba668f1de6032e433d0b0ae9710263bc95a2",
+      "fingerprint": "49fbb23b665535df77975ca182df4d97f3e0ab58cd66c7800cc664c76f8d7163",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/tools/compare/ndog-vs-fvg/": {
-      "fingerprint": "e6abceb75f764f08e5addbdf1138a5fe7706a84b800928390d3d5dbaf180d518",
+      "fingerprint": "b6759c7e1b0758172c89a60c2c2a23085a560d8f8f29d1fd5d7e26bd0d20d1b8",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/tools/compare/ob-vs-breaker/": {
-      "fingerprint": "be8b3188208dbcb280c385d716ac42b5f05e13e006992df41897b004d4b56768",
+      "fingerprint": "99cbb87ffe64e33508f0010bf61c820a7de46d249a5132aed6f0d31341400271",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/tools/compare/ob-vs-mitigation/": {
-      "fingerprint": "74448b9ab6e541cb450161d9333539893e460c9195ad50e66be89f673a095f5d",
+      "fingerprint": "79a7427b348eee3a98b46ecfc06953dff6dde3d0d1614749cceef65060a4c5c1",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/tools/compare/silver-bullet-vs-3am-london/": {
-      "fingerprint": "e1a025c04264246562b85fbcf037aa961fa2b9b63cc81be0f2798f1df09457ce",
+      "fingerprint": "7125b2900fa35a87245aaa49979590fb7a05f0f33a7c52c79358d3279ff7c79f",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/tools/compare/standard-ifvg-vs-reaper-ifvg/": {
-      "fingerprint": "162d6c2e0aa79105bb4e0b3dd72abd720abffc2e690b30e42e293dceef063a6c",
+      "fingerprint": "8255cab55c752b0614b11efe5d6436103be4e3ff38e5c91b93061b43600b7c04",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/tools/compare/suspension-vs-propulsion-vs-ob/": {
-      "fingerprint": "ce6e19e76854ce20ee8df9182fbebdb7354f789ff7676496b6a9f6c33300ffcf",
+      "fingerprint": "eff31afaf85e906d48a5c93be22f10bee9266154a341b0323b406c5570eb2d0a",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/tools/compare/sweep-vs-breakout/": {
-      "fingerprint": "fb8f47593c3b8fef151220bd0712635154e4ba72dec984999590bc05aba1f151",
+      "fingerprint": "1fd2d206a1b43ff29c73cd77711ef3e5da4f78f6cb6b1d30d8e593536766721d",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/tools/delivery-suite/": {
-      "fingerprint": "a0e721cc26254955f4a9ddb164060a9742d69dcbe2633053ebd66419330bf5b3",
+      "fingerprint": "5c7061510d9508ce846d80748e34c42e645cf94d4915be778fcdb32a6b401e70",
       "lastmod": "2026-11-05",
       "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/tools/delivery-suite/judas-planner/": {
-      "fingerprint": "cacf05bb8a45e7af4947523c0ada88d8683e004ae84f44f7fe88d766078d5bc2",
+      "fingerprint": "a6aef47f727a6d23a29f6c64ac6fb923e84dae1f4cb6125b84aa5f03fc5994cf",
       "lastmod": "2026-11-05",
       "evidence": "Shared practice-loop module interface and native bilingual reading; docs/delivery-interface-followup.md."
     },
@@ -1437,17 +1437,17 @@
       "evidence": "Shared practice-loop module interface and native bilingual reading; docs/delivery-interface-followup.md."
     },
     "/tools/delivery-suite/ote-calculator/": {
-      "fingerprint": "b82c5fb0778e51e72a88dca459fbbdef702bdda4dff77917c81be37beb8f9879",
+      "fingerprint": "e0c73daa7135d11b4f8ebc4e50051fc1946eee7e18658660d768197f2c5174cb",
       "lastmod": "2026-11-05",
       "evidence": "Shared practice-loop module interface and native bilingual reading; docs/delivery-interface-followup.md."
     },
     "/tools/glossary/": {
-      "fingerprint": "6d80bd4f9377498c9aaa96f3facde1f7ca36ae244299c2588cbe3b88aac1924a",
+      "fingerprint": "576cbc30dfba420cc8979645449729dfb4b8cb447c24da11f9db2bf3105c239f",
       "lastmod": "2026-11-03",
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/foundations/": {
-      "fingerprint": "f053ee8e78c40b181459b52cee1f16d7de917ea7047244504ee4aa668371209d",
+      "fingerprint": "40ca233311f2717484677681e8b9c9144df936caa2a1cd23c542ea7bc1f5f6bb",
       "lastmod": "2026-11-03",
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
@@ -1462,7 +1462,7 @@
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/imbalances/": {
-      "fingerprint": "f79bfe18b55e518ab173f3016ce91623e1190e4e402b4969b6f21f0e78eff679",
+      "fingerprint": "6c604e0de33c12af37d56eddbc647297bfbe77aa41960df472fac66caeb54cae",
       "lastmod": "2026-11-03",
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
@@ -1517,7 +1517,7 @@
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/liquidity/": {
-      "fingerprint": "71890b57fbc7abad211462ca8194f31e47242d28b899b85643332dc5b3889fab",
+      "fingerprint": "2e71cb6e415e26bf2fce8f53bd484d6a6bb0d96ff8eb379234c8d9983035c8aa",
       "lastmod": "2026-11-03",
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
@@ -1562,7 +1562,7 @@
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/order-blocks/": {
-      "fingerprint": "2ec85b5a9cf7bc1ee3ac7743335ba2b2b712bb201a5e411a6742893624160b4a",
+      "fingerprint": "df89eab79da454a91f4cee15519446d786fa65e66fa0244360b9bca82c48494d",
       "lastmod": "2026-11-03",
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
@@ -1607,7 +1607,7 @@
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/structure/": {
-      "fingerprint": "2cc406ffe127bf66b11a25ecefbf5ac4bd7db42fe852ee916b2aa6b245b88b35",
+      "fingerprint": "202a818acf4dc612f9ae72bb65572d92a01626d4258038681457ce5a84949542",
       "lastmod": "2026-11-03",
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
@@ -1632,7 +1632,7 @@
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/time-and-sessions/": {
-      "fingerprint": "517f519d206e3e34eefbaec7bcadd13de394e5c0b3dae1198b765603a83599d6",
+      "fingerprint": "bb6db931364b982da6633df576c5af85a950fdea2db7afaa96cec1e60462cb7d",
       "lastmod": "2026-11-03",
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
@@ -1667,7 +1667,7 @@
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/glossary/trade-models/": {
-      "fingerprint": "e5628b97f0b3628c8f27bc4bc0f574894fb378c3f537a893180a2054e3b64373",
+      "fingerprint": "bbea038c4e2c037a1e7f0ed22c72aade420ba25b066eb9112abac72ff0e8e7c0",
       "lastmod": "2026-11-03",
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
@@ -1737,17 +1737,17 @@
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/tools/knowledge-graph/": {
-      "fingerprint": "c2162df18a14c13eb0f273359e8f566d731abe97dd4a182004861f2722c9a84d",
+      "fingerprint": "8549d8ef3f01589fa6ac55b4d7ea75212cd4300dd3b48c81530b9d6387c9deda",
       "lastmod": "2026-10-25",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/masterclass/": {
-      "fingerprint": "0f97a12702f860a3247d6db95f0e7d00c5a2c9ea5a2fe1ac74c11a7bf524dfb4",
+      "fingerprint": "72d42af78b2aed10414253ff7b152a5e9774c46a35f045ef7d805aefc7c2e903",
       "lastmod": "2026-11-04",
       "evidence": "Masterclass category content/navigation and weekly illustration review; docs/masterclass-category-refresh-2026-11-04.md"
     },
     "/tools/masterclass/core-masterclasses/": {
-      "fingerprint": "c6a8ee409bd491b4efe07b87b7bf94f8912d4fabac90a03a37f11cf4c909912a",
+      "fingerprint": "c9265c2d295dedc80fa64a3f3d3f6faa17701a95a6096c318505dc94ec119535",
       "lastmod": "2026-11-04",
       "evidence": "Masterclass category content/navigation and weekly illustration review; docs/masterclass-category-refresh-2026-11-04.md"
     },
@@ -1807,17 +1807,17 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/masterclass/core-masterclasses/unicorn-model/": {
-      "fingerprint": "fca95c0455b14ab32bcddf54c6744323938cecbf6dc8a38aca4c3957ae3d1dac",
+      "fingerprint": "94708e3d2258935ecfc9d8a453196f34f56b29f7dfef788e2fb203ae339e2f67",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
     "/tools/masterclass/core-masterclasses/weekly-move/": {
-      "fingerprint": "f8f2d94cf574b50eacac6ed8737549a0a12aee5c0739d1a7348bb4d3466f85a1",
+      "fingerprint": "7d2b8f202ce6982ee7f61a0aa08ec5768429d912983fa330b58882af1bc56a93",
       "lastmod": "2026-11-04",
       "evidence": "Masterclass category content/navigation and weekly illustration review; docs/masterclass-category-refresh-2026-11-04.md"
     },
     "/tools/masterclass/entry-models/": {
-      "fingerprint": "254725acbe1f88499d87928388870e61f7bb7d216d796fe8a3468b3a1c2dbeb9",
+      "fingerprint": "7e640b3f4f95a712177b81fd4dabe92847ff06d797f410eb34d76398471fcf6c",
       "lastmod": "2026-11-04",
       "evidence": "Masterclass category content/navigation and weekly illustration review; docs/masterclass-category-refresh-2026-11-04.md"
     },
@@ -1847,7 +1847,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/masterclass/mentorship-frameworks/": {
-      "fingerprint": "e68a36af20a6ab8c2b02cc6df871222c3be277021c01bff427c8b3494caa9a0b",
+      "fingerprint": "7eb6e7fc616f3a8d103287dd92815f9912bd74c93c305a05a451a4518ec14e7e",
       "lastmod": "2026-11-04",
       "evidence": "Masterclass category content/navigation and weekly illustration review; docs/masterclass-category-refresh-2026-11-04.md"
     },
@@ -1862,7 +1862,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/masterclass/opening-ranges/": {
-      "fingerprint": "5eddc5e78af3fe4b2b4af164cef30d58f511d9d19a8f2f9a237a26e4f3bc9829",
+      "fingerprint": "7f13241a0d9c8f113ecb74dac11f7a562464113035605710e1e0526156d632ee",
       "lastmod": "2026-11-04",
       "evidence": "Masterclass category content/navigation and weekly illustration review; docs/masterclass-category-refresh-2026-11-04.md"
     },
@@ -1872,7 +1872,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/masterclass/pd-arrays/": {
-      "fingerprint": "b0f4eeebd60e09524b367cad898f0837a17ff3e0cd4d613629d83f1d906afdb0",
+      "fingerprint": "39ae621a95d74750b30f4b4dfa947efaee1f4aeaca2d6966b4b03b4093135b9a",
       "lastmod": "2026-11-04",
       "evidence": "Masterclass category content/navigation and weekly illustration review; docs/masterclass-category-refresh-2026-11-04.md"
     },
@@ -1917,37 +1917,37 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/tools/simulator/": {
-      "fingerprint": "05e74751b95d6312abb86ff4a4b0282fafa54c698eca6d41e394b04d44003a86",
+      "fingerprint": "055e28e41545ccbdd7ba7eed5c91e3be0a96339b7134d136fb90a2d6193a04f8",
       "lastmod": "2026-11-04",
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/tools/simulator/failed-ob-breaker/": {
-      "fingerprint": "e57f30856052a355984bf9bb1b0aabd0bc463e7f4c7fc05bab6d7dc1c5f56c2e",
+      "fingerprint": "5b79f37476b6af76ae03e35b3864f2efafb38952506b45c99207e673e0e8a83d",
       "lastmod": "2026-11-05",
       "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/tools/simulator/ict-2022-model/": {
-      "fingerprint": "c7cf79a1f6425e9ecbc906ff5d75e70d4a46167be208a6b671981eb834c90562",
+      "fingerprint": "31d1165cdd5a4d0cf42f1c41b7db0dfe4df56b1084b490bcee9a7d5e1d5e0f37",
       "lastmod": "2026-11-05",
       "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/tools/simulator/london-judas-swing/": {
-      "fingerprint": "3685b444ff219f4d416f94b69c25c3181b3e21ba79645b72ee8040998960194f",
+      "fingerprint": "f739d8e72878f770534eba9fc4401a7d8121f71e77da72bba09cdeb1748c5949",
       "lastmod": "2026-11-05",
       "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/tools/simulator/news-driver-reversal/": {
-      "fingerprint": "b76b82398558d21a3993d7b8b097a649e55b2353708b510b18fef7761ae268d1",
+      "fingerprint": "65228903efcd180d61a9b43e1a48e440778bd2bc44871b0e2452dc44c34477ee",
       "lastmod": "2026-11-05",
       "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/tools/simulator/ote-expansion-long/": {
-      "fingerprint": "c59822ae43e2eea0b224f22bc741e876278969c6ac8ee6ee776069bbcd8d6389",
+      "fingerprint": "5c69212b568da80c4fbf2d6b2bfa8628cbaa2d6c4bb8aaa73835ce759b280f93",
       "lastmod": "2026-11-05",
       "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/tools/simulator/silver-bullet-short/": {
-      "fingerprint": "cb02eed5090583b09d1ce40f4206ce920b7bd7f4e6bc539d45ccac6f5cbc561c",
+      "fingerprint": "76abfec58a4f4312df58cdf3fba6b3f4192ceabdda559a4ea1dfbd072bb1f45a",
       "lastmod": "2026-11-05",
       "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
@@ -1957,62 +1957,62 @@
       "evidence": "Phase 1 curriculum structure/metadata and approved lossless merges; docs/curriculum-phase1-report.md. Source video review dates are not restamped."
     },
     "/ur/about/": {
-      "fingerprint": "8403c4aa2e9dfe3386273f5f8198dfc4f7024337e1d6c35241a26f00ce7e8150",
+      "fingerprint": "5dc6b2e3e9bd08ad318efb34c23d2ff0f1668842ff1b66566960093c9b2f82cd",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/articles/": {
-      "fingerprint": "02634bca9f0e2928bc2a3501a6126d6d49d9ee3e9c60e0fb42e3852c66d46adb",
+      "fingerprint": "9a4fff3b5009f5b4f7a69c17b9955e3cd5395c5c64d33e27e25a6d930eb67be9",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/articles/a-good-trade-can-lose/": {
-      "fingerprint": "f3f07161654134dd1814582df430bc54f05be5e955c60cc0e1aed4d3780dbe06",
+      "fingerprint": "c38adc449674ed23da3bdba36d8666be9d9f333d10bb19b8a73baf9c6d70300a",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/articles/bitcoin-dashboard-is-not-a-crystal-ball/": {
-      "fingerprint": "4ecd0f7eb76e5bbffbafd2d4383958f6d1187b3921ba916a872258fdbbe6c770",
+      "fingerprint": "d76f6f7ca100f817b4a4cd9743c666ca3098c1eeff9bdb0e7528d39929711dce",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/articles/compare-ict-entry-models-without-hindsight/": {
-      "fingerprint": "a94096030534af6f31caaa475bd0fc83cffc48d8fb1fdb59ec134a44a0f895a5",
+      "fingerprint": "3f50f0f8b5d05351efcc0849dcb632a8aa6265dbe849d8007b20d192730489d3",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/articles/drawdown-math-is-not-symmetric/": {
-      "fingerprint": "b8ba6f9b8a43d881228f3f299ed1442ab169d84f36ed97839573a3dca79ca5ed",
+      "fingerprint": "68038933d206944e246343adb24d1b233cf57521cacf173cecc83e753e05b81a",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/articles/higher-timeframe-bias-to-lower-timeframe-execution/": {
-      "fingerprint": "50926473064572c417219321e2ccec1ea1d17003664f7800839ac168e837016f",
+      "fingerprint": "b544f5fcb2efcaa54d4a0e81ac4e082c466f2545d36ab41bf708665cf96463ae",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/articles/how-to-study-ict-without-collecting-setups/": {
-      "fingerprint": "e1f25511a1339b30300ba3f911d71e426eea99ef6148de69ddc62f91cb17a789",
+      "fingerprint": "aa820fc804c75102143b7035e5d164b5bb9e6573371bb1c2a337fad8593dc23b",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/articles/liquidity-is-not-a-magnet/": {
-      "fingerprint": "8c78bd4a0a6c23d1bc79ac8c2e5c4e6627b24d924aa288f015ce58476c17fa10",
+      "fingerprint": "3b6904ced51c91138ea683ae1cc9d983ec1a63e38840cf2c68eb30fa23a6aa0d",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/articles/opening-range-vs-opening-gap-new-york/": {
-      "fingerprint": "4b598a579529280df34e8dd2431d731cd7921625f28734870cf3eed140b57731",
+      "fingerprint": "000f8841187b557e4f78e4fae0fdf1f69b57dbcc8155ca75a622bef77b92e87b",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/articles/pd-arrays-fvg-order-blocks-and-inversions/": {
-      "fingerprint": "30c838f8c65dbc141d71e1bee0065caa6a2e4484c0eed12371d8e323808cf909",
+      "fingerprint": "c0c609f74025b26c03577cf1624c5ba90fb8c21b5b5afcd5ce520c61a9e97649",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/contact/": {
-      "fingerprint": "5a16749fb826cff113f55a6dec3e7be8b15c23245695dd214f7a01f9caf72ede",
+      "fingerprint": "0b5a072900a5c60c57b61aba6696697f75c8f2f8d9e474e566b523d81e2eebc3",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
@@ -2047,12 +2047,12 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/market-foundations/": {
-      "fingerprint": "8077f9bb81c028cecb59964ff0e3d95879639327322efc379f6aeedd3548c1cd",
+      "fingerprint": "f5ac703d9d7eb967892be2f5fb07faf8d34b07c53255f5a44c093da84e3db49c",
       "lastmod": "2026-11-11",
       "evidence": "Chapter 01 supplied-document restoration, confirmed original date, native Urdu and updated directory summary; docs/chapter01-restoration-report.md"
     },
     "/ur/curriculum/mentorships/": {
-      "fingerprint": "e198bab7fc3ecc67a825071f4e68043907e5ccc89612aabcf763596b35b9533a",
+      "fingerprint": "39ea1f3fd73a9434fb8cbe0b489d233b3e9c664f2cd314e07c89971b6893ac6d",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1 curriculum structure/metadata and approved lossless merges; docs/curriculum-phase1-report.md. Source video review dates are not restamped."
     },
@@ -2067,22 +2067,22 @@
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/ur/curriculum/mentorships/2025/": {
-      "fingerprint": "982fbd39447ca7ab27b0a41f8f5a2e712cd09a194081cb9aafda025209dcf62c",
+      "fingerprint": "0d26880c518a92583cf439561bf07193aded1a209d5472fe410a267982ce2b2e",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/curriculum/mentorships/2026/": {
-      "fingerprint": "0415c3d5e12dd34229fdb35ff09434fc6f547054df37b53a66a30bbc096a0641",
+      "fingerprint": "3b36f00d47a61d93fff5e5ea1d781750ccc825e1e642cad72d561a0060f84ebd",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/curriculum/mentorships/charter/": {
-      "fingerprint": "a418434986ecbabcbd2913ee77d6a237c053740c211cea8c3508882044ff42da",
+      "fingerprint": "6159f82aac4e2c81148e60b2964ccac7ca28a83819b7bb14d477ef46a0393e72",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/ur/curriculum/mentorships/core-2016-2017/": {
-      "fingerprint": "ac454164134c3c2128a9e044558fe696fd1c8bc43211a02887c01afbef9a4c10",
+      "fingerprint": "af8c7816909d28159f11970140c85ca003675e7286b79b6f4c39ae6768c11e09",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
@@ -2092,7 +2092,7 @@
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/curriculum/price-structure/": {
-      "fingerprint": "5ce804845a27206ee055a6b7af14ddbf564bf6c3cea650af009007ac33802456",
+      "fingerprint": "b2f3c48e80a8526031722b23148d0de228636ad9a8e9278eecdfecec34fbd560",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
@@ -2112,67 +2112,67 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/disclaimer/": {
-      "fingerprint": "51a99ca34207fd1196620fc35485d1b810cabd01a28c163e155420eff607a67e",
+      "fingerprint": "706e29475c0e25839f2b41b7a08c73b25ca5cd30c352d2a7567b3e6bbe0c7cb6",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/0930-am-opening-range-theory/": {
-      "fingerprint": "62db492f474f3b30e16089b94031cfde46da5a08f30f856055d184b886354bca",
+      "fingerprint": "11f3bbced1fb16d3b6b7a64d37063786b4ca8c96c78696c6fdfa79d41a6d8ef0",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/2026-onboarding-from-vision-to-execution/": {
-      "fingerprint": "b1c0ba3ee08060e0070d085c3b27302822d94c561ab0a20cb2efc448a33ef326",
+      "fingerprint": "488a466916fdcc68394e54689ffd1296b1f558ac4d02e495e31fe347cd2bf8ae",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/break-of-structure-bos-trend-continuation/": {
-      "fingerprint": "f345cdffbe4e811df8e8b4304529f7c27fd3c817359f8886cf681a5f2a89fe62",
+      "fingerprint": "9249d25ae9052194e2bac706e6b22f82446713d35c4c97afa4b057334520a560",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/ur/learn/breaker-blocks-trading-failed-order-blocks/": {
-      "fingerprint": "afa00ab203a853bf42359c6e83b06bddcc75f6aaae2ccb0ba6fcc92466465865",
+      "fingerprint": "647bf258209c82331447de60e7b0c3ffb0f5415bbf50dd0f88359d4f9c47bc19",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/ur/learn/candle-range-theory-crt-strategy/": {
-      "fingerprint": "849a4651c45e8a0aa0db32b7dde4e26fc7f1f40977bac3e8ba5a3b34f0a24ed8",
+      "fingerprint": "261cbe22c0c194cc33afd664cd2e8a0f23bde07dee225d6b2dff1df0c77e9642",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/change-of-character-choch-the-first-warning/": {
-      "fingerprint": "4809fee434415f9aeaa638bd1884a3e8a260a2653437f4c0c5e16ac3942e21e1",
+      "fingerprint": "3846179afd9e3802f85b3710602f108589ef0690d44dad1bd8d5d198b34b04a3",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/core-content-month-1-elements-of-trade-setup/": {
-      "fingerprint": "f72c16a4bfdfb3fdf3e9018389ccfd0d905f01cdd11f0540348789cf2e5dae0d",
+      "fingerprint": "5097c2c717f0da02ee289c3e2f69a28e01294316b2a3655aebaaf863aca3dbbc",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/core-content-month-2-growing-small-accounts/": {
-      "fingerprint": "b0901d2856ab10fd0f05b12176aed2173538e0f77f6bd93d6a0248e77f6b7ffb",
+      "fingerprint": "479d46def22f7e8a74328c002b005025f1461a7c5457082fa837d316113749de",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/core-content-month-3-institutional-sponsorship-and-traps/": {
-      "fingerprint": "871fc741df155687fe8ded0f53164eade0f5df817acba72d5eca516fd12af68d",
+      "fingerprint": "3bcda3363386ec2469f67756760c0968b8839c61126db5bc2c716c41b9fde68c",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/core-content-month-4-advanced-pd-arrays-and-yields/": {
-      "fingerprint": "4cee15f9f636c6cc2ef7564e106ed4d6b0c94fd61d74f1a0d2c992e0763a1ac4",
+      "fingerprint": "35c1659bef79b572b77516cd870c5eb1e38bdade52441d1412e6b02c36f3b689",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/core-content-month-5-quarterly-shifts-and-position-trading/": {
-      "fingerprint": "4a28cd87320ffe9e9a202d01acdc9c605887c5962b6c602ca47a5ef113f7f2a6",
+      "fingerprint": "dc3137917d9cccfaf2fd97d3c3e0f5398ed8a98fd110dc9410f08f3cc2cf1a77",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/core-content-month-6-swing-trading-mastery/": {
-      "fingerprint": "98481a0d4c6dc355f481c1ff350442983660af115137f5c8489375a07b456914",
+      "fingerprint": "b3e6618e89e62a197cc15ae4f4b46cc4b5f8dd96dd72d49e620472801bd06766",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
@@ -2187,17 +2187,17 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/core-content-month-9-consolidations-and-bread-and-butter/": {
-      "fingerprint": "efba80b3e518dcf00ac364cf746d09c70de2f1d3fd8a130aa51da3619c658371",
+      "fingerprint": "ea24d9c632feed29577c2ea4a9769075842a98cfb39aaa0d6491be66a12dcdc7",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/core-content-months-10-11-12-multi-asset-mega-trades-top-down/": {
-      "fingerprint": "18dadb4ef7d54f0ffb88f508bdebef157178e819ee04b337e97701197dfe231b",
+      "fingerprint": "2ff85d458412a73a6031acc398e6e8e924cc4b40e7908790417278d2a35e3ff3",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/daily-profiles-and-intraday-power-of-three-po3/": {
-      "fingerprint": "e4b9639801dbaa138032e4dcbf82b714534bd35caaa2c87836b88de9222d047c",
+      "fingerprint": "9e88c5e895d5882d5af7b07836bc04ffb26348bbbc32629769d266f5a72c1396",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
@@ -2207,17 +2207,17 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/fair-value-gaps-fvg-and-consequent-encroachment/": {
-      "fingerprint": "47116bd12c24066ab113c2df661ab4e55b1ff27132d2cffcaacc79cce39f08a5",
+      "fingerprint": "303a9acbfe12b9aef9ffa07b563668ff95e6ba518ef31128f392ecf4f1325615",
       "lastmod": "2026-11-11",
-      "evidence": "Chapter 26 supplied-PDF implementation; docs/chapter26-fvg-report.md and outputs/fvg-document-review/static-verification.json"
+      "evidence": "User-approved source order, native FAQs, semantic extraction and research-label cleanup; docs/two-lesson-semantic-html-report.md."
     },
     "/ur/learn/how-an-exchange-matches-orders/": {
-      "fingerprint": "09620166276ff35c4e463bf3ffb5ddec5a9bfa6848643a5db8850c525e3a0617",
+      "fingerprint": "3d37f8cc7636b05d1db5ff6e57c6f8053ec7fc18b870a25a7895fa8daf8adb15",
       "lastmod": "2026-11-10",
       "evidence": "Chapter 01 learner-first rewrite or its updated directory summary/native shared foundation review; docs/chapter01-rewrite-report.md"
     },
     "/ur/learn/ict-2026-backtesting-journaling-trade-management/": {
-      "fingerprint": "772471ba24d8fcc710c8567bd6906b133d785c13b815d14b8d798ba8c5ebe5ad",
+      "fingerprint": "31bea248d0975ac50cc88b1acba0246b8bf707fd5a90562f860f704314dba9d4",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
@@ -2232,32 +2232,32 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/ict-2026-obsidian-model/": {
-      "fingerprint": "fec4303c48932924e22a3cb2711848a3bd6168f0eec13e8d7db4ccde2696d3d8",
+      "fingerprint": "76876a950e4c66c3a9bf3d7c713aa25023057c22de27a3069a68a874aad28a46",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/ict-chain-of-custody-of-price/": {
-      "fingerprint": "2ef00e7cc97e3db6a05c318ac4142df0d45779d745b3f59a5a75c40752c68a59",
+      "fingerprint": "5ae28c62326e707ee3496e517914b813d6af4827b93ade09e56b23c8220f1b1c",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/ict-charter-model-1-intraday-scalping/": {
-      "fingerprint": "c8596bddb1cf5b3eb6ddc44c8f362d49a4ac6d1f6bc95a03f1241c3462b58eeb",
+      "fingerprint": "e7a3aef50c5f2c2c7da14981733c7504767e0cec6d414887b7f81d0c5ed3c15e",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/ict-charter-model-13-2022-youtube-model/": {
-      "fingerprint": "04db272b4d403a7bb23e4fde1428d4dbedd9df167f8c3bf71ee9c50c53188984",
+      "fingerprint": "ac5df6b8d1f284f6d24c2942243c6bb1f71da37429f368bc890477589d4b5a05",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/ur/learn/ict-charter-model-2-weekly-range-expansion/": {
-      "fingerprint": "004aa4bb306cf416fcbb424ab442391e09895166c91911121860fdcf493e5e25",
+      "fingerprint": "dbb3b5c47775833d0b436cc06a2582d2fe86617e743acbeb16a3e34f801ac319",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/ict-charter-model-3-swing-trading-cot/": {
-      "fingerprint": "ea0d52eb47c33218a07bf98813ff8484973ce4d20a60da024fd2c1109b54786d",
+      "fingerprint": "66fb622121e35a1f2de8fe63645ca192c0be96b82867f841bc9992cea207b3ae",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
@@ -2277,22 +2277,22 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/ict-charter-models-6-and-7-universal-models/": {
-      "fingerprint": "2696ea1d287ad321df121e26240392e898c8de6454d9860d5658faf934c45886",
+      "fingerprint": "35f1208607c37ccdde92bc2763aa007b4c5947d40de8c0f510f73a1b3baeb8f0",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/ict-charter-models-8-and-9-precision-and-osok/": {
-      "fingerprint": "faf55b74aaf7ba1798eb90a738cd18dea1abef2ae2221709dfaed3172eeeb8c5",
+      "fingerprint": "5fe3541871b6eac852f065f368c19818291381092a69f0d1c029d5637da51525",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/ict-liquidity-turtle-soup-rejection-blocks/": {
-      "fingerprint": "3535822d0915882c85f27edf03ef6624289caeb96aea4fd62ffafe8b01d95aaf",
+      "fingerprint": "a025bb53b3923b9dcdde2ed6c4500e5716bfd45c8452eac667d3de7e65d9f86f",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/ict-lunch-afternoon-session-models/": {
-      "fingerprint": "7119ca63db7b31aff1628a2968b4c73fcb4a13ab6e610a79023796cbdd3bae99",
+      "fingerprint": "d1ea2d44b7fc609e88812a6fce54785762698f41efd35df5bfa44695c2edb9bb",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
@@ -2302,52 +2302,52 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/ict-news-volatility-no-trade-framework/": {
-      "fingerprint": "90e8fab999f39081a16f67f178c6b44a668d34a4ba2b8b7a67634df8faf997e8",
+      "fingerprint": "555f1b25ddc00ad2a8732fbcfc706a6271310dc02d0323156251799844675a5e",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/ur/learn/ict-pd-array-selection-price-delivery-continuum/": {
-      "fingerprint": "e8d529fb022d57841e33e9de7422b8c9c4a15f853d586422ac5b0a26806af86d",
+      "fingerprint": "45f7f7e8b4962ebaaf80f9946489cce7390e4cd1023e69ec066e20fb92c119f1",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/ict-replay-journaling-one-model-study/": {
-      "fingerprint": "08fb6df0f55a5e8feb7e055d6a223174df8c731f3dcdb2b8a7908be6135aaa6b",
+      "fingerprint": "eec6af5488e73386d6a2c278c55a93bd90e66e8f1b1f17b2bfbeae9fafde8070",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/ict-time-price-grids-quadrants-octants/": {
-      "fingerprint": "f7cf9fc41a0e9665dcc911a2502be1bf13f6f10a2cad2939656b9c56ad629b54",
+      "fingerprint": "5e64a0bf6cfc38ffbb7c1137ba3f368f0fbeb863bc9c004074e2a33e9463bcdc",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/ict-weekly-options-payoffs-and-risk/": {
-      "fingerprint": "62f602c60ada2f69081e77c260254c8978c9c5dce973e8b6a44a6fc8fa210b8f",
+      "fingerprint": "2f4671d623ec7f1646fdb2fc87365a7e863c3885924d5d7e23543faa821191ce",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/inverse-fair-value-gaps-ifvg-role-reversal-imbalances/": {
-      "fingerprint": "4999d542e68bdf25245a3b86c0c6bb845aee836a3589f4b00a64975142ae48a2",
+      "fingerprint": "bb8e1caac5508300c62340e6847b28695ce315936b16f5b10c7c8aca1473bfab",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/ur/learn/liquidity-engineering-and-liquidity-runs/": {
-      "fingerprint": "05d7c46926a7b1b5d87ab6d195abc4d9cfef57b831f3e1f080ec2ab379b94d38",
+      "fingerprint": "6302cbb42ab477f458bb7706eb24d86ef62d440cac210da654c55f5b37921066",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/ur/learn/liquidity-the-most-misunderstood-word-in-trading/": {
-      "fingerprint": "a099a6f7a2a60e306d339c0033c448d2337633bfe48807bee7fab401691ac0da",
+      "fingerprint": "03713f105ee1acd7d43f56e20c2d4cb8dc964fc5d8e87cf131897490d1ada45b",
       "lastmod": "2026-11-10",
       "evidence": "Chapter 01 learner-first rewrite or its updated directory summary/native shared foundation review; docs/chapter01-rewrite-report.md"
     },
     "/ur/learn/market-alchemy-trading-all-time-highs-ath/": {
-      "fingerprint": "c337bad940897b0a392a9f0322ed72fab0ce2c96dde6c9ae8fa1f0d526a56655",
+      "fingerprint": "f12b43bc6d7e4f527995bf8edffcade1770be3b668056b9c80ba12a6cce41142",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/ur/learn/market-structure-shift-mss-verified-directional-shift/": {
-      "fingerprint": "944eead363e58fd12a3d25b9aa178dea975c1a0d40e6e702ec38594145d3da98",
+      "fingerprint": "46ddac52e267439e444fe74a9eaf30ec8e21018c336c4d7b812a62362983c7b8",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
@@ -2357,92 +2357,92 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/nq-es-premarket-session-rules-morning-engine/": {
-      "fingerprint": "949db9f2293e1b47459bec8e3eda827f93a1e5940a4087bc035b77ce70f5ec2f",
+      "fingerprint": "c589bcb11ffe746913a1ef167b9ca8f4151fedfe85840249d02920707937b3de",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/opening-gap-matrices-ndog-nwog-csod/": {
-      "fingerprint": "1a40831810953d505753442743b6f7857c226f843150a88875ccad50fbd79330",
+      "fingerprint": "390bbe524698d43f35ea3eff7cd664e41b0edaa8bcde50a56534e3cf2c8c2294",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/order-blocks-ob-and-mitigation/": {
-      "fingerprint": "00dc10dfc07d0a6175c4b817ce3ac3cd1d64cc581a801bf9274b568506b96fbf",
+      "fingerprint": "89cd6d57960cf1a6199d2c9c0657df1ca264abbb756caaa9effba665e2e44c32",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/ur/learn/rdrb-balanced-price-range-and-enigma-fvg/": {
-      "fingerprint": "bb2db68231acbc74b730c72d8e0465ee480f6d691f95d18a5eeb26dfb1068231",
+      "fingerprint": "4477e9a383a59dde1ca0cacf954edfa59cd4d31a4130957634798e2a225f33ed",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/reaper-ifvg-and-suspension-block-advancements/": {
-      "fingerprint": "25423aadf0d02638047d8c2835487a1043673bffabf72723cc41ace80cce3bae",
+      "fingerprint": "061f90bdba82364cd1230b06f448e744ce3d871e4645d9cef6be826de72f81b5",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/sick-sister-strategy-and-double-purge-framework/": {
-      "fingerprint": "06887b0588744c5a46a6a89667597805ff2ac55ec610590ad6c95694e94ff119",
+      "fingerprint": "2d0fbb23ad10c504d83a7c83686ec180d29fcc377825a64fcdbbb154abeb6c9e",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/smt-divergence-mechanics/": {
-      "fingerprint": "6542c64b32487ff5f9ae42665849a4145d1472e3b719f4d4d1db0fe98c7e282d",
+      "fingerprint": "b9ae9fae6e7d6967c5854a74b08587577bca5ab0bc407fa4505b26ed2d11244a",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/the-12-weekly-profiles/": {
-      "fingerprint": "4ec64846f5f63f3ecec17104938e91338ad0a50045eaa2ffa797d967744d205a",
+      "fingerprint": "4f9bbee26ad0dfe5fe9e01f80de0489d855b97b0a6449d081f8f0a8a40ba683f",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/the-1st-presented-fvg-the-0931-rule/": {
-      "fingerprint": "c59efbfe016458b466ec624d57485bf483a19b82ac519dacbe3ff3bc4f42158b",
+      "fingerprint": "71798742612b0900bec98dc445af304649c5eca1c5618505d5dffb8a00d9e51d",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/the-complete-ict-top-down-model-and-execution-blueprint/": {
-      "fingerprint": "0e1a4ee32a21db7acdbe9d80662a016b348063b7ce7fbf3ca3e4865f38fec167",
+      "fingerprint": "39e66dd868d4636340dbd201342c5f45bbf45dc2d196b00bc6f9a2634e0ac3b6",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/ur/learn/the-ict-venom-model-five-stage-delivery/": {
-      "fingerprint": "42f593c6858b1e174a5fd262011ce6e8a9694ab210c66d80146f606446127d1a",
+      "fingerprint": "a6315f42e8e91748b2b5066459be3f4408d5bb05e815aba138b77f87a69082b1",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/the-order-book-in-depth/": {
-      "fingerprint": "95fda0fad249efc7203ff07657d1fe62da75dd8d52040886c5370525ef5bb344",
+      "fingerprint": "1b7fef86e80ba34ef2657a9cb628b3f576454eccaf2d795d4fee7111ae87127f",
       "lastmod": "2026-11-10",
       "evidence": "Chapter 01 learner-first rewrite or its updated directory summary/native shared foundation review; docs/chapter01-rewrite-report.md"
     },
     "/ur/learn/the-weekly-profile-and-five-day-delivery-model/": {
-      "fingerprint": "689f37af77c03142e193afd5304fba835312e70a48ddd4c76604c36ad7b0c51a",
+      "fingerprint": "3042acd43c2ce5c7076857a0a9c6dc23d4d760e5a4efed3852a2730ac2cbc8c2",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/time-and-session-liquidity-the-global-clock/": {
-      "fingerprint": "031a358679daa109f049b1caa651f0c1111c712fd074afdcaf624451d5b15ac6",
+      "fingerprint": "f9afd5e933140cbe35c054214fcd1991f24592202771d9ae62b48aa306ffcf74",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/ur/learn/trader-abdullah-masood-masterclass/": {
-      "fingerprint": "872da8596621b31d90ee0f1975460aaf817bfc76f8bb6b79a972939691184330",
+      "fingerprint": "804eb7f5ec7635add1c905ffa79372a70881139d020915a6f960c3dcc16247f2",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/what-actually-moves-price/": {
-      "fingerprint": "92cca4163c6e408df885593399e1d0a2705e86c0fd87dbdbec8c4e958947cf2b",
+      "fingerprint": "2a395bb3a66ac03265859d8f0bb55287634dfaa5b074f3cd7641e9bf75c67502",
       "lastmod": "2026-11-11",
-      "evidence": "Chapter 01 supplied-document restoration, confirmed original date, native Urdu and updated directory summary; docs/chapter01-restoration-report.md"
+      "evidence": "User-approved source order, native FAQs, semantic extraction and research-label cleanup; docs/two-lesson-semantic-html-report.md."
     },
     "/ur/learn/what-is-a-swing-the-atom-of-structure/": {
-      "fingerprint": "e3fe431413c90f7e5fedc4deb0538e685d6ceb607e04d4694c021d2072737db6",
+      "fingerprint": "f3805caadf0b45d0dd14e14e47c0a0267e8ec2750934133502357d3786f64337",
       "lastmod": "2026-11-10",
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/ur/learn/why-candles-form-and-how-displacement-arises/": {
-      "fingerprint": "7bb87379c810b0aa2c2d1dda2f4d981668f5aac1ebf5e71d7a3f299b866e16be",
+      "fingerprint": "17d083dd5eba957ae1c51e484aacfefef50da50298fb73e4703beb26aa48bdd9",
       "lastmod": "2026-11-10",
       "evidence": "Chapter 01 learner-first rewrite or its updated directory summary/native shared foundation review; docs/chapter01-rewrite-report.md"
     },
@@ -2452,17 +2452,17 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/masood/animations/": {
-      "fingerprint": "34092c07df2a8dedccf6fb39cb0925a38df11f1dcf70692cc2fe09466b600fc5",
+      "fingerprint": "596eb1b3e82da073b6b0602b1e6977099171a06908ee3bdfa757a904833e08fd",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/masood/bias-calculator/": {
-      "fingerprint": "8055ed2c6b9367316bac93255ea54c056bda9d7dd6caaf1cd8d5fb2d9412aceb",
+      "fingerprint": "52d24437f08592722b9e4c9f5e64e1a77e0e7d5478dc0e320bb6dfecec27acb5",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/masood/golden-rules/": {
-      "fingerprint": "f731a0feba24fd65ff715aac47a188b86064274a5fd2010e864c13f0adf882f0",
+      "fingerprint": "1979df7ea0c7b8fc3fd57d1e033b346d0c5ac704b9206008d2dde59cbb1bc1f5",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
@@ -2472,7 +2472,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/masood/lectures/masood-adv-10/": {
-      "fingerprint": "ea877a69146343f94bc5ce221ecad75d460cc91cca32596fd4420fb462d9d981",
+      "fingerprint": "3e0450d5bed5964288a245dc6bd8ee06575761190e86dbcb47794540bcad324d",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
@@ -2507,7 +2507,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/masood/lectures/masood-adv-17/": {
-      "fingerprint": "bc310a101f819717e390c7fd5bb31d3a7ee97a66cdbe2756c29566a2b88cf7df",
+      "fingerprint": "d47d59843f411cf3caed8ea0b060e9aa83d764a5ff8453b199e2da4f9b808f6c",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
@@ -2517,7 +2517,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/masood/lectures/masood-adv-2/": {
-      "fingerprint": "3ae997e3cbcaf466c3d6e442003a9e5974c2f8381946dc500485c8d19cb4f013",
+      "fingerprint": "adab99e06e34f9a6d9cc946d76e175b641d4d12eea675ba6852bb1343c767c1f",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
@@ -2652,7 +2652,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/masood/lectures/masood-db-20/": {
-      "fingerprint": "5452c34c2e2da9a91257db8c3922a23f2777646773c1d20b17688f440b34ffe4",
+      "fingerprint": "2623cdb6494be475a92c5e5e56297aa7487ebb628a209686a65395b4c020bb8c",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
@@ -2732,7 +2732,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/masood/lectures/masood-gf-8/": {
-      "fingerprint": "56de39ea91efa6d965009b13450e336381df33e3e9347c8371bf16b335e9c804",
+      "fingerprint": "e1d7556dada2fe40b636514729e22063c9b6411a47642f03ba182a33a2ecd94a",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
@@ -2802,12 +2802,12 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/masood/lectures/masood-psy-3/": {
-      "fingerprint": "a1e67f31e53387ccdf5e4b8d7626be81356c39c9977f8f826aa74e8062b4477c",
+      "fingerprint": "6a6e2facd1cba8352f6f7a8a72a89e77f4a40b808b01a7ed3a73b8619e898b57",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
     "/ur/masood/lectures/masood-psy-4/": {
-      "fingerprint": "fe9b28ee6fcdbdb255a2316b1dcb4ae199b5de071f60ff4f57ddc6b4cc40ac79",
+      "fingerprint": "385b93837f552c05d09dd8c1b8a92e4206a1cd3d92760eb401be9a8524930936",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
@@ -2932,7 +2932,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/masood/lectures/masood-syn-27/": {
-      "fingerprint": "f44aeb258e72b1f106331658c9e84e20e0833553fe491f2a3917cc6dc6d3f26a",
+      "fingerprint": "39c24fc04b7f42fe08139ceaf558f3fd86cddf5a2f216110fe94eba9914e4ca8",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
@@ -3057,7 +3057,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/masood/playlists/advanced/": {
-      "fingerprint": "c69b937908fefc288714776d92111763a504b464cb3bf00af71ae458b1791778",
+      "fingerprint": "4e777d46d80c3510f5f810ecc70ee6ef6e49a704422e7d962e09f4da7afd0c8f",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
@@ -3067,7 +3067,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/masood/playlists/daily_bias/": {
-      "fingerprint": "3dd19abdd995f01988d92addeb23fc0eaa7f8f37bc8b53ea3eb62d8dc869adfb",
+      "fingerprint": "572a53423c5b1d1c035d1c58e866772aabbb6d03bb3271daec9acd5c38757f9f",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
@@ -3077,17 +3077,17 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/masood/playlists/psychology/": {
-      "fingerprint": "d106ed2a7370d8718a337668576b721ceb3936cacdbbfe6cc89e4d1937843401",
+      "fingerprint": "f0b514b77528088eb8844ccd7c5ad47ae89521c640fcd58567bda74de55eac27",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
     "/ur/masood/playlists/syndicate/": {
-      "fingerprint": "85e9dc9eec995be1bfa4cd18fc612abca9bc9bbdda7ae238ed323f53b364c067",
+      "fingerprint": "b9a896538796677e93a620e3e96956b5aca8b258db9db361fd787d6706f29c55",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
     "/ur/privacy/": {
-      "fingerprint": "eb7793305ff54b4bf83bbeb778a69649caf8f9fe57c83268829dbc31153783c1",
+      "fingerprint": "d0fd60a1dbf0ea563c4b608b04cdb14ad10744341adcdf13bc88d81df33b2e57",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
@@ -3097,7 +3097,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/terms/": {
-      "fingerprint": "290f2e079226a20d5dc8b9989647b48afb5b7937711b4aaa73348c6b29976743",
+      "fingerprint": "a799848ed4dfe62c13b422beb632697db9046ee510ebf573ceb5f73285db50f3",
       "lastmod": "2026-10-24",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
@@ -3107,47 +3107,47 @@
       "evidence": "Phase 1 curriculum structure/metadata and approved lossless merges; docs/curriculum-phase1-report.md. Source video review dates are not restamped."
     },
     "/ur/tools/backtest/": {
-      "fingerprint": "eeac593e5cccf6b78f527b8c7c761c44472b078868deb87895e6f5a53699e029",
+      "fingerprint": "18ffc06171a76d5f33d84575e873c0cf311c21313fd65f056c738b6c38cec9ec",
       "lastmod": "2026-11-04",
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/tools/backtest/2022-mentorship-model/": {
-      "fingerprint": "71a83bdddf03b55c887ca19346d2dc8369277bd7e171043805de3c54c0898d76",
+      "fingerprint": "ff091348b6dd29c5ca1a66b55a42ee81674b4626caa4f5f88e3b78885c71e2ad",
       "lastmod": "2026-11-05",
       "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/ur/tools/backtest/breaker-reversal/": {
-      "fingerprint": "a58facca19666d7b2f1f71f0dc96a0edaf2f23b608e862882278594747328208",
+      "fingerprint": "e98fbd28926c4d47fdc074a56bacaede976ebca4ca200263715c76d3f0ce63c3",
       "lastmod": "2026-11-05",
       "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/ur/tools/backtest/charter-model-1/": {
-      "fingerprint": "33f26c17c1ce40a230ee1ff30be7f4cee1c9f5e0be166ad8f9b0f44ecf85f879",
+      "fingerprint": "272fcf6e22cdfc27d435ef77fb30f4642ed68dbebfa3d6c0375eac3e4889c076",
       "lastmod": "2026-11-05",
       "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/ur/tools/backtest/charter-model-8/": {
-      "fingerprint": "2a61cb3d3b553f0c5995d2b836e450e88d0e58f59cf5c82346ed398d24d96317",
+      "fingerprint": "a7333ac374130364071fa896f4544bb5788f0456d72488ad4bf5bd0f64558120",
       "lastmod": "2026-11-05",
       "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/ur/tools/backtest/charter-model-9/": {
-      "fingerprint": "e8d42f078796488df9d41c7fc1c93fb88023a968c131c1abe0adf9c3ed31a4ab",
+      "fingerprint": "4fdd56c80a14b48ef009d081737b93102c8ef6e2d85f76063c142f30b4b4ce97",
       "lastmod": "2026-11-05",
       "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/ur/tools/backtest/silver-bullet/": {
-      "fingerprint": "1450c32b5b37a8f0cf2e7dbfbcd426a1844b15766d7a2a3009ff7b9be81dd02b",
+      "fingerprint": "edda69f3b5c1e6dbfc14dc7025fbfc78b09612caf6113f9dd48240e869a8371b",
       "lastmod": "2026-11-05",
       "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/ur/tools/chartlab/": {
-      "fingerprint": "c7fc93f8069e0a57c9dd0ea3f001e1a3e57dbe201e170e98cfb1e6878e61fa23",
+      "fingerprint": "ed1732c9cde464ee6a4b15ca90d7f86c5c61c384dd056c78a89a5c9f1f6563f1",
       "lastmod": "2026-11-04",
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/tools/chartlab/btc-2022-bullish-model/": {
-      "fingerprint": "bc6f533f20f0a3bff258f393b6ad8da5971488d43e30773cf0974a07a8e20ec5",
+      "fingerprint": "4da8d4a9a7d7ed38eb33613a1520d5f5a7fa663b53ec255274676b97f7d2f5f1",
       "lastmod": "2026-11-04",
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
@@ -3167,22 +3167,22 @@
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/tools/chartlab/nq-silver-bullet-short/": {
-      "fingerprint": "5efd667fb7080b383a4e0770fcf7c28b72ac00d5187801280514b379eb9db9e1",
+      "fingerprint": "ef4f62930ea9e6b415a32be91cab7279ede004889a1a911eb37e823a873f025a",
       "lastmod": "2026-11-04",
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/tools/chartlab/xauusd-gold-legacy-model/": {
-      "fingerprint": "d8f1ccbe1421550fdb489629be70bab0d0dc4ecc00e2c31b39ee2b3c8754fbc6",
+      "fingerprint": "bd341f61fc3fe862e498f077f5a9e0e2c489850ca1b02361f76a2c2256ee2350",
       "lastmod": "2026-11-04",
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/tools/compare/": {
-      "fingerprint": "46cf537f9f81ae68fa4846d959862b7c7fe9dafbd628b7b7a3b182e6b90b4f76",
+      "fingerprint": "875c57c801d70fa6ec5daf12e994cb91879fffedb1eba847bcc7e783739ac90e",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
     "/ur/tools/compare/bos-vs-mss-vs-choch/": {
-      "fingerprint": "4b3cc4f30683a11132b4972f31833919076c98f9731497ee2748cdb2e70917c0",
+      "fingerprint": "a201dbb99086898c108c118c89ac63439f6b3d43bc8b6cdac67419d55795b3df",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
@@ -3192,17 +3192,17 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/tools/compare/cisd-vs-mss/": {
-      "fingerprint": "2f343469ace3ea8ecafffd30c18fab71cee4dd17998b7842ebf85e225aff8646",
+      "fingerprint": "ef85bf622e3b7372bc539945672224adaea0a163d69313f8786912bc0ece7dfa",
       "lastmod": "2026-11-05",
       "evidence": "Verified claims wording and bilingual parity correction; docs/claims-release-resolution.md."
     },
     "/ur/tools/compare/crt-vs-amd/": {
-      "fingerprint": "66f8489d7631e90e3020a953ade0352c4109fe97d35492b6a852a900d32c4465",
+      "fingerprint": "8b83727171180b7005ed2adda732870953dcdccec7aad26fdf312b9b2a654153",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/tools/compare/csod-vs-mss/": {
-      "fingerprint": "75596b135e7d899acfaec0ea8e3c0b01d847a2ccb9f68679b3e04e3029717a6c",
+      "fingerprint": "dfb2d6e0cdbbbd2c89b5905820fd8b0b83afef9fc3854fccf960c55d2688a076",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
@@ -3212,62 +3212,62 @@
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/tools/compare/internal-vs-external-liquidity/": {
-      "fingerprint": "e16abc625b6be5c8e951156630805e156ee17f1bdf1884dbb92baddee812c560",
+      "fingerprint": "e536163cda45464090436135ac365f9ee113bbe49622d15b74d5707befcf5a76",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/tools/compare/model-1-scalp-vs-model-9-osok/": {
-      "fingerprint": "9608c04664a0ebdbe2998633edf66e26d26c2739681aa4fbfe0a4768bf349a9d",
+      "fingerprint": "03767f2ead30fc8f5f84e341246b89fe0e3358e60ec9ebb8487412f5bb780550",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/tools/compare/model-13-2022-vs-silver-bullet/": {
-      "fingerprint": "46e97d456bf7e1546f6b3b1baa7042a6241c7c345c83a2286adb53229115e2ef",
+      "fingerprint": "b6b75dd05bb171ee985246ef700a9889d6d763babbe2cf08e8e6612874f688f6",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/tools/compare/ndog-vs-fvg/": {
-      "fingerprint": "896c4ae413f1cb92df7701eff5ae73507dbca8361a7b32205bf1233093ebbd68",
+      "fingerprint": "718df31586224666257862ed28f1d160ae21cc4c94a0781b52830fb50d982cd1",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/tools/compare/ob-vs-breaker/": {
-      "fingerprint": "d20e89596dea5a5cdc88cd888b868030d61a85b392c9bdcc845942ff91f30f77",
+      "fingerprint": "e470f2984fdc7a421cf08d197df20a40457dc302dacc08e6682bd284c7f2a8bb",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/tools/compare/ob-vs-mitigation/": {
-      "fingerprint": "e75b5fe54b7c43d09ce541d658a120a6045b91cb0dc29b665098ffe810625cd9",
+      "fingerprint": "df2cf64cc0b47f9949e431fe6da4b3cbc10828e0a63543d5de15b0cc74cdba7d",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/tools/compare/silver-bullet-vs-3am-london/": {
-      "fingerprint": "dd6237d76c4d4ed3f31e0a6766c331cc5d34948d98827df1d1887faeb2576ea3",
+      "fingerprint": "02a1312e1daf444d02fae95970b3b0d99acb692fc972c9521b3a840e8655b5b2",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/tools/compare/standard-ifvg-vs-reaper-ifvg/": {
-      "fingerprint": "3e1586b568261168d3052f3f49744bb7ddb31f7bc862f93338eb924f592a408f",
+      "fingerprint": "d85061c595054e73f2119b2da8d44d8519d81fdc0d628127d0eb6aeb2794eb19",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/tools/compare/suspension-vs-propulsion-vs-ob/": {
-      "fingerprint": "003bdc269a0e529b2831506edf632401745e3494c5ab313a393bd85752ea3e26",
+      "fingerprint": "223bcf035e57c03f9f4850f449372c417a723786e91d6972aa2a42c0dcc85725",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/tools/compare/sweep-vs-breakout/": {
-      "fingerprint": "f1ecfb9aa8e3a9aeb80497d9d54bc7ffd7c8ea501c9f4c02352e4dc018322af8",
+      "fingerprint": "2abd45932bf5f4b47ade04b3b1945a23cb5ea9323849c9627d4552083b6ee350",
       "lastmod": "2026-10-24",
       "evidence": "Heading clarity revision: removed duplicate section labels, repeated lab guidance or featured-card duplication; reviewed 2026-10-24."
     },
     "/ur/tools/delivery-suite/": {
-      "fingerprint": "a50784f30d729074c435346d592c3dd5409fe10156fd9e5e4453bf1b847a0c02",
+      "fingerprint": "75aa3486165c7b9723de9506b9c07049a1aef13f0e30eebeb333edb5ffeb5a37",
       "lastmod": "2026-11-05",
       "evidence": "Practice claims/metadata and native reading parity revision; see docs/practice-performance-report.md and outputs/practice-performance/final-build.log."
     },
     "/ur/tools/delivery-suite/judas-planner/": {
-      "fingerprint": "4cbc5618cbee9bb14ac6fc3b2850fb97417d73eb28055abf8398e5a7f0a4c630",
+      "fingerprint": "773ba24e5dd3267bec5ab6889e5844048f431615958c963e727ae1ea482ae2d0",
       "lastmod": "2026-11-05",
       "evidence": "Shared practice-loop module interface and native bilingual reading; docs/delivery-interface-followup.md."
     },
@@ -3282,17 +3282,17 @@
       "evidence": "Shared practice-loop module interface and native bilingual reading; docs/delivery-interface-followup.md."
     },
     "/ur/tools/delivery-suite/ote-calculator/": {
-      "fingerprint": "320f07f7c5e09a9274f2ce25bfc97b35e6198522e321cf5505be966e191e6d25",
+      "fingerprint": "f88f2ec9430e201da714221c9d89fe004bf26f5989aba47493388bdd8dbeba23",
       "lastmod": "2026-11-05",
       "evidence": "Shared practice-loop module interface and native bilingual reading; docs/delivery-interface-followup.md."
     },
     "/ur/tools/glossary/": {
-      "fingerprint": "2953f3e58e975275c4928edaa7189941f049712a7bcd0656e0422a19d04b04c8",
+      "fingerprint": "3f60a8b66112eec27ce901b2e2373dba9e2d2057e0d700636e5462006ac7505a",
       "lastmod": "2026-11-03",
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/foundations/": {
-      "fingerprint": "db8bf2bfd7bf1b55dba4ed6d3ea92289ee190a9bd48272ea1f053c67fcd0f64d",
+      "fingerprint": "3386977a3d0c1453d174ab4c31f714765b5c317e78d92702551a9bdd0122ffff",
       "lastmod": "2026-11-03",
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
@@ -3307,7 +3307,7 @@
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/imbalances/": {
-      "fingerprint": "3576d0f85e3c9048b6f1569fa082547c888cca05ee0b6ad0eca56232b81d9730",
+      "fingerprint": "804b20eace03d69f6b22aaf4d82bb9d5d57841b5471d0c368b1bad31132d9409",
       "lastmod": "2026-11-03",
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
@@ -3362,7 +3362,7 @@
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/liquidity/": {
-      "fingerprint": "2b56b4536e94155fb73aaa2592d3b869d0ee399908cc178bd5300a80f0bf6aa6",
+      "fingerprint": "7dac54bbd1e771b3fa7e481d0c31d5db3de5c8f4270a9195e889ccf4991b3928",
       "lastmod": "2026-11-03",
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
@@ -3407,7 +3407,7 @@
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/order-blocks/": {
-      "fingerprint": "68b0e9becb0bfdd3ff040431820ad421fccbf2fb961732cc4c9a2f41e78418c3",
+      "fingerprint": "6789aff4beb5b0743090e650fbaca31825ee6e05ef099daa0b56bc132ab41f76",
       "lastmod": "2026-11-03",
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
@@ -3452,7 +3452,7 @@
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/structure/": {
-      "fingerprint": "feb5cf7489a3e5997e988c35257e9c8cfe0f438be442630203e9a8781d893e26",
+      "fingerprint": "e8ebf2c86da216c9766cfceb660de9dd8eb12f3d5b91510d3b1dd9d5242144a8",
       "lastmod": "2026-11-03",
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
@@ -3477,7 +3477,7 @@
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/time-and-sessions/": {
-      "fingerprint": "b49f2ea5fda8c9f6c077820cfdb9e62af642ce3f462862b57f0724e247738797",
+      "fingerprint": "6958c2b5a42ecad5393a3bd47469c7300ddf4ed51663662e0b142001ed147a56",
       "lastmod": "2026-11-03",
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
@@ -3512,7 +3512,7 @@
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/glossary/trade-models/": {
-      "fingerprint": "d1659e486b25b6a4f1fe1661742082ca52d40daf45668ac90e8c4915872d4298",
+      "fingerprint": "ae18674bc0c2d3300d1f288ff8d5188d40673fc4eae50fedc3756cf1397dd552",
       "lastmod": "2026-11-03",
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
@@ -3582,17 +3582,17 @@
       "evidence": "Glossary editorial and shared-renderer revision; docs/glossary-reference-integrity-2026-11-03.md. Only changed glossary fingerprints recorded."
     },
     "/ur/tools/knowledge-graph/": {
-      "fingerprint": "13b937a0767771c966b20b98ec02ab2f231e464d4d0c53576cf4ea7f64341fa2",
+      "fingerprint": "0fc310129486c925981674490b70b79a878ceb3e1dca4c34578374786bc451d6",
       "lastmod": "2026-10-25",
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/masterclass/": {
-      "fingerprint": "cb6b0ba9b74f475b5df87d3931ddbab339b358888f9fc1ba471d4080af49ab8e",
+      "fingerprint": "bcd609f1281f7750ec1fc7e1410bc80fecb3f89b8c179b4287a54853fef433dd",
       "lastmod": "2026-11-04",
       "evidence": "Masterclass category content/navigation and weekly illustration review; docs/masterclass-category-refresh-2026-11-04.md"
     },
     "/ur/tools/masterclass/core-masterclasses/": {
-      "fingerprint": "1a76d2546b22faf411a81c09039db99d44b7b71b3693e606f426be67fe6ba4ee",
+      "fingerprint": "f0934cc15e5d6d09f73c4a02c61ebb0cff5931c8de07a9e9a04dc5e91bef7801",
       "lastmod": "2026-11-04",
       "evidence": "Masterclass category content/navigation and weekly illustration review; docs/masterclass-category-refresh-2026-11-04.md"
     },
@@ -3662,7 +3662,7 @@
       "evidence": "Masterclass category content/navigation and weekly illustration review; docs/masterclass-category-refresh-2026-11-04.md"
     },
     "/ur/tools/masterclass/entry-models/": {
-      "fingerprint": "79225313fb921dfdc647293e9b5e9f419fa5f3ad6fee1a15a2f164d5d3428d6d",
+      "fingerprint": "9737797c0f75c303107109b2c0341ec56d139f8f2e9df9e77d0b6ecff008a07b",
       "lastmod": "2026-11-04",
       "evidence": "Masterclass category content/navigation and weekly illustration review; docs/masterclass-category-refresh-2026-11-04.md"
     },
@@ -3692,7 +3692,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/masterclass/mentorship-frameworks/": {
-      "fingerprint": "d598befe5b21231117e1b312d4bbb43aecf2ef43a144d5ed6c028a8cfc1897c2",
+      "fingerprint": "9f4473e0ce89528f315e58df327368b70d9d4defbd1a8ad49337871d564f78aa",
       "lastmod": "2026-11-04",
       "evidence": "Masterclass category content/navigation and weekly illustration review; docs/masterclass-category-refresh-2026-11-04.md"
     },
@@ -3707,7 +3707,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/masterclass/opening-ranges/": {
-      "fingerprint": "90b5a22ed84ee5130e3ff7ab2ceb3f17ffbaaefa6ae37d44641a4ae733883e0a",
+      "fingerprint": "43c4f502b9b2a41d4d0db0ebcb3bd4ba0a601e55e01e206e19f92a662cfef40b",
       "lastmod": "2026-11-04",
       "evidence": "Masterclass category content/navigation and weekly illustration review; docs/masterclass-category-refresh-2026-11-04.md"
     },
@@ -3717,7 +3717,7 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/masterclass/pd-arrays/": {
-      "fingerprint": "1c13a650d653eb406924aa75d729c4f19985883bde6bbb10eb2e4e689348b5da",
+      "fingerprint": "a97468d0e2eae37284b483d25d7f729d8eedc6824c9f0ff4c7d9d1cabde6eb0e",
       "lastmod": "2026-11-04",
       "evidence": "Masterclass category content/navigation and weekly illustration review; docs/masterclass-category-refresh-2026-11-04.md"
     },
@@ -3762,107 +3762,107 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/tools/simulator/": {
-      "fingerprint": "a6b944b7b202077b236abc2273c2acaf1bbd94b2cc2cd560659d6b4e51140815",
+      "fingerprint": "198d7d960a9b56918efdc9ee3adfb7c6c663c271fcbcd3a7e6d36bf54d255661",
       "lastmod": "2026-11-04",
       "evidence": "Practice-loop content revision; docs/practice-loop-progress.md and outputs/practice-loop/release-build.log."
     },
     "/ur/tools/simulator/failed-ob-breaker/": {
-      "fingerprint": "eeff03a2fea97d471da2a4e64c26a9ef852d4d7786a98b65b612473830667d47",
+      "fingerprint": "98ae94430936a9b2c8b177c0b9a191975525697373efb67024f371f78f3d71fb",
       "lastmod": "2026-11-05",
       "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/ur/tools/simulator/ict-2022-model/": {
-      "fingerprint": "566baa9824b6f2aa6b15359c1f88658b9c52f1a71fb92045cd7f65a6e26e94be",
+      "fingerprint": "f3139012ba33d089e485ae22b9aed6d2679bbd7c3691b1bcc246cc79d4bd029b",
       "lastmod": "2026-11-05",
       "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/ur/tools/simulator/london-judas-swing/": {
-      "fingerprint": "4cf3e42ad0e20ab63d1a8f97e346ac0af2d1387fd5cd48c2c954cfc11979b78a",
+      "fingerprint": "ebe047d52a0eb141e54531009f20685283b95201c904ec37f306be6efbf21aad",
       "lastmod": "2026-11-05",
       "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/ur/tools/simulator/news-driver-reversal/": {
-      "fingerprint": "0eb9dd88b9ec5c9ed9e0656a868a10a148955b23a0bdb0612d0a4614e5cfbfd9",
+      "fingerprint": "d80af51f23d03a5c93f3face5e17b2dd67c2e7c1155bdbffc472a4d86ec55d79",
       "lastmod": "2026-11-05",
       "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/ur/tools/simulator/ote-expansion-long/": {
-      "fingerprint": "9d88163893dd9d7de03838e5bf3f3e29a80d46f05689ce70ee3a6646734b7ba1",
+      "fingerprint": "c289b0d236d11fe465644946171629721f869be29526d8a0b882fd098b41de07",
       "lastmod": "2026-11-05",
       "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/ur/tools/simulator/silver-bullet-short/": {
-      "fingerprint": "6829e38e707efa5375a97ebf8bb9b54f79c8e8a55cee4c8c06ac47d33c0a58c7",
+      "fingerprint": "38bb23a957b6aa039d3ac5d38aa2ba5df0d36d06cd28d407d3a002a10587df29",
       "lastmod": "2026-11-05",
       "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/curriculum/liquidity/": {
-      "fingerprint": "0df82d4542f0e5d844e26cb0e1f80f316686cb8c2500e2c92fbd8dc2d07d8814",
+      "fingerprint": "00ab8fe37b0b39449e89030549523190129ec444b5190e09a318aa5b480b8ec2",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/curriculum/time-and-sessions/": {
-      "fingerprint": "0e573e64eb39559a020cd1d9619629044c3f7042f72330f20a842af8526b9fdf",
+      "fingerprint": "c13eec5f6c32208e6b509a2fe5af84a1bf2abf0ec712535cbd5de706c4a554e5",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/curriculum/narrative-and-bias/": {
-      "fingerprint": "0b99d5c19d5d12c41292b82f16e795870860bbbea30cd95456af42f9334eeed5",
+      "fingerprint": "78ec5a035b1709cc3de6fe59dfeace6f590271c67ff0d96707cc5258292ed761",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/curriculum/entry-models/": {
-      "fingerprint": "9aa4ac27ec9fe6d01066bc784d435ab060952789bb1a0163b37f2c6696a4ed56",
+      "fingerprint": "281ab2f17c7fa8eef733dcb9d2f9aeb9bd14c9a6ae2541c092448cb01fc85961",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/curriculum/risk-management/": {
-      "fingerprint": "819f49abd0aa60137e9ee61c949b141d7c46577bb1e97e49efe63f6b4505bf2a",
+      "fingerprint": "1785b8cc9b086c24bc289d2df70e6e4753d0464f39f02fd33757cfc33bfe9a1f",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/curriculum/process-and-psychology/": {
-      "fingerprint": "e9f93ec1da48ea31df8ea8aa35c06fd0e60b556892dc1fe36b3b595c5329f358",
+      "fingerprint": "b5d3d532572cd09b260201d6c2763bfe73d48bee4febc49df36e1b11a57e48d2",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/curriculum/markets-and-instruments/": {
-      "fingerprint": "eebcd5ff3777f701139a6f76a26a1eb0f485d1d942fd55877461e7da2b872d4d",
+      "fingerprint": "6f3b643ec290c836770070f1f0fb860bf0ff66e105b45d041a70645e9cba6451",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/curriculum/liquidity/": {
-      "fingerprint": "2fdb400588704263ad9a0384ed41adcd403a33fe6d6ac8d5b6996db2ee07fa34",
+      "fingerprint": "05cf0f4528a288fbcc1b14c6696e9e1412f0c706b7d4f3e814ddcda467ace212",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/curriculum/time-and-sessions/": {
-      "fingerprint": "7e2055f747bf9ed1d43d5686c645ee7c39e5d0f92c724921d01209fa8e3741dd",
+      "fingerprint": "903b2c485cfd48e7c51f5d7014a6f769a2b5d23cc4f9bd1d5814ebde077c1de4",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/curriculum/narrative-and-bias/": {
-      "fingerprint": "e158cbb4411b33b41413031d9d172d1a96e93b1a399ba211b7567c6a3b7c4e29",
+      "fingerprint": "3c826b956e2925b5b933dd70b3e0306dcfa4fa5172769769ff09f8da25165da7",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/curriculum/entry-models/": {
-      "fingerprint": "7190385141fd6437b28dbe4c9a6ecc8418cf85d2c5772bb52f47b30c8ed9c1b7",
+      "fingerprint": "4cf6f06bf4a8813cd6a3eb20d70a2410d520c7ba1a6b14eda60d814165402c81",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/curriculum/risk-management/": {
-      "fingerprint": "dc03ef3b6968cb1dc9bec19c767f650cb13196e577868cf67f5fc78775389f28",
+      "fingerprint": "484b80fdf7d34f02b28735ac80d21824105070ec480f569cfb374be215f52a3e",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/curriculum/process-and-psychology/": {
-      "fingerprint": "e4c41247cddba89a97dea339389e8deaf86e10892a486585198e87fe8162eda4",
+      "fingerprint": "e409f283e24f9e9a8f5f7fdef4041cec44cba482ff8fa5d8130d0b811db03877",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/curriculum/markets-and-instruments/": {
-      "fingerprint": "eb02a4768319498207fb2f1b746576654fd0a8550d6fca9812d4fff4e94aeb63",
+      "fingerprint": "c8b74b67d546d8cae33e8c606b902c0efc9636a70649a1f07d37147c4e93d0e9",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     }

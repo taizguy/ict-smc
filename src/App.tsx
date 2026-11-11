@@ -1,4 +1,5 @@
 import {canonicalChapterId} from './data/curriculumPhase1';
+import {isDocumentLesson} from './utils/documentLessons';
 import {publishedCurriculumChapters as activeCurriculumChapters} from './data/chaptersData';
 import { SiteFooter } from './components/SiteFooter';
 import { currentDocumentHref } from './i18n/navigation';
@@ -436,6 +437,7 @@ export const App: React.FC = () => {
 
   const isShowingWelcome = activeTab === 'welcome';
   const isReadingRoom = ['curriculum','world_map','textbook','chapter_room'].includes(activeTab);
+  const contentFirstChapter=activeTab==='chapter_room'&&isDocumentLesson(selectedChapterId),MainContainer=contentFirstChapter?'div':'main';
 
   return (
     <div className={`min-h-screen bg-canvas text-ink flex flex-col font-sans selection:bg-brand selection:text-on-brand relative overflow-x-clip ${isReadingRoom?'reading-site':''}`}>
@@ -459,7 +461,7 @@ export const App: React.FC = () => {
       />
 
       {/* Main Educational Application Content */}
-      <main id="main-content" data-home={isShowingWelcome ? "true" : undefined} tabIndex={-1} className={`flex-1 max-w-[1560px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10 space-y-10 sm:space-y-14 ${isReadingRoom?'reading-main':''}`}>
+      <MainContainer id={contentFirstChapter?undefined:"main-content"} data-home={isShowingWelcome ? "true" : undefined} tabIndex={-1} className={`flex-1 max-w-[1560px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10 space-y-10 sm:space-y-14 ${isReadingRoom?'reading-main':''}`}>
 
         {/* WELCOME / HOME SCREEN (Clean root experience at /) */}
         {isShowingWelcome && (
@@ -566,7 +568,7 @@ export const App: React.FC = () => {
           <PageReady /></Suspense>
         )}
 
-      </main>
+      </MainContainer>
 
       {/* Global Search Modal */}
       {isSearchOpen && <Suspense fallback={null}>

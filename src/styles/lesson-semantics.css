@@ -1,0 +1,17 @@
+/* Source order is content-first; desktop columns retain the approved layout. */
+.reading-room{--lesson-body-size:16px;--lesson-body-leading:1.9;--lesson-faq-leading:1.85}
+/* Shared chapter prose standard; keep headings, tables and figure captions separate. */
+.reading-room :is(.pm-content,.fvg-document) :is(.pm-section,.fvg-document-section)>p,
+.reading-room :is(.pm-content,.fvg-document) .lesson-extract>p,
+.reading-room .pm-deeper>p,
+.reading-room :is(.pm-takeaways,.fvg-takeaways,.pm-section,.fvg-document-section,.pm-deeper)>:is(ul,ol)>li{font:400 var(--lesson-body-size)/var(--lesson-body-leading) var(--font-sans)}
+.reading-room .lesson-faq .lesson-faq-answer p{font:400 var(--lesson-body-size)/var(--lesson-faq-leading) var(--font-sans)}
+.rr-content-first>.rr-page{grid-column:2;grid-row:1}.rr-content-first>.rr-library{grid-column:1;grid-row:1}.rr-content-first.rr-focus>.rr-page{grid-column:1}
+.lesson-extract>p{max-inline-size:73ch;margin-block:1.2rem}.rr-chapter-header .lesson-extract>p{max-inline-size:none;margin-block:0 25px}.lesson-extract-formula code{font-size:.95em;white-space:normal}
+.reading-room .lesson-faq{padding:0;border:1px solid var(--rr-line);border-radius:7px;overflow:hidden;background:linear-gradient(125deg,color-mix(in srgb,var(--rr-accent) 5%,var(--rr-paper)),var(--rr-paper) 95%)}
+.reading-room .lesson-faq>summary{list-style:none;min-height:56px;padding:1rem 1.2rem;cursor:pointer;color:var(--rr-ink)}.lesson-faq>summary::-webkit-details-marker{display:none}.reading-room .lesson-faq>summary h3{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:0;font:600 17px/1.7 var(--font-sans)}.lesson-faq-icon{flex-shrink:0;font:400 22px/1 var(--font-sans);transition:transform .25s ease}.lesson-faq[open] .lesson-faq-icon{transform:rotate(45deg)}
+.reading-room .lesson-faq .lesson-faq-answer{padding:.7rem 1.2rem 1.25rem}.reading-room .lesson-faq .lesson-faq-answer p{padding:0;margin:0;line-height:1.85}.lesson-faq>summary:focus-visible{outline:2px solid var(--rr-accent);outline-offset:-4px}
+/* Progressive enhancement: native disclosures still work where this is unsupported. */
+@supports (interpolate-size:allow-keywords){.lesson-faq{interpolate-size:allow-keywords}.lesson-faq::details-content{height:0;overflow:clip;opacity:0;transition:height .3s ease,opacity .25s ease,content-visibility .3s;transition-behavior:allow-discrete}.lesson-faq[open]::details-content{height:auto;opacity:1}}
+@media(max-width:760px){.rr-content-first>.rr-page{grid-column:auto;grid-row:auto}.reading-room .lesson-faq>summary h3{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.lesson-faq,.lesson-faq::details-content,.lesson-faq-icon{transition:none!important}}

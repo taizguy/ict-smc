@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { textbookChapters } from '../data/chaptersData';
+import { publishedCurriculumChapters as textbookChapters } from '../data/chaptersData';
 import { TextbookChapter } from '../types';
 import { InteractiveDiagram } from './InteractiveDiagram';
 import { 
@@ -141,7 +141,7 @@ export const TextbookReader: React.FC<TextbookReaderProps> = ({ onSelectConcept,
                 <span>OFFICIAL CURRICULUM SYLLABUS</span>
               </span>
               <span className="text-ink-muted">•</span>
-              <span className="text-xs font-sans tabular-nums text-ink-muted font-bold">{textbookChapters.length} Chapters • 9 Master Modules</span>
+              <span className="text-xs font-sans tabular-nums text-ink-muted font-bold">{textbookChapters.length} Chapters • 10 Parts</span>
             </div>
 
             <h1 className="text-2xl sm:text-4xl font-bold text-ink font-display tracking-tight">

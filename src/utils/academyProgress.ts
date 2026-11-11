@@ -1,3 +1,5 @@
+import {chapterCatalog} from '../data/catalog.generated';
+const publishedIds=new Set(chapterCatalog.filter(c=>c.status==='published').map(c=>c.id));
 // Academy Progression & Persistence Engine
 // Tracks completed rooms, current unlocked path, and operator modes
 
@@ -39,6 +41,7 @@ export const getStoredProgress = (): AcademyProgressState => {
 export const saveCompletedChapter = (chapterId: number): number[] => {
   try {
     const { completedChapterIds } = getStoredProgress();
+    if (!publishedIds.has(chapterId)) return completedChapterIds;
     if (!completedChapterIds.includes(chapterId)) {
       const updated = [...completedChapterIds, chapterId];
       localStorage.setItem(STORAGE_KEY_COMPLETED, JSON.stringify(updated));
@@ -47,7 +50,7 @@ export const saveCompletedChapter = (chapterId: number): number[] => {
     return completedChapterIds;
   } catch (e) {
     console.warn('Failed to save completed chapter:', e);
-    return [chapterId];
+    return publishedIds.has(chapterId)?[chapterId]:[];
   }
 };
 

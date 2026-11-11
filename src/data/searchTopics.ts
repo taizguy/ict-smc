@@ -1,3 +1,4 @@
+import {phase1Entries} from './curriculumPhase1';
 import edition2026 from './chapters/mentorship2026Edition.json';
 /** Reviewed short study topics; original lesson and video titles remain in their source records. */
 export const studyTopics: Record<string, string> = {
@@ -32,7 +33,7 @@ export const studyTopics: Record<string, string> = {
   "/learn/ict-charter-models-6-and-7-universal-models/": "ICT Charter Models 6–7: Market Maker Curves",
   "/learn/ict-charter-models-8-and-9-precision-and-osok/": "ICT Charter Models 8–9: Precision & OSOK",
   "/learn/ict-charter-models-10-11-and-12/": "Charter Models 10–12: Swing & Intraday",
-  "/learn/ict-charter-model-13-2022-youtube-model/": "ICT 2022 Mentorship: Source Study Guide",
+  "/learn/ict-charter-model-13-2022-youtube-model/": "ICT 2022 Model: Setup Sequence & Examples",
   "/learn/core-content-month-1-elements-of-trade-setup/": "ICT Core Month 1: Trade Setup Basics",
   "/learn/core-content-month-2-growing-small-accounts/": "ICT Core Month 2: Account Risk & Reward",
   "/learn/core-content-month-3-institutional-sponsorship-and-traps/": "ICT Core Month 3: Timeframes & Traps",
@@ -189,3 +190,5 @@ studyTopics["/learn/ict-replay-journaling-one-model-study/"] = "ICT Trading Jour
 
 // Keep the displayed H1 and static SEO heading aligned with the reviewed 2026 lesson.
 Object.assign(studyTopics,Object.fromEntries(edition2026.map(chapter=>[`/learn/${chapter.slug}/`,chapter.title])));
+
+for(const row of phase1Entries)studyTopics[`/learn/${row.slug}/`]=row.title[0];

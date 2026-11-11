@@ -1,3 +1,4 @@
+import {canonicalChapterId} from './curriculumPhase1';
 export interface MentorshipTrack { slug:string; title:string; eyebrow:string; focus:string; audience:string; difference:string; prerequisite:string; caution:string; chapterIds:number[]; inventoryKey:string; color:string; }
 
 export const mentorshipTracks: MentorshipTrack[] = [
@@ -125,6 +126,7 @@ export const mentorshipTracks: MentorshipTrack[] = [
     "color": "forest"
   }
 ];
+for(const track of mentorshipTracks)track.chapterIds=[...new Set(track.chapterIds.map(canonicalChapterId))];
 export const mentorshipPath = (slug:string) => '/curriculum/mentorships/' + slug + '/';
 /** Study-path selection is UI state, not a separate indexable lesson document. */
 export const mentorshipLessonPath = (slug:string, track:string) => '/learn/' + slug + '/#mentorship=' + encodeURIComponent(track);

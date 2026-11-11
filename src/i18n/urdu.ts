@@ -1,3 +1,6 @@
+import {priceMovementTranslations} from '../data/chapters/priceMovementLesson';
+import {curriculumHubUrdu} from '../data/curriculumHubContent';
+import {curriculumPhase1Urdu} from '../data/curriculumPhase1';
 import claimsReviewUrdu from './claims-review-urdu.json';
 import {legacyPracticeUrdu,legacyPracticeTopicsUrdu} from '../data/legacyPracticeMetadata';
 import practiceLoopUrdu from './practice-loop-urdu.json';
@@ -257,9 +260,13 @@ export const urdu: Record<string, string> = {
   'ICT Glossary':'ICT لغت',
   'Definitions, anatomy and boundaries for ICT and Smart Money Concepts.':'ICT اور اسمارٹ منی تصورات کی تعریفیں، ساخت اور حدود۔',
   ...claimsReviewUrdu,
+  ...curriculumPhase1Urdu,
+  ...curriculumHubUrdu,
 };
 // Exact pairs keep static snippets and client-side metadata in the same language.
 for (const { en, ur } of Object.values(searchDescriptions)) urdu[en] = ur;
 Object.assign(urdu,legacyPracticeUrdu);
 for(const [key,value]of Object.entries(legacyPracticeTopicsUrdu))if(!urdu[key])urdu[key]=value;
 for (const source of Object.keys(urdu)) urdu[source] = refineTradingLanguage(source, urdu[source]);
+
+Object.assign(urdu,priceMovementTranslations);

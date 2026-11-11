@@ -1,3 +1,5 @@
+import {priceMovementTranslations} from '../src/data/chapters/priceMovementLesson';
+import {phase1Entries,curriculumPhase1Urdu} from '../src/data/curriculumPhase1';
 import {legacyPracticeUrdu} from '../src/data/legacyPracticeMetadata';
 import practiceLoopUrdu from '../src/i18n/practice-loop-urdu.json';
 import retiredPracticeStrings from '../src/i18n/retired-practice-strings.json';
@@ -102,6 +104,10 @@ const collectMasterclassSource=(value:unknown):void=>{
 };
 for(const edition of Object.values(journalEditions)) collectMasterclassSource(edition.sources);
 for(const svg of Object.values(masterclassStageArt)) for(const match of svg.matchAll(/<(?:text|title|desc)\b[^>]*>([^<]*)<\/(?:text|title|desc)>/g)) add(match[1].replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>'),'tools');
+// Directory descriptions and search titles are data-driven, not TS string literals.
+for(const row of phase1Entries)for(const key of [...row.title,...row.description])if(urdu[key])keys.shared.add(key);
+for(const key of Object.keys(curriculumPhase1Urdu))if(/^(Free ICT &|Learn ICT and Smart|The roadmap derives)/.test(key))keys.shared.add(key);
+for(const key of Object.keys(priceMovementTranslations))add(key,'chapters');
 const output = 'src/i18n/runtime';
 fs.mkdirSync(output, { recursive: true });
 for (const group of groups) {

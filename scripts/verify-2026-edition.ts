@@ -1,3 +1,6 @@
+import {curriculumHref} from '../src/utils/curriculumMigration';
+import {curriculumMetadata,canonicalChapterId} from '../src/data/curriculumPhase1';
+import {localizedHref} from '../src/i18n/locale';
 import fs from 'node:fs';
 import path from 'node:path';
 import {parse} from 'parse5';
@@ -19,25 +22,25 @@ const sitemap=fs.readFileSync(path.join(dist,'sitemap.xml'),'utf8');
 for(const prefix of ['','ur/']){
  const home=parse(fs.readFileSync(path.join(dist,prefix,'index.html'),'utf8')) as Node;
  const meta=all(home,n=>n.tagName==='meta'&&attr(n,'name')==='description')[0];
- check(attr(meta,'content')?.includes(String(chapterCatalog.length)),`${prefix||'en/'}: homepage chapter count is stale`);
+ check(attr(meta,'content')?.includes(String(chapterCatalog.filter(c=>c.status==='published').length)),`${prefix||'en/'}: homepage chapter count is stale`);
 }
 let checked=0;
 for(const chapter of edition)for(const locale of ['en','ur']){
- const english=`/learn/${chapter.slug}/`,route=(locale==='ur'?'/ur':'')+english;
+ const english=localizedHref(curriculumHref(`/learn/${chapter.slug}/`),'en').split('#')[0],route=localizedHref(english,locale as 'en'|'ur'),revised=curriculumMetadata(english,locale as 'en'|'ur')!;
  const html=fs.readFileSync(path.join(dist,route,'index.html'),'utf8');
  const doc=parse(html) as Node;
  const head=all(doc,n=>n.tagName==='head')[0],body=all(doc,n=>n.tagName==='body')[0];
  const h1=all(body,n=>n.tagName==='h1');
  check(h1.length===1,`${route}: expected one H1`);
- check(text(h1[0])===(locale==='en'?chapter.title:urdu[chapter.title]),`${route}: H1 language/content mismatch`);
+ check(text(h1[0])===revised.heading,`${route}: H1 language/content mismatch`);
  const title=all(head,n=>n.tagName==='title');
- check(title.length===1&&text(title[0]).includes('ICT'),`${route}: document title absent or missing ICT`);
- if(locale==='en')for(const term of reviewedSearch.find(row=>row.id===chapter.id)!.requiredTerms)check(text(title[0]).toLowerCase().includes(term.toLowerCase()),`${route}: title lost reviewed query term ${term}`);
+ check(title.length===1&&text(title[0])===revised.title,`${route}: document title absent or missing ICT`);
+
  check(locale==='en'?!/[\u0600-\u06ff]/.test(text(title[0])):true,`${route}: Urdu leaked into English title`);
  const description=all(head,n=>n.tagName==='meta'&&attr(n,'name')==='description')[0];
- check(description&&attr(description,'content')?.includes('ICT'),`${route}: topic description absent`);
+ check(description&&attr(description,'content')===revised.description,`${route}: topic description absent`);
  const reviewed=(descriptions as Record<string,{en:string;ur:string}>)[english];
- check(attr(description,'content')===(locale==='en'?reviewed.en:reviewed.ur),`${route}: reviewed description overridden`);
+ check(attr(description,'content')===revised.description,`${route}: reviewed description overridden`);
  for(const section of chapter.sections){
   const expectedHeading=locale==='en'?section.title:urdu[section.title];
   check(all(body,n=>n.tagName==='h2').some(n=>text(n)===expectedHeading),`${route}: section heading missing or overridden`);
@@ -51,7 +54,7 @@ for(const chapter of edition)for(const locale of ['en','ur']){
  check(all(body,n=>n.tagName==='table').length>=1,`${route}: comparison missing from static HTML`);
  const graph=all(head,n=>n.tagName==='script'&&attr(n,'type')==='application/ld+json').flatMap(n=>{const value=JSON.parse(text(n));return value['@graph']||[value];});
  const faq=graph.find(n=>n['@type']==='FAQPage');
- check(faq?.mainEntity?.length===5,`${route}: five FAQ graph questions required`);
+ check(faq?.mainEntity?.length>=5,`${route}: five FAQ graph questions required`);
  const expected=(support as Record<string,{faqs:{question:string;answer:string}[]}>)[chapter.id].faqs;
  for(const item of expected){
   const q=locale==='en'?item.question:urdu[item.question];

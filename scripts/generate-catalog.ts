@@ -1,11 +1,11 @@
 import { articles } from '../src/data/articles';
 import fs from 'node:fs';
-import { textbookChapters } from '../src/data/chaptersData';
+import { activeCurriculumChapters as textbookChapters } from '../src/data/chaptersData';
 import { masoodPlaylistsData } from '../src/data/masoodData';
 
 const data = {
   articleCatalog: articles.map(({ slug, title, description, topic }) => ({ slug, title, description, topic })),
-  chapterCatalog: textbookChapters.map(({ id, slug, title, part }) => ({ id, slug, title, part })),
+  chapterCatalog: textbookChapters.map(({ id, slug, title, part, status }) => ({ id, slug, title, part, status })),
   lectureCatalog: masoodPlaylistsData.flatMap(p => p.lectures.map(({ id, title, lectureNumber, playlistType }) => ({ id, title, lectureNumber, playlistType }))),
   playlistCatalog: masoodPlaylistsData.map(({ id, title }) => ({ id, title })),
 };

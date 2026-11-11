@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { textbookChapters } from '../data/chaptersData';
+import { publishedCurriculumChapters as textbookChapters } from '../data/chaptersData';
 import { TextbookChapter } from '../types';
 import { 
   getSectorInfo, 
@@ -53,7 +53,7 @@ export const AcademyWorldMap: React.FC<AcademyWorldMapProps> = ({
 
   const allChapterIds = useMemo(() => textbookChapters.map(c => c.id), []);
   const totalChapters = textbookChapters.length;
-  const completedCount = completedChapterIds.length;
+  const completedCount = textbookChapters.filter(c=>completedChapterIds.includes(c.id)).length;
   const progressPercent = Math.round((completedCount / totalChapters) * 100);
   const operatorRank = getOperatorRank(completedCount, totalChapters);
 

@@ -5,3 +5,10 @@
 - Keep English and Urdu metadata language-specific, with self-canonicals and reciprocal `en`, `ur` and `x-default` annotations. Verify the actual document head, not SVG `<title>` elements. A translated search result alone does not prove a localization bug.
 - Check generated static HTML, social metadata, structured data, contextual links and sitemap revision evidence. Distinguish technical validation from keyword/editorial review, live deployment and actual Google indexing. Do not describe pages as fully SEO-verified based only on tag-presence tests.
 - Keep the root project instruction that `sources/` is read-only. Do not publish research outputs or unrelated design prototypes.
+
+## Supplied chapter documents — mandatory content fidelity
+- Ask the user BEFORE adding, removing, condensing, correcting or rewording any supplied chapter content. Do not silently treat the supplied article as a research brief to rewrite.
+- Preserve exact English headings, hierarchy, wording, order, lists and table structures. Urdu must preserve the same meaning and structure naturally.
+- Keep supplied learner copy distinct from authoring instructions; implement the playbook without publishing process notes. Flag conflicts or factual concerns for approval, never silently resolve them by changing copy.
+- Chapter publication baseline confirmed by the user: 15 October 2026. Show the genuine chapter-specific last-update date beside the author when that chapter is rewritten; never blanket-stamp other chapters.
+- Keep authorised verified references. Restrained text highlights and accessible animated FAQ disclosure cards are authorised presentation changes.

@@ -11,7 +11,7 @@ import {
   Search,
   Compass
 } from 'lucide-react';
-import { textbookChapters } from '../data/chaptersData';
+import { publishedCurriculumChapters as textbookChapters } from '../data/chaptersData';
 import { MainTabType } from './Header';
 
 interface NotFoundViewProps {

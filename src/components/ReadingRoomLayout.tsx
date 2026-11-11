@@ -1,7 +1,8 @@
+import {displayChapterNumber} from '../data/curriculumPhase1';
 import { lessonBreadcrumbs } from '../utils/lessonBreadcrumbs';
 import {useEffect,useRef,useState,type ReactNode} from 'react';
 import {Search,Library,X,ChevronDown,ArrowUpRight,PanelLeftClose,PanelLeft,SlidersHorizontal} from 'lucide-react';
-import {textbookChapters} from '../data/chaptersData';
+import {activeCurriculumChapters as textbookChapters} from '../data/chaptersData';
 import {topicClusters} from '../utils/topicClusters';
 import {useTranslation} from '../i18n/TranslationProvider';
 import {withoutLocale} from '../i18n/locale';
@@ -29,7 +30,7 @@ export function ReadingRoomLayout({children,path:providedPath}:{children:ReactNo
   <aside ref={drawer} id="rr-library" className={`rr-library ${open?'is-open':''}`} aria-label={t('Learning library')}><button className="rr-drawer-close" onClick={()=>setOpen(false)} aria-label={t('Close')}><X size={19}/></button><div className="rr-library-title"><Library size={19}/><span>{t('Learning library')}</span></div>{search('rr-library-search')}
    <nav className="rr-root-links" aria-label={t('Curriculum navigation')}><a href={href('/curriculum/')} aria-current={path==='/curriculum/'?'page':undefined}>{t('Overview')}</a><a href={href('/curriculum/mentorships/')} aria-current={path.includes('/mentorships/')?'page':undefined}>{t('Mentorships')}</a></nav>
    <p className="rr-eyebrow">{t('Chapter index')}</p>
-   <nav className="rr-chapter-index" aria-label={t('All chapters')}>{topicClusters.filter(p=>!query||p.chapters.some(c=>found.includes(c))).map(p=><details key={`${p.slug}-${path}-${!!query}`} open={!!query||p.part===chapter?.part||path===`/curriculum/${p.slug}/`||undefined}><summary>{t(readingPartTitle(p.part))}<ChevronDown size={14}/></summary><a className="rr-part-link" href={href(`/curriculum/${p.slug}/`)}>{t('Topic overview')} <ArrowUpRight size={12}/></a>{p.chapters.filter(c=>!query||found.includes(c)).map(c=><a className="rr-index-lesson" key={c.id} href={href(`/learn/${c.slug}/`)} aria-current={c.id===chapter?.id?'page':undefined}><span>{String(c.id).padStart(2,'0')}</span><ReadingTitle text={c.title}/></a>)}</details>)}</nav>
+   <nav className="rr-chapter-index" aria-label={t('All chapters')}>{topicClusters.filter(p=>!query||p.chapters.some(c=>found.includes(c))).map(p=><details key={`${p.slug}-${path}-${!!query}`} open={!!query||p.part===chapter?.part||path===`/curriculum/${p.slug}/`||undefined}><summary>{t(readingPartTitle(p.part))}<ChevronDown size={14}/></summary><a className="rr-part-link" href={href(`/curriculum/${p.slug}/`)}>{t('Topic overview')} <ArrowUpRight size={12}/></a>{p.chapters.filter(c=>!query||found.includes(c)).map(c=><a className="rr-index-lesson" key={c.id} href={href(`/learn/${c.slug}/`)} aria-current={c.id===chapter?.id?'page':undefined}><span>{String(displayChapterNumber(c.id)).padStart(2,'0')}</span><span className="rr-index-copy"><ReadingTitle text={c.title}/>{c.status==='in-progress'&&<small className="rr-progress-label">{t('In progress')}</small>}</span></a>)}</details>)}</nav>
    {query&&!found.length&&<p className="rr-empty" role="status">{t('No chapters match your search.')}</p>}
    <p className="rr-library-note">{t('Keep the context. Question the pattern.')}</p>
   </aside>

@@ -1,0 +1,1510 @@
+[
+  {
+    "id": 1,
+    "position": 1,
+    "part": 1,
+    "slug": "what-actually-moves-price",
+    "title": [
+      "What Actually Moves Price?",
+      "قیمت واقعی کیوں بدلتی ہے؟"
+    ],
+    "description": [
+      "What moves price in markets? Learn how order flow, liquidity, expectations, macro data and sentiment really drive stocks, forex, crypto and commodities.",
+      "مارکیٹس میں قیمت کس سے بدلتی ہے؟ جانیں آرڈر فلو، لیکویڈیٹی، توقعات، معاشی اعداد اور جذبات حصص، فاریکس، کرپٹو اور کموڈیٹیز کو کیسے چلاتے ہیں۔"
+    ],
+    "status": "published",
+    "seoTitle": "What Moves Price in Markets? Drivers Explained"
+  },
+  {
+    "id": 2,
+    "position": 2,
+    "part": 1,
+    "slug": "how-an-exchange-matches-orders",
+    "title": [
+      "Order Matching: How Exchanges Execute Trades",
+      "آرڈر میچنگ: ایکسچینج سودے کیسے مکمل کرتی ہے"
+    ],
+    "description": [
+      "Follow price and time priority through an exchange order book, compare order types and see why a submitted exchange order does not ensure a fill.",
+      "ایکسچینج کی آرڈر بک میں قیمت اور وقت کی ترجیح سمجھیں، آرڈر کی اقسام کا موازنہ کریں اور جانیں کہ آرڈر جمع ہونا فِل کی ضمانت کیوں نہیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 3,
+    "position": 3,
+    "part": 1,
+    "slug": "the-order-book-in-depth",
+    "title": [
+      "Order Book: Depth, Queues and Hidden Limits",
+      "آرڈر بک: ڈیپتھ، قطار اور معلومات کی حدود"
+    ],
+    "description": [
+      "Read bids, offers, spread and visible depth, then examine queue changes and why an order-book snapshot cannot reveal every participant's intent.",
+      "بِڈ، آفر، اسپریڈ اور نظر آنے والی ڈیپتھ پڑھیں، قطار کی تبدیلیاں سمجھیں اور جانیں کہ آرڈر بک کا ایک منظر ہر شریک کا ارادہ کیوں نہیں بتاتا۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 4,
+    "position": 4,
+    "part": 1,
+    "slug": "liquidity-the-most-misunderstood-word-in-trading",
+    "title": [
+      "Liquidity in Trading: A Precise Definition",
+      "ٹریڈنگ میں لیکویڈیٹی: ایک واضح تعریف"
+    ],
+    "description": [
+      "Distinguish executable liquidity from chart-based liquidity references, and examine spreads, available size and the limits of inferring hidden stops.",
+      "قابلِ عمل لیکویڈیٹی کو چارٹ پر نشان زد حوالوں سے الگ سمجھیں، اور اسپریڈ، دستیاب مقدار اور پوشیدہ اسٹاپس کے بارے میں اندازوں کی حدود جانیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 5,
+    "position": 5,
+    "part": 1,
+    "slug": "why-candles-form-and-how-displacement-arises",
+    "title": [
+      "Displacement Candles: How Price Moves",
+      "ڈسپلیسمنٹ کینڈلز: قیمت کی حرکت کیسے بنتی ہے"
+    ],
+    "description": [
+      "Connect candle formation to transactions, distinguish displacement from a swing break and examine what a strong candle can and cannot establish.",
+      "کینڈل کی تشکیل کو سودوں سے جوڑیں، ڈسپلیسمنٹ اور سوئنگ بریک کا فرق سمجھیں، اور جانیں کہ مضبوط کینڈل کس بات کا ثبوت دیتی ہے اور کس کا نہیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 1006,
+    "position": 6,
+    "part": 1,
+    "slug": "candlestick-basics-for-smc",
+    "title": [
+      "Candlestick Basics for SMC: OHLC, Wicks, Timeframes",
+      "SMC کے لیے کینڈل اسٹک کی بنیادیں: OHLC، وِکس اور ٹائم فریم"
+    ],
+    "description": [
+      "OHLC, wicks and timeframes for reading candlestick charts in SMC.",
+      "SMC میں کینڈل اسٹک چارٹ پڑھنے کے لیے OHLC، وِکس اور ٹائم فریم۔"
+    ],
+    "primaryKeyword": "candlestick basics",
+    "status": "in-progress",
+    "seoTitle": "Candlestick Basics for SMC: OHLC and Wicks"
+  },
+  {
+    "id": 1007,
+    "position": 7,
+    "part": 1,
+    "slug": "forex-futures-cfd-chart-differences",
+    "title": [
+      "Forex, Futures and CFDs: Why the Same Chart Differs",
+      "فاریکس، فیوچرز اور CFD: ایک ہی چارٹ مختلف کیوں ہے"
+    ],
+    "description": [
+      "Price and chart differences between forex, futures and CFD feeds.",
+      "فاریکس، فیوچرز اور CFD کی فیڈز میں قیمت اور چارٹ کے فرق۔"
+    ],
+    "primaryKeyword": "futures vs cfd price",
+    "status": "in-progress",
+    "seoTitle": "Forex, Futures and CFDs: Chart Differences"
+  },
+  {
+    "id": 1008,
+    "position": 8,
+    "part": 1,
+    "slug": "chart-setup-new-york-time",
+    "title": [
+      "Chart Setup: New York Time, Sessions and Data Feeds",
+      "چارٹ سیٹ اپ: نیویارک کا وقت، سیشنز اور ڈیٹا فیڈز"
+    ],
+    "description": [
+      "New York chart time, session settings and the choice of data feed.",
+      "چارٹ پر نیویارک کا وقت، سیشن کی ترتیبات اور ڈیٹا فیڈ کا انتخاب۔"
+    ],
+    "primaryKeyword": "new york time trading chart",
+    "status": "in-progress",
+    "seoTitle": "Chart Setup: New York Time and Sessions"
+  },
+  {
+    "id": 7,
+    "position": 9,
+    "part": 2,
+    "slug": "what-is-a-swing-the-atom-of-structure",
+    "title": [
+      "Swing Highs and Lows: Structure and Scale",
+      "سوئنگ ہائی اور لو: اسٹرکچر اور پیمانہ"
+    ],
+    "description": [
+      "Mark confirmed swing highs and lows, distinguish smaller pivots from wider structure and record when a swing becomes knowable without hindsight.",
+      "تصدیق شدہ سوئنگ ہائی اور لو نشان زد کریں، چھوٹے موڑ کو بڑے اسٹرکچر سے الگ رکھیں اور درج کریں کہ مستقبل دیکھے بغیر سوئنگ کب پہچانا جا سکتا ہے۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 1010,
+    "position": 10,
+    "part": 2,
+    "slug": "internal-vs-external-structure",
+    "title": [
+      "Internal vs External Structure",
+      "اندرونی اور بیرونی مارکیٹ اسٹرکچر"
+    ],
+    "description": [
+      "Internal and external market structure at different chart scales.",
+      "چارٹ کے مختلف پیمانوں پر اندرونی اور بیرونی مارکیٹ اسٹرکچر۔"
+    ],
+    "primaryKeyword": "internal vs external market structure",
+    "status": "in-progress"
+  },
+  {
+    "id": 1011,
+    "position": 11,
+    "part": 2,
+    "slug": "trend-range-transition",
+    "title": [
+      "Trends, Ranges and Transitions",
+      "ٹرینڈ، رینج اور ان کے درمیان تبدیلی"
+    ],
+    "description": [
+      "Trending, ranging and transitional conditions in market structure.",
+      "مارکیٹ اسٹرکچر میں ٹرینڈ، رینج اور عبوری حالات۔"
+    ],
+    "primaryKeyword": "market phases trend range",
+    "status": "in-progress"
+  },
+  {
+    "id": 9,
+    "position": 12,
+    "part": 2,
+    "slug": "break-of-structure-bos-trend-continuation",
+    "title": [
+      "Break of Structure: Rules and Limits",
+      "بریک آف اسٹرکچر: اصول اور حدود"
+    ],
+    "description": [
+      "Study a break of structure against a selected swing, state wick or close rules and compare continuation with failed breaks and ambiguous structure.",
+      "منتخب سوئنگ کے مقابل بریک آف اسٹرکچر سمجھیں، وِک یا کلوز کا اصول لکھیں اور تسلسل، ناکام بریک اور غیر واضح اسٹرکچر کا موازنہ کریں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 10,
+    "position": 13,
+    "part": 2,
+    "slug": "change-of-character-choch-the-first-warning",
+    "title": [
+      "Change of Character: The First Warning",
+      "چینج آف کریکٹر: پہلا انتباہ"
+    ],
+    "description": [
+      "Recognise a change of character within existing structure, compare internal and larger swings and explain why an early warning is not a reversal.",
+      "موجودہ اسٹرکچر میں چینج آف کریکٹر پہچانیں، اندرونی اور بڑے سوئنگز کا موازنہ کریں اور سمجھیں کہ ابتدائی انتباہ ریورسل کی ضمانت کیوں نہیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 11,
+    "position": 14,
+    "part": 2,
+    "slug": "market-structure-shift-mss-verified-directional-shift",
+    "title": [
+      "Market Structure Shift: Context and Rules",
+      "مارکیٹ اسٹرکچر شفٹ: تناظر اور اصول"
+    ],
+    "description": [
+      "Separate a swing crossing, displacement and FVG completion, compare source-specific MSS conventions and practise distinguishing evidence from inference.",
+      "سوئنگ عبور ہونے، ڈسپلیسمنٹ اور FVG مکمل ہونے کو الگ رکھیں، MSS کے مختلف اصول سمجھیں اور مشاہدے کو مفروضے سے الگ کرنے کی مشق کریں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 1015,
+    "position": 15,
+    "part": 2,
+    "slug": "bos-vs-choch-vs-mss",
+    "title": [
+      "BOS vs CHoCH vs MSS: A Side-by-Side Guide",
+      "BOS، CHoCH اور MSS: ساتھ رکھ کر موازنہ"
+    ],
+    "description": [
+      "A side-by-side comparison of BOS, CHoCH and MSS terminology.",
+      "BOS، CHoCH اور MSS کی اصطلاحات کا ساتھ رکھ کر موازنہ۔"
+    ],
+    "primaryKeyword": "bos vs choch vs mss",
+    "status": "in-progress"
+  },
+  {
+    "id": 1016,
+    "position": 16,
+    "part": 2,
+    "slug": "dealing-range-marking",
+    "title": [
+      "Dealing Ranges: Marking the Range That Matters",
+      "ڈیلنگ رینجز: متعلقہ رینج کی نشان دہی"
+    ],
+    "description": [
+      "Range selection and anchor marking for a declared dealing range.",
+      "مقررہ ڈیلنگ رینج کا انتخاب اور اس کے اینکرز کی نشان دہی۔"
+    ],
+    "primaryKeyword": "dealing range trading",
+    "status": "in-progress"
+  },
+  {
+    "id": 1017,
+    "position": 17,
+    "part": 3,
+    "slug": "buyside-sellside-liquidity",
+    "title": [
+      "Buyside and Sellside Liquidity: Where Orders Rest",
+      "بائے سائیڈ اور سیل سائیڈ لیکویڈیٹی: آرڈرز کے مقامات"
+    ],
+    "description": [
+      "Buyside and sellside liquidity references and proposed order locations.",
+      "بائے سائیڈ اور سیل سائیڈ لیکویڈیٹی کے حوالے اور آرڈرز کے ممکنہ مقامات۔"
+    ],
+    "primaryKeyword": "buyside sellside liquidity",
+    "status": "in-progress",
+    "seoTitle": "Buyside and Sellside Liquidity"
+  },
+  {
+    "id": 1018,
+    "position": 18,
+    "part": 3,
+    "slug": "equal-highs-equal-lows",
+    "title": [
+      "Equal Highs and Lows: Reading Liquidity Pools",
+      "برابر ہائی اور لو: لیکویڈیٹی پولز کی پہچان"
+    ],
+    "description": [
+      "Equal highs and equal lows as chart-based liquidity references.",
+      "چارٹ پر لیکویڈیٹی کے حوالوں کے طور پر برابر ہائی اور لو۔"
+    ],
+    "primaryKeyword": "equal highs equal lows",
+    "status": "in-progress"
+  },
+  {
+    "id": 1019,
+    "position": 19,
+    "part": 3,
+    "slug": "liquidity-sweep-vs-stop-hunt",
+    "title": [
+      "Liquidity Sweep or Stop Hunt? What You Can Observe",
+      "لیکویڈیٹی سویپ یا اسٹاپ ہنٹ؟ کیا دیکھا جا سکتا ہے"
+    ],
+    "description": [
+      "Observable price sweeps and the limits of the stop-hunt interpretation.",
+      "قیمت کے نمایاں سویپس اور اسٹاپ ہنٹ کی تشریح کی حدود۔"
+    ],
+    "primaryKeyword": "liquidity sweep vs stop hunt",
+    "status": "in-progress",
+    "seoTitle": "Liquidity Sweep vs Stop Hunt: Observable Evidence"
+  },
+  {
+    "id": 18,
+    "position": 20,
+    "part": 3,
+    "slug": "liquidity-engineering-and-liquidity-runs",
+    "title": [
+      "Liquidity Runs: Sweeps, Context and Limits",
+      "لیکویڈیٹی رنز: سویپ، تناظر اور حدود"
+    ],
+    "description": [
+      "Study price moving through visible highs and lows, distinguish a sweep from continuation and explain the limits of claims about hidden order placement.",
+      "نمایاں ہائی اور لو کے پار قیمت کی حرکت سمجھیں، سویپ اور تسلسل کا فرق دیکھیں اور پوشیدہ آرڈرز کے مقام سے متعلق دعووں کی حدود جانیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 1021,
+    "position": 21,
+    "part": 3,
+    "slug": "inducement-false-breakouts",
+    "title": [
+      "Inducement and False Breakouts",
+      "انڈیوسمنٹ اور ناکام بریک آؤٹ"
+    ],
+    "description": [
+      "Inducement terminology and false-breakout price references.",
+      "انڈیوسمنٹ کی اصطلاح اور ناکام بریک آؤٹ کے قیمت کے حوالے۔"
+    ],
+    "primaryKeyword": "inducement trading",
+    "status": "in-progress"
+  },
+  {
+    "id": 60,
+    "position": 22,
+    "part": 3,
+    "slug": "ict-liquidity-turtle-soup-rejection-blocks",
+    "title": [
+      "Turtle Soup: Failed Breakouts and Rejections",
+      "ٹرٹل سوپ: ناکام بریک آؤٹ اور ردِعمل"
+    ],
+    "description": [
+      "Compare Turtle Soup failed-breakout studies with rejection references, define the selected high or low and test both recovery and continued expansion.",
+      "ٹرٹل سوپ کے ناکام بریک آؤٹ اور ریجیکشن حوالوں کا موازنہ کریں، منتخب ہائی یا لو متعین کریں اور واپسی کے ساتھ مسلسل ایکسپینشن بھی پرکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 1023,
+    "position": 23,
+    "part": 3,
+    "slug": "draw-on-liquidity",
+    "title": [
+      "Draw on Liquidity: Choosing the Next Target",
+      "ڈرا آن لیکویڈیٹی: اگلے ہدف کا انتخاب"
+    ],
+    "description": [
+      "Selecting a proposed liquidity target within a stated market context.",
+      "واضح مارکیٹ تناظر میں لیکویڈیٹی کے ممکنہ ہدف کا انتخاب۔"
+    ],
+    "primaryKeyword": "draw on liquidity",
+    "status": "in-progress"
+  },
+  {
+    "id": 1024,
+    "position": 24,
+    "part": 3,
+    "slug": "htf-liquidity-maps",
+    "title": [
+      "Higher-Timeframe Liquidity Maps",
+      "بڑے ٹائم فریم کی لیکویڈیٹی کے نقشے"
+    ],
+    "description": [
+      "Mapping higher-timeframe liquidity references and possible targets.",
+      "بڑے ٹائم فریم پر لیکویڈیٹی کے حوالوں اور ممکنہ اہداف کی نشان دہی۔"
+    ],
+    "primaryKeyword": "htf liquidity targets",
+    "status": "in-progress"
+  },
+  {
+    "id": 1025,
+    "position": 25,
+    "part": 4,
+    "slug": "imbalance-and-rebalancing",
+    "title": [
+      "Imbalance and Rebalancing: Why Price Revisits",
+      "امبیلنس اور ری بیلنسنگ: قیمت کی واپسی"
+    ],
+    "description": [
+      "Price imbalance, rebalancing terminology and revisited price areas.",
+      "پرائس امبیلنس، ری بیلنسنگ کی اصطلاح اور دوبارہ آنے والے قیمت کے علاقے۔"
+    ],
+    "primaryKeyword": "price imbalance",
+    "status": "in-progress"
+  },
+  {
+    "id": 13,
+    "position": 26,
+    "part": 4,
+    "slug": "fair-value-gaps-fvg-and-consequent-encroachment",
+    "title": [
+      "Fair Value Gaps: Formation, CE and Examples",
+      "فیئر ویلیو گیپس: تشکیل، CE اور مثالیں"
+    ],
+    "description": [
+      "Measure bullish and bearish FVGs using outer-candle wicks, calculate consequent encroachment and compare retracements, overlap and failed reactions.",
+      "بیرونی کینڈلز کی وِکس سے بلش اور بیئرش FVG ناپیں، کونسی کوئنٹ انکروچمنٹ نکالیں اور واپسی، اوورلیپ اور ناکام ردِعمل کا موازنہ کریں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 1027,
+    "position": 27,
+    "part": 4,
+    "slug": "volume-imbalance-liquidity-void",
+    "title": [
+      "Volume Imbalances, Gaps and Liquidity Voids",
+      "والیوم امبیلنس، گیپس اور لیکویڈیٹی ووئڈز"
+    ],
+    "description": [
+      "Volume imbalance, price gaps and liquidity-void terminology.",
+      "والیوم امبیلنس، قیمت کے گیپس اور لیکویڈیٹی ووئڈ کی اصطلاحات۔"
+    ],
+    "primaryKeyword": "volume imbalance",
+    "status": "in-progress"
+  },
+  {
+    "id": 14,
+    "position": 28,
+    "part": 4,
+    "slug": "inverse-fair-value-gaps-ifvg-role-reversal-imbalances",
+    "title": [
+      "Inverse Fair Value Gaps: Role Reversal",
+      "انورس فیئر ویلیو گیپس: کردار کی تبدیلی"
+    ],
+    "description": [
+      "Follow a failed FVG into a possible inverse reference, distinguish formation from retest and compare closing rules, invalidation and unfilled entries.",
+      "ناکام FVG سے ممکنہ انورس حوالے تک ترتیب سمجھیں، تشکیل اور ری ٹیسٹ الگ رکھیں اور کلوز، منسوخی اور فِل نہ ہونے والی انٹری کا موازنہ کریں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 15,
+    "position": 29,
+    "part": 4,
+    "slug": "order-blocks-ob-and-mitigation",
+    "title": [
+      "Order Blocks: Boundaries and Mitigation",
+      "آرڈر بلاکس: حدود اور مٹیگیشن"
+    ],
+    "description": [
+      "Select an order-block reference within its context, compare candle-run boundaries and study mitigation, failure and the limits of institutional claims.",
+      "تناظر میں آرڈر بلاک کا حوالہ منتخب کریں، کینڈلز کی قطار کی حدود کا موازنہ کریں اور مٹیگیشن، ناکامی اور ادارہ جاتی دعووں کی حدود سمجھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 16,
+    "position": 30,
+    "part": 4,
+    "slug": "breaker-blocks-trading-failed-order-blocks",
+    "title": [
+      "Breaker Blocks: Failed Order Block Studies",
+      "بریکر بلاکس: ناکام آرڈر بلاک کا مطالعہ"
+    ],
+    "description": [
+      "Trace an order block through failure and a possible breaker retest, distinguish mitigation and overlap, and compare qualifying and failed examples.",
+      "آرڈر بلاک کی ناکامی سے ممکنہ بریکر ری ٹیسٹ تک ترتیب دیکھیں، مٹیگیشن اور اوورلیپ الگ سمجھیں اور موزوں اور ناکام مثالوں کا موازنہ کریں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 1031,
+    "position": 31,
+    "part": 4,
+    "slug": "mitigation-and-rejection-blocks",
+    "title": [
+      "Mitigation Blocks and Rejection Blocks",
+      "مٹیگیشن بلاکس اور ریجیکشن بلاکس"
+    ],
+    "description": [
+      "The boundaries and terminology of mitigation and rejection blocks.",
+      "مٹیگیشن اور ریجیکشن بلاکس کی حدود اور اصطلاحات۔"
+    ],
+    "primaryKeyword": "mitigation block",
+    "status": "in-progress"
+  },
+  {
+    "id": 55,
+    "position": 32,
+    "part": 4,
+    "slug": "reaper-ifvg-and-suspension-block-advancements",
+    "title": [
+      "Suspension Blocks and Reaper FVG Studies",
+      "سسپنشن بلاکس اور ریپر FVG کا مطالعہ"
+    ],
+    "description": [
+      "Compare separated candle bodies with overlapping wicks, then study the sourced Reaper variant while keeping range selection and entry assumptions explicit.",
+      "الگ کینڈل باڈیز اور اوورلیپ کرتی وِکس کا موازنہ کریں، پھر ریپر کی ماخذ والی صورت سمجھیں اور رینج کے انتخاب اور انٹری کے مفروضے واضح رکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 59,
+    "position": 33,
+    "part": 4,
+    "slug": "ict-pd-array-selection-price-delivery-continuum",
+    "title": [
+      "Premium and Discount: The PD Array Matrix",
+      "پریمیم اور ڈسکاؤنٹ: PD اَرے میٹرکس"
+    ],
+    "description": [
+      "Locate price within a declared range, compare premium and discount PD arrays and examine why range anchors matter more than collecting pattern labels.",
+      "مقررہ رینج میں قیمت کا مقام دیکھیں، پریمیم اور ڈسکاؤنٹ کے PD اَریز کا موازنہ کریں اور سمجھیں کہ پیٹرن کے نام جمع کرنے سے رینج کے اینکر کیوں اہم ہیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 1034,
+    "position": 34,
+    "part": 4,
+    "slug": "optimal-trade-entry-ote",
+    "title": [
+      "Optimal Trade Entry (OTE): Fib Zones Inside a Range",
+      "آپٹیمل ٹریڈ انٹری (OTE): رینج کے اندر فِب زونز"
+    ],
+    "description": [
+      "OTE Fibonacci retracement zones measured inside a selected range.",
+      "منتخب رینج کے اندر ناپے گئے OTE فبوناکی ریٹریسمنٹ زونز۔"
+    ],
+    "primaryKeyword": "optimal trade entry",
+    "status": "in-progress",
+    "seoTitle": "Optimal Trade Entry (OTE): Fibonacci Zones"
+  },
+  {
+    "id": 56,
+    "position": 35,
+    "part": 4,
+    "slug": "rdrb-balanced-price-range-and-enigma-fvg",
+    "title": [
+      "Balanced Price Ranges: Revisits and Enigma",
+      "بیلنسڈ پرائس رینجز: واپسی اور انیگما"
+    ],
+    "description": [
+      "Distinguish balanced-range measurements from the sourced Enigma label, state the chosen anchors and compare returns, failed tests and uncertain outcomes.",
+      "بیلنسڈ رینج کی پیمائش اور ماخذ میں انیگما کے نام کو الگ سمجھیں، اینکر واضح کریں اور واپسی، ناکام ٹیسٹ اور غیر یقینی نتائج کا موازنہ کریں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 1036,
+    "position": 36,
+    "part": 4,
+    "slug": "pd-arrays-compared",
+    "title": [
+      "FVG vs Order Block vs Breaker vs IFVG: Which to Use",
+      "FVG، آرڈر بلاک، بریکر اور IFVG: کس کا استعمال ہو"
+    ],
+    "description": [
+      "A comparison of FVG, order block, breaker and IFVG reference types.",
+      "FVG، آرڈر بلاک، بریکر اور IFVG کے حوالوں کی اقسام کا موازنہ۔"
+    ],
+    "primaryKeyword": "pd arrays compared",
+    "status": "in-progress",
+    "seoTitle": "FVG vs Order Block vs Breaker vs IFVG"
+  },
+  {
+    "id": 19,
+    "position": 37,
+    "part": 5,
+    "slug": "time-and-session-liquidity-the-global-clock",
+    "title": [
+      "Trading Sessions: Time and Liquidity",
+      "ٹریڈنگ سیشنز: وقت اور لیکویڈیٹی"
+    ],
+    "description": [
+      "Map session references with the market, date and timezone stated, compare regional trading windows and account for daylight saving before chart study.",
+      "مارکیٹ، تاریخ اور ٹائم زون بتا کر سیشن کے حوالے نشان زد کریں، علاقائی اوقات کا موازنہ کریں اور چارٹ کے مطالعے سے پہلے ڈے لائٹ سیونگ کا فرق دیکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 1038,
+    "position": 38,
+    "part": 5,
+    "slug": "kill-zones-explained",
+    "title": [
+      "Kill Zones: London, New York and Asia Windows",
+      "کِل زونز: لندن، نیویارک اور ایشیا کی ونڈوز"
+    ],
+    "description": [
+      "London, New York and Asian session windows in ICT kill-zone teaching.",
+      "ICT کے کِل زون مطالعے میں لندن، نیویارک اور ایشیا کے سیشن اوقات۔"
+    ],
+    "primaryKeyword": "ict kill zones",
+    "status": "in-progress"
+  },
+  {
+    "id": 1039,
+    "position": 39,
+    "part": 5,
+    "slug": "asian-range-london-open",
+    "title": [
+      "The Asian Range and the London Open",
+      "ایشین رینج اور لندن اوپن"
+    ],
+    "description": [
+      "Asian-session range references and their relation to the London open.",
+      "ایشین سیشن کی رینج کے حوالے اور لندن اوپن سے ان کا تعلق۔"
+    ],
+    "primaryKeyword": "asian range london open",
+    "status": "in-progress"
+  },
+  {
+    "id": 61,
+    "position": 40,
+    "part": 5,
+    "slug": "ict-lunch-afternoon-session-models",
+    "title": [
+      "New York Open, Lunch and Afternoon Models",
+      "نیویارک اوپن، لنچ اور دوپہر کے ماڈلز"
+    ],
+    "description": [
+      "Compare New York opening, lunch and afternoon references, preserve tape-reading examples and test whether later moves meet the stated session conditions.",
+      "نیویارک اوپن، لنچ اور دوپہر کے حوالے سمجھیں، ٹیپ ریڈنگ کی مثالیں دیکھیں اور پرکھیں کہ بعد کی حرکت سیشن کے مقررہ اصول پورے کرتی ہے یا نہیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 24,
+    "position": 41,
+    "part": 5,
+    "slug": "0930-am-opening-range-theory",
+    "title": [
+      "ICT Opening Range: 9:30 to 10:00",
+      "ICT اوپننگ رینج: 9:30 سے 10:00"
+    ],
+    "description": [
+      "Define the 9:30–10:00 New York opening range, distinguish developing and completed levels and compare breakouts, returns and failed opening-range ideas.",
+      "نیویارک کی 9:30 سے 10:00 اوپننگ رینج متعین کریں، بنتی اور مکمل حدود الگ رکھیں اور بریک آؤٹ، واپسی اور ناکام اوپننگ رینج کا موازنہ کریں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 25,
+    "position": 42,
+    "part": 5,
+    "slug": "the-1st-presented-fvg-the-0931-rule",
+    "title": [
+      "ICT First Presented FVG and First-Hour Range",
+      "ICT فرسٹ پریزنٹڈ FVG اور پہلے گھنٹے کی رینج"
+    ],
+    "description": [
+      "Qualify a first presented FVG in context, track the 9:30–10:30 range without future information and compare valid gaps with missing or failed conditions.",
+      "تناظر میں فرسٹ پریزنٹڈ FVG کی موزونیت جانچیں، آئندہ قیمت دیکھے بغیر 9:30 سے 10:30 رینج درج کریں اور درست گیپ، نامکمل شرط اور ناکامی کا فرق دیکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 48,
+    "position": 43,
+    "part": 5,
+    "slug": "nq-es-premarket-session-rules-morning-engine",
+    "title": [
+      "Pre-Market Range: NQ and ES 7–9 AM Study",
+      "پری مارکیٹ رینج: NQ اور ES کے 7–9 بجے"
+    ],
+    "description": [
+      "Mark the declared 7–9 AM New York pre-market range, compare NQ and ES context and separate completed references from levels changing during formation.",
+      "نیویارک کے مقررہ 7 سے 9 بجے کی پری مارکیٹ رینج نشان زد کریں، NQ اور ES کا تناظر دیکھیں اور مکمل حوالوں کو تشکیل کے دوران بدلتی حدود سے الگ رکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 50,
+    "position": 44,
+    "part": 5,
+    "slug": "opening-gap-matrices-ndog-nwog-csod",
+    "title": [
+      "Opening Gaps: NDOG, NWOG and RTH",
+      "اوپننگ گیپس: NDOG، NWOG اور RTH"
+    ],
+    "description": [
+      "Measure daily, weekly and regular-session opening gaps, distinguish the midnight open from a range and compare midpoint tests, full returns and failures.",
+      "روزانہ، ہفتہ وار اور ریگولر سیشن کے اوپننگ گیپس ناپیں، مڈنائٹ اوپن کو رینج سے الگ سمجھیں اور وسط کے ٹیسٹ، مکمل واپسی اور ناکامی کا موازنہ کریں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 20,
+    "position": 45,
+    "part": 5,
+    "slug": "the-weekly-profile-and-five-day-delivery-model",
+    "title": [
+      "Weekly Profile: The Five-Day Range",
+      "ویکلی پروفائل: پانچ دن کی رینج"
+    ],
+    "description": [
+      "Frame a weekly profile using its opening reference, range and timing, compare expansion with reversal and record what was knowable before the week ended.",
+      "اوپننگ حوالے، رینج اور وقت سے ویکلی پروفائل بنائیں، ایکسپینشن اور ریورسل کا فرق دیکھیں اور درج کریں کہ ہفتہ ختم ہونے سے پہلے کیا معلوم تھا۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 27,
+    "position": 46,
+    "part": 5,
+    "slug": "the-12-weekly-profiles",
+    "title": [
+      "Weekly Profiles: Scenarios and Limits",
+      "ویکلی پروفائلز: صورتیں اور حدود"
+    ],
+    "description": [
+      "Compare weekly-profile scenarios using fixed references, state the conditions for each interpretation and keep failed or unclear weeks in the study record.",
+      "مقررہ حوالوں سے ہفتہ وار صورتوں کا موازنہ کریں، ہر تشریح کی شرائط لکھیں اور ناکام یا غیر واضح ہفتے بھی مطالعاتی ریکارڈ میں رکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 21,
+    "position": 47,
+    "part": 5,
+    "slug": "daily-profiles-and-intraday-power-of-three-po3",
+    "title": [
+      "Daily Profiles and Power of Three",
+      "ڈیلی پروفائلز اور پاور آف تھری"
+    ],
+    "description": [
+      "Study daily-range anatomy and PO3 phases together, distinguish the session narrative from entry conditions and compare expansion with continued balance.",
+      "روزانہ رینج کی ساخت اور PO3 کے مراحل ساتھ سمجھیں، سیشن کی کہانی کو انٹری کی شرائط سے الگ رکھیں اور ایکسپینشن اور برقرار بیلنس کا فرق دیکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 67,
+    "position": 48,
+    "part": 5,
+    "slug": "ict-time-price-grids-quadrants-octants",
+    "title": [
+      "Time and Price: Quadrants and Octants",
+      "وقت اور قیمت: کواڈرنٹس اور آکٹنٹس"
+    ],
+    "description": [
+      "Divide a stated time or price range into quadrants and octants, calculate the levels and compare meaningful reference tests with retrospective fitting.",
+      "مقررہ وقت یا قیمت کی رینج کو کواڈرنٹس اور آکٹنٹس میں بانٹیں، سطحیں نکالیں اور بامعنی ٹیسٹ کو نتیجہ دیکھ کر رینج بدلنے سے الگ سمجھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 1049,
+    "position": 49,
+    "part": 5,
+    "slug": "quarterly-theory-seasonality",
+    "title": [
+      "Quarterly Theory and Seasonal Tendencies",
+      "کوارٹرلی تھیوری اور موسمی رجحانات"
+    ],
+    "description": [
+      "Quarterly timing conventions and seasonal tendencies in chart studies.",
+      "چارٹ مطالعات میں سہ ماہی اوقات کے اصول اور موسمی رجحانات۔"
+    ],
+    "primaryKeyword": "quarterly theory trading",
+    "status": "in-progress"
+  },
+  {
+    "id": 1050,
+    "position": 50,
+    "part": 5,
+    "slug": "intraday-macro-windows",
+    "title": [
+      "Intraday Macros: Short Time Windows Inside Sessions",
+      "انٹراڈے میکروز: سیشنز میں مختصر وقتی ونڈوز"
+    ],
+    "description": [
+      "Short intraday time windows within sessions in ICT macro teaching.",
+      "ICT میکرو مطالعے میں سیشن کے اندر مختصر انٹراڈے وقتی ونڈوز۔"
+    ],
+    "primaryKeyword": "ict macros",
+    "status": "in-progress",
+    "seoTitle": "ICT Intraday Macros: Session Time Windows"
+  },
+  {
+    "id": 22,
+    "position": 51,
+    "part": 6,
+    "slug": "the-complete-ict-top-down-model-and-execution-blueprint",
+    "title": [
+      "Top-Down Analysis: Context to Execution",
+      "ٹاپ ڈاؤن تجزیہ: تناظر سے عمل تک"
+    ],
+    "description": [
+      "Connect higher-timeframe context with an intraday observation and entry rule, compare conflicting references and keep bias separate from the entry trigger.",
+      "بڑے ٹائم فریم کے تناظر کو انٹراڈے مشاہدے اور انٹری کے اصول سے جوڑیں، متضاد حوالے سمجھیں اور بائس اور ٹرگر کے درمیان واضح فرق رکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 1052,
+    "position": 52,
+    "part": 6,
+    "slug": "daily-bias",
+    "title": [
+      "Daily Bias: Building a Directional Plan",
+      "ڈیلی بائس: سمت کا منصوبہ بنانا"
+    ],
+    "description": [
+      "Building a directional daily-bias plan from stated chart references.",
+      "چارٹ کے واضح حوالوں سے ڈیلی بائس اور سمت کا منصوبہ بنانا۔"
+    ],
+    "primaryKeyword": "daily bias trading",
+    "status": "in-progress"
+  },
+  {
+    "id": 39,
+    "position": 53,
+    "part": 6,
+    "slug": "core-content-month-3-institutional-sponsorship-and-traps",
+    "title": [
+      "Timeframe Selection: Higher-Timeframe Context",
+      "ٹائم فریم کا انتخاب: بڑے پیمانے کا تناظر"
+    ],
+    "description": [
+      "Choose a consistent timeframe hierarchy, compare higher-timeframe references with local patterns and avoid changing scale only to justify a desired trade.",
+      "ٹائم فریمز کی مستقل ترتیب منتخب کریں، بڑے حوالوں اور چھوٹے پیٹرنز کا فرق دیکھیں اور محض پسندیدہ ٹریڈ درست ثابت کرنے کے لیے پیمانہ نہ بدلیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 41,
+    "position": 54,
+    "part": 6,
+    "slug": "core-content-month-5-quarterly-shifts-and-position-trading",
+    "title": [
+      "IPDA Lookbacks: 20, 40 and 60 Days",
+      "IPDA لک بیکس: 20، 40 اور 60 دن"
+    ],
+    "description": [
+      "Compare 20-, 40- and 60-day lookback conventions, distinguish rolling windows from calendar quarters and retain the position-risk context of each study.",
+      "20، 40 اور 60 دن کے لک بیک اصولوں کا موازنہ کریں، رولنگ ونڈو اور کیلنڈر سہ ماہی الگ رکھیں اور ہر مطالعے میں پوزیشن رسک کا تناظر برقرار رکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 66,
+    "position": 55,
+    "part": 6,
+    "slug": "ict-chain-of-custody-of-price",
+    "title": [
+      "Chain of Custody: Daily to Intraday Price",
+      "چین آف کسٹڈی: روزانہ سے انٹراڈے قیمت"
+    ],
+    "description": [
+      "Follow a daily reference into intraday observations, record when information becomes available and test alternative paths before assigning a narrative.",
+      "مقررہ روزانہ حوالے سے چھوٹے ٹائم فریم کے مشاہدے تک ترتیب دیکھیں، معلومات معلوم ہونے کا وقت لکھیں اور کہانی بنانے سے پہلے متبادل راستے پرکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 26,
+    "position": 56,
+    "part": 6,
+    "slug": "smt-divergence-mechanics",
+    "title": [
+      "SMT Divergence: Bullish, Bearish, NQ and ES",
+      "SMT ڈائیورجنس: بلش، بیئرش، NQ اور ES"
+    ],
+    "description": [
+      "Compare related markets at matched times, distinguish bullish and bearish SMT and examine feed differences, context and failed divergence examples.",
+      "ایک وقت پر متعلقہ مارکیٹس کا موازنہ کریں، بلش اور بیئرش SMT ڈائیورجنس سمجھیں اور ڈیٹا فیڈ، تناظر اور ناکام ڈائیورجنس کی مثالیں دیکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 1057,
+    "position": 57,
+    "part": 6,
+    "slug": "standard-deviation-projections",
+    "title": [
+      "Standard Deviation Projections: Targets Beyond the Range",
+      "اسٹینڈرڈ ڈیوی ایشن پروجیکشنز: رینج سے باہر اہداف"
+    ],
+    "description": [
+      "Standard-deviation projection levels beyond a selected reference range.",
+      "منتخب حوالہ جاتی رینج سے باہر اسٹینڈرڈ ڈیوی ایشن کی سطحیں۔"
+    ],
+    "primaryKeyword": "standard deviation targets trading",
+    "status": "in-progress",
+    "seoTitle": "Standard Deviation Projections: Range Targets"
+  },
+  {
+    "id": 49,
+    "position": 58,
+    "part": 6,
+    "slug": "market-alchemy-trading-all-time-highs-ath",
+    "title": [
+      "Market Alchemy: Studying All-Time Highs",
+      "مارکیٹ الکیمی: آل ٹائم ہائیز کا مطالعہ"
+    ],
+    "description": [
+      "Study Market Alchemy at all-time highs using range anchors, measured projections and contrasting outcomes, keeping historical and invented data separate.",
+      "مقررہ رینج اینکر، ناپے ہوئے پروجیکشن اور متبادل نتائج سے آل ٹائم ہائیز پر مارکیٹ الکیمی سمجھیں، اور تاریخی و فرضی ڈیٹا الگ رکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 1059,
+    "position": 59,
+    "part": 6,
+    "slug": "building-market-narrative",
+    "title": [
+      "Building a Market Narrative: Timeframe, Liquidity, Time",
+      "مارکیٹ نیریٹو بنانا: ٹائم فریم، لیکویڈیٹی اور وقت"
+    ],
+    "description": [
+      "Combining timeframe, liquidity references and time in a market narrative.",
+      "مارکیٹ نیریٹو میں ٹائم فریم، لیکویڈیٹی کے حوالوں اور وقت کو جوڑنا۔"
+    ],
+    "primaryKeyword": "market narrative trading",
+    "status": "in-progress",
+    "seoTitle": "Market Narrative: Timeframe, Liquidity and Time"
+  },
+  {
+    "id": 42,
+    "position": 60,
+    "part": 6,
+    "slug": "core-content-month-6-swing-trading-mastery",
+    "title": [
+      "COT Reports: Open Interest and Seasonality",
+      "COT رپورٹس: اوپن انٹرسٹ اور سیزنیلٹی"
+    ],
+    "description": [
+      "Read COT positioning alongside open interest and seasonal context, account for reporting delays and distinguish a research reference from an entry signal.",
+      "COT پوزیشننگ کو اوپن انٹرسٹ اور موسمی تناظر کے ساتھ پڑھیں، رپورٹ کی تاخیر سمجھیں اور تحقیقی حوالے کو انٹری سگنل سے الگ رکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 40,
+    "position": 61,
+    "part": 6,
+    "slug": "core-content-month-4-advanced-pd-arrays-and-yields",
+    "title": [
+      "Intermarket Analysis: Yields, Rates and Dollar",
+      "انٹرمارکیٹ تجزیہ: ییلڈز، شرحیں اور ڈالر"
+    ],
+    "description": [
+      "Compare yields, rates and the dollar as market context, recognise changing relationships and avoid treating a correlation as a fixed trading instruction.",
+      "ییلڈز، شرحوں اور ڈالر کا باہمی تناظر سمجھیں، بدلتے تعلقات پہچانیں اور کوریلیشن کو ٹریڈنگ کی مستقل ہدایت سمجھنے سے گریز کریں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 54,
+    "position": 62,
+    "part": 6,
+    "slug": "candle-range-theory-crt-strategy",
+    "title": [
+      "Candle Range Theory: Boundaries and Tests",
+      "کینڈل رینج تھیوری: حدود اور ٹیسٹ"
+    ],
+    "description": [
+      "Define a reference candle and its range before studying a sweep or return, then compare CRT interpretations with failures and uncertain intrabar sequences.",
+      "سویپ یا واپسی دیکھنے سے پہلے حوالہ کینڈل اور اس کی رینج متعین کریں، پھر CRT کی تشریحات، ناکامی اور غیر واضح انٹرا بار ترتیب کا موازنہ کریں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 1063,
+    "position": 63,
+    "part": 7,
+    "slug": "entry-model-anatomy",
+    "title": [
+      "What Is an Entry Model? Anatomy of a Setup",
+      "انٹری ماڈل کیا ہے؟ سیٹ اپ کی ساخت"
+    ],
+    "description": [
+      "The components and sequence that make up a stated trading entry model.",
+      "ٹریڈنگ کے مقررہ انٹری ماڈل کے اجزا اور ان کی ترتیب۔"
+    ],
+    "primaryKeyword": "entry model trading",
+    "status": "in-progress"
+  },
+  {
+    "id": 1064,
+    "position": 64,
+    "part": 7,
+    "slug": "silver-bullet-model",
+    "title": [
+      "Silver Bullet: Time-Windowed FVG Entries",
+      "سلور بُلٹ: مقررہ وقت میں FVG انٹریز"
+    ],
+    "description": [
+      "The time-window and FVG conventions of the ICT Silver Bullet model.",
+      "ICT سلور بُلٹ ماڈل کی وقتی ونڈو اور FVG کے اصول۔"
+    ],
+    "primaryKeyword": "ict silver bullet",
+    "status": "in-progress"
+  },
+  {
+    "id": 1065,
+    "position": 65,
+    "part": 7,
+    "slug": "judas-swing",
+    "title": [
+      "Judas Swing: The Fake Move Before the Real One",
+      "جوڈاس سوئنگ: ابتدائی مخالف حرکت اور بعد کا راستہ"
+    ],
+    "description": [
+      "The Judas Swing convention and the sequence of an opening excursion.",
+      "جوڈاس سوئنگ کا اصول اور اوپننگ کے بعد مخالف سمت کی حرکت کی ترتیب۔"
+    ],
+    "primaryKeyword": "judas swing",
+    "status": "in-progress"
+  },
+  {
+    "id": 1066,
+    "position": 66,
+    "part": 7,
+    "slug": "unicorn-model",
+    "title": [
+      "Unicorn Model: Breaker and FVG Overlap",
+      "یونیکورن ماڈل: بریکر اور FVG کا اوورلیپ"
+    ],
+    "description": [
+      "The breaker and fair value gap overlap used in Unicorn model studies.",
+      "یونیکورن ماڈل کے مطالعے میں بریکر اور فیئر ویلیو گیپ کا اوورلیپ۔"
+    ],
+    "primaryKeyword": "unicorn model",
+    "status": "in-progress"
+  },
+  {
+    "id": 53,
+    "position": 67,
+    "part": 7,
+    "slug": "the-ict-venom-model-five-stage-delivery",
+    "title": [
+      "ICT Venom Model: Opening Range and Sweeps",
+      "ICT وینم ماڈل: اوپننگ رینج اور سویپس"
+    ],
+    "description": [
+      "Follow the Venom opening-range sequence through its selected sweep and confirmation, compare both directions and identify conditions that leave no entry.",
+      "وینم کی اوپننگ رینج سے منتخب سویپ اور تصدیق تک ترتیب سمجھیں، دونوں سمتیں دیکھیں اور ایسی شرائط پہچانیں جہاں انٹری نہیں بنتی۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 33,
+    "position": 68,
+    "part": 7,
+    "slug": "ict-charter-models-6-and-7-universal-models",
+    "title": [
+      "Market Maker Models: MMBM and MMSM",
+      "مارکیٹ میکر ماڈلز: MMBM اور MMSM"
+    ],
+    "description": [
+      "Compare buy-model and sell-model curves, connect their phases with short-term studies and distinguish visible price structure from assumed intent.",
+      "بائے اور سیل ماڈل کے خم کا موازنہ کریں، مراحل کو مختصر مدتی مطالعے سے جوڑیں اور نمایاں پرائس اسٹرکچر کو شرکا کے مفروضہ ارادے سے الگ رکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 36,
+    "position": 69,
+    "part": 7,
+    "slug": "ict-charter-model-13-2022-youtube-model",
+    "title": [
+      "ICT 2022 Model: A Time-Based Entry Framework",
+      "ICT 2022 ماڈل: وقت پر مبنی انٹری فریم ورک"
+    ],
+    "description": [
+      "Trace the ICT 2022 sequence from liquidity context to an FVG entry, compare confirmation variants and distinguish a filled order from a missed setup.",
+      "ICT 2022 کی ترتیب لیکویڈیٹی کے تناظر سے FVG انٹری تک سمجھیں، تصدیق کی مختلف صورتیں دیکھیں اور فِل آرڈر کو رہ جانے والے سیٹ اپ سے الگ رکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 45,
+    "position": 70,
+    "part": 7,
+    "slug": "core-content-month-9-consolidations-and-bread-and-butter",
+    "title": [
+      "Bread-and-Butter Setups: Ranges and Context",
+      "بریڈ اینڈ بٹر سیٹ اپس: رینج اور تناظر"
+    ],
+    "description": [
+      "Study bread-and-butter setups around ranges and consolidations, define the entry and exit convention and compare a completed idea with an unfilled one.",
+      "رینج اور کنسالیڈیشن کے گرد بریڈ اینڈ بٹر سیٹ اپس سمجھیں، انٹری اور ایگزٹ کا اصول لکھیں اور مکمل ہونے والی اور فِل نہ ہونے والی صورت کا فرق دیکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 57,
+    "position": 71,
+    "part": 7,
+    "slug": "sick-sister-strategy-and-double-purge-framework",
+    "title": [
+      "Sick Sister: Market Selection and Sweeps",
+      "سِک سسٹر: مارکیٹ کا انتخاب اور سویپس"
+    ],
+    "description": [
+      "Study the sourced Sick Sister market-selection convention, compare related-market strength and two-sided sweeps and keep selection separate from execution.",
+      "سِک سسٹر کے ماخذ والے انتخابی اصول سمجھیں، متعلقہ مارکیٹس کی مضبوطی اور دو طرفہ سویپس دیکھیں اور مارکیٹ کا انتخاب انٹری کے عمل سے الگ رکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 68,
+    "position": 72,
+    "part": 7,
+    "slug": "ict-2026-enigma-reaper-reflection-fvg",
+    "title": [
+      "Enigma, Reaper and Reflection FVG Studies",
+      "انیگما، ریپر اور ریفلیکشن FVG کا مطالعہ"
+    ],
+    "description": [
+      "Compare Enigma, Reaper and Reflection FVG studies, declare their anchors and failure rules and avoid treating different variants as interchangeable.",
+      "انیگما، ریپر اور ریفلیکشن FVG مطالعات کا موازنہ کریں، اینکر اور ناکامی کے اصول واضح لکھیں اور مختلف صورتوں کو ایک دوسرے کا متبادل نہ سمجھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 69,
+    "position": 73,
+    "part": 7,
+    "slug": "ict-2026-obsidian-model",
+    "title": [
+      "Obsidian Model: Context and Anchors",
+      "آبسیڈین ماڈل: تناظر اور اینکرز"
+    ],
+    "description": [
+      "Study the sourced Obsidian model with explicit context and anchors, compare qualifying observations with lookalikes and define what would cancel the idea.",
+      "آبسیڈین ماڈل کے ماخذ، تناظر اور اینکر واضح سمجھیں، موزوں مشاہدات اور ملتی جلتی صورتیں الگ رکھیں اور خیال منسوخ کرنے والی شرط لکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 28,
+    "position": 74,
+    "part": 7,
+    "slug": "ict-charter-model-1-intraday-scalping",
+    "title": [
+      "Intraday Scalping: Session Frameworks",
+      "انٹراڈے اسکیلپنگ: سیشن فریم ورکس"
+    ],
+    "description": [
+      "Compare intraday scalping and session-day frameworks, keep their entry and management rules distinct and examine news restrictions and unfilled setups.",
+      "انٹراڈے اسکیلپنگ اور سیشن ڈے فریم ورکس کا موازنہ کریں، انٹری و مینجمنٹ کے اصول الگ رکھیں اور خبر کی پابندیوں اور فِل نہ ہونے والی صورتوں کو دیکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 29,
+    "position": 75,
+    "part": 7,
+    "slug": "ict-charter-model-2-weekly-range-expansion",
+    "title": [
+      "Weekly Range: Expansion and Reversal Studies",
+      "ہفتہ وار رینج: ایکسپینشن اور ریورسل"
+    ],
+    "description": [
+      "Study weekly expansion and reversal profiles around declared reference levels, compare competing paths and record the assumptions behind entries and exits.",
+      "مقررہ حوالوں کے گرد ہفتہ وار ایکسپینشن اور ریورسل پروفائلز سمجھیں، متبادل راستے دیکھیں اور انٹری و ایگزٹ کے پیچھے مفروضے درج کریں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 30,
+    "position": 76,
+    "part": 7,
+    "slug": "ict-charter-model-3-swing-trading-cot",
+    "title": [
+      "Swing and Position Trading: Study Frameworks",
+      "سوئنگ اور پوزیشن ٹریڈنگ: مطالعاتی فریم ورک"
+    ],
+    "description": [
+      "Compare swing and position-trading horizons, retain COT, seasonal and trade-management studies and keep the rules of shorter-horizon variants separate.",
+      "سوئنگ اور پوزیشن ٹریڈنگ کی مدت کا موازنہ کریں، COT، سیزنیلٹی اور ٹریڈ مینجمنٹ سمجھیں اور کم مدت والی صورتوں کے اصول الگ رکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 34,
+    "position": 77,
+    "part": 7,
+    "slug": "ict-charter-models-8-and-9-precision-and-osok",
+    "title": [
+      "Precision Entries and One Shot One Kill",
+      "پریسیژن انٹریز اور ون شاٹ ون کِل"
+    ],
+    "description": [
+      "Examine precision-entry and OSOK study conventions, distinguish a selected entry from an assured outcome and state stop, target and execution assumptions.",
+      "پریسیژن انٹری اور OSOK کے مطالعاتی اصول دیکھیں، منتخب انٹری کو یقینی نتیجے سے الگ رکھیں اور اسٹاپ، ہدف اور آرڈر کے مفروضے واضح لکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 62,
+    "position": 78,
+    "part": 7,
+    "slug": "ict-news-volatility-no-trade-framework",
+    "title": [
+      "News Trading: CPI, NFP, FOMC and Volatility",
+      "نیوز ٹریڈنگ: CPI، NFP، FOMC اور وولاٹیلٹی"
+    ],
+    "description": [
+      "Compare news-day rules, volatility and high-resistance paths, use contract values and explain why a chart pattern cannot bound execution risk.",
+      "خبر والے دن کے مشاہداتی اصول، وولاٹیلٹی اور مزاحم راستے سمجھیں، کنٹریکٹ ویلیو دیکھیں اور جانیں کہ چارٹ پیٹرن آرڈر کے رسک کی حد کیوں نہیں بتاتا۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 63,
+    "position": 79,
+    "part": 7,
+    "slug": "ict-weekly-options-payoffs-and-risk",
+    "title": [
+      "Weekly Options: SPX Premium and Risk",
+      "ہفتہ وار آپشنز: SPX پریمیم اور رسک"
+    ],
+    "description": [
+      "Read weekly-options payoff examples with premium, expiry and defined assumptions, and distinguish underlying price movement from the option's own risk.",
+      "پریمیم، ایکسپائری اور واضح مفروضوں کے ساتھ ہفتہ وار آپشنز کے پے آف دیکھیں، اور بنیادی اثاثے کی حرکت کو آپشن کے اپنے رسک سے الگ سمجھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 1080,
+    "position": 80,
+    "part": 8,
+    "slug": "risk-management-basics",
+    "title": [
+      "Risk Management: Risk per Trade, Size and Drawdown",
+      "رسک مینجمنٹ: فی ٹریڈ رسک، سائز اور ڈرا ڈاؤن"
+    ],
+    "description": [
+      "Per-trade risk, position size and drawdown in a risk-management plan.",
+      "رسک مینجمنٹ کے منصوبے میں فی ٹریڈ رسک، پوزیشن سائز اور ڈرا ڈاؤن۔"
+    ],
+    "primaryKeyword": "trading risk management",
+    "status": "in-progress",
+    "seoTitle": "Risk Management: Trade Risk, Size and Drawdown"
+  },
+  {
+    "id": 1081,
+    "position": 81,
+    "part": 8,
+    "slug": "risk-reward-expectancy",
+    "title": [
+      "Risk-to-Reward and Expectancy: The Math of a Setup",
+      "رسک ٹو ریوارڈ اور ایکسپیکٹنسی: سیٹ اپ کا حساب"
+    ],
+    "description": [
+      "Risk-to-reward ratios and expectancy calculations for a stated setup.",
+      "مقررہ سیٹ اپ کے رسک ٹو ریوارڈ تناسب اور ایکسپیکٹنسی کا حساب۔"
+    ],
+    "primaryKeyword": "risk reward ratio",
+    "status": "in-progress",
+    "seoTitle": "Risk-to-Reward and Expectancy: Setup Math"
+  },
+  {
+    "id": 1082,
+    "position": 82,
+    "part": 8,
+    "slug": "stop-placement-invalidation",
+    "title": [
+      "Stop Placement and Trade Invalidation",
+      "اسٹاپ کا مقام اور ٹریڈ کی منسوخی"
+    ],
+    "description": [
+      "Stop placement and the conditions that invalidate a trading idea.",
+      "اسٹاپ کا مقام اور ٹریڈ کے خیال کو منسوخ کرنے والی شرائط۔"
+    ],
+    "primaryKeyword": "where to place stop loss",
+    "status": "in-progress"
+  },
+  {
+    "id": 1083,
+    "position": 83,
+    "part": 8,
+    "slug": "trade-management",
+    "title": [
+      "Trade Management: Partials, Break-Even, Trailing",
+      "ٹریڈ مینجمنٹ: جزوی اخراج، بریک ایون اور ٹریلنگ"
+    ],
+    "description": [
+      "Partial exits, break-even changes and trailing-stop conventions.",
+      "جزوی اخراج، بریک ایون پر تبدیلی اور ٹریلنگ اسٹاپ کے اصول۔"
+    ],
+    "primaryKeyword": "trade management",
+    "status": "in-progress"
+  },
+  {
+    "id": 38,
+    "position": 84,
+    "part": 8,
+    "slug": "core-content-month-2-growing-small-accounts",
+    "title": [
+      "Small Accounts: Risk Math and Growth Limits",
+      "چھوٹے اکاؤنٹس: رسک کا حساب اور بڑھوتری کی حدود"
+    ],
+    "description": [
+      "Calculate account-risk examples, compare position increments and drawdown, and examine why a small balance does not justify leverage or promised growth.",
+      "اکاؤنٹ رسک کی مثالوں کا حساب کریں، پوزیشن کی کم از کم مقدار اور ڈرا ڈاؤن سمجھیں اور جانیں کہ چھوٹا بیلنس زیادہ لیوریج یا یقینی بڑھوتری کا جواز کیوں نہیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 37,
+    "position": 85,
+    "part": 8,
+    "slug": "core-content-month-1-elements-of-trade-setup",
+    "title": [
+      "Market Conditions: When Not to Trade",
+      "مارکیٹ کے حالات: کب ٹریڈ نہ کریں"
+    ],
+    "description": [
+      "Compare consolidation, expansion, retracement and reversal studies, define observation limits and recognise when unclear conditions support standing aside.",
+      "کنسالیڈیشن، ایکسپینشن، ریٹریسمنٹ اور ریورسل کا موازنہ کریں، مشاہدے کی حدود لکھیں اور پہچانیں کہ غیر واضح حالات میں الگ رہنا کب مناسب ہے۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 1086,
+    "position": 86,
+    "part": 9,
+    "slug": "trading-psychology",
+    "title": [
+      "Trading Psychology: Fear, Greed and FOMO",
+      "ٹریڈنگ کی نفسیات: خوف، لالچ اور FOMO"
+    ],
+    "description": [
+      "Fear, greed and fear of missing out in trading psychology.",
+      "ٹریڈنگ کی نفسیات میں خوف، لالچ اور موقع چھوٹ جانے کا ڈر۔"
+    ],
+    "primaryKeyword": "trading psychology",
+    "status": "in-progress"
+  },
+  {
+    "id": 1087,
+    "position": 87,
+    "part": 9,
+    "slug": "patience-discipline-rules",
+    "title": [
+      "Patience, Discipline and Written Rules",
+      "صبر، نظم و ضبط اور تحریری اصول"
+    ],
+    "description": [
+      "Patience, discipline and written rules within a trading process.",
+      "ٹریڈنگ کے طریقۂ کار میں صبر، نظم و ضبط اور تحریری اصول۔"
+    ],
+    "primaryKeyword": "trading discipline",
+    "status": "in-progress"
+  },
+  {
+    "id": 1088,
+    "position": 88,
+    "part": 9,
+    "slug": "building-a-trading-plan",
+    "title": [
+      "Building a Trading Plan",
+      "ٹریڈنگ پلان بنانا"
+    ],
+    "description": [
+      "The structure and written components of a trading plan.",
+      "ٹریڈنگ پلان کی ساخت اور اس میں شامل تحریری اجزا۔"
+    ],
+    "primaryKeyword": "trading plan",
+    "status": "in-progress"
+  },
+  {
+    "id": 1089,
+    "position": 89,
+    "part": 9,
+    "slug": "weekly-preparation-routine",
+    "title": [
+      "Weekly Market Preparation Routine",
+      "ہفتہ وار مارکیٹ کی تیاری کا معمول"
+    ],
+    "description": [
+      "A weekly preparation routine for organising market study.",
+      "مارکیٹ کے مطالعے کو ترتیب دینے کے لیے ہفتہ وار تیاری کا معمول۔"
+    ],
+    "primaryKeyword": "weekly market preparation",
+    "status": "in-progress"
+  },
+  {
+    "id": 64,
+    "position": 90,
+    "part": 9,
+    "slug": "ict-replay-journaling-one-model-study",
+    "title": [
+      "Trade Journaling: Replay and One-Model Review",
+      "ٹریڈ جرنلنگ: ری پلے اور ایک ماڈل کا جائزہ"
+    ],
+    "description": [
+      "Build a replay journal for one model, record decisions before revealing candles and distinguish missed entries, losses and changes to written rules.",
+      "ایک تحریری ماڈل کا ری پلے جرنل بنائیں، اگلی کینڈلز دیکھنے سے پہلے فیصلے لکھیں اور رہ جانے والی انٹری، نقصان اور اصل اصول بدلنے کا فرق سمجھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 70,
+    "position": 91,
+    "part": 9,
+    "slug": "ict-2026-backtesting-journaling-trade-management",
+    "title": [
+      "Backtesting: Samples, Hindsight and Management",
+      "بیک ٹیسٹنگ: نمونہ، ہائنڈ سائٹ اور مینجمنٹ"
+    ],
+    "description": [
+      "Test a written setup across recorded cases, state sample and execution limits and separate hindsight, trade-management choices and later rule revisions.",
+      "تحریری سیٹ اپ کو درج شدہ صورتوں پر پرکھیں، نمونے اور آرڈر کی حدود بتائیں اور ہائنڈ سائٹ، مینجمنٹ کے انتخاب اور بعد کی اصولی تبدیلیاں الگ رکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 47,
+    "position": 92,
+    "part": 9,
+    "slug": "2026-onboarding-from-vision-to-execution",
+    "title": [
+      "Beginner Study Plan: A Trading Roadmap",
+      "ابتدائی مطالعے کا منصوبہ: ٹریڈنگ روڈمیپ"
+    ],
+    "description": [
+      "Organise a beginner study routine around foundations, focused replay and review, with prerequisites and no promise of readiness after fixed study period.",
+      "ابتدائی مطالعہ بنیادی تصورات، محدود ری پلے اور جائزے کے گرد ترتیب دیں، ضروری علم واضح کریں اور مقررہ دنوں میں ٹریڈنگ کی تیاری کا وعدہ نہ سمجھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 23,
+    "position": 93,
+    "part": 10,
+    "slug": "trader-abdullah-masood-masterclass",
+    "title": [
+      "Gold Trading: Daily Bias and Sessions",
+      "گولڈ ٹریڈنگ: ڈیلی بائس اور سیشنز"
+    ],
+    "description": [
+      "Study gold context through daily bias and session references, connect the chart with instrument-specific risk and keep examples separate from advice.",
+      "ڈیلی بائس اور سیشن حوالوں سے گولڈ کا تناظر سمجھیں، چارٹ کو متعلقہ انسٹرومنٹ کے رسک سے جوڑیں اور مثالوں کو ذاتی مشورے سے الگ رکھیں۔"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 1094,
+    "position": 94,
+    "part": 10,
+    "slug": "nq-es-session-playbook",
+    "title": [
+      "Index Futures: NQ and ES Session Playbook",
+      "انڈیکس فیوچرز: NQ اور ES کے سیشن کا مطالعہ"
+    ],
+    "description": [
+      "NQ and ES index-futures references across trading sessions.",
+      "ٹریڈنگ سیشنز میں NQ اور ES انڈیکس فیوچرز کے حوالے۔"
+    ],
+    "primaryKeyword": "nq es trading",
+    "status": "in-progress"
+  },
+  {
+    "id": 1095,
+    "position": 95,
+    "part": 10,
+    "slug": "forex-pairs-study",
+    "title": [
+      "Forex Pairs: EUR/USD and GBP/USD Study",
+      "فاریکس پیئرز: EUR/USD اور GBP/USD کا مطالعہ"
+    ],
+    "description": [
+      "Market and session references for EUR/USD and GBP/USD study.",
+      "EUR/USD اور GBP/USD کے مطالعے کے لیے مارکیٹ اور سیشن کے حوالے۔"
+    ],
+    "primaryKeyword": "eurusd smc",
+    "status": "in-progress"
+  },
+  {
+    "id": 1096,
+    "position": 96,
+    "part": 10,
+    "slug": "crypto-btc-application",
+    "title": [
+      "Crypto: Applying These Ideas to Bitcoin",
+      "کرپٹو: بٹ کوائن پر ان تصورات کا اطلاق"
+    ],
+    "description": [
+      "Bitcoin market context for applying ICT and SMC chart-study ideas.",
+      "ICT اور SMC کے چارٹ تصورات کے اطلاق کے لیے بٹ کوائن کا مارکیٹ تناظر۔"
+    ],
+    "primaryKeyword": "bitcoin smc trading",
+    "status": "in-progress"
+  },
+  {
+    "id": 46,
+    "position": 97,
+    "part": 10,
+    "slug": "core-content-months-10-11-12-multi-asset-mega-trades-top-down",
+    "title": [
+      "Multi-Asset Analysis: Top-Down Planning",
+      "ملٹی ایسیٹ تجزیہ: ٹاپ ڈاؤن منصوبہ بندی"
+    ],
+    "description": [
+      "Compare top-down studies across instruments, declare feed, timeframe and contract assumptions and avoid transferring one market's price rules unchanged.",
+      "مختلف انسٹرومنٹس کے ٹاپ ڈاؤن مطالعے دیکھیں، ہر ڈیٹا فیڈ، ٹائم فریم اور کنٹریکٹ کے مفروضے لکھیں اور ایک مارکیٹ کے اصول جوں کے توں دوسری پر نہ لگائیں۔"
+    ],
+    "status": "published"
+  }
+]

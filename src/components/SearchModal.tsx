@@ -1,9 +1,10 @@
 import { useTranslation } from '../i18n/TranslationProvider';
 import { matchesSearch } from '../i18n/search';
 import { articleCatalog as articles } from '../data/catalog.generated';
+import {displayChapterNumber} from '../data/curriculumPhase1';
 import React, { useState, useEffect, useRef } from 'react';
 import { ictConcepts } from '../data/conceptsData';
-import { textbookChapters } from '../data/chaptersData';
+import {activeCurriculumChapters as textbookChapters} from '../data/chaptersData';
 import { Search, BookOpen, Layers, X, ArrowRight } from 'lucide-react';
 import { useModalScrollLock } from '../hooks/useSmoothScroll';
 
@@ -184,14 +185,14 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                     <div className="space-y-1 min-w-0">
                       <div className="flex items-center gap-2">
                         <span className="text-xs font-sans tabular-nums font-medium text-teal">
-                          CH {ch.id < 10 ? `0${ch.id}` : ch.id}
+                          CH {String(displayChapterNumber(ch.id)).padStart(2,'0')}
                         </span>
                         <span className="font-medium text-sm text-ink group-hover:text-teal transition-colors truncate">
-                          {t(ch.title)}
+                          {t(ch.title)}{ch.status==='in-progress'&&<small className="rr-progress-label">{t('In progress')}</small>}
                         </span>
                       </div>
                       <p className="text-xs text-ink-secondary line-clamp-1 italic">
-                        "{t(ch.quote)}"
+                        {ch.status==='in-progress'?t("We're working on this chapter."):`"${t(ch.quote)}"`}
                       </p>
                     </div>
                     <ArrowRight className="w-4 h-4 text-ink-muted group-hover:text-ink group-hover:translate-x-0.5 transition-[color,background-color,border-color,box-shadow,opacity,transform] shrink-0" />

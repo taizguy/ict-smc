@@ -1,3 +1,5 @@
+import {priceMovementSources,priceMovementDates} from './chapters/priceMovementLesson';
+import {mergedChapterIds,phase1Entry} from './curriculumPhase1';
 import {alchemyDates} from './chapters/marketAlchemyPilot';
 import {hasMentorship2025Edition} from './chapters/mentorship2025Visuals';
 import mentorship2025Sources from './chapters/mentorship2025Sources.json';
@@ -12,7 +14,7 @@ import { cornerstoneGuides, cornerstoneRevision } from './cornerstoneGuides';
 export const curriculumReviewDate = '2026-10-19';
 export const curriculumReviewLabel = '19 October 2026';
 // Chapter-wide editorial/diagram/quiz consistency review; not a new full-recording review.
-export const chapterReviewRevision = (id: number) => id===49?alchemyDates.updated:hasMentorship2026Edition(id) ? {iso:'2026-10-27',label:'27 October 2026'} : hasMentorship2025Edition(id) ? {iso:'2026-10-26',label:'26 October 2026'} : [13,14,15,16].includes(id)
+export const chapterReviewRevision = (id: number) => id===1?priceMovementDates.updated:phase1Entry(id)?.id===id ? {iso:'2026-11-10',label:'10 November 2026'} : id===49?alchemyDates.updated:hasMentorship2026Edition(id) ? {iso:'2026-10-27',label:'27 October 2026'} : hasMentorship2025Edition(id) ? {iso:'2026-10-26',label:'26 October 2026'} : [13,14,15,16].includes(id)
   ? { iso: '2026-10-25', label: '25 October 2026' } : [13, 15].includes(id) || cornerstoneGuides.some(guide => guide.chapterId === id)
   ? { iso: cornerstoneRevision, label: '24 October 2026' }
   : { iso: '2026-10-21', label: '21 October 2026' };
@@ -104,7 +106,8 @@ const interpretation = {
   masood: 'This chapter summarizes a separate educator. Preserve Abdullah Masood’s authorship of his linked videos. ICT’s official accounts are primary references for ICT terminology, not evidence that ICT authored or endorsed this chapter or its exercises.',
 };
 
-export function curriculumReview(chapter: TextbookChapter) {
+function baseCurriculumReview(chapter: TextbookChapter) {
+  if(chapter.id===1)return {sources:priceMovementSources,interpretation:'A chart records price behaviour, not every participant’s orders or motives. The three lenses and five-question analyser are teaching aids, not causal tests or performance models. Separate observed evidence, plausible explanations and unknowns.'};
   const reviewed2026 = (sources2026 as Record<string,CurriculumSource[]>)[chapter.id];
   if(reviewed2026) return {sources:reviewed2026,interpretation:'These lessons distinguish measured prices and times from discretionary range selection, model interpretation and unverified performance claims. State the reference, recognition time, failure rule and execution assumptions before replay.'};
   const sources2025 = (mentorship2025Sources as Record<string, CurriculumSource[]>)[chapter.id];
@@ -172,3 +175,5 @@ export const curriculumReviewCopy = {
   access: 'The X profile could not be read during this review. No post-specific claims or quotations have been added.',
   corrections: 'Report a content correction',
 };
+
+export function curriculumReview(chapter:TextbookChapter){const base=baseCurriculumReview(chapter);const sources=[...base.sources];for(const [id,target] of Object.entries(mergedChapterIds))if(target===chapter.id)sources.push(...baseCurriculumReview({...chapter,id:+id}).sources);if(chapter.id===41)sources.push(...baseCurriculumReview({...chapter,id:28}).sources);return {...base,sources:sources.filter((s,i,a)=>a.findIndex(v=>v.url===s.url)===i)};}

@@ -18,7 +18,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { ChapterDiagram } from '../src/components/ChapterDiagram';
 import type { RouteMeta } from './prerender';
 import { masterclassCollection } from '../src/data/masterclassData';
-import { textbookChapters } from '../src/data/chaptersData';
+import {publishedCurriculumChapters as textbookChapters} from '../src/data/chaptersData';
 import { chartScenarios } from '../src/data/chartScenarios';
 import { guidedChartRevision } from '../src/utils/guidedChartDrills';
 import { SIMULATOR_MODELS, BACKTEST_STRATEGIES, MASTERY_EXAMS, DELIVERY_SUITE_MODULES, getChartScenarioSlug } from '../src/utils/workbenchToolRoutes';

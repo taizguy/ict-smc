@@ -1,3 +1,6 @@
+import {priceMovementLesson,priceMovementPath,priceMovementDates} from '../src/data/chapters/priceMovementLesson';
+import {curriculumTarget,curriculumMetadata,phase1ReviewedAt,mergedChapterIds} from '../src/data/curriculumPhase1';
+import {publishedCurriculumChapters as activeCurriculumChapters} from '../src/data/chaptersData';
 import {practicePages} from '../src/data/practiceLoopContent';
 import {practiceSchema} from '../src/utils/practiceSchema';
 import {masterclassCollectionPage} from '../src/data/masterclassCategoryPages';
@@ -82,6 +85,7 @@ export const canonicalAliases: Record<string, string> = {
 };
 
 export function prepareRoutes(routes: RouteMeta[]) {
+  for(let i=routes.length-1;i>=0;i--)if(curriculumTarget(new URL(routes[i].canonical).pathname))routes.splice(i,1);
   const cheat = route('/resources/ict-smc-cheat-sheet/', 'Free ICT/SMC Glossary & Cheat Sheet PDF',
     'Download free English and Urdu ICT/SMC glossary PDFs with 20 definitions, original diagrams, risk examples and an observation checklist.',
     renderToStaticMarkup(createElement(CheatSheetPage, {staticOnly:true})));
@@ -110,7 +114,7 @@ export function prepareRoutes(routes: RouteMeta[]) {
   }
   routes.push(...topicClusters.map(cluster => route(`/curriculum/${cluster.slug}/`, cluster.part,
     `Study ${cluster.chapters.length} lessons in ${cluster.part.replace(/^Part [IVXLCDM]+ - /, '')}, with definitions, worked explanations and practice questions.`,
-    (cluster.guidance.length ? section('How to use this learning path', cluster.guidance.map(p => `<p>${escape(p)}</p>`).join('')) : '') +
+    (cluster.guidance.length ? section('How to use this learning path', [cluster.question,...cluster.guidance].map(p => `<p>${escape(p)}</p>`).join('')) : '') +
     section('Learning path', list(cluster.chapters.map(c => link(`/learn/${c.slug}/`, c.title)))) +
     cluster.chapters.map(c => section(c.title, renderToStaticMarkup(createElement(ChapterDiagram, { chapterId:c.id, thumbnail:true, staticOnly:true })) + `<p>${escape(c.summary[0])}</p>` + list(c.summary.slice(1).map(escape)) + link(`/learn/${c.slug}/`, 'Read the complete lesson'))).join(''))));
   routes.push(...masoodPlaylistsData.map(p => route(`/masood/playlists/${p.id}/`, `${p.badge} — Abdullah Masood lectures`,
@@ -121,7 +125,7 @@ export function prepareRoutes(routes: RouteMeta[]) {
     p.lectures.map(l => section(l.title, `<p>${escape(l.shortSummary)}</p>` + list(l.keyTakeaways.map(escape)) + link(`/masood/lectures/${l.id}/`, 'Read the study notes'))).join(''))));
   const root = routes.find(r => r.canonical === 'https://learnsmc.xyz/curriculum/')!;
   root.bodyHtml = renderToStaticMarkup(createElement(MentorshipsTeaser)) + root.bodyHtml;
-  root.bodyHtml += `<div class="static-diagram-directory">${textbookChapters.map(c => `<a href="/learn/${escape(c.slug)}/">${renderToStaticMarkup(createElement(ChapterDiagram, { chapterId:c.id, thumbnail:true, staticOnly:true }))}</a>`).join('')}</div>`;
+  root.bodyHtml += `<div class="static-diagram-directory">${activeCurriculumChapters.map(c => `<a href="/learn/${escape(c.slug)}/">${renderToStaticMarkup(createElement(ChapterDiagram, { chapterId:c.id, thumbnail:true, staticOnly:true }))}</a>`).join('')}</div>`;
   root.bodyHtml += section('Browse by topic', list(topicClusters.map(c => link(`/curriculum/${c.slug}/`, c.part))));
 
   const hub = routes.find(r => r.canonical === 'https://learnsmc.xyz/masood/')!;
@@ -205,21 +209,24 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   // This route owns a complete, visible-content-matched graph. Do not wrap its
   // @graph inside a generic node or replace its actual review date.
   if (path===CHARTLAB_HUB_PATH||path===BREAKER_PATH||path===SILVER_PATH||studyForPath(path)) return;
-  const chapterCount = textbookChapters.length;
+  const chapterCount = activeCurriculumChapters.length;
   const lectureCount = masoodPlaylistsData.reduce((sum, p) => sum + p.lectures.length, 0);
   const counts = (text: string) => text.replace(/\b57(?=[- ](?:chapter|Chapter|CHAPTER))/g, String(chapterCount)).replace(/\b52(?=[- ](?:Abdullah|lecture|Lecture|LECTURE|Masterclass|masterclass))/g, String(lectureCount));
   r.title = counts(r.title); r.description = counts(r.description); r.bodyHtml = counts(r.bodyHtml);
   r.heading = counts(r.heading); r.subheading = counts(r.subheading);
   if (path === '/') { r.title = 'Learn ICT & Smart Money Concepts | LearnSMC'; r.description = 'Study ICT and Smart Money Concepts with free trading lessons, Abdullah Masood video notes, chart exercises and risk education.'; r.heading='Learn ICT and Smart Money Concepts'; r.bodyHtml=renderToStaticMarkup(createElement(LearningFirstHome)); }
-  if (path === '/curriculum/') r.heading = 'ICT and Smart Money Concepts Curriculum';
+  if (path === '/curriculum/') {r.heading='ICT and Smart Money Concepts Curriculum';r.description='Learn ICT and Smart Money Concepts through '+activeCurriculumChapters.length+' concept-led lessons in ten parts, with chart studies, risk education and practice.';r.schemaJson={'@type':'Course',name:r.heading,description:r.description,provider:publisher,isAccessibleForFree:true,hasPart:activeCurriculumChapters.map(c=>({'@type':'LearningResource',name:c.title,url:'https://learnsmc.xyz/learn/'+c.slug+'/'})),dateModified:phase1ReviewedAt};}
   r.title = searchTitle(r.title, path);
   r.description = searchDescription(r.description, r.title, path);
   if (path.startsWith('/masood/lectures/') && r.schemaJson?.['@type'] === 'LearningResource') r.schemaJson = {...r.schemaJson, description:r.description};
   if (/^\/(learn|masood\/lectures)\//.test(path)) r.heading = studyTopics[path] || conciseHeading(r.heading);
+  const curriculum=curriculumMetadata(path);if(curriculum){r.title=curriculum.title;r.heading=curriculum.heading;r.description=curriculum.description;}
   if (path === '/tools/glossary/order-blocks/propulsion-and-reclaimed/') r.heading = 'Propulsion & Reclaimed Blocks: Comparison and Rules';
   if (/^\/tools\/(journal|profile)\//.test(path) || path === '/adsense/') r.isNoindex = true;
   const chapter = textbookChapters.find(c => path === `/learn/${c.slug}/`);
+  if(chapter?.status==='in-progress'){r.isNoindex=true;r.schemaJson=undefined;r.bodyHtml="<p>We're working on this chapter.</p>";return;}
   if (chapter) {
+    r.schemaJson={...r.schemaJson,name:r.heading,description:r.description};
     r.bodyHtml = renderToStaticMarkup(createElement(TopicLearningGuide, { chapterId: chapter.id, staticOnly: true })) + r.bodyHtml;
     const diagramHtml = renderToStaticMarkup(createElement(ChapterDiagram, { chapterId:chapter.id, staticOnly:true }));
     r.bodyHtml = chapter.id === 13 ? r.bodyHtml + diagramHtml : diagramHtml + r.bodyHtml;
@@ -283,11 +290,14 @@ export function enrichRoute(r: RouteMeta, routes: RouteMeta[]) {
   // The chapter review includes its copy, diagrams and quizzes; older shared-widget
   // revisions must not overwrite the chapter's actual editorial revision.
   if (chapter) r.schemaJson = { ...r.schemaJson, dateModified: chapterReviewRevision(chapter.id).iso };
-  const faqs = chapter ? deliverySupport[chapter.id]?.faqs : undefined;
-  if (faqs) r.schemaJson = { ...r.schemaJson, '@id': r.canonical, hasPart: { '@id': `${r.canonical}#faq` } };
+  if(path==='/curriculum/'||topicClusters.some(c=>path===`/curriculum/${c.slug}/`))r.schemaJson={'@type':r.schemaJson?.['@type']||'CollectionPage',name:r.heading,url:r.canonical,publisher,...r.schemaJson,dateModified:phase1ReviewedAt};
+  const faqs = chapter?.id===1?priceMovementLesson.faqs.map(q=>({question:q.question[0],answer:q.answer[0]})):chapter ? [chapter.id,...Object.keys(mergedChapterIds).map(Number).filter(id=>mergedChapterIds[id]===chapter.id)].flatMap(id=>deliverySupport[id]?.faqs||[]).filter((q,i,a)=>a.findIndex(x=>x.question===q.question)===i) : undefined;
+  if (faqs?.length) r.schemaJson = { ...r.schemaJson, '@id': r.canonical, hasPart: { '@id': `${r.canonical}#faq` } };
   r.schemaJson = { '@context': 'https://schema.org', '@graph': [publisher, lessonAuthor,
+    ...(chapter?.id===1?[{'@type':'Article','@id':`${r.canonical}#article`,headline:chapter.title,url:r.canonical,inLanguage:'en',author:lessonAuthor,publisher,datePublished:priceMovementDates.published.iso,dateModified:priceMovementDates.updated.iso,mainEntityOfPage:{'@id':r.canonical}}]:[]),
+    ...(chapter?.id===1?[{'@type':'DefinedTermSet','@id':`${r.canonical}#glossary`,name:priceMovementLesson.sections[12].title[0],hasDefinedTerm:priceMovementLesson.terms.map(term=>({'@type':'DefinedTerm',name:term.term[0],description:term.definition[0]}))}]:[]),
     ...(chapter?.id===49?[{'@type':'Article','@id':`${r.canonical}#article`,headline:chapter.title,url:r.canonical,inLanguage:'en',image:'https://learnsmc.xyz/images/lessons/market-alchemy/ict-may14-overshoot-source.jpg',author:lessonAuthor,publisher,datePublished:alchemyDates.published.iso,dateModified:alchemyDates.updated.iso,mainEntityOfPage:{'@id':r.canonical}}]:[]),
-    ...(faqs ? [{ '@type': 'FAQPage', '@id': `${r.canonical}#faq`, url: `${r.canonical}#delivery-faq`, inLanguage: 'en', isPartOf: { '@id': r.canonical }, mainEntity: faqs.map((item, i) => ({ '@type': 'Question', '@id': `${r.canonical}#question-${i + 1}`, name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) }] : []),
+    ...(faqs?.length ? [{ '@type': 'FAQPage', '@id': `${r.canonical}#faq`, url: `${r.canonical}#delivery-faq`, inLanguage: 'en', isPartOf: { '@id': r.canonical }, mainEntity: faqs.map((item, i) => ({ '@type': 'Question', '@id': `${r.canonical}#question-${i + 1}`, name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) }] : []),
     { '@type': 'WebSite', '@id': 'https://learnsmc.xyz/#website', name: 'LearnSMC', url: 'https://learnsmc.xyz/' },
     { '@type': 'BreadcrumbList', itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })) },
     r.schemaJson || { '@type': children.length ? 'CollectionPage' : 'WebPage', name: r.heading, description: r.description, url: r.canonical, publisher, ...(['/', '/curriculum/', '/about/', '/contact/'].includes(path) || path.startsWith('/tools/compare/') ? { dateModified: publisherPageRevision.iso } : {}) },

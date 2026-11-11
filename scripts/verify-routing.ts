@@ -1,3 +1,4 @@
+import {curriculumRedirects} from '../src/utils/curriculumMigration';
 import assert from 'node:assert/strict';
 import worker from '../src/worker';
 import { mentorshipLessonPath, selectedMentorship } from '../src/data/mentorshipTracks';
@@ -49,3 +50,9 @@ for (const suffix of ['', '?mentorship=unknown-track']) {
   assert.equal(page.status, 200, 'Canonical and unrecognized preferences must not loop or redirect elsewhere');
 }
 console.log('Routing checks passed: canonical host, HTTPS, legacy query/path redirects, missing routes and asset casing.');
+
+for(const [old,target] of Object.entries(curriculumRedirects))for(const prefix of ['','/ur'])for(const source of [old,old.slice(0,-1)]){const response=await worker.fetch(new Request('https://learnsmc.xyz'+prefix+source),env);assert.equal(response.status,301);assert.equal(response.headers.get('Location'),'https://learnsmc.xyz'+prefix+target);}
+console.log('Curriculum migrations: all 68 EN/UR slash and no-slash sources resolve directly to the approved destination.');
+
+const oldFirstHour=Object.entries(curriculumRedirects).find(([p,d])=>d.endsWith('#merged-65'))![0];const migratedTrack=await worker.fetch(new Request('https://learnsmc.xyz'+oldFirstHour+'?mentorship=2026'),env);
+assert.equal(migratedTrack.status,301);{const target=new URL(migratedTrack.headers.get('Location')!);assert.ok(!target.searchParams.has('mentorship'),'Migrated mentorship must not cause another redirect');}

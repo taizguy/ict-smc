@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from '../i18n/TranslationProvider';
+import {displayChapterNumber} from '../data/curriculumPhase1';
 import { ChapterDiagram } from './ChapterDiagram';
 import { mentorshipTracks, mentorshipPath, mentorshipLessonPath } from '../data/mentorshipTracks';
 import { mentorshipRecordings } from '../data/mentorshipRecordings.generated';
@@ -96,7 +97,7 @@ export function MentorshipsView({ slug, embedded = false }: { slug?: string; emb
         <ol className="mentorship-note-list">{notes.map((chapter, index) => <li key={chapter.id}>
           <span className="mentorship-step" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
           <ChapterDiagram chapterId={chapter.id} thumbnail />
-          <div><a href={mentorshipLessonPath(chapter.slug, track.slug)}>{chapter.title}</a><p>{chapter.summary[0]}</p></div>
+          <div><a href={mentorshipLessonPath(chapter.slug, track.slug)}><bdi>{String(displayChapterNumber(chapter.id)).padStart(2,'0')}</bdi><span aria-hidden="true"> · </span><span>{chapter.title}</span></a><p>{chapter.summary[0]}</p></div>
           {completed.includes(chapter.id) && <span className="mentorship-status">Completed</span>}
         </li>)}</ol>
       </section>

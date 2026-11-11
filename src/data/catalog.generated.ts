@@ -179,398 +179,681 @@ export const chapterCatalog = [
   {
     "id": 1,
     "slug": "what-actually-moves-price",
-    "title": "What Actually Moves Price? — The Mechanics of the Electronic Auction",
-    "part": "Part I - Market Foundations"
+    "title": "What Actually Moves Price?",
+    "part": "Part I - Market Foundations",
+    "status": "published"
   },
   {
     "id": 2,
     "slug": "how-an-exchange-matches-orders",
-    "title": "How an Exchange Matches Orders — Price-Time Priority and Liquidity Dynamics",
-    "part": "Part I - Market Foundations"
+    "title": "Order Matching: How Exchanges Execute Trades",
+    "part": "Part I - Market Foundations",
+    "status": "published"
   },
   {
     "id": 3,
     "slug": "the-order-book-in-depth",
-    "title": "The Order Book in Depth — Data Feeds & Execution Algorithms",
-    "part": "Part I - Market Foundations"
+    "title": "Order Book: Depth, Queues and Hidden Limits",
+    "part": "Part I - Market Foundations",
+    "status": "published"
   },
   {
     "id": 4,
     "slug": "liquidity-the-most-misunderstood-word-in-trading",
-    "title": "Liquidity: The Most Misunderstood Word in Trading — Buy-Side and Sell-Side Pools",
-    "part": "Part I - Market Foundations"
+    "title": "Liquidity in Trading: A Precise Definition",
+    "part": "Part I - Market Foundations",
+    "status": "published"
   },
   {
     "id": 5,
     "slug": "why-candles-form-and-how-displacement-arises",
-    "title": "Why Candles Form & How Displacement Arises — Deconstructing Time and Price Containers",
-    "part": "Part I - Market Foundations"
+    "title": "Displacement Candles: How Price Moves",
+    "part": "Part I - Market Foundations",
+    "status": "published"
+  },
+  {
+    "id": 1006,
+    "slug": "candlestick-basics-for-smc",
+    "title": "Candlestick Basics for SMC: OHLC, Wicks, Timeframes",
+    "part": "Part I - Market Foundations",
+    "status": "in-progress"
+  },
+  {
+    "id": 1007,
+    "slug": "forex-futures-cfd-chart-differences",
+    "title": "Forex, Futures and CFDs: Why the Same Chart Differs",
+    "part": "Part I - Market Foundations",
+    "status": "in-progress"
+  },
+  {
+    "id": 1008,
+    "slug": "chart-setup-new-york-time",
+    "title": "Chart Setup: New York Time, Sessions and Data Feeds",
+    "part": "Part I - Market Foundations",
+    "status": "in-progress"
   },
   {
     "id": 7,
     "slug": "what-is-a-swing-the-atom-of-structure",
-    "title": "What Is a Swing? The Atom of Structure — 3-Candle Fractals & Multi-Timeframe Anchors",
-    "part": "Part II - Price Structure"
+    "title": "Swing Highs and Lows: Structure and Scale",
+    "part": "Part II - Market Structure",
+    "status": "published"
+  },
+  {
+    "id": 1010,
+    "slug": "internal-vs-external-structure",
+    "title": "Internal vs External Structure",
+    "part": "Part II - Market Structure",
+    "status": "in-progress"
+  },
+  {
+    "id": 1011,
+    "slug": "trend-range-transition",
+    "title": "Trends, Ranges and Transitions",
+    "part": "Part II - Market Structure",
+    "status": "in-progress"
   },
   {
     "id": 9,
     "slug": "break-of-structure-bos-trend-continuation",
-    "title": "Break of Structure (BOS): Continuation Rules & Limitations",
-    "part": "Part II - Price Structure"
+    "title": "Break of Structure: Rules and Limits",
+    "part": "Part II - Market Structure",
+    "status": "published"
   },
   {
     "id": 10,
     "slug": "change-of-character-choch-the-first-warning",
-    "title": "Change of Character (CHoCH): The First Warning — Early Signals of Structural Exhaustion",
-    "part": "Part II - Price Structure"
+    "title": "Change of Character: The First Warning",
+    "part": "Part II - Market Structure",
+    "status": "published"
   },
   {
     "id": 11,
     "slug": "market-structure-shift-mss-verified-directional-shift",
-    "title": "Market Structure Shift (MSS): Source Conventions & Context",
-    "part": "Part II - Price Structure"
+    "title": "Market Structure Shift: Context and Rules",
+    "part": "Part II - Market Structure",
+    "status": "published"
   },
   {
-    "id": 13,
-    "slug": "fair-value-gaps-fvg-and-consequent-encroachment",
-    "title": "Fair Value Gaps (FVG): Formation, CE & Chart Examples",
-    "part": "Part III - Price Delivery"
+    "id": 1015,
+    "slug": "bos-vs-choch-vs-mss",
+    "title": "BOS vs CHoCH vs MSS: A Side-by-Side Guide",
+    "part": "Part II - Market Structure",
+    "status": "in-progress"
   },
   {
-    "id": 14,
-    "slug": "inverse-fair-value-gaps-ifvg-role-reversal-imbalances",
-    "title": "Inverse Fair Value Gaps (IFVG): Role Reversal & Examples",
-    "part": "Part III - Price Delivery"
+    "id": 1016,
+    "slug": "dealing-range-marking",
+    "title": "Dealing Ranges: Marking the Range That Matters",
+    "part": "Part II - Market Structure",
+    "status": "in-progress"
   },
   {
-    "id": 15,
-    "slug": "order-blocks-ob-and-mitigation",
-    "title": "Order Blocks: Selection, Boundaries & Mitigation",
-    "part": "Part III - Price Delivery"
+    "id": 1017,
+    "slug": "buyside-sellside-liquidity",
+    "title": "Buyside and Sellside Liquidity: Where Orders Rest",
+    "part": "Part III - Liquidity",
+    "status": "in-progress"
   },
   {
-    "id": 16,
-    "slug": "breaker-blocks-trading-failed-order-blocks",
-    "title": "Breaker Blocks, Mitigation & Unicorn: Structure Explained",
-    "part": "Part III - Price Delivery"
+    "id": 1018,
+    "slug": "equal-highs-equal-lows",
+    "title": "Equal Highs and Lows: Reading Liquidity Pools",
+    "part": "Part III - Liquidity",
+    "status": "in-progress"
+  },
+  {
+    "id": 1019,
+    "slug": "liquidity-sweep-vs-stop-hunt",
+    "title": "Liquidity Sweep or Stop Hunt? What You Can Observe",
+    "part": "Part III - Liquidity",
+    "status": "in-progress"
   },
   {
     "id": 18,
     "slug": "liquidity-engineering-and-liquidity-runs",
-    "title": "Liquidity Engineering & Liquidity Runs — Inducement, Traps, and Low Resistance Runs",
-    "part": "Part IV - Liquidity and Time"
+    "title": "Liquidity Runs: Sweeps, Context and Limits",
+    "part": "Part III - Liquidity",
+    "status": "published"
   },
   {
-    "id": 19,
-    "slug": "time-and-session-liquidity-the-global-clock",
-    "title": "Time & Session Liquidity: The Global Clock — Killzones, Macros, and Algorithmic Schedules",
-    "part": "Part IV - Liquidity and Time"
-  },
-  {
-    "id": 20,
-    "slug": "the-weekly-profile-and-five-day-delivery-model",
-    "title": "The Weekly Profile & Five-Day Delivery Model — Decoding the Intraworking Weekly Template",
-    "part": "Part IV - Liquidity and Time"
-  },
-  {
-    "id": 21,
-    "slug": "daily-profiles-and-intraday-power-of-three-po3",
-    "title": "Daily Profiles & Intraday Power of Three (PO3 / AMD) — Accumulation, Manipulation, Distribution",
-    "part": "Part IV - Liquidity and Time"
-  },
-  {
-    "id": 22,
-    "slug": "the-complete-ict-top-down-model-and-execution-blueprint",
-    "title": "The Complete ICT Top-Down Model & Execution Blueprint — From Monthly Narrative to 1-Minute Execution",
-    "part": "Part IV - Time Based Delivery"
-  },
-  {
-    "id": 23,
-    "slug": "trader-abdullah-masood-masterclass",
-    "title": "Trader Abdullah Masood: The Gold Legacy & Daily Bias Masterclass",
-    "part": "Special Mentorship Track - Practical Field Guide"
-  },
-  {
-    "id": 24,
-    "slug": "0930-am-opening-range-theory",
-    "title": "ICT Opening Range Theory: 9:30–10:00 AM Explained",
-    "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
-  },
-  {
-    "id": 58,
-    "slug": "ict-midnight-opening-range-rth-gaps-nwog",
-    "title": "ICT Midnight Opening Range, RTH Opening Gaps and NWOG",
-    "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
-  },
-  {
-    "id": 25,
-    "slug": "the-1st-presented-fvg-the-0931-rule",
-    "title": "ICT 1st Presented FVG: Timing, Rules and Examples",
-    "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
-  },
-  {
-    "id": 59,
-    "slug": "ict-pd-array-selection-price-delivery-continuum",
-    "title": "ICT PD Array Matrix: Range Selection, Premium and Discount",
-    "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
-  },
-  {
-    "id": 26,
-    "slug": "smt-divergence-mechanics",
-    "title": "ICT SMT Divergence: Bullish, Bearish and NQ–ES Examples",
-    "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
+    "id": 1021,
+    "slug": "inducement-false-breakouts",
+    "title": "Inducement and False Breakouts",
+    "part": "Part III - Liquidity",
+    "status": "in-progress"
   },
   {
     "id": 60,
     "slug": "ict-liquidity-turtle-soup-rejection-blocks",
-    "title": "ICT Turtle Soup: Liquidity Sweeps and Rejection Blocks",
-    "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
+    "title": "Turtle Soup: Failed Breakouts and Rejections",
+    "part": "Part III - Liquidity",
+    "status": "published"
   },
   {
-    "id": 53,
-    "slug": "the-ict-venom-model-five-stage-delivery",
-    "title": "ICT Venom Model: Opening Range, Liquidity Sweep and Two Fangs",
-    "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
+    "id": 1023,
+    "slug": "draw-on-liquidity",
+    "title": "Draw on Liquidity: Choosing the Next Target",
+    "part": "Part III - Liquidity",
+    "status": "in-progress"
   },
   {
-    "id": 61,
-    "slug": "ict-lunch-afternoon-session-models",
-    "title": "ICT New York Lunch and Afternoon Session Models",
-    "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
+    "id": 1024,
+    "slug": "htf-liquidity-maps",
+    "title": "Higher-Timeframe Liquidity Maps",
+    "part": "Part III - Liquidity",
+    "status": "in-progress"
   },
   {
-    "id": 62,
-    "slug": "ict-news-volatility-no-trade-framework",
-    "title": "ICT News Trading: CPI, NFP, FOMC and No-Trade Decisions",
-    "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
+    "id": 1025,
+    "slug": "imbalance-and-rebalancing",
+    "title": "Imbalance and Rebalancing: Why Price Revisits",
+    "part": "Part IV - Price Delivery",
+    "status": "in-progress"
   },
   {
-    "id": 27,
-    "slug": "the-12-weekly-profiles",
-    "title": "ICT Weekly Profiles: Weekly Highs, Lows and Scenario Examples",
-    "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
+    "id": 13,
+    "slug": "fair-value-gaps-fvg-and-consequent-encroachment",
+    "title": "Fair Value Gaps: Formation, CE and Examples",
+    "part": "Part IV - Price Delivery",
+    "status": "published"
   },
   {
-    "id": 63,
-    "slug": "ict-weekly-options-payoffs-and-risk",
-    "title": "ICT Weekly Options: SPX Premium, Payoffs and Risk",
-    "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
+    "id": 1027,
+    "slug": "volume-imbalance-liquidity-void",
+    "title": "Volume Imbalances, Gaps and Liquidity Voids",
+    "part": "Part IV - Price Delivery",
+    "status": "in-progress"
   },
   {
-    "id": 64,
-    "slug": "ict-replay-journaling-one-model-study",
-    "title": "ICT Trading Journal: Chart Replay and One-Model Review",
-    "part": "Part IX - ICT 2025 Official Mentorship Curriculum"
+    "id": 14,
+    "slug": "inverse-fair-value-gaps-ifvg-role-reversal-imbalances",
+    "title": "Inverse Fair Value Gaps: Role Reversal",
+    "part": "Part IV - Price Delivery",
+    "status": "published"
   },
   {
-    "id": 28,
-    "slug": "ict-charter-model-1-intraday-scalping",
-    "title": "ICT Charter Model 1: Intraday Scalping & The 20-Day IPDA Data Range",
-    "part": "Part X - ICT Charter Price Action Models Curriculum"
+    "id": 15,
+    "slug": "order-blocks-ob-and-mitigation",
+    "title": "Order Blocks: Boundaries and Mitigation",
+    "part": "Part IV - Price Delivery",
+    "status": "published"
   },
   {
-    "id": 29,
-    "slug": "ict-charter-model-2-weekly-range-expansion",
-    "title": "ICT Charter Model 2: Short-Term Weekly Range Expansion & Reversal Profiles",
-    "part": "Part X - ICT Charter Price Action Models Curriculum"
+    "id": 16,
+    "slug": "breaker-blocks-trading-failed-order-blocks",
+    "title": "Breaker Blocks: Failed Order Block Studies",
+    "part": "Part IV - Price Delivery",
+    "status": "published"
   },
   {
-    "id": 30,
-    "slug": "ict-charter-model-3-swing-trading-cot",
-    "title": "ICT Charter Model 3: Swing Trading & Commercial COT Hedging Programs",
-    "part": "Part X - ICT Charter Price Action Models Curriculum"
-  },
-  {
-    "id": 31,
-    "slug": "ict-charter-model-4-position-trading",
-    "title": "ICT Charter Model 4: Position Trading, Quarterly Shifts & Seasonal Tendencies",
-    "part": "Part X - ICT Charter Price Action Models Curriculum"
-  },
-  {
-    "id": 32,
-    "slug": "ict-charter-model-5-session-day-trading",
-    "title": "ICT Charter Model 5: Session Day Trading & Intraday Volatility Expansions",
-    "part": "Part X - ICT Charter Price Action Models Curriculum"
-  },
-  {
-    "id": 33,
-    "slug": "ict-charter-models-6-and-7-universal-models",
-    "title": "ICT Charter Models 6 & 7: Universal Models, Buyside Expansion & Market Maker Curves",
-    "part": "Part X - ICT Charter Price Action Models Curriculum"
-  },
-  {
-    "id": 34,
-    "slug": "ict-charter-models-8-and-9-precision-and-osok",
-    "title": "ICT Charter Models 8 & 9: Advanced Precision (25 Pips/Wk) & One Shot One Kill (OSOK)",
-    "part": "Part X - ICT Charter Price Action Models Curriculum"
-  },
-  {
-    "id": 35,
-    "slug": "ict-charter-models-10-11-and-12",
-    "title": "ICT Charter Models 10, 11 & 12: Swing, Day Trading & Scalping",
-    "part": "Part X - ICT Charter Price Action Models Curriculum"
-  },
-  {
-    "id": 36,
-    "slug": "ict-charter-model-13-2022-youtube-model",
-    "title": "2022 ICT Mentorship Model — A Source-Based Study Guide",
-    "part": "Part X - ICT Charter Price Action Models Curriculum"
-  },
-  {
-    "id": 37,
-    "slug": "core-content-month-1-elements-of-trade-setup",
-    "title": "ICT Core Content Month 1: Elements of a Trade Setup & Market Conditions",
-    "part": "Part XI - ICT Mentorship Core Content Master Curriculum"
-  },
-  {
-    "id": 38,
-    "slug": "core-content-month-2-growing-small-accounts",
-    "title": "ICT Core Content Month 2: Growing Small Accounts & High-Reward Setups",
-    "part": "Part XI - ICT Mentorship Core Content Master Curriculum"
-  },
-  {
-    "id": 39,
-    "slug": "core-content-month-3-institutional-sponsorship-and-traps",
-    "title": "ICT Core Content Month 3: Timeframe Selection, Institutional Sponsorship & Traps",
-    "part": "Part XI - ICT Mentorship Core Content Master Curriculum"
-  },
-  {
-    "id": 40,
-    "slug": "core-content-month-4-advanced-pd-arrays-and-yields",
-    "title": "ICT Core Content Month 4: PD Array Studies & Rate-Market Comparisons",
-    "part": "Part XI - ICT Mentorship Core Content Master Curriculum"
-  },
-  {
-    "id": 41,
-    "slug": "core-content-month-5-quarterly-shifts-and-position-trading",
-    "title": "ICT Core Month 5: Quarterly Shifts, IPDA Lookbacks & Position Risk",
-    "part": "Part XI - ICT Mentorship Core Content Master Curriculum"
-  },
-  {
-    "id": 42,
-    "slug": "core-content-month-6-swing-trading-mastery",
-    "title": "ICT Core Content Month 6: Swing Trading Context, COT & Open Interest",
-    "part": "Part XI - ICT Mentorship Core Content Master Curriculum"
-  },
-  {
-    "id": 43,
-    "slug": "core-content-month-7-short-term-trading-and-market-maker-templates",
-    "title": "ICT Core Content Month 7: Short-Term Studies & Market Maker Models",
-    "part": "Part XI - ICT Mentorship Core Content Master Curriculum"
-  },
-  {
-    "id": 44,
-    "slug": "core-content-month-8-daily-range-and-intraday-profiles",
-    "title": "ICT Core Content Month 8: Anatomy of the Daily Range & Intraday Profiles",
-    "part": "Part XI - ICT Mentorship Core Content Master Curriculum"
-  },
-  {
-    "id": 45,
-    "slug": "core-content-month-9-consolidations-and-bread-and-butter",
-    "title": "ICT Core Content Month 9: Range Consolidations, Institutional Pricing & Bread and Butter Setups",
-    "part": "Part XI - ICT Mentorship Core Content Master Curriculum"
-  },
-  {
-    "id": 46,
-    "slug": "core-content-months-10-11-12-multi-asset-mega-trades-top-down",
-    "title": "ICT Core Content: Multi-Asset Study & Top-Down Planning",
-    "part": "Part XI - ICT Mentorship Core Content Master Curriculum"
-  },
-  {
-    "id": 47,
-    "slug": "2026-onboarding-from-vision-to-execution",
-    "title": "ICT 2026 Mentorship: Beginner Study Plan",
-    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
-  },
-  {
-    "id": 48,
-    "slug": "nq-es-premarket-session-rules-morning-engine",
-    "title": "ICT 2026 Pre-Market Range: 7–9 AM Rules",
-    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
-  },
-  {
-    "id": 65,
-    "slug": "ict-2026-first-hour-dealing-range",
-    "title": "ICT First Hour Dealing Range: 9:30–10:30",
-    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
-  },
-  {
-    "id": 50,
-    "slug": "opening-gap-matrices-ndog-nwog-csod",
-    "title": "ICT Opening Gaps: NDOG, NWOG, RTH & CISD",
-    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
-  },
-  {
-    "id": 66,
-    "slug": "ict-chain-of-custody-of-price",
-    "title": "ICT Chain of Custody of Price: Daily to Intraday",
-    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
-  },
-  {
-    "id": 67,
-    "slug": "ict-time-price-grids-quadrants-octants",
-    "title": "ICT Time & Price Grids: Quadrants and Octants",
-    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
-  },
-  {
-    "id": 68,
-    "slug": "ict-2026-enigma-reaper-reflection-fvg",
-    "title": "ICT Enigma, Reaper & Reflection FVG Studies",
-    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
-  },
-  {
-    "id": 69,
-    "slug": "ict-2026-obsidian-model",
-    "title": "ICT Obsidian Model: Context, Anchors & Examples",
-    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
-  },
-  {
-    "id": 49,
-    "slug": "market-alchemy-trading-all-time-highs-ath",
-    "title": "ICT Market Alchemy: How to Study All-Time Highs",
-    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
-  },
-  {
-    "id": 52,
-    "slug": "event-volatility-hrlr-futures-vs-cfds",
-    "title": "ICT News Volatility & High Resistance Liquidity Runs",
-    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
-  },
-  {
-    "id": 51,
-    "slug": "midday-afternoon-tape-reading-macros-final-hour",
-    "title": "ICT Lunch & Afternoon Tape Reading",
-    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
-  },
-  {
-    "id": 70,
-    "slug": "ict-2026-backtesting-journaling-trade-management",
-    "title": "ICT 2026 Backtesting, Journaling & Trade Management",
-    "part": "Part XII - The 2026 ICT Smart Money Concepts Master Lectures & Tape Reading Series"
-  },
-  {
-    "id": 54,
-    "slug": "candle-range-theory-crt-strategy",
-    "title": "Candle Range Theory (CRT) & Advanced Multi-Session Confluence",
-    "part": "Part XIII - Advanced 2025/2026 Institutional Delivery Systems & Tape Reading"
+    "id": 1031,
+    "slug": "mitigation-and-rejection-blocks",
+    "title": "Mitigation Blocks and Rejection Blocks",
+    "part": "Part IV - Price Delivery",
+    "status": "in-progress"
   },
   {
     "id": 55,
     "slug": "reaper-ifvg-and-suspension-block-advancements",
-    "title": "Suspension Blocks & Reaper FVG: Source Context and Limits",
-    "part": "Part XIII - Advanced 2025/2026 Institutional Delivery Systems & Tape Reading"
+    "title": "Suspension Blocks and Reaper FVG Studies",
+    "part": "Part IV - Price Delivery",
+    "status": "published"
+  },
+  {
+    "id": 59,
+    "slug": "ict-pd-array-selection-price-delivery-continuum",
+    "title": "Premium and Discount: The PD Array Matrix",
+    "part": "Part IV - Price Delivery",
+    "status": "published"
+  },
+  {
+    "id": 1034,
+    "slug": "optimal-trade-entry-ote",
+    "title": "Optimal Trade Entry (OTE): Fib Zones Inside a Range",
+    "part": "Part IV - Price Delivery",
+    "status": "in-progress"
   },
   {
     "id": 56,
     "slug": "rdrb-balanced-price-range-and-enigma-fvg",
-    "title": "Balanced-Range Revisits & Enigma: Measurements, Not Guarantees",
-    "part": "Part XIII - Advanced 2025/2026 Institutional Delivery Systems & Tape Reading"
+    "title": "Balanced Price Ranges: Revisits and Enigma",
+    "part": "Part IV - Price Delivery",
+    "status": "published"
+  },
+  {
+    "id": 1036,
+    "slug": "pd-arrays-compared",
+    "title": "FVG vs Order Block vs Breaker vs IFVG: Which to Use",
+    "part": "Part IV - Price Delivery",
+    "status": "in-progress"
+  },
+  {
+    "id": 19,
+    "slug": "time-and-session-liquidity-the-global-clock",
+    "title": "Trading Sessions: Time and Liquidity",
+    "part": "Part V - Time and Sessions",
+    "status": "published"
+  },
+  {
+    "id": 1038,
+    "slug": "kill-zones-explained",
+    "title": "Kill Zones: London, New York and Asia Windows",
+    "part": "Part V - Time and Sessions",
+    "status": "in-progress"
+  },
+  {
+    "id": 1039,
+    "slug": "asian-range-london-open",
+    "title": "The Asian Range and the London Open",
+    "part": "Part V - Time and Sessions",
+    "status": "in-progress"
+  },
+  {
+    "id": 61,
+    "slug": "ict-lunch-afternoon-session-models",
+    "title": "New York Open, Lunch and Afternoon Models",
+    "part": "Part V - Time and Sessions",
+    "status": "published"
+  },
+  {
+    "id": 24,
+    "slug": "0930-am-opening-range-theory",
+    "title": "ICT Opening Range: 9:30 to 10:00",
+    "part": "Part V - Time and Sessions",
+    "status": "published"
+  },
+  {
+    "id": 25,
+    "slug": "the-1st-presented-fvg-the-0931-rule",
+    "title": "ICT First Presented FVG and First-Hour Range",
+    "part": "Part V - Time and Sessions",
+    "status": "published"
+  },
+  {
+    "id": 48,
+    "slug": "nq-es-premarket-session-rules-morning-engine",
+    "title": "Pre-Market Range: NQ and ES 7–9 AM Study",
+    "part": "Part V - Time and Sessions",
+    "status": "published"
+  },
+  {
+    "id": 50,
+    "slug": "opening-gap-matrices-ndog-nwog-csod",
+    "title": "Opening Gaps: NDOG, NWOG and RTH",
+    "part": "Part V - Time and Sessions",
+    "status": "published"
+  },
+  {
+    "id": 20,
+    "slug": "the-weekly-profile-and-five-day-delivery-model",
+    "title": "Weekly Profile: The Five-Day Range",
+    "part": "Part V - Time and Sessions",
+    "status": "published"
+  },
+  {
+    "id": 27,
+    "slug": "the-12-weekly-profiles",
+    "title": "Weekly Profiles: Scenarios and Limits",
+    "part": "Part V - Time and Sessions",
+    "status": "published"
+  },
+  {
+    "id": 21,
+    "slug": "daily-profiles-and-intraday-power-of-three-po3",
+    "title": "Daily Profiles and Power of Three",
+    "part": "Part V - Time and Sessions",
+    "status": "published"
+  },
+  {
+    "id": 67,
+    "slug": "ict-time-price-grids-quadrants-octants",
+    "title": "Time and Price: Quadrants and Octants",
+    "part": "Part V - Time and Sessions",
+    "status": "published"
+  },
+  {
+    "id": 1049,
+    "slug": "quarterly-theory-seasonality",
+    "title": "Quarterly Theory and Seasonal Tendencies",
+    "part": "Part V - Time and Sessions",
+    "status": "in-progress"
+  },
+  {
+    "id": 1050,
+    "slug": "intraday-macro-windows",
+    "title": "Intraday Macros: Short Time Windows Inside Sessions",
+    "part": "Part V - Time and Sessions",
+    "status": "in-progress"
+  },
+  {
+    "id": 22,
+    "slug": "the-complete-ict-top-down-model-and-execution-blueprint",
+    "title": "Top-Down Analysis: Context to Execution",
+    "part": "Part VI - Narrative and Bias",
+    "status": "published"
+  },
+  {
+    "id": 1052,
+    "slug": "daily-bias",
+    "title": "Daily Bias: Building a Directional Plan",
+    "part": "Part VI - Narrative and Bias",
+    "status": "in-progress"
+  },
+  {
+    "id": 39,
+    "slug": "core-content-month-3-institutional-sponsorship-and-traps",
+    "title": "Timeframe Selection: Higher-Timeframe Context",
+    "part": "Part VI - Narrative and Bias",
+    "status": "published"
+  },
+  {
+    "id": 41,
+    "slug": "core-content-month-5-quarterly-shifts-and-position-trading",
+    "title": "IPDA Lookbacks: 20, 40 and 60 Days",
+    "part": "Part VI - Narrative and Bias",
+    "status": "published"
+  },
+  {
+    "id": 66,
+    "slug": "ict-chain-of-custody-of-price",
+    "title": "Chain of Custody: Daily to Intraday Price",
+    "part": "Part VI - Narrative and Bias",
+    "status": "published"
+  },
+  {
+    "id": 26,
+    "slug": "smt-divergence-mechanics",
+    "title": "SMT Divergence: Bullish, Bearish, NQ and ES",
+    "part": "Part VI - Narrative and Bias",
+    "status": "published"
+  },
+  {
+    "id": 1057,
+    "slug": "standard-deviation-projections",
+    "title": "Standard Deviation Projections: Targets Beyond the Range",
+    "part": "Part VI - Narrative and Bias",
+    "status": "in-progress"
+  },
+  {
+    "id": 49,
+    "slug": "market-alchemy-trading-all-time-highs-ath",
+    "title": "Market Alchemy: Studying All-Time Highs",
+    "part": "Part VI - Narrative and Bias",
+    "status": "published"
+  },
+  {
+    "id": 1059,
+    "slug": "building-market-narrative",
+    "title": "Building a Market Narrative: Timeframe, Liquidity, Time",
+    "part": "Part VI - Narrative and Bias",
+    "status": "in-progress"
+  },
+  {
+    "id": 42,
+    "slug": "core-content-month-6-swing-trading-mastery",
+    "title": "COT Reports: Open Interest and Seasonality",
+    "part": "Part VI - Narrative and Bias",
+    "status": "published"
+  },
+  {
+    "id": 40,
+    "slug": "core-content-month-4-advanced-pd-arrays-and-yields",
+    "title": "Intermarket Analysis: Yields, Rates and Dollar",
+    "part": "Part VI - Narrative and Bias",
+    "status": "published"
+  },
+  {
+    "id": 54,
+    "slug": "candle-range-theory-crt-strategy",
+    "title": "Candle Range Theory: Boundaries and Tests",
+    "part": "Part VI - Narrative and Bias",
+    "status": "published"
+  },
+  {
+    "id": 1063,
+    "slug": "entry-model-anatomy",
+    "title": "What Is an Entry Model? Anatomy of a Setup",
+    "part": "Part VII - Entry Models",
+    "status": "in-progress"
+  },
+  {
+    "id": 1064,
+    "slug": "silver-bullet-model",
+    "title": "Silver Bullet: Time-Windowed FVG Entries",
+    "part": "Part VII - Entry Models",
+    "status": "in-progress"
+  },
+  {
+    "id": 1065,
+    "slug": "judas-swing",
+    "title": "Judas Swing: The Fake Move Before the Real One",
+    "part": "Part VII - Entry Models",
+    "status": "in-progress"
+  },
+  {
+    "id": 1066,
+    "slug": "unicorn-model",
+    "title": "Unicorn Model: Breaker and FVG Overlap",
+    "part": "Part VII - Entry Models",
+    "status": "in-progress"
+  },
+  {
+    "id": 53,
+    "slug": "the-ict-venom-model-five-stage-delivery",
+    "title": "ICT Venom Model: Opening Range and Sweeps",
+    "part": "Part VII - Entry Models",
+    "status": "published"
+  },
+  {
+    "id": 33,
+    "slug": "ict-charter-models-6-and-7-universal-models",
+    "title": "Market Maker Models: MMBM and MMSM",
+    "part": "Part VII - Entry Models",
+    "status": "published"
+  },
+  {
+    "id": 36,
+    "slug": "ict-charter-model-13-2022-youtube-model",
+    "title": "ICT 2022 Model: A Time-Based Entry Framework",
+    "part": "Part VII - Entry Models",
+    "status": "published"
+  },
+  {
+    "id": 45,
+    "slug": "core-content-month-9-consolidations-and-bread-and-butter",
+    "title": "Bread-and-Butter Setups: Ranges and Context",
+    "part": "Part VII - Entry Models",
+    "status": "published"
   },
   {
     "id": 57,
     "slug": "sick-sister-strategy-and-double-purge-framework",
-    "title": "Sick Sister: Contextual Market Selection & Two-Sided Sweep Studies",
-    "part": "Part XIII - Advanced 2025/2026 Institutional Delivery Systems & Tape Reading"
+    "title": "Sick Sister: Market Selection and Sweeps",
+    "part": "Part VII - Entry Models",
+    "status": "published"
+  },
+  {
+    "id": 68,
+    "slug": "ict-2026-enigma-reaper-reflection-fvg",
+    "title": "Enigma, Reaper and Reflection FVG Studies",
+    "part": "Part VII - Entry Models",
+    "status": "published"
+  },
+  {
+    "id": 69,
+    "slug": "ict-2026-obsidian-model",
+    "title": "Obsidian Model: Context and Anchors",
+    "part": "Part VII - Entry Models",
+    "status": "published"
+  },
+  {
+    "id": 28,
+    "slug": "ict-charter-model-1-intraday-scalping",
+    "title": "Intraday Scalping: Session Frameworks",
+    "part": "Part VII - Entry Models",
+    "status": "published"
+  },
+  {
+    "id": 29,
+    "slug": "ict-charter-model-2-weekly-range-expansion",
+    "title": "Weekly Range: Expansion and Reversal Studies",
+    "part": "Part VII - Entry Models",
+    "status": "published"
+  },
+  {
+    "id": 30,
+    "slug": "ict-charter-model-3-swing-trading-cot",
+    "title": "Swing and Position Trading: Study Frameworks",
+    "part": "Part VII - Entry Models",
+    "status": "published"
+  },
+  {
+    "id": 34,
+    "slug": "ict-charter-models-8-and-9-precision-and-osok",
+    "title": "Precision Entries and One Shot One Kill",
+    "part": "Part VII - Entry Models",
+    "status": "published"
+  },
+  {
+    "id": 62,
+    "slug": "ict-news-volatility-no-trade-framework",
+    "title": "News Trading: CPI, NFP, FOMC and Volatility",
+    "part": "Part VII - Entry Models",
+    "status": "published"
+  },
+  {
+    "id": 63,
+    "slug": "ict-weekly-options-payoffs-and-risk",
+    "title": "Weekly Options: SPX Premium and Risk",
+    "part": "Part VII - Entry Models",
+    "status": "published"
+  },
+  {
+    "id": 1080,
+    "slug": "risk-management-basics",
+    "title": "Risk Management: Risk per Trade, Size and Drawdown",
+    "part": "Part VIII - Risk Management",
+    "status": "in-progress"
+  },
+  {
+    "id": 1081,
+    "slug": "risk-reward-expectancy",
+    "title": "Risk-to-Reward and Expectancy: The Math of a Setup",
+    "part": "Part VIII - Risk Management",
+    "status": "in-progress"
+  },
+  {
+    "id": 1082,
+    "slug": "stop-placement-invalidation",
+    "title": "Stop Placement and Trade Invalidation",
+    "part": "Part VIII - Risk Management",
+    "status": "in-progress"
+  },
+  {
+    "id": 1083,
+    "slug": "trade-management",
+    "title": "Trade Management: Partials, Break-Even, Trailing",
+    "part": "Part VIII - Risk Management",
+    "status": "in-progress"
+  },
+  {
+    "id": 38,
+    "slug": "core-content-month-2-growing-small-accounts",
+    "title": "Small Accounts: Risk Math and Growth Limits",
+    "part": "Part VIII - Risk Management",
+    "status": "published"
+  },
+  {
+    "id": 37,
+    "slug": "core-content-month-1-elements-of-trade-setup",
+    "title": "Market Conditions: When Not to Trade",
+    "part": "Part VIII - Risk Management",
+    "status": "published"
+  },
+  {
+    "id": 1086,
+    "slug": "trading-psychology",
+    "title": "Trading Psychology: Fear, Greed and FOMO",
+    "part": "Part IX - Process and Psychology",
+    "status": "in-progress"
+  },
+  {
+    "id": 1087,
+    "slug": "patience-discipline-rules",
+    "title": "Patience, Discipline and Written Rules",
+    "part": "Part IX - Process and Psychology",
+    "status": "in-progress"
+  },
+  {
+    "id": 1088,
+    "slug": "building-a-trading-plan",
+    "title": "Building a Trading Plan",
+    "part": "Part IX - Process and Psychology",
+    "status": "in-progress"
+  },
+  {
+    "id": 1089,
+    "slug": "weekly-preparation-routine",
+    "title": "Weekly Market Preparation Routine",
+    "part": "Part IX - Process and Psychology",
+    "status": "in-progress"
+  },
+  {
+    "id": 64,
+    "slug": "ict-replay-journaling-one-model-study",
+    "title": "Trade Journaling: Replay and One-Model Review",
+    "part": "Part IX - Process and Psychology",
+    "status": "published"
+  },
+  {
+    "id": 70,
+    "slug": "ict-2026-backtesting-journaling-trade-management",
+    "title": "Backtesting: Samples, Hindsight and Management",
+    "part": "Part IX - Process and Psychology",
+    "status": "published"
+  },
+  {
+    "id": 47,
+    "slug": "2026-onboarding-from-vision-to-execution",
+    "title": "Beginner Study Plan: A Trading Roadmap",
+    "part": "Part IX - Process and Psychology",
+    "status": "published"
+  },
+  {
+    "id": 23,
+    "slug": "trader-abdullah-masood-masterclass",
+    "title": "Gold Trading: Daily Bias and Sessions",
+    "part": "Part X - Markets and Instruments",
+    "status": "published"
+  },
+  {
+    "id": 1094,
+    "slug": "nq-es-session-playbook",
+    "title": "Index Futures: NQ and ES Session Playbook",
+    "part": "Part X - Markets and Instruments",
+    "status": "in-progress"
+  },
+  {
+    "id": 1095,
+    "slug": "forex-pairs-study",
+    "title": "Forex Pairs: EUR/USD and GBP/USD Study",
+    "part": "Part X - Markets and Instruments",
+    "status": "in-progress"
+  },
+  {
+    "id": 1096,
+    "slug": "crypto-btc-application",
+    "title": "Crypto: Applying These Ideas to Bitcoin",
+    "part": "Part X - Markets and Instruments",
+    "status": "in-progress"
+  },
+  {
+    "id": 46,
+    "slug": "core-content-months-10-11-12-multi-asset-mega-trades-top-down",
+    "title": "Multi-Asset Analysis: Top-Down Planning",
+    "part": "Part X - Markets and Instruments",
+    "status": "published"
   }
 ];
 export const lectureCatalog = [

@@ -1,3 +1,4 @@
+import {canonicalChapterId,curriculumTarget} from './curriculumMigration';
 /**
  * LearnSMC URL Normalization and Canonical URL Module
  * Single Source of Truth for URL formatting, trailing slash normalization,
@@ -64,7 +65,7 @@ export function getLessonCanonicalUrl(slug: string): string {
  */
 export function getLessonPath(slug: string): string {
   const cleanSlug = slug.replace(/^\/+|\/+$/g, '');
-  return `/learn/${cleanSlug}/`;
+  const path=`/learn/${cleanSlug}/`;return curriculumTarget(path)||path;
 }
 
 /**
@@ -82,16 +83,16 @@ export function resolveLegacyChapter(
   allChapters: Array<{ id: number; slug: string }>
 ): LegacyChapterRedirect | null {
   const query = String(chapterIdOrSlug).trim().toLowerCase();
-  const matched = allChapters.find(
-    c => String(c.id) === query || c.slug.toLowerCase() === query
-  );
-
+  const migration=curriculumTarget(`/learn/${query}/`);
+  const migratedSlug=migration?.split('/')[2];
+  const matched = allChapters.find(c => c.id === canonicalChapterId(Number(query)) || c.slug.toLowerCase() === (migratedSlug||query));
   if (!matched) return null;
+  const fragment=canonicalChapterId(Number(query))!==Number(query)&&Number.isFinite(Number(query))?`#merged-${query}`:'';
 
   return {
     id: matched.id,
     slug: matched.slug,
-    targetPath: getLessonPath(matched.slug),
+    targetPath: migration||getLessonPath(matched.slug)+fragment,
     targetCanonical: getLessonCanonicalUrl(matched.slug),
   };
 }

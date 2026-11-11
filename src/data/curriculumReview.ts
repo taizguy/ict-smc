@@ -1,3 +1,4 @@
+import {mitigationDates,mitigationSources,mitigationDocument} from './chapters/mitigationDocument';
 import {fvgDocumentDates} from './chapters/fvgDocument';
 import {priceMovementSources,priceMovementDates} from './chapters/priceMovementLesson';
 import {mergedChapterIds,phase1Entry} from './curriculumPhase1';
@@ -15,7 +16,7 @@ import { cornerstoneGuides, cornerstoneRevision } from './cornerstoneGuides';
 export const curriculumReviewDate = '2026-10-19';
 export const curriculumReviewLabel = '19 October 2026';
 // Chapter-wide editorial/diagram/quiz consistency review; not a new full-recording review.
-export const chapterReviewRevision = (id: number) => id===13?fvgDocumentDates.updated:id===1?priceMovementDates.updated:phase1Entry(id)?.id===id ? {iso:'2026-11-10',label:'10 November 2026'} : id===49?alchemyDates.updated:hasMentorship2026Edition(id) ? {iso:'2026-10-27',label:'27 October 2026'} : hasMentorship2025Edition(id) ? {iso:'2026-10-26',label:'26 October 2026'} : [13,14,15,16].includes(id)
+export const chapterReviewRevision = (id: number) => id===1031?mitigationDates.updated:id===13?fvgDocumentDates.updated:id===1?priceMovementDates.updated:phase1Entry(id)?.id===id ? {iso:'2026-11-10',label:'10 November 2026'} : id===49?alchemyDates.updated:hasMentorship2026Edition(id) ? {iso:'2026-10-27',label:'27 October 2026'} : hasMentorship2025Edition(id) ? {iso:'2026-10-26',label:'26 October 2026'} : [13,14,15,16].includes(id)
   ? { iso: '2026-10-25', label: '25 October 2026' } : [13, 15].includes(id) || cornerstoneGuides.some(guide => guide.chapterId === id)
   ? { iso: cornerstoneRevision, label: '24 October 2026' }
   : { iso: '2026-10-21', label: '21 October 2026' };
@@ -108,6 +109,7 @@ const interpretation = {
 };
 
 function baseCurriculumReview(chapter: TextbookChapter) {
+  if(chapter.id===1031)return {sources:mitigationSources,interpretation:mitigationDocument.sections[4].blocks[0].text!};
   if(chapter.id===1)return {sources:priceMovementSources,interpretation:'A chart records price behaviour, not every participant’s orders or motives. The three lenses and five-question analyser are teaching aids, not causal tests or performance models. Separate observed evidence, plausible explanations and unknowns.'};
   const reviewed2026 = (sources2026 as Record<string,CurriculumSource[]>)[chapter.id];
   if(reviewed2026) return {sources:reviewed2026,interpretation:'These lessons distinguish measured prices and times from discretionary range selection, model interpretation and unverified performance claims. State the reference, recognition time, failure rule and execution assumptions before replay.'};

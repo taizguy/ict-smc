@@ -172,9 +172,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/": {
-      "fingerprint": "91a00bd7a24ca2a106904f756f0fa933c4d8799d3509c24c214457a87d3cdd8d",
+      "fingerprint": "3ff90a59439a69be179c5b160f45155a9df0f9a5c61cf5621ed8129fdbb8d68c",
       "lastmod": "2026-11-11",
-      "evidence": "Chapter 01 supplied-document restoration, confirmed original date, native Urdu and updated directory summary; docs/chapter01-restoration-report.md"
+      "evidence": "docs/chapter31-rewrite-report.md — Chapter 31 published from supplied PDF; directory/part links and published counts updated."
     },
     "/curriculum/advanced-2025-2026-institutional-delivery-systems-tape-reading/": {
       "fingerprint": "85663a603776f480e8e04e948b2d85bd3879ac331e0cd63da7d4ab043dc50dcd",
@@ -242,9 +242,9 @@
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/curriculum/price-delivery/": {
-      "fingerprint": "d94f1d20d6ced2b2866dd77b9d8d7bb80ffa09e67e14f0856248f74256f11f89",
-      "lastmod": "2026-11-10",
-      "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
+      "fingerprint": "89048ddb8fb37e4fd66cf8de91612f1914c95a4b23c4617cb4f6003bfe673239",
+      "lastmod": "2026-11-11",
+      "evidence": "docs/chapter31-rewrite-report.md — Chapter 31 published from supplied PDF; directory/part links and published counts updated."
     },
     "/curriculum/price-structure/": {
       "fingerprint": "0d9da760c8b2f5244405af2f4097445d5335b4868a3381fa6bba2f15d02cf0f6",
@@ -2017,9 +2017,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/": {
-      "fingerprint": "3365d17de2f413792bdc429afcb78596831feed714b1e1f7ad8b1930a0b52c31",
+      "fingerprint": "6167bfeb645c64677b3c323b33cf8cf5f5930d3bf810b8f66034dc4b1a715735",
       "lastmod": "2026-11-11",
-      "evidence": "Chapter 01 supplied-document restoration, confirmed original date, native Urdu and updated directory summary; docs/chapter01-restoration-report.md"
+      "evidence": "docs/chapter31-rewrite-report.md — Chapter 31 published from supplied PDF; directory/part links and published counts updated."
     },
     "/ur/curriculum/advanced-2025-2026-institutional-delivery-systems-tape-reading/": {
       "fingerprint": "c3ffce40b230b2df7f9e078253195ad7a70820ef8e9e1e15137a5b04b9a65976",
@@ -2087,9 +2087,9 @@
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/ur/curriculum/price-delivery/": {
-      "fingerprint": "e79c680e904a9da988b7a60cdf17cd2b76ed7a08be0e4e3294ed546aca18928f",
-      "lastmod": "2026-11-10",
-      "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
+      "fingerprint": "fcd8988b7f99faa93c9c32dacbcbf14d0e4925713d2352894c36c5ffc149569c",
+      "lastmod": "2026-11-11",
+      "evidence": "docs/chapter31-rewrite-report.md — Chapter 31 published from supplied PDF; directory/part links and published counts updated."
     },
     "/ur/curriculum/price-structure/": {
       "fingerprint": "b2f3c48e80a8526031722b23148d0de228636ad9a8e9278eecdfecec34fbd560",
@@ -3865,6 +3865,16 @@
       "fingerprint": "c8b74b67d546d8cae33e8c606b902c0efc9636a70649a1f07d37147c4e93d0e9",
       "lastmod": "2026-11-10",
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
+    },
+    "/learn/mitigation-and-rejection-blocks/": {
+      "fingerprint": "8a36467c2b45f4d701274a60fbe176d9ce3d9a3cac7e6e8cfe3c8b43601698e6",
+      "lastmod": "2026-11-11",
+      "evidence": "docs/chapter31-rewrite-report.md — Chapter 31 published from supplied PDF; directory/part links and published counts updated."
+    },
+    "/ur/learn/mitigation-and-rejection-blocks/": {
+      "fingerprint": "ffda755d1dc442412ffb7cc5cad1cdcdd301b496fb41d2880adc9b023f9729e9",
+      "lastmod": "2026-11-11",
+      "evidence": "docs/chapter31-rewrite-report.md — Chapter 31 published from supplied PDF; directory/part links and published counts updated."
     }
   }
 }

@@ -391,7 +391,7 @@ export const chapterCatalog = [
     "slug": "mitigation-and-rejection-blocks",
     "title": "Mitigation Blocks and Rejection Blocks",
     "part": "Part IV - Price Delivery",
-    "status": "in-progress"
+    "status": "published"
   },
   {
     "id": 55,

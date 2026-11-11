@@ -1,0 +1,154 @@
+{
+  "baseCommit": "dc26f79864cc18acf4fa67da7a0573d95e4dc9a1",
+  "verifiedOn": "2026-11-12",
+  "typecheck": true,
+  "productionBuildAndPrerender": true,
+  "seoChecksPassed": 11012,
+  "internalPagesCrawled": 847,
+  "sourceFidelity": true,
+  "nativeUrdu": true,
+  "sitemapUrls": 741,
+  "lessonSitemapUrls": 116,
+  "publishedLessons": 58,
+  "inProgressLessons": 39,
+  "claimsGate": true,
+  "bundleBudget": {
+    "measured": {
+      "initialJsRaw": 11739,
+      "initialJsGzip": 5103,
+      "initialJsBrotli": 4752,
+      "allJsRaw": 10152190,
+      "largestJsRaw": 959230,
+      "initialCssRaw": 626699,
+      "initialCssGzip": 107135
+    },
+    "limits": {
+      "initialJsRaw": 13000,
+      "initialJsGzip": 5500,
+      "initialJsBrotli": 5200,
+      "allJsRaw": 10621000,
+      "largestJsRaw": 1313000,
+      "initialCssRaw": 650000,
+      "initialCssGzip": 115000
+    },
+    "staticEntryFiles": [
+      "assets/index-CWU2NI9N.js",
+      "assets/preload-helper-BlTxHScW.js",
+      "assets/locale-Co67roet.js"
+    ],
+    "failures": [],
+    "override": false
+  },
+  "staticRuntimeParity": [
+    {
+      "lang": "en",
+      "blocks": 113,
+      "parity": true
+    },
+    {
+      "lang": "ur",
+      "blocks": 113,
+      "parity": true
+    }
+  ],
+  "browserChecks": {
+    "route": "/learn/mitigation-and-rejection-blocks/",
+    "matrix": {
+      "widths": [
+        1440,
+        390
+      ],
+      "languages": [
+        "en",
+        "ur"
+      ],
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "horizontalOverflow": false
+    },
+    "typography": {
+      "bodyPx": 16,
+      "faqPx": 16,
+      "bodyLineHeightPx": 30.4,
+      "faqLineHeightPx": 29.6
+    },
+    "keyboard": {
+      "animationPlayPauseStep": true,
+      "nativeExclusiveFaq": true,
+      "quizThreeCorrect": true,
+      "mobileDrawerEscape": true
+    },
+    "calculator": {
+      "invalidOhlcRejected": true,
+      "bearishMidpoint": 98.6,
+      "bullishMidpoint": 97.9
+    },
+    "scriptFree": {
+      "method": "CSP script-src none",
+      "en": {
+        "mainVisible": true,
+        "tables": 20,
+        "faqs": 20,
+        "exclusiveFaq": true
+      },
+      "ur": {
+        "mainVisible": true,
+        "tables": 20,
+        "faqs": 20,
+        "rtl": true
+      }
+    },
+    "runtimeContentParity": "runtime-parity.json: 113 paragraph/heading/table blocks per language",
+    "unverified": [
+      "Human Urdu review",
+      "Assistive-technology testing",
+      "Field Core Web Vitals",
+      "External Google schema testing"
+    ]
+  },
+  "revisions": [
+    {
+      "path": "/learn/mitigation-and-rejection-blocks/",
+      "fingerprint": "8a36467c2b45f4d701274a60fbe176d9ce3d9a3cac7e6e8cfe3c8b43601698e6",
+      "lastmod": "2026-11-11",
+      "evidence": "docs/chapter31-rewrite-report.md — Chapter 31 published from supplied PDF; directory/part links and published counts updated."
+    },
+    {
+      "path": "/ur/learn/mitigation-and-rejection-blocks/",
+      "fingerprint": "ffda755d1dc442412ffb7cc5cad1cdcdd301b496fb41d2880adc9b023f9729e9",
+      "lastmod": "2026-11-11",
+      "evidence": "docs/chapter31-rewrite-report.md — Chapter 31 published from supplied PDF; directory/part links and published counts updated."
+    },
+    {
+      "path": "/curriculum/",
+      "fingerprint": "3ff90a59439a69be179c5b160f45155a9df0f9a5c61cf5621ed8129fdbb8d68c",
+      "lastmod": "2026-11-11",
+      "evidence": "docs/chapter31-rewrite-report.md — Chapter 31 published from supplied PDF; directory/part links and published counts updated."
+    },
+    {
+      "path": "/ur/curriculum/",
+      "fingerprint": "6167bfeb645c64677b3c323b33cf8cf5f5930d3bf810b8f66034dc4b1a715735",
+      "lastmod": "2026-11-11",
+      "evidence": "docs/chapter31-rewrite-report.md — Chapter 31 published from supplied PDF; directory/part links and published counts updated."
+    },
+    {
+      "path": "/curriculum/price-delivery/",
+      "fingerprint": "89048ddb8fb37e4fd66cf8de91612f1914c95a4b23c4617cb4f6003bfe673239",
+      "lastmod": "2026-11-11",
+      "evidence": "docs/chapter31-rewrite-report.md — Chapter 31 published from supplied PDF; directory/part links and published counts updated."
+    },
+    {
+      "path": "/ur/curriculum/price-delivery/",
+      "fingerprint": "fcd8988b7f99faa93c9c32dacbcbf14d0e4925713d2352894c36c5ffc149569c",
+      "lastmod": "2026-11-11",
+      "evidence": "docs/chapter31-rewrite-report.md — Chapter 31 published from supplied PDF; directory/part links and published counts updated."
+    }
+  ],
+  "limitations": [
+    "Human Urdu review pending",
+    "No field Core Web Vitals or assistive-technology audit",
+    "No claim that complete source recordings were reviewed"
+  ]
+}

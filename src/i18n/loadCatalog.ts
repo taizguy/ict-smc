@@ -10,7 +10,8 @@ export async function loadUrduCatalog(pathname: string): Promise<TranslationCata
   const loadLesson=slug&&lessonCatalogs[`./runtime/lessons/${slug}.json`];
   if(loadLesson) {
     const [common,lesson]=await Promise.all([import('./runtime/chapter-common.json'),loadLesson()]);
-    return {...shared.default,...common.default,...lesson.default};
+    const overrides=slug==='mitigation-and-rejection-blocks'?(await import('./runtime/mitigation-overrides.json')).default:{};
+    return {...shared.default,...common.default,...lesson.default,...overrides};
   }
   const section = path.startsWith('/curriculum/') || path.startsWith('/learn/') ? await import('./runtime/chapters.json')
     : path.startsWith('/masood/') ? await import('./runtime/masood.json')
@@ -19,6 +20,7 @@ export async function loadUrduCatalog(pathname: string): Promise<TranslationCata
     : /^\/(?:about|privacy|terms|contact|disclaimer|adsense)\//.test(path) ? await import('./runtime/publisher.json')
     : { default: {} };
   const needsChapterFallback=path.startsWith('/curriculum/')||path.startsWith('/learn/');
+  const common=needsChapterFallback?await import('./runtime/chapter-common.json'):{default:{}};
   const reused=needsChapterFallback?await Promise.all(fallbackParts.map(slug=>lessonCatalogs[`./runtime/lessons/${slug}.json`]!())):[];
-  return { ...shared.default, ...section.default,...Object.assign({},...reused.map(part=>part.default)) };
+  return { ...shared.default,...common.default, ...section.default,...Object.assign({},...reused.map(part=>part.default)) };
 }

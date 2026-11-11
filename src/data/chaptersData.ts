@@ -1,3 +1,4 @@
+import {mitigationChapter} from './chapters/mitigationDocument';
 import {organiseCurriculum,phase1Entries} from './curriculumPhase1';
 import { TextbookChapter } from '../types';
 import { applyContentReview } from './chapters/applyContentReview';
@@ -25,7 +26,7 @@ export const originalTextbookChapters: TextbookChapter[] = [
   ...theinnercircletradersNewChapters
 ].map(applyContentReview);
 
-export const textbookChapters=organiseCurriculum(originalTextbookChapters);
+export const textbookChapters=organiseCurriculum([...originalTextbookChapters,mitigationChapter]);
 export const activeCurriculumChapters=phase1Entries.map(r=>textbookChapters.find(c=>c.id===r.id)!);
 export const publishedCurriculumChapters=activeCurriculumChapters.filter(c=>c.status==='published');
 export default textbookChapters;

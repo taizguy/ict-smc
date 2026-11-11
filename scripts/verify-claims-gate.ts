@@ -11,6 +11,7 @@ fs.writeFileSync(directory+'/statements.html',`<!doctype html>
 <p>Algorithmic price delivery controls every candle.</p>
 <p>No method offers guaranteed profits.</p>
 <p>Report sample size and costs alongside win rate.</p>
+<p>Break-even win rate before costs = 1 ÷ (1 + 3) = 25%. Spreads, commissions and slippage raise that rate.</p>
 <fieldset class="chapter-quiz-question"><legend>Choose the supported statement</legend><ul><li>Guaranteed profits</li><li>Losses remain possible</li></ul><strong>Losses remain possible</strong><p>The explanation rejects a profit guarantee.</p></fieldset>
 </main>
 <script type="application/ld+json">{"@type":"Question","name":"Is a stop price a guaranteed exit?","acceptedAnswer":{"@type":"Answer","text":"No. Execution can differ from the requested stop price."}}</script>
@@ -24,6 +25,7 @@ try{
  const run=spawnSync(process.execPath,['node_modules/tsx/dist/cli.mjs','scripts/verify-emitted-claims.ts'],{encoding:'utf8',env:{...process.env,PRERENDER_OUT_DIR:directory}});
  assert.notEqual(run.status,0,'Unqualified claims must fail the gate');
  const result=JSON.parse(fs.readFileSync(report,'utf8'));
+ assert.ok(result.contextualCaveats.some((f:any)=>f.context.includes('Break-even win rate before costs')), 'Accept only the explicit cost-qualified algebraic identity');
  assert.equal(result.findings.length,5,'Reject promises and unrebutted quoted myths; accept bounded negatives/questions/distractors/reporting and paired conditional myths');
  assert.deepEqual(result.findings.map((f:any)=>f.rule).sort(),['algorithmic-delivery','guarantee','win-rate','win-rate','win-rate']);
  assert.deepEqual(result.findings.slice(0,3).map((f:any)=>f.line),[3,4,5]);

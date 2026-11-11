@@ -1,3 +1,4 @@
+import './styles/mitigation-document.css';
 import './index.css';
 import './styles/study-workbench.css';
 import './styles/urdu.css';

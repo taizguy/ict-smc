@@ -1,3 +1,4 @@
+import {mitigationTranslations} from '../data/chapters/mitigationTranslations';
 import {fvgDocumentTranslations} from '../data/chapters/fvgDocumentTranslations';
 import {priceMovementTranslations} from '../data/chapters/priceMovementLesson';
 import {curriculumHubUrdu} from '../data/curriculumHubContent';
@@ -271,3 +272,6 @@ for(const [key,value]of Object.entries(legacyPracticeTopicsUrdu))if(!urdu[key])u
 for (const source of Object.keys(urdu)) urdu[source] = refineTradingLanguage(source, urdu[source]);
 
 Object.assign(urdu,priceMovementTranslations,fvgDocumentTranslations);
+
+// New lesson copy must not override translations used by existing pages.
+Object.assign(urdu,Object.fromEntries(Object.entries(mitigationTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));

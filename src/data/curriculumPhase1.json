@@ -481,11 +481,12 @@
       "مٹیگیشن بلاکس اور ریجیکشن بلاکس"
     ],
     "description": [
-      "The boundaries and terminology of mitigation and rejection blocks.",
-      "مٹیگیشن اور ریجیکشن بلاکس کی حدود اور اصطلاحات۔"
+      "Learn what mitigation blocks and rejection blocks are, how they differ from breaker and order blocks, how to mark them, and where each one fails.",
+      "مٹیگیشن اور ریجیکشن بلاکس کی تعریف، بریکر اور آرڈر بلاک سے فرق، زون بنانے کا طریقہ، مثالیں اور ناکامی کی حدود سمجھیں۔"
     ],
     "primaryKeyword": "mitigation block",
-    "status": "in-progress"
+    "status": "published",
+    "seoTitle": "Mitigation Blocks and Rejection Blocks: ICT Guide"
   },
   {
     "id": 55,

@@ -14,7 +14,7 @@ const graph=head.filter(n=>n.tagName==='script'&&a(n,'type')==='application/ld+j
 report.push({route,title:row.title,description:row.description,h1:text(h1[0]),sourceSections:chapter?.sections.length});}
 for(const old of Object.keys(curriculumRedirects))for(const prefix of ['','/ur']){assert.ok(!manifest.some((r:any)=>r.path===prefix+old));assert.ok(!xml.includes('<loc>https://learnsmc.xyz'+prefix+old+'</loc>'));}
 assert.equal((xml.match(/<loc>/g)||[]).length,sitemapCount);assert.equal(manifest.filter((r:any)=>r.indexable&&/^\/(ur\/)?learn\//.test(r.path)).length,2*publishedCount);
-fs.writeFileSync('outputs/curriculum-rollout/static-verification.json',JSON.stringify({pages:report,canonicalLessons:2*publishedCount,directoryEntries:97,published:publishedCount,inProgress:97-publishedCount,sitemap:sitemapCount},null,2));console.log('Phase 1 static passed: 216 EN/UR chapter/hub documents (80 noindex placeholders), 114 canonical lessons, retained source paragraphs/quizzes/anchors, metadata, schema, language links and 739 sitemap URLs.');
+fs.writeFileSync('outputs/curriculum-rollout/static-verification.json',JSON.stringify({pages:report,canonicalLessons:2*publishedCount,directoryEntries:97,published:publishedCount,inProgress:97-publishedCount,sitemap:sitemapCount},null,2));console.log(`Phase 1 static passed: ${urls.length*2} EN/UR chapter/hub documents (${(97-publishedCount)*2} noindex placeholders), ${publishedCount*2} canonical lessons, retained source content, metadata/schema/languages and ${sitemapCount} sitemap URLs.`);
 
 const inProgress=activeCurriculumChapters.filter(c=>c.status==='in-progress');
 for(const language of ['en','ur']){

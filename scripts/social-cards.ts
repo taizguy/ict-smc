@@ -61,7 +61,7 @@ export function generateSocialCards(dist: string) {
     const englishPath = withoutLocale(page.path);
     const chapter = textbookChapters.find(c=>englishPath===`/learn/${c.slug}/`);
     const spec = chapter && chapterDiagrams[chapter.id];
-    const label = chapter ? `CHAPTER ${String(chapter.id).padStart(2,'0')}` : englishPath.startsWith('/articles/') ? 'ARTICLES' : englishPath.startsWith('/tools/') ? 'WORKBENCH & LAB' : 'ICT & SMART MONEY CONCEPTS';
+    const label = chapter ? `CHAPTER ${String(chapter.id===1031?31:chapter.id).padStart(2,'0')}` : englishPath.startsWith('/articles/') ? 'ARTICLES' : englishPath.startsWith('/tools/') ? 'WORKBENCH & LAB' : 'ICT & SMART MONEY CONCEPTS';
     const lines = wrap(title, urdu ? 33 : 29);
     const text = lines.map((line,i)=>`<text x="${urdu?700:60}" y="${205+i*61}" ${urdu?'direction="rtl" text-anchor="end"':''} font-size="${urdu?46:50}" font-weight="600" fill="#192c47">${escape(line)}</text>`).join('');
     let art = spec ? spec.marks.map(mark).join('') : `<path d="M35 145 H105 V85 H180 V120 H255 V50 H350" stroke="#2453ef" stroke-width="5" fill="none"/><circle cx="350" cy="50" r="9" fill="#ce5347"/><path d="M35 185 H350" stroke="#d6ddee" stroke-width="2"/>`;
@@ -95,6 +95,10 @@ export function generateSocialCards(dist: string) {
     });
     updated = updated.replace('</head>',[...tags.values()].join('')+'</head>');
     fs.writeFileSync(file,updated);
+    if(chapter?.id===1031){
+      const ready=fs.readFileSync(file,'utf8').replace(/(<script\b[^>]*type="application\/ld\+json"[^>]*>)([\s\S]*?)(<\/script>)/g,(_all,a,json,b)=>{const graph=JSON.parse(json);for(const node of graph['@graph']||[graph])if(node['@type']==='Article')node.image={'@type':'ImageObject',url:image,width:1200,height:630,caption:alt};return a+JSON.stringify(graph).replace(/</g,'\\u003c')+b;});
+      fs.writeFileSync(file,ready);
+    }
     count++;
   }
   console.log(`Social cards generated: ${count} unique localized 1200×630 PNGs with OG and Twitter alternative text.`);

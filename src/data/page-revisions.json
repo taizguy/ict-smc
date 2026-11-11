@@ -362,9 +362,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/learn/fair-value-gaps-fvg-and-consequent-encroachment/": {
-      "fingerprint": "c9c52772c0c1e996d3264f6c45f80e20f00a0d48f4407f0e7966ac9a26478663",
-      "lastmod": "2026-11-10",
-      "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
+      "fingerprint": "97fa78a92f350f55abbc6c3379d10eeecb9fcf672451a10caa8c986ec481b22b",
+      "lastmod": "2026-11-11",
+      "evidence": "Chapter 26 supplied-PDF implementation; docs/chapter26-fvg-report.md and outputs/fvg-document-review/static-verification.json"
     },
     "/learn/how-an-exchange-matches-orders/": {
       "fingerprint": "32cf12989fca2145145f96bc82ec8aba0fb224c19965b3aa5551b2cf6ea677b6",
@@ -2207,9 +2207,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/learn/fair-value-gaps-fvg-and-consequent-encroachment/": {
-      "fingerprint": "5df0308c8cb76e3773689a910a239b6a41b4b6da02c7e35560cb9469bc6273f1",
-      "lastmod": "2026-11-10",
-      "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
+      "fingerprint": "47116bd12c24066ab113c2df661ab4e55b1ff27132d2cffcaacc79cce39f08a5",
+      "lastmod": "2026-11-11",
+      "evidence": "Chapter 26 supplied-PDF implementation; docs/chapter26-fvg-report.md and outputs/fvg-document-review/static-verification.json"
     },
     "/ur/learn/how-an-exchange-matches-orders/": {
       "fingerprint": "09620166276ff35c4e463bf3ffb5ddec5a9bfa6848643a5db8850c525e3a0617",

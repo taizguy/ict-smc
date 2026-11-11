@@ -354,7 +354,7 @@ export const chapterCatalog = [
   {
     "id": 13,
     "slug": "fair-value-gaps-fvg-and-consequent-encroachment",
-    "title": "Fair Value Gaps: Formation, CE and Examples",
+    "title": "Fair Value Gaps (FVG): Formation, CE and Examples",
     "part": "Part IV - Price Delivery",
     "status": "published"
   },

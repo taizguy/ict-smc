@@ -32,6 +32,22 @@ function walk(dir:string){for(const e of fs.readdirSync(dir,{withFileTypes:true}
   if(a.tagName==='details'||['li','p','dd','figcaption'].includes(a.tagName)&&context===content(parent))context=content(a);
   if(a.tagName==='fieldset'&&cls.includes('chapter-quiz-question')){const answer=descendants(a).find(v=>v.tagName==='strong');if(answer&&content(answer).trim()!==n.value.trim()&&parent.tagName==='li')reason='quiz distractor; correct answer and explanation are in this fieldset';}
   if(a.tagName==='a'&&/youtube\.com|youtu\.be/.test(a.attrs?.find((x:any)=>x.name==='href')?.value||'')&&/algorithmic.*price delivery/i.test(n.value))reason='attributed source-video title, not a claim by the page';
+  // A quoted metric myth is not an endorsement when its own visible answer
+  // immediately limits it. Require both semantic context and a conditional reply;
+  // a quotation, class name or unrelated caveat alone never exempts a promise.
+  if(/^["“].*win[ -]rate.*["”]$/i.test(n.value.trim())){
+   const conditional=(v:any)=>v&&/^Only if\b/i.test(content(v).trim())&&content(v).trim().length>15&&content(v).trim().length<350;
+   if(a.tagName==='tr'){
+    const cells=(a.childNodes||[]).filter((v:any)=>['th','td'].includes(v.tagName));let table=a.parentNode;while(table&&table.tagName!=='table')table=table.parentNode;
+    const headings=table&&descendants(table).find(v=>v.tagName==='thead');const labels=headings&&descendants(headings).filter(v=>v.tagName==='th').map(content).map(v=>v.trim().toLowerCase());
+    if(labels?.[0]==='myth'&&labels?.[1]==='reality'&&content(cells[0]).trim()===n.value.trim()&&conditional(cells[1]))reason='quoted metric myth paired with its own conditional reality cell';
+   }
+   if(a.tagName==='details'){
+    const summary=descendants(a).find(v=>v.tagName==='summary'),reply=(a.childNodes||[]).find((v:any)=>v.tagName==='p');let figure=a.parentNode;while(figure&&figure.tagName!=='figure')figure=figure.parentNode;
+    const caption=figure&&descendants(figure).find(v=>v.tagName==='figcaption');
+    if(summary&&content(summary).trim()===n.value.trim()&&conditional(reply)&&caption&&/myth.*reality/i.test(content(caption)))reason='quoted metric myth with its conditional reply and explicit myth/reality caption';
+   }
+  }
  if(/[?؟]$/.test(n.value.trim())&&a.tagName==='fieldset'&&cls.includes('chapter-quiz-question')){const answer=descendants(a).find(v=>v.tagName==='strong');if(answer&&/^(?:no[. ,]|نہیں)/i.test(content(answer).trim()))reason='quiz question with an explicit negative correct answer in the same fieldset';}
   if(/win[ -]rate/i.test(n.value)&&n.value.trim().length<80&&!/highest|profit|wealthy|guarantee|\d\s*%/i.test(n.value)){
    let support:any;

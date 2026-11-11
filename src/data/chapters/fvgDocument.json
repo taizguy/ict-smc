@@ -1,0 +1,1542 @@
+{
+  "h1": "Fair Value Gaps (FVG): Formation, CE and Examples",
+  "quickAnswer": "A fair value gap (FVG) is a three-candle price imbalance. In a bullish FVG, the high of candle 1 sits below the low of candle 3, so the middle candle's strong move left a price range that the outer candles never covered. Traders mark that range as a zone, watch its midpoint (called consequent encroachment, or CE), and look for price to return to it as potential support or resistance. In a bearish FVG, the low of candle 1 sits above the high of candle 3.",
+  "takeaways": [
+    "An FVG is a zone, not a single line. It is defined by two prices: the wick of candle 1 and the wick of candle 3.",
+    "It records one-sided, fast trading. It is a footprint of displacement, not a guarantee of anything.",
+    "CE is the 50% midpoint of the gap. Many traders treat it as a verdict line for whether the gap is respected.",
+    "A gap can be tapped, partly filled, fully filled or inverted (turned into the opposite zone). Each state means something different.",
+    "Not every FVG fills, and not every FVG is worth trading. Size, location, timeframe and trend context decide quality.",
+    "FVGs work best as one piece of a confluence stack, together with structure, liquidity and higher-timeframe bias."
+  ],
+  "sections": [
+    {
+      "number": 1,
+      "title": "1. What Is a Fair Value Gap?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "When a market moves very fast in one direction, price can race through a range so quickly that the candles around the move never trade in part of it. On the chart, that leftover stretch looks like empty space beside a long candle. Traders call it a fair value gap, imbalance or inefficiency."
+        },
+        {
+          "type": "paragraph",
+          "text": "The idea behind it: that range saw trading mostly from one side (urgent buyers or urgent sellers) and little from the other. Many traders expect price to come back later to \"rebalance\" that area, and they use the returning visit as a place to plan entries, stops and targets."
+        },
+        {
+          "type": "paragraph",
+          "text": "Beginner picture: Imagine a sale where shoppers rush a shelf so quickly that several price tags are skipped without anyone checking them. Later, some shoppers drift back to look at what they missed. An FVG is that skipped shelf on a chart."
+        },
+        {
+          "type": "paragraph",
+          "text": "Name warning: \"Fair value\" also has other meanings in finance, such as an estimate of what an asset is worth, or the theoretical level of a futures contract against its index. The chart-pattern FVG in this guide is different. It describes a skipped price range, not a valuation."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "2. Anatomy: The Three-Candle Rule",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "An FVG needs three consecutive candles. The middle candle is the engine (the displacement). The outer two define the edges."
+        },
+        {
+          "type": "code",
+          "text": "Bullish FVG                      Bearish FVG\n          [C3] low  ---- top of gap          [C1] low  ---- top of gap\n   [C2]    |  (gap zone)                      |  (gap zone)\n          [C1] high ---- bottom of gap       [C3] high ---- bottom of gap"
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Item",
+              "Bullish FVG",
+              "Bearish FVG"
+            ],
+            [
+              "Direction of the move",
+              "Up",
+              "Down"
+            ],
+            [
+              "Condition",
+              "High of C1 is below low of C3",
+              "Low of C1 is above high of C3"
+            ],
+            [
+              "Gap top",
+              "Low of C3",
+              "Low of C1"
+            ],
+            [
+              "Gap bottom",
+              "High of C1",
+              "High of C3"
+            ],
+            [
+              "Gap size",
+              "Low of C3 minus high of C1",
+              "Low of C1 minus high of C3"
+            ],
+            [
+              "Role later",
+              "Possible support (price dips in, then rises)",
+              "Possible resistance (price rallies in, then falls)"
+            ],
+            [
+              "Other names",
+              "BISI",
+              "SIBI"
+            ]
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Rules of thumb for drawing it"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Use wicks, not bodies, for the edges. Gaps between bodies where wicks still overlap are a different thing (volume imbalance, see Section 10).",
+            "Look for a large middle candle. A tiny middle candle with a small gap is usually noise.",
+            "Draw the box from candle 1's wick edge to candle 3's wick edge, then extend it to the right until it is resolved.",
+            "Mark the midpoint (CE) with a dashed line."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "3. Why FVGs Form",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Three common triggers produce the fast, one-sided move that leaves a gap:"
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Trigger",
+              "What happens",
+              "Typical places"
+            ],
+            [
+              "Aggressive order flow",
+              "A burst of market orders eats through the available quotes faster than new quotes appear",
+              "Session opens, breakouts from ranges"
+            ],
+            [
+              "News and data shocks",
+              "A surprise changes expectations instantly; both sides reprice",
+              "Rate decisions, inflation, jobs, earnings"
+            ],
+            [
+              "Thin liquidity",
+              "Few resting orders, so a modest order skips several price levels",
+              "Off-hours, holidays, small caps, low-volume crypto pairs"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Also common: stop-order cascades, where triggered stops become market orders and accelerate the move, and liquidity sweeps, where price grabs resting orders above a high or below a low and then reverses with force."
+        },
+        {
+          "type": "h3",
+          "text": "The \"return to rebalance\" theory, and its honest limits"
+        },
+        {
+          "type": "paragraph",
+          "text": "The popular explanation is that the unmatched range holds unfinished business, and that liquidity providers prefer to trade at every price, so price tends to revisit it. It is an appealing story and it fits many charts. Keep two cautions in mind:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "It is a working theory, not a measured law. Several educational sources themselves say the pattern does not prove institutional involvement and cannot predict reversals.",
+            "Because FVGs are everywhere on charts, you will always find examples that worked. The real question is how often they work compared with a rule you set before the trade. Section 18 explains how to test that."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "4. Bullish and Bearish FVGs (BISI and SIBI)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In Inner Circle Trader (ICT) terminology the two types have longer names that describe who was active:"
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Label",
+              "Full name",
+              "Plain meaning"
+            ],
+            [
+              "BISI",
+              "Buy-side imbalance, sell-side inefficiency",
+              "A bullish FVG. Buyers dominated; sellers barely traded in the gap"
+            ],
+            [
+              "SIBI",
+              "Sell-side imbalance, buy-side inefficiency",
+              "A bearish FVG. Sellers dominated; buyers barely traded in the gap"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A simple memory trick: the first word names the side that was pushing price. BISI means buyers pushed. SIBI means sellers pushed."
+        },
+        {
+          "type": "h3",
+          "text": "How traders read each type"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Bullish FVG in an uptrend: a pullback into the gap is a candidate buy area.",
+            "Bearish FVG in a downtrend: a rally into the gap is a candidate sell area.",
+            "Opposite-direction FVGs can also act as targets, since price often travels toward the next unfilled gap."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "5. Consequent Encroachment (CE)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Consequent encroachment (CE) is the exact midpoint (50%) of the FVG. Some call it the mean threshold."
+        },
+        {
+          "type": "paragraph",
+          "text": "Formula: CE = (gap top + gap bottom) / 2"
+        },
+        {
+          "type": "h3",
+          "text": "Why traders care about CE"
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Use",
+              "How it is applied"
+            ],
+            [
+              "Test of respect",
+              "Price that dips into the gap but stays above CE (bullish) is read as respecting the gap. A close beyond CE is read as weakening it"
+            ],
+            [
+              "Entry reference",
+              "Some traders place limit entries at CE for a tighter stop and better reward-to-risk, accepting that price may not reach it"
+            ],
+            [
+              "Partial fill measure",
+              "\"The gap filled to CE\" is a standard way to describe depth of retracement"
+            ],
+            [
+              "Zone verdict",
+              "Many models call a gap \"mitigated enough\" once CE is touched"
+            ]
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Three CE outcomes to know"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Holds: price touches or slightly pierces CE and reverses. Gap respected.",
+            "Wicks through, closes back: price spikes beyond CE but candles close back inside the gap's favourable half. Often read as a stop hunt followed by respect.",
+            "Closes through: a candle closes beyond CE (or the far edge, depending on the rule). The gap is weakened or, if closed fully through, may invert (Section 9)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Traders disagree on whether to use the CE or the far edge for invalidation. Pick one rule, write it down, and test it. Do not switch rules mid-trade."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "6. The Life Cycle of an FVG",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A gap changes state as price interacts with it. Knowing the state tells you what to expect."
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "State",
+              "Definition",
+              "How to read it"
+            ],
+            [
+              "Fresh (unmitigated)",
+              "Gap formed; price has not returned",
+              "Candidate zone and potential target"
+            ],
+            [
+              "Tapped",
+              "Price touched the near edge",
+              "First reaction point; many entries trigger here"
+            ],
+            [
+              "CE tested",
+              "Price reached the 50% level",
+              "Key decision point"
+            ],
+            [
+              "Partially filled",
+              "Price entered but did not cross the far edge",
+              "Zone may still have remaining reactions"
+            ],
+            [
+              "Fully filled (mitigated)",
+              "Price traded through the entire gap",
+              "Gap usually considered used up"
+            ],
+            [
+              "Respected",
+              "Price reacted and moved away in the original direction",
+              "Supports the trend"
+            ],
+            [
+              "Disrespected / inverted",
+              "Price closed through the gap against its direction",
+              "Zone may flip role (Section 9)"
+            ],
+            [
+              "Breakaway",
+              "Price never returns and keeps going",
+              "Strong momentum signal"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "7. Worked Examples With Numbers",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The prices below are made up to show the arithmetic. They are not real market data."
+        },
+        {
+          "type": "h3",
+          "text": "Example A: Bullish FVG and a CE entry"
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Candle",
+              "High",
+              "Low"
+            ],
+            [
+              "C1",
+              "100.00",
+              "98.50"
+            ],
+            [
+              "C2 (big green)",
+              "104.00",
+              "99.80"
+            ],
+            [
+              "C3",
+              "105.50",
+              "102.00"
+            ]
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "C1 high (100.00) is below C3 low (102.00), so a bullish FVG exists.",
+            "Gap = 100.00 to 102.00, size 2.00.",
+            "CE = (100.00 + 102.00) / 2 = 101.00.",
+            "Later price pulls back to 101.00 and prints a bullish rejection candle.",
+            "A trader using CE as entry might place a stop just below the gap bottom, at 99.60, and a target at the prior swing high of 106.50.",
+            "Risk = 101.00 − 99.60 = 1.40. Reward = 106.50 − 101.00 = 5.50. Reward-to-risk is about 3.9 to 1."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Example B: Bearish FVG, filled edge to edge"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "C1 low is 250.00, C3 high is 247.50, so a bearish FVG from 247.50 to 250.00 exists. CE = 248.75.",
+            "Price rallies, passes CE, and closes above 250.00. The gap is fully filled and the original selling pressure is questioned. A trader who needed the gap to hold is stopped out. This is why rules for invalidation matter."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Example C: Not an FVG"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "C1 high is 80.00 and C3 low is 79.60. The wicks overlap, so no FVG exists, even if the middle candle is large. Do not draw a zone."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Example D: Breakaway gap"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "A bullish FVG forms at 40.00 to 41.50 on a strong earnings reaction. Price keeps rising for days without returning. The gap never fills in the trader's window. Waiting for a pullback would have meant no trade, which is a normal outcome and a reason to never chase."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Example E: Crypto illustration (concept only)"
+        },
+        {
+          "type": "paragraph",
+          "text": "A coin jumps through a price band in one candle with almost no trading inside the band. That band is the FVG. If price later returns to the midpoint and bounces, traders describe it as a CE respect. If it slices through on high volume, they treat it as a failed gap."
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "8. FVG vs Related Concepts",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Concept",
+              "What it is",
+              "Key difference from FVG"
+            ],
+            [
+              "Regular price gap",
+              "Empty space between one candle's close and the next candle's open, usually across a session break",
+              "FVG sits inside continuous trading and uses three candles"
+            ],
+            [
+              "Imbalance / inefficiency",
+              "Broad terms for one-sided trading",
+              "Often used as synonyms for FVG; \"imbalance\" can also mean any lopsided area"
+            ],
+            [
+              "Liquidity void",
+              "A larger stretch of fast, thin trading, often covering several candles",
+              "FVG is a small, precise three-candle version; a void can contain several FVGs"
+            ],
+            [
+              "Volume imbalance",
+              "Gap between candle bodies while wicks still overlap",
+              "Price technically traded there, just one-sidedly; weaker signal than an FVG"
+            ],
+            [
+              "Order block",
+              "Last opposite candle before a strong move",
+              "A candle-based zone; FVG is a gap-based zone. They are often paired"
+            ],
+            [
+              "Breaker block",
+              "A failed order block that flips role",
+              "Similar flip idea to an inverted FVG"
+            ],
+            [
+              "Support/resistance level",
+              "Price level with repeated reactions",
+              "An FVG is a one-event zone from a single impulse"
+            ],
+            [
+              "Balanced price range (BPR)",
+              "Overlap of two opposite FVGs",
+              "A two-sided rebalanced area"
+            ],
+            [
+              "Inverse FVG (IFVG)",
+              "An FVG price closed through",
+              "An FVG with flipped role"
+            ],
+            [
+              "Implied FVG",
+              "A gap inferred between candle bodies and wicks that does not meet the strict three-candle rule",
+              "A looser, more subjective cousin"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Gap vs FVG in one line: a regular gap needs a break in time (market closed, then reopened); an FVG needs only speed."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "9. Inverse Fair Value Gap (IFVG)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "An inverse fair value gap, also called an inversion FVG or IFVG, appears when price returns to an FVG and closes through it instead of respecting it. The failed zone is then treated as a zone of the opposite type."
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Original gap",
+              "What breaks it",
+              "Becomes",
+              "Expected use"
+            ],
+            [
+              "Bullish FVG (support)",
+              "A candle closes below the gap",
+              "Bearish IFVG (resistance)",
+              "Later rallies into it may reverse down"
+            ],
+            [
+              "Bearish FVG (resistance)",
+              "A candle closes above the gap",
+              "Bullish IFVG (support)",
+              "Later dips into it may reverse up"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Why the flip idea makes sense: traders who bought inside the original zone are now trapped. When price comes back up to their entry area, some exit at break-even, which adds selling pressure. This is the same logic behind \"broken support becomes resistance.\""
+        },
+        {
+          "type": "h3",
+          "text": "Rules that different teachers use (pick and test one)"
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Question",
+              "Strict version",
+              "Looser version"
+            ],
+            [
+              "What counts as \"through\"?",
+              "Candle body closes beyond the far edge",
+              "Candle closes beyond CE"
+            ],
+            [
+              "Must it happen right away?",
+              "Not required; the flip can come after several candles",
+              "Some require it within a few candles"
+            ],
+            [
+              "Which timeframe?",
+              "Same as the original gap",
+              "Close on a lower timeframe is accepted by some"
+            ],
+            [
+              "Which entry?",
+              "Retest of the near edge",
+              "Retest of the new zone's CE"
+            ]
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Typical IFVG sequence"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Price forms a bullish FVG and starts to rise.",
+            "A liquidity sweep or news event drives price back down.",
+            "A strong candle closes below the bullish FVG.",
+            "Price retraces up into the now-inverted zone and stalls near CE.",
+            "A rejection candle gives the entry; stop above the zone; target is a prior low or the next opposing FVG."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Important: inversion gaps are rarer and more selective than normal FVGs, and they work best with other evidence (structure break, liquidity sweep). Trading every inversion without filters tends to look like random noise."
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "10. Balanced Price Range, Implied FVG and Other Relatives",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Term",
+              "Definition",
+              "Why it matters"
+            ],
+            [
+              "Balanced Price Range (BPR)",
+              "The overlap zone where a bullish FVG and a bearish FVG cover the same prices",
+              "Shows price was rebalanced from both directions; traders watch the overlap as a strong reaction area"
+            ],
+            [
+              "Implied FVG",
+              "A looser imbalance read from candle bodies and wicks that does not meet the strict three-candle rule",
+              "More subjective; test it separately from strict FVGs"
+            ],
+            [
+              "Volume imbalance",
+              "Gap between bodies of two candles whose wicks still overlap",
+              "Price traded there, but one-sidedly; thinner signal"
+            ],
+            [
+              "Immediate rebalance",
+              "An FVG that is filled almost at once by the next candles",
+              "Suggests the move was weaker than it looked"
+            ],
+            [
+              "Breakaway gap",
+              "An FVG that price leaves behind and never revisits",
+              "Sign of very strong momentum"
+            ],
+            [
+              "Liquidity void",
+              "A larger fast move spanning several candles, often holding several FVGs",
+              "Context zone; FVGs inside it give entries"
+            ],
+            [
+              "Mitigation",
+              "Price trading back into an FVG (or order block)",
+              "The event that \"uses up\" the zone"
+            ],
+            [
+              "Displacement",
+              "A strong, large-bodied, one-direction move",
+              "The cause of most meaningful FVGs"
+            ],
+            [
+              "First presented FVG",
+              "The first FVG that appears after a key level, session open or structure shift",
+              "Some rule sets only trade this one"
+            ],
+            [
+              "Respect / disrespect",
+              "Whether price reacts at the gap or closes through it",
+              "Used to score gaps"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "11. Which FVGs Deserve Attention? (Quality Filter)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Most charts contain dozens of FVGs. Trading all of them is the fastest way to give back profits. Score each gap against this checklist."
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Filter",
+              "Higher-quality sign",
+              "Lower-quality sign"
+            ],
+            [
+              "Displacement",
+              "Large-bodied middle candle, strong close",
+              "Small candle, wicks everywhere"
+            ],
+            [
+              "Size vs volatility",
+              "Gap is meaningful against recent average range (e.g. a multiple of ATR)",
+              "Tiny gap that disappears inside the spread"
+            ],
+            [
+              "Trend alignment",
+              "Gap agrees with the higher-timeframe bias",
+              "Gap fights the higher-timeframe direction"
+            ],
+            [
+              "Location",
+              "Bullish gap in a discount (lower half of the swing); bearish gap in a premium (upper half)",
+              "Bullish gap in premium, bearish in discount"
+            ],
+            [
+              "Structure",
+              "Created while breaking a swing high/low (market structure shift)",
+              "Formed inside a choppy range"
+            ],
+            [
+              "Liquidity",
+              "Follows a sweep of equal highs/lows or a prior high/low",
+              "No liquidity event beforehand"
+            ],
+            [
+              "Freshness",
+              "Untouched",
+              "Already tapped several times"
+            ],
+            [
+              "Distance",
+              "Close to current price",
+              "Far away"
+            ],
+            [
+              "Session and time",
+              "Forms in a liquid session or key time window",
+              "Forms in dead hours"
+            ],
+            [
+              "Volume / order flow",
+              "Heavy participation on the impulse",
+              "Weak volume"
+            ],
+            [
+              "News context",
+              "Formed on scheduled data; treat with care around releases",
+              "Random illiquid spike"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A simple scoring habit: give each gap one point per filter, trade only gaps with a minimum score, and test whether higher scores really produce better results."
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "12. Multi-Timeframe Use",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Role",
+              "Timeframe examples",
+              "Job"
+            ],
+            [
+              "Bias",
+              "Daily, 4-hour",
+              "Decide whether you only look for buys or sells; mark large FVGs as targets"
+            ],
+            [
+              "Area of interest",
+              "1-hour, 15-minute",
+              "Find the FVG you want price to reach"
+            ],
+            [
+              "Trigger",
+              "5-minute, 1-minute",
+              "Wait for a lower-timeframe confirmation (structure shift, inverse FVG, rejection candle) inside the area"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Useful ideas:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Higher-timeframe FVGs are stronger and last longer. A daily gap can stay relevant for weeks.",
+            "A lower-timeframe FVG inside a higher-timeframe FVG is a classic nested setup.",
+            "Opposing HTF gap = target. Price is often drawn toward an unfilled gap in the direction of bias.",
+            "Do not mix rules between timeframes without testing; a rule that works on the 1-hour may not on the 1-minute."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": "13. Trading Strategies",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "#",
+              "Strategy",
+              "Idea",
+              "Best when",
+              "Main risk"
+            ],
+            [
+              "1",
+              "Continuation retracement",
+              "Trend moves, leaves FVG, price pulls back into it, you join the trend",
+              "Clear trend with HTF bias",
+              "Gap never gets retested; or fails"
+            ],
+            [
+              "2",
+              "CE entry",
+              "Place limit order at the 50% line for tighter stop",
+              "Gap is large enough to justify",
+              "Missed trades when price turns before CE"
+            ],
+            [
+              "3",
+              "Edge entry",
+              "Enter at the near edge with stop beyond the far edge",
+              "You want a higher fill rate",
+              "Wider stop, lower reward-to-risk"
+            ],
+            [
+              "4",
+              "Inversion (IFVG) reversal",
+              "Trade the retest of a failed gap in the new direction",
+              "After sweep and structure break",
+              "Fewer signals, subjective rules"
+            ],
+            [
+              "5",
+              "FVG as target",
+              "Aim for the next opposing unfilled gap",
+              "You already have a trade and need targets",
+              "Gap may not be reached"
+            ],
+            [
+              "6",
+              "Fast-fill scalp",
+              "Trade the quick tap and bounce on lower timeframes",
+              "Liquid sessions, tight spreads",
+              "Costs and slippage eat the edge"
+            ],
+            [
+              "7",
+              "Confluence with order block",
+              "Gap overlaps the order block that started the move",
+              "Strong displacement",
+              "Over-fitting on hindsight"
+            ],
+            [
+              "8",
+              "Session model",
+              "Look for the first FVG inside a chosen time window after a liquidity sweep",
+              "Index futures, forex majors",
+              "Needs strict, tested time rules"
+            ]
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "A generic step-by-step plan (works for strategies 1 to 3)"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Bias: decide direction from a higher timeframe.",
+            "Level: note a liquidity level (prior high/low, equal highs/lows) price may sweep.",
+            "Displacement: wait for a strong move that breaks structure and leaves an FVG.",
+            "Mark: draw the zone, its CE, and the swing low/high behind it.",
+            "Wait: let price come back. No retest means no trade.",
+            "Trigger: require a lower-timeframe confirmation inside the zone.",
+            "Execute: enter with predefined stop and target.",
+            "Manage: move the stop only by rules you wrote down in advance.",
+            "Log: screenshot and record the outcome for later review."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": "14. Entry, Stop, Target and Risk",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "Placement options"
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Item",
+              "Option",
+              "Pros",
+              "Cons"
+            ],
+            [
+              "Entry",
+              "Near edge of gap",
+              "Higher chance of fill",
+              "Larger stop"
+            ],
+            [
+              "",
+              "CE (50%)",
+              "Better reward-to-risk",
+              "May be missed"
+            ],
+            [
+              "",
+              "After a confirmation candle",
+              "Fewer false starts",
+              "Worse price"
+            ],
+            [
+              "Stop",
+              "Beyond the far edge of the gap",
+              "Respects the zone",
+              "Wider stop"
+            ],
+            [
+              "",
+              "Beyond the swing point that created the gap",
+              "Structural logic",
+              "Widest stop"
+            ],
+            [
+              "",
+              "Just beyond CE",
+              "Tight",
+              "Often too tight; zones behave like areas, not lines"
+            ],
+            [
+              "Target",
+              "Next swing high/low",
+              "Simple",
+              "May be small"
+            ],
+            [
+              "",
+              "Opposing FVG",
+              "Tied to the same idea",
+              "May not be reached"
+            ],
+            [
+              "",
+              "Prior day high/low or session extremes",
+              "Common reference levels",
+              "Needs context"
+            ],
+            [
+              "",
+              "Fixed multiple of risk (2R, 3R)",
+              "Consistent math",
+              "Ignores structure"
+            ]
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Position-size example (illustrative)"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Account: 10,000. Risk per trade: 1% = 100.",
+            "Entry 101.00, stop 99.60, so risk per unit = 1.40.",
+            "Size = 100 / 1.40 = about 71 units.",
+            "If the target is 106.50, the potential gain is about 5.50 × 71 = 390.5, so reward-to-risk is roughly 3.9 to 1.",
+            "Remember to subtract spreads, commissions and slippage, and note that a high reward-to-risk ratio does not matter if the win rate is too low. Check both numbers together."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Risk rules worth writing down"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Maximum risk per trade and per day.",
+            "No trade inside high-impact news windows unless that is a tested part of your plan.",
+            "A maximum number of attempts per gap.",
+            "What happens if the gap is filled before your entry (cancel the order)."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": "15. The Confluence Stack",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Treat the FVG as one layer. Each extra layer should add independent information, not repeat the same idea."
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Layer",
+              "What to check",
+              "Why it helps"
+            ],
+            [
+              "Trend / bias",
+              "Higher-timeframe direction",
+              "Avoids fighting the dominant flow"
+            ],
+            [
+              "Market structure",
+              "Break of structure or change of character",
+              "Confirms displacement"
+            ],
+            [
+              "Liquidity",
+              "Sweep of prior highs/lows",
+              "Explains why the impulse started"
+            ],
+            [
+              "Order block / breaker",
+              "Overlap with the origin candle",
+              "Strengthens the zone"
+            ],
+            [
+              "Premium / discount",
+              "Position within the swing",
+              "Buy low, sell high within range"
+            ],
+            [
+              "Key levels",
+              "Prior day high/low, session open, VWAP, round numbers",
+              "Common reaction areas"
+            ],
+            [
+              "Volume / order flow",
+              "Footprint or volume profile (a gap inside a low-volume area tends to be crossed quickly)",
+              "Tests if aggression was real"
+            ],
+            [
+              "Time",
+              "Active session or time window",
+              "Better liquidity"
+            ],
+            [
+              "News calendar",
+              "Scheduled events",
+              "Avoid unplanned volatility"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Caution: adding more layers does not make a trade safer if the layers all say the same thing. It also reduces how often you trade. Test the stack."
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "title": "16. FVGs Across Markets and Sessions",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Market",
+              "Behaviour notes",
+              "Watch out for"
+            ],
+            [
+              "Forex",
+              "Very liquid majors; FVGs common on news and session opens (London, New York)",
+              "Spread widening around news; broker price feed differences"
+            ],
+            [
+              "Index futures",
+              "Clean volume data; strong session structure",
+              "Open/close auctions create their own gaps"
+            ],
+            [
+              "Stocks",
+              "Both FVGs and regular overnight gaps",
+              "Earnings gaps are regular gaps, not FVGs; thin small caps produce noisy gaps"
+            ],
+            [
+              "Crypto",
+              "24/7 so no session gaps; frequent fast impulses",
+              "Exchange-specific prices; weekend liquidity; extreme leverage cascades"
+            ],
+            [
+              "Commodities",
+              "Strong reaction to inventory and supply reports",
+              "Contract rollovers distort charts"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Because different brokers and exchanges feed different prices, the same FVG can look slightly different. Draw gaps from the feed you actually trade."
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "title": "17. Detecting FVGs: Manual, Indicator and Code",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "Manual steps"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Scan for large-bodied candles.",
+            "Check the candle before and after for non-overlapping wicks.",
+            "Draw the box and CE line, extend right.",
+            "Mark the state (fresh, tapped, filled)."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Indicator features to look for"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Minimum gap size or ATR filter.",
+            "Automatic CE line.",
+            "Mitigation rule options (CE touch, close through, full fill).",
+            "Multi-timeframe display.",
+            "Inversion (IFVG) handling.",
+            "Limit on number of visible gaps.",
+            "Alerts and backtest-friendly outputs."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Plain-language detection logic (pseudo-code)"
+        },
+        {
+          "type": "code",
+          "text": "for each candle i (starting at the third candle):\n    c1 = candle[i-2]; c3 = candle[i]\n    if c1.high < c3.low:   bullish FVG, bottom = c1.high, top = c3.low\n    if c1.low  > c3.high:  bearish FVG, top = c1.low, bottom = c3.high\n    require (top - bottom) >= minimum size (e.g. a fraction of ATR)\n    CE = (top + bottom) / 2\n    track state: fresh, tapped, CE tested, filled, inverted"
+        },
+        {
+          "type": "paragraph",
+          "text": "Look-ahead warning: the gap only exists once candle 3 has closed. Code or charts that mark it earlier use information from the future and give fake backtest results."
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "title": "18. Backtesting and the Evidence",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Step",
+              "What to do"
+            ],
+            [
+              "1",
+              "Write the exact rules (what counts as a gap, entry, stop, target, time window) before testing"
+            ],
+            [
+              "2",
+              "Test across several markets, years and volatility regimes"
+            ],
+            [
+              "3",
+              "Include spread, commission and slippage"
+            ],
+            [
+              "4",
+              "Use out-of-sample data (test on data you did not use to design the rules)"
+            ],
+            [
+              "5",
+              "Track win rate, average reward-to-risk, expectancy, maximum drawdown and trade count"
+            ],
+            [
+              "6",
+              "Compare against a simple baseline (e.g. random entries with the same stop and target)"
+            ],
+            [
+              "7",
+              "Forward-test on a demo account before risking money"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "What the evidence honestly looks like: the three-candle shape is easy to measure, so it is easy to test. Many educational authors report that gaps often get revisited and some never are. That is a description, not proof of profit. The pattern appears constantly on every chart, so only strict rules and proper testing can tell you whether it adds an edge for your market and timeframe."
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "title": "19. Common Mistakes",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Mistake",
+              "Fix"
+            ],
+            [
+              "Marking every gap on the chart",
+              "Use the quality filter in Section 11"
+            ],
+            [
+              "Trading against higher-timeframe bias",
+              "Decide direction first"
+            ],
+            [
+              "Stops too tight, inside the zone",
+              "Treat the FVG as an area; place stops beyond the structure"
+            ],
+            [
+              "Assuming every gap fills",
+              "Accept that some are breakaway gaps; do not chase"
+            ],
+            [
+              "Entering without confirmation in choppy ranges",
+              "FVGs are most useful after strong, trending displacement"
+            ],
+            [
+              "Ignoring spreads and slippage on tiny gaps",
+              "Require a minimum size"
+            ],
+            [
+              "Changing rules mid-trade",
+              "Write the plan before the trade"
+            ],
+            [
+              "Confusing weekend or session gaps with FVGs",
+              "Different patterns, different behaviour"
+            ],
+            [
+              "Marking a gap before candle 3 closes",
+              "Wait for the close"
+            ],
+            [
+              "Overfitting on past charts",
+              "Out-of-sample testing"
+            ],
+            [
+              "Over-leveraging",
+              "Fixed small risk per trade"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "title": "20. Pros and Cons",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Pros",
+              "Cons"
+            ],
+            [
+              "Objective, rule-based definition",
+              "Appears constantly, so many are low quality"
+            ],
+            [
+              "Works on any timeframe and market",
+              "No guarantee of a retest"
+            ],
+            [
+              "Gives defined entry, stop and target zones",
+              "Subjective variations (CE vs far edge, strict vs implied)"
+            ],
+            [
+              "Pairs well with structure and liquidity ideas",
+              "Theory about institutional intent is unproven"
+            ],
+            [
+              "Easy to code and test",
+              "Easy to fool yourself with hindsight"
+            ],
+            [
+              "Useful for targets as well as entries",
+              "Poor performance in low-volatility chop"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "title": "21. Myths",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Myth",
+              "Reality"
+            ],
+            [
+              "\"Every FVG must fill.\"",
+              "Many fill; some never do. There is no fixed rule or timeline"
+            ],
+            [
+              "\"FVGs prove banks or institutions are active.\"",
+              "The pattern is a chart footprint; it does not identify who traded"
+            ],
+            [
+              "\"CE always holds.\"",
+              "CE is a reference level; price often goes through it"
+            ],
+            [
+              "\"Bigger confluence always means higher win rate.\"",
+              "Only if layers add independent information"
+            ],
+            [
+              "\"A gap is the same as a liquidity void.\"",
+              "A void is usually larger and can contain several FVGs"
+            ],
+            [
+              "\"FVG strategy is a complete system.\"",
+              "It is a tool; you still need risk rules and a plan"
+            ],
+            [
+              "\"Lower timeframes give more profit.\"",
+              "They give more signals and more cost per trade"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "title": "22. Learning Roadmap (Beginner to Advanced)",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Level",
+              "Skills to master",
+              "Practice task"
+            ],
+            [
+              "Beginner",
+              "Candlesticks, support/resistance, the three-candle rule, bullish vs bearish",
+              "Mark 30 gaps on a chart; label each bullish or bearish"
+            ],
+            [
+              "Intermediate",
+              "CE, gap states, volume imbalance vs FVG, trend and structure, quality filter",
+              "Score each gap using Section 11 and note which got retested"
+            ],
+            [
+              "Upper-intermediate",
+              "IFVG, BPR, premium/discount, liquidity sweeps, multi-timeframe nesting",
+              "Record 20 trades on demo with screenshots"
+            ],
+            [
+              "Advanced",
+              "Rule writing, backtesting, order flow confirmation, session models, risk of ruin",
+              "Backtest one strict ruleset on two markets with costs"
+            ],
+            [
+              "Expert",
+              "Statistical validation, regime filters, algorithmic detection, portfolio-level risk",
+              "Build an automated detector and compare against a random baseline"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "title": "23. Glossary",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Term",
+              "Short definition"
+            ],
+            [
+              "FVG",
+              "Three-candle imbalance with non-overlapping outer wicks"
+            ],
+            [
+              "BISI / SIBI",
+              "Bullish / bearish FVG labels in ICT language"
+            ],
+            [
+              "CE",
+              "Consequent encroachment: the 50% midpoint of a gap"
+            ],
+            [
+              "IFVG",
+              "Inverse FVG: a gap price closed through"
+            ],
+            [
+              "BPR",
+              "Balanced price range: overlap of opposite FVGs"
+            ],
+            [
+              "Displacement",
+              "Strong, impulsive move"
+            ],
+            [
+              "Mitigation",
+              "Price returning into a zone"
+            ],
+            [
+              "Liquidity sweep",
+              "Price grabbing orders beyond a prior high/low, then reversing"
+            ],
+            [
+              "Premium / discount",
+              "Upper / lower half of a swing range"
+            ],
+            [
+              "Order block",
+              "Last opposite candle before an impulse"
+            ],
+            [
+              "Breaker",
+              "Failed order block that flips role"
+            ],
+            [
+              "MSS / CHoCH",
+              "Market structure shift / change of character"
+            ],
+            [
+              "ATR",
+              "Average true range: a volatility measure"
+            ],
+            [
+              "R (risk unit)",
+              "The amount risked on a trade, used to measure reward"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "title": "24. Frequently Asked Questions",
+      "blocks": []
+    },
+    {
+      "number": 25,
+      "title": "25. Final Thoughts",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A fair value gap is a simple shape with a lot of vocabulary built around it. The core idea fits on one line: fast, one-sided trading leaves a zone, and price sometimes comes back to it. Everything else in this guide (CE, inversion, balanced ranges, filters, confluence) exists to decide which gaps matter and what you do when price returns. Learn the shape, write strict rules, test them, and keep risk small."
+        }
+      ],
+      "nextReads": "What is market structure? · Order blocks explained · Liquidity sweeps · Premium and discount zones · Candlestick basics · Risk management and position sizing · How to backtest a strategy · What moves price in markets"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is a fair value gap?",
+      "answer": "A fair value gap is a three-candle imbalance in which the wicks of the first and third candles do not overlap, leaving a price range that the middle candle crossed rapidly. Traders mark it as a zone and watch for price to revisit it."
+    },
+    {
+      "question": "What does FVG stand for?",
+      "answer": "Fair value gap."
+    },
+    {
+      "question": "How do you find a bullish FVG?",
+      "answer": "Look for three candles where the high of the first is lower than the low of the third. The space between those two prices is the gap."
+    },
+    {
+      "question": "How do you find a bearish FVG?",
+      "answer": "Look for three candles where the low of the first is higher than the high of the third."
+    },
+    {
+      "question": "What is consequent encroachment (CE)?",
+      "answer": "The midpoint of an FVG. Traders use it as a decision line and sometimes as a limit-entry level."
+    },
+    {
+      "question": "What is an inverse fair value gap (IFVG)?",
+      "answer": "An FVG that price has closed through, after which traders treat the zone as the opposite type: a failed bullish FVG may act as resistance, and a failed bearish FVG may act as support."
+    },
+    {
+      "question": "What do BISI and SIBI mean?",
+      "answer": "BISI is a bullish FVG (buy-side imbalance, sell-side inefficiency). SIBI is a bearish FVG (sell-side imbalance, buy-side inefficiency)."
+    },
+    {
+      "question": "Do all fair value gaps get filled?",
+      "answer": "No. Many get revisited, some only partly, and some never. Gaps close to current price are revisited more often than distant ones, but there is no guarantee."
+    },
+    {
+      "question": "How long does it take for an FVG to fill?",
+      "answer": "There is no fixed time. Lower-timeframe gaps may fill within minutes or hours; higher-timeframe gaps can last for weeks or longer."
+    },
+    {
+      "question": "What is the difference between an FVG and a regular gap?",
+      "answer": "A regular gap is empty space between one candle's close and the next candle's open, usually after a market closes. An FVG forms during continuous trading and is defined by three candles."
+    },
+    {
+      "question": "What is the difference between an FVG and a liquidity void?",
+      "answer": "A liquidity void is a larger stretch of rapid, thin trading, often spanning several candles. An FVG is the precise three-candle version, and one void may contain several FVGs."
+    },
+    {
+      "question": "What is the difference between an FVG and a volume imbalance?",
+      "answer": "A volume imbalance is a gap between candle bodies where the wicks still overlap, so price did trade there. An FVG requires the wicks themselves not to overlap."
+    },
+    {
+      "question": "What is the difference between an FVG and an order block?",
+      "answer": "An order block is a candle (the last opposite candle before a strong move). An FVG is the gap the move leaves. They are often used together."
+    },
+    {
+      "question": "Which timeframe is best for FVGs?",
+      "answer": "No single timeframe is best. Higher timeframes give stronger, longer-lasting gaps; lower timeframes give more signals but more noise and cost. Many traders use a higher timeframe for bias and a lower one for entries."
+    },
+    {
+      "question": "Where do I place my stop loss on an FVG trade?",
+      "answer": "Common choices are beyond the far edge of the gap or beyond the swing point that created it. Treat the FVG as a zone, not a line, and size the trade so the stop distance fits your risk limit."
+    },
+    {
+      "question": "Is the FVG strategy profitable?",
+      "answer": "No pattern guarantees profit. Results depend on rules, market, costs and risk control. Test your exact ruleset with out-of-sample data before trading real money."
+    },
+    {
+      "question": "Do FVGs work in crypto, forex and stocks?",
+      "answer": "They can appear in any market with candlestick charts. Liquidity, spreads, sessions and data quality differ, so test per market."
+    },
+    {
+      "question": "Do FVGs work in a sideways market?",
+      "answer": "Usually less well. They are most useful after strong displacement in a trending move."
+    },
+    {
+      "question": "Can I use an FVG indicator instead of drawing by hand?",
+      "answer": "Yes. Indicators save time, but check how they define a gap, how they mark mitigation and whether they repaint or use future candles."
+    },
+    {
+      "question": "Are FVGs related to Smart Money Concepts (SMC) and ICT?",
+      "answer": "Yes. They are widely taught in those frameworks, which also teach CE, BISI/SIBI and inversion. The frameworks' claims about institutional behaviour are not proven by the pattern itself."
+    },
+    {
+      "question": "Can beginners trade FVGs?",
+      "answer": "Beginners can learn to identify them and practise on a demo account. Start with simple rules, small risk and a trading journal."
+    }
+  ]
+}

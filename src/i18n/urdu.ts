@@ -1,3 +1,4 @@
+import {fvgDocumentTranslations} from '../data/chapters/fvgDocumentTranslations';
 import {priceMovementTranslations} from '../data/chapters/priceMovementLesson';
 import {curriculumHubUrdu} from '../data/curriculumHubContent';
 import {curriculumPhase1Urdu} from '../data/curriculumPhase1';
@@ -269,4 +270,4 @@ Object.assign(urdu,legacyPracticeUrdu);
 for(const [key,value]of Object.entries(legacyPracticeTopicsUrdu))if(!urdu[key])urdu[key]=value;
 for (const source of Object.keys(urdu)) urdu[source] = refineTradingLanguage(source, urdu[source]);
 
-Object.assign(urdu,priceMovementTranslations);
+Object.assign(urdu,priceMovementTranslations,fvgDocumentTranslations);

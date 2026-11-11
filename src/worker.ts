@@ -1,3 +1,4 @@
+import {curriculumTarget,canonicalChapterId} from './utils/curriculumMigration';
 import { retiredGraphTarget } from './utils/knowledgeGraphRoutes';
 import { chapterCatalog } from './data/catalog.generated';
 import { localeFromPath, localizedHref, withoutLocale } from './i18n/locale';
@@ -25,6 +26,7 @@ export default {
       url.pathname = localizedHref('/curriculum/', locale);
       return Response.redirect(url.href, 301);
     }
+    const curriculum=curriculumTarget(routePath);if(curriculum){const target=new URL(localizedHref(curriculum,locale),url);target.search=url.search;const track=url.searchParams.get('mentorship');const lesson=chapterCatalog.find(c=>target.pathname.replace(/^\/ur(?=\/)/,'')===`/learn/${c.slug}/`);if(track&&lesson&&mentorshipTracks.some(t=>t.slug===track&&t.chapterIds.includes(lesson.id))){target.searchParams.delete('mentorship');target.hash=`mentorship=${encodeURIComponent(track)}`;}return Response.redirect(target.href,301);}
     const graphTarget = retiredGraphTarget(routePath);
     if (graphTarget) {
       url.pathname = localizedHref(graphTarget, locale); url.search = '';
@@ -32,9 +34,9 @@ export default {
     }
     const legacy = url.searchParams.get('chapter') || routePath.match(/^\/chapter[-/]([^/]+)\/?$/)?.[1] || routePath.match(/^\/learn\/(\d+)\/?$/)?.[1];
     if (legacy) {
-      const chapter = chapterCatalog.find(c => String(c.id) === legacy || c.slug === legacy.toLowerCase());
+      const migrated=curriculumTarget(`/learn/${legacy.toLowerCase()}/`);const legacySlug=migrated?.split('/')[2]||legacy.toLowerCase();const chapter = chapterCatalog.find(c => c.id === canonicalChapterId(Number(legacy)) || c.slug === legacySlug);
       if (chapter) {
-        url.pathname = localizedHref(`/learn/${chapter.slug}/`, locale); url.search = '';
+        url.pathname = localizedHref(`/learn/${chapter.slug}/`, locale); url.search = '';if(Number.isFinite(Number(legacy))&&canonicalChapterId(Number(legacy))!==Number(legacy))url.hash=`merged-${legacy}`;if(migrated)url.hash=new URL(migrated,url).hash;
         return Response.redirect(url.href, 301);
       }
       const page = await env.ASSETS.fetch(new Request(new URL(locale === 'ur' ? '/ur/404.html' : '/404.html', url), request));

@@ -1,0 +1,28 @@
+import {saveCompletedChapter} from '../src/utils/academyProgress';
+import {curriculumHref} from '../src/utils/curriculumMigration';
+import {curriculumQuiz} from '../src/data/curriculumQuizzes';
+import {chapterQuiz} from '../src/data/chapters/chapterQuizzes';
+import {curriculumHubContent} from '../src/data/curriculumHubContent';
+import fs from 'node:fs';import assert from 'node:assert/strict';
+import {originalTextbookChapters,textbookChapters,activeCurriculumChapters,publishedCurriculumChapters} from '../src/data/chaptersData';
+import {phase1Entries,phase1Parts,mergedChapterIds,curriculumRedirects,displayChapterNumber,curriculumMetadata} from '../src/data/curriculumPhase1';
+import {topicClusters} from '../src/utils/topicClusters';import {curriculumReview} from '../src/data/curriculumReview';import {localizedHref} from '../src/i18n/locale';
+const legacySourceChapters=originalTextbookChapters.filter(c=>c.id<1000);assert.equal(legacySourceChapters.length,66);assert.equal(activeCurriculumChapters.length,97);assert.equal(topicClusters.length,10);assert.equal(new Set(phase1Entries.map(r=>r.id)).size,97);
+assert.deepEqual(activeCurriculumChapters.map(c=>displayChapterNumber(c.id)),Array.from({length:97},(_,i)=>i+1));
+for(const old of legacySourceChapters){const target=mergedChapterIds[old.id]||old.id;const now=textbookChapters.find(c=>c.id===target)!;assert.ok(now);if(!mergedChapterIds[old.id])assert.equal(now.slug,old.slug);for(const section of old.sections){const destination=old.id===28&&section.id==='28.2'?textbookChapters.find(c=>c.id===41)!:now;const preserved=destination.sections.find(s=>s.id===section.id);assert.equal(preserved?.content,section.content,`Lost or rewritten paragraph ${section.id}`);}if(mergedChapterIds[old.id]){assert.equal(localizedHref(curriculumHref(`/learn/${old.slug}/`),'en'),`/learn/${now.slug}/#merged-${old.id}`);for(const term of old.keyTerms)assert.ok(now.keyTerms.some(t=>t.term===term.term),`Lost term ${old.id} ${term.term}`);for(const summary of old.summary)assert.ok(now.summary.includes(summary));for(const ref of curriculumReview(old).sources)assert.ok(curriculumReview(now).sources.some(s=>s.url===ref.url),`Lost source ${old.id}`);}}
+for(const old of legacySourceChapters){const target=mergedChapterIds[old.id]||old.id;const actual=[...curriculumQuiz(textbookChapters.find(c=>c.id===target)!),...(mergedChapterIds[old.id]?curriculumQuiz(old):[]),...(old.id===28?curriculumQuiz(textbookChapters.find(c=>c.id===41)!):[])];for(const q of chapterQuiz(old))assert.ok(actual.some(a=>JSON.stringify(a)===JSON.stringify(q)),`Lost or changed quiz ${q.id}`);}
+for(const hub of Object.values(curriculumHubContent)){const words=hub.paragraphs.map(p=>p[0]).join(' ').split(/\s+/).length;assert.ok(words>=300&&words<=500);}
+for(const cluster of topicClusters){assert.ok(cluster.chapters.length>0);assert.ok(cluster.question);assert.equal(cluster.slug,phase1Parts.find(p=>p.part===cluster.part)?.slug);}
+for(const row of phase1Entries){const meta=curriculumMetadata(`/learn/${row.slug}/`)!;assert.ok(meta.title.length<=60,meta.title);assert.ok(meta.description.length<=155,`${row.id}: ${meta.description.length} description`);assert.ok(row.title[1].match(/[\u0600-\u06ff]/));assert.ok(row.description[1].match(/[\u0600-\u06ff]/));}
+for(const [old,target] of Object.entries(curriculumRedirects)){assert.ok(!curriculumRedirects[target.split('#')[0]],`Redirect chain ${old}`);assert.ok(target.startsWith('/learn/')||target.startsWith('/curriculum/'));}
+fs.mkdirSync('outputs/curriculum-rollout',{recursive:true});fs.writeFileSync('outputs/curriculum-rollout/data-verification.json',JSON.stringify({chapters:97,published:publishedCurriculumChapters.length,inProgress:97-publishedCurriculumChapters.length,sourceChapters:66,parts:10,merges:mergedChapterIds,bodyText:'all source sections preserved byte-for-byte',rows:phase1Entries.map(r=>({id:r.id,number:displayChapterNumber(r.id),plannedPosition:r.position,path:'/learn/'+r.slug+'/',title:r.title,description:r.description}))},null,2));
+console.log(`Phase 1 data passed: 66 original chapters preserved; ${publishedCurriculumChapters.length} published + ${97-publishedCurriculumChapters.length} in progress, 97 plan positions, 10 parts; native metadata and content retention.`);
+
+assert.ok(publishedCurriculumChapters.length>=57);assert.equal(publishedCurriculumChapters.length+activeCurriculumChapters.filter(c=>c.status==='in-progress').length,97);
+for(const c of activeCurriculumChapters.filter(c=>c.status==='in-progress')){const row=phase1Entries.find(r=>r.id===c.id)!;assert.ok(row.primaryKeyword);assert.deepEqual([c.sections,c.summary,c.keyTerms,c.practiceQuestions],[[],[],[],[]]);assert.deepEqual(curriculumQuiz(c),[]);}
+
+assert.ok(phase1Entries.every(r=>['published','in-progress'].includes(r.status)));assert.equal(new Set(phase1Entries.map(r=>r.slug)).size,97);
+
+// A stray completion call must never write a placeholder ID into browser progress.
+const pending=activeCurriculumChapters.find(c=>c.status==='in-progress');
+if(pending){const prior=Object.getOwnPropertyDescriptor(globalThis,'localStorage'),stored=new Map<string,string>([['ict_academy_completed_chapters','[1]']]);try{Object.defineProperty(globalThis,'localStorage',{configurable:true,value:{getItem:(key:string)=>stored.get(key)||null,setItem:(key:string,value:string)=>stored.set(key,value)}});assert.deepEqual(saveCompletedChapter(pending.id),[1]);assert.equal(stored.get('ict_academy_completed_chapters'),'[1]');}finally{if(prior)Object.defineProperty(globalThis,'localStorage',prior);else delete (globalThis as any).localStorage;}}

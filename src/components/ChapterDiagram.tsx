@@ -1,3 +1,4 @@
+import {PriceMovementVisual} from './PriceMovementVisual';
 import {Mentorship2026Diagram} from './Mentorship2026Diagram';
 import {hasMentorship2026Edition} from '../data/chapters/mentorship2026';
 import { useEffect, useState } from 'react';
@@ -23,9 +24,10 @@ function Mark({ mark, translate }: { mark: DiagramMark; translate: (text: string
 }
 
 /** Static schematics serve thumbnails and prerendered HTML; full lessons use the story players. */
-export function ChapterDiagram({ chapterId, thumbnail = false, staticOnly = false, onPractice }: { chapterId: number; thumbnail?: boolean; staticOnly?: boolean; onPractice?:()=>void }) {
+export function ChapterDiagram({ chapterId, thumbnail = false, staticOnly = false, onPractice, illustrationSourceId }: { illustrationSourceId?:number; chapterId: number; thumbnail?: boolean; staticOnly?: boolean; onPractice?:()=>void }) {
   const { t, locale } = useTranslation();
-  const spec = chapterDiagrams[chapterId];
+  const visualId=illustrationSourceId??(chapterId===28?32:chapterId);
+  const spec = chapterDiagrams[visualId];
   const [step, setStep] = useState<number | null>(null);
   const [playing, setPlaying] = useState(false);
   const [reduced, setReduced] = useState(false);
@@ -51,12 +53,13 @@ export function ChapterDiagram({ chapterId, thumbnail = false, staticOnly = fals
     document.addEventListener('visibilitychange', stopWhenHidden);
     return () => document.removeEventListener('visibilitychange', stopWhenHidden);
   }, [playing]);
+  if(chapterId===1&&!thumbnail)return <PriceMovementVisual kind="book" staticOnly={staticOnly}/>;
   if(hasMentorship2026Edition(chapterId)) return <Mentorship2026Diagram chapterId={chapterId} thumbnail={thumbnail} staticOnly={staticOnly}/>;
   if (!spec) return null;
   if (chapterId === 13 && !thumbnail) return <FvgLessonDiagram staticOnly={staticOnly} onPractice={onPractice}/>;
-  if (!thumbnail && !staticOnly) return <ChapterStory chapterId={chapterId} onPractice={onPractice}/>;
+  if (!thumbnail && !staticOnly) return <ChapterStory chapterId={visualId} onPractice={onPractice}/>;
   const choose = (value: number) => { setPlaying(false); setStep(value); };
-  return <figure className={`chapter-diagram ${thumbnail ? 'chapter-diagram--thumbnail' : 'chapter-diagram--lesson'} ${playing ? 'chapter-diagram--playing' : ''}`} data-chapter-diagram={chapterId}>
+  return <figure className={`chapter-diagram ${thumbnail ? 'chapter-diagram--thumbnail' : 'chapter-diagram--lesson'} ${playing ? 'chapter-diagram--playing' : ''}`} data-chapter-diagram={chapterId} data-illustration-source={visualId}>
     <div className="chapter-diagram-heading"><span>{t('Chapter illustration')}</span><strong>{t(spec.title)}</strong></div>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" width={400} height={220} role="img" aria-label={t(spec.title)} className="chapter-diagram-canvas" lang={locale}>
       <title>{t(spec.title)}</title>
@@ -74,7 +77,7 @@ export function ChapterDiagram({ chapterId, thumbnail = false, staticOnly = fals
       </div>}
       <ol className="diagram-steps" aria-label={t('Illustrated steps')}>
         {spec.steps.map((copy, index) => <li key={index} className={step === index ? 'diagram-step--active' : ''}>
-          {staticOnly ? <span><b dir="ltr">{index + 1}</b><span>{chapterStoryHeadings[chapterId]&&<strong className="static-story-heading">{t(chapterStoryHeadings[chapterId][index].en)}</strong>}{t(copy)}</span></span> : <button type="button" aria-pressed={step === index} onClick={() => choose(index)}><b dir="ltr">{index + 1}</b><span>{t(copy)}</span></button>}
+          {staticOnly ? <span><b dir="ltr">{index + 1}</b><span>{chapterStoryHeadings[visualId]&&<strong className="static-story-heading">{t(chapterStoryHeadings[visualId][index].en)}</strong>}{t(copy)}</span></span> : <button type="button" aria-pressed={step === index} onClick={() => choose(index)}><b dir="ltr">{index + 1}</b><span>{t(copy)}</span></button>}
         </li>)}
       </ol>
       <p className="diagram-note">{t('Schematic example, not a trading signal.')}</p>

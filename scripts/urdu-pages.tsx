@@ -1,3 +1,4 @@
+import {localizePriceMovementDocument} from './price-movement-localized-document';
 import {practicePages} from '../src/data/practiceLoopContent';
 import {practiceSchema} from '../src/utils/practiceSchema';
 import {masterclassCollectionPage} from '../src/data/masterclassCategoryPages';
@@ -44,7 +45,7 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
       if (!preview) fs.writeFileSync(sourcePath, addLanguageAlternates(source, englishPath, !route.isNoindex));
       continue;
     }
-    let html = localizeHtml(localizeMasterclassDocument(source,englishPath), englishPath, urdu, { preview, indexable: !route.isNoindex, availablePaths: available, nativeReadingRoot: !!auditedReadingRoute(englishPath), onMissing(text) {
+    let html = localizeHtml(localizePriceMovementDocument(localizeMasterclassDocument(source,englishPath),englishPath), englishPath, urdu, { preview, indexable: !route.isNoindex, availablePaths: available, nativeReadingRoot: !!auditedReadingRoute(englishPath), onMissing(text) {
       if (!text) return;
       if (!missing.has(text)) missing.set(text, new Set());
       missing.get(text)!.add(englishPath);

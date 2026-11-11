@@ -1,3 +1,6 @@
+import {curriculumHref} from '../src/utils/curriculumMigration';
+import {splitCurriculumSitemap} from './curriculum-sitemaps';
+import {curriculumRedirects,curriculumTarget,phase1Entries} from '../src/data/curriculumPhase1';
 import {masterclassCollectionPage} from '../src/data/masterclassCategoryPages';
 import { renderAuditedReading } from './audited-reading-document';
 import {masterclassJournalForPath} from '../src/utils/masterclassJournalRoutes';
@@ -25,7 +28,7 @@ import { prepareRoutes, enrichRoute, renderContextualText, canonicalAliases } fr
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { textbookChapters } from '../src/data/chaptersData.ts';
+import { textbookChapters,activeCurriculumChapters } from '../src/data/chaptersData.ts';
 import { masoodPlaylistsData } from '../src/data/masoodData.ts';
 import { ictConcepts } from '../src/data/conceptsData.ts';
 import {
@@ -109,7 +112,7 @@ function escapeHtml(val: unknown): string {
 }
 
 function generatePrerenderedHtml(meta: RouteMeta): string {
-  const chapterCount = textbookChapters.length;
+  const chapterCount = activeCurriculumChapters.filter(c=>c.status==='published').length;
   const lectureCount = masoodPlaylistsData.reduce((sum, p) => sum + p.lectures.length, 0);
   let html = templateHtml.replace(/\b57(?=[- ](?:chapter|Chapter|CHAPTER))/g, String(chapterCount)).replace(/\b52(?=[- ](?:Abdullah|lecture|Lecture|LECTURE|Masterclass|masterclass))/g, String(lectureCount));
 
@@ -184,7 +187,7 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
     ?createElement(ChapterRoom,{chapterId:readingChapter.id,onSelectChapter:()=>{},onReturnToMap:()=>{},staticOnly:true})
     :createElement(CurriculumView,{path:readingPath,onSelectChapter:()=>{},onOpenSearch:()=>{}})):'';
   const readingHeader=isReading?renderToStaticMarkup(createElement(Header,{documentPath:readingPath,activeTab:readingChapter?'chapter_room':'curriculum',setActiveTab:()=>{},onOpenSearch:()=>{},onOpenMentorSpotlight:()=>{},onOpenWelcomeIntro:()=>{},progressPercent:0})):'';
-  const readingDocument=isReading?`<div id="static-content" class="reading-site"><a class="skip-link" href="#main-content">Skip to main content</a>${readingHeader}<main id="main-content" class="reading-main" tabindex="-1">${readingBody}</main>${renderToStaticMarkup(createElement(SiteFooter,{playground:false}))}</div>`:'';
+  const readingDocument=isReading?`<div id="static-content" class="reading-site"><a class="skip-link" href="#main-content">Skip to main content</a>${readingHeader}<main id="main-content" class="reading-main" tabindex="-1">${readingBody}</main>${renderToStaticMarkup(createElement(SiteFooter,{playground:false,showRisk:readingChapter?.id!==1}))}</div>`:'';
   const masterclassDocument=(!!masterclassCollectionPage(readingPath)||!!masterclassJournalForPath(readingPath))?`<div id="static-content" class="mc-collection-document"><a class="skip-link" href="#main-content">Skip to main content</a>${renderToStaticMarkup(createElement(Header,{documentPath:readingPath,activeTab:'masterclass',setActiveTab:()=>{},onOpenSearch:()=>{},onOpenMentorSpotlight:()=>{},onOpenWelcomeIntro:()=>{},progressPercent:0}))}<main id="main-content" tabindex="-1">${meta.bodyHtml}</main>${renderToStaticMarkup(createElement(SiteFooter,{playground:false}))}</div>`:'';
   const auditedDocument=auditedReadingRoute(readingPath)?renderAuditedReading(readingPath,meta.heading):'';
   if(auditedDocument){html=html.replace('<html ', '<html data-reading-enhancement="true" ');if(readingPath.startsWith('/tools/glossary/')||readingPath.startsWith('/tools/chartlab/')||readingPath.startsWith('/tools/delivery-suite/')||['/tools/chartlab/','/tools/delivery-suite/','/tools/simulator/','/tools/backtest/'].includes(readingPath)||/^\/tools\/(?:simulator|backtest)\/[^/]+\/$/.test(readingPath))html=html.replace(/<div id="app-startup"[^>]*>[\s\S]*?<\/div>/,'');}
@@ -1433,7 +1436,7 @@ for (const ch of textbookChapters) {
     heading: `Chapter ${ch.id}: ${ch.title}`,
     subheading: `${ch.part} · Level ${ch.level} Institutional Module`,
     badge: `Chapter ${ch.id} · ${ch.part}`,
-    schemaJson: {
+    schemaJson: ch.status==='in-progress'?undefined:{
       '@context': 'https://schema.org',
       '@type': 'LearningResource',
       'name': `Chapter ${ch.id}: ${ch.title}`,
@@ -1779,8 +1782,8 @@ const redirectsLines: string[] = [
 ];
 
 for (const ch of textbookChapters) {
-  redirectsLines.push(`/chapter/${ch.id}     ${getLessonPath(ch.slug)}    301`);
-  redirectsLines.push(`/chapter/${ch.id}/    ${getLessonPath(ch.slug)}    301`);
+  redirectsLines.push(`/chapter/${ch.id}     ${curriculumTarget(getLessonPath(ch.slug))||getLessonPath(ch.slug)}    301`);
+  redirectsLines.push(`/chapter/${ch.id}/    ${curriculumTarget(getLessonPath(ch.slug))||getLessonPath(ch.slug)}    301`);
 }
 
 redirectsLines.push('');
@@ -1789,6 +1792,8 @@ redirectsLines.push('/chapter          /curriculum/          301');
 redirectsLines.push('/chapter/         /curriculum/          301');
 redirectsLines.push('/chapter/*        /curriculum/          301');
 redirectsLines.push('');
+redirectsLines.push('# Curriculum phase 1: approved content-preserving migrations');
+for(const [old,target] of Object.entries(curriculumRedirects))for(const prefix of ['']){redirectsLines.push(`${prefix}${old} ${prefix}${target} 301`);redirectsLines.push(`${prefix}${old.slice(0,-1)} ${prefix}${target} 301`);}
 redirectsLines.push('# Workbench & Glossary route migrations');
 redirectsLines.push('/workbench          /tools/               301');
 redirectsLines.push('/workbench/         /tools/               301');
@@ -1850,5 +1855,14 @@ fs.writeFileSync(path.join(distDir, 'llms-full.txt'), llms + '\n## Published pag
 // Only completed language editions enter the public sitemap. Review builds remain noindex.
 if (URDU_PUBLISHED || process.env.URDU_FULL_PREVIEW === 'true') generateUrduPages(distDir, allRoutes);
 generateSocialCards(distDir);
+normaliseCurriculumLinks(distDir);
 minifyInlineDocuments(distDir);
 applySitemapDates(distDir);
+splitCurriculumSitemap(distDir);
+
+function normaliseCurriculumLinks(dir:string){
+ const walk=(d:string):string[]=>fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(d,e.name)):[path.join(d,e.name)]);
+ for(const file of walk(dir).filter(f=>f.endsWith('.html'))){let html=fs.readFileSync(file,'utf8');html=html.replace(/href="([^"<>]+)"/g,(_all,value)=>'href="'+curriculumHref(value)+'"');html=html.replace(/(<link\b[^>]*rel="canonical"[^>]*href=")([^"#]*)(?:#[^"]*)?("[^>]*>)/g,'$1$2$3');fs.writeFileSync(file,html);}
+}
+
+for(const [old,target] of Object.entries(curriculumRedirects))for(const prefix of ['','/ur']){const file=path.join(distDir,prefix+old,'index.html'),destination=prefix+target;fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,`<!doctype html><html lang="${prefix?'ur':'en'}"${prefix?' dir="rtl"':''}><head><meta charset="utf-8"><meta name="robots" content="noindex,follow"><link rel="canonical" href="https://learnsmc.xyz${destination.split('#')[0]}"><meta http-equiv="refresh" content="0;url=${destination}"><title>${prefix?'سبق نئی جگہ منتقل ہو گیا ہے':'Lesson moved'} | LearnSMC</title></head><body><a href="${destination}">${prefix?'نئے مقام پر سبق پڑھیں':'Read the lesson at its new location'}</a><script>location.replace(${JSON.stringify(destination)})</script></body></html>`);}

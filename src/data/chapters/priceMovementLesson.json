@@ -1,0 +1,2701 @@
+{
+  "sections": [
+    {
+      "id": "1.1",
+      "title": [
+        "1. What Is Price, Really?",
+        "1. قیمت دراصل کیا ہے؟"
+      ],
+      "paragraphs": [
+        [
+          "Price is the number at which the most recent trade happened. That is all. No exchange sets it by decree, and no company \"owns\" its share price. A price exists because one person wanted to buy at that level and another person wanted to sell at that level, at the same moment.",
+          "قیمت وہ عدد ہے جس پر سب سے تازہ سودا ہوا۔ بس یہی۔ کوئی ایکسچینج اسے حکم سے مقرر نہیں کرتی اور کوئی کمپنی اپنے حصص کی قیمت کی \"مالک\" نہیں ہوتی۔ قیمت اس لیے وجود میں آتی ہے کہ ایک ہی لمحے ایک شخص اس سطح پر خریدنا اور دوسرا اسی سطح پر فروخت کرنا چاہتا تھا۔"
+        ],
+        [
+          "This matters because beginners often treat price as a statement of worth. It is closer to a running poll: \"At this instant, where did a buyer and a seller meet?\" The poll updates every time new information, new money, or new fear arrives.",
+          "یہ اس لیے اہم ہے کہ نئے سیکھنے والے اکثر قیمت کو اصل قدر کا بیان سمجھتے ہیں۔ یہ مسلسل جاری رائے شماری سے زیادہ ملتی ہے: \"اس لمحے خریدار اور فروخت کنندہ کس سطح پر ملے؟\" نئی معلومات، نیا سرمایہ یا نیا خوف آنے پر یہ رائے شماری بدل جاتی ہے۔"
+        ],
+        [
+          "Beginner analogy: Picture a busy street market selling mangoes. If ten buyers show up and only five sellers have fruit, sellers can raise prices and still sell out. If a truck delivers a huge load and buyers are scarce, sellers cut prices to move stock. Financial markets work the same way, only faster, bigger and with more participants.",
+          "ابتدائی مثال: آموں کی ایک مصروف گلی مارکیٹ کا تصور کریں۔ دس خریدار آئیں اور صرف پانچ فروخت کنندگان کے پاس پھل ہو تو فروخت کنندہ قیمت بڑھا کر بھی پورا مال بیچ سکتا ہے۔ اگر ٹرک بہت سا مال لے آئے اور خریدار کم ہوں تو مال نکالنے کے لیے قیمت گھٹائی جاتی ہے۔ مالیاتی مارکیٹس بھی اسی طرح کام کرتی ہیں، مگر زیادہ تیزی، بڑے پیمانے اور زیادہ شرکا کے ساتھ۔"
+        ]
+      ],
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": [
+            "Price is the number at which the most recent trade happened. That is all. No exchange sets it by decree, and no company \"owns\" its share price. A price exists because one person wanted to buy at that level and another person wanted to sell at that level, at the same moment.",
+            "قیمت وہ عدد ہے جس پر سب سے تازہ سودا ہوا۔ بس یہی۔ کوئی ایکسچینج اسے حکم سے مقرر نہیں کرتی اور کوئی کمپنی اپنے حصص کی قیمت کی \"مالک\" نہیں ہوتی۔ قیمت اس لیے وجود میں آتی ہے کہ ایک ہی لمحے ایک شخص اس سطح پر خریدنا اور دوسرا اسی سطح پر فروخت کرنا چاہتا تھا۔"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "This matters because beginners often treat price as a statement of worth. It is closer to a running poll: \"At this instant, where did a buyer and a seller meet?\" The poll updates every time new information, new money, or new fear arrives.",
+            "یہ اس لیے اہم ہے کہ نئے سیکھنے والے اکثر قیمت کو اصل قدر کا بیان سمجھتے ہیں۔ یہ مسلسل جاری رائے شماری سے زیادہ ملتی ہے: \"اس لمحے خریدار اور فروخت کنندہ کس سطح پر ملے؟\" نئی معلومات، نیا سرمایہ یا نیا خوف آنے پر یہ رائے شماری بدل جاتی ہے۔"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Beginner analogy: Picture a busy street market selling mangoes. If ten buyers show up and only five sellers have fruit, sellers can raise prices and still sell out. If a truck delivers a huge load and buyers are scarce, sellers cut prices to move stock. Financial markets work the same way, only faster, bigger and with more participants.",
+            "ابتدائی مثال: آموں کی ایک مصروف گلی مارکیٹ کا تصور کریں۔ دس خریدار آئیں اور صرف پانچ فروخت کنندگان کے پاس پھل ہو تو فروخت کنندہ قیمت بڑھا کر بھی پورا مال بیچ سکتا ہے۔ اگر ٹرک بہت سا مال لے آئے اور خریدار کم ہوں تو مال نکالنے کے لیے قیمت گھٹائی جاتی ہے۔ مالیاتی مارکیٹس بھی اسی طرح کام کرتی ہیں، مگر زیادہ تیزی، بڑے پیمانے اور زیادہ شرکا کے ساتھ۔"
+          ]
+        }
+      ],
+      "figure": "balance",
+      "advanced": false
+    },
+    {
+      "id": "1.2",
+      "title": [
+        "2. The Engine Room: Supply, Demand and the Order Book",
+        "2. انجن روم: طلب، رسد اور آرڈر بک"
+      ],
+      "paragraphs": [
+        [
+          "Every liquid market runs on an order book: a live list of who wants to buy (bids) and who wants to sell (asks), and at what prices.",
+          "ہر لیکویڈ مارکیٹ ایک آرڈر بک پر چلتی ہے: ایک براہِ راست فہرست کہ کون خریدنا چاہتا ہے (بِڈز)، کون بیچنا چاہتا ہے (آسکس)، اور کس قیمت پر۔"
+        ],
+        [
+          "Imagine the ask side holds 100 units at 50.00, 100 at 50.05, and 100 at 50.10. A buyer who needs 250 units with a market order will eat through all three levels and end up paying up to 50.10. The last price printed is now higher, purely because one participant needed size quickly. No news was involved.",
+          "فرض کریں آسک پر 50.00 کی قیمت پر 100 اکائیاں، 50.05 پر 100، اور 50.10 پر 100 موجود ہیں۔ مارکیٹ آرڈر سے 250 اکائیاں چاہنے والا خریدار تینوں سطحوں کی مقدار استعمال کرے گا اور آخر میں 50.10 تک ادا کرے گا۔ آخری درج شدہ قیمت اب زیادہ ہے، صرف اس لیے کہ ایک شریک کو فوراً بڑی مقدار چاہیے تھی۔ اس میں کوئی خبر شامل نہیں تھی۔"
+        ],
+        [
+          "The lesson: urgency moves price. The participant who must trade now (a fund rebalancing, a trader being stopped out, a company hedging currency) pays the cost, and everybody else sees the footprint as a price move.",
+          "سبق: فوری ضرورت قیمت کو حرکت دیتی ہے۔ جس شریک کو ابھی سودا کرنا ہو (فنڈ کی ری بیلنسنگ، ٹریڈر کا اسٹاپ لگنا، کمپنی کی کرنسی ہیجنگ)، وہ لاگت ادا کرتا ہے اور باقی سب کو اس کا نشان قیمت کی حرکت کی صورت میں دکھائی دیتا ہے۔"
+        ]
+      ],
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": [
+            "Every liquid market runs on an order book: a live list of who wants to buy (bids) and who wants to sell (asks), and at what prices.",
+            "ہر لیکویڈ مارکیٹ ایک آرڈر بک پر چلتی ہے: ایک براہِ راست فہرست کہ کون خریدنا چاہتا ہے (بِڈز)، کون بیچنا چاہتا ہے (آسکس)، اور کس قیمت پر۔"
+          ]
+        },
+        {
+          "kind": "table",
+          "headers": [
+            [
+              "Term",
+              "اصطلاح"
+            ],
+            [
+              "Plain meaning",
+              "سادہ مطلب"
+            ],
+            [
+              "Effect on price",
+              "قیمت پر اثر"
+            ]
+          ],
+          "rows": [
+            [
+              [
+                "Bid",
+                "بِڈ"
+              ],
+              [
+                "Highest price a buyer currently offers",
+                "وہ بلند ترین قیمت جو خریدار اس وقت دیتا ہے"
+              ],
+              [
+                "Sets the floor of the immediate trade",
+                "فوری سودے کی نچلی حد مقرر کرتی ہے"
+              ]
+            ],
+            [
+              [
+                "Ask (offer)",
+                "آسک (آفر)"
+              ],
+              [
+                "Lowest price a seller currently accepts",
+                "وہ کم ترین قیمت جو فروخت کنندہ اس وقت قبول کرتا ہے"
+              ],
+              [
+                "Sets the ceiling of the immediate trade",
+                "فوری سودے کی بالائی حد مقرر کرتی ہے"
+              ]
+            ],
+            [
+              [
+                "Spread",
+                "اسپریڈ"
+              ],
+              [
+                "Gap between bid and ask",
+                "بِڈ اور آسک کا فرق"
+              ],
+              [
+                "A wide spread signals thin or nervous trading",
+                "زیادہ اسپریڈ کم لیکویڈیٹی یا محتاط ٹریڈنگ کی علامت ہے"
+              ]
+            ],
+            [
+              [
+                "Market order",
+                "مارکیٹ آرڈر"
+              ],
+              [
+                "\"Fill me now at whatever is available\"",
+                "\"جو قیمت دستیاب ہے، اس پر فوراً فِل کریں\""
+              ],
+              [
+                "Consumes the book and pushes price",
+                "بک کی دستیاب مقدار استعمال کرتا اور قیمت کو آگے دھکیلتا ہے"
+              ]
+            ],
+            [
+              [
+                "Limit order",
+                "لمٹ آرڈر"
+              ],
+              [
+                "\"Fill me only at my price or better\"",
+                "\"صرف میری قیمت یا اس سے بہتر پر فِل کریں\""
+              ],
+              [
+                "Waits in the book and supplies liquidity",
+                "بک میں انتظار کرتا اور لیکویڈیٹی مہیا کرتا ہے"
+              ]
+            ],
+            [
+              [
+                "Liquidity",
+                "لیکویڈیٹی"
+              ],
+              [
+                "How much can trade without moving price",
+                "قیمت بدلے بغیر کتنی مقدار کا سودا ہو سکتا ہے"
+              ],
+              [
+                "Deep liquidity absorbs big orders; thin liquidity lets small orders jump the price",
+                "گہری لیکویڈیٹی بڑے آرڈرز جذب کرتی ہے؛ کم لیکویڈیٹی میں چھوٹے آرڈر بھی قیمت اچھال دیتے ہیں"
+              ]
+            ],
+            [
+              [
+                "Slippage",
+                "سلپیج"
+              ],
+              [
+                "Difference between expected and actual fill",
+                "متوقع اور اصل فِل کا فرق"
+              ],
+              [
+                "Rises when liquidity is thin",
+                "لیکویڈیٹی کم ہونے پر بڑھتا ہے"
+              ]
+            ]
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "How a single large order moves price",
+            "ایک بڑا آرڈر قیمت کیسے بدلتا ہے"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Imagine the ask side holds 100 units at 50.00, 100 at 50.05, and 100 at 50.10. A buyer who needs 250 units with a market order will eat through all three levels and end up paying up to 50.10. The last price printed is now higher, purely because one participant needed size quickly. No news was involved.",
+            "فرض کریں آسک پر 50.00 کی قیمت پر 100 اکائیاں، 50.05 پر 100، اور 50.10 پر 100 موجود ہیں۔ مارکیٹ آرڈر سے 250 اکائیاں چاہنے والا خریدار تینوں سطحوں کی مقدار استعمال کرے گا اور آخر میں 50.10 تک ادا کرے گا۔ آخری درج شدہ قیمت اب زیادہ ہے، صرف اس لیے کہ ایک شریک کو فوراً بڑی مقدار چاہیے تھی۔ اس میں کوئی خبر شامل نہیں تھی۔"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "The lesson: urgency moves price. The participant who must trade now (a fund rebalancing, a trader being stopped out, a company hedging currency) pays the cost, and everybody else sees the footprint as a price move.",
+            "سبق: فوری ضرورت قیمت کو حرکت دیتی ہے۔ جس شریک کو ابھی سودا کرنا ہو (فنڈ کی ری بیلنسنگ، ٹریڈر کا اسٹاپ لگنا، کمپنی کی کرنسی ہیجنگ)، وہ لاگت ادا کرتا ہے اور باقی سب کو اس کا نشان قیمت کی حرکت کی صورت میں دکھائی دیتا ہے۔"
+          ]
+        }
+      ],
+      "figure": "book",
+      "advanced": false
+    },
+    {
+      "id": "1.3",
+      "title": [
+        "3. The Three Layers of Price Movement",
+        "3. قیمت کی حرکت کی تین تہیں"
+      ],
+      "paragraphs": [
+        [
+          "Think of price movement as three layers stacked on top of each other. Beginners usually see only the top layer, which is why markets seem random.",
+          "قیمت کی حرکت کو ایک دوسرے کے اوپر رکھی تین تہوں کی طرح سمجھیں۔ نئے سیکھنے والے عموماً اوپر کی تہہ دیکھتے ہیں، اسی لیے مارکیٹس بے ترتیب لگتی ہیں۔"
+        ],
+        [
+          "The layers interact. A Layer 3 trend sets the direction, Layer 2 events cause the swings along the way, and Layer 1 decides the exact path each day.",
+          "یہ تہیں ایک دوسرے پر اثر ڈالتی ہیں۔ تہہ 3 کا رجحان سمت بناتا ہے، تہہ 2 کے واقعات راستے میں سوئنگز پیدا کرتے ہیں، اور تہہ 1 روز کا عین راستہ طے کرتی ہے۔"
+        ]
+      ],
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": [
+            "Think of price movement as three layers stacked on top of each other. Beginners usually see only the top layer, which is why markets seem random.",
+            "قیمت کی حرکت کو ایک دوسرے کے اوپر رکھی تین تہوں کی طرح سمجھیں۔ نئے سیکھنے والے عموماً اوپر کی تہہ دیکھتے ہیں، اسی لیے مارکیٹس بے ترتیب لگتی ہیں۔"
+          ]
+        },
+        {
+          "kind": "table",
+          "headers": [
+            [
+              "Layer",
+              "تہہ"
+            ],
+            [
+              "Speed",
+              "رفتار"
+            ],
+            [
+              "What drives it",
+              "محرکات"
+            ],
+            [
+              "Example",
+              "مثال"
+            ]
+          ],
+          "rows": [
+            [
+              [
+                "Layer 1: Micro (order flow)",
+                "تہہ 1: مائیکرو (آرڈر فلو)"
+              ],
+              [
+                "Seconds to hours",
+                "سیکنڈ سے گھنٹے"
+              ],
+              [
+                "Order imbalance, liquidity, algorithms, stop orders",
+                "آرڈر کا عدم توازن، لیکویڈیٹی، الگورتھمز، اسٹاپ آرڈرز"
+              ],
+              [
+                "A big buy sweep lifts price 0.3% with no headline",
+                "بڑی خریداری کا سویپ بغیر خبر قیمت 0.3% بڑھا دیتا ہے"
+              ]
+            ],
+            [
+              [
+                "Layer 2: Information (expectations)",
+                "تہہ 2: معلومات (توقعات)"
+              ],
+              [
+                "Minutes to weeks",
+                "منٹ سے ہفتے"
+              ],
+              [
+                "Data releases, earnings, central bank signals, geopolitics",
+                "اعداد و شمار، آمدن، مرکزی بینک کے اشارے، جغرافیائی سیاست"
+              ],
+              [
+                "Inflation prints hotter than forecast; yields and currency jump",
+                "مہنگائی تخمینے سے زیادہ نکلتی ہے؛ ییلڈز اور کرنسی اچھلتی ہیں"
+              ]
+            ],
+            [
+              [
+                "Layer 3: Structural (money and fundamentals)",
+                "تہہ 3: ساختی (سرمایہ اور بنیادی عوامل)"
+              ],
+              [
+                "Months to years",
+                "مہینے سے برس"
+              ],
+              [
+                "Interest rates, earnings growth, capital flows, supply cycles, adoption",
+                "شرح سود، آمدن کی نمو، سرمائے کا بہاؤ، رسد کے چکر، قبولیت"
+              ],
+              [
+                "A multi-year earnings trend lifts a stock sector",
+                "کئی برس کی آمدن کی نمو حصص کے شعبے کو اوپر لے جاتی ہے"
+              ]
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "The layers interact. A Layer 3 trend sets the direction, Layer 2 events cause the swings along the way, and Layer 1 decides the exact path each day.",
+            "یہ تہیں ایک دوسرے پر اثر ڈالتی ہیں۔ تہہ 3 کا رجحان سمت بناتا ہے، تہہ 2 کے واقعات راستے میں سوئنگز پیدا کرتے ہیں، اور تہہ 1 روز کا عین راستہ طے کرتی ہے۔"
+          ]
+        }
+      ],
+      "figure": "layers",
+      "advanced": false
+    },
+    {
+      "id": "1.4",
+      "title": [
+        "4. Expectations: Why Good News Can Drop a Market",
+        "4. توقعات: اچھی خبر مارکیٹ کو کیوں گرا سکتی ہے"
+      ],
+      "paragraphs": [
+        [
+          "The single most misunderstood idea for newer traders: markets trade the gap between what happened and what was already expected.",
+          "نئے ٹریڈرز کے لیے سب سے زیادہ غلط سمجھی جانے والی بات: مارکیٹس جو ہوا اور جس کی پہلے ہی توقع تھی، ان کے فرق پر سودا کرتی ہیں۔"
+        ],
+        [
+          "Before any scheduled event, traders position based on forecasts. That forecast is already inside the price. When the result arrives, price moves only by the surprise.",
+          "طے شدہ واقعے سے پہلے ٹریڈرز تخمینوں کے مطابق پوزیشن لیتے ہیں۔ وہ تخمینہ پہلے ہی قیمت میں شامل ہوتا ہے۔ نتیجہ آنے پر قیمت صرف غیر متوقع فرق سے حرکت کرتی ہے۔"
+        ],
+        [
+          "Rule of thumb: Price = expectation + surprise. If everyone already believes the story, the story cannot move price much. Only new information can.",
+          "عملی اصول: قیمت = توقع + غیر متوقع فرق۔ اگر سب پہلے ہی کسی بات کو مانتے ہیں تو وہ بات قیمت زیادہ نہیں بدل سکتی۔ صرف نئی معلومات ایسا کر سکتی ہیں۔"
+        ],
+        [
+          "A second layer: markets also trade the reaction to the reaction. If a big surprise is followed by a price move that fades, that tells you positioning was already crowded in the other direction.",
+          "ایک دوسری تہہ: مارکیٹس ردِعمل کے ردِعمل پر بھی سودا کرتی ہیں۔ بڑے غیر متوقع نتیجے کے بعد قیمتی حرکت ماند پڑ جائے تو یہ بتاتا ہے کہ دوسری سمت کی پوزیشنز پہلے ہی بھری ہوئی تھیں۔"
+        ]
+      ],
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": [
+            "The single most misunderstood idea for newer traders: markets trade the gap between what happened and what was already expected.",
+            "نئے ٹریڈرز کے لیے سب سے زیادہ غلط سمجھی جانے والی بات: مارکیٹس جو ہوا اور جس کی پہلے ہی توقع تھی، ان کے فرق پر سودا کرتی ہیں۔"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Before any scheduled event, traders position based on forecasts. That forecast is already inside the price. When the result arrives, price moves only by the surprise.",
+            "طے شدہ واقعے سے پہلے ٹریڈرز تخمینوں کے مطابق پوزیشن لیتے ہیں۔ وہ تخمینہ پہلے ہی قیمت میں شامل ہوتا ہے۔ نتیجہ آنے پر قیمت صرف غیر متوقع فرق سے حرکت کرتی ہے۔"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Rule of thumb: Price = expectation + surprise. If everyone already believes the story, the story cannot move price much. Only new information can.",
+            "عملی اصول: قیمت = توقع + غیر متوقع فرق۔ اگر سب پہلے ہی کسی بات کو مانتے ہیں تو وہ بات قیمت زیادہ نہیں بدل سکتی۔ صرف نئی معلومات ایسا کر سکتی ہیں۔"
+          ]
+        },
+        {
+          "kind": "table",
+          "headers": [
+            [
+              "Scenario",
+              "صورتِ حال"
+            ],
+            [
+              "Expectation",
+              "توقع"
+            ],
+            [
+              "Actual result",
+              "اصل نتیجہ"
+            ],
+            [
+              "Likely price reaction",
+              "ممکنہ قیمتی ردِعمل"
+            ],
+            [
+              "Why",
+              "وجہ"
+            ]
+          ],
+          "rows": [
+            [
+              [
+                "Company earnings",
+                "کمپنی کی آمدن"
+              ],
+              [
+                "Profit growth of 10%",
+                "منافع کی نمو 10%"
+              ],
+              [
+                "Growth of 12%",
+                "نمو 12%"
+              ],
+              [
+                "Often up",
+                "اکثر اضافہ"
+              ],
+              [
+                "Positive surprise",
+                "مثبت غیر متوقع فرق"
+              ]
+            ],
+            [
+              [
+                "Company earnings",
+                "کمپنی کی آمدن"
+              ],
+              [
+                "Profit growth of 10%",
+                "منافع کی نمو 10%"
+              ],
+              [
+                "Growth of 11%, but weak outlook",
+                "نمو 11%، مگر آئندہ تخمینہ کمزور"
+              ],
+              [
+                "Often down",
+                "اکثر کمی"
+              ],
+              [
+                "Future expectations were cut",
+                "مستقبل کی توقعات گھٹ گئیں"
+              ]
+            ],
+            [
+              [
+                "Company earnings",
+                "کمپنی کی آمدن"
+              ],
+              [
+                "Profit growth of 15% (hot hype)",
+                "منافع کی نمو 15% (بہت چرچا)"
+              ],
+              [
+                "Growth of 12%",
+                "نمو 12%"
+              ],
+              [
+                "Often down",
+                "اکثر کمی"
+              ],
+              [
+                "\"Good\" but below the whisper number",
+                "\"اچھا\" مگر غیر رسمی متوقع عدد سے کم"
+              ]
+            ],
+            [
+              [
+                "Jobs or inflation data",
+                "روزگار یا مہنگائی کے اعداد"
+              ],
+              [
+                "Cooling",
+                "ٹھنڈک"
+              ],
+              [
+                "Cooling slightly more",
+                "قدرے زیادہ ٹھنڈک"
+              ],
+              [
+                "Mixed, depends on what the central bank is worried about",
+                "ملا جلا، مرکزی بینک کی تشویش پر منحصر"
+              ],
+              [
+                "Market reads the policy implication, not the headline",
+                "مارکیٹ سرخی نہیں، پالیسی پر اثر دیکھتی ہے"
+              ]
+            ],
+            [
+              [
+                "Rate decision",
+                "شرح سود کا فیصلہ"
+              ],
+              [
+                "Cut expected",
+                "کمی کی توقع"
+              ],
+              [
+                "Cut delivered",
+                "کمی ہو گئی"
+              ],
+              [
+                "Often small move",
+                "اکثر چھوٹی حرکت"
+              ],
+              [
+                "Already priced in",
+                "پہلے ہی قیمت میں شامل"
+              ]
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "A second layer: markets also trade the reaction to the reaction. If a big surprise is followed by a price move that fades, that tells you positioning was already crowded in the other direction.",
+            "ایک دوسری تہہ: مارکیٹس ردِعمل کے ردِعمل پر بھی سودا کرتی ہیں۔ بڑے غیر متوقع نتیجے کے بعد قیمتی حرکت ماند پڑ جائے تو یہ بتاتا ہے کہ دوسری سمت کی پوزیشنز پہلے ہی بھری ہوئی تھیں۔"
+          ]
+        }
+      ],
+      "figure": "expectations",
+      "advanced": false
+    },
+    {
+      "id": "1.5",
+      "title": [
+        "5. The Core Drivers, One by One",
+        "5. بنیادی محرکات، ایک ایک کر کے"
+      ],
+      "paragraphs": [
+        [
+          "Covered above. This is the immediate mechanism by which every other driver becomes a price change. Everything else on this list works through order flow.",
+          "اوپر وضاحت ہو چکی ہے۔ یہی فوری طریقۂ کار ہے جس سے ہر دوسرا محرک قیمت کی تبدیلی بنتا ہے۔ اس فہرست کی باقی ہر چیز آرڈر فلو کے ذریعے اثر کرتی ہے۔"
+        ],
+        [
+          "Interest rates act like gravity for asset prices. Higher rates raise the return available on safe holdings, so risky assets must offer more to attract money. Lower rates do the opposite. Central banks influence rates through policy decisions, guidance and balance-sheet actions. Traders watch not only the decision but the language and projected path, because markets price the future path of rates, not just today's rate.",
+          "شرح سود اثاثوں کی قیمت کے لیے کششِ ثقل جیسا کام کرتی ہے۔ زیادہ شرح محفوظ اثاثوں پر دستیاب منافع بڑھاتی ہے، اس لیے پُررسک اثاثوں کو سرمایہ کھینچنے کے لیے زیادہ پیش کرنا پڑتا ہے۔ کم شرح الٹا اثر کرتی ہے۔ مرکزی بینک پالیسی فیصلوں، رہنمائی اور بیلنس شیٹ کے اقدامات سے شرح پر اثر ڈالتے ہیں۔ ٹریڈرز صرف فیصلہ نہیں، زبان اور متوقع راستہ بھی دیکھتے ہیں، کیونکہ مارکیٹس صرف آج کی شرح نہیں بلکہ شرحوں کے مستقبل کے راستے کی قیمت لگاتی ہیں۔"
+        ],
+        [
+          "Typical effects:",
+          "عام اثرات:"
+        ],
+        [
+          "Inflation, employment, growth, retail spending and manufacturing surveys shape expectations about both company profits and central bank action. Strong data can be bullish (healthy economy) or bearish (rates stay high), depending on the dominant narrative at the time.",
+          "مہنگائی، روزگار، نمو، صارفین کے اخراجات اور صنعتی سروے کمپنیوں کے منافع اور مرکزی بینک کے اقدامات، دونوں کی توقعات بناتے ہیں۔ مضبوط اعداد بُلش (صحت مند معیشت) یا بیئرش (شرحیں بلند رہیں گی) ہو سکتے ہیں؛ اس کا انحصار اس وقت کے غالب بیانیے پر ہے۔"
+        ],
+        [
+          "Revenue, margins, cash flow, debt and outlook set the long-run value anchor for a stock. In the short term, guidance and expectations change matter more than the past quarter's numbers.",
+          "ریونیو، مارجنز، کیش فلو، قرض اور آئندہ تخمینہ حصص کی طویل مدتی قدر کا سہارا بنتے ہیں۔ مختصر مدت میں گزشتہ سہ ماہی کے اعداد سے زیادہ رہنمائی اور توقعات کی تبدیلی اہم ہوتی ہے۔"
+        ],
+        [
+          "Weather, harvests, inventories, production decisions, shipping disruptions and industrial demand drive physical commodities. Inventory data and production announcements often move prices sharply because physical supply cannot be adjusted instantly.",
+          "موسم، فصلیں، ذخائر، پیداوار کے فیصلے، بحری ترسیل کی رکاوٹیں اور صنعتی طلب طبعی کموڈیٹیز کے محرک ہیں۔ ذخائر کے اعداد اور پیداوار کے اعلانات اکثر قیمت تیزی سے بدلتے ہیں، کیونکہ طبعی رسد فوراً تبدیل نہیں کی جا سکتی۔"
+        ],
+        [
+          "Large funds, pension managers, ETFs and index providers move huge amounts of money for reasons unrelated to a single company's story: inflows, redemptions, rebalancing, tax deadlines and mandate changes. These flows can push price for days.",
+          "بڑے فنڈز، پنشن مینیجرز، ETFs اور انڈیکس فراہم کنندگان ایسی وجوہ سے بڑی رقوم منتقل کرتے ہیں جن کا کسی ایک کمپنی کی کہانی سے تعلق نہیں: سرمایہ آنا، واپس نکلنا، ری بیلنسنگ، ٹیکس کی آخری تاریخیں اور مینڈیٹ کی تبدیلیاں۔ یہ بہاؤ کئی دن قیمت کو آگے لے جا سکتا ہے۔"
+        ],
+        [
+          "Fear and greed change how much risk participants will take. Positioning, meaning how many traders are already long or short, decides how violently price reacts when the story changes. A crowded trade can reverse sharply on mild news.",
+          "خوف اور لالچ بدلتے ہیں کہ شرکا کتنا رسک لیں گے۔ پوزیشننگ، یعنی کتنے ٹریڈرز پہلے ہی لانگ یا شارٹ ہیں، طے کرتی ہے کہ کہانی بدلنے پر قیمت کتنی شدت سے ردِعمل دے گی۔ ہجوم والی ٹریڈ معمولی خبر پر بھی تیزی سے پلٹ سکتی ہے۔"
+        ],
+        [
+          "Headlines matter when they change the probability of future outcomes: sanctions, wars, elections, trade rules, regulation. The market prices probabilities, which is why prices often move before an event is confirmed.",
+          "سرخیاں تب اہم ہوتی ہیں جب وہ مستقبل کے نتائج کے امکانات بدلیں: پابندیاں، جنگیں، انتخابات، تجارتی قواعد، ضابطے۔ مارکیٹ امکانات کی قیمت لگاتی ہے، اسی لیے واقعے کی تصدیق سے پہلے قیمت اکثر حرکت کر جاتی ہے۔"
+        ],
+        [
+          "When traders borrow to amplify positions, falling prices trigger margin calls and liquidations, which create more selling, which pushes prices lower. This feedback loop produces fast, outsized moves in all markets, especially crypto and futures.",
+          "جب ٹریڈرز قرض لے کر پوزیشن بڑھاتے ہیں تو گرتی قیمت مارجن کالز اور لیکویڈیشنز پیدا کرتی ہے۔ ان سے مزید فروخت ہوتی ہے اور قیمت مزید گرتی ہے۔ یہ باہمی اثر تمام مارکیٹس، خصوصاً کرپٹو اور فیوچرز میں تیز اور غیر معمولی بڑی حرکتیں پیدا کرتا ہے۔"
+        ],
+        [
+          "Automated systems react to data, news text and price patterns in milliseconds. Market makers adjust quotes to manage risk, and in stress they widen spreads or step back, which can amplify moves.",
+          "خودکار نظام ملی سیکنڈز میں اعداد، خبر کے متن اور قیمتی پیٹرنز پر ردِعمل دیتے ہیں۔ مارکیٹ میکرز رسک سنبھالنے کے لیے کوٹس بدلتے ہیں؛ دباؤ میں اسپریڈ بڑھاتے یا پیچھے ہٹتے ہیں، جس سے حرکت بڑھ سکتی ہے۔"
+        ],
+        [
+          "Assets do not move in isolation. A stronger US dollar can pressure gold and emerging-market assets. Oil prices affect inflation expectations and currency of energy exporters. Equity sell-offs can push money into government bonds.",
+          "اثاثے الگ تھلگ حرکت نہیں کرتے۔ مضبوط امریکی ڈالر سونے اور ابھرتی مارکیٹس کے اثاثوں پر دباؤ ڈال سکتا ہے۔ تیل کی قیمت مہنگائی کی توقعات اور توانائی برآمد کنندگان کی کرنسی کو متاثر کرتی ہے۔ حصص کی فروخت سرمایہ سرکاری بانڈز میں لے جا سکتی ہے۔"
+        ]
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "text": [
+            "5.1 Order flow and liquidity",
+            "5.1 آرڈر فلو اور لیکویڈیٹی"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Covered above. This is the immediate mechanism by which every other driver becomes a price change. Everything else on this list works through order flow.",
+            "اوپر وضاحت ہو چکی ہے۔ یہی فوری طریقۂ کار ہے جس سے ہر دوسرا محرک قیمت کی تبدیلی بنتا ہے۔ اس فہرست کی باقی ہر چیز آرڈر فلو کے ذریعے اثر کرتی ہے۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "5.2 Interest rates and central banks",
+            "5.2 شرح سود اور مرکزی بینک"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Interest rates act like gravity for asset prices. Higher rates raise the return available on safe holdings, so risky assets must offer more to attract money. Lower rates do the opposite. Central banks influence rates through policy decisions, guidance and balance-sheet actions. Traders watch not only the decision but the language and projected path, because markets price the future path of rates, not just today's rate.",
+            "شرح سود اثاثوں کی قیمت کے لیے کششِ ثقل جیسا کام کرتی ہے۔ زیادہ شرح محفوظ اثاثوں پر دستیاب منافع بڑھاتی ہے، اس لیے پُررسک اثاثوں کو سرمایہ کھینچنے کے لیے زیادہ پیش کرنا پڑتا ہے۔ کم شرح الٹا اثر کرتی ہے۔ مرکزی بینک پالیسی فیصلوں، رہنمائی اور بیلنس شیٹ کے اقدامات سے شرح پر اثر ڈالتے ہیں۔ ٹریڈرز صرف فیصلہ نہیں، زبان اور متوقع راستہ بھی دیکھتے ہیں، کیونکہ مارکیٹس صرف آج کی شرح نہیں بلکہ شرحوں کے مستقبل کے راستے کی قیمت لگاتی ہیں۔"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Typical effects:",
+            "عام اثرات:"
+          ]
+        },
+        {
+          "kind": "list",
+          "items": [
+            [
+              "Rising rate expectations tend to strengthen a country's currency and pressure growth-heavy stocks and long-duration assets.",
+              "شرح سود بڑھنے کی توقع عموماً ملکی کرنسی مضبوط کرتی اور زیادہ نمو والے حصص اور طویل مدتی اثاثوں پر دباؤ ڈالتی ہے۔"
+            ],
+            [
+              "Falling rate expectations tend to weaken the currency and support risk assets, though not always.",
+              "شرح سود گھٹنے کی توقع عموماً کرنسی کمزور اور پُررسک اثاثوں کو سہارا دیتی ہے، مگر ہمیشہ نہیں۔"
+            ]
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "5.3 Inflation and economic data",
+            "5.3 مہنگائی اور معاشی اعداد و شمار"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Inflation, employment, growth, retail spending and manufacturing surveys shape expectations about both company profits and central bank action. Strong data can be bullish (healthy economy) or bearish (rates stay high), depending on the dominant narrative at the time.",
+            "مہنگائی، روزگار، نمو، صارفین کے اخراجات اور صنعتی سروے کمپنیوں کے منافع اور مرکزی بینک کے اقدامات، دونوں کی توقعات بناتے ہیں۔ مضبوط اعداد بُلش (صحت مند معیشت) یا بیئرش (شرحیں بلند رہیں گی) ہو سکتے ہیں؛ اس کا انحصار اس وقت کے غالب بیانیے پر ہے۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "5.4 Earnings and company fundamentals (stocks)",
+            "5.4 آمدن اور کمپنی کے بنیادی عوامل (حصص)"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Revenue, margins, cash flow, debt and outlook set the long-run value anchor for a stock. In the short term, guidance and expectations change matter more than the past quarter's numbers.",
+            "ریونیو، مارجنز، کیش فلو، قرض اور آئندہ تخمینہ حصص کی طویل مدتی قدر کا سہارا بنتے ہیں۔ مختصر مدت میں گزشتہ سہ ماہی کے اعداد سے زیادہ رہنمائی اور توقعات کی تبدیلی اہم ہوتی ہے۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "5.5 Supply and demand fundamentals (commodities)",
+            "5.5 طلب اور رسد کے بنیادی عوامل (کموڈیٹیز)"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Weather, harvests, inventories, production decisions, shipping disruptions and industrial demand drive physical commodities. Inventory data and production announcements often move prices sharply because physical supply cannot be adjusted instantly.",
+            "موسم، فصلیں، ذخائر، پیداوار کے فیصلے، بحری ترسیل کی رکاوٹیں اور صنعتی طلب طبعی کموڈیٹیز کے محرک ہیں۔ ذخائر کے اعداد اور پیداوار کے اعلانات اکثر قیمت تیزی سے بدلتے ہیں، کیونکہ طبعی رسد فوراً تبدیل نہیں کی جا سکتی۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "5.6 Capital flows and institutional activity",
+            "5.6 سرمائے کا بہاؤ اور ادارہ جاتی سرگرمی"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Large funds, pension managers, ETFs and index providers move huge amounts of money for reasons unrelated to a single company's story: inflows, redemptions, rebalancing, tax deadlines and mandate changes. These flows can push price for days.",
+            "بڑے فنڈز، پنشن مینیجرز، ETFs اور انڈیکس فراہم کنندگان ایسی وجوہ سے بڑی رقوم منتقل کرتے ہیں جن کا کسی ایک کمپنی کی کہانی سے تعلق نہیں: سرمایہ آنا، واپس نکلنا، ری بیلنسنگ، ٹیکس کی آخری تاریخیں اور مینڈیٹ کی تبدیلیاں۔ یہ بہاؤ کئی دن قیمت کو آگے لے جا سکتا ہے۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "5.7 Sentiment and positioning",
+            "5.7 جذبات اور پوزیشننگ"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Fear and greed change how much risk participants will take. Positioning, meaning how many traders are already long or short, decides how violently price reacts when the story changes. A crowded trade can reverse sharply on mild news.",
+            "خوف اور لالچ بدلتے ہیں کہ شرکا کتنا رسک لیں گے۔ پوزیشننگ، یعنی کتنے ٹریڈرز پہلے ہی لانگ یا شارٹ ہیں، طے کرتی ہے کہ کہانی بدلنے پر قیمت کتنی شدت سے ردِعمل دے گی۔ ہجوم والی ٹریڈ معمولی خبر پر بھی تیزی سے پلٹ سکتی ہے۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "5.8 News, narratives and geopolitics",
+            "5.8 خبریں، بیانیے اور جغرافیائی سیاست"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Headlines matter when they change the probability of future outcomes: sanctions, wars, elections, trade rules, regulation. The market prices probabilities, which is why prices often move before an event is confirmed.",
+            "سرخیاں تب اہم ہوتی ہیں جب وہ مستقبل کے نتائج کے امکانات بدلیں: پابندیاں، جنگیں، انتخابات، تجارتی قواعد، ضابطے۔ مارکیٹ امکانات کی قیمت لگاتی ہے، اسی لیے واقعے کی تصدیق سے پہلے قیمت اکثر حرکت کر جاتی ہے۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "5.9 Leverage and forced trading",
+            "5.9 لیوریج اور جبری ٹریڈنگ"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "When traders borrow to amplify positions, falling prices trigger margin calls and liquidations, which create more selling, which pushes prices lower. This feedback loop produces fast, outsized moves in all markets, especially crypto and futures.",
+            "جب ٹریڈرز قرض لے کر پوزیشن بڑھاتے ہیں تو گرتی قیمت مارجن کالز اور لیکویڈیشنز پیدا کرتی ہے۔ ان سے مزید فروخت ہوتی ہے اور قیمت مزید گرتی ہے۔ یہ باہمی اثر تمام مارکیٹس، خصوصاً کرپٹو اور فیوچرز میں تیز اور غیر معمولی بڑی حرکتیں پیدا کرتا ہے۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "5.10 Algorithms and market makers",
+            "5.10 الگورتھمز اور مارکیٹ میکرز"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Automated systems react to data, news text and price patterns in milliseconds. Market makers adjust quotes to manage risk, and in stress they widen spreads or step back, which can amplify moves.",
+            "خودکار نظام ملی سیکنڈز میں اعداد، خبر کے متن اور قیمتی پیٹرنز پر ردِعمل دیتے ہیں۔ مارکیٹ میکرز رسک سنبھالنے کے لیے کوٹس بدلتے ہیں؛ دباؤ میں اسپریڈ بڑھاتے یا پیچھے ہٹتے ہیں، جس سے حرکت بڑھ سکتی ہے۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "5.11 Currency, cross-market and correlation effects",
+            "5.11 کرنسی، مختلف مارکیٹس اور باہمی تعلق کے اثرات"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Assets do not move in isolation. A stronger US dollar can pressure gold and emerging-market assets. Oil prices affect inflation expectations and currency of energy exporters. Equity sell-offs can push money into government bonds.",
+            "اثاثے الگ تھلگ حرکت نہیں کرتے۔ مضبوط امریکی ڈالر سونے اور ابھرتی مارکیٹس کے اثاثوں پر دباؤ ڈال سکتا ہے۔ تیل کی قیمت مہنگائی کی توقعات اور توانائی برآمد کنندگان کی کرنسی کو متاثر کرتی ہے۔ حصص کی فروخت سرمایہ سرکاری بانڈز میں لے جا سکتی ہے۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "Driver summary",
+            "محرکات کا خلاصہ"
+          ]
+        },
+        {
+          "kind": "table",
+          "headers": [
+            [
+              "Driver",
+              "محرک"
+            ],
+            [
+              "Main time frame",
+              "اہم مدت"
+            ],
+            [
+              "Beginner takeaway",
+              "ابتدائی سبق"
+            ],
+            [
+              "Advanced takeaway",
+              "اعلیٰ درجے کا سبق"
+            ]
+          ],
+          "rows": [
+            [
+              [
+                "Order flow",
+                "آرڈر فلو"
+              ],
+              [
+                "Seconds to days",
+                "سیکنڈ سے دن"
+              ],
+              [
+                "Urgent traders move price",
+                "فوری ضرورت والے ٹریڈرز قیمت بدلتے ہیں"
+              ],
+              [
+                "Watch depth, absorption, imbalance",
+                "ڈیپتھ، جذب ہونے اور عدم توازن کو دیکھیں"
+              ]
+            ],
+            [
+              [
+                "Rates and central banks",
+                "شرحیں اور مرکزی بینک"
+              ],
+              [
+                "Weeks to years",
+                "ہفتے سے برس"
+              ],
+              [
+                "Cheaper money lifts risk assets",
+                "سستا سرمایہ پُررسک اثاثوں کو اٹھاتا ہے"
+              ],
+              [
+                "Price the path, not the level",
+                "سطح نہیں، راستے کی قیمت لگائیں"
+              ]
+            ],
+            [
+              [
+                "Data releases",
+                "اعداد کا اجرا"
+              ],
+              [
+                "Minutes to weeks",
+                "منٹ سے ہفتے"
+              ],
+              [
+                "Surprise matters, not the number",
+                "عدد نہیں، غیر متوقع فرق اہم ہے"
+              ],
+              [
+                "Learn what the market currently fears",
+                "جانیں مارکیٹ اس وقت کس چیز سے ڈرتی ہے"
+              ]
+            ],
+            [
+              [
+                "Earnings",
+                "آمدن"
+              ],
+              [
+                "Days to months",
+                "دن سے مہینے"
+              ],
+              [
+                "Outlook beats results",
+                "آئندہ تخمینہ نتائج سے اہم ہے"
+              ],
+              [
+                "Revisions and estimate drift",
+                "تبدیلیاں اور تخمینوں کا بتدریج بدلنا"
+              ]
+            ],
+            [
+              [
+                "Supply and demand (physical)",
+                "طلب اور رسد (طبعی)"
+              ],
+              [
+                "Weeks to years",
+                "ہفتے سے برس"
+              ],
+              [
+                "Shortage lifts, glut lowers",
+                "قلت بڑھاتی، فراوانی گھٹاتی ہے"
+              ],
+              [
+                "Inventories, spreads, term structure",
+                "ذخائر، اسپریڈز، مدتی ساخت"
+              ]
+            ],
+            [
+              [
+                "Capital flows",
+                "سرمائے کا بہاؤ"
+              ],
+              [
+                "Days to months",
+                "دن سے مہینے"
+              ],
+              [
+                "Big money moves markets",
+                "بڑا سرمایہ مارکیٹس بدلتا ہے"
+              ],
+              [
+                "Rebalancing, ETF creation, mandate shifts",
+                "ری بیلنسنگ، ETF اکائیاں بننا، مینڈیٹ بدلنا"
+              ]
+            ],
+            [
+              [
+                "Sentiment and positioning",
+                "جذبات اور پوزیشننگ"
+              ],
+              [
+                "Days to months",
+                "دن سے مہینے"
+              ],
+              [
+                "Crowds overreact",
+                "ہجوم حد سے زیادہ ردِعمل دیتا ہے"
+              ],
+              [
+                "Positioning extremes precede reversals",
+                "انتہائی پوزیشننگ ریورسلز سے پہلے آتی ہے"
+              ]
+            ],
+            [
+              [
+                "Leverage and liquidations",
+                "لیوریج اور لیکویڈیشنز"
+              ],
+              [
+                "Minutes to days",
+                "منٹ سے دن"
+              ],
+              [
+                "Borrowed money magnifies moves",
+                "ادھار سرمایہ حرکت بڑھاتا ہے"
+              ],
+              [
+                "Funding, open interest, cascade levels",
+                "فنڈنگ، اوپن انٹرسٹ، سلسلہ وار لیکویڈیشن کی سطحیں"
+              ]
+            ],
+            [
+              [
+                "Geopolitics and news",
+                "جغرافیائی سیاست اور خبریں"
+              ],
+              [
+                "Hours to months",
+                "گھنٹے سے مہینے"
+              ],
+              [
+                "Probabilities shift fast",
+                "امکانات تیزی سے بدلتے ہیں"
+              ],
+              [
+                "Event risk premia and hedging demand",
+                "واقعات کے رسک پریمیم اور ہیجنگ کی طلب"
+              ]
+            ]
+          ]
+        }
+      ],
+      "figure": null,
+      "advanced": false
+    },
+    {
+      "id": "1.6",
+      "title": [
+        "6. Stocks vs Forex vs Crypto vs Commodities",
+        "6. حصص بمقابلہ فاریکس، کرپٹو اور کموڈیٹیز"
+      ],
+      "paragraphs": [
+        [
+          "The mechanics are identical (buyers, sellers, liquidity), but each market weights the drivers differently.",
+          "طریقۂ کار یکساں ہے (خریدار، فروخت کنندہ، لیکویڈیٹی)، مگر ہر مارکیٹ محرکات کو مختلف وزن دیتی ہے۔"
+        ]
+      ],
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": [
+            "The mechanics are identical (buyers, sellers, liquidity), but each market weights the drivers differently.",
+            "طریقۂ کار یکساں ہے (خریدار، فروخت کنندہ، لیکویڈیٹی)، مگر ہر مارکیٹ محرکات کو مختلف وزن دیتی ہے۔"
+          ]
+        },
+        {
+          "kind": "table",
+          "headers": [
+            [
+              "Factor",
+              "عامل"
+            ],
+            [
+              "Stocks",
+              "حصص"
+            ],
+            [
+              "Forex",
+              "فاریکس"
+            ],
+            [
+              "Crypto",
+              "کرپٹو"
+            ],
+            [
+              "Commodities",
+              "کموڈیٹیز"
+            ]
+          ],
+          "rows": [
+            [
+              [
+                "Strongest driver",
+                "سب سے مضبوط محرک"
+              ],
+              [
+                "Earnings, growth outlook, rates",
+                "آمدن، نمو کا تخمینہ، شرحیں"
+              ],
+              [
+                "Interest-rate differentials, central bank policy",
+                "شرح سود کا فرق، مرکزی بینک کی پالیسی"
+              ],
+              [
+                "Liquidity, sentiment, leverage, adoption narratives",
+                "لیکویڈیٹی، جذبات، لیوریج، قبولیت کے بیانیے"
+              ],
+              [
+                "Physical supply and demand, weather, geopolitics",
+                "طبعی طلب و رسد، موسم، جغرافیائی سیاست"
+              ]
+            ],
+            [
+              [
+                "Role of company-specific news",
+                "کمپنی کی مخصوص خبر کا کردار"
+              ],
+              [
+                "Very high",
+                "بہت زیادہ"
+              ],
+              [
+                "None (country-level instead)",
+                "نہیں (اس کی جگہ ملکی سطح)"
+              ],
+              [
+                "Project-specific news and protocol events",
+                "پروجیکٹ کی مخصوص خبریں اور پروٹوکول کے واقعات"
+              ],
+              [
+                "Producer-specific news in some cases",
+                "کچھ صورتوں میں پیدا کنندہ کی مخصوص خبر"
+              ]
+            ],
+            [
+              [
+                "Role of central banks",
+                "مرکزی بینکوں کا کردار"
+              ],
+              [
+                "High (via rates and valuation)",
+                "زیادہ (شرحوں اور قدر کے ذریعے)"
+              ],
+              [
+                "Very high",
+                "بہت زیادہ"
+              ],
+              [
+                "Moderate and indirect",
+                "درمیانہ اور بالواسطہ"
+              ],
+              [
+                "Moderate (via dollar and demand)",
+                "درمیانہ (ڈالر اور طلب کے ذریعے)"
+              ]
+            ],
+            [
+              [
+                "Typical trading hours",
+                "عام تجارتی اوقات"
+              ],
+              [
+                "Exchange sessions",
+                "ایکسچینج سیشنز"
+              ],
+              [
+                "Nearly 24 hours, five days",
+                "تقریباً 24 گھنٹے، پانچ دن"
+              ],
+              [
+                "24 hours, seven days",
+                "24 گھنٹے، سات دن"
+              ],
+              [
+                "Varies, often long sessions",
+                "مختلف، اکثر لمبے سیشنز"
+              ]
+            ],
+            [
+              [
+                "Liquidity",
+                "لیکویڈیٹی"
+              ],
+              [
+                "Varies from deep to very thin",
+                "گہری سے بہت کم تک"
+              ],
+              [
+                "Deepest for major pairs",
+                "بڑے جوڑوں میں سب سے گہری"
+              ],
+              [
+                "Deep for major coins, thin for small ones",
+                "بڑے کوائنز میں گہری، چھوٹوں میں کم"
+              ],
+              [
+                "Deep for major contracts, thin for niche ones",
+                "بڑے کنٹریکٹس میں گہری، مخصوص چھوٹوں میں کم"
+              ]
+            ],
+            [
+              [
+                "Leverage common?",
+                "لیوریج عام ہے؟"
+              ],
+              [
+                "Moderate",
+                "درمیانی"
+              ],
+              [
+                "High",
+                "زیادہ"
+              ],
+              [
+                "Very high",
+                "بہت زیادہ"
+              ],
+              [
+                "High (futures)",
+                "زیادہ (فیوچرز)"
+              ]
+            ],
+            [
+              [
+                "Typical volatility",
+                "عام وولاٹیلٹی"
+              ],
+              [
+                "Moderate",
+                "درمیانی"
+              ],
+              [
+                "Lower",
+                "نسبتاً کم"
+              ],
+              [
+                "High to very high",
+                "زیادہ سے بہت زیادہ"
+              ],
+              [
+                "Moderate to high",
+                "درمیانی سے زیادہ"
+              ]
+            ],
+            [
+              [
+                "Special driver",
+                "خاص محرک"
+              ],
+              [
+                "Index inclusion, buybacks, insider activity",
+                "انڈیکس میں شمولیت، بائے بیکس، اندرونی افراد کی سرگرمی"
+              ],
+              [
+                "Carry trades, trade balances",
+                "کیری ٹریڈز، تجارتی توازن"
+              ],
+              [
+                "Funding rates, token supply schedules, regulation",
+                "فنڈنگ ریٹس، ٹوکن رسد کے شیڈول، ضابطے"
+              ],
+              [
+                "Seasonal demand, inventories, OPEC-type decisions",
+                "موسمی طلب، ذخائر، اوپیک جیسے فیصلے"
+              ]
+            ],
+            [
+              [
+                "Beginner difficulty reading it",
+                "نئے سیکھنے والے کے لیے سمجھنے کی دشواری"
+              ],
+              [
+                "Medium",
+                "درمیانی"
+              ],
+              [
+                "Medium to hard",
+                "درمیانی سے مشکل"
+              ],
+              [
+                "Hard (noise and hype)",
+                "مشکل (شور اور چرچا)"
+              ],
+              [
+                "Medium to hard",
+                "درمیانی سے مشکل"
+              ]
+            ]
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "What this means in practice",
+            "عملی طور پر اس کا مطلب"
+          ]
+        },
+        {
+          "kind": "list",
+          "items": [
+            [
+              "Stocks are valued claims on future profits, so growth expectations and discount rates (rates) dominate.",
+              "حصص مستقبل کے منافع پر قیمت یافتہ حق ہیں، اس لیے نمو کی توقعات اور ڈسکاؤنٹ ریٹس (شرحیں) غالب ہیں۔"
+            ],
+            [
+              "Forex is relative pricing between two economies, so it reflects the difference in rates, growth and risk between countries.",
+              "فاریکس دو معیشتوں کی نسبتی قیمت ہے، اس لیے ممالک کے درمیان شرح، نمو اور رسک کا فرق دکھاتا ہے۔"
+            ],
+            [
+              "Crypto has no earnings in most cases, so price leans heavily on liquidity conditions, speculative sentiment, leverage and narrative shifts.",
+              "کرپٹو میں اکثر آمدن نہیں ہوتی، اس لیے قیمت زیادہ تر لیکویڈیٹی کے حالات، قیاسی جذبات، لیوریج اور بدلتے بیانیوں پر ہوتی ہے۔"
+            ],
+            [
+              "Commodities are tied to physical reality: what can be produced, stored and consumed.",
+              "کموڈیٹیز طبعی حقیقت سے جڑی ہیں: کیا پیدا، ذخیرہ اور استعمال ہو سکتا ہے۔"
+            ]
+          ]
+        }
+      ],
+      "figure": "markets",
+      "advanced": false
+    },
+    {
+      "id": "1.7",
+      "title": [
+        "7. Time Frame: What Matters at Each Speed",
+        "7. ٹائم فریم: ہر رفتار پر کیا اہم ہے"
+      ],
+      "paragraphs": [
+        [
+          "A frequent confusion is arguing about \"what really moves price\" without naming the time frame. Both the day trader who says \"it's order flow\" and the long-term investor who says \"it's earnings\" are right, for their own speed.",
+          "عام الجھن یہ ہے کہ ٹائم فریم بتائے بغیر \"قیمت واقعی کس سے حرکت کرتی ہے\" پر بحث کی جائے۔ \"آرڈر فلو\" کہنے والا ڈے ٹریڈر اور \"آمدن\" کہنے والا طویل مدتی سرمایہ کار، دونوں اپنی اپنی رفتار کے لحاظ سے درست ہیں۔"
+        ]
+      ],
+      "blocks": [
+        {
+          "kind": "table",
+          "headers": [
+            [
+              "Time frame",
+              "ٹائم فریم"
+            ],
+            [
+              "Dominant forces",
+              "غالب قوتیں"
+            ],
+            [
+              "Typical mistake",
+              "عام غلطی"
+            ]
+          ],
+          "rows": [
+            [
+              [
+                "Seconds to minutes",
+                "سیکنڈ سے منٹ"
+              ],
+              [
+                "Order flow, liquidity, algorithms, stop runs",
+                "آرڈر فلو، لیکویڈیٹی، الگورتھمز، اسٹاپ رنز"
+              ],
+              [
+                "Reading deep meaning into noise",
+                "شور میں گہرا مطلب تلاش کرنا"
+              ]
+            ],
+            [
+              [
+                "Hours to days",
+                "گھنٹے سے دن"
+              ],
+              [
+                "Scheduled data, headlines, positioning shifts",
+                "طے شدہ اعداد، سرخیاں، پوزیشننگ کی تبدیلی"
+              ],
+              [
+                "Trading the headline instead of the surprise",
+                "غیر متوقع فرق کے بجائے سرخی پر ٹریڈ کرنا"
+              ]
+            ],
+            [
+              [
+                "Weeks to months",
+                "ہفتے سے مہینے"
+              ],
+              [
+                "Earnings trends, rate expectations, capital flows, sector rotation",
+                "آمدن کے رجحانات، شرحوں کی توقعات، سرمائے کا بہاؤ، شعبوں کی گردش"
+              ],
+              [
+                "Fighting the prevailing flow",
+                "غالب بہاؤ کے خلاف لڑنا"
+              ]
+            ],
+            [
+              [
+                "Years",
+                "برس"
+              ],
+              [
+                "Growth, productivity, demographics, adoption, supply cycles",
+                "نمو، پیداواری صلاحیت، آبادی، قبولیت، رسد کے چکر"
+              ],
+              [
+                "Expecting fundamentals to correct price quickly",
+                "بنیادی عوامل سے فوراً قیمت درست ہونے کی توقع"
+              ]
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "A frequent confusion is arguing about \"what really moves price\" without naming the time frame. Both the day trader who says \"it's order flow\" and the long-term investor who says \"it's earnings\" are right, for their own speed.",
+            "عام الجھن یہ ہے کہ ٹائم فریم بتائے بغیر \"قیمت واقعی کس سے حرکت کرتی ہے\" پر بحث کی جائے۔ \"آرڈر فلو\" کہنے والا ڈے ٹریڈر اور \"آمدن\" کہنے والا طویل مدتی سرمایہ کار، دونوں اپنی اپنی رفتار کے لحاظ سے درست ہیں۔"
+          ]
+        }
+      ],
+      "figure": "timeframes",
+      "advanced": false
+    },
+    {
+      "id": "1.8",
+      "title": [
+        "8. Advanced: Positioning, Leverage and Reflexivity",
+        "8. اعلیٰ سطح: پوزیشننگ، لیوریج اور ریفلیکسیویٹی"
+      ],
+      "paragraphs": [
+        [
+          "A move requires someone to be on the wrong side. The most violent moves happen when a large crowd is leaning the same way and the facts turn against them. Useful gauges across markets include trader positioning reports, options skew, futures open interest and sentiment surveys.",
+          "حرکت کے لیے کسی کا غلط سمت میں ہونا ضروری ہے۔ شدید ترین حرکتیں تب ہوتی ہیں جب بڑا ہجوم ایک سمت ہو اور حقائق اس کے خلاف ہو جائیں۔ مختلف مارکیٹس میں مفید پیمانوں میں ٹریڈر پوزیشننگ رپورٹس، آپشنز اسکیو، فیوچرز اوپن انٹرسٹ اور جذباتی سروے شامل ہیں۔"
+        ],
+        [
+          "Prices do not only reflect conditions; they can change conditions. A rising stock price makes it cheaper for a company to raise capital, which strengthens the business, which supports the price. A falling price can raise borrowing costs or force liquidations, which worsens the fundamentals. This feedback loop is why trends can overshoot both ways.",
+          "قیمتیں صرف حالات ظاہر نہیں کرتیں؛ انہیں بدل بھی سکتی ہیں۔ بڑھتی حصص قیمت کمپنی کے لیے سرمایہ اکٹھا کرنا سستا کرتی ہے، جس سے کاروبار مضبوط اور قیمت کو سہارا ملتا ہے۔ گرتی قیمت قرض کی لاگت بڑھا یا جبری لیکویڈیشن پیدا کر سکتی ہے، جس سے بنیادی حالات خراب ہوتے ہیں۔ اسی باہمی اثر سے رجحانات دونوں سمت حد سے آگے جا سکتے ہیں۔"
+        ],
+        [
+          "In leveraged markets, liquidation levels cluster around round numbers and obvious technical levels. When price touches them, forced orders hit the book at once, creating a rapid cascade that overshoots \"fair\" value and often snaps back after the forced selling or buying is exhausted.",
+          "لیوریج والی مارکیٹس میں لیکویڈیشن کی سطحیں گول اعداد اور نمایاں تکنیکی سطحوں کے گرد جمع ہوتی ہیں۔ قیمت انہیں چھوتی ہے تو جبری آرڈرز ایک ساتھ بک میں آتے ہیں، تیز سلسلہ وار حرکت \"منصفانہ\" قدر سے آگے نکلتی ہے اور جبری خرید یا فروخت ختم ہونے پر اکثر واپس پلٹتی ہے۔"
+        ],
+        [
+          "In forex, carry (earning the interest difference between two currencies) attracts steady flows that can unwind suddenly when volatility rises. In crypto futures, funding rates show which side is paying to hold positions; extreme funding signals crowding.",
+          "فاریکس میں کیری (دو کرنسیوں کی شرح سود کا فرق کمانا) مسلسل بہاؤ کھینچتا ہے، جو وولاٹیلٹی بڑھنے پر اچانک پلٹ سکتا ہے۔ کرپٹو فیوچرز میں فنڈنگ ریٹس بتاتے ہیں کہ کون سا فریق پوزیشن رکھنے کی ادائیگی کر رہا ہے؛ انتہائی فنڈنگ ہجوم کی علامت ہے۔"
+        ],
+        [
+          "Markets alternate between calm and turbulent regimes. In calm regimes, price mean-reverts and news fades. In turbulent regimes, correlations rise, liquidity thins and moves accelerate. Many strategies that work in one regime fail in the other.",
+          "مارکیٹس پُرسکون اور ہنگامہ خیز ادوار میں بدلتی رہتی ہیں۔ پُرسکون دور میں قیمت اوسط کی طرف لوٹتی اور خبر کا اثر ماند پڑتا ہے۔ ہنگامہ خیز دور میں باہمی تعلق بڑھتا، لیکویڈیٹی کم ہوتی اور حرکت تیز ہوتی ہے۔ ایک دور میں چلنے والی کئی حکمت عملیاں دوسرے میں ناکام ہوتی ہیں۔"
+        ]
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "text": [
+            "Positioning and crowding",
+            "پوزیشننگ اور ہجوم"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "A move requires someone to be on the wrong side. The most violent moves happen when a large crowd is leaning the same way and the facts turn against them. Useful gauges across markets include trader positioning reports, options skew, futures open interest and sentiment surveys.",
+            "حرکت کے لیے کسی کا غلط سمت میں ہونا ضروری ہے۔ شدید ترین حرکتیں تب ہوتی ہیں جب بڑا ہجوم ایک سمت ہو اور حقائق اس کے خلاف ہو جائیں۔ مختلف مارکیٹس میں مفید پیمانوں میں ٹریڈر پوزیشننگ رپورٹس، آپشنز اسکیو، فیوچرز اوپن انٹرسٹ اور جذباتی سروے شامل ہیں۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "Reflexivity",
+            "ریفلیکسیویٹی"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Prices do not only reflect conditions; they can change conditions. A rising stock price makes it cheaper for a company to raise capital, which strengthens the business, which supports the price. A falling price can raise borrowing costs or force liquidations, which worsens the fundamentals. This feedback loop is why trends can overshoot both ways.",
+            "قیمتیں صرف حالات ظاہر نہیں کرتیں؛ انہیں بدل بھی سکتی ہیں۔ بڑھتی حصص قیمت کمپنی کے لیے سرمایہ اکٹھا کرنا سستا کرتی ہے، جس سے کاروبار مضبوط اور قیمت کو سہارا ملتا ہے۔ گرتی قیمت قرض کی لاگت بڑھا یا جبری لیکویڈیشن پیدا کر سکتی ہے، جس سے بنیادی حالات خراب ہوتے ہیں۔ اسی باہمی اثر سے رجحانات دونوں سمت حد سے آگے جا سکتے ہیں۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "Leverage cascades",
+            "لیوریج کی سلسلہ وار لیکویڈیشنز"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "In leveraged markets, liquidation levels cluster around round numbers and obvious technical levels. When price touches them, forced orders hit the book at once, creating a rapid cascade that overshoots \"fair\" value and often snaps back after the forced selling or buying is exhausted.",
+            "لیوریج والی مارکیٹس میں لیکویڈیشن کی سطحیں گول اعداد اور نمایاں تکنیکی سطحوں کے گرد جمع ہوتی ہیں۔ قیمت انہیں چھوتی ہے تو جبری آرڈرز ایک ساتھ بک میں آتے ہیں، تیز سلسلہ وار حرکت \"منصفانہ\" قدر سے آگے نکلتی ہے اور جبری خرید یا فروخت ختم ہونے پر اکثر واپس پلٹتی ہے۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "Carry and funding",
+            "کیری اور فنڈنگ"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "In forex, carry (earning the interest difference between two currencies) attracts steady flows that can unwind suddenly when volatility rises. In crypto futures, funding rates show which side is paying to hold positions; extreme funding signals crowding.",
+            "فاریکس میں کیری (دو کرنسیوں کی شرح سود کا فرق کمانا) مسلسل بہاؤ کھینچتا ہے، جو وولاٹیلٹی بڑھنے پر اچانک پلٹ سکتا ہے۔ کرپٹو فیوچرز میں فنڈنگ ریٹس بتاتے ہیں کہ کون سا فریق پوزیشن رکھنے کی ادائیگی کر رہا ہے؛ انتہائی فنڈنگ ہجوم کی علامت ہے۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "Volatility regimes",
+            "وولاٹیلٹی کے ادوار"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Markets alternate between calm and turbulent regimes. In calm regimes, price mean-reverts and news fades. In turbulent regimes, correlations rise, liquidity thins and moves accelerate. Many strategies that work in one regime fail in the other.",
+            "مارکیٹس پُرسکون اور ہنگامہ خیز ادوار میں بدلتی رہتی ہیں۔ پُرسکون دور میں قیمت اوسط کی طرف لوٹتی اور خبر کا اثر ماند پڑتا ہے۔ ہنگامہ خیز دور میں باہمی تعلق بڑھتا، لیکویڈیٹی کم ہوتی اور حرکت تیز ہوتی ہے۔ ایک دور میں چلنے والی کئی حکمت عملیاں دوسرے میں ناکام ہوتی ہیں۔"
+          ]
+        }
+      ],
+      "figure": "leverage",
+      "advanced": true
+    },
+    {
+      "id": "1.9",
+      "title": [
+        "9. Advanced: Market Structure and Dealer Flows",
+        "9. اعلیٰ سطح: مارکیٹ اسٹرکچر اور ڈیلر فلو"
+      ],
+      "paragraphs": [
+        [
+          "When traders buy and sell options, dealers who take the other side hedge by trading the underlying asset. Depending on how options are distributed across strike prices, this hedging can either dampen moves (dealers buy dips and sell rallies) or amplify them (dealers sell into falls and buy into rises). Traders often refer to this as gamma exposure. It is estimated, not directly observed, so treat it as a clue and not a certainty.",
+          "جب ٹریڈرز آپشنز خریدتے اور بیچتے ہیں تو دوسری طرف کے ڈیلرز بنیادی اثاثے میں سودا کر کے ہیج کرتے ہیں۔ اسٹرائیک قیمتوں میں آپشنز کی تقسیم کے مطابق ہیجنگ حرکت دبا سکتی ہے (ڈیلرز کمی پر خریدیں اور تیزی پر بیچیں) یا بڑھا سکتی ہے (کمی میں فروخت اور تیزی میں خرید)۔ ٹریڈرز اسے اکثر گاما ایکسپوژر کہتے ہیں۔ یہ تخمینہ ہے، براہِ راست مشاہدہ نہیں؛ اسے اشارہ سمجھیں، یقین نہیں۔"
+        ],
+        [
+          "Index inclusion or removal forces passive funds to buy or sell, regardless of valuation. ETF creation and redemption can move underlying baskets. Scheduled rebalancing dates concentrate volume and can distort closing prices.",
+          "انڈیکس میں شمولیت یا اخراج غیر فعال فنڈز کو قدر سے قطع نظر خرید یا فروخت پر مجبور کرتا ہے۔ ETF اکائیوں کا بننا اور واپس ہونا بنیادی باسکٹس کو حرکت دے سکتا ہے۔ طے شدہ ری بیلنسنگ کی تاریخیں حجم جمع کرتی اور اختتامی قیمت متاثر کر سکتی ہیں۔"
+        ],
+        [
+          "Markets split across venues. Market makers and high-frequency firms supply most displayed liquidity in calm conditions and reduce it in stress. When they step back, the same order size moves price much further.",
+          "مارکیٹس مختلف مقامات میں تقسیم ہیں۔ پُرسکون حالات میں مارکیٹ میکرز اور ہائی فریکوئنسی فرمز زیادہ تر نمایاں لیکویڈیٹی دیتے ہیں اور دباؤ میں اسے کم کرتے ہیں۔ ان کے پیچھے ہٹنے پر وہی آرڈر مقدار قیمت کو بہت آگے لے جاتی ہے۔"
+        ],
+        [
+          "Opening and closing auctions in stock markets concentrate large institutional orders. Price at the close can be driven by flows that have nothing to do with the day's news.",
+          "اسٹاک مارکیٹس کی افتتاحی اور اختتامی نیلامیاں بڑے ادارہ جاتی آرڈرز جمع کرتی ہیں۔ اختتامی قیمت ایسے بہاؤ سے چل سکتی ہے جس کا دن کی خبر سے کوئی تعلق نہیں۔"
+        ],
+        [
+          "Some participants know more or react faster. Price often drifts in the direction of informed activity before public confirmation. This is why unusually large volume without news deserves attention.",
+          "کچھ شرکا زیادہ جانتے یا تیزی سے ردِعمل دیتے ہیں۔ عوامی تصدیق سے پہلے قیمت اکثر باخبر سرگرمی کی سمت سرکتی ہے۔ اسی لیے بغیر خبر غیر معمولی بڑا حجم توجہ کا مستحق ہے۔"
+        ]
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "text": [
+            "Options and hedging flows",
+            "آپشنز اور ہیجنگ کے بہاؤ"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "When traders buy and sell options, dealers who take the other side hedge by trading the underlying asset. Depending on how options are distributed across strike prices, this hedging can either dampen moves (dealers buy dips and sell rallies) or amplify them (dealers sell into falls and buy into rises). Traders often refer to this as gamma exposure. It is estimated, not directly observed, so treat it as a clue and not a certainty.",
+            "جب ٹریڈرز آپشنز خریدتے اور بیچتے ہیں تو دوسری طرف کے ڈیلرز بنیادی اثاثے میں سودا کر کے ہیج کرتے ہیں۔ اسٹرائیک قیمتوں میں آپشنز کی تقسیم کے مطابق ہیجنگ حرکت دبا سکتی ہے (ڈیلرز کمی پر خریدیں اور تیزی پر بیچیں) یا بڑھا سکتی ہے (کمی میں فروخت اور تیزی میں خرید)۔ ٹریڈرز اسے اکثر گاما ایکسپوژر کہتے ہیں۔ یہ تخمینہ ہے، براہِ راست مشاہدہ نہیں؛ اسے اشارہ سمجھیں، یقین نہیں۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "Index and ETF mechanics",
+            "انڈیکس اور ETF کا طریقۂ کار"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Index inclusion or removal forces passive funds to buy or sell, regardless of valuation. ETF creation and redemption can move underlying baskets. Scheduled rebalancing dates concentrate volume and can distort closing prices.",
+            "انڈیکس میں شمولیت یا اخراج غیر فعال فنڈز کو قدر سے قطع نظر خرید یا فروخت پر مجبور کرتا ہے۔ ETF اکائیوں کا بننا اور واپس ہونا بنیادی باسکٹس کو حرکت دے سکتا ہے۔ طے شدہ ری بیلنسنگ کی تاریخیں حجم جمع کرتی اور اختتامی قیمت متاثر کر سکتی ہیں۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "Liquidity provision and fragmentation",
+            "لیکویڈیٹی کی فراہمی اور تقسیم"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Markets split across venues. Market makers and high-frequency firms supply most displayed liquidity in calm conditions and reduce it in stress. When they step back, the same order size moves price much further.",
+            "مارکیٹس مختلف مقامات میں تقسیم ہیں۔ پُرسکون حالات میں مارکیٹ میکرز اور ہائی فریکوئنسی فرمز زیادہ تر نمایاں لیکویڈیٹی دیتے ہیں اور دباؤ میں اسے کم کرتے ہیں۔ ان کے پیچھے ہٹنے پر وہی آرڈر مقدار قیمت کو بہت آگے لے جاتی ہے۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "Auction and close dynamics",
+            "نیلامی اور اختتام کی حرکیات"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Opening and closing auctions in stock markets concentrate large institutional orders. Price at the close can be driven by flows that have nothing to do with the day's news.",
+            "اسٹاک مارکیٹس کی افتتاحی اور اختتامی نیلامیاں بڑے ادارہ جاتی آرڈرز جمع کرتی ہیں۔ اختتامی قیمت ایسے بہاؤ سے چل سکتی ہے جس کا دن کی خبر سے کوئی تعلق نہیں۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "Information asymmetry",
+            "معلومات کا عدم توازن"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Some participants know more or react faster. Price often drifts in the direction of informed activity before public confirmation. This is why unusually large volume without news deserves attention.",
+            "کچھ شرکا زیادہ جانتے یا تیزی سے ردِعمل دیتے ہیں۔ عوامی تصدیق سے پہلے قیمت اکثر باخبر سرگرمی کی سمت سرکتی ہے۔ اسی لیے بغیر خبر غیر معمولی بڑا حجم توجہ کا مستحق ہے۔"
+          ]
+        }
+      ],
+      "figure": "hedging",
+      "advanced": true
+    },
+    {
+      "id": "1.10",
+      "title": [
+        "10. A Practical Framework to Analyse Any Move",
+        "10. کسی بھی حرکت کا تجزیہ کرنے کا عملی فریم ورک"
+      ],
+      "paragraphs": [
+        [
+          "Use this five-question checklist whenever a price makes a sudden or surprising move.",
+          "جب بھی قیمت اچانک یا حیران کن حرکت کرے، یہ پانچ سوالوں کی چیک لسٹ استعمال کریں۔"
+        ],
+        [
+          "Bonus step: ask what would make the move wrong. If you cannot name the event or level that would invalidate your explanation, you probably have a story, not an analysis.",
+          "اضافی مرحلہ: پوچھیں کون سی بات اس حرکت کو غلط ثابت کرے گی۔ اگر آپ اپنی وضاحت کو باطل کرنے والا واقعہ یا سطح نہیں بتا سکتے تو غالباً آپ کے پاس تجزیہ نہیں، ایک کہانی ہے۔"
+        ]
+      ],
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": [
+            "Use this five-question checklist whenever a price makes a sudden or surprising move.",
+            "جب بھی قیمت اچانک یا حیران کن حرکت کرے، یہ پانچ سوالوں کی چیک لسٹ استعمال کریں۔"
+          ]
+        },
+        {
+          "kind": "table",
+          "headers": [
+            [
+              "Step",
+              "مرحلہ"
+            ],
+            [
+              "Question",
+              "سوال"
+            ],
+            [
+              "What you are checking",
+              "آپ کیا جانچ رہے ہیں"
+            ]
+          ],
+          "rows": [
+            [
+              [
+                "1",
+                "1"
+              ],
+              [
+                "What is the time frame?",
+                "ٹائم فریم کیا ہے؟"
+              ],
+              [
+                "Are you looking at noise, a catalyst or a trend?",
+                "کیا آپ شور، محرک یا رجحان دیکھ رہے ہیں؟"
+              ]
+            ],
+            [
+              [
+                "2",
+                "2"
+              ],
+              [
+                "Was there a catalyst, and what was expected?",
+                "کیا کوئی محرک تھا اور توقع کیا تھی؟"
+              ],
+              [
+                "Surprise versus consensus, not headline alone",
+                "صرف سرخی نہیں، اتفاقی تخمینے کے مقابل غیر متوقع فرق"
+              ]
+            ],
+            [
+              [
+                "3",
+                "3"
+              ],
+              [
+                "Who was positioned where?",
+                "کس کی پوزیشن کہاں تھی؟"
+              ],
+              [
+                "Crowded trades react harder",
+                "ہجوم والی ٹریڈز زیادہ شدت سے ردِعمل دیتی ہیں"
+              ]
+            ],
+            [
+              [
+                "4",
+                "4"
+              ],
+              [
+                "What happened to volume and liquidity?",
+                "حجم اور لیکویڈیٹی میں کیا ہوا؟"
+              ],
+              [
+                "Thin books exaggerate; heavy volume confirms conviction",
+                "کم گہری بک حرکت بڑھاتی ہے؛ زیادہ حجم یقین کی تصدیق کرتا ہے"
+              ]
+            ],
+            [
+              [
+                "5",
+                "5"
+              ],
+              [
+                "Is it spreading to related markets?",
+                "کیا یہ متعلقہ مارکیٹس میں پھیل رہی ہے؟"
+              ],
+              [
+                "Cross-asset confirmation (rates, dollar, sector peers, commodities)",
+                "مختلف اثاثوں کی تصدیق (شرحیں، ڈالر، شعبے کے ساتھی، کموڈیٹیز)"
+              ]
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Bonus step: ask what would make the move wrong. If you cannot name the event or level that would invalidate your explanation, you probably have a story, not an analysis.",
+            "اضافی مرحلہ: پوچھیں کون سی بات اس حرکت کو غلط ثابت کرے گی۔ اگر آپ اپنی وضاحت کو باطل کرنے والا واقعہ یا سطح نہیں بتا سکتے تو غالباً آپ کے پاس تجزیہ نہیں، ایک کہانی ہے۔"
+          ]
+        }
+      ],
+      "figure": "flow",
+      "advanced": false
+    },
+    {
+      "id": "1.11",
+      "title": [
+        "11. Common Myths",
+        "11. عام غلط فہمیاں"
+      ],
+      "paragraphs": [],
+      "blocks": [
+        {
+          "kind": "table",
+          "headers": [
+            [
+              "Myth",
+              "غلط فہمی"
+            ],
+            [
+              "Reality",
+              "حقیقت"
+            ]
+          ],
+          "rows": [
+            [
+              [
+                "\"Good news makes prices go up.\"",
+                "\"اچھی خبر قیمت بڑھاتی ہے۔\""
+              ],
+              [
+                "Only better-than-expected news does.",
+                "صرف توقع سے بہتر خبر ایسا کرتی ہے۔"
+              ]
+            ],
+            [
+              [
+                "\"Price moves because of one big player manipulating it.\"",
+                "\"قیمت ایک بڑے کھلاڑی کی ہیرا پھیری سے بدلتی ہے۔\""
+              ],
+              [
+                "Large orders move price, but most moves come from many participants reacting to the same information and positioning.",
+                "بڑے آرڈرز قیمت بدلتے ہیں، مگر زیادہ تر حرکتیں کئی شرکا کے ایک جیسی معلومات اور پوزیشننگ پر ردِعمل سے آتی ہیں۔"
+              ]
+            ],
+            [
+              [
+                "\"Price always moves to fair value.\"",
+                "\"قیمت ہمیشہ منصفانہ قدر کی طرف جاتی ہے۔\""
+              ],
+              [
+                "Prices can stay far from any estimate of fair value for long periods, especially when leverage or momentum is involved.",
+                "قیمت طویل عرصہ منصفانہ قدر کے کسی بھی تخمینے سے دور رہ سکتی ہے، خصوصاً لیوریج یا مومینٹم ہو۔"
+              ]
+            ],
+            [
+              [
+                "\"Technical analysis and fundamentals are opposites.\"",
+                "\"تکنیکی تجزیہ اور بنیادی عوامل ایک دوسرے کے مخالف ہیں۔\""
+              ],
+              [
+                "They describe different layers of the same process: levels and behaviour versus value and expectations.",
+                "یہ ایک ہی عمل کی مختلف تہیں بیان کرتے ہیں: سطحیں اور رویہ، بمقابلہ قدر اور توقعات۔"
+              ]
+            ],
+            [
+              [
+                "\"Crypto moves randomly with no drivers.\"",
+                "\"کرپٹو کسی محرک کے بغیر بے ترتیب چلتا ہے۔\""
+              ],
+              [
+                "It has clear drivers: liquidity, leverage, sentiment, regulation and supply schedules.",
+                "اس کے واضح محرک ہیں: لیکویڈیٹی، لیوریج، جذبات، ضابطے اور رسد کے شیڈول۔"
+              ]
+            ],
+            [
+              [
+                "\"If I can explain it afterward, I could have predicted it.\"",
+                "\"اگر بعد میں سمجھا سکتا ہوں تو پہلے پیش گوئی بھی کر سکتا تھا۔\""
+              ],
+              [
+                "Hindsight builds neat stories. Prediction requires knowing expectations and positioning in advance.",
+                "بعد کا علم صاف ستھری کہانیاں بناتا ہے۔ پیش گوئی کے لیے توقعات اور پوزیشننگ پہلے جاننا ضروری ہے۔"
+              ]
+            ],
+            [
+              [
+                "\"Volume is the same as price direction.\"",
+                "\"حجم اور قیمت کی سمت ایک ہی چیز ہیں۔\""
+              ],
+              [
+                "Volume shows participation, not which side was in control.",
+                "حجم شرکت دکھاتا ہے، یہ نہیں کہ کس فریق کا اختیار تھا۔"
+              ]
+            ]
+          ]
+        }
+      ],
+      "figure": null,
+      "advanced": false
+    },
+    {
+      "id": "1.12",
+      "title": [
+        "12. Worked Examples",
+        "12. سمجھائی گئی مثالیں"
+      ],
+      "paragraphs": [
+        [
+          "A company reports profits above analyst forecasts, yet the stock drops 6%. Digging in: guidance for the next quarter was cautious, and the stock had rallied sharply before the report, meaning traders were already positioned for perfection. Expectations were higher than the results. Layers involved: Layer 2 (expectations) and positioning.",
+          "کمپنی تجزیہ کاروں کے تخمینے سے زیادہ منافع دیتی ہے، پھر بھی حصص 6% گر جاتے ہیں۔ تفصیل دیکھیں: اگلی سہ ماہی کی رہنمائی محتاط تھی اور رپورٹ سے پہلے حصص بہت بڑھ چکے تھے؛ ٹریڈرز پہلے ہی بہترین نتیجے کے لیے پوزیشن لے چکے تھے۔ توقعات نتائج سے زیادہ تھیں۔ شامل تہیں: تہہ 2 (توقعات) اور پوزیشننگ۔"
+        ],
+        [
+          "A central bank holds rates unchanged, but signals fewer future cuts than markets expected. The currency strengthens within minutes. Nothing changed today; the expected path of rates shifted. Layers: Layer 2, feeding Layer 3 over time.",
+          "مرکزی بینک شرح برقرار رکھتا ہے، مگر مستقبل میں مارکیٹ کی توقع سے کم کٹوتیوں کا اشارہ دیتا ہے۔ چند منٹ میں کرنسی مضبوط ہوتی ہے۔ آج کچھ نہیں بدلا؛ شرحوں کا متوقع راستہ بدلا ہے۔ تہیں: تہہ 2، جو وقت کے ساتھ تہہ 3 کو اثر دیتی ہے۔"
+        ],
+        [
+          "A price level breaks, triggering leveraged long liquidations. Forced selling pushes price further, setting off more liquidations. Funding rates had been unusually high, signalling crowded longs. Layers: Layer 1 (order flow) amplified by leverage.",
+          "قیمت کی سطح ٹوٹتی ہے اور لیوریج والی لانگ پوزیشنز لیکویڈیٹ ہوتی ہیں۔ جبری فروخت قیمت مزید گراتی اور مزید لیکویڈیشنز چلاتی ہے۔ فنڈنگ ریٹس غیر معمولی بلند تھے، جو بھرے ہوئے لانگز کی علامت تھے۔ تہیں: تہہ 1 (آرڈر فلو)، جسے لیوریج بڑھاتی ہے۔"
+        ],
+        [
+          "A production cut announcement reduces expected future supply. Prices rise immediately, then extend as inventory data confirms tight stocks. The initial move was expectations; the extension was fundamentals confirming it.",
+          "پیداوار میں کمی کا اعلان مستقبل کی متوقع رسد گھٹاتا ہے۔ قیمت فوراً بڑھتی اور ذخائر کی کمی کی تصدیق پر مزید بڑھتی ہے۔ ابتدائی حرکت توقعات تھی؛ اگلا اضافہ بنیادی عوامل کی تصدیق تھا۔"
+        ],
+        [
+          "Gold usually attracts safe-haven demand, yet it declines during a sharp market sell-off. Reason: investors sold liquid assets to raise cash and meet margin calls, and a rising dollar pressured gold. Lesson: in stress, liquidity needs can override \"safe haven\" logic.",
+          "سونا عموماً محفوظ پناہ کی طلب کھینچتا ہے، مگر مارکیٹ کی تیز فروخت میں گر جاتا ہے۔ وجہ: سرمایہ کاروں نے نقد جمع کرنے اور مارجن کالز پوری کرنے کے لیے لیکویڈ اثاثے بیچے اور بڑھتے ڈالر نے سونے پر دباؤ ڈالا۔ سبق: دباؤ میں لیکویڈیٹی کی ضرورت \"محفوظ پناہ\" کی منطق پر غالب آ سکتی ہے۔"
+        ],
+        [
+          "All examples are illustrative scenarios, not records of specific dates.",
+          "تمام مثالیں سمجھانے کے لیے بنائے گئے منظرنامے ہیں، مخصوص تاریخوں کے ریکارڈ نہیں۔"
+        ]
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "text": [
+            "Example A: Stock falls after strong earnings",
+            "مثال A: مضبوط آمدن کے بعد حصص گر جاتے ہیں"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "A company reports profits above analyst forecasts, yet the stock drops 6%. Digging in: guidance for the next quarter was cautious, and the stock had rallied sharply before the report, meaning traders were already positioned for perfection. Expectations were higher than the results. Layers involved: Layer 2 (expectations) and positioning.",
+            "کمپنی تجزیہ کاروں کے تخمینے سے زیادہ منافع دیتی ہے، پھر بھی حصص 6% گر جاتے ہیں۔ تفصیل دیکھیں: اگلی سہ ماہی کی رہنمائی محتاط تھی اور رپورٹ سے پہلے حصص بہت بڑھ چکے تھے؛ ٹریڈرز پہلے ہی بہترین نتیجے کے لیے پوزیشن لے چکے تھے۔ توقعات نتائج سے زیادہ تھیں۔ شامل تہیں: تہہ 2 (توقعات) اور پوزیشننگ۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "Example B: Currency jumps on a central bank statement",
+            "مثال B: مرکزی بینک کے بیان پر کرنسی اچھلتی ہے"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "A central bank holds rates unchanged, but signals fewer future cuts than markets expected. The currency strengthens within minutes. Nothing changed today; the expected path of rates shifted. Layers: Layer 2, feeding Layer 3 over time.",
+            "مرکزی بینک شرح برقرار رکھتا ہے، مگر مستقبل میں مارکیٹ کی توقع سے کم کٹوتیوں کا اشارہ دیتا ہے۔ چند منٹ میں کرنسی مضبوط ہوتی ہے۔ آج کچھ نہیں بدلا؛ شرحوں کا متوقع راستہ بدلا ہے۔ تہیں: تہہ 2، جو وقت کے ساتھ تہہ 3 کو اثر دیتی ہے۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "Example C: Crypto drops 10% in an hour with no headline",
+            "مثال C: بغیر خبر ایک گھنٹے میں کرپٹو 10% گرتا ہے"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "A price level breaks, triggering leveraged long liquidations. Forced selling pushes price further, setting off more liquidations. Funding rates had been unusually high, signalling crowded longs. Layers: Layer 1 (order flow) amplified by leverage.",
+            "قیمت کی سطح ٹوٹتی ہے اور لیوریج والی لانگ پوزیشنز لیکویڈیٹ ہوتی ہیں۔ جبری فروخت قیمت مزید گراتی اور مزید لیکویڈیشنز چلاتی ہے۔ فنڈنگ ریٹس غیر معمولی بلند تھے، جو بھرے ہوئے لانگز کی علامت تھے۔ تہیں: تہہ 1 (آرڈر فلو)، جسے لیوریج بڑھاتی ہے۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "Example D: Oil rises on a supply headline",
+            "مثال D: رسد کی خبر پر تیل بڑھتا ہے"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "A production cut announcement reduces expected future supply. Prices rise immediately, then extend as inventory data confirms tight stocks. The initial move was expectations; the extension was fundamentals confirming it.",
+            "پیداوار میں کمی کا اعلان مستقبل کی متوقع رسد گھٹاتا ہے۔ قیمت فوراً بڑھتی اور ذخائر کی کمی کی تصدیق پر مزید بڑھتی ہے۔ ابتدائی حرکت توقعات تھی؛ اگلا اضافہ بنیادی عوامل کی تصدیق تھا۔"
+          ]
+        },
+        {
+          "kind": "heading",
+          "text": [
+            "Example E: Gold falls while fear is high",
+            "مثال E: زیادہ خوف کے دوران سونا گرتا ہے"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "Gold usually attracts safe-haven demand, yet it declines during a sharp market sell-off. Reason: investors sold liquid assets to raise cash and meet margin calls, and a rising dollar pressured gold. Lesson: in stress, liquidity needs can override \"safe haven\" logic.",
+            "سونا عموماً محفوظ پناہ کی طلب کھینچتا ہے، مگر مارکیٹ کی تیز فروخت میں گر جاتا ہے۔ وجہ: سرمایہ کاروں نے نقد جمع کرنے اور مارجن کالز پوری کرنے کے لیے لیکویڈ اثاثے بیچے اور بڑھتے ڈالر نے سونے پر دباؤ ڈالا۔ سبق: دباؤ میں لیکویڈیٹی کی ضرورت \"محفوظ پناہ\" کی منطق پر غالب آ سکتی ہے۔"
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": [
+            "All examples are illustrative scenarios, not records of specific dates.",
+            "تمام مثالیں سمجھانے کے لیے بنائے گئے منظرنامے ہیں، مخصوص تاریخوں کے ریکارڈ نہیں۔"
+          ]
+        }
+      ],
+      "figure": null,
+      "advanced": false
+    },
+    {
+      "id": "1.13",
+      "title": [
+        "13. Glossary (Quick Definitions for AI and Skimmers)",
+        "13. اصطلاحات (AI اور سرسری پڑھنے والوں کے لیے مختصر تعریفیں)"
+      ],
+      "paragraphs": [],
+      "blocks": [
+        {
+          "kind": "table",
+          "headers": [
+            [
+              "Term",
+              "اصطلاح"
+            ],
+            [
+              "Definition",
+              "تعریف"
+            ]
+          ],
+          "rows": [
+            [
+              [
+                "Price",
+                "قیمت"
+              ],
+              [
+                "The most recent level at which a buyer and seller agreed to trade",
+                "تازہ ترین سطح جس پر خریدار اور فروخت کنندہ سودے پر متفق ہوئے"
+              ]
+            ],
+            [
+              [
+                "Liquidity",
+                "لیکویڈیٹی"
+              ],
+              [
+                "How easily an asset can be traded without changing its price much",
+                "قیمت زیادہ بدلے بغیر اثاثے کا سودا کتنی آسانی سے ہو سکتا ہے"
+              ]
+            ],
+            [
+              [
+                "Volatility",
+                "وولاٹیلٹی"
+              ],
+              [
+                "How much and how fast price fluctuates",
+                "قیمت کتنی اور کتنی تیزی سے بدلتی ہے"
+              ]
+            ],
+            [
+              [
+                "Order flow",
+                "آرڈر فلو"
+              ],
+              [
+                "The stream of buy and sell orders reaching the market",
+                "مارکیٹ تک آنے والے خرید اور فروخت کے آرڈرز کا بہاؤ"
+              ]
+            ],
+            [
+              [
+                "Spread",
+                "اسپریڈ"
+              ],
+              [
+                "Difference between the best bid and best ask",
+                "بہترین بِڈ اور بہترین آسک کا فرق"
+              ]
+            ],
+            [
+              [
+                "Slippage",
+                "سلپیج"
+              ],
+              [
+                "Gap between expected price and actual fill price",
+                "متوقع قیمت اور اصل فِل کی قیمت کا فرق"
+              ]
+            ],
+            [
+              [
+                "Consensus",
+                "اتفاقی تخمینہ"
+              ],
+              [
+                "The average forecast economists or analysts expect",
+                "ماہرین معاشیات یا تجزیہ کاروں کا اوسط متوقع تخمینہ"
+              ]
+            ],
+            [
+              [
+                "Priced in",
+                "قیمت میں شامل"
+              ],
+              [
+                "Already reflected in the current price through expectations",
+                "توقعات کے ذریعے پہلے ہی موجودہ قیمت میں ظاہر"
+              ]
+            ],
+            [
+              [
+                "Leverage",
+                "لیوریج"
+              ],
+              [
+                "Using borrowed money to increase position size",
+                "پوزیشن کی مقدار بڑھانے کے لیے ادھار سرمایہ استعمال کرنا"
+              ]
+            ],
+            [
+              [
+                "Liquidation",
+                "لیکویڈیشن"
+              ],
+              [
+                "Forced closing of a leveraged position when margin runs out",
+                "مارجن ختم ہونے پر لیوریج والی پوزیشن کا جبری بند ہونا"
+              ]
+            ],
+            [
+              [
+                "Positioning",
+                "پوزیشننگ"
+              ],
+              [
+                "How many participants are currently long or short",
+                "کتنے شرکا اس وقت لانگ یا شارٹ ہیں"
+              ]
+            ],
+            [
+              [
+                "Carry",
+                "کیری"
+              ],
+              [
+                "Return earned from holding an asset, such as an interest differential",
+                "اثاثہ رکھنے کا حاصل، مثلاً شرح سود کا فرق"
+              ]
+            ],
+            [
+              [
+                "Reflexivity",
+                "ریفلیکسیویٹی"
+              ],
+              [
+                "Feedback loop where price changes affect the fundamentals that drive price",
+                "وہ باہمی اثر جس میں قیمت کی تبدیلی اسے چلانے والے بنیادی عوامل بدلتی ہے"
+              ]
+            ],
+            [
+              [
+                "Risk-on / risk-off",
+                "رسک آن / رسک آف"
+              ],
+              [
+                "Broad appetite for, or retreat from, risky assets",
+                "پُررسک اثاثوں کی طرف مجموعی رغبت یا ان سے پیچھے ہٹنا"
+              ]
+            ],
+            [
+              [
+                "Market maker",
+                "مارکیٹ میکر"
+              ],
+              [
+                "Firm that continuously quotes buy and sell prices to provide liquidity",
+                "وہ فرم جو لیکویڈیٹی دینے کے لیے مسلسل خرید و فروخت کی کوٹس دیتی ہے"
+              ]
+            ]
+          ]
+        }
+      ],
+      "figure": null,
+      "advanced": false
+    },
+    {
+      "id": "1.14",
+      "title": [
+        "14. Frequently Asked Questions",
+        "14. اکثر پوچھے جانے والے سوالات"
+      ],
+      "paragraphs": [],
+      "blocks": [],
+      "figure": null,
+      "advanced": false
+    },
+    {
+      "id": "1.15",
+      "title": [
+        "15. Final Thoughts and Next Steps",
+        "15. آخری بات اور اگلے مراحل"
+      ],
+      "paragraphs": [
+        [
+          "Price is not driven by one mystery force. It is the visible result of urgent orders, shifting expectations and slow-moving fundamentals, filtered through positioning and leverage. Learn to ask who needs to trade, what was expected, and who is on the wrong side, and most market moves become far easier to read.",
+          "قیمت کسی ایک پراسرار قوت سے نہیں چلتی۔ یہ فوری آرڈرز، بدلتی توقعات اور آہستہ بدلنے والے بنیادی عوامل کا نمایاں نتیجہ ہے، جو پوزیشننگ اور لیوریج سے چھن کر آتا ہے۔ پوچھنا سیکھیں کس کو سودا چاہیے، توقع کیا تھی اور کون غلط سمت میں ہے، تو زیادہ تر مارکیٹ حرکتیں سمجھنا بہت آسان ہو جاتا ہے۔"
+        ]
+      ],
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": [
+            "Price is not driven by one mystery force. It is the visible result of urgent orders, shifting expectations and slow-moving fundamentals, filtered through positioning and leverage. Learn to ask who needs to trade, what was expected, and who is on the wrong side, and most market moves become far easier to read.",
+            "قیمت کسی ایک پراسرار قوت سے نہیں چلتی۔ یہ فوری آرڈرز، بدلتی توقعات اور آہستہ بدلنے والے بنیادی عوامل کا نمایاں نتیجہ ہے، جو پوزیشننگ اور لیوریج سے چھن کر آتا ہے۔ پوچھنا سیکھیں کس کو سودا چاہیے، توقع کیا تھی اور کون غلط سمت میں ہے، تو زیادہ تر مارکیٹ حرکتیں سمجھنا بہت آسان ہو جاتا ہے۔"
+          ]
+        }
+      ],
+      "figure": null,
+      "advanced": false
+    }
+  ],
+  "faqs": [
+    {
+      "question": [
+        "What moves price in markets?",
+        "مارکیٹس میں قیمت کس سے حرکت کرتی ہے؟"
+      ],
+      "answer": [
+        "Price moves when buying pressure and selling pressure become imbalanced. That imbalance is created by order flow and liquidity in the short term, by surprises versus expectations over days and weeks, and by interest rates, money flows, earnings and supply-and-demand fundamentals over longer periods.",
+        "خرید اور فروخت کے دباؤ کا توازن بگڑنے پر قیمت حرکت کرتی ہے۔ مختصر مدت میں آرڈر فلو اور لیکویڈیٹی، دنوں اور ہفتوں میں توقع کے مقابل غیر متوقع نتائج، اور طویل مدت میں شرح سود، سرمائے کا بہاؤ، آمدن اور طلب و رسد کے بنیادی عوامل یہ عدم توازن پیدا کرتے ہیں۔"
+      ]
+    },
+    {
+      "question": [
+        "Does news really move prices?",
+        "کیا خبریں واقعی قیمتیں بدلتی ہیں؟"
+      ],
+      "answer": [
+        "Yes, but only the unexpected part. If the news matches what traders already expected, price barely reacts. Surprising news, or news that changes expectations about the future, is what causes meaningful moves.",
+        "ہاں، مگر صرف غیر متوقع حصہ۔ خبر ٹریڈرز کی پہلے کی توقع کے مطابق ہو تو قیمت بمشکل ردِعمل دیتی ہے۔ حیران کن خبر یا مستقبل کی توقعات بدلنے والی خبر معنی خیز حرکت پیدا کرتی ہے۔"
+      ]
+    },
+    {
+      "question": [
+        "Why do prices drop on good news?",
+        "اچھی خبر پر قیمتیں کیوں گرتی ہیں؟"
+      ],
+      "answer": [
+        "Because the good news was already expected or priced in, or because accompanying details such as weak guidance or tighter policy outweigh the headline. Traders also sell into strength when positioning is crowded.",
+        "کیونکہ اچھی خبر کی پہلے ہی توقع تھی یا قیمت میں شامل تھی، یا ساتھ کی تفصیلات، مثلاً کمزور رہنمائی یا سخت پالیسی، سرخی سے زیادہ اہم ہوتی ہیں۔ پوزیشننگ بھری ہو تو ٹریڈرز تیزی میں فروخت بھی کرتے ہیں۔"
+      ]
+    },
+    {
+      "question": [
+        "What is the single biggest driver of price?",
+        "قیمت کا سب سے بڑا واحد محرک کیا ہے؟"
+      ],
+      "answer": [
+        "There is no single driver for every situation. Over very short periods it is order flow; over weeks it is expectations and data; over years it is fundamentals such as earnings, rates and supply and demand.",
+        "ہر حالت کا ایک محرک نہیں۔ بہت مختصر مدت میں آرڈر فلو؛ ہفتوں میں توقعات اور اعداد؛ برسوں میں آمدن، شرحیں اور طلب و رسد جیسے بنیادی عوامل ہوتے ہیں۔"
+      ]
+    },
+    {
+      "question": [
+        "What moves stock prices?",
+        "حصص کی قیمتیں کس سے بدلتی ہیں؟"
+      ],
+      "answer": [
+        "Earnings and guidance, interest rates, economic data, sector trends, institutional flows, sentiment and company news. Index changes and buybacks can also create buying or selling pressure.",
+        "آمدن اور رہنمائی، شرح سود، معاشی اعداد، شعبے کے رجحانات، ادارہ جاتی بہاؤ، جذبات اور کمپنی کی خبریں۔ انڈیکس کی تبدیلیاں اور بائے بیکس بھی خرید یا فروخت کا دباؤ بنا سکتی ہیں۔"
+      ]
+    },
+    {
+      "question": [
+        "What moves forex prices?",
+        "فاریکس کی قیمتیں کس سے بدلتی ہیں؟"
+      ],
+      "answer": [
+        "Mainly interest-rate differentials, central bank policy, economic data, trade and capital flows, and risk sentiment between the two economies in a currency pair.",
+        "بنیادی طور پر کرنسی جوڑے کی دونوں معیشتوں کے درمیان شرح سود کا فرق، مرکزی بینک کی پالیسی، معاشی اعداد، تجارت اور سرمائے کا بہاؤ، اور رسک کے جذبات۔"
+      ]
+    },
+    {
+      "question": [
+        "What moves crypto prices?",
+        "کرپٹو کی قیمتیں کس سے بدلتی ہیں؟"
+      ],
+      "answer": [
+        "Liquidity conditions, speculative sentiment, leverage and liquidations, regulation, exchange and ETF flows, network activity and token supply schedules. Many coins lack earnings, so narratives and flows carry extra weight.",
+        "لیکویڈیٹی کے حالات، قیاسی جذبات، لیوریج اور لیکویڈیشنز، ضابطے، ایکسچینج اور ETF بہاؤ، نیٹ ورک کی سرگرمی اور ٹوکن رسد کے شیڈول۔ کئی کوائنز کی آمدن نہیں، اس لیے بیانیوں اور بہاؤ کا وزن زیادہ ہے۔"
+      ]
+    },
+    {
+      "question": [
+        "What moves commodity prices?",
+        "کموڈیٹیز کی قیمتیں کس سے بدلتی ہیں؟"
+      ],
+      "answer": [
+        "Physical supply and demand, inventories, weather, production decisions, transport disruptions, geopolitical events and the strength of the US dollar for dollar-priced commodities.",
+        "طبعی طلب و رسد، ذخائر، موسم، پیداوار کے فیصلے، ترسیل کی رکاوٹیں، جغرافیائی سیاسی واقعات، اور ڈالر میں قیمت والی کموڈیٹیز کے لیے امریکی ڈالر کی مضبوطی۔"
+      ]
+    },
+    {
+      "question": [
+        "How do big institutions move price?",
+        "بڑے ادارے قیمت کیسے بدلتے ہیں؟"
+      ],
+      "answer": [
+        "By trading in large size. Because they cannot execute everything at once without moving the market, they often split orders over time and across venues, and their flows can sustain trends for days or weeks.",
+        "بڑی مقدار میں سودا کر کے۔ مارکیٹ کو حرکت دیے بغیر سب ایک ساتھ مکمل نہیں کر سکتے، اس لیے اکثر آرڈرز کو وقت اور مختلف مقامات میں بانٹتے ہیں، اور ان کا بہاؤ دنوں یا ہفتوں تک رجحان برقرار رکھ سکتا ہے۔"
+      ]
+    },
+    {
+      "question": [
+        "Can retail traders move price?",
+        "کیا ریٹیل ٹریڈرز قیمت بدل سکتے ہیں؟"
+      ],
+      "answer": [
+        "Individually, very rarely in liquid markets. Collectively, retail participation can matter in thin stocks, small crypto assets and heavily discussed trades, especially when combined with leverage or options activity.",
+        "انفرادی طور پر لیکویڈ مارکیٹس میں بہت کم۔ مجموعی ریٹیل شرکت کم لیکویڈیٹی والے حصص، چھوٹے کرپٹو اثاثوں اور بہت زیرِبحث ٹریڈز میں اہم ہو سکتی ہے، خصوصاً لیوریج یا آپشنز کی سرگرمی کے ساتھ۔"
+      ]
+    },
+    {
+      "question": [
+        "What is the difference between price action and fundamentals?",
+        "پرائس ایکشن اور بنیادی عوامل میں کیا فرق ہے؟"
+      ],
+      "answer": [
+        "Price action studies how price behaves (levels, trends, volume). Fundamentals study the underlying value drivers (earnings, rates, supply, demand). One shows what the market is doing; the other helps explain why it might be doing it.",
+        "پرائس ایکشن قیمت کا رویہ دیکھتا ہے (سطحیں، رجحانات، حجم)۔ بنیادی عوامل قدر کے اصل محرک دیکھتے ہیں (آمدن، شرحیں، رسد، طلب)۔ ایک بتاتا ہے مارکیٹ کیا کر رہی ہے؛ دوسرا سمجھنے میں مدد دیتا ہے کہ ایسا کیوں ہو رہا ہے۔"
+      ]
+    },
+    {
+      "question": [
+        "Why do markets sometimes move for no obvious reason?",
+        "مارکیٹس کبھی واضح وجہ کے بغیر کیوں حرکت کرتی ہیں؟"
+      ],
+      "answer": [
+        "Large orders, algorithmic activity, stop orders, liquidations, option hedging and thin liquidity can all create moves without a headline. The reason exists but may not be visible in the news.",
+        "بڑے آرڈرز، الگورتھمک سرگرمی، اسٹاپ آرڈرز، لیکویڈیشنز، آپشن ہیجنگ اور کم لیکویڈیٹی، سب بغیر سرخی حرکت پیدا کر سکتے ہیں۔ وجہ ہوتی ہے مگر خبر میں نظر نہ آئے۔"
+      ]
+    },
+    {
+      "question": [
+        "How can a beginner learn to understand price movement?",
+        "نیا سیکھنے والا قیمت کی حرکت سمجھنا کیسے سیکھے؟"
+      ],
+      "answer": [
+        "Start with supply and demand and the order book idea, learn the difference between surprise and expectation, follow a small number of scheduled events, and keep a journal explaining each major move using the five-step framework above.",
+        "طلب و رسد اور آرڈر بک کے تصور سے شروع کریں، غیر متوقع نتیجے اور توقع کا فرق سیکھیں، چند طے شدہ واقعات دیکھیں، اور اوپر کے پانچ مرحلوں کے فریم ورک سے ہر بڑی حرکت سمجھانے کا جرنل رکھیں۔"
+      ]
+    },
+    {
+      "question": [
+        "Is price movement predictable?",
+        "کیا قیمت کی حرکت کی پیش گوئی ہو سکتی ہے؟"
+      ],
+      "answer": [
+        "Partly. You can estimate probabilities by understanding expectations, positioning and flows, but outcomes are uncertain, and any single trade can go against even a sound analysis.",
+        "کسی حد تک۔ توقعات، پوزیشننگ اور بہاؤ سمجھ کر امکانات کا اندازہ لگا سکتے ہیں، مگر نتائج غیر یقینی ہیں اور کوئی بھی ٹریڈ مضبوط تجزیے کے خلاف جا سکتی ہے۔"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": [
+        "Price",
+        "قیمت"
+      ],
+      "definition": [
+        "The most recent level at which a buyer and seller agreed to trade",
+        "تازہ ترین سطح جس پر خریدار اور فروخت کنندہ سودے پر متفق ہوئے"
+      ]
+    },
+    {
+      "term": [
+        "Liquidity",
+        "لیکویڈیٹی"
+      ],
+      "definition": [
+        "How easily an asset can be traded without changing its price much",
+        "قیمت زیادہ بدلے بغیر اثاثے کا سودا کتنی آسانی سے ہو سکتا ہے"
+      ]
+    },
+    {
+      "term": [
+        "Volatility",
+        "وولاٹیلٹی"
+      ],
+      "definition": [
+        "How much and how fast price fluctuates",
+        "قیمت کتنی اور کتنی تیزی سے بدلتی ہے"
+      ]
+    },
+    {
+      "term": [
+        "Order flow",
+        "آرڈر فلو"
+      ],
+      "definition": [
+        "The stream of buy and sell orders reaching the market",
+        "مارکیٹ تک آنے والے خرید اور فروخت کے آرڈرز کا بہاؤ"
+      ]
+    },
+    {
+      "term": [
+        "Spread",
+        "اسپریڈ"
+      ],
+      "definition": [
+        "Difference between the best bid and best ask",
+        "بہترین بِڈ اور بہترین آسک کا فرق"
+      ]
+    },
+    {
+      "term": [
+        "Slippage",
+        "سلپیج"
+      ],
+      "definition": [
+        "Gap between expected price and actual fill price",
+        "متوقع قیمت اور اصل فِل کی قیمت کا فرق"
+      ]
+    },
+    {
+      "term": [
+        "Consensus",
+        "اتفاقی تخمینہ"
+      ],
+      "definition": [
+        "The average forecast economists or analysts expect",
+        "ماہرین معاشیات یا تجزیہ کاروں کا اوسط متوقع تخمینہ"
+      ]
+    },
+    {
+      "term": [
+        "Priced in",
+        "قیمت میں شامل"
+      ],
+      "definition": [
+        "Already reflected in the current price through expectations",
+        "توقعات کے ذریعے پہلے ہی موجودہ قیمت میں ظاہر"
+      ]
+    },
+    {
+      "term": [
+        "Leverage",
+        "لیوریج"
+      ],
+      "definition": [
+        "Using borrowed money to increase position size",
+        "پوزیشن کی مقدار بڑھانے کے لیے ادھار سرمایہ استعمال کرنا"
+      ]
+    },
+    {
+      "term": [
+        "Liquidation",
+        "لیکویڈیشن"
+      ],
+      "definition": [
+        "Forced closing of a leveraged position when margin runs out",
+        "مارجن ختم ہونے پر لیوریج والی پوزیشن کا جبری بند ہونا"
+      ]
+    },
+    {
+      "term": [
+        "Positioning",
+        "پوزیشننگ"
+      ],
+      "definition": [
+        "How many participants are currently long or short",
+        "کتنے شرکا اس وقت لانگ یا شارٹ ہیں"
+      ]
+    },
+    {
+      "term": [
+        "Carry",
+        "کیری"
+      ],
+      "definition": [
+        "Return earned from holding an asset, such as an interest differential",
+        "اثاثہ رکھنے کا حاصل، مثلاً شرح سود کا فرق"
+      ]
+    },
+    {
+      "term": [
+        "Reflexivity",
+        "ریفلیکسیویٹی"
+      ],
+      "definition": [
+        "Feedback loop where price changes affect the fundamentals that drive price",
+        "وہ باہمی اثر جس میں قیمت کی تبدیلی اسے چلانے والے بنیادی عوامل بدلتی ہے"
+      ]
+    },
+    {
+      "term": [
+        "Risk-on / risk-off",
+        "رسک آن / رسک آف"
+      ],
+      "definition": [
+        "Broad appetite for, or retreat from, risky assets",
+        "پُررسک اثاثوں کی طرف مجموعی رغبت یا ان سے پیچھے ہٹنا"
+      ]
+    },
+    {
+      "term": [
+        "Market maker",
+        "مارکیٹ میکر"
+      ],
+      "definition": [
+        "Firm that continuously quotes buy and sell prices to provide liquidity",
+        "وہ فرم جو لیکویڈیٹی دینے کے لیے مسلسل خرید و فروخت کی کوٹس دیتی ہے"
+      ]
+    }
+  ],
+  "summary": [
+    [
+      "A price is simply the last agreed trade between a buyer and a seller. It is not a verdict on \"true value.\"",
+      "قیمت صرف خریدار اور فروخت کنندہ کا آخری متفقہ سودا ہے۔ یہ \"اصل قدر\" کا فیصلہ نہیں۔"
+    ],
+    [
+      "Aggressive orders (market orders) push price; patient orders (limit orders) absorb it.",
+      "جارحانہ آرڈرز (مارکیٹ آرڈرز) قیمت آگے بڑھاتے ہیں؛ منتظر آرڈرز (لمٹ آرڈرز) اسے جذب کرتے ہیں۔"
+    ],
+    [
+      "Markets react to surprise relative to expectation, not to good or bad news by itself.",
+      "مارکیٹس توقع کے مقابل غیر متوقع فرق پر ردِعمل دیتی ہیں، صرف اچھی یا بری خبر پر نہیں۔"
+    ],
+    [
+      "The dominant driver changes with time frame: order flow dominates minutes, news and data dominate days, and money flows and fundamentals dominate months and years.",
+      "غالب محرک ٹائم فریم سے بدلتا ہے: منٹوں میں آرڈر فلو، دنوں میں خبر اور اعداد، اور مہینوں اور برسوں میں سرمائے کا بہاؤ اور بنیادی عوامل غالب ہوتے ہیں۔"
+    ],
+    [
+      "Stocks, forex, crypto and commodities share the same mechanics but weigh the drivers very differently.",
+      "حصص، فاریکس، کرپٹو اور کموڈیٹیز کا طریقۂ کار یکساں ہے مگر وہ محرکات کو بہت مختلف وزن دیتے ہیں۔"
+    ],
+    [
+      "Leverage and crowded positioning explain many of the sharpest, most \"irrational\" moves.",
+      "لیوریج اور بھری ہوئی پوزیشننگ بہت سی تیز ترین، بظاہر \"غیر منطقی\" حرکتیں سمجھاتی ہیں۔"
+    ]
+  ],
+  "quickAnswer": [
+    "Price moves because buyers and sellers disagree about value, and the side willing to pay more (or accept less) to get a trade done pushes it. In practice, price is moved by three layers working together: (1) order flow and liquidity that move it second by second, (2) expectations and surprises about news, data and policy that move it hour by hour, and (3) money flows, positioning and long-term fundamentals that move it over weeks and years. News alone rarely moves price. Change in expectations does.",
+    "قیمت اس لیے حرکت کرتی ہے کہ خریدار اور فروخت کنندہ قدر پر متفق نہیں، اور سودا کرنے کے لیے زیادہ دینے یا کم قبول کرنے والا فریق اسے آگے دھکیلتا ہے۔ عملی طور پر تین تہیں مل کر قیمت بدلتی ہیں: (1) آرڈر فلو اور لیکویڈیٹی، جو ہر سیکنڈ اثر کرتے ہیں، (2) خبروں، اعداد اور پالیسی کے بارے میں توقعات اور غیر متوقع نتائج، جو گھنٹہ بہ گھنٹہ اثر کرتے ہیں، اور (3) سرمائے کا بہاؤ، پوزیشننگ اور طویل مدتی بنیادی عوامل، جو ہفتوں اور برسوں میں اثر کرتے ہیں۔ اکیلی خبر شاذ ہی قیمت بدلتی ہے۔ توقعات کی تبدیلی بدلتی ہے۔"
+  ],
+  "tables": {},
+  "questions": [
+    [
+      "What is the time frame?",
+      "ٹائم فریم کیا ہے؟"
+    ],
+    [
+      "Was there a catalyst, and what was expected?",
+      "کیا کوئی محرک تھا اور توقع کیا تھی؟"
+    ],
+    [
+      "Who was positioned where?",
+      "کس کی پوزیشن کہاں تھی؟"
+    ],
+    [
+      "What happened to volume and liquidity?",
+      "حجم اور لیکویڈیٹی میں کیا ہوا؟"
+    ],
+    [
+      "Is it spreading to related markets?",
+      "کیا یہ متعلقہ مارکیٹس میں پھیل رہی ہے؟"
+    ]
+  ],
+  "myths": [
+    [
+      [
+        "\"Good news makes prices go up.\"",
+        "\"اچھی خبر قیمت بڑھاتی ہے۔\""
+      ],
+      [
+        "Only better-than-expected news does.",
+        "صرف توقع سے بہتر خبر ایسا کرتی ہے۔"
+      ]
+    ],
+    [
+      [
+        "\"Price moves because of one big player manipulating it.\"",
+        "\"قیمت ایک بڑے کھلاڑی کی ہیرا پھیری سے بدلتی ہے۔\""
+      ],
+      [
+        "Large orders move price, but most moves come from many participants reacting to the same information and positioning.",
+        "بڑے آرڈرز قیمت بدلتے ہیں، مگر زیادہ تر حرکتیں کئی شرکا کے ایک جیسی معلومات اور پوزیشننگ پر ردِعمل سے آتی ہیں۔"
+      ]
+    ],
+    [
+      [
+        "\"Price always moves to fair value.\"",
+        "\"قیمت ہمیشہ منصفانہ قدر کی طرف جاتی ہے۔\""
+      ],
+      [
+        "Prices can stay far from any estimate of fair value for long periods, especially when leverage or momentum is involved.",
+        "قیمت طویل عرصہ منصفانہ قدر کے کسی بھی تخمینے سے دور رہ سکتی ہے، خصوصاً لیوریج یا مومینٹم ہو۔"
+      ]
+    ],
+    [
+      [
+        "\"Technical analysis and fundamentals are opposites.\"",
+        "\"تکنیکی تجزیہ اور بنیادی عوامل ایک دوسرے کے مخالف ہیں۔\""
+      ],
+      [
+        "They describe different layers of the same process: levels and behaviour versus value and expectations.",
+        "یہ ایک ہی عمل کی مختلف تہیں بیان کرتے ہیں: سطحیں اور رویہ، بمقابلہ قدر اور توقعات۔"
+      ]
+    ],
+    [
+      [
+        "\"Crypto moves randomly with no drivers.\"",
+        "\"کرپٹو کسی محرک کے بغیر بے ترتیب چلتا ہے۔\""
+      ],
+      [
+        "It has clear drivers: liquidity, leverage, sentiment, regulation and supply schedules.",
+        "اس کے واضح محرک ہیں: لیکویڈیٹی، لیوریج، جذبات، ضابطے اور رسد کے شیڈول۔"
+      ]
+    ],
+    [
+      [
+        "\"If I can explain it afterward, I could have predicted it.\"",
+        "\"اگر بعد میں سمجھا سکتا ہوں تو پہلے پیش گوئی بھی کر سکتا تھا۔\""
+      ],
+      [
+        "Hindsight builds neat stories. Prediction requires knowing expectations and positioning in advance.",
+        "بعد کا علم صاف ستھری کہانیاں بناتا ہے۔ پیش گوئی کے لیے توقعات اور پوزیشننگ پہلے جاننا ضروری ہے۔"
+      ]
+    ],
+    [
+      [
+        "\"Volume is the same as price direction.\"",
+        "\"حجم اور قیمت کی سمت ایک ہی چیز ہیں۔\""
+      ],
+      [
+        "Volume shows participation, not which side was in control.",
+        "حجم شرکت دکھاتا ہے، یہ نہیں کہ کس فریق کا اختیار تھا۔"
+      ]
+    ]
+  ],
+  "figures": {
+    "balance": {
+      "title": [
+        "Equal traded quantity, different urgency",
+        "برابر سودا شدہ مقدار، مختلف فوری ضرورت"
+      ],
+      "caption": [
+        "A buyer and a seller exchange the same quantity; their urgency and the available quotes can differ. The mango analogy is not a participant-count model.",
+        "خریدار اور فروخت کنندہ کی مقدار برابر؛ فوری ضرورت اور دستیاب کوٹس مختلف ہو سکتی ہیں۔ آم کی مثال لوگوں کی گنتی کا ماڈل نہیں۔"
+      ],
+      "alt": [
+        "Equal traded quantity, different urgency: A buyer and a seller exchange the same quantity; their urgency and the available quotes can differ. The mango analogy is not a participant-count model.",
+        "برابر سودا شدہ مقدار، مختلف فوری ضرورت: خریدار اور فروخت کنندہ کی مقدار برابر؛ فوری ضرورت اور دستیاب کوٹس مختلف ہو سکتی ہیں۔ آم کی مثال لوگوں کی گنتی کا ماڈل نہیں۔"
+      ]
+    },
+    "book": {
+      "title": [
+        "Walk the fictional ask book",
+        "فرضی آسک بک میں سودا"
+      ],
+      "caption": [
+        "Invented book: 100 at 50.00, 100 at 50.05, 100 at 50.10. Buying 250 ends at 50.10 with average 50.04; a 50.05 limit fills only 200 immediately.",
+        "فرضی بک: 50.00 پر 100، 50.05 پر 100، 50.10 پر 100۔ 250 خریدنے کی آخری قیمت 50.10، اوسط 50.04؛ 50.05 لمٹ فوراً صرف 200 فِل کرتی ہے۔"
+      ],
+      "alt": [
+        "Walk the fictional ask book: Invented book: 100 at 50.00, 100 at 50.05, 100 at 50.10. Buying 250 ends at 50.10 with average 50.04; a 50.05 limit fills only 200 immediately.",
+        "فرضی آسک بک میں سودا: فرضی بک: 50.00 پر 100، 50.05 پر 100، 50.10 پر 100۔ 250 خریدنے کی آخری قیمت 50.10، اوسط 50.04؛ 50.05 لمٹ فوراً صرف 200 فِل کرتی ہے۔"
+      ]
+    },
+    "layers": {
+      "title": [
+        "One market, three lenses",
+        "ایک مارکیٹ، تین زاویے"
+      ],
+      "caption": [
+        "Orders and quotes, information, and structural conditions interact. The waves are conceptual, not measured contributions or an additive price formula.",
+        "آرڈرز اور کوٹس، معلومات اور ساختی حالات جڑے ہیں۔ لہریں تصور ہیں، ناپے گئے حصے یا قیمت کا جمعی مساوات نہیں۔"
+      ],
+      "alt": [
+        "One market, three lenses: Orders and quotes, information, and structural conditions interact. The waves are conceptual, not measured contributions or an additive price formula.",
+        "ایک مارکیٹ، تین زاویے: آرڈرز اور کوٹس، معلومات اور ساختی حالات جڑے ہیں۔ لہریں تصور ہیں، ناپے گئے حصے یا قیمت کا جمعی مساوات نہیں۔"
+      ]
+    },
+    "expectations": {
+      "title": [
+        "A beat is not a direction",
+        "بہتر نتیجہ سمت نہیں"
+      ],
+      "caption": [
+        "Invented growth: 10% forecast, 12% reported. Change the outlook assumption; neither branch supplies a price prediction.",
+        "فرضی نمو: 10% توقع، 12% نتیجہ۔ آئندہ صورت کا مفروضہ بدلیں؛ کوئی شاخ قیمت کی پیش گوئی نہیں دیتی۔"
+      ],
+      "alt": [
+        "A beat is not a direction: Invented growth: 10% forecast, 12% reported. Change the outlook assumption; neither branch supplies a price prediction.",
+        "بہتر نتیجہ سمت نہیں: فرضی نمو: 10% توقع، 12% نتیجہ۔ آئندہ صورت کا مفروضہ بدلیں؛ کوئی شاخ قیمت کی پیش گوئی نہیں دیتی۔"
+      ]
+    },
+    "markets": {
+      "title": [
+        "Four markets, different questions",
+        "چار مارکیٹس، مختلف سوال"
+      ],
+      "caption": [
+        "Stocks: cash flows. Forex: relative currencies. Crypto: token and venue. Commodities: physical supply and delivery. These are lenses, not rankings.",
+        "حصص: کیش فلو۔ فاریکس: نسبتی کرنسیاں۔ کرپٹو: ٹوکن اور مقام۔ کموڈیٹیز: طبعی رسد اور ڈیلیوری۔ یہ زاویے ہیں، درجہ بندی نہیں۔"
+      ],
+      "alt": [
+        "Four markets, different questions: Stocks: cash flows. Forex: relative currencies. Crypto: token and venue. Commodities: physical supply and delivery. These are lenses, not rankings.",
+        "چار مارکیٹس، مختلف سوال: حصص: کیش فلو۔ فاریکس: نسبتی کرنسیاں۔ کرپٹو: ٹوکن اور مقام۔ کموڈیٹیز: طبعی رسد اور ڈیلیوری۔ یہ زاویے ہیں، درجہ بندی نہیں۔"
+      ]
+    },
+    "timeframes": {
+      "title": [
+        "Change the question with the horizon",
+        "مدت کے ساتھ سوال بدلیں"
+      ],
+      "caption": [
+        "Short and long horizons call for different evidence, but their drivers overlap. The ladder does not assign an exclusive cause to a time frame.",
+        "مختصر اور طویل مدت کے شواہد مختلف، محرکات باہم ملتے ہیں۔ سیڑھی کسی مدت کا واحد سبب نہیں بتاتی۔"
+      ],
+      "alt": [
+        "Change the question with the horizon: Short and long horizons call for different evidence, but their drivers overlap. The ladder does not assign an exclusive cause to a time frame.",
+        "مدت کے ساتھ سوال بدلیں: مختصر اور طویل مدت کے شواہد مختلف، محرکات باہم ملتے ہیں۔ سیڑھی کسی مدت کا واحد سبب نہیں بتاتی۔"
+      ]
+    },
+    "leverage": {
+      "title": [
+        "A smaller buffer absorbs the loss",
+        "چھوٹی گنجائش نقصان سہتی ہے"
+      ],
+      "caption": [
+        "Invented arithmetic: asset 100, debt 80, equity 20. At asset value 90, equity is 10 before costs. No real margin permission, liquidation level or historical trade is implied.",
+        "فرضی حساب: اثاثہ 100، قرض 80، ایکویٹی 20۔ اثاثہ 90 ہو تو اخراجات سے پہلے ایکویٹی 10۔ مجاز مارجن، لیکویڈیشن سطح یا تاریخی ٹریڈ مراد نہیں۔"
+      ],
+      "alt": [
+        "A smaller buffer absorbs the loss: Invented arithmetic: asset 100, debt 80, equity 20. At asset value 90, equity is 10 before costs. No real margin permission, liquidation level or historical trade is implied.",
+        "چھوٹی گنجائش نقصان سہتی ہے: فرضی حساب: اثاثہ 100، قرض 80، ایکویٹی 20۔ اثاثہ 90 ہو تو اخراجات سے پہلے ایکویٹی 10۔ مجاز مارجن، لیکویڈیشن سطح یا تاریخی ٹریڈ مراد نہیں۔"
+      ]
+    },
+    "hedging": {
+      "title": [
+        "Hedging can lean against or with a move",
+        "ہیجنگ حرکت کے خلاف یا ساتھ ہو سکتی ہے"
+      ],
+      "caption": [
+        "Simplified net-gamma hedge: long gamma buys after falls and sells after rises; short gamma does the opposite. Actual exposure and hedges may be unknown.",
+        "سادہ نیٹ گاما ہیج: لانگ گاما کمی کے بعد خرید اور اضافے کے بعد فروخت؛ شارٹ گاما الٹ۔ اصل ایکسپوژر اور ہیج نامعلوم ہو سکتے ہیں۔"
+      ],
+      "alt": [
+        "Hedging can lean against or with a move: Simplified net-gamma hedge: long gamma buys after falls and sells after rises; short gamma does the opposite. Actual exposure and hedges may be unknown.",
+        "ہیجنگ حرکت کے خلاف یا ساتھ ہو سکتی ہے: سادہ نیٹ گاما ہیج: لانگ گاما کمی کے بعد خرید اور اضافے کے بعد فروخت؛ شارٹ گاما الٹ۔ اصل ایکسپوژر اور ہیج نامعلوم ہو سکتے ہیں۔"
+      ]
+    },
+    "flow": {
+      "title": [
+        "Five questions, honest confidence",
+        "پانچ سوال، دیانت دار اعتماد"
+      ],
+      "caption": [
+        "Specify the observation, catalyst, positioning evidence, liquidity evidence and related markets. Finish with explained, partly explained or unexplained; this is not a signal.",
+        "مشاہدہ، محرک، پوزیشننگ، لیکویڈیٹی کے ثبوت اور متعلقہ مارکیٹس بتائیں۔ نتیجہ: وضاحت، جزوی وضاحت یا نامعلوم؛ یہ سگنل نہیں۔"
+      ],
+      "alt": [
+        "Five questions, honest confidence: Specify the observation, catalyst, positioning evidence, liquidity evidence and related markets. Finish with explained, partly explained or unexplained; this is not a signal.",
+        "پانچ سوال، دیانت دار اعتماد: مشاہدہ، محرک، پوزیشننگ، لیکویڈیٹی کے ثبوت اور متعلقہ مارکیٹس بتائیں۔ نتیجہ: وضاحت، جزوی وضاحت یا نامعلوم؛ یہ سگنل نہیں۔"
+      ]
+    },
+    "myths": {
+      "title": [
+        "Open a claim, test its boundary",
+        "دعویٰ کھولیں، اس کی حد جانچیں"
+      ],
+      "caption": [
+        "Each claim has a visible text alternative and a counterpoint. Explanations should preserve uncertainty instead of promising direction.",
+        "ہر دعوے کا متنی متبادل اور مخالف نکتہ موجود ہے۔ وضاحت میں غیر یقینی رکھیں، سمت کا وعدہ نہیں۔"
+      ],
+      "alt": [
+        "Open a claim, test its boundary: Each claim has a visible text alternative and a counterpoint. Explanations should preserve uncertainty instead of promising direction.",
+        "دعویٰ کھولیں، اس کی حد جانچیں: ہر دعوے کا متنی متبادل اور مخالف نکتہ موجود ہے۔ وضاحت میں غیر یقینی رکھیں، سمت کا وعدہ نہیں۔"
+      ]
+    }
+  },
+  "nextReads": [
+    [
+      [
+        "How order books and liquidity work",
+        "آرڈر بکس اور لیکویڈیٹی کیسے کام کرتی ہیں"
+      ],
+      "/learn/the-order-book-in-depth/"
+    ],
+    [
+      [
+        "Interest rates and markets: a simple guide",
+        "شرح سود اور مارکیٹس: ایک سادہ رہنما"
+      ],
+      "/learn/core-content-month-4-advanced-pd-arrays-and-yields/"
+    ],
+    [
+      [
+        "How to read economic data releases",
+        "معاشی اعداد کے اجرا کو کیسے پڑھیں"
+      ],
+      "/learn/ict-news-volatility-no-trade-framework/"
+    ],
+    [
+      [
+        "Leverage, margin calls and liquidations explained",
+        "لیوریج، مارجن کالز اور لیکویڈیشنز کی وضاحت"
+      ],
+      "/learn/core-content-month-2-growing-small-accounts/"
+    ],
+    [
+      [
+        "Crypto market structure basics",
+        "کرپٹو مارکیٹ اسٹرکچر کی بنیادیں"
+      ],
+      "/learn/the-order-book-in-depth/"
+    ],
+    [
+      [
+        "Risk management for beginners",
+        "نئے سیکھنے والوں کے لیے رسک مینجمنٹ"
+      ],
+      "/learn/core-content-month-2-growing-small-accounts/"
+    ]
+  ],
+  "headings": {
+    "quick": [
+      "Quick Answer",
+      "مختصر جواب"
+    ],
+    "takeaways": [
+      "Key Takeaways",
+      "اہم نکات"
+    ],
+    "next": [
+      "Suggested next reads",
+      "اگلی مطالعے کی تجاویز"
+    ]
+  }
+}

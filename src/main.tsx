@@ -9,6 +9,7 @@ import './styles/learning-first.css';
 import './styles/workbench-hallmark/page.css';
 import './styles/home-playground.css';
 import './styles/reading-room.css';
+import './styles/price-movement.css';
 import './styles/delivery-lesson.css';
 import './styles/mentorship2025.css';
 import './styles/mentorship2026.css';

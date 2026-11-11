@@ -3,7 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { parse } from 'parse5';
 import { languageAlternates, SITE_ORIGIN } from '../src/i18n/locale';
-import { textbookChapters } from '../src/data/chaptersData.ts';
+import { activeCurriculumChapters as textbookChapters } from '../src/data/chaptersData.ts';
 import { ictConcepts } from '../src/data/conceptsData.ts';
 import { 
   GLOSSARY_CATEGORIES, 
@@ -133,16 +133,16 @@ const sitemapContent = fs.readFileSync(sitemapPath, 'utf-8');
 assert(sitemapContent.startsWith('<?xml'), 'sitemap.xml begins with valid XML declaration');
 assert(/<urlset\b[^>]*\bxmlns="http:\/\/www.sitemaps.org\/schemas\/sitemap\/0.9"/.test(sitemapContent), 'sitemap.xml has standard sitemap 0.9 schema');
 
-// Verify all 53 chapters have exact trailing-slash entries in sitemap.xml
+// Only published lessons belong in XML; in-progress lessons remain crawlable noindex pages.
 let missingSitemapChapters = 0;
-for (const ch of textbookChapters) {
+for (const ch of textbookChapters.filter(c=>c.status==='published')) {
   const expectedEntry = `<loc>https://learnsmc.xyz/learn/${ch.slug}/</loc>`;
   if (!sitemapContent.includes(expectedEntry)) {
     missingSitemapChapters++;
     console.error(`Missing from sitemap.xml: ${expectedEntry}`);
   }
 }
-assert(missingSitemapChapters === 0, `All ${textbookChapters.length} chapters present in sitemap with canonical trailing slashes`);
+assert(missingSitemapChapters === 0, `All ${textbookChapters.filter(c=>c.status==='published').length} published chapters present in sitemap with canonical trailing slashes`);
 
 // Verify all glossary categories, concepts, and deep sub-concepts are present in sitemap.xml
 let missingGlossaryEntries = 0;

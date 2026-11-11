@@ -1,6 +1,6 @@
 import { useState, type Dispatch, type SetStateAction } from 'react';
 import type { TextbookChapter } from '../types';
-import { chapterQuiz } from '../data/chapters/chapterQuizzes';
+import { curriculumQuiz as chapterQuiz } from '../data/curriculumQuizzes';
 import { useTranslation } from '../i18n/TranslationProvider';
 
 /** A fresh attempt belongs to one chapter. Answers never mark a chapter completed. */

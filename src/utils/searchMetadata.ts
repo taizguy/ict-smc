@@ -1,3 +1,4 @@
+import {curriculumMetadata} from '../data/curriculumPhase1';
 import {legacyPracticeMetadata} from '../data/legacyPracticeMetadata';
 import {masterclassHubPath,masterclassHubTitle,masterclassHubDescription} from '../data/masterclassHubMeta';
 import {chapterCatalog} from '../data/catalog.generated';
@@ -88,6 +89,7 @@ const routeTitles: Record<string, string> = {
 };
 
 export function searchTitle(value: string, path = '/'): string {
+  const curriculum=curriculumMetadata(path,path.startsWith('/ur/')?'ur':'en');if(curriculum)return curriculum.title;
   if(legacyPracticeMetadata[path])return legacyPracticeMetadata[path].title[0];
   if(path===masterclassHubPath)return masterclassHubTitle+BRAND; // Human-reviewed 54-character hub title; preserve Concepts.
   let topic = path===masterclassHubPath?masterclassHubTitle:reviewed2026.find(entry=>entry.path===path)?.title || routeTitles[path] || studyTopics[path] || primaryTopic(value);
@@ -100,13 +102,14 @@ export function searchTitle(value: string, path = '/'): string {
 }
 
 export function searchDescription(value: string, title: string, path: string): string {
+  const curriculum=curriculumMetadata(path,path.startsWith('/ur/')?'ur':'en');if(curriculum)return curriculum.description;
   if(path===masterclassHubPath)return masterclassHubDescription;
   // Human-reviewed page summaries take precedence over length-based fallbacks.
   const englishPath = path.replace(/^\/ur(?=\/|$)/, '') || '/';
   const reviewed = audit4LectureDescriptions[englishPath as keyof typeof audit4LectureDescriptions] || audit4NumberedDescriptions[englishPath as keyof typeof audit4NumberedDescriptions] || audit4Descriptions[englishPath as keyof typeof audit4Descriptions] || searchDescriptions[englishPath as keyof typeof searchDescriptions];
   if (reviewed) {
     const description=path.startsWith('/ur/') ? reviewed.ur : reviewed.en;
-    return englishPath==='/' ? description.replace(/\d+(?=\s+(?:chapters|ابواب))/,String(chapterCatalog.length)) : description;
+    return englishPath==='/' ? description.replace(/\d+(?=\s+(?:chapters|ابواب))/,String(chapterCatalog.filter(c=>c.status==='published').length)) : description;
   }
   const reviewedDescriptions: Record<string, string> = {
     '/tools/masterclass/pd-arrays/reaper-ifvg/': 'Study the sourced Reaper variant with nested gaps and a breaker. Compare the chart context, invalidation assumptions and limits.',

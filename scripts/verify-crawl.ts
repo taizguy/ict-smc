@@ -5,7 +5,7 @@ import { verify2025Search } from './verify-2025-search';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import { parse } from 'parse5';
-import { textbookChapters } from '../src/data/chaptersData';
+import { activeCurriculumChapters as textbookChapters } from '../src/data/chaptersData';
 import { masoodPlaylistsData } from '../src/data/masoodData';
 import { chapterCatalog, lectureCatalog } from '../src/data/catalog.generated';
 import { contextualFragments } from '../src/utils/contextualLinks';
@@ -94,9 +94,10 @@ for (const route of routes) {
   check(sitemap.includes(`<loc>https://learnsmc.xyz${route.path}</loc>`) === route.indexable, `Sitemap indexability: ${route.path}`);
   check(html.includes('content="noindex, follow"') === !route.indexable, `Robots directive: ${route.path}`);
   const graph = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1]));
-  check(graph.length === 1, `Expected one consistent schema graph: ${route.path}`);
+  const placeholder=textbookChapters.some(c=>c.status==='in-progress'&&[`/learn/${c.slug}/`,`/ur/learn/${c.slug}/`].includes(route.path));
+  check(graph.length === (placeholder?0:1), `Schema count matches publication status: ${route.path}`);
   const nodes = graph.flatMap(g => g['@graph'] || [g]);
-  if (route.path.startsWith('/learn/') || route.path.startsWith('/masood/lectures/')) {
+  if (!placeholder&&(route.path.startsWith('/learn/') || route.path.startsWith('/masood/lectures/'))) {
     const resource = nodes.find(n => n['@type'] === 'LearningResource');
     check(resource?.author?.name === 'Muhammad Umer Ijaz', `Actual author missing: ${route.path}`);
     check(hasContentDisclaimer(html), `In-content disclaimer missing or incomplete: ${route.path}`);

@@ -94,6 +94,9 @@ export type DiagramType =
   | 'three_day_rule';
 
 export interface ChapterSection {
+  sourceChapterId?: number;
+  sourceSectionIndex?: number;
+  stableAnchor?: string;
   id: string;
   title: string;
   content: string; // Markdown / formatted text
@@ -108,6 +111,7 @@ export interface KeyTerm {
 }
 
 export interface TextbookChapter {
+  status?: 'published' | 'in-progress';
   id: number;
   slug: string;
   part: string;

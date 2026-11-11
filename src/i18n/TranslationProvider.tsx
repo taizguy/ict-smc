@@ -1,3 +1,4 @@
+import {curriculumHref} from '../utils/curriculumMigration';
 import { createElement, useContext, type ReactNode } from 'react';
 import { localizedHref, type Locale } from './locale';
 import { t as translate, type TranslationCatalog } from './translate';
@@ -16,6 +17,7 @@ export function useTranslation() {
     t: (text: string) => translate(text, locale, catalog),
     message: (text: string, values: Record<string, string | number>) => translate(text, locale, catalog).replace(/\{(\w+)\}/g, (match, key) => String(values[key] ?? match)),
     href: (path: string) => {
+      path=curriculumHref(path);
       const target = localizedHref(path, locale);
       // Review previews must never link to a nonexistent translated document.
       const pathname = new URL(localizedHref(path, 'en'), 'https://learnsmc.xyz').pathname;

@@ -1,3 +1,5 @@
+import {canonicalChapterId} from './data/curriculumPhase1';
+import {publishedCurriculumChapters as activeCurriculumChapters} from './data/chaptersData';
 import { SiteFooter } from './components/SiteFooter';
 import { currentDocumentHref } from './i18n/navigation';
 import { useTranslation } from './i18n/TranslationProvider';
@@ -183,7 +185,7 @@ export const App: React.FC = () => {
         const slugOrId = learnMatch[1];
         const match = textbookChapters.find(c => c.slug === slugOrId || String(c.id) === slugOrId);
         if (match) {
-          setSelectedChapterId(match.id);
+          setSelectedChapterId(canonicalChapterId(match.id));
           setActiveTab('chapter_room');
           return;
         } else {
@@ -356,8 +358,8 @@ export const App: React.FC = () => {
 
   // Metadata comes from the generated document. Cross-page navigation loads a fresh document,
   // so hydration must not replace deep-route metadata with parent-route information.
-  const totalChapters = textbookChapters.length;
-  const progressPercent = Math.round((completedChapterIds.length / totalChapters) * 100);
+  const totalChapters = activeCurriculumChapters.length;
+  const progressPercent = Math.round((activeCurriculumChapters.filter(c=>completedChapterIds.includes(c.id)).length / totalChapters) * 100);
 
   // Let a document navigation finish before changing the outgoing page's state.
   const openDocument = (targetPath: string) => {
@@ -383,10 +385,10 @@ export const App: React.FC = () => {
   };
 
   const handleSelectChapter = (chapterId: number, slug?: string) => {
-    const ch = textbookChapters.find(c => c.id === chapterId) || textbookChapters[0];
+    const ch = textbookChapters.find(c => c.id === canonicalChapterId(chapterId)) || textbookChapters[0];
     const targetPath = getLessonPath(slug || ch?.slug || String(chapterId));
     if (openDocument(targetPath)) return;
-    setSelectedChapterId(chapterId);
+    setSelectedChapterId(canonicalChapterId(chapterId));
     setActiveTab('chapter_room');
   };
 
@@ -589,7 +591,7 @@ export const App: React.FC = () => {
         />
       </Suspense>}
 
-      <SiteFooter playground={isShowingWelcome}/>
+      <SiteFooter playground={isShowingWelcome} showRisk={!(activeTab==='chapter_room'&&selectedChapterId===1)}/>
 
       {/* Regulatory & Legal Modal (Quick preview or deep study) */}
       {isLegalModalOpen && <Suspense fallback={null}>

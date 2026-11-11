@@ -301,7 +301,7 @@
     "Example E: Gold falls while fear is high",
     "Gold usually attracts safe-haven demand, yet it declines during a sharp market sell-off. Reason: investors sold liquid assets to raise cash and meet margin calls, and a rising dollar pressured gold. Lesson: in stress, liquidity needs can override \"safe haven\" logic.",
     "All examples are illustrative scenarios, not records of specific dates.",
-    "13. Glossary (Quick Definitions for AI and Skimmers)",
+    "13. Glossary",
     "Term",
     "Definition",
     "Price",
@@ -372,5 +372,8 @@
     "Start with supply and demand and the order book idea, learn the difference between surprise and expectation, follow a small number of scheduled events, and keep a journal explaining each major move using the five-step framework above.",
     "Is price movement predictable?",
     "Partly. You can estimate probabilities by understanding expectations, positioning and flows, but outcomes are uncertain, and any single trade can go against even a sound analysis."
+  ],
+  "approvedEditorialExceptions": [
+    "Removed research-only parenthetical from Glossary heading at user request, 11 November 2026."
   ]
 }

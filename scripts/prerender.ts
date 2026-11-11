@@ -11,6 +11,7 @@ import {CurriculumView} from '../src/components/CurriculumView';
 import {ChapterRoom} from '../src/components/ChapterRoom';
 import {Header} from '../src/components/Header';
 import { SiteFooter } from '../src/components/SiteFooter';
+import {isDocumentLesson} from '../src/utils/documentLessons';
 import { FvgIllustration } from '../src/components/FvgLessonDiagram';
 import { fvgScenes } from '../src/data/fvgLesson';
 import { createElement } from 'react';
@@ -187,7 +188,9 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
     ?createElement(ChapterRoom,{chapterId:readingChapter.id,onSelectChapter:()=>{},onReturnToMap:()=>{},staticOnly:true})
     :createElement(CurriculumView,{path:readingPath,onSelectChapter:()=>{},onOpenSearch:()=>{}})):'';
   const readingHeader=isReading?renderToStaticMarkup(createElement(Header,{documentPath:readingPath,activeTab:readingChapter?'chapter_room':'curriculum',setActiveTab:()=>{},onOpenSearch:()=>{},onOpenMentorSpotlight:()=>{},onOpenWelcomeIntro:()=>{},progressPercent:0})):'';
-  const readingDocument=isReading?`<div id="static-content" class="reading-site"><a class="skip-link" href="#main-content">Skip to main content</a>${readingHeader}<main id="main-content" class="reading-main" tabindex="-1">${readingBody}</main>${renderToStaticMarkup(createElement(SiteFooter,{playground:false,showRisk:!readingChapter||![1,13].includes(readingChapter.id)}))}</div>`:'';
+  const readingTag=isDocumentLesson(readingChapter?.id)?'div':'main';
+  const readingId=readingTag==='main'?' id="main-content"':'';
+  const readingDocument=isReading?`<div id="static-content" class="reading-site"><a class="skip-link" href="#main-content">Skip to main content</a>${readingHeader}<${readingTag}${readingId} class="reading-main" tabindex="-1">${readingBody}</${readingTag}>${renderToStaticMarkup(createElement(SiteFooter,{playground:false,showRisk:!readingChapter||![1,13].includes(readingChapter.id)}))}</div>`:'';
   const masterclassDocument=(!!masterclassCollectionPage(readingPath)||!!masterclassJournalForPath(readingPath))?`<div id="static-content" class="mc-collection-document"><a class="skip-link" href="#main-content">Skip to main content</a>${renderToStaticMarkup(createElement(Header,{documentPath:readingPath,activeTab:'masterclass',setActiveTab:()=>{},onOpenSearch:()=>{},onOpenMentorSpotlight:()=>{},onOpenWelcomeIntro:()=>{},progressPercent:0}))}<main id="main-content" tabindex="-1">${meta.bodyHtml}</main>${renderToStaticMarkup(createElement(SiteFooter,{playground:false}))}</div>`:'';
   const auditedDocument=auditedReadingRoute(readingPath)?renderAuditedReading(readingPath,meta.heading):'';
   if(auditedDocument){html=html.replace('<html ', '<html data-reading-enhancement="true" ');if(readingPath.startsWith('/tools/glossary/')||readingPath.startsWith('/tools/chartlab/')||readingPath.startsWith('/tools/delivery-suite/')||['/tools/chartlab/','/tools/delivery-suite/','/tools/simulator/','/tools/backtest/'].includes(readingPath)||/^\/tools\/(?:simulator|backtest)\/[^/]+\/$/.test(readingPath))html=html.replace(/<div id="app-startup"[^>]*>[\s\S]*?<\/div>/,'');}

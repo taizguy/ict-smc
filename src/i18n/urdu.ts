@@ -1,3 +1,4 @@
+import {liquidityTranslations} from '../data/chapters/liquidityTranslations';
 import {mitigationTranslations} from '../data/chapters/mitigationTranslations';
 import {fvgDocumentTranslations} from '../data/chapters/fvgDocumentTranslations';
 import {priceMovementTranslations} from '../data/chapters/priceMovementLesson';
@@ -275,3 +276,5 @@ Object.assign(urdu,priceMovementTranslations,fvgDocumentTranslations);
 
 // New lesson copy must not override translations used by existing pages.
 Object.assign(urdu,Object.fromEntries(Object.entries(mitigationTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(liquidityTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));

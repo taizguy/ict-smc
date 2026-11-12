@@ -1,3 +1,5 @@
+import {liquidityDocument} from '../src/data/chapters/liquidityDocument';
+import {liquidityTranslations} from '../src/data/chapters/liquidityTranslations';
 import {mitigationTranslations} from '../src/data/chapters/mitigationTranslations';
 import {mitigationDocument} from '../src/data/chapters/mitigationDocument';
 import fs from 'node:fs';
@@ -25,6 +27,7 @@ export function splitUrduLessons(output:string,uiKeys:ReadonlySet<string>) {
   visit(chapter); visit(chapterQuiz(chapter));
   if(chapter.id===13)visit(fvgDocument);
   if(chapter.id===1031)visit(mitigationDocument);
+  if(chapter.id===4)visit(liquidityDocument);
  }
  const common=Object.fromEntries(Object.entries(catalog).filter(([key])=>!owners.has(key)||uiKeys.has(key)||/\{\w+\}/.test(key)));
  fs.writeFileSync(path.join(output,'chapter-common.json'),JSON.stringify(common)+'\n');
@@ -47,5 +50,7 @@ export function splitUrduLessons(output:string,uiKeys:ReadonlySet<string>) {
  // Route-only terminology overrides must not leak through the directory fallback pieces.
  const overrides=Object.fromEntries(Object.entries(mitigationTranslations).filter(([key,value])=>catalog[key]!==value));
  fs.writeFileSync(path.join(output,'mitigation-overrides.json'),JSON.stringify(overrides)+'\n');
+ const liquidityOverrides=Object.fromEntries(Object.entries(liquidityTranslations).filter(([key,value])=>catalog[key]!==value));
+ fs.writeFileSync(path.join(output,'liquidity-overrides.json'),JSON.stringify(liquidityOverrides)+'\n');
  console.log(`Urdu lesson split: ${textbookChapters.length} lessons; common ${Math.round(Buffer.byteLength(JSON.stringify(common))/1024)} KB; exact fallback parity, five lesson chunks reused.`);
 }

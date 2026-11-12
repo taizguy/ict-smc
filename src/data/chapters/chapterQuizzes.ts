@@ -1,3 +1,4 @@
+import {liquidityQuizzes} from './liquidityDocument';
 import {mitigationQuizzes} from './mitigationDocument';
 import {priceMovementQuizzes} from './priceMovementLesson';
 import type { TextbookChapter } from '../../types';
@@ -25,6 +26,7 @@ function rotate(question: ChapterQuizQuestion, seed: number): ChapterQuizQuestio
 /** Exact chapter IDs, never title matching or a generic fallback. */
 export function chapterQuiz(chapter: TextbookChapter): ChapterQuizQuestion[] {
   if(chapter.status==='in-progress')return [];
+  if(chapter.id===4)return liquidityQuizzes.map((q,i)=>rotate({...q,id:`liquidity-4-v1-${i}`},i+1));
   if(chapter.id===1031)return mitigationQuizzes.map((q,i)=>rotate({...q,id:`mitigation-1031-v1-${i}`},i+1));
   if(chapter.id===1)return priceMovementQuizzes.map((q,i)=>rotate({...q,id:`price-movement-1-v1-${i}`},i+1));
   const reviewed2026 = (quizzes2026 as Record<string,Omit<ChapterQuizQuestion,'id'>[]>)[chapter.id];

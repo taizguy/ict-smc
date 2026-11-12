@@ -172,9 +172,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/": {
-      "fingerprint": "3ff90a59439a69be179c5b160f45155a9df0f9a5c61cf5621ed8129fdbb8d68c",
-      "lastmod": "2026-11-11",
-      "evidence": "docs/chapter31-rewrite-report.md — Chapter 31 published from supplied PDF; directory/part links and published counts updated."
+      "fingerprint": "3fd8c562b3822c380ff3d820594de30b50fb666541db74d04b3fc83611115e67",
+      "lastmod": "2026-11-12",
+      "evidence": "Chapter 04 document rewrite; docs/chapter04-rewrite-report.md"
     },
     "/curriculum/advanced-2025-2026-institutional-delivery-systems-tape-reading/": {
       "fingerprint": "85663a603776f480e8e04e948b2d85bd3879ac331e0cd63da7d4ab043dc50dcd",
@@ -202,9 +202,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/market-foundations/": {
-      "fingerprint": "7bae0394f8968327e352aca6fa9d71699e463267e2b6179f3108d72609aca1de",
-      "lastmod": "2026-11-11",
-      "evidence": "Chapter 01 supplied-document restoration, confirmed original date, native Urdu and updated directory summary; docs/chapter01-restoration-report.md"
+      "fingerprint": "875ee06224bfa1c35c7cb96f8b0ad549d07ce9f2c43f671e6738cb3cc98d3049",
+      "lastmod": "2026-11-12",
+      "evidence": "Chapter 04 document rewrite; docs/chapter04-rewrite-report.md"
     },
     "/curriculum/mentorships/": {
       "fingerprint": "aa2b1ac77d9ae478c0889c43d18e0d5afbf3bfacd4c38500166bafce55bff175",
@@ -492,9 +492,9 @@
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/liquidity-the-most-misunderstood-word-in-trading/": {
-      "fingerprint": "ec4acf9c4b76fb4b7045fa06c3efc912c6328532584472858bde16459d4c754f",
-      "lastmod": "2026-11-10",
-      "evidence": "Phase 1 curriculum structure/metadata and approved lossless merges; docs/curriculum-phase1-report.md. Source video review dates are not restamped."
+      "fingerprint": "99fcb15fb38eb0e1cc7fc5856bf57e1cd12c799b11465a6e49ae1560bea0a47b",
+      "lastmod": "2026-11-12",
+      "evidence": "Chapter 04 document rewrite; docs/chapter04-rewrite-report.md"
     },
     "/learn/market-alchemy-trading-all-time-highs-ath/": {
       "fingerprint": "54fb7f43741cca24aa5b1d6db52d4630efb100db0e4e6e02a21ec88a1240497a",
@@ -2017,9 +2017,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/": {
-      "fingerprint": "6167bfeb645c64677b3c323b33cf8cf5f5930d3bf810b8f66034dc4b1a715735",
-      "lastmod": "2026-11-11",
-      "evidence": "docs/chapter31-rewrite-report.md — Chapter 31 published from supplied PDF; directory/part links and published counts updated."
+      "fingerprint": "6b56fe927ce0fe891637b4573019292afab2a8131660bbfd6d6874d045012bc0",
+      "lastmod": "2026-11-12",
+      "evidence": "Chapter 04 document rewrite; docs/chapter04-rewrite-report.md"
     },
     "/ur/curriculum/advanced-2025-2026-institutional-delivery-systems-tape-reading/": {
       "fingerprint": "c3ffce40b230b2df7f9e078253195ad7a70820ef8e9e1e15137a5b04b9a65976",
@@ -2047,9 +2047,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/market-foundations/": {
-      "fingerprint": "f5ac703d9d7eb967892be2f5fb07faf8d34b07c53255f5a44c093da84e3db49c",
-      "lastmod": "2026-11-11",
-      "evidence": "Chapter 01 supplied-document restoration, confirmed original date, native Urdu and updated directory summary; docs/chapter01-restoration-report.md"
+      "fingerprint": "1a21d1ecf6273ac3ee1cd1fa5892369b7cf7bbccbb2031e55e69a911d0088119",
+      "lastmod": "2026-11-12",
+      "evidence": "Chapter 04 document rewrite; docs/chapter04-rewrite-report.md"
     },
     "/ur/curriculum/mentorships/": {
       "fingerprint": "39ea1f3fd73a9434fb8cbe0b489d233b3e9c664f2cd314e07c89971b6893ac6d",
@@ -2337,9 +2337,9 @@
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/ur/learn/liquidity-the-most-misunderstood-word-in-trading/": {
-      "fingerprint": "03713f105ee1acd7d43f56e20c2d4cb8dc964fc5d8e87cf131897490d1ada45b",
-      "lastmod": "2026-11-10",
-      "evidence": "Chapter 01 learner-first rewrite or its updated directory summary/native shared foundation review; docs/chapter01-rewrite-report.md"
+      "fingerprint": "1eeac86276a8080f8e9ff93a4c0855c1f2e63dfaec3df5039b653504a51e41dd",
+      "lastmod": "2026-11-12",
+      "evidence": "Chapter 04 document rewrite; docs/chapter04-rewrite-report.md"
     },
     "/ur/learn/market-alchemy-trading-all-time-highs-ath/": {
       "fingerprint": "f12b43bc6d7e4f527995bf8edffcade1770be3b668056b9c80ba12a6cce41142",

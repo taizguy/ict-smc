@@ -1,3 +1,6 @@
+import {localizeLiquidityDocument} from './liquidity-localized-document';
+import {liquidityTranslations} from '../src/data/chapters/liquidityTranslations';
+import {liquidityPath} from '../src/data/chapters/liquidityDocument';
 import {localizeMitigationDocument} from './mitigation-localized-document';
 import {localizeFvgDocument} from './fvg-localized-document';
 import {localizePriceMovementDocument} from './price-movement-localized-document';
@@ -47,7 +50,7 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
       if (!preview) fs.writeFileSync(sourcePath, addLanguageAlternates(source, englishPath, !route.isNoindex));
       continue;
     }
-    let html = localizeHtml(localizeMitigationDocument(localizeFvgDocument(localizePriceMovementDocument(localizeMasterclassDocument(source,englishPath),englishPath),englishPath),englishPath), englishPath, urdu, { preview, indexable: !route.isNoindex, availablePaths: available, nativeReadingRoot: !!auditedReadingRoute(englishPath), onMissing(text) {
+    let html = localizeHtml(localizeLiquidityDocument(localizeMitigationDocument(localizeFvgDocument(localizePriceMovementDocument(localizeMasterclassDocument(source,englishPath),englishPath),englishPath),englishPath),englishPath), englishPath, englishPath===liquidityPath?{...urdu,...liquidityTranslations}:urdu, { preview, indexable: !route.isNoindex, availablePaths: available, nativeReadingRoot: !!auditedReadingRoute(englishPath), onMissing(text) {
       if (!text) return;
       if (!missing.has(text)) missing.set(text, new Set());
       missing.get(text)!.add(englishPath);

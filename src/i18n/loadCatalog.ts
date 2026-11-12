@@ -10,7 +10,7 @@ export async function loadUrduCatalog(pathname: string): Promise<TranslationCata
   const loadLesson=slug&&lessonCatalogs[`./runtime/lessons/${slug}.json`];
   if(loadLesson) {
     const [common,lesson]=await Promise.all([import('./runtime/chapter-common.json'),loadLesson()]);
-    const overrides=slug==='mitigation-and-rejection-blocks'?(await import('./runtime/mitigation-overrides.json')).default:{};
+    const overrides=slug==='mitigation-and-rejection-blocks'?(await import('./runtime/mitigation-overrides.json')).default:slug==='liquidity-the-most-misunderstood-word-in-trading'?(await import('./runtime/liquidity-overrides.json')).default:{};
     return {...shared.default,...common.default,...lesson.default,...overrides};
   }
   const section = path.startsWith('/curriculum/') || path.startsWith('/learn/') ? await import('./runtime/chapters.json')

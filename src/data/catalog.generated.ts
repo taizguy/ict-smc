@@ -200,7 +200,7 @@ export const chapterCatalog = [
   {
     "id": 4,
     "slug": "liquidity-the-most-misunderstood-word-in-trading",
-    "title": "Liquidity in Trading: A Precise Definition",
+    "title": "What Is Liquidity in Trading? A Precise Definition",
     "part": "Part I - Market Foundations",
     "status": "published"
   },

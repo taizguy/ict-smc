@@ -1,3 +1,4 @@
+import {liquidityChapter} from './liquidityDocument';
 import {fvgDocumentChapter} from './fvgDocument';
 import {priceMovementChapter} from './priceMovementLesson';
 import {hasMentorship2026Edition} from './mentorship2026';
@@ -11,6 +12,7 @@ const reviewed = corrections as Record<string, ChapterCorrection>;
 
 /** Preserve canonical slugs and section IDs while replacing conflicting legacy copy. */
 export function applyContentReview(chapter: TextbookChapter): TextbookChapter {
+  if(chapter.id===4)return liquidityChapter;
   if(chapter.id===1)return priceMovementChapter;
   if(chapter.id===13)return fvgDocumentChapter;
   if(hasMentorship2026Edition(chapter.id)) return {...chapter,practiceQuestions:chapterQuiz(chapter).map(q=>q.question)};

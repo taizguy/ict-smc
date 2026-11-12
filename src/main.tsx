@@ -1,3 +1,4 @@
+import './styles/liquidity-document.css';
 import './styles/mitigation-document.css';
 import './index.css';
 import './styles/study-workbench.css';

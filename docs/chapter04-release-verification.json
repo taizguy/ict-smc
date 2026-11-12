@@ -1,0 +1,27 @@
+{
+  "scope": "Chapter 04 only, isolated from pending drafts against origin/main 40e1da90375c7121c2dd8fa2956fd7b35ebe0e55",
+  "typecheck": "passed",
+  "productionBuild": "passed",
+  "seoChecks": 11012,
+  "crawlPages": 847,
+  "sitemapUrls": 741,
+  "lessonUrls": 116,
+  "sourceCopyMathMetadataSchema": "passed",
+  "claimsGate": "passed",
+  "bundleBudget": "passed",
+  "visualFixes": [
+    "isolated outer figure classes",
+    "clock text stroke:none",
+    "five dimension grid",
+    "padded clickable checklist rows"
+  ],
+  "sectionSourceAsides": 8,
+  "sectionSourceLinks": 15,
+  "browserEvidence": "Source-identical component/CSS tested locally in EN/UR, desktop/mobile, light/dark; outputs/chapter04/layout-regression.json. Release source fixture and generated HTML separately verified.",
+  "notVerified": [
+    "human Urdu editorial review",
+    "field Core Web Vitals",
+    "production deployment"
+  ],
+  "branch": "release/chapter04-liquidity"
+}

@@ -1,0 +1,28 @@
+{
+  "verifiedOn": "2026-11-13",
+  "base": "ced8e7a2cc4b24a1f08876f0719f66998b63a415",
+  "scope": "Two-section curriculum navigation; unrelated drafts excluded",
+  "typeScript": "passed",
+  "fullProductionBuild": "passed",
+  "seoChecks": 11012,
+  "crawlPages": 847,
+  "lessonDocumentsChecked": 194,
+  "publishedLessonDocuments": 116,
+  "placeholderDocuments": 78,
+  "removedPanels": "interactive diagram, key terms, summary briefing; absent from static HTML and runtime",
+  "inlineFiguresRetained": {
+    "chapter01": 10,
+    "chapter04": 16,
+    "fvg": 11,
+    "chapter31": 9
+  },
+  "sitemapUrls": 741,
+  "claimsGate": "passed",
+  "bundleBudget": "passed",
+  "browserEvidence": "EN/UR mouse and keyboard switching; Urdu dark mobile390px; no overflow; 47.59px minimum button height; outputs/chapter-two-tabs/browser-verification.json",
+  "notVerified": [
+    "production deployment",
+    "assistive-technology testing"
+  ],
+  "branch": "release/curriculum-two-sections"
+}

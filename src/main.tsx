@@ -1,3 +1,6 @@
+import './styles/break-document.css';
+import './styles/structure-document.css';
+import './styles/swing-document.css';
 import './styles/liquidity-document.css';
 import './styles/mitigation-document.css';
 import './index.css';

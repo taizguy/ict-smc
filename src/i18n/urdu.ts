@@ -1,3 +1,6 @@
+import {breakTranslations} from '../data/chapters/breakTranslations';
+import {structureTranslations} from '../data/chapters/structureTranslations';
+import {swingTranslations} from '../data/chapters/swingTranslations';
 import {liquidityTranslations} from '../data/chapters/liquidityTranslations';
 import {mitigationTranslations} from '../data/chapters/mitigationTranslations';
 import {fvgDocumentTranslations} from '../data/chapters/fvgDocumentTranslations';
@@ -278,3 +281,9 @@ Object.assign(urdu,priceMovementTranslations,fvgDocumentTranslations);
 Object.assign(urdu,Object.fromEntries(Object.entries(mitigationTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
 
 Object.assign(urdu,Object.fromEntries(Object.entries(liquidityTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(swingTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(structureTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(breakTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));

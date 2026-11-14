@@ -1,0 +1,841 @@
+{
+  "h1": "What Is a Swing? The Atom of Structure",
+  "quickAnswer": "A swing high is a three-candle price peak where the middle candle's high sits strictly above the highs of the candles immediately to its left and right. A swing low is the mirror image: a three-candle trough where the middle candle's low sits strictly below both neighboring lows. Together, swing highs and swing lows form the atomic building blocks of market structure, trend direction, and liquidity pools.",
+  "takeaways": [
+    "**Wicks mark the swing; closes mark the break.** Measure swing highs and lows from the extreme wick tips under this convention. Orders beyond those extremes are inferred, not visible in the candles.",
+    "**A swing is only confirmed after Candle 3 closes.** Until the third candle finishes printing, a potential peak or trough is still live and can be invalidated.",
+    "**Not all swings carry equal weight.** Raw 3-candle pivots (Short-Term Swings) stack into Intermediate-Term and Long-Term swings that govern higher-timeframe trend.",
+    "**Protected and weak swings describe structural roles, not guaranteed outcomes.** The swing that launched a qualifying structure break is labelled protected; a weak swing is a potential target within the chosen framework.",
+    "**In futures (NQ, ES), session context decides quality.** Compare the selected session and actual conditions; a 9:30 AM New York label alone does not establish order flow or swing quality."
+  ],
+  "sections": [
+    {
+      "number": 1,
+      "title": "1. What Is a Swing High and Swing Low?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Every price chart looks chaotic at first glance. Candles push up, stall, pull back, spike, and reverse. To read that noise without guessing, traders reduce continuous price movement into turning points called **swing highs** and **swing lows**."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "A **swing high** is a local peak where upward momentum pauses and price turns down.",
+            "A **swing low** is a local trough where downward momentum pauses and price turns up."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Think of swing points as the atoms of technical analysis. You cannot identify an uptrend, a downtrend, a Break of Structure (BOS), a Change of Character (CHoCH), or a liquidity sweep until you can mark swing highs and lows consistently. If two traders mark swings differently on the same chart, every downstream decision they make will conflict."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "2. Anatomy: The Strict 3-Candle Rule",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "This chapter uses a strict three-candle swing convention (`C1`, `C2`, `C3`). Once the timeframe, closed-bar rule and treatment of ties are fixed, the comparison is mechanical. Choosing which swing matters still requires context; other swing definitions use different lookbacks."
+        },
+        {
+          "type": "h3",
+          "text": "The Mathematical Conditions"
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Feature",
+              "Swing High (`SH`)",
+              "Swing Low (`SL`)"
+            ],
+            [
+              "**Role of Candle 2**",
+              "Highest peak of the three-bar cluster",
+              "Lowest trough of the three-bar cluster"
+            ],
+            [
+              "**Left Condition (`C1`)**",
+              "`C2 High > C1 High`",
+              "`C2 Low < C1 Low`"
+            ],
+            [
+              "**Right Condition (`C3`)**",
+              "`C2 High > C3 High`",
+              "`C2 Low < C3 Low`"
+            ],
+            [
+              "**Confirmation Moment**",
+              "Close of `C3`",
+              "Close of `C3`"
+            ],
+            [
+              "**Price Level Marked**",
+              "Exact tip of `C2`'s upper wick",
+              "Exact tip of `C2`'s lower wick"
+            ]
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Edge Cases You Will Meet on Real Charts"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "**Equal neighboring highs or lows (`C2 High == C1 High`):** Under strict rules, `C2` must be *strictly* higher than `C1` and `C3`. If two adjacent candles share the exact same high tick, neither qualifies at that point under this strict greater-than rule. A later lower close does not retrospectively remove that tie. An equal-high zone requires a separately stated convention.",
+            "**Inside bars (`C3` sits completely inside `C2`):** Technically, `C3 High < C2 High`, so the 3-candle swing high triggers on `C3`'s close. However, if `C3` is a tiny inside bar during a strong impulse, treat that swing as minor internal noise until price shows real counter-flow.",
+            "**Outside / engulfing bars (`C2` takes both `C1`'s high and low):** A single candle can simultaneously print a swing high and a swing low if its high exceeds `C1` and `C3`, and its low drops below `C1` and `C3`. Mark both extremes; outside bars signal two-sided volatility expansion."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "3. Why Swings Form: The Auction & Order-Book Mechanism",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A swing point is not a magical line on a screen. It is a visible turning point in the traded price. **Auction exhaustion** is one possible explanation in a central limit order book (CLOB), not something proved by three candles."
+        },
+        {
+          "type": "paragraph",
+          "text": "Here is one possible order-book sequence at a **Swing High**; a candle chart alone cannot verify it:"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "**Aggressive buying (`C1` into `C2`):** Market buy orders lift resting limit sell orders (asks), pushing price upward.",
+            "**Absorption at the peak (`C2` wick):** Price may meet passive sell limits, or buyers may stop paying higher prices. Absorption requires order-flow evidence; the wick alone does not establish it.",
+            "**Seller initiative (`C3`):** Market sell orders may trade against resting bids as price moves down; three candles do not show the changing bid stack.",
+            "**Stop-loss clustering:** In ICT/SMC teaching, traders infer that some short sellers' protective buy stops and breakout buy orders may cluster above `C2`'s high wick. This inferred reference is called **Buy-Side Liquidity (BSL)**; candles do not reveal its actual size or location."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A **Swing Low** has the mirror price geometry. Passive buying and later buyer initiative are possible explanations; inferred sell stops beneath `C2`'s lower wick are called **Sell-Side Liquidity (SSL)** in this framework. Actual orders and participant motives are not visible in the candles."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "4. Wicks vs. Bodies: The Non-Negotiable Convention",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "One of the fastest ways to ruin your chart reading is switching between candle wicks and candle bodies when marking swings. Use one consistent standard across every timeframe:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "**Use WICKS to mark the swing high or swing low.** The wick tip represents the true furthest price traded during that period. Traders may use the extreme as a stop reference, but actual resting stops are not visible in the candles.",
+            "**Use BODIES (candle closes) to judge structural breaks.** When price returns to a prior swing high, a wick piercing above it followed by a close back below it is labelled a **liquidity sweep** under the close-based convention used here, rather than a confirmed structural continuation. A candle close beyond the selected swing extreme is the **Break of Structure (BOS)** confirmation convention used here; it does not guarantee continuation."
+          ]
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Action",
+              "Reference Point",
+              "What It Tells You"
+            ],
+            [
+              "**Marking the Swing Level**",
+              "Extreme wick tip of `C2`",
+              "Exact boundary of the swing; actual stop orders remain inferred"
+            ],
+            [
+              "**Wick pierces, body closes inside**",
+              "Wick beyond `C2`, close inside",
+              "Liquidity sweep / rejection; structure has not broken"
+            ],
+            [
+              "**Candle body closes beyond**",
+              "Full close past `C2` wick",
+              "Confirmed Break of Structure (BOS) or Shift (MSS)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "5. Step-by-Step: How to Mark Swings on a Blank Chart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Follow this five-step routine on any clean candlestick chart:"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "**Zoom out to 80 to 120 candles.** Avoid zooming in so tight that you lose sight of the surrounding price leg.",
+            "**Wait for closed candles only.** Never mark a swing on a live, ticking candle (`C3` must close first).",
+            "**Scan for local peaks (`SH`) and troughs (`SL`).** Check `C1` (left) and `C3` (right) against `C2` (center). Mark `C2`'s exact wick tip with a clean horizontal tick or dot.",
+            "**Connect alternating highs and lows.** A valid structural wave alternates: Swing Low to Swing High to Swing Low. If two swing highs appear without a meaningful swing low between them, take the higher of the two peaks as the dominant swing high.",
+            "**Filter out dead-zone noise.** If a 3-candle swing forms inside an inside-bar cluster during a quiet trading period before the daily maintenance closure, consider whether it is minor internal structure under your written rule. No new traded candles form during the closure itself."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "6. The Swing Hierarchy: STL, ITL, LTL and STH, ITH, LTH",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "On a 5-minute chart, the 3-candle rule fires dozens of times per session. Treating every tiny 3-candle bump as equal leads to overtrading. To separate major turning points from minor ripples, this ICT/SMC study convention organizes swings into a three-tier fractal hierarchy:"
+        },
+        {
+          "type": "h3",
+          "text": "Bullish Lows Hierarchy (Support Structure)"
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Tier",
+              "Full Name",
+              "Exact Definition",
+              "Structural Role"
+            ],
+            [
+              "**STL**",
+              "**Short-Term Low**",
+              "Any valid 3-candle swing low (`C2 Low < C1 & C3 Low`).",
+              "Base atomic pivot; governs immediate intraday pullbacks."
+            ],
+            [
+              "**ITL**",
+              "**Intermediate-Term Low**",
+              "An `STL` that has a higher `STL` immediately to its left and a higher `STL` immediately to its right.",
+              "Confirms a medium-term floor; a break below the selected `ITL` is a structural event to assess in context, not proof of a momentum shift."
+            ],
+            [
+              "**LTL**",
+              "**Long-Term Low**",
+              "An `ITL` flanked by a higher `ITL` on its left and a higher `ITL` on its right.",
+              "Macro anchor low; defines the broader multi-day or multi-week trend."
+            ]
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Bearish Highs Hierarchy (Resistance Structure)"
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Tier",
+              "Full Name",
+              "Exact Definition",
+              "Structural Role"
+            ],
+            [
+              "**STH**",
+              "**Short-Term High**",
+              "Any valid 3-candle swing high (`C2 High > C1 & C3 High`).",
+              "Base atomic peak; may be used as an inferred buy-stop reference."
+            ],
+            [
+              "**ITH**",
+              "**Intermediate-Term High**",
+              "An `STH` flanked by a lower `STH` on its left and a lower `STH` on its right.",
+              "Intermediate high defined by neighboring STHs; a sweep or FVG tap alone does not establish the tier."
+            ],
+            [
+              "**LTH**",
+              "**Long-Term High**",
+              "An `ITH` flanked by a lower `ITH` on its left and a lower `ITH` on its right.",
+              "Macro ceiling; defines the upper boundary of a major dealing range."
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "**Hierarchy check:** An FVG rebalance or sweep can supply context, but it does not promote an STL to an ITL. Under the hierarchy above, the pivot becomes an ITL only after higher neighboring STLs on both sides are confirmed; an LTL requires the corresponding neighboring ITLs."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "7. Protected Swings vs. Weak (Target) Swings",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Once you can rank swings by tier, you must classify them by **job**. Within this framework, selected swings can be labelled **protected** (a structural invalidation reference) or **weak** (a potential target). These labels do not guarantee a hold or break, and not every minor pivot needs a label."
+        },
+        {
+          "type": "h3",
+          "text": "Protected Swing (The Trend Anchor)"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "**In an uptrend:** A **Protected Swing Low** is the swing low that launched the impulsive move that broke above a prior swing high (BOS). Because buyers proved strong enough at that low to push price to new highs, this framework selects that level as a structural invalidation reference; it does not prove that an institution defends it. As long as price stays above the protected low, the uptrend remains intact.",
+            "**In a downtrend:** A **Protected Swing High** is the swing high that generated the sell-off that broke below a prior swing low. It can serve as a stated structural invalidation reference; it is not a universally appropriate stop for every short position."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Weak Swing (The Liquidity Target)"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "**In an uptrend:** The most recent **Swing High** is a **weak high**. If the bullish sequence continues, price may exceed that high; the label does not predict that it will.",
+            "**Failure to break structure:** If price bounces from a swing low (`HL`) but fails to close above the prior swing high before turning back down, that `HL` was never validated by a Break of Structure. Some traders label it a **weak low** and a possible target; a sweep is not assured."
+          ]
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Attribute",
+              "Protected Swing",
+              "Weak (Target) Swing"
+            ],
+            [
+              "**What it did**",
+              "Caused a confirmed Break of Structure (BOS)",
+              "Failed to break opposing structure, or sits in the path of the trend"
+            ],
+            [
+              "**Expected behavior**",
+              "Selected as a structural invalidation reference; may hold or fail",
+              "Potential target within the framework; may hold instead"
+            ],
+            [
+              "**Trade use**",
+              "Stop-loss placement / trend invalidation",
+              "Take-profit target / draw on liquidity"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "8. How Swings Build Market Structure (HH, HL, LH, LL)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Market structure is simply the chronological sequence of your confirmed swing highs and swing lows:"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "**Bullish Structure (Uptrend):** Price prints a series of **Higher Highs (`HH`)** and **Higher Lows (`HL`)**. Each pullback stops above the prior protected swing low, and each expansion closes above the prior weak swing high.",
+            "**Bearish Structure (Downtrend):** Price prints a series of **Lower Highs (`LH`)** and **Lower Lows (`LL`)**. Each rally stalls below the prior protected swing high, and each drop closes below the prior weak swing low.",
+            "**Consolidation (Range):** Swing highs form at roughly the same ceiling and swing lows form at roughly the same floor (`EQH` / `EQL`). Neither buyers nor sellers achieve a sustained candle-body close beyond the boundary.",
+            "**Structural Transition (CHoCH / MSS):** When a bullish sequence (`HH`, `HL`) fails to make a new high and breaks below its **protected Higher Low**, the sequence breaks. That first violation of a protected swing warns that control is shifting."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "9. Swings as Liquidity Pools (BSL, SSL, Equal Highs/Lows)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In ICT/SMC teaching, traders infer possible order clusters around prominent swings:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "**Buy-Side Liquidity (`BSL`):** Buy-stop orders inferred above a **Swing High** (some short sellers' stops and breakout buy orders); their actual location and quantity are not established by candles.",
+            "**Sell-Side Liquidity (`SSL`):** Sell-stop orders inferred below a **Swing Low** (some long holders' stops and breakout sell orders); their actual location and quantity are not established by candles.",
+            "**Equal Highs (`EQH`) and Equal Lows (`EQL`):** When two or three consecutive swing highs peak within a few ticks of the exact same price level, retail traders see \"strong double/triple resistance\". ICT/SMC traders may interpret them as potential stop-cluster references. A chart does not establish institutional intent or a probability of a third-test failure. Price can hold, break and continue, or trade through and return."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "10. Worked Examples with Exact Futures Numbers (NQ & ES)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "*Note: The price levels below are synthetic examples constructed to illustrate exact tick arithmetic on E-mini Nasdaq-100 (`NQ`, $0.25$ tick size) and E-mini S&P 500 (`ES`, $0.25$ tick size).*"
+        },
+        {
+          "type": "h3",
+          "text": "Example A: Valid 3-Candle Swing High on NQ (15-Minute Chart)"
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Candle",
+              "Time (NY)",
+              "Open",
+              "High",
+              "Low",
+              "Close",
+              "Role"
+            ],
+            [
+              "**`C1`**",
+              "09:45 AM",
+              "20,410.00",
+              "20,445.50",
+              "20,405.00",
+              "20,440.25",
+              "Left shoulder (`High < C2`)"
+            ],
+            [
+              "**`C2`**",
+              "10:00 AM",
+              "20,440.25",
+              "**20,468.75**",
+              "20,432.00",
+              "20,436.50",
+              "**Swing High Peak (`20,468.75`)**"
+            ],
+            [
+              "**`C3`**",
+              "10:15 AM",
+              "20,436.50",
+              "20,442.00",
+              "20,412.50",
+              "20,415.00",
+              "Right shoulder (`High < C2`)"
+            ]
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "**Verification:** `C2 High` (`20,468.75`) is strictly greater than `C1 High` (`20,445.50`) by $23.25$ points ($93$ ticks) and strictly greater than `C3 High` (`20,442.00`) by $26.75$ points ($107$ ticks).",
+            "**Confirmation:** At `10:30 AM` (when `C3` closes), `20,468.75` is locked in as a confirmed **Short-Term High (STH)**. In the chart-liquidity convention, `20,469.00` is one tick above the swing and can be marked as a hypothetical stop reference; actual resting orders are not known from these invented candles."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Example B: Protected Swing Low vs. Sweep on ES (5-Minute Chart)"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "`ES` forms a Swing Low at **`5,880.25`** at `10:05 AM`.",
+            "Buyers drive `ES` upward, closing a 5-minute candle body at `5,896.50`, cleanly above the prior swing high of `5,894.00`.",
+            "Because the rally from `5,880.25` broke structure, **`5,880.25` is now a Protected Swing Low**.",
+            "At `10:35 AM`, `ES` pulls back to `5,883.50` (holding $3.25$ points above the protected low) and forms a new Higher Low (`HL`). An illustrative stop reference of `5,879.50` is $3$ ticks below the protected low; it is not a safe or universally appropriate buffer."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Example C: Invalidated Swing (No Confirmation)"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "On `NQ`, `C1 High` is `20,500.00` and `C2 High` reaches `20,520.00`.",
+            "While `C3` is still forming, price trades at `20,512.00`—making it *look* like a swing high. In the final 30 seconds before `C3` closes, a news headline pushes `C3` up to `20,524.50`.",
+            "**Result:** No swing high formed at `20,520.00`. `C3` becomes the new candidate center candle (`C2`), and you must wait for the next bar to close with a lower high before marking a swing."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "11. Swing High/Low vs. Related Concepts",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Traders often confuse the 3-candle swing rule with older technical indicators. Here is how they differ:"
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Concept",
+              "Lookback Rule",
+              "Lag Time",
+              "Best Use Case"
+            ],
+            [
+              "**3-Candle Swing (ICT/SMC)**",
+              "1 bar left, 1 bar right (`3 bars` total)",
+              "**1 candle** after peak",
+              "Precision liquidity levels, STL/ITL/LTL mapping, intraday futures"
+            ],
+            [
+              "**Williams Fractal**",
+              "2 bars left, 2 bars right (`5 bars` total)",
+              "**2 candles** after peak",
+              "Filtering out minor single-bar noise on higher timeframes"
+            ],
+            [
+              "**ZigZag Indicator**",
+              "Percentage or ATR threshold move",
+              "Variable (repaints live)",
+              "Visualizing broad macro waves; poor for live stop placement"
+            ],
+            [
+              "**Floor Trader Pivots (`PP`, `R1`, `S1`)**",
+              "Formula based on prior day's `H, L, C`",
+              "Calculated once at session open",
+              "Static intraday reference levels, not live price action pivots"
+            ],
+            [
+              "**Order Block (`OB`)**",
+              "Last opposing candle before displacement",
+              "Confirmed after impulse",
+              "Supply/demand execution zone; often sits right inside a swing extreme"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "12. Multi-Timeframe Swing Alignment",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A swing point only has meaning inside its timeframe context:"
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Timeframe Layer",
+              "Example Charts",
+              "What You Mark",
+              "Job in Your Plan"
+            ],
+            [
+              "**Higher Timeframe (HTF)**",
+              "Daily, 4-Hour",
+              "Major `ITL`/`ITH`, `LTL`/`LTH`, and prior day/week swing extremes",
+              "Establishes directional bias and major Draw on Liquidity targets"
+            ],
+            [
+              "**Intermediate Timeframe (MTF)**",
+              "1-Hour, 15-Minute",
+              "Protected swings (`HH`/`HL` or `LH`/`LL`) and current Dealing Range",
+              "Defines where price sits in the curve (Premium vs. Discount)"
+            ],
+            [
+              "**Lower Timeframe (LTF)**",
+              "5-Minute, 1-Minute",
+              "Raw 3-candle `STH`/`STL` shifts inside an HTF Point of Interest",
+              "Provides tight structural confirmation and stop-loss placement"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "**The Golden Rule of Alignment:** Never short a 1-minute swing high solely because it broke structure on the 1-minute chart if the 4-hour and 15-minute charts are aggressively expanding toward an untapped Daily Swing High (`BSL`)."
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": "13. Futures-Specific Rules: RTH, ETH, Ticks, and Rollovers",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "If you trade futures, check the selected contract and chart settings. The ES/NQ session examples below do not define the hours of gold, oil or every other contract:"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "**RTH vs. ETH Session Swings:**"
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "**US cash-equity window (9:30 AM to 4:00 PM America/New_York):** This is the ES/NQ study window used here, not the full Globex schedule or a universal futures RTH definition. Check the contract, holidays and your platform's RTH template; the session label alone does not establish depth or swing quality.",
+            "**Electronic Trading Hours (ETH / Globex):** Globex includes trading outside the cash-equity window. Overnight highs and lows (`Asia High/Low`, `London High/Low`) are chart references; their later sweep is not required, and depth varies with actual conditions.",
+            "*Best practice:* State the session template used and distinguish overnight references from cash-window swings. Apply the same selection rule instead of assuming one session always produces a stronger pivot."
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "start": 2,
+          "items": [
+            "**Tick-Exact Stop Clustering:** ES/NQ trade in 0.25-point ticks and GC in 0.10-point ticks. Tick size defines valid price increments; it does not reveal how many stop orders rest near a swing. A **2 to 8 tick** buffer would be an illustrative study setting, not a verified sweep range or universal stop rule. Consider volatility, spread and slippage when defining any risk plan.",
+            "**Contract Rollover Distortion:** Quarterly futures rollovers (March, June, September, December) create artificial price gaps on unadjusted continuous contracts (`NQ1!`, `ES1!`). State whether the continuous chart is back-adjusted. **Back-Adjustment (`B-ADJ`)** removes roll gaps by shifting earlier contract prices, so adjusted historical swing levels may differ from the original traded contract. Use a consistent setting and check the actual contract before applying exact prices.",
+            "**Millisecond / Sub-Minute Noise:** During high-impact releases (CPI, NFP, FOMC), 1-minute candles can whip 40+ points in seconds, printing meaningless 3-candle swings. Step up to the 5-minute or 15-minute chart during news windows if that matches your written study rule; a higher timeframe does not guarantee a meaningful or profitable pivot."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": "14. When Swings Fail: Sweeps, Traps, and Chop",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Even perfectly marked swings fail under three specific conditions:"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "**Liquidity Sweeps (Turtle Soup / Stop Hunts):** Price pushes above a swing high (`BSL`), triggers resting buy stops, and immediately closes back below the swing high. If you entered a breakout trade on that wick, you become the liquidity for the reversal.",
+            "**Mid-Range Consolidation Chop:** Inside a tight sideways range (such as New York lunch between `12:00 PM` and `1:30 PM` America/New_York), 3-candle swing highs and lows form every few bars and get broken in both directions without follow-through. Swings inside a range are internal noise until one side of the range breaks with displacement.",
+            "**Counter-Trend Swings Into HTF Draw:** A 5-minute swing high below a selected 4-hour high can hold or be exceeded. The higher-timeframe reference supplies context, not a measured probability or a force that guarantees price will trade through it."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": "15. Detecting Swings: Manual, Indicators, and Code Logic",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "Manual vs. Automated Indicators"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "**Manual Marking:** Best for learning. Forces you to check `C1`, `C2`, and `C3` wicks and classify whether a swing is protected or weak.",
+            "**Indicators (Fractals / ZigZag / SMC Structure scripts):** Helpful for visual confirmation, but verify the settings. Many TradingView indicators default to a **5-bar or 10-bar lookback**, which ignores valid 3-candle pivots."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Clean Pine Script / Python Detection Logic (No Look-Ahead Bias)"
+        },
+        {
+          "type": "code",
+          "language": "python",
+          "text": "# Zero-look-ahead 3-candle swing detector\n# Confirmed only at the close of candle index i (which acts as C3)\n\ndef detect_swings(candles):\n    # Each bar has explicit open_time, close_time and is_closed fields.\n    # Keep neighboring bars consecutive; skip an unfinished three-bar window.\n    swings = []\n    # Start at index 2 so i-2 (C1), i-1 (C2), and i (C3) all exist\n    for i in range(2, len(candles)):\n        c1 = candles[i - 2]\n        c2 = candles[i - 1]\n        c3 = candles[i]\n        if not all(bar.is_closed for bar in (c1, c2, c3)):\n            continue\n\n        # Strict 3-Candle Swing High\n        if c2.high > c1.high and c2.high > c3.high:\n            swings.append({\n                \"type\": \"SWING_HIGH\",\n                \"price\": c2.high,\n                \"pivot_time\": c2.open_time,\n                \"confirmed_at\": c3.close_time\n            })\n\n        # Strict 3-Candle Swing Low\n        if c2.low < c1.low and c2.low < c3.low:\n            swings.append({\n                \"type\": \"SWING_LOW\",\n                \"price\": c2.low,\n                \"pivot_time\": c2.open_time,\n                \"confirmed_at\": c3.close_time\n            })\n    return swings\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "**Backtesting Warning:** Notice that while the swing price belongs to `c2`, it is **not known until `c3` closes**. A confirmed marker can be drawn retrospectively at `C2` if its later confirmation time is retained. A backtest must not act on it before `C3` closes."
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "title": "16. Common Mistakes (And How to Fix Them)",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Common Mistake",
+              "Why It Hurts",
+              "Exact Fix"
+            ],
+            [
+              "**Mixing wicks and bodies**",
+              "Creates inconsistent structure maps and premature BOS calls",
+              "Always mark swing levels on **wicks**; always confirm breaks on **closes**"
+            ],
+            [
+              "**Marking unconfirmed swings**",
+              "`C3` can still take out `C2` before closing, invalidating the pivot",
+              "Wait until `C3` closes completely before drawing a swing marker"
+            ],
+            [
+              "**Treating all 50 intraday swings as equal**",
+              "Leads to chart clutter and constant counter-trend entries",
+              "Promote swings into `STL/ITL/LTL` tiers and focus on **protected swings**"
+            ],
+            [
+              "**Ignoring Equal Highs/Lows (`EQH`/`EQL`)**",
+              "Treating equal peaks as \"strong resistance\" instead of a stop pool",
+              "A 2 to 5 tick equality tolerance can be an illustrative study convention; define it in advance for the instrument, and treat the zone as an inferred reference, not known orders"
+            ],
+            [
+              "**Placing stops at the exact swing tick**",
+              "The exact extreme is a visible price reference; later price can hold, break or trade through and return",
+              "A 3 to 8 tick buffer is an illustrative setting, not a universal stop rule; account for instrument conditions, spread, slippage and the chosen invalidation"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "title": "17. Pros, Cons, and Myths",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "Pros & Cons"
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Pros",
+              "Cons"
+            ],
+            [
+              "Mechanical three-candle comparison once the timeframe, closed-bar rule and tie policy are fixed",
+              "Fires frequently on low timeframes, creating noise without tier filtering"
+            ],
+            [
+              "Works across every market (futures, forex, crypto, stocks)",
+              "Always has a 1-candle confirmation lag (`C3` close)"
+            ],
+            [
+              "Marks exact traded swing extremes; possible stop clusters remain inferred",
+              "Does not predict reversal size on its own; requires HTF bias and time context"
+            ]
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Myths vs. Reality"
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Myth",
+              "Reality"
+            ],
+            [
+              "**\"A swing high means price must reverse.\"**",
+              "In this framework an uptrend high can be labelled weak, but the label does not guarantee it will be broken or that price will reverse."
+            ],
+            [
+              "**\"You need 5 or 7 candles to confirm a real swing.\"**",
+              "Three candles is the convention used here; five- or seven-bar definitions are different filters. This chapter builds its `ITL`/`LTL` tiers from neighboring confirmed swings."
+            ],
+            [
+              "**\"Every swing high is a good place to put a stop loss.\"**",
+              "A **protected** swing is a chosen structural invalidation reference, not a reliable or safe stop for every trade; execution conditions and the written plan still matter."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "title": "18. Learning Roadmap (Beginner to Advanced)",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Stage",
+              "Skills to Master",
+              "Practical Chart Drill"
+            ],
+            [
+              "**1. Beginner**",
+              "The strict 3-candle rule, wick-only marking, identifying `HH`, `HL`, `LH`, `LL`",
+              "Open a blank 1-hour `NQ` or `ES` chart; mark 50 consecutive confirmed swing highs and lows without indicators."
+            ],
+            [
+              "**2. Intermediate**",
+              "Promoting `STH`/`STL` to `ITH`/`ITL` and `LTH`/`LTL`; separating protected swings from weak swings",
+              "Label the last 10 protected swings on a 15-minute chart and verify how many held until a confirmed BOS occurred."
+            ],
+            [
+              "**3. Advanced**",
+              "Mapping RTH vs. ETH liquidity pools (`BSL`/`SSL`), identifying `EQH`/`EQL` as inferred order references, multi-timeframe nesting",
+              "Map Daily and 4-Hour swing extremes before the 9:30 AM NY Open, then track how 5-minute swings react at those levels."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "title": "19. Glossary",
+      "blocks": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "**Swing High (`SH`):** A three-candle peak where the middle candle's high exceeds the highs of both adjacent candles.",
+            "**Swing Low (`SL`):** A three-candle trough where the middle candle's low sits below the lows of both adjacent candles.",
+            "**STH / STL:** Short-Term High / Short-Term Low — any raw 3-candle swing point.",
+            "**ITH / ITL:** Intermediate-Term High / Intermediate-Term Low — a short-term swing flanked by lower highs (for `ITH`) or higher lows (for `ITL`) on both sides.",
+            "**LTH / LTL:** Long-Term High / Long-Term Low — an intermediate-term swing flanked by lower `ITH`s or higher `ITL`s on both sides.",
+            "**Protected Swing:** A swing point that generated a confirmed Break of Structure; acts as the trend's invalidation anchor.",
+            "**Buy-Side Liquidity (`BSL`):** Buy-stop orders inferred above swing highs; actual orders are not visible in candles.",
+            "**Sell-Side Liquidity (`SSL`):** Sell-stop orders inferred below swing lows; actual orders are not visible in candles.",
+            "**RTH / ETH:** Regular Trading Hours (a specified chart or contract session template) vs. Electronic Trading Hours; Globex includes more than just overnight trading."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "title": "20. Frequently Asked Questions (FAQs)",
+      "blocks": []
+    },
+    {
+      "number": 21,
+      "title": "21. Next Steps & Practice",
+      "blocks": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "**Prerequisite:** Chapter 6 — *Candlestick Basics for SMC: OHLC, Wicks, Timeframes*",
+            "**Next Chapter:** Chapter 10 — *Internal vs. External Structure*",
+            "**Comparison Guide:** Chapter 15 — *BOS vs. CHOCH vs. MSS: A Side-by-Side Guide*",
+            "**Practice Tool:** Open **LearnSMC Chart Lab** to practise chart observation. For this chapter's exact three-candle check, use the Swing Validator above."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "*Disclaimer: Educational content only. Not financial or investment advice. Futures, forex, and crypto trading involve substantial risk of loss and are not suitable for every investor. LearnSMC is an independent educational resource and is not affiliated with or endorsed by Michael Huddleston or any third-party course provider.*"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is a swing high and swing low in trading?",
+      "answer": "A swing high is a three-candle price peak where the center candle's high is higher than the candles immediately before and after it. A swing low is a three-candle trough where the center candle's low is lower than both neighboring candles. Together, they define market trends, support/resistance, and liquidity pools."
+    },
+    {
+      "question": "Do you use candle wicks or bodies to mark swing highs and lows?",
+      "answer": "Always use candle wicks to mark swing highs and lows. Wicks show the exact extreme price traded; actual resting stop-loss orders remain inferred. Use candle body closes to confirm when a swing high or low has been broken."
+    },
+    {
+      "question": "How many candles does it take to form a swing high or swing low?",
+      "answer": "Under the standard ICT and price action rule, it takes exactly three consecutive candles (`C1`, `C2`, and `C3`). The swing is confirmed only after the third candle closes. Classic Williams Fractals use five candles (two on each side)."
+    },
+    {
+      "question": "What is the difference between a protected swing and a weak swing?",
+      "answer": "A protected swing is the pivot that launched an impulsive move that broke prior market structure. Traders expect it to hold on pullbacks. A weak swing failed to break opposing structure or sits in the path of the dominant trend, making it a target to be swept."
+    },
+    {
+      "question": "What do STL, ITL, and LTL mean?",
+      "answer": "They stand for Short-Term Low, Intermediate-Term Low, and Long-Term Low. An `STL` is any raw 3-candle swing low. An `ITL` is an `STL` with a higher `STL` on both sides. An `LTL` is an `ITL` with a higher `ITL` on both sides. Highs use the exact mirror labels (`STH`, `ITH`, `LTH`)."
+    },
+    {
+      "question": "Why do swing highs and lows get swept before price reverses?",
+      "answer": "ICT/SMC traders infer that some stop-loss and breakout orders may cluster beyond prominent swing highs and lows. A trade-through and return is observable; the orders and participant motives are not. Some moves continue instead of reversing, so a sweep does not identify a true direction or guarantee the next outcome."
+    },
+    {
+      "question": "How do swing highs and lows work in futures trading like NQ and ES?",
+      "answer": "The same three-candle comparison can be applied to futures, but contract, timeframe and session settings matter. This chapter uses the US cash-equity window of 9:30 AM to 4:00 PM America/New_York for ES/NQ examples; check the contract and platform template. State whether `B-ADJ` is enabled, because it shifts earlier continuous-contract prices. Neither the session label nor back-adjustment proves swing quality."
+    }
+  ]
+}

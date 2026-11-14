@@ -1,3 +1,6 @@
+import {breakTranslations} from '../src/data/chapters/breakTranslations';
+import {structureTranslations} from '../src/data/chapters/structureTranslations';
+import {swingTranslations} from '../src/data/chapters/swingTranslations';
 import {liquidityTranslations} from '../src/data/chapters/liquidityTranslations';
 import {mitigationTranslations} from '../src/data/chapters/mitigationTranslations';
 import {fvgDocumentTranslations} from '../src/data/chapters/fvgDocumentTranslations';
@@ -110,7 +113,7 @@ for(const svg of Object.values(masterclassStageArt)) for(const match of svg.matc
 // Directory descriptions and search titles are data-driven, not TS string literals.
 for(const row of phase1Entries)for(const key of [...row.title,...row.description])if(urdu[key])keys.shared.add(key);
 for(const key of Object.keys(curriculumPhase1Urdu))if(/^(Free ICT &|Learn ICT and Smart|The roadmap derives)/.test(key))keys.shared.add(key);
-for(const key of [...Object.keys(priceMovementTranslations),...Object.keys(fvgDocumentTranslations),...Object.keys(mitigationTranslations),...Object.keys(liquidityTranslations)])add(key,'chapters');
+for(const key of [...Object.keys(priceMovementTranslations),...Object.keys(fvgDocumentTranslations),...Object.keys(mitigationTranslations),...Object.keys(liquidityTranslations),...Object.keys(swingTranslations),...Object.keys(structureTranslations),...Object.keys(breakTranslations)])add(key,'chapters');
 const output = 'src/i18n/runtime';
 fs.mkdirSync(output, { recursive: true });
 for (const group of groups) {

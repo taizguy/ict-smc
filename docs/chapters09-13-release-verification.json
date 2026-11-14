@@ -1,0 +1,241 @@
+{
+  "status": "validated for approved push and merge",
+  "base": "56f7333b0bebd9d2bc18fcce238488c68d365494",
+  "branch": "release/chapters-09-13",
+  "chapters": [
+    {
+      "display": 9,
+      "id": 7
+    },
+    {
+      "display": 10,
+      "id": 1010
+    },
+    {
+      "display": 12,
+      "id": 9
+    },
+    {
+      "display": 13,
+      "id": 10
+    }
+  ],
+  "planned": 97,
+  "published": 59,
+  "inProgress": 38,
+  "sitemapUrls": 743,
+  "publishedLessonUrls": 118,
+  "checks": {
+    "typeScript": "passed",
+    "productionBuildAndPrerender": "passed",
+    "seoChecks": 11038,
+    "crawlPages": 847,
+    "claimsGate": "passed; no new exceptions",
+    "bundleBudget": {
+      "initialJsRaw": 11739,
+      "initialJsGzip": 5104,
+      "initialJsBrotli": 4752,
+      "allJsRaw": 10441929,
+      "largestJsRaw": 1037993,
+      "initialCssRaw": 621172,
+      "initialCssGzip": 106643
+    },
+    "browserEvidence": "Source-identical lesson components, visuals and authored data; prior EN/UR, mobile, both-theme, no-JS and keyboard evidence retained. Essential-content static/runtime parity passed again against the isolated output."
+  },
+  "sourceIdentity": [
+    {
+      "path": "src/components/BreakDocumentContent.tsx",
+      "sha256": "eca63cd2d4499e798e63fcb5297f0925e3af9f64debfd077eccccc74336e5f2a"
+    },
+    {
+      "path": "src/components/BreakVisual.tsx",
+      "sha256": "da6f88e18326aa0066ceb6fd4807989f58a6ea4cff83d0fdbbf7c02965bcdc37"
+    },
+    {
+      "path": "src/components/StructureDocumentContent.tsx",
+      "sha256": "77b07c2a545a81a817878d215dd16a198c724301e24e2db25a2f1fac558dc062"
+    },
+    {
+      "path": "src/components/StructureVisual.tsx",
+      "sha256": "cf81b6a96288fdd088ae27137931abcb4eb34b3f7d8c4944f87be6ec779505e6"
+    },
+    {
+      "path": "src/components/SwingDocumentContent.tsx",
+      "sha256": "a1914a99705a4990cc97a83ae025b766a2116c22ee096452cd6cc93f5b407eb0"
+    },
+    {
+      "path": "src/components/SwingVisual.tsx",
+      "sha256": "38560ffd43e121d9cfcb2570b5187c82a32a085271dd6451192e315e837beb58"
+    },
+    {
+      "path": "src/styles/break-document.css",
+      "sha256": "08e90c3e3d65c581ac76d680016dc9e8228373cb7e44d1fd5d091f9fd6a7e4e8"
+    },
+    {
+      "path": "src/styles/structure-document.css",
+      "sha256": "4c0b0b9875e541e51c6a3592c8ff2bf70c7ada2003bf4a28443d76968d5ffc21"
+    },
+    {
+      "path": "src/styles/swing-document.css",
+      "sha256": "1971152e5757338641a341b7f5a09556ee009d1afd3e8fdaf8551f79204977c6"
+    },
+    {
+      "path": "src/utils/breakMath.ts",
+      "sha256": "e6995dec7c18cf24ef5910b498a99a56130c4ae872a695781e27b099a182e55c"
+    },
+    {
+      "path": "src/utils/structureMath.ts",
+      "sha256": "d3bd60bd9523b7578375c72674b5946d78b4673fbff840a8e33a29d2ba236ada"
+    },
+    {
+      "path": "src/utils/swingMath.ts",
+      "sha256": "3229b68821c60eeb89aef0dd83d290cf805b8ceeb0e6876f2e50af90198df53e"
+    },
+    {
+      "path": "src/data/chapters/bosDocument.json",
+      "sha256": "a21c78fe6836178431b1ef384ec383db382e93c3dc6d42233006939388edc922"
+    },
+    {
+      "path": "src/data/chapters/chochDocument.json",
+      "sha256": "046ee61038f80102e1f211d12ada2cf6a5a4c0ec05a7129d81a808ee4ac24f85"
+    },
+    {
+      "path": "src/data/chapters/structureDocument.json",
+      "sha256": "e1fb1ebaaeffae847a8de940ff1500ba2a04164638b6cde4a166e147ec93de22"
+    },
+    {
+      "path": "src/data/chapters/swingDocument.json",
+      "sha256": "d623ac84a89ad6ab30dc0c1b1cd8bc2071542da09a0663e7843422bf7170990b"
+    }
+  ],
+  "revisions": [
+    {
+      "path": "/",
+      "lastmod": "2026-11-10",
+      "priorDateRetained": true
+    },
+    {
+      "path": "/curriculum/",
+      "lastmod": "2026-11-14",
+      "priorDateRetained": false
+    },
+    {
+      "path": "/tools/delivery-suite/learning-path/",
+      "lastmod": "2026-11-05",
+      "priorDateRetained": true
+    },
+    {
+      "path": "/learn/what-is-a-swing-the-atom-of-structure/",
+      "lastmod": "2026-11-13",
+      "priorDateRetained": false
+    },
+    {
+      "path": "/learn/break-of-structure-bos-trend-continuation/",
+      "lastmod": "2026-11-14",
+      "priorDateRetained": false
+    },
+    {
+      "path": "/learn/change-of-character-choch-the-first-warning/",
+      "lastmod": "2026-11-14",
+      "priorDateRetained": false
+    },
+    {
+      "path": "/learn/market-structure-shift-mss-verified-directional-shift/",
+      "lastmod": "2026-11-10",
+      "priorDateRetained": true
+    },
+    {
+      "path": "/learn/internal-vs-external-structure/",
+      "lastmod": "2026-11-13",
+      "priorDateRetained": false
+    },
+    {
+      "path": "/curriculum/mentorships/core-2016-2017/",
+      "lastmod": "2026-11-14",
+      "priorDateRetained": false
+    },
+    {
+      "path": "/curriculum/mentorships/2022/",
+      "lastmod": "2026-11-14",
+      "priorDateRetained": false
+    },
+    {
+      "path": "/curriculum/price-structure/",
+      "lastmod": "2026-11-14",
+      "priorDateRetained": false
+    },
+    {
+      "path": "/ur/",
+      "lastmod": "2026-11-10",
+      "priorDateRetained": true
+    },
+    {
+      "path": "/ur/curriculum/",
+      "lastmod": "2026-11-14",
+      "priorDateRetained": false
+    },
+    {
+      "path": "/ur/tools/delivery-suite/learning-path/",
+      "lastmod": "2026-11-05",
+      "priorDateRetained": true
+    },
+    {
+      "path": "/ur/learn/what-is-a-swing-the-atom-of-structure/",
+      "lastmod": "2026-11-13",
+      "priorDateRetained": false
+    },
+    {
+      "path": "/ur/learn/break-of-structure-bos-trend-continuation/",
+      "lastmod": "2026-11-14",
+      "priorDateRetained": false
+    },
+    {
+      "path": "/ur/learn/change-of-character-choch-the-first-warning/",
+      "lastmod": "2026-11-14",
+      "priorDateRetained": false
+    },
+    {
+      "path": "/ur/learn/market-structure-shift-mss-verified-directional-shift/",
+      "lastmod": "2026-11-10",
+      "priorDateRetained": true
+    },
+    {
+      "path": "/ur/learn/internal-vs-external-structure/",
+      "lastmod": "2026-11-13",
+      "priorDateRetained": false
+    },
+    {
+      "path": "/ur/curriculum/mentorships/core-2016-2017/",
+      "lastmod": "2026-11-14",
+      "priorDateRetained": false
+    },
+    {
+      "path": "/ur/curriculum/mentorships/2022/",
+      "lastmod": "2026-11-14",
+      "priorDateRetained": false
+    },
+    {
+      "path": "/ur/curriculum/price-structure/",
+      "lastmod": "2026-11-14",
+      "priorDateRetained": false
+    }
+  ],
+  "datePolicy": "Only actual chapter/directory/reading-guide updates receive new dates. Six count/navigation-label-only pages retain their prior dates; macro-clock build-time noise is excluded.",
+  "excluded": [
+    "unrelated glossary and source-review drafts",
+    "design prototypes",
+    "deployment/ads/robots changes"
+  ],
+  "releaseCorrections": [
+    "Native Urdu source label for ICT Episode 6",
+    "Retain original structure-interpretation translation lookup on chapter 11 when chapter 7 adopts its own review",
+    "Chapter 09 social-image label uses display number 09"
+  ],
+  "unverified": [
+    "human Urdu sign-off",
+    "assistive-technology certification",
+    "field Core Web Vitals",
+    "production deployment and actual Google indexing"
+  ],
+  "sourceIdentityNormalization": "Equivalent after normalizing CRLF/LF and final blank lines; recorded hashes are the release files."
+}

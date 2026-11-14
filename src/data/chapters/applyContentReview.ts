@@ -1,3 +1,5 @@
+import {breakChapters} from './breakDocuments';
+import {swingChapter} from './swingDocument';
 import {liquidityChapter} from './liquidityDocument';
 import {fvgDocumentChapter} from './fvgDocument';
 import {priceMovementChapter} from './priceMovementLesson';
@@ -12,6 +14,8 @@ const reviewed = corrections as Record<string, ChapterCorrection>;
 
 /** Preserve canonical slugs and section IDs while replacing conflicting legacy copy. */
 export function applyContentReview(chapter: TextbookChapter): TextbookChapter {
+  if(breakChapters[chapter.id])return breakChapters[chapter.id];
+  if(chapter.id===7)return swingChapter;
   if(chapter.id===4)return liquidityChapter;
   if(chapter.id===1)return priceMovementChapter;
   if(chapter.id===13)return fvgDocumentChapter;

@@ -133,14 +133,16 @@
     "part": 2,
     "slug": "what-is-a-swing-the-atom-of-structure",
     "title": [
-      "Swing Highs and Lows: Structure and Scale",
-      "سوئنگ ہائی اور لو: اسٹرکچر اور پیمانہ"
+      "What Is a Swing? The Atom of Structure",
+      "سوئنگ کیا ہے؟ اسٹرکچر کی بنیادی اکائی"
     ],
     "description": [
-      "Mark confirmed swing highs and lows, distinguish smaller pivots from wider structure and record when a swing becomes knowable without hindsight.",
-      "تصدیق شدہ سوئنگ ہائی اور لو نشان زد کریں، چھوٹے موڑ کو بڑے اسٹرکچر سے الگ رکھیں اور درج کریں کہ مستقبل دیکھے بغیر سوئنگ کب پہچانا جا سکتا ہے۔"
+      "Learn swing highs and lows with the strict 3-candle rule, wick examples, confirmation timing, protected swings and interactive NQ and ES practice.",
+      "سوئنگ ہائی اور لو کا سخت تین کینڈل اصول، وِکس کی مثالیں، تصدیق کا وقت اور پروٹیکٹڈ سوئنگ سمجھیں؛ NQ اور ES کی انٹرایکٹو مشقوں کے ساتھ۔"
     ],
-    "status": "published"
+    "status": "published",
+    "seoTitle": "Swing Highs and Lows: 3-Candle Rule",
+    "seoTitleUr": "سوئنگ ہائی اور لو: تین کینڈلز کا اصول"
   },
   {
     "id": 1010,
@@ -148,15 +150,15 @@
     "part": 2,
     "slug": "internal-vs-external-structure",
     "title": [
-      "Internal vs External Structure",
+      "Internal vs External Market Structure",
       "اندرونی اور بیرونی مارکیٹ اسٹرکچر"
     ],
     "description": [
-      "Internal and external market structure at different chart scales.",
-      "چارٹ کے مختلف پیمانوں پر اندرونی اور بیرونی مارکیٹ اسٹرکچر۔"
+      "Learn internal vs external market structure: mark major and minor swings, distinguish a pullback from a larger break, and practise with annotated examples.",
+      "اندرونی اور بیرونی مارکیٹ اسٹرکچر سیکھیں: بڑے اور چھوٹے سوئنگ نشان لگائیں، پل بیک اور بڑے بریک کا فرق جانیں اور واضح مثالوں سے مشق کریں۔"
     ],
     "primaryKeyword": "internal vs external market structure",
-    "status": "in-progress"
+    "status": "published"
   },
   {
     "id": 1011,
@@ -180,14 +182,17 @@
     "part": 2,
     "slug": "break-of-structure-bos-trend-continuation",
     "title": [
-      "Break of Structure: Rules and Limits",
-      "بریک آف اسٹرکچر: اصول اور حدود"
+      "Break of Structure (BOS): Rules and Limits",
+      "بریک آف اسٹرکچر (BOS): اصول اور حدود"
     ],
     "description": [
-      "Study a break of structure against a selected swing, state wick or close rules and compare continuation with failed breaks and ambiguous structure.",
-      "منتخب سوئنگ کے مقابل بریک آف اسٹرکچر سمجھیں، وِک یا کلوز کا اصول لکھیں اور تسلسل، ناکام بریک اور غیر واضح اسٹرکچر کا موازنہ کریں۔"
+      "Learn break of structure (BOS): bullish and bearish rules, wick vs close, swing selection, failed breaks and interactive examples with clear limits.",
+      "بریک آف اسٹرکچر (BOS) کے بُلش اور بیئرش اصول، وِک اور کلوز کا فرق، سوئنگ کا انتخاب اور ناکام بریک واضح حدود اور انٹرایکٹو مثالوں سے سیکھیں۔"
     ],
-    "status": "published"
+    "status": "published",
+    "primaryKeyword": "break of structure",
+    "seoTitle": "Break of Structure (BOS): Rules and Examples",
+    "seoTitleUr": "بریک آف اسٹرکچر (BOS): اصول اور مثالیں"
   },
   {
     "id": 10,
@@ -195,14 +200,17 @@
     "part": 2,
     "slug": "change-of-character-choch-the-first-warning",
     "title": [
-      "Change of Character: The First Warning",
-      "چینج آف کریکٹر: پہلا انتباہ"
+      "Change of Character (CHoCH): The First Warning",
+      "چینج آف کریکٹر (CHoCH): پہلا انتباہ"
     ],
     "description": [
-      "Recognise a change of character within existing structure, compare internal and larger swings and explain why an early warning is not a reversal.",
-      "موجودہ اسٹرکچر میں چینج آف کریکٹر پہچانیں، اندرونی اور بڑے سوئنگز کا موازنہ کریں اور سمجھیں کہ ابتدائی انتباہ ریورسل کی ضمانت کیوں نہیں۔"
+      "Learn change of character (CHoCH): bullish and bearish warnings, BOS vs MSS, swing selection, failed reversals and step-by-step interactive examples.",
+      "چینج آف کریکٹر (CHoCH) کے بُلش اور بیئرش انتباہ، BOS اور MSS کا فرق، سوئنگ کا انتخاب اور ناکام ریورسل مرحلہ وار انٹرایکٹو مثالوں سے سیکھیں۔"
     ],
-    "status": "published"
+    "status": "published",
+    "primaryKeyword": "change of character",
+    "seoTitle": "Change of Character (CHoCH): Rules and Examples",
+    "seoTitleUr": "چینج آف کریکٹر (CHoCH): اصول اور مثالیں"
   },
   {
     "id": 11,

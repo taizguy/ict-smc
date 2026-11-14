@@ -1,3 +1,12 @@
+import {localizeBreakDocument} from './break-localized-document';
+import {breakTranslations} from '../src/data/chapters/breakTranslations';
+import {breakPaths} from '../src/data/chapters/breakDocuments';
+import {localizeStructureDocument} from './structure-localized-document';
+import {structureTranslations} from '../src/data/chapters/structureTranslations';
+import {structurePath} from '../src/data/chapters/structureDocument';
+import {localizeSwingDocument} from './swing-localized-document';
+import {swingTranslations} from '../src/data/chapters/swingTranslations';
+import {swingPath} from '../src/data/chapters/swingDocument';
 import {localizeLiquidityDocument} from './liquidity-localized-document';
 import {liquidityTranslations} from '../src/data/chapters/liquidityTranslations';
 import {liquidityPath} from '../src/data/chapters/liquidityDocument';
@@ -50,7 +59,7 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
       if (!preview) fs.writeFileSync(sourcePath, addLanguageAlternates(source, englishPath, !route.isNoindex));
       continue;
     }
-    let html = localizeHtml(localizeLiquidityDocument(localizeMitigationDocument(localizeFvgDocument(localizePriceMovementDocument(localizeMasterclassDocument(source,englishPath),englishPath),englishPath),englishPath),englishPath), englishPath, englishPath===liquidityPath?{...urdu,...liquidityTranslations}:urdu, { preview, indexable: !route.isNoindex, availablePaths: available, nativeReadingRoot: !!auditedReadingRoute(englishPath), onMissing(text) {
+    let html = localizeHtml(localizeLiquidityDocument(localizeMitigationDocument(localizeFvgDocument(localizePriceMovementDocument(localizeMasterclassDocument(localizeSwingDocument(localizeStructureDocument(localizeBreakDocument(source,englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath), englishPath, Object.values(breakPaths).includes(englishPath)?{...urdu,...breakTranslations}:englishPath===structurePath?{...urdu,...structureTranslations}:englishPath===swingPath?{...urdu,...swingTranslations}:englishPath===liquidityPath?{...urdu,...liquidityTranslations}:urdu, { preview, indexable: !route.isNoindex, availablePaths: available, nativeReadingRoot: !!auditedReadingRoute(englishPath), onMissing(text) {
       if (!text) return;
       if (!missing.has(text)) missing.set(text, new Set());
       missing.get(text)!.add(englishPath);

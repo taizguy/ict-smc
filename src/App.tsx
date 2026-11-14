@@ -593,7 +593,7 @@ export const App: React.FC = () => {
         />
       </Suspense>}
 
-      <SiteFooter playground={isShowingWelcome} showRisk={!(activeTab==='chapter_room'&&[1,4,13,1031].includes(selectedChapterId))}/>
+      <SiteFooter playground={isShowingWelcome} showRisk={!(activeTab==='chapter_room'&&[1,4,7,9,10,13,1010,1031].includes(selectedChapterId))}/>
 
       {/* Regulatory & Legal Modal (Quick preview or deep study) */}
       {isLegalModalOpen && <Suspense fallback={null}>

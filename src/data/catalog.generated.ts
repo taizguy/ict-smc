@@ -235,16 +235,16 @@ export const chapterCatalog = [
   {
     "id": 7,
     "slug": "what-is-a-swing-the-atom-of-structure",
-    "title": "Swing Highs and Lows: Structure and Scale",
+    "title": "What Is a Swing? The Atom of Structure",
     "part": "Part II - Market Structure",
     "status": "published"
   },
   {
     "id": 1010,
     "slug": "internal-vs-external-structure",
-    "title": "Internal vs External Structure",
+    "title": "Internal vs External Market Structure",
     "part": "Part II - Market Structure",
-    "status": "in-progress"
+    "status": "published"
   },
   {
     "id": 1011,
@@ -256,14 +256,14 @@ export const chapterCatalog = [
   {
     "id": 9,
     "slug": "break-of-structure-bos-trend-continuation",
-    "title": "Break of Structure: Rules and Limits",
+    "title": "Break of Structure (BOS): Rules and Limits",
     "part": "Part II - Market Structure",
     "status": "published"
   },
   {
     "id": 10,
     "slug": "change-of-character-choch-the-first-warning",
-    "title": "Change of Character: The First Warning",
+    "title": "Change of Character (CHoCH): The First Warning",
     "part": "Part II - Market Structure",
     "status": "published"
   },

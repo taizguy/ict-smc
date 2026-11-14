@@ -1,3 +1,4 @@
+import './styles/silver-lesson.css';
 import './styles/break-document.css';
 import './styles/structure-document.css';
 import './styles/swing-document.css';

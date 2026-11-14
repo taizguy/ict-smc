@@ -620,9 +620,9 @@ export const chapterCatalog = [
   {
     "id": 1064,
     "slug": "silver-bullet-model",
-    "title": "Silver Bullet: Time-Windowed FVG Entries",
+    "title": "ICT Silver Bullet: Time-Windowed FVG Entries",
     "part": "Part VII - Entry Models",
-    "status": "in-progress"
+    "status": "published"
   },
   {
     "id": 1065,

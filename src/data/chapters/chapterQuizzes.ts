@@ -1,3 +1,4 @@
+import {silverLessonQuizzes} from './silverBulletLesson';
 import {breakQuizzes,breakTopic} from './breakDocuments';
 import {structureQuizzes} from './structureDocument';
 import {swingQuizzes} from './swingDocument';
@@ -29,6 +30,7 @@ function rotate(question: ChapterQuizQuestion, seed: number): ChapterQuizQuestio
 /** Exact chapter IDs, never title matching or a generic fallback. */
 export function chapterQuiz(chapter: TextbookChapter): ChapterQuizQuestion[] {
   if(chapter.status==='in-progress')return [];
+  if(chapter.id===1064)return silverLessonQuizzes.map((q,i)=>rotate({...q,id:`silver-1064-v1-${i}`},i+1));
   const bt=breakTopic(chapter.id);if(bt)return breakQuizzes[bt].map((q,i)=>rotate({...q,id:`${bt}-${chapter.id}-v1-${i}`},i+1));
   if(chapter.id===1010)return structureQuizzes.map((q,i)=>rotate({...q,id:`structure-1010-v1-${i}`},i+1));
   if(chapter.id===7)return swingQuizzes.map((q,i)=>rotate({...q,id:`swing-7-v1-${i}`},i+1));

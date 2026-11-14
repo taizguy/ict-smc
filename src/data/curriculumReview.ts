@@ -1,3 +1,4 @@
+import {silverLessonDates,silverLessonSources,silverLessonInterpretation} from './chapters/silverBulletLesson';
 import {breakDates,breakSources,breakTopic,breakInterpretation} from './chapters/breakDocuments';
 import {structureDates,structureSources,structureInterpretation} from './chapters/structureDocument';
 import {swingDates,swingSources} from './chapters/swingDocument';
@@ -20,7 +21,7 @@ import { cornerstoneGuides, cornerstoneRevision } from './cornerstoneGuides';
 export const curriculumReviewDate = '2026-10-19';
 export const curriculumReviewLabel = '19 October 2026';
 // Chapter-wide editorial/diagram/quiz consistency review; not a new full-recording review.
-export const chapterReviewRevision = (id: number) => breakTopic(id)?breakDates.updated:id===1010?structureDates.updated:id===7?swingDates.updated:id===4?liquidityDates.updated:id===1031?mitigationDates.updated:id===13?fvgDocumentDates.updated:id===1?priceMovementDates.updated:phase1Entry(id)?.id===id ? {iso:'2026-11-10',label:'10 November 2026'} : id===49?alchemyDates.updated:hasMentorship2026Edition(id) ? {iso:'2026-10-27',label:'27 October 2026'} : hasMentorship2025Edition(id) ? {iso:'2026-10-26',label:'26 October 2026'} : [13,14,15,16].includes(id)
+export const chapterReviewRevision = (id: number) => id===1064?silverLessonDates.updated:breakTopic(id)?breakDates.updated:id===1010?structureDates.updated:id===7?swingDates.updated:id===4?liquidityDates.updated:id===1031?mitigationDates.updated:id===13?fvgDocumentDates.updated:id===1?priceMovementDates.updated:phase1Entry(id)?.id===id ? {iso:'2026-11-10',label:'10 November 2026'} : id===49?alchemyDates.updated:hasMentorship2026Edition(id) ? {iso:'2026-10-27',label:'27 October 2026'} : hasMentorship2025Edition(id) ? {iso:'2026-10-26',label:'26 October 2026'} : [13,14,15,16].includes(id)
   ? { iso: '2026-10-25', label: '25 October 2026' } : [13, 15].includes(id) || cornerstoneGuides.some(guide => guide.chapterId === id)
   ? { iso: cornerstoneRevision, label: '24 October 2026' }
   : { iso: '2026-10-21', label: '21 October 2026' };
@@ -113,6 +114,7 @@ const interpretation = {
 };
 
 function baseCurriculumReview(chapter: TextbookChapter) {
+  if(chapter.id===1064)return {sources:silverLessonSources,interpretation:silverLessonInterpretation};
   if(breakTopic(chapter.id))return {sources:breakSources,interpretation:breakInterpretation};
   if(chapter.id===1010)return {sources:structureSources,interpretation:structureInterpretation};
   if(chapter.id===7)return {sources:swingSources,interpretation:'The three-candle rule and swing hierarchy are stated study conventions. Protected and weak labels describe selected structural roles; they do not reveal resting orders, prove institutional motives or guarantee a hold or break.'};

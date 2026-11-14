@@ -1,3 +1,5 @@
+import {silverLessonTranslations} from '../data/chapters/silverBulletLesson';
+import '../data/chapters/silverLessonVisuals';
 import {breakTranslations} from '../data/chapters/breakTranslations';
 import {structureTranslations} from '../data/chapters/structureTranslations';
 import {swingTranslations} from '../data/chapters/swingTranslations';
@@ -287,3 +289,5 @@ Object.assign(urdu,Object.fromEntries(Object.entries(swingTranslations).filter((
 Object.assign(urdu,Object.fromEntries(Object.entries(structureTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
 
 Object.assign(urdu,Object.fromEntries(Object.entries(breakTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(silverLessonTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));

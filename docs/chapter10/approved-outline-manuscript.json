@@ -1,0 +1,461 @@
+{
+  "outlineApproved": true,
+  "article": {
+    "h1": "Internal vs External Market Structure",
+    "quickAnswer": "External structure is the larger swing sequence selected as the reference for a chart study. Internal structure is the smaller sequence of swings inside that reference leg or range. An internal break changes the smaller map; it does not, by itself, break the selected external swing. The labels depend on your range, timeframe and stated swing rule—not on a candle’s appearance alone.",
+    "takeaways": [
+      "Choose the larger map first. Record its confirmed anchors before inspecting the smaller swings.",
+      "A bearish internal sequence can be a pullback inside a bullish external sequence. Both descriptions can be true at the same time.",
+      "Name the level and the confirmation rule. In this lesson, a completed candle must close strictly beyond the selected level; a touch or wick alone does not qualify.",
+      "Internal and external are relative labels. A level can be external to a small map and internal to a larger one.",
+      "Structure is visible; resting orders and future outcomes are not. These labels are a study framework, not a complete trade plan."
+    ],
+    "sections": [
+      {
+        "number": 1,
+        "title": "1. What is internal vs external market structure?",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Chapter 09 showed how a local swing becomes confirmed. This chapter asks the next question: which confirmed swings belong to the larger move, and which describe movement within it? A three-candle pivot tells you that price turned locally. It does not automatically tell you how important that turn is."
+          },
+          {
+            "type": "paragraph",
+            "text": "An external swing is an anchor in the larger sequence you have chosen to study. An internal swing is a smaller confirmed turn within that selected leg or range. Think of a route between two towns and the bends along the road: a bend changes your immediate direction without necessarily changing your destination. The analogy describes scale, not a destination price must reach."
+          },
+          {
+            "type": "paragraph",
+            "text": "Neither label is a hidden property of the candle. Two traders can disagree because they selected different reference legs. A useful explanation must show the anchors, the selection rule and the point at which the interpretation would stop qualifying."
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "title": "2. Internal vs external structure at a glance",
+        "blocks": [
+          {
+            "type": "table",
+            "rows": [
+              [
+                "Question",
+                "External structure",
+                "Internal structure"
+              ],
+              [
+                "What does it describe?",
+                "The selected larger swing sequence.",
+                "Smaller swings within its leg or range."
+              ],
+              [
+                "What fixes the reference?",
+                "Confirmed anchors and a written selection rule.",
+                "Confirmed local pivots inside those boundaries."
+              ],
+              [
+                "What does a break change?",
+                "The selected larger interpretation needs reassessment.",
+                "The local sequence changes; the larger reference may remain intact."
+              ],
+              [
+                "Does it require a separate timeframe?",
+                "No. Larger and smaller swings can share one chart.",
+                "A lower timeframe can add detail, but it is not the definition."
+              ],
+              [
+                "What is not established?",
+                "It does not establish institutional intent, a guaranteed trend or a safe stop.",
+                "It does not establish a valid entry, a guaranteed reversal or observable stop quantities."
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "title": "3. Choose the reference range before naming the swings",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Start with a chart question, not a collection of labels. For example: has the pullback changed the larger upswing I am studying? Write the instrument, feed, timeframe, session and which completed bars were available. Then select confirmed anchors that describe that upswing under your stated rule. Do not choose them because the later outcome looks tidy."
+          },
+          {
+            "type": "paragraph",
+            "text": "Our worked map starts with a previously confirmed external low of 100.00 and external high of 140.00. The 40.00-point distance is the study range, not an order-size calculation. Those two anchors remain fixed throughout the replay. Pivots at 132.00, 136.00 and 124.00 are examined within that map; they do not replace 100.00 merely because price recently touched them."
+          },
+          {
+            "type": "paragraph",
+            "text": "The surrounding bullish sequence is supplied as context; two endpoints alone do not establish a trend."
+          },
+          {
+            "type": "paragraph",
+            "text": "This fixed-anchor exercise is a LearnSMC teaching convention. In live analysis, selecting the relevant leg involves judgment. Explain a changed selection as a new map with a new recognition time; retain the earlier map in your notes. If no defensible anchors are available, leave the structure unclassified rather than manufacturing certainty."
+          }
+        ]
+      },
+      {
+        "number": 4,
+        "title": "4. How to mark internal and external structure, step by step",
+        "blocks": [
+          {
+            "type": "h3",
+            "text": "Step 1: Fix the larger reference"
+          },
+          {
+            "type": "paragraph",
+            "text": "Draw horizontal references at 100.00 and 140.00. Label the instrument as an illustrative index, the timeframe as five minutes and the clock as America/New_York. The anchors are supplied as previously confirmed for this exercise; the short replay does not establish them retrospectively."
+          },
+          {
+            "type": "h3",
+            "text": "Step 2: Confirm the local pivots"
+          },
+          {
+            "type": "paragraph",
+            "text": "Use Chapter 09’s strict three-candle rule on completed bars. A center high of 136.00 exceeds neighboring highs of 134.00 and 133.00, so it qualifies only when the right-hand bar closes. Equal neighboring extremes fail the strict rule. Candle color does not decide the result."
+          },
+          {
+            "type": "h3",
+            "text": "Step 3: Keep the two maps separate"
+          },
+          {
+            "type": "paragraph",
+            "text": "Mark the local low at 132.00, local high at 136.00 and later low at 124.00 in a second line style. A move from 132.00 down to 124.00 is an 8.00-point internal extension. It remains inside 100.00–140.00. Use labels as well as line styles so the distinction does not depend on color."
+          },
+          {
+            "type": "h3",
+            "text": "Step 4: Name the exact break"
+          },
+          {
+            "type": "paragraph",
+            "text": "Under this exercise’s close-based rule, a close at 137.00 is 1.00 point above the internal high at 136.00. It changes the local bearish sequence. It is still 3.00 points below the external high at 140.00, so it is not a break above that external reference."
+          },
+          {
+            "type": "h3",
+            "text": "Step 5: Save an evidence note"
+          },
+          {
+            "type": "paragraph",
+            "text": "Write: external references 100.00 and 140.00; internal high 136.00; completed close 137.00; external low still intact. Record the bar-close time and what would contradict the interpretation. Do not add an entry, stop or target merely because the chart now has structure labels."
+          }
+        ]
+      },
+      {
+        "number": 5,
+        "title": "5. Can internal structure turn bearish while external structure stays bullish?",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Yes. Suppose the selected larger sequence has higher highs and higher lows. During its pullback, smaller swings can print lower highs and lower lows. That describes a bearish internal sequence within the selected bullish context. It does not mean price must recover; it means the external invalidation reference has not yet been broken under your rule."
+          },
+          {
+            "type": "paragraph",
+            "text": "The bearish mirror is a smaller rally inside a larger declining sequence. A local higher high can describe the rally without invalidating the selected external lower high. Always name the scale: “internal bullish break” is more precise than “the market reversed.”"
+          }
+        ]
+      },
+      {
+        "number": 6,
+        "title": "6. Internal break, external break or sweep?",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This lesson uses a completed close strictly beyond the selected reference to classify a break. It is a stated chart-reading convention, not a rule followed by every educator or every ICT example. A close exactly at the reference does not pass the strict test. An unfinished candle can still change."
+          },
+          {
+            "type": "table",
+            "rows": [
+              [
+                "Observed event",
+                "Classification in the fixed map",
+                "What remains unknown"
+              ],
+              [
+                "High 138.00; close 135.00; internal reference 136.00.",
+                "Wick excursion above the internal reference; no close-based break.",
+                "Actual stop activation and the next price move."
+              ],
+              [
+                "Completed close 137.00 above 136.00.",
+                "Internal bullish break.",
+                "Whether the move will continue to 140.00."
+              ],
+              [
+                "Completed close 99.00 below external low 100.00.",
+                "External downside break; reassess the prior map.",
+                "Whether a lasting downtrend follows or price reclaims the range."
+              ]
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "A “liquidity sweep” label describes a trade-through and return under a chosen convention. It does not prove that particular stop orders were present. Likewise, crossing an external boundary invalidates a selected condition; it does not automatically supply a reversal entry or a new confirmed external swing."
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "title": "7. The same swing can belong to two different maps",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "On a narrow study range of 124.00–136.00, 136.00 is its upper boundary. Within the wider 100.00–140.00 map, that same level is internal. Both classifications are possible because they answer different questions. State which map you mean before calling a break “external.”"
+          },
+          {
+            "type": "paragraph",
+            "text": "You can see nesting on one timeframe. You can also use, for example, a one-hour context chart and a five-minute detail chart. That pairing is an example, not the best combination for everyone. Higher-timeframe candles aggregate smaller bars and hide their sequence; a one-hour high alone does not reveal the order in which its internal highs and lows formed."
+          },
+          {
+            "type": "paragraph",
+            "text": "The STL, ITL and LTL hierarchy from Chapter 09 is related but not identical. Those tiers use neighboring confirmed pivots. Internal/external labels describe the role of a swing relative to your selected map. An ITL is not automatically external to every study range."
+          }
+        ]
+      },
+      {
+        "number": 8,
+        "title": "8. Worked example: the internal pullback ends",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Illustrative index · five-minute bars · America/New_York · invented prices with no historical trading date. External anchors 100.00 and 140.00 are supplied as confirmed before the replay. The table gives bar OPEN times; the close is five minutes later. The chart uses this exact data."
+          },
+          {
+            "type": "case-table"
+          },
+          {
+            "type": "paragraph",
+            "text": "At 10:15, the bar that opened at 10:10 has closed. Its 133.00 high is below the 136.00 center high, confirming that local high. At 10:30, the bar that opened at 10:25 closes with a low of 126.00, confirming the preceding 124.00 local low. Neither label was available before the right-hand bar closed."
+          },
+          {
+            "type": "paragraph",
+            "text": "At 10:35, the 10:30 bar closes at 137.00, above the selected internal high of 136.00. The larger low at 100.00 has not broken, and the external high at 140.00 remains ahead. At 10:40 the final bar closes at 139.00: the local break has held so far, but the external high has still not broken. This is evidence about the supplied path, not a prediction or a trade recommendation."
+          }
+        ]
+      },
+      {
+        "number": 9,
+        "title": "9. Contrasting example: the external reference fails",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Keep the same earlier anchors and the same first seven bars. Now replace the last two bars with the failure path below. These are also invented five-minute index bars in America/New_York, without a historical date. Do not move 100.00 lower to make the old map appear right."
+          },
+          {
+            "type": "failure-table"
+          },
+          {
+            "type": "paragraph",
+            "text": "At 10:35 the first contrasting bar closes at 99.00, one point below the external low. The previous bullish-context condition no longer qualifies under this fixed map. The next bar closes at 97.00. That later continuation does not make the 10:35 decision knowable earlier."
+          },
+          {
+            "type": "paragraph",
+            "text": "An alternative path could reclaim 100.00 after the break. You would document that new evidence separately. A failed external condition and a confirmed lasting bearish trend are different claims. This lesson establishes the former; it does not promise the latter."
+          }
+        ]
+      },
+      {
+        "number": 10,
+        "title": "10. When neither map is clear",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A sideways range can contain repeated internal higher highs and lower lows without a durable external trend. In an illustrative 100.00–140.00 box, moves through 128.00, 132.00 and back to 126.00 are local events. Calling each one a new major trend changes the question every few bars."
+          },
+          {
+            "type": "paragraph",
+            "text": "“Unclear” is a valid observation. Retain the range boundaries, mark incomplete or conflicting evidence, and wait for the conditions your study requires. Do not remove inconvenient candles, keep shrinking the timeframe or assume the next boundary touch must break."
+          }
+        ]
+      },
+      {
+        "number": 11,
+        "title": "11. Structure is not the same as liquidity",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Swing structure describes visible price relationships. Buy-side liquidity and sell-side liquidity, in ICT terminology, often refer to orders inferred around highs and lows. A fair value gap is a three-candle range relationship. These are different descriptions; none lets a candle chart count hidden orders."
+          },
+          {
+            "type": "paragraph",
+            "text": "ICT’s Episode 3 discussion around 34:49–35:47 includes short-term highs or lows and imbalances within a retraced leg when discussing internal range liquidity. It should not be reduced to “IRL always means an FVG.” External range liquidity is also relative to the range selected. No compulsory internal-to-external cycle is assumed here."
+          },
+          {
+            "type": "paragraph",
+            "text": "Actual market liquidity concerns the ability to transact, including spread, depth and price impact. Revisit Liquidity in Trading for that distinction. The presence of an internal swing does not establish available size or an executable fill at its marked price."
+          }
+        ]
+      },
+      {
+        "number": 12,
+        "title": "12. Common mistakes and myths",
+        "blocks": [
+          {
+            "type": "table",
+            "rows": [
+              [
+                "Mistake or claim",
+                "Why it fails",
+                "Better practice"
+              ],
+              [
+                "Every internal break reverses the larger trend.",
+                "It may break only a smaller reference.",
+                "Name the broken level and check the external reference separately."
+              ],
+              [
+                "Higher timeframe always wins.",
+                "A contextual expectation can fail.",
+                "Write invalidation and accept contrary evidence."
+              ],
+              [
+                "Move the anchor after seeing the outcome.",
+                "Hindsight makes the original rule untestable.",
+                "Preserve the earlier map; date and explain any new selection."
+              ],
+              [
+                "Three-candle confirmation makes a pivot external.",
+                "Geometry confirms a local pivot, not its role.",
+                "Apply the stated range and ranking rule afterwards."
+              ],
+              [
+                "Two aligned timeframes are two independent signals.",
+                "They can describe the same underlying price move.",
+                "Do not treat repeated views as independent evidence."
+              ],
+              [
+                "Treating the external swing as a safe stop.",
+                "A chart reference does not guarantee execution or limit realised loss.",
+                "Separate structure, order type, sizing and execution assumptions."
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "number": 13,
+        "title": "13. A practical chart-reading checklist",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Record the selected map: instrument, feed, timeframe, session and confirmed anchors.",
+              "Identify the internal pivot and when its right-hand confirmation bar closed.",
+              "State the break rule, including touches, wicks and unfinished candles.",
+              "Describe which map changed and which reference is still intact.",
+              "Record uncertainty and a contrasting outcome, not just the attractive continuation."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "The artifact is an evidence note, not an order ticket. Chart Lab offers separate chart-observation studies; use them to practise explaining references and limits. Its scenarios are not a dedicated backtest of the synthetic map in this lesson."
+          }
+        ]
+      },
+      {
+        "number": 14,
+        "title": "14. Glossary",
+        "blocks": [
+          {
+            "type": "table",
+            "rows": [
+              [
+                "Term",
+                "Definition"
+              ],
+              [
+                "External structure",
+                "The selected larger swing sequence used as the reference map."
+              ],
+              [
+                "Internal structure",
+                "Smaller confirmed swings within the selected leg or range."
+              ],
+              [
+                "Reference range",
+                "The stated high and low bounding the current study."
+              ],
+              [
+                "Internal break",
+                "A qualifying crossing of a selected internal reference under the written rule."
+              ],
+              [
+                "External break",
+                "A qualifying crossing of the selected larger boundary, requiring reassessment."
+              ],
+              [
+                "Recognition time",
+                "When the evidence required for a label actually became available."
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "number": 15,
+        "title": "15. Frequently asked questions",
+        "blocks": []
+      },
+      {
+        "number": 16,
+        "title": "16. Next steps and practice",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Revisit Swing Highs and Lows if confirmation timing is unclear. Continue to Trends, Ranges and Transitions when that chapter is available; its current placeholder is labelled in progress. Break of Structure explains the selected break reference, and the market-structure glossary offers a compact definition."
+          },
+          {
+            "type": "paragraph",
+            "text": "Use Practice & Quiz to check which map changed, when the evidence became available and what the chart cannot establish. Keep an uncertain case in your notes rather than forcing every chart into a trade."
+          }
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the difference between internal and external market structure?",
+        "answer": "External structure is the larger selected swing map. Internal structure is the smaller sequence within its leg or range. Name the anchors and selection rule: there is no single candle pattern that makes a swing external in every context."
+      },
+      {
+        "question": "How do I choose internal and external swing points?",
+        "answer": "Choose the larger reference question and confirmed anchors first, then identify local pivots within that range using a consistent rule. Save the map before revealing later bars. If the selection is ambiguous, record that uncertainty instead of changing anchors after the result."
+      },
+      {
+        "question": "Can internal structure change while external structure stays intact?",
+        "answer": "Yes. A pullback can form internal lower highs and lower lows inside a larger bullish map. An internal bullish break can end that local sequence without breaking the external high. It does not guarantee continuation or supply an entry on its own."
+      },
+      {
+        "question": "Must internal and external structure use different timeframes?",
+        "answer": "No. Both scales can be visible on one chart. A higher/lower timeframe pair is another way to examine nesting, but its usefulness depends on the chosen question and rules. A one-hour candle alone cannot reveal its full five-minute sequence."
+      },
+      {
+        "question": "Is internal and external structure the same as IRL and ERL?",
+        "answer": "No. Structure ranks visible swings; liquidity terminology describes inferred order references or imbalances relative to a range. ICT’s Episode 3 discussion includes short-term highs/lows as well as imbalances within the internal-range context. Neither label reveals hidden order quantities."
+      }
+    ],
+    "terms": [
+      {
+        "term": "External structure",
+        "definition": "The selected larger swing sequence used as the reference map."
+      },
+      {
+        "term": "Internal structure",
+        "definition": "Smaller confirmed swings within the selected leg or range."
+      },
+      {
+        "term": "Reference range",
+        "definition": "The stated high and low bounding the current study."
+      },
+      {
+        "term": "Internal break",
+        "definition": "A qualifying crossing of a selected internal reference under the written rule."
+      },
+      {
+        "term": "External break",
+        "definition": "A qualifying crossing of the selected larger boundary, requiring reassessment."
+      },
+      {
+        "term": "Recognition time",
+        "definition": "When the evidence required for a label actually became available."
+      }
+    ]
+  }
+}

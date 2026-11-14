@@ -1,0 +1,348 @@
+{
+  "h1": "Change of Character (CHoCH): The First Warning",
+  "quickAnswer": "A change of character (CHoCH) is the first qualifying break of a selected opposing swing against the sequence you were tracking. A bearish CHoCH breaks the selected low of an upward sequence; a bullish CHoCH breaks the selected high of a downward sequence. It warns that the local pattern changed. It does not, by itself, confirm a lasting reversal or reveal institutional activity.",
+  "takeaways": [
+    "The direction before the break determines the label; the colour of the breaking candle does not.",
+    "Choose the opposing swing before the break. “Protected” is a role in a map, not a promise that the level cannot fail.",
+    "A warning can lead to a reversal, a reclaim or a range. Preserve all three possibilities until later evidence distinguishes them.",
+    "CHoCH, MSS and CISD are not universal synonyms or guaranteed stages of one sequence."
+  ],
+  "sections": [
+    {
+      "number": 1,
+      "title": "1. What does change of character mean in trading?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In the previous chapter, a break of structure extended the selected trend. Now keep an upward map with lows at 100.00 and 108.00 and highs at 110.00 and 120.00. The selected opposing swing is 108.00. A completed close at 106.00 below that level interrupts the map’s higher-low condition. That is our bearish CHoCH, not a prediction that every later candle must fall."
+        },
+        {
+          "type": "paragraph",
+          "text": "Think of an interruption in a conversation: it tells you something changed, but not how the discussion ends. The chart equivalent needs less storytelling and more precision. Which swing failed? When was it known? Did only the small map change? What would show that the warning did not develop into the reversal you considered?"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "2. Bullish CHoCH vs bearish CHoCH",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Feature",
+              "Bullish CHoCH",
+              "Bearish CHoCH"
+            ],
+            [
+              "Before the event",
+              "A selected downward swing sequence.",
+              "A selected upward swing sequence."
+            ],
+            [
+              "Opposing reference",
+              "A confirmed lower high selected before the event.",
+              "A confirmed higher low selected before the event."
+            ],
+            [
+              "This lesson’s test",
+              "Completed close > selected high; 122.00 > 120.00.",
+              "Completed close < selected low; 106.00 < 108.00."
+            ],
+            [
+              "Immediate conclusion",
+              "The chosen lower-high condition no longer holds.",
+              "The chosen higher-low condition no longer holds."
+            ],
+            [
+              "Unproven conclusion",
+              "It does not prove an enduring uptrend.",
+              "It does not prove an enduring downtrend."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "3. How to select the swing that matters",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Use the swing responsible for the selected structural condition, not whichever tiny pivot produces the earliest arrow. In our upward map, 108.00 is the low of the leg that went on to break 110.00 and reach 120.00. Calling it protected describes that structural role. It does not establish visible stop quantities or a level defended by a known institution."
+        },
+        {
+          "type": "paragraph",
+          "text": "Suppose price then makes a smaller low of 114.00 inside the 108.00–120.00 leg. A close at 113.00 breaks 114.00 but not 108.00. You may call it an internal warning if your smaller map qualifies, while the larger upward condition remains intact. Write the scale beside the label. Internal vs External Market Structure explains why those two statements can coexist."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "4. How to identify a CHoCH, step by step",
+      "blocks": [
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Describe the existing sequence: 100.00 low, 110.00 high, 108.00 higher low, 120.00 higher high. The warning is meaningful only relative to that map.",
+            "Fix the opposing level at 108.00 and record when it was confirmed. For a strict three-bar low of 110.00, 108.00 and 111.00, wait for the third bar to close.",
+            "Apply the written test: low 107.00 with close 109.00 is a wick excursion; close 106.00 is a close-based break. A close exactly at 108.00 does not pass the strict test.",
+            "Timestamp the warning: the bar opening at 10:05 closes at 10:10 America/New_York. Do not give the close-based warning a 10:05 decision time.",
+            "Keep branches open: below 108.00 may develop into a lower high and lower low, a quick reclaim, or overlapping range bars. Later bars choose the branch; the label does not."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "5. Wick, close and displacement: state the variant",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Our examples use a completed close strictly beyond the selected swing. This makes the replay decision reproducible, not infallible. Other teachers count an intrabar crossing. Some require a distinct displacement move; some reserve a separate MSS label for that stronger-looking variant. There is no evidence here that one naming scheme is universally best."
+        },
+        {
+          "type": "paragraph",
+          "text": "ICT’s Episode 6 selected bearish-shift passage links the example to a prior high excursion, energetic displacement and a preferred close below the short-term low. Episode 3’s selected bullish example allows the high to be crossed without a required close and then checks the FVG. We cite those teaching contexts without renaming every CHoCH as ICT’s exact model or claiming to have reviewed every recording."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "6. Worked example: the warning develops lower",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Illustrative index; five-minute OHLC bars; America/New_York; invented prices with no historical trading date. The earlier upward sequence and its confirmed 108.00 low are supplied context. The table starts as price approaches that low; it does not claim to show the earlier swing’s entire formation."
+        },
+        {
+          "type": "case-table"
+        },
+        {
+          "type": "paragraph",
+          "text": "At 10:05, low 107.00 and close 109.00 give only a wick excursion. At 10:10, close 106.00 breaks 108.00 and qualifies the warning. A later bounce reaches 107.50, stays below the broken reference and closes at 105.50. The subsequent 102.00 close supplies a lower continuation in this example. The lower high is recognised only after its following bar closes, not while the bounce is still rising."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "7. Failed warning: price reclaims the broken low",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Keep the wick attempt and the same 106.00 warning close. In this branch, the next bar closes at 110.00 above 108.00; the final bar closes at 113.00. The anticipated bearish continuation did not develop. Keep the original warning and mark the later reclaim. Deleting the CHoCH label after seeing the recovery would hide a failed idea from your record."
+        },
+        {
+          "type": "failure-table"
+        },
+        {
+          "type": "paragraph",
+          "text": "A reclaim of 108.00 does not immediately prove a new bullish BOS above 120.00. The old high still needs its own test. This is why a useful journal has separate columns for warning, reclaim and later structure rather than a single “right/wrong” label."
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "8. A third outcome: the warning becomes a range",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "After the same 106.00 close, imagine successive completed closes at 107.00, 105.50 and 106.50 with overlapping highs and lows. The earlier upward condition failed, but a clean new downward sequence has not yet formed. Calling this unresolved is a useful answer. Do not force every warning into either an immediate reversal or an instant failure."
+        },
+        {
+          "type": "paragraph",
+          "text": "Small charts can print alternating warnings inside a wider range. Repeated attempts increase spread and fee exposure in an actual strategy, even when each label follows the same rule. A no-trade decision can follow from missing context or undefined execution rules; it does not require predicting the next candle."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "9. CHoCH vs BOS, MSS and CISD",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Concept",
+              "Reference question",
+              "Do not assume"
+            ],
+            [
+              "BOS",
+              "Did a swing break with the selected existing sequence?",
+              "It does not guarantee the trend will continue."
+            ],
+            [
+              "CHoCH",
+              "Did the selected opposing swing break for the first time?",
+              "It does not guarantee a reversal or supply an entry."
+            ],
+            [
+              "MSS",
+              "Does the specific shift model meet its stated conditions?",
+              "It is not always a separate mandatory stage after CHoCH."
+            ],
+            [
+              "CISD",
+              "Did price cross the chosen opening-price reference under that delivery rule?",
+              "An opening-price reference is not automatically the swing reference used here."
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Read the Market Structure Shift chapter and the market-structure glossary for the terminology used elsewhere on LearnSMC. When comparing sources or indicators, write their actual rules beside their labels. Two tools may draw different labels because they use different pivots or close rules, not because one has access to hidden institutional orders."
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "10. From warning to a complete study plan",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A warning is not an order. First ask whether the larger map, session and selected reference support investigating a reversal. Then specify any displacement, liquidity excursion or fair value gap condition separately. If the named model needs a completed three-candle FVG and no gap forms, the model has not qualified even if the opposing swing broke."
+        },
+        {
+          "type": "paragraph",
+          "text": "For arithmetic only, a hypothetical short at 107.00 with stop 110.00 and target 101.00 has risk 3.00 points and reward 6.00 points, or 2R before costs. A return that never reaches 107.00 leaves the limit entry unfilled. A stop-market order can execute at a worse price; a stop-limit order can remain unfilled. Investor.gov explains those stock-order distinctions; other products need their venue’s rules."
+        },
+        {
+          "type": "paragraph",
+          "text": "Higher-timeframe context can narrow the question without turning a warning into proof. For example, a five-minute warning near a premarked hourly reference of 120.00 is different from one at 114.00 in the middle of that range. Record the higher-timeframe reference before replay and treat any required PD array as a model filter. A sweep or an order block can be absent from the basic CHoCH definition while still being required by a particular reversal model."
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "11. How to practise CHoCH without hindsight",
+      "blocks": [
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Hide future bars and identify one existing sequence. Save its timeframe and anchors before replay.",
+            "Write the opposing swing, its confirmation time and the wick/close rule. Record internal and external references separately.",
+            "Reveal completed candles and timestamp the first qualifying warning. Do not keep counting each later close below the same low as a new first warning.",
+            "Reveal the outcome separately: lower continuation, reclaim or range. Record missing fills and ambiguous intrabar order rather than choosing the favourable sequence.",
+            "Use Chart Lab to mark the reference and Trade Simulator to practise waiting or skipping. These authored cases teach decisions; they do not establish market probabilities."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "12. Common CHoCH mistakes and corrections",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Mistake",
+              "Correction"
+            ],
+            [
+              "Choosing the swing only after the outcome looks obvious.",
+              "Freeze the map and recognition time before the break."
+            ],
+            [
+              "Treating every internal warning as an external reversal.",
+              "Name the scale and show the unbroken larger reference."
+            ],
+            [
+              "Assuming a warning proves banks changed direction.",
+              "OHLC shows prices, not trader identity or hidden order inventory."
+            ],
+            [
+              "Switching from close confirmation to wick confirmation after missing a move.",
+              "Keep the declared test; review a different variant as a separate study."
+            ],
+            [
+              "Treating every warning as a compulsory trade.",
+              "Require the rest of the plan or stand aside."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": "13. A CHoCH decision record",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A useful note for the worked example reads: “Five-minute illustrative index. Upward map 100.00/110.00/108.00/120.00. Opposing low 108.00 confirmed before the replay window. Close-based warning at 10:10, close 106.00. Larger map not supplied, so no claim about an external reversal. Later lower continuation observed; no live entry or fill verified.” This is more useful than a screenshot labelled “perfect reversal”."
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": "14. CHoCH glossary",
+      "blocks": []
+    },
+    {
+      "number": 15,
+      "title": "15. Frequently Asked Questions",
+      "blocks": []
+    },
+    {
+      "number": 16,
+      "title": "16. A warning earns attention, not certainty",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The value of CHoCH is that it asks you to update a map that no longer meets its own condition. The next task is to examine the context, not to replace one certainty with another. Carry the same fixed references into Market Structure Shift and compare the additional conditions of the specific model you choose to study."
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What does change of character mean in trading?",
+      "answer": "CHoCH is the first qualifying break of a selected opposing swing against the sequence being tracked. Here it requires a completed close beyond the reference. It changes the local structural assessment without proving a lasting reversal."
+    },
+    {
+      "question": "What is the difference between CHoCH and MSS?",
+      "answer": "Usage varies. Some educators use overlapping labels; others reserve MSS for an opposing break with displacement and specific context. Compare the actual swing, confirmation and setup rules rather than assuming a universal sequence of labels."
+    },
+    {
+      "question": "What happens after a CHoCH?",
+      "answer": "Price may develop a new sequence, reclaim the broken reference or enter a range. The later outcome is not contained in the initial label. The three branches in this lesson deliberately begin with the same warning."
+    },
+    {
+      "question": "How do you identify a valid CHoCH?",
+      "answer": "Identify the existing sequence, fix its relevant opposing swing, verify that the swing was known, then apply the written wick or close rule. In this lesson a touch or wick without a qualifying close does not pass."
+    },
+    {
+      "question": "Can CHoCH happen without a liquidity sweep or FVG?",
+      "answer": "Under this chapter’s basic opposing-break definition, yes. A named trading model may separately require a liquidity excursion, displacement or completed FVG. Do not silently add those conditions to every use of the word CHoCH."
+    },
+    {
+      "question": "Can a CHoCH fail on a higher timeframe?",
+      "answer": "Yes. Higher-timeframe labels can fail too, and a lower-timeframe warning may be only an internal retracement. The timeframe changes the map and timing, not the uncertainty of future prices."
+    }
+  ],
+  "terms": [
+    {
+      "term": "CHoCH",
+      "definition": "The first qualifying opposing-swing break against the tracked sequence."
+    },
+    {
+      "term": "Protected swing",
+      "definition": "A selected swing whose structural role supports the current map; not a guaranteed barrier."
+    },
+    {
+      "term": "Recognition time",
+      "definition": "The point when the required confirming bars have actually closed."
+    },
+    {
+      "term": "Displacement",
+      "definition": "An energetic directional movement assessed under a stated model, not proof of trader identity."
+    },
+    {
+      "term": "Unresolved range",
+      "definition": "Overlapping later movement that has not supplied the selected new sequence."
+    }
+  ]
+}

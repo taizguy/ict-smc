@@ -1,3 +1,6 @@
+import {breakQuizzes,breakTopic} from './breakDocuments';
+import {structureQuizzes} from './structureDocument';
+import {swingQuizzes} from './swingDocument';
 import {liquidityQuizzes} from './liquidityDocument';
 import {mitigationQuizzes} from './mitigationDocument';
 import {priceMovementQuizzes} from './priceMovementLesson';
@@ -26,6 +29,9 @@ function rotate(question: ChapterQuizQuestion, seed: number): ChapterQuizQuestio
 /** Exact chapter IDs, never title matching or a generic fallback. */
 export function chapterQuiz(chapter: TextbookChapter): ChapterQuizQuestion[] {
   if(chapter.status==='in-progress')return [];
+  const bt=breakTopic(chapter.id);if(bt)return breakQuizzes[bt].map((q,i)=>rotate({...q,id:`${bt}-${chapter.id}-v1-${i}`},i+1));
+  if(chapter.id===1010)return structureQuizzes.map((q,i)=>rotate({...q,id:`structure-1010-v1-${i}`},i+1));
+  if(chapter.id===7)return swingQuizzes.map((q,i)=>rotate({...q,id:`swing-7-v1-${i}`},i+1));
   if(chapter.id===4)return liquidityQuizzes.map((q,i)=>rotate({...q,id:`liquidity-4-v1-${i}`},i+1));
   if(chapter.id===1031)return mitigationQuizzes.map((q,i)=>rotate({...q,id:`mitigation-1031-v1-${i}`},i+1));
   if(chapter.id===1)return priceMovementQuizzes.map((q,i)=>rotate({...q,id:`price-movement-1-v1-${i}`},i+1));

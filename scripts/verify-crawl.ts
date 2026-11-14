@@ -55,7 +55,7 @@ function hasContentDisclaimer(source: string) {
     const main = insideMain || node.tagName === 'main';
     const classes = node.attrs?.find((a: any) => a.name === 'class')?.value.split(/\s+/) || [];
     if (main && classes.includes('ymyl-disclaimer')) {
-      return (text(node).includes('Financial education and risk notice') || text(node).includes(alchemyRisk)) && hasDisclosureLink(node);
+      return (text(node).includes('Financial education and risk notice') || text(node).includes(alchemyRisk) || text(node).includes('Disclaimer: Educational content only. Not financial or investment advice. Futures, forex, and crypto trading involve substantial risk of loss and are not suitable for every investor.')) && hasDisclosureLink(node);
     }
     return (node.childNodes || []).some((child: any) => visit(child, main));
   }
@@ -63,6 +63,10 @@ function hasContentDisclaimer(source: string) {
 }
 const disclaimerFixture = '<aside class="ymyl-disclaimer rounded-xl"><h2>Financial education and risk notice</h2><a href="/disclaimer/">Read disclosure</a></aside>';
 assert.ok(hasContentDisclaimer(`<main>${disclaimerFixture}</main>`), 'Styled in-content disclaimers are recognized');
+const swingRiskFixture='<aside class="ymyl-disclaimer"><p>Disclaimer: Educational content only. Not financial or investment advice. Futures, forex, and crypto trading involve substantial risk of loss and are not suitable for every investor.</p><a href="/disclaimer/">Read the full risk disclosure</a></aside>';
+assert.ok(hasContentDisclaimer(`<main>${swingRiskFixture}</main>`),'Complete supplied risk copy is recognized');
+assert.ok(!hasContentDisclaimer(`<main>${swingRiskFixture.replace('href="/disclaimer/"','href="/about/"')}</main>`),'Supplied risk copy still requires the policy link');
+
 assert.ok(!hasContentDisclaimer(disclaimerFixture), 'A footer-only disclaimer cannot satisfy the in-content requirement');
 assert.ok(!hasContentDisclaimer(`<main>${disclaimerFixture.replace('href="/disclaimer/"', 'href="/about/"')}</main>`), 'Disclaimer must link to the disclosure');
 assert.ok(!hasContentDisclaimer(`<main>${disclaimerFixture.replace('ymyl-disclaimer', 'not-ymyl-disclaimer')}</main>`), 'Disclaimer class must match a complete token');

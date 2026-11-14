@@ -1,3 +1,8 @@
+import {breakDocuments,breakTopic} from '../src/data/chapters/breakDocuments';
+import {breakTranslations} from '../src/data/chapters/breakTranslations';
+import {structureDocument} from '../src/data/chapters/structureDocument';
+import {structureTranslations} from '../src/data/chapters/structureTranslations';
+import {swingDocument} from '../src/data/chapters/swingDocument';
 import {liquidityDocument} from '../src/data/chapters/liquidityDocument';
 import {liquidityTranslations} from '../src/data/chapters/liquidityTranslations';
 import {mitigationTranslations} from '../src/data/chapters/mitigationTranslations';
@@ -8,6 +13,7 @@ import { textbookChapters } from '../src/data/chaptersData';
 import { chapterQuiz } from '../src/data/chapters/chapterQuizzes';
 import {fvgDocument} from '../src/data/chapters/fvgDocument';
 import assert from 'node:assert/strict';
+import {swingTranslations} from '../src/data/chapters/swingTranslations';
 import { lessonParagraphs } from '../src/utils/lessonText';
 
 /** Remove only proven lesson-owned copy; unknown/dynamic UI keys remain common. */
@@ -28,6 +34,9 @@ export function splitUrduLessons(output:string,uiKeys:ReadonlySet<string>) {
   if(chapter.id===13)visit(fvgDocument);
   if(chapter.id===1031)visit(mitigationDocument);
   if(chapter.id===4)visit(liquidityDocument);
+  if(chapter.id===7)visit(swingDocument);
+  if(chapter.id===1010)visit(structureDocument);
+  const bt=breakTopic(chapter.id);if(bt)visit(breakDocuments[bt]);
  }
  const common=Object.fromEntries(Object.entries(catalog).filter(([key])=>!owners.has(key)||uiKeys.has(key)||/\{\w+\}/.test(key)));
  fs.writeFileSync(path.join(output,'chapter-common.json'),JSON.stringify(common)+'\n');
@@ -39,9 +48,9 @@ export function splitUrduLessons(output:string,uiKeys:ReadonlySet<string>) {
   lessonParts.push({slug:chapter.slug,catalog:selected,bytes:Buffer.byteLength(JSON.stringify(selected))});
  }
  // The fallback used by directory routes duplicated every lesson chunk. Reuse
- // its five largest existing pieces; reconstruct the exact original dictionary.
+ // its thirty-two largest existing pieces; reconstruct the exact original dictionary.
  // This changes storage only: no translation is dropped or moved behind a click.
- const pieces=lessonParts.sort((a,b)=>b.bytes-a.bytes||a.slug.localeCompare(b.slug)).slice(0,5),factoredKeys=new Set(pieces.flatMap(p=>Object.keys(p.catalog)));
+ const pieces=lessonParts.sort((a,b)=>b.bytes-a.bytes||a.slug.localeCompare(b.slug)).slice(0,32),factoredKeys=new Set(pieces.flatMap(p=>Object.keys(p.catalog)));
  const fallback=Object.fromEntries(Object.entries(catalog).filter(([key])=>!factoredKeys.has(key)&&!Object.hasOwn(common,key)));
  const restored=Object.assign({},common,fallback,...pieces.map(p=>p.catalog));assert.deepEqual(restored,catalog,'Factored Urdu fallback must retain every original key/value');
  fs.writeFileSync(path.join(output,'chapters.json'),JSON.stringify(fallback)+'\n');
@@ -52,5 +61,22 @@ export function splitUrduLessons(output:string,uiKeys:ReadonlySet<string>) {
  fs.writeFileSync(path.join(output,'mitigation-overrides.json'),JSON.stringify(overrides)+'\n');
  const liquidityOverrides=Object.fromEntries(Object.entries(liquidityTranslations).filter(([key,value])=>catalog[key]!==value));
  fs.writeFileSync(path.join(output,'liquidity-overrides.json'),JSON.stringify(liquidityOverrides)+'\n');
- console.log(`Urdu lesson split: ${textbookChapters.length} lessons; common ${Math.round(Buffer.byteLength(JSON.stringify(common))/1024)} KB; exact fallback parity, five lesson chunks reused.`);
+ const swingBase=Object.assign({},JSON.parse(fs.readFileSync(path.join(output,'shared.json'),'utf8')),common,lessonParts.find(p=>p.slug==='what-is-a-swing-the-atom-of-structure')!.catalog);
+ const swingOverrides=Object.fromEntries(Object.entries(swingTranslations).filter(([key,value])=>swingBase[key]!==value));
+ assert.deepEqual({...swingBase,...swingOverrides},{...swingBase,...swingTranslations},'Swing route override factoring must preserve every translation');
+ fs.writeFileSync(path.join(output,'swing-overrides.json'),JSON.stringify(swingOverrides)+'\n');
+ const structureBase=Object.assign({},JSON.parse(fs.readFileSync(path.join(output,'shared.json'),'utf8')),common,lessonParts.find(p=>p.slug==='internal-vs-external-structure')!.catalog);
+ const structureOverrides=Object.fromEntries(Object.entries(structureTranslations).filter(([key,value])=>structureBase[key]!==value));
+ assert.deepEqual({...structureBase,...structureOverrides},{...structureBase,...structureTranslations},'Structure route factoring must retain every translation');
+ fs.writeFileSync(path.join(output,'structure-overrides.json'),JSON.stringify(structureOverrides)+'\n');
+ const documentKeys=(d:unknown):string[]=>typeof d==='string'?[d]:Array.isArray(d)?d.flatMap(documentKeys):d&&typeof d==='object'?Object.values(d).flatMap(documentKeys):[];
+ for(const slug of ['break-of-structure-bos-trend-continuation','change-of-character-choch-the-first-warning']){
+  const base=Object.assign({},JSON.parse(fs.readFileSync(path.join(output,'shared.json'),'utf8')),common,lessonParts.find(p=>p.slug===slug)!.catalog);
+  const own=slug.startsWith('break-')?'bos':'choch',other=own==='bos'?'choch':'bos',otherKeys=new Set(documentKeys(breakDocuments[other])),ownKeys=new Set(documentKeys(breakDocuments[own]));
+  const scoped=Object.fromEntries(Object.entries(breakTranslations).filter(([key])=>!otherKeys.has(key)||ownKeys.has(key)));
+  const delta=Object.fromEntries(Object.entries(scoped).filter(([key,value])=>base[key]!==value));
+  assert.deepEqual({...base,...delta},{...base,...scoped});
+  fs.writeFileSync(path.join(output,slug+'-overrides.json'),JSON.stringify(delta)+'\n');
+ }
+ console.log(`Urdu lesson split: ${textbookChapters.length} lessons; common ${Math.round(Buffer.byteLength(JSON.stringify(common))/1024)} KB; exact fallback parity, thirty-two lesson chunks reused.`);
 }

@@ -19,7 +19,7 @@ export const displayChapterNumber=(id:number)=>phase1Entry(id)?.position||0;
 export const isPublishedChapter=(id:number)=>phase1Entry(id)?.status==='published';
 export function curriculumMetadata(path:string,locale:'en'|'ur'='en'){
  const clean=path.replace(/^\/ur(?=\/)/,'');const hub=phase1Parts.find(p=>clean===`/curriculum/${p.slug}/`);if(hub){const title=locale==='ur'?curriculumPhase1Urdu[hub.title]:hub.title;const description=hubDescriptions[hub.slug][locale==='ur'?1:0];return {title:title+' | LearnSMC',heading:title,description};}const r=entries.find(r=>clean===`/learn/${r.slug}/`);if(!r)return null;
- const i=locale==='ur'?1:0;return {title:(i===0&&'seoTitle' in r&&r.seoTitle?r.seoTitle:r.title[i])+' | LearnSMC',heading:r.title[i],description:r.description[i]};
+ const i=locale==='ur'?1:0;return {title:(i===0&&'seoTitle' in r&&r.seoTitle?r.seoTitle:i===1&&'seoTitleUr' in r&&r.seoTitleUr?r.seoTitleUr:r.title[i])+' | LearnSMC',heading:r.title[i],description:r.description[i]};
 }
 const romans=['I','II','III','IV','V','VI','VII','VIII','IX','X'];
 export const phase1Parts=[['Market Foundations','market-foundations'],['Market Structure','price-structure'],['Liquidity','liquidity'],['Price Delivery','price-delivery'],['Time and Sessions','time-and-sessions'],['Narrative and Bias','narrative-and-bias'],['Entry Models','entry-models'],['Risk Management','risk-management'],['Process and Psychology','process-and-psychology'],['Markets and Instruments','markets-and-instruments']].map(([title,slug],i)=>({id:i+1,title,slug,part:`Part ${romans[i]} - ${title}`}));
@@ -38,7 +38,7 @@ export function organiseCurriculum(source:TextbookChapter[]):TextbookChapter[]{
 }
 export const curriculumPhase1Urdu:Record<string,string>={};
 for(const [en,ur] of Object.values(mergedOpenings))curriculumPhase1Urdu[en]=ur;
-for(const r of entries){curriculumPhase1Urdu[r.title[0]]=r.title[1];curriculumPhase1Urdu[r.title[0]+' | LearnSMC']=r.title[1]+' | LearnSMC';curriculumPhase1Urdu[r.description[0]]=r.description[1];if('seoTitle' in r&&r.seoTitle)curriculumPhase1Urdu[r.seoTitle+' | LearnSMC']=r.title[1]+' | LearnSMC';}
+for(const r of entries){curriculumPhase1Urdu[r.title[0]]=r.title[1];curriculumPhase1Urdu[r.title[0]+' | LearnSMC']=r.title[1]+' | LearnSMC';curriculumPhase1Urdu[r.description[0]]=r.description[1];if('seoTitle' in r&&r.seoTitle)curriculumPhase1Urdu[r.seoTitle+' | LearnSMC']=('seoTitleUr' in r&&r.seoTitleUr?r.seoTitleUr:r.title[1])+' | LearnSMC';}
 
 const partUrdu=['مارکیٹ کی بنیادیں','مارکیٹ اسٹرکچر','لیکویڈیٹی','پرائس ڈیلیوری','وقت اور سیشنز','نیریٹو اور بائس','انٹری ماڈلز','رسک مینجمنٹ','طریقۂ کار اور نفسیات','مارکیٹس اور انسٹرومنٹس'];
 phase1Parts.forEach((p,i)=>{curriculumPhase1Urdu[p.title]=partUrdu[i];curriculumPhase1Urdu[p.part]=partUrdu[i];});

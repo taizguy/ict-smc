@@ -1,0 +1,105 @@
+{
+  "source": "C:\\Users\\umri\\.codex\\attachments\\ca727eee-e9c3-439c-8fc2-267a9dacfd50\\Pasted text.txt",
+  "sha256": "3d7c41aad6186c589b1deed054dc64de4dab76ac25537c8cb2da5ec720597351",
+  "chapterDisplay": 9,
+  "permanentId": 7,
+  "slug": "what-is-a-swing-the-atom-of-structure",
+  "sections": [
+    {
+      "number": 1,
+      "title": "What Is a Swing High and Swing Low?"
+    },
+    {
+      "number": 2,
+      "title": "Anatomy: The Strict 3-Candle Rule"
+    },
+    {
+      "number": 3,
+      "title": "Why Swings Form: The Auction & Order-Book Mechanism"
+    },
+    {
+      "number": 4,
+      "title": "Wicks vs. Bodies: The Non-Negotiable Convention"
+    },
+    {
+      "number": 5,
+      "title": "Step-by-Step: How to Mark Swings on a Blank Chart"
+    },
+    {
+      "number": 6,
+      "title": "The Swing Hierarchy: STL, ITL, LTL and STH, ITH, LTH"
+    },
+    {
+      "number": 7,
+      "title": "Protected Swings vs. Weak (Target) Swings"
+    },
+    {
+      "number": 8,
+      "title": "How Swings Build Market Structure (HH, HL, LH, LL)"
+    },
+    {
+      "number": 9,
+      "title": "Swings as Liquidity Pools (BSL, SSL, Equal Highs/Lows)"
+    },
+    {
+      "number": 10,
+      "title": "Worked Examples with Exact Futures Numbers (NQ & ES)"
+    },
+    {
+      "number": 11,
+      "title": "Swing High/Low vs. Related Concepts"
+    },
+    {
+      "number": 12,
+      "title": "Multi-Timeframe Swing Alignment"
+    },
+    {
+      "number": 13,
+      "title": "Futures-Specific Rules: RTH, ETH, Ticks, and Rollovers"
+    },
+    {
+      "number": 14,
+      "title": "When Swings Fail: Sweeps, Traps, and Chop"
+    },
+    {
+      "number": 15,
+      "title": "Detecting Swings: Manual, Indicators, and Code Logic"
+    },
+    {
+      "number": 16,
+      "title": "Common Mistakes (And How to Fix Them)"
+    },
+    {
+      "number": 17,
+      "title": "Pros, Cons, and Myths"
+    },
+    {
+      "number": 18,
+      "title": "Learning Roadmap (Beginner to Advanced)"
+    },
+    {
+      "number": 19,
+      "title": "Glossary"
+    },
+    {
+      "number": 20,
+      "title": "Frequently Asked Questions (FAQs)"
+    },
+    {
+      "number": 21,
+      "title": "Next Steps & Practice"
+    }
+  ],
+  "sectionCount": 21,
+  "tables": 12,
+  "faqs": 7,
+  "sourceLink": "https://www.youtube.com/watch?v=loIqJEZpVR4",
+  "status": "Inventory and accuracy review; no article wording changed",
+  "articleInstructionsSeparated": [
+    "Quick Answer editorial label",
+    "Visual specification blockquotes",
+    "Part 3 implementation playbook"
+  ],
+  "visualsRequested": 8,
+  "existingSwingDrillFound": false
+}

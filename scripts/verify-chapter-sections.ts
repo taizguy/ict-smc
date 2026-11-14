@@ -23,10 +23,10 @@ for(const chapter of activeCurriculumChapters)for(const language of ['en','ur'])
  assert.ok(all.some(n=>attr(n,'class')==='rr-text-content'),route+' complete static textbook');
  assert.ok(all.some(n=>attr(n,'class')==='rr-quiz'),route+' static practice quiz');
  assert.ok(all.some(n=>attr(n,'data-chapter-quiz')===String(chapter.id)),route+' correct quiz');
- const expectedFigures:Record<number,[string,number]>={1:['data-price-figure',10],4:['data-liquidity-figure',16],13:['data-fvg-figure',11],1031:['data-mitigation-figure',9]};
+ const expectedFigures:Record<number,[string,number]>={1:['data-price-figure',10],4:['data-liquidity-figure',16],7:['data-swing-figure',9],9:['data-break-figure',13],10:['data-break-figure',13],1010:['data-structure-figure',11],13:['data-fvg-figure',11],1031:['data-mitigation-figure',9]};
  if(expectedFigures[chapter.id]){const [attribute,count]=expectedFigures[chapter.id];assert.equal(all.filter(n=>attr(n,attribute)!==undefined).length,count,route+' textbook illustrations preserved exactly once');}
  evidence.push({route,status:chapter.status,tabs:labels});
 }
 assert.equal(evidence.length,194);
 fs.mkdirSync('outputs/chapter-two-tabs',{recursive:true});fs.writeFileSync('outputs/chapter-two-tabs/static-verification.json',JSON.stringify(evidence,null,2));
-console.log('Chapter sections passed: all 194 EN/UR lesson documents; 116 published pages have only textbook + practice/quiz; 78 placeholders remain notice-only; removed panels/actions absent; inline illustrations retained.');
+console.log(`Chapter sections passed: all ${2*activeCurriculumChapters.length} EN/UR lesson documents; ${2*activeCurriculumChapters.filter(c=>c.status==='published').length} published pages have only textbook + practice/quiz; ${2*activeCurriculumChapters.filter(c=>c.status==='in-progress').length} placeholders remain notice-only; removed panels/actions absent; inline illustrations retained.`);

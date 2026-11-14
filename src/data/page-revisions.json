@@ -2,9 +2,9 @@
   "version": 1,
   "pages": {
     "/": {
-      "fingerprint": "b7908b18c11d620b8a471d9ebacb58773166370b2011b76c1d57cd73ac9a06a8",
+      "fingerprint": "9ed316c6ecbcd18b64b2d40516cc12c093b1224322ac98b85b6fe5bbe5cafff1",
       "lastmod": "2026-11-10",
-      "evidence": "Phase 1 curriculum structure/metadata and approved lossless merges; docs/curriculum-phase1-report.md. Source video review dates are not restamped."
+      "evidence": "docs/chapters09-13-release-verification.json; Counter or navigation-label-only change; previous editorial date retained."
     },
     "/about/": {
       "fingerprint": "fc9fcecad574c63de2b6703e840d5b9de4adb538f6edd1f5df8c7785c05f11fb",
@@ -172,9 +172,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/": {
-      "fingerprint": "3fd8c562b3822c380ff3d820594de30b50fb666541db74d04b3fc83611115e67",
-      "lastmod": "2026-11-12",
-      "evidence": "Chapter 04 document rewrite; docs/chapter04-rewrite-report.md"
+      "fingerprint": "c8a2f9afc817db369b83dfe414d621e58434b8ca620768e84a3efece4b6764fc",
+      "lastmod": "2026-11-14",
+      "evidence": "docs/chapters09-13-release-verification.json; Reviewed chapter rewrite or derived curriculum/reading-guide content update."
     },
     "/curriculum/advanced-2025-2026-institutional-delivery-systems-tape-reading/": {
       "fingerprint": "85663a603776f480e8e04e948b2d85bd3879ac331e0cd63da7d4ab043dc50dcd",
@@ -212,9 +212,9 @@
       "evidence": "Phase 1 curriculum structure/metadata and approved lossless merges; docs/curriculum-phase1-report.md. Source video review dates are not restamped."
     },
     "/curriculum/mentorships/2022/": {
-      "fingerprint": "d01fd42ec6b24f266d1404f7cdfe56f50d8356dd02553fb8b7c21938ea5b134b",
-      "lastmod": "2026-11-10",
-      "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
+      "fingerprint": "da63f239496b0e1c40f460fbea12620e3918130a17cbb3990820b1a52152899a",
+      "lastmod": "2026-11-14",
+      "evidence": "docs/chapters09-13-release-verification.json; Reviewed chapter rewrite or derived curriculum/reading-guide content update."
     },
     "/curriculum/mentorships/2023/": {
       "fingerprint": "72de2047f35c1dfed3f92b92c463b5642ac4ee719e1b161f28b5061fe1612cf2",
@@ -237,9 +237,9 @@
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/curriculum/mentorships/core-2016-2017/": {
-      "fingerprint": "effe09f5c19ca472ea6bc0dfcbc20e003b1c85a7cd0c12868d16868cf1da3408",
-      "lastmod": "2026-11-10",
-      "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
+      "fingerprint": "4a8b3a71a56fcd7b1a24d5fa5fd08848e2f062b76a0497beaf65d5495fe79cce",
+      "lastmod": "2026-11-14",
+      "evidence": "docs/chapters09-13-release-verification.json; Reviewed chapter rewrite or derived curriculum/reading-guide content update."
     },
     "/curriculum/price-delivery/": {
       "fingerprint": "89048ddb8fb37e4fd66cf8de91612f1914c95a4b23c4617cb4f6003bfe673239",
@@ -247,9 +247,9 @@
       "evidence": "docs/chapter31-rewrite-report.md — Chapter 31 published from supplied PDF; directory/part links and published counts updated."
     },
     "/curriculum/price-structure/": {
-      "fingerprint": "0d9da760c8b2f5244405af2f4097445d5335b4868a3381fa6bba2f15d02cf0f6",
-      "lastmod": "2026-11-10",
-      "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
+      "fingerprint": "8969ecd86dcc004f315ba429723443b87941471c6f4d481e4ec5b4aa58561f8b",
+      "lastmod": "2026-11-14",
+      "evidence": "docs/chapters09-13-release-verification.json; Reviewed chapter rewrite or derived curriculum/reading-guide content update."
     },
     "/curriculum/special-mentorship-track-practical-field-guide/": {
       "fingerprint": "8725f1bbe4aa6479d3b944592cae15213550760937d811b2052399bcdfdcbc0d",
@@ -282,9 +282,9 @@
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/break-of-structure-bos-trend-continuation/": {
-      "fingerprint": "aaef4db984f440133824e20bb24a742e7ac7a86f4b61678d46272dc4f7f35e62",
-      "lastmod": "2026-11-10",
-      "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
+      "fingerprint": "b7fa5790f988271221d1d4c7958e358ac91009b550c7edaa666814e6d90f4ea4",
+      "lastmod": "2026-11-14",
+      "evidence": "docs/chapters09-13-release-verification.json; Reviewed chapter rewrite or derived curriculum/reading-guide content update."
     },
     "/learn/breaker-blocks-trading-failed-order-blocks/": {
       "fingerprint": "61d61aeb9f12fa579bd4ae29db39d01e99cc2dc7b2c1557d652ed17bcd893b0c",
@@ -297,9 +297,9 @@
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/learn/change-of-character-choch-the-first-warning/": {
-      "fingerprint": "86e253d001245965c01e55b57458107d28c292e53532909cbea51573ed2456c0",
-      "lastmod": "2026-11-10",
-      "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
+      "fingerprint": "6a76c02270248a5dd45aa97cd16fa5bdc4c2dc9adedd6ccfcb2d9c8a7cfc1df6",
+      "lastmod": "2026-11-14",
+      "evidence": "docs/chapters09-13-release-verification.json; Reviewed chapter rewrite or derived curriculum/reading-guide content update."
     },
     "/learn/core-content-month-1-elements-of-trade-setup/": {
       "fingerprint": "c359e1cd845f881ca74a261b4ea1948d84a118fb28fa9fbd3dcabda6208690cc",
@@ -502,9 +502,9 @@
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/learn/market-structure-shift-mss-verified-directional-shift/": {
-      "fingerprint": "5172e0517835f7e670640b353220108bb70ff717f118a7598860428f1cea52ff",
+      "fingerprint": "198797d11c29e99a0693b3d6b728fce3330a31a41b9c97e28ad2ab1f829f746b",
       "lastmod": "2026-11-10",
-      "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
+      "evidence": "docs/chapters09-13-release-verification.json; Counter or navigation-label-only change; previous editorial date retained."
     },
     "/learn/midday-afternoon-tape-reading-macros-final-hour/": {
       "fingerprint": "ae99d4ab68948cb5cdc38bb2d00cd77ddb8585ea40275c6b41013060d89bae35",
@@ -592,9 +592,9 @@
       "evidence": "User-approved source order, native FAQs, semantic extraction and research-label cleanup; docs/two-lesson-semantic-html-report.md."
     },
     "/learn/what-is-a-swing-the-atom-of-structure/": {
-      "fingerprint": "0062bd248a1eebe4e32beef26c3c4fa3bce6feee02a368d3776ad2ffd1d09752",
-      "lastmod": "2026-11-10",
-      "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
+      "fingerprint": "e21ef21bdc61a5641f765b8acc21e03827723dedd48e26a2142a7a4a36fad510",
+      "lastmod": "2026-11-13",
+      "evidence": "docs/chapters09-13-release-verification.json; Reviewed chapter rewrite or derived curriculum/reading-guide content update."
     },
     "/learn/why-candles-form-and-how-displacement-arises/": {
       "fingerprint": "5845c8d7d124fbde0dd878203a3bdaf8db290cd553c3ecb802c3add9d1aa25fd",
@@ -1427,9 +1427,9 @@
       "evidence": "Shared practice-loop module interface and native bilingual reading; docs/delivery-interface-followup.md."
     },
     "/tools/delivery-suite/learning-path/": {
-      "fingerprint": "1aa959f31073159c93b6dc2c84dafdc14ecd9ec8777c0c4c0b7ce9142ca674fa",
+      "fingerprint": "5936b624deee241e54a8505e6294b37ae35a040abdfddbce7d308ce34431e09a",
       "lastmod": "2026-11-05",
-      "evidence": "Shared practice-loop module interface and native bilingual reading; docs/delivery-interface-followup.md."
+      "evidence": "docs/chapters09-13-release-verification.json; Counter or navigation-label-only change; previous editorial date retained."
     },
     "/tools/delivery-suite/macro-clock/": {
       "fingerprint": "6f44af501b3d89305ca85bfe4edd646871a4fe5f49dcb00a4bde134b7d7b9e1a",
@@ -1952,9 +1952,9 @@
       "evidence": "Simulator brief interface, topic-specific applications and explicit shared-dataset separation; docs/simulator-interface-followup.md."
     },
     "/ur/": {
-      "fingerprint": "db4adbf73aa35e0532fa76b44f16508fb8d5d00a7a10bc4358a75f936db346b5",
+      "fingerprint": "4ffc44072748783a4cfe3f2f248474cdaa77422753d477eabb19f4d51f008996",
       "lastmod": "2026-11-10",
-      "evidence": "Phase 1 curriculum structure/metadata and approved lossless merges; docs/curriculum-phase1-report.md. Source video review dates are not restamped."
+      "evidence": "docs/chapters09-13-release-verification.json; Counter or navigation-label-only change; previous editorial date retained."
     },
     "/ur/about/": {
       "fingerprint": "5dc6b2e3e9bd08ad318efb34c23d2ff0f1668842ff1b66566960093c9b2f82cd",
@@ -2017,9 +2017,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/": {
-      "fingerprint": "6b56fe927ce0fe891637b4573019292afab2a8131660bbfd6d6874d045012bc0",
-      "lastmod": "2026-11-12",
-      "evidence": "Chapter 04 document rewrite; docs/chapter04-rewrite-report.md"
+      "fingerprint": "bf38c8b45741e6064a2ba93178f9036b5df052494ccde5eaeeb26ba36fb18657",
+      "lastmod": "2026-11-14",
+      "evidence": "docs/chapters09-13-release-verification.json; Reviewed chapter rewrite or derived curriculum/reading-guide content update."
     },
     "/ur/curriculum/advanced-2025-2026-institutional-delivery-systems-tape-reading/": {
       "fingerprint": "c3ffce40b230b2df7f9e078253195ad7a70820ef8e9e1e15137a5b04b9a65976",
@@ -2057,9 +2057,9 @@
       "evidence": "Phase 1 curriculum structure/metadata and approved lossless merges; docs/curriculum-phase1-report.md. Source video review dates are not restamped."
     },
     "/ur/curriculum/mentorships/2022/": {
-      "fingerprint": "484b4432fcf998a487deeae54d73eb8f63276edb1c5bb30b68881ebe682c908a",
-      "lastmod": "2026-11-10",
-      "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
+      "fingerprint": "5a6c0c9c4ae8d1f901f934110116030ce42008d5113b750a013089831e7c1148",
+      "lastmod": "2026-11-14",
+      "evidence": "docs/chapters09-13-release-verification.json; Reviewed chapter rewrite or derived curriculum/reading-guide content update."
     },
     "/ur/curriculum/mentorships/2023/": {
       "fingerprint": "5d15c27ddd09e7a825046bd8d6ea9da725f0f661da6783758b926eda4be7cf39",
@@ -2082,9 +2082,9 @@
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/ur/curriculum/mentorships/core-2016-2017/": {
-      "fingerprint": "af8c7816909d28159f11970140c85ca003675e7286b79b6f4c39ae6768c11e09",
-      "lastmod": "2026-11-10",
-      "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
+      "fingerprint": "138dde607d98cfbb9689f68316e04c6168b12b720e0580e389d19f6df87fa391",
+      "lastmod": "2026-11-14",
+      "evidence": "docs/chapters09-13-release-verification.json; Reviewed chapter rewrite or derived curriculum/reading-guide content update."
     },
     "/ur/curriculum/price-delivery/": {
       "fingerprint": "fcd8988b7f99faa93c9c32dacbcbf14d0e4925713d2352894c36c5ffc149569c",
@@ -2092,9 +2092,9 @@
       "evidence": "docs/chapter31-rewrite-report.md — Chapter 31 published from supplied PDF; directory/part links and published counts updated."
     },
     "/ur/curriculum/price-structure/": {
-      "fingerprint": "b2f3c48e80a8526031722b23148d0de228636ad9a8e9278eecdfecec34fbd560",
-      "lastmod": "2026-11-10",
-      "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
+      "fingerprint": "319feac926ec9bf5e736b1c5875baf35d090e60f1c5a8dae09cec7d58f91b173",
+      "lastmod": "2026-11-14",
+      "evidence": "docs/chapters09-13-release-verification.json; Reviewed chapter rewrite or derived curriculum/reading-guide content update."
     },
     "/ur/curriculum/special-mentorship-track-practical-field-guide/": {
       "fingerprint": "dc78f1085fd8606bf02bfadcde7a9e0fb021e85649688f44cf990633597cff6a",
@@ -2127,9 +2127,9 @@
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/break-of-structure-bos-trend-continuation/": {
-      "fingerprint": "9249d25ae9052194e2bac706e6b22f82446713d35c4c97afa4b057334520a560",
-      "lastmod": "2026-11-10",
-      "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
+      "fingerprint": "bb6cc2ab35f428d9c59cab92c04a86310ec3dd38df0272d3840c3638a7428cd2",
+      "lastmod": "2026-11-14",
+      "evidence": "docs/chapters09-13-release-verification.json; Reviewed chapter rewrite or derived curriculum/reading-guide content update."
     },
     "/ur/learn/breaker-blocks-trading-failed-order-blocks/": {
       "fingerprint": "647bf258209c82331447de60e7b0c3ffb0f5415bbf50dd0f88359d4f9c47bc19",
@@ -2142,9 +2142,9 @@
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/learn/change-of-character-choch-the-first-warning/": {
-      "fingerprint": "3846179afd9e3802f85b3710602f108589ef0690d44dad1bd8d5d198b34b04a3",
-      "lastmod": "2026-11-10",
-      "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
+      "fingerprint": "ee02e185c7a071a6dee9c4b3cbbb1cd8a8ce744aa4485924dcb6b145d5420f68",
+      "lastmod": "2026-11-14",
+      "evidence": "docs/chapters09-13-release-verification.json; Reviewed chapter rewrite or derived curriculum/reading-guide content update."
     },
     "/ur/learn/core-content-month-1-elements-of-trade-setup/": {
       "fingerprint": "5097c2c717f0da02ee289c3e2f69a28e01294316b2a3655aebaaf863aca3dbbc",
@@ -2347,9 +2347,9 @@
       "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
     },
     "/ur/learn/market-structure-shift-mss-verified-directional-shift/": {
-      "fingerprint": "46ddac52e267439e444fe74a9eaf30ec8e21018c336c4d7b812a62362983c7b8",
+      "fingerprint": "35ffd92567fdefb367d846d424dc7457d47186cb06959d6d38cb9baedd577a2d",
       "lastmod": "2026-11-10",
-      "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
+      "evidence": "docs/chapters09-13-release-verification.json; Counter or navigation-label-only change; previous editorial date retained."
     },
     "/ur/learn/midday-afternoon-tape-reading-macros-final-hour/": {
       "fingerprint": "1628302d9f010b50ef1d980e0cbde1df0771d79f27304ecaa99846172baf4be8",
@@ -2437,9 +2437,9 @@
       "evidence": "User-approved source order, native FAQs, semantic extraction and research-label cleanup; docs/two-lesson-semantic-html-report.md."
     },
     "/ur/learn/what-is-a-swing-the-atom-of-structure/": {
-      "fingerprint": "f3805caadf0b45d0dd14e14e47c0a0267e8ec2750934133502357d3786f64337",
-      "lastmod": "2026-11-10",
-      "evidence": "Approved curriculum Phase 1/1b metadata, directory and content-preserving migration; Chapter 01 document restoration where applicable. docs/curriculum-phase1-report.md; docs/chapter01-restoration-report.md"
+      "fingerprint": "994f7fb02543a33f96407ec7bdf9dec42fbcee206e5b33d6823f26d5a50825e7",
+      "lastmod": "2026-11-13",
+      "evidence": "docs/chapters09-13-release-verification.json; Reviewed chapter rewrite or derived curriculum/reading-guide content update."
     },
     "/ur/learn/why-candles-form-and-how-displacement-arises/": {
       "fingerprint": "17d083dd5eba957ae1c51e484aacfefef50da50298fb73e4703beb26aa48bdd9",
@@ -3272,9 +3272,9 @@
       "evidence": "Shared practice-loop module interface and native bilingual reading; docs/delivery-interface-followup.md."
     },
     "/ur/tools/delivery-suite/learning-path/": {
-      "fingerprint": "85c82888d294ffa6a6d61af3b5bf29a767deeb41f7678f4a3ef7524eade66192",
+      "fingerprint": "a8d0da9d5325baf61108156ab11361986f866344acf954fdbf96ac535ead2cd0",
       "lastmod": "2026-11-05",
-      "evidence": "Shared practice-loop module interface and native bilingual reading; docs/delivery-interface-followup.md."
+      "evidence": "docs/chapters09-13-release-verification.json; Counter or navigation-label-only change; previous editorial date retained."
     },
     "/ur/tools/delivery-suite/macro-clock/": {
       "fingerprint": "745395984a53449be678ac2d3c257358c95290d65d55cec3b81ce969342f9107",
@@ -3875,6 +3875,16 @@
       "fingerprint": "ffda755d1dc442412ffb7cc5cad1cdcdd301b496fb41d2880adc9b023f9729e9",
       "lastmod": "2026-11-11",
       "evidence": "docs/chapter31-rewrite-report.md — Chapter 31 published from supplied PDF; directory/part links and published counts updated."
+    },
+    "/learn/internal-vs-external-structure/": {
+      "fingerprint": "14e867ceac593d5c8483f83217c206c84fa81f4114ebf85184edccd4d1bbe1ba",
+      "lastmod": "2026-11-13",
+      "evidence": "docs/chapters09-13-release-verification.json; Reviewed chapter rewrite or derived curriculum/reading-guide content update."
+    },
+    "/ur/learn/internal-vs-external-structure/": {
+      "fingerprint": "d08f73e713f031aa11ea639deafa70803fe2b88e653e5559c55dae27a40a7a92",
+      "lastmod": "2026-11-13",
+      "evidence": "docs/chapters09-13-release-verification.json; Reviewed chapter rewrite or derived curriculum/reading-guide content update."
     }
   }
 }

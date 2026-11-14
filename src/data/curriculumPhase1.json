@@ -998,15 +998,17 @@
     "part": 7,
     "slug": "silver-bullet-model",
     "title": [
-      "Silver Bullet: Time-Windowed FVG Entries",
-      "سلور بُلٹ: مقررہ وقت میں FVG انٹریز"
+      "ICT Silver Bullet: Time-Windowed FVG Entries",
+      "ICT سلور بُلٹ: مقررہ وقت میں FVG انٹریز"
     ],
     "description": [
-      "The time-window and FVG conventions of the ICT Silver Bullet model.",
-      "ICT سلور بُلٹ ماڈل کی وقتی ونڈو اور FVG کے اصول۔"
+      "Learn the ICT Silver Bullet model: New York time windows, FVG entries, futures tick values, worked examples, failed setups and rules for standing aside.",
+      "ICT سلور بُلٹ کے نیویارک اوقات، FVG انٹری، فیوچرز ٹکس، عملی مثالیں، ناکام سیٹ اپ اور ٹریڈ سے الگ رہنے کے اصول سمجھیں۔"
     ],
     "primaryKeyword": "ict silver bullet",
-    "status": "in-progress"
+    "status": "published",
+    "seoTitle": "ICT Silver Bullet: Times, FVG Entries & Futures",
+    "seoTitleUr": "ICT سلور بُلٹ: اوقات، FVG انٹری اور فیوچرز"
   },
   {
     "id": 1065,

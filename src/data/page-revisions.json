@@ -172,9 +172,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/curriculum/": {
-      "fingerprint": "c8a2f9afc817db369b83dfe414d621e58434b8ca620768e84a3efece4b6764fc",
+      "fingerprint": "6005755681940a53ec4df0ddaefbb210a7077a2abebe1b9eee7723a68d9d4edc",
       "lastmod": "2026-11-14",
-      "evidence": "docs/chapters09-13-release-verification.json; Reviewed chapter rewrite or derived curriculum/reading-guide content update."
+      "evidence": "docs/chapter64/implementation-report.md; Chapter 64 original bilingual lesson publication or collection entry change."
     },
     "/curriculum/advanced-2025-2026-institutional-delivery-systems-tape-reading/": {
       "fingerprint": "85663a603776f480e8e04e948b2d85bd3879ac331e0cd63da7d4ab043dc50dcd",
@@ -2017,9 +2017,9 @@
       "evidence": "Editorial content revision; rendered content fingerprint changed."
     },
     "/ur/curriculum/": {
-      "fingerprint": "bf38c8b45741e6064a2ba93178f9036b5df052494ccde5eaeeb26ba36fb18657",
+      "fingerprint": "22e864f5e1f7472ca74763f2c11cf796a6967a8bf6bd3d9fe67f7be15d6af262",
       "lastmod": "2026-11-14",
-      "evidence": "docs/chapters09-13-release-verification.json; Reviewed chapter rewrite or derived curriculum/reading-guide content update."
+      "evidence": "docs/chapter64/implementation-report.md; Chapter 64 original bilingual lesson publication or collection entry change."
     },
     "/ur/curriculum/advanced-2025-2026-institutional-delivery-systems-tape-reading/": {
       "fingerprint": "c3ffce40b230b2df7f9e078253195ad7a70820ef8e9e1e15137a5b04b9a65976",
@@ -3812,9 +3812,9 @@
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/curriculum/entry-models/": {
-      "fingerprint": "281ab2f17c7fa8eef733dcb9d2f9aeb9bd14c9a6ae2541c092448cb01fc85961",
-      "lastmod": "2026-11-10",
-      "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
+      "fingerprint": "0c1da0166c1d369006289a193388a926c451d163772aa81989e4243f5fe4a0ee",
+      "lastmod": "2026-11-14",
+      "evidence": "docs/chapter64/implementation-report.md; Chapter 64 original bilingual lesson publication or collection entry change."
     },
     "/curriculum/risk-management/": {
       "fingerprint": "1785b8cc9b086c24bc289d2df70e6e4753d0464f39f02fd33757cfc33bfe9a1f",
@@ -3847,9 +3847,9 @@
       "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
     },
     "/ur/curriculum/entry-models/": {
-      "fingerprint": "4cf6f06bf4a8813cd6a3eb20d70a2410d520c7ba1a6b14eda60d814165402c81",
-      "lastmod": "2026-11-10",
-      "evidence": "Phase 1b course-map numbering and placeholder navigation; published body copy unchanged. docs/curriculum-phase1b-report.md. Source-video review dates unchanged."
+      "fingerprint": "3c539c3c4b23efe001e8e44b3fac2d3ca501352f34949e880dc3a25675c91a61",
+      "lastmod": "2026-11-14",
+      "evidence": "docs/chapter64/implementation-report.md; Chapter 64 original bilingual lesson publication or collection entry change."
     },
     "/ur/curriculum/risk-management/": {
       "fingerprint": "484b80fdf7d34f02b28735ac80d21824105070ec480f569cfb374be215f52a3e",
@@ -3885,6 +3885,16 @@
       "fingerprint": "d08f73e713f031aa11ea639deafa70803fe2b88e653e5559c55dae27a40a7a92",
       "lastmod": "2026-11-13",
       "evidence": "docs/chapters09-13-release-verification.json; Reviewed chapter rewrite or derived curriculum/reading-guide content update."
+    },
+    "/learn/silver-bullet-model/": {
+      "fingerprint": "2d0b04b1f0ce5e3191e772dae3344c66acfddaa028933feeb940970ffdbfe67f",
+      "lastmod": "2026-11-14",
+      "evidence": "docs/chapter64/implementation-report.md; Chapter 64 original bilingual lesson publication or collection entry change."
+    },
+    "/ur/learn/silver-bullet-model/": {
+      "fingerprint": "102c86d0dddef49786a6a8cdc8115308151fdbaeb8c8e410064eb476ea8df4a7",
+      "lastmod": "2026-11-14",
+      "evidence": "docs/chapter64/implementation-report.md; Chapter 64 original bilingual lesson publication or collection entry change."
     }
   }
 }

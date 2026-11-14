@@ -1,0 +1,1224 @@
+{
+  "id": "resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb",
+  "created_at": 1794646823,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": null,
+  "model": "parallel",
+  "object": "response",
+  "output": [
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_0",
+      "action": {
+        "type": "search",
+        "queries": [
+          "Inner Circle Trader ICT Silver Bullet official YouTube",
+          "ICT Silver Bullet mentorship teaching video transcript timestamps"
+        ],
+        "query": "Inner Circle Trader ICT Silver Bullet official YouTube",
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_1",
+      "action": {
+        "type": "search",
+        "queries": [
+          "CME E-mini Nasdaq-100 futures NQ contract specs tick size trading hours",
+          "CME Micro E-mini Nasdaq-100 MNQ E-mini S&P ES MES specifications tick values order types"
+        ],
+        "query": "CME E-mini Nasdaq-100 futures NQ contract specs tick size trading hours",
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_2",
+      "action": {
+        "type": "search",
+        "queries": [
+          "ICT Silver Bullet strategy time windows FVG entry 2025",
+          "ICT Silver Bullet 10am setup MSS sweep FVG education"
+        ],
+        "query": "ICT Silver Bullet strategy time windows FVG entry 2025",
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_3",
+      "action": {
+        "type": "search",
+        "queries": [
+          "Reddit ICT Silver Bullet questions FVG time window entry",
+          "site:reddit.com/r/ICT Silver Bullet MSS sweep FVG questions"
+        ],
+        "query": "Reddit ICT Silver Bullet questions FVG time window entry",
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_4",
+      "action": {
+        "type": "search",
+        "queries": [
+          "Quora ICT Silver Bullet trading strategy questions time window",
+          "Quora ICT Silver Bullet FVG entry model"
+        ],
+        "query": "Quora ICT Silver Bullet trading strategy questions time window",
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_5",
+      "action": {
+        "type": "search",
+        "queries": [
+          "Inner Circle Trader Silver Bullet 2022 model Judas swing killzone",
+          "ICT Silver Bullet compared to 2022 model official"
+        ],
+        "query": "Inner Circle Trader Silver Bullet 2022 model Judas swing killzone",
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_6",
+      "action": {
+        "type": "open_page",
+        "url": "https://www.youtube.com/watch?v=tRq1hyGGtl4"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_7",
+      "action": {
+        "type": "open_page",
+        "url": "https://info.quagmyre.com/xwiki/bin/view/Forex/The-Inner-Circle-Trader/ICT-Youtube-Series-2023/ICT-YT-2023-05-15-ICT-Mentorship-ICT-Silver-Bullet-Time-Based-Trading-Model"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_8",
+      "action": {
+        "type": "open_page",
+        "url": "https://www.youtube.com/watch?v=DkOuO0eNwUA"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_9",
+      "action": {
+        "type": "search",
+        "queries": [
+          "ICT Silver Bullet Time Based Trading Model transcript 2023 10 11 video",
+          "ICT Evolving Silver Bullet Example May 22 transcript timestamp"
+        ],
+        "query": "ICT Silver Bullet Time Based Trading Model transcript 2023 10 11 video",
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_10",
+      "action": {
+        "type": "open_page",
+        "url": "https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_11",
+      "action": {
+        "type": "open_page",
+        "url": "https://www.cmegroup.com/markets/equities/sp/micro-e-mini-sandp-500.contractSpecs.html"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_12",
+      "action": {
+        "type": "open_page",
+        "url": "https://www.cmegroup.com/education/courses/introduction-to-futures/order-types.html"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_13",
+      "action": {
+        "type": "open_page",
+        "url": "https://www.cmegroup.com/education/courses/introduction-to-futures/understanding-futures-contracts.html"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_14",
+      "action": {
+        "type": "search",
+        "queries": [
+          "site:cmegroup.com ES MES contract specs 0.25 $12.50 $1.25",
+          "CME futures limit order may not fill order types execution education"
+        ],
+        "query": "site:cmegroup.com ES MES contract specs 0.25 $12.50 $1.25",
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_15",
+      "action": {
+        "type": "search",
+        "queries": [
+          "Quora question ICT Silver Bullet strategy FVG",
+          "Quora learner asks Silver Bullet ICT time window trade"
+        ],
+        "query": "Quora question ICT Silver Bullet strategy FVG",
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_16",
+      "action": {
+        "type": "search",
+        "queries": [
+          "New York daylight saving time UTC offset official dates 2026 NIST",
+          "ICT Silver Bullet New York local daylight saving UTC time windows"
+        ],
+        "query": "New York daylight saving time UTC offset official dates 2026 NIST",
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_17",
+      "action": {
+        "type": "search",
+        "queries": [
+          "ICT fair value gap three candle wick high low geometry close candle",
+          "FVG formation third candle close lookahead repainting backtest ICT"
+        ],
+        "query": "ICT fair value gap three candle wick high low geometry close candle",
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_18",
+      "action": {
+        "type": "open_page",
+        "url": "https://bestprops.com/ict-silver-bullet-time-based-trading-model"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_19",
+      "action": {
+        "type": "open_page",
+        "url": "https://www.ictkillzone.com/ict-silver-bullet"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_20",
+      "action": {
+        "type": "search",
+        "queries": [
+          "ICT silver bullet entry must happen within 60 minute window 11am deadline"
+        ],
+        "query": "ICT silver bullet entry must happen within 60 minute window 11am deadline",
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_21",
+      "action": {
+        "type": "search",
+        "queries": [
+          "CME Globex equity index futures session hours maintenance break official"
+        ],
+        "query": "CME Globex equity index futures session hours maintenance break official",
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb_22",
+      "action": {
+        "type": "search",
+        "queries": [
+          "Quora ICT silver bullet trading FVG question learner",
+          "Quora ICT Silver Bullet entry time window question"
+        ],
+        "query": "Quora ICT silver bullet trading FVG question learner",
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "msg_resp_eb6ea22a-1b72-4c04-a830-a793e952a3fb",
+      "content": [
+        {
+          "annotations": [
+            {
+              "end_index": 408,
+              "start_index": 108,
+              "title": "ICT YT - 2023-05-15 - ICT Mentorship - ICT Silver Bullet Time Based Trading Model - XWiki",
+              "type": "url_citation",
+              "url": "https://info.quagmyre.com/xwiki/bin/view/Forex/The-Inner-Circle-Trader/ICT-Youtube-Series-2023/ICT-YT-2023-05-15-ICT-Mentorship-ICT-Silver-Bullet-Time-Based-Trading-Model"
+            },
+            {
+              "end_index": 725,
+              "start_index": 569,
+              "title": "ICT YT - 2023-05-15 - ICT Mentorship - ICT Silver Bullet Time Based Trading Model - XWiki",
+              "type": "url_citation",
+              "url": "https://info.quagmyre.com/xwiki/bin/view/Forex/The-Inner-Circle-Trader/ICT-Youtube-Series-2023/ICT-YT-2023-05-15-ICT-Mentorship-ICT-Silver-Bullet-Time-Based-Trading-Model"
+            },
+            {
+              "end_index": 1744,
+              "start_index": 1444,
+              "title": "ICT YT - 2023-05-15 - ICT Mentorship - ICT Silver Bullet Time Based Trading Model - XWiki",
+              "type": "url_citation",
+              "url": "https://info.quagmyre.com/xwiki/bin/view/Forex/The-Inner-Circle-Trader/ICT-Youtube-Series-2023/ICT-YT-2023-05-15-ICT-Mentorship-ICT-Silver-Bullet-Time-Based-Trading-Model"
+            },
+            {
+              "end_index": 2116,
+              "start_index": 2051,
+              "title": "ICT YT - 2023-05-15 - ICT Mentorship - ICT Silver Bullet Time Based Trading Model - XWiki",
+              "type": "url_citation",
+              "url": "https://info.quagmyre.com/xwiki/bin/view/Forex/The-Inner-Circle-Trader/ICT-Youtube-Series-2023/ICT-YT-2023-05-15-ICT-Mentorship-ICT-Silver-Bullet-Time-Based-Trading-Model"
+            },
+            {
+              "end_index": 3184,
+              "start_index": 2941,
+              "title": "ICT YT - 2023-05-15 - ICT Mentorship - ICT Silver Bullet Time Based Trading Model - XWiki",
+              "type": "url_citation",
+              "url": "https://info.quagmyre.com/xwiki/bin/view/Forex/The-Inner-Circle-Trader/ICT-Youtube-Series-2023/ICT-YT-2023-05-15-ICT-Mentorship-ICT-Silver-Bullet-Time-Based-Trading-Model"
+            },
+            {
+              "end_index": 3616,
+              "start_index": 3528,
+              "title": "ICT YT - 2023-05-15 - ICT Mentorship - ICT Silver Bullet Time Based Trading Model - XWiki",
+              "type": "url_citation",
+              "url": "https://info.quagmyre.com/xwiki/bin/view/Forex/The-Inner-Circle-Trader/ICT-Youtube-Series-2023/ICT-YT-2023-05-15-ICT-Mentorship-ICT-Silver-Bullet-Time-Based-Trading-Model"
+            },
+            {
+              "end_index": 3929,
+              "start_index": 3845,
+              "title": "ICT YT - 2023-05-15 - ICT Mentorship - ICT Silver Bullet Time Based Trading Model - XWiki",
+              "type": "url_citation",
+              "url": "https://info.quagmyre.com/xwiki/bin/view/Forex/The-Inner-Circle-Trader/ICT-Youtube-Series-2023/ICT-YT-2023-05-15-ICT-Mentorship-ICT-Silver-Bullet-Time-Based-Trading-Model"
+            },
+            {
+              "end_index": 4896,
+              "start_index": 4768,
+              "title": "ICT YT - 2023-05-15 - ICT Mentorship - ICT Silver Bullet Time Based Trading Model - XWiki",
+              "type": "url_citation",
+              "url": "https://info.quagmyre.com/xwiki/bin/view/Forex/The-Inner-Circle-Trader/ICT-Youtube-Series-2023/ICT-YT-2023-05-15-ICT-Mentorship-ICT-Silver-Bullet-Time-Based-Trading-Model"
+            },
+            {
+              "end_index": 5087,
+              "start_index": 4897,
+              "title": "ICT YT - 2023-05-15 - ICT Mentorship - ICT Silver Bullet Time Based Trading Model - XWiki",
+              "type": "url_citation",
+              "url": "https://info.quagmyre.com/xwiki/bin/view/Forex/The-Inner-Circle-Trader/ICT-Youtube-Series-2023/ICT-YT-2023-05-15-ICT-Mentorship-ICT-Silver-Bullet-Time-Based-Trading-Model"
+            },
+            {
+              "end_index": 5565,
+              "start_index": 5469,
+              "title": "ICT YT - 2023-05-15 - ICT Mentorship - ICT Silver Bullet Time Based Trading Model - XWiki",
+              "type": "url_citation",
+              "url": "https://info.quagmyre.com/xwiki/bin/view/Forex/The-Inner-Circle-Trader/ICT-Youtube-Series-2023/ICT-YT-2023-05-15-ICT-Mentorship-ICT-Silver-Bullet-Time-Based-Trading-Model"
+            },
+            {
+              "end_index": 8729,
+              "start_index": 8467,
+              "title": "ICT YT - 2023-05-15 - ICT Mentorship - ICT Silver Bullet Time Based Trading Model - XWiki",
+              "type": "url_citation",
+              "url": "https://info.quagmyre.com/xwiki/bin/view/Forex/The-Inner-Circle-Trader/ICT-Youtube-Series-2023/ICT-YT-2023-05-15-ICT-Mentorship-ICT-Silver-Bullet-Time-Based-Trading-Model"
+            },
+            {
+              "end_index": 9046,
+              "start_index": 8895,
+              "title": "ICT YT - 2023-05-15 - ICT Mentorship - ICT Silver Bullet Time Based Trading Model - XWiki",
+              "type": "url_citation",
+              "url": "https://info.quagmyre.com/xwiki/bin/view/Forex/The-Inner-Circle-Trader/ICT-Youtube-Series-2023/ICT-YT-2023-05-15-ICT-Mentorship-ICT-Silver-Bullet-Time-Based-Trading-Model"
+            },
+            {
+              "end_index": 14930,
+              "start_index": 14735,
+              "title": "ICT YT - 2023-05-15 - ICT Mentorship - ICT Silver Bullet Time Based Trading Model - XWiki",
+              "type": "url_citation",
+              "url": "https://info.quagmyre.com/xwiki/bin/view/Forex/The-Inner-Circle-Trader/ICT-Youtube-Series-2023/ICT-YT-2023-05-15-ICT-Mentorship-ICT-Silver-Bullet-Time-Based-Trading-Model"
+            },
+            {
+              "end_index": 15334,
+              "start_index": 15129,
+              "title": "ICT YT - 2023-05-15 - ICT Mentorship - ICT Silver Bullet Time Based Trading Model - XWiki",
+              "type": "url_citation",
+              "url": "https://info.quagmyre.com/xwiki/bin/view/Forex/The-Inner-Circle-Trader/ICT-Youtube-Series-2023/ICT-YT-2023-05-15-ICT-Mentorship-ICT-Silver-Bullet-Time-Based-Trading-Model"
+            },
+            {
+              "end_index": 408,
+              "start_index": 108,
+              "title": "2023 ICT Mentorship: ICT Silver Bullet Time Based Trading Model",
+              "type": "url_citation",
+              "url": "https://bestprops.com/ict-silver-bullet-time-based-trading-model"
+            },
+            {
+              "end_index": 2241,
+              "start_index": 2117,
+              "title": "2023 ICT Mentorship: ICT Silver Bullet Time Based Trading Model",
+              "type": "url_citation",
+              "url": "https://bestprops.com/ict-silver-bullet-time-based-trading-model"
+            },
+            {
+              "end_index": 3929,
+              "start_index": 3845,
+              "title": "2023 ICT Mentorship: ICT Silver Bullet Time Based Trading Model",
+              "type": "url_citation",
+              "url": "https://bestprops.com/ict-silver-bullet-time-based-trading-model"
+            },
+            {
+              "end_index": 5087,
+              "start_index": 4897,
+              "title": "2023 ICT Mentorship: ICT Silver Bullet Time Based Trading Model",
+              "type": "url_citation",
+              "url": "https://bestprops.com/ict-silver-bullet-time-based-trading-model"
+            },
+            {
+              "end_index": 6476,
+              "start_index": 6394,
+              "title": "2023 ICT Mentorship: ICT Silver Bullet Time Based Trading Model",
+              "type": "url_citation",
+              "url": "https://bestprops.com/ict-silver-bullet-time-based-trading-model"
+            },
+            {
+              "end_index": 8214,
+              "start_index": 7914,
+              "title": "2023 ICT Mentorship: ICT Silver Bullet Time Based Trading Model",
+              "type": "url_citation",
+              "url": "https://bestprops.com/ict-silver-bullet-time-based-trading-model"
+            },
+            {
+              "end_index": 8729,
+              "start_index": 8467,
+              "title": "2023 ICT Mentorship: ICT Silver Bullet Time Based Trading Model",
+              "type": "url_citation",
+              "url": "https://bestprops.com/ict-silver-bullet-time-based-trading-model"
+            },
+            {
+              "end_index": 725,
+              "start_index": 569,
+              "title": "Silver Bullet Strategy: ICT Times, Rules and How to Trade It",
+              "type": "url_citation",
+              "url": "https://www.tmgm.com/en/academy/trading-academy/silver-bullet-strategy"
+            },
+            {
+              "end_index": 3741,
+              "start_index": 3617,
+              "title": "Silver Bullet Strategy: ICT Times, Rules and How to Trade It",
+              "type": "url_citation",
+              "url": "https://www.tmgm.com/en/academy/trading-academy/silver-bullet-strategy"
+            },
+            {
+              "end_index": 12185,
+              "start_index": 11970,
+              "title": "Silver Bullet Strategy: ICT Times, Rules and How to Trade It",
+              "type": "url_citation",
+              "url": "https://www.tmgm.com/en/academy/trading-academy/silver-bullet-strategy"
+            },
+            {
+              "end_index": 14600,
+              "start_index": 14338,
+              "title": "Silver Bullet Strategy: ICT Times, Rules and How to Trade It",
+              "type": "url_citation",
+              "url": "https://www.tmgm.com/en/academy/trading-academy/silver-bullet-strategy"
+            },
+            {
+              "end_index": 725,
+              "start_index": 569,
+              "title": "ICT Silver Bullet: Times, Setup and Win Rate | 2026 Guide",
+              "type": "url_citation",
+              "url": "https://www.alphaexcapital.com/smart-money-concepts/ict-silver-bullet"
+            },
+            {
+              "end_index": 963,
+              "start_index": 818,
+              "title": "2023 ICT Mentorship - ICT Silver Bullet Time Based Trading Model - YouTube",
+              "type": "url_citation",
+              "url": "https://www.youtube.com/watch?v=tRq1hyGGtl4"
+            },
+            {
+              "end_index": 16278,
+              "start_index": 16141,
+              "title": "2023 ICT Mentorship - ICT Silver Bullet Time Based Trading Model - YouTube",
+              "type": "url_citation",
+              "url": "https://www.youtube.com/watch?v=tRq1hyGGtl4"
+            },
+            {
+              "end_index": 1097,
+              "start_index": 964,
+              "title": "ICT Mentorship 2023 - Evolving ICT Silver Bullet Example - YouTube",
+              "type": "url_citation",
+              "url": "https://www.youtube.com/watch?v=DkOuO0eNwUA"
+            },
+            {
+              "end_index": 16278,
+              "start_index": 16141,
+              "title": "ICT Mentorship 2023 - Evolving ICT Silver Bullet Example - YouTube",
+              "type": "url_citation",
+              "url": "https://www.youtube.com/watch?v=DkOuO0eNwUA"
+            },
+            {
+              "end_index": 1744,
+              "start_index": 1444,
+              "title": "2023 ICT Mentorship - ICT Silver Bullet Time Based Trading Model",
+              "type": "url_citation",
+              "url": "https://lilys.ai/en/notes/541724"
+            },
+            {
+              "end_index": 5565,
+              "start_index": 5469,
+              "title": "2023 ICT Mentorship - ICT Silver Bullet Time Based Trading Model",
+              "type": "url_citation",
+              "url": "https://lilys.ai/en/notes/541724"
+            },
+            {
+              "end_index": 2116,
+              "start_index": 2051,
+              "title": "Video Summary - 2023 ICT Mentorship - ICT Silver Bullet Time Based Trading Model",
+              "type": "url_citation",
+              "url": "https://youtubesummary.com/summary/tRq1hyGGtl4"
+            },
+            {
+              "end_index": 2410,
+              "start_index": 2380,
+              "title": "ICT Silver Bullet Strategy: Setup, Rules & Times",
+              "type": "url_citation",
+              "url": "https://arongroups.co/technical-analyze/ict-silver-bullet-strategy"
+            },
+            {
+              "end_index": 3372,
+              "start_index": 3275,
+              "title": "ICT Silver Bullet Strategy: Setup, Rules & Times",
+              "type": "url_citation",
+              "url": "https://arongroups.co/technical-analyze/ict-silver-bullet-strategy"
+            },
+            {
+              "end_index": 4101,
+              "start_index": 4020,
+              "title": "ICT Silver Bullet Strategy: Setup, Rules & Times",
+              "type": "url_citation",
+              "url": "https://arongroups.co/technical-analyze/ict-silver-bullet-strategy"
+            },
+            {
+              "end_index": 5302,
+              "start_index": 5088,
+              "title": "ICT Silver Bullet Strategy: Setup, Rules & Times",
+              "type": "url_citation",
+              "url": "https://arongroups.co/technical-analyze/ict-silver-bullet-strategy"
+            },
+            {
+              "end_index": 8214,
+              "start_index": 7914,
+              "title": "ICT Silver Bullet Strategy: Setup, Rules & Times",
+              "type": "url_citation",
+              "url": "https://arongroups.co/technical-analyze/ict-silver-bullet-strategy"
+            },
+            {
+              "end_index": 11179,
+              "start_index": 10879,
+              "title": "ICT Silver Bullet Strategy: Setup, Rules & Times",
+              "type": "url_citation",
+              "url": "https://arongroups.co/technical-analyze/ict-silver-bullet-strategy"
+            },
+            {
+              "end_index": 14600,
+              "start_index": 14338,
+              "title": "ICT Silver Bullet Strategy: Setup, Rules & Times",
+              "type": "url_citation",
+              "url": "https://arongroups.co/technical-analyze/ict-silver-bullet-strategy"
+            },
+            {
+              "end_index": 2410,
+              "start_index": 2380,
+              "title": "ICT Silver Bullet Strategy Guide | LiquidityScan",
+              "type": "url_citation",
+              "url": "https://liquidityscan.io/blog/silver-bullet-strategy-complete-checklist-examples"
+            },
+            {
+              "end_index": 4101,
+              "start_index": 4020,
+              "title": "ICT Silver Bullet Strategy Guide | LiquidityScan",
+              "type": "url_citation",
+              "url": "https://liquidityscan.io/blog/silver-bullet-strategy-complete-checklist-examples"
+            },
+            {
+              "end_index": 4896,
+              "start_index": 4768,
+              "title": "ICT Silver Bullet Strategy Guide | LiquidityScan",
+              "type": "url_citation",
+              "url": "https://liquidityscan.io/blog/silver-bullet-strategy-complete-checklist-examples"
+            },
+            {
+              "end_index": 2712,
+              "start_index": 2504,
+              "title": "ICT Silver Bullet Strategy: Master 10-11 AM EST Setup | FXNX",
+              "type": "url_citation",
+              "url": "https://fxnx.com/en/blog/ict-silver-bullet-master-10-11-am-setup"
+            },
+            {
+              "end_index": 2712,
+              "start_index": 2504,
+              "title": "\n      ICT Silver Bullet: Trade the 1-Hour Power Windows\n – ScalperIntel",
+              "type": "url_citation",
+              "url": "https://scalperintel.com/en-ca/blogs/hub/ict-silver-bullet-the-1-hour-window-that-outperforms"
+            },
+            {
+              "end_index": 4347,
+              "start_index": 4218,
+              "title": "\n      ICT Silver Bullet: Trade the 1-Hour Power Windows\n – ScalperIntel",
+              "type": "url_citation",
+              "url": "https://scalperintel.com/en-ca/blogs/hub/ict-silver-bullet-the-1-hour-window-that-outperforms"
+            },
+            {
+              "end_index": 2940,
+              "start_index": 2888,
+              "title": "Fair Value Gaps: How to Identify, Validate and Trade Them",
+              "type": "url_citation",
+              "url": "https://blog.iqoption.com/en/fair-value-gaps/"
+            },
+            {
+              "end_index": 4524,
+              "start_index": 4420,
+              "title": "Fair Value Gaps: How to Identify, Validate and Trade Them",
+              "type": "url_citation",
+              "url": "https://blog.iqoption.com/en/fair-value-gaps/"
+            },
+            {
+              "end_index": 6690,
+              "start_index": 6528,
+              "title": "Fair Value Gaps: How to Identify, Validate and Trade Them",
+              "type": "url_citation",
+              "url": "https://blog.iqoption.com/en/fair-value-gaps/"
+            },
+            {
+              "end_index": 6955,
+              "start_index": 6793,
+              "title": "Fair Value Gaps: How to Identify, Validate and Trade Them",
+              "type": "url_citation",
+              "url": "https://blog.iqoption.com/en/fair-value-gaps/"
+            },
+            {
+              "end_index": 15125,
+              "start_index": 14934,
+              "title": "Fair Value Gaps: How to Identify, Validate and Trade Them",
+              "type": "url_citation",
+              "url": "https://blog.iqoption.com/en/fair-value-gaps/"
+            },
+            {
+              "end_index": 2940,
+              "start_index": 2888,
+              "title": "Fair Value Gap (FVG): How to Spot and Trade It | Velotrade",
+              "type": "url_citation",
+              "url": "https://velotrade.com/blog/fair-value-gap"
+            },
+            {
+              "end_index": 3184,
+              "start_index": 2941,
+              "title": "ict-knowledge-library/concepts/11-silver-bullet/silver-bullet-rules.md at master · SrsBlack/ict-knowledge-library · GitHub",
+              "type": "url_citation",
+              "url": "https://github.com/SrsBlack/ict-knowledge-library/blob/master/concepts/11-silver-bullet/silver-bullet-rules.md"
+            },
+            {
+              "end_index": 3372,
+              "start_index": 3275,
+              "title": "ICT Displacement: Candles, FVG Timing & Examples",
+              "type": "url_citation",
+              "url": "https://homedadpro.com/en/displacement-trading/"
+            },
+            {
+              "end_index": 4524,
+              "start_index": 4420,
+              "title": "ICT Displacement: Candles, FVG Timing & Examples",
+              "type": "url_citation",
+              "url": "https://homedadpro.com/en/displacement-trading/"
+            },
+            {
+              "end_index": 6690,
+              "start_index": 6528,
+              "title": "ICT Displacement: Candles, FVG Timing & Examples",
+              "type": "url_citation",
+              "url": "https://homedadpro.com/en/displacement-trading/"
+            },
+            {
+              "end_index": 15125,
+              "start_index": 14934,
+              "title": "ICT Displacement: Candles, FVG Timing & Examples",
+              "type": "url_citation",
+              "url": "https://homedadpro.com/en/displacement-trading/"
+            },
+            {
+              "end_index": 3616,
+              "start_index": 3528,
+              "title": "Daylight Saving Time Rules | NIST",
+              "type": "url_citation",
+              "url": "https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst"
+            },
+            {
+              "end_index": 14930,
+              "start_index": 14735,
+              "title": "Daylight Saving Time Rules | NIST",
+              "type": "url_citation",
+              "url": "https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst"
+            },
+            {
+              "end_index": 4347,
+              "start_index": 4218,
+              "title": "\n      ICT Silver Bullet: Trade the 1-Hour Power Windows\n – ScalperIntel",
+              "type": "url_citation",
+              "url": "https://scalperintel.com/blogs/hub/ict-silver-bullet-the-1-hour-window-that-outperforms"
+            },
+            {
+              "end_index": 4737,
+              "start_index": 4697,
+              "title": "Futures Order Types - CME Group",
+              "type": "url_citation",
+              "url": "http://www.cmegroup.com/education/courses/things-to-know-before-trading-cme-futures/futures-order-types"
+            },
+            {
+              "end_index": 7550,
+              "start_index": 7385,
+              "title": "Futures Order Types - CME Group",
+              "type": "url_citation",
+              "url": "http://www.cmegroup.com/education/courses/things-to-know-before-trading-cme-futures/futures-order-types"
+            },
+            {
+              "end_index": 10334,
+              "start_index": 10096,
+              "title": "Futures Order Types - CME Group",
+              "type": "url_citation",
+              "url": "http://www.cmegroup.com/education/courses/things-to-know-before-trading-cme-futures/futures-order-types"
+            },
+            {
+              "end_index": 11509,
+              "start_index": 11423,
+              "title": "Futures Order Types - CME Group",
+              "type": "url_citation",
+              "url": "http://www.cmegroup.com/education/courses/things-to-know-before-trading-cme-futures/futures-order-types"
+            },
+            {
+              "end_index": 15521,
+              "start_index": 15338,
+              "title": "Futures Order Types - CME Group",
+              "type": "url_citation",
+              "url": "http://www.cmegroup.com/education/courses/things-to-know-before-trading-cme-futures/futures-order-types"
+            },
+            {
+              "end_index": 4737,
+              "start_index": 4697,
+              "title": "A Trader's Guide to Futures — CME Group Education",
+              "type": "url_citation",
+              "url": "https://cmegroup.com/content/dam/cmegroup/education/files/a-traders-guide-to-futures.pdf"
+            },
+            {
+              "end_index": 9461,
+              "start_index": 9335,
+              "title": "A Trader's Guide to Futures — CME Group Education",
+              "type": "url_citation",
+              "url": "https://cmegroup.com/content/dam/cmegroup/education/files/a-traders-guide-to-futures.pdf"
+            },
+            {
+              "end_index": 10334,
+              "start_index": 10096,
+              "title": "A Trader's Guide to Futures — CME Group Education",
+              "type": "url_citation",
+              "url": "https://cmegroup.com/content/dam/cmegroup/education/files/a-traders-guide-to-futures.pdf"
+            },
+            {
+              "end_index": 11509,
+              "start_index": 11423,
+              "title": "A Trader's Guide to Futures — CME Group Education",
+              "type": "url_citation",
+              "url": "https://cmegroup.com/content/dam/cmegroup/education/files/a-traders-guide-to-futures.pdf"
+            },
+            {
+              "end_index": 5302,
+              "start_index": 5088,
+              "title": "ICT Silver Bullet Strategy: Rules, Times, Example | TJ",
+              "type": "url_citation",
+              "url": "https://tjtrace.com/blog/ict-silver-bullet-strategy"
+            },
+            {
+              "end_index": 14600,
+              "start_index": 14338,
+              "title": "ICT Silver Bullet Strategy: Rules, Times, Example | TJ",
+              "type": "url_citation",
+              "url": "https://tjtrace.com/blog/ict-silver-bullet-strategy"
+            },
+            {
+              "end_index": 5913,
+              "start_index": 5741,
+              "title": "ICT Silver Bullet — AM Session Playbook",
+              "type": "url_citation",
+              "url": "https://i.looksmax.org/attachments/2026/05/6342958_ICT_Silver_Bullet_AM_Playbook.pdf"
+            },
+            {
+              "end_index": 15334,
+              "start_index": 15129,
+              "title": "ICT Silver Bullet — AM Session Playbook",
+              "type": "url_citation",
+              "url": "https://i.looksmax.org/attachments/2026/05/6342958_ICT_Silver_Bullet_AM_Playbook.pdf"
+            },
+            {
+              "end_index": 6326,
+              "start_index": 6190,
+              "title": "ICT Silver Bullet Strategy: Complete Step-by-Step Guide (2026)",
+              "type": "url_citation",
+              "url": "https://www.ictkillzone.com/ict-silver-bullet"
+            },
+            {
+              "end_index": 6476,
+              "start_index": 6394,
+              "title": "ICT Silver Bullet Strategy: Complete Step-by-Step Guide (2026)",
+              "type": "url_citation",
+              "url": "https://www.ictkillzone.com/ict-silver-bullet"
+            },
+            {
+              "end_index": 8214,
+              "start_index": 7914,
+              "title": "ICT Silver Bullet Strategy: Complete Step-by-Step Guide (2026)",
+              "type": "url_citation",
+              "url": "https://www.ictkillzone.com/ict-silver-bullet"
+            },
+            {
+              "end_index": 15334,
+              "start_index": 15129,
+              "title": "ICT Silver Bullet Strategy: Complete Step-by-Step Guide (2026)",
+              "type": "url_citation",
+              "url": "https://www.ictkillzone.com/ict-silver-bullet"
+            },
+            {
+              "end_index": 6792,
+              "start_index": 6691,
+              "title": "Fair Value Gap (FVG): ICT Strategy and Backtest Guide",
+              "type": "url_citation",
+              "url": "https://backtrex.com/en/blog/fair-value-gap-trading-strategy"
+            },
+            {
+              "end_index": 11179,
+              "start_index": 10879,
+              "title": "Fair Value Gap (FVG): ICT Strategy and Backtest Guide",
+              "type": "url_citation",
+              "url": "https://backtrex.com/en/blog/fair-value-gap-trading-strategy"
+            },
+            {
+              "end_index": 11509,
+              "start_index": 11423,
+              "title": "Fair Value Gap (FVG): ICT Strategy and Backtest Guide",
+              "type": "url_citation",
+              "url": "https://backtrex.com/en/blog/fair-value-gap-trading-strategy"
+            },
+            {
+              "end_index": 6955,
+              "start_index": 6793,
+              "title": "Fair Value Gap Explained: FVG Boundaries and Examples",
+              "type": "url_citation",
+              "url": "https://homedadpro.com/en/fair-value-gap/"
+            },
+            {
+              "end_index": 7550,
+              "start_index": 7385,
+              "title": "Submitting a Futures Order - CME Group",
+              "type": "url_citation",
+              "url": "https://www.cmegroup.com/education/courses/things-to-know-before-trading-cme-futures/submitting-a-futures-order.html"
+            },
+            {
+              "end_index": 15521,
+              "start_index": 15338,
+              "title": "Submitting a Futures Order - CME Group",
+              "type": "url_citation",
+              "url": "https://www.cmegroup.com/education/courses/things-to-know-before-trading-cme-futures/submitting-a-futures-order.html"
+            },
+            {
+              "end_index": 16278,
+              "start_index": 16141,
+              "title": "Submitting a Futures Order - CME Group",
+              "type": "url_citation",
+              "url": "https://www.cmegroup.com/education/courses/things-to-know-before-trading-cme-futures/submitting-a-futures-order.html"
+            },
+            {
+              "end_index": 8440,
+              "start_index": 8264,
+              "title": "ICT YT - 2023-05-22 - ICT Mentorship 2023 - Evolving ICT Silver Bullet Example - XWiki",
+              "type": "url_citation",
+              "url": "https://info.quagmyre.com/xwiki/bin/view/Forex/The-Inner-Circle-Trader/ICT-Youtube-Series-2023/ICT-YT-2023-05-22-ICT-Mentorship-2023-Evolving-ICT-Silver-Bullet-Example"
+            },
+            {
+              "end_index": 8440,
+              "start_index": 8264,
+              "title": "ICT Mentorship 2023 - Evolving ICT Silver Bullet Example - Glasp",
+              "type": "url_citation",
+              "url": "https://glasp.co/youtube/DkOuO0eNwUA"
+            },
+            {
+              "end_index": 9046,
+              "start_index": 8895,
+              "title": "ICT Silver Bullet: the killzone trading strategy explained",
+              "type": "url_citation",
+              "url": "https://backtrex.com/en/blog/ict-silver-bullet-strategy-trading-guide"
+            },
+            {
+              "end_index": 9334,
+              "start_index": 9188,
+              "title": "E-mini Nasdaq-100 Futures Contract Specs",
+              "type": "url_citation",
+              "url": "https://www.cmegroup.com/markets/equities/nasdaq/e-mini-nasdaq-100.contractSpecs.html"
+            },
+            {
+              "end_index": 9902,
+              "start_index": 9858,
+              "title": "E-mini Nasdaq-100 Futures Contract Specs",
+              "type": "url_citation",
+              "url": "https://www.cmegroup.com/markets/equities/nasdaq/e-mini-nasdaq-100.contractSpecs.html"
+            },
+            {
+              "end_index": 9334,
+              "start_index": 9188,
+              "title": "E-mini Nasdaq-100 Futures Contract Specs - CME Group",
+              "type": "url_citation",
+              "url": "https://www.cmegroup.com/markets/equities/nasdaq/e-mini-nasdaq-100.contractSpecs.html?afp=@@avudi&videoId=6405639384112"
+            },
+            {
+              "end_index": 9681,
+              "start_index": 9462,
+              "title": "E-mini Nasdaq-100 Futures Contract Specs - CME Group",
+              "type": "url_citation",
+              "url": "https://www.cmegroup.com/markets/equities/nasdaq/e-mini-nasdaq-100.contractSpecs.html?afp=@@avudi&videoId=6405639384112"
+            },
+            {
+              "end_index": 15738,
+              "start_index": 15525,
+              "title": "E-mini Nasdaq-100 Futures Contract Specs - CME Group",
+              "type": "url_citation",
+              "url": "https://www.cmegroup.com/markets/equities/nasdaq/e-mini-nasdaq-100.contractSpecs.html?afp=@@avudi&videoId=6405639384112"
+            },
+            {
+              "end_index": 9334,
+              "start_index": 9188,
+              "title": "Micro E-mini Nasdaq-100 Index Futures Contract Specs - CME Group",
+              "type": "url_citation",
+              "url": "https://www.cmegroup.com/markets/equities/nasdaq/micro-e-mini-nasdaq-100.contractSpecs.html"
+            },
+            {
+              "end_index": 9681,
+              "start_index": 9462,
+              "title": "Micro E-mini Nasdaq-100 Index Futures Contract Specs - CME Group",
+              "type": "url_citation",
+              "url": "https://www.cmegroup.com/markets/equities/nasdaq/micro-e-mini-nasdaq-100.contractSpecs.html"
+            },
+            {
+              "end_index": 15738,
+              "start_index": 15525,
+              "title": "Micro E-mini Nasdaq-100 Index Futures Contract Specs - CME Group",
+              "type": "url_citation",
+              "url": "https://www.cmegroup.com/markets/equities/nasdaq/micro-e-mini-nasdaq-100.contractSpecs.html"
+            },
+            {
+              "end_index": 9461,
+              "start_index": 9335,
+              "title": "E-mini S&P 500 Futures Contract Specs - CME Group",
+              "type": "url_citation",
+              "url": "https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html"
+            },
+            {
+              "end_index": 9681,
+              "start_index": 9462,
+              "title": "E-mini S&P 500 Futures Contract Specs - CME Group",
+              "type": "url_citation",
+              "url": "https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html"
+            },
+            {
+              "end_index": 15738,
+              "start_index": 15525,
+              "title": "E-mini S&P 500 Futures Contract Specs - CME Group",
+              "type": "url_citation",
+              "url": "https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html"
+            },
+            {
+              "end_index": 9461,
+              "start_index": 9335,
+              "title": "Micro E-mini S&P 500 Index Futures Contract Specs - CME Group",
+              "type": "url_citation",
+              "url": "https://www.cmegroup.com/markets/equities/sp/micro-e-mini-sandp-500.contractSpecs.html"
+            },
+            {
+              "end_index": 9681,
+              "start_index": 9462,
+              "title": "Micro E-mini S&P 500 Index Futures Contract Specs - CME Group",
+              "type": "url_citation",
+              "url": "https://www.cmegroup.com/markets/equities/sp/micro-e-mini-sandp-500.contractSpecs.html"
+            },
+            {
+              "end_index": 15738,
+              "start_index": 15525,
+              "title": "Micro E-mini S&P 500 Index Futures Contract Specs - CME Group",
+              "type": "url_citation",
+              "url": "https://www.cmegroup.com/markets/equities/sp/micro-e-mini-sandp-500.contractSpecs.html"
+            },
+            {
+              "end_index": 9902,
+              "start_index": 9858,
+              "title": "E-mini Nasdaq-100 Futures Overview",
+              "type": "url_citation",
+              "url": "https://www.cmegroup.com/markets/equities/nasdaq/e-mini-nasdaq-100.html"
+            },
+            {
+              "end_index": 9902,
+              "start_index": 9858,
+              "title": "CME Group Holiday and Trading Hours",
+              "type": "url_citation",
+              "url": "https://www.cmegroup.com/trading-hours.html"
+            },
+            {
+              "end_index": 10644,
+              "start_index": 10476,
+              "title": "NQ Futures Contract Specs: Point Value, Tick Value, Hours | STS",
+              "type": "url_citation",
+              "url": "https://stsfutures.com/learn/nq-futures-contract-specs"
+            },
+            {
+              "end_index": 12185,
+              "start_index": 11970,
+              "title": "ICT Silver Bullet Strategy: Capture 10–40 Pips in Just 60 Minutes - Michael J. Huddleston",
+              "type": "url_citation",
+              "url": "https://michaeljhuddleston.org/notes/ict-silver-bullet-strategy-capture-10-40-pips-in-just-60-minutes"
+            },
+            {
+              "end_index": 12185,
+              "start_index": 11970,
+              "title": "ICT Silver Bullet Strategy Backtest on ES Futures",
+              "type": "url_citation",
+              "url": "https://ripbacktest.com/posts/ict-silver-bullet-strategy-es"
+            },
+            {
+              "end_index": 14600,
+              "start_index": 14338,
+              "title": "ICT Silver Bullet Strategy Backtest on ES Futures",
+              "type": "url_citation",
+              "url": "https://ripbacktest.com/posts/ict-silver-bullet-strategy-es"
+            },
+            {
+              "end_index": 12497,
+              "start_index": 12197,
+              "title": "Silver bullet confusion : r/InnerCircleTraders",
+              "type": "url_citation",
+              "url": "https://www.reddit.com/r/InnerCircleTraders/comments/18at6pe/silver_bullet_confusion"
+            },
+            {
+              "end_index": 14014,
+              "start_index": 13761,
+              "title": "Silver bullet confusion : r/InnerCircleTraders",
+              "type": "url_citation",
+              "url": "https://www.reddit.com/r/InnerCircleTraders/comments/18at6pe/silver_bullet_confusion"
+            },
+            {
+              "end_index": 12497,
+              "start_index": 12197,
+              "title": "Reddit - The heart of the internet",
+              "type": "url_citation",
+              "url": "https://www.reddit.com/r/InnerCircleTraders/comments/1ovf0hc/ict_silver_bullet_strat_fallen_off_time_to_switch"
+            },
+            {
+              "end_index": 14014,
+              "start_index": 13761,
+              "title": "Reddit - The heart of the internet",
+              "type": "url_citation",
+              "url": "https://www.reddit.com/r/InnerCircleTraders/comments/1ovf0hc/ict_silver_bullet_strat_fallen_off_time_to_switch"
+            },
+            {
+              "end_index": 12497,
+              "start_index": 12197,
+              "title": "Been backtesting ICT Silver Bullet — only 36% win rate. What am I missing? : r/InnerCircleTraders",
+              "type": "url_citation",
+              "url": "https://www.reddit.com/r/InnerCircleTraders/comments/1obzw74/been_backtesting_ict_silver_bullet_only_36_win/"
+            },
+            {
+              "end_index": 12497,
+              "start_index": 12197,
+              "title": "ICT Silver Bullet backtest~9/17-9/21~66.67% Win Rate - Reddit",
+              "type": "url_citation",
+              "url": "https://www.reddit.com/r/FuturesTrading/comments/16p0a7z/ict_silver_bullet_backtest9179216667_win_rate"
+            },
+            {
+              "end_index": 12497,
+              "start_index": 12197,
+              "title": "Reddit - The heart of the internet",
+              "type": "url_citation",
+              "url": "https://www.reddit.com/r/ICTMentorship/comments/1wkrphn/silver_bullet_on_ten_years_of_nq_made_13_and_drew?sort=new"
+            },
+            {
+              "end_index": 12933,
+              "start_index": 12797,
+              "title": "ICT Entry Models Compared — 2022, Silver Bullet, Unicorn ...",
+              "type": "url_citation",
+              "url": "https://www.ictkillzone.com/ict-entry-models"
+            },
+            {
+              "end_index": 15941,
+              "start_index": 15742,
+              "title": "ICT Entry Models Compared — 2022, Silver Bullet, Unicorn ...",
+              "type": "url_citation",
+              "url": "https://www.ictkillzone.com/ict-entry-models"
+            },
+            {
+              "end_index": 12933,
+              "start_index": 12797,
+              "title": "ICT 2022 Model Explained — Steps, Checklist & Example",
+              "type": "url_citation",
+              "url": "https://www.ictkillzone.com/ict-2022-model"
+            },
+            {
+              "end_index": 13123,
+              "start_index": 13053,
+              "title": "Kill Zone vs Macro vs Silver Bullet | LiquidityScan",
+              "type": "url_citation",
+              "url": "https://liquidityscan.io/blog/kill-zone-vs-macro-vs-silver-bullet-how-icts-time-windows-nest"
+            },
+            {
+              "end_index": 13278,
+              "start_index": 13124,
+              "title": "Kill Zone vs Macro vs Silver Bullet | LiquidityScan",
+              "type": "url_citation",
+              "url": "https://liquidityscan.io/blog/kill-zone-vs-macro-vs-silver-bullet-how-icts-time-windows-nest"
+            },
+            {
+              "end_index": 15941,
+              "start_index": 15742,
+              "title": "Kill Zone vs Macro vs Silver Bullet | LiquidityScan",
+              "type": "url_citation",
+              "url": "https://liquidityscan.io/blog/kill-zone-vs-macro-vs-silver-bullet-how-icts-time-windows-nest"
+            },
+            {
+              "end_index": 13123,
+              "start_index": 13053,
+              "title": "What Is the ICT Silver Bullet? Meaning, Rules, and Examples | EBC Financial Group",
+              "type": "url_citation",
+              "url": "https://www.ebc.com/forex/what-is-the-ict-silver-bullet-meaning-rules-and-examples"
+            },
+            {
+              "end_index": 13533,
+              "start_index": 13429,
+              "title": "ICT Kill Zones (Killzones): The Best Session Times to Trade",
+              "type": "url_citation",
+              "url": "https://www.theinnercircletraders.com/ict-trading-strategy-london-open-model"
+            },
+            {
+              "end_index": 15941,
+              "start_index": 15742,
+              "title": "ICT Kill Zones (Killzones): The Best Session Times to Trade",
+              "type": "url_citation",
+              "url": "https://www.theinnercircletraders.com/ict-trading-strategy-london-open-model"
+            },
+            {
+              "end_index": 13533,
+              "start_index": 13429,
+              "title": "ICT Judas Swing — Session-Open Reversal Setup + Free PDF (Complete Guide)",
+              "type": "url_citation",
+              "url": "https://innercircletrader.net/tutorials/ict-judas-swing-complete-guide"
+            },
+            {
+              "end_index": 13717,
+              "start_index": 13534,
+              "title": "ICT Trading Models: AMD, MMXM, Silver Bullet & More | The ...",
+              "type": "url_citation",
+              "url": "https://www.theinnercircletraders.com/ict-best-trading-strategy-models"
+            },
+            {
+              "end_index": 14014,
+              "start_index": 13761,
+              "title": "Silver Bullet : r/InnerCircleTraders",
+              "type": "url_citation",
+              "url": "https://www.reddit.com/r/InnerCircleTraders/comments/1dgp32d/silver_bullet"
+            },
+            {
+              "end_index": 14014,
+              "start_index": 13761,
+              "title": "ICT SILVER BULLET : r/InnerCircleTraders",
+              "type": "url_citation",
+              "url": "https://www.reddit.com/r/InnerCircleTraders/comments/17d6dkr/ict_silver_bullet"
+            },
+            {
+              "end_index": 14014,
+              "start_index": 13761,
+              "title": "ICT SILVER BULLET HELP NEEDED : r/Forex",
+              "type": "url_citation",
+              "url": "https://www.reddit.com/r/Forex/comments/1dm53ar/ict_silver_bullet_help_needed"
+            }
+          ],
+          "text": "# LearnSMC research brief: “Silver Bullet: Time-Windowed FVG Entries”\n\n## Editorial scope and bottom line\n\nThe ICT Silver Bullet is best taught as a **time-qualified entry framework**, not as a guaranteed standalone strategy: identify a plausible draw on liquidity, wait for a qualifying displacement/FVG sequence during a New York-local one-hour window, and seek a retracement entry rather than chase price. The commonly cited windows are **03:00–04:00, 10:00–11:00, and 14:00–15:00 New York local time**; the 10:00–11:00 window is the most widely emphasized for U.S. index futures, but claims that it is universally “highest probability” are educational consensus claims, not independently established performance evidence.\n\nThis chapter should clearly separate **ICT’s own teaching** from later checklist variants. ICT’s official YouTube lesson is *2023 ICT Mentorship – ICT Silver Bullet Time Based Trading Model*: https://www.youtube.com/watch?v=tRq1hyGGtl4. A second official example is *ICT Mentorship 2023 – Evolving ICT Silver Bullet Example*: https://www.youtube.com/watch?v=DkOuO0eNwUA. The accessible timestamped transcript supports the following exact references: **00:08:18**—the model is linked to a specific 60-minute interval; **00:09:01**—charts should use New York local time; **00:09:11**—daylight-saving changes should be observed; **00:11:18**—the London entry is taken inside 03:00–04:00; **00:11:30**—the trade need not be entered and exited within that same hour; **00:12:38**—the AM session example; **00:13:24–00:13:35**—the 10-handle framework is an offered range, not necessarily the trader’s exact objective; **00:14:11**—the PM session; and **00:15:26**—the first FVG that forms and reprices inside the PM window. These are the verified timestamps located here; no additional official ICT timestamp should be invented.\n\n## Core definitions\n\n- **Liquidity / draw on liquidity (DOL):** a prior high, low, session extreme, equal high/low, opening-gap reference, or other visible pool that supplies a plausible destination. ICT’s lesson puts knowing the next draw ahead of entry precision. Treat “price is drawn to liquidity” as the model’s explanatory premise, not proof that any particular level must be reached.\n- **Sweep:** price trades through a visible high or low, potentially triggering stops, then fails or displaces in the opposite direction. A sweep alone is not an entry.\n- **MSS/BOS:** a decisive move that breaks a selected short-term swing in the new direction. The exact swing-selection rule is discretionary unless the chapter specifies it mechanically; therefore “MSS required” is a common implementation variant rather than a universally standardized ICT definition.\n- **FVG:** on three consecutive candles, a bullish FVG exists when candle 3’s low is above candle 1’s high; a bearish FVG exists when candle 3’s high is below candle 1’s low. The zone is measured wick-to-wick, not body-to-body. The 50% midpoint is commonly called consequent encroachment (CE), but ICT’s official lesson and related 2022 material also show edge-based limit-entry language; CE should therefore be labeled a variant, not silently presented as the only rule.\n- **Displacement:** a forceful directional move that breaks structure and leaves the FVG. An FVG by itself is not evidence of direction, institutional ownership, or a guaranteed reaction.\n\n## A beginner-to-advanced rule set\n\n### Beginner operational version\n\n1. Anchor the clock to **New York local time**, not a permanently fixed EST offset. New York alternates between UTC−5 and UTC−4; in 2026 DST ran from March 8 to November 1. Thus, for example, the 10:00–11:00 New York window is 15:00–16:00 UTC in standard time and 14:00–15:00 UTC in daylight time.\n2. Before the window, mark nearby highs/lows and write one directional sentence naming the likely DOL. If no plausible target can be named, treat that as a filter against forcing a trade.\n3. During the selected window, wait for a sweep or other clearly defined liquidity event. Do not enter merely because the clock opened or because an isolated FVG appeared.\n4. Require displacement in the intended direction; optionally require an MSS/BOS close through a preselected swing. This is the conservative beginner version, while FVG-only and liquidity-only variants exist in educational tools and communities.\n5. After the third candle closes, mark the FVG using full candle wicks. For a bullish gap, mark candle 1 high to candle 3 low; for a bearish gap, candle 3 high to candle 1 low.\n6. Place a planned limit order at the chosen edge or CE, define the invalidation level and target before entry, and cancel or manage the order according to a written rule. A limit order is not guaranteed to fill.\n\n### Advanced interpretation\n\nThe most defensible full sequence is **DOL/context → sweep → displacement/MSS → FVG → retracement → opposing liquidity target**. ICT’s own lesson is more nuanced than the simplified “sweep, MSS, CE” checklist: it discusses the next draw, a framework range, FVG/OTE-style entries, and holding beyond the one-hour window. The chapter should therefore label “mandatory sweep,” “mandatory MSS,” “first FVG only,” “CE only,” “stop beyond sweep,” and “cancel at the window close” as explicit rule-set choices that must be tested separately.\n\n## Window versus deadline\n\nThe strongest source-grounded distinction is: **the setup/entry is time-windowed; the position need not be closed when the window ends**. ICT’s timestamped teaching explicitly says the trade may continue beyond the 60-minute interval. The lesson supports entry inside the named hour, but it does not establish a universal rule that every pending limit order must be canceled exactly at 11:00, 04:00, or 15:00. Some later playbooks impose an entry deadline and cancel unfilled orders at the bell; that is a variant and must not be attributed to ICT without a direct primary citation. A conservative backtest may test both policies: “entry must fill before window close” and “order remains valid after the window if the setup formed inside the window.” Report them as different systems.\n\nLikewise, distinguish **FVG creation deadline** from **entry deadline**. A widely circulated implementation requires the displacement/FVG itself to form inside the window, even if the retracement occurs later. Another interpretation requires the actual fill inside the window. These produce materially different samples; the chapter should never combine them.\n\n## FVG geometry, closed bars, and OHLC ambiguity\n\nUse a closed-bar protocol: do not confirm the three-candle FVG until candle 3 has completed, because its wick can still extend into the proposed gap and erase it. A live-bar indicator that draws a gap before candle 3 closes can create lookahead or repainting bias. “Wick touched the zone,” “midpoint traded,” “full gap filled,” and “candle closed through the zone” are different event definitions and must be logged separately.\n\nOHLC bars cannot reveal the intrabar order of events. If a candle’s high and low encompass both a limit price and a stop, OHLC data alone cannot establish whether the entry happened before the stop, whether the order had queue priority, or whether the limit was actually filled. A robust backtest should use tick data where possible; otherwise apply a declared conservative tie-break rule and run an ambiguity sensitivity test. This follows from the fact that a limit order may remain unfilled even when a chart appears to touch the price, while CME matching uses exchange matching algorithms.\n\n## No-trade cases\n\nThe chapter should show “no trade” as a successful rule outcome when: the window is inactive; no meaningful liquidity event occurs; displacement does not break the chosen swing; no clean wick-defined FVG forms; the FVG forms before the window under a window-formation rule; price reaches the target without retracing to the planned entry; the limit is touched ambiguously or not filled; the FVG is repeatedly chopped through before activation; the DOL is unclear; the setup conflicts with the selected higher-timeframe bias; the required minimum range is unavailable; or high-impact news makes the predeclared execution assumptions unreliable.\n\nDo not chase a move that leaves the FVG behind. ICT’s evolving example explicitly frames missing the move as preferable to chasing it, and shows a limit order being canceled or revised as the original gap becomes unsuitable.\n\n## Minimum-range claims\n\nICT’s official lesson describes a **minimum framework of 10 index handles/points or 40 ticks and 15 forex pips**, while also clarifying that this is the best-case price-delivery framework—not necessarily the exact entry-to-exit result or required profit capture. This is not a universal statistical minimum, not a guaranteed target, and not a substitute for stop distance, spread, commissions, slippage, or available liquidity. Later sources variously claim 5 handles, 10 handles, 10–15 handles, or fixed 2R targets; these are competing conventions and should be labeled as such.\n\n## Futures implementation: NQ, MNQ, ES, MES\n\nCME specifications establish the contract mechanics, not the validity of ICT’s pattern claims. NQ is $20 per Nasdaq-100 index point with a 0.25-point minimum tick worth $5; MNQ is $2 per index point with the same 0.25-point tick worth $0.50. ES is $50 per S&P 500 index point with a 0.25-point tick worth $12.50; MES is $5 per point with a 0.25-point tick worth $1.25. Therefore ICT’s 10-index-point framework corresponds mechanically to $200 per NQ, $20 per MNQ, $500 per ES, or $50 per MES per contract before costs; this is arithmetic from the CME multipliers, not a performance claim.\n\nCME’s listed equity-index futures schedule is approximately Sunday 18:00 ET through Friday 17:00 ET with a daily 17:00–18:00 ET maintenance period, while the high-volume U.S. cash-session context begins around 09:30 ET. The Silver Bullet clock should be kept separate from the exchange’s nearly continuous Globex schedule: a market being open does not mean the ICT window or liquidity conditions are equivalent.\n\nFor execution, CME explains that a limit order specifies the worst acceptable price but may not fill if the market moves away; market orders prioritize execution but can receive a worse available price, especially in thin or wide markets. Log commissions, exchange fees, bid-ask spread, slippage, partial fills, rejected orders, and the difference between NQ/ES and their micros. Micros reduce dollar exposure but ten MNQ contracts carry ten contract-level commission charges compared with one NQ; exact costs depend on the broker and fee schedule.\n\n## Backtesting protocol and lookahead traps\n\nA reproducible test must predefine: instrument and contract month/roll method; New York-local session conversion; bar timeframe; swing algorithm; what counts as a sweep; whether MSS requires a close; wick or body FVG geometry; candle-3 close confirmation; first FVG versus any FVG; entry edge versus CE; whether the order can fill after the hour; stop placement; target/DOL selection; one-trade-per-window rule; news exclusions; time-based exits; and the treatment of ambiguous OHLC bars.\n\nNever use future information to decide which FVG was “cleanest,” whether a sweep was meaningful, whether the target was obvious, or whether the trade should have been filtered. Freeze the signal at the first moment all rules become knowable. Use realistic limit-fill logic and do not count a chart touch as a fill automatically. Separate in-sample rule development from out-of-sample testing, report every eligible window including no-trade windows, and publish distributions—not only win rate—including expectancy after costs, profit factor, maximum drawdown, losing streak, fill rate, adverse/favorable excursion, and results by instrument, weekday, window, DST regime, volatility regime, and news condition.\n\nThe available evidence does **not** establish a verified universal win rate. Competitor pages use phrases such as “high probability,” “reliable,” “2R,” or “10–40 pips/points,” but those are promotional or instructional claims unless accompanied by a complete, independently reproducible test. Community reports are heterogeneous: Reddit discussions include confusion about whether late FVG fills qualify, reports of approximately 36% win rates, short samples with 66.67%, and a later self-reported ten-year NQ test with substantial drawdown and costs; these are learner experiences, not audited evidence. No reliable search-volume figure or verified “People Also Ask” dataset was established here, so the chapter should not publish either.\n\n## Comparisons\n\n- **2022 Model:** a broader sweep/displacement/FVG framework that can operate in a killzone without the Silver Bullet’s fixed one-hour constraint. Silver Bullet is best presented as a time-boxed application or specialization, not automatically as a wholly different market mechanism.\n- **Killzone:** a broader session filter answering “when should I watch?” It does not itself specify a complete entry. Silver Bullet is narrower: a one-hour pattern with an FVG-based entry.\n- **Macro:** a shorter timing pulse nested within a broader session; it is not synonymous with Silver Bullet and does not necessarily include entry rules.\n- **Judas Swing:** a session-open false move against the larger bias, generally treated as the manipulation phase of an AMD/Power-of-Three narrative. It can provide context for a later Silver Bullet but is not required by every Silver Bullet formulation.\n- **AMD/Power of Three:** a higher-level accumulation–manipulation–distribution story; Silver Bullet is an execution window, not proof that the entire day will complete that sequence.\n\n## Learner questions and competitor gaps\n\nReddit learners repeatedly ask whether a later FVG fill still qualifies, whether a sweep is mandatory, whether 2022 and Silver Bullet are the same, why their backtests cannot reproduce claimed results, and whether bias/DOL/MSS is the missing ingredient. Those questions support an FAQ organized around definitions and event timing rather than another generic “high-probability strategy” article.\n\nA direct Quora learner page or question with usable Silver Bullet-specific evidence was **not found in the consulted material**; do not claim Quora coverage beyond that statement. Competitor coverage commonly repeats the three windows and sweep–MSS–FVG sequence, but often leaves unresolved the distinction between FVG formation and fill deadline, candle-close confirmation, limit-fill ambiguity, DST handling, costs, and rule-set versioning. Those unresolved implementation details are the strongest original LearnSMC opportunity.\n\n## Original animation and chapter ideas\n\n1. **The three-clock animation:** synchronize a New York-local clock, the broader killzone, and the one-hour Silver Bullet window; flip the UTC display at DST while keeping the New York clock fixed.\n2. **Wick-geometry build:** animate candle 1, displacement candle 2, and candle 3 tick by tick; show a provisional gap disappear before candle 3 closes, then lock the confirmed wick-to-wick box.\n3. **Deadline fork:** duplicate one chart into “formation inside window, fill later” and “fill must occur inside window,” then show how the trade count changes without calling either rule universally correct.\n4. **Limit-order courtroom:** show a candle whose OHLC range touches a limit and stop, then label the result “unknown from OHLC”; contrast with a time-and-sales/tick-data reconstruction.\n5. **Four-contract risk ruler:** animate the same 10-point move in NQ, MNQ, ES, and MES, showing the different dollar values while warning that smaller contract value does not remove execution costs or leverage risk.\n6. **Model nesting map:** place 2022 model, AMD, Judas Swing, killzone, macro, and Silver Bullet in concentric layers, with an explicit warning that a layer is context—not automatically an entry signal.\n\n## Suggested chapter disclaimer\n\nThis is educational market-structure research, not investment advice, a recommendation, a promise of profitability, or a reproduction of ICT’s copyrighted teaching. Futures are leveraged and losses can be substantial; CME materials also warn that order execution and simulated results have limitations.",
+          "type": "output_text",
+          "logprobs": null
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": null
+    }
+  ],
+  "parallel_tool_calls": false,
+  "temperature": null,
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": null,
+  "background": null,
+  "completed_at": 1794646887,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "moderation": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": null,
+  "reasoning": null,
+  "safety_identifier": null,
+  "service_tier": null,
+  "status": "completed",
+  "text": null,
+  "top_logprobs": null,
+  "truncation": null,
+  "usage": null,
+  "user": null,
+  "effort_used": "medium"
+}

@@ -1,3 +1,5 @@
+import {silverLessonDocument,silverLessonTranslations,silverLessonSources,silverLessonScope,silverLessonInterpretation} from '../src/data/chapters/silverBulletLesson';
+import {silverUi} from '../src/data/chapters/silverLessonVisuals';
 import {breakDocuments,breakTopic} from '../src/data/chapters/breakDocuments';
 import {breakTranslations} from '../src/data/chapters/breakTranslations';
 import {structureDocument} from '../src/data/chapters/structureDocument';
@@ -31,6 +33,7 @@ export function splitUrduLessons(output:string,uiKeys:ReadonlySet<string>) {
    else if(value&&typeof value==='object') Object.values(value).forEach(visit);
   };
   visit(chapter); visit(chapterQuiz(chapter));
+  if(chapter.id===1064){visit(silverLessonDocument);visit(silverUi);visit(silverLessonSources);visit(silverLessonScope);visit(silverLessonInterpretation);}
   if(chapter.id===13)visit(fvgDocument);
   if(chapter.id===1031)visit(mitigationDocument);
   if(chapter.id===4)visit(liquidityDocument);
@@ -65,6 +68,8 @@ export function splitUrduLessons(output:string,uiKeys:ReadonlySet<string>) {
  const swingOverrides=Object.fromEntries(Object.entries(swingTranslations).filter(([key,value])=>swingBase[key]!==value));
  assert.deepEqual({...swingBase,...swingOverrides},{...swingBase,...swingTranslations},'Swing route override factoring must preserve every translation');
  fs.writeFileSync(path.join(output,'swing-overrides.json'),JSON.stringify(swingOverrides)+'\n');
+ const silverBase=Object.assign({},JSON.parse(fs.readFileSync(path.join(output,'shared.json'),'utf8')),common,lessonParts.find(p=>p.slug==='silver-bullet-model')!.catalog);
+ fs.writeFileSync(path.join(output,'silver-lesson-overrides.json'),JSON.stringify(Object.fromEntries(Object.entries(silverLessonTranslations).filter(([key,value])=>silverBase[key]!==value)))+'\n');
  const structureBase=Object.assign({},JSON.parse(fs.readFileSync(path.join(output,'shared.json'),'utf8')),common,lessonParts.find(p=>p.slug==='internal-vs-external-structure')!.catalog);
  const structureOverrides=Object.fromEntries(Object.entries(structureTranslations).filter(([key,value])=>structureBase[key]!==value));
  assert.deepEqual({...structureBase,...structureOverrides},{...structureBase,...structureTranslations},'Structure route factoring must retain every translation');

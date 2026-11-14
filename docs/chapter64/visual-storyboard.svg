@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="880" viewBox="0 0 1440 880" role="img" aria-labelledby="title desc">
+<title id="title">Silver Bullet: proposed visual storyboard</title>
+<desc id="desc">An original research storyboard. First align New York and Karachi clocks, then confirm a three-candle gap, then compare a target, stop, missed entry and expiry from the same decision point. These are proposed teaching scenes, not historical market data or finished animations.</desc>
+<defs><style>text{font-family:Arial,sans-serif;fill:#182735}.k{font-size:13px;letter-spacing:2px;fill:#526576}.h{font-size:25px;font-weight:600}.p{font-size:16px}.s{font-size:13px;fill:#526576}.axis{stroke:#cfdae2;stroke-width:1}.line{fill:none;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}</style></defs>
+<rect width="1440" height="880" fill="#fff"/>
+<text x="60" y="48" class="k">LEARNSMC / CHAPTER 64 / ORIGINAL MOTION STORYBOARD</text>
+<text x="60" y="104" font-size="42" font-weight="600">One hour. Several possible outcomes.</text>
+<text x="60" y="139" class="p">The animation should reveal what becomes knowable—not quietly reveal the future.</text>
+<path d="M60 170H1380" class="axis"/>
+<text x="60" y="211" class="k">01 / ALIGN THE CLOCK</text>
+<text x="510" y="211" class="k">02 / LET THE EVIDENCE COMPLETE</text>
+<text x="960" y="211" class="k">03 / COMPARE THE ENDINGS</text>
+<path d="M470 192V655M920 192V655" class="axis"/>
+<text x="60" y="256" class="h">Same New York hour.</text>
+<text x="60" y="288" class="h">Different local time.</text>
+<text x="60" y="339" class="s">NEW YORK · JANUARY / EST</text>
+<text x="60" y="387" font-size="42">10:00—11:00</text>
+<path d="M65 417H422" stroke="#2068ae" stroke-width="5"/>
+<path d="M65 407V427M422 407V427" stroke="#2068ae" stroke-width="2"/>
+<text x="60" y="471" class="s">KARACHI · SAME DATE</text>
+<text x="60" y="512" font-size="32">20:00—21:00</text>
+<text x="60" y="557" class="p">In US daylight time: 19:00—20:00.</text>
+<text x="60" y="588" class="s">Date-aware conversion. No permanent EST offset.</text>
+<text x="510" y="256" class="h">A provisional gap</text>
+<text x="510" y="288" class="h">is not a confirmed gap.</text>
+<path d="M515 350H873M515 420H873M515 490H873M515 560H873" class="axis"/>
+<path d="M565 458V538" stroke="#168268" stroke-width="2"/>
+<rect x="550" y="478" width="30" height="50" fill="#168268"/>
+<path d="M676 398V488" stroke="#168268" stroke-width="2"/>
+<rect x="661" y="408" width="30" height="70" fill="#168268"/>
+<path d="M786 378V438" stroke="#168268" stroke-width="2"/>
+<rect x="771" y="388" width="30" height="20" fill="#168268"/>
+<rect x="585" y="438" width="259" height="20" fill="#e7c877" fill-opacity=".25" stroke="#9d7624" stroke-dasharray="5 4"/>
+<text x="594" y="453" class="s">20,004—20,006</text>
+<text x="553" y="587" class="s">C1</text><text x="663" y="587" class="s">C2</text><text x="773" y="587" class="s">C3</text>
+<text x="510" y="623" class="p">Lock the bounds only after C3 closes.</text>
+<text x="960" y="256" class="h">Same evidence.</text>
+<text x="960" y="288" class="h">No promised result.</text>
+<path d="M965 443L994 423L1024 439L1055 400L1085 414" class="line" stroke="#536b80"/>
+<path d="M1085 330V568" stroke="#536b80" stroke-dasharray="4 5"/>
+<text x="1045" y="317" class="s">Decision</text>
+<path d="M1085 414L1120 430L1154 390L1180 402L1214 350L1263 336" class="line" stroke="#168268"/>
+<text x="1273" y="341" class="s">Target*</text>
+<path d="M1085 414L1115 428L1144 415L1174 473L1217 495L1263 522" class="line" stroke="#bb4f5c"/>
+<text x="1273" y="527" class="s">Stop*</text>
+<path d="M1085 414L1120 394L1152 374L1187 381L1220 356L1263 366" class="line" stroke="#376caa" stroke-dasharray="5 5"/>
+<text x="1273" y="374" class="s">No fill</text>
+<path d="M1085 414L1126 450L1154 437L1190 453L1225 442L1263 452" class="line" stroke="#9d7624" stroke-dasharray="2 5"/>
+<text x="1273" y="457" class="s">Expiry</text>
+<text x="960" y="623" class="p">Choose a branch. Keep the past unchanged.</text>
+<path d="M60 685H1380" class="axis"/>
+<text x="60" y="729" class="k">PRECISION FIRST</text>
+<text x="60" y="765" class="p">Actual OHLC → exact bounds → known-at time → written order rule → outcome.</text>
+<text x="60" y="802" class="s">* Modeled outcomes under stated assumptions. Original illustrative composition; invented prices, not a real trade.</text>
+<text x="60" y="831" class="s">Research storyboard only. Final scenes require complete datasets, accessible controls and equivalent HTML captions.</text>
+</svg>

@@ -1,6 +1,9 @@
 import {breakChapters} from './breakDocuments';
 import {swingChapter} from './swingDocument';
 import {liquidityChapter} from './liquidityDocument';
+import {orderBookChapter} from './orderBookLesson';
+import {marketMakerChapter} from './marketMakerLesson';
+import {model2022Chapter} from './model2022Lesson';
 import {fvgDocumentChapter} from './fvgDocument';
 import {priceMovementChapter} from './priceMovementLesson';
 import {hasMentorship2026Edition} from './mentorship2026';
@@ -17,6 +20,9 @@ export function applyContentReview(chapter: TextbookChapter): TextbookChapter {
   if(breakChapters[chapter.id])return breakChapters[chapter.id];
   if(chapter.id===7)return swingChapter;
   if(chapter.id===4)return liquidityChapter;
+  if(chapter.id===3)return orderBookChapter;
+  if(chapter.id===33)return marketMakerChapter;
+  if(chapter.id===36)return model2022Chapter;
   if(chapter.id===1)return priceMovementChapter;
   if(chapter.id===13)return fvgDocumentChapter;
   if(hasMentorship2026Edition(chapter.id)) return {...chapter,practiceQuestions:chapterQuiz(chapter).map(q=>q.question)};

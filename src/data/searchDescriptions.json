@@ -12,8 +12,8 @@
     "ur": "Price-time قطار اور دوسرے Allocation قواعد کا موازنہ کریں۔ Fill کی مثال سمجھیں اور جانیں کہ Limit Order نامکمل کیوں رہ سکتا ہے۔"
   },
   "/learn/the-order-book-in-depth/": {
-    "en": "Read bid, ask, spread and displayed depth with a numerical example. Understand why a book snapshot cannot establish intent or guarantee a fill.",
-    "ur": "عددی مثال سے Bid، Ask، Spread اور ظاہر کردہ Depth سمجھیں۔ جانیں کہ Book کی لمحاتی تصویر نیت یا Fill کی ضمانت کیوں نہیں دیتی۔"
+    "en": "Learn how an order book works from basic bid-ask spreads to Level 3 MBO queues, DOM ladders, OBI microprice, icebergs, auctions, and slippage math.",
+    "ur": "بنیادی بِڈ آسک اسپریڈ سے لے کر لیول 3 MBO قطاروں، DOM لیڈر، OBI مائیکرو پرائس، آئس برگ، نیلامی اور سلپیج حساب تک آرڈر بک مکمل سمجھیں۔"
   },
   "/learn/liquidity-the-most-misunderstood-word-in-trading/": {
     "en": "Distinguish liquidity in execution from presumed stop pools on a chart. Compare a move beyond prior highs with a continuation counterexample.",

@@ -23,7 +23,7 @@ for(const chapter of activeCurriculumChapters)for(const language of ['en','ur'])
  assert.ok(all.some(n=>attr(n,'class')==='rr-text-content'),route+' complete static textbook');
  assert.ok(all.some(n=>attr(n,'class')==='rr-quiz'),route+' static practice quiz');
  assert.ok(all.some(n=>attr(n,'data-chapter-quiz')===String(chapter.id)),route+' correct quiz');
- const expectedFigures:Record<number,[string,number]>={1:['data-price-figure',10],4:['data-liquidity-figure',16],7:['data-swing-figure',9],9:['data-break-figure',13],10:['data-break-figure',13],1010:['data-structure-figure',11],13:['data-fvg-figure',11],1031:['data-mitigation-figure',9]};
+ const expectedFigures:Record<number,[string,number]>={1:['data-price-figure',10],4:['data-liquidity-figure',16],7:['data-swing-figure',9],9:['data-break-figure',13],10:['data-break-figure',13],33:['data-market-maker-figure',8],36:['data-model-2022-figure',8],1010:['data-structure-figure',11],13:['data-fvg-figure',11],1031:['data-mitigation-figure',9]};
  if(expectedFigures[chapter.id]){const [attribute,count]=expectedFigures[chapter.id];assert.equal(all.filter(n=>attr(n,attribute)!==undefined).length,count,route+' textbook illustrations preserved exactly once');}
  evidence.push({route,status:chapter.status,tabs:labels});
 }

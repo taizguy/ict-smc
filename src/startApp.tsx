@@ -17,8 +17,9 @@ const catalog = locale === 'ur' ? await (await import('./i18n/loadCatalog')).loa
 const container = document.getElementById('root')!;
 // Preserve the original document for script/network failures; no-JS visitors use it directly.
 const readingHtml = container.innerHTML;
-const progressive = document.documentElement.dataset.readingEnhancement === 'true' && !!auditedReadingRoute(window.location.pathname) && !!readingHtml.trim();
-if (document.documentElement.dataset.appStartup !== 'fallback' || progressive) {
+const hasReadingFallback = !!readingHtml.trim();
+const progressive = document.documentElement.dataset.readingEnhancement === 'true' && !!auditedReadingRoute(window.location.pathname) && hasReadingFallback;
+if (document.documentElement.dataset.appStartup !== 'fallback' || progressive || !hasReadingFallback) {
   // Verified routes retain their real reading DOM until the complete view commits.
   // This is a staged createRoot enhancement, not hydration of a different tree.
   const mount = progressive ? document.createElement('div') : container;
@@ -46,8 +47,8 @@ if (document.documentElement.dataset.appStartup !== 'fallback' || progressive) {
       if (href) Array.from(mount.querySelectorAll<HTMLAnchorElement>('a[href]')).find(link => link.getAttribute('href') === href)?.focus({preventScroll:true});
     }
   };
-  // A slow enhancement may still finish later: the original reading view never left.
-  if (!progressive) window.addEventListener('learnsmc:startup-timeout', restoreReadingView, { once: true });
+  // Only restore pre-existing static HTML on timeout; an empty SPA container has no fallback to restore.
+  if (!progressive && hasReadingFallback) window.addEventListener('learnsmc:startup-timeout', restoreReadingView, { once: true });
   window.addEventListener('learnsmc:page-ready', finishStartup, { once: true });
   appRoot.render(
     <StrictMode>

@@ -1,0 +1,27 @@
+# Known issues, uncertainty and technical debt
+Snapshot: **15 November 2026, Asia/Karachi**. Evidence labels: **V** = inspected current source/state; **H** = dated historical report/test; **C** = accessible conversation decision/outcome; **P** = proposed, not approved; **U** = unknown. Source keys resolve in [SOURCES.md](SOURCES.md). Do not treat old chat approvals as standing release authorization. [A01](SOURCES.md#a01) [C03](SOURCES.md#c03) [S01](SOURCES.md#s01)
+
+| Issue / limitation | State | Evidence and next safe action |
+|---|---|---|
+| 37 incomplete planned chapters | V | Notice-only placeholders; do not invent bodies or remove noindex prematurely. [S05](SOURCES.md#s05) [S30](SOURCES.md#s30) |
+| Not every published lesson meets new standard | V/H | Nine document-renderer display chapters exist; publication is not a quality certification. Select the next rewrite with owner. [S40](SOURCES.md#s40) [S05](SOURCES.md#s05) [S01](SOURCES.md#s01) |
+| Supplied text accuracy tensions | C/H | User rejected silent corrections and sometimes chose verbatim wording. Get scoped approval before changing it. [S01](SOURCES.md#s01) [S56](SOURCES.md#s56) [S57](SOURCES.md#s57) [S58](SOURCES.md#s58) [S59](SOURCES.md#s59) |
+| Paused homepage claims/old module labels | V/C | Reference-restored copy can conflict with evidence-first production policy. Do not ship or exempt it from claims checks. [P01](SOURCES.md#p01) [P02](SOURCES.md#p02) [S53](SOURCES.md#s53) [C01](SOURCES.md#c01) |
+| Optional legacy execution sharing | H/V | Simulator/Backtest named briefs can share optional generic practice. No approved consolidation; inspect exact current case adapters before asserting duplication. [S25](SOURCES.md#s25) [S47](SOURCES.md#s47) [S24](SOURCES.md#s24) |
+| Obsolete all-Chart-Lab-shared finding | H | Later six-route/29-case work superseded it. Do not re-report old audit prose as current. [S38](SOURCES.md#s38) [S44](SOURCES.md#s44) [S62](SOURCES.md#s62) [S21](SOURCES.md#s21) |
+| Tight bundle headroom | V/H | All JS is 6,618 bytes below current 10,621,000 limit; CSS raw headroom 14,893. Measure new features; don't raise budgets casually. [S20](SOURCES.md#s20) [S21](SOURCES.md#s21) |
+| Complex static/runtime parity | V | Staged mounting, reading fallback and generated/native Urdu need coordinated changes. No blind hydration or gate removal. [S10](SOURCES.md#s10) [S13](SOURCES.md#s13) [S15](SOURCES.md#s15) [S61](SOURCES.md#s61) [S01](SOURCES.md#s01) |
+| Large generated catalog/data/CSS payload | H/V | Optional dependencies/data and global CSS remain; small reading boot is not zero interaction cost. Reprofile before optimization. [S19](SOURCES.md#s19) [S23](SOURCES.md#s23) [S21](SOURCES.md#s21) |
+| Revision evidence backlog | H | Existing report records unreviewed unrelated fingerprints; today's dates must not be blanket-stamped. Exact current backlog requires a new scoped measurement. [S22](SOURCES.md#s22) [S01](SOURCES.md#s01) |
+| Human Urdu and assistive testing | U | Native implementation/tests are not human linguistic approval or screen-reader certification. [S22](SOURCES.md#s22) [S23](SOURCES.md#s23) |
+| Current Google/AdSense status | U | No live account check in this task; technical passes don't prove rankings/indexing/approval. [A01](SOURCES.md#a01) [S35](SOURCES.md#s35) |
+| Source rights/full playlist coverage | U/C | No entire-playlist review or educator permission is established by saved excerpts/draft outreach. [C02](SOURCES.md#c02) [S22](SOURCES.md#s22) [S50](SOURCES.md#s50) [S51](SOURCES.md#s51) |
+| Cloudflare incident recurrence | U/H | Initialization timeout/retry and Git-app repair were past incidents, not a diagnosis of today's app. Reconnect manually only as required. [S52](SOURCES.md#s52) [C01](SOURCES.md#c01) |
+| Historical report contradictions | V/H | Older local-only claims/counts and protected-claim failures are superseded by later appendices/merge evidence. Keep dates/scope explicit. [S23](SOURCES.md#s23) [S26](SOURCES.md#s26) [S30](SOURCES.md#s30) [S31](SOURCES.md#s31) |
+| Git worktree/dependency links | V | `.git` points outside this checkout and local dependency links may break when copied. Fresh clone/npm ci, not copying account state. [S03](SOURCES.md#s03) [A01](SOURCES.md#a01) |
+| Account-local skills | U/C | Related chat reports modern-web-guidance installation elsewhere; new-account availability unknown. Impeccable launcher also previously failed locally. Don't claim installed context without checking. [C02](SOURCES.md#c02) [P01](SOURCES.md#p01) |
+| Earlier social workflow | C/U | 404 stopped the related-thread task; no drafts/posts reported. Running automation/14-day log not verified. No automatic posting permission. [C02](SOURCES.md#c02) |
+| Available conversation gaps | V | Exports have counted malformed/absent records; no deleted/other-account history reconstruction. Preserve provenance. [P04](SOURCES.md#p04) [C02](SOURCES.md#c02) |
+
+## Rejected approaches not to revive
+Silent manuscript condensation, transcript-style teaching, repeated chart shapes with changed labels, unverified historical examples, generic Silver Bullet instrument panels, indiscriminate link highlighting, bulk visual replacement and the reverted CSS-anchor homepage tab experiment. Each has a specific scope; do not turn a rejection into a blanket ban on useful future techniques. [S01](SOURCES.md#s01) [C01](SOURCES.md#c01) [C02](SOURCES.md#c02) [S22](SOURCES.md#s22) [S28](SOURCES.md#s28) [S56](SOURCES.md#s56)

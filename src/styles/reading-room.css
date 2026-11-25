@@ -87,3 +87,15 @@ html .reading-room .rr-search input:is(:hover,:focus,:focus-visible) {
 .rr-index-copy .rr-progress-label{margin-inline-start:0;margin-block-start:.25rem}
 .rr-index-copy{min-width:0}
 .rr-placeholder-layout{display:block}.rr-placeholder-notice{padding-block:2rem 4rem}.rr-placeholder-layout .rr-chapter-header{max-inline-size:75ch}.rr-placeholder-layout .rr-eyebrow a{text-decoration:underline;text-underline-offset:3px}
+
+/* Distinct highlighted styling for Continue Studying cards and inline contextual links */
+.reading-room .rr-related-reading{margin-block:2.2rem;padding:1.35rem 1.5rem;border:1px solid var(--rr-line);border-radius:8px;background:color-mix(in srgb,var(--rr-accent) 4%,var(--rr-paper))}
+.reading-room .rr-related-reading h2{font:600 1.15rem/1.45 var(--font-sans);color:var(--rr-ink);margin:0 0 .9rem}
+.reading-room .rr-related-reading ul{list-style:none;padding:0;margin:0 0 .85rem;display:grid;gap:.5rem}
+.reading-room .rr-related-reading li{margin:0}
+.reading-room .rr-related-reading a,.reading-room .rr-related-reading a.fvg-context-link{display:inline-flex;align-items:center;gap:.4rem;color:var(--rr-accent);font:500 15px/1.6 var(--font-sans);text-decoration:underline;text-underline-offset:.22em;text-decoration-thickness:1.5px;background:color-mix(in srgb,var(--rr-accent) 8%,transparent);padding:.22rem .55rem;border-radius:4px;transition:background .15s ease,color .15s ease}
+.reading-room .rr-related-reading a:hover,.reading-room .rr-related-reading a.fvg-context-link:hover{background:color-mix(in srgb,var(--rr-accent) 16%,transparent);color:var(--color-brand-hover,var(--rr-accent))}
+.reading-room .fvg-document .fvg-context-link{color:var(--rr-accent);background:color-mix(in srgb,var(--rr-accent) 9%,transparent);text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1.5px;font-weight:500;padding:.04rem .24rem;border-radius:3px;transition:background .15s ease}
+.reading-room .fvg-document .fvg-context-link:hover{background:color-mix(in srgb,var(--rr-accent) 18%,transparent)}
+.reading-room .liquidity-section-sources a{color:var(--rr-accent);text-decoration:underline;text-underline-offset:.2em;font-weight:500}
+

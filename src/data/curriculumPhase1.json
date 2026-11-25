@@ -36,14 +36,16 @@
     "part": 1,
     "slug": "the-order-book-in-depth",
     "title": [
-      "Order Book: Depth, Queues and Hidden Limits",
-      "آرڈر بک: ڈیپتھ، قطار اور معلومات کی حدود"
+      "Order Book Explained: Bids, Depth, DOM & Liquidity",
+      "آرڈر بک: بِڈ، ڈیپتھ، DOM اور لیکویڈیٹی کی مکمل تفصیل"
     ],
     "description": [
-      "Read bids, offers, spread and visible depth, then examine queue changes and why an order-book snapshot cannot reveal every participant's intent.",
-      "بِڈ، آفر، اسپریڈ اور نظر آنے والی ڈیپتھ پڑھیں، قطار کی تبدیلیاں سمجھیں اور جانیں کہ آرڈر بک کا ایک منظر ہر شریک کا ارادہ کیوں نہیں بتاتا۔"
+      "Learn how an order book works from basic bid-ask spreads to Level 3 MBO queues, DOM ladders, OBI microprice, icebergs, auctions, and slippage math.",
+      "بنیادی بِڈ آسک اسپریڈ سے لے کر لیول 3 MBO قطاروں، DOM لیڈر، OBI مائیکرو پرائس، آئس برگ، نیلامی اور سلپیج حساب تک آرڈر بک مکمل سمجھیں۔"
     ],
-    "status": "published"
+    "status": "published",
+    "seoTitle": "Order Book Explained: Depth, DOM & Liquidity",
+    "seoTitleUr": "آرڈر بک: ڈیپتھ، DOM اور لیکویڈیٹی کی مکمل تفصیل"
   },
   {
     "id": 4,
@@ -1067,10 +1069,13 @@
       "مارکیٹ میکر ماڈلز: MMBM اور MMSM"
     ],
     "description": [
-      "Compare buy-model and sell-model curves, connect their phases with short-term studies and distinguish visible price structure from assumed intent.",
-      "بائے اور سیل ماڈل کے خم کا موازنہ کریں، مراحل کو مختصر مدتی مطالعے سے جوڑیں اور نمایاں پرائس اسٹرکچر کو شرکا کے مفروضہ ارادے سے الگ رکھیں۔"
+      "Learn the Market Maker Buy Model (MMBM) and MMSM curve stages: original consolidation, smart money reversal, 50% equilibrium, re-accumulation, and fails.",
+      "مارکیٹ میکر بائے ماڈل (MMBM) اور MMSM کے تمام مراحل سمجھیں: اوریجنل کنسولیڈیشن، اسمارٹ منی ریورسل، 50% ایکویلبریم، ری اکیومولیشن اور ناکامی کی حدود۔"
     ],
-    "status": "published"
+    "primaryKeyword": "market maker buy model",
+    "status": "published",
+    "seoTitle": "Market Maker Buy Model (MMBM) & MMSM Guide",
+    "seoTitleUr": "مارکیٹ میکر بائے ماڈل (MMBM) اور MMSM مکمل رہنما"
   },
   {
     "id": 36,
@@ -1082,10 +1087,13 @@
       "ICT 2022 ماڈل: وقت پر مبنی انٹری فریم ورک"
     ],
     "description": [
-      "Trace the ICT 2022 sequence from liquidity context to an FVG entry, compare confirmation variants and distinguish a filled order from a missed setup.",
-      "ICT 2022 کی ترتیب لیکویڈیٹی کے تناظر سے FVG انٹری تک سمجھیں، تصدیق کی مختلف صورتیں دیکھیں اور فِل آرڈر کو رہ جانے والے سیٹ اپ سے الگ رکھیں۔"
+      "Learn the ICT 2022 Model: New York time windows, liquidity sweeps, displacement MSS, FVG/OTE entries, multi-timeframe rules & common mistakes.",
+      "ICT 2022 ماڈل شروع سے ایڈوانس تک سیکھیں: نیویارک اوقات، لیکویڈیٹی سویپس، ڈسپلیسمنٹ MSS، FVG اور OTE انٹریز، ملٹی ٹائم فریم اصول اور عام غلطیاں۔"
     ],
-    "status": "published"
+    "primaryKeyword": "ict 2022 model",
+    "status": "published",
+    "seoTitle": "ICT 2022 Model Explained: Time, Sweep, MSS & FVG",
+    "seoTitleUr": "ICT 2022 ماڈل کی مکمل وضاحت: وقت، سویپ، MSS اور FVG"
   },
   {
     "id": 45,

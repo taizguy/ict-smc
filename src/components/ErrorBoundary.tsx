@@ -25,6 +25,10 @@ export class ErrorBoundary extends React.Component<Props, State> {
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.error('Uncaught component error:', error, errorInfo);
+    if (typeof document !== 'undefined') {
+      document.documentElement.dataset.appStartup = 'ready';
+      window.dispatchEvent(new Event('learnsmc:page-ready'));
+    }
   }
 
   public handleReset = () => {

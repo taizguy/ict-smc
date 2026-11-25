@@ -97,7 +97,7 @@ export function generateSocialCards(dist: string) {
     });
     updated = updated.replace('</head>',[...tags.values()].join('')+'</head>');
     fs.writeFileSync(file,updated);
-    if(chapter&&[4,7,9,10,1010,1031,1064].includes(chapter.id)){
+    if(chapter&&[3,4,7,9,10,33,36,1010,1031,1064].includes(chapter.id)){
       const ready=fs.readFileSync(file,'utf8').replace(/(<script\b[^>]*type="application\/ld\+json"[^>]*>)([\s\S]*?)(<\/script>)/g,(_all,a,json,b)=>{const graph=JSON.parse(json);for(const node of graph['@graph']||[graph])if(node['@type']==='Article')node.image={'@type':'ImageObject',url:image,width:1200,height:630,caption:alt};return a+JSON.stringify(graph).replace(/</g,'\\u003c')+b;});
       fs.writeFileSync(file,ready);
     }

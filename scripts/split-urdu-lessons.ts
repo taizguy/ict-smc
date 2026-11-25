@@ -7,6 +7,12 @@ import {structureTranslations} from '../src/data/chapters/structureTranslations'
 import {swingDocument} from '../src/data/chapters/swingDocument';
 import {liquidityDocument} from '../src/data/chapters/liquidityDocument';
 import {liquidityTranslations} from '../src/data/chapters/liquidityTranslations';
+import {orderBookDocument} from '../src/data/chapters/orderBookLesson';
+import {orderBookTranslations} from '../src/data/chapters/orderBookTranslations';
+import {marketMakerDocument} from '../src/data/chapters/marketMakerLesson';
+import {marketMakerTranslations} from '../src/data/chapters/marketMakerTranslations';
+import {model2022Document} from '../src/data/chapters/model2022Lesson';
+import {model2022Translations} from '../src/data/chapters/model2022Translations';
 import {mitigationTranslations} from '../src/data/chapters/mitigationTranslations';
 import {mitigationDocument} from '../src/data/chapters/mitigationDocument';
 import fs from 'node:fs';
@@ -37,6 +43,9 @@ export function splitUrduLessons(output:string,uiKeys:ReadonlySet<string>) {
   if(chapter.id===13)visit(fvgDocument);
   if(chapter.id===1031)visit(mitigationDocument);
   if(chapter.id===4)visit(liquidityDocument);
+  if(chapter.id===3)visit(orderBookDocument);
+  if(chapter.id===33)visit(marketMakerDocument);
+  if(chapter.id===36)visit(model2022Document);
   if(chapter.id===7)visit(swingDocument);
   if(chapter.id===1010)visit(structureDocument);
   const bt=breakTopic(chapter.id);if(bt)visit(breakDocuments[bt]);
@@ -64,6 +73,12 @@ export function splitUrduLessons(output:string,uiKeys:ReadonlySet<string>) {
  fs.writeFileSync(path.join(output,'mitigation-overrides.json'),JSON.stringify(overrides)+'\n');
  const liquidityOverrides=Object.fromEntries(Object.entries(liquidityTranslations).filter(([key,value])=>catalog[key]!==value));
  fs.writeFileSync(path.join(output,'liquidity-overrides.json'),JSON.stringify(liquidityOverrides)+'\n');
+ const orderBookOverrides=Object.fromEntries(Object.entries(orderBookTranslations).filter(([key,value])=>catalog[key]!==value));
+ fs.writeFileSync(path.join(output,'order-book-overrides.json'),JSON.stringify(orderBookOverrides)+'\n');
+ const marketMakerOverrides=Object.fromEntries(Object.entries(marketMakerTranslations).filter(([key,value])=>catalog[key]!==value));
+ fs.writeFileSync(path.join(output,'market-maker-overrides.json'),JSON.stringify(marketMakerOverrides)+'\n');
+ const model2022Overrides=Object.fromEntries(Object.entries(model2022Translations).filter(([key,value])=>catalog[key]!==value));
+ fs.writeFileSync(path.join(output,'model-2022-overrides.json'),JSON.stringify(model2022Overrides)+'\n');
  const swingBase=Object.assign({},JSON.parse(fs.readFileSync(path.join(output,'shared.json'),'utf8')),common,lessonParts.find(p=>p.slug==='what-is-a-swing-the-atom-of-structure')!.catalog);
  const swingOverrides=Object.fromEntries(Object.entries(swingTranslations).filter(([key,value])=>swingBase[key]!==value));
  assert.deepEqual({...swingBase,...swingOverrides},{...swingBase,...swingTranslations},'Swing route override factoring must preserve every translation');

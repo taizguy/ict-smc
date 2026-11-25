@@ -1,0 +1,534 @@
+{
+  "h1": "Market Maker Models: MMBM and MMSM",
+  "seoTitle": "Market Maker Buy Model (MMBM) & MMSM Guide",
+  "metaDescription": "Learn the Market Maker Buy Model (MMBM) and MMSM curve stages: original consolidation, smart money reversal, 50% equilibrium, re-accumulation, and fails.",
+  "quickAnswer": "A Market Maker Buy Model (MMBM) is a structured ICT price-curve framework that maps a complete two-sided market cycle: price consolidates at an initial range (Original Consolidation), sells down in controlled steps to build sell-side liquidity, sweeps into a Higher Timeframe Discount PD Array to trigger a Smart Money Reversal (SMR), and then climbs symmetrically up a Buy-Side Delivery Curve toward the original consolidation high (Terminus). Its exact mirror is the Market Maker Sell Model (MMSM).",
+  "takeaways": [
+    "Every Market Maker Model has two balanced halves anchored across a Higher Timeframe turning point: an engineering leg that builds opposing stops and a mirrored delivery leg toward Terminus.",
+    "The Dealing Range Equilibrium rule filters bias cleanly: longs belong strictly below the 50% Equilibrium midpoint in Discount, while shorts belong above it in Premium.",
+    "A valid Smart Money Reversal requires a higher-timeframe PD array tag, a liquidity sweep, energetic displacement (CISD and/or MSS), and an imbalance or breaker anchor — never guessing bottoms blindly.",
+    "Symmetric left-side consolidations often flip roles on the right side of the curve into Low-Risk Entries, Re-Accumulation steps, or Breakers, while Low-Resistance Liquidity Runs (LRLR) reduce structural friction.",
+    "Market Maker templates are discretionary analytical maps illustrated with synthetic curves in this guide; candlesticks cannot prove dealer identity or guarantee a target fill."
+  ],
+  "sections": [
+    {
+      "number": 1,
+      "icon": "users",
+      "title": "Why Charts Form U-Shapes: The Plain-English Story",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Imagine walking into a crowded weekend market before opening hours. Most late shoppers rush toward whichever stall already has the loudest line, buying high after the crowd is excited or panic-selling their goods outside the gate just because a short dip spooked everyone. Meanwhile, a patient stall owner quietly waits near the side entrance where everyone else dumped their inventory, buys at a lower shelf price, and sells back to the returning crowd once calm returns."
+        },
+        {
+          "type": "paragraph",
+          "text": "Price charts frequently trace U-shaped or inverted-U curves for a similar practical reason: liquidity and opposing orders sit in predictable places. In a Market Maker Buy Model (MMBM), price leaves an upper sideways box, steps lower in two or three pauses that persuade breakout sellers to place stop-loss buy orders above every small pause, sweeps an obvious higher-timeframe discount level to flush weak longs, and then climbs back across those same abandoned ledges toward the top of the starting box."
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Beginner Key: No Secret Villains Needed",
+          "text": "Using the label 'Market Maker Model' does not mean you can see a single bank's order book on a candlestick chart. Think of MMBM and MMSM as geometric maps describing where stop clusters accumulate during a drift and how symmetrical stair-steps unwind once a larger support or resistance zone responds."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "icon": "layers",
+      "title": "What Is a Market Maker Model? (MMBM vs. MMSM Defined)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In the Inner Circle Trader (ICT) curriculum, Market Maker Models organize multi-swing price paths around two complementary delivery curves. A Market Maker Buy Model (MMBM) describes a bearish-to-bullish U-curve: price leaves an Original Consolidation near higher prices, works lower along a Sell-Side Delivery Curve, reverses at a Higher Timeframe Discount PD Array (the Smart Money Reversal), and rises along a Buy-Side Delivery Curve back to the upper Terminus."
+        },
+        {
+          "type": "paragraph",
+          "text": "A Market Maker Sell Model (MMSM) is the exact vertical mirror (an inverted-U curve): price starts in an Original Consolidation near lower prices, climbs along a Buy-Side Delivery Curve to engineer buy-side stops, taps a Higher Timeframe Premium PD Array at the Smart Money Reversal, and unwinds lower along a Sell-Side Delivery Curve back into the original lows."
+        },
+        {
+          "type": "table",
+          "rows": [
+            ["Dimension", "Market Maker Buy Model (MMBM)", "Market Maker Sell Model (MMSM)"],
+            ["Curve Shape", "U-shape (drop into discount, then rally back)", "Inverted-U shape (rally into premium, then drop back)"],
+            ["Left Side of Curve", "Sell-Side Delivery Curve (Distribution pauses)", "Buy-Side Delivery Curve (Accumulation pauses)"],
+            ["Turning Point (SMR)", "Higher-Timeframe Discount PD Array + Liquidity Sweep Low", "Higher-Timeframe Premium PD Array + Liquidity Sweep High"],
+            ["Right Side Entry Leg", "Buy-Side Delivery Curve (LRB + Re-Accumulation)", "Sell-Side Delivery Curve (LRS + Re-Distribution)"],
+            ["Terminal Target", "Original Consolidation Highs / BSL (Terminus)", "Original Consolidation Lows / SSL (Terminus)"]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "icon": "compass",
+      "title": "Universal Curve Models & Short-Term Execution Explained",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Learners often ask how Universal Range Expansion rules, full Market Maker Curve geometry, and 1-to-3-day short-term execution fit together. The directional range-expansion framework begins by anchoring an active Dealing Range, prohibiting buys above the 50% Equilibrium midpoint, and walking price systematically up the Discount PD Array Matrix (Mitigation Block, Breaker Block, Liquidity Void, Fair Value Gap, Order Block, Rejection Block)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Zooming out reveals the complete two-sided Market Maker Sell Model and Market Maker Buy Model geometry — showing how the left-side curve sets up the symmetry, inversion zones, and target terminus for the right-side curve. Adding short-term swing context — 20-day lookback alignment, Low-Resistance vs. High-Resistance Liquidity Runs (LRLR/HRLR), and Midweek Reversal timing — translates those universal curves into practical multi-day chart reading."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "icon": "trending-up",
+      "title": "Anatomy of the Market Maker Buy Model (MMBM): 6 Core Stages",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Whether you study a 5-minute intraday session or a 4-hour weekly swing, a textbook Market Maker Buy Model follows six recognizable landmarks from left to right. Think of the left half as building the coiled spring and the right half as releasing energy across the same structural shelves:"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Stage 1 — Original Consolidation (OC): Price builds a visible sideways balance range at a higher price zone. Its upper boundary stores resting Buy-Side Liquidity (BSL) and serves as the eventual Terminus objective if the cycle completes.",
+            "Stage 2 — Sell-Side Curve (Engineering Liquidity): Price breaks downward out of Original Consolidation in one or two shallow pauses (often labeled Distribution 1 and Distribution 2). Every minor swing high along the descent attracts early short sellers and accumulates resting buy stops above those lower highs.",
+            "Stage 3 — Smart Money Reversal (SMR): Price sweeps an external Sell-Side Liquidity pool directly into a pre-mapped Higher Timeframe Discount PD Array (such as a Daily FVG, Weekly Order Block, or 20-day discount extreme) and snaps upward with energetic displacement.",
+            "Stage 4 — Low-Risk Buy (LRB): The first qualified retracement after the initial Change in State of Delivery (CISD) or Market Structure Shift (MSS) — typically an FVG, Order Block, or Optimal Trade Entry (0.62–0.79) resting safely below 50% Equilibrium.",
+            "Stage 5 — Re-Accumulation Curve (Stages 1 & 2): As price climbs the right side, it pauses horizontally at price levels aligned with the left-side distribution shelves. Left-side down-candles or imbalances frequently flip into Bullish Breakers, Inversion FVGs, or Propulsion launchpads.",
+            "Stage 6 — Terminus Objective: Price expands through the resting Buy-Side Liquidity above the Original Consolidation. Complete model symmetry is achieved, at which point aggressive chasing is avoided and full or final partial exits are evaluated."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "warn",
+          "title": "Synthetic Chart Reminder",
+          "text": "In the interactive lifecycle diagram below, the EUR/USD-style prices (1.0920 down to 1.0800 and back to 1.0920) are an illustrative synthetic study sequence. Toggle 'Show Failure Branch' to compare how an unconfirmed bounce rolls over instead of reaching Terminus."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "icon": "repeat",
+      "title": "Anatomy of the Market Maker Sell Model (MMSM): Mirror Curve",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The Market Maker Sell Model flips every stage upside down while preserving identical structural logic. Instead of dropping away from an upper box, price rises away from a lower Original Consolidation in controlled Accumulation steps. Retail breakout buyers see higher highs and higher lows, moving trailing stop-loss sell orders right below each horizontal shelf on the Buy-Side Curve."
+        },
+        {
+          "type": "paragraph",
+          "text": "When price tags a Higher Timeframe Premium PD Array (for instance, a Weekly Bearish Order Block, Daily Bearish FVG, or Previous Month High sweep), the upward staircase stalls. Once lower-timeframe bodies break downward through the final accumulation shelf with displacement, the Sell-Side Delivery Curve begins: Low-Risk Sell -> Re-Distribution 1 -> Re-Distribution 2 -> full liquidation into the Original Consolidation lows (Terminus)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Notice why two-sided curve analysis emphasizes horizontal correspondence: if Accumulation Stage 2 formed between 20,095 and 20,115 on the left climb, Re-Distribution Stage 1 on the right drop often develops inside or right against that exact 20,095–20,115 corridor because trapped longs and old resting references cluster at the same price coordinates."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "icon": "scale",
+      "title": "The 50% Equilibrium Rule & 50% SMR Symmetry Check",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Two distinct '50% rules' govern Market Maker curve analysis, and separating them prevents one of the most common beginner mistakes:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Dealing Range Equilibrium Rule: Measure the active Higher Timeframe Dealing Range from Swing Low to Swing High. Its midpoint is Equilibrium = (High + Low) ÷ 2. This rule strictly prohibits initiating new buys above Equilibrium (Premium) or new shorts below Equilibrium (Discount).",
+            "50% SMR Model Symmetry Checkpoint: Measure the distance from the Smart Money Reversal extreme (e.g., 1.0800 in our synthetic MMBM) to the Original Consolidation high (1.0920). Halfway across that 120-pip distance sits the Curve Midpoint (1.0860). Once price decisively closes above that halfway line and prints a clean re-accumulation base, the market has proved multi-stage sponsorship; conversely, failing to reclaim that 50% mark warns that the curve may collapse back into the SMR low."
+          ]
+        },
+        {
+          "type": "table",
+          "rows": [
+            ["Synthetic Range Landmark", "Price Formula / Ratio", "MMBM Role (1.0800 to 1.0920)", "Rule Status"],
+            ["Terminus High (100%)", "Original Consolidation High", "1.0920 — External BSL Target", "Primary completion zone"],
+            ["Equilibrium / 50% SMR", "(1.0920 + 1.0800) ÷ 2", "1.0860 — Midpoint Gate", "No fresh Discount longs above here"],
+            ["OTE 62% Retracement", "High − 0.62 × Range", "1.0846 — First Discount Scale", "Early Stage-1 / LRB entry"],
+            ["OTE 70.5% Sweet Spot", "High − 0.705 × Range", "1.0835 — Core Discount Zone", "Deep FVG / Order Block confluence"],
+            ["SMR Invalidation Extreme", "Swing Low at HTF Array", "1.0800 — Synthetic Low", "Break below ends curve thesis"]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "icon": "activity",
+      "title": "External vs. Internal Liquidity & LRLR vs. HRLR",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A Market Maker curve is literally a shuttle riding between External Range Liquidity (ERL) and Internal Range Liquidity (IRL). At the Smart Money Reversal, price purges an External low (like a Previous Week Low or Asian Low) to strike an Internal Discount imbalance or Order Block on a wider frame, OR reverses from an Internal FVG to attack an External high. Understanding which pool sits next prevents selling at the bottom or taking profit right before the real expansion."
+        },
+        {
+          "type": "paragraph",
+          "text": "Short-term swing analysis sharpens target selection by contrasting Low-Resistance Liquidity Runs (LRLR) with High-Resistance Liquidity Runs (HRLR). In an LRLR, price travels through clean unmitigated range toward smooth Equal Highs/Lows with almost no opposing order blocks blocking the lane — like a sprinter on an open track. In an HRLR, price tries to fight straight back through a tangled stair-step of fresh opposing Breakers, Fair Value Gaps, and protected swings — like running into a row of tall hurdles."
+        },
+        {
+          "type": "table",
+          "rows": [
+            ["Feature", "Low-Resistance Liquidity Run (LRLR)", "High-Resistance Liquidity Run (HRLR)"],
+            ["Path Ahead", "Clean open space toward Terminus / Equal Highs", "Dense opposing Order Blocks, Breakers & jagged swings"],
+            ["Left-Side Velocity", "Smooth, rapid sell-side descent with small retracements", "Choppy, overlapping wicks and failed swing continuations"],
+            ["Candle Behavior", "Energetic displacement toward targets", "Deep pullbacks, stop-hunts inside the leg, slow drift"],
+            ["Study Guideline", "Preferred environment for MMBM/MMSM right-side legs", "Reduce expectations or stand aside until external liquidity clears"]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "icon": "crosshair",
+      "title": "Step-by-Step: How to Mark an MMBM on a Blank Chart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Do not start on a 1-minute chart looking for tiny U-shapes. A reliable Market Maker Model always begins with Higher Timeframe context and drills down only after the anchor is locked:"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Step 1 — Anchor Higher-Timeframe Direction & Target: On the Weekly or Daily chart, locate where price sits inside the 20-day IPDA dealing range. Mark clean Buy-Side Liquidity above (ERL) and any untested Discount FVG or Order Block below.",
+            "Step 2 — Box the Original Consolidation: Step down to the intermediate curve chart (4H or 1H for short-term, 15m for intraday) and draw a clean horizontal band around the upper consolidation shelf before price dropped away.",
+            "Step 3 — Trace the Left-Side Stages: Mark each pause box along the Sell-Side Curve as SS-1 and SS-2. Record the exact price boundaries of those down-close legs — they become your future right-side magnets and Breaker/IFVG landmarks.",
+            "Step 4 — Wait Patiently at the HTF Discount Array: Do not guess inside mid-air. Set an alert where the left-side sell-off reaches your pre-marked Daily/4H Discount array and sweeps a prominent short-term low.",
+            "Step 5 — Confirm the SMR Trigger on Execution TF: Drop to 15m/5m (or 1m for intraday) and demand a completed candle Change in State of Delivery (CISD) or Market Structure Shift (MSS) leaving a clean Fair Value Gap.",
+            "Step 6 — Map Right-Side Re-Accumulation & Scaling Plan: Measure the 50% SMR checkpoint and align partial profit targets with SS-2, SS-1, and the Original Consolidation Terminus before committing any order."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "icon": "zap",
+      "title": "Execution Triggers at SMR: Sweep, Displacement, CISD vs. MSS",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The biggest danger in trading Market Maker Models is calling a Smart Money Reversal too early while the left-side sell-off is still unfolding. Three distinct confirmation layers help separate real reversals from mere pauses:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Layer 1 — Liquidity Sweep + HTF Tag: Price must trade below an identifiable swing low or equal lows while touching your pre-selected Higher Timeframe Discount PD Array.",
+            "Layer 2 — CISD (Change in State of Delivery): An up-close candle body closes decisively above the opening price of the final consecutive down-close delivery run that swept the low. CISD gives an earlier structural cue than waiting for a major swing high break.",
+            "Layer 3 — MSS (Market Structure Shift) + FVG: An energetic displacement candle closes above an opposing lower-timeframe swing high, leaving a valid 3-candle Fair Value Gap inside Discount where the Low-Risk Buy (LRB) can rest."
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "CISD vs. Full MSS: Which Should Beginners Wait For?",
+          "text": "Advanced practitioners sometimes enter on an aggressive CISD inside a higher-timeframe extreme with SMT confluence. Newer learners generally suffer fewer false starts by demanding BOTH a completed MSS body close AND an accompanying Fair Value Gap before placing a Low-Risk Buy limit."
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "icon": "arrow-up-down",
+      "title": "Re-Accumulation & Left-to-Right PD Array Role Flips",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "You do not have to catch the exact bottom at the Low-Risk Buy to participate cleanly in a Market Maker curve. Right-side Stage-2 Re-Accumulation (and Re-Distribution in MMSM) highlights what happens when price climbs back up to the exact price shelf that paused on the left side of the curve, triggering two high-clarity mechanisms."
+        },
+        {
+          "type": "paragraph",
+          "text": "First, any Bearish Fair Value Gap created during the left-side sell-off that gets punched upward by strong bullish candle bodies converts into a Bullish Inversion Fair Value Gap (IFVG). Second, the consolidation swing that trapped late breakdown shorts on the left side becomes a Bullish Breaker or Balanced Price Range (BPR) on the right side."
+        },
+        {
+          "type": "paragraph",
+          "text": "Instead of chasing green candles far away from stops, traders waiting on Re-Accumulation Stage 1 let price rise out of the left-side shelf, form a clean horizontal pause or shallow pullback onto the flipped IFVG/Breaker, and enter in the direction of proven displacement with a clear structural invalidation directly beneath the re-accumulation low."
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "icon": "sparkles",
+      "title": "Advanced Nuances: SMT Divergence, Propulsion Blocks, Time Distortion & Midweek Reversals",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Once the basic curve geometry is second nature, four institutional-grade filters dramatically sharpen both curve timing and target conviction:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Intermarket SMT Divergence at the SMR: Compare positively correlated pairs or index futures at the turning point. For example, if ES sweeps below Tuesday's low into Daily Discount while NQ prints a higher low (failing to confirm the breakdown), that Smart Money Technique (SMT) crack signals asymmetrical sponsorship at the SMR.",
+            "Nested Propulsion Blocks: When a Re-Accumulation candle dips into a freshly formed Bullish Order Block and immediately launches higher, that dipping candle acts as a Propulsion Block. In strong curves, price respects the top/mean threshold of that Propulsion candle rather than revisiting the full origin.",
+            "Time Distortion (Time & Price Alignment): A clean U-shape formed inside dead Asian midday consolidation is far weaker than an SMR forming during London Open (02:00–05:00 NY), NY AM Killzone (08:30–11:00 NY), or Silver Bullet hours. Time Distortion occurs when price has already hit the level early, or stalls sideways until the next high-volume session opens.",
+            "Midweek Reversal Timing (Merged Ch. 43): If Monday and Tuesday push strongly downward into a Weekly Discount PD Array without breaking lower, Wednesday London or New York Open often prints the weekly SMR — turning Wednesday through Friday into a clean Buy-Side Delivery Curve back toward Monday's opening high."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "icon": "candlestick-chart",
+      "title": "Worked MMBM Case Study: Synthetic EUR/USD 1.0800 Curve",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Walk through a complete hypothetical short-term EUR/USD study using strict rules before seeing the outcome (all prices are purely illustrative synthetic levels, not historical market fills):"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "HTF Context: On the Daily chart, the 20-day Dealing Range spans 1.0780 (Low) to 1.0960 (High), placing Equilibrium at 1.0870. A Daily Bullish FVG sits at 1.0795–1.0815 inside deep Discount.",
+            "Original Consolidation & Left Side (Mon–Tue): EUR/USD balances near 1.0900–1.0920 (OC), then drifts down in two tidy steps: SS-1 (1.0874–1.0888) and SS-2 (1.0842–1.0856), leaving clean buy stops stacked above 1.0888 and 1.0922.",
+            "Smart Money Reversal (Wed 03:30 NY London Open): Price sweeps Monday's low at 1.0818 down to 1.0800 inside the Daily FVG while GBP/USD holds higher (Bullish SMT). A 15-minute candle closes vigorously back at 1.0844, creating a bullish MSS above 1.0838 and leaving a 15m FVG at 1.0824–1.0836.",
+            "Low-Risk Buy & Stops: A hypothetical buyer enters at 1.0835 inside the 15m FVG / 70.5% OTE with a 39-pip invalidation stop at 1.0796 (below the 1.0800 SMR wick). Notice 1.0835 is well below both the 1.0870 Daily Equilibrium and the 1.0860 50% SMR checkpoint.",
+            "Re-Accumulation & Terminus: Price clears 1.0860 (50% SMR gate), pauses above the flipped 1.0845–1.0856 SS-2 shelf (Stage-1 Re-Accumulation), rallies past 1.0888 (Scale 1 at +53 pips / 1.36R), pauses briefly at 1.0884, and finishes inside the 1.0920–1.0925 Terminus zone (+85 pips / 2.18R before costs)."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "icon": "trending-down",
+      "title": "Worked MMSM Case Study: Synthetic NQ-Style Index 20,160 Curve",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Now trace the bearish mirror on an illustrative intraday Nasdaq-style futures example (purely synthetic tick coordinates for structural comparison):"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Original Consolidation (07:30–08:30 NY): Price rotates between 20,040 and 20,065 below a 4-Hour Bearish Breaker at 20,145–20,165. Sell-Side Liquidity sits cleanly at 20,038.",
+            "Buy-Side Climb (08:30–09:45 NY): Equities cash open pushes upward through two tidy shelves: BS-1 (20,085–20,100) and BS-2 (20,115–20,130), tempting breakout buyers to trail stops below 20,115 and 20,085.",
+            "Smart Money Reversal (09:50 NY Macro): Price spikes above 20,145 to 20,160 inside the 4H Premium Breaker while ES fails to clear its prior session high (Bearish SMT). Within 10 minutes, 5-minute bodies close sharply below 20,128 (CISD + MSS), printing a 5m Bearish FVG at 20,132–20,144.",
+            "Low-Risk Sell & Re-Distribution: A Low-Risk Sell enters at 20,136 with invalidation above 20,164 (28 points risk). Price breaks the BS-2 shelf, flips 20,095–20,100 into a Bearish IFVG for Stage-2 Re-Distribution, and delivers down to 20,038 Terminus (+98 points / 3.5R before spreads, commissions, or slippage)."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "icon": "alert-triangle",
+      "title": "When Market Maker Models Fail: Invalidations & Counter-Examples",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Studying only idealized U-shapes builds false confidence. In live chart replay, many sharp bounces collapse back into the prevailing trend. Four recurring failure modes invalidate an MMBM or MMSM candidate before entry or early in management:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Missing Higher-Timeframe Anchor (Mid-Air Reversal): A 5-minute bounce with an FVG occurs in the middle of nowhere while the Daily chart is still heading straight toward an unmitigated Weekly low 80 pips deeper.",
+            "Failure to Reclaim the 50% SMR Midpoint: Price sweeps the low and bounces 25%, stalls underneath a bearish Order Block below the curve's halfway mark, and closes back below the Low-Risk Buy low — turning what looked like an SMR into simple Stage-2 Redistribution before another leg down.",
+            "High-Resistance Liquidity Run (HRLR) Exhaustion: Left-side price dropped through jagged choppy ranges full of overlapping unmitigated Bearish Breakers. On the climb back up, every single level stalls progress until a macro news spike sweeps both sides.",
+            "Time-Window Mismatch & Late Chasing: Entering after price has already crossed 70% of the distance back to Terminus violates the MMBM Discount rule, cutting reward-to-risk sharply just as early entrants start taking profits."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "icon": "git-compare",
+      "title": "Comparison: MMBM vs. Power of Three (AMD), 2022 Model, Silver Bullet & Judas Swing",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Beginners frequently ask whether these ICT concepts compete against one another. In practice, they sit at different zoom levels — an MMBM can be thought of as the structural map, while Silver Bullet or the 2022 Model are zoom-in execution triggers inside the SMR or Re-Accumulation window."
+        },
+        {
+          "type": "table",
+          "rows": [
+            ["Framework", "Primary Focus", "Typical Horizon", "Relation to Market Maker Model"],
+            ["MMBM / MMSM (Universal Curves)", "Full two-sided curve symmetry & PD array progression", "Intraday to Multi-Week", "Master geometric map from Original Consolidation to Terminus"],
+            ["Power of Three (AMD)", "Open -> Manipulation -> Expansion -> Close inside one candle", "1 Session / 1 Daily Bar", "Often describes the SMR manipulation wick + expansion body of a single bar"],
+            ["2022 Time-Based Entry Model", "HTF Liquidity Sweep -> LTF MSS + FVG -> Opposing Liquidity", "Intraday Killzone", "Exact LTF execution trigger used inside the SMR or Re-Accumulation stage"],
+            ["Silver Bullet Model", "1-Hour fixed NY/London window FVG setup", "60-Minute Window", "Captures one clean internal leg inside Stage 4 or Stage 5 of a wider curve"],
+            ["Judas Swing", "False session-open breakout trapping early traders", "London / NY Open", "Frequently forms the final Sell-Side sweep into the SMR extreme"]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "icon": "clock",
+      "title": "Multi-Timeframe Pairing Matrix",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A common mistake is trying to read the Higher Timeframe POI, draw the entire curve, and pull the execution trigger on a single timeframe. Selecting a clean three-timeframe triad keeps your HTF narrative separate from your entry trigger:"
+        },
+        {
+          "type": "table",
+          "rows": [
+            ["Trading Horizon", "HTF Context (Anchor)", "Curve Mapping Chart (Curve)", "Execution Trigger (Entry)", "Typical Target Window"],
+            ["Multi-Week Swing Profile", "Monthly / Weekly", "Daily (D1)", "4-Hour / 1-Hour", "Weekly BSL/SSL Terminus (3–15 days)"],
+            ["Short-Term Swing Profile", "Weekly / Daily", "4-Hour / 1-Hour", "15-Minute / 5-Minute", "Multi-day Terminus (1–3 days)"],
+            ["Intraday Session Profile", "Daily / 4-Hour", "15-Minute / 5-Minute", "1-Minute / 3-Minute", "Session High/Low Terminus (1–4 hours)"]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "icon": "shield-alert",
+      "title": "Risk Arithmetic, Partial Exits & Invalidation Discipline",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Even an accurate structural read creates losses when execution sizing and stop placement are sloppy. Market Maker Models reinforce three numerical risk safeguards before costs and slippage:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Shared Setup Risk Budget: Under disciplined position-sizing principles, if you split an idea into two or three scaled entries (for example, one Low-Risk Buy at Stage 4 and one add-on at Stage 5 Re-Accumulation), divide your single setup risk allowance across those orders rather than risking full account percentage on each bullet.",
+            "Structural Invalidation Over Arbitrary Pips: Anchor the protective stop beyond the completed Smart Money Reversal extreme (plus spread/tick buffer) for Stage 4, or below the protected Re-Accumulation swing low for Stage 5. Stop-market orders protect against unlimited drift but may suffer slippage during fast news; stop-limit orders control price but risk non-execution.",
+            "Rule-Based Partial Scaling: Rather than waiting all-or-nothing for Terminus, evaluate scaling partials at the 50% SMR midpoint or opposing left-side liquidity shelves so realized losses shrink if price turns HRLR mid-flight."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "icon": "eye-off",
+      "title": "Eight Mistakes Beginners & Intermediates Make with MMBM",
+      "blocks": [
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Calling any random dip an MMBM without an identifiable Higher Timeframe PD Array at the bottom.",
+            "Buying inside Premium above 50% Equilibrium (violating the Discount filter) and wondering why stops get swept during deep pullbacks.",
+            "Fading the Sell-Side Curve with limit buys BEFORE a completed CISD or MSS candle close appears.",
+            "Ignoring High-Resistance Liquidity Runs — trying to long directly under nested 4H/Daily Bearish Order Blocks.",
+            "Forgetting that a single 1-minute MSS is only local until it aligns with the curve timeframe's structure.",
+            "Stacking fresh 1% risk on every Re-Accumulation pause instead of capping total correlated exposure.",
+            "Blindly expecting 100% of Original Consolidation to clear immediately ahead of red-folder CPI/NFP/FOMC releases.",
+            "Cherry-picking Original Consolidation boxes AFTER price has already rallied (hindsight bias) rather than logging them before the sweep."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "icon": "check-square",
+      "title": "Pre-Execution MMBM / MMSM Verification Routine",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Run through every item in this interactive pre-trade check during chart replay before labeling a Market Maker Buy or Sell Model ready for execution:"
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Replay Discipline Note",
+          "text": "If two or more items remain unchecked — especially HTF alignment, 50% Equilibrium position, or Low-Resistance path clarity — log the chart as 'Observe Only' and revisit after the next Killzone."
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "icon": "bookmark",
+      "title": "Complete Glossary of Market Maker Model Terms (20 Terms)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Bookmark these twenty definitions as your reference dictionary when mapping Market Maker curves, short-term swing frameworks, and live Chart Lab studies:"
+        },
+        {
+          "type": "table",
+          "rows": [
+            ["Term", "Concise Technical Meaning"],
+            ["Market Maker Buy Model (MMBM)", "A complete U-shaped curve: Original Consolidation -> Sell-Side Curve -> Smart Money Reversal at Discount -> Buy-Side Curve back toward Terminus."],
+            ["Market Maker Sell Model (MMSM)", "The bearish inverted-U mirror: Original Consolidation -> Buy-Side Curve -> Smart Money Reversal at Premium -> Sell-Side Curve back to original lows."],
+            ["Universal Trading Model", "Symmetric expansion-curve and Dealing Range rules adaptable across liquid markets and multiple timeframes."],
+            ["Original Consolidation (OC)", "The initial sideways balance range where a Market Maker curve begins; its outer extreme becomes the Terminal liquidity target."],
+            ["Sell-Side Curve (MMBM Left Side)", "The controlled stepped descent out of Original Consolidation that stacks buy stops above lower highs before hitting Discount."],
+            ["Buy-Side Curve (MMSM Left Side)", "The controlled stepped climb out of Original Consolidation that stacks sell stops below higher lows before hitting Premium."],
+            ["Smart Money Reversal (SMR)", "The apex turning point where price sweeps liquidity into a Higher Timeframe PD Array and snaps away with energetic displacement."],
+            ["Low-Risk Buy / Sell (LRB / LRS)", "The first qualified FVG, Order Block, or OTE retracement immediately after the SMR's confirmed CISD or MSS."],
+            ["Re-Accumulation Stage", "Right-side horizontal pauses in an MMBM that align with left-side sell shelves and launch secondary continuation legs."],
+            ["Re-Distribution Stage", "Right-side horizontal pauses in an MMSM that align with left-side buy shelves and launch secondary downward legs."],
+            ["Terminus Objective", "The opposing External Liquidity pool beyond the Original Consolidation marking full geometric completion of the curve."],
+            ["Dealing Range Equilibrium (50%)", "Midpoint (High + Low) / 2 of the active Higher Timeframe swing; separates Premium (>50%) from Discount (<50%)."],
+            ["50% SMR Symmetry Rule", "Checkpoint halfway between the SMR extreme and Terminus; reclaiming and holding past it validates Stage-2 continuation."],
+            ["CISD (Change in State of Delivery)", "A completed candle body closing cleanly through the opening boundary of the final opposing candle run that made the SMR extreme."],
+            ["MSS (Market Structure Shift)", "An energetic displacement close breaking an established opposing swing point and typically creating a Fair Value Gap."],
+            ["Low Resistance Liquidity Run (LRLR)", "Clean, rapid price travel toward smooth equal highs/lows with minimal opposing Order Blocks or Breakers in the path."],
+            ["High Resistance Liquidity Run (HRLR)", "Slow, choppy delivery forced to fight through dense prior swings, Breakers, and opposing imbalances."],
+            ["Propulsion Block", "A candle that retraces into an active Order Block and bounces sharply, acting as a tighter secondary springboard."],
+            ["Midweek Reversal", "The recurring intra-week turning tendency where Tuesday or Wednesday London/NY forms the week's absolute extreme."],
+            ["Time Distortion", "Misalignment where price reaches a curve landmark outside active Killzone hours or stalls sideways before session volume arrives."]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "icon": "help-circle",
+      "title": "Frequently Asked Questions (MMBM & MMSM)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Clear, direct answers to the ten most-searched learner questions about Market Maker Buy and Sell Models:"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "icon": "book-open",
+      "title": "Technical Market References & Next Practice",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Review the exchange, order-handling, and market-structure references below, then practice marking symmetric curves, Equilibrium gates, and invalidation branches in the LearnSMC interactive Chart Laboratory."
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is a Market Maker Buy Model (MMBM) in simple terms?",
+      "answer": "An MMBM is a U-shaped chart framework that maps how price drops out of an upper sideways box in controlled steps, sweeps an obvious low inside a higher-timeframe Discount zone (the Smart Money Reversal), and then climbs symmetrically back across those same price shelves to clear the highs of the starting box."
+    },
+    {
+      "question": "What is the main difference between MMBM and MMSM?",
+      "answer": "They are exact vertical mirrors. An MMBM starts high, curves down to a Discount Smart Money Reversal, and targets Original Consolidation highs; an MMSM starts low, curves up to a Premium Smart Money Reversal, and targets Original Consolidation lows."
+    },
+    {
+      "question": "What is Original Consolidation and why does price return to it?",
+      "answer": "Original Consolidation is the balanced starting range before the curve trends away. Its unviolated outer boundary stores resting liquidity (External Range Liquidity), making it the logical structural Terminus once an opposing Higher Timeframe zone triggers a reversal."
+    },
+    {
+      "question": "How do you confirm a Smart Money Reversal without guessing the bottom?",
+      "answer": "Never buy simply because price fell fast. Wait for four pieces of visible chart evidence in order: (1) price tags a pre-marked Higher Timeframe Discount PD Array, (2) a prior low is swept, (3) candle bodies deliver a clear CISD and/or MSS upward with displacement, and (4) a Fair Value Gap or Breaker forms for a structured Low-Risk Buy."
+    },
+    {
+      "question": "What is the 50% Equilibrium rule in a Market Maker Model?",
+      "answer": "Dealing Range Equilibrium divides the active Higher Timeframe swing into Premium (above 50%) and Discount (below 50%). It restricts long entries strictly to Discount PD arrays below Equilibrium and restricts short entries strictly to Premium PD arrays above Equilibrium."
+    },
+    {
+      "question": "What is the difference between a Low-Risk Buy and Re-Accumulation Stage 1?",
+      "answer": "The Low-Risk Buy occurs immediately after the Smart Money Reversal shift inside the earliest FVG or OTE zone. Re-Accumulation Stage 1 occurs higher up on the right curve when price flips a left-side Sell-Side pause or Bearish FVG into support and launches a secondary continuation leg."
+    },
+    {
+      "question": "How do LRLR and HRLR affect a Market Maker Model?",
+      "answer": "Low-Resistance Liquidity Runs (LRLR) occur when the path from SMR to Terminus faces clean, unchallenged space and smooth equal highs/lows, making delivery smoother. High-Resistance Liquidity Runs (HRLR) face dense opposing Order Blocks and jagged swings, increasing stall and stop-out risk."
+    },
+    {
+      "question": "What is the difference between CISD and MSS at the SMR?",
+      "answer": "CISD (Change in State of Delivery) happens earlier when a candle body closes past the opening reference of the final opposing candle run that swept the low. MSS (Market Structure Shift) requires an energetic body close beyond an established opposing swing point and is safer for beginners when paired with an FVG."
+    },
+    {
+      "question": "Can you trade a Market Maker Model on 1-minute or Daily charts?",
+      "answer": "Yes, Market Maker curve principles are fractal across liquid markets as long as you preserve the three-timeframe hierarchy (HTF Anchor -> Curve Mapping Chart -> LTF Execution Trigger). Intraday curves run on 15m/5m/1m inside Killzones, while short-term swing curves run on Daily/4H/15m over 1 to 3 days."
+    },
+    {
+      "question": "When does a Market Maker Buy Model fail or invalidate?",
+      "answer": "An MMBM invalidates if price closes below the completed SMR extreme, fails repeatedly to reclaim and hold above the 50% SMR midpoint, forms in mid-air with no Higher Timeframe Discount PD Array, or runs into heavy HRLR resistance right ahead of major scheduled macroeconomic news."
+    }
+  ]
+}

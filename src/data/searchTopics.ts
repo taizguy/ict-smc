@@ -4,7 +4,7 @@ import edition2026 from './chapters/mentorship2026Edition.json';
 export const studyTopics: Record<string, string> = {
   "/learn/what-actually-moves-price/": "What Moves Price? The Electronic Auction",
   "/learn/how-an-exchange-matches-orders/": "How Exchanges Match Orders",
-  "/learn/the-order-book-in-depth/": "Order Book, DOM & Spoofing",
+  "/learn/the-order-book-in-depth/": "Order Book Explained: Bids, Depth, DOM & Liquidity",
   "/learn/liquidity-the-most-misunderstood-word-in-trading/": "Liquidity: Buy-Side & Sell-Side Pools",
   "/learn/why-candles-form-and-how-displacement-arises/": "Candles & Price Displacement",
   "/learn/what-is-a-swing-the-atom-of-structure/": "Swing Highs, Swing Lows & Fractals",
@@ -30,7 +30,7 @@ export const studyTopics: Record<string, string> = {
   "/learn/ict-charter-model-3-swing-trading-cot/": "ICT Charter Model 3: Swing Trading & COT",
   "/learn/ict-charter-model-4-position-trading/": "ICT Charter Model 4: Position Trading",
   "/learn/ict-charter-model-5-session-day-trading/": "ICT Charter Model 5: Session Day Trading",
-  "/learn/ict-charter-models-6-and-7-universal-models/": "ICT Charter Models 6–7: Market Maker Curves",
+  "/learn/ict-charter-models-6-and-7-universal-models/": "Market Maker Buy Model (MMBM) & MMSM",
   "/learn/ict-charter-models-8-and-9-precision-and-osok/": "ICT Charter Models 8–9: Precision & OSOK",
   "/learn/ict-charter-models-10-11-and-12/": "Charter Models 10–12: Swing & Intraday",
   "/learn/ict-charter-model-13-2022-youtube-model/": "ICT 2022 Model: Setup Sequence & Examples",

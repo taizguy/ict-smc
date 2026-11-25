@@ -12,6 +12,15 @@ import {swingPath} from '../src/data/chapters/swingDocument';
 import {localizeLiquidityDocument} from './liquidity-localized-document';
 import {liquidityTranslations} from '../src/data/chapters/liquidityTranslations';
 import {liquidityPath} from '../src/data/chapters/liquidityDocument';
+import {localizeOrderBookDocument} from './order-book-localized';
+import {orderBookTranslations} from '../src/data/chapters/orderBookTranslations';
+import {orderBookPath} from '../src/data/chapters/orderBookLesson';
+import {localizeMarketMakerDocument} from './market-maker-localized';
+import {marketMakerTranslations} from '../src/data/chapters/marketMakerTranslations';
+import {marketMakerPath} from '../src/data/chapters/marketMakerLesson';
+import {localizeModel2022Document} from './model-2022-localized';
+import {model2022Translations} from '../src/data/chapters/model2022Translations';
+import {model2022Path} from '../src/data/chapters/model2022Lesson';
 import {localizeMitigationDocument} from './mitigation-localized-document';
 import {localizeFvgDocument} from './fvg-localized-document';
 import {localizePriceMovementDocument} from './price-movement-localized-document';
@@ -61,7 +70,7 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
       if (!preview) fs.writeFileSync(sourcePath, addLanguageAlternates(source, englishPath, !route.isNoindex));
       continue;
     }
-    let html = localizeHtml(localizeLiquidityDocument(localizeMitigationDocument(localizeFvgDocument(localizePriceMovementDocument(localizeMasterclassDocument(localizeSwingDocument(localizeStructureDocument(localizeSilverLessonDocument(localizeBreakDocument(source,englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath), englishPath, englishPath===silverLessonPath?{...urdu,...silverLessonTranslations}:Object.values(breakPaths).includes(englishPath)?{...urdu,...breakTranslations}:englishPath===structurePath?{...urdu,...structureTranslations}:englishPath===swingPath?{...urdu,...swingTranslations}:englishPath===liquidityPath?{...urdu,...liquidityTranslations}:urdu, { preview, indexable: !route.isNoindex, availablePaths: available, nativeReadingRoot: !!auditedReadingRoute(englishPath), onMissing(text) {
+    let html = localizeHtml(localizeModel2022Document(localizeMarketMakerDocument(localizeOrderBookDocument(localizeLiquidityDocument(localizeMitigationDocument(localizeFvgDocument(localizePriceMovementDocument(localizeMasterclassDocument(localizeSwingDocument(localizeStructureDocument(localizeSilverLessonDocument(localizeBreakDocument(source,englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath), englishPath, englishPath===silverLessonPath?{...urdu,...silverLessonTranslations}:Object.values(breakPaths).includes(englishPath)?{...urdu,...breakTranslations}:englishPath===structurePath?{...urdu,...structureTranslations}:englishPath===swingPath?{...urdu,...swingTranslations}:englishPath===liquidityPath?{...urdu,...liquidityTranslations}:englishPath===orderBookPath?{...urdu,...orderBookTranslations}:englishPath===marketMakerPath?{...urdu,...marketMakerTranslations}:englishPath===model2022Path?{...urdu,...model2022Translations}:urdu, { preview, indexable: !route.isNoindex, availablePaths: available, nativeReadingRoot: !!auditedReadingRoute(englishPath), onMissing(text) {
       if (!text) return;
       if (!missing.has(text)) missing.set(text, new Set());
       missing.get(text)!.add(englishPath);

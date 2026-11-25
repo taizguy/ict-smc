@@ -3,6 +3,9 @@ import {breakDates,breakSources,breakTopic,breakInterpretation} from './chapters
 import {structureDates,structureSources,structureInterpretation} from './chapters/structureDocument';
 import {swingDates,swingSources} from './chapters/swingDocument';
 import {liquidityDates,liquiditySources} from './chapters/liquidityDocument';
+import {orderBookDates,orderBookSources} from './chapters/orderBookLesson';
+import {marketMakerDates,marketMakerSources} from './chapters/marketMakerLesson';
+import {model2022Dates,model2022Sources} from './chapters/model2022Lesson';
 import {mitigationDates,mitigationSources,mitigationDocument} from './chapters/mitigationDocument';
 import {fvgDocumentDates} from './chapters/fvgDocument';
 import {priceMovementSources,priceMovementDates} from './chapters/priceMovementLesson';
@@ -21,7 +24,7 @@ import { cornerstoneGuides, cornerstoneRevision } from './cornerstoneGuides';
 export const curriculumReviewDate = '2026-10-19';
 export const curriculumReviewLabel = '19 October 2026';
 // Chapter-wide editorial/diagram/quiz consistency review; not a new full-recording review.
-export const chapterReviewRevision = (id: number) => id===1064?silverLessonDates.updated:breakTopic(id)?breakDates.updated:id===1010?structureDates.updated:id===7?swingDates.updated:id===4?liquidityDates.updated:id===1031?mitigationDates.updated:id===13?fvgDocumentDates.updated:id===1?priceMovementDates.updated:phase1Entry(id)?.id===id ? {iso:'2026-11-10',label:'10 November 2026'} : id===49?alchemyDates.updated:hasMentorship2026Edition(id) ? {iso:'2026-10-27',label:'27 October 2026'} : hasMentorship2025Edition(id) ? {iso:'2026-10-26',label:'26 October 2026'} : [13,14,15,16].includes(id)
+export const chapterReviewRevision = (id: number) => id===1064?silverLessonDates.updated:breakTopic(id)?breakDates.updated:id===1010?structureDates.updated:id===7?swingDates.updated:id===4?liquidityDates.updated:id===3?orderBookDates.updated:id===33?marketMakerDates.updated:id===36?model2022Dates.updated:id===1031?mitigationDates.updated:id===13?fvgDocumentDates.updated:id===1?priceMovementDates.updated:phase1Entry(id)?.id===id ? {iso:'2026-11-10',label:'10 November 2026'} : id===49?alchemyDates.updated:hasMentorship2026Edition(id) ? {iso:'2026-10-27',label:'27 October 2026'} : hasMentorship2025Edition(id) ? {iso:'2026-10-26',label:'26 October 2026'} : [13,14,15,16].includes(id)
   ? { iso: '2026-10-25', label: '25 October 2026' } : [13, 15].includes(id) || cornerstoneGuides.some(guide => guide.chapterId === id)
   ? { iso: cornerstoneRevision, label: '24 October 2026' }
   : { iso: '2026-10-21', label: '21 October 2026' };
@@ -119,6 +122,9 @@ function baseCurriculumReview(chapter: TextbookChapter) {
   if(chapter.id===1010)return {sources:structureSources,interpretation:structureInterpretation};
   if(chapter.id===7)return {sources:swingSources,interpretation:'The three-candle rule and swing hierarchy are stated study conventions. Protected and weak labels describe selected structural roles; they do not reveal resting orders, prove institutional motives or guarantee a hold or break.'};
   if(chapter.id===4)return {sources:liquiditySources,interpretation:'All example prices and quantities are invented. The displayed books are teaching snapshots, not live market data.'};
+  if(chapter.id===3)return {sources:orderBookSources,interpretation:'All example prices, book snapshots, OBI scores, and auction sizes in this chapter are illustrative synthetic teaching figures, not historical trades or live venue quotes. Cancellation of resting liquidity never establishes unlawful intent by itself.'};
+  if(chapter.id===33)return {sources:marketMakerSources,interpretation:'All synthetic EUR/USD and NQ-style Market Maker curves, Equilibrium ratios, and stick-figure stories in this chapter are illustrative teaching diagrams, not live quotes, verified returns, or proof of dealer inventory. Candlesticks cannot confirm participant identity or guarantee any future target.'};
+  if(chapter.id===36)return {sources:model2022Sources,interpretation:'All synthetic NQ-style 2022 sequences, Killzone clocks, OTE calculations, and stick-figure illustrations in this chapter are educational diagrams, not live market quotes, historical fills, or guaranteed setups. Completing every condition filters chart study; it never predicts profits.'};
   if(chapter.id===1031)return {sources:mitigationSources,interpretation:mitigationDocument.sections[4].blocks[0].text!};
   if(chapter.id===1)return {sources:priceMovementSources,interpretation:'A chart records price behaviour, not every participant’s orders or motives. The three lenses and five-question analyser are teaching aids, not causal tests or performance models. Separate observed evidence, plausible explanations and unknowns.'};
   const reviewed2026 = (sources2026 as Record<string,CurriculumSource[]>)[chapter.id];

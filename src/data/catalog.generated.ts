@@ -193,7 +193,7 @@ export const chapterCatalog = [
   {
     "id": 3,
     "slug": "the-order-book-in-depth",
-    "title": "Order Book: Depth, Queues and Hidden Limits",
+    "title": "Order Book Explained: Bids, Depth, DOM & Liquidity",
     "part": "Part I - Market Foundations",
     "status": "published"
   },

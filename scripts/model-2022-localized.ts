@@ -1,0 +1,33 @@
+import { createElement } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { parse, parseFragment, serialize } from 'parse5';
+import { Model2022Content } from '../src/components/Model2022Content';
+import { TranslationProvider } from '../src/i18n/TranslationProvider';
+import { urdu } from '../src/i18n/urdu';
+import { model2022Translations } from '../src/data/chapters/model2022Translations';
+import { model2022Path } from '../src/data/chapters/model2022Lesson';
+
+/** Translate Chapter 69 (ID 36) document body before inserting contextual links. */
+export function localizeModel2022Document(html: string, pathname: string) {
+  if (pathname !== model2022Path) return html;
+  const doc = parse(html) as any;
+  const find = (n: any): any =>
+    n.attrs?.some((a: any) => a.name === 'class' && a.value.split(' ').includes('model-2022-document'))
+      ? n
+      : (n.childNodes || []).map(find).find(Boolean);
+  const old = find(doc);
+  if (!old) throw new Error('Chapter 69 (ID 36) article body missing');
+  const markup = renderToStaticMarkup(
+    createElement(TranslationProvider, {
+      locale: 'ur',
+      catalog: { ...urdu, ...model2022Translations },
+      children: createElement(Model2022Content, { staticOnly: true }),
+    }),
+  );
+  const replacement = (parseFragment(markup) as any).childNodes[0];
+  replacement.attrs.push({ name: 'data-native-locale', value: 'ur' });
+  const parent = old.parentNode;
+  replacement.parentNode = parent;
+  parent.childNodes[parent.childNodes.indexOf(old)] = replacement;
+  return serialize(doc);
+}

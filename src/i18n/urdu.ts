@@ -4,6 +4,9 @@ import {breakTranslations} from '../data/chapters/breakTranslations';
 import {structureTranslations} from '../data/chapters/structureTranslations';
 import {swingTranslations} from '../data/chapters/swingTranslations';
 import {liquidityTranslations} from '../data/chapters/liquidityTranslations';
+import {orderBookTranslations} from '../data/chapters/orderBookTranslations';
+import {marketMakerTranslations} from '../data/chapters/marketMakerTranslations';
+import {model2022Translations} from '../data/chapters/model2022Translations';
 import {mitigationTranslations} from '../data/chapters/mitigationTranslations';
 import {fvgDocumentTranslations} from '../data/chapters/fvgDocumentTranslations';
 import {priceMovementTranslations} from '../data/chapters/priceMovementLesson';
@@ -283,6 +286,12 @@ Object.assign(urdu,priceMovementTranslations,fvgDocumentTranslations);
 Object.assign(urdu,Object.fromEntries(Object.entries(mitigationTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
 
 Object.assign(urdu,Object.fromEntries(Object.entries(liquidityTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(orderBookTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(marketMakerTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(model2022Translations).filter(([key])=>!Object.hasOwn(urdu,key))));
 
 Object.assign(urdu,Object.fromEntries(Object.entries(swingTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
 

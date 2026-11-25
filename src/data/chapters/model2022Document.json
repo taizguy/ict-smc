@@ -1,0 +1,519 @@
+{
+  "h1": "ICT 2022 Model: A Time-Based Entry Framework",
+  "seoTitle": "ICT 2022 Model Explained: Time, Sweep, MSS & FVG",
+  "seoTitleUr": "ICT 2022 ماڈل کی مکمل وضاحت: وقت، سویپ، MSS اور FVG",
+  "metaDescription": "Learn the ICT 2022 Model: New York time windows, liquidity sweeps, displacement MSS, FVG/OTE entries, multi-timeframe rules & common mistakes.",
+  "metaDescriptionUr": "ICT 2022 ماڈل شروع سے ایڈوانس تک سیکھیں: نیویارک اوقات، لیکویڈیٹی سویپس، ڈسپلیسمنٹ MSS، FVG اور OTE انٹریز، ملٹی ٹائم فریم اصول اور عام غلطیاں۔",
+  "quickAnswer": "The ICT 2022 Model is a strict, chronological time-and-price framework designed for repeatable intraday observation. Inside an active New York-local Killzone, a trader aligns with a higher-timeframe Draw on Liquidity, waits for price to sweep a visible pool of resting stops, confirms energetic displacement with a Market Structure Shift (MSS), and enters on a retracement into the trailing Fair Value Gap (often inside the 62%–79% OTE zone). The sequence filters observation; it never guarantees a fill or profitable trade.",
+  "takeaways": [
+    "Chronology is non-negotiable: Higher-Timeframe Draw -> New York Time Window -> Liquidity Sweep -> Displacement MSS -> Fair Value Gap return.",
+    "Time filters noise before patterns appear: always evaluate windows using America/New_York local time (with daylight saving) rather than a frozen UTC offset.",
+    "A sweep beyond a prior high or low is only the first condition; never buy or sell before completed displacement and a clean Market Structure Shift confirm the turn.",
+    "No-FVG Patience Rule: if a structure break happens slowly or lacks an unmitigated 3-candle Fair Value Gap, patience and standing aside are built directly into the model.",
+    "Risk stays capped behind the sweep extreme with explicit contract sizing, transaction costs, and no hindsight target redrawing."
+  ],
+  "sections": [
+    {
+      "number": 1,
+      "icon": "users",
+      "title": "Why Impulsive Traders Get Trapped — A Stick-Figure Story",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Imagine two traders opening their charts at 09:30 AM New York time: an Impulsive Chaser and a Time-Based Planner. Price suddenly dives aggressively beneath the morning consolidation low. Seeing big red candles, the Impulsive Chaser clicks sell immediately, terrified of missing a crash. Three minutes later, price snaps straight back upward, hits the Chaser's stop-loss, and rallies toward the previous session high."
+        },
+        {
+          "type": "paragraph",
+          "text": "Why did the exact same price movement frustrate one trader and reward patience for the other? Because the Planner recognized that a sharp drop below an obvious low inside an active session window can simply be a liquidity sweep—not the beginning of a lasting downtrend. Instead of chasing the initial push, the Planner waited for displacement upward, a confirmed Market Structure Shift (MSS), and a calm pullback into a Fair Value Gap."
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "The Core Mindset Shift",
+          "text": "Think of the ICT 2022 Model as a four-gate security checkpoint rather than a single chart shape. Until all four gates click open in exact sequence, there is no qualified setup—only observation."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "icon": "layers",
+      "title": "Plain-Language Definition: What Is the ICT 2022 Model?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The ICT 2022 Model is a structured lower-timeframe entry methodology built around repeatable intraday observation rather than lagging indicators. It combines higher-timeframe Draw on Liquidity mapping, New York session time windows, an observable liquidity sweep beyond a prior high or low, rapid price displacement breaking opposing structure (MSS), and a limit or stop entry inside the resulting Fair Value Gap (FVG) toward an opposing liquidity target."
+        },
+        {
+          "type": "paragraph",
+          "text": "What makes the 2022 framework especially accessible is deliberate simplification. Rather than juggling dozens of simultaneous indicators or complex multi-month projections on day one, beginners learn one repeatable observation chain across futures (NQ, ES), spot forex pairs, and commodities—provided they respect session timing and manage fixed risk responsibly."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "icon": "book-open",
+      "title": "Essential Prerequisites Before Studying the 2022 Sequence",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Before applying the 2022 Model on a live or replay chart, make sure five foundational building blocks feel effortless:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Candlestick OHLC anatomy: distinguish candle body closes (where structural commitment is measured) from upper and lower wicks (where stop runs often poke through).",
+            "Confirmed Swing Highs and Swing Lows: identify three-candle pivot points clearly so your Market Structure Shift anchor is chosen objectively before price moves.",
+            "Buy-Side Liquidity (BSL) and Sell-Side Liquidity (SSL): recognize obvious highs and lows where resting buy-stops or sell-stops are presumed to accumulate.",
+            "Fair Value Gaps (FVG / BISI / SIBI): spot the three-candle gap between Candle 1's extreme and Candle 3's opposite extreme created by a strong Candle 2 impulse.",
+            "Product Contract Specs & Broker Feeds: an NQ futures point ($20 per point) or MNQ micro point ($2 per point) behaves differently from a broker's NAS100 CFD or a 10,000-unit micro lot on EUR/USD."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "icon": "activity",
+      "title": "The Chronological 5-Step Blueprint & Failure Branch",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Every valid ICT 2022 Model setup unfolds across five sequential steps, illustrated below in an interactive NQ-style synthetic series. You cannot reorder them: entering before a sweep guesses direction, and entering without an MSS or FVG invites catching a falling knife."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Establish Higher-Timeframe Narrative & Draw on Liquidity (Daily, 4H, or 1H).",
+            "Wait inside an active New York-local Killzone or Macro window.",
+            "Observe a Liquidity Sweep above a key Buy-Side high or below a Sell-Side low.",
+            "Confirm Displacement + Market Structure Shift (MSS) breaking the opposite short-term swing.",
+            "Mark the trailing Fair Value Gap (and OTE overlap), place the stop beyond the sweep extreme, and target opposing liquidity."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Use the interactive chart controls below to step through all five stages—and toggle the Failure Branch button to see how weak displacement breaks through the sweep low instead of forming a tradeable FVG."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "icon": "compass",
+      "title": "Step 1: Higher-Timeframe Narrative & Draw on Liquidity (ERL vs. IRL)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Beginners often scan 1-minute charts for FVGs in isolation. As strict higher-timeframe top-down analysis emphasizes, pattern geometry without location produces endless whipsaws. First ask on the Daily, 4-Hour, or 1-Hour chart: where is price currently coming from, and where is the nearest unvisited External Range Liquidity (ERL) or Internal Range Liquidity (IRL) magnet?"
+        },
+        {
+          "type": "table",
+          "rows": [
+            ["Narrative Anchor", "Chart Examples", "Role in the 2022 Model"],
+            ["External Range Liquidity (ERL)", "Previous Day High/Low (PDH/PDL), Previous Week High/Low, London/Asia Extremes", "Frequent sweep source that initiates the reversal OR final target destination."],
+            ["Internal Range Liquidity (IRL)", "4H / 1H Fair Value Gaps, Order Blocks, Daily Equilibrium gaps", "Launches directional legs toward opposing ERL once tapped cleanly."],
+            ["Discount / Premium Filter", "Current Dealing Range below 50% (Discount) or above 50% (Premium)", "Favors 2022 long setups inside HTF Discount and short setups inside HTF Premium."]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Wait—can you take a bullish 2022 entry on a day whose Daily Bias leans bearish? Deliberate intraday countertrend setups show that strict daily trend alignment is conditional rather than an absolute ban. However, trading countertrend demands smaller target expectations (nearest internal pool) rather than swinging blindly against a weekly down-leg."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "icon": "clock",
+      "title": "Step 2: Time Is Supreme — NY Local Clock, Midnight Open & Killzones",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A classic mistake in 2022 study is hunting setups during midday chop or late Asian lunch hours. In ICT methodology, time always precedes price: liquidity sweeps and clean displacement cluster heavily around New York session openings and scheduled macro releases."
+        },
+        {
+          "type": "callout",
+          "tone": "warn",
+          "title": "Daylight Saving Discipline (America/New_York)",
+          "text": "Always keep your charting clock set to New York local time (America/New_York), never a permanent UTC−5 EST offset. When US daylight saving shifts between EST (UTC−5) and EDT (UTC−4), freezing a static UTC hour moves your observation window onto the wrong candles during spring and summer months."
+        },
+        {
+          "type": "paragraph",
+          "text": "Explore the interactive Killzone & Session Clock below to see how NY Midnight Open (00:00), London Open (02:00–05:00), NY AM Forex (07:00–10:00), the 08:30 Macro release, the 09:30 Equities Cash Open, the 10:00–11:00 overlap, and the NY PM Session align across New York, UTC, and Karachi."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "icon": "crosshair",
+      "title": "Step 3: Liquidity Sweeps, 3 Drives & ES/NQ SMT Divergence",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The trigger that wakes up the 2022 Model is an excursion beyond a prior visible swing high or low. Common sweep targets include Asian Session High/Low, London Session High/Low, Previous Day High/Low (PDH/PDL), and clean Equal Highs (EQH) or Equal Lows (EQL). Remember our observational discipline: a chart shows price trading through a level, not proof of who owns the resting stop orders."
+        },
+        {
+          "type": "paragraph",
+          "text": "Intermediate and advanced traders watch two refinement clues during Step 3:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "3-Drives Exhaustion Pattern: three consecutive pushes into an HTF resistance or support zone where the third drive barely clears the second drive, signaling weakening momentum just prior to a sharp MSS.",
+            "ES / NQ SMT Divergence Caution: when one index future (say NQ) makes a lower low sweeping Sell-Side Liquidity while its correlated partner (ES) fails to break its corresponding low, creating asymmetric structural divergence—while remembering the critical caveat that an apparent SMT crack can vanish if the stronger market later catches up and sweeps too."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "icon": "zap",
+      "title": "Step 4: Displacement, CISD vs. MSS & Confirmation Rules",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A slow, overlapping bounce after a sweep is NOT a Market Structure Shift. Genuine displacement appears as one or more full-bodied expansion candles speeding rapidly away from the sweep extreme, crossing the prior short-term swing structure with minimal opposing wicks and leaving clean empty space (an FVG) behind."
+        },
+        {
+          "type": "paragraph",
+          "text": "Three structural confirmation nuances separate reliable displacement from noisy wicks:"
+        },
+        {
+          "type": "table",
+          "rows": [
+            ["Confirmation Term", "Exact Observation Rule", "Structural Nuance & Caveat"],
+            ["CISD (Change in State of Delivery)", "Candle bodies close cleanly past the opening price of the final opposing candle run that formed the sweep extreme.", "Often triggers earlier than a full swing MSS, aiding early awareness around a sweep turning point."],
+            ["MSS (Market Structure Shift)", "Energetic displacement crosses a prior opposing swing high (bullish) or swing low (bearish) immediately after a sweep.", "A decisive candle body close beyond the swing offers clearer confirmation; wick-only crossings still await Candle-3 FVG completion."],
+            ["No-FVG Wait Rule", "What if structure shifts but no clean FVG forms on the impulse leg?", "Waiting is mandatory: no clean Fair Value Gap on the displacement leg means no qualified 2022 limit setup yet."]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Test the interactive Trigger Inspector below to verify how a liquidity sweep, strong displacement, completed swing crossing, and Candle-3 FVG closure combine to qualify a setup."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "icon": "scale",
+      "title": "Step 5: Fair Value Gap (FVG), Consequent Encroachment & OTE Confluence",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Once displacement completes Candle 3 and prints a Fair Value Gap, you measure the zone strictly from Candle 1's extreme to Candle 3's opposite extreme (using full wicks unless a declared body variant is tested). Consequent Encroachment (CE) is the exact 50% arithmetic midpoint of that gap."
+        },
+        {
+          "type": "paragraph",
+          "text": "Bullish FVG Bounds = C1 High to C3 Low | Consequent Encroachment CE = (FVG Low + FVG High) ÷ 2 | OTE Confluence Band = 62%–79% Retracement (70.5% Midpoint) of Sweep-to-MSS Impulse Leg"
+        },
+        {
+          "type": "paragraph",
+          "text": "How do advanced traders combine the 2022 Model with Optimal Trade Entry (OTE)? They anchor a Fibonacci retracement from the sweep extreme low to the high of the displacement swing that caused the MSS. When the 2022 Fair Value Gap overlaps directly inside the 62%–79% OTE Discount band (around the 70.5% sweet spot), the FVG entry enjoys both imbalance rebalancing and deep Discount pricing inside one footprint."
+        },
+        {
+          "type": "paragraph",
+          "text": "Slide the FVG & OTE Confluence Sandbox below to compare filling at the proximal FVG edge, at 50% Consequent Encroachment, or deeper inside the 70.5% OTE zone."
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "icon": "trending-up",
+      "title": "First vs. Second FVG & Order Block Overlap (OB, Breaker & IFVG)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "When displacement moves strongly across multiple bars, two Fair Value Gaps sometimes stack inside the same impulse leg—forcing a practical decision: enter on the higher/closer FVG, or wait for the deeper FVG closer to Discount and OTE?"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Upper (First) FVG in Strong Momentum: captures fast continuations when market delivery refuses to pull back deep into the leg, though initial stop distance to the sweep wick is wider.",
+            "Lower (Deepest) FVG / Order Block Overlap: offers superior Risk-to-Reward and often overlaps the last down-close candle run (Order Block) or OTE 70.5% zone—with higher risk of an unfilled order if price reverses early.",
+            "Breaker Block Alignment: when the impulse pierces through a failed swing that originally swept liquidity, that broken zone transforms into a Bullish or Bearish Breaker intersecting the FVG.",
+            "Inverse FVG (IFVG) Check: if price slices straight through your intended FVG and closes cleanly past its far edge without bouncing, that broken gap flips into an Inverse FVG signaling immediate invalidation—never widen your stop."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "icon": "sparkles",
+      "title": "Midnight Open, Power of Three (AMD) & the 8:30 / 9:30 Judas Swing",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "If you want the 2022 Model to click visually inside live intraday sessions, overlay two foundational concepts onto your chart: the New York Midnight Open (00:00 NY local) and Power of Three (Accumulation, Manipulation, Distribution)."
+        },
+        {
+          "type": "paragraph",
+          "text": "On a textbook bullish expansion day, Asian session price consolidates quietly (Accumulation). Between London open or 08:30 / 09:30 AM New York open, price drops sharply below Midnight Open (Manipulation / the Judas Swing) into Discount to sweep overnight lows. Right there inside Discount, the 2022 Model's Sweep -> Displacement -> MSS -> FVG launches the upward Distribution leg back above Midnight Open."
+        },
+        {
+          "type": "paragraph",
+          "text": "Click the phases in the interactive Power of Three & Midnight Open Lab below to watch how the Judas Swing sets up the 2022 Model trigger."
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "icon": "candlestick-chart",
+      "title": "Worked Bullish & Bearish Examples (NQ Futures & EUR/USD Forex)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The numbers below are strictly synthetic teaching examples designed to demonstrate clean stop arithmetic, contract sizing, and pre-entry planning—never historical market records or guaranteed fills."
+        },
+        {
+          "type": "table",
+          "rows": [
+            ["Field", "Bullish Example (Synthetic NQ Index Futures)", "Bearish Example (Synthetic EUR/USD Forex)"],
+            ["NY Session & Bias", "09:30–10:30 AM EDT; 1H Bias bullish toward 21,085 PDH", "07:00–10:00 AM NY Forex; 4H Bias bearish toward 1.0815 PDL"],
+            ["Liquidity Sweep", "09:40 bar dips below 21,000 Asian Low to 20,986 wick", "08:30 news spike tags 1.0910 London High up to 1.0918"],
+            ["Displacement MSS", "5m/1m candles surge past 21,020 short-term high to 21,060", "5m candle drops through 1.0894 higher low to 1.0872"],
+            ["FVG Entry Zone", "Bullish FVG 21,012–21,032; limit placed at 21,022 CE", "Bearish FVG 1.0892–1.0904; limit placed at 1.0898 CE"],
+            ["Stop & Invalidations", "Stop at 20,984 (2 pts past sweep wick) = 38 pts risk ($76 on 1 MNQ)", "Stop at 1.0920 (2 pips past sweep high) = 22 pips risk ($22 on 0.10 lot)"],
+            ["Objective Target", "21,085 PDH Buy-Side Liquidity = +63 pts (1.66R before costs)", "1.0832 pre-NY low (partial) & 1.0815 PDL = +83 pips (3.77R before costs)"]
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Contract Exposure & Cost Discipline",
+          "text": "Never assume 1 NQ ($20/point) matches 1 MNQ ($2/point) or a broker CFD. Always compute dollar risk at your planned stop including commissions, spreads, and potential slippage before placing any limit or stop order."
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "icon": "trending-down",
+      "title": "Execution Variants, Stop Placement, Partial Exits & Expiry",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Even inside the exact same structural shift, traders may execute via a retracement limit order back into the FVG or a momentum stop order upon continuation—meaning you must explicitly document which execution rule you test."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Proximal Edge Limit Entry: triggers immediately when price touches the near boundary of the FVG; highest fill rate, slightly wider stop distance.",
+            "Consequent Encroachment (50% CE) Limit Entry: lowers average risk distance and improves R-multiple when filled, at the expense of missing shallow retracements.",
+            "Stop-Order Execution Risks (SEC / Investor.gov): a stop-market order placed beyond a sweep wick converts into a market order once triggered and can fill beyond the stop price during fast gaps; a stop-limit order risks non-execution in violent swings.",
+            "Rule-Based Partial Exits: partial profit-taking at intermediate highs or lows involves discretionary judgment—choose and record your exact scaling rule prior to replay rather than inventing it mid-trade.",
+            "Time Expiry Rule: if a pending FVG limit order remains unfilled when your Killzone closes (e.g., 11:00 AM NY), cancel the pending order rather than letting stale orders linger into afternoon chop."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "icon": "git-compare",
+      "title": "Multi-Timeframe Hierarchy Matrix (15m -> 5m -> 1m & Beyond)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Because market structure and FVGs repeat fractally across horizons, the ICT 2022 Model adapts cleanly to your schedule as long as your Higher-Timeframe Draw, MSS chart, and Entry FVG chart remain proportional—never jump from a Weekly bias straight to a 15-second stop."
+        },
+        {
+          "type": "paragraph",
+          "text": "Switch between Swing, Standard Intraday, and Micro Session profiles below to align timeframe pairings cleanly."
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "icon": "arrow-up-down",
+      "title": "Model Comparison: ICT 2022 vs. Silver Bullet vs. MMXM vs. Unicorn vs. OTE",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Learners frequently blend every ICT model name into one soup. Use this comparison matrix to keep their exact triggers, time rules, and roles completely distinct:"
+        },
+        {
+          "type": "table",
+          "rows": [
+            ["Framework", "Primary Trigger", "Time Window Constraint", "Distinguishing Feature"],
+            ["ICT 2022 Model", "Liquidity Sweep -> Displacement MSS -> FVG", "Active NY-local Killzones (London, NY AM, NY PM)", "Strict sequential reversal trigger; adaptable across timeframes and pairs."],
+            ["ICT Silver Bullet", "Sweep or Liquidity Draw -> FVG inside 1-hour box", "Strictly 03:00–04:00, 10:00–11:00, or 14:00–15:00 NY", "Time-boxed subset applying 2022 FVG mechanics inside three exact hours."],
+            ["Market Maker Model (MMBM / MMSM)", "Original Consol. -> Left Curve -> SMR -> Right Curve", "HTF Curve Alignment across sessions or days", "Full U-shaped price cycle map; 2022 MSS+FVG often acts as the SMR LRB trigger."],
+            ["ICT Unicorn Model", "Failed OB / Breaker overlapping directly with FVG", "Killzone alignment preferred", "Requires explicit Breaker + FVG overlap zone rather than any standalone FVG."],
+            ["Optimal Trade Entry (OTE)", "62%–79% (70.5%) Fib retracement of impulse leg", "Session timing supportive, not strictly 1-hour boxed", "Deep Discount/Premium Fib filter used as confluence behind 2022 FVGs."]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "icon": "alert-triangle",
+      "title": "Common Mistakes That Break the 2022 Model (Stick-Figure Gallery)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Almost every avoidable loss on replay logs comes from violating chronology, time discipline, or stop logic—not because Fair Value Gaps stopped functioning. Inspect the four animated stick-figure traps below before your next practice session."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Trap 1 — Trading Outside Killzones: entering pretty 1-minute FVGs during dead 12:30 PM lunch chop or low-liquidity Asian ranges with no session expansion behind them.",
+            "Trap 2 — Buying the Sweep Before MSS: guessing the low during falling red candles before displacement proves sellers actually exhausted.",
+            "Trap 3 — Confusing Weak Drift for Displacement: marking tiny 3-candle gaps formed during slow corrective grinds with heavy wick overlap.",
+            "Trap 4 — Tucking Stops Inside the FVG: placing ultra-tight stops inside Candle 2 just to manufacture artificial 10R ratios, only to get wicked out before the real move begins."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "icon": "shield-alert",
+      "title": "When the 2022 Model Fails: Invalidations, News Shocks & No-Trade Days",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Stand aside rather than forcing a setup whenever market context violates core assumptions. Balanced consolidation days stuck near range equilibrium yield muddy Daily Bias—expecting clean sweeps on balanced chop leads to back-to-back stops."
+        },
+        {
+          "type": "callout",
+          "tone": "warn",
+          "title": "High-Impact News & Drawdown Preservation",
+          "text": "Do not gamble across scheduled CPI, NFP, or FOMC announcement seconds when spreads widen dramatically and wicks sweep both directions instantaneously. Returning to paper/replay practice after unusually large wins or losses cools adrenaline, while strict drawdown recovery rules prevent revenge sizing."
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "icon": "eye-off",
+      "title": "Replay Integrity, Backtest Discipline & Evidence Boundaries",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Maintain strict transparency across your chart study and replay logs. Simulated paper-trading walkthroughs or illustrative case diagrams never establish a return promise, guaranteed fill rate, or representative win rate across market regimes."
+        },
+        {
+          "type": "paragraph",
+          "text": "Keep every replay or backtest record split cleanly between observed candle timestamps, your stated execution rules, and hypothetical transaction costs. Define partial scaling fractions, OTE confluence filters, and invalidation stops before opening any sample rather than editing rules after seeing the outcome."
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "icon": "check-square",
+      "title": "Interactive Pre-Execution Qualification Checklist",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Walk through all six checks during historical bar-by-bar replay (with future candles hidden!) before labeling a 2022 Model trade valid:"
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Replay Integrity Standard",
+          "text": "If price breaks structure without creating a clean FVG, fails to retrace before your time window closes, or hits stop-loss—record the outcome faithfully alongside winners. Never delete missed or losing samples."
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "icon": "bookmark",
+      "title": "Complete Glossary of ICT 2022 Model Terms (20 Terms)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Keep these twenty concise technical definitions handy while practicing in Chart Lab and Backtest Lab:"
+        },
+        {
+          "type": "table",
+          "rows": [
+            ["Term", "Concise Technical Meaning"],
+            ["ICT 2022 Model", "Chronological time-and-price reversal model: HTF Draw -> NY Killzone -> Liquidity Sweep -> Displacement MSS -> FVG/OTE return."],
+            ["Draw on Liquidity (DOL)", "The pre-identified external high/low or internal HTF imbalance toward which price is hypothesized to travel."],
+            ["Killzone", "High-activity NY-local time window (London 02–05, NY AM 07–11, NY PM 13:30–16) where sweeps and expansions cluster."],
+            ["NY Midnight Open", "The 00:00 America/New_York opening price benchmark used as intraday Premium/Discount reference in Power of Three."],
+            ["Buy-Side Liquidity (BSL)", "Assumed cluster of buy-stop orders resting above prior swing highs, Equal Highs, or session extremes."],
+            ["Sell-Side Liquidity (SSL)", "Assumed cluster of sell-stop orders resting below prior swing lows, Equal Lows, or session extremes."],
+            ["Liquidity Sweep (Stop Run)", "Rapid price excursion beyond a visible high or low that reverses instead of continuing cleanly."],
+            ["Judas Swing", "Early-session deceptive price leg (commonly at London or 08:30/09:30 NY open) sweeping liquidity before true expansion."],
+            ["Displacement", "Strong, large-bodied candle acceleration showing clear directional commitment and leaving a Fair Value Gap."],
+            ["Market Structure Shift (MSS)", "First forceful break of an opposing short-term swing high or low immediately following a liquidity sweep."],
+            ["CISD (Change in State of Delivery)", "Completed candle body closing through the opening boundary of the final opposing candle run at an extreme."],
+            ["Fair Value Gap (FVG)", "Three-candle imbalance between Candle 1 extreme and Candle 3 opposite extreme caused by Candle 2 acceleration."],
+            ["Consequent Encroachment (CE)", "Arithmetic 50% midpoint of an FVG: (Lower Bound + Upper Bound) / 2, used for conservative limit placement."],
+            ["Optimal Trade Entry (OTE)", "Fibonacci 62%–79% retracement zone (midpoint 70.5%) aligned behind displacement to price entries deep in Discount/Premium."],
+            ["External Range Liquidity (ERL)", "Swing highs and lows bounding the outer perimeter of the current dealing range."],
+            ["Internal Range Liquidity (IRL)", "Fair Value Gaps, Order Blocks, or micro swings resting strictly inside the active dealing range."],
+            ["3-Drives Pattern", "Three consecutive pushes into an HTF zone where slowing follow-through signals potential exhaustion ahead of an MSS."],
+            ["SMT Divergence", "Correlated asset divergence (such as ES vs. NQ) where one instrument sweeps a swing while its pair fails to follow."],
+            ["Inverse FVG (IFVG)", "A breached Fair Value Gap whose boundaries close completely through and flip from expected support to resistance (or vice versa)."],
+            ["Replay Information Boundary", "The strict rule of hiding future candles so entry references and stops reflect only data visible at execution time."]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "icon": "help-circle",
+      "title": "Frequently Asked Questions (People Also Ask)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Direct answers to the ten most frequently searched learner questions about the ICT 2022 Model:"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "icon": "book-open",
+      "title": "Technical Market References & Practice Lab",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Review the authoritative exchange, timekeeping, macro-calendar, and execution references below, then practice marking sweeps, displacements, and valid vs. invalidated FVGs step-by-step inside the LearnSMC Chart Laboratory."
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the ICT 2022 Model in simple terms?",
+      "answer": "It is a four-step checklist inside New York trading sessions: wait for price to run a clear high or low (Liquidity Sweep), snap violently in the opposite direction breaking a prior swing (Displacement + MSS), wait for a pullback into the 3-candle gap left behind (Fair Value Gap), and target liquidity on the opposite side of the range."
+    },
+    {
+      "question": "What are the best timeframes for the ICT 2022 Model?",
+      "answer": "The most widely taught intraday combination uses 1-Hour or 15-Minute for Higher-Timeframe Draw on Liquidity, 5-Minute for confirming the Market Structure Shift, and 1-Minute for precision Fair Value Gap entries. Swing traders can scale proportionally to Daily/4H -> 1H -> 15m."
+    },
+    {
+      "question": "What time window should I trade the ICT 2022 Model?",
+      "answer": "Always use America/New_York local time (handling daylight saving by date). Core intraday windows are London Killzone (02:00–05:00), NY AM Forex (07:00–10:00), Equities Open (09:30–11:00, overlapping the 10:00–11:00 Silver Bullet hour), and NY PM (13:30–16:00)."
+    },
+    {
+      "question": "Where should the stop loss go in the ICT 2022 Model?",
+      "answer": "Standard structure rules place the protective stop strictly beyond the extreme wick of the liquidity sweep (plus a small product-appropriate buffer), not tucked tightly inside the FVG body. Moving past that sweep extreme invalidates the reversal premise."
+    },
+    {
+      "question": "What is the difference between the ICT 2022 Model and the Silver Bullet?",
+      "answer": "The Silver Bullet applies the same core Sweep and Fair Value Gap mechanics strictly inside three fixed 1-hour windows (03:00–04:00, 10:00–11:00, and 14:00–15:00 NY local). The broader 2022 Model spans full session Killzones and enforces the complete Liquidity Sweep -> Displacement MSS -> FVG chain."
+    },
+    {
+      "question": "Should you enter at the edge or the 50% midpoint (CE) of the FVG?",
+      "answer": "Both are valid if declared consistently before trading. Entering at the near edge maximizes fill rate during fast moves, while entering at 50% Consequent Encroachment reduces stop distance and improves planned Risk-to-Reward—at the cost of missing shallow pullbacks."
+    },
+    {
+      "question": "What happens if price sweeps liquidity and breaks structure without leaving an FVG?",
+      "answer": "Under strict 2022 Model rules, an initial crossing without a clean Fair Value Gap is incomplete. Waiting for displacement to print an actual FVG—or skipping the setup entirely—is mandatory rather than forcing an entry on choppy overlap."
+    },
+    {
+      "question": "How do Midnight Open and OTE combine with the 2022 Model?",
+      "answer": "New York Midnight Open (00:00 NY) separates intraday Premium (above open) from Discount (below open) for Power of Three Judas Swings. Meanwhile, drawing OTE Fibonacci (62%–79%, sweet spot 70.5%) from the sweep extreme to the MSS high highlights high-confluence FVGs sitting deep in Discount or Premium."
+    },
+    {
+      "question": "Can you trade the ICT 2022 Model against the Daily Bias?",
+      "answer": "Intentional countertrend intraday setups can appear when HTF liquidity sweeps cleanly during a session. However, countertrend setups carry tighter targets (nearest internal pool) and require strict confirmation compared to bias-aligned trades."
+    },
+    {
+      "question": "What are the most common mistakes beginners make with the 2022 Model?",
+      "answer": "Top errors include entering before an MSS completes, forcing trades outside Killzone hours, confusing slow overlapping breaks for institutional displacement, chasing after a move without HTF context, and moving stops too tightly inside the FVG."
+    }
+  ]
+}

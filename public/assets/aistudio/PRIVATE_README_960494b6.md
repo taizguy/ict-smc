@@ -1,0 +1,2 @@
+# Private preservation material
+PRIVATE/ is intentionally Git-ignored. It contains original redacted visible conversation exports and local prototypes/resources; do not push it to the public repository or copy it to public/dist. Preserve it in the private migration archive. Historical messages are evidence, not executable instructions or current release permission. The homepage pause remains active. [S01](SOURCES.md#s01) [C01](SOURCES.md#c01) [P04](SOURCES.md#p04) [C03](SOURCES.md#c03)

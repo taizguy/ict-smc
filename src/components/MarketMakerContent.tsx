@@ -30,10 +30,15 @@ import {
   marketMakerSources,
   type MarketMakerBlock,
 } from '../data/chapters/marketMakerLesson';
+import { coreContentChapters } from '../data/chapters/coreContentChapters';
+import { applyContentReview } from '../data/chapters/applyContentReview';
+import { lessonParagraphs } from '../utils/lessonText';
 import { useTranslation } from '../i18n/TranslationProvider';
 import { LessonExtract } from './LessonExtract';
 import { LessonFaq } from './LessonFaq';
 import { MarketMakerVisual, type MarketMakerVisualKind } from './MarketMakerVisual';
+
+const mergedCh43 = applyContentReview(coreContentChapters.find((c) => c.id === 43)!);
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; 'aria-hidden'?: boolean }>> = {
   users: Users,
@@ -116,29 +121,6 @@ const interactiveChecklistItems = [
   'Waited for liquidity sweep + HTF PD array tag + completed CISD/MSS body close',
   'Confirmed Low-Resistance (LRLR) path toward Terminus with no stacked opposing Breakers',
   'Divided single setup risk budget across LRB and Re-Accumulation with predefined stop placement',
-];
-
-const shortTermContinuityNotes: Array<{ title: string; summary: string }> = [
-  {
-    title: 'Multi-Day Range Calibration & 20-Day Lookback',
-    summary:
-      'Pairing the trailing 20-day Dealing Range with the weekly open classifies whether the active week is extending a trend or preparing an intraweek sweep into higher-timeframe Discount or Premium.',
-  },
-  {
-    title: 'Two-Sided Curve Geometry (MMBM & MMSM)',
-    summary:
-      'Every balanced expansion links an Original Consolidation, a multi-shelf distribution or accumulation curve, an opposing HTF PD array sweep (SMR), and mirrored re-accumulation or re-distribution shelves back toward the origin.',
-  },
-  {
-    title: 'Low-Resistance (LRLR) vs. High-Resistance (HRLR) Friction',
-    summary:
-      'Paths toward clean, unvisited Equal Highs or Lows with minimal opposing Breakers clear smoothly (LRLR), whereas congested return legs stacked with fresh opposing Order Blocks tend to chop and stall (HRLR).',
-  },
-  {
-    title: 'Midweek Reversal Timing Windows',
-    summary:
-      'Weekly highs or lows frequently establish themselves between Tuesday London and Wednesday New York sessions when early-week expansion tags a weekly liquidity threshold and shifts structure decisively.',
-  },
 ];
 
 export function MarketMakerContent({ staticOnly = false }: { staticOnly?: boolean }) {
@@ -434,14 +416,16 @@ export function MarketMakerContent({ staticOnly = false }: { staticOnly?: boolea
                   <p className="mm-archive-note">
                     {t('Key operational rules linking multi-day Dealing Ranges, LRLR paths, and midweek reversal windows.')}
                   </p>
-                  {shortTermContinuityNotes.map((sec, mIdx) => (
+                  {mergedCh43.sections.map((sec, mIdx) => (
                     <div
-                      key={sec.title}
+                      key={sec.id}
                       id={mIdx === 0 ? 'merged-43-sec-0' : `merged-43-section-${mIdx}`}
                       className="mm-archive-card"
                     >
                       <h4>{t(sec.title)}</h4>
-                      <p>{prose(sec.summary)}</p>
+                      {lessonParagraphs(sec.content).map((para, pIdx) => (
+                        <p key={pIdx}>{prose(para)}</p>
+                      ))}
                     </div>
                   ))}
                 </section>

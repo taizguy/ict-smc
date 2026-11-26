@@ -412,12 +412,12 @@ export const chapterCatalog = [
     "slug": "optimal-trade-entry-ote",
     "title": "Optimal Trade Entry (OTE): Fib Zones Inside a Range",
     "part": "Part IV - Price Delivery",
-    "status": "in-progress"
+    "status": "published"
   },
   {
     "id": 56,
     "slug": "rdrb-balanced-price-range-and-enigma-fvg",
-    "title": "Balanced Price Ranges: Revisits and Enigma",
+    "title": "Balanced Price Range (BPR), RDRB & Enigma FVG",
     "part": "Part IV - Price Delivery",
     "status": "published"
   },

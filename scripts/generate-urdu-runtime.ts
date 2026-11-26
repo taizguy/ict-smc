@@ -7,6 +7,9 @@ import {liquidityTranslations} from '../src/data/chapters/liquidityTranslations'
 import {orderBookTranslations} from '../src/data/chapters/orderBookTranslations';
 import {marketMakerTranslations} from '../src/data/chapters/marketMakerTranslations';
 import {model2022Translations} from '../src/data/chapters/model2022Translations';
+import {oteTranslations} from '../src/data/chapters/oteTranslations';
+import {rdrbTranslations} from '../src/data/chapters/rdrbTranslations';
+import {pdArrayTranslations} from '../src/data/chapters/pdArrayTranslations';
 import {mitigationTranslations} from '../src/data/chapters/mitigationTranslations';
 import {fvgDocumentTranslations} from '../src/data/chapters/fvgDocumentTranslations';
 import {priceMovementTranslations} from '../src/data/chapters/priceMovementLesson';
@@ -118,7 +121,7 @@ for(const svg of Object.values(masterclassStageArt)) for(const match of svg.matc
 // Directory descriptions and search titles are data-driven, not TS string literals.
 for(const row of phase1Entries)for(const key of [...row.title,...row.description])if(urdu[key])keys.shared.add(key);
 for(const key of Object.keys(curriculumPhase1Urdu))if(/^(Free ICT &|Learn ICT and Smart|The roadmap derives)/.test(key))keys.shared.add(key);
-for(const key of [...Object.keys(silverLessonTranslations),...Object.keys(priceMovementTranslations),...Object.keys(fvgDocumentTranslations),...Object.keys(mitigationTranslations),...Object.keys(liquidityTranslations),...Object.keys(orderBookTranslations),...Object.keys(marketMakerTranslations),...Object.keys(model2022Translations),...Object.keys(swingTranslations),...Object.keys(structureTranslations),...Object.keys(breakTranslations)])add(key,'chapters');
+for(const key of [...Object.keys(silverLessonTranslations),...Object.keys(priceMovementTranslations),...Object.keys(fvgDocumentTranslations),...Object.keys(mitigationTranslations),...Object.keys(liquidityTranslations),...Object.keys(orderBookTranslations),...Object.keys(marketMakerTranslations),...Object.keys(model2022Translations),...Object.keys(oteTranslations),...Object.keys(rdrbTranslations),...Object.keys(pdArrayTranslations),...Object.keys(swingTranslations),...Object.keys(structureTranslations),...Object.keys(breakTranslations)])add(key,'chapters');
 const output = 'src/i18n/runtime';
 fs.mkdirSync(output, { recursive: true });
 for (const group of groups) {

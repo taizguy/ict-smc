@@ -21,6 +21,15 @@ import {marketMakerPath} from '../src/data/chapters/marketMakerLesson';
 import {localizeModel2022Document} from './model-2022-localized';
 import {model2022Translations} from '../src/data/chapters/model2022Translations';
 import {model2022Path} from '../src/data/chapters/model2022Lesson';
+import {localizeOteDocument} from './ote-localized';
+import {oteTranslations} from '../src/data/chapters/oteTranslations';
+import {otePath} from '../src/data/chapters/oteLesson';
+import {localizeRdrbDocument} from './rdrb-localized';
+import {rdrbTranslations} from '../src/data/chapters/rdrbTranslations';
+import {rdrbPath} from '../src/data/chapters/rdrbLesson';
+import {localizePdArrayDocument} from './pd-array-localized';
+import {pdArrayTranslations} from '../src/data/chapters/pdArrayTranslations';
+import {pdArrayPath} from '../src/data/chapters/pdArrayLesson';
 import {localizeMitigationDocument} from './mitigation-localized-document';
 import {localizeFvgDocument} from './fvg-localized-document';
 import {localizePriceMovementDocument} from './price-movement-localized-document';
@@ -70,7 +79,7 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
       if (!preview) fs.writeFileSync(sourcePath, addLanguageAlternates(source, englishPath, !route.isNoindex));
       continue;
     }
-    let html = localizeHtml(localizeModel2022Document(localizeMarketMakerDocument(localizeOrderBookDocument(localizeLiquidityDocument(localizeMitigationDocument(localizeFvgDocument(localizePriceMovementDocument(localizeMasterclassDocument(localizeSwingDocument(localizeStructureDocument(localizeSilverLessonDocument(localizeBreakDocument(source,englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath), englishPath, englishPath===silverLessonPath?{...urdu,...silverLessonTranslations}:Object.values(breakPaths).includes(englishPath)?{...urdu,...breakTranslations}:englishPath===structurePath?{...urdu,...structureTranslations}:englishPath===swingPath?{...urdu,...swingTranslations}:englishPath===liquidityPath?{...urdu,...liquidityTranslations}:englishPath===orderBookPath?{...urdu,...orderBookTranslations}:englishPath===marketMakerPath?{...urdu,...marketMakerTranslations}:englishPath===model2022Path?{...urdu,...model2022Translations}:urdu, { preview, indexable: !route.isNoindex, availablePaths: available, nativeReadingRoot: !!auditedReadingRoute(englishPath), onMissing(text) {
+    let html = localizeHtml(localizePdArrayDocument(localizeRdrbDocument(localizeOteDocument(localizeModel2022Document(localizeMarketMakerDocument(localizeOrderBookDocument(localizeLiquidityDocument(localizeMitigationDocument(localizeFvgDocument(localizePriceMovementDocument(localizeMasterclassDocument(localizeSwingDocument(localizeStructureDocument(localizeSilverLessonDocument(localizeBreakDocument(source,englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath), englishPath, englishPath===silverLessonPath?{...urdu,...silverLessonTranslations}:Object.values(breakPaths).includes(englishPath)?{...urdu,...breakTranslations}:englishPath===structurePath?{...urdu,...structureTranslations}:englishPath===swingPath?{...urdu,...swingTranslations}:englishPath===liquidityPath?{...urdu,...liquidityTranslations}:englishPath===orderBookPath?{...urdu,...orderBookTranslations}:englishPath===marketMakerPath?{...urdu,...marketMakerTranslations}:englishPath===model2022Path?{...urdu,...model2022Translations}:englishPath===otePath?{...urdu,...oteTranslations}:englishPath===rdrbPath?{...urdu,...rdrbTranslations}:englishPath===pdArrayPath?{...urdu,...pdArrayTranslations}:urdu, { preview, indexable: !route.isNoindex, availablePaths: available, nativeReadingRoot: !!auditedReadingRoute(englishPath), onMissing(text) {
       if (!text) return;
       if (!missing.has(text)) missing.set(text, new Set());
       missing.get(text)!.add(englishPath);

@@ -1,4 +1,5 @@
 import {silverLessonChapter} from './chapters/silverBulletLesson';
+import {oteChapter} from './chapters/oteLesson';
 import {structureChapter} from './chapters/structureDocument';
 import {mitigationChapter} from './chapters/mitigationDocument';
 import {organiseCurriculum,phase1Entries} from './curriculumPhase1';
@@ -28,7 +29,7 @@ export const originalTextbookChapters: TextbookChapter[] = [
   ...theinnercircletradersNewChapters
 ].map(applyContentReview);
 
-export const textbookChapters=organiseCurriculum([...originalTextbookChapters,mitigationChapter,structureChapter,silverLessonChapter]);
+export const textbookChapters=organiseCurriculum([...originalTextbookChapters,mitigationChapter,structureChapter,silverLessonChapter,oteChapter]);
 export const activeCurriculumChapters=phase1Entries.map(r=>textbookChapters.find(c=>c.id===r.id)!);
 export const publishedCurriculumChapters=activeCurriculumChapters.filter(c=>c.status==='published');
 export default textbookChapters;

@@ -1,0 +1,790 @@
+/* Chapter 34 (ID 1034): Optimal Trade Entry (OTE) — iOS Clarity + Fibonacci Indigo Atlas + Motion Study 02 */
+.ote-document {
+  --ote-paper: #ffffff;
+  --ote-fill: #f4f6fa;
+  --ote-line: #d6dde8;
+  --ote-ink: #1b2432;
+  --ote-secondary: #515e72;
+  --ote-accent: #3949ab;
+  --ote-accent-soft: #eef1ff;
+  --ote-bid: #0e7c66;
+  --ote-bid-soft: rgba(14, 124, 102, 0.11);
+  --ote-ask: #be3e36;
+  --ote-ask-soft: rgba(190, 62, 54, 0.11);
+  --ote-amber: #925f0c;
+  --ote-wash: #fbf4e2;
+  --ote-shadow: rgba(25, 40, 72, 0.06);
+  --ote-cinema-bg: #eef2f7;
+  --ote-cinema-ink: #182738;
+  --ote-cinema-muted: #4b5d72;
+  --ote-cinema-line: #b2c0d1;
+  --ote-cinema-label: #0e7c66;
+}
+
+html[data-theme='dark'] .ote-document {
+  --ote-paper: #171e29;
+  --ote-fill: #202938;
+  --ote-line: #364459;
+  --ote-ink: #edf2f8;
+  --ote-secondary: #b9c5d8;
+  --ote-accent: #90a4ff;
+  --ote-accent-soft: #202c4d;
+  --ote-bid: #36caa9;
+  --ote-bid-soft: rgba(54, 202, 169, 0.15);
+  --ote-ask: #f3766d;
+  --ote-ask-soft: rgba(243, 118, 109, 0.15);
+  --ote-amber: #f3c45d;
+  --ote-wash: #2b2416;
+  --ote-shadow: rgba(0, 0, 0, 0.24);
+  --ote-cinema-bg: #0f1722;
+  --ote-cinema-ink: #e8f0f7;
+  --ote-cinema-muted: #a9bacf;
+  --ote-cinema-line: #3a4c63;
+  --ote-cinema-label: #2dc7a4;
+}
+
+/* Typography & Section Rhythm */
+.reading-room .ote-document .ote-section {
+  scroll-margin-top: 105px;
+  padding-bottom: 0.5rem;
+}
+
+.reading-room .ote-document .ote-section > h2.ote-sec-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-sans);
+  font-size: clamp(23px, 2.2vw, 28px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+  color: var(--ote-ink);
+  margin-block: 2.75rem 1.25rem;
+  scroll-margin-top: 110px;
+}
+
+.reading-room .ote-document .ote-section > h3 {
+  font: 600 20px/1.4 var(--font-sans);
+  color: var(--ote-ink);
+  margin-block: 1.9rem 0.9rem;
+}
+
+.reading-room .ote-document .ote-section > p,
+.reading-room .ote-document .lesson-extract > p,
+.reading-room .ote-document .ote-section > :is(ul, ol) > li {
+  font: 400 var(--lesson-body-size, 16px) / var(--lesson-body-leading, 1.9) var(--font-sans);
+  color: var(--ote-ink);
+  max-inline-size: 74ch;
+}
+
+.reading-room .ote-document .ote-section > p {
+  margin-block: 1.2rem;
+}
+
+.reading-room .ote-document .ote-styled-list {
+  padding-inline-start: 1.5rem;
+  margin-block: 1.15rem 1.5rem;
+}
+
+.reading-room .ote-document .ote-styled-list > li {
+  margin-block: 0.65rem;
+}
+
+.ote-document .ote-sec-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  border: 1px solid color-mix(in srgb, var(--ote-accent) 28%, var(--ote-line));
+  background: var(--ote-accent-soft);
+  color: var(--ote-accent);
+}
+
+/* Takeaways, Extract & Formula Boxes */
+.reading-room .ote-document .fvg-takeaways {
+  margin: 1.5rem 0 2rem;
+  padding: 1.35rem 1.55rem;
+  border: 1px solid var(--ote-line);
+  border-radius: 14px;
+  background: var(--ote-paper);
+  box-shadow: 0 3px 14px var(--ote-shadow);
+}
+
+.reading-room .ote-document .fvg-takeaways > h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font: 600 20px/1.35 var(--font-sans);
+  margin: 0 0 0.85rem;
+  color: var(--ote-ink);
+}
+
+.reading-room .ote-document .lesson-extract {
+  padding: 1.2rem 1.4rem;
+  border: 1px solid color-mix(in srgb, var(--ote-accent) 26%, var(--ote-line));
+  border-radius: 14px;
+  background: var(--ote-accent-soft);
+  box-shadow: 0 2px 10px var(--ote-shadow);
+  margin-block: 1.5rem 2rem;
+}
+
+.reading-room .ote-document .ote-formula-box {
+  font: 600 14px/1.65 var(--font-mono, ui-monospace, monospace);
+  color: var(--ote-ink);
+}
+
+.reading-room .ote-document .ote-formula-box code {
+  display: block;
+  margin-top: 0.35rem;
+  font: 500 13.5px/1.7 var(--font-mono, ui-monospace, monospace);
+  color: var(--ote-ink);
+  word-break: break-word;
+}
+
+/* Closed Collapsible "On this page" TOC Drawer */
+.reading-room .ote-document .ote-toc {
+  margin: 1.5rem 0 2.5rem;
+  border: 1px solid var(--ote-line);
+  border-radius: 14px;
+  background: var(--ote-paper);
+  box-shadow: 0 2px 10px var(--ote-shadow);
+  overflow: hidden;
+}
+
+.reading-room .ote-document .ote-toc summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  list-style: none;
+  min-height: 52px;
+  padding: 0.85rem 1.25rem;
+  cursor: pointer;
+  font: 600 15.5px/1.5 var(--font-sans);
+  color: var(--ote-ink);
+}
+
+.reading-room .ote-document .ote-toc summary::-webkit-details-marker {
+  display: none;
+}
+
+.reading-room .ote-document .ote-toc-summary-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.reading-room .ote-document .ote-toc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font: 600 12.5px/1.4 var(--font-sans);
+  color: var(--ote-accent);
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  background: var(--ote-accent-soft);
+}
+
+.reading-room .ote-document .ote-toc-chevron {
+  transition: transform 0.2s ease;
+}
+
+.reading-room .ote-document .ote-toc details[open] .ote-toc-chevron {
+  transform: rotate(180deg);
+}
+
+.reading-room .ote-document .ote-toc ol {
+  margin: 0;
+  padding: 0.9rem 1.35rem 1.25rem 2.25rem;
+  border-top: 1px solid var(--ote-line);
+  background: var(--ote-fill);
+  columns: 2;
+  gap: 2rem;
+}
+
+.reading-room .ote-document .ote-toc li {
+  break-inside: avoid;
+  margin-block: 0.4rem;
+  font: 500 14.5px/1.65 var(--font-sans);
+}
+
+.reading-room .ote-document .ote-toc a {
+  color: var(--ote-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.reading-room .ote-document .ote-toc a:hover {
+  color: var(--ote-bid);
+}
+
+/* Callouts & Sources Boxes */
+.reading-room .ote-document .ote-callout {
+  margin: 1.65rem 0;
+  padding: 1.15rem 1.35rem;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--ote-accent) 26%, var(--ote-line));
+  border-inline-start: 4px solid var(--ote-accent);
+  background: var(--ote-accent-soft);
+  box-shadow: 0 2px 10px var(--ote-shadow);
+}
+
+.reading-room .ote-document .ote-callout-warn {
+  border-color: color-mix(in srgb, var(--ote-amber) 36%, var(--ote-line));
+  border-inline-start-color: var(--ote-amber);
+  background: var(--ote-wash);
+}
+
+.reading-room .ote-document .ote-callout-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
+  font: 600 14.5px/1.45 var(--font-sans);
+  color: var(--ote-ink);
+}
+
+.reading-room .ote-document .ote-callout p {
+  margin: 0;
+  font: 400 var(--lesson-body-size, 16px) / var(--lesson-body-leading, 1.9) var(--font-sans);
+  color: var(--ote-ink);
+}
+
+.reading-room .ote-document .ote-sources-box {
+  margin: 1.75rem 0 2rem;
+  padding: 1.25rem 1.45rem;
+  border: 1px solid var(--ote-line);
+  border-radius: 14px;
+  background: var(--ote-paper);
+  box-shadow: 0 2px 10px var(--ote-shadow);
+}
+
+.reading-room .ote-document .ote-sources-box h3 {
+  margin: 0 0 0.75rem;
+  font: 600 17px/1.4 var(--font-sans);
+}
+
+.reading-room .ote-document .ote-sources-box ul {
+  margin: 0;
+  padding-inline-start: 1.3rem;
+}
+
+.reading-room .ote-document .ote-sources-box li {
+  margin-block: 0.5rem;
+  font: 400 14.5px/1.75 var(--font-sans);
+}
+
+.reading-room .ote-document .ote-sources-box a {
+  color: var(--ote-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* iOS Clarity Rounded Tables */
+.reading-room .ote-document .ote-table-scroll {
+  max-inline-size: 100%;
+  overflow-x: auto;
+  margin-block: 1.75rem;
+  border: 1px solid var(--ote-line);
+  border-radius: 14px;
+  background: var(--ote-paper);
+  box-shadow: 0 3px 14px var(--ote-shadow);
+  overscroll-behavior-inline: contain;
+}
+
+.reading-room .ote-document .ote-table-scroll table {
+  width: 100%;
+  min-inline-size: 560px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font: 400 15px/1.75 var(--font-sans);
+}
+
+.reading-room .ote-document .ote-table-scroll :is(th, td) {
+  padding: 15px 18px;
+  text-align: start;
+  vertical-align: top;
+  border: 0;
+  border-bottom: 1px solid var(--ote-line);
+  border-inline-end: 1px solid color-mix(in srgb, var(--ote-line) 55%, transparent);
+  color: var(--ote-ink);
+  background: var(--ote-paper);
+  white-space: normal;
+}
+
+.reading-room .ote-document .ote-table-scroll :is(th, td):last-child {
+  border-inline-end: 0;
+}
+
+.reading-room .ote-document .ote-table-scroll thead th {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--ote-secondary);
+  background: var(--ote-fill);
+}
+
+.reading-room .ote-document .ote-table-scroll tbody th {
+  font-weight: 600;
+  color: var(--ote-accent);
+}
+
+.reading-room .ote-document .ote-table-scroll tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.reading-room .ote-document .ote-table-scroll tbody tr:hover > * {
+  background: var(--ote-accent-soft);
+}
+
+/* Interactive Pre-Execution Checklist */
+.reading-room .ote-document .ote-interactive-check {
+  display: grid;
+  gap: 0.7rem;
+  margin: 1.4rem 0 2rem;
+}
+
+.reading-room .ote-document .ote-interactive-check label {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  align-items: start;
+  gap: 0.85rem;
+  padding: 0.95rem 1.15rem;
+  border: 1px solid var(--ote-line);
+  border-radius: 10px;
+  background: var(--ote-paper);
+  box-shadow: 0 1px 6px var(--ote-shadow);
+  cursor: pointer;
+  font: 400 15.5px/1.75 var(--font-sans);
+}
+
+.reading-room .ote-document .ote-interactive-check label:has(input:checked) {
+  border-color: var(--ote-bid);
+  background: var(--ote-bid-soft);
+}
+
+.reading-room .ote-document .ote-interactive-check input {
+  width: 20px;
+  height: 20px;
+  margin-top: 0.25rem;
+  accent-color: var(--ote-bid);
+}
+
+.reading-room .ote-document .ote-check-status {
+  margin: 0.25rem 0 0;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--ote-bid) 38%, var(--ote-line));
+  background: var(--ote-bid-soft);
+  font: 600 14px/1.6 var(--font-sans);
+  color: var(--ote-ink);
+}
+
+/* Visual Figures & Three.js Motion Study 02 Cinema Stage */
+.ote-figure {
+  display: block;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  margin: 2.25rem 0 2.6rem;
+  padding: 0;
+  border: 1px solid var(--ote-line);
+  border-radius: 14px;
+  background: var(--ote-paper);
+  color: var(--ote-ink);
+  box-shadow: 0 4px 18px var(--ote-shadow);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.ote-figure-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--ote-line);
+  background: var(--ote-fill);
+  font: 600 14.5px/1.5 var(--font-sans);
+}
+
+.ote-head-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ote-ink);
+}
+
+.ote-figure-head > span:last-child {
+  font: 500 11.5px/1.4 var(--font-mono, ui-monospace, monospace);
+  color: var(--ote-secondary);
+}
+
+.ote-figure-body {
+  padding: clamp(0.95rem, 2.5vw, 1.35rem);
+}
+
+.ote-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 0.85rem 1.25rem 0.25rem;
+}
+
+.ote-controls button,
+.ote-controls select {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 40px;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--ote-line);
+  border-radius: 8px;
+  background: var(--ote-paper);
+  color: var(--ote-ink);
+  font: 600 13px/1.4 var(--font-sans);
+  cursor: pointer;
+}
+
+.ote-controls button:hover,
+.ote-controls button.is-active,
+.ote-controls button[aria-pressed='true'] {
+  border-color: var(--ote-accent);
+  background: var(--ote-accent-soft);
+  color: var(--ote-accent);
+}
+
+.ote-controls button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.ote-controls label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font: 600 12.5px/1.4 var(--font-sans);
+  color: var(--ote-secondary);
+}
+
+/* 3D Cinema Header & Viewport */
+.ote-time-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--ote-cinema-bg);
+  color: var(--ote-cinema-ink);
+  border-bottom: 1px solid var(--ote-cinema-line);
+}
+
+.ote-time-head > div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.ote-time-head span,
+.ote-time-head small {
+  font: 500 12px/1.5 var(--font-sans);
+  color: var(--ote-cinema-muted);
+}
+
+.ote-time-head bdi {
+  font: 600 clamp(22px, 3vw, 30px) / 1.2 var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.025em;
+}
+
+.ote-document .ote-time-head ol {
+  list-style: none;
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.ote-document .ote-time-head ol > li {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem 0.45rem;
+  border-bottom: 2px solid var(--ote-cinema-line);
+  font: 500 12px/1.5 var(--font-sans);
+  color: var(--ote-cinema-muted);
+}
+
+.ote-document .ote-time-head ol > li[data-active='true'] {
+  border-color: var(--ote-cinema-label);
+  color: var(--ote-cinema-ink);
+  font-weight: 600;
+}
+
+.ote-cinema {
+  inline-size: 100%;
+  min-inline-size: 0;
+  position: relative;
+  aspect-ratio: 1.72;
+  min-height: 290px;
+  max-height: 460px;
+  overflow: hidden;
+  background: var(--ote-cinema-bg);
+  color: var(--ote-cinema-ink);
+  isolation: isolate;
+  direction: ltr;
+}
+
+.ote-cinema canvas,
+.ote-cinema-fallback,
+.ote-scene-labels {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.ote-cinema-fallback {
+  display: grid;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.ote-cinema[data-scene-ready='true'] .ote-cinema-fallback {
+  visibility: hidden;
+}
+
+.ote-scene-labels {
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ote-world-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  font: 600 11px/1.35 var(--font-sans);
+  color: var(--ote-cinema-ink);
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--ote-cinema-bg) 82%, transparent);
+}
+
+.ote-world-sweet {
+  padding: 4px 8px;
+  color: #ffffff;
+  background: var(--ote-cinema-label);
+  font-weight: 700;
+}
+
+.ote-world-stop {
+  color: var(--ote-ask);
+  font-weight: 700;
+}
+
+.ote-cinema-mark {
+  position: absolute;
+  inset: 12px auto auto 14px;
+  font: 600 10.5px/1.4 var(--font-mono, ui-monospace, monospace);
+  letter-spacing: 0.08em;
+  color: var(--ote-cinema-muted);
+  pointer-events: none;
+}
+
+.ote-scrubber {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.35rem 1rem;
+  padding: 0.75rem 1.25rem;
+  font: 600 13px/1.6 var(--font-sans);
+  color: var(--ote-ink);
+}
+
+.ote-scrubber input {
+  grid-column: 1 / -1;
+  inline-size: 100%;
+  min-height: 36px;
+  accent-color: var(--ote-accent);
+  cursor: pointer;
+}
+
+.ote-readout-bar {
+  padding: 0.9rem 1.25rem;
+  border-top: 1px solid var(--ote-line);
+  border-inline-start: 4px solid var(--ote-accent);
+  background: var(--ote-fill);
+  font: 500 14px/1.75 var(--font-sans);
+  color: var(--ote-ink);
+}
+
+.ote-svg {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  overflow: visible;
+  direction: ltr;
+  fill: var(--ote-ink);
+  font-family: var(--font-sans);
+}
+
+.ote-slider-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.65rem 1.25rem 0.25rem;
+  font: 600 14px/1.5 var(--font-sans);
+}
+
+.ote-slider-row input[type='range'] {
+  flex: 1 1 220px;
+  accent-color: var(--ote-accent);
+}
+
+.ote-readout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.65rem;
+  padding: 0.9rem 1.25rem 1rem;
+}
+
+.ote-readout {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--ote-line);
+  border-radius: 9px;
+  background: var(--ote-fill);
+}
+
+.ote-readout span {
+  display: block;
+  font: 500 11.5px/1.4 var(--font-sans);
+  color: var(--ote-secondary);
+}
+
+.ote-readout strong {
+  display: block;
+  margin-top: 0.2rem;
+  font: 700 14px/1.4 var(--font-sans);
+}
+
+.ote-readout strong.is-ok {
+  color: var(--ote-bid);
+}
+
+.ote-readout strong.is-warn {
+  color: var(--ote-ask);
+}
+
+.ote-detector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0.55rem;
+  padding: 0.9rem 1.25rem 0.25rem;
+}
+
+.ote-detector-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--ote-line);
+  border-radius: 9px;
+  background: var(--ote-paper);
+  font: 500 13.5px/1.45 var(--font-sans);
+  cursor: pointer;
+}
+
+.ote-detector-toggle input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--ote-bid);
+}
+
+.ote-verdict {
+  margin: 0 1.25rem 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 9px;
+  font: 600 13.5px/1.55 var(--font-sans);
+  border: 1px solid var(--ote-line);
+}
+
+.ote-verdict-qualified {
+  border-color: var(--ote-bid);
+  background: var(--ote-bid-soft);
+  color: var(--ote-bid);
+}
+
+.ote-verdict-partial {
+  border-color: var(--ote-amber);
+  background: var(--ote-wash);
+  color: var(--ote-amber);
+}
+
+.ote-verdict-invalid {
+  border-color: var(--ote-ask);
+  background: var(--ote-ask-soft);
+  color: var(--ote-ask);
+}
+
+.ote-caption {
+  margin: 0;
+  padding: 0.9rem 1.25rem 1.05rem;
+  border-top: 1px solid var(--ote-line);
+  font: 400 14px/1.75 var(--font-sans);
+  color: var(--ote-secondary);
+}
+
+.ote-num {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes oteBob {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.ote-char-group {
+  animation: oteBob 3s ease-in-out infinite;
+}
+
+@media (max-width: 640px) {
+  .reading-room .ote-document .ote-toc ol {
+    columns: 1;
+    padding-inline-start: 1.75rem;
+  }
+  .reading-room .ote-document .ote-table-scroll table {
+    min-width: 520px;
+    font-size: 14px;
+  }
+  .reading-room .ote-document .ote-table-scroll tbody th:first-child {
+    position: sticky;
+    inset-inline-start: 0;
+    z-index: 1;
+    box-shadow: 1px 0 var(--ote-line);
+  }
+  .ote-cinema {
+    aspect-ratio: 1.18;
+    min-height: 270px;
+  }
+  .ote-controls button {
+    flex: 1 1 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ote-char-group,
+  .ote-document .ote-toc-chevron {
+    animation: none !important;
+    transition: none !important;
+  }
+}

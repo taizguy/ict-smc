@@ -524,10 +524,13 @@
       "پریمیم اور ڈسکاؤنٹ: PD اَرے میٹرکس"
     ],
     "description": [
-      "Locate price within a declared range, compare premium and discount PD arrays and examine why range anchors matter more than collecting pattern labels.",
-      "مقررہ رینج میں قیمت کا مقام دیکھیں، پریمیم اور ڈسکاؤنٹ کے PD اَریز کا موازنہ کریں اور سمجھیں کہ پیٹرن کے نام جمع کرنے سے رینج کے اینکر کیوں اہم ہیں۔"
+      "Learn Premium and Discount in SMC using the PD Array Matrix: 50% Equilibrium, quadrants, array hierarchy, CE vs MT, suspension gaps and invalidation.",
+      "پریمیم اور ڈسکاؤنٹ SMC میں PD اَرے میٹرکس سیکھیں: 50% ایکویلیبریم، کواڈرنٹس، اَرے درجہ بندی، CE بمقابلہ MT، سسپنشن گیپس اور ان ویلیڈیشن۔"
     ],
-    "status": "published"
+    "primaryKeyword": "premium and discount smc",
+    "status": "published",
+    "seoTitle": "Premium and Discount SMC: PD Array Matrix",
+    "seoTitleUr": "پریمیم اور ڈسکاؤنٹ SMC: PD اَرے میٹرکس"
   },
   {
     "id": 1034,
@@ -539,12 +542,13 @@
       "آپٹیمل ٹریڈ انٹری (OTE): رینج کے اندر فِب زونز"
     ],
     "description": [
-      "OTE Fibonacci retracement zones measured inside a selected range.",
-      "منتخب رینج کے اندر ناپے گئے OTE فبوناکی ریٹریسمنٹ زونز۔"
+      "Learn Optimal Trade Entry (OTE) Fibonacci zones (0.62, 0.705, 0.79), Premium and Discount anchors, FVG confluence, targets (-0.27, -0.62) and invalidation.",
+      "آپٹیمل ٹریڈ انٹری (OTE) کے فبوناکی زونز (0.62، 0.705، 0.79)، پریمیم اور ڈسکاؤنٹ اینکرز، FVG ہم آہنگی، اہداف (-0.27، -0.62) اور ان ویلیڈیشن سیکھیں۔"
     ],
     "primaryKeyword": "optimal trade entry",
-    "status": "in-progress",
-    "seoTitle": "Optimal Trade Entry (OTE): Fibonacci Zones"
+    "status": "published",
+    "seoTitle": "Optimal Trade Entry (OTE): Fibonacci Zones",
+    "seoTitleUr": "آپٹیمل ٹریڈ انٹری (OTE): فبوناکی زونز"
   },
   {
     "id": 56,
@@ -552,14 +556,17 @@
     "part": 4,
     "slug": "rdrb-balanced-price-range-and-enigma-fvg",
     "title": [
-      "Balanced Price Ranges: Revisits and Enigma",
-      "بیلنسڈ پرائس رینجز: واپسی اور انیگما"
+      "Balanced Price Range (BPR), RDRB & Enigma FVG",
+      "بیلنسڈ پرائس رینج (BPR)، RDRB اور انیگما FVG"
     ],
     "description": [
-      "Distinguish balanced-range measurements from the sourced Enigma label, state the chosen anchors and compare returns, failed tests and uncertain outcomes.",
-      "بیلنسڈ رینج کی پیمائش اور ماخذ میں انیگما کے نام کو الگ سمجھیں، اینکر واضح کریں اور واپسی، ناکام ٹیسٹ اور غیر یقینی نتائج کا موازنہ کریں۔"
+      "Learn Balanced Price Range (BPR) overlaps, 50% equilibrium, RDRB second revisits, Enigma FVG measurements, entry triggers, targets and invalidation.",
+      "بیلنسڈ پرائس رینج (BPR) اوورلیپ، 50% وسط، RDRB دوسری واپسی، انیگما FVG پیمائش، انٹری، اہداف اور ان ویلیڈیشن سیکھیں۔"
     ],
-    "status": "published"
+    "primaryKeyword": "balanced price range",
+    "status": "published",
+    "seoTitle": "Balanced Price Range (BPR), RDRB & Enigma",
+    "seoTitleUr": "بیلنسڈ پرائس رینج (BPR)، RDRB اور انیگما"
   },
   {
     "id": 1036,

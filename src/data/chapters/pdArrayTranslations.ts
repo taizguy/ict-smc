@@ -892,4 +892,5 @@ export const pdArrayTranslations: Record<string, string> = {
   Bar: 'کینڈل',
   'Original synthetic study candles (Close:': 'اصل فرضی مطالعاتی کینڈلز (کلوز:',
   ') — not live quotes.': ') — لائیو قیمتیں نہیں۔',
+  'NWOG / NDOG': 'NWOG / NDOG (افتتاحی گیپس)',
 };

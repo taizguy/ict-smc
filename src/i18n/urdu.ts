@@ -1,5 +1,4 @@
-import {silverLessonTranslations} from '../data/chapters/silverBulletLesson';
-import '../data/chapters/silverLessonVisuals';
+import {silverLessonTranslations} from '../data/chapters/silverLessonTranslations';
 import {breakTranslations} from '../data/chapters/breakTranslations';
 import {structureTranslations} from '../data/chapters/structureTranslations';
 import {swingTranslations} from '../data/chapters/swingTranslations';
@@ -10,9 +9,10 @@ import {model2022Translations} from '../data/chapters/model2022Translations';
 import {oteTranslations} from '../data/chapters/oteTranslations';
 import {rdrbTranslations} from '../data/chapters/rdrbTranslations';
 import {pdArrayTranslations} from '../data/chapters/pdArrayTranslations';
+import {suspensionReaperTranslations} from '../data/chapters/suspensionReaperTranslations';
 import {mitigationTranslations} from '../data/chapters/mitigationTranslations';
 import {fvgDocumentTranslations} from '../data/chapters/fvgDocumentTranslations';
-import {priceMovementTranslations} from '../data/chapters/priceMovementLesson';
+import {priceMovementTranslations} from '../data/chapters/priceMovementTranslations';
 import {curriculumHubUrdu} from '../data/curriculumHubContent';
 import {curriculumPhase1Urdu} from '../data/curriculumPhase1';
 import claimsReviewUrdu from './claims-review-urdu.json';
@@ -301,6 +301,8 @@ Object.assign(urdu,Object.fromEntries(Object.entries(oteTranslations).filter(([k
 Object.assign(urdu,Object.fromEntries(Object.entries(rdrbTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
 
 Object.assign(urdu,Object.fromEntries(Object.entries(pdArrayTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(suspensionReaperTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
 
 Object.assign(urdu,Object.fromEntries(Object.entries(swingTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
 

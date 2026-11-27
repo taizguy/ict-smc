@@ -10,7 +10,7 @@ import {MentorshipsView,MentorshipsTeaser} from './MentorshipsView';
 import {TopicJourneyLinks} from './TopicLearningGuide';
 import {SearchFocusGuide} from './SearchFocusGuide';
 import {ReadingRoomLayout,ReadingTitle,readingPartTitle} from './ReadingRoomLayout';
-import {conciseHeading} from '../utils/searchMetadata';
+import {conciseHeading} from '../utils/searchHeading';
 import {AccentText} from './AccentText';
 import { audit4Headings } from '../data/audit4Headings';
 interface CurriculumViewProps{onSelectChapter:(id:number,slug?:string)=>void;onOpenSearch:()=>void;path?:string;}

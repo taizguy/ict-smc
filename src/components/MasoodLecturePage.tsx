@@ -1,4 +1,5 @@
-import { conciseHeading, studyTopics } from '../utils/searchMetadata';
+import { conciseHeading } from '../utils/searchHeading';
+import { studyTopics } from '../data/searchTopics';
 import { useState } from 'react';
 import { MasoodLecture } from '../types';
 import { masoodPlaylistsData } from '../data/masoodData';

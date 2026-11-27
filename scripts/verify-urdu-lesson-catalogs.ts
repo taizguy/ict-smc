@@ -1,3 +1,4 @@
+import './register-ssr-chapters';
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import { createElement } from 'react';
@@ -6,7 +7,8 @@ import { textbookChapters } from '../src/data/chaptersData';
 import { TranslationProvider } from '../src/i18n/TranslationProvider';
 import { ChapterRoom } from '../src/components/ChapterRoom';
 const read=(name:string)=>JSON.parse(fs.readFileSync(`src/i18n/runtime/${name}.json`,'utf8'));
-const shared=read('shared'),full={...shared,...read('chapters')},common=read('chapter-common');
+const shared=read('shared'),common=read('chapter-common'),fallbackParts=read('chapter-fallback-parts') as string[];
+const full={...shared,...common,...read('chapters'),...Object.assign({},...fallbackParts.map(slug=>read('lessons/'+slug)))};
 const results=[];
 for(const chapter of textbookChapters) {
  const selected={...shared,...common,...read('lessons/'+chapter.slug)};

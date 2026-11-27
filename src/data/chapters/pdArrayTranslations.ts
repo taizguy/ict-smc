@@ -441,7 +441,7 @@ export const pdArrayTranslations: Record<string, string> = {
   'Liquidity Void': 'لیکویڈیٹی وائڈ',
   'A broad multi-candle corridor of rapid one-sided expansion lacking overlapping opposing candles.':
     'متعدد کینڈلز کا وسیع یک طرفہ پھیلاؤ جس میں مخالف کینڈلز کا اوورلیپ نہ ہو۔',
-  'NWOG / NDOG': 'NWOG / NDOG',
+  'NWOG / NDOG': 'NWOG / NDOG (افتتاحی گیپس)',
   'New Week (Friday 17:00–Sunday 18:00 NY) and New Day (17:00–18:00 NY) time-anchored opening gaps.':
     'نئے ہفتے (جمعہ 17:00–اتوار 18:00 NY) اور نئے دن (17:00–18:00 NY) کے وقتی اوپننگ گیپس۔',
   'Low-Resistance Liquidity Run (LRLR)': 'کم مزاحمت لیکویڈیٹی رن (LRLR)',
@@ -892,5 +892,4 @@ export const pdArrayTranslations: Record<string, string> = {
   Bar: 'کینڈل',
   'Original synthetic study candles (Close:': 'اصل فرضی مطالعاتی کینڈلز (کلوز:',
   ') — not live quotes.': ') — لائیو قیمتیں نہیں۔',
-  'NWOG / NDOG': 'NWOG / NDOG (افتتاحی گیپس)',
 };

@@ -1,20 +1,24 @@
 import {canonicalChapterId} from './data/curriculumPhase1';
 import {isDocumentLesson} from './utils/documentLessons';
-import {publishedCurriculumChapters as activeCurriculumChapters} from './data/chaptersData';
 import { SiteFooter } from './components/SiteFooter';
 import { currentDocumentHref } from './i18n/navigation';
 import { useTranslation } from './i18n/TranslationProvider';
 import { withoutLocale } from './i18n/locale';
 import { mentorshipTracks } from './data/mentorshipTracks';
-import './styles/articles.css';
 import { articleCatalog } from './data/catalog.generated';
+import { loadChapterModule } from './components/chapterContentRegistry';
 import { PageReady } from './components/PageReady';
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { AdsenseLoader } from './components/AdsenseLoader';
 import { Header, MainTabType } from './components/Header';
 
-import { TradingToolId } from './components/TradingToolsWorkbench';
+import {
+  type TradingToolId,
+  loadWorkbenchTool,
+  resolveWorkbenchRegistryKey,
+} from './components/workbenchToolRegistry';
 import { chapterCatalog as textbookChapters, lectureCatalog as allMasoodLectures, playlistCatalog as masoodPlaylistsData } from './data/catalog.generated';
+const activeCurriculumChapters = textbookChapters.filter(c => c.status === 'published');
 
 import {
   getStoredProgress,
@@ -170,6 +174,7 @@ export const App: React.FC = () => {
       if (rawLegacyChapter) {
         const resolved = resolveLegacyChapter(rawLegacyChapter, textbookChapters);
         if (resolved) {
+          await loadChapterModule(resolved.id);
           setSelectedChapterId(resolved.id);
           setActiveTab('chapter_room');
           return;
@@ -186,7 +191,9 @@ export const App: React.FC = () => {
         const slugOrId = learnMatch[1];
         const match = textbookChapters.find(c => c.slug === slugOrId || String(c.id) === slugOrId);
         if (match) {
-          setSelectedChapterId(canonicalChapterId(match.id));
+          const cid = canonicalChapterId(match.id);
+          await loadChapterModule(cid);
+          setSelectedChapterId(cid);
           setActiveTab('chapter_room');
           return;
         } else {
@@ -263,17 +270,25 @@ export const App: React.FC = () => {
       // 5. Workbench Tools deep routing: /workbench, /tools, /tools/glossary/..., /tools/:toolId/...
       if (path === '/workbench' || path.startsWith('/workbench/') || path === '/tools' || path.startsWith('/tools/')) {
         setActiveTab('tools');
+        const currentPathname = window.location.pathname;
         if (path === '/tools' || path === '/workbench') {
-          if (toolParam && toolSlugMap[toolParam]) {
-            setInitialTool(toolSlugMap[toolParam]);
-          } else {
-            setInitialTool('overview');
-          }
+          const nextTool = toolParam && toolSlugMap[toolParam] ? toolSlugMap[toolParam] : 'overview';
+          await loadWorkbenchTool(resolveWorkbenchRegistryKey({
+            activeTool: nextTool,
+            collectionPath: currentPathname,
+            glossaryPath: currentPathname,
+          }));
+          setInitialTool(nextTool);
           return;
         }
 
         // Check glossary routes (/tools/glossary/ or legacy /tools/concepts/)
         if (path === '/tools/glossary' || path.startsWith('/tools/glossary/') || path === '/tools/concepts' || path.startsWith('/tools/concepts/')) {
+          await loadWorkbenchTool(resolveWorkbenchRegistryKey({
+            activeTool: 'concepts',
+            collectionPath: currentPathname,
+            glossaryPath: currentPathname,
+          }));
           setInitialTool('concepts');
           const resolved = resolveGlossaryUrl(path);
           setGlossaryCategory(resolved.categorySlug);
@@ -289,6 +304,14 @@ export const App: React.FC = () => {
         const { resolveWorkbenchRoute } = await import('./utils/workbenchToolRoutes');
         const resolvedWb = resolveWorkbenchRoute(path);
         if (resolvedWb && resolvedWb.tool !== 'overview') {
+          await loadWorkbenchTool(resolveWorkbenchRegistryKey({
+            activeTool: resolvedWb.tool,
+            collectionPath: currentPathname,
+            glossaryPath: currentPathname,
+            masterclassModuleSlug: resolvedWb.masterclassModuleSlug,
+            simulatorModelSlug: resolvedWb.simulatorModelSlug,
+            backtestStrategySlug: resolvedWb.backtestStrategySlug,
+          }));
           setInitialTool(resolvedWb.tool);
           setMasterclassCategory(resolvedWb.masterclassCategory);
           setMasterclassModuleSlug(resolvedWb.masterclassModuleSlug);
@@ -315,6 +338,11 @@ export const App: React.FC = () => {
         const subTool = path.replace(/^\/(tools|workbench)\//, '').split('/')[0];
         if (toolSlugMap[subTool]) {
           const resolvedTool = toolSlugMap[subTool];
+          await loadWorkbenchTool(resolveWorkbenchRegistryKey({
+            activeTool: resolvedTool,
+            collectionPath: currentPathname,
+            glossaryPath: currentPathname,
+          }));
           setInitialTool(resolvedTool);
           return;
         } else {
@@ -593,7 +621,7 @@ export const App: React.FC = () => {
         />
       </Suspense>}
 
-      <SiteFooter playground={isShowingWelcome} showRisk={!(activeTab==='chapter_room'&&[1,3,4,7,9,10,13,33,36,56,1010,1031,1034,1064].includes(selectedChapterId))}/>
+      <SiteFooter playground={isShowingWelcome} showRisk={!(activeTab==='chapter_room'&&[1,3,4,7,9,10,13,33,36,55,56,59,1010,1031,1034,1064].includes(selectedChapterId))}/>
 
       {/* Regulatory & Legal Modal (Quick preview or deep study) */}
       {isLegalModalOpen && <Suspense fallback={null}>

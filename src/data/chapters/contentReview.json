@@ -33,75 +33,6 @@
       "Cumulative Volume Delta (CVD) accumulates a feed’s classification of buyer-initiated minus seller-initiated executed volume."
     ]
   },
-  "3": {
-    "sections": {
-      "0": {
-        "content": "Market-data products expose different information: top-of-book prices, aggregated depth or order-level messages. Availability, latency, hidden quantity and venue coverage vary. Displayed depth is not the whole market or a record of every stop order.\n\nA large quote can disappear through execution, cancellation or amendment. The disappearance alone does not establish spoofing intent. Compare quote messages with trades where available, and state what the feed omits.",
-        "keyTakeaway": "Market-data products expose different information: top-of-book prices, aggregated depth or order-level messages."
-      },
-      "1": {
-        "content": "TWAP distributes execution over a stated time schedule; VWAP execution seeks a volume-weighted benchmark using a chosen participation profile. An iceberg displays only part of its total quantity under the venue’s rules. None eliminates market impact or guarantees a benchmark fill.\n\nThese are execution concepts, not candle-reading proof. An order-block rectangle cannot identify a particular execution algorithm, its remaining inventory or the participant using it.",
-        "keyTakeaway": "TWAP distributes execution over a stated time schedule; VWAP execution seeks a volume-weighted benchmark using a chosen participation profile."
-      }
-    },
-    "summary": [
-      "Market-data products expose different information: top-of-book prices, aggregated depth or order-level messages.",
-      "TWAP distributes execution over a stated time schedule; VWAP execution seeks a volume-weighted benchmark using a chosen participation profile."
-    ],
-    "quote": "Market-data products expose different information: top-of-book prices, aggregated depth or order-level messages.",
-    "keyTerms": [
-      {
-        "term": "Market-data coverage",
-        "definition": "The information a particular feed exposes, including covered venues, price levels, aggregation and hidden-quantity limitations."
-      },
-      {
-        "term": "Execution benchmark",
-        "definition": "A defined reference measure used to compare execution, such as a time-weighted or volume-weighted average price; matching it is not guaranteed."
-      }
-    ],
-    "title": "The Order Book in Depth — Data Feeds & Execution Algorithms"
-  },
-  "4": {
-    "sections": {
-      "0": {
-        "content": "Market liquidity concerns the ability to transact a stated quantity at available prices with associated spread and price impact. ICT’s buy-side and sell-side labels instead mark hypothesized order interest beyond selected highs and lows. Keep these two uses of liquidity distinct.\n\nA visible high is an observable reference. The number, ownership and exact prices of stops beyond it are not visible in an OHLC candle. Select the reference before the later breach.",
-        "keyTakeaway": "Market liquidity concerns the ability to transact a stated quantity at available prices with associated spread and price impact."
-      },
-      "1": {
-        "content": "A sweep study records a trade beyond a previously selected high or low, followed by a specified response. State whether a wick or close counts and how long a return may take. A breach can continue rather than reverse.\n\nTriggered stop-market orders and stop-limit orders behave differently. Execution price, available quantity and slippage are not established by the sweep label. A return inside the range does not prove that every stop was filled or reveal who took the other side.",
-        "keyTakeaway": "A sweep study records a trade beyond a previously selected high or low, followed by a specified response."
-      },
-      "2": {
-        "content": "Within a selected dealing range, an internal reference may be an FVG or another chosen price interval; external references may be the range extremes. This is a chart framework, not a closed-loop law requiring price to alternate between them.\n\nMark the boundaries and observation horizon in advance. Record a return, partial return, continuation and no return separately. Moving the range afterward changes the study and can hide failed hypotheses.",
-        "title": "4.3 Internal and External Range References",
-        "keyTakeaway": "Within a selected dealing range, an internal reference may be an FVG or another chosen price interval; external references may be the range extremes."
-      }
-    },
-    "keyTerms": [
-      {
-        "term": "Buy-side reference",
-        "definition": "A selected high or group of highs used to study a possible breach; resting buy stops are a hypothesis, not measured quantity."
-      },
-      {
-        "term": "Sell-side reference",
-        "definition": "A selected low or group of lows used to study a possible breach without assuming a reversal."
-      },
-      {
-        "term": "Internal range reference",
-        "definition": "A selected price interval inside a defined dealing range."
-      },
-      {
-        "term": "External range reference",
-        "definition": "A selected boundary of the same dealing range; the range must be named."
-      }
-    ],
-    "summary": [
-      "Market liquidity concerns the ability to transact a stated quantity at available prices with associated spread and price impact.",
-      "A sweep study records a trade beyond a previously selected high or low, followed by a specified response.",
-      "Within a selected dealing range, an internal reference may be an FVG or another chosen price interval; external references may be the range extremes."
-    ],
-    "quote": "Market liquidity concerns the ability to transact a stated quantity at available prices with associated spread and price impact."
-  },
   "5": {
     "sections": {
       "0": {
@@ -136,88 +67,6 @@
       "Displacement describes a relatively strong move under a stated measurement convention."
     ],
     "quote": "A candle records the open, high, low and close over a specified interval and feed."
-  },
-  "7": {
-    "sections": {
-      "2": {
-        "content": "A swing’s role depends on the timeframe and selection rule. A minor break may be a local retracement or part of a wider reversal; neither label is known with certainty from the break alone. Higher-timeframe references provide context, not an infallible hierarchy.\n\nFreeze the three-candle pivot rule, tie handling and confirmation delay. A pivot requiring a right-hand candle is not available before that candle forms. Compare how the same event appears on two timeframes without backdating the signal.",
-        "keyTakeaway": "A swing’s role depends on the timeframe and selection rule."
-      }
-    }
-  },
-  "9": {
-    "sections": {
-      "0": {
-        "content": "For this study, a bullish continuation BOS is a break above a selected prior swing high within an already defined upward structure; reverse the logic for bearish continuation. State whether an intrabar crossing or a completed close qualifies.\n\nA break is an observable price event, not proof that institutions control the next move. Displacement and a completed FVG can be additional conditions in a named variation, but are not automatically present after every break.",
-        "keyTakeaway": "For this study, a bullish continuation BOS is a break above a selected prior swing high within an already defined upward structure; reverse the logic for bearish continuation."
-      },
-      "1": {
-        "content": "A protected swing is the reference whose breach would contradict your stated structural interpretation. Weak high or weak low is a framework label for a candidate objective. Neither describes a level that cannot break or a target that must be reached.\n\nSelect the reference while it is visible, record its timestamp, and define wick-versus-close invalidation. Different swing selection can change the label; disclose that judgment rather than moving the reference after a losing example.",
-        "keyTakeaway": "A protected swing is the reference whose breach would contradict your stated structural interpretation."
-      },
-      "2": {
-        "content": "A breakout entry and a retracement entry are distinct research variations. Waiting for a return to a completed FVG may change price, stop distance and fill frequency; the return may never occur. Neither method has a verified advantage established by this chapter.\n\nSpecify order type, expiry, invalidation and costs before replay. Keep unfilled orders and failed continuations in the sample. A close beyond structure does not make a stop safe or establish positive expectancy.",
-        "title": "9.3 Breakout and Retracement Entry Variations",
-        "keyTakeaway": "A breakout entry and a retracement entry are distinct research variations."
-      }
-    },
-    "summary": [
-      "For this study, a bullish continuation BOS is a break above a selected prior swing high within an already defined upward structure; reverse the logic for bearish continuation.",
-      "A protected swing is the reference whose breach would contradict your stated structural interpretation.",
-      "A breakout entry and a retracement entry are distinct research variations."
-    ],
-    "quote": "For this study, a bullish continuation BOS is a break above a selected prior swing high within an already defined upward structure; reverse the logic for bearish continuation.",
-    "keyTerms": [
-      {
-        "term": "Continuation BOS",
-        "definition": "A break of a selected prior swing in the direction of a previously defined trend, under a stated wick-or-close rule."
-      },
-      {
-        "term": "Protected swing",
-        "definition": "The selected swing whose breach would contradict the stated structural interpretation; protected does not mean unbreakable."
-      },
-      {
-        "term": "Entry variation",
-        "definition": "A separately documented change to an entry condition, order type, price or timing, evaluated with its own fill assumptions."
-      }
-    ],
-    "title": "Break of Structure (BOS): Continuation Rules & Limitations"
-  },
-  "10": {
-    "sections": {
-      "0": {
-        "content": "CHoCH is used here for a first break against a previously selected local structural direction. For example, a selected internal low breaks during an upward sequence. This flags a change to investigate, not a confirmed new downtrend.\n\nChoose the swing and wick-or-close rule in advance. The same local event may be a retracement on a wider chart. A candle chart cannot establish whether the move came from profit taking, new positions or a particular institution.",
-        "keyTakeaway": "CHoCH is used here for a first break against a previously selected local structural direction."
-      },
-      "1": {
-        "content": "CHoCH and MSS are used differently across trading communities and source lessons. Do not impose a universal hierarchy in which one label mathematically verifies a regime change. The separate MSS chapter records the reviewed source’s crossing and displacement conventions.\n\nWrite which event you mean: crossing a chosen swing, closing beyond it, or completing an FVG. Higher-timeframe location can be a context filter in your selected variation; it does not prove the next direction.",
-        "keyTakeaway": "CHoCH and MSS are used differently across trading communities and source lessons."
-      },
-      "2": {
-        "content": "An earlier entry can have a different fill price and failure rate from an entry deferred until more candles complete. A smaller planned stop or larger reward-to-risk ratio does not establish a better outcome. No comparative win rate is verified here.\n\nKeep the variants separate and apply the same transaction-cost assumptions. Save the information visible at each decision. Include false breaks and missed entries rather than comparing only completed winners.",
-        "keyTakeaway": "An earlier entry can have a different fill price and failure rate from an entry deferred until more candles complete."
-      }
-    },
-    "summary": [
-      "CHoCH is used here for a first break against a previously selected local structural direction.",
-      "CHoCH and MSS are used differently across trading communities and source lessons.",
-      "An earlier entry can have a different fill price and failure rate from an entry deferred until more candles complete."
-    ],
-    "quote": "CHoCH is used here for a first break against a previously selected local structural direction.",
-    "keyTerms": [
-      {
-        "term": "CHoCH",
-        "definition": "A first selected local structural break against the preceding direction; it can be a retracement rather than a wider reversal."
-      },
-      {
-        "term": "Confirmation convention",
-        "definition": "The explicit event used to recognize a condition, such as an intrabar crossing or a completed close beyond a chosen boundary."
-      },
-      {
-        "term": "Entry timing",
-        "definition": "The moment an entry condition becomes actionable using information available then; waiting for more evidence creates a different variation."
-      }
-    ]
   },
   "23": {
     "sections": {
@@ -464,51 +313,6 @@
       {
         "term": "News participation rule",
         "definition": "A predefined restriction on whether and when to participate around a scheduled release; waiting does not guarantee safe execution."
-      }
-    ]
-  },
-  "33": {
-    "sections": {
-      "0": {
-        "content": "Model 6’s buyside study organizes selected discount references within a defined range. A list of PD-array names is not a compulsory sequence that price must respect. Define the range and the actual reference used by your example.\n\nA discount-only entry can be a rule of a selected variation; it is not evidence that every bullish opportunity above a midpoint is impossible. The word universal does not validate transfer across every asset, feed or timeframe.",
-        "keyTakeaway": "Model 6’s buyside study organizes selected discount references within a defined range."
-      },
-      "1": {
-        "content": "A Market Maker Sell Model sketch starts with a selected consolidation, an upward curve, a candidate reversal region and a later downward curve. A Buy Model sketch reverses that sequence. These are chart-study narratives, not observed institutional inventory cycles.\n\nMark the initial range before the later move. Reaccumulation and redistribution labels describe interpretation of intermediate ranges. A return to the original consolidation is a proposed objective, not a required final destination.",
-        "keyTakeaway": "A Market Maker Sell Model sketch starts with a selected consolidation, an upward curve, a candidate reversal region and a later downward curve."
-      },
-      "2": {
-        "content": "Smart Money Reversal names a proposed turning region in the framework. Define a higher-timeframe reference and a narrower price condition before evaluating it. The name does not identify the participants responsible for a turn.\n\nSMT can be an additional comparison when the specified markets and times align. A divergence may disappear and does not prove that accumulation ceased. Record the structural event, any completed FVG and entry expiry as separate observations.",
-        "keyTakeaway": "Smart Money Reversal names a proposed turning region in the framework."
-      },
-      "3": {
-        "content": "A later return to a prior consolidation can be studied without chasing the initial move. Preserve its original boundaries and specify the required response. A consolidation does not automatically become an inversion FVG; an FVG requires its own completed three-candle geometry.\n\nLikewise, a breaker requires a defined swing and breach sequence. Check each condition independently rather than renaming every retest as confluence. Include failed retests and no-return examples before drawing a conclusion about a trading variation.",
-        "keyTakeaway": "A later return to a prior consolidation can be studied without chasing the initial move."
-      }
-    },
-    "summary": [
-      "Model 6’s buyside study organizes selected discount references within a defined range.",
-      "A Market Maker Sell Model sketch starts with a selected consolidation, an upward curve, a candidate reversal region and a later downward curve.",
-      "Smart Money Reversal names a proposed turning region in the framework.",
-      "A later return to a prior consolidation can be studied without chasing the initial move."
-    ],
-    "quote": "Model 6’s buyside study organizes selected discount references within a defined range.",
-    "keyTerms": [
-      {
-        "term": "Discount reference",
-        "definition": "A selected level or interval below the midpoint of a named dealing range; its classification changes if that range changes."
-      },
-      {
-        "term": "Market Maker Model",
-        "definition": "A chart-study narrative using consolidation, a directional curve, a candidate turn and a possible opposing curve; it does not measure inventory."
-      },
-      {
-        "term": "Smart Money Reversal",
-        "definition": "The framework’s name for a candidate turning region assessed with predefined price conditions, not identification of the traders behind it."
-      },
-      {
-        "term": "Array qualification",
-        "definition": "Checking that a proposed PD-array label meets its own price-sequence, boundary and completion rules before combining it with another label."
       }
     ]
   },
@@ -812,27 +616,6 @@
       {
         "term": "Return-inside variation",
         "definition": "A separately specified study requiring a chosen boundary breach and a later qualifying return inside; the opposite boundary is not guaranteed."
-      }
-    ]
-  },
-  "1": {
-    "summary": [
-      "Every executed quantity has both a buying and selling side; participant counts need not be equal.",
-      "A quoted price can change through orders and cancellations without a new trade at that price.",
-      "Marketable orders consume available liquidity subject to the venue’s rules."
-    ],
-    "keyTerms": [
-      {
-        "term": "Central Limit Order Book (CLOB)",
-        "definition": "A venue’s book of orders under its matching rules; displayed depth may exclude hidden interest."
-      },
-      {
-        "term": "Marketable order",
-        "definition": "An order capable of executing against an available opposite-side quote; it can be a market or limit order."
-      },
-      {
-        "term": "Bid–ask spread",
-        "definition": "The difference between the best displayed offer and bid on the stated venue and feed."
       }
     ]
   },

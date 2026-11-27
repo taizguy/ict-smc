@@ -8,18 +8,12 @@ import audit4Descriptions from '../data/audit4Descriptions.json';
 import audit4NumberedDescriptions from '../data/audit4NumberedDescriptions.json';
 import audit4LectureDescriptions from '../data/audit4LectureDescriptions.json';
 import reviewed2026 from '../data/chapters/mentorship2026Search.json';
-export { studyTopics };
+import { primaryTopic, conciseHeading } from './searchHeading';
+export { studyTopics, primaryTopic, conciseHeading };
 /** Editorial budgets, not Google indexing limits. Keep the topic before the brand. */
 const BRAND = ' | LearnSMC';
 const TITLE_LIMIT = 60;
 const DESCRIPTION_LIMIT = 155;
-
-export function primaryTopic(value: string): string {
-  return value.replace(/\s*\|\s*(?:LearnSMC|ICT\s*&\s*SMC Academy).*$/i, '')
-    .replace(/^(?:Chapter|LEC)\s*\d+\s*:\s*/i, '')
-    .replace(/\s+[—–]\s+(?:Institutional )?(?:Glossary|Knowledge Graph|Chart Lab|ICT Masterclass Hub|LearnSMC).*$/i, '')
-    .replace(/\s+/g, ' ').trim();
-}
 
 /** Conservative approximate display widths; actual search layouts vary by device. */
 export function estimatedSearchWidth(value: string, size: number): number {
@@ -133,10 +127,4 @@ export function searchDescription(value: string, title: string, path: string): s
   else text = value;
   const result = fitWords(text, DESCRIPTION_LIMIT - 1, 910, 14).replace(/[.!?…]+$/, '');
   return result + '.';
-}
-
-export function conciseHeading(value: string): string {
-  const clean = primaryTopic(value);
-  const topic = clean.split(/\s+[—–]\s+/)[0];
-  return topic.length >= 12 ? topic : clean;
 }

@@ -4,7 +4,7 @@ import {parse,parseFragment,serialize} from 'parse5';
 import {SilverLessonContent} from '../src/components/SilverLessonContent';
 import {TranslationProvider} from '../src/i18n/TranslationProvider';
 import {urdu} from '../src/i18n/urdu';
-import {silverLessonTranslations} from '../src/data/chapters/silverBulletLesson';
+import {silverLessonTranslations} from '../src/data/chapters/silverLessonTranslations';
 import {silverLessonPath} from '../src/data/chapters/silverBulletLesson';
 /** Translate whole sentences before inserting links: no fragment-by-fragment Urdu. */
 export function localizeSilverLessonDocument(html:string,pathname:string){

@@ -1,65 +1,143 @@
-import {silverLessonDocument,silverLessonTranslations,silverLessonSources,silverLessonScope,silverLessonInterpretation} from '../src/data/chapters/silverBulletLesson';
+import {silverLessonDocument,silverLessonSources,silverLessonScope,silverLessonInterpretation} from '../src/data/chapters/silverBulletLesson';
+import {silverLessonTranslations} from '../src/data/chapters/silverLessonTranslations';
 import {silverUi} from '../src/data/chapters/silverLessonVisuals';
-import {breakDocuments,breakTopic} from '../src/data/chapters/breakDocuments';
+import {cornerstoneGuides} from '../src/data/cornerstoneGuides';
+import {topicJourneys} from '../src/data/topicJourneys';
+import {breakDocuments,breakTopic,breakSources,breakQuizzes,breakDates,breakReviewScope,breakInterpretation} from '../src/data/chapters/breakDocuments';
 import {breakTranslations} from '../src/data/chapters/breakTranslations';
-import {structureDocument} from '../src/data/chapters/structureDocument';
+import {structureDocument,structureSources,structureQuizzes,structureDates,structureReviewScope,structureInterpretation} from '../src/data/chapters/structureDocument';
 import {structureTranslations} from '../src/data/chapters/structureTranslations';
-import {swingDocument} from '../src/data/chapters/swingDocument';
-import {liquidityDocument} from '../src/data/chapters/liquidityDocument';
+import {swingDocument,swingSources,swingQuizzes,swingDates} from '../src/data/chapters/swingDocument';
+import {liquidityDocument,liquiditySources,liquidityQuizzes,liquidityDates} from '../src/data/chapters/liquidityDocument';
 import {liquidityTranslations} from '../src/data/chapters/liquidityTranslations';
-import {orderBookDocument} from '../src/data/chapters/orderBookLesson';
+import {orderBookDocument,orderBookSources,orderBookQuizzes,orderBookDates} from '../src/data/chapters/orderBookLesson';
 import {orderBookTranslations} from '../src/data/chapters/orderBookTranslations';
-import {marketMakerDocument} from '../src/data/chapters/marketMakerLesson';
+import {marketMakerDocument,marketMakerSources,marketMakerQuizzes,marketMakerDates} from '../src/data/chapters/marketMakerLesson';
 import {marketMakerTranslations} from '../src/data/chapters/marketMakerTranslations';
-import {model2022Document} from '../src/data/chapters/model2022Lesson';
+import {model2022Document,model2022Sources,model2022Quizzes,model2022Dates} from '../src/data/chapters/model2022Lesson';
 import {model2022Translations} from '../src/data/chapters/model2022Translations';
-import {oteDocument} from '../src/data/chapters/oteLesson';
+import {oteDocument,oteSources,oteQuizzes,oteDates} from '../src/data/chapters/oteLesson';
 import {oteTranslations} from '../src/data/chapters/oteTranslations';
-import {rdrbDocument} from '../src/data/chapters/rdrbLesson';
+import {rdrbDocument,rdrbSources,rdrbQuizzes,rdrbDates} from '../src/data/chapters/rdrbLesson';
 import {rdrbTranslations} from '../src/data/chapters/rdrbTranslations';
-import {pdArrayDocument} from '../src/data/chapters/pdArrayLesson';
+import {pdArrayDocument,pdArraySources,pdArrayQuizzes,pdArrayDates} from '../src/data/chapters/pdArrayLesson';
 import {pdArrayTranslations} from '../src/data/chapters/pdArrayTranslations';
+import {suspensionReaperDocument,suspensionReaperSources,suspensionReaperQuizzes,suspensionReaperDates} from '../src/data/chapters/suspensionReaperLesson';
+import {suspensionReaperTranslations} from '../src/data/chapters/suspensionReaperTranslations';
 import {mitigationTranslations} from '../src/data/chapters/mitigationTranslations';
-import {mitigationDocument} from '../src/data/chapters/mitigationDocument';
+import {mitigationDocument,mitigationSources,mitigationQuizzes,mitigationDates} from '../src/data/chapters/mitigationDocument';
+import {priceMovementLesson,priceMovementSources,priceMovementQuizzes,priceMovementDates} from '../src/data/chapters/priceMovementLesson';
 import fs from 'node:fs';
 import path from 'node:path';
-import { textbookChapters } from '../src/data/chaptersData';
+import { textbookChapters, originalTextbookChapters } from '../src/data/chaptersData';
+import { mergedChapterIds } from '../src/utils/curriculumMigration';
 import { chapterQuiz } from '../src/data/chapters/chapterQuizzes';
-import {fvgDocument} from '../src/data/chapters/fvgDocument';
+import {fvgDocument,fvgNextReads} from '../src/data/chapters/fvgDocument';
 import assert from 'node:assert/strict';
+import ts from 'typescript';
 import {swingTranslations} from '../src/data/chapters/swingTranslations';
+import {deliverySupport} from '../src/data/chapters/deliverySupport';
 import { lessonParagraphs } from '../src/utils/lessonText';
+
+const readJson = (p: string) => JSON.parse(fs.readFileSync(path.join('src/data/chapters', p), 'utf8'));
+const deliveryEdition = readJson('deliveryEdition.json') as { id: number }[];
+const deliveryQuizzes = readJson('deliveryQuizzes.json') as Record<string, unknown>;
+const deliveryFigures = readJson('deliveryFigures.json') as { chapter: number }[];
+const m25Edition = readJson('mentorship2025Edition.json') as { id: number }[];
+const m25Support = readJson('mentorship2025Support.json') as Record<string, unknown>;
+const m25Quizzes = readJson('mentorship2025Quizzes.json') as Record<string, unknown>;
+const m25Sources = readJson('mentorship2025Sources.json') as Record<string, unknown>;
+const m25Replays = readJson('mentorship2025Replays.json') as { chapter: number }[];
+const m26Edition = readJson('mentorship2026Edition.json') as { id: number }[];
+const m26Support = readJson('mentorship2026Support.json') as Record<string, unknown>;
+const m26Quizzes = readJson('mentorship2026Quizzes.json') as Record<string, unknown>;
+const m26Sources = readJson('mentorship2026Sources.json') as Record<string, unknown>;
+const m26Visuals = readJson('mentorship2026Visuals.json') as Record<string, unknown>;
+
+const CHAPTER_COMPONENT_FILES: Record<number, string[]> = {
+  1: ['src/components/PriceMovementContent.tsx', 'src/components/PriceMovementVisual.tsx'],
+  3: ['src/components/OrderBookContent.tsx', 'src/components/OrderBookVisual.tsx'],
+  4: ['src/components/LiquidityDocumentContent.tsx', 'src/components/LiquidityVisual.tsx'],
+  7: ['src/components/SwingDocumentContent.tsx', 'src/components/SwingVisual.tsx'],
+  9: ['src/components/BreakDocumentContent.tsx', 'src/components/BreakVisual.tsx'],
+  10: ['src/components/BreakDocumentContent.tsx', 'src/components/BreakVisual.tsx'],
+  13: ['src/components/FvgDocumentContent.tsx', 'src/components/FvgBlueprint.tsx', 'src/components/FvgLessonDiagram.tsx', 'src/components/FvgStoryDiagram.tsx', 'src/components/FvgStory.tsx'],
+  33: ['src/components/MarketMakerContent.tsx', 'src/components/MarketMakerVisual.tsx'],
+  36: ['src/components/Model2022Content.tsx', 'src/components/Model2022Visual.tsx'],
+  55: ['src/components/SuspensionReaperContent.tsx', 'src/components/SuspensionReaperVisual.tsx', 'src/components/SuspensionReaperScene.tsx', 'src/utils/suspensionReaperSceneRenderer.ts'],
+  56: ['src/components/RdrbContent.tsx', 'src/components/RdrbVisual.tsx', 'src/components/RdrbScene.tsx', 'src/components/rdrbSceneRenderer.ts'],
+  59: ['src/components/PdArrayContent.tsx', 'src/components/PdArrayVisual.tsx', 'src/components/PdArrayScene.tsx', 'src/utils/pdArraySceneRenderer.ts'],
+  1010: ['src/components/StructureDocumentContent.tsx', 'src/components/StructureVisual.tsx'],
+  1031: ['src/components/MitigationDocumentContent.tsx', 'src/components/MitigationVisual.tsx'],
+  1034: ['src/components/OteContent.tsx', 'src/components/OteVisual.tsx', 'src/components/OteScene.tsx', 'src/components/oteSceneRenderer.ts'],
+  1064: ['src/components/SilverLessonContent.tsx', 'src/components/SilverLessonVisual.tsx', 'src/components/SilverLessonScene.tsx', 'src/components/SilverLessonAtlas.tsx', 'src/components/silverSceneRenderer.ts'],
+};
+
+function collectComponentStrings(filePath: string): string[] {
+  if (!fs.existsSync(filePath)) return [];
+  const source = ts.createSourceFile(filePath, fs.readFileSync(filePath, 'utf8'), ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX);
+  const strings: string[] = [];
+  function walk(node: ts.Node) {
+    if (ts.isJsxText(node) || ts.isStringLiteralLike(node)) strings.push(node.text);
+    else if (ts.isTemplateExpression(node)) strings.push(node.head.text + node.templateSpans.map((span, index) => `{${index}}${span.literal.text}`).join(''));
+    ts.forEachChild(node, walk);
+  }
+  walk(source);
+  return strings;
+}
 
 /** Remove only proven lesson-owned copy; unknown/dynamic UI keys remain common. */
 export function splitUrduLessons(output:string,uiKeys:ReadonlySet<string>) {
  const catalog=JSON.parse(fs.readFileSync(path.join(output,'chapters.json'),'utf8')) as Record<string,string>;
+ const catalogByLower=new Map<string,string[]>();
+ for(const k of Object.keys(catalog)){const l=k.toLowerCase();if(!catalogByLower.has(l))catalogByLower.set(l,[]);catalogByLower.get(l)!.push(k);}
  const owners=new Map<string,Set<string>>();
  const normalize=(s:string)=>s.replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/\s+/g,' ').trim();
  for(const chapter of textbookChapters) {
+  const addOwner=(key:string)=>{if(!owners.has(key))owners.set(key,new Set());owners.get(key)!.add(chapter.slug);};
   const visit=(value:unknown)=>{
    if(typeof value==='string') for(const source of [value,...lessonParagraphs(value),value.replace(/^\d+\.\s+/,''),value.replace(/^Part\s+[IVXLCDM]+\s*-\s*/,'')]) {
     const key=normalize(source);
-    if(catalog[key]) {if(!owners.has(key)) owners.set(key,new Set());owners.get(key)!.add(chapter.slug);}
+    if(catalog[key]) addOwner(key);
+    else if(key.length<=30){const matches=catalogByLower.get(key.toLowerCase());if(matches)matches.forEach(addOwner);}
    }
    else if(Array.isArray(value)) value.forEach(visit);
    else if(value&&typeof value==='object') Object.values(value).forEach(visit);
   };
   visit(chapter); visit(chapterQuiz(chapter));
   if(chapter.id===1064){visit(silverLessonDocument);visit(silverUi);visit(silverLessonSources);visit(silverLessonScope);visit(silverLessonInterpretation);}
-  if(chapter.id===13)visit(fvgDocument);
-  if(chapter.id===1031)visit(mitigationDocument);
-  if(chapter.id===4)visit(liquidityDocument);
-  if(chapter.id===3)visit(orderBookDocument);
-  if(chapter.id===33)visit(marketMakerDocument);
-  if(chapter.id===36)visit(model2022Document);
-  if(chapter.id===1034)visit(oteDocument);
-  if(chapter.id===56)visit(rdrbDocument);
-  if(chapter.id===59)visit(pdArrayDocument);
-  if(chapter.id===7)visit(swingDocument);
-  if(chapter.id===1010)visit(structureDocument);
-  const bt=breakTopic(chapter.id);if(bt)visit(breakDocuments[bt]);
+  if(chapter.id===1){visit(priceMovementLesson);visit(priceMovementSources);visit(priceMovementQuizzes);visit(priceMovementDates);}
+  if(chapter.id===13){visit(fvgDocument);visit(fvgNextReads);}
+  if(chapter.id===1031){visit(mitigationDocument);visit(mitigationSources);visit(mitigationQuizzes);visit(mitigationDates);}
+  if(chapter.id===4){visit(liquidityDocument);visit(liquiditySources);visit(liquidityQuizzes);visit(liquidityDates);}
+  if(chapter.id===3){visit(orderBookDocument);visit(orderBookSources);visit(orderBookQuizzes);visit(orderBookDates);}
+  if(chapter.id===33){visit(marketMakerDocument);visit(marketMakerSources);visit(marketMakerQuizzes);visit(marketMakerDates);}
+  if(chapter.id===36){visit(model2022Document);visit(model2022Sources);visit(model2022Quizzes);visit(model2022Dates);}
+  if(chapter.id===1034){visit(oteDocument);visit(oteSources);visit(oteQuizzes);visit(oteDates);}
+  if(chapter.id===55){visit(suspensionReaperDocument);visit(suspensionReaperSources);visit(suspensionReaperQuizzes);visit(suspensionReaperDates);}
+  if(chapter.id===56){visit(rdrbDocument);visit(rdrbSources);visit(rdrbQuizzes);visit(rdrbDates);}
+  if(chapter.id===59){visit(pdArrayDocument);visit(pdArraySources);visit(pdArrayQuizzes);visit(pdArrayDates);}
+  if(chapter.id===7){visit(swingDocument);visit(swingSources);visit(swingQuizzes);visit(swingDates);}
+  if(chapter.id===1010){visit(structureDocument);visit(structureSources);visit(structureQuizzes);visit(structureDates);visit(structureReviewScope);visit(structureInterpretation);}
+  const ownedIds=[chapter.id,...Object.entries(mergedChapterIds).filter(([,host])=>host===chapter.id).map(([id])=>Number(id))];
+  for(const oid of ownedIds){
+   if(oid!==chapter.id){const merged=originalTextbookChapters.find(c=>c.id===oid);if(merged){visit(merged);visit(chapterQuiz(merged));}}
+   const cid=String(oid);
+   visit(deliveryEdition.find(e=>e.id===oid));
+   visit(deliverySupport[oid]);
+   visit(deliveryQuizzes[cid]);
+   visit(deliveryFigures.filter(f=>f.chapter===oid));
+   visit(m25Edition.find(e=>e.id===oid));
+   visit(m25Support[cid]);visit(m25Quizzes[cid]);visit(m25Sources[cid]);
+   visit(m25Replays.filter(r=>r.chapter===oid));
+   visit(m26Edition.find(e=>e.id===oid));
+   visit(m26Support[cid]);visit(m26Quizzes[cid]);visit(m26Sources[cid]);visit(m26Visuals[cid]);
+  }
+  const bt=breakTopic(chapter.id);if(bt){visit(breakDocuments[bt]);visit(breakSources);visit(breakQuizzes[bt]);visit(breakDates);visit(breakReviewScope);visit(breakInterpretation);}
+  const compFiles=CHAPTER_COMPONENT_FILES[chapter.id];
+  if(compFiles) compFiles.forEach(f=>visit(collectComponentStrings(f)));
  }
- const common=Object.fromEntries(Object.entries(catalog).filter(([key])=>!owners.has(key)||uiKeys.has(key)||/\{\w+\}/.test(key)));
+ const common=Object.fromEntries(Object.entries(catalog).filter(([key])=>!owners.has(key)||(owners.get(key)?.size||0)>=2||uiKeys.has(key)||/\{\w+\}/.test(key)));
  fs.writeFileSync(path.join(output,'chapter-common.json'),JSON.stringify(common)+'\n');
  const folder=path.join(output,'lessons');fs.mkdirSync(folder,{recursive:true});
  const lessonParts:{slug:string;catalog:Record<string,string>;bytes:number}[]=[];
@@ -68,36 +146,33 @@ export function splitUrduLessons(output:string,uiKeys:ReadonlySet<string>) {
   fs.writeFileSync(path.join(folder,chapter.slug+'.json'),JSON.stringify(selected)+'\n');
   lessonParts.push({slug:chapter.slug,catalog:selected,bytes:Buffer.byteLength(JSON.stringify(selected))});
  }
- // The fallback used by directory routes duplicated every lesson chunk. Reuse
- // its thirty-two largest existing pieces; reconstruct the exact original dictionary.
- // This changes storage only: no translation is dropped or moved behind a click.
- const pieces=lessonParts.sort((a,b)=>b.bytes-a.bytes||a.slug.localeCompare(b.slug)).slice(0,32),factoredKeys=new Set(pieces.flatMap(p=>Object.keys(p.catalog)));
+ // Reuse all substantial per-lesson chunks so directory fallback routes keep
+ // chapters.json free of duplicate per-lesson copy.
+ const pieces=lessonParts.filter(p=>p.bytes>500).sort((a,b)=>b.bytes-a.bytes||a.slug.localeCompare(b.slug)),factoredKeys=new Set(pieces.flatMap(p=>Object.keys(p.catalog)));
  const fallback=Object.fromEntries(Object.entries(catalog).filter(([key])=>!factoredKeys.has(key)&&!Object.hasOwn(common,key)));
  const restored=Object.assign({},common,fallback,...pieces.map(p=>p.catalog));assert.deepEqual(restored,catalog,'Factored Urdu fallback must retain every original key/value');
  fs.writeFileSync(path.join(output,'chapters.json'),JSON.stringify(fallback)+'\n');
  fs.writeFileSync(path.join(output,'chapter-fallback-parts.json'),JSON.stringify(pieces.map(p=>p.slug))+'\n');
  fs.mkdirSync('outputs/urdu-localization',{recursive:true});fs.writeFileSync('outputs/urdu-localization/fallback-parity.json',JSON.stringify({passed:true,originalEntries:Object.keys(catalog).length,restoredEntries:Object.keys(restored).length,reused:pieces.map(p=>({slug:p.slug,bytes:p.bytes})),bytesRemoved:Buffer.byteLength(JSON.stringify(catalog))-Buffer.byteLength(JSON.stringify(fallback))},null,2));
  // Route-only terminology overrides must not leak through the directory fallback pieces.
- const overrides=Object.fromEntries(Object.entries(mitigationTranslations).filter(([key,value])=>catalog[key]!==value));
- fs.writeFileSync(path.join(output,'mitigation-overrides.json'),JSON.stringify(overrides)+'\n');
- const liquidityOverrides=Object.fromEntries(Object.entries(liquidityTranslations).filter(([key,value])=>catalog[key]!==value));
- fs.writeFileSync(path.join(output,'liquidity-overrides.json'),JSON.stringify(liquidityOverrides)+'\n');
- const orderBookOverrides=Object.fromEntries(Object.entries(orderBookTranslations).filter(([key,value])=>catalog[key]!==value));
- fs.writeFileSync(path.join(output,'order-book-overrides.json'),JSON.stringify(orderBookOverrides)+'\n');
- const marketMakerOverrides=Object.fromEntries(Object.entries(marketMakerTranslations).filter(([key,value])=>catalog[key]!==value));
- fs.writeFileSync(path.join(output,'market-maker-overrides.json'),JSON.stringify(marketMakerOverrides)+'\n');
- const model2022Overrides=Object.fromEntries(Object.entries(model2022Translations).filter(([key,value])=>catalog[key]!==value));
- fs.writeFileSync(path.join(output,'model-2022-overrides.json'),JSON.stringify(model2022Overrides)+'\n');
- const oteOverrides=Object.fromEntries(Object.entries(oteTranslations).filter(([key,value])=>catalog[key]!==value));
- fs.writeFileSync(path.join(output,'ote-overrides.json'),JSON.stringify(oteOverrides)+'\n');
- const rdrbOverrides=Object.fromEntries(Object.entries(rdrbTranslations).filter(([key,value])=>catalog[key]!==value));
- fs.writeFileSync(path.join(output,'rdrb-overrides.json'),JSON.stringify(rdrbOverrides)+'\n');
- const pdArrayOverrides=Object.fromEntries(Object.entries(pdArrayTranslations).filter(([key,value])=>catalog[key]!==value));
- fs.writeFileSync(path.join(output,'pd-array-overrides.json'),JSON.stringify(pdArrayOverrides)+'\n');
- const swingBase=Object.assign({},JSON.parse(fs.readFileSync(path.join(output,'shared.json'),'utf8')),common,lessonParts.find(p=>p.slug==='what-is-a-swing-the-atom-of-structure')!.catalog);
- const swingOverrides=Object.fromEntries(Object.entries(swingTranslations).filter(([key,value])=>swingBase[key]!==value));
- assert.deepEqual({...swingBase,...swingOverrides},{...swingBase,...swingTranslations},'Swing route override factoring must preserve every translation');
- fs.writeFileSync(path.join(output,'swing-overrides.json'),JSON.stringify(swingOverrides)+'\n');
+ const sharedCatalog = JSON.parse(fs.readFileSync(path.join(output,'shared.json'),'utf8')) as Record<string,string>;
+ const writeDedupedOverrides = (slug: string, filename: string, translations: Record<string, string>) => {
+   const lessonPart = lessonParts.find(p => p.slug === slug);
+   const base = Object.assign({}, sharedCatalog, common, lessonPart ? lessonPart.catalog : {});
+   const delta = Object.fromEntries(Object.entries(translations).filter(([key, value]) => base[key] !== value));
+   assert.deepEqual({ ...base, ...delta }, { ...base, ...translations }, `${slug} route override factoring must preserve every translation`);
+   fs.writeFileSync(path.join(output, filename), JSON.stringify(delta) + '\n');
+ };
+ writeDedupedOverrides('mitigation-and-rejection-blocks', 'mitigation-overrides.json', mitigationTranslations);
+ writeDedupedOverrides('liquidity-the-most-misunderstood-word-in-trading', 'liquidity-overrides.json', liquidityTranslations);
+ writeDedupedOverrides('the-order-book-in-depth', 'order-book-overrides.json', orderBookTranslations);
+ writeDedupedOverrides('ict-charter-models-6-and-7-universal-models', 'market-maker-overrides.json', marketMakerTranslations);
+ writeDedupedOverrides('ict-charter-model-13-2022-youtube-model', 'model-2022-overrides.json', model2022Translations);
+ writeDedupedOverrides('optimal-trade-entry-ote', 'ote-overrides.json', oteTranslations);
+ writeDedupedOverrides('rdrb-balanced-price-range-and-enigma-fvg', 'rdrb-overrides.json', rdrbTranslations);
+ writeDedupedOverrides('ict-pd-array-selection-price-delivery-continuum', 'pd-array-overrides.json', pdArrayTranslations);
+ writeDedupedOverrides('reaper-ifvg-and-suspension-block-advancements', 'suspension-reaper-overrides.json', suspensionReaperTranslations);
+ writeDedupedOverrides('what-is-a-swing-the-atom-of-structure', 'swing-overrides.json', swingTranslations);
  const silverBase=Object.assign({},JSON.parse(fs.readFileSync(path.join(output,'shared.json'),'utf8')),common,lessonParts.find(p=>p.slug==='silver-bullet-model')!.catalog);
  fs.writeFileSync(path.join(output,'silver-lesson-overrides.json'),JSON.stringify(Object.fromEntries(Object.entries(silverLessonTranslations).filter(([key,value])=>silverBase[key]!==value)))+'\n');
  const structureBase=Object.assign({},JSON.parse(fs.readFileSync(path.join(output,'shared.json'),'utf8')),common,lessonParts.find(p=>p.slug==='internal-vs-external-structure')!.catalog);

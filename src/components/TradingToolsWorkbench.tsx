@@ -1,64 +1,18 @@
 import {withoutLocale} from '../i18n/locale';
-import {PracticeLoopPage} from './practice/PracticeLoopPage';
 import {WorkbenchHeader} from './WorkbenchHeader';
-import {GlossaryReference} from './GlossaryReference';
-import {primaryGlossaryRoute} from '../utils/glossaryReference';
-import {chartLabHubMeta} from '../data/chartLabHub';
-import {studyForSlug} from '../data/chartLabRemainingContent';
-import {masterclassCollectionPage} from '../data/masterclassCategoryPages';
-import {MasterclassHub} from './MasterclassHub';
-import {MasterclassJournal} from './MasterclassJournal';
-import {masterclassJournalForPath} from '../utils/masterclassJournalRoutes';
 import { useTranslation } from "../i18n/TranslationProvider";
 import { currentDocumentHref } from '../i18n/navigation';
-import { masterclassCollection } from '../data/masterclassData';
 import { toolStudyGuide } from '../utils/toolStudyGuides';
 import { FinancialDisclaimer } from './FinancialDisclaimer';
-import { ContextualInternalLinker } from './ContextualInternalLinker';
-import {breakerMeta} from '../data/breakerStudy';
-import {silverMeta} from '../data/silverBulletStudy';
 import React, { useState, useEffect } from 'react';
 import {
-  BarChart2,
-  PlayCircle,
-  Cpu,
-  BookMarked,
-  GitFork,
-  Layers,
-  GitCompare,
-  Award,
-  Wrench,
-  Flame,
-  Compass,
-  LayoutGrid,
-  ArrowLeft,
-  ChevronDown
-} from 'lucide-react';
-import { ChartLab } from './ChartLab';
-import { TradeSimulator } from './TradeSimulator';
-import { BacktestLab } from './BacktestLab';
-import { TradingJournal } from './TradingJournal';
-import { KnowledgeGraph } from './KnowledgeGraph';
-import { ConceptExplorer } from './ConceptExplorer';
-import { CompareView } from './CompareView';
-import { MasteryDashboard } from './MasteryDashboard';
-import { MasterclassWorkbench } from './MasterclassWorkbench';
-import { InstitutionalToolsSuite } from './InstitutionalToolsSuite';
-import { TradingToolsOverview } from './TradingToolsOverview';
-import { ScrollReveal } from './ScrollReveal';
-import { SEO } from './SEO';
+  type TradingToolId,
+  resolveWorkbenchRegistryKey,
+  getRegisteredWorkbenchTool,
+  loadWorkbenchTool,
+} from './workbenchToolRegistry';
 
-export type TradingToolId =
-  | 'chartlab'
-  | 'simulator'
-  | 'backtest'
-  | 'journal'
-  | 'graph'
-  | 'concepts'
-  | 'compare'
-  | 'dashboard'
-  | 'masterclass'
-  | 'ict_suite';
+export type { TradingToolId };
 
 export interface TradingToolsWorkbenchProps {
   documentPath?: string;
@@ -95,6 +49,19 @@ export interface TradingToolsWorkbenchProps {
   deliveryModuleSlug?: string;
 }
 
+const TOOL_META: Record<TradingToolId, { slug: string; name: string }> = {
+  masterclass: { slug: 'masterclass', name: 'Masterclass Hub' },
+  chartlab: { slug: 'chartlab', name: 'Chart Lab' },
+  simulator: { slug: 'simulator', name: 'Trade Simulator' },
+  backtest: { slug: 'backtest', name: 'Backtest Lab' },
+  journal: { slug: 'journal', name: 'Trading Journal' },
+  graph: { slug: 'knowledge-graph', name: 'Knowledge Graph' },
+  concepts: { slug: 'glossary', name: 'Glossary' },
+  compare: { slug: 'compare', name: 'Compare Matrix' },
+  dashboard: { slug: 'profile', name: 'Mastery Profile' },
+  ict_suite: { slug: 'delivery-suite', name: 'ICT Delivery Suite' },
+};
+
 export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
   documentPath,
   documentHeading,
@@ -119,175 +86,157 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
   profileExamSlug,
   deliveryModuleSlug
 }) => {
-  const { t,locale,href } = useTranslation();
+  const { t, locale } = useTranslation();
   const [activeTool, setActiveTool] = useState<TradingToolId | 'overview'>(initialTool);
+  const [, setLoadTick] = useState(0);
+
   useEffect(() => {
     if (initialTool !== undefined && initialTool !== activeTool) {
       setActiveTool(initialTool);
     }
   }, [initialTool]);
 
+  const currentWindowPath = typeof window !== 'undefined' ? window.location.pathname : '';
+  const collectionPath = documentPath || currentWindowPath || '/tools/masterclass/';
+  const glossaryPath = documentPath || currentWindowPath || '/tools/glossary/';
+  const registryKey = resolveWorkbenchRegistryKey({
+    activeTool,
+    collectionPath,
+    glossaryPath,
+    masterclassModuleSlug,
+    simulatorModelSlug,
+    backtestStrategySlug,
+  });
+
+  useEffect(() => {
+    if (getRegisteredWorkbenchTool(registryKey)) return;
+    let cancelled = false;
+    loadWorkbenchTool(registryKey).then(() => {
+      if (!cancelled) setLoadTick(n => n + 1);
+    });
+    return () => { cancelled = true; };
+  }, [registryKey]);
+
   const handleSelectTool = (toolId: TradingToolId | 'overview', customUrl?: string) => {
     if (onToolChange) { onToolChange(toolId, customUrl); return; }
-    window.location.assign(currentDocumentHref(customUrl || `/tools/${tools.find(t => t.id === toolId)?.slug || toolId}/`));
+    const slug = toolId === 'overview' ? '' : (TOOL_META[toolId]?.slug || toolId);
+    window.location.assign(currentDocumentHref(customUrl || (slug ? `/tools/${slug}/` : '/tools/')));
   };
 
-  const tools = [
-    {
-      id: 'masterclass' as const,
-      slug: 'masterclass',
-      name: 'Masterclass Hub',
-      badge: `${masterclassCollection.length} Lessons`,
-      desc: 'Model definitions, PD arrays and reference lessons',
-      icon: Flame
-    },
-    {
-      id: 'chartlab' as const,
-      slug: 'chartlab',
-      name: 'Chart Lab',
-      badge: 'Trading Floor',
-      desc: 'Find sweeps, displacement and FVGs with visual hints',
-      icon: BarChart2
-    },
-    {
-      id: 'simulator' as const,
-      slug: 'simulator',
-      name: 'Trade Simulator',
-      badge: 'Execution Room',
-      desc: 'Lock a plan, reveal candles and review the outcome',
-      icon: PlayCircle
-    },
-    {
-      id: 'backtest' as const,
-      slug: 'backtest',
-      name: 'Backtest Lab',
-      badge: 'Research Lab',
-      desc: 'Scan candle data, compare samples and inspect every trade',
-      icon: Cpu
-    },
-    {
-      id: 'journal' as const,
-      slug: 'journal',
-      name: 'Trading Journal',
-      badge: "Trader's Log",
-      desc: '7-point institutional trade audit and rule validation',
-      icon: BookMarked
-    },
-    {
-      id: 'graph' as const,
-      slug: 'knowledge-graph',
-      name: 'Knowledge Graph',
-      badge: 'Concept Matrix',
-      desc: 'Interactive 3D tree connecting ICT and smart money concepts',
-      icon: GitFork
-    },
-    {
-      id: 'concepts' as const,
-      slug: 'glossary',
-      name: 'Glossary',
-      badge: 'Encyclopedia',
-      desc: 'Searchable glossary of ICT mechanics, definitions, and diagrams',
-      icon: Layers
-    },
-    {
-      id: 'compare' as const,
-      slug: 'compare',
-      name: 'Compare Matrix',
-      badge: 'Side-by-Side',
-      desc: 'Side-by-side contrast of overlapping or misunderstood concepts',
-      icon: GitCompare
-    },
-    {
-      id: 'dashboard' as const,
-      slug: 'profile',
-      name: 'Mastery Profile',
-      badge: 'Diagnostics',
-      desc: 'Device-local lesson completion and practice quizzes',
-      icon: Award
-    },
-    {
-      id: 'ict_suite' as const,
-      slug: 'delivery-suite',
-      name: 'ICT Delivery Suite',
-      badge: 'Tools & Macros',
-      desc: 'Independent retracement calculator, range extensions, New York clock and study checklist',
-      icon: Compass
-    }
-  ];
+  if (registryKey === 'overview') {
+    const Overview = getRegisteredWorkbenchTool('overview');
+    if (!Overview) return null;
+    return <Overview onSelectTool={(toolId, customUrl) => handleSelectTool(toolId, customUrl)} />;
+  }
 
-  const toolOrder=['masterclass','chartlab','ict_suite','simulator','backtest','journal','graph','concepts','compare','dashboard'];
-  tools.sort((a,b)=>toolOrder.indexOf(a.id)-toolOrder.indexOf(b.id));
-  // If in Overview mode, render the full Hub Overview
-  if (activeTool === 'overview') {
+  if (registryKey === 'masterclass-hub') {
+    const MasterclassHub = getRegisteredWorkbenchTool('masterclass-hub');
+    if (!MasterclassHub) return null;
+    const cleanCollection = withoutLocale(collectionPath).replace(/\/?$/, '/');
+    return <MasterclassHub key={cleanCollection} path={cleanCollection} />;
+  }
+
+  if (registryKey === 'masterclass') {
+    const mcMod = getRegisteredWorkbenchTool('masterclass');
+    if (!mcMod) return null;
+    // Drafts are available only in the local editorial preview. Production waits
+    // for each edition's source/content/language release checks.
+    const draftPreview = typeof window !== 'undefined' && !!import.meta.env?.DEV;
+    const journal = mcMod.masterclassJournalForPath(currentWindowPath, draftPreview);
+    if (journal) return <mcMod.MasterclassJournal lesson={journal} />;
+  }
+
+  if (registryKey === 'glossary-ref') {
+    const GlossaryReference = getRegisteredWorkbenchTool('glossary-ref');
+    if (!GlossaryReference) return null;
+    return <GlossaryReference pathname={glossaryPath} />;
+  }
+
+  if (registryKey === 'practice-loop') {
+    const PracticeLoopPage = getRegisteredWorkbenchTool('practice-loop');
+    if (!PracticeLoopPage) return null;
+    if (activeTool === 'simulator' && !simulatorModelSlug) return <PracticeLoopPage tool="simulator" />;
+    if (activeTool === 'backtest' && !backtestStrategySlug) return <PracticeLoopPage tool="backtest" />;
+    if (activeTool === 'ict_suite' && withoutLocale(collectionPath) === '/tools/delivery-suite/') return <PracticeLoopPage tool="delivery" />;
+  }
+
+  if (activeTool === 'simulator' && simulatorModelSlug) {
+    const TradeSimulator = getRegisteredWorkbenchTool('simulator');
+    if (!TradeSimulator) return null;
+    return <TradeSimulator key={simulatorModelSlug} initialModelSlug={simulatorModelSlug} />;
+  }
+
+  if (activeTool === 'ict_suite' && deliveryModuleSlug) {
+    const InstitutionalToolsSuite = getRegisteredWorkbenchTool('ict_suite');
+    if (!InstitutionalToolsSuite) return null;
     return (
-      <TradingToolsOverview
-        onSelectTool={(toolId, customUrl) => handleSelectTool(toolId, customUrl)}
+      <InstitutionalToolsSuite
+        initialModuleSlug={deliveryModuleSlug}
+        heading={documentHeading || (typeof document !== 'undefined' ? document.querySelector('meta[name="learnsmc-heading"]')?.getAttribute('content') || undefined : undefined)}
       />
     );
   }
 
-  const collectionPath=documentPath||(typeof window!=='undefined'?window.location.pathname:'/tools/masterclass/');
-  if(activeTool==='masterclass'&&!masterclassModuleSlug){const collection=masterclassCollectionPage(collectionPath);if(collection)return <MasterclassHub key={collection.path} path={collection.path}/>;}
+  const currentToolMeta = TOOL_META[activeTool as TradingToolId] || TOOL_META.masterclass;
+  const chartLabMod = activeTool === 'chartlab' ? getRegisteredWorkbenchTool('chartlab') : undefined;
+  const resolvedHeading =
+    chartLabMod?.resolveHeading(chartScenarioSlug, locale) ||
+    documentHeading ||
+    (typeof document === 'undefined' ? undefined : document.querySelector('meta[name="learnsmc-heading"]')?.getAttribute('content')) ||
+    t(currentToolMeta.name);
 
-  // Drafts are available only in the local editorial preview. Production waits
-  // for each edition's source/content/language release checks.
-  const journalPath=typeof window==='undefined'?'':window.location.pathname;
-  const draftPreview=typeof window!=='undefined'&&!!import.meta.env?.DEV;
-  const journal=activeTool==='masterclass'?masterclassJournalForPath(journalPath,draftPreview):undefined;
-  if(journal)return <MasterclassJournal lesson={journal}/>;
-
-  const glossaryPath=documentPath || (typeof window!=='undefined'?window.location.pathname:'/tools/glossary/');
-  if(activeTool==='concepts'&&primaryGlossaryRoute(glossaryPath))return <GlossaryReference pathname={glossaryPath}/>;
-
-  if(activeTool==='simulator'&&simulatorModelSlug)return <TradeSimulator key={simulatorModelSlug} initialModelSlug={simulatorModelSlug}/>;
-  if(activeTool==='simulator'&&!simulatorModelSlug)return <PracticeLoopPage tool="simulator"/>;
-  if(activeTool==='backtest'&&!backtestStrategySlug)return <PracticeLoopPage tool="backtest"/>;
-  if(activeTool==='ict_suite'&&withoutLocale(collectionPath)==='/tools/delivery-suite/')return <PracticeLoopPage tool="delivery"/>;
-  if(activeTool==='ict_suite'&&deliveryModuleSlug)return <InstitutionalToolsSuite initialModuleSlug={deliveryModuleSlug} heading={documentHeading || (typeof document!=='undefined'?document.querySelector('meta[name="learnsmc-heading"]')?.getAttribute('content')||undefined:undefined)}/>;
-  const currentToolMeta = tools.find(t => t.id === activeTool) || tools[0];
+  const masterclassMod = activeTool === 'masterclass' ? getRegisteredWorkbenchTool('masterclass') : undefined;
+  const TradeSimulatorComp = activeTool === 'simulator' ? getRegisteredWorkbenchTool('simulator') : undefined;
+  const BacktestLabComp = activeTool === 'backtest' ? getRegisteredWorkbenchTool('backtest') : undefined;
+  const TradingJournalComp = activeTool === 'journal' ? getRegisteredWorkbenchTool('journal') : undefined;
+  const KnowledgeGraphComp = activeTool === 'graph' ? getRegisteredWorkbenchTool('graph') : undefined;
+  const ConceptExplorerComp = activeTool === 'concepts' ? getRegisteredWorkbenchTool('concepts') : undefined;
+  const CompareViewComp = activeTool === 'compare' ? getRegisteredWorkbenchTool('compare') : undefined;
+  const MasteryDashboardComp = activeTool === 'dashboard' ? getRegisteredWorkbenchTool('dashboard') : undefined;
+  const InstitutionalToolsSuiteComp = activeTool === 'ict_suite' ? getRegisteredWorkbenchTool('ict_suite') : undefined;
 
   return (
     <div data-workbench-tool={activeTool} className="wb-suite workbench-pages academy-surface space-y-8 sm:space-y-12 pb-20 text-ink">
 
-      <WorkbenchHeader activeTool={activeTool} heading={activeTool==='chartlab'&&!chartScenarioSlug?chartLabHubMeta.h1[locale==='ur'?1:0]:activeTool==='chartlab'&&studyForSlug(chartScenarioSlug) ? studyForSlug(chartScenarioSlug)!.h1[locale==='ur'?1:0] : activeTool==='chartlab'&&chartScenarioSlug==='nq-silver-bullet-short' ? silverMeta.h1[locale==='ur'?1:0] : activeTool==='chartlab'&&chartScenarioSlug==='eurusd-failed-ob-breaker' ? breakerMeta.h1[locale==='ur'?1:0] : documentHeading || (typeof document === 'undefined' ? undefined : document.querySelector('meta[name="learnsmc-heading"]')?.getAttribute('content')) || t(currentToolMeta.name)}/>
+      <WorkbenchHeader activeTool={activeTool} heading={resolvedHeading} />
 
       {/* Render Active Tool Content */}
       <div className="workbench-content">
         <div className="predikt-workbench-body">
-          {activeTool === 'masterclass' && (
-            <MasterclassWorkbench
+          {activeTool === 'masterclass' && masterclassMod && (
+            <masterclassMod.MasterclassWorkbench
               initialCategory={masterclassCategory}
               initialModuleSlug={masterclassModuleSlug}
               onNavigateUrl={(url) => handleSelectTool('masterclass', url)}
             />
           )}
-          {activeTool === 'chartlab' && (
-            <ChartLab
+          {activeTool === 'chartlab' && chartLabMod && (
+            <chartLabMod.ChartLab
               initialScenarioSlug={chartScenarioSlug}
               initialStepSlug={chartStepSlug}
               onNavigateUrl={(url) => handleSelectTool('chartlab', url)}
             />
           )}
-          {activeTool === 'simulator' && (
-            <TradeSimulator
+          {activeTool === 'simulator' && TradeSimulatorComp && (
+            <TradeSimulatorComp
               initialModelSlug={simulatorModelSlug}
               onNavigateUrl={(url) => handleSelectTool('simulator', url)}
             />
           )}
-          {activeTool === 'backtest' && (
-            <BacktestLab
+          {activeTool === 'backtest' && BacktestLabComp && (
+            <BacktestLabComp
               initialStrategySlug={backtestStrategySlug}
               onNavigateUrl={(url) => handleSelectTool('backtest', url)}
             />
           )}
-          {activeTool === 'journal' && (
-            <TradingJournal
+          {activeTool === 'journal' && TradingJournalComp && (
+            <TradingJournalComp
               initialSectionSlug={journalSectionSlug}
               onNavigateUrl={(url) => handleSelectTool('journal', url)}
             />
           )}
-          {activeTool === 'graph' && (
-            <KnowledgeGraph
+          {activeTool === 'graph' && KnowledgeGraphComp && (
+            <KnowledgeGraphComp
               initialViewMode={graphViewMode}
               initialStep={graphStep}
               initialNodeId={graphNodeId}
@@ -295,8 +244,8 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
               onNavigateUrl={(url) => handleSelectTool('graph', url)}
             />
           )}
-          {activeTool === 'concepts' && (
-            <ConceptExplorer
+          {activeTool === 'concepts' && ConceptExplorerComp && (
+            <ConceptExplorerComp
               initialCategory={glossaryCategory}
               initialConceptId={glossaryConceptId}
               initialSubConceptId={glossarySubConceptId}
@@ -304,22 +253,22 @@ export const TradingToolsWorkbench: React.FC<TradingToolsWorkbenchProps> = ({
               onOpenSimulator={() => handleSelectTool('simulator', '/tools/simulator/')}
             />
           )}
-          {activeTool === 'compare' && (
-            <CompareView
+          {activeTool === 'compare' && CompareViewComp && (
+            <CompareViewComp
               initialComparisonSlug={comparisonSlug}
               onNavigateUrl={(url) => handleSelectTool('compare', url)}
             />
           )}
-          {activeTool === 'dashboard' && (
-            <MasteryDashboard
+          {activeTool === 'dashboard' && MasteryDashboardComp && (
+            <MasteryDashboardComp
               initialSubTab={profileSubTab}
               initialExamSlug={profileExamSlug}
               onSelectTab={(tab) => handleSelectTool(tab as any)}
               onNavigateUrl={(url) => handleSelectTool('dashboard', url)}
             />
           )}
-          {activeTool === 'ict_suite' && (
-            <InstitutionalToolsSuite
+          {activeTool === 'ict_suite' && InstitutionalToolsSuiteComp && (
+            <InstitutionalToolsSuiteComp
               initialModuleSlug={deliveryModuleSlug}
               onNavigateUrl={(url) => handleSelectTool('ict_suite', url)}
             />

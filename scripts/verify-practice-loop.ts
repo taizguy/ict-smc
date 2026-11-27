@@ -1,3 +1,4 @@
+import './register-ssr-tools';
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {parse} from 'parse5';

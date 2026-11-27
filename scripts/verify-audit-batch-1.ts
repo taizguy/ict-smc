@@ -11,6 +11,7 @@ import { urdu } from '../src/i18n/urdu';
 import { t } from '../src/i18n/translate';
 import shared from '../src/i18n/runtime/shared.json';
 import tools from '../src/i18n/runtime/tools.json';
+import toolsMasterclass from '../src/i18n/runtime/tools-masterclass.json';
 import { chapterCatalog } from '../src/data/catalog.generated';
 import { workbenchToolCatalog } from '../src/data/workbenchCatalog';
 import type { RouteMeta } from './prerender';
@@ -39,7 +40,7 @@ for (const route of paths) {
     assert.deepEqual(metadata(english).meta(key), [pair.en], `English unchanged: ${route} ${key}`);
     assert.deepEqual(metadata(localized).meta(key), [pair.ur], `Urdu parity: ${route} ${key}`);
   }
-  assert.equal(t(pair.en, 'ur', { ...shared, ...tools }), pair.ur, `Client catalog parity: ${route}`);
+  assert.equal(t(pair.en, 'ur', { ...shared, ...tools, ...toolsMasterclass }), pair.ur, `Client catalog parity: ${route}`);
   fs.writeFileSync(path.join(output, route.includes('rejection') ? 'rejection-block-ur.html' : 'hangman-pd-array-ur.html'), localized);
 }
 

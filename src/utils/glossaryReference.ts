@@ -1,7 +1,7 @@
 import {ictConcepts} from '../data/conceptsData';
 import {GLOSSARY_CATEGORIES,CONCEPT_SLUG_MAP,getGlossaryConceptPath,resolveGlossaryUrl} from './glossaryRoutes';
 import {glossaryReviewFor,glossaryReviewDate,glossaryCategoryCopy} from '../data/glossaryReview';
-import {textbookChapters} from '../data/chaptersData';
+import {chapterCatalog as textbookChapters} from '../data/catalog.generated';
 import {lessonAuthor,publisher} from './publisher';
 import {withoutLocale} from '../i18n/locale';
 export const GLOSSARY_PATH='/tools/glossary/';

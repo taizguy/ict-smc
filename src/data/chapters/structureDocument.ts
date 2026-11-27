@@ -5,6 +5,7 @@ export type StructureBlock={type:'paragraph'|'h3'|'list'|'table'|'case-table'|'f
 export const structureDocument=data as{h1:string;quickAnswer:string;takeaways:string[];sections:{number:number;title:string;blocks:StructureBlock[]}[];faqs:{question:string;answer:string}[];terms:{term:string;definition:string}[]};
 export const structurePath='/learn/internal-vs-external-structure/';
 export const structureDates={updated:{iso:'2026-11-13',label:'13 November 2026'}};
+export const structureRoomDates={published:{iso:'2026-10-15',label:'15 October 2026'},updated:{iso:'2026-11-11',label:'11 November 2026'}};
 export const structureChapter:TextbookChapter={id:1010,slug:'internal-vs-external-structure',part:'Part II - Market Structure',title:data.h1,status:'published',level:1,quote:data.quickAnswer,summary:data.takeaways,keyTerms:data.terms,practiceQuestions:data.faqs.slice(0,3).map(q=>q.question),sections:data.sections.map(s=>({id:`1010.document.${s.number}`,title:s.title,content:s.blocks.filter(b=>b.type==='paragraph').map(b=>b.text!).join('\n\n')}))};
 export const structureSources:CurriculumSource[]=[
  {title:'ICT 2022 Mentorship — Episode 3',url:'https://www.youtube.com/watch?v=nQfHZ2DEJ8c&t=2089s',scope:'Selected local transcript passage at approximately 34:49–35:47: shorter-term highs/lows and imbalances within a retraced leg. This does not establish an obligatory liquidity cycle or verify the invented examples.'},

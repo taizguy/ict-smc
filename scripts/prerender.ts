@@ -1,3 +1,5 @@
+import './register-ssr-chapters';
+import './register-ssr-tools';
 import {curriculumHref} from '../src/utils/curriculumMigration';
 import {splitCurriculumSitemap} from './curriculum-sitemaps';
 import {curriculumRedirects,curriculumTarget,phase1Entries} from '../src/data/curriculumPhase1';
@@ -83,6 +85,64 @@ const templateHtml = fs.readFileSync(templatePath, 'utf-8')
   .replace(/<div id="root">[\s\S]*<\/div>\s*<\/body>/, '<div id="root"></div>\n</body>')
   .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, '')
   .replace(/<meta name="(?:learnsmc-prerendered|learnsmc-heading|learnsmc-status|google-site-verification)"[^>]*>/g, '');
+
+interface RouteCssChunk { file: string; entry: boolean; imports: string[]; css: string[]; modules: string[]; }
+const routeCssPath = path.resolve(projectRoot, 'outputs/practice-performance/latest/route-css.json');
+const routeCssChunks: RouteCssChunk[] = fs.existsSync(routeCssPath) ? JSON.parse(fs.readFileSync(routeCssPath, 'utf-8')) : [];
+const routeCssByFile = new Map(routeCssChunks.map(c => [c.file, c]));
+const REBUILT_CONTENT_FILE_BY_ID: Record<number, string> = {
+  1: 'PriceMovementContent.tsx',
+  3: 'OrderBookContent.tsx',
+  4: 'LiquidityDocumentContent.tsx',
+  7: 'SwingDocumentContent.tsx',
+  9: 'BreakDocumentContent.tsx',
+  10: 'BreakDocumentContent.tsx',
+  13: 'FvgDocumentContent.tsx',
+  33: 'MarketMakerContent.tsx',
+  36: 'Model2022Content.tsx',
+  55: 'SuspensionReaperContent.tsx',
+  56: 'RdrbContent.tsx',
+  59: 'PdArrayContent.tsx',
+  1010: 'StructureDocumentContent.tsx',
+  1031: 'MitigationDocumentContent.tsx',
+  1034: 'OteContent.tsx',
+  1064: 'SilverLessonContent.tsx',
+};
+function collectRouteCss(routePath: string, chapterId?: number): string[] {
+  const markers: string[] = [];
+  if (routePath === '/') markers.push('src/components/WelcomeScreen.tsx', 'src/components/LearningFirstHome.tsx');
+  else if (routePath.startsWith('/articles/')) markers.push('src/components/articles/ArticlesView.tsx');
+  else if (routePath.startsWith('/curriculum/')) markers.push('src/components/CurriculumView.tsx', 'src/components/ReadingRoomLayout.tsx');
+  else if (chapterId) {
+    markers.push('src/components/ChapterRoom.tsx', 'src/components/ReadingRoomLayout.tsx');
+    const contentFile = REBUILT_CONTENT_FILE_BY_ID[chapterId];
+    if (contentFile) markers.push(`src/components/${contentFile}`);
+  } else if (routePath === '/tools/chartlab/') markers.push('src/components/market/ChartLabHubPage.tsx');
+  else if (routePath.startsWith('/tools/chartlab/')) markers.push('src/components/TradingToolsWorkbench.tsx', 'src/components/ChartLab.tsx');
+  else if (routePath.startsWith('/tools/glossary/')) markers.push('src/components/TradingToolsWorkbench.tsx', 'src/components/GlossaryReference.tsx');
+  else if (routePath.startsWith('/tools/concepts/')) markers.push('src/components/TradingToolsWorkbench.tsx', 'src/components/ConceptExplorer.tsx');
+  else if (routePath.startsWith('/tools/masterclass/')) markers.push('src/components/TradingToolsWorkbench.tsx', 'src/components/MasterclassHub.tsx', 'src/components/MasterclassWorkbench.tsx', 'src/components/MasterclassJournal.tsx');
+  else if (routePath.startsWith('/tools/delivery-suite/') || routePath.startsWith('/tools/simulator/') || routePath.startsWith('/tools/backtest/')) {
+    markers.push('src/components/practice/PracticeLoopPage.tsx', 'src/components/TradingToolsWorkbench.tsx', 'src/components/TradeSimulator.tsx', 'src/components/BacktestLab.tsx', 'src/components/InstitutionalToolsSuite.tsx');
+  } else if (routePath.startsWith('/tools/') || routePath.startsWith('/workbench/')) {
+    markers.push('src/components/TradingToolsWorkbench.tsx', 'src/components/TradingToolsOverview.tsx');
+  }
+  if (!markers.length) return [];
+  const cssFiles = new Set<string>();
+  const visited = new Set<string>();
+  const visitChunk = (chunk: RouteCssChunk | undefined) => {
+    if (!chunk || visited.has(chunk.file)) return;
+    visited.add(chunk.file);
+    chunk.css.forEach(c => cssFiles.add(c));
+    chunk.imports.forEach(imp => visitChunk(routeCssByFile.get(imp)));
+  };
+  for (const chunk of routeCssChunks) {
+    if (chunk.modules.some(m => markers.some(marker => m.endsWith(marker) || m.includes(marker)))) {
+      visitChunk(chunk);
+    }
+  }
+  return [...cssFiles];
+}
 
 export interface RouteMeta {
   url: string;
@@ -183,6 +243,13 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
 
   const readingPath=new URL(meta.canonical).pathname;
   const readingChapter=textbookChapters.find(chapter=>readingPath===`/learn/${chapter.slug}/`);
+  const extraCssLinks = collectRouteCss(readingPath, readingChapter?.id)
+    .filter(cssFile => !html.includes(`/${cssFile}`))
+    .map(cssFile => `<link rel="stylesheet" crossorigin href="/${cssFile}">`)
+    .join('\n    ');
+  if (extraCssLinks) {
+    html = html.replace('</head>', `  ${extraCssLinks}\n  </head>`);
+  }
   const isReading=!!readingChapter||readingPath.startsWith('/curriculum/');
   const readingBody=isReading?renderToStaticMarkup(readingChapter
     ?createElement(ChapterRoom,{chapterId:readingChapter.id,onSelectChapter:()=>{},onReturnToMap:()=>{},staticOnly:true})
@@ -190,7 +257,7 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
   const readingHeader=isReading?renderToStaticMarkup(createElement(Header,{documentPath:readingPath,activeTab:readingChapter?'chapter_room':'curriculum',setActiveTab:()=>{},onOpenSearch:()=>{},onOpenMentorSpotlight:()=>{},onOpenWelcomeIntro:()=>{},progressPercent:0})):'';
   const readingTag=isDocumentLesson(readingChapter?.id)?'div':'main';
   const readingId=readingTag==='main'?' id="main-content"':'';
-  const readingDocument=isReading?`<div id="static-content" class="reading-site"><a class="skip-link" href="#main-content">Skip to main content</a>${readingHeader}<${readingTag}${readingId} class="reading-main" tabindex="-1">${readingBody}</${readingTag}>${renderToStaticMarkup(createElement(SiteFooter,{playground:false,showRisk:!readingChapter||![1,3,4,7,9,10,13,33,36,56,59,1010,1031,1034,1064].includes(readingChapter.id)}))}</div>`:'';
+  const readingDocument=isReading?`<div id="static-content" class="reading-site"><a class="skip-link" href="#main-content">Skip to main content</a>${readingHeader}<${readingTag}${readingId} class="reading-main" tabindex="-1">${readingBody}</${readingTag}>${renderToStaticMarkup(createElement(SiteFooter,{playground:false,showRisk:!readingChapter||![1,3,4,7,9,10,13,33,36,55,56,59,1010,1031,1034,1064].includes(readingChapter.id)}))}</div>`:'';
   const masterclassDocument=(!!masterclassCollectionPage(readingPath)||!!masterclassJournalForPath(readingPath))?`<div id="static-content" class="mc-collection-document"><a class="skip-link" href="#main-content">Skip to main content</a>${renderToStaticMarkup(createElement(Header,{documentPath:readingPath,activeTab:'masterclass',setActiveTab:()=>{},onOpenSearch:()=>{},onOpenMentorSpotlight:()=>{},onOpenWelcomeIntro:()=>{},progressPercent:0}))}<main id="main-content" tabindex="-1">${meta.bodyHtml}</main>${renderToStaticMarkup(createElement(SiteFooter,{playground:false}))}</div>`:'';
   const auditedDocument=auditedReadingRoute(readingPath)?renderAuditedReading(readingPath,meta.heading):'';
   if(auditedDocument){html=html.replace('<html ', '<html data-reading-enhancement="true" ');if(readingPath.startsWith('/tools/glossary/')||readingPath.startsWith('/tools/chartlab/')||readingPath.startsWith('/tools/delivery-suite/')||['/tools/chartlab/','/tools/delivery-suite/','/tools/simulator/','/tools/backtest/'].includes(readingPath)||/^\/tools\/(?:simulator|backtest)\/[^/]+\/$/.test(readingPath))html=html.replace(/<div id="app-startup"[^>]*>[\s\S]*?<\/div>/,'');}

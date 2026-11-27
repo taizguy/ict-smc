@@ -1,0 +1,758 @@
+{
+  "h1": "Suspension Blocks and Reaper FVG",
+  "seoTitle": "Suspension Blocks & Reaper FVG Explained",
+  "seoTitleUr": "سسپنشن بلاکس اور ریپر FVG کی مکمل وضاحت",
+  "metaDescription": "Master Suspension Blocks (dual body-gap Volume Imbalances) and Reaper FVGs (nested IFVG-Breaker setups) with 3D charts, rules, and futures contract guides.",
+  "metaDescriptionUr": "سسپنشن بلاکس (ڈبل باڈی گیپ والیوم امبیلنس) اور ریپر FVG (بریکر کے اندر نیسٹڈ IFVG) کو 3D چارٹس، اصولوں اور فیوچرز کنٹریکٹ گائیڈ کے ساتھ سیکھیں۔",
+  "quickAnswer": "A Suspension Block is a candle whose real body hangs isolated between two adjacent candle body-to-body Volume Imbalances while wicks overlap. A Reaper FVG is a nested Breaker-context setup pairing a validated Inverse FVG and an overlapping opposing FVG—not every failed IFVG—requiring explicit invalidation rules and matched futures contract feeds.",
+  "takeaways": [
+    "True Suspension Geometry: Candle 2's open-to-close body sits completely separated from both Candle 1 and Candle 3 bodies, creating Lower and Upper Volume Imbalances even when outer wicks overlap.",
+    "Not a Generic Pause Candle: An isolated single counter-trend candle without both body-to-body separations is an Order Block or Propulsion candidate, not a Suspension Block.",
+    "Reaper FVG Requires Context: In the sourced Breaker model, a prior gap flips via body close into an Inverse FVG (IFVG) and overlaps an opposing active FVG inside a swept swing.",
+    "Contract Feed Calibration: Continuous futures charts (e.g., back-adjusted continuous feeds) can distort body separations relative to the active front-month delivery contract.",
+    "Strict Risk & Claims Discipline: Neither a Suspension Block nor a Reaper label confirms participant intent or guarantees a first-touch reaction; define tick depth and close-based invalidation beforehand."
+  ],
+  "sections": [
+    {
+      "number": 1,
+      "icon": "users",
+      "title": "1. Why Body Gaps Suspend Price: The Beginner Mental Model",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "When new traders learn Fair Value Gaps (FVGs), they train their eyes to measure only outer wicks: Candle 1's high to Candle 3's low. Whenever those wicks overlap, they assume price action is completely balanced and move on. A Suspension Block exposes the blind spot in that habit. Even when Candle 1, Candle 2, and Candle 3 share overlapping wick shadows, the open-to-close bodies can still break apart into two clean voids—one immediately beneath Candle 2's body and another immediately above it."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagine three wooden stepping stones across a fast stream connected only by narrow submerged planks (the wicks). Because the main stones (the bodies) never touch, the middle stone looks suspended mid-air over two separate gaps. In ICT terminology, each body-to-body separation is a Volume Imbalance (VI)—meaning the majority of body-level price expansion stepped vertically without adjacent opening/closing overlap."
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Plain-Language Core Rule",
+          "text": "Think of a Suspension Block as a central candle body bookended by two consecutive Volume Imbalances: one body gap just before the candle opens, and a second body gap right after that candle closes."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "icon": "layers",
+      "title": "2. Suspension Block Exact OHLC Anatomy (Lower & Upper Body VIs)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Every Suspension Block is defined on three consecutive completed candles (C1, C2, C3) on the exact same timeframe and data feed. Instead of scanning High/Low wicks, inspect the Open and Close coordinates of each body using bodyLow = min(Open, Close) and bodyHigh = max(Open, Close)."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Bullish Suspension Inequality: bodyLow(C2) > bodyHigh(C1) AND bodyLow(C3) > bodyHigh(C2). Lower VI spans [bodyHigh(C1), bodyLow(C2)], and Upper VI spans [bodyHigh(C2), bodyLow(C3)].",
+            "Bearish Suspension Inequality: bodyHigh(C2) < bodyLow(C1) AND bodyHigh(C3) < bodyLow(C2). Upper VI spans [bodyHigh(C2), bodyLow(C1)], and Lower VI spans [bodyHigh(C3), bodyLow(C2)].",
+            "Total Suspension Envelope: The combined vertical corridor running from the outer boundary of the first Volume Imbalance to the far edge of the second Volume Imbalance, with C2's isolated body sitting strictly in the middle."
+          ]
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Structural Element",
+              "Bullish Suspension Block",
+              "Bearish Suspension Block",
+              "Analytical Role"
+            ],
+            [
+              "First Body Gap (VI-1)",
+              "C1 Body High to C2 Body Low",
+              "C2 Body High to C1 Body Low",
+              "Initiation jump separating Candle 1 and Candle 2 bodies"
+            ],
+            [
+              "Isolated Core Body",
+              "C2 [min(O,C) to max(O,C)]",
+              "C2 [min(O,C) to max(O,C)]",
+              "Central suspended shelf framed between the two VIs"
+            ],
+            [
+              "Second Body Gap (VI-2)",
+              "C2 Body High to C3 Body Low",
+              "C3 Body High to C2 Body Low",
+              "Continuation jump leaving Candle 2 hanging behind C3"
+            ],
+            [
+              "Wick Overlap Condition",
+              "C2 Low <= C1 High or C3 Low <= C2 High",
+              "C2 High >= C1 Low or C3 High >= C2 Low",
+              "Explains why classic outer-wick scanners stay blind to the block"
+            ],
+            [
+              "Invalidation Reference",
+              "Full body close below VI-1 bottom",
+              "Full body close above VI-1 top",
+              "Neutralizes the suspended continuation structure"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "icon": "activity",
+      "title": "3. Interactive 3D Motion Study: Suspension Blocks & Reaper Sequences",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Two-dimensional flat rectangles often flatten the relationship between overlapping wicks, suspended bodies, and nested Breaker-Reaper zones. Use the interactive 3D Motion Study cinema below to step candle-by-candle through four explicit synthetic scenarios: Bullish Suspension, Bearish Suspension, Nested Bearish Reaper IFVG, and Contract-Drift Failure."
+        },
+        {
+          "type": "paragraph",
+          "text": "Toggle between the 3D Isometric perspective and the Straight-On Ruler view to measure exact close/open separations, inspect where overlapping wicks bridge across gap corridors, and verify how closing prices validate or invalidate each zone."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "icon": "arrow-up-down",
+      "title": "4. Bullish vs. Bearish Suspension Blocks: Reading the Isolated Core",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In a Bullish Suspension Block, C1 closes higher, C2 gaps upward on the open (forming VI-1 beneath it) and closes strong, and C3 gaps upward again on its open (forming VI-2 above C2). Note carefully: C2 can be a small up-close candle, a doji-like pause, or even a small down-close pause candle—so long as its entire body range remains strictly above C1's body top and strictly below C3's body bottom."
+        },
+        {
+          "type": "paragraph",
+          "text": "In a Bearish Suspension Block, the sequence mirrors downward. C1 closes lower, C2 opens below C1's body top-to-bottom boundary, and C3 opens strictly beneath C2's body bottom. When price later retraces upward into the Bearish Suspension Envelope, traders observe three sub-references in order: the nearer Lower VI (VI-2), the 50% midpoint of the C2 Core Body, and the Upper VI (VI-1) ceiling."
+        },
+        {
+          "type": "callout",
+          "tone": "warn",
+          "title": "Avoiding the Single Counter-Candle Trap",
+          "text": "A solitary red candle inside an uptrend whose open and close match the prior and next candle bodies has zero body-to-body Volume Imbalances. That pattern is a standard Order Block candidate, never a Suspension Block."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "icon": "crosshair",
+      "title": "5. Interactive Suspension Dual-VI Calculator & FVG Comparator",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Before labeling any three-candle impulse on a live chart, test the exact Open/Close and High/Low coordinates. Load a preset or adjust the OHLC inputs below to inspect how tiny 2-to-5-point shifts in candle opens transform a plain overlapping triad into a Dual-VI Suspension Block, a Single VI, or an Open Outer-Wick FVG."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "icon": "git-compare",
+      "title": "6. Classic 3-Candle FVG vs. Single Volume Imbalance vs. Suspension Block",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Beginners frequently conflate every gap term into one generic box. Yet Fair Value Gaps (FVG / BISI / SIBI), single Volume Imbalances (VI), Opening Gaps (NWOG / NDOG), and Suspension Blocks measure distinctly different OHLC price relationships."
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Gap Type",
+              "Candle Count",
+              "Measured Coordinates",
+              "Outer Wick Condition",
+              "Core Diagnostic Question"
+            ],
+            [
+              "Classic 3-Candle FVG",
+              "3 candles",
+              "C1 Wick to C3 Wick",
+              "C1 and C3 wicks must NOT overlap",
+              "Did price leave raw untested wick space across Candle 2?"
+            ],
+            [
+              "Single Volume Imbalance (VI)",
+              "2 adjacent candles",
+              "C1 Close/Open to C2 Open/Close",
+              "Wicks typically overlap across the gap",
+              "Did adjacent bodies jump apart once with wick overlap?"
+            ],
+            [
+              "Suspension Block",
+              "3 consecutive candles",
+              "Two Body VIs flanking C2 body",
+              "Wicks overlap so classic FVG may be absent",
+              "Is C2's full body suspended between VI-1 AND VI-2?"
+            ],
+            [
+              "NWOG / NDOG Opening Gap",
+              "Session close to open",
+              "Prior session Close to new Open",
+              "Weekend or daily maintenance jump",
+              "Did an external session break separate the open from prior close?"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "icon": "compass",
+      "title": "7. Suspension Block vs. Order Block vs. Propulsion Block vs. Breaker",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In the PD Array Matrix, Order Blocks, Propulsion Blocks, Breaker Blocks, and Suspension Blocks often cluster in the same expansion leg. Mixing their definitions blurs stop placement because each block invalidates at a different threshold."
+        },
+        {
+          "type": "paragraph",
+          "text": "An Order Block emphasizes the last opposing-color candle (or consecutive run) prior to a structural displacement. A Propulsion Block is a secondary opposing candle that dipped directly into a prior Order Block's 50% mean threshold before launching the next impulse. A Breaker Block is a failed Order Block situated after a liquidity sweep and Market Structure Shift. A Suspension Block cares strictly about body-to-body air pockets on both sides of Candle 2—even when all three candles share the exact same bullish or bearish color."
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "icon": "zap",
+      "title": "8. Introducing the Reaper FVG: Beyond Simple Inversion",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In standard ICT market structure, an Inverse Fair Value Gap (IFVG) occurs whenever price closes decisively through an opposing FVG, flipping old support into resistance (or old resistance into support). Early online commentary loosely applied the label 'Reaper' to almost any failed IFVG or morning reversal."
+        },
+        {
+          "type": "paragraph",
+          "text": "However, rigorous study requires separating internet folklore from documented chart geometry. In the reviewed June 2026 variant, a Reaper FVG is specifically examined as a two-gap nested structure inside a Breaker context: a newly validated Inverse FVG overlaps an opposing Fair Value Gap right alongside the swept swing leg."
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Key Terminology Boundary",
+          "text": "Treat an ordinary violated Inverse FVG simply as a failed IFVG unless the chart actually displays the nested two-gap Breaker overlap or the documented execution context matches the named study."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "icon": "crosshair",
+      "title": "9. Interactive Breaker-to-Reaper Sequence Dissector",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Explore each chronological step of a Bearish or Bullish Reaper FVG formation below. Click through the stages from initial Leg 1 impulse through sweep, closing IFVG validation, nested opposing FVG overlap, and retest invalidation boundaries."
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "icon": "layers",
+      "title": "10. Anatomy of a Sourced Bearish & Bullish Reaper Variant",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "To qualify a chart as a nested Reaper FVG study rather than a random reversal, trace five sequential observations across the swing:"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Stage 1 — Initial Impulse Gap (FVG-1): Price drives into a prior high (bearish setup) or low (bullish setup), printing a visible three-candle FVG inside the pre-sweep swing leg.",
+            "Stage 2 — Swing Sweep Extreme: Price pushes briefly beyond the reference high/low, forming the structural apex of the upcoming Breaker Block.",
+            "Stage 3 — Decisive Closing Inversion (IFVG): A strong opposing impulse closes completely across FVG-1, converting the trapped gap into a validated Inverse FVG.",
+            "Stage 4 — Nested Opposing Gap (FVG-2 Overlap): The same breaking displacement leaves behind a fresh opposing FVG-2 whose vertical span overlaps the flipped IFVG-1 zone, computed cleanly as Reaper_Low = max(IFVG_Low, FVG2_Low) and Reaper_High = min(IFVG_High, FVG2_High).",
+            "Stage 5 — First-Utilization Retest: Price retraces into that tight nested overlap zone (often aligned with the Breaker Block boundary) while bodies stay contained on the active side of the overlap."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "icon": "scale",
+      "title": "11. Reaper FVG vs. Standard IFVG vs. Failed IFVG vs. Unicorn",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Because Reaper FVG, Unicorn Model, BPR, and Failed IFVG all involve overlapping boxes inside a reversal swing, students routinely misclassify them. Compare their exact structural checklists:"
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Model Name",
+              "Sweep + Breaker Required?",
+              "Two Overlapping FVGs?",
+              "Distinguishing Structural Requirement"
+            ],
+            [
+              "Standard IFVG",
+              "Optional",
+              "No (single flipped FVG)",
+              "Candle body closes through one FVG; retest occurs on the flipped range"
+            ],
+            [
+              "Failed IFVG",
+              "Optional",
+              "No",
+              "Price validates an IFVG, retests, then closes back through it, restoring prior trend"
+            ],
+            [
+              "Classic Unicorn",
+              "Yes (Breaker Block)",
+              "Usually single FVG inside Breaker",
+              "Overlaps a completed Breaker Block with a regular active FVG on the breaking leg"
+            ],
+            [
+              "Balanced Price Range (BPR)",
+              "Recommended",
+              "Yes (opposing FVGs overlap)",
+              "Direct overlap of FVG-1 and FVG-2, with or without a formal Breaker candle"
+            ],
+            [
+              "Sourced Reaper FVG",
+              "Yes (Breaker context)",
+              "Yes (validated IFVG + FVG-2 overlap)",
+              "Examines inverted FVG-1 nested inside FVG-2 plus wick/body placement around the Breaker"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "icon": "shield-alert",
+      "title": "12. Separating Source Titles from Verified Chart Rules",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "One of the most damaging habits in modern trading education is reverse-engineering universal laws from a single video title or timestamp. Seeing an execution titled 'Reaper FVG' or '09:50 Stop Hunt' does not authenticate unstated rules—such as forcing every 09:50 AM move to reverse, treating every failed inversion as a mandatory flip signal, or claiming a first touch of any Suspension Block is risk-free."
+        },
+        {
+          "type": "paragraph",
+          "text": "A chart annotation is a study hypothesis, not a statement about who placed resting orders or proof that every retail stop was swept. Always record the original gap boundaries, exact closing criterion, wick behavior, and invalidation point independently before backtesting."
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "icon": "trending-up",
+      "title": "13. Continuous vs. Front-Month Futures Contract Calibration",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Suspension Blocks depend on tiny 1-to-8-tick separations between Candle Close and next Candle Open. In equity index futures like E-mini Nasdaq (NQ) or Micro E-mini Nasdaq (MNQ), traders often discover a sharp difference between the Continuous Back-Adjusted Chart (e.g., NQ1!) and the active Front-Month Delivery Contract (e.g., NQH, NQM, NQU, or NQZ)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Because roll adjustments and overnight liquidity pricing shift continuous prices relative to the live contract, a clean Suspension Block on a continuous chart may disappear on the delivery contract—or vice versa. Never execute live orders using uncalibrated continuous-chart coordinates. Use the futures basis calibration tool below to convert continuous Suspension levels accurately onto your active trading contract."
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "icon": "check-square",
+      "title": "14. Interactive 6-Gate Suspension & Reaper Confluence Grader",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Not every dual body-gap or nested IFVG merits equal confidence. Toggle the six structural filters below—dual body separation, Breaker origin sweep, closing IFVG validation, opposing FVG overlap, matched contract feed, and session Killzone alignment—to see when context supports study versus standing aside."
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "icon": "compass",
+      "title": "15. Multi-Timeframe Fractal Nesting (HTF Suspension to LTF Reaper)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Institutional-grade chart studies rarely use a 1-minute Suspension Block in isolation against a higher-timeframe freight train. Instead, Suspension Blocks act powerfully as Higher-Timeframe (1H, 4H, Daily) directional shelves, while a nested Breaker + Reaper FVG on the 5M or 1M chart supplies the precise lower-timeframe entry trigger when price arrives inside the HTF Suspension core."
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Trading Style",
+              "Higher-TF Context",
+              "Active Delivery Shelf",
+              "LTF Entry Trigger",
+              "Structural Invalidation"
+            ],
+            [
+              "Intraday Scalping",
+              "1H / 15M Draw on Liquidity",
+              "15M or 5M Suspension Core",
+              "1M Breaker + Reaper IFVG",
+              "Close beyond 5M Suspension outer VI"
+            ],
+            [
+              "Session Day Trading",
+              "4H / Daily Dealing Range",
+              "15M Suspension or Breaker",
+              "5M Nested Reaper FVG",
+              "Close beyond 15M envelope edge"
+            ],
+            [
+              "Multi-Day Swing",
+              "Weekly / Daily Narrative",
+              "Daily / 4H Suspension Block",
+              "1H Breaker + Nested IFVG",
+              "Daily close outside VI-1 boundary"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "icon": "clock",
+      "title": "16. Session Killzones & Time-of-Day Filtering (America/New_York)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Body-to-body gaps formed during illiquid Asian lunch hours or pre-holiday rollovers often reflect thin quote spacing rather than high-participation displacement. Anchor all intraday Suspension Block and Reaper FVG studies to standardized America/New_York clock windows (accounting for U.S. EST/EDT Daylight Saving transitions per NIST calendars)."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "London Open Window (02:00–05:00 NY): Useful for observing EUR/USD and GBP/USD early Breaker-to-Reaper sequences after Asian range sweeps.",
+            "New York Equities Pre-Market & Open (08:30–11:00 NY): Highest futures index participation around 08:30 macro releases and the 09:30 NYSE cash equity open—prime window for clean Suspension Blocks.",
+            "New York Midday Lunch (12:00–13:30 NY): Frequently prints overlapping body gaps inside tight chop; avoid treating isolated lunch micro-gaps as primary anchors.",
+            "New York PM Session (13:30–16:00 NY): Often yields secondary Breaker + Reaper continuations toward unresolved Daily High/Low liquidity."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "icon": "trending-up",
+      "title": "17. Worked Bullish Blueprint: NQ Morning Suspension + LTF Reaper Confirmation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "All prices below are illustrative synthetic teaching figures on an active MNQ/NQ delivery contract, not historical trades or live quotes. Suppose 1H bias targets an unresolved prior-day high (BSL) at 20,520.00 during the 09:30–10:30 America/New_York window."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Sweep & HTF Suspension (09:35 NY): After dipping below a 15M internal sell-side low, price rallies across three 15M candles: C1 closes at 20,416.00; C2 opens at 20,420.00 and closes at 20,430.00; C3 opens at 20,435.00 and closes at 20,456.00—creating Lower VI (20,416–20,420) and Upper VI (20,430–20,435).",
+            "Pullback Entry Wait (09:50 NY): Instead of chasing the top at 20,456, mark the 15M Suspension Core (20,420–20,430) and wait for price to revisit Upper VI / Core.",
+            "LTF 1M Reaper Confirmation (09:58 NY): Inside the 15M Suspension Core, a minor 1M drop forms a small bearish FVG (20,426–20,429). Price sweeps 20,421, then closes bullishly through 20,429—inverting it into a Bullish IFVG—while leaving an overlapping Bullish FVG (20,424–20,428). The nested Reaper window is 20,426.00–20,428.00.",
+            "Defined Invalidation: Place protective stop below the 15M Lower VI bottom (e.g., 20,414.50, 11.50 points = 46 MNQ ticks at $0.50/tick = $23.00 risk per micro contract), sizing position strictly within pre-set account rules."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "icon": "trending-down",
+      "title": "18. Worked Bearish Blueprint: EUR/USD & Index Breaker + Nested Reaper",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Consider a synthetic EUR/USD London-to-NY setup where price sweeps an Asian High at 1.08850 (Buy-Side Liquidity), printing an initial Bullish FVG1 (1.08720–1.08790) right below the high."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Rejection & Breaker Flip: Following the sweep at 1.08850, aggressive selling breaks downward and closes a 5M candle at 1.08660—cleanly below Bullish FVG1 (1.08720). FVG1 is now validated as a Bearish Inverse FVG.",
+            "Nested Bearish SIBI Formation: That same breakdown leg prints a Bearish FVG2 between 1.08740 and 1.08820. Intersecting [1.08720, 1.08790] and [1.08740, 1.08820] isolates a tight 5-pip nested Reaper FVG zone: 1.08740–1.08790.",
+            "Breaker Alignment Check: Verify that the last up-close candle before the drop (the Bearish Breaker) sits over the exact same 1.08740–1.08800 shelf on the stated feed.",
+            "Execution Discipline: Monitor whether retracement wicks pierce into 1.08740–1.08790 while 5M candle bodies remain capped below 1.08800; exit or stand down if a 5M body closes cleanly above 1.08820."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "icon": "alert-triangle",
+      "title": "19. Invalidation Geometry, Stop Placement & Futures Tick Precision",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The reviewed passages never claim a universal 'midpoint stop' or 'fixed 1% risk rule' inside every Suspension Block. Because Candle 2's core sits between two distinct Volume Imbalances, placing a tight stop strictly at C2's open or midpoint exposes a trade to routine fills of the deeper VI-1 gap."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Suspension Envelope Stop Reference: Structural invalidation lies outside the outer edge of VI-1 (the initiation body gap), plus a measured spread/tick buffer on the traded delivery month.",
+            "Reaper Overlap Stop Reference: Structural invalidation sits beyond the swept Breaker extreme or outside the far boundary of the nested IFVG/FVG overlap—whichever aligns with the declared timeframe.",
+            "Order Type & Slippage Reality: Per SEC Investor.gov guidance, stop-market orders become market orders upon trigger and can experience slippage through thin body-gap corridors during volatile 08:30 or 09:30 releases; limit orders cap fill price but risk non-execution."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "icon": "alert-triangle",
+      "title": "20. Common Beginner & Intermediate Mistakes (Illustrated)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Inspect the four illustrated stick-figure comic tabs below to spot and eliminate the four recurring errors traders make with Suspension Blocks and Reaper FVGs: mistaking a plain Order Block for a Suspension Block, calling every failed IFVG a Reaper, copying unadjusted continuous-chart coordinates onto front-month futures, and placing blind stops at the middle of a double-VI zone."
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "icon": "activity",
+      "title": "21. High-Probability vs. Low-Probability Tape Conditions",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Market Environment",
+              "Suspension Block Behavior",
+              "Reaper FVG Behavior",
+              "Recommended Study Stance"
+            ],
+            [
+              "Clean Trend Expansion (NY AM / London)",
+              "Shallow taps into Upper VI or C2 Core often resume cleanly",
+              "Breaker + nested IFVG aligns with HTF draw",
+              "Priority focus window with predefined invalidation"
+            ],
+            [
+              "Pre-CPI / FOMC Compression",
+              "Small drifting body gaps lack genuine displacement",
+              "Repeated overlapping inversions whip-saw both sides",
+              "Stand aside; avoid labeling thin drift as Suspension"
+            ],
+            [
+              "Immediate Shock-Spike News Candle",
+              "Spread widening leaves giant illiquid air pockets",
+              "Wick spikes sweep stops far past structural bounds",
+              "Wait for post-release settling or skip session"
+            ],
+            [
+              "Contract Rollover Week",
+              "Continuous vs. front-month candle bodies diverge",
+              "Breaker and IFVG prices shift across feeds",
+              "Audit active delivery month exclusively"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "icon": "check-square",
+      "title": "22. Pre-Execution 6-Gate Checklist (Interactive)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Before logging a Suspension Block or Reaper FVG case study in your replay journal, confirm all six verification gates below:"
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "icon": "bookmark",
+      "title": "23. Comprehensive Glossary & Reference Matrix (24 Terms)",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Term",
+              "Exact Definition & Analytical Scope"
+            ],
+            [
+              "Suspension Block",
+              "A central candle whose open-to-close body is completely separated from both the prior candle's body and the next candle's body, creating dual Volume Imbalances while wicks touch or overlap."
+            ],
+            [
+              "Reaper FVG (Reaper IFVG)",
+              "A documented Breaker-context pattern combining a body-close validated Inverse FVG (IFVG) nested directly inside an overlapping opposing Fair Value Gap."
+            ],
+            [
+              "Volume Imbalance (VI)",
+              "An adjacent two-candle separation between one candle's Close/Open body boundary and the next candle's Open/Close boundary while wicks overlap."
+            ],
+            [
+              "Lower Volume Imbalance (VI-1)",
+              "In a bullish Suspension Block, the body gap sitting beneath Candle 2 between C1 Body High and C2 Body Low."
+            ],
+            [
+              "Upper Volume Imbalance (VI-2)",
+              "In a bullish Suspension Block, the body gap sitting above Candle 2 between C2 Body High and C3 Body Low."
+            ],
+            [
+              "Core Suspended Body",
+              "The isolated Open-to-Close body of Candle 2 positioned strictly between the Lower and Upper Volume Imbalances."
+            ],
+            [
+              "Total Suspension Envelope",
+              "The full vertical span from the far edge of VI-1 through the Core Body to the far edge of VI-2."
+            ],
+            [
+              "Inverse Fair Value Gap (IFVG)",
+              "A previously established Fair Value Gap that price has closed decisively through, reversing its analytical role from support to resistance or vice versa."
+            ],
+            [
+              "Nested Two-Gap Overlap",
+              "The price interval where an inverted FVG and a newly printed opposing FVG share overlapping price coordinates."
+            ],
+            [
+              "Breaker Block",
+              "An Order Block that failed following a liquidity sweep and Market Structure Shift, converting trapped momentum into a directional barrier."
+            ],
+            [
+              "Classic Outer-Wick FVG",
+              "A three-candle price gap measured between Candle 1's High/Low wick extreme and Candle 3's Low/High wick extreme without overlap."
+            ],
+            [
+              "Order Block (OB)",
+              "The final opposing-color candle (or consecutive run) preceding an impulsive structural break, distinct from body-separated Suspension Blocks."
+            ],
+            [
+              "Propulsion Block",
+              "A secondary opposing candle that dips into the 50% mean threshold of a prior Order Block before launching trend continuation."
+            ],
+            [
+              "Failed IFVG",
+              "An Inverse FVG that fails to hold on retest and closes back in the original direction; study as a failed IFVG rather than assuming a Reaper label."
+            ],
+            [
+              "Continuous Futures Chart",
+              "A stitched multi-contract data series (such as NQ1!) that adjusts historical prices across quarterly expirations and can differ from live delivery candles."
+            ],
+            [
+              "Front-Month Delivery Contract",
+              "The currently active quarterly futures contract (e.g., MNQ/NQ delivery month) whose actual bid/ask executions govern real order fills."
+            ],
+            [
+              "Basis / Roll Offset",
+              "The numerical price difference between a continuous back-adjusted chart and the live front-month futures contract."
+            ],
+            [
+              "First-Utilization Reference",
+              "The initial opposing FVG or Suspension gap encountered on the first counter-move retracement after displacement."
+            ],
+            [
+              "Wick Excursion Tolerance",
+              "Allowing temporary wick probes through a gap edge while requiring candle bodies to close inside the valid structural side."
+            ],
+            [
+              "Mean Threshold (50% Core)",
+              "The arithmetic midpoint of either Candle 2's suspended body or the full Suspension Envelope."
+            ],
+            [
+              "Displacement Filter",
+              "An explicit measure comparing candle body expansion against prior bars to distinguish high-conviction jumps from illiquid noise."
+            ],
+            [
+              "Liquidity Sweep Context",
+              "Price briefly trading beyond an identified Swing High or Swing Low prior to reversing through an FVG to create a Breaker and potential Reaper."
+            ],
+            [
+              "Tick Increment & Value",
+              "The minimum price step of a futures contract (e.g., 0.25 points = $0.50 on MNQ) used to convert structural distance into dollar risk."
+            ],
+            [
+              "Structural Invalidation",
+              "The pre-committed candle close beyond the opposite outer boundary that disproves the setup hypothesis and ends further hold rationale."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "icon": "info",
+      "title": "24. Baseline Reference Retention & Institutional Market Sources",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The audited chapter notes below are preserved alongside independent regulatory and exchange references so learners can compare source-specific geometry against venue order mechanics and futures contract specifications."
+        },
+        {
+          "type": "paragraph",
+          "text": "In the reviewed April 2026 explanation, ICT examines separations between adjacent candle bodies while their wicks touch or overlap. These are volume imbalances in his terminology. Mark the actual close/open prices around the selected candle; an isolated counter-trend pause alone is not the definition illustrated here."
+        },
+        {
+          "type": "paragraph",
+          "text": "Body-price separation is observable. Concluding that an institution refuelled a trend, that no deep retracement can occur, or that the first touch is safe requires additional evidence. The reviewed passage does not establish a universal first-touch entry, one-percent risk rule or midpoint stop. Keep the chosen invalidation and the contract’s tick value explicit."
+        },
+        {
+          "type": "paragraph",
+          "text": "The source compares the nearby/front-month futures contract with a continuous chart. Their candle shapes and absolute prices differ. ICT prefers a candidate agreeing with a selected breaker reference in this example and discusses comparing other candidate levels. Record the symbol, delivery month, adjustment setting and timeframe. Do not transplant a continuous-chart price directly into a different contract."
+        },
+        {
+          "type": "paragraph",
+          "text": "In the 9 June 2026 review, ICT explicitly describes a Reaper variant with two nested gaps in a breaker context. In the bearish example, a previously bullish gap is validated as an inversion after a close below it, while a bearish FVG supplies a first-utilization reference. The lesson examines their overlap, wick excursions and body placement together; it does not define every failed inversion as a Reaper."
+        },
+        {
+          "type": "paragraph",
+          "text": "An official June 2026 execution is titled Reaper FVG. Its reviewed passages show trade management, but they do not authenticate the previous definition of Reaper as every inversion-of-inversion, a mandatory 09:50 trap or an immediate instruction to reverse position. A source title alone cannot supply those rules."
+        },
+        {
+          "type": "paragraph",
+          "text": "Study a failed IFVG as a failed IFVG unless the precise named variation is supported by an original explanation. Save the initial gap boundaries, the break criterion, the retest and the later failure separately. Neither the price sequence nor its label identifies every participant or proves that all retail stops were harvested."
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "icon": "help-circle",
+      "title": "25. Frequently Asked Questions (Suspension Blocks & Reaper FVG)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Review these twelve structured answers covering geometry, differences from Order Blocks and FVGs, futures contract discrepancies, and strict risk rules."
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is a Suspension Block in simple terms?",
+      "answer": "A Suspension Block is a three-candle formation where the middle candle's open-to-close body hangs completely separated from both the candle before it and the candle after it—leaving two adjacent body-to-body Volume Imbalances even when their wicks overlap."
+    },
+    {
+      "question": "How is a Suspension Block different from a Classic Fair Value Gap (FVG)?",
+      "answer": "A Classic Fair Value Gap requires zero overlap between Candle 1's outer wick and Candle 3's outer wick. A Suspension Block focuses strictly on Open and Close body separations around Candle 2, so it remains valid even when wicks touch or overlap completely."
+    },
+    {
+      "question": "What makes a Suspension Block different from an Order Block or Propulsion Block?",
+      "answer": "Order Blocks require an opposing-color candle before displacement, and Propulsion Blocks dip into an existing Order Block's mean threshold. A Suspension Block ignores candle color and requires dual body-to-body Volume Imbalances immediately above and below Candle 2."
+    },
+    {
+      "question": "Can a Suspension Block form if all three candles are the same color?",
+      "answer": "Yes. Three consecutive bullish or bearish candles form a valid Suspension Block whenever Candle 2 opens separated from Candle 1's close and Candle 3 opens separated from Candle 2's close, leaving two Volume Imbalances."
+    },
+    {
+      "question": "What is a Reaper FVG (Reaper IFVG)?",
+      "answer": "In the reviewed 9 June 2026 variant, a Reaper FVG is a Breaker-context structure where price closes decisively through an initial FVG to validate an Inverse FVG (IFVG), and that inverted gap overlaps directly with a newly formed opposing FVG on the breaking leg."
+    },
+    {
+      "question": "Is every failed Inverse FVG automatically a Reaper FVG?",
+      "answer": "No. Calling every failed IFVG or inversion-of-inversion a Reaper FVG conflates unverified online labels with sourced chart structure. If the nested two-gap Breaker overlap is absent, record the pattern simply as a failed IFVG."
+    },
+    {
+      "question": "How does a Reaper FVG differ from a Balanced Price Range (BPR) or Unicorn?",
+      "answer": "A BPR measures any opposing FVG overlap, and a Unicorn overlaps a Breaker with a single FVG. The sourced Reaper variant pairs a completed Breaker sweep with a validated IFVG that nests inside an opposing active FVG simultaneously."
+    },
+    {
+      "question": "Why do continuous futures charts and front-month contracts show different Suspension Blocks?",
+      "answer": "Back-adjusted continuous charts (like NQ1!) shift historical prices across quarterly expirations, altering absolute body gaps and overlapping wicks compared with the live delivery month (such as NQZ). Always calibrate execution anchors directly on the contract you actually trade."
+    },
+    {
+      "question": "Does a Suspension Block guarantee that price will bounce on the first touch?",
+      "answer": "No. Body-to-body separation is an observable chart pattern, never a guarantee of institutional resting orders or first-touch support. Price can easily trade through Upper VI, tap Lower VI, or invalidate the entire corridor."
+    },
+    {
+      "question": "Where should a protective stop be placed on a Suspension Block or Reaper FVG?",
+      "answer": "Place structural invalidation beyond the outer edge of the initiation Volume Imbalance (VI-1) for a Suspension Block, or beyond the swept Breaker / far nested IFVG boundary for a Reaper setup, accounting for futures tick increments and potential stop-order slippage."
+    },
+    {
+      "question": "Which session times produce the most reliable Suspension Block and Reaper FVG studies?",
+      "answer": "Active London Open (02:00–05:00 NY) and New York AM/PM windows (08:30–11:00 and 13:30–16:00 NY) generate the cleanest displacement. Avoid treating thin Asian or NY Lunch micro-gaps as primary high-conviction anchors."
+    },
+    {
+      "question": "Can beginners practice identifying Suspension Blocks before risking live capital?",
+      "answer": "Yes. Beginners should disable future candle visibility during historical replay, verify both Close-to-Open inequalities numerically, cross-check continuous versus front-month charts, and log invalidations before considering demo or micro-contract sizing."
+    }
+  ]
+}

@@ -384,80 +384,11 @@ Once stops are cleared, price aggressively rallies back above the Asian low, shi
     title: 'ICT Charter Models 6 & 7: Universal Models, Buyside Expansion & Market Maker Curves',
     part: 'Part X - ICT Charter Price Action Models Curriculum',
     level: 3,
-    quote: 'Models 6 and 7 unlock the complete geometric architecture of price delivery. The Market Maker Buy and Sell Models mirror each other with mathematical perfection across the Smart Money Reversal.',
-    summary: [
-      'The Universal Trading Model 6: Systematic buyside range expansions from Discount PD arrays.',
-      'The Universal Trading Model 7: The Sell-Side Curve and the complete Market Maker Sell Model (MMSM).',
-      'The symmetry of the Market Maker Model: Original Consolidation to Smart Money Reversal (SMR).',
-      'Amplified Lecture: Executing low-risk entries on the redistribution curve toward terminal liquidity.'
-    ],
-    keyTerms: [
-      { term: 'Universal Trading Model', definition: 'The standardized ICT algorithmic model that applies seamlessly across any liquid asset class and timeframe.' },
-      { term: 'Market Maker Sell Model (MMSM)', definition: 'The complete institutional delivery cycle from buying accumulation through Smart Money Reversal to selling distribution.' },
-      { term: 'Smart Money Reversal (SMR)', definition: 'The critical HTF turning point where institutional algorithms transition from net buying to net selling.' }
-    ],
-    practiceQuestions: [
-      'What are the distinct developmental stages of the Buy-Side Curve in a Market Maker Sell Model?',
-      'How does the Smart Money Reversal (SMR) differ from a regular intraday pullback?',
-      'Why does the redistribution curve on the right side of the model mirror the consolidation blocks on the left side?'
-    ],
-    sections: [
-      {
-        id: '33.1',
-        title: '33.1 Model 6: Universal Buyside Range Expansion',
-        content: `ICT Charter Price Action Model 6 is classified as the Universal Trading Model for buyside delivery.
-
-Core Principles of Model 6:
-1. The Hierarchical PD Array Matrix:
-Price delivered in a bullish trend respects a strict sequence of discount arrays:
-- Mitigation Block
-- Breaker Block
-- Liquidity Void
-- Fair Value Gap
-- Order Block
-- Rejection Block
-
-2. The Dealing Range Equilibrium Rule:
-Model 6 strictly forbids buying above the 50% Equilibrium level of the active dealing range. All valid entries must be anchored at a Discount PD array located below Equilibrium.`
-      },
-      {
-        id: '33.2',
-        title: '33.2 Model 7: The Sell-Side Curve & Market Maker Models',
-        content: `ICT Charter Price Action Model 7 introduces the complete Market Maker Sell Model (MMSM) and Market Maker Buy Model (MMBM):
-
-The Geometry of the Model:
-1. Left Side (The Buy-Side Curve):
-- Original Consolidation: Initial base where institutional smart money builds inventory.
-- Accumulation Stage 1: First impulsive run breaking minor structure.
-- Re-Accumulation Stage 2: Secondary consolidation and upward continuation.
-- Smart Money Reversal (SMR): Price tags a major Higher Timeframe Premium Array (such as a Weekly Bearish Order Block or Monthly FVG).
-
-2. Right Side (The Sell-Side Curve):
-- Low-Risk Sell Setup: The first Market Structure Shift lower following the SMR.
-- Distribution Stage: Price begins systematically clearing the low of Re-Accumulation Stage 2.
-- Re-Distribution Stage: Price breaks through Accumulation Stage 1 lows.
-- Terminal Objective: Complete liquidation into the original consolidation origin.`
-      },
-      {
-        id: '33.3',
-        title: '33.3 The Smart Money Reversal (SMR) Mechanics',
-        content: `The Smart Money Reversal is the most critical inflection point in Model 7:
-
-- It must occur at a pre-determined Higher Timeframe Point of Interest.
-- Look for Intermarket SMT Divergence at the SMR: if ES prints a higher high but NQ fails to make a higher high, institutional accumulation has ceased.
-- The entry is taken immediately after the first low-timeframe displacement breaks below the internal swing low.`
-      },
-      {
-        id: '33.4',
-        title: '33.4 Amplified Lecture: Trading the Redistribution Curve',
-        content: `In the Amplified Lecture for Models 6 and 7, ICT explains how to trade the right-side curve:
-
-- Traders who miss the initial Smart Money Reversal do not chase price.
-- Instead, wait for price to reach the level of the previous accumulation block on the left side of the chart.
-- The previous accumulation block now flips into an Inversion FVG or Bearish Breaker on the right side.
-- Enter on the retest of this flipped level with a limit order, targeting the Original Consolidation with exceptional confidence.`
-      }
-    ]
+    quote: '',
+    summary: [],
+    keyTerms: [],
+    practiceQuestions: [],
+    sections: []
   },
   {
     id: 34,
@@ -566,31 +497,10 @@ The Geometry of the Model:
     title: "2022 ICT Mentorship Model — A Source-Based Study Guide",
     part: 'Part X - ICT Charter Price Action Models Curriculum',
     level: 3,
-    quote: "Study the liquidity reference, displacement, structure shift and possible FVG retracement as separate observations. A completed example does not establish a live fill or a win rate.",
-    summary: ["Selected-passage review across the introduction and Episodes 2–41.","Context, liquidity references, displacement and FVG completion as separate observations.","Conditional bias, source-specific variants and no-entry cases.","Risk and performance limitations without promised returns."],
-    keyTerms: [{"term":"Liquidity reference","definition":"A previously visible high, low or group of comparable levels selected before the later move. The chart does not reveal all orders resting there."},{"term":"Confirmation convention","definition":"The stated displacement and candle-completion rule used to recognize a particular example; it is not a guarantee about the next candle."},{"term":"Replay information boundary","definition":"The last completed candle available when an observation is recorded. Later candles must not be used to choose an earlier reference."}],
-    practiceQuestions: ["Which references were visible before the move, and which annotations only become clear afterward?","Which event marks the initial structure crossing in the chosen example, and which later event confirms the FVG?","How would unfilled orders, failed returns and execution costs affect the interpretation of the same chart?"],
-    sections: [
-      {
-        id: '36.1',
-        title: "36.1 Read the Original Context",
-        content: "The supplied 2022 collection contains an introduction and Episodes 2–41. Our review uses selected timestamped caption passages and chart frames across that collection, with local transcription checks for important wording. It is not an independent audit of the instructor’s results or a claim that every spoken assertion has been verified.\n\nThe introduction emphasizes a simpler learning model. Episodes 2–6 separate context, a prior liquidity reference, displacement, a local structure crossing and an FVG. Later episodes add applications, uncertainty, intermarket comparisons and risk discussion. LearnSMC organizes those ideas into original study notes.\n\nThe original Charter Model 13 lecture identifies its subject as the public 2022 model at the opening and assumes prior study of the public series. Treat that lecture as a follow-up, not a substitute for the 2022 foundation. This verifies the relationship between those sources; it does not authenticate every numbered model or every later curriculum claim."
-      },
-      {
-        id: '36.2',
-        title: "36.2 Keep the Observations Separate",
-        content: "First select the prior liquidity reference. Then observe whether price moves beyond it. Assess displacement using the specific lesson’s convention, recording the initial structure crossing separately from later candle completion for an FVG. Finally record whether a return occurs.\n\nThese are separate observations, not proof of hidden institutional positions. A missing return, a continuation beyond the swept level or a failed reaction is a result to record, not a reason to redraw the setup afterward."
-      },
-      {
-        id: '36.3',
-        title: "36.3 An Original Replay Exercise",
-        content: "Hide future candles, write the observation window and mark a reference that already exists. Advance one candle at a time and record the first moment each condition becomes visible. Specify whether the entry is a limit or market order and when an unfilled order expires.\n\nChoose invalidation before entry and calculate position size using the actual product increment and contract value. Include spread, commission and possible slippage. This exercise supplies no universal risk percentage, fixed tick stop or required reward-to-risk ratio, and it is not a claim that ICT prescribed these exact research steps."
-      },
-      {
-        id: '36.4',
-        title: "36.4 Applications and Limits Across the Later Recordings",
-        content: "Episodes 7 and 21 show why daily bias and opening-price references are conditional. Episode 26 deliberately illustrates a countertrend idea; an opposing daily label is not proof that no intraday opportunity can exist. These examples must not be combined into an unrestricted permission to trade every direction.\n\nEpisodes 14, 15 and the silent Episode 28 are execution demonstrations. Their entries, contract counts and exits do not establish a student return target, representative win rate or achievable live fill. Episode 29 explicitly distinguishes the paper-trading display from a promise that students can replicate it.\n\nEpisode 35 compares corresponding lows in ES and NQ for SMT and warns that an apparent divergence can disappear. Episode 41 finishes with risk and drawdown management. Choose one clearly specified study variant; collecting more model names does not validate it."
-      }
-    ]
+    quote: '',
+    summary: [],
+    keyTerms: [],
+    practiceQuestions: [],
+    sections: []
   }
 ];

@@ -9,6 +9,7 @@ import {model2022Quizzes} from './model2022Lesson';
 import {oteQuizzes} from './oteLesson';
 import {rdrbQuizzes} from './rdrbLesson';
 import {pdArrayQuizzes} from './pdArrayLesson';
+import {suspensionReaperQuizzes} from './suspensionReaperLesson';
 import {mitigationQuizzes} from './mitigationDocument';
 import {priceMovementQuizzes} from './priceMovementLesson';
 import type { TextbookChapter } from '../../types';
@@ -44,6 +45,7 @@ export function chapterQuiz(chapter: TextbookChapter): ChapterQuizQuestion[] {
   if(chapter.id===3)return orderBookQuizzes.map((q,i)=>rotate({...q,id:`order-book-3-v1-${i}`},i+1));
   if(chapter.id===33)return marketMakerQuizzes.map((q,i)=>rotate({...q,id:`market-maker-33-v1-${i}`},i+1));
   if(chapter.id===36)return model2022Quizzes.map((q,i)=>rotate({...q,id:`model-2022-36-v1-${i}`},i+1));
+  if(chapter.id===55)return suspensionReaperQuizzes.map((q,i)=>rotate({...q,id:`sr-55-v1-${i}`},i+1));
   if(chapter.id===56)return rdrbQuizzes.map((q,i)=>rotate({...q,id:`rdrb-56-v1-${i}`},i+1));
   if(chapter.id===59)return pdArrayQuizzes.map((q,i)=>rotate({...q,id:`pd-array-59-v1-${i}`},i+1));
   if(chapter.id===1034)return oteQuizzes.map((q,i)=>rotate({...q,id:`ote-1034-v1-${i}`},i+1));

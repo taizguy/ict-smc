@@ -8,7 +8,7 @@ import {topicClusters} from '../utils/topicClusters';
 import {useTranslation} from '../i18n/TranslationProvider';
 import {withoutLocale} from '../i18n/locale';
 import {matchesSearch} from '../i18n/search';
-import {conciseHeading} from '../utils/searchMetadata';
+import {conciseHeading} from '../utils/searchHeading';
 
 export const readingPartTitle=(part:string)=>part.replace(/^Part\s+[IVXLCDM]+\s*[-–—:]\s*/i,'');
 export function ReadingTitle({text,display}:{text:string;display?:string}){const {t}=useTranslation();const translated=t(text);return <span data-reading-source={text}>{translated===text?(display||conciseHeading(text)):translated.replace(/^\d+\.\d+\s*/,'')}</span>;}

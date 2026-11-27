@@ -15,7 +15,7 @@ const attr=(n:any,k:string)=>n.attrs?.find((a:any)=>a.name===k)?.value;
 const content=(n:any):string=>n.nodeName==='#text'?n.value:(n.childNodes||[]).map(content).join('');
 const reading=(html:string)=>{const all=walk(parse(html));const root=all.find(n=>attr(n,'class')?.split(' ').includes('mc-journal'));return walk(root).filter(n=>['h1','h2','h3','p','figcaption','text','title','li'].includes(n.tagName)).map(n=>content(n).replace(/\s+/g,' ').trim());};
 const built=process.argv.includes('--built');
-const runtimeUr=built?{...JSON.parse(fs.readFileSync('src/i18n/runtime/shared.json','utf8')),...JSON.parse(fs.readFileSync('src/i18n/runtime/tools.json','utf8'))}:urdu;
+const runtimeUr=built?{...JSON.parse(fs.readFileSync('src/i18n/runtime/shared.json','utf8')),...JSON.parse(fs.readFileSync('src/i18n/runtime/tools.json','utf8')),...JSON.parse(fs.readFileSync('src/i18n/runtime/tools-masterclass.json','utf8'))}:urdu;
 const differences:any[]=[];
 for(const lesson of Object.values(journalEditions)){
  const path=getMasterclassUrl(masterclassCollection.find(m=>m.number===lesson.number)!);

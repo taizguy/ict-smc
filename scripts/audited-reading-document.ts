@@ -1,3 +1,4 @@
+import './register-ssr-tools';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { parse, parseFragment, serialize } from 'parse5';

@@ -7,49 +7,12 @@ export const foundationsChapters: TextbookChapter[] = [
     slug: 'what-actually-moves-price',
     part: 'Part I - Market Foundations',
     title: 'What Actually Moves Price? — The Mechanics of the Electronic Auction',
-    quote: "Each executed trade has equal bought and sold quantity. Transaction prices and quoted prices are different: trading, new orders and cancellations all matter when interpreting the auction.",
+    quote: '',
     level: 0,
-    summary: [
-      'The foundational fallacy: Why "more buyers than sellers" is mathematically and mechanically impossible.',
-      'The Central Limit Order Book (CLOB): How passive bids and asks form liquidity queues.',
-      'Aggressive market orders vs. passive limit orders: The true catalyst of price change.',
-      'Slippage, market impact, and liquidity voids: Why large institutional participants cannot enter like retail traders.',
-      "ICT-style liquidity interpretation: distinguish a visible sweep from an unverified claim about who caused it."
-    ],
-    keyTerms: [
-      { term: 'Central Limit Order Book (CLOB)', definition: 'The centralized, deterministic electronic ledger maintained by an exchange matching engine that tracks all outstanding limit orders sorted by price and arrival time.' },
-      { term: 'Passive Liquidity', definition: 'Resting limit orders (bids below price, asks above price) that wait in the book to be filled, providing the counterparty volume necessary for market orders.' },
-      { term: 'Aggressive Liquidity / Market Orders', definition: 'Orders submitted with immediate execution priority that cross the bid-ask spread and consume resting passive liquidity.' },
-      { term: 'Market Impact', definition: 'The degree of price movement caused by an order consuming multiple price tiers of the order book due to insufficient resting depth at the top of the book.' },
-      { term: 'Liquidity Void', definition: "A chart label for rapid movement through a range with limited candle overlap; it does not establish that no two-sided trades occurred." }
-    ],
-    practiceQuestions: [
-      'If every transaction requires exactly one buyer and one seller in equal volume, why does price move at all?',
-      'What specific mechanism causes a candle to print a large displacement body on the chart?',
-      'Why is an institution with $500M unable to simply click "buy at market" without destroying their own average fill price?',
-      'How does the concept of resting limit orders relate to ICT liquidity pools and retail stop clusters?',
-      'What is the structural difference between a deep, liquid order book and a thin, illiquid order book during high-impact news?'
-    ],
-    sections: [
-      {
-        id: '1.1',
-        title: '1.1 The Great Fallacy: "More Buyers Than Sellers"',
-        content: "Every executed trade matches bought and sold quantity. This does not mean there are equal numbers of interested people or equal quantities of unexecuted orders. One participant can trade with several counterparties.\n\nOn an exchange order book, an aggressive order can consume the best available quote and trade at further levels. A marketable limit order can do this too, subject to its limit. Quotes can also move when resting orders are added, amended or cancelled, even before another trade occurs.\n\nDistinguish the last transaction price from the current bid and ask. This is an introduction to an exchange auction, not a complete model of every market. Spot foreign exchange is fragmented across venues and dealers rather than one consolidated exchange order book.",
-        keyTakeaway: "Matched trade quantity is equal on both sides. Quotes can change through order additions and cancellations as well as executions."
-      },
-      {
-        id: '1.2',
-        title: '1.2 Inside the Matching Engine: Bids, Asks, and the Spread',
-        content: "The best bid is the highest displayed buying price; the best ask is the lowest displayed selling price. Their difference is the spread. Displayed depth is only the visible portion of liquidity on that venue.\n\nA buy market order or marketable buy limit order can execute against the ask. A sell market order or marketable sell limit order can execute against the bid. If the available quantity is insufficient, execution may continue at other prices, subject to the order type and venue rules.\n\nAdding a better-priced resting order can improve a quote without a trade. Cancelling the best quote can expose a worse one. It is therefore inaccurate to say that only market orders move price. Hidden orders, routing, auctions and dealer markets require additional explanation.",
-        keyTakeaway: "Separate the visible order book, execution prices and changes in quotes; they are related but different observations."
-      },
-      {
-        id: '1.3',
-        title: '1.3 The Institutional Liquidity Dilemma',
-        content: "Large orders can face market impact because the desired quantity exceeds available liquidity. Small orders can also suffer slippage during fast markets or poor liquidity; an exact screen price and fixed execution time are not guaranteed.\n\nStops may cluster near obvious highs or lows, but a candle does not reveal their quantity, owners or purpose. A triggered stop-market order can add aggressive flow. A stop-limit order behaves differently and may remain unfilled. Confirm the instrument and broker rules.\n\nIn ICT-style chart study, a move through a prior high or low followed by rejection may be labelled a liquidity sweep. Treat the inferred orders and institutional motives as a hypothesis. The same level can break and continue; the chart alone does not establish deliberate manipulation.",
-        keyTakeaway: "A sweep describes price behavior. The size of hidden stops and the identity or intent of counterparties cannot be established from candles alone."
-      }
-    ]
+    summary: [],
+    keyTerms: [],
+    practiceQuestions: [],
+    sections: []
   },
 
   // CHAPTER 2: How an Exchange Matches Orders

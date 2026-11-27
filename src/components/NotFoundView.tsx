@@ -11,8 +11,9 @@ import {
   Search,
   Compass
 } from 'lucide-react';
-import { publishedCurriculumChapters as textbookChapters } from '../data/chaptersData';
+import { chapterCatalog } from '../data/catalog.generated';
 import { MainTabType } from './Header';
+const textbookChapters = chapterCatalog.filter(c => c.status === 'published');
 
 interface NotFoundViewProps {
   attemptedPath?: string;
@@ -30,9 +31,7 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({
 
   const matchingChapters = query.trim()
     ? textbookChapters.filter(ch =>
-        matchesLocalizedSearch(query, [ch.title], translateSearch) ||
-        matchesLocalizedSearch(query, [ch.slug], translateSearch) ||
-        ch.summary.some(s => matchesLocalizedSearch(query, [s], translateSearch))
+        matchesLocalizedSearch(query, [ch.title, ch.slug, ch.part], translateSearch)
       ).slice(0, 4)
     : [];
 

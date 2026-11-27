@@ -4,6 +4,78 @@ import path from 'path';
 import {defineConfig} from 'vite';
 import {performanceBundlePlugin} from './scripts/performance-bundle-plugin';
 
+const ROUTE_CSS_MAP: Record<string, string[]> = {
+  'src/components/articles/ArticlesView.tsx': ['/src/styles/articles.css'],
+  'src/components/LearningFirstHome.tsx': ['/src/styles/home-playground.css'],
+  'src/components/ReadingRoomLayout.tsx': ['/src/styles/reading-room.css'],
+  'src/components/market/ChartLabHubPage.tsx': ['/src/styles/workbench-hallmark/page.css', '/src/styles/chartlab-analysis.css'],
+  'src/components/ChartLab.tsx': ['/src/styles/chartlab-analysis.css', '/src/styles/practice-loop.css'],
+  'src/components/TradeSimulator.tsx': ['/src/styles/practice-loop.css'],
+  'src/components/BacktestLab.tsx': ['/src/styles/practice-loop.css'],
+  'src/components/InstitutionalToolsSuite.tsx': ['/src/styles/practice-loop.css'],
+  'src/components/MasterclassHub.tsx': ['/src/styles/masterclass-hub.css'],
+  'src/components/GlossaryReference.tsx': ['/src/styles/glossary-reference.css'],
+  'src/components/practice/PracticeLoopPage.tsx': ['/src/styles/workbench-hallmark/page.css', '/src/styles/practice-loop.css'],
+  'src/components/TradingToolsWorkbench.tsx': ['/src/styles/workbench-hallmark/page.css'],
+  'src/components/ChapterRoom.tsx': [
+    '/src/styles/fvg-document.css',
+    '/src/styles/delivery-lesson.css',
+    '/src/styles/mentorship2025.css',
+    '/src/styles/mentorship2026.css',
+    '/src/styles/mentorship2026-alchemy.css',
+  ],
+  'src/components/SilverLessonContent.tsx': ['/src/styles/silver-lesson.css', '/src/styles/liquidity-document.css'],
+  'src/components/BreakDocumentContent.tsx': ['/src/styles/break-document.css', '/src/styles/liquidity-document.css'],
+  'src/components/StructureDocumentContent.tsx': ['/src/styles/structure-document.css', '/src/styles/liquidity-document.css'],
+  'src/components/SwingDocumentContent.tsx': ['/src/styles/swing-document.css', '/src/styles/liquidity-document.css'],
+  'src/components/LiquidityDocumentContent.tsx': ['/src/styles/liquidity-document.css'],
+  'src/components/OrderBookContent.tsx': ['/src/styles/order-book-document.css', '/src/styles/liquidity-document.css'],
+  'src/components/MarketMakerContent.tsx': ['/src/styles/market-maker-document.css', '/src/styles/liquidity-document.css'],
+  'src/components/Model2022Content.tsx': ['/src/styles/model-2022-document.css', '/src/styles/liquidity-document.css'],
+  'src/components/OteContent.tsx': ['/src/styles/ote-document.css'],
+  'src/components/RdrbContent.tsx': ['/src/styles/rdrb-document.css'],
+  'src/components/PdArrayContent.tsx': ['/src/styles/pd-array-lesson.css'],
+  'src/components/SuspensionReaperContent.tsx': ['/src/styles/suspension-reaper-lesson.css'],
+  'src/components/MitigationDocumentContent.tsx': ['/src/styles/mitigation-document.css'],
+  'src/components/PriceMovementContent.tsx': ['/src/styles/price-movement.css'],
+  'src/components/FvgDocumentContent.tsx': ['/src/styles/fvg-document.css'],
+};
+
+function routeCssPlugin() {
+  return {
+    name: 'learnsmc-route-css',
+    enforce: 'pre' as const,
+    transform(code: string, id: string) {
+      const cleanId = id.split('?')[0].replace(/\\/g, '/');
+      const match = Object.keys(ROUTE_CSS_MAP).find(suffix => cleanId.endsWith('/' + suffix) || cleanId === suffix);
+      if (!match) return null;
+      const imports = ROUTE_CSS_MAP[match].map(css => `import ${JSON.stringify(css)};`).join('\n');
+      return { code: `${imports}\n${code}`, map: null };
+    },
+  };
+}
+
+function stripClientUrduJsonPlugin() {
+  const stripPairs = (value: unknown): unknown =>
+    Array.isArray(value)
+      ? value.length === 2 && typeof value[0] === 'string' && typeof value[1] === 'string'
+        ? [value[0], '']
+        : value.map(stripPairs)
+      : value && typeof value === 'object'
+        ? Object.fromEntries(Object.entries(value).map(([k, v]) => [k, stripPairs(v)]))
+        : value;
+  return {
+    name: 'learnsmc-strip-client-urdu-json',
+    apply: 'build' as const,
+    enforce: 'pre' as const,
+    transform(code: string, id: string) {
+      const cleanId = id.split('?')[0].replace(/\\/g, '/');
+      if (!cleanId.endsWith('/src/data/chapters/priceMovementLesson.json')) return null;
+      return { code: JSON.stringify(stripPairs(JSON.parse(code))), map: null };
+    },
+  };
+}
+
 function legacyRedirectsPlugin() {
   return {
     name: 'learnsmc-legacy-redirects',
@@ -84,7 +156,7 @@ function legacyRedirectsPlugin() {
 
 export default defineConfig(() => {
   return {
-    plugins: [react({ jsxImportSource: '@learnsmc/i18n' }), tailwindcss(), legacyRedirectsPlugin(),performanceBundlePlugin()],
+    plugins: [stripClientUrduJsonPlugin(), routeCssPlugin(), react({ jsxImportSource: '@learnsmc/i18n' }), tailwindcss(), legacyRedirectsPlugin(), performanceBundlePlugin()],
     resolve: {
       alias: {
         '@learnsmc/i18n': path.resolve(__dirname, 'src/i18n'),
@@ -102,10 +174,7 @@ export default defineConfig(() => {
             if (/node_modules[\\/](?:lightweight-charts|fancy-canvas)[\\/]/.test(id)) return 'chart-vendor';
             if (/node_modules[\\/]three[\\/]/.test(id)) return 'three-vendor';
             if (/node_modules[\\/](?:motion|motion-dom|motion-utils|framer-motion)[\\/]/.test(id)) return 'motion-vendor';
-            if (/node_modules[\\/](?:react|react-dom|scheduler)[\\/]/.test(id)) return 'react-vendor';
-            if (id.includes('src/data/chapters/')) {
-              return 'data-chapters';
-            }
+            if (/node_modules[\\/]react|react-dom|scheduler/.test(id) && /node_modules[\\/](?:react|react-dom|scheduler)[\\/]/.test(id)) return 'react-vendor';
             if (id.includes('src/data/masood')) {
               return 'data-masood';
             }

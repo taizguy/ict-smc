@@ -2,7 +2,7 @@ import { LabDesk, downloadLabFile } from './labs/LabDesk';
 import { useMemo, useState } from 'react';
 import { useTranslation } from '../i18n/TranslationProvider';
 import { chartScenarios } from '../data/chartScenarios';
-import { textbookChapters } from '../data/chaptersData';
+import { chapterCatalog as textbookChapters } from '../data/catalog.generated';
 import { guidedChartDrills } from '../utils/guidedChartDrills';
 import { getChartScenarioSlug } from '../utils/workbenchToolRoutes';
 import { CandleBoard } from './labs/CandleBoard';

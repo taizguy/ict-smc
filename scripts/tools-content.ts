@@ -1,3 +1,4 @@
+import './register-ssr-tools';
 import {legacyPracticeMetadata} from '../src/data/legacyPracticeMetadata';
 import {chartLabHubMeta,chartLabHubSchema,CHARTLAB_HUB_PATH} from '../src/data/chartLabHub';
 import {studyForPath} from '../src/data/chartLabRemainingContent';

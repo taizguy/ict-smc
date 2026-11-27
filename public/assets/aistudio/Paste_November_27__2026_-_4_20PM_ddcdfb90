@@ -1,0 +1,508 @@
+2026-11-27T11:17:04.736Z	Initializing build environment...
+2026-11-27T11:17:44.610Z	Success: Finished initializing build environment
+2026-11-27T11:17:45.346Z	Cloning repository...
+2026-11-27T11:17:47.590Z	Restoring from dependencies cache
+2026-11-27T11:17:47.591Z	Restoring from build output cache
+2026-11-27T11:17:47.593Z	Detected the following tools from environment: bun@1.4.4, npm@10.9.2, nodejs@24.22.1
+2026-11-27T11:17:47.741Z	Installing project dependencies: bun install --frozen-lockfile
+2026-11-27T11:17:47.913Z	bun install v1.4.4 (38afee6c8)
+2026-11-27T11:17:50.002Z	
+2026-11-27T11:17:50.002Z	+ @resvg/resvg-js@2.6.2
+2026-11-27T11:17:50.002Z	+ @types/canvas-confetti@1.9.0
+2026-11-27T11:17:50.005Z	+ @types/express@4.17.25
+2026-11-27T11:17:50.005Z	+ @types/node@22.20.2
+2026-11-27T11:17:50.005Z	+ @types/react@19.3.0
+2026-11-27T11:17:50.005Z	+ @types/react-dom@19.3.0
+2026-11-27T11:17:50.005Z	+ @types/three@0.186.0
+2026-11-27T11:17:50.005Z	+ autoprefixer@10.6.0
+2026-11-27T11:17:50.005Z	+ esbuild@0.25.12
+2026-11-27T11:17:50.005Z	+ parse5@8.1.1
+2026-11-27T11:17:50.005Z	+ tailwindcss@4.3.3
+2026-11-27T11:17:50.006Z	+ tsx@4.23.13
+2026-11-27T11:17:50.006Z	+ typescript@5.8.3
+2026-11-27T11:17:50.006Z	+ vite@6.4.3
+2026-11-27T11:17:50.006Z	+ @google/genai@2.22.0
+2026-11-27T11:17:50.006Z	+ @tailwindcss/vite@4.3.3
+2026-11-27T11:17:50.006Z	+ @vitejs/plugin-react@5.2.0
+2026-11-27T11:17:50.007Z	+ canvas-confetti@1.9.4
+2026-11-27T11:17:50.007Z	+ dotenv@17.4.2
+2026-11-27T11:17:50.007Z	+ express@4.22.3
+2026-11-27T11:17:50.007Z	+ lenis@1.3.26
+2026-11-27T11:17:50.007Z	+ lightweight-charts@5.3.0
+2026-11-27T11:17:50.007Z	+ lucide-react@0.546.0
+2026-11-27T11:17:50.007Z	+ motion@12.43.0
+2026-11-27T11:17:50.007Z	+ react@19.3.0
+2026-11-27T11:17:50.007Z	+ react-dom@19.3.0
+2026-11-27T11:17:50.007Z	+ three@0.186.1
+2026-11-27T11:17:50.007Z	
+2026-11-27T11:17:50.008Z	231 packages installed [2.12s]
+2026-11-27T11:17:50.008Z	
+2026-11-27T11:17:50.008Z	Blocked 2 postinstalls. Run `bun pm untrusted` for details.
+2026-11-27T11:17:50.097Z	Executing user build command: npm run build
+2026-11-27T11:17:50.632Z	
+2026-11-27T11:17:50.632Z	> react-example@0.0.0 build
+2026-11-27T11:17:50.632Z	> npm run build:content && tsx scripts/verify-emitted-claims.ts
+2026-11-27T11:17:50.632Z	
+2026-11-27T11:17:50.812Z	
+2026-11-27T11:17:50.812Z	> react-example@0.0.0 build:content
+2026-11-27T11:17:50.812Z	> tsx scripts/verify-curriculum-phase1.ts && tsx scripts/generate-catalog.ts && tsx scripts/practice-loop-evidence.ts && tsx scripts/generate-practice-case-chunks.ts && tsx scripts/generate-urdu-runtime.ts && tsx scripts/generate-silver-assets.ts && tsx scripts/verify-silver-study.ts && tsx scripts/generate-remaining-study-assets.ts && tsx scripts/verify-remaining-studies.ts && tsx scripts/verify-chartlab-uniqueness.ts && vite build && tsx scripts/prerender.ts && tsx scripts/validate-seo.ts && tsx scripts/verify-crawl.ts && tsx scripts/verify-glossary-reference.ts && tsx scripts/verify-curriculum-phase1-static.ts && tsx scripts/verify-price-movement.ts && tsx scripts/verify-fvg-document.ts && tsx scripts/verify-lesson-semantics.ts && tsx scripts/verify-mitigation-document.ts && tsx scripts/verify-liquidity-document.ts && tsx scripts/verify-swing-document.ts && tsx scripts/verify-structure-document.ts && tsx scripts/verify-break-documents.ts && tsx scripts/verify-silver-lesson.ts && tsx scripts/verify-silver-visual-system.ts && tsx scripts/verify-chapter-sections.ts && tsx scripts/verify-routing.ts && tsx scripts/verify-2026-edition.ts && tsx scripts/verify-masterclass-hub.ts && tsx scripts/verify-masterclass-collections.ts && tsx scripts/verify-chartlab-hub.ts && tsx scripts/verify-practice-loop.ts && tsx scripts/practice-loop-legacy-report.ts && tsx scripts/verify-practice-cleanup.ts && node scripts/verify-retired-taxonomy.mjs && tsx scripts/verify-claims-gate.ts && node scripts/verify-bundle-budget.mjs
+2026-11-27T11:17:50.813Z	
+2026-11-27T11:17:51.460Z	Phase 1 data passed: 66 original chapters preserved; 61 published + 36 in progress, 97 plan positions, 10 parts; native metadata and content retention.
+2026-11-27T11:17:51.828Z	Catalog: 97 chapters, 118 lectures, 6 series
+2026-11-27T11:17:53.280Z	196 bilingual pairs; 40 unchanged synthetic CSV bars exported.
+2026-11-27T11:17:53.687Z	35 exact per-case chunks; candle-free chooser metadata.
+2026-11-27T11:17:58.438Z	Urdu shared: 2841 entries / 388 KB
+2026-11-27T11:17:58.505Z	Urdu chapters: 11427 entries / 2451 KB
+2026-11-27T11:17:58.522Z	Urdu masood: 1843 entries / 441 KB
+2026-11-27T11:17:58.533Z	Urdu articles: 1136 entries / 263 KB
+2026-11-27T11:17:58.541Z	Urdu tools: 920 entries / 202 KB
+2026-11-27T11:17:58.551Z	Urdu tools-masterclass: 1265 entries / 260 KB
+2026-11-27T11:17:58.567Z	Urdu tools-glossary: 1880 entries / 504 KB
+2026-11-27T11:17:58.572Z	Urdu tools-chartlab: 625 entries / 146 KB
+2026-11-27T11:17:58.573Z	Urdu publisher: 209 entries / 47 KB
+2026-11-27T11:17:59.819Z	Urdu lesson split: 106 lessons; common 505 KB; exact fallback parity, thirty-two lesson chunks reused.
+2026-11-27T11:18:00.212Z	Generated five-case synthetic CSV and original EN/UR 1200×630 social charts.
+2026-11-27T11:18:00.516Z	Silver data passed: valid explicit UTC OHLC, NQ ticks, context/time continuity, five computed outcomes, near-miss isolation, CE/stop/target, DST and 10:00/11:00 off-by-one tests, exact CSV and bilingual questions.
+2026-11-27T11:18:00.990Z	Generated four exact CSVs and eight original bilingual 1200×630 social charts.
+2026-11-27T11:18:01.405Z	Four route models passed: 20 cases, 142 case-specific stages, OHLC/tick/UTC/context references, computed outcomes and CSV parity.
+2026-11-27T11:18:01.769Z	Shape guard passed for 29 implemented cases; closest distance 0.0997 > 0.055; clone/noise/padding controls rejected. All six named routes are migrated; no pending generic route.
+2026-11-27T11:18:02.233Z	vite v6.4.3 building for production...
+2026-11-27T11:18:02.310Z	transforming...
+2026-11-27T11:18:11.364Z	✓ 2677 modules transformed.
+2026-11-27T11:18:12.567Z	rendering chunks...
+2026-11-27T11:18:14.273Z	computing gzip size...
+2026-11-27T11:18:15.617Z	dist/assets/marketResearch.worker-Bojx_CaX.js                                                 2.89 kB
+2026-11-27T11:18:15.617Z	dist/index.html                                                                               5.97 kB │ gzip:   2.18 kB
+2026-11-27T11:18:15.618Z	dist/assets/MitigationDocumentContent-__IkXBK5.css                                            3.63 kB │ gzip:   1.31 kB
+2026-11-27T11:18:15.618Z	dist/assets/StructureDocumentContent-yVQ5lDti.css                                             5.11 kB │ gzip:   1.55 kB
+2026-11-27T11:18:15.618Z	dist/assets/SwingDocumentContent-CBXkkMqc.css                                                 5.17 kB │ gzip:   1.65 kB
+2026-11-27T11:18:15.618Z	dist/assets/BreakDocumentContent-J9_Ax2Nt.css                                                 5.77 kB │ gzip:   1.73 kB
+2026-11-27T11:18:15.618Z	dist/assets/Model2022Content-BBy00LOb.css                                                     6.42 kB │ gzip:   1.77 kB
+2026-11-27T11:18:15.618Z	dist/assets/PriceMovementContent-DVwlnasb.css                                                 7.14 kB │ gzip:   2.18 kB
+2026-11-27T11:18:15.618Z	dist/assets/MarketMakerContent-BzmUTinH.css                                                   7.26 kB │ gzip:   1.91 kB
+2026-11-27T11:18:15.618Z	dist/assets/liquidity-document-BLq1uD6W.css                                                   7.58 kB │ gzip:   2.15 kB
+2026-11-27T11:18:15.619Z	dist/assets/OrderBookContent-DM-PD_tN.css                                                     7.77 kB │ gzip:   2.00 kB
+2026-11-27T11:18:15.619Z	dist/assets/fvg-document-BtKqG5oZ.css                                                         8.79 kB │ gzip:   2.50 kB
+2026-11-27T11:18:15.619Z	dist/assets/SuspensionReaperContent-D_SI8_iE.css                                              9.98 kB │ gzip:   2.27 kB
+2026-11-27T11:18:15.620Z	dist/assets/PdArrayContent-Br8sHFNX.css                                                      10.37 kB │ gzip:   2.47 kB
+2026-11-27T11:18:15.620Z	dist/assets/ReadingChart-CtTstVqD.css                                                        10.44 kB │ gzip:   2.54 kB
+2026-11-27T11:18:15.620Z	dist/assets/SilverLessonContent-DDDNVtxk.css                                                 13.94 kB │ gzip:   3.55 kB
+2026-11-27T11:18:15.620Z	dist/assets/OteContent-Cb92EdVC.css                                                          15.06 kB │ gzip:   3.42 kB
+2026-11-27T11:18:15.620Z	dist/assets/RdrbContent-DXInVEBb.css                                                         15.60 kB │ gzip:   3.45 kB
+2026-11-27T11:18:15.620Z	dist/assets/ArticlesView-Cu1BIQKT.css                                                        16.67 kB │ gzip:   3.99 kB
+2026-11-27T11:18:15.621Z	dist/assets/WelcomeScreen-C_8q-avB.css                                                       20.82 kB │ gzip:   4.61 kB
+2026-11-27T11:18:15.621Z	dist/assets/GlossaryReference-3YurneGW.css                                                   22.88 kB │ gzip:   4.31 kB
+2026-11-27T11:18:15.621Z	dist/assets/MasterclassHub-DAsA2WmL.css                                                      23.69 kB │ gzip:   5.34 kB
+2026-11-27T11:18:15.621Z	dist/assets/ReadingRoomLayout-O147og3W.css                                                   30.16 kB │ gzip:   6.48 kB
+2026-11-27T11:18:15.621Z	dist/assets/ChapterRoom-Bp08Tvfi.css                                                         36.52 kB │ gzip:   7.67 kB
+2026-11-27T11:18:15.621Z	dist/assets/ChartLabHub-BCs3EfuW.css                                                         45.69 kB │ gzip:   6.46 kB
+2026-11-27T11:18:15.621Z	dist/assets/page-DU-fIuSk.css                                                                54.56 kB │ gzip:   9.72 kB
+2026-11-27T11:18:15.621Z	dist/assets/index-BaR4Bs3p.css                                                              334.96 kB │ gzip:  57.82 kB
+2026-11-27T11:18:15.622Z	dist/assets/asian-range-london-open-DTPGigcu.js                                               0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.622Z	dist/assets/bos-vs-choch-vs-mss-B1O5LaIO.js                                                   0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.622Z	dist/assets/building-a-trading-plan-yoD6TSFD.js                                               0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.622Z	dist/assets/building-market-narrative-yoD6TSFD.js                                             0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.622Z	dist/assets/buyside-sellside-liquidity-BIHI7g3E.js                                            0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.622Z	dist/assets/candlestick-basics-for-smc-BVRepiTI.js                                            0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.622Z	dist/assets/chart-setup-new-york-time-BIHI7g3E.js                                             0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.622Z	dist/assets/core-content-month-7-short-term-trading-and-market-maker-templates-BIHI7g3E.js    0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.623Z	dist/assets/core-content-month-8-daily-range-and-intraday-profiles-DTPGigcu.js                0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.623Z	dist/assets/crypto-btc-application-FmFgRqLi.js                                                0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.623Z	dist/assets/daily-bias-yoD6TSFD.js                                                            0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.623Z	dist/assets/dealing-range-marking-yoD6TSFD.js                                                 0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.623Z	dist/assets/draw-on-liquidity-FmFgRqLi.js                                                     0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.623Z	dist/assets/entry-model-anatomy-FmFgRqLi.js                                                   0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.624Z	dist/assets/equal-highs-equal-lows-yoD6TSFD.js                                                0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.624Z	dist/assets/event-volatility-hrlr-futures-vs-cfds-FmFgRqLi.js                                 0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.624Z	dist/assets/forex-futures-cfd-chart-differences-BIHI7g3E.js                                   0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.624Z	dist/assets/forex-pairs-study-FmFgRqLi.js                                                     0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.624Z	dist/assets/htf-liquidity-maps-FmFgRqLi.js                                                    0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.624Z	dist/assets/ict-2026-first-hour-dealing-range-FmFgRqLi.js                                     0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.624Z	dist/assets/ict-charter-model-4-position-trading-FmFgRqLi.js                                  0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.624Z	dist/assets/ict-charter-model-5-session-day-trading-yoD6TSFD.js                               0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.624Z	dist/assets/ict-charter-models-10-11-and-12-FmFgRqLi.js                                       0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.625Z	dist/assets/ict-midnight-opening-range-rth-gaps-nwog-FmFgRqLi.js                              0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.625Z	dist/assets/imbalance-and-rebalancing-yoD6TSFD.js                                             0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.625Z	dist/assets/inducement-false-breakouts-BIHI7g3E.js                                            0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.625Z	dist/assets/intraday-macro-windows-yoD6TSFD.js                                                0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.625Z	dist/assets/judas-swing-yoD6TSFD.js                                                           0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.625Z	dist/assets/kill-zones-explained-BIHI7g3E.js                                                  0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.625Z	dist/assets/liquidity-sweep-vs-stop-hunt-FmFgRqLi.js                                          0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.626Z	dist/assets/midday-afternoon-tape-reading-macros-final-hour-yoD6TSFD.js                       0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.626Z	dist/assets/nq-es-session-playbook-BkiAkXrA.js                                                0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.626Z	dist/assets/patience-discipline-rules-BIHI7g3E.js                                             0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.626Z	dist/assets/pd-arrays-compared-yoD6TSFD.js                                                    0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.626Z	dist/assets/quarterly-theory-seasonality-yoD6TSFD.js                                          0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.626Z	dist/assets/risk-management-basics-yoD6TSFD.js                                                0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.626Z	dist/assets/risk-reward-expectancy-yoD6TSFD.js                                                0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.627Z	dist/assets/standard-deviation-projections-FmFgRqLi.js                                        0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.627Z	dist/assets/stop-placement-invalidation-FmFgRqLi.js                                           0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.627Z	dist/assets/trade-management-yoD6TSFD.js                                                      0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.627Z	dist/assets/trading-psychology-BkiAkXrA.js                                                    0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.628Z	dist/assets/trend-range-transition-DTPGigcu.js                                                0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.628Z	dist/assets/unicorn-model-BkiAkXrA.js                                                         0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.628Z	dist/assets/volume-imbalance-liquidity-void-yoD6TSFD.js                                       0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.628Z	dist/assets/weekly-preparation-routine-BIHI7g3E.js                                            0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.628Z	dist/assets/chapters-FmFgRqLi.js                                                              0.03 kB │ gzip:   0.05 kB
+2026-11-27T11:18:15.628Z	dist/assets/bilingual-DQvU9PeQ.js                                                             0.04 kB │ gzip:   0.06 kB
+2026-11-27T11:18:15.628Z	dist/assets/catalogCounts-Cl1sYeMz.js                                                         0.14 kB │ gzip:   0.14 kB
+2026-11-27T11:18:15.629Z	dist/assets/lessonText-B_Zk_uVv.js                                                            0.18 kB │ gzip:   0.16 kB
+2026-11-27T11:18:15.629Z	dist/assets/audit4Headings-C18jbwfS.js                                                        0.19 kB │ gzip:   0.16 kB
+2026-11-27T11:18:15.629Z	dist/assets/search-tk27vhj5.js                                                                0.27 kB │ gzip:   0.23 kB
+2026-11-27T11:18:15.629Z	dist/assets/chevron-down-fIDCg2NF.js                                                          0.30 kB │ gzip:   0.25 kB
+2026-11-27T11:18:15.629Z	dist/assets/chevron-left-DyHi9twh.js                                                          0.31 kB │ gzip:   0.25 kB
+2026-11-27T11:18:15.629Z	dist/assets/chevron-right-DRiPpVZU.js                                                         0.31 kB │ gzip:   0.25 kB
+2026-11-27T11:18:15.629Z	dist/assets/x-CKJ8RXEc.js                                                                     0.33 kB │ gzip:   0.26 kB
+2026-11-27T11:18:15.629Z	dist/assets/masterclassHubMeta-iNDQhyJX.js                                                    0.33 kB │ gzip:   0.21 kB
+2026-11-27T11:18:15.629Z	dist/assets/bookmark-ZOJPyjqo.js                                                              0.34 kB │ gzip:   0.27 kB
+2026-11-27T11:18:15.630Z	dist/assets/arrow-right-CGZ3wOur.js                                                           0.34 kB │ gzip:   0.27 kB
+2026-11-27T11:18:15.631Z	dist/assets/arrow-left-B7fAbaPi.js                                                            0.34 kB │ gzip:   0.27 kB
+2026-11-27T11:18:15.632Z	dist/assets/arrow-up-right-4xe_Nhhp.js                                                        0.34 kB │ gzip:   0.27 kB
+2026-11-27T11:18:15.632Z	dist/assets/trending-up-D4SQPLZb.js                                                           0.35 kB │ gzip:   0.28 kB
+2026-11-27T11:18:15.632Z	dist/assets/circle-check-BdYqLrHv.js                                                          0.35 kB │ gzip:   0.28 kB
+2026-11-27T11:18:15.633Z	dist/assets/flame-BjALU3Gn.js                                                                 0.38 kB │ gzip:   0.29 kB
+2026-11-27T11:18:15.633Z	dist/assets/rotate-ccw-CboxYdsj.js                                                            0.38 kB │ gzip:   0.29 kB
+2026-11-27T11:18:15.633Z	dist/assets/searchHeading-BJTRTrMH.js                                                         0.38 kB │ gzip:   0.29 kB
+2026-11-27T11:18:15.633Z	dist/assets/info-CSY5Cw9F.js                                                                  0.38 kB │ gzip:   0.29 kB
+2026-11-27T11:18:15.633Z	dist/assets/routeStudyLabels-gyNl1G-K.js                                                      0.38 kB │ gzip:   0.31 kB
+2026-11-27T11:18:15.633Z	dist/assets/structure-overrides-DLhIopRE.js                                                   0.38 kB │ gzip:   0.28 kB
+2026-11-27T11:18:15.633Z	dist/assets/chart-no-axes-column-C8NYAscV.js                                                  0.38 kB │ gzip:   0.28 kB
+2026-11-27T11:18:15.633Z	dist/assets/LessonFaq-CoHvDUdj.js                                                             0.38 kB │ gzip:   0.25 kB
+2026-11-27T11:18:15.633Z	dist/assets/LessonExtract-DHabuj13.js                                                         0.39 kB │ gzip:   0.29 kB
+2026-11-27T11:18:15.633Z	dist/assets/grid-2x2-aG8zisq1.js                                                              0.40 kB │ gzip:   0.30 kB
+2026-11-27T11:18:15.633Z	dist/assets/target-Bib3iVlI.js                                                                0.40 kB │ gzip:   0.27 kB
+2026-11-27T11:18:15.633Z	dist/assets/square-check-big-C7TGmbSL.js                                                      0.41 kB │ gzip:   0.30 kB
+2026-11-27T11:18:15.633Z	dist/assets/download-BM6gT3YD.js                                                              0.41 kB │ gzip:   0.30 kB
+2026-11-27T11:18:15.634Z	dist/assets/activity-CaodWLt3.js                                                              0.41 kB │ gzip:   0.31 kB
+2026-11-27T11:18:15.634Z	dist/assets/skip-back-DFvJuLL4.js                                                             0.41 kB │ gzip:   0.31 kB
+2026-11-27T11:18:15.634Z	dist/assets/step-forward-RJMJvrkT.js                                                          0.41 kB │ gzip:   0.31 kB
+2026-11-27T11:18:15.634Z	dist/assets/arrow-up-down-56B3avno.js                                                         0.42 kB │ gzip:   0.30 kB
+2026-11-27T11:18:15.634Z	dist/assets/mentorship2026-C3Bk7g1u.js                                                        0.42 kB │ gzip:   0.33 kB
+2026-11-27T11:18:15.634Z	dist/assets/circle-question-mark-Biwk0zIp.js                                                  0.42 kB │ gzip:   0.32 kB
+2026-11-27T11:18:15.634Z	dist/assets/external-link-BLU4TflN.js                                                         0.43 kB │ gzip:   0.31 kB
+2026-11-27T11:18:15.634Z	dist/assets/compass-DBkjL6lE.js                                                               0.43 kB │ gzip:   0.32 kB
+2026-11-27T11:18:15.634Z	dist/assets/eye-BctloRoB.js                                                                   0.43 kB │ gzip:   0.31 kB
+2026-11-27T11:18:15.634Z	dist/assets/heart-Au6n7mo4.js                                                                 0.43 kB │ gzip:   0.32 kB
+2026-11-27T11:18:15.634Z	dist/assets/award-CIKbsWHn.js                                                                 0.45 kB │ gzip:   0.33 kB
+2026-11-27T11:18:15.634Z	dist/assets/book-open-DHyOyDx8.js                                                             0.46 kB │ gzip:   0.31 kB
+2026-11-27T11:18:15.634Z	dist/assets/git-compare-ChmSrgFd.js                                                           0.46 kB │ gzip:   0.32 kB
+2026-11-27T11:18:15.634Z	dist/assets/list-Do1LypWT.js                                                                  0.47 kB │ gzip:   0.30 kB
+2026-11-27T11:18:15.635Z	dist/assets/shield-check-qtjunt5Z.js                                                          0.50 kB │ gzip:   0.36 kB
+2026-11-27T11:18:15.635Z	dist/assets/youtube-CGvc21_B.js                                                               0.50 kB │ gzip:   0.33 kB
+2026-11-27T11:18:15.635Z	dist/assets/file-text-D9fd3bJ4.js                                                             0.51 kB │ gzip:   0.32 kB
+2026-11-27T11:18:15.635Z	dist/assets/camera-DG3PwTmP.js                                                                0.51 kB │ gzip:   0.36 kB
+2026-11-27T11:18:15.635Z	dist/assets/crosshair-BrvtCZiF.js                                                             0.53 kB │ gzip:   0.33 kB
+2026-11-27T11:18:15.635Z	dist/assets/shield-alert-dH6-gN47.js                                                          0.53 kB │ gzip:   0.37 kB
+2026-11-27T11:18:15.635Z	dist/assets/scale-CKL9Z48n.js                                                                 0.54 kB │ gzip:   0.34 kB
+2026-11-27T11:18:15.635Z	dist/assets/silver-lesson-overrides-DKSdJPrb.js                                               0.57 kB │ gzip:   0.39 kB
+2026-11-27T11:18:15.635Z	dist/assets/AccentText-BfOYY7Lf.js                                                            0.57 kB │ gzip:   0.37 kB
+2026-11-27T11:18:15.635Z	dist/assets/layers-bjmf6YdD.js                                                                0.60 kB │ gzip:   0.35 kB
+2026-11-27T11:18:15.635Z	dist/assets/sliders-horizontal-BknTUZAj.js                                                    0.60 kB │ gzip:   0.35 kB
+2026-11-27T11:18:15.635Z	dist/assets/FinancialDisclaimer-BwVD3jIk.js                                                   0.60 kB │ gzip:   0.37 kB
+2026-11-27T11:18:15.635Z	dist/assets/eye-off-er_1Au4-.js                                                               0.61 kB │ gzip:   0.38 kB
+2026-11-27T11:18:15.635Z	dist/assets/wick-only-B0g_nZjE.js                                                             0.64 kB │ gzip:   0.36 kB
+2026-11-27T11:18:15.636Z	dist/assets/no-retest-buV77uaE.js                                                             0.65 kB │ gzip:   0.36 kB
+2026-11-27T11:18:15.636Z	dist/assets/sparkles-D8xYXDMD.js                                                              0.67 kB │ gzip:   0.39 kB
+2026-11-27T11:18:15.636Z	dist/assets/rejection-eni6iU5O.js                                                             0.68 kB │ gzip:   0.38 kB
+2026-11-27T11:18:15.636Z	dist/assets/reclaim-CEGbYt3w.js                                                               0.68 kB │ gzip:   0.37 kB
+2026-11-27T11:18:15.636Z	dist/assets/order-book-overrides-6-cUMSHw.js                                                  0.71 kB │ gzip:   0.52 kB
+2026-11-27T11:18:15.636Z	dist/assets/zap-M5JOr0Zw.js                                                                   0.73 kB │ gzip:   0.39 kB
+2026-11-27T11:18:15.636Z	dist/assets/square-dashed-B3uuFOB9.js                                                         0.74 kB │ gzip:   0.37 kB
+2026-11-27T11:18:15.636Z	dist/assets/swing-overrides-BcKTmC4b.js                                                       0.75 kB │ gzip:   0.47 kB
+2026-11-27T11:18:15.636Z	dist/assets/cpu-DfU1cgc3.js                                                                   0.81 kB │ gzip:   0.40 kB
+2026-11-27T11:18:15.637Z	dist/assets/ote-overrides-CWpivzcq.js                                                         0.89 kB │ gzip:   0.61 kB
+2026-11-27T11:18:15.637Z	dist/assets/liquidity-overrides-DEPYF2nO.js                                                   0.99 kB │ gzip:   0.62 kB
+2026-11-27T11:18:15.637Z	dist/assets/BacktestLab-UmUXxzn1.js                                                           0.99 kB │ gzip:   0.58 kB
+2026-11-27T11:18:15.637Z	dist/assets/market-maker-overrides-CLKJFUaJ.js                                                1.01 kB │ gzip:   0.62 kB
+2026-11-27T11:18:15.637Z	dist/assets/chartStudyTime-PNS_k5Iy.js                                                        1.07 kB │ gzip:   0.60 kB
+2026-11-27T11:18:15.637Z	dist/assets/mail-D9r82VLG.js                                                                  1.08 kB │ gzip:   0.47 kB
+2026-11-27T11:18:15.637Z	dist/assets/preload-helper-BlTxHScW.js                                                        1.11 kB │ gzip:   0.65 kB
+2026-11-27T11:18:15.637Z	dist/assets/ChartLabHubPage-Cx1rHvMS.js                                                       1.11 kB │ gzip:   0.61 kB
+2026-11-27T11:18:15.637Z	dist/assets/mitigation-overrides-yyD3K8Pk.js                                                  1.14 kB │ gzip:   0.74 kB
+2026-11-27T11:18:15.637Z	dist/assets/users-BQbRo38i.js                                                                 1.15 kB │ gzip:   0.49 kB
+2026-11-27T11:18:15.637Z	dist/assets/reviewedModelSources-CcuKuBjK.js                                                  1.33 kB │ gzip:   0.58 kB
+2026-11-27T11:18:15.637Z	dist/assets/useToolStorage-DMNoa8eo.js                                                        1.38 kB │ gzip:   0.76 kB
+2026-11-27T11:18:15.637Z	dist/assets/practiceToolReferences.generated-D9b5WYip.js                                      1.38 kB │ gzip:   0.66 kB
+2026-11-27T11:18:15.637Z	dist/assets/ToolUI-bC13spaU.js                                                                1.48 kB │ gzip:   0.79 kB
+2026-11-27T11:18:15.638Z	dist/assets/ContextualInternalLinker-CnpBqu7U.js                                              1.55 kB │ gzip:   0.82 kB
+2026-11-27T11:18:15.638Z	dist/assets/locale-Co67roet.js                                                                1.71 kB │ gzip:   0.86 kB
+2026-11-27T11:18:15.638Z	dist/assets/c-BDck8G36.js                                                                     1.94 kB │ gzip:   0.56 kB
+2026-11-27T11:18:15.638Z	dist/assets/model-2022-overrides-DVk1pJA4.js                                                  2.12 kB │ gzip:   1.18 kB
+2026-11-27T11:18:15.638Z	dist/assets/e-Dzuc7j_-.js                                                                     2.17 kB │ gzip:   0.60 kB
+2026-11-27T11:18:15.638Z	dist/assets/BauhausNavScroller-CA1jjp-5.js                                                    2.20 kB │ gzip:   1.00 kB
+2026-11-27T11:18:15.638Z	dist/assets/b-DEB6nrOi.js                                                                     2.25 kB │ gzip:   0.62 kB
+2026-11-27T11:18:15.638Z	dist/assets/xauusd-gold-legacy-model-C80Vn7JC.js                                              2.28 kB │ gzip:   1.26 kB
+2026-11-27T11:18:15.638Z	dist/assets/WorkbenchHeader-BH__Gamn.js                                                       2.37 kB │ gzip:   1.14 kB
+2026-11-27T11:18:15.638Z	dist/assets/eur-mmbm-propulsion-model-dAxer11i.js                                             2.39 kB │ gzip:   1.33 kB
+2026-11-27T11:18:15.638Z	dist/assets/a-BQhV5lKe.js                                                                     2.41 kB │ gzip:   0.65 kB
+2026-11-27T11:18:15.638Z	dist/assets/f-C47rOjVT.js                                                                     2.42 kB │ gzip:   0.66 kB
+2026-11-27T11:18:15.638Z	dist/assets/s-a-DbWNLuUE.js                                                                   2.43 kB │ gzip:   0.81 kB
+2026-11-27T11:18:15.639Z	dist/assets/d-DUXxNxxk.js                                                                     2.43 kB │ gzip:   0.65 kB
+2026-11-27T11:18:15.640Z	dist/assets/btc-2022-bullish-model-Kdmi3E9W.js                                                2.47 kB │ gzip:   1.36 kB
+2026-11-27T11:18:15.640Z	dist/assets/SEO-CW7R4LD1.js                                                                   2.47 kB │ gzip:   1.14 kB
+2026-11-27T11:18:15.640Z	dist/assets/nq-ath-alchemy-ndog-macro-DEqq6aWi.js                                             2.51 kB │ gzip:   1.38 kB
+2026-11-27T11:18:15.641Z	dist/assets/suspension-reaper-overrides-CwessM7O.js                                           2.60 kB │ gzip:   1.45 kB
+2026-11-27T11:18:15.641Z	dist/assets/nq-silver-bullet-short-DdzxqiE3.js                                                2.61 kB │ gzip:   1.42 kB
+2026-11-27T11:18:15.641Z	dist/assets/s-c-BYyLZd94.js                                                                   2.65 kB │ gzip:   0.88 kB
+2026-11-27T11:18:15.641Z	dist/assets/s-e-C5OcyW1f.js                                                                   2.67 kB │ gzip:   0.89 kB
+2026-11-27T11:18:15.641Z	dist/assets/eurusd-failed-ob-breaker-UMsNc87-.js                                              2.93 kB │ gzip:   1.54 kB
+2026-11-27T11:18:15.641Z	dist/assets/rdrb-overrides-q9h1kPIG.js                                                        2.95 kB │ gzip:   1.60 kB
+2026-11-27T11:18:15.641Z	dist/assets/s-b-Ditw53vM.js                                                                   2.99 kB │ gzip:   0.94 kB
+2026-11-27T11:18:15.641Z	dist/assets/pd-array-overrides-CfCssxp6.js                                                    3.10 kB │ gzip:   1.65 kB
+2026-11-27T11:18:15.641Z	dist/assets/m-a-uRE6_3R-.js                                                                   3.28 kB │ gzip:   0.93 kB
+2026-11-27T11:18:15.642Z	dist/assets/london-judas-swing-D6lS1aQM.js                                                    3.31 kB │ gzip:   1.67 kB
+2026-11-27T11:18:15.642Z	dist/assets/news-driver-reversal-DkKrC9XN.js                                                  3.37 kB │ gzip:   1.75 kB
+2026-11-27T11:18:15.642Z	dist/assets/macro-clock-BQHvW8j7.js                                                           3.39 kB │ gzip:   1.76 kB
+2026-11-27T11:18:15.642Z	dist/assets/ReviewedModelSource-BXc8HSye.js                                                   3.40 kB │ gzip:   1.62 kB
+2026-11-27T11:18:15.642Z	dist/assets/silver-bullet-short-A6IFnt6U.js                                                   3.44 kB │ gzip:   1.75 kB
+2026-11-27T11:18:15.642Z	dist/assets/charter-model-8-7XrzQrt7.js                                                       3.50 kB │ gzip:   1.81 kB
+2026-11-27T11:18:15.642Z	dist/assets/g-d-BvdSsnoY.js                                                                   3.52 kB │ gzip:   0.98 kB
+2026-11-27T11:18:15.642Z	dist/assets/silver-bullet-CT3JViMr.js                                                         3.53 kB │ gzip:   1.86 kB
+2026-11-27T11:18:15.642Z	dist/assets/judas-planner-CduPOIfV.js                                                         3.54 kB │ gzip:   1.80 kB
+2026-11-27T11:18:15.642Z	dist/assets/break-of-structure-bos-trend-continuation-overrides-mZqldeX_.js                   3.58 kB │ gzip:   1.85 kB
+2026-11-27T11:18:15.642Z	dist/assets/change-of-character-choch-the-first-warning-overrides-F6eqhUQZ.js                 3.59 kB │ gzip:   1.79 kB
+2026-11-27T11:18:15.642Z	dist/assets/breaker-reversal-oiON_x38.js                                                      3.59 kB │ gzip:   1.83 kB
+2026-11-27T11:18:15.642Z	dist/assets/ote-expansion-long-BfgpaRfU.js                                                    3.61 kB │ gzip:   1.86 kB
+2026-11-27T11:18:15.643Z	dist/assets/learning-path-Dm_wHoBN.js                                                         3.62 kB │ gzip:   1.81 kB
+2026-11-27T11:18:15.643Z	dist/assets/2022-mentorship-model-DfyQwk9R.js                                                 3.62 kB │ gzip:   1.89 kB
+2026-11-27T11:18:15.643Z	dist/assets/failed-ob-breaker-BA2bMBj8.js                                                     3.65 kB │ gzip:   1.90 kB
+2026-11-27T11:18:15.643Z	dist/assets/charter-model-9-B61V9OMH.js                                                       3.69 kB │ gzip:   1.91 kB
+2026-11-27T11:18:15.643Z	dist/assets/g-a-WiCtFfIA.js                                                                   3.72 kB │ gzip:   1.03 kB
+2026-11-27T11:18:15.643Z	dist/assets/ict-2022-model-AnUPr1ET.js                                                        3.72 kB │ gzip:   1.93 kB
+2026-11-27T11:18:15.644Z	dist/assets/charter-model-1-h4W2T24T.js                                                       3.74 kB │ gzip:   1.86 kB
+2026-11-27T11:18:15.644Z	dist/assets/m-c-C7EuQpvu.js                                                                   3.75 kB │ gzip:   1.00 kB
+2026-11-27T11:18:15.644Z	dist/assets/ote-calculator-DJSqWQJl.js                                                        3.79 kB │ gzip:   1.91 kB
+2026-11-27T11:18:15.644Z	dist/assets/m-e-BW4vxXn7.js                                                                   3.96 kB │ gzip:   1.02 kB
+2026-11-27T11:18:15.644Z	dist/assets/FvgDocumentContent-nb5UlTtR.js                                                    4.15 kB │ gzip:   1.95 kB
+2026-11-27T11:18:15.644Z	dist/assets/g-c-BGu3U528.js                                                                   4.16 kB │ gzip:   1.12 kB
+2026-11-27T11:18:15.644Z	dist/assets/SearchFocusGuide-CMJCTVe4.js                                                      4.29 kB │ gzip:   1.92 kB
+2026-11-27T11:18:15.644Z	dist/assets/g-b-DXhlaLEv.js                                                                   4.37 kB │ gzip:   1.18 kB
+2026-11-27T11:18:15.645Z	dist/assets/g-e-B0OkRC3A.js                                                                   4.74 kB │ gzip:   1.24 kB
+2026-11-27T11:18:15.645Z	dist/assets/m-b-B99jy9ZH.js                                                                   5.31 kB │ gzip:   1.21 kB
+2026-11-27T11:18:15.645Z	dist/assets/core-content-month-9-consolidations-and-bread-and-butter-BZGdVtZx.js              5.40 kB │ gzip:   2.56 kB
+2026-11-27T11:18:15.645Z	dist/assets/TranslationProvider-DiiIdbDv.js                                                   5.69 kB │ gzip:   2.43 kB
+2026-11-27T11:18:15.645Z	dist/assets/ToolRouteStudy-Dh6-XPVZ.js                                                        5.97 kB │ gzip:   2.06 kB
+2026-11-27T11:18:15.645Z	dist/assets/m-d-Dh5Emknf.js                                                                   6.25 kB │ gzip:   1.37 kB
+2026-11-27T11:18:15.645Z	dist/assets/silverSceneRenderer-DYwxmmuw.js                                                   6.27 kB │ gzip:   2.97 kB
+2026-11-27T11:18:15.645Z	dist/assets/PriceMovementContent-tEsG9IpS.js                                                  6.37 kB │ gzip:   2.87 kB
+2026-11-27T11:18:15.645Z	dist/assets/oteSceneRenderer-BeYDK7P-.js                                                      6.39 kB │ gzip:   2.85 kB
+2026-11-27T11:18:15.645Z	dist/assets/s-d-ASDe7ILM.js                                                                   6.47 kB │ gzip:   1.49 kB
+2026-11-27T11:18:15.645Z	dist/assets/core-content-months-10-11-12-multi-asset-mega-trades-top-down-elrH3k3S.js         6.74 kB │ gzip:   3.06 kB
+2026-11-27T11:18:15.646Z	dist/assets/NotFoundView-DWdG35oU.js                                                          7.30 kB │ gzip:   2.41 kB
+2026-11-27T11:18:15.646Z	dist/assets/ReadingRoomLayout-ikb-Ib-_.js                                                     7.48 kB │ gzip:   2.91 kB
+2026-11-27T11:18:15.646Z	dist/assets/why-candles-form-and-how-displacement-arises-WkzX3xXm.js                          7.67 kB │ gzip:   2.25 kB
+2026-11-27T11:18:15.646Z	dist/assets/ict-charter-models-8-and-9-precision-and-osok-BfZ_aFKD.js                         7.68 kB │ gzip:   3.26 kB
+2026-11-27T11:18:15.646Z	dist/assets/PracticeLoop-BITR-EF0.js                                                          7.72 kB │ gzip:   3.34 kB
+2026-11-27T11:18:15.646Z	dist/assets/CheatSheetPage-C9z3VXKV.js                                                        7.79 kB │ gzip:   3.58 kB
+2026-11-27T11:18:15.646Z	dist/assets/TradeSimulator-vthww9pU.js                                                        7.80 kB │ gzip:   3.48 kB
+2026-11-27T11:18:15.646Z	dist/assets/PriceMovementVisual-BCzvKkzD.js                                                   7.83 kB │ gzip:   3.12 kB
+2026-11-27T11:18:15.646Z	dist/assets/n-a-BrKW3g_d.js                                                                   7.85 kB │ gzip:   1.98 kB
+2026-11-27T11:18:15.646Z	dist/assets/sick-sister-strategy-and-double-purge-framework-D_pfedPW.js                       7.90 kB │ gzip:   3.46 kB
+2026-11-27T11:18:15.647Z	dist/assets/candle-range-theory-crt-strategy-DbU6YKzZ.js                                      8.04 kB │ gzip:   2.33 kB
+2026-11-27T11:18:15.647Z	dist/assets/core-content-month-5-quarterly-shifts-and-position-trading-D2c0LMdl.js            8.07 kB │ gzip:   3.25 kB
+2026-11-27T11:18:15.647Z	dist/assets/rdrbSceneRenderer-Dg_HA52R.js                                                     8.11 kB │ gzip:   3.37 kB
+2026-11-27T11:18:15.647Z	dist/assets/ReadingChart-DiVIKxzP.js                                                          8.38 kB │ gzip:   3.15 kB
+2026-11-27T11:18:15.647Z	dist/assets/breakerStudy-DS872VnW.js                                                          8.39 kB │ gzip:   3.68 kB
+2026-11-27T11:18:15.647Z	dist/assets/ict-charter-model-1-intraday-scalping-BseVhoNA.js                                 8.43 kB │ gzip:   3.02 kB
+2026-11-27T11:18:15.647Z	dist/assets/SearchModal-MNjr6n4d.js                                                           8.74 kB │ gzip:   2.94 kB
+2026-11-27T11:18:15.647Z	dist/assets/the-weekly-profile-and-five-day-delivery-model-DZRU6kvQ.js                        8.77 kB │ gzip:   2.56 kB
+2026-11-27T11:18:15.647Z	dist/assets/index-dvltXa7F.js                                                                 8.86 kB │ gzip:   3.56 kB
+2026-11-27T11:18:15.647Z	dist/assets/contextualLinks-C3mvC_62.js                                                       9.00 kB │ gzip:   3.13 kB
+2026-11-27T11:18:15.647Z	dist/assets/CompareView-RNeMQMyf.js                                                           9.18 kB │ gzip:   2.90 kB
+2026-11-27T11:18:15.647Z	dist/assets/n-c-CG8d1FfD.js                                                                   9.36 kB │ gzip:   2.16 kB
+2026-11-27T11:18:15.647Z	dist/assets/n-e-sqFroJwL.js                                                                   9.60 kB │ gzip:   2.28 kB
+2026-11-27T11:18:15.647Z	dist/assets/ict-charter-model-2-weekly-range-expansion-BpsskoQr.js                            9.87 kB │ gzip:   2.89 kB
+2026-11-27T11:18:15.647Z	dist/assets/n-f-DIR5BR-2.js                                                                  10.14 kB │ gzip:   2.31 kB
+2026-11-27T11:18:15.647Z	dist/assets/MarketChart-DA8q4gZq.js                                                          10.23 kB │ gzip:   4.31 kB
+2026-11-27T11:18:15.648Z	dist/assets/core-content-month-3-institutional-sponsorship-and-traps-ckgBIHbY.js             10.48 kB │ gzip:   2.98 kB
+2026-11-27T11:18:15.648Z	dist/assets/ict-time-price-grids-quadrants-octants-BZAhH_Go.js                               10.57 kB │ gzip:   4.49 kB
+2026-11-27T11:18:15.648Z	dist/assets/masterclassHub-61eZuqPq.js                                                       10.63 kB │ gzip:   4.15 kB
+2026-11-27T11:18:15.648Z	dist/assets/MentorSpotlight-BxJfdNV1.js                                                      10.63 kB │ gzip:   4.63 kB
+2026-11-27T11:18:15.648Z	dist/assets/core-content-month-6-swing-trading-mastery-KxBxUMMZ.js                           10.65 kB │ gzip:   4.60 kB
+2026-11-27T11:18:15.648Z	dist/assets/liquidity-engineering-and-liquidity-runs-CHp_a3J3.js                             10.79 kB │ gzip:   3.04 kB
+2026-11-27T11:18:15.648Z	dist/assets/core-content-month-1-elements-of-trade-setup-C4k69lAY.js                         10.92 kB │ gzip:   3.01 kB
+2026-11-27T11:18:15.648Z	dist/assets/ict-charter-model-3-swing-trading-cot-CmGE1DQd.js                                10.95 kB │ gzip:   3.26 kB
+2026-11-27T11:18:15.648Z	dist/assets/trader-abdullah-masood-masterclass-BXyS5B9M.js                                   10.96 kB │ gzip:   3.10 kB
+2026-11-27T11:18:15.648Z	dist/assets/n-b-CdGhSSPx.js                                                                  11.12 kB │ gzip:   2.47 kB
+2026-11-27T11:18:15.649Z	dist/assets/n-d-C5TkXuRe.js                                                                  11.19 kB │ gzip:   2.41 kB
+2026-11-27T11:18:15.649Z	dist/assets/ict-2026-obsidian-model-CnN5u9f2.js                                              11.23 kB │ gzip:   4.67 kB
+2026-11-27T11:18:15.649Z	dist/assets/how-an-exchange-matches-orders-B2jIIJIu.js                                       11.36 kB │ gzip:   3.15 kB
+2026-11-27T11:18:15.649Z	dist/assets/nq-es-premarket-session-rules-morning-engine-BfZ4Dd93.js                         11.41 kB │ gzip:   4.78 kB
+2026-11-27T11:18:15.649Z	dist/assets/b-c-Ce-cWukI.js                                                                  11.42 kB │ gzip:   2.74 kB
+2026-11-27T11:18:15.650Z	dist/assets/b-b-BkBGoEEv.js                                                                  11.62 kB │ gzip:   2.77 kB
+2026-11-27T11:18:15.650Z	dist/assets/ict-chain-of-custody-of-price-CABKNS1z.js                                        11.70 kB │ gzip:   4.72 kB
+2026-11-27T11:18:15.650Z	dist/assets/TradingJournal-BBzmqTN_.js                                                       11.81 kB │ gzip:   4.53 kB
+2026-11-27T11:18:15.650Z	dist/assets/b-a-Cxr06SfN.js                                                                  12.20 kB │ gzip:   2.89 kB
+2026-11-27T11:18:15.650Z	dist/assets/the-complete-ict-top-down-model-and-execution-blueprint-831C3MMK.js              12.32 kB │ gzip:   3.43 kB
+2026-11-27T11:18:15.650Z	dist/assets/the-12-weekly-profiles-DdnxTyC9.js                                               12.33 kB │ gzip:   4.90 kB
+2026-11-27T11:18:15.650Z	dist/assets/the-ict-venom-model-five-stage-delivery-CiqT7q7F.js                              12.34 kB │ gzip:   4.84 kB
+2026-11-27T11:18:15.650Z	dist/assets/core-content-month-4-advanced-pd-arrays-and-yields-iwPMZHcY.js                   12.35 kB │ gzip:   3.27 kB
+2026-11-27T11:18:15.650Z	dist/assets/chartLabHub-Boyo6k-e.js                                                          12.37 kB │ gzip:   5.53 kB
+2026-11-27T11:18:15.650Z	dist/assets/b-d-DNDSp7wL.js                                                                  12.45 kB │ gzip:   2.95 kB
+2026-11-27T11:18:15.651Z	dist/assets/ict-liquidity-turtle-soup-rejection-blocks-PkFalKYO.js                           12.53 kB │ gzip:   4.82 kB
+2026-11-27T11:18:15.651Z	dist/assets/ict-replay-journaling-one-model-study-sLRcXPvv.js                                12.84 kB │ gzip:   5.28 kB
+2026-11-27T11:18:15.651Z	dist/assets/ict-2026-backtesting-journaling-trade-management-4E4xNBbV.js                     12.88 kB │ gzip:   5.26 kB
+2026-11-27T11:18:15.651Z	dist/assets/ict-weekly-options-payoffs-and-risk-a-OLk_RD.js                                  12.94 kB │ gzip:   4.90 kB
+2026-11-27T11:18:15.651Z	dist/assets/0930-am-opening-range-theory-CPiXBw-E.js                                         13.14 kB │ gzip:   5.25 kB
+2026-11-27T11:18:15.651Z	dist/assets/smt-divergence-mechanics-WpYaKAl7.js                                             13.49 kB │ gzip:   5.30 kB
+2026-11-27T11:18:15.651Z	dist/assets/opening-gap-matrices-ndog-nwog-csod-CnG5Wy5O.js                                  13.65 kB │ gzip:   5.44 kB
+2026-11-27T11:18:15.651Z	dist/assets/daily-profiles-and-intraday-power-of-three-po3-ytoCUTpz.js                       13.80 kB │ gzip:   3.64 kB
+2026-11-27T11:18:15.651Z	dist/assets/ict-news-volatility-no-trade-framework-Cs2bZxtj.js                               14.13 kB │ gzip:   5.63 kB
+2026-11-27T11:18:15.651Z	dist/assets/ChartStudyLinks-CNBv_CN6.js                                                      14.19 kB │ gzip:   3.81 kB
+2026-11-27T11:18:15.651Z	dist/assets/ict-lunch-afternoon-session-models-xHK8eR8C.js                                   14.39 kB │ gzip:   5.55 kB
+2026-11-27T11:18:15.651Z	dist/assets/ict-2026-enigma-reaper-reflection-fvg-p4CWSaV6.js                                14.44 kB │ gzip:   5.42 kB
+2026-11-27T11:18:15.651Z	dist/assets/2026-onboarding-from-vision-to-execution-CaAdP5a8.js                             14.57 kB │ gzip:   5.99 kB
+2026-11-27T11:18:15.651Z	dist/assets/the-1st-presented-fvg-the-0931-rule-CE06me4p.js                                  14.74 kB │ gzip:   5.73 kB
+2026-11-27T11:18:15.651Z	dist/assets/searchTopics-BgYkdx7F.js                                                         14.85 kB │ gzip:   4.73 kB
+2026-11-27T11:18:15.652Z	dist/assets/TradingToolsWorkbench-o3IQMSfm.js                                                14.90 kB │ gzip:   5.88 kB
+2026-11-27T11:18:15.652Z	dist/assets/WelcomeScreen-heKRbb9_.js                                                        15.56 kB │ gzip:   5.41 kB
+2026-11-27T11:18:15.652Z	dist/assets/TradingToolsOverview-6hA-pcxb.js                                                 15.66 kB │ gzip:   6.11 kB
+2026-11-27T11:18:15.652Z	dist/assets/StructureDocumentContent-pfRMi8Pc.js                                             15.69 kB │ gzip:   5.95 kB
+2026-11-27T11:18:15.652Z	dist/assets/TopicLearningGuide-DH9rFSW_.js                                                   15.71 kB │ gzip:   5.38 kB
+2026-11-27T11:18:15.652Z	dist/assets/mentorship2025Visuals-CbvJLOL3.js                                                15.84 kB │ gzip:   6.25 kB
+2026-11-27T11:18:15.652Z	dist/assets/BreakDocumentContent-BNYSVRnL.js                                                 15.87 kB │ gzip:   6.35 kB
+2026-11-27T11:18:15.652Z	dist/assets/KnowledgeGraph-xa2FQKnY.js                                                       16.24 kB │ gzip:   6.94 kB
+2026-11-27T11:18:15.652Z	dist/assets/InstitutionalToolsSuite-BJxI_gBZ.js                                              16.44 kB │ gzip:   6.76 kB
+2026-11-27T11:18:15.652Z	dist/assets/MitigationDocumentContent-i_Ez9uJY.js                                            16.74 kB │ gzip:   6.26 kB
+2026-11-27T11:18:15.652Z	dist/assets/FvgBlueprint-DXbgnIZ4.js                                                         16.75 kB │ gzip:   6.51 kB
+2026-11-27T11:18:15.652Z	dist/assets/core-content-month-2-growing-small-accounts-I7Ycrdrw.js                          16.94 kB │ gzip:   4.31 kB
+2026-11-27T11:18:15.652Z	dist/assets/MasteryDashboard-CxwyzACk.js                                                     17.24 kB │ gzip:   6.67 kB
+2026-11-27T11:18:15.652Z	dist/assets/time-and-session-liquidity-the-global-clock-Bkvm1EGM.js                          17.57 kB │ gzip:   4.22 kB
+2026-11-27T11:18:15.653Z	dist/assets/MasterclassWorkbench-BUsXHhX-.js                                                 18.46 kB │ gzip:   4.95 kB
+2026-11-27T11:18:15.653Z	dist/assets/SwingDocumentContent-gZMm403-.js                                                 18.94 kB │ gzip:   7.88 kB
+2026-11-27T11:18:15.653Z	dist/assets/silverBulletStudy-CvJX9vbA.js                                                    19.81 kB │ gzip:   7.77 kB
+2026-11-27T11:18:15.653Z	dist/assets/LegalModal-p8LwxOgZ.js                                                           20.57 kB │ gzip:   6.22 kB
+2026-11-27T11:18:15.653Z	dist/assets/loadCatalog-JOz_LiT4.js                                                          20.76 kB │ gzip:   4.12 kB
+2026-11-27T11:18:15.653Z	dist/assets/market-structure-shift-mss-verified-directional-shift-CLYWED_H.js                20.83 kB │ gzip:   5.08 kB
+2026-11-27T11:18:15.653Z	dist/assets/MasterclassHub-CuPGSSiy.js                                                       22.78 kB │ gzip:   8.17 kB
+2026-11-27T11:18:15.653Z	dist/assets/structureDocument-DOcKqQQU.js                                                    23.40 kB │ gzip:   8.10 kB
+2026-11-27T11:18:15.653Z	dist/assets/cornerstoneGuides-sJgYCqzW.js                                                    24.36 kB │ gzip:   9.06 kB
+2026-11-27T11:18:15.653Z	dist/assets/LiquidityDocumentContent-rVzsCDp8.js                                             24.70 kB │ gzip:   9.20 kB
+2026-11-27T11:18:15.653Z	dist/assets/LegalPageView-DsWxg2pD.js                                                        26.87 kB │ gzip:   8.65 kB
+2026-11-27T11:18:15.653Z	dist/assets/MasterclassJournal-RlN7oRRf.js                                                   27.36 kB │ gzip:   9.73 kB
+2026-11-27T11:18:15.653Z	dist/assets/SilverLessonContent-4eh3R_7u.js                                                  27.53 kB │ gzip:  10.65 kB
+2026-11-27T11:18:15.654Z	dist/assets/MarketWorkspace-CmuawQHP.js                                                      30.27 kB │ gzip:  10.78 kB
+2026-11-27T11:18:15.654Z	dist/assets/ConceptExplorer-QKZNiPb4.js                                                      31.12 kB │ gzip:   7.14 kB
+2026-11-27T11:18:15.654Z	dist/assets/chartLabRemainingContent-hVUZ1aaN.js                                             33.32 kB │ gzip:  12.02 kB
+2026-11-27T11:18:15.654Z	dist/assets/breaker-blocks-trading-failed-order-blocks-CRdxNtKB.js                           33.33 kB │ gzip:  11.42 kB
+2026-11-27T11:18:15.654Z	dist/assets/change-of-character-choch-the-first-warning-B30CLtBI.js                          34.26 kB │ gzip:  11.90 kB
+2026-11-27T11:18:15.654Z	dist/assets/break-of-structure-bos-trend-continuation-uB-VGsKQ.js                            34.45 kB │ gzip:  11.87 kB
+2026-11-27T11:18:15.654Z	dist/assets/order-blocks-ob-and-mitigation-BLJ0WQbX.js                                       35.08 kB │ gzip:  11.70 kB
+2026-11-27T11:18:15.654Z	dist/assets/inverse-fair-value-gaps-ifvg-role-reversal-imbalances-CpjuIdxG.js                35.36 kB │ gzip:  11.93 kB
+2026-11-27T11:18:15.655Z	dist/assets/market-alchemy-trading-all-time-highs-ath-_kxlWEs3.js                            35.76 kB │ gzip:  13.00 kB
+2026-11-27T11:18:15.655Z	dist/assets/breakDocuments-ehlLAbkf.js                                                       35.77 kB │ gzip:  12.09 kB
+2026-11-27T11:18:15.655Z	dist/assets/orderBookLesson-BnUzL8ck.js                                                      35.82 kB │ gzip:  13.52 kB
+2026-11-27T11:18:15.655Z	dist/assets/swingDocument-A-fwfSOf.js                                                        37.83 kB │ gzip:  13.69 kB
+2026-11-27T11:18:15.655Z	dist/assets/model2022Lesson-CDEGIX8Z.js                                                      37.87 kB │ gzip:  14.41 kB
+2026-11-27T11:18:15.655Z	dist/assets/fvgDocument-BL3ZlNjG.js                                                          38.75 kB │ gzip:  14.23 kB
+2026-11-27T11:18:15.655Z	dist/assets/PracticeLoopPage-BEoJQUpX.js                                                     39.43 kB │ gzip:  13.61 kB
+2026-11-27T11:18:15.655Z	dist/assets/OrderBookContent-529EnVrq.js                                                     39.63 kB │ gzip:  12.46 kB
+2026-11-27T11:18:15.655Z	dist/assets/oteLesson-D9-drmCg.js                                                            40.61 kB │ gzip:  14.99 kB
+2026-11-27T11:18:15.655Z	dist/assets/mitigationDocument-CmfjZok4.js                                                   40.75 kB │ gzip:  13.29 kB
+2026-11-27T11:18:15.656Z	dist/assets/rdrbLesson-wa6-WN3u.js                                                           41.06 kB │ gzip:  14.94 kB
+2026-11-27T11:18:15.656Z	dist/assets/silverBulletLesson-BQ8UqDBt.js                                                   41.07 kB │ gzip:  10.68 kB
+2026-11-27T11:18:15.656Z	dist/assets/pdArrayLesson-BF0QVKrZ.js                                                        41.15 kB │ gzip:  14.87 kB
+2026-11-27T11:18:15.656Z	dist/assets/MarketMakerContent-CVG-u2VG.js                                                   41.19 kB │ gzip:  12.70 kB
+2026-11-27T11:18:15.656Z	dist/assets/suspensionReaperLesson-CdahLync.js                                               41.74 kB │ gzip:  14.78 kB
+2026-11-27T11:18:15.656Z	dist/assets/Model2022Content-BRudXq1v.js                                                     42.73 kB │ gzip:  13.54 kB
+2026-11-27T11:18:15.656Z	dist/assets/GuidedMarketDesk-BMagJ8lm.js                                                     43.36 kB │ gzip:  15.23 kB
+2026-11-27T11:18:15.656Z	dist/assets/marketMakerLesson-07VXQmKd.js                                                    43.74 kB │ gzip:  15.43 kB
+2026-11-27T11:18:15.656Z	dist/assets/masterclassStageArt-CI2u36Aq.js                                                  44.36 kB │ gzip:   7.67 kB
+2026-11-27T11:18:15.656Z	dist/assets/topicClusters-D-hkkOcc.js                                                        47.99 kB │ gzip:  16.97 kB
+2026-11-27T11:18:15.656Z	dist/assets/publisher-AjYiZ-RQ.js                                                            48.63 kB │ gzip:  16.90 kB
+2026-11-27T11:18:15.656Z	dist/assets/liquidityDocument-COvWoDED.js                                                    50.77 kB │ gzip:  17.17 kB
+2026-11-27T11:18:15.656Z	dist/assets/RdrbContent-BBl_HT-Y.js                                                          51.51 kB │ gzip:  15.17 kB
+2026-11-27T11:18:15.656Z	dist/assets/internal-vs-external-structure-DB-YTC6L.js                                       52.26 kB │ gzip:  16.11 kB
+2026-11-27T11:18:15.656Z	dist/assets/priceMovementLesson-SQlHbIkk.js                                                  53.77 kB │ gzip:  14.29 kB
+2026-11-27T11:18:15.657Z	dist/assets/OteContent-BBOsP3_F.js                                                           54.93 kB │ gzip:  16.41 kB
+2026-11-27T11:18:15.657Z	dist/assets/InteractiveDiagram-B0e37j-X.js                                                   55.93 kB │ gzip:  11.71 kB
+2026-11-27T11:18:15.657Z	dist/assets/PdArrayContent-Cykp_qnP.js                                                       57.44 kB │ gzip:  18.13 kB
+2026-11-27T11:18:15.657Z	dist/assets/workbenchToolRoutes-8Te9rpUz.js                                                  58.39 kB │ gzip:  17.90 kB
+2026-11-27T11:18:15.657Z	dist/assets/SuspensionReaperContent-CLCoQuEA.js                                              60.01 kB │ gzip:  18.88 kB
+2026-11-27T11:18:15.657Z	dist/assets/silver-bullet-model-By7YaiuR.js                                                  61.24 kB │ gzip:  21.15 kB
+2026-11-27T11:18:15.657Z	dist/assets/toolRouteStudies-Cj5mhcfb.js                                                     61.28 kB │ gzip:  20.92 kB
+2026-11-27T11:18:15.657Z	dist/assets/mentorship2026Edition-CkC7OjfC.js                                                67.43 kB │ gzip:  22.22 kB
+2026-11-27T11:18:15.657Z	dist/assets/masterclassData-Dd1p7SMr.js                                                      78.90 kB │ gzip:  21.72 kB
+2026-11-27T11:18:15.657Z	dist/assets/what-actually-moves-price-BX9NzVSx.js                                            81.59 kB │ gzip:  27.27 kB
+2026-11-27T11:18:15.657Z	dist/assets/the-order-book-in-depth-rI2vKnGO.js                                              83.28 kB │ gzip:  28.25 kB
+2026-11-27T11:18:15.657Z	dist/assets/MasoodAcademyView-P15bMekR.js                                                    86.72 kB │ gzip:  22.11 kB
+2026-11-27T11:18:15.657Z	dist/assets/rdrb-balanced-price-range-and-enigma-fvg-Cu9ono7k.js                             88.00 kB │ gzip:  29.57 kB
+2026-11-27T11:18:15.657Z	dist/assets/ict-charter-model-13-2022-youtube-model-BYnfKBCR.js                              89.41 kB │ gzip:  30.47 kB
+2026-11-27T11:18:15.657Z	dist/assets/mitigation-and-rejection-blocks-Daw7XX_p.js                                      90.04 kB │ gzip:  26.44 kB
+2026-11-27T11:18:15.657Z	dist/assets/optimal-trade-entry-ote-DJasOHwu.js                                              90.11 kB │ gzip:  30.32 kB
+2026-11-27T11:18:15.657Z	dist/assets/curriculumReview-CinkrV4B.js                                                     91.48 kB │ gzip:  20.09 kB
+2026-11-27T11:18:15.657Z	dist/assets/ChartLab-Dudk87O5.js                                                             92.18 kB │ gzip:  28.61 kB
+2026-11-27T11:18:15.658Z	dist/assets/masterclassJournalRoutes-DAHjXWVH.js                                             95.59 kB │ gzip:  29.56 kB
+2026-11-27T11:18:15.658Z	dist/assets/ict-charter-models-6-and-7-universal-models-DhS7zcQx.js                          97.37 kB │ gzip:  31.95 kB
+2026-11-27T11:18:15.658Z	dist/assets/GlossaryReference-BMHdiHAn.js                                                    98.18 kB │ gzip:  32.78 kB
+2026-11-27T11:18:15.658Z	dist/assets/ChapterDiagram-DC5swhMv.js                                                      100.42 kB │ gzip:  31.80 kB
+2026-11-27T11:18:15.658Z	dist/assets/CurriculumView-CbsUe9U7.js                                                      102.37 kB │ gzip:  19.71 kB
+2026-11-27T11:18:15.658Z	dist/assets/ChartLabHub-BPkeho-x.js                                                         102.75 kB │ gzip:  13.61 kB
+2026-11-27T11:18:15.658Z	dist/assets/ict-pd-array-selection-price-delivery-continuum-BrgZXNDx.js                     105.05 kB │ gzip:  34.39 kB
+2026-11-27T11:18:15.658Z	dist/assets/what-is-a-swing-the-atom-of-structure-C-HjtiaC.js                               109.91 kB │ gzip:  33.23 kB
+2026-11-27T11:18:15.659Z	dist/assets/reaper-ifvg-and-suspension-block-advancements-_u3KmHKT.js                       111.17 kB │ gzip:  34.80 kB
+2026-11-27T11:18:15.659Z	dist/assets/fair-value-gaps-fvg-and-consequent-encroachment-COrc0GyA.js                     120.32 kB │ gzip:  39.84 kB
+2026-11-27T11:18:15.659Z	dist/assets/liquidity-the-most-misunderstood-word-in-trading-LdWmUTDD.js                    126.44 kB │ gzip:  38.87 kB
+2026-11-27T11:18:15.660Z	dist/assets/motion-vendor-CDZi1uBP.js                                                       126.78 kB │ gzip:  41.69 kB
+2026-11-27T11:18:15.660Z	dist/assets/searchMetadata-BXX5L-bs.js                                                      128.47 kB │ gzip:  36.64 kB
+2026-11-27T11:18:15.660Z	dist/assets/tools-chartlab-CfZesWpJ.js                                                      149.89 kB │ gzip:  48.13 kB
+2026-11-27T11:18:15.660Z	dist/assets/applyContentReview-CIA7BTF9.js                                                  152.39 kB │ gzip:  45.15 kB
+2026-11-27T11:18:15.660Z	dist/assets/data-masood-CSBehgdn.js                                                         164.48 kB │ gzip:  55.15 kB
+2026-11-27T11:18:15.660Z	dist/assets/ChapterRoom-CdRNGkXU.js                                                         177.43 kB │ gzip:  51.72 kB
+2026-11-27T11:18:15.660Z	dist/assets/chart-vendor-Bbrlwr10.js                                                        198.32 kB │ gzip:  63.75 kB
+2026-11-27T11:18:15.660Z	dist/assets/tools-DJcqpLh5.js                                                               207.70 kB │ gzip:  67.82 kB
+2026-11-27T11:18:15.660Z	dist/assets/chaptersData-BF8IFga_.js                                                        211.53 kB │ gzip:  68.47 kB
+2026-11-27T11:18:15.660Z	dist/assets/react-vendor-CPQMGIC9.js                                                        223.19 kB │ gzip:  69.24 kB
+2026-11-27T11:18:15.661Z	dist/assets/startApp-CD-1RngC.js                                                            239.91 kB │ gzip:  72.88 kB
+2026-11-27T11:18:15.661Z	dist/assets/tools-masterclass-BvLnpn0o.js                                                   266.56 kB │ gzip:  84.31 kB
+2026-11-27T11:18:15.661Z	dist/assets/articles-DBLq1HuH.js                                                            270.66 kB │ gzip:  90.02 kB
+2026-11-27T11:18:15.664Z	dist/assets/data-concepts-D4c5WymZ.js                                                       274.90 kB │ gzip:  76.00 kB
+2026-11-27T11:18:15.664Z	dist/assets/ArticlesView-BdwqmwtA.js                                                        276.04 kB │ gzip:  95.72 kB
+2026-11-27T11:18:15.664Z	dist/assets/shared-D5bAnIdc.js                                                              401.14 kB │ gzip: 129.71 kB
+2026-11-27T11:18:15.664Z	dist/assets/masood-6Hqx4bg5.js                                                              451.38 kB │ gzip: 144.12 kB
+2026-11-27T11:18:15.664Z	dist/assets/tools-glossary-CTHe8B34.js                                                      516.54 kB │ gzip: 159.82 kB
+2026-11-27T11:18:15.664Z	dist/assets/chapter-common-2OBp_DKB.js                                                      518.86 kB │ gzip: 165.07 kB
+2026-11-27T11:18:15.665Z	dist/assets/three-vendor-CqzLLWYo.js                                                        770.57 kB │ gzip: 197.87 kB
+2026-11-27T11:18:15.665Z	✓ built in 13.36s
+2026-11-27T11:18:19.003Z	Starting static prerendering for 419 canonical routes...
+2026-11-27T11:18:26.668Z	✓ Generated 404.html for static hosting fallback
+2026-11-27T11:18:26.678Z	✓ Generated 106 legacy /chapter/:id redirect aliases + /chapter root fallback + /tools/concepts & tool aliases
+2026-11-27T11:18:26.678Z	✓ Generated sitemap.xml with 384 verified canonical URLs
+2026-11-27T11:18:26.680Z	✓ Generated _redirects with 229 legacy 301 rules
+2026-11-27T11:18:26.680Z	✓ Prerendering and SEO build completed successfully!
+2026-11-27T11:18:38.997Z	Urdu public documents generated: 413. Unmatched text segments require review: 15.
+2026-11-27T11:19:02.787Z	Social cards generated: 747 unique localized 1200×630 PNGs with OG and Twitter alternative text.
+2026-11-27T11:19:06.579Z	Inline code minified: 985 HTML documents; 893328 bytes removed.
+2026-11-27T11:19:09.713Z	Sitemap dates: 214 evidenced dates; 533 changed/new pages awaiting editorial recording.
+2026-11-27T11:19:10.465Z	--- Starting Comprehensive SEO, URL Consistency & Redirect Integrity Audit ---
+2026-11-27T11:19:10.466Z	
+2026-11-27T11:19:10.466Z	[Suite 1] Testing Trailing Slash Normalization & Canonical URL Generator...
+2026-11-27T11:19:10.466Z	
+2026-11-27T11:19:10.466Z	[Suite 2] Testing Legacy Chapter Mapping & Fallback...
+2026-11-27T11:19:10.469Z	
+2026-11-27T11:19:10.469Z	[Suite 3] Testing Robots.txt and XML Sitemap...
+2026-11-27T11:19:10.472Z	
+2026-11-27T11:19:10.472Z	[Suite 4] Testing HTML Pre-rendered Pages & Canonical Tags...
+2026-11-27T11:19:10.522Z	
+2026-11-27T11:19:10.522Z	[Suite 5] Testing Cloudflare & Vercel Edge Redirect Configurations...
+2026-11-27T11:19:10.522Z	
+2026-11-27T11:19:10.523Z	[Suite 6] Testing Content Isolation & Preventing Chapter 1 Bleed...
+2026-11-27T11:19:10.559Z	
+2026-11-27T11:19:10.560Z	[Hreflang] Checking self-references, reciprocals and sitemap parity...
+2026-11-27T11:19:13.040Z	
+2026-11-27T11:19:13.041Z	--------------------------------------------------
+2026-11-27T11:19:13.042Z	Results: 11090 checks passed, 0 failed.
+2026-11-27T11:19:13.042Z	✅ ALL URL consistency, canonical trailing slash, sitemap, and legacy redirect audits PASSED successfully!
+2026-11-27T11:19:17.910Z	Skipped heading level: /learn/reaper-ifvg-and-suspension-block-advancements/
+2026-11-27T11:19:17.911Z	Broken internal link /learn/reaper-ifvg-and-suspension-block-advancements/ -> /learn/opening-gaps-ndog-and-nwog/
+2026-11-27T11:19:17.911Z	Skipped heading level: /ur/learn/reaper-ifvg-and-suspension-block-advancements/
+2026-11-27T11:19:17.911Z	Broken internal link /ur/learn/reaper-ifvg-and-suspension-block-advancements/ -> /ur/learn/opening-gaps-ndog-and-nwog/
+2026-11-27T11:19:17.915Z	/opt/buildhome/repo/scripts/verify-crawl.ts:141
+2026-11-27T11:19:17.915Z	  console.error(failures.join('\n')); throw new Error(`${failures.length} crawl checks failed`);
+2026-11-27T11:19:17.915Z	                                            ^
+2026-11-27T11:19:17.916Z	
+2026-11-27T11:19:17.916Z	Error: 4 crawl checks failed
+2026-11-27T11:19:17.916Z	    at <anonymous> (/opt/buildhome/repo/scripts/verify-crawl.ts:141:45)
+2026-11-27T11:19:17.916Z	
+2026-11-27T11:19:17.916Z	Node.js v24.22.1
+2026-11-27T11:19:17.995Z	Failed: error occurred while running build command

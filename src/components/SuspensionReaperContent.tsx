@@ -83,7 +83,7 @@ const contextTerms: Array<[string[], string]> = [
   [['Market Structure Shift', 'MSS', 'مارکیٹ اسٹرکچر شفٹ'], '/learn/market-structure-shift-mss-verified-directional-shift/'],
   [['Liquidity Sweep', 'Buy-Side Liquidity', 'Sell-Side Liquidity', 'BSL', 'SSL'], '/learn/liquidity-engineering-and-liquidity-runs/'],
   [['Killzone', 'Killzones', 'London Open', 'New York AM'], '/learn/time-and-session-liquidity-the-global-clock/'],
-  [['NWOG', 'NDOG'], '/learn/opening-gaps-ndog-and-nwog/'],
+  [['NWOG', 'NDOG'], '/learn/opening-gap-matrices-ndog-nwog-csod/'],
   [['Displacement', 'ڈسپلیسمنٹ'], '/learn/why-candles-form-and-how-displacement-arises/'],
   [['CPI', 'FOMC', 'NFP'], '/learn/ict-news-volatility-no-trade-framework/'],
   [['Chart Lab', 'چارٹ لیب'], '/tools/chartlab/'],

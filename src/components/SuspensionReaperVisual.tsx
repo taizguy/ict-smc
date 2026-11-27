@@ -625,7 +625,7 @@ export function SuspensionReaperVisual({
 
           <div className="sr-stage-card">
             <span className="sr-stage-tag">{t(activeStage.step)}</span>
-            <h4>{t(activeStage.title)}</h4>
+            <h3>{t(activeStage.title)}</h3>
             <p className="sr-stage-lead">{t(activeStage.headline)}</p>
             <p>{t(activeStage.detail)}</p>
             <div className="sr-stat-grid">
@@ -771,7 +771,7 @@ export function SuspensionReaperVisual({
 
         <div className="sr-taxonomy-detail">
           <div className="sr-taxonomy-header">
-            <h4>{t(active.name)}</h4>
+            <h3>{t(active.name)}</h3>
             <span className="sr-taxonomy-badge">{t(active.badge)}</span>
           </div>
           <div className="sr-stat-grid">

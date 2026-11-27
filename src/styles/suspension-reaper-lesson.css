@@ -435,7 +435,7 @@ html[data-theme='dark'] .sr-btn.is-primary {
   font-weight: 700;
 }
 
-.sr-stage-card h4 {
+.sr-stage-card h3 {
   margin: 0;
   font-size: 1.05rem;
   color: var(--sr-ink);
@@ -468,7 +468,7 @@ html[data-theme='dark'] .sr-btn.is-primary {
   gap: 0.6rem;
 }
 
-.sr-taxonomy-header h4 {
+.sr-taxonomy-header h3 {
   margin: 0;
   font-size: 1.08rem;
   color: var(--sr-ink);

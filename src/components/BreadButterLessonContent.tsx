@@ -21,7 +21,6 @@ import {
   TrendingDown,
   TrendingUp,
 } from 'lucide-react';
-import '../styles/bread-butter-lesson.css';
 import {
   breadButterDocument as lesson,
   breadButterPath,

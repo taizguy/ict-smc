@@ -48,6 +48,14 @@ import {suspensionReaperDocument,suspensionReaperSources,suspensionReaperQuizzes
 import {suspensionReaperTranslations} from '../src/data/chapters/suspensionReaperTranslations';
 import {mitigationTranslations} from '../src/data/chapters/mitigationTranslations';
 import {mitigationDocument,mitigationSources,mitigationQuizzes,mitigationDates} from '../src/data/chapters/mitigationDocument';
+import {breakerBlockDocument,breakerBlockSources,breakerBlockQuizzes,breakerBlockDates} from '../src/data/chapters/breakerBlockLesson';
+import {breakerBlockTranslations} from '../src/data/chapters/breakerBlockTranslations';
+import {orderBlockDocument,orderBlockSources,orderBlockQuizzes,orderBlockDates} from '../src/data/chapters/orderBlockLesson';
+import {orderBlockTranslations} from '../src/data/chapters/orderBlockTranslations';
+import {venomModelDocument,venomModelSources,venomModelQuizzes,venomModelDates} from '../src/data/chapters/venomModelLesson';
+import {venomModelTranslations} from '../src/data/chapters/venomModelTranslations';
+import {breadButterDocument,breadButterSources,breadButterQuizzes,breadButterDates} from '../src/data/chapters/breadButterLesson';
+import {breadButterTranslations} from '../src/data/chapters/breadButterTranslations';
 import {priceMovementLesson,priceMovementSources,priceMovementQuizzes,priceMovementDates} from '../src/data/chapters/priceMovementLesson';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -84,6 +92,8 @@ const CHAPTER_COMPONENT_FILES: Record<number, string[]> = {
   9: ['src/components/BreakDocumentContent.tsx', 'src/components/BreakVisual.tsx'],
   10: ['src/components/BreakDocumentContent.tsx', 'src/components/BreakVisual.tsx'],
   13: ['src/components/FvgDocumentContent.tsx', 'src/components/FvgBlueprint.tsx', 'src/components/FvgLessonDiagram.tsx', 'src/components/FvgStoryDiagram.tsx', 'src/components/FvgStory.tsx'],
+  15: ['src/components/OrderBlockLessonContent.tsx', 'src/components/OrderBlockVisual.tsx', 'src/components/OrderBlockExtendedVisuals.tsx', 'src/components/OrderBlockScene.tsx', 'src/utils/orderBlockSceneRenderer.ts', 'src/utils/orderBlockMath.ts'],
+  16: ['src/components/BreakerBlockContent.tsx', 'src/components/BreakerBlockVisual.tsx', 'src/components/BreakerBlockExtendedVisuals.tsx', 'src/components/BreakerBlockScene.tsx', 'src/utils/breakerBlockSceneRenderer.ts', 'src/utils/breakerBlockMath.ts'],
   18: ['src/components/LiquidityRunContent.tsx', 'src/components/LiquidityRunVisual.tsx', 'src/components/LiquidityRunScene.tsx'],
   1017: ['src/components/BslSslContent.tsx', 'src/components/BslSslVisual.tsx', 'src/components/BslSslScene.tsx'],
   1018: ['src/components/EqhEqlContent.tsx', 'src/components/EqhEqlVisual.tsx', 'src/components/EqhEqlScene.tsx'],
@@ -94,6 +104,8 @@ const CHAPTER_COMPONENT_FILES: Record<number, string[]> = {
   1016: ['src/components/DealingRangeContent.tsx', 'src/components/DealingRangeVisual.tsx', 'src/components/DealingRangeScene.tsx'],
   33: ['src/components/MarketMakerContent.tsx', 'src/components/MarketMakerVisual.tsx'],
   36: ['src/components/Model2022Content.tsx', 'src/components/Model2022Visual.tsx'],
+  45: ['src/components/BreadButterLessonContent.tsx', 'src/components/BreadButterVisual.tsx', 'src/components/BreadButterExtendedVisuals.tsx', 'src/components/BreadButterScene.tsx', 'src/utils/breadButterSceneRenderer.ts', 'src/utils/breadButterMath.ts'],
+  53: ['src/components/VenomLessonContent.tsx', 'src/components/VenomVisual.tsx', 'src/components/VenomExtendedVisuals.tsx', 'src/components/VenomScene.tsx', 'src/utils/venomSceneRenderer.ts', 'src/utils/venomModelMath.ts'],
   55: ['src/components/SuspensionReaperContent.tsx', 'src/components/SuspensionReaperVisual.tsx', 'src/components/SuspensionReaperScene.tsx', 'src/utils/suspensionReaperSceneRenderer.ts'],
   56: ['src/components/RdrbContent.tsx', 'src/components/RdrbVisual.tsx', 'src/components/RdrbScene.tsx', 'src/components/rdrbSceneRenderer.ts'],
   59: ['src/components/PdArrayContent.tsx', 'src/components/PdArrayVisual.tsx', 'src/components/PdArrayScene.tsx', 'src/utils/pdArraySceneRenderer.ts'],
@@ -141,6 +153,8 @@ export function splitUrduLessons(output:string,uiKeys:ReadonlySet<string>) {
   if(chapter.id===1064){visit(silverLessonDocument);visit(silverUi);visit(silverLessonSources);visit(silverLessonScope);visit(silverLessonInterpretation);}
   if(chapter.id===1){visit(priceMovementLesson);visit(priceMovementSources);visit(priceMovementQuizzes);visit(priceMovementDates);}
   if(chapter.id===13){visit(fvgDocument);visit(fvgNextReads);}
+  if(chapter.id===15){visit(orderBlockDocument);visit(orderBlockSources);visit(orderBlockQuizzes);visit(orderBlockDates);}
+  if(chapter.id===16){visit(breakerBlockDocument);visit(breakerBlockSources);visit(breakerBlockQuizzes);visit(breakerBlockDates);}
   if(chapter.id===1031){visit(mitigationDocument);visit(mitigationSources);visit(mitigationQuizzes);visit(mitigationDates);}
   if(chapter.id===4){visit(liquidityDocument);visit(liquiditySources);visit(liquidityQuizzes);visit(liquidityDates);}
   if(chapter.id===3){visit(orderBookDocument);visit(orderBookSources);visit(orderBookQuizzes);visit(orderBookDates);}
@@ -158,6 +172,8 @@ export function splitUrduLessons(output:string,uiKeys:ReadonlySet<string>) {
   if(chapter.id===11){visit(mssDocument);visit(mssSources);visit(mssDates);}
   if(chapter.id===1015){visit(bosChochMssDocument);visit(bosChochMssSources);visit(bosChochMssQuizzes);visit(bosChochMssDates);}
   if(chapter.id===1016){visit(dealingRangeDocument);visit(dealingRangeSources);visit(dealingRangeQuizzes);visit(dealingRangeDates);}
+  if(chapter.id===45){visit(breadButterDocument);visit(breadButterSources);visit(breadButterQuizzes);visit(breadButterDates);}
+  if(chapter.id===53){visit(venomModelDocument);visit(venomModelSources);visit(venomModelQuizzes);visit(venomModelDates);}
   if(chapter.id===55){visit(suspensionReaperDocument);visit(suspensionReaperSources);visit(suspensionReaperQuizzes);visit(suspensionReaperDates);}
   if(chapter.id===56){visit(rdrbDocument);visit(rdrbSources);visit(rdrbQuizzes);visit(rdrbDates);}
   if(chapter.id===59){visit(pdArrayDocument);visit(pdArraySources);visit(pdArrayQuizzes);visit(pdArrayDates);}
@@ -227,6 +243,10 @@ export function splitUrduLessons(output:string,uiKeys:ReadonlySet<string>) {
  writeDedupedOverrides('rdrb-balanced-price-range-and-enigma-fvg', 'rdrb-overrides.json', rdrbTranslations);
  writeDedupedOverrides('ict-pd-array-selection-price-delivery-continuum', 'pd-array-overrides.json', pdArrayTranslations);
  writeDedupedOverrides('reaper-ifvg-and-suspension-block-advancements', 'suspension-reaper-overrides.json', suspensionReaperTranslations);
+ writeDedupedOverrides('breaker-blocks-trading-failed-order-blocks', 'breaker-block-overrides.json', breakerBlockTranslations);
+ writeDedupedOverrides('order-blocks-ob-and-mitigation', 'order-block-overrides.json', orderBlockTranslations);
+ writeDedupedOverrides('the-ict-venom-model-five-stage-delivery', 'venom-model-overrides.json', venomModelTranslations);
+ writeDedupedOverrides('core-content-month-9-consolidations-and-bread-and-butter', 'bread-butter-overrides.json', breadButterTranslations);
  writeDedupedOverrides('what-is-a-swing-the-atom-of-structure', 'swing-overrides.json', swingTranslations);
  const silverBase=Object.assign({},JSON.parse(fs.readFileSync(path.join(output,'shared.json'),'utf8')),common,lessonParts.find(p=>p.slug==='silver-bullet-model')!.catalog);
  fs.writeFileSync(path.join(output,'silver-lesson-overrides.json'),JSON.stringify(Object.fromEntries(Object.entries(silverLessonTranslations).filter(([key,value])=>silverBase[key]!==value)))+'\n');

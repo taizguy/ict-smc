@@ -20,7 +20,7 @@ export interface LoadedChapterModule {
 }
 
 export const REBUILT_CONTENT_CHAPTER_IDS = new Set([
-  1, 3, 4, 7, 9, 10, 11, 13, 18, 33, 36, 55, 56, 59, 60, 1010, 1011, 1015, 1016, 1017, 1018, 1019, 1023, 1024, 1031, 1034, 1064,
+  1, 3, 4, 7, 9, 10, 11, 13, 15, 16, 18, 33, 36, 45, 53, 55, 56, 59, 60, 1010, 1011, 1015, 1016, 1017, 1018, 1019, 1023, 1024, 1031, 1034, 1064,
 ]);
 
 const registry = new Map<number, LoadedChapterModule>();
@@ -477,6 +477,86 @@ export async function loadChapterModule(chapterId: number): Promise<LoadedChapte
           import('../data/chapters/fvgDocument'),
         ]);
         const mod: LoadedChapterModule = { Content: FvgDocumentContent, dates: fvgDocumentDates };
+        registry.set(chapterId, mod);
+        return mod;
+      }
+      case 15: {
+        const [{ OrderBlockLessonContent, OrderBlockRelatedLinks }, { orderBlockDates, orderBlockDocument }] =
+          await Promise.all([
+            import('./OrderBlockLessonContent'),
+            import('../data/chapters/orderBlockLesson'),
+          ]);
+        const mod: LoadedChapterModule = {
+          Content: OrderBlockLessonContent,
+          RelatedLinks: OrderBlockRelatedLinks,
+          dates: orderBlockDates,
+          tocSections: orderBlockDocument.sections.map((sec, i) => ({
+            id: `15.toc.${sec.number}`,
+            title: sec.title,
+            stableAnchor: sec.faqs?.length ? 'order-block-faq' : `rr-section-${i}`,
+          })),
+          quickAnswer: orderBlockDocument.quickAnswer,
+        };
+        registry.set(chapterId, mod);
+        return mod;
+      }
+      case 16: {
+        const [{ BreakerBlockContent, BreakerBlockRelatedLinks }, { breakerBlockDates, breakerBlockDocument }] =
+          await Promise.all([
+            import('./BreakerBlockContent'),
+            import('../data/chapters/breakerBlockLesson'),
+          ]);
+        const mod: LoadedChapterModule = {
+          Content: BreakerBlockContent,
+          RelatedLinks: BreakerBlockRelatedLinks,
+          dates: breakerBlockDates,
+          tocSections: breakerBlockDocument.sections.map((sec, i) => ({
+            id: `16.toc.${sec.number}`,
+            title: sec.title,
+            stableAnchor: sec.faqs?.length ? 'breaker-block-faq' : `rr-section-${i}`,
+          })),
+          quickAnswer: breakerBlockDocument.quickAnswer,
+        };
+        registry.set(chapterId, mod);
+        return mod;
+      }
+      case 45: {
+        const [{ BreadButterLessonContent, BreadButterRelatedLinks }, { breadButterDates, breadButterDocument }] =
+          await Promise.all([
+            import('./BreadButterLessonContent'),
+            import('../data/chapters/breadButterLesson'),
+          ]);
+        const mod: LoadedChapterModule = {
+          Content: BreadButterLessonContent,
+          RelatedLinks: BreadButterRelatedLinks,
+          dates: breadButterDates,
+          tocSections: breadButterDocument.sections.map((sec, i) => ({
+            id: `45.toc.${sec.number}`,
+            title: sec.title,
+            stableAnchor: sec.faqs?.length ? 'bread-butter-faq' : `rr-section-${i}`,
+          })),
+          quickAnswer: breadButterDocument.quickAnswer,
+        };
+        registry.set(chapterId, mod);
+        return mod;
+      }
+      case 53: {
+        const [{ VenomLessonContent, VenomRelatedLinks }, { venomModelDates, venomModelDocument }] =
+          await Promise.all([
+            import('./VenomLessonContent'),
+            import('../data/chapters/venomModelLesson'),
+          ]);
+        const mod: LoadedChapterModule = {
+          Content: VenomLessonContent,
+          RelatedLinks: VenomRelatedLinks,
+          dates: venomModelDates,
+          tocSections: venomModelDocument.sections.map((sec, i) => ({
+            id: `53.toc.${sec.number}`,
+            title: sec.title,
+            stableAnchor: sec.faqs?.length ? 'venom-model-faq' : `rr-section-${i}`,
+          })),
+          quickAnswer: venomModelDocument.quickAnswer,
+        };
         registry.set(chapterId, mod);
         return mod;
       }

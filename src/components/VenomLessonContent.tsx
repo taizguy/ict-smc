@@ -24,7 +24,6 @@ import {
   TrendingDown,
   TrendingUp,
 } from 'lucide-react';
-import '../styles/venom-model-lesson.css';
 import {
   venomModelDocument as lesson,
   venomModelPath,

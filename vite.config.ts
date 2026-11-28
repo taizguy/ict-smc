@@ -49,6 +49,8 @@ const ROUTE_CSS_MAP: Record<string, string[]> = {
   'src/components/SuspensionReaperContent.tsx': ['/src/styles/suspension-reaper-lesson.css'],
   'src/components/BreakerBlockContent.tsx': ['/src/styles/breaker-block-lesson.css'],
   'src/components/OrderBlockLessonContent.tsx': ['/src/styles/order-block-lesson.css'],
+  'src/components/VenomLessonContent.tsx': ['/src/styles/venom-model-lesson.css'],
+  'src/components/BreadButterLessonContent.tsx': ['/src/styles/bread-butter-lesson.css'],
   'src/components/MitigationDocumentContent.tsx': ['/src/styles/mitigation-document.css'],
   'src/components/PriceMovementContent.tsx': ['/src/styles/price-movement.css'],
   'src/components/FvgDocumentContent.tsx': ['/src/styles/fvg-document.css'],

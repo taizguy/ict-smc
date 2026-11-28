@@ -641,7 +641,7 @@ export const chapterCatalog = [
   {
     "id": 53,
     "slug": "the-ict-venom-model-five-stage-delivery",
-    "title": "ICT Venom Model: Opening Range and Sweeps",
+    "title": "Venom Model: Opening Range, Sweep & Two Fangs",
     "part": "Part VII - Entry Models",
     "status": "published"
   },
@@ -662,7 +662,7 @@ export const chapterCatalog = [
   {
     "id": 45,
     "slug": "core-content-month-9-consolidations-and-bread-and-butter",
-    "title": "Bread-and-Butter Setups: Ranges and Context",
+    "title": "Bread-and-Butter Setups: Ranges & Consolidations",
     "part": "Part VII - Entry Models",
     "status": "published"
   },

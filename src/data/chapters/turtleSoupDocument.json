@@ -1,0 +1,244 @@
+{
+  "h1": "Turtle Soup: Failed Breakouts and Rejection Blocks",
+  "seoTitle": "Turtle Soup: Failed Breakouts and Rejections | LearnSMC",
+  "metaDescription": "Compare Turtle Soup failed-breakout studies with rejection references, define the selected high or low and test both recovery and continued expansion.",
+  "quickAnswer": "Turtle Soup trading is a failed-breakout framework that studies an excursion beyond an obvious old high or low followed by sharp rejection back into the prior range. In ICT methodology, the extreme wick of that failed breakout defines a Rejection Block, separating blind counter-trend guessing from a structured sweep, Market Structure Shift (MSS), and deferred return.",
+  "takeaways": [
+    "Trap vs. Breakout: Turtle Soup fades failed excursions past obvious highs/lows (PDH/PDL, session extremes, or 20-day pivots) when price snaps back inside the prior range.",
+    "Rejection Block Arithmetic: A Rejection Block's body boundary (e.g., 110–111, midpoint 110.5) and full wick span (110–112, midpoint 111.0) are distinct measurements.",
+    "Deferred vs. Aggressive Entry: Selling blindly at 110 before rejection exists is guessing; deferred entry waits for departure and a later return into the Rejection Block or FVG.",
+    "Acceptance Refutes the Soup: Sustained candle closes holding above 110 indicate expansion rather than a failed breakout—never force a reversal label.",
+    "Risk & Evidence Discipline: Define session context (ETH vs. RTH), close-based invalidation beyond the sweep wick, and tick/pip cost before any replay."
+  ],
+  "sections": [
+    {
+      "number": 1,
+      "icon": "compass",
+      "title": "1. Why Breakout Traders Become \"Turtle Soup\" (Beginner Mental Model)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Imagine a textbook resistance line at 110.00. Dozens of breakout traders place buy-stop orders just above 110.00, while short-sellers cluster protective stop-losses right alongside them. When price pokes to 112.00, triggers both groups, and snaps violently back below 110.00, the breakout traders are trapped—becoming \"Turtle Soup.\""
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Plain-English Core Principle",
+          "text": "A Turtle Soup study never guesses a top or bottom before the break; it waits for the old extreme to be breached and visibly rejected back inside the range."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "icon": "book-open",
+      "title": "2. From Linda Raschke (1995) to ICT Liquidity Sweeps",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In their 1995 book Street Smarts, Linda Bradford Raschke and Laurence Connors quantified fading failed 20-day channel breakouts used by the 1980s Turtle Traders. Modern ICT methodology adapts that same price behavior to intraday session highs/lows, Previous Day High/Low (PDH/PDL), and Rejection Blocks."
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Dimension",
+              "Classic Raschke Turtle Soup (1995)",
+              "ICT Turtle Soup & Rejection Block"
+            ],
+            [
+              "Reference Level",
+              "20-day high or 20-day low",
+              "PDH/PDL, PWH/PWL, Session High/Low, or 4H Swing"
+            ],
+            [
+              "Time Filter",
+              "Daily bar close / next-day open",
+              "London Open (02:00–05:00) & NY AM (08:30–11:00 NY)"
+            ],
+            [
+              "Entry Trigger",
+              "Immediate reclaim back inside 20-day level",
+              "Sweep + Rejection Block / LTF MSS + FVG retest"
+            ],
+            [
+              "Stop Reference",
+              "1 tick beyond the new excursion high/low",
+              "Beyond the Rejection Block extreme wick"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A Turtle Soup-style study examines an excursion beyond a chosen old extreme followed by rejection back toward the prior range. The excursion alone is not the setup. For an old high of 110, a trade to 112 and return below 110 differs from sustained acceptance above 110. Define how rejection is recognised and whether a wick or completed close is required in your variation. Do not call every high break manipulation or every return a reversal that must continue."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "icon": "sparkles",
+      "title": "3. Interactive 3D Trap Cage: Failed Breakout vs. Sustained Acceptance",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Explore the 3D Rejection-Wick & Trap Cage below. Switch between Bearish Sweep + Rejection Block, Bullish SSL Turtle Soup, and Sustained Acceptance (No Soup) to see why a wick-and-reject differs fundamentally from body acceptance."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "icon": "layers",
+      "title": "4. Anatomy of a Rejection Block: Body Midpoint vs. Full-Wick Span",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "An ICT Rejection Block isolates the opening/closing body boundary associated with a sweeping rejection wick. In the standard 110–112 teaching example, the candle body sits at 110–111 (midpoint 110.5) while the full wick spans 110–112 (midpoint 111.0). Mixing those two midpoints distorts both entry and stop distance."
+        },
+        {
+          "type": "paragraph",
+          "text": "A rejection block studies the opening/closing body reference associated with a rejection wick. Its body boundary and the full wick are different measurements. In a bearish teaching example, the excursion prints a body at 110–111 with high 112, then price departs to 107 and leaves a selected imbalance. A later return to the declared body reference is a deferred candidate; selling blindly at 110 before the rejection exists is another strategy. Entry, protective stop and objective still need separate rules, including what happens if no return occurs."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "icon": "play-circle",
+      "title": "5. Animated Sequence: Aggressive Reclaim vs. Deferred Rejection-Block Entry",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "After price sweeps 110 to 112 and departs down to 107, traders face a choice: enter aggressively on the reclaim close, or wait for a deferred return to the 110.5 Rejection Block body midpoint. Step through the animation below to compare both outcomes—including when no return arrives."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "icon": "calculator",
+      "title": "6. Interactive Rejection Block & Turtle Soup Arithmetic Calculator",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Test the 110–112 teaching example, NQ Futures PDH sweeps, or EUR/USD Asian Low sweeps below to compute exact Body Midpoint, Full-Span Midpoint, sweep depth, stop ticks, and reward-to-risk."
+        },
+        {
+          "type": "paragraph",
+          "text": "In the invented 110–111 body with a 112 wick high, the body midpoint is 110.5. The midpoint of the full 110–112 span is 111. Those are not interchangeable mean references. A proposed return to 110.5, a stop beyond 112 and an objective at 106 create their own distance and cost assumptions. If the return occurs before the required rejection and departure are complete, it is too early for that deferred sequence. If it occurs after the declared expiry, it belongs to another study."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "icon": "clock",
+      "title": "7. Session Killzones & Reference Hygiene (ETH vs. RTH)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Always record whether your reference high or low comes from Regular Trading Hours (RTH), Extended Trading Hours (ETH / overnight), or a higher timeframe. A new RTH high is not identical to the full ETH high, and sweeps outside active London or New York Killzones carry lower participation."
+        },
+        {
+          "type": "paragraph",
+          "text": "Old highs, old lows and similar-looking extremes are visible references. Stops near them are a plausible hypothesis, not an order-book fact supplied by a candle. Mark whether the reference comes from the overnight session, premarket, RTH or a higher timeframe. A new RTH high is not identical to the full ETH high. Rank a nearby objective separately from a distant weekly objective so a small sweep is not mistaken for completion of the whole daily narrative."
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "icon": "git-compare",
+      "title": "8. Resistance Paths (LRLR vs. HRLR) & The Gauntlet Context",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Before targeting an opposing pool after a Turtle Soup sweep, inspect the return path. A Low-Resistance Liquidity Run (LRLR) travels through clean air, whereas a High-Resistance Liquidity Run (HRLR) must fight dense opposing swings. In the source-specific Gauntlet sequence, verify the down-leg into the lower low and its SIBI/body-gap boundary rather than labeling any random FVG overlap."
+        },
+        {
+          "type": "paragraph",
+          "text": "A low-resistance liquidity run describes a relatively clear path through selected references; high resistance describes more opposing price structure. The classification depends on the timeframe and mapped arrays. The Gauntlet example is more specific: within a bullish breaker sequence, inspect the down-leg into the lower low and identify the relevant nearby SIBI and body-gap boundary before studying its changed use. It is not a name for any FVG overlap. If the required leg or boundary is unclear, leave the case unclassified instead of forcing a label."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "icon": "crosshair",
+      "title": "9. Worked Blueprints: Bearish PDH & Bullish PDL Turtle Soup",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Compare both directional templates side by side: a Bearish Turtle Soup sweeping an old 110 high to 112 before departing to 107 and retesting 110.5, and a Bullish Turtle Soup sweeping PDL before shifting 5M structure upward."
+        },
+        {
+          "type": "paragraph",
+          "text": "Read the order blocks and breaker blocks lessons before combining rejection references. Trade Simulator is useful for checking why a response and a later executable entry are separate events."
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "icon": "alert-triangle",
+      "title": "10. Common Beginner & Intermediate Mistakes (Stick-Figure Comic)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Avoid the three classic Turtle Soup errors illustrated below: front-running a level before the sweep occurs, calling sustained body acceptance a failed breakout, and forcing a deferred entry when price never returns."
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "icon": "check-square",
+      "title": "11. Pre-Execution 6-Gate Turtle Soup Checklist (Interactive)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Confirm all six structural, session-label, rejection-proof, and invalidation gates below before classifying any chart sequence as a Turtle Soup study."
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "icon": "help-circle",
+      "title": "12. Frequently Asked Questions (Turtle Soup & Rejection Blocks)",
+      "blocks": []
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is Turtle Soup trading in ICT and SMC?",
+      "answer": "Turtle Soup trading studies a false breakout beyond an obvious old high or low followed by sharp rejection back inside the prior range, using that sweep to frame counter-direction setups once rejection is confirmed."
+    },
+    {
+      "question": "Who originally invented the Turtle Soup trading strategy?",
+      "answer": "Linda Bradford Raschke and Laurence Connors introduced Turtle Soup in their 1995 book Street Smarts as a counter-trend method fading failed 20-day channel breakouts."
+    },
+    {
+      "question": "What is an ICT Rejection Block?",
+      "answer": "A Rejection Block is the opening/closing candle body reference associated with a long rejection wick that swept a liquidity extreme, distinct from the full wick span itself."
+    },
+    {
+      "question": "Why are the 110.5 body midpoint and 111.0 full-span midpoint not interchangeable?",
+      "answer": "In a 110–111 body with a 112 wick high, 110.5 is the midpoint of the body boundary while 111.0 is the midpoint of the full 110–112 excursion; each creates different entry, stop, and risk-to-reward arithmetic."
+    },
+    {
+      "question": "What is the difference between a deferred Rejection Block entry and selling blindly at the high?",
+      "answer": "Selling blindly at 110 guesses a reversal before any rejection exists. A deferred entry waits for the sweep, departure, and a later return to the declared body reference."
+    },
+    {
+      "question": "How do you tell a Turtle Soup sweep apart from a real breakout?",
+      "answer": "A Turtle Soup sweep rejects back inside the prior range (often with a lower-timeframe MSS), whereas a real breakout shows sustained candle acceptance holding beyond the broken level."
+    },
+    {
+      "question": "Does every old-high break or return guarantee a full trend reversal?",
+      "answer": "No; an excursion past an old high is not automatically manipulation or a guaranteed reversal. Wait for your stated rejection rule and define close-based invalidation beforehand."
+    },
+    {
+      "question": "What happens if price sweeps and departs without returning to the Rejection Block?",
+      "answer": "If no deferred return arrives before your declared expiry or target is reached, skip the missed setup rather than chasing price mid-move."
+    },
+    {
+      "question": "Why does ETH vs. RTH high/low labeling matter in futures Turtle Soup studies?",
+      "answer": "A new Regular Trading Hours (RTH) high is not identical to the full Extended Trading Hours (ETH) high; mixing session definitions causes misplaced sweep references."
+    },
+    {
+      "question": "What is the Gauntlet idea in ICT Turtle Soup lessons?",
+      "answer": "The Gauntlet refers to a specific bullish breaker sequence where you inspect the down-leg into the lower low and identify its nearby SIBI and body-gap boundary rather than labeling any random FVG overlap."
+    }
+  ]
+}

@@ -7,6 +7,17 @@ import {orderBookTranslations} from '../data/chapters/orderBookTranslations';
 import {marketMakerTranslations} from '../data/chapters/marketMakerTranslations';
 import {model2022Translations} from '../data/chapters/model2022Translations';
 import {oteTranslations} from '../data/chapters/oteTranslations';
+import {htfLiquidityTranslations} from '../data/chapters/htfLiquidityTranslations';
+import {drawOnLiquidityTranslations} from '../data/chapters/drawOnLiquidityTranslations';
+import {turtleSoupTranslations} from '../data/chapters/turtleSoupTranslations';
+import {liquidityRunTranslations} from '../data/chapters/liquidityRunTranslations';
+import {bslSslTranslations} from '../data/chapters/bslSslTranslations';
+import {eqhEqlTranslations} from '../data/chapters/eqhEqlTranslations';
+import {sweepHuntTranslations} from '../data/chapters/sweepHuntTranslations';
+import {trendRangeTranslations} from '../data/chapters/trendRangeTranslations';
+import {mssTranslations} from '../data/chapters/mssTranslations';
+import {bosChochMssTranslations} from '../data/chapters/bosChochMssTranslations';
+import {dealingRangeTranslations} from '../data/chapters/dealingRangeTranslations';
 import {rdrbTranslations} from '../data/chapters/rdrbTranslations';
 import {pdArrayTranslations} from '../data/chapters/pdArrayTranslations';
 import {suspensionReaperTranslations} from '../data/chapters/suspensionReaperTranslations';
@@ -297,6 +308,28 @@ Object.assign(urdu,Object.fromEntries(Object.entries(marketMakerTranslations).fi
 Object.assign(urdu,Object.fromEntries(Object.entries(model2022Translations).filter(([key])=>!Object.hasOwn(urdu,key))));
 
 Object.assign(urdu,Object.fromEntries(Object.entries(oteTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(htfLiquidityTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(drawOnLiquidityTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(turtleSoupTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(liquidityRunTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(bslSslTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(eqhEqlTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(sweepHuntTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(trendRangeTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(mssTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(bosChochMssTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(dealingRangeTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
 
 Object.assign(urdu,Object.fromEntries(Object.entries(rdrbTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
 

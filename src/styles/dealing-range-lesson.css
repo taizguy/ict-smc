@@ -1,0 +1,331 @@
+/* Chapter 16 (ID 1016) — Dealing Ranges: Marking the Range That Matters */
+.dr-document {
+  --dr-ink: var(--rr-ink);
+  --dr-muted: var(--rr-muted);
+  --dr-border: var(--rr-line);
+  --dr-surface: color-mix(in srgb, var(--rr-accent) 4%, var(--rr-paper));
+  --dr-accent: #0891b2;
+  --dr-emerald: #059669;
+  --dr-crimson: #e11d48;
+  --dr-amber: #d97706;
+}
+
+html[data-theme='dark'] .dr-document {
+  --dr-accent: #22d3ee;
+  --dr-emerald: #34d399;
+  --dr-crimson: #fb7185;
+  --dr-amber: #fbbf24;
+}
+
+.dr-sec-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: clamp(1.22rem, 1.8vw, 1.46rem);
+  font-weight: 650;
+  line-height: 1.35;
+  margin-block: 2.3rem 1rem;
+  color: var(--dr-ink);
+}
+
+.dr-sec-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--dr-accent) 13%, transparent);
+  color: var(--dr-accent);
+  flex-shrink: 0;
+}
+
+.dr-formula-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1rem 1.15rem;
+  border-radius: 10px;
+  border: 1px solid var(--dr-border);
+  background: var(--dr-surface);
+  margin-block: 1.25rem;
+}
+
+.dr-formula-box code {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  white-space: normal;
+  color: var(--dr-ink);
+}
+
+.dr-toc {
+  margin-block: 1.5rem 2rem;
+  border: 1px solid var(--dr-border);
+  border-radius: 10px;
+  background: var(--dr-surface);
+}
+
+.dr-toc summary {
+  cursor: pointer;
+  padding: 0.85rem 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--dr-ink);
+}
+
+.dr-toc-list {
+  margin: 0;
+  padding: 0 1.25rem 1rem 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.45rem 1.2rem;
+  font-size: 0.92rem;
+}
+
+.dr-toc-list a {
+  color: var(--dr-muted);
+  text-decoration: none;
+}
+
+.dr-list {
+  padding-inline-start: 1.35rem;
+  margin-block: 0.9rem 1.25rem;
+}
+
+.dr-list li {
+  margin-block: 0.45rem;
+  line-height: 1.8;
+}
+
+.dr-table-wrap {
+  overflow-x: auto;
+  margin-block: 1.35rem;
+  border: 1px solid var(--dr-border);
+  border-radius: 10px;
+}
+
+.dr-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  text-align: start;
+}
+
+.dr-table th,
+.dr-table td {
+  padding: 0.72rem 0.9rem;
+  border-bottom: 1px solid var(--dr-border);
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+.dr-table th {
+  background: var(--dr-surface);
+  font-weight: 650;
+  color: var(--dr-ink);
+}
+
+.dr-table tr:last-child td {
+  border-bottom: none;
+}
+
+.dr-figure {
+  margin: 1.5rem 0 1.85rem;
+  padding: 1rem;
+  border: 1px solid var(--dr-border);
+  border-radius: 12px;
+  background: var(--dr-surface);
+}
+
+.dr-figure-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  margin-bottom: 0.85rem;
+}
+
+.dr-head-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 650;
+  font-size: 0.96rem;
+  color: var(--dr-ink);
+}
+
+.dr-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--dr-accent) 32%, transparent);
+  background: color-mix(in srgb, var(--dr-accent) 10%, transparent);
+  color: var(--dr-accent);
+}
+
+.dr-controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.85rem;
+}
+
+.dr-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.42rem 0.78rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid var(--dr-border);
+  background: var(--rr-paper);
+  color: var(--dr-ink);
+  cursor: pointer;
+}
+
+.dr-document .dr-btn.is-active,
+.dr-document .dr-btn.is-primary,
+.dr-btn.is-active,
+.dr-btn.is-primary {
+  background-color: #0891b2;
+  border-color: #0891b2;
+  color: #ffffff;
+}
+
+.dr-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.dr-canvas-host {
+  width: 100%;
+  min-height: 270px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--dr-border);
+  background: color-mix(in srgb, var(--dr-ink) 3%, var(--rr-paper));
+}
+
+.dr-caption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--dr-muted);
+}
+
+.dr-comic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.75rem;
+}
+
+.dr-comic-panel {
+  border: 1px solid var(--dr-border);
+  border-radius: 10px;
+  padding: 0.7rem;
+  background: var(--rr-paper);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.dr-comic-panel strong {
+  font-size: 0.85rem;
+  color: var(--dr-ink);
+}
+
+.dr-comic-panel p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.48;
+  color: var(--dr-muted);
+}
+
+.dr-calc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.dr-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.82rem;
+  color: var(--dr-muted);
+}
+
+.dr-field input {
+  padding: 0.48rem 0.62rem;
+  border-radius: 8px;
+  border: 1px solid var(--dr-border);
+  background: var(--rr-paper);
+  color: var(--dr-ink);
+  font-size: 0.9rem;
+}
+
+.dr-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 0.65rem;
+}
+
+.dr-metric {
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--dr-border);
+  background: var(--rr-paper);
+}
+
+.dr-metric-label {
+  font-size: 0.76rem;
+  color: var(--dr-muted);
+}
+
+.dr-metric-val {
+  font-size: 1.04rem;
+  font-weight: 700;
+  color: var(--dr-ink);
+  margin-top: 0.15rem;
+}
+
+.dr-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dr-check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--dr-border);
+  background: var(--rr-paper);
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--dr-ink);
+}
+
+.dr-meter-track {
+  height: 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--dr-ink) 10%, transparent);
+  overflow: hidden;
+  margin-top: 0.75rem;
+}
+
+.dr-meter-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--dr-emerald);
+  transition: width 0.25s ease;
+}

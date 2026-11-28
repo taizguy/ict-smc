@@ -1,0 +1,144 @@
+{
+  "h1": "Dealing Ranges: Marking the Range That Matters",
+  "seoTitle": "Dealing Ranges: Marking the Range That Matters | LearnSMC",
+  "metaDescription": "Learn how to anchor an external dealing range between a sweep and a displacement leg, divide Premium vs. Discount at 50% EQ, and avoid stale ranges.",
+  "quickAnswer": "A Dealing Range is the active price boundary anchored between a significant swing low and swing high—formed after a liquidity sweep and opposing displacement—divided at 50% Equilibrium into Discount (below) and Premium (above).",
+  "takeaways": [
+    "Anchor a dealing range from the extreme of a liquidity sweep to the opposing extreme created by the displacement leg.",
+    "The 50% midpoint (Equilibrium) separates Discount (below 50%) from Premium (above 50%).",
+    "Internal ranges live inside external dealing ranges; always mark the higher-timeframe dealing range first.",
+    "When candle bodies close decisively beyond the anchored high or low, update your dealing range rather than clinging to stale anchors."
+  ],
+  "sections": [
+    {
+      "number": 1,
+      "icon": "compass",
+      "title": "1. Why Every Setup Depends on the Right Dealing Range",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Without an anchored Dealing Range, terms like Premium, Discount, and Optimal Trade Entry (OTE) have no fixed ruler. Drawing a Fibonacci grid from random highs and lows produces random percentages. A valid dealing range defines the exact battlefield between two confirmed structural extremes."
+        },
+        {
+          "type": "paragraph",
+          "text": "At its core, a Dealing Range answers one practical question before every study: am I looking at a cheap price (Discount, below 50% Equilibrium) or an expensive price (Premium, above 50% Equilibrium)? Measure the range wick-to-wick from the swing origin to the opposing displacement extreme; deeper Optimal Trade Entry (OTE) retracements (62%–79%) sit inside Deep Discount or Upper Premium."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "icon": "layers",
+      "title": "2. Anatomy of a Dealing Range: 0%, 25%, 50% EQ, 75%, 100%",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            ["Quadrant", "Range Level", "Role in Study"],
+            ["100% Extreme", "Range High", "External Buyside Liquidity boundary"],
+            ["75% Upper Quadrant", "Upper Premium", "Deep premium reaction zone in bearish studies"],
+            ["50% Midpoint", "Equilibrium (EQ)", "Fair-value dividing line between Premium & Discount"],
+            ["25% Lower Quadrant", "Deep Discount", "Deep discount reaction zone in bullish studies"],
+            ["0% Extreme", "Range Low", "External Sellside Liquidity boundary"]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "icon": "sparkles",
+      "title": "3. Interactive 3D Dealing-Range Equilibrium Cube",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Explore the 3D Equilibrium Cube below to switch between External Bullish Range, Internal Sub-Range, and Range Expansion Break."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "icon": "play-circle",
+      "title": "4. Animated Sequence: Anchor → 50% Retrace → Target",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Step through the four-stage sequence below to watch how a dealing range forms from a sweep low to a displacement high, pulls back below 50% Equilibrium into Discount, and expands toward the opposing extreme."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "icon": "calculator",
+      "title": "5. Interactive Dealing-Range Quadrant & Equilibrium Calculator",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Enter your anchored Range Low, Range High, and Current Price to compute exact 25%, 50% Equilibrium, and 75% levels along with Premium/Discount status."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "icon": "git-compare",
+      "title": "6. External Dealing Range vs. Internal Sub-Range",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A 15-minute dealing range often sits completely inside a 4-hour dealing range. Knowing whether price is in 4-hour Premium or Discount prevents taking a 15-minute Discount long directly into a 4-hour Premium resistance wall."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "icon": "book-open",
+      "title": "7. Worked Blueprints: NQ 4H Range vs. EUR/USD Daily Range",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Compare two synthetic blueprints: an NQ 4-hour dealing range retesting 50% Equilibrium, and a EUR/USD Daily dealing range rotating from Premium down toward 0% SSL."
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "icon": "alert-triangle",
+      "title": "8. Common Mistakes Marking Dealing Ranges",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Avoid anchoring ranges on minor 1-minute wicks, forgetting to shift anchors after a clean external breakout, or buying in Upper Premium when seeking Discount value."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "icon": "check-square",
+      "title": "9. Pre-Replay Dealing Range 6-Gate Checklist",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Verify all six anchor, quadrant, and update gates below before logging a dealing-range study."
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "icon": "help-circle",
+      "title": "10. Frequently Asked Questions (Dealing Ranges)",
+      "blocks": []
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do you anchor a Dealing Range properly?",
+      "answer": "Anchor it from the extreme of a completed liquidity sweep (or swing origin) to the opposing confirmed swing extreme formed by the subsequent displacement leg."
+    },
+    {
+      "question": "What does 50% Equilibrium mean in a Dealing Range?",
+      "answer": "Equilibrium is the exact 50% midpoint between Range Low and Range High, dividing Discount (below 50%) from Premium (above 50%)."
+    },
+    {
+      "question": "When do you update a Dealing Range?",
+      "answer": "Update the dealing range once candle bodies close decisively beyond the anchored high or low, forming a new displacement leg and opposing swing extreme."
+    }
+  ]
+}

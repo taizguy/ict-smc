@@ -7,6 +7,17 @@ import {orderBookDates,orderBookSources} from './chapters/orderBookLesson';
 import {marketMakerDates,marketMakerSources} from './chapters/marketMakerLesson';
 import {model2022Dates,model2022Sources} from './chapters/model2022Lesson';
 import {oteDates,oteSources} from './chapters/oteLesson';
+import {htfLiquidityDates,htfLiquiditySources} from './chapters/htfLiquidityLesson';
+import {drawOnLiquidityDates,drawOnLiquiditySources} from './chapters/drawOnLiquidityLesson';
+import {turtleSoupDates,turtleSoupSources} from './chapters/turtleSoupLesson';
+import {liquidityRunDates,liquidityRunSources} from './chapters/liquidityRunLesson';
+import {bslSslDates,bslSslSources} from './chapters/bslSslLesson';
+import {eqhEqlDates,eqhEqlSources} from './chapters/eqhEqlLesson';
+import {sweepHuntDates,sweepHuntSources} from './chapters/sweepHuntLesson';
+import {trendRangeDates,trendRangeSources} from './chapters/trendRangeLesson';
+import {mssDates,mssSources} from './chapters/mssLesson';
+import {bosChochMssDates,bosChochMssSources} from './chapters/bosChochMssLesson';
+import {dealingRangeDates,dealingRangeSources} from './chapters/dealingRangeLesson';
 import {rdrbDates,rdrbSources} from './chapters/rdrbLesson';
 import {pdArrayDates,pdArraySources} from './chapters/pdArrayLesson';
 import {suspensionReaperDates,suspensionReaperSources} from './chapters/suspensionReaperLesson';
@@ -28,7 +39,7 @@ import { cornerstoneGuides, cornerstoneRevision } from './cornerstoneGuides';
 export const curriculumReviewDate = '2026-10-19';
 export const curriculumReviewLabel = '19 October 2026';
 // Chapter-wide editorial/diagram/quiz consistency review; not a new full-recording review.
-export const chapterReviewRevision = (id: number) => id===1064?silverLessonDates.updated:breakTopic(id)?breakDates.updated:id===1010?structureDates.updated:id===7?swingDates.updated:id===4?liquidityDates.updated:id===3?orderBookDates.updated:id===33?marketMakerDates.updated:id===36?model2022Dates.updated:id===55?suspensionReaperDates.updated:id===56?rdrbDates.updated:id===59?pdArrayDates.updated:id===1034?oteDates.updated:id===1031?mitigationDates.updated:id===13?fvgDocumentDates.updated:id===1?priceMovementDates.updated:phase1Entry(id)?.id===id ? {iso:'2026-11-10',label:'10 November 2026'} : id===49?alchemyDates.updated:hasMentorship2026Edition(id) ? {iso:'2026-10-27',label:'27 October 2026'} : hasMentorship2025Edition(id) ? {iso:'2026-10-26',label:'26 October 2026'} : [13,14,15,16].includes(id)
+export const chapterReviewRevision = (id: number) => id===1064?silverLessonDates.updated:breakTopic(id)?breakDates.updated:id===1010?structureDates.updated:id===7?swingDates.updated:id===4?liquidityDates.updated:id===3?orderBookDates.updated:id===33?marketMakerDates.updated:id===36?model2022Dates.updated:id===55?suspensionReaperDates.updated:id===56?rdrbDates.updated:id===59?pdArrayDates.updated:id===1034?oteDates.updated:id===1024?htfLiquidityDates.updated:id===1023?drawOnLiquidityDates.updated:id===60?turtleSoupDates.updated:id===18?liquidityRunDates.updated:id===1017?bslSslDates.updated:id===1018?eqhEqlDates.updated:id===1019?sweepHuntDates.updated:id===1011?trendRangeDates.updated:id===11?mssDates.updated:id===1015?bosChochMssDates.updated:id===1016?dealingRangeDates.updated:id===1031?mitigationDates.updated:id===13?fvgDocumentDates.updated:id===1?priceMovementDates.updated:phase1Entry(id)?.id===id ? {iso:'2026-11-10',label:'10 November 2026'} : id===49?alchemyDates.updated:hasMentorship2026Edition(id) ? {iso:'2026-10-27',label:'27 October 2026'} : hasMentorship2025Edition(id) ? {iso:'2026-10-26',label:'26 October 2026'} : [13,14,15,16].includes(id)
   ? { iso: '2026-10-25', label: '25 October 2026' } : [13, 15].includes(id) || cornerstoneGuides.some(guide => guide.chapterId === id)
   ? { iso: cornerstoneRevision, label: '24 October 2026' }
   : { iso: '2026-10-21', label: '21 October 2026' };
@@ -133,6 +144,17 @@ function baseCurriculumReview(chapter: TextbookChapter) {
   if(chapter.id===56)return {sources:rdrbSources,interpretation:'All synthetic NQ and EUR/USD BPR examples, RDRB visit timelines, Enigma 1.25x projections, and stick-figure comics in this chapter are illustrative chart-geometry studies, not live quotes or guaranteed outcomes.'};
   if(chapter.id===59)return {sources:pdArraySources,interpretation:'All synthetic Dealing Range quadrants, 9-array ladders, Suspension vs. Wick FVG dissections, and MTF fractal diagrams in this chapter are illustrative chart-geometry studies, not live quotes or trading promises. Anchoring a lookback requires judgment and never predicts future returns.'};
   if(chapter.id===1034)return {sources:oteSources,interpretation:'All synthetic NQ and EUR/USD OTE examples, Fibonacci grids, and stick-figure stories are educational range-arithmetic illustrations, not live quotes or trade recommendations.'};
+  if(chapter.id===1024)return {sources:htfLiquiditySources,interpretation:'All synthetic NQ, EUR/USD, and XAU/USD HTF liquidity maps, dealing-range calculations, and stick-figure stories are educational chart-reference illustrations, not live quotes or trade recommendations.'};
+  if(chapter.id===1023)return {sources:drawOnLiquiditySources,interpretation:'All synthetic EUR/USD and NQ Draw on Liquidity maps, priority scores, and stick-figure stories are educational chart-reference illustrations, not live quotes or trade recommendations.'};
+  if(chapter.id===60)return {sources:turtleSoupSources,interpretation:'All synthetic 110–112 Rejection Block examples, NQ/EURUSD Turtle Soup presets, and stick-figure stories are educational chart-geometry studies, not live quotes or trade recommendations.'};
+  if(chapter.id===18)return {sources:liquidityRunSources,interpretation:'All synthetic NQ and EUR/USD liquidity engineering maps, LRLR/HRLR corridor scores, and stick-figure stories are educational chart-reference studies, not live quotes or trade recommendations.'};
+  if(chapter.id===1017)return {sources:bslSslSources,interpretation:'All synthetic BSL/SSL towers, NQ/EURUSD diagrams, and distance calculators are educational chart-reference studies, not live quotes or trade recommendations.'};
+  if(chapter.id===1018)return {sources:eqhEqlSources,interpretation:'All synthetic EQH/EQL tolerance bands, cluster scores, and NQ/XAUUSD diagrams are educational chart-reference studies, not live quotes or trade recommendations.'};
+  if(chapter.id===1019)return {sources:sweepHuntSources,interpretation:'All synthetic sweep-vs-stop-hunt engines, slippage calculators, and ES/CPI diagrams are educational chart-reference studies, not live quotes or trade recommendations.'};
+  if(chapter.id===1011)return {sources:trendRangeSources,interpretation:'All synthetic trend/range state machines and NQ/Asia blueprints are educational chart-reference studies, not live quotes or trade recommendations.'};
+  if(chapter.id===11)return {sources:mssSources,interpretation:'All synthetic MSS displacement engines and FVG retest diagrams are educational chart-reference studies, not live quotes or trade recommendations.'};
+  if(chapter.id===1015)return {sources:bosChochMssSources,interpretation:'All synthetic BOS/CHoCH/MSS comparators and NQ/NY blueprints are educational chart-reference studies, not live quotes or trade recommendations.'};
+  if(chapter.id===1016)return {sources:dealingRangeSources,interpretation:'All synthetic dealing-range cubes, quadrant calculators, and NQ/EURUSD blueprints are educational chart-reference studies, not live quotes or trade recommendations.'};
   if(chapter.id===1031)return {sources:mitigationSources,interpretation:mitigationDocument.sections[4].blocks[0].text!};
   if(chapter.id===1)return {sources:priceMovementSources,interpretation:'A chart records price behaviour, not every participant’s orders or motives. The three lenses and five-question analyser are teaching aids, not causal tests or performance models. Separate observed evidence, plausible explanations and unknowns.'};
   const reviewed2026 = (sources2026 as Record<string,CurriculumSource[]>)[chapter.id];

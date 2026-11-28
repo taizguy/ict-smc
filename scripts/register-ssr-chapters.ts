@@ -18,6 +18,28 @@ import { Model2022Content, Model2022RelatedLinks } from '../src/components/Model
 import { model2022Dates, model2022Document } from '../src/data/chapters/model2022Lesson';
 import { OteContent, OteRelatedLinks } from '../src/components/OteContent';
 import { oteDates, oteDocument } from '../src/data/chapters/oteLesson';
+import { HtfLiquidityContent, HtfLiquidityRelatedLinks } from '../src/components/HtfLiquidityContent';
+import { htfLiquidityDates, htfLiquidityDocument } from '../src/data/chapters/htfLiquidityLesson';
+import { DolContent, DolRelatedLinks } from '../src/components/DolContent';
+import { drawOnLiquidityDates, drawOnLiquidityDocument } from '../src/data/chapters/drawOnLiquidityLesson';
+import { TurtleSoupContent, TurtleSoupRelatedLinks } from '../src/components/TurtleSoupContent';
+import { turtleSoupDates, turtleSoupDocument } from '../src/data/chapters/turtleSoupLesson';
+import { LiquidityRunContent, LiquidityRunRelatedLinks } from '../src/components/LiquidityRunContent';
+import { liquidityRunDates, liquidityRunDocument } from '../src/data/chapters/liquidityRunLesson';
+import { BslSslContent, BslSslRelatedLinks } from '../src/components/BslSslContent';
+import { bslSslDates, bslSslDocument } from '../src/data/chapters/bslSslLesson';
+import { EqhEqlContent, EqhEqlRelatedLinks } from '../src/components/EqhEqlContent';
+import { eqhEqlDates, eqhEqlDocument } from '../src/data/chapters/eqhEqlLesson';
+import { SweepHuntContent, SweepHuntRelatedLinks } from '../src/components/SweepHuntContent';
+import { sweepHuntDates, sweepHuntDocument } from '../src/data/chapters/sweepHuntLesson';
+import { TrendRangeContent, TrendRangeRelatedLinks } from '../src/components/TrendRangeContent';
+import { trendRangeDates, trendRangeDocument } from '../src/data/chapters/trendRangeLesson';
+import { MssContent, MssRelatedLinks } from '../src/components/MssContent';
+import { mssDates, mssDocument } from '../src/data/chapters/mssLesson';
+import { BosChochMssContent, BosChochMssRelatedLinks } from '../src/components/BosChochMssContent';
+import { bosChochMssDates, bosChochMssDocument } from '../src/data/chapters/bosChochMssLesson';
+import { DealingRangeContent, DealingRangeRelatedLinks } from '../src/components/DealingRangeContent';
+import { dealingRangeDates, dealingRangeDocument } from '../src/data/chapters/dealingRangeLesson';
 import { RdrbContent, RdrbRelatedLinks } from '../src/components/RdrbContent';
 import { rdrbDates, rdrbDocument } from '../src/data/chapters/rdrbLesson';
 import { PdArrayContent, PdArrayRelatedLinks } from '../src/components/PdArrayContent';
@@ -98,6 +120,127 @@ registerChapterModule(59, {
     stableAnchor: `rr-section-${i}`,
   })),
   quickAnswer: pdArrayDocument.quickAnswer,
+});
+registerChapterModule(60, {
+  Content: TurtleSoupContent,
+  RelatedLinks: TurtleSoupRelatedLinks,
+  dates: turtleSoupDates,
+  tocSections: turtleSoupDocument.sections.map((sec, i) => ({
+    id: `60.toc.${sec.number}`,
+    title: sec.title,
+    stableAnchor: `rr-section-${i}`,
+  })),
+  quickAnswer: turtleSoupDocument.quickAnswer,
+});
+registerChapterModule(18, {
+  Content: LiquidityRunContent,
+  RelatedLinks: LiquidityRunRelatedLinks,
+  dates: liquidityRunDates,
+  tocSections: liquidityRunDocument.sections.map((sec, i) => ({
+    id: `18.toc.${sec.number}`,
+    title: sec.title,
+    stableAnchor: `rr-section-${i}`,
+  })),
+  quickAnswer: liquidityRunDocument.quickAnswer,
+});
+registerChapterModule(1017, {
+  Content: BslSslContent,
+  RelatedLinks: BslSslRelatedLinks,
+  dates: bslSslDates,
+  tocSections: bslSslDocument.sections.map((sec, i) => ({
+    id: `1017.toc.${sec.number}`,
+    title: sec.title,
+    stableAnchor: `rr-section-${i}`,
+  })),
+  quickAnswer: bslSslDocument.quickAnswer,
+});
+registerChapterModule(1018, {
+  Content: EqhEqlContent,
+  RelatedLinks: EqhEqlRelatedLinks,
+  dates: eqhEqlDates,
+  tocSections: eqhEqlDocument.sections.map((sec, i) => ({
+    id: `1018.toc.${sec.number}`,
+    title: sec.title,
+    stableAnchor: `rr-section-${i}`,
+  })),
+  quickAnswer: eqhEqlDocument.quickAnswer,
+});
+registerChapterModule(1019, {
+  Content: SweepHuntContent,
+  RelatedLinks: SweepHuntRelatedLinks,
+  dates: sweepHuntDates,
+  tocSections: sweepHuntDocument.sections.map((sec, i) => ({
+    id: `1019.toc.${sec.number}`,
+    title: sec.title,
+    stableAnchor: `rr-section-${i}`,
+  })),
+  quickAnswer: sweepHuntDocument.quickAnswer,
+});
+registerChapterModule(1011, {
+  Content: TrendRangeContent,
+  RelatedLinks: TrendRangeRelatedLinks,
+  dates: trendRangeDates,
+  tocSections: trendRangeDocument.sections.map((sec, i) => ({
+    id: `1011.toc.${sec.number}`,
+    title: sec.title,
+    stableAnchor: `rr-section-${i}`,
+  })),
+  quickAnswer: trendRangeDocument.quickAnswer,
+});
+registerChapterModule(11, {
+  Content: MssContent,
+  RelatedLinks: MssRelatedLinks,
+  dates: mssDates,
+  tocSections: mssDocument.sections.map((sec, i) => ({
+    id: `11.toc.${sec.number}`,
+    title: sec.title,
+    stableAnchor: `rr-section-${i}`,
+  })),
+  quickAnswer: mssDocument.quickAnswer,
+});
+registerChapterModule(1015, {
+  Content: BosChochMssContent,
+  RelatedLinks: BosChochMssRelatedLinks,
+  dates: bosChochMssDates,
+  tocSections: bosChochMssDocument.sections.map((sec, i) => ({
+    id: `1015.toc.${sec.number}`,
+    title: sec.title,
+    stableAnchor: `rr-section-${i}`,
+  })),
+  quickAnswer: bosChochMssDocument.quickAnswer,
+});
+registerChapterModule(1016, {
+  Content: DealingRangeContent,
+  RelatedLinks: DealingRangeRelatedLinks,
+  dates: dealingRangeDates,
+  tocSections: dealingRangeDocument.sections.map((sec, i) => ({
+    id: `1016.toc.${sec.number}`,
+    title: sec.title,
+    stableAnchor: `rr-section-${i}`,
+  })),
+  quickAnswer: dealingRangeDocument.quickAnswer,
+});
+registerChapterModule(1023, {
+  Content: DolContent,
+  RelatedLinks: DolRelatedLinks,
+  dates: drawOnLiquidityDates,
+  tocSections: drawOnLiquidityDocument.sections.map((sec, i) => ({
+    id: `1023.toc.${sec.number}`,
+    title: sec.title,
+    stableAnchor: `rr-section-${i}`,
+  })),
+  quickAnswer: drawOnLiquidityDocument.quickAnswer,
+});
+registerChapterModule(1024, {
+  Content: HtfLiquidityContent,
+  RelatedLinks: HtfLiquidityRelatedLinks,
+  dates: htfLiquidityDates,
+  tocSections: htfLiquidityDocument.sections.map((sec, i) => ({
+    id: `1024.toc.${sec.number}`,
+    title: sec.title,
+    stableAnchor: `rr-section-${i}`,
+  })),
+  quickAnswer: htfLiquidityDocument.quickAnswer,
 });
 registerChapterModule(1034, {
   Content: OteContent,

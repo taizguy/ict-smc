@@ -1,0 +1,200 @@
+{
+  "h1": "Buyside and Sellside Liquidity: Where Orders Rest",
+  "seoTitle": "Buyside & Sellside Liquidity: Where Orders Rest | LearnSMC",
+  "metaDescription": "Learn how buyside and sellside liquidity form above swing highs and below swing lows, what stop orders sit there, and how to map BSL and SSL objectively.",
+  "quickAnswer": "Buyside Liquidity (BSL) refers to resting buy-stop orders—short sellers' stop-losses and breakout buy entries—clustered above swing highs, while Sellside Liquidity (SSL) refers to resting sell-stop orders—long buyers' stop-losses and breakout sell entries—clustered below swing lows.",
+  "takeaways": [
+    "Every short position's stop-loss is a buy order, and every long position's stop-loss is a sell order—which is why stops cluster on opposite sides of obvious swings.",
+    "BSL rests above swing highs, previous day highs (PDH), and session highs; SSL rests below swing lows, previous day lows (PDL), and session lows.",
+    "OHLC candlesticks reveal where structural highs and lows sit, not the exact contract size or identity of resting orders in the venue book.",
+    "Mapping both BSL and SSL before a session lets you track whether price sweeps and reclaims a pool or accepts beyond it."
+  ],
+  "sections": [
+    {
+      "number": 1,
+      "icon": "compass",
+      "title": "1. The Two-Sided Fuel Tank: Buyside vs. Sellside Liquidity",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In Smart Money Concepts (SMC) and ICT price-delivery study, liquidity means the concentration of resting orders waiting to be matched at specific price levels. Because large orders require counterparties to fill without excessive slippage, price frequently gravitates toward areas where stop-losses and breakout orders are likely to cluster."
+        },
+        {
+          "type": "paragraph",
+          "text": "Think of a market range as having two fuel tanks: Buyside Liquidity (BSL) resting above obvious highs, and Sellside Liquidity (SSL) resting below obvious lows. Understanding which side sits closer—and how orders convert into market flow when triggered—replaces guesswork about why price spikes past a high or low and snaps back."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "icon": "layers",
+      "title": "2. Order-Type Mechanics: Why Short Stops Are Buy Orders",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Beginners often assume a stop-loss above resistance is a sell order. In reality, a trader who sold short must buy back the asset to close the losing position. Therefore, every short seller's stop-loss above a swing high is a pending buy-stop order—joining momentum breakout traders who also place buy-stop entries above that exact high."
+        },
+        {
+          "type": "table",
+          "rows": [
+            ["Liquidity Side", "Where It Rests", "Two Order Sources", "What Happens When Triggered"],
+            ["Buyside Liquidity (BSL)", "Above swing highs, PDH, PWH, session highs", "Short stop-losses (buy-to-cover) + breakout buy-stops", "Urgent buy flow enters; large sellers can match short entries into it"],
+            ["Sellside Liquidity (SSL)", "Below swing lows, PDL, PWL, session lows", "Long stop-losses (sell-to-close) + breakdown sell-stops", "Urgent sell flow enters; large buyers can match long entries into it"]
+          ]
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Observable Fact vs. Hidden Book",
+          "text": "A candlestick chart shows where swing highs and lows formed, not how many stop contracts actually sit above or below them. Treat BSL and SSL as structural reference zones, never as guaranteed order counts."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "icon": "sparkles",
+      "title": "3. Interactive 3D Order-Cluster Tower: BSL vs. SSL",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Explore the 3D Order-Cluster Tower below to see how BSL shelves sit overhead above swing highs while SSL shelves sit underneath swing lows. Toggle between a BSL Sweep & Reversal, an SSL Sweep & Reversal, and a Balanced Range Sweep to watch how price tags each shelf."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "icon": "crosshair",
+      "title": "4. Where BSL and SSL Cluster on Real Charts (Hierarchy)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Not every swing high or low carries equal weight. Higher-timeframe extremes sit on more screens and anchor wider risk limits than minor 1-minute wicks. Organizing pools into a clear hierarchy keeps your chart clean."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Tier 1 (Macro HTF Pools): Previous Month High/Low (PMH/PML) and Previous Week High/Low (PWH/PWL).",
+            "Tier 2 (Daily & Session Pools): Previous Day High/Low (PDH/PDL), Asia High/Low, and London High/Low.",
+            "Tier 3 (Structural Clusters): Clean Equal Highs (EQH) and Equal Lows (EQL) on 15m–4H charts.",
+            "Tier 4 (Internal Minor Swings): Short-term 1m–5m swing highs/lows inside a dealing range."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "icon": "play-circle",
+      "title": "5. Animated Sequence: How a BSL or SSL Sweep Absorbs Orders",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Step through the four-stage sequence below to observe how price approaches a resting BSL pool above a swing high, triggers clustered buy-stops, and either rejects back below the high or accepts above it."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "icon": "calculator",
+      "title": "6. Interactive BSL / SSL Target Distance & Risk Calculator",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Before logging any liquidity study in replay, measure the exact tick distance to the target pool against your invalidation stop width. A clean BSL or SSL target only makes sense when the reward-to-risk ratio justifies the corridor friction."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "icon": "git-compare",
+      "title": "7. BSL/SSL Sweep vs. True Breakout Continuation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Reaching a BSL or SSL level does not automatically cause a reversal. In strong trending sessions, triggering buy-stops above a swing high fuels continued upward expansion rather than a reversal. Candle-body closes beyond the level distinguish acceptance from a wick-only sweep."
+        },
+        {
+          "type": "table",
+          "rows": [
+            ["Feature", "Liquidity Sweep (Rejection)", "Breakout Continuation (Acceptance)"],
+            ["Close Location", "Candle body closes back inside the prior range", "Candle bodies close and hold beyond the pool"],
+            ["Follow-Through", "Sharp displacement back toward the opposite pool", "Pullbacks hold the broken high/low as support/resistance"],
+            ["HTF Context", "Often occurs at opposing HTF PD arrays or extremes", "Often aligns with fresh HTF trend expansion"]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "icon": "clock",
+      "title": "8. Session Pool Map: Asia, London & New York Killzones",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Liquidity pools refresh every 24-hour cycle. Overnight Asian consolidation frequently builds tight BSL and SSL boundaries that London raids during 02:00–05:00 ET, setting up New York AM expansion toward the opposite daily pool."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "icon": "book-open",
+      "title": "9. Worked Blueprints: NQ BSL Raid vs. EUR/USD SSL Reclaim",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Compare two synthetic replay studies: an NQ futures raid above Previous Day High (BSL) that closes back inside and displaces lower, and a EUR/USD sweep below the Asian Low (SSL) that reclaims the range during London Open."
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "icon": "alert-triangle",
+      "title": "10. Common Mistakes When Mapping BSL & SSL",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Avoid cluttering charts with dozens of micro-swing lines, assuming every swept high must reverse immediately, or treating a visual swing high as proof of exact resting contract volume."
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "icon": "check-square",
+      "title": "11. Pre-Replay BSL / SSL 6-Gate Checklist (Interactive)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Confirm each structural, session, close-basis, and risk gate below before recording a BSL or SSL study in your replay journal."
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "icon": "help-circle",
+      "title": "12. Frequently Asked Questions (Buyside & Sellside Liquidity)",
+      "blocks": []
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is Buyside Liquidity (BSL) in simple terms?",
+      "answer": "Buyside Liquidity (BSL) is the cluster of resting buy-stop orders sitting above swing highs, equal highs, and previous session highs—formed by short sellers' stop-losses and breakout buyers' pending buy entries."
+    },
+    {
+      "question": "What is Sellside Liquidity (SSL) in simple terms?",
+      "answer": "Sellside Liquidity (SSL) is the cluster of resting sell-stop orders sitting below swing lows, equal lows, and previous session lows—formed by long buyers' stop-losses and breakdown sellers' pending sell entries."
+    },
+    {
+      "question": "Why are short sellers' stop-losses considered buyside liquidity?",
+      "answer": "To close a short trade at a loss, a trader must buy back the asset. That stop-loss executes as a buy order, adding buying pressure above resistance."
+    },
+    {
+      "question": "Does price always reverse after sweeping BSL or SSL?",
+      "answer": "No. A sweep can either reverse back inside the range (if candle bodies fail to accept beyond the level) or continue trending if buyers/sellers sustain acceptance beyond the pool."
+    },
+    {
+      "question": "Which BSL and SSL levels matter most for intraday study?",
+      "answer": "Previous Day High/Low (PDH/PDL), Asia High/Low, London High/Low, and clean 1H/4H Equal Highs and Equal Lows typically carry clearer intraday relevance than 1-minute swings."
+    }
+  ]
+}

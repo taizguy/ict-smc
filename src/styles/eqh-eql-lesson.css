@@ -1,0 +1,335 @@
+/* Chapter 18 (ID 1018) — Equal Highs and Lows: Reading Liquidity Pools */
+.eq-document {
+  --eq-ink: var(--rr-ink);
+  --eq-muted: var(--rr-muted);
+  --eq-border: var(--rr-line);
+  --eq-surface: color-mix(in srgb, var(--rr-accent) 4%, var(--rr-paper));
+  --eq-accent: #7c3aed;
+  --eq-emerald: #059669;
+  --eq-crimson: #e11d48;
+  --eq-amber: #d97706;
+}
+
+html[data-theme='dark'] .eq-document {
+  --eq-accent: #a78bfa;
+  --eq-emerald: #34d399;
+  --eq-crimson: #fb7185;
+  --eq-amber: #fbbf24;
+}
+
+.eq-sec-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: clamp(1.22rem, 1.8vw, 1.46rem);
+  font-weight: 650;
+  line-height: 1.35;
+  margin-block: 2.3rem 1rem;
+  color: var(--eq-ink);
+}
+
+.eq-sec-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--eq-accent) 13%, transparent);
+  color: var(--eq-accent);
+  flex-shrink: 0;
+}
+
+.eq-formula-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1rem 1.15rem;
+  border-radius: 10px;
+  border: 1px solid var(--eq-border);
+  background: var(--eq-surface);
+  margin-block: 1.25rem;
+}
+
+.eq-formula-box code {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  white-space: normal;
+  color: var(--eq-ink);
+}
+
+.eq-toc {
+  margin-block: 1.5rem 2rem;
+  border: 1px solid var(--eq-border);
+  border-radius: 10px;
+  background: var(--eq-surface);
+}
+
+.eq-toc summary {
+  cursor: pointer;
+  padding: 0.85rem 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--eq-ink);
+}
+
+.eq-toc-list {
+  margin: 0;
+  padding: 0 1.25rem 1rem 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.45rem 1.2rem;
+  font-size: 0.92rem;
+}
+
+.eq-toc-list a {
+  color: var(--eq-muted);
+  text-decoration: none;
+}
+
+.eq-toc-list a:hover {
+  color: var(--eq-accent);
+  text-decoration: underline;
+}
+
+.eq-list {
+  padding-inline-start: 1.35rem;
+  margin-block: 0.9rem 1.25rem;
+}
+
+.eq-list li {
+  margin-block: 0.45rem;
+  line-height: 1.8;
+}
+
+.eq-table-wrap {
+  overflow-x: auto;
+  margin-block: 1.35rem;
+  border: 1px solid var(--eq-border);
+  border-radius: 10px;
+}
+
+.eq-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  text-align: start;
+}
+
+.eq-table th,
+.eq-table td {
+  padding: 0.72rem 0.9rem;
+  border-bottom: 1px solid var(--eq-border);
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+.eq-table th {
+  background: var(--eq-surface);
+  font-weight: 650;
+  color: var(--eq-ink);
+}
+
+.eq-table tr:last-child td {
+  border-bottom: none;
+}
+
+.eq-figure {
+  margin: 1.5rem 0 1.85rem;
+  padding: 1rem;
+  border: 1px solid var(--eq-border);
+  border-radius: 12px;
+  background: var(--eq-surface);
+}
+
+.eq-figure-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  margin-bottom: 0.85rem;
+}
+
+.eq-head-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 650;
+  font-size: 0.96rem;
+  color: var(--eq-ink);
+}
+
+.eq-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--eq-accent) 32%, transparent);
+  background: color-mix(in srgb, var(--eq-accent) 10%, transparent);
+  color: var(--eq-accent);
+}
+
+.eq-controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.85rem;
+}
+
+.eq-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.42rem 0.78rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid var(--eq-border);
+  background: var(--rr-paper);
+  color: var(--eq-ink);
+  cursor: pointer;
+}
+
+.eq-btn.is-active,
+.eq-btn.is-primary {
+  background: var(--eq-accent);
+  border-color: var(--eq-accent);
+  color: #ffffff;
+}
+
+.eq-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.eq-canvas-host {
+  width: 100%;
+  min-height: 270px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--eq-border);
+  background: color-mix(in srgb, var(--eq-ink) 3%, var(--rr-paper));
+}
+
+.eq-caption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--eq-muted);
+}
+
+.eq-comic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.75rem;
+}
+
+.eq-comic-panel {
+  border: 1px solid var(--eq-border);
+  border-radius: 10px;
+  padding: 0.7rem;
+  background: var(--rr-paper);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.eq-comic-panel strong {
+  font-size: 0.85rem;
+  color: var(--eq-ink);
+}
+
+.eq-comic-panel p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.48;
+  color: var(--eq-muted);
+}
+
+.eq-calc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.eq-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.82rem;
+  color: var(--eq-muted);
+}
+
+.eq-field input,
+.eq-field select {
+  padding: 0.48rem 0.62rem;
+  border-radius: 8px;
+  border: 1px solid var(--eq-border);
+  background: var(--rr-paper);
+  color: var(--eq-ink);
+  font-size: 0.9rem;
+}
+
+.eq-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 0.65rem;
+}
+
+.eq-metric {
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--eq-border);
+  background: var(--rr-paper);
+}
+
+.eq-metric-label {
+  font-size: 0.76rem;
+  color: var(--eq-muted);
+}
+
+.eq-metric-val {
+  font-size: 1.04rem;
+  font-weight: 700;
+  color: var(--eq-ink);
+  margin-top: 0.15rem;
+}
+
+.eq-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.eq-check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--eq-border);
+  background: var(--rr-paper);
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--eq-ink);
+}
+
+.eq-meter-track {
+  height: 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--eq-ink) 10%, transparent);
+  overflow: hidden;
+  margin-top: 0.75rem;
+}
+
+.eq-meter-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--eq-emerald);
+  transition: width 0.25s ease;
+}

@@ -1,0 +1,303 @@
+/* Chapter 14 (ID 11) — Market Structure Shift: Context and Rules */
+.mss-document {
+  --mss-ink: var(--rr-ink);
+  --mss-muted: var(--rr-muted);
+  --mss-border: var(--rr-line);
+  --mss-surface: color-mix(in srgb, var(--rr-accent) 4%, var(--rr-paper));
+  --mss-accent: #2563eb;
+  --mss-emerald: #059669;
+  --mss-crimson: #e11d48;
+}
+
+html[data-theme='dark'] .mss-document {
+  --mss-accent: #60a5fa;
+  --mss-emerald: #34d399;
+  --mss-crimson: #fb7185;
+}
+
+.mss-sec-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: clamp(1.22rem, 1.8vw, 1.46rem);
+  font-weight: 650;
+  line-height: 1.35;
+  margin-block: 2.3rem 1rem;
+  color: var(--mss-ink);
+}
+
+.mss-sec-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--mss-accent) 13%, transparent);
+  color: var(--mss-accent);
+  flex-shrink: 0;
+}
+
+.mss-formula-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1rem 1.15rem;
+  border-radius: 10px;
+  border: 1px solid var(--mss-border);
+  background: var(--mss-surface);
+  margin-block: 1.25rem;
+}
+
+.mss-formula-box code {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  white-space: normal;
+  color: var(--mss-ink);
+}
+
+.mss-toc {
+  margin-block: 1.5rem 2rem;
+  border: 1px solid var(--mss-border);
+  border-radius: 10px;
+  background: var(--mss-surface);
+}
+
+.mss-toc summary {
+  cursor: pointer;
+  padding: 0.85rem 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--mss-ink);
+}
+
+.mss-toc-list {
+  margin: 0;
+  padding: 0 1.25rem 1rem 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.45rem 1.2rem;
+  font-size: 0.92rem;
+}
+
+.mss-toc-list a {
+  color: var(--mss-muted);
+  text-decoration: none;
+}
+
+.mss-list {
+  padding-inline-start: 1.35rem;
+  margin-block: 0.9rem 1.25rem;
+}
+
+.mss-list li {
+  margin-block: 0.45rem;
+  line-height: 1.8;
+}
+
+.mss-table-wrap {
+  overflow-x: auto;
+  margin-block: 1.35rem;
+  border: 1px solid var(--mss-border);
+  border-radius: 10px;
+}
+
+.mss-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  text-align: start;
+}
+
+.mss-table th,
+.mss-table td {
+  padding: 0.72rem 0.9rem;
+  border-bottom: 1px solid var(--mss-border);
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+.mss-table th {
+  background: var(--mss-surface);
+  font-weight: 650;
+  color: var(--mss-ink);
+}
+
+.mss-table tr:last-child td {
+  border-bottom: none;
+}
+
+.mss-figure {
+  margin: 1.5rem 0 1.85rem;
+  padding: 1rem;
+  border: 1px solid var(--mss-border);
+  border-radius: 12px;
+  background: var(--mss-surface);
+}
+
+.mss-figure-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  margin-bottom: 0.85rem;
+}
+
+.mss-head-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 650;
+  font-size: 0.96rem;
+  color: var(--mss-ink);
+}
+
+.mss-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--mss-accent) 32%, transparent);
+  background: color-mix(in srgb, var(--mss-accent) 10%, transparent);
+  color: var(--mss-accent);
+}
+
+.mss-controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.85rem;
+}
+
+.mss-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.42rem 0.78rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid var(--mss-border);
+  background: var(--rr-paper);
+  color: var(--mss-ink);
+  cursor: pointer;
+}
+
+.mss-btn.is-active,
+.mss-btn.is-primary {
+  background: var(--mss-accent);
+  border-color: var(--mss-accent);
+  color: #ffffff;
+}
+
+.mss-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mss-canvas-host {
+  width: 100%;
+  min-height: 270px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--mss-border);
+  background: color-mix(in srgb, var(--mss-ink) 3%, var(--rr-paper));
+}
+
+.mss-caption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--mss-muted);
+}
+
+.mss-comic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.75rem;
+}
+
+.mss-comic-panel {
+  border: 1px solid var(--mss-border);
+  border-radius: 10px;
+  padding: 0.7rem;
+  background: var(--rr-paper);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.mss-comic-panel strong {
+  font-size: 0.85rem;
+  color: var(--mss-ink);
+}
+
+.mss-comic-panel p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.48;
+  color: var(--mss-muted);
+}
+
+.mss-calc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.mss-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.82rem;
+  color: var(--mss-muted);
+}
+
+.mss-field input,
+.mss-field select {
+  padding: 0.48rem 0.62rem;
+  border-radius: 8px;
+  border: 1px solid var(--mss-border);
+  background: var(--rr-paper);
+  color: var(--mss-ink);
+  font-size: 0.9rem;
+}
+
+.mss-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mss-check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--mss-border);
+  background: var(--rr-paper);
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--mss-ink);
+}
+
+.mss-meter-track {
+  height: 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--mss-ink) 10%, transparent);
+  overflow: hidden;
+  margin-top: 0.75rem;
+}
+
+.mss-meter-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--mss-emerald);
+  transition: width 0.25s ease;
+}

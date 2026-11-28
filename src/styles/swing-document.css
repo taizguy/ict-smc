@@ -4,3 +4,14 @@
 .sw-visual--wick .sw-svg{font-size:13px}.sw-drag-hit{r:27px}@media(max-width:600px){.sw-drag-hit{r:55px}}
 .swing-document .sw-risk{padding:1.2rem;border:1px solid var(--rr-line);border-radius:5px;background:linear-gradient(125deg,color-mix(in srgb,var(--rr-accent) 4%,var(--rr-paper)),var(--rr-paper));margin-block:1.5rem}.swing-document .sw-risk p{font:400 var(--lesson-body-size)/var(--lesson-body-leading) var(--font-sans);margin:0 0 1rem;max-width:73ch}.swing-document .sw-risk a{color:var(--rr-accent);text-decoration:underline;text-underline-offset:3px;display:inline-flex;align-items:center;min-height:44px}
 .sw-inputs input{font-size:16px}
+
+/* Visual & animation upgrades for Chapter 9 (Swings) */
+.sw-figure{border-radius:12px;transition:box-shadow .2s ease}
+.sw-figure:hover{box-shadow:0 6px 20px color-mix(in srgb,var(--rr-ink) 7%,transparent)}
+.sw-ring,.sw-gold{transform-box:fill-box;transform-origin:center;animation:swPulse 2.2s ease-in-out infinite}
+.sw-inferred{stroke-dasharray:6 5;animation:swDash 3s linear infinite}
+.sw-drag-dot{transition:r .15s ease,filter .15s ease}
+.sw-drag-hit:hover+.sw-drag-dot,.sw-drag-hit:focus-visible+.sw-drag-dot{filter:drop-shadow(0 0 6px currentColor)}
+@keyframes swPulse{0%,100%{opacity:.72;transform:scale(.96)}50%{opacity:1;transform:scale(1.12)}}
+@keyframes swDash{to{stroke-dashoffset:-22}}
+@media(prefers-reduced-motion:reduce){.sw-ring,.sw-gold,.sw-inferred{animation:none}}

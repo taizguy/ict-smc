@@ -7,6 +7,17 @@ import {orderBookTranslations} from '../src/data/chapters/orderBookTranslations'
 import {marketMakerTranslations} from '../src/data/chapters/marketMakerTranslations';
 import {model2022Translations} from '../src/data/chapters/model2022Translations';
 import {oteTranslations} from '../src/data/chapters/oteTranslations';
+import {htfLiquidityTranslations} from '../src/data/chapters/htfLiquidityTranslations';
+import {drawOnLiquidityTranslations} from '../src/data/chapters/drawOnLiquidityTranslations';
+import {turtleSoupTranslations} from '../src/data/chapters/turtleSoupTranslations';
+import {liquidityRunTranslations} from '../src/data/chapters/liquidityRunTranslations';
+import {bslSslTranslations} from '../src/data/chapters/bslSslTranslations';
+import {eqhEqlTranslations} from '../src/data/chapters/eqhEqlTranslations';
+import {sweepHuntTranslations} from '../src/data/chapters/sweepHuntTranslations';
+import {trendRangeTranslations} from '../src/data/chapters/trendRangeTranslations';
+import {mssTranslations} from '../src/data/chapters/mssTranslations';
+import {bosChochMssTranslations} from '../src/data/chapters/bosChochMssTranslations';
+import {dealingRangeTranslations} from '../src/data/chapters/dealingRangeTranslations';
 import {rdrbTranslations} from '../src/data/chapters/rdrbTranslations';
 import {pdArrayTranslations} from '../src/data/chapters/pdArrayTranslations';
 import {suspensionReaperTranslations} from '../src/data/chapters/suspensionReaperTranslations';
@@ -49,7 +60,7 @@ const keys = Object.fromEntries(groups.map(group => [group, new Set<string>()]))
 const searchKeys = new Set<string>();
 const chapterUiKeys = new Set<string>();
 const normalize = (text: string) => text.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&rarr;/g, '→').replace(/&larr;/g, '←').replace(/\s+/g, ' ').trim();
-const SINGLE_CHAPTER_COMPONENT_RE = /src\/(?:components|utils)\/(?:SilverLesson(?:Content|Visual|Scene|Atlas)|silverSceneRenderer|Break(?:DocumentContent|Visual)|Structure(?:DocumentContent|Visual)|Swing(?:DocumentContent|Visual)|Liquidity(?:DocumentContent|Visual)|OrderBook(?:Content|Visual)|MarketMaker(?:Content|Visual)|Model2022(?:Content|Visual)|Ote(?:Content|Visual|Scene)|oteSceneRenderer|Rdrb(?:Content|Visual|Scene)|rdrbSceneRenderer|PdArray(?:Content|Visual|Scene)|pdArraySceneRenderer|SuspensionReaper(?:Content|Visual|Scene)|suspensionReaperSceneRenderer|Mitigation(?:DocumentContent|Visual)|PriceMovement(?:Content|Visual)|Fvg(?:DocumentContent|Blueprint|LessonDiagram|StoryDiagram|Story))\.[jt]sx?$/;
+const SINGLE_CHAPTER_COMPONENT_RE = /src\/(?:components|utils)\/(?:SilverLesson(?:Content|Visual|Scene|Atlas)|silverSceneRenderer|Break(?:DocumentContent|Visual)|Structure(?:DocumentContent|Visual)|Swing(?:DocumentContent|Visual)|Liquidity(?:DocumentContent|Visual)|LiquidityRun(?:Content|Visual|Scene)|BslSsl(?:Content|Visual|Scene)|EqhEql(?:Content|Visual|Scene)|SweepHunt(?:Content|Visual|Scene)|TrendRange(?:Content|Visual|Scene)|Mss(?:Content|Visual|Scene)|BosChochMss(?:Content|Visual|Scene)|DealingRange(?:Content|Visual|Scene)|OrderBook(?:Content|Visual)|MarketMaker(?:Content|Visual)|Model2022(?:Content|Visual)|Ote(?:Content|Visual|Scene)|oteSceneRenderer|Rdrb(?:Content|Visual|Scene)|rdrbSceneRenderer|PdArray(?:Content|Visual|Scene)|pdArraySceneRenderer|SuspensionReaper(?:Content|Visual|Scene)|suspensionReaperSceneRenderer|Mitigation(?:DocumentContent|Visual)|PriceMovement(?:Content|Visual)|Fvg(?:DocumentContent|Blueprint|LessonDiagram|StoryDiagram|Story))\.[jt]sx?$/;
 function toolsGroupForPath(pathname: string): Group {
   if (pathname.startsWith('/tools/masterclass/')) return 'tools-masterclass';
   if (pathname.startsWith('/tools/glossary/') || pathname.startsWith('/tools/concepts/') || pathname.startsWith('/tools/compare/')) return 'tools-glossary';
@@ -156,7 +167,7 @@ for(const svg of Object.values(masterclassStageArt)) for(const match of svg.matc
 // Directory descriptions and search titles are data-driven, not TS string literals.
 for(const row of phase1Entries)for(const key of [...row.title,...row.description])if(urdu[key])keys.shared.add(key);
 for(const key of Object.keys(curriculumPhase1Urdu))if(/^(Free ICT &|Learn ICT and Smart|The roadmap derives)/.test(key))keys.shared.add(key);
-for(const key of [...Object.keys(silverLessonTranslations),...Object.keys(priceMovementTranslations),...Object.keys(fvgDocumentTranslations),...Object.keys(mitigationTranslations),...Object.keys(liquidityTranslations),...Object.keys(orderBookTranslations),...Object.keys(marketMakerTranslations),...Object.keys(model2022Translations),...Object.keys(oteTranslations),...Object.keys(rdrbTranslations),...Object.keys(pdArrayTranslations),...Object.keys(suspensionReaperTranslations),...Object.keys(swingTranslations),...Object.keys(structureTranslations),...Object.keys(breakTranslations)])add(key,'chapters');
+for(const key of [...Object.keys(silverLessonTranslations),...Object.keys(priceMovementTranslations),...Object.keys(fvgDocumentTranslations),...Object.keys(mitigationTranslations),...Object.keys(liquidityTranslations),...Object.keys(orderBookTranslations),...Object.keys(marketMakerTranslations),...Object.keys(model2022Translations),...Object.keys(oteTranslations),...Object.keys(htfLiquidityTranslations),...Object.keys(drawOnLiquidityTranslations),...Object.keys(turtleSoupTranslations),...Object.keys(liquidityRunTranslations),...Object.keys(bslSslTranslations),...Object.keys(eqhEqlTranslations),...Object.keys(sweepHuntTranslations),...Object.keys(trendRangeTranslations),...Object.keys(mssTranslations),...Object.keys(bosChochMssTranslations),...Object.keys(dealingRangeTranslations),...Object.keys(rdrbTranslations),...Object.keys(pdArrayTranslations),...Object.keys(suspensionReaperTranslations),...Object.keys(swingTranslations),...Object.keys(structureTranslations),...Object.keys(breakTranslations)])add(key,'chapters');
 // Handwritten overrides also include derived labels assembled at runtime.
 const sourceKeysBeforeOverrides = new Set(groups.flatMap(group => [...keys[group]]));
 for (const key of Object.keys({ ...editorialUrdu, ...toolsUrdu, ...terminology, ...learningUpdate })) if (!sourceKeysBeforeOverrides.has(key)&&!retiredPracticeStrings.includes(key)) keys.shared.add(key);

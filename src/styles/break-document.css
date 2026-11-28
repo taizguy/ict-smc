@@ -16,3 +16,12 @@
 @media(prefers-reduced-motion:reduce){.br-controls button{transition:none}}
 
 .br-branch-origin{display:grid;gap:.65rem;padding:1.2rem;border:1px solid var(--br-line);max-width:20rem;margin:auto;text-align:center}.br-branch-origin bdi{font:500 22px/1.5 var(--font-mono);color:var(--br-accent)}.br-branch-paths{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.4rem}.br-branch-paths>div{display:grid;gap:.6rem;padding:1rem;border-top:2px solid var(--br-line)}.br-branch-paths span{font-size:28px;color:var(--br-accent)}.br-branch-paths bdi{font:500 24px/1.5 var(--font-mono)}.br-branch p{font:400 14px/1.8 var(--font-sans)}.br-candle{animation:br-reveal .3s ease-out both}@keyframes br-reveal{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}@media(max-width:600px){.br-branch-paths{grid-template-columns:1fr}.br-branch-paths>div{grid-template-columns:auto 1fr auto;align-items:center;gap:.75rem}.br-branch-paths bdi{font-size:19px}}@media(prefers-reduced-motion:reduce){.br-candle{animation:none}}
+
+/* Visual & animation upgrades for Chapters 12 & 13 (BOS & CHoCH) */
+.br-figure{border-radius:12px;transition:box-shadow .2s ease}
+.br-figure:hover{box-shadow:0 6px 20px color-mix(in srgb,var(--rr-ink) 7%,transparent)}
+.br-node{transform-box:fill-box;transform-origin:center;animation:brPulse 2.2s ease-in-out infinite}
+.br-reference{stroke-dasharray:7 5;animation:brDash 3s linear infinite}
+@keyframes brPulse{0%,100%{opacity:.75;transform:scale(.95)}50%{opacity:1;transform:scale(1.14)}}
+@keyframes brDash{to{stroke-dashoffset:-24}}
+@media(prefers-reduced-motion:reduce){.br-node,.br-reference{animation:none}}

@@ -176,7 +176,7 @@
       "مارکیٹ اسٹرکچر میں ٹرینڈ، رینج اور عبوری حالات۔"
     ],
     "primaryKeyword": "market phases trend range",
-    "status": "in-progress"
+    "status": "published"
   },
   {
     "id": 9,
@@ -243,7 +243,7 @@
       "BOS، CHoCH اور MSS کی اصطلاحات کا ساتھ رکھ کر موازنہ۔"
     ],
     "primaryKeyword": "bos vs choch vs mss",
-    "status": "in-progress"
+    "status": "published"
   },
   {
     "id": 1016,
@@ -259,7 +259,7 @@
       "مقررہ ڈیلنگ رینج کا انتخاب اور اس کے اینکرز کی نشان دہی۔"
     ],
     "primaryKeyword": "dealing range trading",
-    "status": "in-progress"
+    "status": "published"
   },
   {
     "id": 1017,
@@ -275,7 +275,7 @@
       "بائے سائیڈ اور سیل سائیڈ لیکویڈیٹی کے حوالے اور آرڈرز کے ممکنہ مقامات۔"
     ],
     "primaryKeyword": "buyside sellside liquidity",
-    "status": "in-progress",
+    "status": "published",
     "seoTitle": "Buyside and Sellside Liquidity"
   },
   {
@@ -292,7 +292,7 @@
       "چارٹ پر لیکویڈیٹی کے حوالوں کے طور پر برابر ہائی اور لو۔"
     ],
     "primaryKeyword": "equal highs equal lows",
-    "status": "in-progress"
+    "status": "published"
   },
   {
     "id": 1019,
@@ -308,7 +308,7 @@
       "قیمت کے نمایاں سویپس اور اسٹاپ ہنٹ کی تشریح کی حدود۔"
     ],
     "primaryKeyword": "liquidity sweep vs stop hunt",
-    "status": "in-progress",
+    "status": "published",
     "seoTitle": "Liquidity Sweep vs Stop Hunt: Observable Evidence"
   },
   {
@@ -367,11 +367,11 @@
       "ڈرا آن لیکویڈیٹی: اگلے ہدف کا انتخاب"
     ],
     "description": [
-      "Selecting a proposed liquidity target within a stated market context.",
-      "واضح مارکیٹ تناظر میں لیکویڈیٹی کے ممکنہ ہدف کا انتخاب۔"
+      "Learn how to identify the Draw on Liquidity (DOL) and choose your next target using ERL vs. IRL, daily bias, displacement, and PD arrays.",
+      "ERL بمقابلہ IRL، ڈیلی بائیس، ڈسپلیسمنٹ اور PD اَرے کے ذریعے Draw on Liquidity (DOL) کی شناخت اور اگلا ہدف منتخب کرنا سیکھیں۔"
     ],
     "primaryKeyword": "draw on liquidity",
-    "status": "in-progress"
+    "status": "published"
   },
   {
     "id": 1024,
@@ -383,11 +383,11 @@
       "بڑے ٹائم فریم کی لیکویڈیٹی کے نقشے"
     ],
     "description": [
-      "Mapping higher-timeframe liquidity references and possible targets.",
-      "بڑے ٹائم فریم پر لیکویڈیٹی کے حوالوں اور ممکنہ اہداف کی نشان دہی۔"
+      "Map higher-timeframe liquidity targets (PMH/PML, PWH/PWL, PDH/PDL, EQH/EQL) using IRL/ERL cycles, sweeps, LRLR, and dealing ranges.",
+      "بڑے ٹائم فریم کے لیکویڈیٹی اہداف (PMH/PML، PWH/PWL، PDH/PDL، EQH/EQL) کو IRL/ERL چکر، سویپس، LRLR اور ڈیلنگ رینج کے ساتھ نقشہ بنانا سیکھیں۔"
     ],
     "primaryKeyword": "htf liquidity targets",
-    "status": "in-progress"
+    "status": "published"
   },
   {
     "id": 1025,

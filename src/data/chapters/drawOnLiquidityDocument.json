@@ -1,0 +1,448 @@
+{
+  "h1": "Draw on Liquidity: Choosing the Next Target",
+  "seoTitle": "Draw on Liquidity: Choosing the Next Target | LearnSMC",
+  "seoTitleUr": "ڈرا آن لیکویڈیٹی: اگلے ہدف کا انتخاب | LearnSMC",
+  "metaDescription": "Learn how to identify the Draw on Liquidity (DOL) and choose your next target using ERL vs. IRL, daily bias, displacement, and PD arrays.",
+  "metaDescriptionUr": "ERL بمقابلہ IRL، ڈیلی بائیس، ڈسپلیسمنٹ اور PD اَرے کے ذریعے Draw on Liquidity (DOL) کی شناخت اور اگلا ہدف منتخب کرنا سیکھیں۔",
+  "quickAnswer": "Draw on Liquidity (DOL) is the primary resting liquidity pool or price inefficiency toward which the market is currently expanding. Rather than picking arbitrary 1:3 take-profits, traders choose the next logical target by combining Higher-Timeframe (HTF) bias, the ERL ↔ IRL oscillation cycle, and displacement confirmation.",
+  "takeaways": [
+    "Markets Move Pool-to-Pool: Price continually expands from one liquidity reference to another—either sweeping External Range Liquidity (ERL) or rebalancing Internal Range Liquidity (IRL).",
+    "Daily Bias Comes First: Always identify the Weekly/Daily Draw on Liquidity before dropping to 5M or 1M charts for entry timing.",
+    "Displacement Confirms Active Pull: Aggressive impulse candles leaving clean Fair Value Gaps (FVGs) show which liquidity pool is currently attracting order flow.",
+    "Nearby IRL vs. Far ERL: When an unmitigated 4H FVG or Order Block sits directly in front of a distant swing high, price often reacts at the internal target first.",
+    "Risk & Evidence Discipline: A Draw on Liquidity is a directional working hypothesis, never a guaranteed destination; always define close-based invalidation and exact tick/pip risk."
+  ],
+  "sections": [
+    {
+      "number": 1,
+      "icon": "compass",
+      "title": "1. Why Arbitrary Take-Profits Fail: The Draw on Liquidity Mental Model",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Many new traders enter a trade with a rigid rule such as 'always exit at 1:3 risk-to-reward' or 'take 30 pips every session.' Sometimes price rockets past their target and they leave most of the move behind; other times it reverses two ticks short of 1:3 because an obvious opposing Fair Value Gap or swing high sat right in front of it."
+        },
+        {
+          "type": "paragraph",
+          "text": "The Draw on Liquidity (DOL) framework replaces fixed-ratio guessing with market geography. Instead of asking 'How much money do I want to make?', you ask 'Where are resting stop orders or unmitigated imbalances sitting that price is logically drawn to reach next?'"
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Plain-English Core Principle",
+          "text": "Your entry model only gets you onto the train; the Draw on Liquidity tells you which station the train is actually heading toward."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "icon": "target",
+      "title": "2. What Is a Draw on Liquidity (DOL)?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In ICT and Smart Money Concepts (SMC), Draw on Liquidity refers to the next high-clarity price destination where concentrated order flow—either resting stop-losses outside a range (External Range Liquidity) or unfilled imbalances inside a range (Internal Range Liquidity)—is pulling price."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "External Draw (ERL): Resting buy-stops above old swing highs, Equal Highs (EQH), PDH, or PWH, and resting sell-stops below old swing lows, Equal Lows (EQL), PDL, or PWL.",
+            "Internal Draw (IRL): Unmitigated Fair Value Gaps (FVGs), Order Blocks (OBs), Breaker Blocks, or Balanced Price Ranges (BPRs) trapped inside an established dealing range."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "icon": "sparkles",
+      "title": "3. Interactive 3D Compass: Magnetic Pull Field (IRL vs. ERL)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Explore the 3D Magnetic Target-Selection Field below. Toggle between an External ERL Pull, an Internal IRL Rebalance, and Conflicting Targets to watch how the directional vector locks onto the active Draw on Liquidity."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "icon": "layers",
+      "title": "4. The 5-Step Framework for Choosing the Next Target",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "When multiple highs, lows, and gaps appear on your chart at once, use this repeatable five-step sequence to isolate the single highest-clarity next Draw on Liquidity:"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Step 1 — Establish HTF Bias (Weekly / Daily): Check whether the Daily or Weekly chart recently swept a major pool or bounced from a higher-timeframe PD array.",
+            "Step 2 — Scan External Liquidity (ERL): Mark the nearest un-swept Daily/4H swing highs/lows and clean Equal Highs (EQH) or Equal Lows (EQL) aligned with that bias.",
+            "Step 3 — Scan Internal Liquidity (IRL): Check if price is currently retracing toward an unmitigated 4H/1H Fair Value Gap or Order Block inside the dealing range.",
+            "Step 4 — Check Path Resistance (LRLR vs. HRLR): Inspect the path between current price and the candidate target—fewer opposing swings mean cleaner delivery.",
+            "Step 5 — Confirm with Displacement: Wait for energetic displacement candles breaking short-term structure (MSS/BOS) in the direction of your selected target."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "icon": "git-branch",
+      "title": "5. Interactive DOL Target-Selection Decision Tree",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Select your current market condition below to trace the decision tree and identify whether your next logical target is an Internal FVG, an External swing pool, or patience on the sidelines."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "icon": "repeat",
+      "title": "6. External vs. Internal Liquidity Targets: When Each Takes Priority",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Feature",
+              "External Range Liquidity (ERL)",
+              "Internal Range Liquidity (IRL)"
+            ],
+            [
+              "Location",
+              "Outside the current dealing range (highs & lows)",
+              "Inside the current dealing range (FVGs, OBs, BPRs)"
+            ],
+            [
+              "Primary Role",
+              "Final expansion target & stop-run magnet",
+              "Pullback rebalance target & launchpad"
+            ],
+            [
+              "When It Leads",
+              "Immediately after bouncing from an IRL PD array",
+              "Immediately after sweeping an ERL high or low"
+            ],
+            [
+              "Examples",
+              "PDH/PDL, PWH/PWL, 4H Swing High/Low, EQH/EQL",
+              "4H Discount FVG, 1H Bullish OB, Daily BPR"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "icon": "zap",
+      "title": "7. Reading Displacement & Order Flow to Confirm the Active Draw",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Charts often display valid bullish and bearish pools at the same time. How do you know which one is active *today*? Displacement is the tie-breaker. When price leaves a reference level with large-bodied candles, minimal wicks, and consecutive Fair Value Gaps, it demonstrates active directional sponsorship."
+        },
+        {
+          "type": "paragraph",
+          "text": "By contrast, slow overlapping candles drifting toward a high without displacement often signal that the move is merely a retracement into an internal PD array before reversing."
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "icon": "activity",
+      "title": "8. Animated Tug-of-War: Nearby IRL FVG vs. Distant ERL High",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Watch the animated sequence below to see why an unmitigated 4H Fair Value Gap (IRL) pulls price *first* during a pullback before the stronger External Equal Highs (ERL) magnet takes over."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "icon": "scale",
+      "title": "9. Daily Bias & Multi-Timeframe Alignment (Weekly → 4H → 15M)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Your Daily Bias is simply the direction of the Daily Draw on Liquidity. If Yesterday swept a Daily Low (SSL) and closed strong, your Daily Bias points upward toward Yesterday's High (PDH) or an overhead Daily FVG. On 15M and 5M charts, you then filter exclusively for long setups aligned with that upward draw."
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "icon": "shield-alert",
+      "title": "10. Competing Targets: How to Handle Conflicting Pools",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Sometimes the 4H chart draws upward toward Equal Highs while the Weekly chart sits right inside a Premium Bearish Order Block. When higher timeframes conflict, reduce target expectations: either take partials at the nearest 1H/4H pool or stand aside until one timeframe breaks structure decisively."
+        },
+        {
+          "type": "callout",
+          "tone": "warn",
+          "title": "Do Not Force a Distant Target Through a Nearby HTF Barrier",
+          "text": "Never hold a 5M long targeting a Weekly High if price must first pass through an unmitigated Daily Bearish Order Block without taking partials."
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "icon": "trending-up",
+      "title": "11. LRLR vs. HRLR: Scoring the Path to Your Target",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Even when you pick the right Draw on Liquidity, the *path* matters. A Low-Resistance Liquidity Run (LRLR) travels through clean air—unmitigated FVGs and no old swing obstacles—making it far easier for price to reach the target. A High-Resistance Liquidity Run (HRLR) must fight through dense prior consolidation and opposing Order Blocks."
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "icon": "calculator",
+      "title": "12. Interactive 5-Factor DOL Target Priority Scorer",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Score your candidate Draw on Liquidity below across five objective gates—HTF bias alignment, displacement, path resistance (LRLR vs. HRLR), Killzone timing, and reward-to-risk ratio—before committing capital."
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "icon": "crosshair",
+      "title": "13. Choosing Between Immediate, Intermediate & Ultimate Targets",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Target Tier",
+              "Typical Chart Reference",
+              "Best Use Case",
+              "Management Role"
+            ],
+            [
+              "Immediate Target (TP1)",
+              "Nearest 15M/1H swing or IRL FVG",
+              "High-probability partial scale-out",
+              "Reduces open risk after initial displacement"
+            ],
+            [
+              "Intermediate Target (TP2)",
+              "Session High/Low or PDH/PDL",
+              "Core intraday objective",
+              "Main exit for day-trading models"
+            ],
+            [
+              "Ultimate Target (Runner)",
+              "4H EQH/EQL or PWH/PWL",
+              "Strong LRLR trend days",
+              "Trailing runner with structural stop"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "icon": "clock",
+      "title": "14. Time-of-Day Synergy: When Draws Complete (Killzones)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A valid Draw on Liquidity rarely completes during dead market hours. Most intraday draws unfold inside London Open (02:00–05:00 AM NY), New York AM (08:30–11:00 AM NY), or New York PM (01:30–04:00 PM NY). If London already swept PDL and expanded 80% of the way to PDH, New York AM often finishes the remaining 20%."
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "icon": "trending-up",
+      "title": "15. Worked Bullish Case: EUR/USD Daily SSL Sweep to 4H EQH",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In a synthetic EUR/USD study example (not live quotes), suppose the Daily chart sweeps a prior Daily Low at 1.0810 (SSL) and closes back above it. On the 1H chart, price prints strong bullish displacement, breaking a swing high (BOS) and leaving an unmitigated 1H FVG at 1.0835–1.0845."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Immediate IRL Target: Retrace into the 1H Discount FVG (1.0835–1.0845) as the launchpad.",
+            "Intermediate Target (TP1): First opposing 4H Premium FVG at 1.0885.",
+            "Ultimate ERL Draw (TP2): Clean 4H Equal Highs resting overhead at 1.0920, with close-based invalidation below 1.0805."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "icon": "trending-down",
+      "title": "16. Worked Bearish Case: NQ Futures ERL Sweep to 4H Discount FVG",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In a synthetic NQ futures study example, suppose NQ sweeps Previous Week High (21,520.00) during the 09:30 AM NY equities open, fails to hold a 15M body above it, and breaks a 5M higher low with aggressive bearish displacement."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Active Draw on Liquidity: Because External BSL (PWH) was just swept, the draw shifts inward (ERL → IRL) toward the unmitigated 4H Discount Fair Value Gap at 21,310–21,340.",
+            "Execution & Invalidation: Hypothetical short from the 5M bearish FVG retest with close-based invalidation above 21,528.00."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "icon": "git-compare",
+      "title": "17. Advanced Tie-Breaker: SMT Divergence Across Correlated Pairs",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "When two correlated markets disagree at a liquidity target—for example, ES sweeps its Previous Day High while NQ fails to reach its PDH—Smart Money Technique (SMT) divergence warns that the buy-side run may be exhausting, shifting the next Draw on Liquidity downward toward internal discount pools."
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "icon": "shield-alert",
+      "title": "18. Invalidation Rules: Knowing When Your Draw Has Changed",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "No Draw on Liquidity is permanent. If your bullish thesis targets PWH, but price prints a 1H displacement candle closing below your key Discount FVG and breaking 4H structure lower, the active Draw on Liquidity has flipped. Accept the close-based invalidation immediately instead of hoping."
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "icon": "alert-triangle",
+      "title": "19. Common Mistakes When Choosing a Target (Stick-Figure Comic)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Three behavioral traps derail target selection even when a trader reads structure well: moving the goalpost mid-trade, ignoring a nearby IRL barrier, and targeting against HTF displacement."
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "icon": "briefcase",
+      "title": "20. Trade Management: Partials, Break-Even & Runner Logic at DOL",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Smart target management pairs partial profit-taking at the first Internal Range Liquidity barrier (or 1:2 R:R) with a trailing structural stop behind newly formed 15M/1H swings for the final runner toward External Range Liquidity."
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "icon": "arrow-up-down",
+      "title": "21. High-Clarity vs. Low-Clarity Draw on Liquidity Conditions",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Factor",
+              "High-Clarity DOL",
+              "Low-Clarity / Stand-Aside"
+            ],
+            [
+              "HTF Alignment",
+              "Weekly, Daily & 4H point to the same un-swept pool",
+              "Weekly Bullish OB sits directly above 4H target"
+            ],
+            [
+              "Displacement",
+              "Energetic impulse candles + clean FVGs",
+              "Slow, overlapping grind with equal wicks"
+            ],
+            [
+              "Path Profile",
+              "Clean LRLR path toward target",
+              "Dense HRLR consolidation blocking the path"
+            ],
+            [
+              "News & Timing",
+              "Active London or NY AM/PM Killzone",
+              "Pre-FOMC/CPI dead compression"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "icon": "check-square",
+      "title": "22. Pre-Trade Draw on Liquidity Selection Checklist (Interactive)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Verify all six DOL selection gates below before choosing your take-profit target and entering a study setup."
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "icon": "help-circle",
+      "title": "23. Frequently Asked Questions (Draw on Liquidity)",
+      "blocks": []
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What does Draw on Liquidity (DOL) mean in ICT trading?",
+      "answer": "Draw on Liquidity (DOL) is the primary liquidity pool (such as PDH/PDL, EQH/EQL, or PWH/PWL) or price imbalance (such as a 4H Fair Value Gap) toward which price is logically expanding next."
+    },
+    {
+      "question": "How do you find the next Draw on Liquidity step by step?",
+      "answer": "Start with Weekly/Daily bias, mark nearby External Range Liquidity (swing highs/lows, EQH/EQL), check for unmitigated Internal Range Liquidity (FVGs/OBs) along the path, evaluate LRLR vs. HRLR resistance, and confirm with lower-timeframe displacement."
+    },
+    {
+      "question": "What is the difference between IRL and ERL as targets?",
+      "answer": "External Range Liquidity (ERL) sits outside the dealing range at old highs and lows, while Internal Range Liquidity (IRL) sits inside the range as Fair Value Gaps or Order Blocks. Price typically alternates from ERL sweep to IRL rebalance and back to opposing ERL."
+    },
+    {
+      "question": "Should I target an internal FVG or an external swing high first?",
+      "answer": "If an unmitigated higher-timeframe FVG sits directly in front of a distant external high, price often reacts at the internal FVG first—making it a logical partial take-profit or caution zone."
+    },
+    {
+      "question": "How does Daily Bias relate to Draw on Liquidity?",
+      "answer": "Daily Bias is the directional expectation derived from the Daily Draw on Liquidity. Once you identify whether the Daily chart is drawing toward PDH/PWH or PDL/PWL, you filter intraday trades in that same direction."
+    },
+    {
+      "question": "How does displacement confirm a Draw on Liquidity?",
+      "answer": "Aggressive, large-bodied candles creating Fair Value Gaps and breaking short-term structure confirm active directional commitment toward the next opposing pool."
+    },
+    {
+      "question": "What is the difference between LRLR and HRLR when choosing a target?",
+      "answer": "A Low-Resistance Liquidity Run (LRLR) has a clean path with few opposing swings, making target completion faster and cleaner. A High-Resistance Liquidity Run (HRLR) faces dense prior consolidation and higher reversal risk."
+    },
+    {
+      "question": "Can a Draw on Liquidity guarantee that price will reach my take-profit?",
+      "answer": "No; a Draw on Liquidity is a directional working hypothesis based on chart references, never a guarantee. Always define close-based invalidation and exact tick or pip risk before entering."
+    },
+    {
+      "question": "What should I do when Weekly and 4H Draws on Liquidity conflict?",
+      "answer": "When timeframes conflict, either take partials at the nearer 1H/4H target or stand aside until displacement resolves the conflict in one clear direction."
+    },
+    {
+      "question": "Why is fixed 1:3 risk-to-reward inferior to Draw on Liquidity targeting?",
+      "answer": "Fixed ratios ignore market structure—sometimes exiting far too early before an obvious EQH magnet, or placing a take-profit beyond an unmitigated HTF Order Block where price stalls."
+    },
+    {
+      "question": "How do Killzones affect Draw on Liquidity completion?",
+      "answer": "Most intraday draws complete during high-participation windows—London Open (02:00–05:00 AM NY), NY AM (08:30–11:00 AM NY), and NY PM (01:30–04:00 PM NY)—rather than low-volume mid-session hours."
+    },
+    {
+      "question": "How do you know when an active Draw on Liquidity is invalidated?",
+      "answer": "Your selected draw is invalidated when price prints decisive candle closes in the opposite direction—breaking the key supporting FVG and shifting higher-timeframe structure against your bias."
+    }
+  ]
+}

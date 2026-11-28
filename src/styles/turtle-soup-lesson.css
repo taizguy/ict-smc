@@ -1,0 +1,340 @@
+/* Chapter 22 (ID 60) — Turtle Soup: Failed Breakouts and Rejection Blocks */
+.ts-document {
+  --ts-ink: var(--rr-ink);
+  --ts-muted: var(--rr-muted);
+  --ts-border: var(--rr-line);
+  --ts-surface: color-mix(in srgb, var(--rr-accent) 4%, var(--rr-paper));
+  --ts-accent: #0d9488;
+  --ts-emerald: #059669;
+  --ts-crimson: #e11d48;
+  --ts-amber: #d97706;
+  --ts-sky: #0284c7;
+}
+
+html[data-theme='dark'] .ts-document {
+  --ts-accent: #2dd4bf;
+  --ts-emerald: #34d399;
+  --ts-crimson: #fb7185;
+  --ts-amber: #fbbf24;
+  --ts-sky: #38bdf8;
+}
+
+.ts-sec-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: clamp(1.22rem, 1.8vw, 1.46rem);
+  font-weight: 650;
+  line-height: 1.35;
+  margin-block: 2.3rem 1rem;
+  color: var(--ts-ink);
+}
+
+.ts-sec-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--ts-accent) 13%, transparent);
+  color: var(--ts-accent);
+  flex-shrink: 0;
+}
+
+.ts-formula-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1rem 1.15rem;
+  border-radius: 10px;
+  border: 1px solid var(--ts-border);
+  background: var(--ts-surface);
+  margin-block: 1.25rem;
+}
+
+.ts-formula-box code {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  white-space: normal;
+  color: var(--ts-ink);
+}
+
+.ts-toc {
+  margin-block: 1.5rem 2rem;
+  border: 1px solid var(--ts-border);
+  border-radius: 10px;
+  background: var(--ts-surface);
+}
+
+.ts-toc summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.1rem;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  font-size: 0.94rem;
+}
+
+.ts-toc summary::-webkit-details-marker {
+  display: none;
+}
+
+.ts-toc-summary-left,
+.ts-toc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.ts-toc-badge {
+  font-size: 0.82rem;
+  color: var(--ts-muted);
+  font-weight: 500;
+}
+
+.ts-toc ol {
+  margin: 0;
+  padding: 0.25rem 1.25rem 1.1rem 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.45rem 1.25rem;
+}
+
+.ts-toc ol a {
+  font-size: 0.88rem;
+  color: var(--ts-muted);
+  text-decoration: none;
+}
+
+.ts-toc ol a:hover {
+  color: var(--ts-accent);
+  text-decoration: underline;
+}
+
+.ts-callout {
+  margin-block: 1.25rem;
+  padding: 1rem 1.15rem;
+  border-radius: 10px;
+  border: 1px solid var(--ts-border);
+  border-inline-start: 4px solid var(--ts-accent);
+  background: var(--ts-surface);
+}
+
+.ts-callout-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
+  font-size: 0.95rem;
+}
+
+.ts-callout p {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.ts-styled-list {
+  margin-block: 1rem 1.25rem;
+  padding-inline-start: 1.35rem;
+}
+
+.ts-figure {
+  margin: 1.45rem 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--ts-border);
+  border-radius: 12px;
+  background: var(--ts-surface);
+}
+
+.ts-figure-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+}
+
+.ts-head-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 650;
+  font-size: 0.96rem;
+  color: var(--ts-ink);
+}
+
+.ts-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ts-accent) 14%, transparent);
+  color: var(--ts-accent);
+}
+
+.ts-controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.ts-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  min-height: 36px;
+  padding: 0.35rem 0.78rem;
+  border-radius: 8px;
+  border: 1px solid var(--ts-border);
+  background: var(--rr-paper);
+  color: var(--ts-ink);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ts-btn.is-active {
+  border-color: var(--ts-accent);
+  background: color-mix(in srgb, var(--ts-accent) 14%, var(--rr-paper));
+  color: var(--ts-accent);
+}
+
+.ts-btn.is-primary {
+  background: var(--ts-accent);
+  border-color: var(--ts-accent);
+  color: #ffffff;
+}
+
+html[data-theme='dark'] .ts-btn.is-primary {
+  color: #042f2e;
+}
+
+.ts-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ts-canvas-host {
+  width: 100%;
+  min-height: 340px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--ts-border);
+  background: radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--ts-accent) 10%, var(--rr-paper)), var(--rr-paper));
+}
+
+.ts-caption {
+  margin-top: 0.7rem;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--ts-muted);
+}
+
+.ts-calc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.ts-calc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.82rem;
+  color: var(--ts-muted);
+}
+
+.ts-calc-field input {
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--ts-border);
+  background: var(--rr-paper);
+  color: var(--ts-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.ts-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+}
+
+.ts-stat {
+  padding: 0.65rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--ts-border);
+  background: var(--rr-paper);
+}
+
+.ts-stat small {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--ts-muted);
+}
+
+.ts-stat strong {
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--ts-ink);
+}
+
+.ts-interactive-check {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1rem 1.15rem;
+  border-radius: 10px;
+  border: 1px solid var(--ts-border);
+  background: var(--ts-surface);
+  margin-block: 1.25rem;
+}
+
+.ts-interactive-check label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  cursor: pointer;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.ts-check-status {
+  margin: 0.35rem 0 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ts-accent);
+}
+
+.ts-sources-box {
+  margin-top: 1.5rem;
+  padding: 1rem 1.15rem;
+  border-radius: 10px;
+  border: 1px solid var(--ts-border);
+  background: var(--ts-surface);
+}
+
+.ts-sources-box h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1.02rem;
+  color: var(--ts-ink);
+}
+
+.ts-sources-box ul {
+  margin: 0;
+  padding-inline-start: 1.25rem;
+}
+
+.ts-sources-box li {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 0.45rem;
+}

@@ -1,0 +1,143 @@
+{
+  "h1": "BOS vs CHoCH vs MSS: A Side-by-Side Guide",
+  "seoTitle": "BOS vs CHoCH vs MSS: Side-by-Side Guide | LearnSMC",
+  "metaDescription": "Compare Break of Structure (BOS), Change of Character (CHoCH), and Market Structure Shift (MSS) side by side with clear close rules and examples.",
+  "quickAnswer": "Break of Structure (BOS) confirms continuation with the active trend, Change of Character (CHoCH) is the first counter-trend warning break, and Market Structure Shift (MSS) is a counter-trend shift commonly paired with a prior liquidity sweep, displacement, and an FVG.",
+  "takeaways": [
+    "BOS moves with the existing trend; CHoCH and MSS break against the existing trend.",
+    "CHoCH acts as an early warning on the chart, whereas MSS adds context filters such as a prior liquidity sweep and displacement.",
+    "The same candle can look like CHoCH on a 5-minute chart while remaining a normal pullback inside a 4-hour BOS sequence.",
+    "Always state the timeframe and close rule before labeling any break."
+  ],
+  "sections": [
+    {
+      "number": 1,
+      "icon": "compass",
+      "title": "1. Why Traders Confuse BOS, CHoCH, and MSS",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Every structural break looks similar on the surface: a candle moves past a prior swing high or swing low. Confusion starts when learners use BOS, CHoCH, and MSS interchangeably without separating trend direction, prior liquidity context, and displacement."
+        },
+        {
+          "type": "paragraph",
+          "text": "Terminology note: CHoCH was popularized across broader Smart Money Concepts (SMC) courses as the first counter-trend swing break, whereas ICT traditionally emphasizes MSS—which pairs that counter-trend break with energetic displacement and often a prior liquidity sweep. In a full market cycle, price prints BOS legs with the trend, sweeps a HTF pool, prints a CHoCH/MSS counter-trend shift, and retraces into an FVG or Order Block."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "icon": "layers",
+      "title": "2. Side-by-Side Comparison Matrix: BOS vs. CHoCH vs. MSS",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            ["Feature", "BOS (Break of Structure)", "CHoCH (Change of Character)", "MSS (Market Structure Shift)"],
+            ["Direction", "With the existing trend", "First break against the trend", "Against the trend (transition)"],
+            ["Liquidity Context", "Optional", "Often internal swing break", "Commonly follows BSL/SSL sweep"],
+            ["Displacement", "Steady or impulsive", "Can be modest", "Energetic displacement preferred"],
+            ["Primary Role", "Trend continuation confirmation", "Early warning to reassess", "Reversal / transition study trigger"]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "icon": "sparkles",
+      "title": "3. Interactive 3D Structural Break Comparator",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Explore the 3D Comparator below to toggle between BOS Continuation, CHoCH Early Warning, and MSS Sweep + Displacement."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "icon": "play-circle",
+      "title": "4. Animated Sequence: BOS → CHoCH → MSS Progression",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Step through the four-stage sequence below to watch an uptrend print a BOS, then hit resistance, flash an early CHoCH warning, and confirm a displaced MSS."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "icon": "calculator",
+      "title": "5. Interactive Break Classifier (BOS vs. CHoCH vs. MSS)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Test any structural break candidate by selecting direction, prior sweep, displacement, and close confirmation."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "icon": "git-compare",
+      "title": "6. Timeframe Alignment: 5m CHoCH Inside a 4H BOS",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A 5-minute CHoCH or MSS does not automatically overthrow a 4-hour bullish BOS. Often, a lower-timeframe shift simply marks the start of a higher-timeframe discount pullback."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "icon": "book-open",
+      "title": "7. Worked Blueprints: NQ Continuation BOS vs. NY Reversal MSS",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Compare two synthetic blueprints side by side: a bullish NQ BOS extending higher highs, and a bearish NY AM MSS after sweeping pre-market Equal Highs."
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "icon": "alert-triangle",
+      "title": "8. Common Mistakes When Labeling Structural Breaks",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Avoid relabeling a failed CHoCH in hindsight, counting wick-only pokes as full BOS closes, or ignoring which swing actually belongs to the trend scale you are trading."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "icon": "check-square",
+      "title": "9. Pre-Replay Break Classification 6-Gate Checklist",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Confirm all six direction, close, sweep, and scale gates below before recording any BOS, CHoCH, or MSS study."
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "icon": "help-circle",
+      "title": "10. Frequently Asked Questions (BOS vs. CHoCH vs. MSS)",
+      "blocks": []
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the main difference between CHoCH and MSS?",
+      "answer": "Both break against the prior trend, but CHoCH is the initial warning break (often on an internal swing), whereas MSS commonly pairs that counter-trend break with a prior liquidity sweep, energetic displacement, and an FVG."
+    },
+    {
+      "question": "Can BOS and CHoCH happen on the same chart?",
+      "answer": "Yes. An uptrend prints a series of bullish BOS breaks as it climbs, and then prints a CHoCH when price finally closes below a prior Higher Low."
+    },
+    {
+      "question": "Which break is more reliable for beginners?",
+      "answer": "None guarantees an outcome on its own; clarity comes from defining your timeframe, close rule, and higher-timeframe liquidity target before replay."
+    }
+  ]
+}

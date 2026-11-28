@@ -18,6 +18,28 @@ import {model2022Document,model2022Sources,model2022Quizzes,model2022Dates} from
 import {model2022Translations} from '../src/data/chapters/model2022Translations';
 import {oteDocument,oteSources,oteQuizzes,oteDates} from '../src/data/chapters/oteLesson';
 import {oteTranslations} from '../src/data/chapters/oteTranslations';
+import {htfLiquidityDocument,htfLiquiditySources,htfLiquidityQuizzes,htfLiquidityDates} from '../src/data/chapters/htfLiquidityLesson';
+import {htfLiquidityTranslations} from '../src/data/chapters/htfLiquidityTranslations';
+import {drawOnLiquidityDocument,drawOnLiquiditySources,drawOnLiquidityQuizzes,drawOnLiquidityDates} from '../src/data/chapters/drawOnLiquidityLesson';
+import {drawOnLiquidityTranslations} from '../src/data/chapters/drawOnLiquidityTranslations';
+import {turtleSoupDocument,turtleSoupSources,turtleSoupQuizzes,turtleSoupDates} from '../src/data/chapters/turtleSoupLesson';
+import {turtleSoupTranslations} from '../src/data/chapters/turtleSoupTranslations';
+import {liquidityRunDocument,liquidityRunSources,liquidityRunQuizzes,liquidityRunDates} from '../src/data/chapters/liquidityRunLesson';
+import {liquidityRunTranslations} from '../src/data/chapters/liquidityRunTranslations';
+import {bslSslDocument,bslSslSources,bslSslQuizzes,bslSslDates} from '../src/data/chapters/bslSslLesson';
+import {bslSslTranslations} from '../src/data/chapters/bslSslTranslations';
+import {eqhEqlDocument,eqhEqlSources,eqhEqlQuizzes,eqhEqlDates} from '../src/data/chapters/eqhEqlLesson';
+import {eqhEqlTranslations} from '../src/data/chapters/eqhEqlTranslations';
+import {sweepHuntDocument,sweepHuntSources,sweepHuntQuizzes,sweepHuntDates} from '../src/data/chapters/sweepHuntLesson';
+import {sweepHuntTranslations} from '../src/data/chapters/sweepHuntTranslations';
+import {trendRangeDocument,trendRangeSources,trendRangeQuizzes,trendRangeDates} from '../src/data/chapters/trendRangeLesson';
+import {trendRangeTranslations} from '../src/data/chapters/trendRangeTranslations';
+import {mssDocument,mssSources,mssDates} from '../src/data/chapters/mssLesson';
+import {mssTranslations} from '../src/data/chapters/mssTranslations';
+import {bosChochMssDocument,bosChochMssSources,bosChochMssQuizzes,bosChochMssDates} from '../src/data/chapters/bosChochMssLesson';
+import {bosChochMssTranslations} from '../src/data/chapters/bosChochMssTranslations';
+import {dealingRangeDocument,dealingRangeSources,dealingRangeQuizzes,dealingRangeDates} from '../src/data/chapters/dealingRangeLesson';
+import {dealingRangeTranslations} from '../src/data/chapters/dealingRangeTranslations';
 import {rdrbDocument,rdrbSources,rdrbQuizzes,rdrbDates} from '../src/data/chapters/rdrbLesson';
 import {rdrbTranslations} from '../src/data/chapters/rdrbTranslations';
 import {pdArrayDocument,pdArraySources,pdArrayQuizzes,pdArrayDates} from '../src/data/chapters/pdArrayLesson';
@@ -62,12 +84,23 @@ const CHAPTER_COMPONENT_FILES: Record<number, string[]> = {
   9: ['src/components/BreakDocumentContent.tsx', 'src/components/BreakVisual.tsx'],
   10: ['src/components/BreakDocumentContent.tsx', 'src/components/BreakVisual.tsx'],
   13: ['src/components/FvgDocumentContent.tsx', 'src/components/FvgBlueprint.tsx', 'src/components/FvgLessonDiagram.tsx', 'src/components/FvgStoryDiagram.tsx', 'src/components/FvgStory.tsx'],
+  18: ['src/components/LiquidityRunContent.tsx', 'src/components/LiquidityRunVisual.tsx', 'src/components/LiquidityRunScene.tsx'],
+  1017: ['src/components/BslSslContent.tsx', 'src/components/BslSslVisual.tsx', 'src/components/BslSslScene.tsx'],
+  1018: ['src/components/EqhEqlContent.tsx', 'src/components/EqhEqlVisual.tsx', 'src/components/EqhEqlScene.tsx'],
+  1019: ['src/components/SweepHuntContent.tsx', 'src/components/SweepHuntVisual.tsx', 'src/components/SweepHuntScene.tsx'],
+  1011: ['src/components/TrendRangeContent.tsx', 'src/components/TrendRangeVisual.tsx', 'src/components/TrendRangeScene.tsx'],
+  11: ['src/components/MssContent.tsx', 'src/components/MssVisual.tsx', 'src/components/MssScene.tsx'],
+  1015: ['src/components/BosChochMssContent.tsx', 'src/components/BosChochMssVisual.tsx', 'src/components/BosChochMssScene.tsx'],
+  1016: ['src/components/DealingRangeContent.tsx', 'src/components/DealingRangeVisual.tsx', 'src/components/DealingRangeScene.tsx'],
   33: ['src/components/MarketMakerContent.tsx', 'src/components/MarketMakerVisual.tsx'],
   36: ['src/components/Model2022Content.tsx', 'src/components/Model2022Visual.tsx'],
   55: ['src/components/SuspensionReaperContent.tsx', 'src/components/SuspensionReaperVisual.tsx', 'src/components/SuspensionReaperScene.tsx', 'src/utils/suspensionReaperSceneRenderer.ts'],
   56: ['src/components/RdrbContent.tsx', 'src/components/RdrbVisual.tsx', 'src/components/RdrbScene.tsx', 'src/components/rdrbSceneRenderer.ts'],
   59: ['src/components/PdArrayContent.tsx', 'src/components/PdArrayVisual.tsx', 'src/components/PdArrayScene.tsx', 'src/utils/pdArraySceneRenderer.ts'],
   1010: ['src/components/StructureDocumentContent.tsx', 'src/components/StructureVisual.tsx'],
+  60: ['src/components/TurtleSoupContent.tsx', 'src/components/TurtleSoupVisual.tsx', 'src/components/TurtleSoupScene.tsx'],
+  1023: ['src/components/DolContent.tsx', 'src/components/DolVisual.tsx', 'src/components/DolScene.tsx'],
+  1024: ['src/components/HtfLiquidityContent.tsx', 'src/components/HtfLiquidityVisual.tsx', 'src/components/HtfLiquidityScene.tsx'],
   1031: ['src/components/MitigationDocumentContent.tsx', 'src/components/MitigationVisual.tsx'],
   1034: ['src/components/OteContent.tsx', 'src/components/OteVisual.tsx', 'src/components/OteScene.tsx', 'src/components/oteSceneRenderer.ts'],
   1064: ['src/components/SilverLessonContent.tsx', 'src/components/SilverLessonVisual.tsx', 'src/components/SilverLessonScene.tsx', 'src/components/SilverLessonAtlas.tsx', 'src/components/silverSceneRenderer.ts'],
@@ -114,6 +147,17 @@ export function splitUrduLessons(output:string,uiKeys:ReadonlySet<string>) {
   if(chapter.id===33){visit(marketMakerDocument);visit(marketMakerSources);visit(marketMakerQuizzes);visit(marketMakerDates);}
   if(chapter.id===36){visit(model2022Document);visit(model2022Sources);visit(model2022Quizzes);visit(model2022Dates);}
   if(chapter.id===1034){visit(oteDocument);visit(oteSources);visit(oteQuizzes);visit(oteDates);}
+  if(chapter.id===1024){visit(htfLiquidityDocument);visit(htfLiquiditySources);visit(htfLiquidityQuizzes);visit(htfLiquidityDates);}
+  if(chapter.id===1023){visit(drawOnLiquidityDocument);visit(drawOnLiquiditySources);visit(drawOnLiquidityQuizzes);visit(drawOnLiquidityDates);}
+  if(chapter.id===60){visit(turtleSoupDocument);visit(turtleSoupSources);visit(turtleSoupQuizzes);visit(turtleSoupDates);}
+  if(chapter.id===18){visit(liquidityRunDocument);visit(liquidityRunSources);visit(liquidityRunQuizzes);visit(liquidityRunDates);}
+  if(chapter.id===1017){visit(bslSslDocument);visit(bslSslSources);visit(bslSslQuizzes);visit(bslSslDates);}
+  if(chapter.id===1018){visit(eqhEqlDocument);visit(eqhEqlSources);visit(eqhEqlQuizzes);visit(eqhEqlDates);}
+  if(chapter.id===1019){visit(sweepHuntDocument);visit(sweepHuntSources);visit(sweepHuntQuizzes);visit(sweepHuntDates);}
+  if(chapter.id===1011){visit(trendRangeDocument);visit(trendRangeSources);visit(trendRangeQuizzes);visit(trendRangeDates);}
+  if(chapter.id===11){visit(mssDocument);visit(mssSources);visit(mssDates);}
+  if(chapter.id===1015){visit(bosChochMssDocument);visit(bosChochMssSources);visit(bosChochMssQuizzes);visit(bosChochMssDates);}
+  if(chapter.id===1016){visit(dealingRangeDocument);visit(dealingRangeSources);visit(dealingRangeQuizzes);visit(dealingRangeDates);}
   if(chapter.id===55){visit(suspensionReaperDocument);visit(suspensionReaperSources);visit(suspensionReaperQuizzes);visit(suspensionReaperDates);}
   if(chapter.id===56){visit(rdrbDocument);visit(rdrbSources);visit(rdrbQuizzes);visit(rdrbDates);}
   if(chapter.id===59){visit(pdArrayDocument);visit(pdArraySources);visit(pdArrayQuizzes);visit(pdArrayDates);}
@@ -169,6 +213,17 @@ export function splitUrduLessons(output:string,uiKeys:ReadonlySet<string>) {
  writeDedupedOverrides('ict-charter-models-6-and-7-universal-models', 'market-maker-overrides.json', marketMakerTranslations);
  writeDedupedOverrides('ict-charter-model-13-2022-youtube-model', 'model-2022-overrides.json', model2022Translations);
  writeDedupedOverrides('optimal-trade-entry-ote', 'ote-overrides.json', oteTranslations);
+ writeDedupedOverrides('htf-liquidity-maps', 'htf-liquidity-overrides.json', htfLiquidityTranslations);
+ writeDedupedOverrides('draw-on-liquidity', 'draw-on-liquidity-overrides.json', drawOnLiquidityTranslations);
+ writeDedupedOverrides('ict-liquidity-turtle-soup-rejection-blocks', 'turtle-soup-overrides.json', turtleSoupTranslations);
+ writeDedupedOverrides('liquidity-engineering-and-liquidity-runs', 'liquidity-run-overrides.json', liquidityRunTranslations);
+ writeDedupedOverrides('buyside-sellside-liquidity', 'bsl-ssl-overrides.json', bslSslTranslations);
+ writeDedupedOverrides('equal-highs-equal-lows', 'eqh-eql-overrides.json', eqhEqlTranslations);
+ writeDedupedOverrides('liquidity-sweep-vs-stop-hunt', 'sweep-hunt-overrides.json', sweepHuntTranslations);
+ writeDedupedOverrides('trend-range-transition', 'trend-range-overrides.json', trendRangeTranslations);
+ writeDedupedOverrides('market-structure-shift-mss-verified-directional-shift', 'mss-overrides.json', mssTranslations);
+ writeDedupedOverrides('bos-vs-choch-vs-mss', 'bos-choch-mss-overrides.json', bosChochMssTranslations);
+ writeDedupedOverrides('dealing-range-marking', 'dealing-range-overrides.json', dealingRangeTranslations);
  writeDedupedOverrides('rdrb-balanced-price-range-and-enigma-fvg', 'rdrb-overrides.json', rdrbTranslations);
  writeDedupedOverrides('ict-pd-array-selection-price-delivery-continuum', 'pd-array-overrides.json', pdArrayTranslations);
  writeDedupedOverrides('reaper-ifvg-and-suspension-block-advancements', 'suspension-reaper-overrides.json', suspensionReaperTranslations);

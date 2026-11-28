@@ -20,7 +20,7 @@ export interface LoadedChapterModule {
 }
 
 export const REBUILT_CONTENT_CHAPTER_IDS = new Set([
-  1, 3, 4, 7, 9, 10, 13, 33, 36, 55, 56, 59, 1010, 1031, 1034, 1064,
+  1, 3, 4, 7, 9, 10, 11, 13, 18, 33, 36, 55, 56, 59, 60, 1010, 1011, 1015, 1016, 1017, 1018, 1019, 1023, 1024, 1031, 1034, 1064,
 ]);
 
 const registry = new Map<number, LoadedChapterModule>();
@@ -206,6 +206,226 @@ export async function loadChapterModule(chapterId: number): Promise<LoadedChapte
             stableAnchor: `rr-section-${i}`,
           })),
           quickAnswer: pdArrayDocument.quickAnswer,
+        };
+        registry.set(chapterId, mod);
+        return mod;
+      }
+      case 1011: {
+        const [{ TrendRangeContent, TrendRangeRelatedLinks }, { trendRangeDates, trendRangeDocument }] =
+          await Promise.all([
+            import('./TrendRangeContent'),
+            import('../data/chapters/trendRangeLesson'),
+          ]);
+        const mod: LoadedChapterModule = {
+          Content: TrendRangeContent,
+          RelatedLinks: TrendRangeRelatedLinks,
+          dates: trendRangeDates,
+          tocSections: trendRangeDocument.sections.map((sec, i) => ({
+            id: `1011.toc.${sec.number}`,
+            title: sec.title,
+            stableAnchor: `rr-section-${i}`,
+          })),
+          quickAnswer: trendRangeDocument.quickAnswer,
+        };
+        registry.set(chapterId, mod);
+        return mod;
+      }
+      case 11: {
+        const [{ MssContent, MssRelatedLinks }, { mssDates, mssDocument }] =
+          await Promise.all([
+            import('./MssContent'),
+            import('../data/chapters/mssLesson'),
+          ]);
+        const mod: LoadedChapterModule = {
+          Content: MssContent,
+          RelatedLinks: MssRelatedLinks,
+          dates: mssDates,
+          tocSections: mssDocument.sections.map((sec, i) => ({
+            id: `11.toc.${sec.number}`,
+            title: sec.title,
+            stableAnchor: `rr-section-${i}`,
+          })),
+          quickAnswer: mssDocument.quickAnswer,
+        };
+        registry.set(chapterId, mod);
+        return mod;
+      }
+      case 1015: {
+        const [{ BosChochMssContent, BosChochMssRelatedLinks }, { bosChochMssDates, bosChochMssDocument }] =
+          await Promise.all([
+            import('./BosChochMssContent'),
+            import('../data/chapters/bosChochMssLesson'),
+          ]);
+        const mod: LoadedChapterModule = {
+          Content: BosChochMssContent,
+          RelatedLinks: BosChochMssRelatedLinks,
+          dates: bosChochMssDates,
+          tocSections: bosChochMssDocument.sections.map((sec, i) => ({
+            id: `1015.toc.${sec.number}`,
+            title: sec.title,
+            stableAnchor: `rr-section-${i}`,
+          })),
+          quickAnswer: bosChochMssDocument.quickAnswer,
+        };
+        registry.set(chapterId, mod);
+        return mod;
+      }
+      case 1016: {
+        const [{ DealingRangeContent, DealingRangeRelatedLinks }, { dealingRangeDates, dealingRangeDocument }] =
+          await Promise.all([
+            import('./DealingRangeContent'),
+            import('../data/chapters/dealingRangeLesson'),
+          ]);
+        const mod: LoadedChapterModule = {
+          Content: DealingRangeContent,
+          RelatedLinks: DealingRangeRelatedLinks,
+          dates: dealingRangeDates,
+          tocSections: dealingRangeDocument.sections.map((sec, i) => ({
+            id: `1016.toc.${sec.number}`,
+            title: sec.title,
+            stableAnchor: `rr-section-${i}`,
+          })),
+          quickAnswer: dealingRangeDocument.quickAnswer,
+        };
+        registry.set(chapterId, mod);
+        return mod;
+      }
+      case 1017: {
+        const [{ BslSslContent, BslSslRelatedLinks }, { bslSslDates, bslSslDocument }] =
+          await Promise.all([
+            import('./BslSslContent'),
+            import('../data/chapters/bslSslLesson'),
+          ]);
+        const mod: LoadedChapterModule = {
+          Content: BslSslContent,
+          RelatedLinks: BslSslRelatedLinks,
+          dates: bslSslDates,
+          tocSections: bslSslDocument.sections.map((sec, i) => ({
+            id: `1017.toc.${sec.number}`,
+            title: sec.title,
+            stableAnchor: `rr-section-${i}`,
+          })),
+          quickAnswer: bslSslDocument.quickAnswer,
+        };
+        registry.set(chapterId, mod);
+        return mod;
+      }
+      case 1018: {
+        const [{ EqhEqlContent, EqhEqlRelatedLinks }, { eqhEqlDates, eqhEqlDocument }] =
+          await Promise.all([
+            import('./EqhEqlContent'),
+            import('../data/chapters/eqhEqlLesson'),
+          ]);
+        const mod: LoadedChapterModule = {
+          Content: EqhEqlContent,
+          RelatedLinks: EqhEqlRelatedLinks,
+          dates: eqhEqlDates,
+          tocSections: eqhEqlDocument.sections.map((sec, i) => ({
+            id: `1018.toc.${sec.number}`,
+            title: sec.title,
+            stableAnchor: `rr-section-${i}`,
+          })),
+          quickAnswer: eqhEqlDocument.quickAnswer,
+        };
+        registry.set(chapterId, mod);
+        return mod;
+      }
+      case 1019: {
+        const [{ SweepHuntContent, SweepHuntRelatedLinks }, { sweepHuntDates, sweepHuntDocument }] =
+          await Promise.all([
+            import('./SweepHuntContent'),
+            import('../data/chapters/sweepHuntLesson'),
+          ]);
+        const mod: LoadedChapterModule = {
+          Content: SweepHuntContent,
+          RelatedLinks: SweepHuntRelatedLinks,
+          dates: sweepHuntDates,
+          tocSections: sweepHuntDocument.sections.map((sec, i) => ({
+            id: `1019.toc.${sec.number}`,
+            title: sec.title,
+            stableAnchor: `rr-section-${i}`,
+          })),
+          quickAnswer: sweepHuntDocument.quickAnswer,
+        };
+        registry.set(chapterId, mod);
+        return mod;
+      }
+      case 18: {
+        const [{ LiquidityRunContent, LiquidityRunRelatedLinks }, { liquidityRunDates, liquidityRunDocument }] =
+          await Promise.all([
+            import('./LiquidityRunContent'),
+            import('../data/chapters/liquidityRunLesson'),
+          ]);
+        const mod: LoadedChapterModule = {
+          Content: LiquidityRunContent,
+          RelatedLinks: LiquidityRunRelatedLinks,
+          dates: liquidityRunDates,
+          tocSections: liquidityRunDocument.sections.map((sec, i) => ({
+            id: `18.toc.${sec.number}`,
+            title: sec.title,
+            stableAnchor: `rr-section-${i}`,
+          })),
+          quickAnswer: liquidityRunDocument.quickAnswer,
+        };
+        registry.set(chapterId, mod);
+        return mod;
+      }
+      case 60: {
+        const [{ TurtleSoupContent, TurtleSoupRelatedLinks }, { turtleSoupDates, turtleSoupDocument }] =
+          await Promise.all([
+            import('./TurtleSoupContent'),
+            import('../data/chapters/turtleSoupLesson'),
+          ]);
+        const mod: LoadedChapterModule = {
+          Content: TurtleSoupContent,
+          RelatedLinks: TurtleSoupRelatedLinks,
+          dates: turtleSoupDates,
+          tocSections: turtleSoupDocument.sections.map((sec, i) => ({
+            id: `60.toc.${sec.number}`,
+            title: sec.title,
+            stableAnchor: `rr-section-${i}`,
+          })),
+          quickAnswer: turtleSoupDocument.quickAnswer,
+        };
+        registry.set(chapterId, mod);
+        return mod;
+      }
+      case 1023: {
+        const [{ DolContent, DolRelatedLinks }, { drawOnLiquidityDates, drawOnLiquidityDocument }] =
+          await Promise.all([
+            import('./DolContent'),
+            import('../data/chapters/drawOnLiquidityLesson'),
+          ]);
+        const mod: LoadedChapterModule = {
+          Content: DolContent,
+          RelatedLinks: DolRelatedLinks,
+          dates: drawOnLiquidityDates,
+          tocSections: drawOnLiquidityDocument.sections.map((sec, i) => ({
+            id: `1023.toc.${sec.number}`,
+            title: sec.title,
+            stableAnchor: `rr-section-${i}`,
+          })),
+          quickAnswer: drawOnLiquidityDocument.quickAnswer,
+        };
+        registry.set(chapterId, mod);
+        return mod;
+      }
+      case 1024: {
+        const [{ HtfLiquidityContent, HtfLiquidityRelatedLinks }, { htfLiquidityDates, htfLiquidityDocument }] =
+          await Promise.all([
+            import('./HtfLiquidityContent'),
+            import('../data/chapters/htfLiquidityLesson'),
+          ]);
+        const mod: LoadedChapterModule = {
+          Content: HtfLiquidityContent,
+          RelatedLinks: HtfLiquidityRelatedLinks,
+          dates: htfLiquidityDates,
+          tocSections: htfLiquidityDocument.sections.map((sec, i) => ({
+            id: `1024.toc.${sec.number}`,
+            title: sec.title,
+            stableAnchor: `rr-section-${i}`,
+          })),
+          quickAnswer: htfLiquidityDocument.quickAnswer,
         };
         registry.set(chapterId, mod);
         return mod;

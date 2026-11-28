@@ -251,7 +251,7 @@ export const chapterCatalog = [
     "slug": "trend-range-transition",
     "title": "Trends, Ranges and Transitions",
     "part": "Part II - Market Structure",
-    "status": "in-progress"
+    "status": "published"
   },
   {
     "id": 9,
@@ -279,35 +279,35 @@ export const chapterCatalog = [
     "slug": "bos-vs-choch-vs-mss",
     "title": "BOS vs CHoCH vs MSS: A Side-by-Side Guide",
     "part": "Part II - Market Structure",
-    "status": "in-progress"
+    "status": "published"
   },
   {
     "id": 1016,
     "slug": "dealing-range-marking",
     "title": "Dealing Ranges: Marking the Range That Matters",
     "part": "Part II - Market Structure",
-    "status": "in-progress"
+    "status": "published"
   },
   {
     "id": 1017,
     "slug": "buyside-sellside-liquidity",
     "title": "Buyside and Sellside Liquidity: Where Orders Rest",
     "part": "Part III - Liquidity",
-    "status": "in-progress"
+    "status": "published"
   },
   {
     "id": 1018,
     "slug": "equal-highs-equal-lows",
     "title": "Equal Highs and Lows: Reading Liquidity Pools",
     "part": "Part III - Liquidity",
-    "status": "in-progress"
+    "status": "published"
   },
   {
     "id": 1019,
     "slug": "liquidity-sweep-vs-stop-hunt",
     "title": "Liquidity Sweep or Stop Hunt? What You Can Observe",
     "part": "Part III - Liquidity",
-    "status": "in-progress"
+    "status": "published"
   },
   {
     "id": 18,
@@ -335,14 +335,14 @@ export const chapterCatalog = [
     "slug": "draw-on-liquidity",
     "title": "Draw on Liquidity: Choosing the Next Target",
     "part": "Part III - Liquidity",
-    "status": "in-progress"
+    "status": "published"
   },
   {
     "id": 1024,
     "slug": "htf-liquidity-maps",
     "title": "Higher-Timeframe Liquidity Maps",
     "part": "Part III - Liquidity",
-    "status": "in-progress"
+    "status": "published"
   },
   {
     "id": 1025,

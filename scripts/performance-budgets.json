@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "measuredAt": "2026-11-25",
+  "measuredAt": "2026-11-28",
   "evidence": "outputs/practice-performance/latest/bundle.json; full build and deferred-entry bundle evidence",
   "note": "Static entry graph covers reading-first practice routes. Interaction payload is reported separately; totals include lazy features. Limits are reviewed baselines and are not changed by normal builds or the --override diagnostic.",
   "limits": {
     "initialJsRaw": 13000,
     "initialJsGzip": 5500,
     "initialJsBrotli": 5200,
-    "allJsRaw": 11350000,
+    "allJsRaw": 12250000,
     "largestJsRaw": 1313000,
     "initialCssRaw": 660000,
     "initialCssGzip": 115000

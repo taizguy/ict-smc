@@ -25,6 +25,39 @@ import {model2022Path} from '../src/data/chapters/model2022Lesson';
 import {localizeOteDocument} from './ote-localized';
 import {oteTranslations} from '../src/data/chapters/oteTranslations';
 import {otePath} from '../src/data/chapters/oteLesson';
+import {localizeHtfLiquidityDocument} from './htf-liquidity-localized';
+import {htfLiquidityTranslations} from '../src/data/chapters/htfLiquidityTranslations';
+import {htfLiquidityPath} from '../src/data/chapters/htfLiquidityLesson';
+import {localizeDolDocument} from './dol-localized';
+import {drawOnLiquidityTranslations} from '../src/data/chapters/drawOnLiquidityTranslations';
+import {drawOnLiquidityPath} from '../src/data/chapters/drawOnLiquidityLesson';
+import {localizeTurtleSoupDocument} from './turtle-soup-localized';
+import {turtleSoupTranslations} from '../src/data/chapters/turtleSoupTranslations';
+import {turtleSoupPath} from '../src/data/chapters/turtleSoupLesson';
+import {localizeLiquidityRunDocument} from './liquidity-run-localized';
+import {liquidityRunTranslations} from '../src/data/chapters/liquidityRunTranslations';
+import {liquidityRunPath} from '../src/data/chapters/liquidityRunLesson';
+import {localizeBslSslDocument} from './bsl-ssl-localized';
+import {bslSslTranslations} from '../src/data/chapters/bslSslTranslations';
+import {bslSslPath} from '../src/data/chapters/bslSslLesson';
+import {localizeEqhEqlDocument} from './eqh-eql-localized';
+import {eqhEqlTranslations} from '../src/data/chapters/eqhEqlTranslations';
+import {eqhEqlPath} from '../src/data/chapters/eqhEqlLesson';
+import {localizeSweepHuntDocument} from './sweep-hunt-localized';
+import {sweepHuntTranslations} from '../src/data/chapters/sweepHuntTranslations';
+import {sweepHuntPath} from '../src/data/chapters/sweepHuntLesson';
+import {localizeTrendRangeDocument} from './trend-range-localized';
+import {trendRangeTranslations} from '../src/data/chapters/trendRangeTranslations';
+import {trendRangePath} from '../src/data/chapters/trendRangeLesson';
+import {localizeMssDocument} from './mss-localized';
+import {mssTranslations} from '../src/data/chapters/mssTranslations';
+import {mssPath} from '../src/data/chapters/mssLesson';
+import {localizeBosChochMssDocument} from './bos-choch-mss-localized';
+import {bosChochMssTranslations} from '../src/data/chapters/bosChochMssTranslations';
+import {bosChochMssPath} from '../src/data/chapters/bosChochMssLesson';
+import {localizeDealingRangeDocument} from './dealing-range-localized';
+import {dealingRangeTranslations} from '../src/data/chapters/dealingRangeTranslations';
+import {dealingRangePath} from '../src/data/chapters/dealingRangeLesson';
 import {localizeRdrbDocument} from './rdrb-localized';
 import {rdrbTranslations} from '../src/data/chapters/rdrbTranslations';
 import {rdrbPath} from '../src/data/chapters/rdrbLesson';
@@ -83,7 +116,7 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
       if (!preview) fs.writeFileSync(sourcePath, addLanguageAlternates(source, englishPath, !route.isNoindex));
       continue;
     }
-    let html = localizeHtml(localizeSuspensionReaperDocument(localizePdArrayDocument(localizeRdrbDocument(localizeOteDocument(localizeModel2022Document(localizeMarketMakerDocument(localizeOrderBookDocument(localizeLiquidityDocument(localizeMitigationDocument(localizeFvgDocument(localizePriceMovementDocument(localizeMasterclassDocument(localizeSwingDocument(localizeStructureDocument(localizeSilverLessonDocument(localizeBreakDocument(source,englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath), englishPath, englishPath===silverLessonPath?{...urdu,...silverLessonTranslations}:Object.values(breakPaths).includes(englishPath)?{...urdu,...breakTranslations}:englishPath===structurePath?{...urdu,...structureTranslations}:englishPath===swingPath?{...urdu,...swingTranslations}:englishPath===liquidityPath?{...urdu,...liquidityTranslations}:englishPath===orderBookPath?{...urdu,...orderBookTranslations}:englishPath===marketMakerPath?{...urdu,...marketMakerTranslations}:englishPath===model2022Path?{...urdu,...model2022Translations}:englishPath===otePath?{...urdu,...oteTranslations}:englishPath===rdrbPath?{...urdu,...rdrbTranslations}:englishPath===pdArrayPath?{...urdu,...pdArrayTranslations}:englishPath===suspensionReaperPath?{...urdu,...suspensionReaperTranslations}:urdu, { preview, indexable: !route.isNoindex, availablePaths: available, nativeReadingRoot: !!auditedReadingRoute(englishPath), onMissing(text) {
+    let html = localizeHtml(localizeDealingRangeDocument(localizeBosChochMssDocument(localizeMssDocument(localizeTrendRangeDocument(localizeSweepHuntDocument(localizeEqhEqlDocument(localizeBslSslDocument(localizeLiquidityRunDocument(localizeTurtleSoupDocument(localizeDolDocument(localizeHtfLiquidityDocument(localizeSuspensionReaperDocument(localizePdArrayDocument(localizeRdrbDocument(localizeOteDocument(localizeModel2022Document(localizeMarketMakerDocument(localizeOrderBookDocument(localizeLiquidityDocument(localizeMitigationDocument(localizeFvgDocument(localizePriceMovementDocument(localizeMasterclassDocument(localizeSwingDocument(localizeStructureDocument(localizeSilverLessonDocument(localizeBreakDocument(source,englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath),englishPath), englishPath, englishPath===silverLessonPath?{...urdu,...silverLessonTranslations}:Object.values(breakPaths).includes(englishPath)?{...urdu,...breakTranslations}:englishPath===structurePath?{...urdu,...structureTranslations}:englishPath===swingPath?{...urdu,...swingTranslations}:englishPath===liquidityPath?{...urdu,...liquidityTranslations}:englishPath===orderBookPath?{...urdu,...orderBookTranslations}:englishPath===marketMakerPath?{...urdu,...marketMakerTranslations}:englishPath===model2022Path?{...urdu,...model2022Translations}:englishPath===otePath?{...urdu,...oteTranslations}:englishPath===htfLiquidityPath?{...urdu,...htfLiquidityTranslations}:englishPath===drawOnLiquidityPath?{...urdu,...drawOnLiquidityTranslations}:englishPath===turtleSoupPath?{...urdu,...turtleSoupTranslations}:englishPath===liquidityRunPath?{...urdu,...liquidityRunTranslations}:englishPath===bslSslPath?{...urdu,...bslSslTranslations}:englishPath===eqhEqlPath?{...urdu,...eqhEqlTranslations}:englishPath===sweepHuntPath?{...urdu,...sweepHuntTranslations}:englishPath===trendRangePath?{...urdu,...trendRangeTranslations}:englishPath===mssPath?{...urdu,...mssTranslations}:englishPath===bosChochMssPath?{...urdu,...bosChochMssTranslations}:englishPath===dealingRangePath?{...urdu,...dealingRangeTranslations}:englishPath===rdrbPath?{...urdu,...rdrbTranslations}:englishPath===pdArrayPath?{...urdu,...pdArrayTranslations}:englishPath===suspensionReaperPath?{...urdu,...suspensionReaperTranslations}:urdu, { preview, indexable: !route.isNoindex, availablePaths: available, nativeReadingRoot: !!auditedReadingRoute(englishPath), onMissing(text) {
       if (!text) return;
       if (!missing.has(text)) missing.set(text, new Set());
       missing.get(text)!.add(englishPath);
@@ -149,7 +182,7 @@ export function generateUrduPages(dist: string, routes: RouteMeta[]) {
   fs.writeFileSync(path.join(dist, 'seo-manifest.json'), JSON.stringify(manifest, null, 2));
   fs.mkdirSync('outputs/urdu-localization', { recursive: true });
   fs.writeFileSync('outputs/urdu-localization/rendered-missing.json', JSON.stringify([...missing].map(([english, pages]) => ({ english, pages: [...pages] })), null, 2));
-  const unchangedReferences = new Set(['LearnSMC', 'RDRB', 'MSS', 'FVG', 'BOS', 'OTE', 'BSL', 'SSL', 'IFVG', 'BISI / SIBI', 'MSS / CHoCH', 'ATR', 'MVRV = 2', 'NUPL = 0.5']);
+  const unchangedReferences = new Set(['LearnSMC', 'RDRB', 'MSS', 'FVG', 'FVGs', 'BOS', 'OTE', 'BSL', 'SSL', 'IFVG', 'BISI / SIBI', 'MSS / CHoCH', 'ATR', 'EQH', 'EQL', 'NQ LRLR', 'MVRV = 2', 'NUPL = 0.5']);
   const unresolved = [...missing.keys()].filter(text => !unchangedReferences.has(text) && !/^(?:https?:\/\/|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}$)/.test(text));
   if (!preview && unresolved.length) throw new Error(`Urdu publication stopped: ${unresolved.length} untranslated text segments. Review outputs/urdu-localization/rendered-missing.json.`);
   console.log(`Urdu ${preview ? 'noindex review' : 'public'} documents generated: ${routes.filter(route => !isEnglishOnlyHistory(new URL(route.canonical).pathname)).length}. Unmatched text segments require review: ${missing.size}.`);

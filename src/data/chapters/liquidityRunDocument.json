@@ -1,0 +1,204 @@
+{
+  "h1": "Liquidity Engineering and Liquidity Runs",
+  "seoTitle": "Liquidity Runs: Sweeps, Context and Limits | LearnSMC",
+  "metaDescription": "Study price moving through visible highs and lows, distinguish a sweep from continuation and explain the limits of claims about hidden order placement.",
+  "quickAnswer": "A liquidity run is a directional price move toward visible highs, lows, or trendline clusters where resting orders may sit. In ICT/SMC study, Low-Resistance Liquidity Runs (LRLR) travel smoothly through unobstructed Fair Value Gaps, while High-Resistance Liquidity Runs (HRLR) grind through dense opposing structure and often stall or reverse.",
+  "takeaways": [
+    "Reference vs. Hidden Inventory: Old highs, Equal Highs (EQH), and trendlines are visible chart references—OHLC candles never reveal exact hidden stop quantities or participant intent.",
+    "LRLR (Open Highway): Low-Resistance Liquidity Runs move rapidly through clean air with expanding Fair Value Gaps and minimal opposing swing barriers.",
+    "HRLR (Traffic Jam): High-Resistance Liquidity Runs fight through cluttered prior swings and overlapping wicks, increasing fakeout and stop-out risk.",
+    "Predefine Rules Before Replay: Set your price tolerance, timeframe, and LRLR/HRLR classification before judging the move—never retroactively.",
+    "Exposure & Cost Discipline: Neither label permits aggressive pyramiding or guarantees a fixed retracement; account for combined multi-entry exposure and slippage."
+  ],
+  "sections": [
+    {
+      "number": 1,
+      "icon": "compass",
+      "title": "1. Highway vs. Traffic Jam: The Liquidity Run Mental Model",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Imagine driving to a destination across two different routes. One is an open highway with zero traffic lights (Low-Resistance Liquidity Run); the other is a crowded city street packed with speed bumps and intersections (High-Resistance Liquidity Run). Even if both routes point toward the same destination, the speed, smoothness, and risk of getting stopped along the way are completely different."
+        },
+        {
+          "type": "callout",
+          "tone": "note",
+          "title": "Plain-English Core Principle",
+          "text": "A visible high or low is a reference point, not a guarantee of hidden order size. Always evaluate both the destination and the resistance along the corridor."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "icon": "layers",
+      "title": "2. The Architecture of Liquidity Engineering (EQH, EQL & Tolerance)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In ICT terminology, similar highs and lows can be treated as possible liquidity references. Define the price tolerance and timeframe before grouping them. A later move beyond that group is observable; the quantity and owners of stops are not visible in OHLC candles."
+        },
+        {
+          "type": "paragraph",
+          "text": "The framework may interpret a failed breakout as inducement or a liquidity sweep. That interpretation does not prove deliberate construction by a single algorithm, a required five-to-fifteen-tick stop hunt or a necessary reversal. Record both continued breakouts and reversals under the same prior reference rule."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "icon": "sparkles",
+      "title": "3. Interactive 3D Hydraulic Corridor: LRLR vs. HRLR Flow",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Explore the 3D Hydraulic Liquidity Corridor below. Switch between LRLR Open Highway, HRLR Obstacle Corridor, and Trendline Anchor Mirage to observe how structural barriers alter price delivery."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "icon": "trending-up",
+      "title": "4. Trendline Phantom Liquidity: Why Drawn Lines Do Not Show Stops",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A trendline is drawn using selected anchors. Traders may place stops near it, but the line does not reveal a staircase of actual resting orders or prove that institutions created it."
+        },
+        {
+          "type": "paragraph",
+          "text": "When price crosses the line, new orders, triggered stops, cancellations and changing quotes may all matter. A candle alone cannot identify the dominant cause. Choose the anchors before replay and compare breaks that continue with breaks that fail."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "icon": "play-circle",
+      "title": "5. Animated Sequence: LRLR Displacement vs. HRLR Grinding",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Play or step through the animated sequence below to compare a clean Low-Resistance Liquidity Run (expanding FVGs toward EQH) against a High-Resistance Liquidity Run chopping through multiple opposing blocks."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "icon": "calculator",
+      "title": "6. Low-Resistance vs. High-Resistance Corridor & Exposure Calculator",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Low- and high-resistance liquidity runs are framework descriptions of relatively direct or obstructed price delivery. The classification depends on selected reference levels, timeframe and how overlap is measured."
+        },
+        {
+          "type": "paragraph",
+          "text": "Define that classification before judging the later move. Neither label establishes a fixed retracement percentage, permission to pyramid aggressively or a tested win probability. A direct historical path can still be difficult to execute, and multiple entries increase combined exposure. Include costs and failures when comparing the two groups."
+        },
+        {
+          "type": "table",
+          "rows": [
+            ["Dimension", "Low-Resistance Liquidity Run (LRLR)", "High-Resistance Liquidity Run (HRLR)"],
+            ["Corridor Structure", "Minimal opposing swings; clean FVG air", "Dense opposing swings, OBs, and overlapping wicks"],
+            ["Candle Momentum", "Strong displacement bodies", "Hesitant, slow, two-sided grinding"],
+            ["Typical Outcome Context", "Smooth continuation toward target pool", "Higher sweep-and-reversal or chop risk"],
+            ["Exposure Rule", "Respect single-trade risk limits", "Avoid pyramiding; wait for clear MSS"]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "icon": "git-compare",
+      "title": "7. Distinguishing a Liquidity Sweep from Sustained Continuation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "When price reaches an engineered high or low, record both outcomes under the same pre-defined rule: a wick excursion closing back inside the range with lower-timeframe MSS suggests a sweep, whereas sustained body closes holding beyond the extreme indicate continuation."
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "icon": "clock",
+      "title": "8. Session Engineering Flow: Asia Consolidation → London → NY AM",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Intraday liquidity engineering frequently unfolds across session boundaries: tight Asian Range highs/lows form overnight references, London Open sweeps one side, and New York AM drives a Low-Resistance Liquidity Run toward the opposing session extreme."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "icon": "crosshair",
+      "title": "9. Worked Blueprints: NQ LRLR Continuation vs. EUR/USD HRLR Sweep",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Compare two synthetic study blueprints side by side: an unobstructed NQ bullish LRLR expanding through clean FVGs toward Equal Highs, and a choppy EUR/USD HRLR grinding into PDH before reversing."
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "icon": "alert-triangle",
+      "title": "10. Common Mistakes in Liquidity Run Studies (Stick-Figure Comic)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Avoid the three recurring traps illustrated below: pyramiding aggressively on a single LRLR label, treating a drawn trendline as verified stop inventory, and calling every breakout a manipulated stop hunt."
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "icon": "check-square",
+      "title": "11. Pre-Replay Liquidity Run 6-Gate Checklist (Interactive)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Verify all six tolerance, anchor, LRLR/HRLR classification, exposure, and invalidation gates below before logging any liquidity run study."
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "icon": "help-circle",
+      "title": "12. Frequently Asked Questions (Liquidity Engineering & Runs)",
+      "blocks": []
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is a liquidity run in trading?",
+      "answer": "A liquidity run is a directional price move toward visible highs, lows, or equal-level clusters where stop-losses and breakout orders may rest, classified as Low-Resistance (LRLR) or High-Resistance (HRLR) depending on path obstacles."
+    },
+    {
+      "question": "What is the difference between LRLR and HRLR?",
+      "answer": "LRLR (Low-Resistance Liquidity Run) moves swiftly through an unobstructed corridor with clean Fair Value Gaps, while HRLR (High-Resistance Liquidity Run) grinds slowly through dense opposing swings and overlapping wicks."
+    },
+    {
+      "question": "Does liquidity engineering prove that institutions created a pattern on purpose?",
+      "answer": "No; liquidity engineering is an interpretive framework label. OHLC candles show price breaks, not hidden order quantities, owner identities, or proof of deliberate manipulation."
+    },
+    {
+      "question": "Why is trendline liquidity called phantom liquidity?",
+      "answer": "A trendline is drawn from selected anchors; while traders may place stops near it, the line itself does not measure actual resting stop inventory or guarantee a reversal when crossed."
+    },
+    {
+      "question": "How do you distinguish a liquidity sweep from a continued breakout?",
+      "answer": "Record both under the same pre-defined reference rule: a sweep pierces the extreme and closes back inside with an opposing shift, while continuation sustains body closes beyond the level."
+    },
+    {
+      "question": "Does an LRLR label allow aggressive pyramiding or fixed retracement rules?",
+      "answer": "No; neither LRLR nor HRLR establishes a fixed retracement percentage, a tested win probability, or permission to pyramid aggressively—multiple entries increase combined exposure."
+    },
+    {
+      "question": "How should you define Equal Highs (EQH) and Equal Lows (EQL) before replay?",
+      "answer": "State your exact price tolerance (in ticks or pips) and timeframe beforehand so you do not cherry-pick highs or lows after seeing the outcome."
+    },
+    {
+      "question": "Which Killzones produce the cleanest Low-Resistance Liquidity Runs?",
+      "answer": "London Open (02:00–05:00 AM NY) and New York AM (08:30–11:00 AM NY) typically provide higher participation than dead mid-session hours."
+    }
+  ]
+}

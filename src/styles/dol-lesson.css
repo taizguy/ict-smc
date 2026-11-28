@@ -1,0 +1,346 @@
+/* Chapter 23 (ID 1023) — Draw on Liquidity: Choosing the Next Target */
+.dol-document {
+  --dol-ink: var(--rr-ink);
+  --dol-muted: var(--rr-muted);
+  --dol-border: var(--rr-line);
+  --dol-surface: color-mix(in srgb, var(--rr-accent) 4%, var(--rr-paper));
+  --dol-accent: #7c3aed;
+  --dol-emerald: #059669;
+  --dol-crimson: #e11d48;
+  --dol-amber: #d97706;
+  --dol-sky: #0284c7;
+}
+
+html[data-theme='dark'] .dol-document {
+  --dol-accent: #a78bfa;
+  --dol-emerald: #34d399;
+  --dol-crimson: #fb7185;
+  --dol-amber: #fbbf24;
+  --dol-sky: #38bdf8;
+}
+
+.dol-sec-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: clamp(1.22rem, 1.8vw, 1.46rem);
+  font-weight: 650;
+  line-height: 1.35;
+  margin-block: 2.3rem 1rem;
+  color: var(--dol-ink);
+}
+
+.dol-sec-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--dol-accent) 13%, transparent);
+  color: var(--dol-accent);
+  flex-shrink: 0;
+}
+
+.dol-formula-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1rem 1.15rem;
+  border-radius: 10px;
+  border: 1px solid var(--dol-border);
+  background: var(--dol-surface);
+  margin-block: 1.25rem;
+}
+
+.dol-formula-box code {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  white-space: normal;
+  color: var(--dol-ink);
+}
+
+.dol-toc {
+  margin-block: 1.5rem 2rem;
+  border: 1px solid var(--dol-border);
+  border-radius: 10px;
+  background: var(--dol-surface);
+}
+
+.dol-toc summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.1rem;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  font-size: 0.94rem;
+}
+
+.dol-toc summary::-webkit-details-marker {
+  display: none;
+}
+
+.dol-toc-summary-left,
+.dol-toc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.dol-toc-badge {
+  font-size: 0.82rem;
+  color: var(--dol-muted);
+  font-weight: 500;
+}
+
+.dol-toc ol {
+  margin: 0;
+  padding: 0.25rem 1.25rem 1.1rem 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.45rem 1.25rem;
+}
+
+.dol-toc ol a {
+  font-size: 0.88rem;
+  color: var(--dol-muted);
+  text-decoration: none;
+}
+
+.dol-toc ol a:hover {
+  color: var(--dol-accent);
+  text-decoration: underline;
+}
+
+.dol-callout {
+  margin-block: 1.25rem;
+  padding: 1rem 1.15rem;
+  border-radius: 10px;
+  border: 1px solid var(--dol-border);
+  border-inline-start: 4px solid var(--dol-accent);
+  background: var(--dol-surface);
+}
+
+.dol-callout-warn {
+  border-inline-start-color: var(--dol-amber);
+  background: color-mix(in srgb, var(--dol-amber) 7%, var(--rr-paper));
+}
+
+.dol-callout-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
+  font-size: 0.95rem;
+}
+
+.dol-callout p {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.dol-styled-list {
+  margin-block: 1rem 1.25rem;
+  padding-inline-start: 1.35rem;
+}
+
+.dol-figure {
+  margin: 1.5rem 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--dol-border);
+  border-radius: 12px;
+  background: var(--dol-surface);
+}
+
+.dol-figure-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+}
+
+.dol-head-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 650;
+  font-size: 0.96rem;
+  color: var(--dol-ink);
+}
+
+.dol-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--dol-accent) 14%, transparent);
+  color: var(--dol-accent);
+}
+
+.dol-controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.dol-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  min-height: 36px;
+  padding: 0.35rem 0.78rem;
+  border-radius: 8px;
+  border: 1px solid var(--dol-border);
+  background: var(--rr-paper);
+  color: var(--dol-ink);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dol-btn.is-active {
+  border-color: var(--dol-accent);
+  background: color-mix(in srgb, var(--dol-accent) 14%, var(--rr-paper));
+  color: var(--dol-accent);
+}
+
+.dol-btn.is-primary {
+  background: var(--dol-accent);
+  border-color: var(--dol-accent);
+  color: #ffffff;
+}
+
+html[data-theme='dark'] .dol-btn.is-primary {
+  color: #1e1b4b;
+}
+
+.dol-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.dol-canvas-host {
+  width: 100%;
+  min-height: 340px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--dol-border);
+  background: radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--dol-accent) 10%, var(--rr-paper)), var(--rr-paper));
+}
+
+.dol-caption {
+  margin-top: 0.7rem;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--dol-muted);
+}
+
+.dol-calc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.dol-calc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.82rem;
+  color: var(--dol-muted);
+}
+
+.dol-calc-field input,
+.dol-calc-field select {
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--dol-border);
+  background: var(--rr-paper);
+  color: var(--dol-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.dol-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+}
+
+.dol-stat {
+  padding: 0.65rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--dol-border);
+  background: var(--rr-paper);
+}
+
+.dol-stat small {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--dol-muted);
+}
+
+.dol-stat strong {
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--dol-ink);
+}
+
+.dol-interactive-check {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1rem 1.15rem;
+  border-radius: 10px;
+  border: 1px solid var(--dol-border);
+  background: var(--dol-surface);
+  margin-block: 1.25rem;
+}
+
+.dol-interactive-check label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  cursor: pointer;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.dol-check-status {
+  margin: 0.35rem 0 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--dol-accent);
+}
+
+.dol-sources-box {
+  margin-top: 1.5rem;
+  padding: 1rem 1.15rem;
+  border-radius: 10px;
+  border: 1px solid var(--dol-border);
+  background: var(--dol-surface);
+}
+
+.dol-sources-box h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1.02rem;
+  color: var(--dol-ink);
+}
+
+.dol-sources-box ul {
+  margin: 0;
+  padding-inline-start: 1.25rem;
+}
+
+.dol-sources-box li {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 0.45rem;
+}

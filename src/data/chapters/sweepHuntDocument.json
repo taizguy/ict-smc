@@ -1,0 +1,168 @@
+{
+  "h1": "Liquidity Sweep or Stop Hunt? What You Can Observe",
+  "seoTitle": "Liquidity Sweep vs Stop Hunt: Observable Evidence | LearnSMC",
+  "metaDescription": "Compare liquidity sweeps and stop hunts using observable order-book mechanics, stop-market slippage, and candle-wick evidence instead of guesswork.",
+  "quickAnswer": "On a price chart, a liquidity sweep and a stop hunt describe the same observable event: price spikes beyond a prior high or low, triggers resting stop orders, and leaves a wick if it snaps back inside—though candlesticks alone never prove deliberate intent.",
+  "takeaways": [
+    "A candlestick chart shows price excursion, wick rejection, and closing location—it never proves who pushed price or whether a spike was intentional manipulation.",
+    "Triggered stop-loss orders execute as market orders; when many stops trigger together in a thin book, rapid slippage exaggerates the candle wick.",
+    "In SMC study, 'liquidity sweep' describes the mechanical absorption of resting orders, whereas 'stop hunt' frames the same move as targeting retail stops.",
+    "Evaluating sweeps objectively requires checking candle-body closes, session timing, and slippage buffer rules before replay."
+  ],
+  "sections": [
+    {
+      "number": 1,
+      "icon": "compass",
+      "title": "1. Mind-Reading vs. Tape Evidence: Why the Distinction Matters",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "When a sharp wick pierces a clean support or resistance level, stops out dozens of traders, and snaps back within minutes, traders often shout 'stop hunt!' While the frustration is real, blaming an invisible villain does not help you read the next chart."
+        },
+        {
+          "type": "paragraph",
+          "text": "Separating observable evidence from unverified stories keeps your analysis grounded. You can measure the exact excursion past the reference level, the candle-body close, and the resulting structure shift—without pretending a 5-minute candle reveals hidden order-book motives."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "icon": "layers",
+      "title": "2. Liquidity Sweep vs. Stop Hunt: Observable vs. Unobserved Matrix",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            ["Dimension", "Liquidity Sweep (Mechanical Lens)", "Stop Hunt (Intent Lens)", "What OHLC Actually Proves"],
+            ["Core Meaning", "Price pierces a reference extreme and absorbs resting flow", "Claim that large players deliberately pushed price to trigger stops", "Only that price traded past the level and returned"],
+            ["Order-Book Driver", "Clustered stop-losses convert to market orders on trigger", "Assumed predatory targeting by dealers or funds", "Market-order cascades and thin depth explain fast spikes"],
+            ["Chart Footprint", "Wick excursion beyond high/low + close back inside", "Long spike through obvious support/resistance", "Exact tick excursion and close location are 100% observable"]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "icon": "sparkles",
+      "title": "3. Interactive 3D Order-Book Sweep & Slippage Engine",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Explore the 3D Order-Book Sweep Engine below. Switch between a Clean Wick Sweep, a Thin-Book Slippage Cascade, and a True Breakout Acceptance to see how resting limit depth changes the shape of a spike."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "icon": "crosshair",
+      "title": "4. Why Stop-Market Cascades Create Long Wicks & Slippage",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A standard stop-loss order is a stop-market order: once price touches your trigger, it converts into an immediate market order that fills at whatever opposing limit orders exist. If many stops sit at the same Equal High or Equal Low while opposing limit depth is thin, price gaps several ticks before absorbing—printing a sharp candle wick."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "icon": "play-circle",
+      "title": "5. Animated Sequence: Stop Cascade → Absorption → Reclaim",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Step through the four-stage sequence below to watch how clustered stops convert into urgent market orders, sweep through thin book levels, and snap back inside once resting absorption finishes."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "icon": "calculator",
+      "title": "6. Interactive Wick Excursion & Slippage Buffer Calculator",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Measure whether a candle spike qualifies as a Sweep & Reclaim or Breakout Acceptance, and calculate how many ticks of slippage buffer your stop placement requires."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "icon": "git-compare",
+      "title": "7. Sweep-and-Reclaim vs. News-Driven Volatility Spike",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Not every fast wick is a clean liquidity sweep setup. During scheduled releases like CPI, NFP, or FOMC, market makers widen spreads and pull resting limit orders, causing erratic two-sided wicks that can invalidate both sides."
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "icon": "clock",
+      "title": "8. When Sweeps Cluster: Session Opens & Macro Windows",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Observable sweeps cluster around liquidity transitions: the London Open (02:00–05:00 ET), the New York 08:30 ET macro release, and the 09:30 ET equity cash open—when overnight orders meet fresh session volume."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "icon": "book-open",
+      "title": "9. Worked Blueprints: ES Open Sweep vs. FX News Whipsaw",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Compare two synthetic blueprints: a clean ES futures sweep below pre-market lows at 09:32 ET that closes back inside, versus an erratic CPI announcement spike that whipsaws both highs and lows."
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "icon": "alert-triangle",
+      "title": "10. Common Mistakes in Calling Moves 'Stop Hunts'",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Avoid blaming stop hunts for poor risk placement right on obvious EQH/EQL, confusing normal trend breakouts with failed sweeps, or risking tight stops during high-impact news releases."
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "icon": "check-square",
+      "title": "11. Pre-Replay Sweep Observation 6-Gate Checklist (Interactive)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Verify all six observable evidence, slippage, and close-confirmation gates below before logging any sweep study."
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "icon": "help-circle",
+      "title": "12. Frequently Asked Questions (Liquidity Sweep vs. Stop Hunt)",
+      "blocks": []
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is the difference between a liquidity sweep and a stop hunt?",
+      "answer": "They usually refer to the same chart event. 'Liquidity sweep' emphasizes the market mechanics of absorbing resting orders beyond a level, while 'stop hunt' implies intentional targeting of retail stop-losses—something candlesticks alone cannot prove."
+    },
+    {
+      "question": "Can you prove a stop hunt from a candlestick chart?",
+      "answer": "No. OHLC candles prove price spiked past a level and closed back inside, but they never reveal participant identity, motives, or exact resting order-book sizes."
+    },
+    {
+      "question": "Why do stop-losses experience slippage during a liquidity sweep?",
+      "answer": "Standard stop-losses turn into market orders when triggered. If many stops fire simultaneously in a thin order book, fills occur at worse prices, widening the wick."
+    },
+    {
+      "question": "How do traders avoid getting caught in routine liquidity sweeps?",
+      "answer": "By avoiding stop placement directly on obvious Equal Highs/Lows, using wider close-based invalidation or buffer ticks, and checking scheduled news times."
+    }
+  ]
+}

@@ -1,0 +1,304 @@
+/* Chapter 15 (ID 1015) — BOS vs CHoCH vs MSS: A Side-by-Side Guide */
+.bcm-document {
+  --bcm-ink: var(--rr-ink);
+  --bcm-muted: var(--rr-muted);
+  --bcm-border: var(--rr-line);
+  --bcm-surface: color-mix(in srgb, var(--rr-accent) 4%, var(--rr-paper));
+  --bcm-accent: #9333ea;
+  --bcm-emerald: #059669;
+  --bcm-crimson: #e11d48;
+  --bcm-amber: #d97706;
+}
+
+html[data-theme='dark'] .bcm-document {
+  --bcm-accent: #c084fc;
+  --bcm-emerald: #34d399;
+  --bcm-crimson: #fb7185;
+  --bcm-amber: #fbbf24;
+}
+
+.bcm-sec-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: clamp(1.22rem, 1.8vw, 1.46rem);
+  font-weight: 650;
+  line-height: 1.35;
+  margin-block: 2.3rem 1rem;
+  color: var(--bcm-ink);
+}
+
+.bcm-sec-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--bcm-accent) 13%, transparent);
+  color: var(--bcm-accent);
+  flex-shrink: 0;
+}
+
+.bcm-formula-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1rem 1.15rem;
+  border-radius: 10px;
+  border: 1px solid var(--bcm-border);
+  background: var(--bcm-surface);
+  margin-block: 1.25rem;
+}
+
+.bcm-formula-box code {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  white-space: normal;
+  color: var(--bcm-ink);
+}
+
+.bcm-toc {
+  margin-block: 1.5rem 2rem;
+  border: 1px solid var(--bcm-border);
+  border-radius: 10px;
+  background: var(--bcm-surface);
+}
+
+.bcm-toc summary {
+  cursor: pointer;
+  padding: 0.85rem 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--bcm-ink);
+}
+
+.bcm-toc-list {
+  margin: 0;
+  padding: 0 1.25rem 1rem 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.45rem 1.2rem;
+  font-size: 0.92rem;
+}
+
+.bcm-toc-list a {
+  color: var(--bcm-muted);
+  text-decoration: none;
+}
+
+.bcm-list {
+  padding-inline-start: 1.35rem;
+  margin-block: 0.9rem 1.25rem;
+}
+
+.bcm-list li {
+  margin-block: 0.45rem;
+  line-height: 1.8;
+}
+
+.bcm-table-wrap {
+  overflow-x: auto;
+  margin-block: 1.35rem;
+  border: 1px solid var(--bcm-border);
+  border-radius: 10px;
+}
+
+.bcm-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  text-align: start;
+}
+
+.bcm-table th,
+.bcm-table td {
+  padding: 0.72rem 0.9rem;
+  border-bottom: 1px solid var(--bcm-border);
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+.bcm-table th {
+  background: var(--bcm-surface);
+  font-weight: 650;
+  color: var(--bcm-ink);
+}
+
+.bcm-table tr:last-child td {
+  border-bottom: none;
+}
+
+.bcm-figure {
+  margin: 1.5rem 0 1.85rem;
+  padding: 1rem;
+  border: 1px solid var(--bcm-border);
+  border-radius: 12px;
+  background: var(--bcm-surface);
+}
+
+.bcm-figure-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  margin-bottom: 0.85rem;
+}
+
+.bcm-head-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 650;
+  font-size: 0.96rem;
+  color: var(--bcm-ink);
+}
+
+.bcm-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--bcm-accent) 32%, transparent);
+  background: color-mix(in srgb, var(--bcm-accent) 10%, transparent);
+  color: var(--bcm-accent);
+}
+
+.bcm-controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.85rem;
+}
+
+.bcm-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.42rem 0.78rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid var(--bcm-border);
+  background: var(--rr-paper);
+  color: var(--bcm-ink);
+  cursor: pointer;
+}
+
+.bcm-btn.is-active,
+.bcm-btn.is-primary {
+  background: var(--bcm-accent);
+  border-color: var(--bcm-accent);
+  color: #ffffff;
+}
+
+.bcm-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bcm-canvas-host {
+  width: 100%;
+  min-height: 270px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--bcm-border);
+  background: color-mix(in srgb, var(--bcm-ink) 3%, var(--rr-paper));
+}
+
+.bcm-caption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--bcm-muted);
+}
+
+.bcm-comic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.75rem;
+}
+
+.bcm-comic-panel {
+  border: 1px solid var(--bcm-border);
+  border-radius: 10px;
+  padding: 0.7rem;
+  background: var(--rr-paper);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.bcm-comic-panel strong {
+  font-size: 0.85rem;
+  color: var(--bcm-ink);
+}
+
+.bcm-comic-panel p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.48;
+  color: var(--bcm-muted);
+}
+
+.bcm-calc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.bcm-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.82rem;
+  color: var(--bcm-muted);
+}
+
+.bcm-field select {
+  padding: 0.48rem 0.62rem;
+  border-radius: 8px;
+  border: 1px solid var(--bcm-border);
+  background: var(--rr-paper);
+  color: var(--bcm-ink);
+  font-size: 0.9rem;
+}
+
+.bcm-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bcm-check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--bcm-border);
+  background: var(--rr-paper);
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--bcm-ink);
+}
+
+.bcm-meter-track {
+  height: 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bcm-ink) 10%, transparent);
+  overflow: hidden;
+  margin-top: 0.75rem;
+}
+
+.bcm-meter-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--bcm-emerald);
+  transition: width 0.25s ease;
+}

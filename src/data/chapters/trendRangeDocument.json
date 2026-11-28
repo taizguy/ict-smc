@@ -1,0 +1,142 @@
+{
+  "h1": "Trends, Ranges and Transitions",
+  "seoTitle": "Trends, Ranges & Transitions: Market Phases | LearnSMC",
+  "metaDescription": "Learn how to classify bullish trends, bearish trends, consolidation ranges, and structural transitions on any timeframe before choosing setups.",
+  "quickAnswer": "Markets spend their time in three structural states—bullish trends (HH/HL), bearish trends (LH/LL), and sideways ranges (EQH/EQL)—connected by brief transition phases when price closes beyond an established boundary.",
+  "takeaways": [
+    "Every timeframe sits in either a trend (directional HH/HL or LH/LL), a range (contained between two boundaries), or a transition.",
+    "Range strategies fail in strong trends, and trend-continuation entries get chopped up inside tight consolidation ranges.",
+    "A transition starts with an early warning (a break of an opposing internal or external swing) and only becomes a new trend when follow-through confirms.",
+    "Always classify the higher-timeframe phase before zooming into lower-timeframe entries."
+  ],
+  "sections": [
+    {
+      "number": 1,
+      "icon": "compass",
+      "title": "1. Why Market Phase Determines Which Playbook Works",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Most trading frustration happens when a trader applies a trend-continuation rule inside a sideways box—or tries to fade range extremes during a one-way expansion. Before marking Fair Value Gaps or Order Blocks, you must answer a simpler question: is the market trending, ranging, compressing in tight consolidation, or transitioning?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Notice the practical difference between a wide Range and tight Consolidation: in a wide horizontal range (for example, $100 support to $120 resistance), traders study boundary sweeps at the edges. In a tight mid-trend consolidation (coiling inside a narrow flag), price is gathering energy and chasing mid-box swings invites whipsaw—patience for a decisive breakout close works better. Across longer cycles, these states echo Wyckoff's four stages: Accumulation (bottom range), Mark-Up (bullish trend), Distribution (top range), and Mark-Down (bearish trend)."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "icon": "layers",
+      "title": "2. The Three Core Phases: Bullish, Bearish & Consolidation",
+      "blocks": [
+        {
+          "type": "table",
+          "rows": [
+            ["Phase", "Swing Sequence", "Primary Behavior", "Key Focus"],
+            ["Bullish Trend", "Higher Highs (HH) + Higher Lows (HL)", "Impulsive rallies followed by shallow pullbacks", "Discount pullbacks & overhead BSL targets"],
+            ["Bearish Trend", "Lower Highs (LH) + Lower Lows (LL)", "Impulsive sell-offs followed by relief bounces", "Premium rallies & underneath SSL targets"],
+            ["Consolidation Range", "Contained Highs + Contained Lows", "Mean-reverting swings between ceiling and floor", "Boundary sweeps (EQH/EQL) rather than mid-range entries"]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "icon": "sparkles",
+      "title": "3. Interactive 3D Market-Phase State Machine",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Explore the 3D State Machine below to see how Bullish Staircases, Consolidation Boxes, and Transition Breaks differ structurally in space."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "icon": "play-circle",
+      "title": "4. Animated Sequence: Range → Transition → New Trend",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Step through the four phases below to watch how a market compresses inside a range, breaks out with displacement, retests the broken boundary, and establishes a new directional sequence."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "icon": "calculator",
+      "title": "5. Interactive Market-Phase Classifier",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Select the current swing-high direction, swing-low direction, and boundary-close status to classify the active phase objectively."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "icon": "git-compare",
+      "title": "6. Healthy Retracement vs. Structural Transition",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A deep pullback inside an uptrend can look scary on a 1-minute chart while the 4-hour Higher Low remains completely intact. Comparing internal retracements against the protected external swing prevents premature reversal calls."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "icon": "book-open",
+      "title": "7. Worked Blueprints: NQ Trend Expansion vs. Asia Range Box",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Compare two synthetic chart studies: an NQ New York morning expansion printing clean HH/HL steps, and an overnight Asian consolidation rotating between fixed boundaries."
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "icon": "alert-triangle",
+      "title": "8. Common Mistakes in Reading Market Phases",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Avoid chasing breakouts in the middle of a range, calling a trend reversal before a boundary close confirms, or ignoring higher-timeframe phase alignment."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "icon": "check-square",
+      "title": "9. Pre-Replay Phase Classification 6-Gate Checklist",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Confirm each phase-classification gate below before choosing a continuation or reversal model."
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "icon": "help-circle",
+      "title": "10. Frequently Asked Questions (Trends, Ranges & Transitions)",
+      "blocks": []
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do you tell if a market is trending or ranging?",
+      "answer": "Check the sequence of confirmed 3-candle swings: rising highs and rising lows (HH/HL) define an uptrend, falling highs and lows (LH/LL) define a downtrend, and overlapping swings contained between two boundaries define a range."
+    },
+    {
+      "question": "What marks a transition between a range and a trend?",
+      "answer": "A transition begins when candle bodies close decisively beyond a prior range boundary or opposing swing extreme, followed by a pullback that holds rather than snapping back inside."
+    },
+    {
+      "question": "Can a market be in a range on one timeframe and a trend on another?",
+      "answer": "Yes. A 15-minute chart can consolidate sideways for hours while sitting as a single pullback candle inside a bullish Daily trend."
+    }
+  ]
+}

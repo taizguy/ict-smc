@@ -97,13 +97,24 @@ const REBUILT_CONTENT_FILE_BY_ID: Record<number, string> = {
   7: 'SwingDocumentContent.tsx',
   9: 'BreakDocumentContent.tsx',
   10: 'BreakDocumentContent.tsx',
+  11: 'MssContent.tsx',
   13: 'FvgDocumentContent.tsx',
+  18: 'LiquidityRunContent.tsx',
   33: 'MarketMakerContent.tsx',
   36: 'Model2022Content.tsx',
   55: 'SuspensionReaperContent.tsx',
   56: 'RdrbContent.tsx',
   59: 'PdArrayContent.tsx',
+  60: 'TurtleSoupContent.tsx',
   1010: 'StructureDocumentContent.tsx',
+  1011: 'TrendRangeContent.tsx',
+  1015: 'BosChochMssContent.tsx',
+  1016: 'DealingRangeContent.tsx',
+  1017: 'BslSslContent.tsx',
+  1018: 'EqhEqlContent.tsx',
+  1019: 'SweepHuntContent.tsx',
+  1023: 'DolContent.tsx',
+  1024: 'HtfLiquidityContent.tsx',
   1031: 'MitigationDocumentContent.tsx',
   1034: 'OteContent.tsx',
   1064: 'SilverLessonContent.tsx',
@@ -257,7 +268,7 @@ function generatePrerenderedHtml(meta: RouteMeta): string {
   const readingHeader=isReading?renderToStaticMarkup(createElement(Header,{documentPath:readingPath,activeTab:readingChapter?'chapter_room':'curriculum',setActiveTab:()=>{},onOpenSearch:()=>{},onOpenMentorSpotlight:()=>{},onOpenWelcomeIntro:()=>{},progressPercent:0})):'';
   const readingTag=isDocumentLesson(readingChapter?.id)?'div':'main';
   const readingId=readingTag==='main'?' id="main-content"':'';
-  const readingDocument=isReading?`<div id="static-content" class="reading-site"><a class="skip-link" href="#main-content">Skip to main content</a>${readingHeader}<${readingTag}${readingId} class="reading-main" tabindex="-1">${readingBody}</${readingTag}>${renderToStaticMarkup(createElement(SiteFooter,{playground:false,showRisk:!readingChapter||![1,3,4,7,9,10,13,33,36,55,56,59,1010,1031,1034,1064].includes(readingChapter.id)}))}</div>`:'';
+  const readingDocument=isReading?`<div id="static-content" class="reading-site"><a class="skip-link" href="#main-content">Skip to main content</a>${readingHeader}<${readingTag}${readingId} class="reading-main" tabindex="-1">${readingBody}</${readingTag}>${renderToStaticMarkup(createElement(SiteFooter,{playground:false,showRisk:!readingChapter||![1,3,4,7,9,10,11,13,18,33,36,55,56,59,60,1010,1011,1015,1016,1017,1018,1019,1023,1024,1031,1034,1064].includes(readingChapter.id)}))}</div>`:'';
   const masterclassDocument=(!!masterclassCollectionPage(readingPath)||!!masterclassJournalForPath(readingPath))?`<div id="static-content" class="mc-collection-document"><a class="skip-link" href="#main-content">Skip to main content</a>${renderToStaticMarkup(createElement(Header,{documentPath:readingPath,activeTab:'masterclass',setActiveTab:()=>{},onOpenSearch:()=>{},onOpenMentorSpotlight:()=>{},onOpenWelcomeIntro:()=>{},progressPercent:0}))}<main id="main-content" tabindex="-1">${meta.bodyHtml}</main>${renderToStaticMarkup(createElement(SiteFooter,{playground:false}))}</div>`:'';
   const auditedDocument=auditedReadingRoute(readingPath)?renderAuditedReading(readingPath,meta.heading):'';
   if(auditedDocument){html=html.replace('<html ', '<html data-reading-enhancement="true" ');if(readingPath.startsWith('/tools/glossary/')||readingPath.startsWith('/tools/chartlab/')||readingPath.startsWith('/tools/delivery-suite/')||['/tools/chartlab/','/tools/delivery-suite/','/tools/simulator/','/tools/backtest/'].includes(readingPath)||/^\/tools\/(?:simulator|backtest)\/[^/]+\/$/.test(readingPath))html=html.replace(/<div id="app-startup"[^>]*>[\s\S]*?<\/div>/,'');}

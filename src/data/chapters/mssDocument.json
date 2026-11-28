@@ -1,0 +1,175 @@
+{
+  "h1": "Market Structure Shift: Context and Rules",
+  "seoTitle": "Market Structure Shift (MSS): Context and Rules | LearnSMC",
+  "metaDescription": "Learn how a Market Structure Shift (MSS) works with displacement, liquidity sweeps, FVG entries, and why an intraday shift is not a multi-day forecast.",
+  "quickAnswer": "A Market Structure Shift (MSS) marks a break of a previously identifiable swing high or low—often studied alongside a prior liquidity sweep, energetic displacement, and a Fair Value Gap—whose exact close rule and timeframe scale must be defined before replay.",
+  "takeaways": [
+    "Always identify the target swing high/low and timeframe before price reaches it; never pick a new swing after seeing the outcome.",
+    "A wick-only break and a candle-close break are distinct observations—label your close rule explicitly.",
+    "Displacement should be measured relative to recent candles rather than described vaguely.",
+    "An intraday Market Structure Shift can produce a local leg without ending the higher-timeframe trend."
+  ],
+  "sections": [
+    {
+      "number": 1,
+      "icon": "compass",
+      "title": "1. What Is a Market Structure Shift (MSS)?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "When price sweeps a prior liquidity level and reverses energetically through the most recent opposing swing, SMC traders study that transition as a Market Structure Shift (MSS). Unlike a routine trend continuation, an MSS focuses on whether momentum has shifted directionally on the selected timeframe."
+        },
+        {
+          "type": "table",
+          "rows": [
+            ["Stage (Illustrative)", "Bullish MSS Example", "Bearish MSS Example"],
+            ["1. Prior Liquidity Sweep", "Drops to $90 (sweeps SSL below prior low)", "Rallies to $170 (sweeps BSL above prior high)"],
+            ["2. Reference Swing", "Last Lower High sits at $100", "Last Higher Low sits at $150"],
+            ["3. Displacement MSS", "Strong candle closes above $100 at $105", "Strong candle closes below $150 at $140"],
+            ["4. FVG / OB & Risk", "Retrace into $98–$101 FVG; stop beyond $90", "Retrace into $148–$152 FVG; stop beyond $170"]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "icon": "layers",
+      "title": "2. A Defined MSS Study Checklist",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Start with an identifiable swing and a stated timeframe. A bullish candidate breaks a selected prior swing high; a bearish candidate breaks a selected prior swing low. Record whether the rule requires a candle close. A wick-only break is a different observation, not proof of a particular participant’s intent."
+        },
+        {
+          "type": "paragraph",
+          "text": "Assess displacement relative to recent candles rather than using words such as violent without a definition. A prior sweep, higher-timeframe reference and an FVG can be additional filters in a chosen execution model. Do not present this combined checklist as the universal definition used in every ICT lecture."
+        },
+        {
+          "type": "paragraph",
+          "text": "The broken swing must have been identifiable before the break. If a three-candle pivot needs a right-hand candle, wait for that candle to complete. A lower-timeframe break can occur inside a higher-timeframe continuation; neither the label nor the filter set guarantees a reversal."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "icon": "sparkles",
+      "title": "3. Interactive 3D Sweep-to-MSS Displacement Engine",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Explore the 3D MSS Engine below to compare a Bullish Sweep + MSS + FVG, a Bearish Sweep + MSS, and an Unconfirmed Intraday Pullback."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "icon": "crosshair",
+      "title": "4. The Complete Mechanical MSS Execution Blueprint",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "For a paper study of the illustrated model, select the liquidity reference and the nearby structure level before price reaches them. Record the timeframe and the candle-close condition. Observe whether the break shows displacement relative to surrounding candles; do not choose a new swing after seeing the result."
+        },
+        {
+          "type": "paragraph",
+          "text": "If a completed FVG follows, an edge entry and a midpoint entry are separate execution variants. Neither is automatically conservative or superior. A deeper order may improve the planned ratio but remain unfilled, while a tighter stop may be reached more often. Record the fill assumption explicitly."
+        },
+        {
+          "type": "paragraph",
+          "text": "Choose the invalidation and target before entry. The sweep extreme can be one candidate for invalidation in this study, but the actual stop distance, size increment and costs depend on the instrument. Measure the outcome after spread, fees and slippage; do not infer an executable trade from the finished chart alone."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "icon": "play-circle",
+      "title": "5. Animated Sequence: Liquidity Sweep → MSS → FVG Return",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Step through the four-stage sequence below to separate the initial sweep, the swing break, the completed Fair Value Gap, and the FVG retest."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "icon": "calculator",
+      "title": "6. Interactive MSS Rule & Displacement Calculator",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Test how prior sweep status, displacement multiple, close condition, and FVG presence score an MSS candidate objectively."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "icon": "git-compare",
+      "title": "7. An Intraday Shift Is Not a Multi-Day Forecast",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Early in Episode 3, ICT distinguishes an intraday market structure shift from a break associated with a longer-duration move. For study, a local directional change can produce an intraday leg without establishing that the higher-timeframe trend has ended."
+        },
+        {
+          "type": "paragraph",
+          "text": "Keep the observation scale visible. A lower-timeframe break inside a larger uptrend may be a pullback, a more lasting reversal or an unresolved transition. The selected definition tells you when to label the local event; later price action determines which path actually develops."
+        },
+        {
+          "type": "paragraph",
+          "text": "Record both the original local reference and the higher-timeframe context before replay. If the intraday leg later reverses, retain that result. Avoid calling every unsuccessful example a fake shift merely because the outcome became known."
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "icon": "book-open",
+      "title": "8. The Displacement-and-Close Example in Episode 6",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Episode 6’s bearish MSS discussion emphasizes a quick displacement lower rather than a small, hesitant move. A close below the reference is described as preferable for greater significance. Do not turn a stated preference into a universal mandatory close rule."
+        },
+        {
+          "type": "paragraph",
+          "text": "In Episode 3’s bullish example around 13:45, the initial move through a short-term high does not have to close above that high. The discussion then waits for a later candle to complete to assess the FVG. The initial crossing, gap confirmation and possible entry are separate events."
+        },
+        {
+          "type": "paragraph",
+          "text": "For replay, write which lesson and example you are studying. Mark the prior reference before the crossing and record when each later condition becomes visible. If you add a stricter close filter for research, label it as your own variation rather than attributing that extra condition to every ICT setup."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "icon": "check-square",
+      "title": "9. Pre-Replay MSS 6-Gate Checklist (Interactive)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Verify all six pre-marked swing, displacement, FVG, and cost gates below before logging an MSS study."
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "icon": "help-circle",
+      "title": "10. Frequently Asked Questions (Market Structure Shift)",
+      "blocks": []
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is a Market Structure Shift (MSS) in ICT / SMC?",
+      "answer": "An MSS is a break of a previously identifiable swing high or low on a stated timeframe, commonly studied alongside a prior liquidity sweep, energetic displacement, and a Fair Value Gap."
+    },
+    {
+      "question": "Does every MSS require a candle close beyond the swing?",
+      "answer": "No single universal rule applies to every source. Some discussions prefer a body close for clearer significance, while others examine an initial crossing followed by a later candle completing an FVG. Always state your chosen close rule before replay."
+    },
+    {
+      "question": "Does an intraday 5-minute MSS reverse the Daily trend?",
+      "answer": "Not necessarily. An intraday shift can mark a local pullback or short-term leg inside a continuing higher-timeframe trend."
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "h1": "Equal Highs and Lows: Reading Liquidity Pools",
+  "seoTitle": "Equal Highs & Lows: Reading Liquidity Pools | LearnSMC",
+  "metaDescription": "Learn how Equal Highs (EQH) and Equal Lows (EQL) form liquidity pools, why double tops fail, and how to define tick tolerance before chart replay.",
+  "quickAnswer": "Equal Highs (EQH) and Equal Lows (EQL) are two or more swing highs or swing lows aligned within a predefined price tolerance, creating visible reference shelves where stop-losses and breakout orders frequently cluster.",
+  "takeaways": [
+    "EQH and EQL rarely align to the exact tick—define an objective pip or tick tolerance and timeframe before marking pools in replay.",
+    "Traditional retail analysis treats EQH as double-top resistance, while SMC study treats the same level as a Buyside Liquidity (BSL) shelf.",
+    "Relative Equal Highs (slightly lower second high) and Relative Equal Lows (slightly higher second low) act like magnets because stops sit just beyond both extremes.",
+    "Sweeping EQH or EQL only triggers a reversal study when candle bodies reclaim back inside the range; sustained closes beyond the shelf indicate acceptance."
+  ],
+  "sections": [
+    {
+      "number": 1,
+      "icon": "compass",
+      "title": "1. Double Top vs. Liquidity Pool: Why Equal Levels Fail So Often",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "When price stalls twice near the same ceiling, textbook retail patterns call it a double top and expect an immediate sell-off. Yet traders who short that second peak routinely place their stop-losses just a few ticks above the ceiling, while breakout traders place buy-stops at the very same height."
+        },
+        {
+          "type": "paragraph",
+          "text": "In Smart Money Concepts, that double top is labeled Equal Highs (EQH)—and its mirror-image double bottom is labeled Equal Lows (EQL). Instead of assuming the ceiling will hold forever, you treat the shelf as a high-visibility liquidity reference."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "icon": "layers",
+      "title": "2. Exact vs. Relative EQH/EQL & Setting Predefined Tolerance",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Waiting for two swings to match to the exact 0.0001 pip causes traders to miss most real-world pools. Defining a fixed tick or pip tolerance before replay prevents hindsight bias and keeps your chart labels consistent."
+        },
+        {
+          "type": "table",
+          "rows": [
+            ["Pool Type", "Visual Shape", "Typical Tolerance Example", "Study Role"],
+            ["Exact EQH / EQL", "Two or more highs/lows at virtually identical price", "0–2 ticks (NQ/ES) or 0–2 pips (FX)", "Clean visible shelf; attracts tight stop clustering"],
+            ["Relative EQH / EQL", "Second peak slightly lower (or second trough slightly higher)", "3–6 ticks or 3–8 pips on 1H/4H", "Often swept together in a single expansion leg"]
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "icon": "sparkles",
+      "title": "3. Interactive 3D Equal-Level Liquidity Shelf",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Inspect the 3D Equal-Level Shelf below. Switch between Exact EQH Sweep, Relative EQL Sweep, and True Breakout Acceptance to see how candle closes distinguish a failed-breakout sweep from genuine trend continuation."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "icon": "crosshair",
+      "title": "4. How to Mark EQH and EQL Step by Step on a Blank Chart",
+      "blocks": [
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Start on a higher timeframe (4H or 1H) so minor 1-minute noise does not distract you.",
+            "Locate two or more distinct swing highs or lows separated by a clear pullback.",
+            "Measure the vertical spread between peaks and confirm it sits inside your predefined tolerance.",
+            "Draw a horizontal ray to the right labeled EQH (BSL) or EQL (SSL) and wait for price to reach it."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "icon": "play-circle",
+      "title": "5. Animated Sequence: EQH Build → Sweep → Reclaim",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Step through the four phases below to watch how an Equal Highs pool builds across two swing peaks, gets pierced by a fast liquidity run, and reclaims back inside the prior range."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "icon": "calculator",
+      "title": "6. Interactive EQH / EQL Tolerance & Cluster Priority Calculator",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Test your swing highs or lows against a fixed tolerance rule below to decide objectively whether two peaks qualify as an Equal Highs/Lows pool or remain staggered swings."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "icon": "git-compare",
+      "title": "7. EQH/EQL Pools vs. Single Swing Highs & Trendlines",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A single swing high holds one group of stops, whereas Equal Highs stack multiple rounds of short stops and breakout orders along one horizontal line. Compared with diagonal trendlines, horizontal EQH/EQL shelves remain identical across zoom levels and chart scales."
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "icon": "clock",
+      "title": "8. When EQH/EQL Pools Form During the Trading Day",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Equal Highs and Equal Lows appear most cleanly during Asian session consolidations, pre-market NY ranges (07:00–08:30 ET), and lunchtime pauses (12:00–13:30 ET) before volatility expands."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "icon": "book-open",
+      "title": "9. Worked Blueprints: NQ 15m EQH Sweep vs. XAU/USD 1H EQL Raid",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Compare two synthetic replay studies: an NQ 15-minute EQH cluster swept at the 09:30 ET equity open, and a Gold (XAU/USD) 1-hour EQL shelf raided before a London-to-NY bullish rotation."
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "icon": "alert-triangle",
+      "title": "10. Common Mistakes When Trading Equal Highs & Lows",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Avoid stretching tolerance rules in hindsight, entering counter-trend before the sweep actually closes back inside, or forgetting that strong HTF trends can slice straight through EQH without reversing."
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "icon": "check-square",
+      "title": "11. Pre-Replay EQH / EQL 6-Gate Checklist (Interactive)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Confirm all six objective tolerance, timeframe, and close-confirmation gates below before logging an EQH or EQL study."
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "icon": "help-circle",
+      "title": "12. Frequently Asked Questions (Equal Highs & Equal Lows)",
+      "blocks": []
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What are Equal Highs (EQH) and Equal Lows (EQL) in trading?",
+      "answer": "Equal Highs (EQH) are two or more swing highs aligned at nearly the same price level, while Equal Lows (EQL) are two or more swing lows aligned at nearly the same level. Traders monitor them as visible liquidity references."
+    },
+    {
+      "question": "Do Equal Highs have to match to the exact tick?",
+      "answer": "No. Real markets rarely align to the exact tick. Relative Equal Highs or Lows within a predefined tolerance (such as a few ticks on index futures or a few pips on FX) serve the same reference role."
+    },
+    {
+      "question": "Why do double tops and double bottoms often get swept?",
+      "answer": "Because many traders place stop-losses just past the double top or bottom while breakout traders place stop entries at the same price, creating a concentrated cluster of buy-stops or sell-stops."
+    },
+    {
+      "question": "What confirms an EQH sweep versus a real breakout?",
+      "answer": "A sweep pierces the EQH shelf and closes back inside the range (often followed by a lower-timeframe structure shift), whereas a real breakout closes and holds candle bodies above the shelf."
+    }
+  ]
+}

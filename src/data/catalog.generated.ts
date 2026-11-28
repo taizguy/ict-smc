@@ -396,7 +396,7 @@ export const chapterCatalog = [
   {
     "id": 55,
     "slug": "reaper-ifvg-and-suspension-block-advancements",
-    "title": "Suspension Blocks and Reaper FVG Studies",
+    "title": "Suspension Blocks and Reaper FVG",
     "part": "Part IV - Price Delivery",
     "status": "published"
   },

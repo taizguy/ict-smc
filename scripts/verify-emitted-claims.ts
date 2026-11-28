@@ -50,7 +50,7 @@ function walk(dir:string){for(const e of fs.readdirSync(dir,{withFileTypes:true}
     if(summary&&content(summary).trim()===n.value.trim()&&conditional(reply)&&caption&&/myth.*reality/i.test(content(caption)))reason='quoted metric myth with its conditional reply and explicit myth/reality caption';
    }
   }
- if(/[?؟]$/.test(n.value.trim())&&a.tagName==='fieldset'&&cls.includes('chapter-quiz-question')){const answer=descendants(a).find(v=>v.tagName==='strong');if(answer&&/^(?:no[. ,]|نہیں)/i.test(content(answer).trim()))reason='quiz question with an explicit negative correct answer in the same fieldset';}
+ if(/[?؟]$/.test(n.value.trim())&&a.tagName==='fieldset'&&cls.includes('chapter-quiz-question')){const answer=descendants(a).find(v=>v.tagName==='strong');if(answer&&/^(?:no[. ,;]|نہیں)/i.test(content(answer).trim()))reason='quiz question with an explicit negative correct answer in the same fieldset';}
   if(/win[ -]rate/i.test(n.value)&&n.value.trim().length<80&&!/highest|profit|wealthy|guarantee|\d\s*%/i.test(n.value)){
    let support:any;
    if(/^h[1-6]$/.test(a.tagName)){const siblings=a.parentNode?.childNodes||[];support=siblings.slice(siblings.indexOf(a)+1).find((v:any)=>v.tagName);}

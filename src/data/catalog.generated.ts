@@ -375,14 +375,14 @@ export const chapterCatalog = [
   {
     "id": 15,
     "slug": "order-blocks-ob-and-mitigation",
-    "title": "Order Blocks: Boundaries and Mitigation",
+    "title": "Order Blocks: Selection, Boundaries & Mitigation",
     "part": "Part IV - Price Delivery",
     "status": "published"
   },
   {
     "id": 16,
     "slug": "breaker-blocks-trading-failed-order-blocks",
-    "title": "Breaker Blocks: Failed Order Block Studies",
+    "title": "Breaker Blocks: Trading Failed Order Blocks",
     "part": "Part IV - Price Delivery",
     "status": "published"
   },

@@ -170,7 +170,7 @@ export const suspensionReaperQuizzes = [
       'The intersection runs from max(1.08720, 1.08740) = 1.08740 up to min(1.08790, 1.08820) = 1.08790.',
   },
   {
-    question: 'Does a Suspension Block establish a universal 1% risk rule or guaranteed first-touch bounce?',
+    question: 'Does a Suspension Block establish a universal 1% risk rule or automatic first-touch bounce?',
     context: 'Capital preservation, stop mechanics, and evidentiary limits.',
     options: [
       'No; body gaps are observable chart references requiring explicit closing invalidation, tick sizing, and slippage awareness.',

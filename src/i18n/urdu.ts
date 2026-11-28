@@ -23,6 +23,10 @@ import {pdArrayTranslations} from '../data/chapters/pdArrayTranslations';
 import {suspensionReaperTranslations} from '../data/chapters/suspensionReaperTranslations';
 import {mitigationTranslations} from '../data/chapters/mitigationTranslations';
 import {fvgDocumentTranslations} from '../data/chapters/fvgDocumentTranslations';
+import {breakerBlockTranslations} from '../data/chapters/breakerBlockTranslations';
+import {orderBlockTranslations} from '../data/chapters/orderBlockTranslations';
+import {venomModelTranslations} from '../data/chapters/venomModelTranslations';
+import {breadButterTranslations} from '../data/chapters/breadButterTranslations';
 import {priceMovementTranslations} from '../data/chapters/priceMovementTranslations';
 import {curriculumHubUrdu} from '../data/curriculumHubContent';
 import {curriculumPhase1Urdu} from '../data/curriculumPhase1';
@@ -344,3 +348,16 @@ Object.assign(urdu,Object.fromEntries(Object.entries(structureTranslations).filt
 Object.assign(urdu,Object.fromEntries(Object.entries(breakTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
 
 Object.assign(urdu,Object.fromEntries(Object.entries(silverLessonTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(breakerBlockTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(orderBlockTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(venomModelTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu,Object.fromEntries(Object.entries(breadButterTranslations).filter(([key])=>!Object.hasOwn(urdu,key))));
+
+Object.assign(urdu, {
+  'Order Blocks: Boundaries and Mitigation': 'آرڈر بلاکس: حدود اور مٹیگیشن',
+  'Breaker Blocks: Failed Order Block Studies': 'بریکر بلاکس: ناکام آرڈر بلاک کے مطالعے',
+});

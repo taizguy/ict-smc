@@ -1,0 +1,667 @@
+{
+  "title": "Bread-and-Butter Setups: Ranges & Consolidations",
+  "quickAnswer": "A Bread-and-Butter setup is a repeatable, time-anchored intraday entry taken when price exits a pre-defined consolidation range, sweeps an external liquidity boundary (or expands cleanly in higher-timeframe direction), and retraces into an interior fair value gap, order block, or optimal trade entry pocket for a modest, cost-aware intraday objective.",
+  "tocLabel": "Jump to any of the 21 sections in this chapter",
+  "sections": [
+    {
+      "number": 1,
+      "anchor": "what-is-bread-and-butter-setup",
+      "icon": "Compass",
+      "title": "What Is a Bread-and-Butter Setup?",
+      "extract": {
+        "name": "Bread-and-Butter Setup",
+        "kind": "DefinedTerm",
+        "text": "A Bread-and-Butter setup is a standardized intraday price-action sequence built around a pre-marked consolidation range: define the box boundaries before expansion, observe a liquidity sweep or directional displacement out of the range during an active session window, and execute on a disciplined retracement toward a realistic intraday objective rather than chasing mid-range noise or home-run swings."
+      },
+      "paragraphs": [
+        "Most new chart students start by hunting for dramatic multi-day reversals or once-a-month breakout rockets. In practice, those rare moves are difficult to anticipate and tempt traders into forcing entries during quiet, overlapping sessions. The Bread-and-Butter concept from Core Content Month 9 shifts attention to a calmer habit: recognizing one repeatable range-exit-and-retracement routine that shows up across liquid Forex pairs and index futures throughout the week.",
+        "Think of a neighborhood bakery that opens at the same hour every morning. The baker does not invent a brand-new recipe every day or chase customers down the street; the baker prepares the dough before sunrise, waits for the morning rush, and serves the same dependable loaf again and again. In market structure terms, the pre-breakout consolidation box is your prep work, the session open is the morning rush, and the retracement entry after a sweep or displacement is the repeatable routine."
+      ],
+      "bullets": [
+        "Pre-defined range boundaries: mark the consolidation high, low, and midpoint before the expansion candle prints.",
+        "Active session liquidity: focus on London or New York open windows rather than thin mid-afternoon drift.",
+        "Modest, cost-aware objectives: aim for clean liquidity pockets (such as an opposing range edge or an example 20-pip slice) instead of holding for improbable all-week highs.",
+        "Selective participation: day trading means choosing qualified sessions, never clicking a button on every calendar day."
+      ],
+      "visualId": "stick-figure-bakery",
+      "callout": {
+        "tone": "cerulean",
+        "label": "Core Beginner Takeaway",
+        "text": "A Bread-and-Butter setup is a process framework, not an automatic paycheck. Its value comes from enforcing identical rules across clean sessions, losing sessions, and no-trade days."
+      }
+    },
+    {
+      "number": 2,
+      "anchor": "anatomy-of-consolidations-and-ranges",
+      "icon": "Box",
+      "title": "Anatomy of Consolidations & Price Ranges",
+      "extract": {
+        "name": "Consolidation Range Quartiles Formula",
+        "kind": "CreativeWork",
+        "formula": "Equilibrium (50%) = Low + 0.50 × (High − Low)  |  Upper Quartile (75%) = Low + 0.75 × Width  |  Lower Quartile (25%) = Low + 0.25 × Width",
+        "text": "A consolidation range is a bounded horizontal interval where candles oscillate repeatedly between a defined ceiling (buy-side liquidity) and floor (sell-side liquidity). Dividing that pre-breakout box into four equal quartiles separates expensive upper-box prices from discounted lower-box prices before expansion begins."
+      },
+      "paragraphs": [
+        "Before anyone can trade a breakout or a fakeout, they have to agree on where the box actually sits. A valid consolidation has clear upper and lower boundaries created by at least two alternating swing reactions inside a defined time window—most commonly the Asian session (20:00–00:00 New York) or a pre-killzone intraday pause.",
+        "Inside any consolidation, the 50% Equilibrium line is the worst place to initiate a position. Buying right in the middle of a tight box leaves tiny room to the top boundary while exposing the stop to ordinary internal whipsaw. Marking the Upper Quartile (75%), Equilibrium (50%), and Lower Quartile (25%) gives you an immediate visual map of where resting stop orders accumulate outside the edges."
+      ],
+      "numberedPoints": [
+        "Mark the exact Consolidation High (buy-side liquidity shelf) using completed candle wicks before the active session begins.",
+        "Mark the exact Consolidation Low (sell-side liquidity shelf) across the same completed time window.",
+        "Plot the 50% Equilibrium line and the 25% / 75% quartiles to keep yourself from chasing entries in the dead center of the box.",
+        "Measure the total box width against the instrument's 5-day Average Daily Range (ADR) so you know whether the session still has room to expand."
+      ],
+      "visualId": "range-anatomy-explorer",
+      "table": {
+        "caption": "Four Structural Zones Inside a Pre-Breakout Consolidation Box",
+        "headers": ["Range Zone", "Boundary Position", "Typical Order-Book & Chart Role", "Primary Trader Hazard"],
+        "rows": [
+          ["Buy-Side Shelf", "Above 100% High", "Resting buy stops above resistance and breakout buy triggers", "Buying the exact wick extreme into a sweep"],
+          ["Upper Quartile", "75% to 100%", "Premium interior zone where bearish rallies stall", "Initiating longs with almost no room to box high"],
+          ["Equilibrium Core", "25% to 75%", "Balanced two-way chop around the 50% midpoint", "Repeated stop-outs from directionless ping-pong"],
+          ["Sell-Side Shelf", "Below 0% Low", "Resting sell stops beneath support and breakdown triggers", "Panic-selling the sweep low right before reversal"]
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "anchor": "four-stage-market-delivery-cycle",
+      "icon": "Activity",
+      "title": "The Four-Stage Market Delivery Cycle",
+      "extract": {
+        "name": "Four-Stage Price Delivery Cycle",
+        "kind": "DefinedTerm",
+        "text": "The descriptive market cycle tracks how price transitions between four observable states: Consolidation (range-bound equilibrium), Expansion (directional displacement out of the box), Retracement (pullback into a fair value gap or order block), and Reversal (directional shift after sweeping an opposing liquidity pool)."
+      },
+      "paragraphs": [
+        "Every clean Bread-and-Butter trade begins by identifying which of the four market states is currently active. Traders blow up accounts when they apply a trend-retracement tool inside a sleepy consolidation, or try to fade a strong expansion leg as if it were still trapped inside a box.",
+        "In Month 9 Core Content, Consolidation is always treated as the neutral origin. Price leaves equilibrium via Expansion, offers disciplined participants a second-chance entry during Retracement, and eventually exhausts into a higher-timeframe liquidity pool where a Reversal or fresh Consolidation begins."
+      ],
+      "numberedPoints": [
+        "Stage 1 — Consolidation: price compresses inside a measurable box with overlapping candle bodies and balanced wicks.",
+        "Stage 2 — Expansion: energetic displacement candles break cleanly away from equilibrium, leaving behind an observable Fair Value Gap or Order Block.",
+        "Stage 3 — Retracement: price pulls back partially into the displacement origin without closing past structural invalidation—the primary Bread-and-Butter entry window.",
+        "Stage 4 — Reversal or Fresh Consolidation: once price reaches the opposing external liquidity draw, momentum either reverses sharply or settles into a new horizontal box."
+      ],
+      "visualId": "market-cycle-stepper",
+      "callout": {
+        "tone": "ochre",
+        "label": "Epistemic Note on Market Cycles",
+        "text": "The four-stage cycle is a descriptive chart classification, not a fixed law of physics. A consolidation can expand and immediately return into a wider range without offering a clean retracement."
+      }
+    },
+    {
+      "number": 4,
+      "anchor": "power-of-three-amd-and-range-expansion",
+      "icon": "Layers",
+      "title": "Power of 3 (AMD) Inside Daily & Session Ranges",
+      "extract": {
+        "name": "Power of 3 (Accumulation, Manipulation, Distribution)",
+        "kind": "DefinedTerm",
+        "text": "Power of 3 (AMD) maps a single daily or session candlestick onto intraday structure: Accumulation forms a narrow consolidation near the open, Manipulation prints a deceptive wick beyond one boundary (the Judas Swing), and Distribution expands the candle body toward the primary session objective."
+      },
+      "paragraphs": [
+        "One of the clearest lightbulb moments in intraday analysis happens when you put a single Daily candlestick right beside a 15-minute chart of the exact same trading day. On a bullish day, the open near 00:00 New York sits inside an Asian consolidation (Accumulation). Around the London open, price drops beneath the Asian low to carve the Daily candle's lower wick (Manipulation). From there, price displaces higher through the body of the Daily candle toward external buy-side liquidity (Distribution).",
+        "Recognizing Power of 3 stops you from treating every break below an Asian low as a bearish trend. Instead, you ask a calmer question: does higher-timeframe structure point upward, and did this drop below the consolidation low immediately reject back inside the box with displacement?"
+      ],
+      "bullets": [
+        "Accumulation (Asian / Pre-Open): quiet horizontal box anchored around the 00:00 New York Midnight Open.",
+        "Manipulation (Judas Swing): early-session stop run below the box on a bullish plan—or above the box on a bearish plan—creating the daily candle wick.",
+        "Distribution (Main Session Leg): sustained directional expansion away from the sweep toward an external liquidity target or intraday range projection.",
+        "No-AMD Days: on high-impact news days or dead holiday ranges, price may expand immediately without a clean manipulation wick; never force an AMD label when the chart does not show one."
+      ],
+      "visualId": "amd-power-of-three"
+    },
+    {
+      "number": 5,
+      "anchor": "bread-and-butter-buy-setup",
+      "icon": "TrendingUp",
+      "title": "Bread-and-Butter Buy Setup: Bullish Anatomy",
+      "extract": {
+        "name": "Bread-and-Butter Buy Setup",
+        "kind": "DefinedTerm",
+        "text": "A Bread-and-Butter Buy Setup requires a bullish higher-timeframe draw, a pre-defined consolidation box, an active-session liquidity sweep beneath the box low (or clean upward breakout), an energetic bullish displacement candle printing a Fair Value Gap or Order Block, and a retracement fill with stop protection beneath the sweep low."
+      },
+      "paragraphs": [
+        "There are two valid architectural variations of the bullish Bread-and-Butter setup, and beginners frequently confuse them. Variant A is the Sweep-and-Reclaim (Offset Accumulation): price dips cleanly beneath the consolidation floor during London or New York open, triggers resting sell stops, then rockets back inside the box with a Market Structure Shift and a bullish Fair Value Gap.",
+        "Variant B is the Re-Accumulation Continuation: when higher-timeframe momentum is already firmly upward, price may pause inside a tight mid-trend consolidation and break directly upward without ever sweeping the box floor. In that variation, the entry still waits for a retracement back to the breakout Order Block or Fair Value Gap rather than buying the top of a stretched expansion candle."
+      ],
+      "numberedPoints": [
+        "Confirm higher-timeframe bullish context (for example, an unmitigated 4H/Daily buy-side high or discount PD array).",
+        "Define the pre-session consolidation box (High, Midpoint, Low) before London or New York opens.",
+        "Wait for either a sell-side liquidity sweep beneath the box low followed by bullish displacement back inside (Variant A) or a decisive displacement breakout closing above the box high (Variant B).",
+        "Place a deferred buy limit at the resulting bullish Fair Value Gap, Order Block open, or 62%–79% Optimal Trade Entry pocket.",
+        "Anchor the protective stop beneath the sweep low (tight tier) or beneath the pre-breakout box low (structural tier), and aim for opposing buy-side liquidity or a pre-planned cost-adjusted objective."
+      ],
+      "visualId": "buy-setup-anatomy"
+    },
+    {
+      "number": 6,
+      "anchor": "bread-and-butter-sell-setup",
+      "icon": "TrendingDown",
+      "title": "Bread-and-Butter Sell Setup: Bearish Mirror",
+      "extract": {
+        "name": "Bread-and-Butter Sell Setup",
+        "kind": "DefinedTerm",
+        "text": "A Bread-and-Butter Sell Setup is the structural mirror of the bullish model: inside a bearish higher-timeframe bias, price sweeps above a pre-defined consolidation ceiling during an active killzone, displaces decisively downward back through the range, and fills a short limit on a premium retracement into a bearish FVG, Order Block, or OTE pocket."
+      },
+      "paragraphs": [
+        "Bearish Bread-and-Butter setups follow the exact same mechanical rules flipped vertically, with one practical difference: equity indices and volatile currency crosses often fall faster than they climb. Because downward displacement legs can expand rapidly, beginners panic and market-sell the bottom of a huge red candle right when price is poised to snap back.",
+        "Patience on the bearish retest is what protects your risk-to-reward math. If price sweeps the Asian high, slams back inside the range to leave a clean bearish Fair Value Gap, and then drops straight to the sell-side target without coming back to your resting limit order, that is a disciplined unfilled scratch—not a mistake to chase at the bottom of the move."
+      ],
+      "visualId": "sell-vs-buy-mirror",
+      "table": {
+        "caption": "Side-by-Side Structural Blueprint: Bullish Buy vs. Bearish Sell Bread-and-Butter",
+        "headers": ["Checklist Element", "Bullish Buy Setup", "Bearish Sell Setup"],
+        "rows": [
+          ["HTF Directional Draw", "Resting Buy-Side Liquidity (old highs) above", "Resting Sell-Side Liquidity (old lows) below"],
+          ["Pre-Breakout Anchor", "Asian or intraday box marked before open", "Asian or intraday box marked before open"],
+          ["Manipulation Sweep", "Sweep below box low (SSL) at/below 00:00 NY Open", "Sweep above box high (BSL) at/above 00:00 NY Open"],
+          ["Displacement Signal", "Strong up-close breaking interior swing high + bullish FVG", "Strong down-close breaking interior swing low + bearish FVG"],
+          ["Entry Pocket", "Discount retracement (FVG / Bullish OB / 62%–79% OTE)", "Premium retracement (FVG / Bearish OB / 62%–79% OTE)"],
+          ["Invalidation Stop", "Below sweep low or structural consolidation floor", "Above sweep high or structural consolidation ceiling"]
+        ]
+      }
+    },
+    {
+      "number": 7,
+      "anchor": "four-range-resolutions-and-trap-filter",
+      "icon": "GitBranch",
+      "title": "Four Ways a Consolidation Resolves & Trap Filters",
+      "paragraphs": [
+        "A common flaw in basic trading videos is showing only the one textbook sweep-and-reverse chart while ignoring the other three ways a real consolidation resolves. To trade ranges honestly, you must map all four possible outcomes before the session starts so you know instantly when to engage and when to stand down.",
+        "Pay special attention to the difference between a Sweep Rejection (wick or failed close beyond the edge followed by immediate displacement back inside) and True Acceptance (consecutive candle bodies closing outside the box and holding the broken edge as new support or resistance). Fading true acceptance is how range traders get run over on trend days."
+      ],
+      "numberedPoints": [
+        "Outcome 1 — Sweep & Reclaim (Classic Bread-and-Butter): price raids one edge, rejects back inside with displacement, retraces to an FVG/OB, and delivers to the opposite side.",
+        "Outcome 2 — Clean Breakout & Retest (Trend Continuation): price closes decisively outside the box, holds the former boundary as a flip zone, and continues in higher-timeframe trend direction.",
+        "Outcome 3 — Single-Pass Runaway (Unfilled Limit): price breaks cleanly in your expected direction but never retraces to your resting entry; journaled honestly as 0R unfilled.",
+        "Outcome 4 — Seeking & Destroying Both Sides (Chop Trap): price sweeps both the high and low without sustained displacement—often ahead of CPI, FOMC, or NFP—requiring a full stand-down."
+      ],
+      "visualId": "range-resolution-filter",
+      "callout": {
+        "tone": "terra",
+        "label": "Seek-and-Destroy Red Flag",
+        "text": "When price sweeps the consolidation high and low back-to-back without closing cleanly away from either edge, stop trading the box. Double-sided expansion signals choppy event positioning, not a clean Bread-and-Butter session."
+      }
+    },
+    {
+      "number": 8,
+      "anchor": "interactive-3d-range-study",
+      "icon": "SlidersHorizontal",
+      "title": "Motion Study 02: Interactive 3D Range & Ruler View",
+      "paragraphs": [
+        "Inspect the complete 100.0–130.0 synthetic consolidation sequence (modeled on a 30-pip EUR/USD box from 1.0800 to 1.0830 scaled to pip units) inside our interactive 3D studio. Switch between all three authored outcomes—Completed Retest Delivery, Unfilled Expansion Runaway, and Breakdown Continuation Failure—to observe how the exact same pre-breakout box and sweep candle can lead to three completely different journal outcomes.",
+        "Toggle Ruler View at any stage for a straight-on orthogonal price measurement comparing the 100.0 box floor, 92.0 sweep low, 106.0 deferred FVG limit entry, 86.0 stop invalidation, and 136.0 objective rail."
+      ],
+      "bullets": [
+        "Branch A (Completed Delivery): sweep to 92.0 -> bullish displacement leaving FVG -> pullback fills 106.0 limit -> clean delivery to 136.0 (+30 units / 1.50R pre-cost).",
+        "Branch B (Unfilled Runaway): identical sweep and displacement, but price rallies straight from 113.0 to 140.0 without touching 106.0 (0R unfilled scratch).",
+        "Branch C (Breakdown Failure): pullback fills 106.0, buyers fail to hold 100.0, and downward acceptance slices cleanly through the 86.0 stop (-1.00R loss)."
+      ],
+      "visualId": "cinema-3d"
+    },
+    {
+      "number": 9,
+      "anchor": "institutional-price-levels-and-reference-discipline",
+      "icon": "Target",
+      "title": "Institutional Price Levels & Reference-vs-Forecast Discipline",
+      "extract": {
+        "name": "Institutional Quarter-Point Levels",
+        "kind": "DefinedTerm",
+        "text": "In Forex and futures charts, psychological figure levels ending in .00 (big figures), .50 (mid-figures), and .20 / .80 (institutional reference quarters) frequently cluster with resting stop orders and limit liquidity around consolidation edges. They serve as structural context markers, never as standalone reversal signals."
+      },
+      "paragraphs": [
+        "Month 9 Core Content highlights four recurring numeric anchors inside every 100-pip handle: the Big Figure (.00), the Mid-Figure (.50), and the .20 and .80 quarter lines. When a pre-breakout consolidation low sits right near 1.0800 and a London sweep dips to 1.0792—stopping short of the 1.0780 quarter line before snapping back above 1.0800—the round number provides clean visual confluence for why liquidity pooled there.",
+        "However, discipline requires separating a price reference from a directional forecast. Not every old high triggers a reversal, and not every .00 or .80 line holds. Round figures, sentiment gauges, and previous session highs are research inputs that must be confirmed by actual displacement and structure—never blind limit fades based on an unsupported sentiment percentage."
+      ],
+      "bullets": [
+        ".00 Big Figure: major psychological handle where consolidation edges and resting stops frequently cluster.",
+        ".20 and .80 Reference Levels: common outer buffer zones where sweeps stall or breakout continuations pause.",
+        ".50 Mid-Figure: frequent midpoint equilibrium inside a 100-pip dealing range.",
+        "Reference ≠ Forecast: never short automatically just because price touches .00 or an arbitrary sentiment reading like 85%—wait for displacement and structure."
+      ],
+      "visualId": "institutional-levels-ruler"
+    },
+    {
+      "number": 10,
+      "anchor": "twenty-pip-objective-and-cross-asset-math",
+      "icon": "Calculator",
+      "title": "The 20-Pip Objective, Forex vs. Futures Scaling & Costs",
+      "extract": {
+        "name": "Cost-Adjusted Expectancy & Break-Even Formula",
+        "kind": "CreativeWork",
+        "formula": "Net R = (Target − RoundTripCost) / (Risk + RoundTripCost)  |  Break-Even Hit Frequency = 1 / (1 + Net R)",
+        "text": "An intraday objective such as 20 pips on EUR/USD is an illustrative teaching target, not a daily income schedule. Every contract has distinct tick sizing, spread, commission, and slippage; converting a Forex pip target mechanically onto Nasdaq (MNQ), S&P 500 (MES), or Gold (XAU/USD) without rescaling destroys risk math."
+      },
+      "paragraphs": [
+        "One of the most misunderstood lessons in ICT Month 9 is titled '20 Pips Per Day.' Beginners hear that phrase and assume a trader is supposed to extract exactly 20 pips every single business day like clockwork. The lesson itself explicitly rejects that myth: 20 pips is an example of taking a modest, repeatable middle slice out of a 60-to-90-pip daily Forex range rather than greedily trying to catch the exact low and exact high.",
+        "Equally important, 20 pips on EUR/USD (about 25%–30% of a typical daily range) is completely different from 20 points on MNQ (Micro E-mini Nasdaq-100, which routinely swings 250–400 points a day) or 20 points on MES (Micro E-mini S&P 500). Use the interactive cost-adjusted calculator below to compare how spread, commissions, and stop width transform your true Net R and break-even hit frequency across four liquid markets."
+      ],
+      "visualId": "pip-vs-futures-calculator",
+      "table": {
+        "caption": "Cross-Asset Contract Specifications & Example Intraday Scaling (Illustrative)",
+        "headers": ["Instrument", "Standard Unit & Dollar Value", "Typical Daily Range", "Comparable Modest Slice", "Typical Cost Friction"],
+        "rows": [
+          ["EUR/USD (Spot FX)", "1 pip = 0.0001 ($10 / standard lot)", "65–95 pips", "20–30 pips (~30% ADR)", "0.6–1.4 pips spread + comm."],
+          ["GBP/USD (Spot FX)", "1 pip = 0.0001 ($10 / standard lot)", "80–120 pips", "25–35 pips (~30% ADR)", "0.9–1.8 pips spread + comm."],
+          ["MNQ (Micro Nasdaq)", "1 pt = 4 ticks ($2 / contract)", "220–420 pts", "40–80 pts (~20% ADR)", "0.75–1.50 pts spread + fees"],
+          ["MES (Micro S&P 500)", "1 pt = 4 ticks ($5 / contract)", "45–90 pts", "12–20 pts (~25% ADR)", "0.50–0.75 pts spread + fees"],
+          ["XAU/USD (Gold)", "1.00 pt = $100 / standard lot", "$25–$55", "$8–$15 (~25% ADR)", "$0.30–$0.65 spread + comm."]
+        ]
+      }
+    },
+    {
+      "number": 11,
+      "anchor": "session-timing-killzones-and-adr-context",
+      "icon": "Clock",
+      "title": "Session Timing, Killzones & Asian Range ADR Filters",
+      "paragraphs": [
+        "Consolidations only produce reliable intraday Bread-and-Butter legs when fresh session volume arrives to displace price out of the box. Trading a range breakout at 14:30 New York afternoon drift produces vastly different follow-through than the exact same pattern at 03:10 London Open or 08:40 New York Open.",
+        "Just as crucial is measuring how much of the 5-day Average Daily Range (ADR) the Asian consolidation already consumed. If EUR/USD averages 80 pips per day and the Asian box is a tight 22 pips (27.5% of ADR), plenty of fuel remains for a London or New York expansion. If Asia already whipped 62 pips (77.5% of ADR) on an overnight central-bank surprise, the day's energy is largely spent and the safest call is to skip the session."
+      ],
+      "numberedPoints": [
+        "Asian Consolidation Anchor (20:00–00:00 NY): ideal quiet box is typically under 35% of the 5-day ADR.",
+        "London Open Killzone (02:00–05:00 NY): primary window for EUR/USD and GBP/USD sweep-and-reclaim Bread-and-Butter setups.",
+        "New York Open Killzone (07:00–10:00 NY for FX; 09:30–11:00 NY for equity futures): prime window for either London continuation re-accumulations or mid-day reversals.",
+        "London Close Window (10:00–12:00 NY): profit-taking pocket where extended morning moves frequently pause or retrace back toward intraday equilibrium."
+      ],
+      "visualId": "session-adr-clock",
+      "callout": {
+        "tone": "pine",
+        "label": "Daylight Saving Alignment Rule",
+        "text": "Always anchor your chart clock to America/New_York (EST UTC-5 / EDT UTC-4) rather than a fixed UTC offset so your Asian, London, and New York range boxes shift cleanly across seasonal DST transitions."
+      }
+    },
+    {
+      "number": 12,
+      "anchor": "higher-timeframe-context-and-equilibrium-traps",
+      "icon": "Layers",
+      "title": "Higher-Timeframe Context & Mid-Range Equilibrium Traps",
+      "paragraphs": [
+        "Even the cleanest 5-minute consolidation sweep fails repeatedly when it fights an opposing Daily or 4-Hour liquidity draw. Before marking a single intraday box, zoom out to the Daily and 4-Hour charts and ask one plain question: where is the nearest obvious unmitigated external liquidity pool (old high or old low), and is current price sitting in a discount or a premium of the parent dealing range?",
+        "Notice how alignment changes probability context without turning into magic. A bullish London sweep beneath the Asian low while price is bouncing off a Daily bullish Order Block in discount has clear room to expand higher. That exact same 5-minute bullish pattern printed right below a major Daily resistance high is an equilibrium trap with a low ceiling."
+      ],
+      "bullets": [
+        "Parent Dealing Range Check: identify the active Daily/4H swing high and swing low before opening the 5m chart.",
+        "Discount Longs / Premium Shorts: favor bullish Bread-and-Butter setups below the parent 50% midpoint and bearish setups above it.",
+        "Opposing Obstacle Clearance: confirm there is enough unobstructed price space between your entry and the next higher-timeframe PD array to reach at least your planned after-cost target.",
+        "Stand-Down Rule: when the Daily chart is trapped dead-center between two equal-strength obstacles with high-impact news pending, keep capital flat."
+      ],
+      "visualId": "htf-context-alignment"
+    },
+    {
+      "number": 13,
+      "anchor": "bread-and-butter-vs-other-models",
+      "icon": "Grid",
+      "title": "Bread-and-Butter vs. Silver Bullet, 2022, Venom & Classic ORB",
+      "paragraphs": [
+        "Learners studying multiple ICT and price-action frameworks often blend rules together—taking a Silver Bullet time window, slapping a Venom opening box onto it, and calling it a Bread-and-Butter trade. Keeping each model's exact boundaries distinct prevents rule drift and keeps your backtest journal clean.",
+        "Bread-and-Butter is the broad foundational range-expansion workflow taught in Core Content Month 9: it works across Asian/London/New York consolidations and allows both sweep-reclaim and re-accumulation continuations. Silver Bullet, the 2022 Model, Venom, and Classic Opening Range Breakout (ORB) are more specialized siblings with narrower clock windows or stricter entry triggers."
+      ],
+      "visualId": "model-comparison-matrix",
+      "table": {
+        "caption": "Structural Comparison Across Five Intraday Range & Liquidity Models",
+        "headers": ["Model", "Primary Range Anchor", "Core Entry Trigger", "Typical Time Window", "Primary Distinction"],
+        "rows": [
+          ["Bread-and-Butter (Ch. 70)", "Asian or intraday consolidation box", "Sweep + displacement or breakout retest into FVG/OB/OTE", "London (02–05) or NY (07–10 NY)", "Repeatable modest intraday slice with strict ADR & cost filters"],
+          ["ICT Silver Bullet (Ch. 64)", "Internal liquidity sweep inside 1h window", "First clean FVG inside the fixed 60-minute slot", "03–04, 10–11, or 14–15 NY", "Fixed 1-hour clock window takes precedence over pre-built box"],
+          ["ICT 2022 Model (Ch. 63)", "Higher-timeframe liquidity pool (PDH/PDL/Session)", "Liquidity sweep + MSS + displacement FVG", "London & NY Killzones", "Anchored to HTF liquidity sweep rather than horizontal range box"],
+          ["ICT Venom Model (Ch. 67)", "Frozen 08:00–09:30 NY ETH opening range", "Closing-candle Fang 1 sweep + opposing Fang 2 BPR/FVG", "09:30–11:00 NY Equities Open", "Requires opposing closing Two Fangs on index futures"],
+          ["Classic ORB", "First 5m / 15m / 30m RTH opening range", "Immediate breakout stop order beyond box edge", "09:35–10:30 NY", "Trades raw breakouts without waiting for sweep or FVG retest"]
+        ]
+      }
+    },
+    {
+      "number": 14,
+      "anchor": "six-gate-setup-grader-and-checklist",
+      "icon": "CheckSquare",
+      "title": "The Six-Gate Bread-and-Butter Setup Grader & Checklist",
+      "paragraphs": [
+        "Discretionary trading falls apart when rules stay vague inside your head. Turning the Bread-and-Butter framework into six binary pass/fail gates forces you to grade every candidate setup objectively before an order ever enters the platform.",
+        "Use the interactive Six-Gate Grader below alongside the pre-session checklist. A candidate scoring 6/6 qualifies as an A-grade routine setup; 4–5/6 requires extra caution or reduced risk; anything below 4/6 belongs in the skipped column of your journal."
+      ],
+      "visualId": "setup-grader",
+      "checklist": [
+        {
+          "id": "bb-gate-1",
+          "label": "Gate 1 — Pre-Breakout Box Locked Before Expansion",
+          "detail": "Consolidation high, low, and 50% equilibrium were drawn on completed bars before the killzone open."
+        },
+        {
+          "id": "bb-gate-2",
+          "label": "Gate 2 — Asian / Pre-Session Width Within ADR Budget",
+          "detail": "Pre-breakout range consumes less than 40% of the instrument's 5-day Average Daily Range."
+        },
+        {
+          "id": "bb-gate-3",
+          "label": "Gate 3 — Higher-Timeframe Draw & Obstacles Cleared",
+          "detail": "Daily/4H directional liquidity draw aligns with the trade and leaves clean room for the target."
+        },
+        {
+          "id": "bb-gate-4",
+          "label": "Gate 4 — Active Killzone & Clean Event Calendar",
+          "detail": "Setup unfolds inside London or New York open with no unscheduled high-impact macro release minutes away."
+        },
+        {
+          "id": "bb-gate-5",
+          "label": "Gate 5 — Observable Sweep + Displacement (or Clean Retest)",
+          "detail": "Clear liquidity raid and energetic displacement candle printing an unambiguous FVG or Order Block."
+        },
+        {
+          "id": "bb-gate-6",
+          "label": "Gate 6 — Pre-Declared Invalidation & After-Cost Math",
+          "detail": "Stop tier, limit price, spread/commission drag, and modest objective are calculated prior to order submission."
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "anchor": "worked-example-eurusd-bullish-buy",
+      "icon": "TrendingUp",
+      "title": "Worked Example 1: EUR/USD 5m Bullish London Range Sweep (Synthetic)",
+      "paragraphs": [
+        "Walk step-by-step through a complete synthetic EUR/USD 5-minute bullish Bread-and-Butter Buy Setup. Before London opens at 02:00 New York, the Asian consolidation sits cleanly between 1.0800 (sell-side floor) and 1.0830 (buy-side ceiling)—a 30-pip box representing 35% of an 85-pip 5-day ADR. The Daily chart sits in discount with an unmitigated prior-day high at 1.0865.",
+        "Notice how every coordinate is locked in real time as the bars close: no hindsight shifting of the box, no market-chasing after displacement, and explicit deduction of 1.0 pip round-trip spread/commission cost."
+      ],
+      "numberedPoints": [
+        "00:00–02:55 NY: Asian consolidation locks 1.0800 Low, 1.0815 Equilibrium, and 1.0830 High.",
+        "03:05 NY: London Judas Swing sweeps below 1.0800 down to 1.0792 (respecting the 1.0780 institutional quarter level) and closes back near 1.0798.",
+        "03:10 NY: Bullish displacement surges to 1.0816, breaking interior structure and leaving a 5m Fair Value Gap from 1.0804 to 1.0812.",
+        "03:15 NY: Price retraces to 1.0805, filling our resting 1.0806 buy limit with structural stop at 1.0786 (20-pip risk) and modest objective at 1.0836 (30-pip gross reward above Asian BSL).",
+        "03:45 NY: Delivery clears 1.0830 and fills our 1.0836 objective. After 1.0 pip round-trip cost, net profit is +29.0 pips on 21.0 pips net risk (+1.38 Net R)."
+      ],
+      "visualId": "worked-eurusd-buy"
+    },
+    {
+      "number": 16,
+      "anchor": "worked-example-gbpusd-bearish-sell",
+      "icon": "TrendingDown",
+      "title": "Worked Example 2: GBP/USD 5m Bearish Sell — Filled Retest vs. Unfilled Runaway (Synthetic)",
+      "paragraphs": [
+        "Most tutorials only display filled winners, which hides a crucial reality of deferred limit execution: sometimes your directional read on a consolidation sweep is completely right, yet price drops straight to target without retracing to fill your resting order.",
+        "In this synthetic GBP/USD 5-minute New York session example (pre-open box 1.2680–1.2710), toggle between Scenario A (Filled Retest at 1.2704) and Scenario B (Single-Pass Unfilled Runaway). Comparing both branches side-by-side teaches you why chasing a runaway candle ruins your stop-to-target geometry."
+      ],
+      "bullets": [
+        "Pre-Open Range: 1.2680 SSL to 1.2710 BSL (30-pip box inside a 105-pip 5-day ADR).",
+        "Manipulation Sweep: 08:35 NY spikes above 1.2710 to 1.2718, then reverses sharply to close at 1.2692 leaving a bearish FVG at 1.2700–1.2708.",
+        "Scenario A (Filled Retest): 08:45 NY bounces to 1.2705, fills the 1.2704 short limit (stop 1.2722 = 18 pips, target 1.2674 = 30 pips), delivering +1.47 Net R after 1.4 pips cost.",
+        "Scenario B (Unfilled Runaway): 08:45 NY stalls at 1.2696 and plunges straight to 1.2670. The 1.2704 limit stays legitimately unfilled (0R scratch)—never chase at 1.2686 with 36 pips risk for 12 pips reward."
+      ],
+      "visualId": "worked-gbpusd-sell"
+    },
+    {
+      "number": 17,
+      "anchor": "whole-sample-journaling-and-expectancy",
+      "icon": "BarChart3",
+      "title": "Whole-Sample Journaling, Unfilled Orders & After-Cost Math",
+      "extract": {
+        "name": "Whole-Sample Expectancy Discipline",
+        "kind": "CreativeWork",
+        "formula": "Sample Expectancy (Net R / trade) = (Total Net R across all filled wins & losses) / Total Filled Trades  |  Always log Unfilled & No-Trade Sessions separately",
+        "text": "Evaluating a Bread-and-Butter playbook requires recording every qualified session in chronological order—wins, full stops, partial exits, unfilled limits, no-trade days, and exact spread/commission costs—on out-of-sample data separate from the examples used to design the rules."
+      },
+      "paragraphs": [
+        "One attractive screenshot from last Tuesday proves nothing about expectancy. When traders review only the four cleanest winners of a two-week stretch, they accidentally manufacture an imaginary edge that collapses on live execution. Honest backtesting separates rule selection from out-of-sample testing and counts every stop-out, every missed fill, and every commission ticket.",
+        "Toggle between the Cherry-Picked Highlight Reel and the Honest 10-Session Whole-Sample Ledger below. Watch how including two no-trade days, two unfilled limits, two stop-outs, one partial exit, and realistic transaction costs gives you a grounded, truthful picture of how a repeatable routine actually behaves."
+      ],
+      "visualId": "whole-sample-ledger",
+      "table": {
+        "caption": "Mandatory Fields for a Bread-and-Butter Out-of-Sample Journal",
+        "headers": ["Journal Field", "Why It Matters", "What Happens If Omitted"],
+        "rows": [
+          ["Pre-Breakout Box Screenshot", "Proves range high/low were locked before expansion", "Hindsight bias redraws boxes around winners"],
+          ["Session & ADR % Ratio", "Tracks whether tight boxes outperform expanded Asian ranges", "You keep trading exhausted days blindly"],
+          ["Order Status (Filled / Unfilled / Skipped)", "Separates directional accuracy from execution fill rate", "Unfilled moves get falsely logged as wins"],
+          ["Gross R vs. Net R After Costs", "Captures real spread, commission, and slippage drag", "Tight-target strategies look profitable only on paper"],
+          ["Invalidation & Rule Compliance", "Distinguishes a valid stop-out from a rule violation", "Good rules get abandoned after normal variance"]
+        ]
+      }
+    },
+    {
+      "number": 18,
+      "anchor": "common-mistakes-and-stick-figure-clinic",
+      "icon": "AlertTriangle",
+      "title": "Five Common Range Mistakes (Stick-Figure Clinic)",
+      "paragraphs": [
+        "Even traders who memorize every consolidation term tend to stumble over the same five behavioral traps when candles start moving in real time. Stepping through each trap visually makes it far easier to catch yourself before clicking confirm.",
+        "Cycle through all five stick-figure clinic cases below to compare the impulsive habit against the disciplined Bread-and-Butter correction."
+      ],
+      "numberedPoints": [
+        "Mistake 1 — Trading Inside Dead Equilibrium: entering in the middle 50% of a narrow range where wicks chop both stops.",
+        "Mistake 2 — Fading True Breakout Acceptance: shorting a trend breakout after multiple candle bodies close and hold above the range ceiling.",
+        "Mistake 3 — Forcing a Trade on Every Calendar Day: mistaking '20 pips per day' for a daily quota and clicking on exhausted 75%-ADR holiday sessions.",
+        "Mistake 4 — Sliding the Entry to Chase a Runaway: turning a clean 1.6R limit plan into a 0.4R market chase after missing the pullback.",
+        "Mistake 5 — Blindly Mixing Pip Targets Across Instruments: using a 20-pip EUR/USD stop/target template unchanged on volatile MNQ futures or Gold."
+      ],
+      "visualId": "mistake-clinic"
+    },
+    {
+      "number": 19,
+      "anchor": "daily-routine-and-process-discipline",
+      "icon": "ShieldCheck",
+      "title": "Day-Trade Routine: Trading Selectively vs. Trading Every Day",
+      "paragraphs": [
+        "A core lesson inside Core Content Month 9 draws a sharp line between being a day trader and forcing a trade every day. Professional execution looks surprisingly calm: a short pre-session preparation checklist, a defined killzone watch window, a hard stop-time cutoff if no clean sweep or displacement appears, and a five-minute end-of-day log.",
+        "Use the interactive Routine Chronometer below to walk through the four checkpoints of a disciplined Bread-and-Butter session—including the exact moment you close your charts with zero trades taken and count that flat day as a process victory."
+      ],
+      "numberedPoints": [
+        "Checkpoint 1 — Pre-Session Prep (15 Minutes): check high-impact economic calendar, note Daily/4H draw, calculate 5-day ADR, and lock the pre-open consolidation box.",
+        "Checkpoint 2 — Killzone Observation Window: wait patiently for a sweep + displacement or clean breakout retest inside London or New York open; do not invent setups outside the window.",
+        "Checkpoint 3 — Bracket Execution & Hands-Off Management: enter limit, stop-loss, and modest target together—no widening stops or chasing unfilled moves.",
+        "Checkpoint 4 — Hard Cutoff & Whole-Sample Log: close the platform at the session cutoff, screenshot the outcome (including unfilled orders and no-trade days), and update the journal."
+      ],
+      "visualId": "routine-chronometer",
+      "callout": {
+        "tone": "pine",
+        "label": "The Flat-Day Standard",
+        "text": "Protecting capital during Seek-and-Destroy chop or exhausted Asian ranges is an active trading decision. A disciplined 0-trade day beats a forced -1R chase every single week."
+      }
+    },
+    {
+      "number": 20,
+      "anchor": "glossary-and-baseline-study-notes",
+      "icon": "BookMarked",
+      "title": "Glossary (24 Terms) & Baseline Study Notes",
+      "paragraphs": [
+        "Use the 24 observable definitions below as a quick precision reference while annotating charts or journaling out-of-sample sessions. Directly beneath the glossary are the preserved baseline curriculum study notes (45.1 through 45.4) retained verbatim for full continuity across the LearnSMC curriculum."
+      ],
+      "glossaryTerms": [
+        {
+          "term": "Bread-and-Butter Setup",
+          "definition": "A repeatable intraday price-action sequence built around a pre-defined consolidation range, an active-session sweep or breakout, and a disciplined retracement toward a modest intraday objective."
+        },
+        {
+          "term": "Consolidation Range",
+          "definition": "A bounded horizontal price interval with alternating swing highs and lows where candle bodies oscillate around a shared midpoint before directional expansion."
+        },
+        {
+          "term": "Range Equilibrium (50%)",
+          "definition": "The exact mathematical midpoint between a pre-breakout consolidation high and low, calculated as Low + 0.50 × (High − Low)."
+        },
+        {
+          "term": "Range Quartiles (25% / 75%)",
+          "definition": "Quarter-divisions inside a consolidation box separating discounted lower-box prices (0%–25%) from premium upper-box prices (75%–100%)."
+        },
+        {
+          "term": "Asian Range",
+          "definition": "The pre-London consolidation box typically measured across 20:00–00:00 America/New_York that frequently serves as the liquidity reference for London and New York opens."
+        },
+        {
+          "term": "Buy-Side Liquidity (BSL)",
+          "definition": "Resting buy stop orders and breakout buy triggers clustered above a consolidation high or old swing high."
+        },
+        {
+          "term": "Sell-Side Liquidity (SSL)",
+          "definition": "Resting sell stop orders and breakdown triggers clustered beneath a consolidation low or old swing low."
+        },
+        {
+          "term": "Liquidity Sweep (Stop Run)",
+          "definition": "A brief excursion beyond a consolidation boundary that triggers resting orders and immediately rejects back inside the box."
+        },
+        {
+          "term": "True Acceptance (Breakout)",
+          "definition": "Sustained candle closes beyond a consolidation boundary that hold the broken edge as flipped support or resistance rather than snapping back inside."
+        },
+        {
+          "term": "Power of 3 (AMD)",
+          "definition": "A structural map linking Accumulation (pre-open consolidation), Manipulation (early deceptive sweep forming the daily wick), and Distribution (primary directional expansion)."
+        },
+        {
+          "term": "Judas Swing",
+          "definition": "An early-session false move beyond a consolidation edge designed to establish the daily wick opposite the primary directional expansion."
+        },
+        {
+          "term": "Displacement",
+          "definition": "Energetic, full-bodied directional candles leaving a consolidation or sweep that break interior structure and print an observable Fair Value Gap."
+        },
+        {
+          "term": "Fair Value Gap (FVG)",
+          "definition": "A three-candle price imbalance where candle 1 and candle 3 wicks do not overlap across candle 2's expansion body, often used as a retracement entry zone."
+        },
+        {
+          "term": "Order Block (OB)",
+          "definition": "The final opposing-color candle (or consecutive run) immediately preceding a decisive displacement move that breaks structure."
+        },
+        {
+          "term": "Optimal Trade Entry (OTE)",
+          "definition": "The 62% to 79% Fibonacci retracement zone (centered on 70.5%) of a completed displacement impulse."
+        },
+        {
+          "term": "Re-Accumulation",
+          "definition": "A secondary horizontal consolidation formed partway through an active higher-timeframe trend before continuation expansion."
+        },
+        {
+          "term": "Institutional Quarter Levels",
+          "definition": "Recurring figure markers ending in .00 (big figure), .50 (mid-figure), and .20 / .80 where resting liquidity frequently clusters around range edges."
+        },
+        {
+          "term": "Average Daily Range (ADR)",
+          "definition": "The rolling average high-to-low distance an instrument travels per trading day (commonly 5-day ADR), used to check remaining expansion room."
+        },
+        {
+          "term": "Killzone",
+          "definition": "A recurring high-liquidity session window—such as London Open (02:00–05:00 NY) or New York Open (07:00–10:00 NY)—when range expansions most commonly initiate."
+        },
+        {
+          "term": "Seek-and-Destroy Profile",
+          "definition": "A choppy market profile that sweeps both the consolidation high and low without clean directional follow-through, signaling a stand-down day."
+        },
+        {
+          "term": "Unfilled Deferred Limit",
+          "definition": "A resting retracement limit order that never triggers because price expands straight to the target without pulling back; logged honestly as 0R."
+        },
+        {
+          "term": "Cost-Adjusted Net R",
+          "definition": "Reward-to-risk ratio computed after subtracting round-trip spread, commission, and slippage from reward and adding those same costs to risk."
+        },
+        {
+          "term": "Break-Even Hit Frequency",
+          "definition": "The minimum proportion of winning trades required for zero net profit at a fixed Net R multiple, given by 1 / (1 + Net R)."
+        },
+        {
+          "term": "Out-of-Sample Evaluation",
+          "definition": "Testing a fully frozen set of entry, stop, and exit rules on fresh chronological sessions strictly separate from the examples used to choose those rules."
+        }
+      ],
+      "baselineSections": [
+        {
+          "code": "45.1",
+          "heading": "Define a consolidation before the breakout",
+          "paragraphs": [
+            "Select the instrument, session and range boundaries before looking at the subsequent move. Record both false breakouts and successful continuations. A candle chart cannot show that an order inventory reached critical mass or that every breakout trader was trapped."
+          ]
+        },
+        {
+          "code": "45.2",
+          "heading": "A price reference is not a forecast",
+          "paragraphs": [
+            "The reviewed Market Reversals lesson notes that not every old high creates a reversal. Some price runs continue. Round numbers, sentiment measures and a selected swing can form research inputs, but none alone proves the next direction. Do not use an unsupported 85% sentiment threshold as an automatic reversal rule."
+          ]
+        },
+        {
+          "code": "45.3",
+          "heading": "Twenty pips is an example objective",
+          "paragraphs": [
+            "The official lesson titled 20 Pips Per Day explicitly separates its title from a promise to earn that amount every day. It is not a daily income schedule. Another Month 9 routine discussion distinguishes day trading from trading every day, and scalping from acting on every fluctuation.",
+            "A source objective measured in Forex pips is not mechanically interchangeable with Nasdaq handles or futures ticks. State the contract, tick value, spread and costs. Record days without trades, losses, partial exits and unfilled orders. A chosen objective does not establish expectancy."
+          ]
+        },
+        {
+          "code": "45.4",
+          "heading": "Evaluate the whole sample",
+          "paragraphs": [
+            "Choose the setup and invalidation before replay. Keep later data separate from the examples used to select the rules. Compare results after costs and disclose every excluded session. An attractive historical example is useful for explanation; it is not an independently verified performance record."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "anchor": "bread-butter-faq",
+      "icon": "HelpCircle",
+      "title": "Frequently Asked Questions About Bread-and-Butter Setups",
+      "paragraphs": [
+        "Direct, practical answers to the most common beginner and intermediate questions about trading ranges, consolidations, 20-pip objectives, and whole-sample journaling."
+      ],
+      "faqs": [
+        {
+          "q": "What does 'Bread-and-Butter setup' mean in ICT trading?",
+          "a": "It refers to a standardized, repeatable intraday entry built around a pre-marked consolidation range: wait for an active session to sweep a boundary or break cleanly in higher-timeframe direction, enter on a retracement into an FVG, Order Block, or OTE pocket, and aim for a realistic intraday liquidity target rather than chasing rare multi-day swings."
+        },
+        {
+          "q": "Does the Month 9 '20 Pips Per Day' lesson mean I should make 20 pips every trading day?",
+          "a": "No. The official lesson explicitly separates its title from a daily income promise. Twenty pips is an illustrative example of taking a modest slice out of an intraday Forex range on qualified sessions—not a daily quota, and never an excuse to force trades during poor conditions."
+        },
+        {
+          "q": "Which consolidation window works best for Bread-and-Butter setups?",
+          "a": "For major Forex pairs like EUR/USD and GBP/USD, the Asian session (20:00–00:00 America/New_York) is the most widely studied pre-open box because it typically stays compact relative to 5-day ADR before London volume arrives. On U.S. index futures, pre-09:30 extended-hours boxes or mid-morning consolidations serve a similar structural role."
+        },
+        {
+          "q": "How wide is too wide for an Asian consolidation range?",
+          "a": "As a practical rule of thumb, once the Asian box exceeds roughly 40%–45% of the instrument's 5-day Average Daily Range, much of the day's typical expansion budget has already been burned. Tight ranges under 35% of ADR generally leave far healthier room for a London or New York expansion leg."
+        },
+        {
+          "q": "Why should I avoid buying or selling near the 50% midpoint of a consolidation?",
+          "a": "The 50% equilibrium core sits right in the middle of two-way noise. Entering there leaves minimal reward before hitting the nearest range edge while exposing your stop to routine internal swings in both directions."
+        },
+        {
+          "q": "How do I tell a liquidity sweep (Judas Swing) apart from a genuine breakout?",
+          "a": "A liquidity sweep pokes past the range edge and rapidly snaps back inside with an opposing displacement candle that breaks interior structure. A genuine breakout prints consecutive full candle bodies closing outside the box and holds the former boundary as flipped support or resistance."
+        },
+        {
+          "q": "Can I use a 20-pip Forex target directly as 20 points on Nasdaq (MNQ) futures?",
+          "a": "No. Twenty pips on EUR/USD is roughly 25%–30% of an average daily range, whereas 20 points on MNQ is less than 8% of a typical 300-point daily swing and sits well inside normal 1-minute noise. Always rescale stops and targets to the specific contract's ADR, tick value, and spread/commission costs."
+        },
+        {
+          "q": "Where should the stop-loss go on a Bread-and-Butter Buy or Sell setup?",
+          "a": "Place your invalidation stop beyond the manipulation sweep extreme (tight structural tier) or beyond the opposite side of the consolidation edge plus a small spread buffer (wider structural tier)—never arbitrarily inside the middle of the box just to force a smaller stop."
+        },
+        {
+          "q": "What should I do if price sweeps the range, displaces cleanly, and hits target without filling my limit order?",
+          "a": "Cancel the working limit once the target or session cutoff passes and log the trade honestly as an unfilled 0R scratch. Chasing a runaway candle mid-leg widens your stop, shrinks remaining reward, and turns a healthy plan into an inferior bet."
+        },
+        {
+          "q": "How does Bread-and-Butter differ from the ICT Silver Bullet or 2022 Model?",
+          "a": "Bread-and-Butter centers on a pre-defined horizontal consolidation box and accepts both sweep-reclaim and re-accumulation continuations across London or New York sessions. Silver Bullet enforces strict fixed 60-minute clock windows (such as 10:00–11:00 NY), while the 2022 Model anchors primarily to higher-timeframe liquidity sweeps rather than horizontal Asian boxes."
+        },
+        {
+          "q": "Are institutional quarter levels (.00, .20, .50, .80) enough to trade a reversal on their own?",
+          "a": "No. Quarter levels and big figures are structural context markers showing where resting orders often cluster, not standalone forecasts. Always require an observable liquidity sweep, displacement, and structural confirmation before acting."
+        },
+        {
+          "q": "Should I trade a Bread-and-Butter setup on major news days like CPI, FOMC, or NFP?",
+          "a": "Usually no—especially before the release. High-impact macro days frequently produce Seek-and-Destroy ranges that sweep both highs and lows while widening spreads dramatically. Standing aside before major releases protects both execution quality and mental clarity."
+        },
+        {
+          "q": "Is an 85% retail sentiment reading a valid automatic Bread-and-Butter reversal rule?",
+          "a": "No. As noted in the baseline curriculum review, an unsupported 85% sentiment threshold must never be treated as an automatic reversal trigger. Sentiment can be logged as background research context, but price structure and invalidation rules must govern execution."
+        },
+        {
+          "q": "How many sessions should I test in an out-of-sample journal before risking live capital?",
+          "a": "Freeze your exact six-gate rules, stop tier, instrument, and cost assumptions, then log at least 30 to 50 consecutive chronological sessions on fresh out-of-sample data—including every no-trade day, unfilled limit, partial exit, and stop-out—before evaluating live sizing."
+        }
+      ]
+    }
+  ]
+}

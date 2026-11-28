@@ -488,12 +488,12 @@
     "ur": "Bullish اور Bearish مثالوں سے IFVG کا کردار بدلنا سمجھیں۔ وِک، کلوز، ری ٹیسٹ، ناکامی اور فرضی ٹریڈ کے نتائج ملائیں۔"
   },
   "/learn/order-blocks-ob-and-mitigation/": {
-    "en": "Learn to select order-block candles and runs, draw opening and midpoint references, and study mitigation with animated examples and practical quizzes.",
-    "ur": "Order Block کی کینڈل اور سلسلہ منتخب کریں، اوپن اور وسط ناپیں، متحرک مثالوں اور کوئز سے Mitigation سمجھیں۔"
+    "en": "Learn bullish & bearish order blocks, candle runs, body vs. wick boundaries, 50% mean threshold, mitigation, CISD, inducement & animated examples.",
+    "ur": "بُلش اور بیئرش آرڈر بلاکس، کینڈل رنز، باڈی بمقابلہ وِک حدود، 50 فیصد مین تھریش ہولڈ، مٹیگیشن، CISD، انڈیوسمنٹ اور متحرک مثالیں سیکھیں۔"
   },
   "/learn/breaker-blocks-trading-failed-order-blocks/": {
-    "en": "Follow bullish and bearish breaker structures. Compare mitigation blocks, measure Unicorn overlaps and practise retest timing with animated examples.",
-    "ur": "Bullish اور Bearish Breaker ترتیبیں دیکھیں۔ Mitigation Block، Unicorn اشتراک اور ری ٹیسٹ کے وقت کو متحرک مثالوں سے سمجھیں۔"
+    "en": "Learn bullish & bearish breaker blocks, A-B-C-D sweep flips, mitigation vs. order blocks, Unicorn FVG overlaps, OHLC rules, and invalidation.",
+    "ur": "بُلش اور بیئرش بریکر بلاکس، A-B-C-D سویپ فلپ، مٹیگیشن بمقابلہ آرڈر بلاکس، یونیکارن FVG اوورلیپ، OHLC اصول اور منسوخی سیکھیں۔"
   },
   "/": {
     "en": "Free ICT & Smart Money Concepts course: 66 chapters, interactive chart labs, FVG, order blocks and liquidity. English & Urdu.",
@@ -524,8 +524,8 @@
     "ur": "ICT Turtle Soup اور Rejection Block کو پرانے ہائی اور لو کی مثالوں سے سمجھیں۔ Liquidity Sweep، ناکام بریک آؤٹ اور تسلسل میں فرق کریں۔"
   },
   "/learn/the-ict-venom-model-five-stage-delivery/": {
-    "en": "Learn the ICT Venom model with the 08:00–09:30 New York range, liquidity sweeps and two-fang sequence. Compare failed setups and no-entry outcomes.",
-    "ur": "ICT Venom Model میں نیویارک 08:00–09:30 رینج، Liquidity Sweep اور دو Fang کی ترتیب سیکھیں۔ ناکام سیٹ اپ اور انٹری نہ ملنے کی صورتیں ملائیں۔"
+    "en": "Learn the ICT Venom Model: freeze the 08:00–09:30 NY range, spot the Two Fangs sweep and displacement, compare BPR and deferred entries, and map risk.",
+    "ur": "ICT وینم ماڈل سیکھیں: 08:00–09:30 نیویارک رینج منجمد کریں، ٹو فینگز سویپ اور ڈسپلیسمنٹ پہچانیں، BPR اور مؤخر انٹریز کا موازنہ کریں اور رسک متعین کریں۔"
   },
   "/learn/ict-lunch-afternoon-session-models/": {
     "en": "Understand ICT New York lunch and afternoon sessions. Compare post-10:00 swing confirmation, the 13:30–14:00 opening range and changing context.",
@@ -618,5 +618,9 @@
   "/tools/masterclass/pd-arrays/hangman-pd-array/": {
     "en": "#28: The ICT Hangman PD Array Masterclass: Wick Rejection Confirmation & Consequent Encroachment Defense.",
     "ur": "ICT ہینگ مین PD اَرے میں وِک سے قیمت کا ردِعمل اور درمیانی سطح (CE) دیکھیں؛ تصدیق، حدود اور ناکام صورتوں کا موازنہ کریں۔"
+  },
+  "/learn/core-content-month-9-consolidations-and-bread-and-butter/": {
+    "en": "Learn ICT Bread-and-Butter setups in ranges and consolidations: pre-breakout boxes, liquidity sweeps, 20-pip math, stop tiers, and sample journaling.",
+    "ur": "رینج اور کنسالیڈیشن میں ICT بریڈ اینڈ بٹر سیٹ اپس سیکھیں: پری بریک آؤٹ باکس، لیکویڈیٹی سویپس، 20 پِپ حساب، اسٹاپ درجات اور مکمل جرنلنگ۔"
   }
 }

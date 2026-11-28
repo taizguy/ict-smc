@@ -458,12 +458,12 @@
     "part": 4,
     "slug": "order-blocks-ob-and-mitigation",
     "title": [
-      "Order Blocks: Boundaries and Mitigation",
-      "آرڈر بلاکس: حدود اور مٹیگیشن"
+      "Order Blocks: Selection, Boundaries & Mitigation",
+      "آرڈر بلاکس: انتخاب، حدود اور مٹیگیشن"
     ],
     "description": [
-      "Select an order-block reference within its context, compare candle-run boundaries and study mitigation, failure and the limits of institutional claims.",
-      "تناظر میں آرڈر بلاک کا حوالہ منتخب کریں، کینڈلز کی قطار کی حدود کا موازنہ کریں اور مٹیگیشن، ناکامی اور ادارہ جاتی دعووں کی حدود سمجھیں۔"
+      "Learn bullish & bearish order blocks, candle runs, body vs. wick boundaries, 50% mean threshold, mitigation, CISD, inducement & animated examples.",
+      "بُلش اور بیئرش آرڈر بلاکس، کینڈل رنز، باڈی بمقابلہ وِک حدود، 50 فیصد مین تھریش ہولڈ، مٹیگیشن، CISD، انڈیوسمنٹ اور متحرک مثالیں سیکھیں۔"
     ],
     "status": "published"
   },
@@ -473,12 +473,12 @@
     "part": 4,
     "slug": "breaker-blocks-trading-failed-order-blocks",
     "title": [
-      "Breaker Blocks: Failed Order Block Studies",
-      "بریکر بلاکس: ناکام آرڈر بلاک کا مطالعہ"
+      "Breaker Blocks: Trading Failed Order Blocks",
+      "بریکر بلاکس: ناکام آرڈر بلاکس کی ٹریڈنگ"
     ],
     "description": [
-      "Trace an order block through failure and a possible breaker retest, distinguish mitigation and overlap, and compare qualifying and failed examples.",
-      "آرڈر بلاک کی ناکامی سے ممکنہ بریکر ری ٹیسٹ تک ترتیب دیکھیں، مٹیگیشن اور اوورلیپ الگ سمجھیں اور موزوں اور ناکام مثالوں کا موازنہ کریں۔"
+      "Learn bullish & bearish breaker blocks, A-B-C-D sweep flips, mitigation vs. order blocks, Unicorn FVG overlaps, OHLC rules, and invalidation.",
+      "بُلش اور بیئرش بریکر بلاکس، A-B-C-D سویپ فلپ، مٹیگیشن بمقابلہ آرڈر بلاکس، یونیکارن FVG اوورلیپ، OHLC اصول اور منسوخی سیکھیں۔"
     ],
     "status": "published"
   },
@@ -1060,13 +1060,14 @@
     "part": 7,
     "slug": "the-ict-venom-model-five-stage-delivery",
     "title": [
-      "ICT Venom Model: Opening Range and Sweeps",
-      "ICT وینم ماڈل: اوپننگ رینج اور سویپس"
+      "Venom Model: Opening Range, Sweep & Two Fangs",
+      "وینم ماڈل: اوپننگ رینج، سویپ اور ٹو فینگز"
     ],
     "description": [
-      "Follow the Venom opening-range sequence through its selected sweep and confirmation, compare both directions and identify conditions that leave no entry.",
-      "وینم کی اوپننگ رینج سے منتخب سویپ اور تصدیق تک ترتیب سمجھیں، دونوں سمتیں دیکھیں اور ایسی شرائط پہچانیں جہاں انٹری نہیں بنتی۔"
+      "Learn the ICT Venom Model: freeze the 08:00–09:30 NY range, spot the Two Fangs sweep and displacement, compare BPR and deferred entries, and map risk.",
+      "ICT وینم ماڈل سیکھیں: 08:00–09:30 نیویارک رینج منجمد کریں، ٹو فینگز سویپ اور ڈسپلیسمنٹ پہچانیں، BPR اور مؤخر انٹریز کا موازنہ کریں اور رسک متعین کریں۔"
     ],
+    "primaryKeyword": "venom model",
     "status": "published"
   },
   {
@@ -1111,14 +1112,17 @@
     "part": 7,
     "slug": "core-content-month-9-consolidations-and-bread-and-butter",
     "title": [
-      "Bread-and-Butter Setups: Ranges and Context",
-      "بریڈ اینڈ بٹر سیٹ اپس: رینج اور تناظر"
+      "Bread-and-Butter Setups: Ranges & Consolidations",
+      "بریڈ اینڈ بٹر سیٹ اپس: رینج اور کنسالیڈیشن"
     ],
     "description": [
-      "Study bread-and-butter setups around ranges and consolidations, define the entry and exit convention and compare a completed idea with an unfilled one.",
-      "رینج اور کنسالیڈیشن کے گرد بریڈ اینڈ بٹر سیٹ اپس سمجھیں، انٹری اور ایگزٹ کا اصول لکھیں اور مکمل ہونے والی اور فِل نہ ہونے والی صورت کا فرق دیکھیں۔"
+      "Learn ICT Bread-and-Butter setups in ranges and consolidations: pre-breakout boxes, liquidity sweeps, 20-pip math, stop tiers, and sample journaling.",
+      "رینج اور کنسالیڈیشن میں ICT بریڈ اینڈ بٹر سیٹ اپس سیکھیں: پری بریک آؤٹ باکس، لیکویڈیٹی سویپس، 20 پِپ حساب، اسٹاپ درجات اور مکمل جرنلنگ۔"
     ],
-    "status": "published"
+    "primaryKeyword": "bread and butter setup",
+    "status": "published",
+    "seoTitle": "Bread-and-Butter Setups: Ranges & Consolidations",
+    "seoTitleUr": "بریڈ اینڈ بٹر سیٹ اپس: رینج اور کنسالیڈیشن"
   },
   {
     "id": 57,

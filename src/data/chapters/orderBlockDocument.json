@@ -1,0 +1,966 @@
+{
+  "title": "Order Blocks: Selection, Boundaries & Mitigation",
+  "quickAnswer": "An Order Block (OB) is a selected opposing candle or consecutive same-direction candle run immediately preceding a forceful directional departure that breaks a structural reference. Traders map its Opening Price, Body Range, Full Wick Range, and 50% Mean Threshold to study later mitigation returns—while keeping observable OHLC geometry strictly separate from unverified institutional order-book assumptions.",
+  "tocLabel": "Jump to any of the 22 sections in this chapter",
+  "sections": [
+    {
+      "number": 1,
+      "anchor": "what-is-an-order-block",
+      "icon": "Compass",
+      "title": "What Is an Order Block? Plain-English Definition & Core Purpose",
+      "extract": {
+        "name": "Order Block (OB)",
+        "kind": "DefinedTerm",
+        "text": "An Order Block is a saved chart reference marking the final opposing candle or consecutive same-direction candle run right before an energetic directional departure breaks a defined price reference. A Bullish Order Block is formed from down-close candle(s) before an upward surge; a Bearish Order Block is formed from up-close candle(s) before a downward drop."
+      },
+      "paragraphs": [
+        "Open any candlestick chart and look right before a sudden, rapid move away from a swing high or swing low. Almost every major expansion begins from one opposing candle—or a short cluster of consecutive opposing candles—that briefly pushed price in the wrong direction before reversing violently. In Smart Money Concepts (SMC) and ICT price-delivery study, that saved origin candle or candle run is called an Order Block.",
+        "Beginners often hear a popular metaphor: think of an Order Block as a warehouse loading dock where large buyers or sellers supposedly stacked massive orders and later returned to pick up leftover pallets. That story is memorable, but professional chart study requires an honest scientific boundary."
+      ],
+      "numberedPoints": [
+        "What OHLC candles actually prove: Open, High, Low, and Close prices record where the opposing candle run started, how far it probed, and where displacement broke away.",
+        "What OHLC candles cannot prove: A candlestick chart never identifies who traded, how many contracts remain resting at a bank desk, or whether anyone is obligated to defend that price.",
+        "Why the Order Block still matters: By freezing a strict selection rule before price returns, an Order Block turns a vague support/resistance guess into a measurable, testable price interval."
+      ],
+      "visualId": "ob-stick-figure-comic",
+      "callout": {
+        "tone": "emerald",
+        "label": "Beginner Rule of Thumb",
+        "text": "Never treat a colored box as proof of hidden bank orders. Treat an Order Block as a pre-committed coordinate rule: which exact candle(s) qualified, which boundaries are active, and what closes invalidate the zone."
+      }
+    },
+    {
+      "number": 2,
+      "anchor": "five-step-departure-sequence",
+      "icon": "GitBranch",
+      "title": "How an Order Block Forms: The 5-Step Departure Sequence",
+      "paragraphs": [
+        "Every candlestick chart prints hundreds of down-close candles before small upward bounces. Marking all of them creates chart clutter and zero analytical discipline. A qualified Order Block is defined chronologically—from the departure first, never backward from a convenient bounce."
+      ],
+      "numberedPoints": [
+        "Step 1 — Contextual Approach: Price approaches a meaningful higher-timeframe reference such as a prior swing low/high, range edge, or session liquidity pool.",
+        "Step 2 — Liquidity Probe or Sweep: The opposing candle(s) briefly push into or slightly beyond that reference (for example, dipping below a marked prior low at 100.0 down to 99.0).",
+        "Step 3 — Origin Candle Run Forms: One down-close candle—or consecutive down-close candles (such as 106 -> 104 -> 102 -> 101)—completes at the turning point.",
+        "Step 4 — Energetic Displacement Departure: Price accelerates away in the opposite direction with full-bodied momentum, closing decisively through the run's opening price (106 -> 108) and leaving an imbalance such as a Fair Value Gap.",
+        "Step 5 — Structural Break & Freeze: A subsequent completed candle clears the external swing reference (closing at 111 above 109). You freeze the Order Block box immediately—before watching whether price ever returns."
+      ],
+      "visualId": "ob-departure-sequence-anim",
+      "callout": {
+        "tone": "ochre",
+        "label": "Chronology First",
+        "text": "If price drifts away slowly in overlapping dojis without breaking structure or creating displacement, the opposing candle is ordinary consolidation—not a qualified Order Block."
+      }
+    },
+    {
+      "number": 3,
+      "anchor": "single-candle-vs-consecutive-run",
+      "icon": "Layers",
+      "title": "Single Candle vs. Consecutive Candle Run: Freezing Your Selection Rule",
+      "paragraphs": [
+        "One of the biggest sources of confusion between YouTube tutorials and ICT source lessons is candle selection. Many beginner guides teach a one-line shortcut: \"mark the single last down candle before the up move.\" However, ICT 2022 Episode 3 frequently groups consecutive same-direction close candles into one continuous delivery run.",
+        "In our canonical bullish example, three consecutive down-close candles print back-to-back: Candle A (Open 106, Close 104, High 107), Candle B (Open 104, Close 102), and Candle C (Open 102, Close 101, Low 99). Choosing only Candle C versus grouping A + B + C produces completely different entry levels and midpoints."
+      ],
+      "bullets": [
+        "Single-Candle Convention (Candle C only): Narrower box (Open 102, Body 101–102, Body Midpoint 101.5). Offers a tighter stop distance when price retraces deeply, but misses fills whenever price bounces early at 106.",
+        "Consecutive-Run Convention (Candles A + B + C): Treats all uninterrupted down-close candles as one origin block (First Open 106, Body 101–106, Body Midpoint 103.5, Full Wick 99–107). Captures shallow opening-price reactions at 106, at the cost of a wider zone.",
+        "Non-Negotiable Discipline: Pick one convention per study sample and log it in advance. Silently switching between a single candle and a 3-candle run after seeing the bounce destroys honest backtesting."
+      ],
+      "visualId": "ob-single-vs-run-explorer",
+      "table": {
+        "caption": "Comparison of Selection Conventions on the Same 3-Candle Bullish Turn (Synthetic Example)",
+        "headers": [
+          "Selection Rule",
+          "Opening Reference",
+          "Body Range",
+          "Full Wick Range",
+          "Body Mean Threshold",
+          "Primary Trade-Off"
+        ],
+        "rows": [
+          [
+            "3-Candle Consecutive Run (A–C)",
+            "106.0",
+            "101.0 – 106.0 (5.0 pts)",
+            "99.0 – 107.0 (8.0 pts)",
+            "103.5",
+            "Catches shallow touches at 106; wider stop if anchored at 99."
+          ],
+          [
+            "Single Last Candle (C only)",
+            "102.0",
+            "101.0 – 102.0 (1.0 pt)",
+            "99.0 – 102.5 (3.5 pts)",
+            "101.5",
+            "Tighter risk footprint; misses rallies that bounce at 106.0 or 103.5."
+          ],
+          [
+            "Extreme-Wick Anchor Only",
+            "102.0",
+            "101.0 – 102.0",
+            "99.0 (Extreme Low)",
+            "100.75 (Full)",
+            "Focuses strictly on the sweep candle that set the lowest low."
+          ]
+        ]
+      }
+    },
+    {
+      "number": 4,
+      "anchor": "boundaries-and-mean-threshold",
+      "icon": "Ruler",
+      "title": "How to Draw Order Block Boundaries & Calculate Mean Threshold (50%)",
+      "extract": {
+        "name": "Order Block Mean Threshold Formula",
+        "kind": "CreativeWork",
+        "formula": "Body Mean Threshold = (Body_Low + Body_High) / 2   |   Full-Range Mean Threshold = (Wick_Low + Wick_High) / 2",
+        "text": "The Mean Threshold is the exact 50% arithmetic midpoint of an explicitly declared Order Block range. Because body boundaries and full wick boundaries rarely share the same midpoint, always state which range is being bisected."
+      },
+      "paragraphs": [
+        "Drawing an Order Block accurately means distinguishing four exact coordinates rather than tossing one sloppy rectangle across a candle. In institutional-style charting, candle bodies carry particular weight because wick extremes vary slightly across retail CFD and forex feeds, while bodies remain far more uniform across venues."
+      ],
+      "numberedPoints": [
+        "Proximal Opening Reference (106.0 in our bullish run): The first opening price of the selected candle or consecutive run. Aggressive limit orders often sit here to avoid missing shallow reactions.",
+        "Body Range Band (101.0 – 106.0): The union of all candle bodies in the run. Drawing this as an inner shaded band separates core body delivery from outer wick spikes.",
+        "Mean Threshold — 50% Midpoint (103.5 Body / 103.0 Full): The equilibrium checkpoint of the block. Many traders monitor whether candle bodies respect 50% (closing back above 103.5 in a bullish OB) as an internal health gauge.",
+        "Distal Full-Range Wick Extreme (99.0 Low / 107.0 High): The outermost liquidity extreme of the run. Protective stops are commonly anchored beyond this distal edge plus a spread/volatility buffer, and a decisive candle close past 99.0 marks full-range invalidation."
+      ],
+      "visualId": "ob-boundary-anatomy-ruler",
+      "callout": {
+        "tone": "emerald",
+        "label": "Why Body vs. Wick Matters",
+        "text": "On our 3-candle run, Full-Range Mean Threshold is (99 + 107) / 2 = 103.0 while Body Mean Threshold is (101 + 106) / 2 = 103.5. A return to 106.0 touches the opening and body edge—it never touches either Mean Threshold."
+      }
+    },
+    {
+      "number": 5,
+      "anchor": "bullish-vs-bearish-mirror",
+      "icon": "ArrowLeftRight",
+      "title": "Bullish vs. Bearish Order Blocks: Mirroring the Complete Sequence",
+      "paragraphs": [
+        "A common beginner mistake is memorizing bullish rules and only half-inverting them on bearish setups—for instance, selecting an up-close run for a bearish block but accidentally marking its closing price instead of its opening price, or placing stops below the box instead of above it.",
+        "Every single coordinate—origin candle polarity, departure direction, approach side, opening line, Mean Threshold, and closing invalidation—must mirror symmetrically."
+      ],
+      "bullets": [
+        "Bullish Order Block Mirror: Down-close candle run (106 -> 101; Full 99–107; Body 101–106; First Open 106.0; Body MT 103.5). Price departs upward through 106 and 109, returns from ABOVE, and fails on a close below 99.0.",
+        "Bearish Order Block Mirror: Up-close candle run (104 -> 109; Full 103–111; Body 104–109; First Open 104.0; Body MT 106.5; Full MT 107.0). Price departs downward through 104 and 101, returns from BELOW, and fails on a close above 111.0."
+      ],
+      "visualId": "ob-bullish-bearish-mirror",
+      "table": {
+        "caption": "Complete Side-by-Side Bullish vs. Bearish Order Block Coordinate Mirror (Synthetic Worked Numbers)",
+        "headers": [
+          "Structural Attribute",
+          "Bullish Order Block",
+          "Bearish Order Block"
+        ],
+        "rows": [
+          [
+            "Origin Candle Polarity",
+            "Last down-close candle or consecutive down-close run",
+            "Last up-close candle or consecutive up-close run"
+          ],
+          [
+            "Preceding Sweep Location",
+            "Sell-side liquidity / prior swing low sweep (below 100.0)",
+            "Buy-side liquidity / prior swing high sweep (above 110.0)"
+          ],
+          [
+            "Proximal Opening Reference",
+            "First open of down-close run (106.0)",
+            "First open of up-close run (104.0)"
+          ],
+          [
+            "Body Range & Body MT (50%)",
+            "101.0 – 106.0 | Body MT = 103.5",
+            "104.0 – 109.0 | Body MT = 106.5"
+          ],
+          [
+            "Full Wick Range & Full MT",
+            "99.0 – 107.0 | Full MT = 103.0",
+            "103.0 – 111.0 | Full MT = 107.0"
+          ],
+          [
+            "Approach Direction on Return",
+            "Pullback descending from ABOVE into 106.0 / 103.5",
+            "Rally ascending from BELOW into 104.0 / 106.5"
+          ],
+          [
+            "Closing Invalidation Edge",
+            "Decisive candle body close below 99.0",
+            "Decisive candle body close above 111.0"
+          ]
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "anchor": "3d-ruler-motion-study",
+      "icon": "Box",
+      "title": "Motion Study 02: Interactive 3D & Ruler Measurement Studio",
+      "paragraphs": [
+        "Inspect the canonical bullish three-candle Order Block run in physical 3D space or switch to the straight-on orthographic Ruler View to measure every tick from 99.0 to 115.0 without perspective distortion.",
+        "Use the branch selector to compare three distinct authored outcomes on the exact same frozen Order Block—so you train your eyes to evaluate opening bounces, deep Mean Threshold tags, and closing failures objectively."
+      ],
+      "numberedPoints": [
+        "Branch 1 — Opening Bounce: Price retraces from 111.0 to 105.8, tags the 106.0 opening edge, closes back at 107.4, and expands to 115.0.",
+        "Branch 2 — Mean Threshold Tag: Price probes deeper into the body band down to 103.5 (exact 50% Body MT), holds above the body floor on the close, and resumes upward.",
+        "Branch 3 — Closing Failure: Price slices straight through 106.0, 103.5, and 99.0, closing at 98.4—invalidating the bullish OB and setting up a potential Bearish Breaker flip."
+      ],
+      "visualId": "ob-3d-cinema-studio"
+    },
+    {
+      "number": 7,
+      "anchor": "cisd-vs-mss",
+      "icon": "Activity",
+      "title": "Change in State of Delivery (CISD) vs. Market Structure Shift (MSS)",
+      "paragraphs": [
+        "Advanced SMC traders separate two distinct departure confirmations after an Order Block run prints: Change in State of Delivery (CISD) and Market Structure Shift (MSS). Confusing the two causes traders either to enter blindly on weak chop or to arrive too late after the move is already half over."
+      ],
+      "numberedPoints": [
+        "Change in State of Delivery (CISD): Triggers the moment a completed opposing candle closes strictly beyond the opening price of the consecutive delivery run (in our example, closing at 108.0 above the 106.0 opening of Candle A). It confirms immediate order-flow delivery shift before the broader swing breaks.",
+        "Market Structure Shift (MSS): Triggers later when a forceful displacement candle breaks and closes beyond the external structural swing reference (closing at 111.0 above Swing High 109.0), frequently leaving a Fair Value Gap in its wake.",
+        "How Professionals Combine Them: Use CISD inside a pre-identified higher-timeframe Order Block or sweep zone as an early lower-timeframe confirmation trigger, and use MSS to confirm sustained directional expansion."
+      ],
+      "visualId": "ob-cisd-vs-mss-anim",
+      "table": {
+        "caption": "CISD vs. Market Structure Shift (MSS) Qualification Comparison",
+        "headers": [
+          "Criterion",
+          "Change in State of Delivery (CISD)",
+          "Market Structure Shift (MSS)"
+        ],
+        "rows": [
+          [
+            "Exact Trigger Level",
+            "Close past the first opening price of the opposing candle run (106.0)",
+            "Displacement close beyond the external swing high/low (109.0)"
+          ],
+          [
+            "Confirmation Speed",
+            "Earlier (often 1–3 candles sooner)",
+            "Later (waits for wider swing clearance)"
+          ],
+          [
+            "Entry Price & Stop Width",
+            "Better entry price and tighter structural stop distance",
+            "Wider stop unless waiting for a deeper pullback"
+          ],
+          [
+            "Whipsaw / False-Signal Risk",
+            "Higher if used in mid-range without HTF sweep context",
+            "Lower because external liquidity and structure have shifted"
+          ]
+        ]
+      }
+    },
+    {
+      "number": 8,
+      "anchor": "what-is-order-block-mitigation",
+      "icon": "Target",
+      "title": "What Is Order Block Mitigation? Depth, Timing & The 3-Candle Window",
+      "extract": {
+        "name": "Order Block Mitigation",
+        "kind": "DefinedTerm",
+        "text": "Order Block Mitigation is the observable return of price into a previously frozen Order Block interval after departure. Measuring the exact penetration depth (Opening, Body Band, 50% Mean Threshold, or Distal Wick) and grading price behavior over a pre-defined response window turns subjective commentary into verifiable chart evidence."
+      },
+      "paragraphs": [
+        "When price rallies away from a Bullish Order Block and later pulls back into that saved box, SMC traders call that revisit mitigation. Many educators explain mitigation as large desks closing offsetting hedges at breakeven before pushing the trend further. Remember: that narrative is an interpretive model, whereas the OHLC revisit depth is a hard fact anyone can verify.",
+        "Not all mitigation touches are equal. A fresh, unmitigated Order Block that has never been retested behaves very differently from a block that has been chewed through three times. To avoid hindsight bias, define a fixed response window—such as the next 3 completed candles after first touch—before replaying."
+      ],
+      "numberedPoints": [
+        "Unmitigated (No Return): Price never comes back to 106.0 during the observation window. Record this as a missed fill rather than pretending the setup never existed.",
+        "Shallow Opening Mitigation (Touch at 106.0): Fast markets often kiss the proximal opening line and accelerate immediately without ever reaching 50%.",
+        "Mean Threshold Mitigation (Probe to 103.5): Price retraces halfway through the body band, fills deeper limit orders, and closes back above 103.5 within the 3-candle window.",
+        "Full Traversal / Closing Failure (Close below 99.0): Price slices cleanly through the distal edge and closes beyond it—invalidating the Order Block."
+      ],
+      "visualId": "ob-mitigation-depth-anim"
+    },
+    {
+      "number": 9,
+      "anchor": "inducement-and-trap-blocks",
+      "icon": "AlertTriangle",
+      "title": "Inducement (IDM) & Why Many Order Blocks Fail Before the Real Move",
+      "paragraphs": [
+        "If you have ever marked a textbook-looking Order Block, placed a buy limit right at its open, watched price bounce for two minutes, and then slam straight through your stop loss before rocketing to your original target—you almost certainly traded an Inducement Order Block.",
+        "In multi-swing price legs, the market frequently leaves an obvious mid-leg Order Block sitting above a deeper, unmitigated extreme Order Block in Discount. Early traders stack buy limits and protective stops around that mid-leg block. Because no prior liquidity was swept before that mid-leg block formed, that block itself becomes the liquidity pool (Inducement) that price sweeps right before tapping the true extreme Order Block below."
+      ],
+      "numberedPoints": [
+        "Check for Inducement First: Ask whether a minor pullback swing (IDM) sits directly in front of your Order Block. A sweep of that inducement low provides clear observable liquidity engineering.",
+        "Prefer Extreme Discount / Premium Origins: Bullish Order Blocks sitting below the 50% equilibrium of the dealing range (Discount) after a liquidity sweep offer cleaner structural clearance than mid-range blocks.",
+        "Wait for the Sweep Rather Than Chasing the First Box: If two stacked Order Blocks exist in the same leg and the upper one never swept liquidity, treat the upper block with skepticism and monitor the deeper extreme block."
+      ],
+      "visualId": "ob-high-prob-vs-trap",
+      "callout": {
+        "tone": "rose",
+        "label": "The Inducement Filter",
+        "text": "When you see two bullish Order Blocks stacked on top of each other in the same upward impulse, ask: did the upper one sweep a swing low? If not, the upper block often acts as bait ahead of the deeper extreme block."
+      }
+    },
+    {
+      "number": 10,
+      "anchor": "order-block-taxonomy-comparison",
+      "icon": "Grid",
+      "title": "Order Block vs. Supply & Demand, Breaker, Mitigation, Propulsion & Rejection Blocks",
+      "paragraphs": [
+        "Traders constantly mix up Order Blocks with legacy Supply & Demand zones, Breaker Blocks, Mitigation Blocks, Propulsion Blocks, Reclaimed Order Blocks, and Rejection Blocks. Although all seven live on the same candlestick chart, each has a distinct geometric definition and market role."
+      ],
+      "bullets": [
+        "Supply & Demand vs. Order Block: Supply & Demand marks broad multi-candle consolidation bases; an Order Block isolates the exact final opposing candle or run immediately prior to structural displacement.",
+        "Order Block vs. Breaker Block: An Order Block holds on its original side; a Breaker Block is a failed Order Block that swept an external swing extreme before breaking and flipping polarity.",
+        "Order Block vs. Mitigation Block: A Mitigation Block also involves a broken zone, but forms after a failure swing (no external sweep) rather than a liquidity raid.",
+        "Order Block vs. Rejection Block: A Rejection Block specifically measures the long upper/lower wick region between candle bodies and extreme wicks at a major swing turning point."
+      ],
+      "visualId": "ob-taxonomy-matrix-visual",
+      "table": {
+        "caption": "Master Taxonomy: Comparing All 7 Structural Zone Types Side by Side",
+        "headers": [
+          "Zone Type",
+          "Exact Candle Geometry",
+          "Liquidity Sweep Required?",
+          "Primary Market Role",
+          "Key Reference Line"
+        ],
+        "rows": [
+          [
+            "Standard Order Block (OB)",
+            "Last opposing candle / consecutive run before displacement",
+            "Strongly preferred (higher quality)",
+            "Trend continuation or sweep reversal origin",
+            "First Open & 50% Mean Threshold"
+          ],
+          [
+            "Supply & Demand Zone",
+            "Broad base / multi-candle consolidation before impulse",
+            "Optional",
+            "Macro area of historical buying/selling",
+            "Proximal & Distal base borders"
+          ],
+          [
+            "Breaker Block (BB)",
+            "Failed OB after external swing sweep + opposing MSS",
+            "Mandatory (Point C sweeps Point A)",
+            "Role-reversal flip (old support -> resistance)",
+            "Body band & midpoint of Point B origin"
+          ],
+          [
+            "Mitigation Block (MB)",
+            "Failed OB after failure swing (no sweep) + break",
+            "No (Point C stops short of Point A)",
+            "Structural retest after failed swing extreme",
+            "Broken swing candle body / open"
+          ],
+          [
+            "Propulsion Block (PB)",
+            "Secondary OB formed right after tapping a parent OB",
+            "Parent OB already absorbed sweep",
+            "High-momentum continuation springboard",
+            "50% Mean Threshold (must stay sensitive)"
+          ],
+          [
+            "Reclaimed Order Block",
+            "Prior OB broken briefly then reclaimed during MMXM shift",
+            "Often aligns with buy/sell model turn",
+            "Secondary continuation after reclaim",
+            "Reclaimed body & opening price"
+          ],
+          [
+            "Rejection Block (RB)",
+            "Long wick cluster protruding beyond swing candle bodies",
+            "Wicks themselves probe liquidity",
+            "Rejection zone at swing extremes",
+            "Highest/lowest candle body to wick tip"
+          ]
+        ]
+      }
+    },
+    {
+      "number": 11,
+      "anchor": "order-block-vs-fvg-overlap",
+      "icon": "Calculator",
+      "title": "Order Block vs. Fair Value Gap (FVG): Exact Interval Overlap Arithmetic",
+      "extract": {
+        "name": "OB–FVG Intersection Formula",
+        "kind": "CreativeWork",
+        "formula": "Overlap_Low = max(OB_Low, FVG_Low)   |   Overlap_High = min(OB_High, FVG_High)   |   Valid Overlap iff Overlap_High > Overlap_Low",
+        "text": "An Order Block marks the origin candle run while a Fair Value Gap measures a three-candle wick gap left during departure. True geometric confluence exists only on the strictly positive price interval shared by both ranges."
+      },
+      "paragraphs": [
+        "Order Blocks and Fair Value Gaps frequently appear in the exact same impulse move, yet they measure completely different phenomena: the Order Block marks where the departure originated, while the Fair Value Gap marks where price accelerated so rapidly that Candle 1 and Candle 3 wicks left an unfilled pocket.",
+        "Before labeling an Order Block and an FVG as overlapping confluence, check the numbers. If an Order Block spans 99–107 and an FVG sits above it at 108–110, they are stacked neighbors (disjoint)—not an overlap. If a completed FVG spans 105–108, their strict intersection is 105–107 (width = 2.0 points)."
+      ],
+      "numberedPoints": [
+        "Positive-Width Overlap (Overlap_High > Overlap_Low): Both references share a measurable price slice (for example, 105–107). Entries inside this slice satisfy both the OB and FVG conditions simultaneously.",
+        "Touching Boundary (Overlap_High == Overlap_Low): The FVG starts right where the OB ends (for example, OB 99–107 and FVG 107–110). Useful sequential alignment, but zero shared interior width.",
+        "Disjoint / Stacked (Overlap_High < Overlap_Low): Price must clear the FVG first before ever reaching the OB below. Decide in advance whether your strategy enters the FVG or waits for the deeper OB."
+      ],
+      "visualId": "ob-fvg-overlap-calculator"
+    },
+    {
+      "number": 12,
+      "anchor": "propulsion-and-reclaimed-blocks",
+      "icon": "RefreshCw",
+      "title": "Advanced Variants: Propulsion Blocks & Reclaimed Order Blocks",
+      "paragraphs": [
+        "Once you master standard Order Blocks, two specialized ICT variants show up repeatedly on index futures and major forex pairs: Propulsion Blocks and Reclaimed Order Blocks. Both explain why price sometimes refuses to retrace all the way back to the original extreme low or high."
+      ],
+      "numberedPoints": [
+        "Propulsion Block Mechanics: First, price dips into a higher-timeframe Parent Order Block and launches away aggressively. Next, a fresh opposing candle forms right out of that reaction and immediately sparks a second displacement leg. That secondary candle is the Propulsion Block. Traders watch its 50% Mean Threshold closely because deep closes past its midpoint signal fading momentum.",
+        "Reclaimed Order Block Mechanics: Inside a Market Maker Buy or Sell Model, price may drop cleanly through an older bullish Order Block during the sell-side curve—making it appear invalidated—before sweeping external liquidity, shifting structure upward, and aggressively reclaiming that exact same Order Block from underneath. Once reclaimed with displacement, the zone frequently acts as support along the buy-side expansion curve."
+      ],
+      "visualId": "ob-propulsion-reclaimed-anim"
+    },
+    {
+      "number": 13,
+      "anchor": "multi-timeframe-refinement",
+      "icon": "SlidersHorizontal",
+      "title": "Multi-Timeframe Refinement (4H -> 15M -> 1M): Precision vs. Missed Fills",
+      "paragraphs": [
+        "A Daily or 4-Hour Order Block on Nasdaq futures or EUR/USD can span 40 to 80 points—far too wide for an intraday trader seeking a compact protective stop. Multi-Timeframe Refinement solves this by dropping inside the higher-timeframe Order Block to locate the smaller lower-timeframe Order Block or FVG that launched the break.",
+        "However, refinement is never free magic. Every step down in timeframe shrinks your risk distance while simultaneously increasing the probability that price reacts from the outer higher-timeframe boundary and leaves your hyper-refined limit order unfilled."
+      ],
+      "numberedPoints": [
+        "Higher Timeframe (Daily / 4H — Context & Bias): Identifies the macro Dealing Range, Premium/Discount equilibrium, and the unmitigated parent Order Block.",
+        "Intermediate Timeframe (15M / 5M — Refined POI): Isolates the fresh lower-timeframe Order Block nested inside the HTF parent zone, cutting stop width by 50%–65%.",
+        "Execution Timeframe (1M / 3M — Entry Confirmation): Rather than guessing which 1-minute candle inside a 4H box will hold, many disciplined traders wait for price to tap the 4H/15M zone first, then enter on a 1M CISD or MSS."
+      ],
+      "visualId": "ob-mtf-refinement-zoom",
+      "table": {
+        "caption": "Multi-Timeframe Refinement Trade-Off Matrix (Synthetic NQ Illustration)",
+        "headers": [
+          "Refinement Tier",
+          "Typical Zone Width",
+          "Potential Reward-to-Risk",
+          "Fill Frequency Trade-Off",
+          "Best Practical Use"
+        ],
+        "rows": [
+          [
+            "4H Parent Order Block",
+            "40.0 pts",
+            "1.5R – 2.0R",
+            "Highest fill frequency (catches shallow taps)",
+            "Directional bias & swing-trade area of interest"
+          ],
+          [
+            "15M Nested Order Block",
+            "14.0 pts",
+            "2.5R – 4.0R",
+            "Balanced (misses shallow 4H open-only taps)",
+            "Intraday Killzone point of interest"
+          ],
+          [
+            "1M Refined OB / CISD Trigger",
+            "5.0 pts",
+            "4.0R+ (when filled)",
+            "Lowest limit-fill rate; higher noise sensitivity",
+            "Confirmation entry after 4H/15M zone is tagged"
+          ]
+        ]
+      }
+    },
+    {
+      "number": 14,
+      "anchor": "high-probability-quality-grader",
+      "icon": "ShieldCheck",
+      "title": "High-Probability Order Block Checklist & 7-Gate Confluence Grader",
+      "paragraphs": [
+        "Not every valid Order Block deserves capital risk. High-probability selection filters out mid-range noise by stacking seven objective, chart-verifiable structural conditions before you place a single order."
+      ],
+      "numberedPoints": [
+        "Gate 1 — Higher-Timeframe Directional Alignment: The OB aligns with the active Daily or 4H draw on liquidity.",
+        "Gate 2 — Premium / Discount Location: Bullish OBs sit in Discount (below 50% of the dealing range); Bearish OBs sit in Premium (above 50%).",
+        "Gate 3 — Preceding Liquidity Sweep or Inducement Raid: The OB origin swept an obvious prior swing high/low or internal inducement level.",
+        "Gate 4 — Displacement With Fair Value Gap: Price departed rapidly with large-bodied candles, leaving an unfilled FVG alongside or overlapping the OB.",
+        "Gate 5 — Clean Body-Close Structural Shift: A completed candle closed decisively beyond the origin run opening (CISD) or external swing (MSS).",
+        "Gate 6 — Fresh & Unmitigated Status: Price is returning to the saved boundaries for the first time rather than retesting an already exhausted level.",
+        "Gate 7 — Killzone Session Timing: Both the departure and mitigation align with active London (02:00–05:00 NY) or New York AM (08:30–11:00 NY) liquidity windows."
+      ],
+      "visualId": "ob-quality-scorecard"
+    },
+    {
+      "number": 15,
+      "anchor": "worked-bullish-nq-example",
+      "icon": "TrendingUp",
+      "title": "Worked Bullish Example: NQ 5M Discount Order Block (09:15–10:20 NY)",
+      "paragraphs": [
+        "Let us walk through a complete synthetic Nasdaq-100 E-mini (NQ) 5-minute bullish Order Block during the New York AM Killzone (America/New_York). Every price, timestamp, entry choice, and risk multiple is calculated explicitly so you can verify the geometry bar by bar.",
+        "Prior to 09:30 NY, NQ holds a marked pre-market sell-side low at 20,044. At 09:30–09:35 NY, two consecutive down-close candles sweep below 20,044 down to 20,040 and close at 20,048 (First Open = 20,072; Body Range = 20,048–20,072; Body Mean Threshold = 20,060; Full Wick Range = 20,040–20,076). At 09:40 NY, an energetic bullish candle closes at 20,088 (CISD above 20,072), and at 09:45 NY price closes at 20,104 (MSS above swing high 20,094) while leaving a 5M Bullish FVG at 20,064–20,084."
+      ],
+      "numberedPoints": [
+        "Frozen OB Coordinates: Consecutive 2-candle run — Opening Reference 20,072.0, Body Range 20,048.0–20,072.0, Body Mean Threshold 20,060.0, Distal Low 20,040.0.",
+        "OB–FVG Overlap Check: OB (20,040–20,076) intersects FVG (20,064–20,084) strictly from 20,064.0 to 20,076.0 (12.0-point shared zone).",
+        "Entry Option A (Opening Limit at 20,072.0): Stop at 20,036.0 (36.0 pts risk), Target at 20,144.0 (72.0 pts reward) = 2.0R before costs.",
+        "Entry Option B (Mean Threshold Limit at 20,060.0): Stop at 20,036.0 (24.0 pts risk), Target at 20,144.0 (84.0 pts reward) = 3.5R before costs — requires price to probe halfway into the body."
+      ],
+      "visualId": "ob-nq-bullish-replay",
+      "table": {
+        "caption": "Synthetic NQ 5M Bullish Order Block Trade Blueprint (Educational Example, Before Costs)",
+        "headers": [
+          "Parameter",
+          "Opening Limit Plan",
+          "Mean Threshold Limit Plan"
+        ],
+        "rows": [
+          [
+            "Instrument & Session",
+            "NQ 5M · New York AM (09:15–10:20 America/New_York)",
+            "NQ 5M · New York AM (09:15–10:20 America/New_York)"
+          ],
+          [
+            "Saved OB Run (09:30–09:35)",
+            "Open 20,072 | Body 20,048–20,072 | Full 20,040–20,076",
+            "Body Mean Threshold = 20,060.0"
+          ],
+          [
+            "Planned Entry Price",
+            "20,072.0 (Proximal Open)",
+            "20,060.0 (50% Body MT)"
+          ],
+          [
+            "Protective Stop (Distal + 4 pt buffer)",
+            "20,036.0 (Risk = 36.0 pts)",
+            "20,036.0 (Risk = 24.0 pts)"
+          ],
+          [
+            "Target (Prior Day High Pool)",
+            "20,144.0 (Reward = 72.0 pts)",
+            "20,144.0 (Reward = 84.0 pts)"
+          ],
+          [
+            "Planned R-Multiple (Before Costs)",
+            "2.0R (Fills on shallow or deep mitigation)",
+            "3.5R (Higher missed-fill risk if bounce stays shallow)"
+          ]
+        ]
+      }
+    },
+    {
+      "number": 16,
+      "anchor": "worked-bearish-eurusd-example",
+      "icon": "TrendingDown",
+      "title": "Worked Bearish Example: EUR/USD 15M Premium Order Block (07:30–10:15 NY)",
+      "paragraphs": [
+        "Now inspect the exact bearish mirror on a synthetic EUR/USD 15-minute chart spanning the London-to-New York overlap. Notice how every single boundary inverts cleanly—and how an interactive intrabar wick spike highlights the crucial difference between an exchange stop trigger and a candle-close pattern rule.",
+        "At 08:00 NY, two consecutive up-close candles raid the London session high at 1.0920, wicking up to 1.0924 before closing at 1.0918 (First Open = 1.0900; Body Range = 1.0900–1.0918; Body Mean Threshold = 1.0909; Full Wick Range = 1.0898–1.0924). At 08:15 NY, a heavy bearish displacement candle closes at 1.0886 (CISD below 1.0900) and at 08:30 NY closes at 1.0870 (MSS below 1.0878)."
+      ],
+      "numberedPoints": [
+        "Frozen Bearish OB Coordinates: First Open 1.0900, Body Range 1.0900–1.0918, Body Mean Threshold 1.0909, Distal Wick High 1.0924.",
+        "Planned Short Parameters: Limit Entry at 1.0900 (Opening Reference), Protective Stop at 1.0928 (28 pips risk, 4 pips above distal high), Target at 1.0844 (56 pips reward) = 2.0R before spread and commissions.",
+        "Interactive Branch Check: Toggle the \"Simulate Intrabar Wick Spike (1.0929)\" mode in the animation below to see how an intrabar spread spike can trigger a stop-market order at 1.0928 even if the 15M candle later closes back at 1.0912."
+      ],
+      "visualId": "ob-eurusd-bearish-replay",
+      "table": {
+        "caption": "Synthetic EUR/USD 15M Bearish Order Block Blueprint (Educational Example, Before Costs)",
+        "headers": [
+          "Parameter",
+          "Baseline Mitigation Hold",
+          "Intrabar Spike Scenario"
+        ],
+        "rows": [
+          [
+            "Saved Bearish OB Run (07:45–08:00)",
+            "Open 1.0900 | Body 1.0900–1.0918 | Full 1.0898–1.0924",
+            "Same frozen OB boundaries"
+          ],
+          [
+            "Entry & Protective Stop",
+            "Short Limit 1.0900 | Stop-Market 1.0928 (28 pips)",
+            "Short Limit 1.0900 | Stop-Market 1.0928 (28 pips)"
+          ],
+          [
+            "Retest Candle Behavior (09:00 NY)",
+            "Wicks to 1.0911 (near 1.0909 MT), closes at 1.0894",
+            "Spikes intrabar to 1.0929, then closes back at 1.0912"
+          ],
+          [
+            "Outcome Classification",
+            "Stop untouched; price reaches 1.0844 target (+2.0R)",
+            "Stop triggered intrabar (-1.0R) despite close staying below 1.0924"
+          ]
+        ]
+      }
+    },
+    {
+      "number": 17,
+      "anchor": "paper-trade-execution-and-risk",
+      "icon": "SlidersHorizontal",
+      "title": "Paper-Trade Execution, Order Types, Stop Tiers & Risk Arithmetic",
+      "paragraphs": [
+        "A textbook Order Block diagram is only half the workflow. Turning a chart box into a disciplined trade plan requires explicitly declaring your order type, order expiry, protective stop tier, and cost-adjusted position size before price ever reaches the zone.",
+        "Remember the fundamental separation between chart labels and live order matching: a stop-market order executes immediately when touched intrabar (potentially with slippage during fast news spikes), whereas a close-based invalidation rule waits for the candle timer to finish. Never widen a stop mid-trade just to protect a chart label."
+      ],
+      "numberedPoints": [
+        "Aggressive Opening Limit Entry: Places a resting limit order at the proximal opening line (106.0). Maximizes fill participation on fast moves, with a wider stop distance.",
+        "Refined Mean Threshold Limit Entry: Places a limit order at 50% (103.5). Shrinks risk distance and boosts R-multiple when filled, but leaves you watching from the sidelines on shallow bounces.",
+        "Lower-Timeframe Confirmation Entry: Waits for price to enter the HTF Order Block and print a completed 1M/5M CISD before entering. Filters out runaway reversals, but sacrifices initial entry price.",
+        "Three Stop-Placement Tiers: (1) Aggressive Mean Threshold stop (tightest, highest wick-out risk), (2) Candle Body stop (moderate), and (3) Distal Extreme Wick + spread buffer (most structural room)."
+      ],
+      "visualId": "ob-risk-order-simulator",
+      "table": {
+        "caption": "Order-Block Execution Order Types & Practical Trade-Offs",
+        "headers": [
+          "Execution Style",
+          "Entry Mechanism",
+          "Missed-Fill Risk",
+          "Failure-Protection Advantage",
+          "Key Operational Risk"
+        ],
+        "rows": [
+          [
+            "Proximal Open Limit",
+            "Resting limit at first opening price",
+            "Low",
+            "None if price slices straight through",
+            "Wider stop distance; lower R-multiple"
+          ],
+          [
+            "Mean Threshold (50%) Limit",
+            "Resting limit at 50% body midpoint",
+            "Moderate to High",
+            "Smaller stop distance if wrong",
+            "Price frequently reverses from open before reaching 50%"
+          ],
+          [
+            "LTF CISD Confirmation",
+            "Market/limit after LTF close shifts inside HTF OB",
+            "Moderate (fast V-reversals)",
+            "Avoids catching falling knives on invalidations",
+            "Worse entry price; slippage on fast candles"
+          ]
+        ]
+      }
+    },
+    {
+      "number": 18,
+      "anchor": "common-order-block-mistakes",
+      "icon": "Ban",
+      "title": "Common Order Block Mistakes & How to Fix Them",
+      "paragraphs": [
+        "Most frustration with Order Blocks comes not from the concept itself, but from four repeatable charting errors. Inspect each mistake in the interactive clinic below and apply the concrete rule fix."
+      ],
+      "numberedPoints": [
+        "Mistake 1 — Marking Every Opposite Candle Without Displacement: An opposing candle followed by choppy overlap has no directional displacement or structural break. Fix: Require energetic departure + FVG or clear swing break.",
+        "Mistake 2 — Buying the First Mid-Leg Box (Ignoring Inducement): Un-swept mid-leg boxes frequently trap early buyers right before price raids down into the deeper Discount OB. Fix: Map inducement lows/highs first.",
+        "Mistake 3 — Redrawing the Box in Hindsight: Switching from single-candle to 3-candle run after price already bounced corrupts your journal. Fix: Screenshot and freeze boundaries before the return.",
+        "Mistake 4 — Confusing Wick Mitigation With Closing Failure: Panicking out when a wick taps Mean Threshold—or holding blindly after a full candle body closes beyond the distal wick. Fix: Separate wick probes from closing invalidation and pre-set protective stops."
+      ],
+      "visualId": "ob-mistakes-comic"
+    },
+    {
+      "number": 19,
+      "anchor": "pre-trade-execution-checklist",
+      "icon": "CheckSquare",
+      "title": "Pre-Trade Execution & Journaling Checklist",
+      "paragraphs": [
+        "Work through these eight interactive verification gates before committing risk to any Order Block setup—and log every missed fill, expired setup, and stop-out alongside clean reactions."
+      ],
+      "checklist": [
+        {
+          "id": "ob-chk-1",
+          "label": "1. Higher-Timeframe Bias & Dealing Range Mapped",
+          "detail": "Confirmed Daily/4H draw on liquidity and verified whether the OB sits in Discount (bullish) or Premium (bearish)."
+        },
+        {
+          "id": "ob-chk-2",
+          "label": "2. Preceding Liquidity Sweep or Inducement Identified",
+          "detail": "Verified that the origin run raided a prior swing extreme or inducement pool rather than forming randomly in mid-air."
+        },
+        {
+          "id": "ob-chk-3",
+          "label": "3. Selection Convention Frozen (Single Candle vs. Consecutive Run)",
+          "detail": "Recorded exact candle IDs and timestamps before price returned; no hindsight redrawing allowed."
+        },
+        {
+          "id": "ob-chk-4",
+          "label": "4. Exact Boundaries & Mean Threshold Labeled",
+          "detail": "Marked Opening Price, Body Range, 50% Mean Threshold (specifying Body or Full), and Distal Wick Extreme."
+        },
+        {
+          "id": "ob-chk-5",
+          "label": "5. Displacement, CISD/MSS & FVG Confluence Verified",
+          "detail": "Confirmed energetic departure with completed body close and computed exact OB–FVG overlap if both exist."
+        },
+        {
+          "id": "ob-chk-6",
+          "label": "6. Fresh / Unmitigated Status & Session Window Checked",
+          "detail": "Verified this is the first eligible mitigation visit during London or New York Killzone hours (America/New_York)."
+        },
+        {
+          "id": "ob-chk-7",
+          "label": "7. Order Type, Expiry, Stop Tier & Costs Defined",
+          "detail": "Declared limit vs. confirmation entry, protective stop beyond distal edge + buffer, spread/fees, and time expiry."
+        },
+        {
+          "id": "ob-chk-8",
+          "label": "8. Three-Candle Response Window & Misses Logged",
+          "detail": "Committed to journaling the outcome honestly whether it holds, stops out, expires unfilled, or flips into a Breaker."
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "anchor": "order-block-glossary",
+      "icon": "BookMarked",
+      "title": "24-Term Order Block & Mitigation Glossary",
+      "paragraphs": [
+        "Use this standardized reference table to keep selection rules, boundary labels, and related PD array definitions consistent across every chart review."
+      ],
+      "glossaryTerms": [
+        {
+          "term": "Order Block (OB)",
+          "definition": "The final opposing candle or consecutive same-direction candle run immediately preceding a forceful directional departure that breaks a structural reference."
+        },
+        {
+          "term": "Bullish Order Block",
+          "definition": "A down-close candle or consecutive down-close run before an energetic upward departure, studied on later pullbacks from above."
+        },
+        {
+          "term": "Bearish Order Block",
+          "definition": "An up-close candle or consecutive up-close run before an energetic downward departure, studied on later rallies from below."
+        },
+        {
+          "term": "Consecutive Candle Run",
+          "definition": "Two or more uninterrupted same-direction close candles grouped together as a single Order Block origin under an explicit selection rule."
+        },
+        {
+          "term": "Opening Reference (Proximal Edge)",
+          "definition": "The first opening price of the selected Order Block candle or consecutive candle run; often the earliest mitigation line."
+        },
+        {
+          "term": "Body Range",
+          "definition": "The price interval spanning from the lowest open/close to the highest open/close across the selected Order Block candle(s)."
+        },
+        {
+          "term": "Full Wick Range",
+          "definition": "The outer frame from the absolute lowest wick to the absolute highest wick of the selected Order Block candle(s)."
+        },
+        {
+          "term": "Mean Threshold (MT)",
+          "definition": "The exact 50% arithmetic midpoint of an explicitly declared Order Block boundary set (Body Range or Full Wick Range)."
+        },
+        {
+          "term": "Distal Edge",
+          "definition": "The farthest outer wick extreme of the Order Block away from the departure direction; commonly used to anchor stops and closing invalidation."
+        },
+        {
+          "term": "Mitigation",
+          "definition": "The observable return of price into a previously frozen Order Block interval after departure, graded by penetration depth and response window."
+        },
+        {
+          "term": "Unmitigated Order Block",
+          "definition": "A qualified Order Block that price has not yet revisited since its initial departure."
+        },
+        {
+          "term": "Displacement",
+          "definition": "Energetic, full-bodied directional movement away from an origin that breaks structure and frequently leaves a Fair Value Gap."
+        },
+        {
+          "term": "Change in State of Delivery (CISD)",
+          "definition": "An early confirmation signal triggered when a completed opposing candle closes strictly beyond the opening price of the preceding consecutive delivery run."
+        },
+        {
+          "term": "Market Structure Shift (MSS)",
+          "definition": "A displacement break and close beyond a broader prior swing high or swing low confirming directional shift."
+        },
+        {
+          "term": "Inducement (IDM)",
+          "definition": "A minor internal swing high/low or un-swept mid-leg block sitting ahead of an extreme Order Block that attracts early orders before being swept."
+        },
+        {
+          "term": "Fair Value Gap (FVG)",
+          "definition": "A three-candle price imbalance where Candle 1 and Candle 3 wicks do not overlap; compared strictly by mathematical intersection against an Order Block."
+        },
+        {
+          "term": "Breaker Block (BB)",
+          "definition": "A failed Order Block formed after an external liquidity sweep and opposing structural break that reverses role from support to resistance (or vice versa)."
+        },
+        {
+          "term": "Mitigation Block (MB)",
+          "definition": "A broken structural zone formed after a failure swing (without sweeping the prior external extreme) followed by an opposing break."
+        },
+        {
+          "term": "Propulsion Block (PB)",
+          "definition": "A secondary Order Block created immediately after price reacts from a higher-timeframe parent Order Block, acting as a continuation springboard."
+        },
+        {
+          "term": "Reclaimed Order Block",
+          "definition": "An older Order Block that price initially traded through during one curve of a cycle and later aggressively reclaimed with displacement."
+        },
+        {
+          "term": "Rejection Block (RB)",
+          "definition": "A zone defined by long wicks extending beyond swing candle bodies at a major high or low."
+        },
+        {
+          "term": "Multi-Timeframe Refinement",
+          "definition": "Drilling from a higher-timeframe parent Order Block into a smaller nested lower-timeframe Order Block to narrow stop distance while accepting higher missed-fill risk."
+        },
+        {
+          "term": "Response Window",
+          "definition": "A pre-declared number of completed candles after first touch (for example, 3 candles) used to classify mitigation outcomes objectively."
+        },
+        {
+          "term": "Closing Invalidation",
+          "definition": "A completed candle body closing strictly beyond the distal boundary of an Order Block, distinct from an intrabar stop-market execution."
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "anchor": "baseline-textbook-reference",
+      "icon": "Archive",
+      "title": "Original Baseline Textbook Reference (15.1–15.9)",
+      "paragraphs": [
+        "Every original section from the foundational LearnSMC Price Delivery edition (15.1–15.9) is preserved verbatim below for continuity and reference."
+      ],
+      "baselineSections": [
+        {
+          "code": "15.1",
+          "heading": "What is an order block? Start with the departure",
+          "paragraphs": [
+            "An order block is a candle-based reference selected before a directional departure. In a common bullish illustration, price falls through one or more down-close candles and then moves upward through a chosen reference. The earlier candles become an area to study on a later return. A bearish illustration reverses that sequence.",
+            "Think of the drawing as a saved location: “This is where the move began under my selection rule.” It is not a photograph of institutional orders. A candle records opening, high, low and closing prices; it does not identify who traded, what inventory remains, or whether anyone must defend that price.",
+            "The useful question is therefore specific: which candles are selected, what price action qualifies them, and what would count as a successful or failed revisit? A coloured box without those answers is only a coloured box."
+          ]
+        },
+        {
+          "code": "15.2",
+          "heading": "One candle or a consecutive run? Save the rule first",
+          "paragraphs": [
+            "A familiar shortcut is “the last down candle before an up move.” It is a useful starting picture, but it does not describe every order-block convention. Some examples use a single candle; others treat consecutive same-direction closes as one run. Those choices produce different openings, boundaries and midpoints.",
+            "Our bullish worked example selects three consecutive down-close candles: A opens at 106 and closes at 104; B opens at 104 and closes at 102; C opens at 102 and closes at 101. The run begins at 106. Its lowest wick is 99 and highest wick is 107. Selecting only C would produce a much smaller reference. Neither drawing can silently stand in for the other.",
+            "An upward candle later closes at 108, beyond the run’s first opening at 106. A subsequent close at 111 clears the separately marked swing reference at 109. In this example those are two different observations: trading through the opening and breaking a chosen swing. Save the run before examining the later retest; do not choose whichever candle would make the outcome look best."
+          ]
+        },
+        {
+          "code": "15.3",
+          "heading": "How do you draw order block boundaries?",
+          "paragraphs": [
+            "For this three-candle run, the full wick range is 99–107. The union of the candle bodies spans 101–106. The first opening is 106. These are three different references, not interchangeable names for the same line.",
+            "The midpoint often called mean threshold depends on the selected boundaries. For the full range it is (99 + 107) ÷ 2 = 103. For the body range it is (101 + 106) ÷ 2 = 103.5. A return to 106 reaches the opening and the body-range edge; it does not reach either midpoint.",
+            "Draw the full range as the outer frame and the body range as an inner band. Label the opening and the midpoint you actually intend to study. If your chosen source or model uses a narrower boundary, keep that convention throughout the example. A midpoint is arithmetic; which range deserves attention is a model choice."
+          ]
+        },
+        {
+          "code": "15.4",
+          "heading": "Why some candles deserve attention and others do not",
+          "paragraphs": [
+            "Every chart contains down-close candles before upward movement. Marking all of them makes selection meaningless. Begin with a wider question: what swing, range edge or liquidity reference was price approaching, and what changed after the selected candles?",
+            "In the worked example, the run trades below a previously marked low at 100 and then closes back above it. Price subsequently moves through 106 and closes above the swing reference at 109. These observations create a narrative: an excursion through a reference, a reclaim, and an upward departure. They do not prove that stops caused the move, but they are observable conditions you can record.",
+            "Displacement, a completed FVG and alignment with a higher-timeframe range can be additional filters in a particular trading model. They are not permission to redraw the block after seeing a successful bounce. A chart with an impressive departure but no later return is also part of the sample."
+          ]
+        },
+        {
+          "code": "15.5",
+          "heading": "What is order block mitigation?",
+          "paragraphs": [
+            "In this lesson, mitigation describes price returning to a previously selected order-block reference. Traders sometimes explain that return as participants reducing or offsetting earlier exposure. That is an interpretation; ordinary OHLC candles do not reveal whose position changed.",
+            "Observe the event in smaller pieces. Did price reach the opening, the body band, the midpoint or the far wick? Did it close within the range, leave it, or cross its far side? A shallow touch at 106 and a full traversal to 99 are both returns, but they are very different outcomes.",
+            "Choose a response window before replaying: for example, the next three completed candles after the first touch. Record the highest and lowest prices reached in that window. This turns “it respected the block” into something another person could check. The three-candle window here is a study choice, not a universal ICT requirement."
+          ]
+        },
+        {
+          "code": "15.6",
+          "heading": "Bullish and bearish examples: mirror the whole sequence",
+          "paragraphs": [
+            "The bullish example starts with a down-close run, an upward departure and a later approach from above. If price returns to 106 and then rises, that is an upward reaction at the saved opening. If it closes below the full-range low at 99, it fails the full-range closing rule used in this example.",
+            "For the bearish mirror, the selected candles close upward. Their full range is 103–111, body range 104–109 and first opening 104. Price departs downward through 104, then returns from below. The body midpoint is 106.5 and the full-range midpoint is 107. Do not reuse the bullish numbers or put the bearish stop underneath the zone.",
+            "There are at least three honest endings: a reaction in the departure direction, a crossing through the reference, and no revisit during the observation window. A block can also be touched repeatedly. Whether only the first return is eligible is a separate model rule; repeated touches do not supply a measurable universal “remaining order” count."
+          ]
+        },
+        {
+          "code": "15.7",
+          "heading": "Order block versus FVG: related references, different geometry",
+          "paragraphs": [
+            "An order block is selected from a candle or candle run. An FVG is measured between the outer wicks of three neighbouring candles. They may appear in the same departure, but they answer different questions: where did the selected movement begin, and where did the outer ranges leave a positive interval?",
+            "If an order-block interval is 99–107 and a separate FVG is 108–110, the drawings do not overlap. They may still belong to the same price sequence. If a different completed FVG spans 105–108, their intersection is 105–107. Only that intersection belongs to both drawings.",
+            "Higher and lower timeframes also change the picture. Three separate candles on a small timeframe may become one candle on a larger timeframe. Keep the chart timeframe, session and selection convention with every saved example. More boxes do not automatically mean stronger evidence: several drawings can describe the same underlying move."
+          ]
+        },
+        {
+          "code": "15.8",
+          "heading": "A paper-trade plan: separate the drawing from the order",
+          "paragraphs": [
+            "Suppose a paper exercise plans a long entry at 106, a stop at 98.5 and a target at 121. Planned risk is 7.5 points and planned reward is 15 points, giving 2R before costs. These invented prices illustrate arithmetic; they are not a recommended entry or stop formula.",
+            "The plan still needs an order type, an expiry and a rule for whether confirmation is required after the touch. A limit order at 106 and an entry after a later confirmation close are different strategies. If the market only falls to 106.5, the limit entry has not been reached. If one recorded candle spans both stop and target after entry, OHLC alone may not resolve the order of events.",
+            "Pattern failure and account risk are also different. Your protective stop can trigger intrabar while a close-based pattern condition remains intact. Do not widen a stop simply to preserve a chart label. Include spread, fees, slippage and instrument-specific contract values before translating points into position size."
+          ]
+        },
+        {
+          "code": "15.9",
+          "heading": "Study routine: keep the misses, not just the beautiful returns",
+          "paragraphs": [
+            "For each example, save the chart before the return. Record the selected candle IDs, the opening, body and wick boundaries, the qualification time and the contextual reference. Then replay one completed candle at a time without moving the box.",
+            "Classify the ending with your original rules. Keep failed returns, expired ideas and unclear intrabar sequences alongside the clean reactions. Compare a single-candle version and a run version as separate rule sets rather than choosing whichever worked on each chart.",
+            "The next chapter asks a new question: what happens when a saved reference fails and price approaches it from the other side? That takes us from order-block selection to breaker structure, mitigation distinctions and the overlap sometimes called a Unicorn."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "anchor": "order-block-faq",
+      "icon": "HelpCircle",
+      "title": "Frequently Asked Questions About Order Blocks",
+      "paragraphs": [
+        "Direct, plain-language answers to the 14 most common beginner, intermediate, and advanced questions about Order Blocks, boundaries, Mean Threshold, and mitigation."
+      ],
+      "faqs": [
+        {
+          "q": "What is an Order Block in trading in simple words?",
+          "a": "An Order Block is the last opposing candle—or consecutive cluster of opposing candles—immediately before a sharp, structure-breaking price move. Traders save its boundaries so they can study whether price reacts again when it later revisits that origin zone."
+        },
+        {
+          "q": "How do you identify a valid Order Block vs. random chart candles?",
+          "a": "Require context and displacement: price should approach a meaningful reference (such as a swing low/high or liquidity pool), print the opposing candle run, and then depart energetically enough to break structure and often leave a Fair Value Gap. Slow, choppy drift does not qualify."
+        },
+        {
+          "q": "Should I draw an Order Block using candle bodies or full wicks?",
+          "a": "Draw both clearly: use the full wick range as the outer frame (helpful for stop placement and full invalidation) and the body range as the inner core band (more uniform across broker feeds). Always state explicitly which boundary your Mean Threshold measures."
+        },
+        {
+          "q": "Should I select a single candle or a consecutive candle run as my Order Block?",
+          "a": "Both conventions exist in SMC and ICT study, but they yield different opening lines and midpoints. Choose one convention for a given rule set and freeze it before the retest—never switch rules in hindsight to make an example look cleaner."
+        },
+        {
+          "q": "What is the Mean Threshold of an Order Block?",
+          "a": "The Mean Threshold is the exact 50% midpoint of the Order Block range: (Low + High) / 2. Traders watch whether candle bodies respect this midpoint during a pullback and sometimes use it for refined limit entries with tighter risk."
+        },
+        {
+          "q": "What does Order Block mitigation mean?",
+          "a": "Mitigation simply means price has returned to touch or trade inside a previously formed Order Block. Recording whether the visit reached the opening line, 50% Mean Threshold, or distal wick—and how the next few candles responded—keeps analysis objective."
+        },
+        {
+          "q": "Do candlesticks prove that banks left unfilled orders inside an Order Block?",
+          "a": "No. Standard OHLC candles record only Open, High, Low, and Close prices over a time interval. They do not reveal trader identity, remaining bank inventory, or resting limit queues; participant narratives remain interpretive frameworks rather than observed order-book proof."
+        },
+        {
+          "q": "What is the difference between an Order Block and a Fair Value Gap (FVG)?",
+          "a": "An Order Block marks the opposing candle or run where the move started, while a Fair Value Gap measures a three-candle wick gap left during rapid acceleration. True confluence exists only where their numerical price intervals strictly overlap."
+        },
+        {
+          "q": "What is the difference between an Order Block and a Supply or Demand zone?",
+          "a": "Supply and Demand zones usually cover broad multi-candle consolidation bases, whereas an Order Block narrows attention to the specific final opposing candle run immediately before displacement and applies precise opening and 50% Mean Threshold geometry."
+        },
+        {
+          "q": "What is the difference between an Order Block and a Breaker Block?",
+          "a": "An Order Block is traded on its original side while it holds. A Breaker Block is a failed Order Block that forms after price sweeps an external swing high/low and breaks straight through the old block, flipping its role from support to resistance or vice versa."
+        },
+        {
+          "q": "What is Change in State of Delivery (CISD) and how does it relate to Order Blocks?",
+          "a": "CISD occurs when a completed candle closes strictly past the opening price of the preceding consecutive opposing candle run. It fires earlier than a full external Market Structure Shift (MSS) and is often used as a lower-timeframe entry confirmation inside a higher-timeframe Order Block."
+        },
+        {
+          "q": "Why do so many Order Blocks fail right before the real move happens?",
+          "a": "Many mid-leg Order Blocks form without sweeping prior liquidity and sit directly in front of a deeper Discount or Premium extreme Order Block. Those obvious mid-leg zones act as Inducement (IDM), getting swept right before price tags the deeper extreme block."
+        },
+        {
+          "q": "What is a Propulsion Block vs. a Reclaimed Order Block?",
+          "a": "A Propulsion Block is a fresh secondary Order Block launched directly from a reaction inside a higher-timeframe parent Order Block. A Reclaimed Order Block is an older block that price initially broke through before sweeping liquidity and forcefully reclaiming it with displacement."
+        },
+        {
+          "q": "Can an Order Block be mitigated more than once, and does a protective stop wait for candle close?",
+          "a": "Price can revisit a zone multiple times, though many rule sets focus strictly on the first fresh touch. Separately, exchange stop-market orders trigger immediately intrabar when reached—they never wait for a candle close—so keep pattern invalidation and live stop placement distinct."
+        }
+      ]
+    }
+  ]
+}

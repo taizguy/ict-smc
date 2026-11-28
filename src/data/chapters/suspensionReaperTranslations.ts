@@ -638,8 +638,8 @@ export const suspensionReaperTranslations: Record<string, string> = {
   'The intersection runs from max(1.08720, 1.08740) = 1.08740 up to min(1.08790, 1.08820) = 1.08790.':
     'مشترکہ حصہ max(1.08720, 1.08740) = 1.08740 سے min(1.08790, 1.08820) = 1.08790 تک بنتا ہے۔',
 
-  'Does a Suspension Block establish a universal 1% risk rule or guaranteed first-touch bounce?':
-    'کیا سسپنشن بلاک کوئی آفاقی 1% رسک اصول یا پہلی چھو پر یقینی اچھال ثابت کرتا ہے؟',
+  'Does a Suspension Block establish a universal 1% risk rule or automatic first-touch bounce?':
+    'کیا سسپنشن بلاک کوئی آفاقی 1% رسک اصول یا پہلی چھو پر خودکار اچھال ثابت کرتا ہے؟',
   'Capital preservation, stop mechanics, and evidentiary limits.':
     'سرمایہ کا تحفظ، اسٹاپ میکانکس اور شواہد کی حدود۔',
   'No; body gaps are observable chart references requiring explicit closing invalidation, tick sizing, and slippage awareness.':

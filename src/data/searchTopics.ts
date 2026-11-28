@@ -14,7 +14,7 @@ export const studyTopics: Record<string, string> = {
   "/learn/fair-value-gaps-fvg-and-consequent-encroachment/": "Fair Value Gaps (FVG): Formation, CE and Examples",
   "/learn/inverse-fair-value-gaps-ifvg-role-reversal-imbalances/": "Inverse Fair Value Gaps (IFVG): Role Reversal & Examples",
   "/learn/order-blocks-ob-and-mitigation/": "Order Blocks: Selection, Boundaries & Mitigation",
-  "/learn/breaker-blocks-trading-failed-order-blocks/": "Breaker Blocks, Mitigation & Unicorn: Structure Explained",
+  "/learn/breaker-blocks-trading-failed-order-blocks/": "Breaker Blocks: Trading Failed Order Blocks",
   "/learn/liquidity-engineering-and-liquidity-runs/": "Liquidity Runs, Inducement & Traps",
   "/learn/time-and-session-liquidity-the-global-clock/": "Trading Sessions, Killzones & Macros",
   "/learn/the-weekly-profile-and-five-day-delivery-model/": "Weekly Profiles & the Five-Day Range",

@@ -52,6 +52,14 @@ import { fvgDocumentDates } from '../src/data/chapters/fvgDocument';
 import { FvgDocumentContent } from '../src/components/FvgDocumentContent';
 import { priceMovementDates } from '../src/data/chapters/priceMovementLesson';
 import { PriceMovementContent } from '../src/components/PriceMovementContent';
+import { BreakerBlockContent, BreakerBlockRelatedLinks } from '../src/components/BreakerBlockContent';
+import { breakerBlockDates, breakerBlockDocument } from '../src/data/chapters/breakerBlockLesson';
+import { OrderBlockLessonContent, OrderBlockRelatedLinks } from '../src/components/OrderBlockLessonContent';
+import { orderBlockDates, orderBlockDocument } from '../src/data/chapters/orderBlockLesson';
+import { VenomLessonContent, VenomRelatedLinks } from '../src/components/VenomLessonContent';
+import { venomModelDates, venomModelDocument } from '../src/data/chapters/venomModelLesson';
+import { BreadButterLessonContent, BreadButterRelatedLinks } from '../src/components/BreadButterLessonContent';
+import { breadButterDates, breadButterDocument } from '../src/data/chapters/breadButterLesson';
 
 registerChapterModule(1064, { Content: SilverLessonContent, dates: silverLessonDates });
 registerChapterModule(9, {
@@ -256,3 +264,47 @@ registerChapterModule(1034, {
 registerChapterModule(1031, { Content: MitigationDocumentContent, RelatedLinks: MitigationRelatedLinks, dates: mitigationDates });
 registerChapterModule(1, { Content: PriceMovementContent, dates: priceMovementDates });
 registerChapterModule(13, { Content: FvgDocumentContent, dates: fvgDocumentDates });
+registerChapterModule(15, {
+  Content: OrderBlockLessonContent,
+  RelatedLinks: OrderBlockRelatedLinks,
+  dates: orderBlockDates,
+  tocSections: orderBlockDocument.sections.map((sec, i) => ({
+    id: `15.toc.${sec.number}`,
+    title: sec.title,
+    stableAnchor: sec.faqs?.length ? 'order-block-faq' : `rr-section-${i}`,
+  })),
+  quickAnswer: orderBlockDocument.quickAnswer,
+});
+registerChapterModule(16, {
+  Content: BreakerBlockContent,
+  RelatedLinks: BreakerBlockRelatedLinks,
+  dates: breakerBlockDates,
+  tocSections: breakerBlockDocument.sections.map((sec, i) => ({
+    id: `16.toc.${sec.number}`,
+    title: sec.title,
+    stableAnchor: sec.faqs?.length ? 'breaker-block-faq' : `rr-section-${i}`,
+  })),
+  quickAnswer: breakerBlockDocument.quickAnswer,
+});
+registerChapterModule(53, {
+  Content: VenomLessonContent,
+  RelatedLinks: VenomRelatedLinks,
+  dates: venomModelDates,
+  tocSections: venomModelDocument.sections.map((sec, i) => ({
+    id: `53.toc.${sec.number}`,
+    title: sec.title,
+    stableAnchor: sec.faqs?.length ? 'venom-model-faq' : `rr-section-${i}`,
+  })),
+  quickAnswer: venomModelDocument.quickAnswer,
+});
+registerChapterModule(45, {
+  Content: BreadButterLessonContent,
+  RelatedLinks: BreadButterRelatedLinks,
+  dates: breadButterDates,
+  tocSections: breadButterDocument.sections.map((sec, i) => ({
+    id: `45.toc.${sec.number}`,
+    title: sec.title,
+    stableAnchor: sec.faqs?.length ? 'bread-butter-faq' : `rr-section-${i}`,
+  })),
+  quickAnswer: breadButterDocument.quickAnswer,
+});

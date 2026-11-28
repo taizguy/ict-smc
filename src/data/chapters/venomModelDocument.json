@@ -1,0 +1,675 @@
+{
+  "title": "Venom Model: Opening Range, Sweep & Two Fangs",
+  "quickAnswer": "The ICT Venom Model is a rule-based New York opening-session entry framework built on three observable events: freezing the 08:00–09:30 New York extended-hours range high and low, observing a post-09:30 candle close beyond one boundary with an inefficient sweep leg (Fang 1), and confirming an opposing inefficient displacement back inside the range (Fang 2). Where Fang 1 and Fang 2 overlap, they can form a Balanced Price Range (BPR) or a declared deferred candle-open reference; traders then compare aggressive close-based participation against deferred pullback limit orders under strict invalidation and expiry rules.",
+  "tocLabel": "Chapter 67 Contents (21 Sections)",
+  "sections": [
+    {
+      "number": 1,
+      "anchor": "plain-english-intro",
+      "icon": "Compass",
+      "title": "What Is the ICT Venom Model in Plain English?",
+      "extract": {
+        "name": "ICT Venom Model",
+        "kind": "DefinedTerm",
+        "text": "An intraday opening-session price-action framework that marks a frozen pre-open reference box (commonly 08:00–09:30 New York time), waits for a candle close beyond one range edge on an inefficient expansion (Fang 1), and requires a sharp opposing inefficient move back inside the range (Fang 2) before framing risk and reward."
+      },
+      "paragraphs": [
+        "Imagine a crowded room with two marked exits at 09:30 AM New York time: the ceiling of the morning's warm-up range (Buy-Side Liquidity) and the floor of the morning's warm-up range (Sell-Side Liquidity). Instead of guessing which door the crowd will run through before the bell rings, the Venom Model waits for the opening surge to burst through one door, close outside it, and then immediately slam back through the doorway in the opposite direction.",
+        "Beginners often confuse the Venom Model with any generic breakout or vague reversal arrow. In reality, its name highlights a very specific two-leg signature: two opposing inefficient price legs—called the Two Fangs—straddling the frozen range edge. Without both the outward sweep leg and the forceful inward counter-leg, you do not have a Venom sequence; you only have an unconfirmed breakout."
+      ],
+      "numberedPoints": [
+        "Anchor the box: freeze the exact 08:00–09:30 New York high and low once the 09:30 candle opens.",
+        "Observe Fang 1: wait for post-09:30 price to push past one frozen boundary with a full candle close outside the edge and visible displacement.",
+        "Confirm Fang 2: require an opposing inefficient move back through the range boundary that shifts local delivery against the breakout.",
+        "Separate plan from wish: declare in advance whether you use an aggressive close-based entry, a BPR overlap limit, or a deferred Venom candle-open limit—and accept an unfilled order when price leaves without returning."
+      ],
+      "visualId": "stick-figure-analogy",
+      "callout": {
+        "tone": "violet",
+        "label": "Observable Chart Facts vs. Market Folklore",
+        "text": "The frozen 08:00–09:30 boundaries, candle closes, gap overlap, and stop distances are 100% measurable on any OHLC chart. Stories claiming a hidden operator engineered the move solely to hunt retail traders cannot be verified from a price candle alone."
+      }
+    },
+    {
+      "number": 2,
+      "anchor": "opening-range-clock",
+      "icon": "Clock",
+      "title": "Freezing the 08:00–09:30 New York Opening Range & Session Clock",
+      "extract": {
+        "name": "Venom Frozen Opening Range",
+        "kind": "CreativeWork",
+        "formula": "OR_High = max(High[08:00..09:29 NY]), OR_Low = min(Low[08:00..09:29 NY]), OR_Span = OR_High - OR_Low",
+        "text": "The 90-minute pre-open liquidity box on an extended-hours futures or CFD feed spanning 08:00 AM through the close of the 09:29 AM New York minute bar, frozen permanently at the 09:30 AM equity cash open."
+      },
+      "paragraphs": [
+        "Time is the first filter of the Venom Model. Between 08:00 AM and 09:30 AM New York time, major U.S. macroeconomic releases (such as 08:30 AM CPI, NFP, or jobless claims) and pre-market equity positioning carve out an upper high and a lower low. At 09:30:00 AM, when the New York Stock Exchange cash equity session opens, those two extremes become static horizontal reference lines.",
+        "Two practical chart mistakes derail beginners before 09:35 AM even arrives. First, plotting the range on a Regular Trading Hours (RTH) chart hides the 08:00–09:30 pre-market candles altogether—you must enable Extended Trading Hours (ETH). Second, forgetting U.S. Daylight Saving Time shifts between EDT (UTC-4) and EST (UTC-5) offsets your box by a full hour if you chart in UTC or local time instead of America/New_York."
+      ],
+      "bullets": [
+        "Extended-Hours Requirement: Enable ETH on NQ, ES, YM, or index futures so every 08:00–09:29 candle is included in the high/low calculation.",
+        "Freeze Rule at 09:30: Never drag the box higher or lower after 09:30 AM; post-09:30 price pushing outside the frozen edge is the very sweep event the model measures.",
+        "Primary Active Window: Most opening-session Venom sequences complete their Two Fangs between 09:30 and 11:00 AM New York time; declare a firm expiry timestamp if no return occurs.",
+        "Other Session Variants: Some traders study an 18:00–09:30 overnight range or London pre-open range, but any non-08:00–09:30 variant must be backtested and logged under its own separate timing definition."
+      ],
+      "visualId": "ny-clock-box",
+      "table": {
+        "caption": "Venom Session Window Reference (America/New_York)",
+        "headers": ["Window (NY Time)", "Role in Venom Model", "EDT (Summer UTC)", "EST (Winter UTC)"],
+        "rows": [
+          ["08:00 – 09:29", "Build & freeze Opening Range High/Low (ETH chart)", "12:00 – 13:29 UTC", "13:00 – 14:29 UTC"],
+          ["09:30 – 10:00", "Cash open volatility surge; Fang 1 sweep & Fang 2 reversal", "13:30 – 14:00 UTC", "14:30 – 15:00 UTC"],
+          ["10:00 – 11:00", "Deferred retest window (overlap with Silver Bullet window)", "14:00 – 15:00 UTC", "15:00 – 16:00 UTC"],
+          ["After 11:00 – 11:30", "Common time expiry for unfilled opening-session orders", "After 15:00 UTC", "After 16:00 UTC"]
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "anchor": "two-fangs-anatomy",
+      "icon": "Layers",
+      "title": "Anatomy of the Two Fangs: Sweep Leg vs. Displacement Counter-Leg",
+      "extract": {
+        "name": "The Two Fangs Sequence",
+        "kind": "DefinedTerm",
+        "text": "Two consecutive, opposing inefficient price legs spanning a frozen range boundary: Fang 1 expands outside the boundary with a closing candle and visible imbalance, and Fang 2 drives back inside the boundary with opposing displacement to shift local delivery."
+      },
+      "paragraphs": [
+        "Every clean Venom structure looks like a twin-tooth V-top (bearish) or V-bottom (bullish) straddling the frozen boundary. On our synthetic 100–110 reference range, imagine 09:31 price surging upward from 107.2 to a high of 113.0 and closing at 112.0—leaving a bullish Fair Value Gap (Buy-Side Imbalance, Sell-Side Inefficiency) on the way up. That outward surge is Fang 1.",
+        "If price kept climbing to 116 and 120, Fang 1 would simply be a normal opening breakout. What transforms it into a Venom setup is Fang 2: an immediate, wide-bodied bearish displacement leg that drops from 111.0 down to 108.0, closes back inside the 100–110 range, and leaves a bearish Fair Value Gap (Sell-Side Imbalance, Buy-Side Inefficiency) slicing downward across the same price corridor."
+      ],
+      "numberedPoints": [
+        "Range Freeze (100.0 – 110.0): 08:00–09:29 establishes clear high and low liquidity references.",
+        "Fang 1 Outward Sweep (High 113.0, Close 112.0): Price closes decisively above 110.0 with a fast upward gap, inviting breakout buyers.",
+        "Fang 2 Opposing Displacement (Open 111.0, Close 108.0): Sellers overwhelm the breakout, print an opposing bearish imbalance, and close back beneath 110.0.",
+        "Declared Entry Reference (111.0 / BPR): Only after Fang 2 closes back inside the range do the BPR overlap and deferred Venom candle-open reference exist.",
+        "Delivery Test or Runaway: Price either retraces into 111.0 before falling toward 104.0, or drops straight to 104.0 without filling deferred limit orders."
+      ],
+      "visualId": "two-fang-stepper",
+      "callout": {
+        "tone": "amber",
+        "label": "Recognition Time Discipline",
+        "text": "You never know Fang 1 is a trap while it is printing. The Venom signal only becomes observable after Fang 2 closes back across the range boundary—so any entry reference is strictly forward-looking from that bar onward."
+      }
+    },
+    {
+      "number": 4,
+      "anchor": "wick-vs-close-filter",
+      "icon": "ShieldCheck",
+      "title": "Wick-Only Sweep vs. Confirmed Closing-Candle Condition",
+      "paragraphs": [
+        "One of the sharpest technical distinctions in Chapter 67 is whether a brief wick poke above 110.0 counts as the exact same Venom variant as a full candle close above 110.0. In the reviewed bearish Venom definition, Fang 1 closes above the frozen buy-side reference (for example, reaching 113.0 and closing at 112.0) before Fang 2 reverses back below 110.0.",
+        "Why does this distinction matter in live journaling? A wick-only probe above 110.0 that closes at 109.4 on the very same minute bar is a classic stop-hunt rejection or Turtle Soup wick sweep—it can certainly precede a decline, yet it does not produce the same two-sided closing displacement geometry or breakout-trader trap as a closing Fang 1. Conversely, a closing candle above 110.0 without a forceful opposing Fang 2 close back inside is simply trend acceptance."
+      ],
+      "bullets": [
+        "Wick-Only Probe (High 111.6, Close 109.4): Useful liquidity raid context, but log it as a separate wick-sweep variant rather than mixing its statistics with closing-fang Venom setups.",
+        "Confirmed Closing Fang (High 113.0, Close 112.0 -> Fang 2 Close 108.0): Traps breakout participants who entered on the closed bar above 110.0 and creates a measurable two-sided gap corridor.",
+        "Trend Acceptance Failure (High 113.0, Close 112.0 -> Next Close 114.5): Proves why you never short Fang 1 blindly—without Fang 2 closing back inside 110.0, there is zero Venom trigger."
+      ],
+      "visualId": "wick-vs-close",
+      "table": {
+        "caption": "Comparing Three Post-09:30 Range-Boundary Reactions",
+        "headers": ["Reaction Pattern", "Close Above 110.0?", "Opposing Fang 2 Below 110.0?", "Classification"],
+        "rows": [
+          ["Wick-Only Probe", "No (wick only)", "Immediate same-bar drop", "Wick Sweep / Turtle Soup Variant"],
+          ["Confirmed Venom Two Fangs", "Yes (Close 112.0)", "Yes (Close 108.0 with FVG)", "Standard Closing-Fang Venom"],
+          ["Breakout Continuation", "Yes (Close 112.0)", "No (holds & expands > 114.0)", "Trend Acceptance — No Short"]
+        ]
+      }
+    },
+    {
+      "number": 5,
+      "anchor": "bearish-vs-bullish-mirror",
+      "icon": "ArrowLeftRight",
+      "title": "Bearish Venom vs. Bullish Venom: Exact Structural Mirror",
+      "paragraphs": [
+        "While the reviewed baseline example illustrates a bearish Venom raid above the 110.0 range high, the exact geometric mirror applies to a bullish Venom raid below the 100.0 range low. Treating the bullish case as an explicitly labeled teaching contrast keeps your playbook symmetrical without blurring which example came from which review.",
+        "In a bullish Venom, post-09:30 price plunges below the frozen 08:00–09:30 low (100.0), prints a downward closing Fang 1 (for instance, low 97.0, close 98.0) that clears sell-side liquidity, and then erupts upward in Fang 2 to close decisively back above 100.0 (close 102.0). Protective invalidation shifts beneath the sweep low (96.0), and upside targets aim into internal imbalance or the opposite 110.0 high."
+      ],
+      "bullets": [
+        "Bearish Venom (High Raid): Sweeps Buy-Side Liquidity above 08:00–09:30 High -> closes above -> Fang 2 displaces below High -> targets internal low or 08:00–09:30 Low.",
+        "Bullish Venom (Low Raid): Sweeps Sell-Side Liquidity below 08:00–09:30 Low -> closes below -> Fang 2 displaces above Low -> targets internal high or 08:00–09:30 High.",
+        "Mirror Discipline: Always check higher-timeframe draw on liquidity before forcing a counter-trend raid on a strong news trend day."
+      ],
+      "visualId": "bearish-vs-bullish",
+      "table": {
+        "caption": "Bearish vs. Bullish Venom Side-by-Side Reference (Synthetic 100–110 Box)",
+        "headers": ["Element", "Bearish Venom (Reviewed Example)", "Bullish Venom (Teaching Mirror)"],
+        "rows": [
+          ["Liquidity Attacked", "Buy-Side Liquidity above 110.0 High", "Sell-Side Liquidity below 100.0 Low"],
+          ["Fang 1 (Outward)", "Reaches 113.0, closes 112.0 (BISI)", "Reaches 97.0, closes 98.0 (SIBI)"],
+          ["Fang 2 (Inward)", "Drops through 110.0, closes 108.0 (SIBI)", "Rallies through 100.0, closes 102.0 (BISI)"],
+          ["Deferred Entry Ref", "Selected Venom open ~111.0 or BPR", "Selected Venom open ~99.0 or BPR"],
+          ["Invalidation Level", "Acceptance above 114.0 sweep high", "Acceptance below 96.0 sweep low"],
+          ["Example Objective", "104.0 internal / 100.0 opposite low", "106.0 internal / 110.0 opposite high"]
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "anchor": "bpr-fvg-ifvg-overlap",
+      "icon": "Calculator",
+      "title": "Balanced Price Range (BPR), FVG & IFVG Overlap Mechanics",
+      "extract": {
+        "name": "Venom Balanced Price Range (BPR) Overlap Formula",
+        "kind": "CreativeWork",
+        "formula": "BPR_Low = max(Fang1_FVG_Low, Fang2_FVG_Low); BPR_High = min(Fang1_FVG_High, Fang2_FVG_High); Valid iff BPR_High > BPR_Low",
+        "text": "The strict price intersection where the upward Fair Value Gap from Fang 1 and the downward Fair Value Gap from Fang 2 share identical price ticks, creating a dual-sided balanced corridor."
+      },
+      "paragraphs": [
+        "When two fast opposing displacements occur right next to each other, their Fair Value Gaps frequently overlap in price. In ICT terminology, that exact shared slice is a Balanced Price Range (BPR): prices that were first delivered inefficiently upward in Fang 1 and then immediately re-delivered inefficiently downward in Fang 2.",
+        "Notice how clean the arithmetic is—and how easy it is to misdraw by eye. If Fang 1's upward FVG spans 109.6 to 111.4 and Fang 2's downward FVG spans 108.6 to 111.0, the true BPR is strictly 109.6 to 111.0 (width 1.4 points, midpoint 110.3), NOT the entire 108.6–111.4 union. Meanwhile, once Fang 2 closes cleanly below Fang 1's upward FVG (109.6), that invalidated upward gap also flips into a bearish Inverse Fair Value Gap (IFVG)."
+      ],
+      "numberedPoints": [
+        "Measure Fang 1 FVG strictly between Candle 1 High and Candle 3 Low (for an upward sweep).",
+        "Measure Fang 2 FVG strictly between Candle A Low and Candle C High (for the downward counter-leg).",
+        "Compute the mathematical intersection [max(Low1, Low2), min(High1, High2)]—if the lower value exceeds the upper value, the two gaps do not overlap and no BPR exists.",
+        "Use the BPR edges (proximal edge, 50% midpoint, or overlapping Venom candle open) to anchor objective limit orders rather than eyeballing a vague rectangle."
+      ],
+      "visualId": "bpr-calculator",
+      "callout": {
+        "tone": "teal",
+        "label": "BPR vs. Standalone IFVG",
+        "text": "If Fang 2 reverses slowly without printing its own fresh FVG, you do not have a BPR—you have an Inverse Fair Value Gap (IFVG) once a candle closes through Fang 1's FVG. Both are valid observable references, but they should be tagged separately in your journal."
+      }
+    },
+    {
+      "number": 7,
+      "anchor": "entry-archetypes",
+      "icon": "Target",
+      "title": "Three Venom Entry Archetypes: Aggressive, BPR Midpoint & Deferred Open",
+      "paragraphs": [
+        "Two traders can stare at the exact same 100–110 Venom sequence and experience completely different trade outcomes simply because they chose different entry archetypes. Every entry location trades off fill probability against stop distance and reward-to-risk ratio.",
+        "Using our synthetic bearish setup (Invalidation at 114.0, Objective at 104.0), compare all three options before you ever place an order: an aggressive close entry at 109.5 provides immediate participation on runaway drops at the cost of a wider 4.5-point stop; a BPR midpoint limit at 110.5 improves geometry to 1.86R; and a deferred Venom candle-open limit at 111.0 achieves 2.33R (3.0 risk for 7.0 reward) while accepting the risk of being left behind on a straight drop."
+      ],
+      "bullets": [
+        "Archetype 1 — Aggressive Displacement Close (109.5): Enters on the close of Fang 2 back inside the range; never misses single-pass drops, but carries the widest stop (4.5 pts -> 1.22R before costs).",
+        "Archetype 2 — BPR Midpoint / Proximal Limit (110.5): Balances fill probability with tighter risk (3.5 pts risk, 6.5 pts reward -> 1.86R before costs).",
+        "Archetype 3 — Deferred Venom Candle Open (111.0): Demands a deep return to the declared opening price of the bearish Fang 2 candle (3.0 pts risk, 7.0 pts reward -> 2.33R before costs), but goes unfilled when price falls straight from 108.0 to 104.0."
+      ],
+      "visualId": "entry-archetypes",
+      "table": {
+        "caption": "Three Entry Archetypes on the Synthetic Bearish Venom (Stop 114.0, Target 104.0)",
+        "headers": ["Entry Archetype", "Entry Price", "Risk (pts)", "Reward (pts)", "Planned R (pre-cost)", "Fill Trade-Off"],
+        "rows": [
+          ["Aggressive Fang 2 Close", "109.5", "4.5", "5.5", "1.22R", "High fill rate; wider stop"],
+          ["BPR Overlap Midpoint", "110.5", "3.5", "6.5", "1.86R", "Balanced fill & geometry"],
+          ["Deferred Venom Open", "111.0", "3.0", "7.0", "2.33R", "Tightest risk; misses single-pass runs"]
+        ]
+      }
+    },
+    {
+      "number": 8,
+      "anchor": "motion-study-3d",
+      "icon": "Box",
+      "title": "Motion Study 02: Interactive 3D & Ruler View of Three Venom Outcomes",
+      "paragraphs": [
+        "Real markets do not follow one tidy textbook script after Fang 2 closes. Use the interactive 3D Motion Study below to inspect the exact 100–110 reference range, the 113.0/112.0 sweep Fang 1, and the 108.0 counter-leg Fang 2 across three distinct authored outcome branches.",
+        "Switch between 3D Studio perspective and straight-on Ruler View to measure every horizontal rail cleanly: Range Low 100.0, Objective 104.0, Range High 110.0, Deferred Open 111.0, and Protective Invalidation 114.0. Pay special attention to Branch B (Unfilled Runaway), where the bearish read is 100% right yet a resting limit at 111.0 legitimately records zero fill."
+      ],
+      "numberedPoints": [
+        "Branch A (Deferred Fill 111 -> 104): Price retraces cleanly to 111.2, fills the resting 111.0 limit order, respects 114.0, and delivers to 104.0.",
+        "Branch B (Unfilled Runaway -> 104): Price stalls at 108.9 after Fang 2 and slides straight through 104.0 to 102.2; the directional thesis works, while the 111.0 deferred order stays unfilled.",
+        "Branch C (Closing Failure > 114): Buyers reclaim 111.4 and close at 114.4 above invalidation, ending the bearish Venom thesis cleanly at the pre-declared stop."
+      ],
+      "visualId": "cinema-3d"
+    },
+    {
+      "number": 9,
+      "anchor": "cisd-vs-mss",
+      "icon": "GitBranch",
+      "title": "CISD vs. Micro-MSS Inside Fang 2: Confirmation Speed vs. Whipsaw Risk",
+      "paragraphs": [
+        "Inside Fang 2, traders often debate whether to confirm the reversal using a Change in State of Delivery (CISD) or wait for a full Micro Market Structure Shift (MSS). Understanding the exact candle line separating them removes all guesswork.",
+        "A bearish CISD triggers the moment a down-close candle closes beneath the opening price of the consecutive up-close sweep run (for example, closing below 110.5 on our synthetic sequence). A full Micro-MSS waits until price closes beneath the prior swing low established inside the pre-open leg (for example, 107.0). CISD arrives earlier and yields tighter stops on fast reversals, whereas MSS filters out shallow mid-sweep pauses at the expense of later entry."
+      ],
+      "bullets": [
+        "CISD Trigger: Candle body closes through the opening price of the upward Fang 1 delivery run -> earliest warning that buy-side delivery lost control.",
+        "Micro-MSS Trigger: Candle body closes below the most recent swing low -> stronger structural confirmation, but sometimes occurs halfway to your target.",
+        "Hybrid Rule: Many systematic traders require CISD + a close back inside the 08:00–09:30 range high (110.0) with an opposing FVG, using MSS as confirmation for higher-timeframe targets."
+      ],
+      "visualId": "cisd-vs-mss"
+    },
+    {
+      "number": 10,
+      "anchor": "single-vs-double-pass-math",
+      "icon": "Activity",
+      "title": "Single-Pass vs. Double-Pass Delivery & The Math of Chasing a Missed Fill",
+      "extract": {
+        "name": "Entry-Chasing Geometry Degradation Formula",
+        "kind": "CreativeWork",
+        "formula": "R_planned = (Entry_0 - Target) / (Stop - Entry_0); R_chased = (Entry_1 - Target) / (Stop - Entry_1); BE_freq = 1 / (1 + R) before costs",
+        "text": "Quantifies how sliding a bearish entry lower toward a fixed target while holding the protective stop fixed simultaneously doubles risk distance and shrinks reward distance."
+      },
+      "paragraphs": [
+        "Opening-session Venom moves generally resolve in one of two ways: a Double-Pass delivery (Fang 1 sweeps, Fang 2 reverses, then price pulls back into 111.0 before expanding to 104.0) or a Single-Pass delivery (Fang 2 drops straight from 108.0 to 104.0 without ever revisiting 111.0). The single most expensive psychological error in Venom trading happens on Single-Pass mornings.",
+        "Suppose your written plan is a bearish limit at 111.0, stop at 114.0 (3.0 points risk), and target at 104.0 (7.0 points reward)—a clean 2.33R plan requiring a 30.0% break-even hit frequency before commissions and slippage. Price leaves without you and hits 108.0. If you impulsively sell at 108.0 using the same 114.0 stop and 104.0 target, your risk doubles to 6.0 points while reward collapses to 4.0 points (0.67R), forcing your required break-even hit frequency to jump from 30.0% to 60.0% before costs. That is not a slightly worse fill—it is a completely broken trade plan."
+      ],
+      "numberedPoints": [
+        "Original Plan (111.0 entry, 114.0 stop, 104.0 target): 3.0 risk vs. 7.0 reward = 2.33R (30.0% break-even hit frequency before costs).",
+        "Chased Entry (108.0 entry, 114.0 stop, 104.0 target): 6.0 risk vs. 4.0 reward = 0.67R (60.0% break-even hit frequency before costs).",
+        "Operational Rule: A missed deferred fill is a 0R scratch. Log 'Missed — Single Pass' in your journal and wait for the next clean session rather than converting a 2.33R setup into a 0.67R gamble."
+      ],
+      "visualId": "chasing-calculator",
+      "callout": {
+        "tone": "crimson",
+        "label": "Never Repair a Missed Entry by Moving the Trigger",
+        "text": "If price drops straight to 108.0 without tagging 111.0, you only have two disciplined choices: stand aside cleanly (0R), or wait for a brand-new, independently validated lower-timeframe structure with its own risk math."
+      }
+    },
+    {
+      "number": 11,
+      "anchor": "optional-smt-htf-context",
+      "icon": "SlidersHorizontal",
+      "title": "Optional Confluence: SMT Divergence, Higher-Timeframe Bias & First Presented FVG",
+      "paragraphs": [
+        "Online checklists frequently bolt five or six compulsory extra ingredients onto the Venom Model. In strict practice, those tools are optional context filters—helpful when present, not mandatory rules that invalidate a clean Two-Fangs sequence when absent.",
+        "The three most widely studied optional filters are SMT Divergence across correlated U.S. equity indices (for example, Nasdaq-100 NQ sweeping its 08:00–09:30 high while S&P 500 ES fails to make a higher high), alignment with a 15-minute or 1-hour Draw on Liquidity, and overlap with the 09:30 First Presented Fair Value Gap (1st PFVG). Log each filter as a separate tag in your trade journal so your own data tells you whether adding it improves expectancy or merely filters out too many valid trades."
+      ],
+      "bullets": [
+        "Bearish Index SMT (NQ vs. ES): NQ prints a higher high above its 08:00–09:30 box while ES stalls below its 08:00–09:30 high—an observable cross-market divergence.",
+        "Higher-Timeframe Draw on Liquidity (15m / 1H): Confirming that a major discount PD array or prior-day low sits beneath the opening range gives Fang 2 room to run.",
+        "First Presented FVG (09:30–09:35): When Fang 2's bearish FVG aligns with or overlaps the opening 1st PFVG, both opening-session models highlight the same price band.",
+        "Keep Context Optional: Never invent a rigid five-stage mythology claiming every Venom setup must contain SMT, a breaker, an order block, and a 1st PFVG simultaneously."
+      ],
+      "visualId": "smt-htf-context"
+    },
+    {
+      "number": 12,
+      "anchor": "venom-vs-other-models",
+      "icon": "Grid",
+      "title": "Venom Model vs. Silver Bullet, 2022 Mentorship, Unicorn & Classic ORB",
+      "paragraphs": [
+        "Beginners exploring ICT entry models often struggle to tell where one playbook ends and another begins—especially because Venom (09:30–11:00) sits directly adjacent to the New York AM Silver Bullet (10:00–11:00) and shares FVG vocabulary with the 2022 Model and Unicorn Model.",
+        "The clearest way to separate them is by their core anchor and mandatory trigger. Venom anchors specifically on the frozen 08:00–09:30 range and requires opposing Two Fangs (sweep close + displacement return). Silver Bullet anchors strictly on a one-hour clock window (such as 10:00–11:00) seeking the first clean FVG toward liquidity. The 2022 Model works on any session swing sweep + MSS + FVG. The Unicorn Model requires a Breaker Block overlapping an FVG, while Classic ORB trades breakouts in the direction of the opening break—making Venom the exact counter-thesis to a failed ORB."
+      ],
+      "visualId": "model-comparison",
+      "table": {
+        "caption": "Side-by-Side Comparison of Five Intraday Entry Models",
+        "headers": ["Model", "Primary Time / Anchor", "Core Trigger", "Direction vs. Opening Break", "Key Distinguishing Trait"],
+        "rows": [
+          ["ICT Venom Model", "08:00–09:30 Frozen Range", "Fang 1 close outside + Fang 2 displacement inside", "Fade / Reversal of opening sweep", "Two opposing inefficient legs (BPR / deferred open)"],
+          ["ICT Silver Bullet", "Fixed 1-hour windows (e.g. 10:00–11:00 NY)", "Liquidity draw + first FVG entry in window", "Either direction toward liquidity", "Strict clock window; no 08:00–09:30 box needed"],
+          ["ICT 2022 Model", "Any Killzone swing high/low", "Swing sweep + MSS + FVG retrace", "Reversal after external sweep", "General multi-session swing blueprint"],
+          ["ICT Unicorn Model", "Any HTF key level / Killzone", "Breaker Block strictly overlapping an FVG", "Reversal through failed OB", "Mandatory Breaker + FVG overlap"],
+          ["Classic ORB", "09:30–09:45 or 09:30–10:00 range", "Breakout & continuation outside range", "Continuation with opening break", "Opposite thesis to a Venom fakeout"]
+        ]
+      }
+    },
+    {
+      "number": 13,
+      "anchor": "markets-timeframes",
+      "icon": "BarChart3",
+      "title": "Best Markets, Timeframe Stack & Session Decay Rules",
+      "paragraphs": [
+        "Because the Venom Model is tethered to the 09:30 AM New York equity cash open, its clearest habitat is U.S. equity index futures—specifically E-mini and Micro Nasdaq-100 (NQ / MNQ) and S&P 500 (ES / MES), followed by Dow (YM) and COMEX Gold (GC) when New York morning macro news drives sharp pre-open ranges.",
+        "Matching your chart timeframe to the 90-minute range is equally important. Use the 15-minute or 5-minute chart to mark the clean 08:00–09:30 box and higher-timeframe liquidity draws, then drop to the 1-minute chart (or 30-second/15-second only if you are experienced with fast execution) at 09:30 AM to read the closing Fang 1, opposing Fang 2, and BPR ticks precisely. Note that foreign-exchange pairs like EUR/USD experience their primary liquidity catalyst around the 08:00–08:30 AM NY overlap rather than the 09:30 equity bell, so index opening-range rules do not transfer identically to forex without separate testing."
+      ],
+      "numberedPoints": [
+        "Context Stack (1H -> 15m -> 5m): Map overnight highs/lows, prior-day extremes, and the exact 08:00–09:30 ETH high and low before 09:29 AM.",
+        "Execution Timeframe (1-Minute Primary): Observe the post-09:30 closing candle outside the box (Fang 1) and the opposing displacement close back inside (Fang 2).",
+        "Time-of-Day Decay: Edge on an opening-range sweep decays rapidly after 11:00 AM NY once the London close approaches and morning liquidity is already redistributed.",
+        "News-Day Caution: On FOMC rate days or extreme 08:30 CPI days where the 08:00–09:30 range already spans 250+ NQ points, range width can distort stop distances—verify tick cost before participating."
+      ],
+      "visualId": "market-timeframe"
+    },
+    {
+      "number": 14,
+      "anchor": "setup-quality-grader",
+      "icon": "CheckSquare",
+      "title": "Six-Gate Venom Setup Grader: Filtering High-Clarity Sequences",
+      "paragraphs": [
+        "Not every post-09:30 dip back inside the opening range deserves capital. A messy sideways drift that barely pokes 2 ticks above 110.0 and crawls back inside over twelve tiny doji candles lacks the displacement imbalance that gives the Venom Model its structure.",
+        "Score every candidate against the six objective binary gates below before placing an order. A setup scoring 5–6 gates offers clear structural definition; a setup scoring 0–3 gates belongs on the sidelines as an observation-only chart."
+      ],
+      "bullets": [
+        "Gate 1 — Frozen ETH Box: Exact 08:00–09:30 New York high and low marked on extended hours with clean range width.",
+        "Gate 2 — Closing Fang 1: Post-09:30 candle closes decisively outside the frozen range boundary with visible imbalance.",
+        "Gate 3 — Opposing Fang 2 Inside: Fast counter-displacement closes back inside the range and leaves a clear opposing FVG.",
+        "Gate 4 — Defined Entry Reference: Concrete BPR overlap or declared Venom candle open exists with pre-calculated stop geometry.",
+        "Gate 5 — Clean Room to Target: At least 2.0R before costs remains between your declared entry and the nearest opposing liquidity pool.",
+        "Gate 6 — Active Window & No Blind Chase: Current time is inside 09:30–11:00 NY and price has not already completed the target before your entry fills."
+      ],
+      "visualId": "setup-grader"
+    },
+    {
+      "number": 15,
+      "anchor": "worked-example-bearish-nq",
+      "icon": "TrendingDown",
+      "title": "Worked Example 1: Animated Bearish NQ 1-Minute Venom Replay (Double-Pass Fill)",
+      "paragraphs": [
+        "Walk step by step through a complete synthetic Micro E-mini Nasdaq-100 (MNQ) 1-minute bearish Venom sequence. Between 08:00 and 09:29 AM NY, MNQ carves a clean 100-point opening range from 21,400.00 (Low) to 21,500.00 (High). Notice that all prices below are synthetic teaching figures built to keep tick arithmetic transparent.",
+        "At 09:31 AM, a strong opening burst pushes MNQ to 21,530.00 and closes at 21,520.00 (Fang 1), leaving a bullish FVG from 21,496.00 to 21,514.00. Two minutes later at 09:33 AM, Fang 2 slams back down from 21,510.00 to close at 21,480.00—back inside the 08:00–09:30 box—creating a bearish FVG from 21,486.00 to 21,510.00 and a strict BPR overlap from 21,496.00 to 21,510.00."
+      ],
+      "numberedPoints": [
+        "08:00–09:29 Freeze: Mark Range High at 21,500.00 and Range Low at 21,400.00 (100-point box).",
+        "09:31 Fang 1 Sweep: Candle closes above the box at 21,520.00 (High 21,530.00), printing upward imbalance.",
+        "09:33 Fang 2 Reversal: Opposing bearish displacement closes at 21,480.00 inside the box, establishing BPR 21,496–21,510 and Deferred Venom Open at 21,510.00.",
+        "09:36 Retest Fill: Price rallies back to 21,512.00, filling a resting short limit at 21,510.00 with protective stop at 21,540.00 (30 pts risk = $60/contract on MNQ at $2/pt).",
+        "09:44 Delivery: Price expands downward to the 21,440.00 internal objective (70 pts reward = $140/contract -> 2.33R before commissions and slippage)."
+      ],
+      "visualId": "worked-nq-bearish",
+      "callout": {
+        "tone": "violet",
+        "label": "Synthetic Example Verification",
+        "text": "On MNQ ($2 per index point, $0.50 per 0.25 tick), 30.0 points of stop distance equals $60.00 gross risk per contract before exchange/broker fees and potential stop-market slippage."
+      }
+    },
+    {
+      "number": 16,
+      "anchor": "worked-example-bullish-es",
+      "icon": "TrendingUp",
+      "title": "Worked Example 2: Animated Bullish ES 1-Minute Venom (Filled BPR vs. Unfilled Deferred Open)",
+      "paragraphs": [
+        "Now inspect the exact bullish mirror on synthetic Micro E-mini S&P 500 (MES, $5 per point). Between 08:00 and 09:29 AM NY, MES establishes a 20-point frozen box from 6,000.00 (Low) to 6,020.00 (High). At 09:32 AM, a sharp flush sweeps sell-side liquidity to 5,994.00 and closes at 5,996.00 (Fang 1).",
+        "At 09:34 AM, Fang 2 drives back above 6,000.00 and closes at 6,004.50, creating a bullish BPR overlap from 5,998.50 to 6,001.50 and a deeper deferred Venom open at 5,998.00. Toggle the replay mode below to see how the exact same market move fills a BPR midpoint limit at 6,000.00 (yielding 2.0R to 6,014.00) while leaving a stricter 5,998.00 deferred limit unfilled when the pullback bottoms at 5,999.25."
+      ],
+      "numberedPoints": [
+        "08:00–09:29 Freeze: MES Range Low 6,000.00 and Range High 6,020.00.",
+        "09:32 Fang 1 Downward Sweep: Closes below 6,000.00 at 5,996.00 (Low 5,994.00), leaving a bearish FVG.",
+        "09:34 Fang 2 Bullish Reversal: Closes cleanly back inside at 6,004.50, printing an overlapping bullish BPR (5,998.50–6,001.50).",
+        "09:37 Divergence of Two Plans: Pullback dips to 5,999.25—filling the BPR Midpoint buyer (6,000.00 entry, 5,993.00 stop, 6,014.00 target -> 2.0R) while leaving the 5,998.00 deferred buyer unfilled (0R)."
+      ],
+      "visualId": "worked-es-bullish"
+    },
+    {
+      "number": 17,
+      "anchor": "stops-targets-invalidation",
+      "icon": "ShieldAlert",
+      "title": "Stop-Loss Placement Tiers, Invalidation Rules & Target Hierarchy",
+      "paragraphs": [
+        "A Venom setup is invalidated when price re-accepts beyond the protected extreme of Fang 1—proving the sweep was not a failed breakout after all. Because live stop-market orders trigger intrabar on a single touch (and can experience slippage during fast 09:30 volatility), you must distinguish between your hard broker stop-loss and your analytical candle-close thesis invalidation.",
+        "On the target side, beginners routinely assume every Venom sweep must travel all the way across the opposite edge of the 08:00–09:30 box. In reality, many clean reversals stall at the 50% equilibrium of the opening range or at an internal opposing FVG before reversing again. Planning a primary partial or fixed 2.0R objective inside the range—and leaving only a runner for the opposite range extreme—protects realized equity."
+      ],
+      "bullets": [
+        "Tier 1 — Tight BPR Edge Stop: Placed just above Fang 2 / BPR upper edge; maximizes R-multiple but suffers frequent noise stop-outs during 09:30–09:45 whipsaws.",
+        "Tier 2 — Standard Protected Sweep Extreme (Recommended Baseline): Placed above the Fang 1 swing high plus a small buffer (e.g., 114.0 above the 113.0 high), matching structural invalidation.",
+        "Tier 3 — Wide Structure / News Buffer Stop: Used only on volatile macro mornings by cutting contract size proportionally so dollar risk stays constant.",
+        "Target Ladder: Scale or exit at (a) 50% Opening Range Equilibrium (105.0), (b) Internal Opposing FVG / fixed 2.0R–2.33R (104.0), and optionally trail toward (c) Opposite Range Extreme (100.0)."
+      ],
+      "visualId": "stop-target-planner",
+      "table": {
+        "caption": "Stop-Loss Tiers & Objective Hierarchy (Synthetic 100–110 Bearish Venom, Entry 111.0)",
+        "headers": ["Stop / Target Choice", "Level", "Distance from 111.0", "Operational Profile"],
+        "rows": [
+          ["Tier 1 Tight Stop (Above BPR)", "112.2", "1.2 pts risk", "High noise-out rate during cash-open volatility"],
+          ["Tier 2 Sweep Extreme Stop", "114.0", "3.0 pts risk", "Aligns hard protection with Fang 1 invalidation"],
+          ["Target A — 50% Box Equilibrium", "105.0", "6.0 pts (2.0R)", "High-clarity internal mean-reversion target"],
+          ["Target B — Internal Liquidity", "104.0", "7.0 pts (2.33R)", "Matches reviewed baseline worked example"],
+          ["Target C — Opposite Box Low", "100.0", "11.0 pts (3.67R)", "Runner objective; never assumed on every morning"]
+        ]
+      }
+    },
+    {
+      "number": 18,
+      "anchor": "common-mistakes-clinic",
+      "icon": "AlertTriangle",
+      "title": "Five Classic Venom Model Mistakes (Animated Stick-Figure Clinic)",
+      "paragraphs": [
+        "Most losses on the Venom Model do not come from misunderstanding what a candle is—they come from five repeatable execution habits during the adrenaline rush of the 09:30–10:00 New York open.",
+        "Click through each stick-figure scenario below to see the exact chart trap and its concrete corrective rule before your next practice session."
+      ],
+      "numberedPoints": [
+        "Mistake 1 — Shorting Fang 1 Before Fang 2 Closes: Guessing the top above 110.0 on a trend breakout day without waiting for opposing displacement back inside.",
+        "Mistake 2 — Charting Regular Trading Hours (RTH): Missing the 08:00–09:30 pre-market candles entirely and drawing a phantom range.",
+        "Mistake 3 — Chasing a Single-Pass Run at 108.0: Sliding a missed 111.0 deferred limit down mid-drop, cutting reward-to-risk from 2.33R to 0.67R.",
+        "Mistake 4 — Ignoring Time Expiry: Leaving a 09:35 limit order active into 13:00 afternoon chop long after morning liquidity dynamics have expired.",
+        "Mistake 5 — Forcing Mandatory 5-Stage Checklists: Either skipping clean setups because SMT was absent, or hallucinating non-existent FVGs just to fit a rigid template."
+      ],
+      "visualId": "mistake-clinic"
+    },
+    {
+      "number": 19,
+      "anchor": "checklist-glossary",
+      "icon": "BookMarked",
+      "title": "Pre-Session Venom Execution Checklist & 24-Term Glossary",
+      "paragraphs": [
+        "Use this interactive six-point routine before 09:29 AM New York time so your levels, risk dollars, entry archetype, and expiry timestamp are locked in before the opening bell rings. Below the checklist sits a complete 24-term reference glossary defining every Venom concept strictly in observable chart language."
+      ],
+      "visualId": "execution-checklist",
+      "checklist": [
+        {
+          "id": "vm-chk-1",
+          "label": "1. Verify Extended Hours (ETH) & America/New_York Clock",
+          "detail": "Confirm chart displays 08:00–09:29 NY candles accurately for current EST/EDT season."
+        },
+        {
+          "id": "vm-chk-2",
+          "label": "2. Freeze 08:00–09:30 High, Low & 50% Equilibrium",
+          "detail": "Draw static horizontal lines at 09:30:00 and check total box width against normal ATR."
+        },
+        {
+          "id": "vm-chk-3",
+          "label": "3. Check High-Impact Scheduled News (08:30 / 10:00 NY)",
+          "detail": "Note any 10:00 AM red-folder release (ISM, JOLTS, Consumer Confidence) that can whip open orders."
+        },
+        {
+          "id": "vm-chk-4",
+          "label": "4. Pre-Declare Entry Archetype (Aggressive, BPR, or Deferred Open)",
+          "detail": "Commit to one fill rule before Fang 2 prints—never chase downward if a limit stays unfilled."
+        },
+        {
+          "id": "vm-chk-5",
+          "label": "5. Compute Fixed Dollar Risk & Hard Stop Distance",
+          "detail": "Size contracts so a stop-out beyond Fang 1 extreme stays within your fixed per-trade risk cap."
+        },
+        {
+          "id": "vm-chk-6",
+          "label": "6. Set Hard Order Expiry Timestamp (e.g., 11:00 AM NY)",
+          "detail": "Cancel resting unfilled limit orders at expiry and log 'Missed — Single Pass' honestly."
+        }
+      ],
+      "glossaryTerms": [
+        {
+          "term": "Venom Model",
+          "definition": "An opening-session reversal framework pairing a frozen 08:00–09:30 NY range with a closing-candle sweep (Fang 1) and opposing displacement back inside (Fang 2)."
+        },
+        {
+          "term": "Frozen Opening Range (08:00–09:30 NY)",
+          "definition": "The static high and low carved on an extended-hours chart during the 90 minutes preceding the 09:30 AM New York equity cash open."
+        },
+        {
+          "term": "Extended Trading Hours (ETH)",
+          "definition": "A chart data setting that includes overnight and pre-market futures/CFD sessions rather than showing only 09:30–16:00 regular cash hours."
+        },
+        {
+          "term": "Fang 1 (Outward Sweep Leg)",
+          "definition": "The initial post-09:30 inefficient price expansion that breaks and closes beyond the frozen range high (bearish) or low (bullish)."
+        },
+        {
+          "term": "Fang 2 (Inward Displacement Leg)",
+          "definition": "The opposing inefficient price leg that drives forcefully back inside the frozen range boundary, reversing the breakout narrative."
+        },
+        {
+          "term": "Balanced Price Range (BPR)",
+          "definition": "The strict overlapping price band shared by an upward Fair Value Gap (Fang 1) and a downward Fair Value Gap (Fang 2)."
+        },
+        {
+          "term": "Fair Value Gap (FVG)",
+          "definition": "A three-candle price imbalance where Candle 1 and Candle 3 wicks do not overlap across the body of Candle 2."
+        },
+        {
+          "term": "Inverse Fair Value Gap (IFVG)",
+          "definition": "An existing Fair Value Gap that fails to hold as support/resistance after a candle closes completely through it, flipping into an opposing reference."
+        },
+        {
+          "term": "Deferred Venom Candle Open",
+          "definition": "A resting limit-order entry placed at the opening price of the selected opposing Fang 2 candle, requiring a pullback return to fill."
+        },
+        {
+          "term": "Aggressive Close Entry",
+          "definition": "Immediate participation upon the close of Fang 2 back inside the frozen range, trading wider stop distance for higher fill certainty."
+        },
+        {
+          "term": "Single-Pass Delivery",
+          "definition": "A fast post-reversal drop or rally that moves directly to the objective without retracing back to fill deferred limit orders."
+        },
+        {
+          "term": "Double-Pass Delivery",
+          "definition": "A reversal sequence that returns to test the BPR or deferred Venom candle open before continuing toward the target."
+        },
+        {
+          "term": "Wick-Only Sweep",
+          "definition": "A brief spike beyond the frozen boundary whose candle body closes back inside the range; distinct from a closing-candle Fang 1 variant."
+        },
+        {
+          "term": "Change in State of Delivery (CISD)",
+          "definition": "An early shift confirmed when a candle closes beyond the opening price of the consecutive opposing candle run that created the sweep."
+        },
+        {
+          "term": "Micro Market Structure Shift (Micro-MSS)",
+          "definition": "A lower-timeframe candle close beyond the most recent confirmed structural swing low (bearish) or swing high (bullish)."
+        },
+        {
+          "term": "Buy-Side Liquidity (BSL)",
+          "definition": "Resting buy-stop orders and breakout orders clustered above prominent highs such as the frozen 08:00–09:30 range high."
+        },
+        {
+          "term": "Sell-Side Liquidity (SSL)",
+          "definition": "Resting sell-stop orders and breakdown orders clustered beneath prominent lows such as the frozen 08:00–09:30 range low."
+        },
+        {
+          "term": "SMT Divergence",
+          "definition": "An optional cross-market filter where one correlated index (e.g., NQ) sweeps its opening range boundary while another (e.g., ES) fails to do so."
+        },
+        {
+          "term": "First Presented FVG (1st PFVG)",
+          "definition": "The very first Fair Value Gap printed immediately after the 09:30 AM New York cash open; an optional contextual overlay for Venom entries."
+        },
+        {
+          "term": "Protected Sweep Extreme",
+          "definition": "The highest wick of Fang 1 (bearish) or lowest wick of Fang 1 (bullish) beyond which acceptance invalidates the Venom thesis."
+        },
+        {
+          "term": "Time Expiry",
+          "definition": "A pre-declared clock cutoff (commonly 11:00–11:30 AM NY) at which any unfilled opening-session Venom limit order is automatically cancelled."
+        },
+        {
+          "term": "Opening Range Equilibrium (50%)",
+          "definition": "The exact mathematical midpoint (OR_High + OR_Low) / 2 of the frozen 08:00–09:30 box, frequently used as an initial internal target."
+        },
+        {
+          "term": "Entry Chasing",
+          "definition": "Impulsively sliding a missed limit entry closer to the target after price departs, degrading reward-to-risk and raising break-even requirements."
+        },
+        {
+          "term": "Draw on Liquidity (DOL)",
+          "definition": "The prominent resting high, low, or imbalance on a higher timeframe toward which intraday price expansion is evaluated."
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "anchor": "curriculum-baseline-notes",
+      "icon": "Archive",
+      "title": "Chapter 67 Baseline Study Notes (Sections 53.1 – 53.5)",
+      "paragraphs": [
+        "The five study notes below preserve the original LearnSMC Chapter 67 curriculum baseline verbatim, grounding every interactive diagram and calculator above in transparent, verifiable rules."
+      ],
+      "baselineSections": [
+        {
+          "code": "53.1",
+          "heading": "Which range defines this Venom example?",
+          "paragraphs": [
+            "This opening-session variant freezes the 08:00–09:30 New York high and low on an extended-hours chart. The window is a reference, not a claim that every ninety-minute interval is a Venom setup. At 09:30, label the completed boundaries and the location of broader liquidity. A range of 100–110 gives two references; it does not prescribe whether the next move must attack the high, low or both. Other session variants require their own source and timing definition."
+          ]
+        },
+        {
+          "code": "53.2",
+          "heading": "What do the two fangs describe?",
+          "paragraphs": [
+            "In the bearish example, price moves above the range high and a candle closes above that buy-side reference. An inefficient upward departure is followed by an opposing inefficient move down: the two fangs. The downward response changes the interpretation of the earlier break. A wick above the high without the specified close is not the same version. Nor is a completed close above the high sufficient if price keeps accepting higher prices without the opposing response. The bullish mirror should be labelled as a teaching contrast, not substituted for the reviewed bearish example."
+          ]
+        },
+        {
+          "code": "53.3",
+          "heading": "Worked sequence: aggressive versus deferred participation",
+          "paragraphs": [
+            "Use an invented 100–110 reference range. A candle reaches 113 and closes 112; a later opposing move trades back below 110 and leaves a declared reference. An aggressive response-based idea and a deferred return to a selected Venom candle opening price have different recognition times and risk distances. Do not award the deferred entry at 111 unless a later price actually returns there after the reference is known. A move straight to 104 can support the directional reading while leaving the deferred order unfilled."
+          ]
+        },
+        {
+          "code": "53.4",
+          "heading": "Failure, expiry and the limits of the model name",
+          "paragraphs": [
+            "Define the protected extreme, the chosen entry boundary and the time at which the idea expires. Acceptance back above a selected bearish failure level can end the thesis; no retracement can end the opportunity without a loss. SMT, a breaker or an FVG may add context, but do not invent a mandatory five-stage chain that every Venom instance must contain. The range, candle-close condition and opposing departure are observable. Claims about who engineered them, fixed success rates or guaranteed full-range targets are not established by their appearance."
+          ]
+        },
+        {
+          "code": "53.5",
+          "heading": "Measure the consequences of waiting for a return",
+          "paragraphs": [
+            "Suppose a deferred bearish example considers 111, with a hypothetical protective level at 114 and objective 104. The planned distance is three points of risk and seven points of reward, before costs and any slippage. Moving the entry down to 108 after the decline would leave six points to the same protective level and only four to the objective. That is a different plan, not the same setup at a slightly worse price. The example illustrates why a missed return cannot be repaired by quietly moving the entry.",
+            "The first presented FVG and SMT lessons explain optional contextual observations; they are not compulsory additions to every Venom variant. Practise a separately defined entry sequence in Trade Simulator."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "anchor": "venom-model-faq",
+      "icon": "HelpCircle",
+      "title": "Frequently Asked Questions About the ICT Venom Model",
+      "paragraphs": [
+        "Direct, plain-language answers to the fourteen most searched questions about the ICT Venom Model, opening-range boundaries, Two Fangs validation, BPR overlap, and execution rules."
+      ],
+      "faqs": [
+        {
+          "q": "What is the ICT Venom Model in trading?",
+          "a": "The ICT Venom Model is an opening-session price-action framework that freezes the 08:00–09:30 New York high and low on an extended-hours chart, waits for a post-09:30 candle close outside one boundary on an inefficient leg (Fang 1), and requires an opposing inefficient displacement back inside the range (Fang 2) before framing an entry and protective stop."
+        },
+        {
+          "q": "What exact time window defines the Venom Model opening range?",
+          "a": "The standard opening-session variant freezes the high and low from 08:00 AM through 09:29 AM New York time (America/New_York) on an Extended Trading Hours chart, locking both lines when the 09:30 AM equity cash session opens."
+        },
+        {
+          "q": "Why is it called the 'Two Fangs' model?",
+          "a": "The term Two Fangs describes the paired opposing inefficient legs straddling the frozen range edge: Fang 1 drives rapidly outside the boundary leaving an imbalance, and Fang 2 slices immediately back inside the boundary leaving an opposing imbalance."
+        },
+        {
+          "q": "Does a wick-only sweep above the range high count as a standard Venom setup?",
+          "a": "No—a wick-only poke whose candle closes back inside the range is a separate wick-sweep or Turtle Soup variant. The reviewed closing-fang Venom version specifically requires a candle close beyond the range edge before the opposing displacement returns inside."
+        },
+        {
+          "q": "Do I need an Extended Trading Hours (ETH) chart to trade the Venom Model?",
+          "a": "Yes. Regular Trading Hours (RTH) charts omit pre-09:30 data on U.S. equity index futures, which makes it impossible to mark the 08:00–09:30 opening range accurately."
+        },
+        {
+          "q": "How do you calculate the Balanced Price Range (BPR) inside a Venom setup?",
+          "a": "Take the upward Fair Value Gap from Fang 1 and the downward Fair Value Gap from Fang 2 and compute their exact price overlap: BPR Low = max(FVG1 Low, FVG2 Low) and BPR High = min(FVG1 High, FVG2 High). A valid BPR exists only when BPR High is greater than BPR Low."
+        },
+        {
+          "q": "What is the difference between an aggressive entry and a deferred Venom open entry?",
+          "a": "An aggressive entry participates right on Fang 2's close back inside the range—ensuring fills on single-pass drops at the cost of a wider stop. A deferred entry places a resting limit at the declared Venom candle open or BPR midpoint, achieving tighter risk and higher reward-to-risk while accepting unfilled trades when price runs without retracing."
+        },
+        {
+          "q": "What should I do if price drops straight to target without filling my deferred limit order?",
+          "a": "Cancel the order and record a 0R missed fill (Single-Pass delivery). Chasing a bearish entry from 111 down to 108 with a fixed 114 stop and 104 target doubles your risk from 3 to 6 points while cutting reward from 7 to 4 points—turning a 2.33R plan into a 0.67R plan."
+        },
+        {
+          "q": "Are SMT Divergence and the First Presented FVG mandatory for every Venom trade?",
+          "a": "No. Both SMT Divergence (such as NQ vs. ES) and the 09:30 First Presented FVG are optional contextual filters. Treat them as separate journal tags rather than inventing a compulsory five-stage chain."
+        },
+        {
+          "q": "How is the Venom Model different from the ICT Silver Bullet?",
+          "a": "The Venom Model anchors on the frozen 08:00–09:30 opening range and specifically fades a post-09:30 sweep using Two Fangs. The New York AM Silver Bullet anchors strictly on the 10:00–11:00 clock hour and seeks the first FVG toward an active liquidity draw regardless of whether an opening-range sweep occurred."
+        },
+        {
+          "q": "How does the Venom Model compare to a classic Opening Range Breakout (ORB)?",
+          "a": "They are structural opposites. Classic ORB enters in the direction of the breakout expecting trend continuation, whereas the Venom Model waits for that breakout to fail violently back inside the 08:00–09:30 range."
+        },
+        {
+          "q": "Which markets and timeframes work best for studying the Venom Model?",
+          "a": "U.S. equity index futures—NQ/MNQ, ES/MES, and YM/MYM—are the primary habitat because the 09:30 AM NYSE cash open directly drives their liquidity surge. Most learners mark the box on 15m/5m charts and read Fang 1, Fang 2, and BPR ticks on the 1-minute chart."
+        },
+        {
+          "q": "Where is the stop-loss placed on a bearish or bullish Venom setup?",
+          "a": "The standard structural stop sits beyond the protected extreme of Fang 1 (above the sweep high for bearish setups, below the sweep low for bullish setups) plus a small volatility buffer. Remember that hard stop-market orders trigger intrabar on a touch, whereas thesis invalidation is often reviewed on candle closes."
+        },
+        {
+          "q": "When does an unfilled Venom Model setup expire?",
+          "a": "Declare a fixed session cutoff before 09:30 AM—commonly 11:00 AM or 11:30 AM New York time—or earlier if price reaches the opposite target objective first. Leaving morning opening-range limit orders sitting open into afternoon chop exposes you to unrelated session drivers."
+        }
+      ]
+    }
+  ]
+}
